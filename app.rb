@@ -104,10 +104,12 @@ before '/:locale/*' do
 end
 
 get '/' do
-	@active_tab_index = "active"
-	@categories = KeventerReader.instance.categories session[:locale]
-	@kleerers = KeventerReader.instance.kleerers session[:locale]
-	erb :index
+	# @active_tab_index = "active"
+	# @categories = KeventerReader.instance.categories session[:locale]
+	# @kleerers = KeventerReader.instance.kleerers session[:locale]
+	# erb :index/
+
+	erb :index, :layout => :layout_angular
 end
 
 get '/blog' do
