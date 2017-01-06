@@ -111,7 +111,7 @@ get '/home' do # Dejo esta ruta para que los test de la home peguen contra la ho
 	@active_tab_index = "active"
 	@categories = KeventerReader.instance.categories session[:locale]
 	@kleerers = KeventerReader.instance.kleerers session[:locale]
-	erb :index_old/
+	erb :index_old
 end
 
 get '/blog' do
