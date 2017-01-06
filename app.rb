@@ -112,6 +112,13 @@ get '/' do
 	erb :index, :layout => :layout_angular
 end
 
+get '/old-home' do
+	@active_tab_index = "active"
+	@categories = KeventerReader.instance.categories session[:locale]
+	@kleerers = KeventerReader.instance.kleerers session[:locale]
+	erb :index.old
+end
+
 get '/blog' do
   @active_tab_blog = "active"
   erb :blog

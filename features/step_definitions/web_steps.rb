@@ -50,17 +50,17 @@ end
 
 When /^I visit the home page$/ do
   stub_connector
-  visit '/'
+  visit '/old-home'
 end
 
 Given(/^I visit the spanish home page$/) do
   stub_connector
-  visit '/es/'
+  visit '/es/old-home'
 end
 
 Given(/^I visit the english home page$/) do
   stub_connector
-  visit '/en/'
+  visit '/en/old-home'
 end
 
 Given(/^I visit the english "(.*?)"$/) do |page|
