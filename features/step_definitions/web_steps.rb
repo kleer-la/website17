@@ -48,20 +48,20 @@ Given /^there are many events$/ do
   stub_connector( "events.xml")
 end
 
-When /^I visit the home page$/ do
-  stub_connector
-  visit '/'
-end
+# When /^I visit the home page$/ do
+#   stub_connector
+#   visit '/'
+# end
 
-Given(/^I visit the spanish home page$/) do
-  stub_connector
-  visit '/es/'
-end
+# Given(/^I visit the spanish home page$/) do
+#   stub_connector
+#   visit '/es/'
+# end
 
-Given(/^I visit the english home page$/) do
-  stub_connector
-  visit '/en/'
-end
+# Given(/^I visit the english home page$/) do
+#   stub_connector
+#   visit '/en/'
+# end
 
 Given(/^I visit the english "(.*?)"$/) do |page|
   stub_connector
