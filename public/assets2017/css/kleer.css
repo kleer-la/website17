@@ -196,7 +196,9 @@ hr.small {
 
 .social-media {
     padding-top: 20px;
-    padding-left: 70px;
+    text-align: center;
+    width: 290px;
+    margin-left: 0px;
 }
 
 .social-media a:hover {
@@ -465,6 +467,7 @@ footer {
     }
     .social-media {
         padding-left: 0;
+        margin: 0 auto;
     }
     .list-inline {
         text-align: center;
