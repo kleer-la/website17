@@ -356,10 +356,16 @@ section#about {
 /* Footer */
 
 footer {
-    padding: 100px 0;
-    padding: 100px 0;
-    height: 500px;
+    padding: 80px 0;
+    height: 550px;
     overflow: hidden;
+}
+
+footer .nav-tabs li a {
+    background: rgba(255, 255, 255, 0.7);
+}
+footer .nav-tabs li {
+    padding: 2px;
 }
 
 #to-top {
@@ -411,7 +417,7 @@ footer {
 
 .kleero01 {
     position: absolute;
-    height: 440px;
+    height: 500px;
     overflow: hidden;
     left: 5%;
     margin-top: -60px;
@@ -519,7 +525,7 @@ footer {
     }
     .kleero01 {
         position: absolute;
-        height: 400px;
+        height: 500px;
         overflow: hidden;
         left: -35px;
         margin-top: -40px;
