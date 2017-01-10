@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
 
   
-  <base href="/">
+  <base href="/app">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,15 +50,15 @@
       <div class="menu-container text-uppercase">
 
         <div id="logoMenu">
-          <img src="img/kleer-logo.png">
+          <img src="app/img/kleer-logo.png">
         </div>
 
         <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
         <ul class="sidebar-nav">
-          <li><a href="#about" onclick='scrollTo("#about");closeSidebar(event)'>Hacemos</a></li>
-          <li><a href="#team" onclick='scrollTo("#team");closeSidebar(event)'>Somos</a></li>
-          <li><a href="#share" onclick='scrollTo("#share");closeSidebar(event)'>Compartimos</a></li>
-          <li><a href="#contact" onclick='scrollTo("#contact");closeSidebar(event)'>¿Hablamos?</a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo("#about");closeSidebar(event)'>Hacemos</a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo("#team");closeSidebar(event)'>Somos</a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo("#share");closeSidebar(event)'>Compartimos</a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo("#contact");closeSidebar(event)'>¿Hablamos?</a></li>
         </ul>
 
         <div class="social-media">
@@ -81,7 +81,7 @@
   <!-- Logo Kleer -->
 
   <div id="logo">
-    <img src="img/kleer-logo.png">
+    <img src="app/img/kleer-logo.png">
   </div>
 
   <!-- Márgenes -->
@@ -98,7 +98,7 @@
   <footer>
     <div class="container">
       <div class="kleero01">
-          <img src="img/kleero01.png">
+          <img src="app/img/kleero01.png">
       </div>
 
       <div class="container">
@@ -310,7 +310,7 @@
         </div>
 
       </div>
-      <a id="to-top" href="#top" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+      <a id="to-top" href="javascript:void(0);" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </div>
   </footer>
 
@@ -328,22 +328,22 @@
 </script>
 
 <!-- build:js(.) scripts/vendor.js -->
-<script src="vendor/jquery/dist/jquery.min.js"></script>
-<script src="vendor/angular/angular.min.js"></script>
-<script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="vendor/angular-animate/angular-animate.min.js"></script>
-<script src="vendor/angular-cookies/angular-cookies.min.js"></script>
-<script src="vendor/angular-resource/angular-resource.min.js"></script>
-<script src="vendor/angular-route/angular-route.min.js"></script>
-<script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
-<script src="vendor/angular-touch/angular-touch.min.js"></script>
-<script src="vendor/ui-bootstrap/ui-bootstrap-tpls-2.4.0.min.js"></script>
-<script src="vendor/scrollreveal.min.js"></script>
+<script src="app/vendor/jquery/dist/jquery.min.js"></script>
+<script src="app/vendor/angular/angular.min.js"></script>
+<script src="app/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app/vendor/angular-animate/angular-animate.min.js"></script>
+<script src="app/vendor/angular-cookies/angular-cookies.min.js"></script>
+<script src="app/vendor/angular-resource/angular-resource.min.js"></script>
+<script src="app/vendor/angular-route/angular-route.min.js"></script>
+<script src="app/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="app/vendor/angular-touch/angular-touch.min.js"></script>
+<script src="app/vendor/ui-bootstrap/ui-bootstrap-tpls-2.4.0.min.js"></script>
+<script src="app/vendor/scrollreveal.min.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/home.js"></script>
+<script src="app/scripts/app.js"></script>
+<script src="app/scripts/controllers/home.js"></script>
 <!-- endbuild -->
 
 
