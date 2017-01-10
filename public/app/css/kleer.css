@@ -364,8 +364,8 @@ footer {
 footer .nav-tabs li a {
     background: rgba(255, 255, 255, 0.7);
 }
-footer .nav-tabs li {
-    padding: 2px;
+footer .list-inline>li {
+    padding: 0px;
 }
 
 #to-top {
@@ -515,7 +515,7 @@ footer .nav-tabs li {
     }
     .sidebar-nav li {
         text-indent: 0px;
-        line-height: 42px;
+        line-height: 30px;
     }
     #logo {
         z-index: 99;
@@ -550,7 +550,7 @@ footer .nav-tabs li {
 }
 
 @media (max-width: 480px) {
-    .text-vertical-center h1 {
-        font-size: 3.5em;
+    .carousel-caption h1{
+        font-size: 3em !important;
     }
 }
