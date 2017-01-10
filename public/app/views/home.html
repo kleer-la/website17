@@ -1,0 +1,148 @@
+<!-- Slider de imágenes -->
+<header id="slider" class="carousel slide carousel-fade">
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" class="carousel-inner">
+        <div class="fill" style="background-image:url('{{slide.image}}');"></div> 
+        <div class="carousel-caption">
+          <h1>{{slide.title}}</h1>
+          <h3>{{slide.text}}</h3>
+          <a href="#about" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">Me interesa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Sobre Kleer / Separador -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <img src="img/karl-creemos.png" class="image-about-01">
+                <img src="img/01_03_web.png" class="image-about-02">
+                <img src="img/02_03_web.png" class="image-about-03">
+              </div>
+        </div>
+    </div>
+</section>
+
+<!-- Servicios -->
+  <section id="services" class="services bg-primary">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Nuestros servicios</h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong>Facilitación</strong>
+                            </h4>
+                            <p> A través de ella satisfacemos las necesidades de cualquier grupo que se reúne con un propósito en común, ya sea para la toma de decisiones, la resolución de problemas, o simplemente el intercambio de ideas e información.</p>
+                            <a href="http://facilitacion.kleer.la/" class="btn btn-light">+ Info</a>
+                        </div>
+                      </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong>Coaching</strong>
+                            </h4>
+                            <p>Ofrecemos servicios de acompañamiento integral en la implementación de metodologías y técnicas ágiles que potencian tanto a las personas como a sus negocios.</p>
+                            <a href="/coaching" class="btn btn-light">+ Info</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong>Cursos</strong>
+                            </h4>
+                            <p>Vivirás éstas, las técnicas de aprendizaje colectivo y participativo, donde serás parte de un equipo auto organizado y el facilitador te guiará 'desde el fondo del aula'.</p>
+                            <a href="/entrenamos" class="btn btn-light">+ Info</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Llamado a la acción / Separador -->
+<!-- 
+<aside class="callout">
+
+        <h1>Algún otro texto</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum in tortor tempus elementum. Sed id diam ipsum. Pellentesque mauris libero, rutrum hendrerit pulvinar sed, bibendum ut leo. </p>
+
+</aside>
+-->
+
+<!-- Equipo -->
+<!--
+<section id="team" class="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Nuestro equipo</h2>
+                <hr class="small">
+                <h4>Fotos y descripción del equipo, rotando</h4>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<!-- Llamado a la acción / Separador -->
+<!-- 
+<aside class="call-to-action bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3>Algún otro llamado a la acción</h3>
+                <a href="#" class="btn btn-lg btn-light">Link 1</a>
+                <a href="#" class="btn btn-lg btn-dark">Link 2!</a>
+            </div>
+        </div>
+    </div>
+</aside>
+-->
+
+<!-- Compartimos -->
+<!--
+<section id="share" class="share">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Compartimos</h2>
+                <hr class="small">
+                <h4>Links o promoción de libros, blog posts, eventos comunitarios, etc...</h4>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<!-- Mapa -->
+<section id="contact" class="map">
+    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0824455490874!2d-58.374204748997!3d-34.60207666482279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaccb6e2b6e9%3A0xfaaafc7a95eaa913!2sKleer!5e0!3m2!1ses!2sar!4v1478746630071"></iframe>
+    <br />
+    <small>
+        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0824455490874!2d-58.374204748997!3d-34.60207666482279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaccb6e2b6e9%3A0xfaaafc7a95eaa913!2sKleer!5e0!3m2!1ses!2sar!4v1478746630071"></a>
+    </small>
+    </iframe>
+
+</section>
+
