@@ -148,7 +148,7 @@ get '/coaching' do
 	@active_tab_coaching = "active"
 	@page_title += " | Coaching"
 	@categories = KeventerReader.instance.categories session[:locale]
-	erb :coaching
+	erb :coaching, :layout => :layout_2017
 end
 
 get '/comunidad' do
