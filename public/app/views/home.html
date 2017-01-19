@@ -1,16 +1,16 @@
 <!-- Slider de imágenes -->
 <header id="slider" class="carousel slide carousel-fade">
     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" class="carousel-inner">
-        <div class="fill" style="background-image:url('{{slide.image}}');"></div> 
-        <div class="carousel-caption">
-          <h1>{{slide.title}}</h1>
-          <h3>{{slide.text}}</h3>
-          <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">Me interesa</a>
+        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" class="carousel-inner">
+            <div class="fill" style="background-image:url('{{slide.image}}');"></div>
+            <div class="carousel-caption">
+                <h1>{{slide.title}}</h1>
+                <h3>{{slide.text}}</h3>
+                <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">Me interesa</a>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    </div>
 </header>
 
 <!-- Sobre Kleer / Separador -->
@@ -21,18 +21,21 @@
                 <img src="app/img/karl-creemos.png" class="image-about-01">
                 <img src="app/img/01_03_web.png" class="image-about-02">
                 <img src="app/img/02_03_web.png" class="image-about-03">
-              </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Servicios -->
-  <section id="services" class="services bg-primary">
+<section id="services" class="services bg-primary">
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-10 col-lg-offset-1">
-                <h2>Nuestros servicios</h2>
+                <h2>Nuestros servicio</h2>
                 <hr class="small">
+
+                <a href="/#!cursos" class="btn btn-light">CURSOS</a>
+
                 <div class="row">
                     <div class="col-md-4 col-sm-4">
                         <div class="service-item">
@@ -46,7 +49,7 @@
                             <p> A través de ella satisfacemos las necesidades de cualquier grupo que se reúne con un propósito en común, ya sea para la toma de decisiones, la resolución de problemas, o simplemente el intercambio de ideas e información.</p>
                             <a href="http://facilitacion.kleer.la/" class="btn btn-light">+ Info</a>
                         </div>
-                      </div>
+                    </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="service-item">
                             <span class="fa-stack fa-4x sr-services">
@@ -145,4 +148,3 @@
     </iframe>
 
 </section>
-

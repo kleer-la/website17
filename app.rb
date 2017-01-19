@@ -135,7 +135,7 @@ def entrenamos_view(country=nil)
 		@unique_countries = KeventerReader.instance.unique_countries_for_commercial_events()
 		@country= country || session[:filter_country] || 'todos'
     session[:filter_country]= @country
-    erb :entrenamos
+    erb :entrenamos, :layout => :layout_2017
 	end
 end
 
