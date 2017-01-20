@@ -20,13 +20,9 @@
 
   <!-- build:css(.tmp) styles/main.css -->
   <link href="app/css/kleer.css" rel="stylesheet" type="text/css">
-  <link href="app/css/full-slider.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
-
-  
-  <base href="/app">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,6 +52,13 @@
         <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
         <ul class="sidebar-nav">
           <li><a href="/#about">Hacemos</a></li>
+          <li>
+            <ul>
+                <li><a href="/facilitacion">Facilitación</a></li>
+                <li><a href="/coaching">Coaching</a></li>
+                <li><a href="/entrenamos">Cursos</a></li>
+            </ul>
+          </li>
           <li><a href="/#contact">¿Hablamos?</a></li>
         </ul>
 
@@ -92,202 +95,10 @@
 <%= yield %>
 
   <!-- Footer -->
-  <footer>
+  <footer-small>
     <div class="container">
-      <div class="kleero01">
-          <img src="app/img/kleero01.png">
-      </div>
 
       <div class="container">
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs text-center" role="tablist">
-            <li role="presentation" class="active"><a data-target="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
-            <li role="presentation"><a data-target="#Brasil" aria-controls="Brasil" role="tab" data-toggle="tab">Brasil</a></li>
-            <li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
-            <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
-            <li role="presentation"><a data-target="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
-            <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
-            <li role="presentation"><a data-target="#Europa" aria-controls="Europa" role="tab" data-toggle="tab">Europa</a></li>
-            <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
-            <li role="presentation"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab">Otro</a></li>
-        </ul>
-
-        <br>
-
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 text-center">
-            
-                <!-- Tab panes -->
-                <div class="tab-content">
-
-                    <div role="tabpanel" class="text-center tab-pane active" id="Argentina">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-xs-8">
-                              <h4><strong>Kleer Argentina</strong></h4>
-                              <p>Lavalle 362, 4º piso
-                                <br>1049 CABA - Argentina</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> (+54) 011 5236-0314</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:hola@kleer.la">hola@kleer.la</a></li>
-                                <li>Te contactarás con: Constanza y Flor</li>
-                              </ul>
-                            </div>
-                            <div class="col-xs-4">
-                              <a href="http://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
-                                <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="100" data-pin-nopin="true">
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Brasil">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Brazil</strong></h4>
-                              <p>Alameda Jaú, 310 113-A
-                                <br>São Paulo - Brazil</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +55 11.3284.5878</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:treinamos.br@kleer.la">treinamos.br@kleer.la</a></li>
-                                <li>Você entrará em contato com: Angélica</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Bolivia">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Bolivia</strong>
-                              </h4>
-                              <p>1ro de Mayo No. 542
-                                <br>Qllo., Cochabamba - Bolivia</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +59 1.4.4321690</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.bo@kleer.la">entrenamos.bo@kleer.la</a></li>
-                                <li>Te contactarás con: Israel</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Colombia">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Colombia</strong>
-                              </h4>
-                              <p>Carrera 13 # 78-47
-                                <br>Bogotá - Colombia</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +57 300.327.0604</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.co@kleer.la">entrenamos.co@kleer.la</a></li>
-                                <li>Te contactarás con: Jennifer</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Peru">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Perú</strong>
-                              </h4>
-                              <p>Av. Juan De Aliaga 107
-                                <br>Lima - Perú</p>
-                              <ul class="list-unstyled">
-                                <li>&nbsp;</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.pe@kleer.la">entrenamos.pe@kleer.la</a></li>
-                                <li>Te contactarás con: Hiroshi y Gustavo</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Uruguay">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Uruguay</strong>
-                              </h4>
-                              <p>Dr. Mario Cassinoni 1408
-                                <br>Montevideo, 11200</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +598-94681588</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.uy@kleer.la">entrenamos.uy@kleer.la</a></li>
-                                <li>Te contactarás con Pablo</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Europa">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Europe</strong>
-                              </h4>
-                              <p>Hektoroviceva Ulica 2/V
-                                <br>10000 Zagreb, Croatia</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +385 99 244 0000 (9 to 17 hrs Central European Time)</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:training.eu@kleer.la">training.eu@kleer.la</a></li>
-                                <li>Te contactarás con Milan</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Mexico">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer México</strong>
-                              </h4>
-                              <p>Monte Athos 115
-                                <br>11000, D.F. - México</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>+52 55 5276 4486</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.mx@kleer.la">entrenamos.mx@kleer.la</a></li>
-                                <li>Te contactarás con nuestros partners <a href="http://scrum.org.mx/" target="_blank">Scrum México</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Otro">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>&nbsp;</strong>
-                              </h4>
-                              <p>&nbsp;
-                                <br>Escribenos a:</p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos@kleer.la">entrenamos@kleer.la</a></li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
         <div class="row">
           <div class="text-center">
@@ -309,7 +120,7 @@
       </div>
       <a id="to-top" href="javascript:void(0);" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </div>
-  </footer>
+  </footer-small>
 
 <!-- Google Analytics -->
 <script>
