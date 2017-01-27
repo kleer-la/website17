@@ -64,6 +64,14 @@ h6 {
     opacity: 0.3;
 }
 
+.header-courses {
+    background: url(../img/slide03.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    opacity: 0.3;
+}
+
 .blackBg {
     background: black;
 }
@@ -639,6 +647,19 @@ footer .list-inline>li {
     margin-top: -100px;
     width: 100%;
     text-align: right;
+    padding-right: 100px;
+}
+
+.withSubtitle .headerTitle {
+    margin-top: -120px;
+}
+
+.headerSubtitle {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    margin-top: -50px;
+    color: white;
     padding-right: 100px;
 }
 
