@@ -256,7 +256,7 @@ get '/entrenamos/evento/:event_id_with_name' do
     @active_tab_entrenamos = "active"
     @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event.friendly_title
-    erb :event
+    erb :event, :layout => :layout_2017
   end
 end
 

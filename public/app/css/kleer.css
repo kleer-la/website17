@@ -27,6 +27,10 @@ h6 {
     font-weight: 100;
 }
 
+img {
+    max-width: 100%;
+}
+
 .mainContainer {
     display: inline;
 }
@@ -423,8 +427,8 @@ footer .nav-tabs li a {
     background: rgba(255, 255, 255, 0.7);
 }
 
-footer .list-inline>li {
-    padding: 0px;
+.list-inline>li {
+    padding: 0px !important;
 }
 
 #to-top {
@@ -647,20 +651,91 @@ footer .list-inline>li {
     margin-top: -100px;
     width: 100%;
     text-align: right;
-    padding-right: 100px;
+    padding-right: 80px;
 }
 
 .withSubtitle .headerTitle {
-    margin-top: -120px;
+    margin-top: -160px;
+}
+
+.withSubtitleAndDescription .headerTitle {
+    margin-top: -220px;
+    font-size: 20px;
+}
+
+.withSubtitleAndDescription .headerSubtitle {
+    margin-top: -190px;
+    font-size: 16px;
 }
 
 .headerSubtitle {
     position: absolute;
     text-align: right;
     width: 100%;
-    margin-top: -50px;
+    margin-top: -90px;
     color: white;
-    padding-right: 100px;
+    padding-right: 80px;
+}
+
+.elevatorPitch {
+    position: absolute;
+    text-align: right;
+    width: 100%;
+    margin-top: -160px;
+    color: white;
+    padding-right: 80px;
+    padding-left: 80px;
+    font-size: 13px;
+}
+
+@media (max-width: 568px) {
+    .withSubtitle .headerTitle {
+        margin-top: -130px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .headerTitle {
+        padding-right: 40px;
+    }
+    .withSubtitleAndDescription .headerTitle {
+        margin-top: -280px;
+        font-size: 14px;
+    }
+    .withSubtitleAndDescription .headerSubtitle {
+        margin-top: -225px;
+    }
+    .headerSubtitle {
+        margin-top: -150x;
+        padding-right: 40px;
+    }
+    .elevatorPitch {
+        margin-top: -200px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+.fondo-amarillo {
+    background-color: #fef290;
+}
+
+.fondo-verde {
+    background-color: #56f7cd;
+}
+
+.fondo-celeste {
+    background-color: #88cddc;
+}
+
+.stars,
+.stars>div {
+    display: inline-block;
+    background: url(/img/icons/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+    text-align: left;
 }
 
 p.lead {

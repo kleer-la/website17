@@ -1,10 +1,33 @@
-<div class="container-fluid fondo-celeste slide-header-evento">
-	<div class="container">
-		<div class="container-fluid container-header-generico container-header-evento">
+<div class="blackBg withSubtitleAndDescription">
+	
+	<div class="header-courses"></div>
+
+	<h3 class="headerTitle"><%= @event.event_type.name %></h3>
+	<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
+	<p class="headerSubtitle"><%=@event.event_type.subtitle%></p>
+	<%end%>
+	<p class="headerSubtitle">
+	<% if @event.is_online %>
+	Online,
+	<% elsif @event.is_classroom %>
+	Presencial,
+	<% elsif @event.is_blended_learning %>
+	Presencial + Online,
+	<% end %>
+	<%= @event.event_type.duration%> <%=t("event.duration")%></p>
+
+	<p class="elevatorPitch"><%= @event.event_type.elevator_pitch %>
+
+</div>
+
+<div class="container mainContent">
+	<div class="">
+		<div class=" container-header-generico container-header-evento">
 			<div class="col-md-7">
 				<div class="evento-title-container">
-					<h2><%= @event.event_type.name %></h2>
-					<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
+					<!--<h2><%= @event.event_type.name %></h2>-->
+
+					<!--<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
 						<h3 class="subtitle"><%=@event.event_type.subtitle%></h3>
 					<%end%>
 					<h3 class="subtitle">
@@ -15,8 +38,11 @@
 					<% elsif @event.is_blended_learning %>
 						Presencial + Online,
 					<% end %>
-					<%= @event.event_type.duration%> <%=t("event.duration")%></h3>
+					<%= @event.event_type.duration%> <%=t("event.duration")%></h3> 
+					
 					<p><%= @event.event_type.elevator_pitch %></p>
+					
+					-->
 
 					<% if @event.event_type.has_rate %>
 						<p>
@@ -84,16 +110,16 @@
 <!-- ######################### PRICING #################### -->
 
 <% if @event.list_price == 0.0  %>
-<div class="container-fluid fondo-amarillo slide-evento-gratuito">
+<div class=" fondo-amarillo slide-evento-gratuito">
 	<div class="container">
 		<h2><%=t("event.free")%></h2>
 	</div>
 </div>
 <% elsif @event.show_pricing %>
-<div class="container-fluid fondo-amarillo slide-evento-pricing">
+<div class=" fondo-amarillo slide-evento-pricing">
 	<div class="container">
 		<!-- small (sm), medium (md) y large (lg) logistics -->
-		<div class="container-fluid hidden-xs">
+		<div class=" hidden-xs">
 
 			<div class="col-md-3 col-sm-4">
 				&nbsp;
@@ -131,7 +157,7 @@
 		<!-- / small (sm), medium (md) y large (lg) logistics -->
 
 		<!-- extra small (xs) logistics -->
-		<div class="container-fluid no-hpadding visible-xs">
+		<div class=" no-hpadding visible-xs">
 
 			<div class="col-xs-12">
 				<h2><%=t("event.pricing")%>:
@@ -180,10 +206,10 @@ else
 end
 %>
 
-<div class="container-fluid <%=fondo_logistics%> slide-evento-logistics">
+<div class=" <%=fondo_logistics%> slide-evento-logistics">
 	<div class="container">
 		<!-- small (sm), medium (md) y large (lg) logistics -->
-		<div class="container-fluid hidden-xs">
+		<div class=" hidden-xs">
 
 			<div class="col-md-3 col-sm-4 no-hpadding">
 					<% if @event.trainers.count==1 %>
@@ -243,7 +269,7 @@ end
 		<!-- / small (sm), medium (md) y large (lg) logistics -->
 
 		<!-- extra small (xs) logistics -->
-		<div class="container-fluid no-hpadding visible-xs">
+		<div class=" no-hpadding visible-xs">
 
 			<div class="col-xs-12">
 				<% if @event.trainers.count==1 %>
@@ -307,7 +333,7 @@ end
 </div>
 
 
-<div class="container-fluid fondo-blanco">
+<div class=" fondo-blanco">
 	<div class="container">
 		<div class="col-md-8 event-program-column evento-description-container">
 			<h2><%=t("event.tabs.description")%></h2>
@@ -324,9 +350,9 @@ end
 	</div>
 </div>
 
-<div class="container-fluid fondo-celeste">
+<div class=" fondo-celeste">
 	<div class="container">
-		<div class="container-fluid col-md-10 col-md-offset-1">
+		<div class="col-md-10 col-md-offset-1">
 			<div class="col-md-4">
 				<img src="/img/personajes/03_03_web.png" class="img-responsive"/>
 			</div>
@@ -346,9 +372,9 @@ end
 	</div>
 </div>
 
-<div class="container-fluid fondo-blanco">
+<div class=" fondo-blanco">
 	<div class="container">
-		<div class="container-fluid event-target-column">
+		<div class=" event-target-column">
 			<div class="col-md-6">
 				<h2><%=t("event.tabs.target")%></h2>
 				<%=@markdown_renderer.render( @event.event_type.recipients )%>
@@ -361,15 +387,15 @@ end
 	</div>
 </div>
 
-<div class="container-fluid fondo-pano pano-6"></div>
+<div class=" fondo-pano pano-6"></div>
 
 <%= if not @event.is_community_event
 	erb :_slide_experiencia_kleer, :layout => false
 	end%>
 
-<div class="container-fluid fondo-amarillo">
+<div class=" fondo-amarillo">
 	<div class="container">
-		<div class="container-fluid col-md-10 col-md-offset-1 slide-evento-aprovecha">
+		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha">
 			APROVECHA ESTA OPORTUNIDAD PARA APRENDER EN UN ENTORNO DONDE EL PROTAGONISTA ERES TÚ<br/>
 			<br/>
 			<%if @event.is_sold_out %>
@@ -402,9 +428,9 @@ end
 </div>
 
 <% if !@event.event_type.faqs.nil? && @event.event_type.faqs.strip != "" %>
-<div class="container-fluid fondo-blanco">
+<div class=" fondo-blanco">
 	<div class="container">
-		<div class="container-fluid col-md-10 col-md-offset-1">
+		<div class=" col-md-10 col-md-offset-1">
 			<h2><%=t("event.tabs.faqs")%></h2>
 			<%=@markdown_renderer.render( @event.event_type.faqs )%>
 			<br/>&nbsp;
@@ -414,4 +440,4 @@ end
 </div>
 <% end %>
 
-<div class="container-fluid fondo-pano pano-9"></div>
+<div class=" fondo-pano pano-9"></div>
