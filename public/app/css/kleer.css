@@ -717,27 +717,6 @@ footer .nav-tabs li a {
     }
 }
 
-.fondo-amarillo {
-    background-color: #fef290;
-}
-
-.fondo-verde {
-    background-color: #56f7cd;
-}
-
-.fondo-celeste {
-    background-color: #88cddc;
-}
-
-.stars,
-.stars>div {
-    display: inline-block;
-    background: url(/img/icons/stars.png) 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
-    text-align: left;
-}
-
 p.lead {
     width: 100%;
     font-size: 24px;
@@ -833,4 +812,150 @@ p.lead {
     padding: 10px;
     text-shadow: 2px 2px #000;
     color: #FFF;
+}
+
+
+/* Estilos de web antigua */
+
+.fondo-amarillo {
+    background-color: #fef290;
+}
+
+.fondo-verde {
+    background-color: #56f7cd;
+}
+
+.fondo-celeste {
+    background-color: #88cddc;
+}
+
+.stars,
+.stars>div {
+    display: inline-block;
+    background: url(/img/icons/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+    text-align: left;
+}
+
+.stars>div {
+    background-position: 0 0;
+}
+
+.fondo-pano {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 215px;
+}
+
+.pano-1 {
+    background-image: url('/img/fondos/panoramica-1.jpg');
+}
+
+.pano-2 {
+    background-image: url('/img/fondos/panoramica-2.jpg');
+}
+
+.pano-3 {
+    background-image: url('/img/fondos/panoramica-3.jpg');
+}
+
+.pano-5 {
+    background-image: url('/img/fondos/panoramica-5.jpg');
+}
+
+.pano-6 {
+    background-image: url('/img/fondos/panoramica-6.jpg');
+}
+
+.pano-9 {
+    background-image: url('/img/fondos/panoramica-9.jpg');
+}
+
+#panoramica-parallax-1 {
+    background-image: url('/img/fondos/panoramica-parallax-1.jpg');
+}
+
+.big-glyphicon {
+    font-size: 32pt;
+    color: black;
+    opacity: 0.4;
+}
+
+@media (max-width: 1200px) {
+    .event-facilitator-face {
+        left: -50px;
+    }
+}
+
+.event-facilitator-face {
+    position: absolute;
+    top: -25px;
+    z-index: 50;
+    width: 120%;
+    left: -15px;
+}
+
+.event-important-column {
+    border-left: 1px solid #000;
+}
+
+.no-hpadding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.slide-evento-logistics {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10pt;
+    max-height: 100px;
+}
+
+.slide-evento-pricing {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10pt;
+}
+
+.logistic-indicator {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.img-experiencia {
+    width: 100%;
+    height: auto;
+}
+
+.slide-evento-aprovecha {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .slide-evento-logistics {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .visible-xs {
+        display: block !important;
+    }
+    .slide-evento-logistics {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .slide-evento-logistics {
+        max-height: 200px;
+    }
 }

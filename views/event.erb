@@ -3,46 +3,30 @@
 	<div class="header-courses"></div>
 
 	<h3 class="headerTitle"><%= @event.event_type.name %></h3>
-	<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
-	<p class="headerSubtitle"><%=@event.event_type.subtitle%></p>
-	<%end%>
 	<p class="headerSubtitle">
-	<% if @event.is_online %>
-	Online,
-	<% elsif @event.is_classroom %>
-	Presencial,
-	<% elsif @event.is_blended_learning %>
-	Presencial + Online,
-	<% end %>
-	<%= @event.event_type.duration%> <%=t("event.duration")%></p>
+		<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
+			<%=@event.event_type.subtitle%>
+		<%end%>
+		<% if @event.is_online %>
+		Online,
+		<% elsif @event.is_classroom %>
+		Presencial,
+		<% elsif @event.is_blended_learning %>
+		Presencial + Online,
+		<% end %>
+		<%= @event.event_type.duration%> <%=t("event.duration")%>
+	</p>
 
 	<p class="elevatorPitch"><%= @event.event_type.elevator_pitch %>
 
 </div>
-
+<!--
 <div class="container mainContent">
 	<div class="">
 		<div class=" container-header-generico container-header-evento">
 			<div class="col-md-7">
 				<div class="evento-title-container">
-					<!--<h2><%= @event.event_type.name %></h2>-->
 
-					<!--<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
-						<h3 class="subtitle"><%=@event.event_type.subtitle%></h3>
-					<%end%>
-					<h3 class="subtitle">
-					<% if @event.is_online %>
-						Online,
-					<% elsif @event.is_classroom %>
-						Presencial,
-					<% elsif @event.is_blended_learning %>
-						Presencial + Online,
-					<% end %>
-					<%= @event.event_type.duration%> <%=t("event.duration")%></h3> 
-					
-					<p><%= @event.event_type.elevator_pitch %></p>
-					
-					-->
 
 					<% if @event.event_type.has_rate %>
 						<p>
@@ -106,7 +90,7 @@
 		</div>
 	</div>
 </div>
-
+-->
 <!-- ######################### PRICING #################### -->
 
 <% if @event.list_price == 0.0  %>
@@ -211,7 +195,7 @@ end
 		<!-- small (sm), medium (md) y large (lg) logistics -->
 		<div class=" hidden-xs">
 
-			<div class="col-md-3 col-sm-4 no-hpadding">
+			<div class="col-md-3 col-sm-3 no-hpadding">
 					<% if @event.trainers.count==1 %>
 						<%= erb :'_events/_single_trainer' %>
 					<% else %>
@@ -219,7 +203,7 @@ end
 					<% end %>
 			</div>
 
-			<div class="col-md-3 col-sm-3 no-hpadding">
+			<div class="col-md-2 col-sm-3 no-hpadding">
 				<div class="col-md-4 col-sm-4 no-hpadding logistic-indicator">
 					<span class="glyphicon glyphicon-calendar big-glyphicon"></span>
 				</div>
@@ -234,7 +218,7 @@ end
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-2 no-hpadding">
+			<div class="col-md-2 col-sm-3 no-hpadding">
 				<div class="col-md-4 col-sm-4 no-hpadding logistic-indicator">
 					<span class="glyphicon glyphicon-time big-glyphicon"></span>
 				</div>
@@ -247,11 +231,11 @@ end
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-3 no-hpadding">
-				<div class="col-md-4 col-sm-2 no-hpadding logistic-indicator">
+			<div class="col-md-5 col-sm-3 no-hpadding">
+				<div class="col-md-4 col-sm-4 no-hpadding logistic-indicator">
 					<span class="glyphicon glyphicon-map-marker big-glyphicon"></span>
 				</div>
-				<div class="col-md-8 col-sm-10 no-hpadding">
+				<div class="col-md-8 col-sm-8 no-hpadding">
 					<strong><%=t("event.location")%>:</strong><br/>
 					<% if @event.is_online %>
 						Online<br/>
@@ -393,9 +377,9 @@ end
 	erb :_slide_experiencia_kleer, :layout => false
 	end%>
 
-<div class=" fondo-amarillo">
+<div class="container-fluid fondo-amarillo">
 	<div class="container">
-		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha">
+		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha text-center">
 			APROVECHA ESTA OPORTUNIDAD PARA APRENDER EN UN ENTORNO DONDE EL PROTAGONISTA ERES TÚ<br/>
 			<br/>
 			<%if @event.is_sold_out %>
@@ -421,8 +405,6 @@ end
 					<%=button_text%>
 				</a>
 			<% end %>
-			<br/>&nbsp;
-			<br/>&nbsp;
 		</div>
 	</div>
 </div>
@@ -433,8 +415,6 @@ end
 		<div class=" col-md-10 col-md-offset-1">
 			<h2><%=t("event.tabs.faqs")%></h2>
 			<%=@markdown_renderer.render( @event.event_type.faqs )%>
-			<br/>&nbsp;
-			<br/>&nbsp;
 		</div>
 	</div>
 </div>
