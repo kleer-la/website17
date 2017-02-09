@@ -51,11 +51,6 @@ Feature: Event Details
 		And I should see "Thomas Wallet" in a phone
 		And I should see "Hiroshi Hiromoto" in a phone
 
-	Scenario: Los Eventos normales tienen sección de Experiencia Kleer
-		Given theres only one event
-		When I visit the event page
-		Then I should see "Experiencia Kleer"
-
 	Scenario: Detalle de Evento Comunitario
 		Given there are community events
 		When I visit the community event page
