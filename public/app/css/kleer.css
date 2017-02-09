@@ -830,6 +830,12 @@ p.lead {
     background-color: #88cddc;
 }
 
+.slide-event-type-category-name {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
 .stars,
 .stars>div {
     display: inline-block;
@@ -909,6 +915,10 @@ p.lead {
 
 .img-circle {
     border-radius: 50%;
+}
+
+h3.list-group-item-heading {
+    font-size: 1.2em;
 }
 
 .slide-evento-logistics {
