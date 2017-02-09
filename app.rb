@@ -287,7 +287,7 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
    # @active_tab_entrenamos = "active"
    # @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event_type.name
-    erb :event_type
+    erb :event_type, :layout => :layout_2017
   end
 end
 

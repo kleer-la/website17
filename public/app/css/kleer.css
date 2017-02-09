@@ -76,6 +76,23 @@ img {
     opacity: 0.3;
 }
 
+.header-courses-description {
+    position: absolute;
+    z-index: 9;
+    display: inline-block;
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.withSubtitleAndDescription .header-courses-description {
+    top: 140px;
+}
+
+.withSubtitle .header-courses-description {
+    top: 240px;
+}
+
 .blackBg {
     background: black;
 }
@@ -158,7 +175,7 @@ hr.small {
 
 .sidebar-nav {
     top: 0;
-    width: 350px;
+    width: 290px;
     margin: 0;
     list-style: none;
     padding: 0 0 0 70px;
@@ -566,11 +583,8 @@ footer .nav-tabs li a {
         right: 50%;
     }
     .sidebar-nav {
-        width: 100%;
-        padding: 0;
-    }
-    .sidebar-nav li {
-        text-align: center;
+        padding-left: 90px;
+        margin: 0 auto;
     }
     .email {
         width: 100%;
@@ -599,6 +613,15 @@ footer .nav-tabs li a {
     }
     .kleero01 img {
         width: 50%;
+    }
+    .header-courses-description {
+        position: absolute;
+        z-index: 9;
+        display: inline-block;
+        top: 140px;
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
@@ -647,73 +670,51 @@ footer .nav-tabs li a {
 }
 
 .headerTitle {
-    position: absolute;
-    margin-top: -100px;
-    width: 100%;
     text-align: right;
-    padding-right: 80px;
 }
 
-.withSubtitle .headerTitle {
-    margin-top: -160px;
+h1.headerTitle {
+    font-size: 4.5em;
 }
 
-.withSubtitleAndDescription .headerTitle {
-    margin-top: -220px;
-    font-size: 20px;
+h2.headerTitle {
+    font-size: 3.5em;
 }
 
-.withSubtitleAndDescription .headerSubtitle {
-    margin-top: -190px;
-    font-size: 16px;
+h3.headerTitle {
+    font-size: 2.5em;
 }
 
 .headerSubtitle {
-    position: absolute;
     text-align: right;
-    width: 100%;
-    margin-top: -90px;
     color: white;
-    padding-right: 80px;
+    font-size: 1.3em;
 }
 
 .elevatorPitch {
-    position: absolute;
     text-align: right;
-    width: 100%;
-    margin-top: -160px;
     color: white;
-    padding-right: 80px;
-    padding-left: 80px;
     font-size: 13px;
 }
 
 @media (max-width: 568px) {
     .withSubtitle .headerTitle {
-        margin-top: -130px;
         font-size: 28px;
+    }
+    .headerSubtitle {
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
-    .headerTitle {
-        padding-right: 40px;
+    .withSubtitleAndDescription .header-courses-description {
+        top: 90px;
     }
-    .withSubtitleAndDescription .headerTitle {
-        margin-top: -280px;
-        font-size: 14px;
+    .withSubtitle .header-courses-description {
+        top: 240px;
     }
-    .withSubtitleAndDescription .headerSubtitle {
-        margin-top: -225px;
-    }
-    .headerSubtitle {
-        margin-top: -150x;
-        padding-right: 40px;
-    }
-    .elevatorPitch {
-        margin-top: -200px;
-        padding-right: 40px;
-        padding-left: 40px;
+    h3.headerTitle {
+        font-size: 1.5em !important;
     }
 }
 
@@ -945,17 +946,17 @@ p.lead {
     }
 }
 
+@media (max-width: 992px) {
+    .slide-evento-logistics {
+        max-height: 200px;
+    }
+}
+
 @media (max-width: 768px) {
     .visible-xs {
         display: block !important;
     }
     .slide-evento-logistics {
         max-height: 400px;
-    }
-}
-
-@media (max-width: 992px) {
-    .slide-evento-logistics {
-        max-height: 200px;
     }
 }

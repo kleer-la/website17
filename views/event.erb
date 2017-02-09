@@ -2,22 +2,26 @@
 	
 	<div class="header-courses"></div>
 
-	<h3 class="headerTitle"><%= @event.event_type.name %></h3>
-	<p class="headerSubtitle">
-		<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
-			<%=@event.event_type.subtitle%>
-		<%end%>
-		<% if @event.is_online %>
-		Online,
-		<% elsif @event.is_classroom %>
-		Presencial,
-		<% elsif @event.is_blended_learning %>
-		Presencial + Online,
-		<% end %>
-		<%= @event.event_type.duration%> <%=t("event.duration")%>
-	</p>
+	<div class="header-courses-description">
 
-	<p class="elevatorPitch"><%= @event.event_type.elevator_pitch %>
+		<h3 class="headerTitle"><%= @event.event_type.name %></h3>
+		<p class="headerSubtitle">
+			<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
+				<%=@event.event_type.subtitle%>
+			<%end%>
+			<% if @event.is_online %>
+			Online,
+			<% elsif @event.is_classroom %>
+			Presencial,
+			<% elsif @event.is_blended_learning %>
+			Presencial + Online,
+			<% end %>
+			<%= @event.event_type.duration%> <%=t("event.duration")%>
+		</p>
+
+		<p class="elevatorPitch"><%= @event.event_type.elevator_pitch %>
+		
+	</div>
 
 </div>
 <!--
@@ -370,12 +374,6 @@ end
 		</div>
 	</div>
 </div>
-
-<div class=" fondo-pano pano-6"></div>
-
-<%= if not @event.is_community_event
-	erb :_slide_experiencia_kleer, :layout => false
-	end%>
 
 <div class="container-fluid fondo-amarillo">
 	<div class="container">
