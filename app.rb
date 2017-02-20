@@ -170,7 +170,8 @@ end
 
 get '/facilitacion' do
   @active_tab_facilitacion = "active"
-  redirect "http://facilitacion.kleer.la", 301 # permanent redirect
+  @page_title += " | Facilicación"
+  erb :facilitacion, :layout => :layout_2017
 end
 
 get '/publicamos' do

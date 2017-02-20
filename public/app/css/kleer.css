@@ -69,6 +69,14 @@ img {
     display: none;
 }
 
+.header-facilitacion {
+    background: url(../img/risas-fg.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-coaching {
     background: url(../img/slide01.jpg);
     background-size: cover;
@@ -562,9 +570,13 @@ footer .nav-tabs>li {
     padding: 5px 10px;
 }
 
-.bottomContainer {
+.containerWithPadding {
     padding: 30px;
-    text-align: center;
+}
+
+.containerWithVPadding {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 
@@ -887,6 +899,28 @@ p.lead {
 
 .categoria-productos {
     background-color: #fef290;
+}
+
+ul.featured-icons {
+    cursor: default;
+    margin: 0 0 0 0;
+    opacity: 0.7;
+    overflow: hidden;
+    position: relative;
+}
+
+ul.featured-icons li {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 50%;
+    padding: 2px;
+}
+
+@media (max-width: 992px) {
+    ul.featured-icons li {
+        width: 25%;
+    }
 }
 
 .klabel-date {
