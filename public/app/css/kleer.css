@@ -65,7 +65,7 @@ img {
     background-size: cover;
     height: 400px;
     background-position: center center;
-    opacity: 0.3;
+    /*opacity: 0.3;*/
 }
 
 .header-courses {
@@ -73,23 +73,28 @@ img {
     background-size: cover;
     height: 400px;
     background-position: center center;
-    opacity: 0.3;
+    /*opacity: 0.3;*/
 }
 
-.header-courses-description {
+.header-description {
     position: absolute;
     z-index: 9;
     display: inline-block;
     width: 100%;
     padding-left: 80px;
     padding-right: 80px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
 
-.withSubtitleAndDescription .header-courses-description {
+.header-description {
+    top: 260px;
+}
+
+.withSubtitleAndDescription .header-description {
     top: 140px;
 }
 
-.withSubtitle .header-courses-description {
+.withSubtitle .header-description {
     top: 240px;
 }
 
@@ -444,6 +449,10 @@ footer .nav-tabs li a {
     background: rgba(255, 255, 255, 0.7);
 }
 
+footer .nav-tabs>li {
+    margin-bottom: 8px;
+}
+
 .list-inline>li {
     padding: 0px !important;
 }
@@ -614,7 +623,7 @@ footer .nav-tabs li a {
     .kleero01 img {
         width: 50%;
     }
-    .header-courses-description {
+    .header-description {
         position: absolute;
         z-index: 9;
         display: inline-block;
@@ -707,10 +716,10 @@ h3.headerTitle {
 }
 
 @media (max-width: 480px) {
-    .withSubtitleAndDescription .header-courses-description {
+    .withSubtitleAndDescription .header-description {
         top: 90px;
     }
-    .withSubtitle .header-courses-description {
+    .withSubtitle .header-description {
         top: 240px;
     }
     h3.headerTitle {
@@ -755,7 +764,7 @@ p.lead {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    opacity: 0.4;
+    /*opacity: 0.4;*/
 }
 
 .carousel-fade .carousel-inner .item {
