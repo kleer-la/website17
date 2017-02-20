@@ -37,7 +37,7 @@ end
             <% @event_type.public_editions.each do |event| %>
               &nbsp;
               <div class="row">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                   <%
                   date_line = "<table border=\"0\" align=\"center\" cellpadding=\"2\"><tr>"
                   if event.date != event.finish_date && !event.finish_date.nil?
@@ -56,9 +56,9 @@ end
                   end
                   date_line += "</tr></table>"
                   %>
-                  <div class="klabel-date" style="width:<%=post_it_width%>"><%=date_line%></div>
+                  <div class="klabel-date"><%=date_line%></div>
                 </div>
-                <div class="col-md-9" style="text-align:left;">
+                <div class="col-xs-9" style="text-align:left;">
                   <a href="/<%=session[:locale]%>/<%=event.is_community_event ? "comunidad" : "entrenamos" %>/evento/<%=url_sanitize(event.uri_path)%>">
                     <%=event.event_type.name%>
                   </a><br/>

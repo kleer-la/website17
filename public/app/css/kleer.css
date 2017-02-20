@@ -41,11 +41,20 @@ img {
     vertical-align: middle;
 }
 
+.text-white {
+    color: white;
+}
+
 .text-vertical-center h1 {
     margin: 0;
     padding: 0;
     font-size: 4.5em;
     font-weight: 700;
+}
+
+.vSpace {
+    display: block;
+    height: 20px;
 }
 
 .carousel-inner .text-center {
@@ -70,6 +79,14 @@ img {
 
 .header-courses {
     background: url(../img/slide03.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-catalogo {
+    background: url(../img/slide02.jpg);
     background-size: cover;
     height: 400px;
     background-position: center center;
@@ -545,6 +562,11 @@ footer .nav-tabs>li {
     padding: 5px 10px;
 }
 
+.bottomContainer {
+    padding: 30px;
+    text-align: center;
+}
+
 
 /* mobile */
 
@@ -837,6 +859,46 @@ p.lead {
 
 .fondo-celeste {
     background-color: #88cddc;
+}
+
+.fondo-rosa {
+    background: #e46095;
+}
+
+.categoria {
+    border-radius: 0px;
+    border: 0;
+    padding: 15px;
+}
+
+.categoria-clientes {
+    background-color: #88cddc;
+    color: white;
+}
+
+.categoria-organizaciones {
+    background-color: #56f7cd;
+}
+
+.categoria-software {
+    background-color: #e46095;
+    color: white;
+}
+
+.categoria-productos {
+    background-color: #fef290;
+}
+
+.klabel-date {
+    min-width: 70px !important;
+    font-size: 12px;
+    background: #fef290;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.post-it-success {
+    padding-bottom: 20px;
 }
 
 .slide-event-type-category-name {

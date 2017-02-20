@@ -265,7 +265,7 @@ get '/catalogo' do
   #pdf_catalog
   @page_title += " | Catálogo"
   @categories = KeventerReader.instance.categories session[:locale]
-  erb :catalogo
+  erb :catalogo, :layout => :layout_2017
 end
 
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
