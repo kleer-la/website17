@@ -77,6 +77,38 @@ img {
     /*opacity: 0.3;*/
 }
 
+.header-facilitacion-grafica {
+    background: url(../img/facilitacion-grafica.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-facilitacion-innovacion {
+    background: url(../img/facilitacion-innovacion.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-facilitacion-planificacion {
+    background: url(../img/facilitacion-planificacion.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-facilitacion-dinamicas {
+    background: url(../img/facilitacion-dinamicas.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-coaching {
     background: url(../img/slide01.jpg);
     background-size: cover;
@@ -740,6 +772,11 @@ h3.headerTitle {
     font-size: 13px;
 }
 
+.bigIcon {
+    font-size: 60px;
+    color: #56f7cd;
+}
+
 @media (max-width: 568px) {
     .withSubtitle .headerTitle {
         font-size: 28px;
@@ -755,6 +792,9 @@ h3.headerTitle {
     }
     .withSubtitle .header-description {
         top: 240px;
+    }
+    h1.headerTitle {
+        font-size: 3.5em !important;
     }
     h3.headerTitle {
         font-size: 1.5em !important;

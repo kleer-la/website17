@@ -174,6 +174,30 @@ get '/facilitacion' do
   erb :facilitacion, :layout => :layout_2017
 end
 
+get '/facilitacion/grafica' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Facilicación gráfica"
+  erb :facilitacion_grafica, :layout => :layout_2017
+end
+
+get '/facilitacion/innovacion-creatividad' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Innovación y creatividad"
+  erb :facilitacion_innovacion_creatividad, :layout => :layout_2017
+end
+
+get '/facilitacion/planificacion-estrategica' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Planificación estratégica"
+  erb :facilitacion_planificacion_estrategica, :layout => :layout_2017
+end
+
+get '/facilitacion/dinamicas-eventos' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Dinámicas y eventos"
+  erb :facilitacion_dinamicas_eventos, :layout => :layout_2017
+end
+
 get '/publicamos' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos"
