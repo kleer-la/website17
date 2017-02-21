@@ -298,6 +298,11 @@ hr.small {
     color: rgba(255, 255, 255, 0.75);
 }
 
+.sidebar-nav li li li a {
+    font-size: 11px;
+    line-height: 14px;
+}
+
 #menu-toggle {
     z-index: 2;
     position: fixed;
@@ -658,7 +663,7 @@ footer .nav-tabs>li {
         right: 50%;
     }
     .sidebar-nav {
-        padding-left: 90px;
+        padding-left: 70px;
         margin: 0 auto;
     }
     .email {
@@ -794,7 +799,10 @@ h3.headerTitle {
         top: 240px;
     }
     h1.headerTitle {
-        font-size: 3.5em !important;
+        font-size: 3em !important;
+    }
+    h2.headerTitle {
+        font-size: 2em !important;
     }
     h3.headerTitle {
         font-size: 1.5em !important;
