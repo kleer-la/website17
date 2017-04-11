@@ -77,6 +77,14 @@ img {
     /*opacity: 0.3;*/
 }
 
+.header-suscripcion {
+    background: url(../img/subscribe.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-facilitacion-grafica {
     background: url(../img/facilitacion-grafica.jpg);
     background-size: cover;
