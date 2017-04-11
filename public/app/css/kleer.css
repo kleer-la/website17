@@ -906,6 +906,10 @@ p.lead {
     color: #FFF;
 }
 
+.modal {
+    z-index: 100000;
+}
+
 
 /* Estilos de web antigua */
 
@@ -919,6 +923,22 @@ p.lead {
 
 .fondo-celeste {
     background-color: #88cddc;
+}
+
+.slide-home-newsletter {
+    background-color: #62c3d1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    background: url('/img/fondos/bg-avion.png') #62c3d1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 95%;
+}
+
+.slide-home-publicaciones {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .fondo-rosa {

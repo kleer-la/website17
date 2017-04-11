@@ -212,7 +212,7 @@ post '/subscribe' do
 
   CrmConnector::subscribe_person( @email, @fname, @lname, @influence_zone_tag )
 
-  erb :subscribe
+  erb :subscribe, :layout => :layout_2017
 end
 
 get '/publicamos/scrum' do
