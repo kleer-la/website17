@@ -341,7 +341,7 @@ Acompañamos al proyecto desde su inicio para lograr resultados rápidos y valio
                 address2: "1049 CABA"
                 phone: "+54 11.5236.0314"
             brasil:
-                name: "Brasil"
+                name: "Brazil"
                 address1: "Alameda Jaú, 310 113-A"
                 address2: "São Paulo"
                 phone: "+55 11.3284.5878"
@@ -356,25 +356,25 @@ Acompañamos al proyecto desde su inicio para lograr resultados rápidos y valio
                 address2: "Bogotá"
                 phone: "+57 300.327.0604"
             peru:
-                name: "Perú"
+                name: "Peru"
                 address1: "Av. Juan De Aliaga 107"
                 address2: "Lima"
-                phone: "entrenamos.pe@kleer.la"
+                phone: "info.pe@kleer.la"
             uruguay:
                 name: "Uruguay"
-                address1: "Dr. Mario Cassinoni 1408"
-                address2: "Montevideo, 11200"
+                address1: "Luis Lamas 3241"
+                address2: "11300 Montevideo"
                 phone: "+598-94681588"
             europa:
-                address1: Hektoroviceva Ulica 2/V
-                address2: 10000 Zagreb, Croatia
-                phone: +385 99 244 0000 (9 to 17 hrs Central European Time)
+                address1: "Hektoroviceva Ulica 2/V"
+                address2: "10000 Zagreb, Croatia"
+                phone: "+385 99 244 0000 (9 to 17 hrs Central European Time)"
             mexico:
-                partners: "Te contactarás con nosotros <br/>y con nuestros partners de"
+                partners: "You will be helped by us <br/>and our partners "
             other:
-                title: "¿Otro?"
-                contact_us: "Escribenos a"
-                contact_email: "hola@kleer.la"
+                title: "Other?"
+                contact_us: "Contact us at"
+                contact_email: "info@kleer.la"
         subscription:
             text1: "Sé el primero en enterarte"
             text2: "de todas las novedades del mundo ágil"
