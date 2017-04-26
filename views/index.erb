@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
 
-  
+
   <base href="/app">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -203,7 +203,7 @@
 
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3 text-center">
-            
+
                 <!-- Tab panes -->
                 <div class="tab-content">
 
@@ -212,12 +212,20 @@
                           <div class="row">
                             <div class="col-xs-8">
                               <h4><strong>Kleer Argentina</strong></h4>
-                              <p>Lavalle 362, 4º piso
-                                <br>1049 CABA - Argentina</p>
+                              <p><%=t("contact.locations.argentina.address1")%>
+                                <br><%=t("contact.locations.argentina.address2")%>
+                                </p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> (+54) 011 5236-0314</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:hola@kleer.la">hola@kleer.la</a></li>
-                                <li>Te contactarás con: Constanza y Flor</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.argentina.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.argentina.contact_email")%>">
+                                    <%=t("contact.locations.argentina.contact_email")%>
+                                  </a></li>
+                                <li>Te contactarás con:
+                                  <%=t("contact.locations.argentina.contact")%>
+                                </li>
                               </ul>
                             </div>
                             <div class="col-xs-4">
@@ -233,13 +241,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer Brazil</strong></h4>
-                              <p>Alameda Jaú, 310 113-A
-                                <br>São Paulo - Brazil</p>
+                              <h4><strong>Kleer Brasil</strong></h4>
+                              <p><%=t("contact.locations.brasil.address1")%>
+                                <br><%=t("contact.locations.brasil.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +55 11.3284.5878</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:treinamos.br@kleer.la">treinamos.br@kleer.la</a></li>
-                                <li>Você entrará em contato com: Angélica</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.brasil.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.brasil.contact_email")%>">
+                                    <%=t("contact.locations.brasil.contact_email")%>
+                                    </a></li>
+                                <li>Você entrará em contato com:
+                                  <%=t("contact.locations.brasil.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -250,14 +265,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer Bolivia</strong>
-                              </h4>
-                              <p>1ro de Mayo No. 542
-                                <br>Qllo., Cochabamba - Bolivia</p>
+                              <h4><strong>Kleer Bolivia</strong></h4>
+                              <p><%=t("contact.locations.bolivia.address1")%>
+                                <br><%=t("contact.locations.bolivia.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +59 1.4.4321690</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.bo@kleer.la">entrenamos.bo@kleer.la</a></li>
-                                <li>Te contactarás con: Israel</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.bolivia.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.bolivia.contact_email")%>">
+                                    <%=t("contact.locations.bolivia.contact_email")%>
+                                    </a></li>
+                                    <li>Te contactarás con:
+                                  <%=t("contact.locations.bolivia.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -268,14 +289,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer Colombia</strong>
-                              </h4>
-                              <p>Carrera 13 # 78-47
-                                <br>Bogotá - Colombia</p>
+                              <h4><strong>Kleer Colombia</strong></h4>
+                              <p><%=t("contact.locations.colombia.address1")%>
+                                <br><%=t("contact.locations.colombia.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +57 300.327.0604</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.co@kleer.la">entrenamos.co@kleer.la</a></li>
-                                <li>Te contactarás con: Jennifer</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.colombia.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.colombia.contact_email")%>">
+                                    <%=t("contact.locations.colombia.contact_email")%>
+                                    </a></li>
+                                  <li>Te contactarás con:
+                                  <%=t("contact.locations.colombia.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -286,14 +313,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer Perú</strong>
-                              </h4>
-                              <p>Av. Juan De Aliaga 107
-                                <br>Lima - Perú</p>
+                              <h4><strong>Kleer Perú</strong></h4>
+                              <p><%=t("contact.locations.peru.address1")%>
+                                <br><%=t("contact.locations.peru.address2")%></p>
                               <ul class="list-unstyled">
-                                <li>&nbsp;</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.pe@kleer.la">entrenamos.pe@kleer.la</a></li>
-                                <li>Te contactarás con: Hiroshi y Gustavo</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.peru.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.peru.contact_email")%>">
+                                    <%=t("contact.locations.peru.contact_email")%>
+                                    </a></li>
+                                  <li>Te contactarás con:
+                                  <%=t("contact.locations.peru.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -304,14 +337,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer Uruguay</strong>
-                              </h4>
-                              <p>Dr. Mario Cassinoni 1408
-                                <br>Montevideo, 11200</p>
+                              <h4><strong>Kleer Uruguay</strong></h4>
+                              <p><%=t("contact.locations.uruguay.address1")%>
+                                <br><%=t("contact.locations.uruguay.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +598-94681588</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.uy@kleer.la">entrenamos.uy@kleer.la</a></li>
-                                <li>Te contactarás con Pablo</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.uruguay.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.uruguay.contact_email")%>">
+                                    <%=t("contact.locations.uruguay.contact_email")%>
+                                    </a></li>
+                                <li>Te contactarás con:
+                                  <%=t("contact.locations.uruguay.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -322,14 +361,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer Europe</strong>
-                              </h4>
-                              <p>Hektoroviceva Ulica 2/V
-                                <br>10000 Zagreb, Croatia</p>
+                              <h4><strong>Kleer Europe</strong></h4>
+                              <p><%=t("contact.locations.europa.address1")%>
+                                <br><%=t("contact.locations.europa.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +385 99 244 0000 (9 to 17 hrs Central European Time)</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:training.eu@kleer.la">training.eu@kleer.la</a></li>
-                                <li>Te contactarás con Milan</li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.europa.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.europa.contact_email")%>">
+                                    <%=t("contact.locations.europa.contact_email")%>
+                                    </a></li>
+                                <li>Te contactarás con:
+                                  <%=t("contact.locations.europa.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -340,14 +385,20 @@
                         <div class="alert alert-info">
                           <div class="row">
                             <div class="col-sm-12">
-                              <h4><strong>Kleer México</strong>
-                              </h4>
-                              <p>Monte Athos 115
-                                <br>11000, D.F. - México</p>
+                              <h4><strong>Kleer México</strong></h4>
+                              <p><%=t("contact.locations.mexico.address1")%>
+                                <br><%=t("contact.locations.mexico.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>+52 55 5276 4486</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.mx@kleer.la">entrenamos.mx@kleer.la</a></li>
-                                <li>Te contactarás con nuestros partners <a href="http://scrum.org.mx/" target="_blank">Scrum México</a></li>
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.mexico.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.mexico.contact_email")%>">
+                                    <%=t("contact.locations.mexico.contact_email")%>
+                                    </a></li>
+                                <li>Te contactarás con:
+                                  <%=t("contact.locations.mexico.contact")%>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -434,8 +485,8 @@
 <script>
 
     $(document).ready(function(){
-      $('.suscription-modal').on('shown.bs.modal', function (e) { 
-        $('#suscriptionModalEmail').focus() 
+      $('.suscription-modal').on('shown.bs.modal', function (e) {
+        $('#suscriptionModalEmail').focus()
       });
     });
 
