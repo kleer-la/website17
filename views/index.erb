@@ -112,68 +112,71 @@
   <!-- Contenido del sitio -->
   <div ng-view="" class="mainContainer"></div>
 
+  <!-- Suscripción Newsletter -->
   <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
-	<div class="container-fluid">
-		<div class="container">
-			<div class="container suscripcion">
-				<div class="col-md-12 suscripcion-inner">
-					<%=t('contact.subscription.text1')+ ' ' +t('contact.subscription.text2')%>
-            <br/>
-            <img src="img/fondos/flecha-derecha.png">
-						<input type="button" class="btn btn-warning btn-kleer btn-suscription" value="<%=t('contact.subscription.interested')%>" data-toggle="modal" data-target=".suscription-modal"/>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal fade suscription-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <form method="POST" action="/subscribe" class="form-horizontal">
-	      <div class="modal-header">
-	        <button type="button" class="close suscription-modal-title" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h2 class="modal-title" id="myModalLabel"><%=t('contact.subscription.form.title')%></h2>
-	      </div>
-	      <div class="modal-body suscripcion-modal-inner">
-
-        <div class="form-group">
-          <div class="col-sm-12">
-            <input type="email" name="email" class="form-control" placeholder="<%=t('contact.subscription.form.mail_hint')%>" id="suscriptionModalEmail">
+      <div class="container-fluid">
+          <div class="container">
+              <div class="container suscripcion">
+                  <div class="col-md-12 suscripcion-inner">
+                      <%=t('contact.subscription.text1')+ ' ' +t('contact.subscription.text2')%>
+                          <br/>
+                          <img src="img/fondos/flecha-derecha.png">
+                          <input type="button" class="btn btn-warning btn-kleer btn-suscription" value="<%=t('contact.subscription.interested')%>" data-toggle="modal" data-target=".suscription-modal" />
+                  </div>
+              </div>
           </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-sm-12">
-            <input type="text" name="fname" class="form-control" placeholder="<%=t('contact.subscription.form.fname_hint')%>">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-sm-12">
-            <input type="text" name="lname" class="form-control" placeholder="<%=t('contact.subscription.form.lname_hint')%>">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <div class="col-sm-12">
-          <select id="influence_zone_tag" class="form-control" name="influence_zone_tag">
-					  <option value=""><%=t('contact.subscription.form.where_are_you')%></option>
-					  <%=t('contact.subscription.form.countries')%>
-				  </select>
-          </div>
-        </div>
-
-				<br/>
-	      </div>
-	      <div class="modal-footer suscripcion-modal-footer">
-	        <button type="button" class="btn btn-default btn-kleer" data-dismiss="modal"><%=t('contact.subscription.form.cancel')%></button>
-	        <input type="submit" value="<%=t('contact.subscription.form.send')%>" class="btn btn-warning btn-kleer btn-suscription-popup"/>
-	      </div>
-      </form>
-    </div>
+      </div>
   </div>
-</div>
+
+  <div class="modal fade suscription-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <form method="POST" action="/subscribe" class="form-horizontal">
+                  <div class="modal-header">
+                      <button type="button" class="close suscription-modal-title" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h2 class="modal-title" id="myModalLabel">
+                          <%=t('contact.subscription.form.title')%>
+                      </h2>
+                  </div>
+                  <div class="modal-body suscripcion-modal-inner">
+
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <input type="email" name="email" class="form-control" placeholder="<%=t('contact.subscription.form.mail_hint')%>" id="suscriptionModalEmail">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <input type="text" name="fname" class="form-control" placeholder="<%=t('contact.subscription.form.fname_hint')%>">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <input type="text" name="lname" class="form-control" placeholder="<%=t('contact.subscription.form.lname_hint')%>">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <select id="influence_zone_tag" class="form-control" name="influence_zone_tag">
+                                <option value=""><%=t('contact.subscription.form.where_are_you')%></option>
+                                <%=t('contact.subscription.form.countries')%>
+                              </select>
+                          </div>
+                      </div>
+
+                      <br/>
+                  </div>
+                  <div class="modal-footer suscripcion-modal-footer">
+                      <button type="button" class="btn btn-default btn-kleer" data-dismiss="modal"><%=t('contact.subscription.form.cancel')%></button>
+                      <input type="submit" value="<%=t('contact.subscription.form.send')%>" class="btn btn-warning btn-kleer btn-suscription-popup" />
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 
   <!-- Footer -->
   <footer>

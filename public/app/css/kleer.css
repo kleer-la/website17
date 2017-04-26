@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 img {
@@ -82,10 +82,9 @@ img {
     position: absolute;
     right: 0;
     left: 0;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, .5));
-    opacity: .6;
-    height: 150px;
-    top: 250px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .6));
+    height: 300px;
+    top: 100px;
 }
 
 .header-suscripcion {
@@ -159,23 +158,12 @@ img {
     width: 100%;
     padding-left: 80px;
     padding-right: 80px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
-}
-
-.header-description {
-    top: 260px;
-}
-
-.withSubtitleAndDescription .header-description {
-    top: 140px;
-}
-
-.withSubtitle .header-description {
-    top: 240px;
+    bottom: 20px;
 }
 
 .blackBg {
-    background: black;
+    height: 400px;
+    position: relative;
 }
 
 
@@ -592,7 +580,7 @@ footer .nav-tabs>li {
     height: 500px;
     overflow: hidden;
     left: 5%;
-    margin-top: -60px;
+    margin-top: -50px;
 }
 
 .nav>li>a {
@@ -717,7 +705,6 @@ footer .nav-tabs>li {
         position: absolute;
         z-index: 9;
         display: inline-block;
-        top: 140px;
         width: 100%;
         padding-left: 40px;
         padding-right: 40px;
@@ -756,17 +743,27 @@ footer .nav-tabs>li {
 
 .carousel-caption {
     padding-bottom: 50px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, .8);
+    text-shadow: none;
+    color: black;
 }
 
 .carousel-caption h1,
 .headerTitle {
     font-family: 'Noto Serif', serif;
     font-weight: 100;
-    color: #e46095;
+    color: #000000;
     margin: 0;
     padding: 0;
     font-size: 4.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.carousel-indicators .active {
+    background-color: #080808 !important;
+}
+
+.carousel-indicators li {
+    border-color: black !important;
 }
 
 .headerTitle {
@@ -787,14 +784,16 @@ h3.headerTitle {
 
 .headerSubtitle {
     text-align: right;
-    color: white;
+    color: black;
     font-size: 1.3em;
+    text-shadow: 0px 0px 10px white;
 }
 
 .elevatorPitch {
     text-align: right;
     color: white;
     font-size: 13px;
+    display: none;
 }
 
 .bigIcon {
@@ -812,12 +811,6 @@ h3.headerTitle {
 }
 
 @media (max-width: 480px) {
-    .withSubtitleAndDescription .header-description {
-        top: 90px;
-    }
-    .withSubtitle .header-description {
-        top: 240px;
-    }
     h1.headerTitle {
         font-size: 3em !important;
     }
@@ -875,15 +868,13 @@ p.lead {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, .5));
-    opacity: .6;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5));
     height: 40%;
 }
 
 .carousel-fade .carousel-inner .item {
     opacity: 0;
     transition-property: opacity;
-    background-color: black;
 }
 
 .carousel-fade .carousel-inner .active {
