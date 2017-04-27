@@ -19,9 +19,9 @@ angular.module('kleerApp')
   $scope.noWrapSlides = false;
   $scope.active = 0;
   var slides = $scope.slides = [
-    {image: 'app/img/slide01.jpg', title:'Coaching', text: 'Co-Creamos nuevas realidades', id: 0 },
-    {image: 'app/img/slide02.jpg', title:'Facilitación', text: 'Co-Creamos nuevas realidades', id: 1 },
-    {image: 'app/img/slide03.jpg', title:'Cursos', text: 'Co-Creamos nuevas realidades', id: 2 }
+    {image: 'app/img/slide01.jpg', title:'Coaching', text: 'Acompañamos mejoras integrales', id: 0 },
+    {image: 'app/img/slide02.jpg', title:'Facilitación', text: 'Diseñamos ambientes para potenciar la innovación colectiva', id: 1 },
+    {image: 'app/img/slide03.jpg', title:'Cursos', text: 'Capacitamos a profesionales y equipos', id: 2 }
   ];
 
   $scope.test= function(t){$scope.$parent.parentTest(t)};
