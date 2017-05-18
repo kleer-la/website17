@@ -77,6 +77,14 @@ img {
     /*opacity: 0.3;*/
 }
 
+.header-publicamos {
+    background: url(../img/publicamos.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-small:before {
     content: '';
     position: absolute;
