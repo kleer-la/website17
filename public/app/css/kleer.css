@@ -1165,3 +1165,34 @@ h3.list-group-item-heading {
         max-height: 400px;
     }
 }
+
+.book-description {
+    min-height: 300px;
+    font-size: 10pt;
+    border: none;
+    box-shadow: none;
+}
+
+h4.feed-item-title a {
+    color: #e46095 !important;
+}
+
+p.feed-item-desc a,
+p.feed-item-desc a:link,
+p.feed-item-desc a span {
+    color: #E46091 !important;
+}
+
+p.feed-item-desc {
+    border-bottom: 1px solid #e1e8ed;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-Widget {
+    background: #efefef !important;
+}
+
+.white {
+    color: white;
+}

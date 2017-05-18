@@ -116,7 +116,7 @@ end
 
 get '/blog' do
   @active_tab_blog = "active"
-  erb :blog
+  erb :blog, :layout => :layout_2017
 end
 
 get '/entrenamos/:country?' do |country|
@@ -201,7 +201,7 @@ end
 get '/publicamos' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos"
-  erb :ebooks
+  erb :ebooks, :layout => :layout_2017
 end
 
 post '/subscribe' do

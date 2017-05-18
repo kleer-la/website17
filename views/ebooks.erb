@@ -1,21 +1,17 @@
-<div class="container-fluid fondo-amarillo slide-header-generico">
-	<div class="container">
-		<div class="container-fluid container-header-generico">
-			<div class="col-md-7">
-				<h1><%=t("publishing.title")%></h1>
-			</div>
-			<div class="col-md-5 hidden-xs hidden-sm">
-				&nbsp;<br/>
-				<img src="/img/personajes/your-way-kleerer.png" height="400">
-			</div>
-		</div>
+<div class="blackBg">
+	<div class="header-small header-coaching"></div>
+	
+	<div class="header-description">
+		<h1 class="headerTitle"><%=t("publishing.title")%></h1>
 	</div>
 </div>
 
-<div class="container-fluid fondo-rosa slide-contenedor-generico">
-	<div class="container fondo-blanco contenedor-generico">
-		<div class="col-md-9 no-hpadding contenedor-main-izq">
-			<%=t("publishing.description")%><br/>
+<div class="vSpace"></div>
+
+<div class="container mainContent">
+
+	<div class="col-md-9 no-hpadding contenedor-main-izq">
+			<h4><%=t("publishing.description")%></h4><br/>
 			&nbsp;<br/>
 			<div class="container-fluid">
 
@@ -26,7 +22,7 @@
 					<div class="well well-small book-description">
 						<h4><%=t("publishing.books.mas_productivos.title")%></h4>
 						<p><%=t("publishing.books.mas_productivos.text")%></p>
-						<p><a href="/<%=session[:locale]%>/publicamos/mas-productivos"><%=t("publishing.books.mas_productivos.next")%></a></p>
+						<p><a target="_bank" href="/<%=session[:locale]%>/publicamos/mas-productivos"><%=t("publishing.books.mas_productivos.next")%></a></p>
 					</div>
 				</div>
 
@@ -36,7 +32,7 @@
 					<div class="well well-small book-description">
 						<h4><%=t("publishing.books.scrum.title")%></h4>
 						<p><%=t("publishing.books.scrum.text")%></p>
-						<p><a href="/<%=session[:locale]%>/publicamos/scrum"><%=t("publishing.books.scrum.next")%></a></p>
+						<p><a target="_bank" href="/<%=session[:locale]%>/publicamos/scrum"><%=t("publishing.books.scrum.next")%></a></p>
 					</div>
 				</div>
 
@@ -79,7 +75,7 @@
 					<div class="well well-small book-description">
 						<h4><%=t("publishing.books.little_book.title")%></h4>
 						<p><%=t("publishing.books.little_book.text")%></p>
-						<a href="http://kl.la/Agile2015LittleBook"><%=t("publishing.books.mas_productivos.next")%></a></p>
+						<a target="_bank" href="http://kl.la/Agile2015LittleBook"><%=t("publishing.books.mas_productivos.next")%></a></p>
 					</div>
 				</div>
 
@@ -87,8 +83,8 @@
 
 		</div>
 
-		<div class="col-md-3">
-			<%= erb :_twitter_widget, :layout => false %>
-		</div>
+	<div class="col-md-3">
+		<%= erb :_twitter_widget, :layout => false %>
 	</div>
-</div>
+
+</div>	
