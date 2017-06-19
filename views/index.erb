@@ -6,20 +6,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kleer - Coaching, Facilitación y Cursos">
   <meta name="author" content="Mauro Strione - www.innqube.com">
+  <meta name="description" content="<%=@meta_description%>">
+  <meta name="keywords" content="<%=@meta_keywords%>">
+  <meta name="robots" content="noarchive">
 
-  <title>Kleer - Agile Coaching & Training</title>
+  <title><%=@page_title%></title>
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
-  <link href="app/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/app/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
 
 
   <!-- build:css(.tmp) styles/main.css -->
-  <link href="app/css/kleer.css" rel="stylesheet" type="text/css">
+  <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
@@ -58,21 +60,21 @@
           <li><a href="javascript:void(0);" onclick='scrollTo("#about");closeSidebar(event)'>Hacemos</a></li>
           <li>
             <ul>
-                <li><a href="/coaching">Coaching</a></li>
-                <li><a href="/facilitacion">Facilitación</a></li>
+                <li><a href="/<%=session[:locale]%>/coaching">Coaching</a></li>
+                <li><a href="/<%=session[:locale]%>/facilitacion">Facilitación</a></li>
                 <li>
                   <ul>
-                    <li><a href="/facilitacion/grafica">Facilitación gráfica</a></li>
-                    <li><a href="/facilitacion/innovacion-creatividad">Innovación y creatividad</a></li>
-                    <li><a href="/facilitacion/planificacion-estrategica">Planificación estratégica</a></li>
-                    <li><a href="/facilitacion/dinamicas-eventos">Dinámicas y eventos</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/grafica">Facilitación gráfica</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/innovacion-creatividad">Innovación y creatividad</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/planificacion-estrategica">Planificación estratégica</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/dinamicas-eventos">Dinámicas y eventos</a></li>
                   </ul>
                 </li>
-                <li><a href="/entrenamos">Cursos</a></li>
+                <li><a href="/<%=session[:locale]%>/entrenamos">Cursos</a></li>
                 <li>
                   <ul>
-                    <li><a href="/entrenamos">Agenda</a></li>
-                    <li><a href="/catalogo">Catálogo</a></li>
+                    <li><a href="/<%=session[:locale]%>/entrenamos">Agenda</a></li>
+                    <li><a href="/<%=session[:locale]%>/catalogo">Catálogo</a></li>
                   </ul>
                 </li>
             </ul>
@@ -81,8 +83,8 @@
           <li><span class="white">Publicamos</span></li>
           <li>
             <ul>
-              <li><a href="/publicamos">Libros</a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><a href="/<%=session[:locale]%>/publicamos">Libros</a></li>
+              <li><a href="/<%=session[:locale]%>/blog">Blog</a></li>
               <li><a href="http://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank">Vídeos</a></li>
             </ul>
           </li>
@@ -122,7 +124,168 @@
   <div id="top"></div>
 
   <!-- Contenido del sitio -->
-  <div ng-view="" class="mainContainer"></div>
+  <!-- <div ng-view="" class="mainContainer"></div> --> 
+
+  <!-- Slider de imágenes -->
+<header id="slider" class="carousel slide carousel-fade">
+    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+        <div class="carousel-inner">
+            <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
+            <div class="carousel-caption">
+                <h1>Coaching</h1>
+                <h3>Acompañamos mejoras integrales</h3>
+                <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                    <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
+            <div class="carousel-caption">
+                <h1>Facilitación</h1>
+                <h3>Diseñamos ambientes para potenciar la innovación colectiva</h3>
+                <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                    <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
+            <div class="carousel-caption">
+                <h1>Cursos</h1>
+                <h3>Capacitamos a profesionales y equipos</h3>
+                <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                    <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>
+
+<!-- Sobre Kleer / Separador -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <img src="/img/personajes/<%=t('kleeros.vision')%>" class="image-about-01">
+                <img src="app/img/01_03_web.png" class="image-about-02">
+                <img src="app/img/02_03_web.png" class="image-about-03">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Servicios -->
+<section id="services" class="services bg-primary">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Nuestros servicios</h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong>Facilitación</strong>
+                            </h4>
+                            <p> A través de ella satisfacemos las necesidades de cualquier grupo que se reúne con un propósito en común, ya sea para la toma de decisiones, la resolución de problemas, o simplemente el intercambio de ideas e información.</p>
+                            <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light">+ Info</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong>Coaching</strong>
+                            </h4>
+                            <p>Ofrecemos servicios de acompañamiento integral en la implementación de metodologías y técnicas ágiles que potencian tanto a las personas como a sus negocios.</p>
+                            <a href="/<%=session[:locale]%>/coaching" class="btn btn-light">+ Info</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong>Cursos</strong>
+                            </h4>
+                            <p>Vivirás éstas, las técnicas de aprendizaje colectivo y participativo, donde serás parte de un equipo auto organizado y el facilitador te guiará 'desde el fondo del aula'.</p>
+                            <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light">+ Info</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Llamado a la acción / Separador -->
+<!-- 
+<aside class="callout">
+
+        <h1>Algún otro texto</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum in tortor tempus elementum. Sed id diam ipsum. Pellentesque mauris libero, rutrum hendrerit pulvinar sed, bibendum ut leo. </p>
+
+</aside>
+-->
+
+<!-- Equipo -->
+<!--
+<section id="team" class="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Nuestro equipo</h2>
+                <hr class="small">
+                <h4>Fotos y descripción del equipo, rotando</h4>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<!-- Llamado a la acción / Separador -->
+<!-- 
+<aside class="call-to-action bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3>Algún otro llamado a la acción</h3>
+                <a href="#" class="btn btn-lg btn-light">Link 1</a>
+                <a href="#" class="btn btn-lg btn-dark">Link 2!</a>
+            </div>
+        </div>
+    </div>
+</aside>
+-->
+
+<!-- Compartimos -->
+<!--
+<section id="share" class="share">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Compartimos</h2>
+                <hr class="small">
+                <h4>Links o promoción de libros, blog posts, eventos comunitarios, etc...</h4>
+            </div>
+        </div>
+    </div>
+</section>
+-->
 
   <!-- Suscripción Newsletter -->
   <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">

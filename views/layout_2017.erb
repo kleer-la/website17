@@ -5,9 +5,11 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kleer - Coaching, Facilitación y Cursos">
   <meta name="author" content="Mauro Strione - www.innqube.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%=@meta_description%>">
+  <meta name="keywords" content="<%=@meta_keywords%>">
+  <meta name="robots" content="noarchive">
 
   <title><%=@page_title%></title>
 
@@ -61,21 +63,21 @@
           <li><a href="/#about">Hacemos</a></li>
           <li>
             <ul>
-                <li><a href="/coaching">Coaching</a></li>
-                <li><a href="/facilitacion">Facilitación</a></li>
+                <li><a href="/<%=session[:locale]%>/coaching">Coaching</a></li>
+                <li><a href="/<%=session[:locale]%>/facilitacion">Facilitación</a></li>
                 <li>
                   <ul>
-                    <li><a href="/facilitacion/grafica">Facilitación gráfica</a></li>
-                    <li><a href="/facilitacion/innovacion-creatividad">Innovación y creatividad</a></li>
-                    <li><a href="/facilitacion/planificacion-estrategica">Planificación estratégica</a></li>
-                    <li><a href="/facilitacion/dinamicas-eventos">Dinámicas y eventos</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/grafica">Facilitación gráfica</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/innovacion-creatividad">Innovación y creatividad</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/planificacion-estrategica">Planificación estratégica</a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/dinamicas-eventos">Dinámicas y eventos</a></li>
                   </ul>
                 </li>
-                <li><a href="/entrenamos">Cursos</a></li>
+                <li><a href="/<%=session[:locale]%>/entrenamos">Cursos</a></li>
                 <li>
                   <ul>
-                    <li><a href="/entrenamos">Agenda</a></li>
-                    <li><a href="/catalogo">Catálogo</a></li>
+                    <li><a href="/<%=session[:locale]%>/entrenamos">Agenda</a></li>
+                    <li><a href="/<%=session[:locale]%>/catalogo">Catálogo</a></li>
                   </ul>
                 </li>
             </ul>
@@ -83,8 +85,8 @@
           <li><span class="white">Publicamos</span></li>
           <li>
             <ul>
-              <li><a href="/publicamos">Libros</a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><a href="/<%=session[:locale]%>/publicamos">Libros</a></li>
+              <li><a href="/<%=session[:locale]%>/blog">Blog</a></li>
               <li><a href="http://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank">Vídeos</a></li>
             </ul>
           </li>
