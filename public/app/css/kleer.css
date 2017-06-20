@@ -940,6 +940,10 @@ p.lead {
     z-index: 100000;
 }
 
+.btn-group-custom {
+    padding-top: 4px;
+}
+
 
 /* Estilos de web antigua */
 
