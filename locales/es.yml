@@ -12,6 +12,13 @@ es:
             close: "Cerrar"
         texts:
             loading: "cargando..."
+    slider:
+        title_1: "Coaching"
+        text_1: "Acompañamos mejoras integrales"
+        title_2: "Facilitación"
+        text_2: "Diseñamos ambientes para potenciar la innovación colectiva"
+        title_3: "Cursos"
+        text_3: "Capacitamos a profesionales y equipos"
     dt_grid:
         select_all: "Todos"
         see_more: "ver más..."
@@ -20,6 +27,22 @@ es:
         filter: "(filtrado de _MAX_ registros en total)"
         search: "Buscar"
         no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
+    side_menu:
+        we_do: "Hacemos"
+        coaching: "Coaching"
+        facilitation: "Facilitación"
+        graphic_facilitation: "Facilitación gráfica"
+        creativity_innovation: "Innovación y creatividad"
+        strategic_panning: "Planificación estratégica"
+        dynamics_events: "Dinámicas y eventos"
+        courses: "Cursos"
+        agenda: "Agenda"
+        catalog: "Catálogo"
+        we_publish: "Publicamos"
+        books: "Libros"
+        blog: "Blog"
+        videos: "Vídeos"
+        lets_talk: "¿Hablamos?"
     menu:
         home: "Inicio"
         we_do_it_for: "Lo hacemos para que:"
@@ -53,6 +76,14 @@ es:
         team: "equipo-kleer.png"
         nps: "nps-eventos.png"
     home:
+        our_services: "Nuestros servicios"
+        facilitation: "Facilitación"
+        facilitacion_text: "Diseñamos ambientes para potenciar el trabajo en equipo en reuniones y eventos."
+        coaching: "Coaching"
+        coaching_text: "Realizamos un acompañamiento integral en la implementación de metodologías ágiles dentro de organizaciones."
+        courses: "Cursos"
+        courses_text: "Capacitamos a profesionales a través de técnicas de aprendizaje colaborativo y participativo."
+        plus_info: "+ Info"
         calendar:
             current_year_calendar: "Ver Calendario Completo"
             title: "Cursos"
