@@ -32,9 +32,9 @@ en:
         coaching: "Coaching"
         facilitation: "Facilitation"
         graphic_facilitation: "Graphic facilitation"
-        creativity_innovation: "Innovation & creativity"
-        strategic_panning: "Statrategic planning"
-        dynamics_events: "Dynamics & events"
+        creativity_innovation: "Innovation & Creativity"
+        strategic_panning: "Strategic Planning"
+        dynamics_events: "Event Dynamics"
         courses: "Courses"
         agenda: "Agenda"
         catalog: "Catalog"
@@ -78,25 +78,25 @@ en:
     home:
         our_services: "Our services"
         facilitation: "Facilitation"
-        facilitation_text: "We design environments to enhance teamwork in meetings and events."
+        facilitation_text: "We design environments to improve teamwork for meetings and events"
         coaching: "Coaching"
-        coaching_text: "We carry out an integral accompaniment in the implementation of agile methodologies within organizations."
+        coaching_text: "We coach individuals, teams and areas to help in Organization Evolution"
         courses: "Courses"
-        courses_text: "We train professionals through collaborative and participatory learning techniques."
+        courses_text: "We train professionals through collaborative learning techniques"
         plus_info: "+ Info"
         calendar:
-            current_year_calendar: "Full calendar"
+            current_year_calendar: "Full Calendar"
             title: "Courses"
             characteristics: "<ul>
-                                <li>With highly recognized professionals</li>
-                                <li>100% experiential</li>
+                                <li>With well-known professionals</li>
+                                <li>100% hands-on!</li>
                                 <li>Dynamic, fun and useful</li>
-                                <li>Certifications endorsed by the Scrum Alliance</li>
+                                <li>Certifications endorsed by Scrum Alliance</li>
                             </ul>"
         community:
             title: "Community"
-            subtitle: "WE ACTIVELY SUPPORT THE LATIN AMERICAN COMMUNITIES"
-            text: "We were born in the community and we always want to give back to the community. We share knowledge, time, experiences and moods with professional, educational, regional and all kind of communities"
+            subtitle: "We actively support the Latin American communities"
+            text: "We were born in the community and we always want to give back to the community. We share knowledge, time, and experiences with professional, educational, regional and all kind of communities."
             agenda: "Community Events"
     popups:
         course:
