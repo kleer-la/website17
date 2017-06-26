@@ -119,24 +119,24 @@
 				</h2>
 
 				<% if @event.eb_price > 0 %>
-					Pronto pago (hasta el <strong>
+					<%=t("event.early_bird_until")%> <strong>
 						<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-					</strong>):
+					</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.eb_price) %>
         	<br/>
 				<% end %>
 
 				<% if @event.couples_eb_price > 0 %>
-					Parejas (por persona; hasta el <strong>
+					<%=t("event.early_bird_couples_until")%> <strong>
 					<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-				</strong>):
+				</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.couples_eb_price) %><br/>
 				<% end %>
 
         <% if @event.business_eb_price > 0 %>
-        	<br/>¡Pregunta por nuestras tarifas Business (Grupos)!
+        	<br/><%=t("event.ask_for_business_prices")%>
         <% end %>
 			</div>
 		</div>
@@ -152,25 +152,25 @@
 				</h2>
 
 				<% if @event.eb_price > 0 %>
-					Pronto pago (hasta el <strong>
+					<%=t("event.early_bird_until")%> <strong>
 						<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-					</strong>):
+					</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.eb_price) %>
         	<br/>
 				<% end %>
 
 				<% if @event.couples_eb_price > 0 %>
-					Parejas (por persona; hasta el <strong>
+					<%=t("event.early_bird_couples_until")%> <strong>
 					<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-				</strong>):
+				</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.couples_eb_price) %><br/>
 				<% end %>
 
         <% if @event.business_eb_price > 0 %>
         	<br/>&nbsp;
-        	<br/>¡Pregunta por nuestras tarifas Business (Grupos)!
+        	<br/><%=t("event.ask_for_business_prices")%>
         <% end %>
 			</div>
 
@@ -222,8 +222,8 @@ end
  							end_date += "-#{@event.finish_date.strftime("%Y")}"
  						end
  						%>
- 						Inicia: <%=str_date%><br/>
- 						Finaliza: <%=end_date%>
+ 						<%=t("event.starts")%>: <%=str_date%><br/>
+ 						<%=t("event.finishes")%>: <%=end_date%>
 					<% end %>
 				</div>
 			</div>
@@ -283,9 +283,9 @@ end
 					<% if @event.finish_date.nil? || @event.date == @event.finish_date %>
 					<%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%>
 					<% else %>
-					Inicia: <%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%><br/>
-					Finaliza: <%=@event.finish_date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.finish_date.strftime("%b")]%>
-					<% end %>
+					<%=t("event.starts")%>: <%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%><br/>
+ 					<%=t("event.finishes")%>: <%=@event.finish_date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.finish_date.strftime("%b")]%>
+  					<% end %>
 					<br/>&nbsp;
 				</div>
 			</div>
