@@ -12,6 +12,13 @@ en:
             close: "Close"
         texts:
             loading: "loading..."
+    slider:
+        title_1: "Coaching"
+        text_1: "We accompany integral improvements"
+        title_2: "Facilitation"
+        text_2: "We design environments to promote collective innovation"
+        title_3: "Courses"
+        text_3: "We train professionals and teams"
     dt_grid:
         select_all: "All"
         see_more: "see more..."
@@ -20,6 +27,22 @@ en:
         filter: "(filtering from a total of _MAX_ records)"
         search: "Search"
         no_courses_found: "No courses found. We would like you to contact us at <a href=\\\"mailto:hello@kleer.us\\\">hello@kleer.us</a> with your questions."
+    side_menu:
+        we_do: "We do"
+        coaching: "Coaching"
+        facilitation: "Facilitation"
+        graphic_facilitation: "Graphic facilitation"
+        creativity_innovation: "Innovation & Creativity"
+        strategic_panning: "Strategic Planning"
+        dynamics_events: "Event Dynamics"
+        courses: "Courses"
+        agenda: "Agenda"
+        catalog: "Catalog"
+        we_publish: "We publish"
+        books: "Books"
+        blog: "Blog"
+        videos: "Videos"
+        lets_talk: "Let´s talk!"
     menu:
         home: "Home"
         we_do_it_for: "We do it for you to:"
@@ -53,19 +76,27 @@ en:
         team: "equipo-kleer-en.png"
         nps: "nps-eventos-en.png"
     home:
+        our_services: "Our services"
+        facilitation: "Facilitation"
+        facilitation_text: "We design environments to improve teamwork for meetings and events"
+        coaching: "Coaching"
+        coaching_text: "We coach individuals, teams and areas to help in Organization Evolution"
+        courses: "Courses"
+        courses_text: "We train professionals through collaborative learning techniques"
+        plus_info: "+ Info"
         calendar:
-            current_year_calendar: "Full calendar"
+            current_year_calendar: "Full Calendar"
             title: "Courses"
             characteristics: "<ul>
-                                <li>With highly recognized professionals</li>
-                                <li>100% experiential</li>
+                                <li>With well-known professionals</li>
+                                <li>100% hands-on!</li>
                                 <li>Dynamic, fun and useful</li>
-                                <li>Certifications endorsed by the Scrum Alliance</li>
+                                <li>Certifications endorsed by Scrum Alliance</li>
                             </ul>"
         community:
             title: "Community"
-            subtitle: "WE ACTIVELY SUPPORT THE LATIN AMERICAN COMMUNITIES"
-            text: "We were born in the community and we always want to give back to the community. We share knowledge, time, experiences and moods with professional, educational, regional and all kind of communities"
+            subtitle: "We actively support the Latin American communities"
+            text: "We were born in the community and we always want to give back to the community. We share knowledge, time, and experiences with professional, educational, regional and all kind of communities."
             agenda: "Community Events"
     popups:
         course:
@@ -78,7 +109,7 @@ en:
                 title: "Event Registration"
     training:
         title: "Public Courses"
-        description: "WE ORGANIZE BOTH PUBLIC AND PRIVATE COURSES.<br/>OUR CERTIFICATIONS ARE ENDORSED BY THE SCRUM ALLIANCE."
+        description: "WE ORGANIZE BOTH PUBLIC AND PRIVATE COURSES"
         incompany: "WE CAN TEACH ALL OUR COURSES IN YOUR ORGANIZATION"
         more_info: "More Information"
     community:
@@ -194,6 +225,12 @@ en:
         release11_text: "Kleer se complace en anunciar que será el anfitrión de la Primera Jornada del Movimiento de Metacreatividad en la Argentina. El encuentro, de entrada libre y gratuita, se realizará el próximo lunes 31 de agosto en sus oficinas."
     event:
        course: "Course"
+       time_zone: "Time Zone:"
+       starts: "Starts"
+       finishes: "Finishes"
+       ask_for_business_prices: "Ask for our business prices (groups)!"
+       early_bird_until: "Early bird until"
+       early_bird_couples_until: "Couples (each) until "
        public_editions: "Public editions"
        other_trainings: "Other trainings from this category"
        facilitator: "Facilitator"
@@ -244,41 +281,60 @@ en:
                 address1: "Lavalle 362 4to Piso"
                 address2: "1049 CABA"
                 phone: "+54 11.5236.0314"
+                contact: "Lucia y Coti"
+                contact_email: "info.ar@kleer.la"
             brasil:
                 name: "Brazil"
-                address1: "Alameda Jaú, 310 113-A"
-                address2: "São Paulo"
+                address1: "Alameda Jau, 310 113-A"
+                address2: "Sao Paulo"
                 phone: "+55 11.3284.5878"
+                contact: "Angélica"
+                contact_email: "info.br@kleer.la"
             bolivia:
                 name: "Bolivia"
                 address1: "1ro de Mayo No. 542"
                 address2: "Qllo., Cochabamba"
                 phone: "+59 1.4.4321690"
+                contact: "Israel"
+                contact_email: "info.bo@kleer.la"
             colombia:
                 name: "Colombia"
-                address1: "Carrera 13 # 78-47"
-                address2: "Bogotá"
+                address1: "Carrera 30 # 49A-34 of 402"
+                address2: "Bogota"
                 phone: "+57 300.327.0604"
+                contact: "Jennifer"
+                contact_email: "info.co@kleer.la"
             peru:
                 name: "Peru"
                 address1: "Av. Juan De Aliaga 107"
                 address2: "Lima"
-                phone: "entrenamos.pe@kleer.la"
+                phone: "+51 94 731 5896"
+                contact: "Jessy"
+                contact_email: "info.pe@kleer.la"
             uruguay:
                 name: "Uruguay"
-                address1: "1408 Dr. Mario Cassinoni"
-                address2: "11200 Montevideo"
+                address1: "Luis Lamas 3241"
+                address2: "11300 Montevideo"
                 phone: "+598-94681588"
+                contact: "Pablo"
+                contact_email: "info.uy@kleer.la"
             europa:
-                address1: Hektoroviceva Ulica 2/V
-                address2: 10000 Zagreb, Croatia
-                phone: +385 99 244 0000 (9 to 17 hrs Central European Time)
+                address1: "Hektoroviceva Ulica 2/V"
+                address2: "10000 Zagreb, Croatia"
+                phone: "+385 99 244 0000 (9 to 17 hrs Central European Time)"
+                contact: "Milan"
+                contact_email: "info.eu@kleer.la"
             mexico:
-                partners: "You will be helped by us <br/>and our partners "
+                address1: "Monte Athos 115"
+                address2: "11000, D.F."
+                phone: "+52 55 5276 4486"
+                contact: "our partners <a href=\"http://scrum.org.mx/\" target=\"_blank\">Scrum México</a>"
+                contact_email: "entrenamos.mx@kleer.la"
+                partners: "Te ayudará uno de nuestros aliados."
             other:
                 title: "Other?"
                 contact_us: "Contact us at"
-                contact_email: "hello@kleer.la"
+                contact_email: "info@kleer.la"
         subscription:
             text1: "       Be the first to get"
             text2: "       all the agile news!"

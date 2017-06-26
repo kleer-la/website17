@@ -7,6 +7,8 @@ require 'redcarpet'
 require 'json'
 require 'i18n'
 require 'money'
+require 'rss'
+require 'escape_utils'
 
 require File.join(File.dirname(__FILE__),'/lib/keventer_reader')
 require File.join(File.dirname(__FILE__),'/lib/dt_helper')
@@ -114,9 +116,18 @@ get '/home' do # Dejo esta ruta para que los test de la home peguen contra la ho
 	erb :index_old
 end
 
+get '/en' do
+  redirect "/en/", 301 # permanent redirect
+end
+
+get '/es' do
+  redirect "/es/", 301 # permanent redirect
+end
+
 get '/blog' do
   @active_tab_blog = "active"
-  erb :blog
+  @rss = RSS::Parser.parse('http://feed.informer.com/digests/EGSKOZF5FA/feeder.rss', false)
+  erb :blog, :layout => :layout_2017
 end
 
 get '/entrenamos/:country?' do |country|
@@ -135,7 +146,7 @@ def entrenamos_view(country=nil)
 		@unique_countries = KeventerReader.instance.unique_countries_for_commercial_events()
 		@country= country || session[:filter_country] || 'todos'
     session[:filter_country]= @country
-    erb :entrenamos
+    erb :entrenamos, :layout => :layout_2017
 	end
 end
 
@@ -148,7 +159,7 @@ get '/coaching' do
 	@active_tab_coaching = "active"
 	@page_title += " | Coaching"
 	@categories = KeventerReader.instance.categories session[:locale]
-	erb :coaching
+	erb :coaching, :layout => :layout_2017
 end
 
 get '/comunidad' do
@@ -170,13 +181,38 @@ end
 
 get '/facilitacion' do
   @active_tab_facilitacion = "active"
-  redirect "http://facilitacion.kleer.la", 301 # permanent redirect
+  @page_title += " | Facilicación"
+  erb :facilitacion, :layout => :layout_2017
+end
+
+get '/facilitacion/grafica' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Facilicación gráfica"
+  erb :facilitacion_grafica, :layout => :layout_2017
+end
+
+get '/facilitacion/innovacion-creatividad' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Innovación y creatividad"
+  erb :facilitacion_innovacion_creatividad, :layout => :layout_2017
+end
+
+get '/facilitacion/planificacion-estrategica' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Planificación estratégica"
+  erb :facilitacion_planificacion_estrategica, :layout => :layout_2017
+end
+
+get '/facilitacion/dinamicas-eventos' do
+  @active_tab_facilitacion = "active"
+  @page_title += " | Dinámicas y eventos"
+  erb :facilitacion_dinamicas_eventos, :layout => :layout_2017
 end
 
 get '/publicamos' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos"
-  erb :ebooks
+  erb :ebooks, :layout => :layout_2017
 end
 
 post '/subscribe' do
@@ -187,7 +223,7 @@ post '/subscribe' do
 
   CrmConnector::subscribe_person( @email, @fname, @lname, @influence_zone_tag )
 
-  erb :subscribe
+  erb :subscribe, :layout => :layout_2017
 end
 
 get '/publicamos/scrum' do
@@ -256,7 +292,7 @@ get '/entrenamos/evento/:event_id_with_name' do
     @active_tab_entrenamos = "active"
     @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event.friendly_title
-    erb :event
+    erb :event, :layout => :layout_2017
   end
 end
 
@@ -265,7 +301,7 @@ get '/catalogo' do
   #pdf_catalog
   @page_title += " | Catálogo"
   @categories = KeventerReader.instance.categories session[:locale]
-  erb :catalogo
+  erb :catalogo, :layout => :layout_2017
 end
 
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
@@ -287,7 +323,7 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
    # @active_tab_entrenamos = "active"
    # @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event_type.name
-    erb :event_type
+    erb :event_type, :layout => :layout_2017
   end
 end
 
@@ -472,6 +508,10 @@ end
 
 get '/preguntas-frecuentes/facturacion-pagos-colombia' do
   erb :facturacion_pagos_colombia
+end
+
+get '/preguntas-frecuentes/facturacion-pagos-peru' do
+  erb :facturacion_pagos_peru
 end
 
 get '/preguntas-frecuentes/certified-scrum-master' do

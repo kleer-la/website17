@@ -1,19 +1,13 @@
-<div class="container-fluid fondo-amarillo slide-header-generico slide-header-cursos">
-	<div class="container">
-		<div class="container-fluid container-header-generico container-header-cursos">
-			<div class="col-md-8">
-				<h1><%=t("training.title")%></h1>
-				<%=t("training.description")%>
-			</div>
-			<div class="col-md-4 hidden-xs hidden-sm">
-				&nbsp;<br/>
-				<img src="/img/personajes/<%=t('kleeros.live')%>" height="400">
-			</div>
-		</div>
+<div class="blackBg withSubtitle">
+	<div class="header-small header-courses"></div>
+
+	<div class="header-description">
+		<h1 class="headerTitle"><%=t("training.title")%></h1>
 	</div>
+
 </div>
 
-<div class="container-fluid fondo-amarillo">
+<div class="container mainContent">
 	<div class="container">
 		<div class="container-fluid">
 			<div class="col-md-8">
@@ -52,14 +46,6 @@
 					<%=t("scrumalliance.description")%>
 					<br/>&nbsp;
 				</div>
-				<div class="col-md-12 fondo-verde sombra-amarilla">
-					<h2><%=t("scrumalliance.top")%></h1>
-
-					<a href="/<%=session[:locale]%>/categoria/organizaciones/cursos/7-certified-scrum-master-(csm)">Certified ScrumMaster (CSM)</a><br/>
-					&nbsp;<br/>
-					<a href="/<%=session[:locale]%>/categoria/productos/cursos/3-certified-scrum-developer-(csd-track-completo)">Certified Scrum Developer (CSD)</a><br/>
-					&nbsp;<br/>
-				</div>
 				&nbsp;
 				<div class="col-md-12 fondo-celeste sombra-amarilla">
 					&nbsp;<br/><%=t("scrumalliance.why")%>
@@ -71,16 +57,14 @@
 	</div>
 </div>
 
-<div class="container-fluid fondo-pano pano-5"></div>
-
-<%= erb :_slide_experiencia_kleer, :layout => false %>
-
-<div class="container-fluid fondo-rosa">
-	<div class="container">
-		&nbsp;<br/>
-		<%=t('training.incompany')%>&nbsp;&nbsp;
-		<a href="http://media.kleer.la/kleer-entrenamos-2014.pdf" class="btn btn-info btn-kleer"><%=t('training.more_info')%></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:<%=t('contact.training_email')%>" class="btn btn-info btn-kleer"><%=t('contact.contact_us')%></a>
-		<br/>&nbsp;
+<div class="container-fluid fondo-rosa containerWithPadding text-center">
+	<div class="row">
+		<div class="col-sm-12">
+			<%=t('training.incompany')%>
+			<div class="btn-group-custom">
+				<a href="http://media.kleer.la/kleer-entrenamos-2014.pdf" class="btn btn-info btn-kleer"><%=t('training.more_info')%></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:<%=t('contact.training_email')%>" class="btn btn-info btn-kleer"><%=t('contact.contact_us')%></a>
+			</div>
+		</div>
 	</div>
 </div>
 

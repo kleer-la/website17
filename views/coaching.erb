@@ -1,35 +1,31 @@
-<div class="container-fluid fondo-celeste slide-header-generico">
-	<div class="container">
-		<div class="container-fluid container-header-generico">
-			<div class="col-md-7">
-				<h1><%=t("coaching.title")%></h1>
-			</div>
-			<div class="col-md-5 hidden-xs hidden-sm">
-				&nbsp;<br/>
-				<img src="/img/personajes/your-way-kleerer.png" height="400">
-			</div>
-		</div>
+<div class="blackBg">
+	<div class="header-small header-coaching"></div>
+	
+	<div class="header-description">
+		<h1 class="headerTitle"><%=t("coaching.title")%></h1>
 	</div>
 </div>
 
-<div class="container-fluid fondo-rosa slide-contenedor-generico">
-	<div class="container fondo-blanco contenedor-generico">
-		<div class="col-md-9 contenedor-main-izq">
-			<p class="lead"><%=t("coaching.subtitle")%></p>
-			<%=t("coaching.text.top")%>
+<div class="container mainContent">
+	<div class="col-md-12 contenedor-main-izq">
+		<p class="lead"><%=t("coaching.subtitle")%></p>
+		<%=t("coaching.text.top")%>
 
-			<h2><%=t("coaching.tabs.benefits.title")%></h2>
-			<%=t("coaching.tabs.benefits.text")%>
+		<h2><%=t("coaching.tabs.benefits.title")%></h2>
+		<%=t("coaching.tabs.benefits.text")%>
 
-			<h2><%=t("coaching.tabs.characteristics.title")%></h2>
-			<%=t("coaching.tabs.characteristics.text")%>
+		<h2><%=t("coaching.tabs.characteristics.title")%></h2>
+		<%=t("coaching.tabs.characteristics.text")%>
 
+		<div class="alertBox">
 			<%=t("coaching.text.bottom")%>
-
 		</div>
 
-		<div class="col-md-3">
-			<%= erb :_twitter_widget, :layout => false %>
-		</div>
-	</div>	
-</div>
+	</div>
+<!-- 
+	<div class="col-md-3">
+		<%= erb :_twitter_widget, :layout => false %>
+	</div>
+-->
+</div>	
+	

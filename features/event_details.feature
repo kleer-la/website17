@@ -27,6 +27,7 @@ Feature: Event Details
 		And I should see "Raul Gorgonzola"
 		And I should see "09"
 		And I should see "Ene"
+		And I should see "un texto a resaltar"
 
 	Scenario: Detalle de Evento con cotrainer
 		Given theres only one event for the following two months
@@ -50,11 +51,6 @@ Feature: Event Details
 		And I should see "Juan Gabardini" in a phone
 		And I should see "Thomas Wallet" in a phone
 		And I should see "Hiroshi Hiromoto" in a phone
-
-	Scenario: Los Eventos normales tienen sección de Experiencia Kleer
-		Given theres only one event
-		When I visit the event page
-		Then I should see "Experiencia Kleer"
 
 	Scenario: Detalle de Evento Comunitario
 		Given there are community events

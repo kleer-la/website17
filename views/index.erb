@@ -1,85 +1,131 @@
+<!doctype html>
+<html>
+
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Kleer - Coaching, Facilitación y Cursos">
-    <meta name="author" content="Mauro Strione - www.innqube.com">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Mauro Strione - www.innqube.com">
+  <meta name="description" content="<%=@meta_description%>">
+  <meta name="keywords" content="<%=@meta_keywords%>">
+  <meta name="robots" content="noarchive">
 
-    <title>Kleer</title>
+  <title><%=@page_title%></title>
 
-    <link href="/assets2017/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets2017/css/kleer.css" rel="stylesheet">
-    <link href="/assets2017/css/full-slider.css" rel="stylesheet">
-    <link href="/assets2017/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <link href="/app/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- endbuild -->
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
+  <!-- build:css(.tmp) styles/main.css -->
+  <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
+
+
+  <base href="/app">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
-<body>
+<body ng-app="kleerApp">
+  <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-    <!-- Menu lateral -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
+  <!-- Add your site or application content here -->
 
-        <div class="menu-container text-uppercase">
+  <!-- Menu lateral -->
+  <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+  <nav id="sidebar-wrapper">
 
-            <div id="logoMenu">
-                <img src="/assets2017/img/kleer-logo.png">
-            </div>
-            
-            <ul class="sidebar-nav">
-                <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+      <div class="menu-container text-uppercase">
+
+        <div id="logoMenu">
+          <a href="/"><img src="app/img/kleer-logo.png"></a>
+        </div>
+
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+        <ul class="sidebar-nav">
+
+          <li><a href="javascript:void(0);" onclick='scrollTo("#about");closeSidebar(event)'><%=t('side_menu.we_do')%></a></li>
+          <li>
+            <ul>
+                <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
+                <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
                 <li>
-                    <a href="#about" onclick='closeSidebar(event)'>Hacemos</a>
+                  <ul>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/grafica"><%=t('side_menu.graphic_facilitation')%></a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/innovacion-creatividad"><%=t('side_menu.creativity_innovation')%></a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/planificacion-estrategica"><%=t('side_menu.strategic_panning')%></a></li>
+                    <li><a href="/<%=session[:locale]%>/facilitacion/dinamicas-eventos"><%=t('side_menu.dynamics_events')%></a></li>
+                  </ul>
                 </li>
+                <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.courses')%></a></li>
                 <li>
-                    <a href="#team" onclick='closeSidebar(event)'>Somos</a>
-                </li>
-                <li>
-                    <a href="#share" onclick='closeSidebar(event)'>Compartimos</a>
-                </li>
-                <li>
-                    <a href="#contact" onclick='closeSidebar(event)'>¿Hablamos?</a>
+                  <ul>
+                    <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                    <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
+                  </ul>
                 </li>
             </ul>
+          </li>
 
-            <div class="social-media">
-                <ul class="list-unstyled list-inline font-family-alt no-letter-spacing text-extra-large">
-                    <li><a href="#" target="_blank"><i class="fa fa-facebook sr-icons"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fa fa-twitter sr-icons"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fa fa-youtube sr-icons"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fa fa-instagram sr-icons"></i></a></li>
-                    <li><a href="#" target="_blank"><i class="fa fa-linkedin sr-icons"></i></a></li>
-                </ul>
-                <span class="display-inline-block font-family-alt text-large email">
-                    <a href="mailto:hola@kleer.la">hola@kleer.la</a>
-                </span>
-            </div>
+          <li><span class="white"><%=t('side_menu.we_publish')%></span></li>
+          <li>
+            <ul>
+              <li><a href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.books')%></a></li>
+              <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
+              <li><a href="http://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
+            </ul>
+          </li>
 
+          <li><a href="javascript:void(0);" onclick='scrollTo("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
+          
+        </ul>
+
+        <div class="social-media">
+          <ul class="list-unstyled list-inline font-family-alt no-letter-spacing text-extra-large">
+            <li><a href="http://facebook.com/kleer.la" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="http://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="http://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+          <span class="display-inline-block font-family-alt text-large email"><a href="mailto:hola@kleer.la">hola@kleer.la</a></span>
         </div>
-    
-    </nav>
 
-    <!-- Logo Kleer -->
+      </div>
 
-    <div id="logo">
-        <img src="/assets2017/img/kleer-logo.png">
-    </div>
+  </nav>
 
-    <!-- Márgenes -->
-    <div class="margin top-margin"></div>
-    <div class="margin left-margin"></div>
-    <div class="margin rigth-margin"></div>
-    <div class="margin bottom-margin"></div>
+  <!-- Logo Kleer -->
+
+  <div id="logo">
+    <a href="/"><img src="app/img/kleer-logo.png"></a>
+  </div>
+
+  <!-- Márgenes -->
+  <div class="margin top-margin"></div>
+  <div class="margin left-margin"></div>
+  <div class="margin rigth-margin"></div>
+  <div class="margin bottom-margin"></div>
+  <div id="top"></div>
+
+  <!-- Contenido del sitio -->
+  <!-- <div ng-view="" class="mainContainer"></div> --> 
+
 
     <!-- Slider de imágenes -->
     <header id="slider" class="carousel slide carousel-fade">
@@ -89,39 +135,42 @@
             <li data-target="#slider" data-slide-to="1"></li>
             <li data-target="#slider" data-slide-to="2"></li>
         </ol>
-
+        
         <!-- Slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('/assets2017/img/slide01.jpg');"></div>
+                <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
                 <div class="carousel-caption">
                     <div class="text-vertical-center">
-                        <h1>Coaching</h1>
-                        <h3>Co-Creamos nuevas realidades</h3>
-                        <br>
-                        <a href="#about" class="btn btn-dark btn-lg sr-button">Me interesa</a>
+                        <h1><%=t('slider.title_1')%></h1>
+                        <h3><%=t('slider.text_1')%></h3>
+                        <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                          <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('/assets2017/img/slide02.jpg');"></div>
+                <div class="fill" style="background-image:url('app/img/slide02.jpg');"></div>
                 <div class="carousel-caption">
                     <div class="text-vertical-center">
-                        <h1>Facilitación</h1>
-                        <h3>Co-Creamos nuevas realidades</h3>
-                        <br>
-                        <a href="#about" class="btn btn-dark btn-lg sr-button">Me interesa</a>
+                        <h1><%=t('slider.title_2')%></h1>
+                        <h3><%=t('slider.text_2')%></h3>
+                        <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                          <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('/assets2017/img/slide03.jpg');"></div>
+                <div class="fill" style="background-image:url('app/img/slide03.jpg');"></div>
                 <div class="carousel-caption">
                     <div class="text-vertical-center">
-                        <h1>Cursos</h1>
-                        <h3>Co-Creamos nuevas realidades</h3>
-                        <br>
-                        <a href="#about" class="btn btn-dark btn-lg sr-button">Me interesa</a>
+                        <h1><%=t('slider.title_3')%></h1>
+                        <h3><%=t('slider.text_3')%></h3>
+                        <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                          <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -129,291 +178,438 @@
 
     </header>
 
-    <!-- Sobre Kleer / Separador -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <img src="/assets2017/img/karl-creemos.png" class="image-about-01">
-                    <img src="/assets2017/img/01_03_web.png" class="image-about-02">
-                    <img src="/assets2017/img/02_03_web.png" class="image-about-03">
-                 </div>
+<!-- Sobre Kleer / Separador -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <img src="/img/personajes/<%=t('kleeros.vision')%>" class="image-about-01">
+                <img src="app/img/01_03_web.png" class="image-about-02">
+                <img src="app/img/02_03_web.png" class="image-about-03">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Servicios -->
-      <section id="services" class="services bg-primary">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Nuestros servicios</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x sr-services">
-                                <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                                <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
-                            </span>
-                                <h4>
-                                    <strong>Facilitación</strong>
-                                </h4>
-                                <p> A través de ella satisfacemos las necesidades de cualquier grupo que se reúne con un propósito en común, ya sea para la toma de decisiones, la resolución de problemas, o simplemente el intercambio de ideas e información.</p>
-                                <a href="http://facilitacion.kleer.la/" class="btn btn-light">+ Info</a>
-                            </div>
-                         </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x sr-services">
-                                <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
-                            </span>
-                                <h4>
-                                    <strong>Coaching</strong>
-                                </h4>
-                                <p>Ofrecemos servicios de acompañamiento integral en la implementación de metodologías y técnicas ágiles que potencian tanto a las personas como a sus negocios.</p>
-                                <a href="/coaching" class="btn btn-light">+ Info</a>
-                            </div>
+<!-- Servicios -->
+<section id="services" class="services bg-primary">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2><%=t('home.our_services')%></h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong><%=t('home.facilitation')%></strong>
+                            </h4>
+                            <p><%=t('home.facilitation_text')%></p>
+                            <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.plus_info')%></a>
                         </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x sr-services">
-                                <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                                <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
-                            </span>
-                                <h4>
-                                    <strong>Cursos</strong>
-                                </h4>
-                                <p>Vivirás éstas, las técnicas de aprendizaje colectivo y participativo, donde serás parte de un equipo auto organizado y el facilitador te guiará 'desde el fondo del aula'.</p>
-                                <a href="/entrenamos" class="btn btn-light">+ Info</a>
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong><%=t('home.coaching')%></strong>
+                            </h4>
+                            <p><%=t('home.coaching_text')%></p>
+                            <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.plus_info')%></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x sr-services">
+                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                            <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
+                        </span>
+                            <h4>
+                                <strong><%=t('home.courses')%></strong>
+                            </h4>
+                            <p><%=t('home.courses_text')%></p>
+                            <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.plus_info')%></a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Llamado a la acción / Separador -->
-    <!-- 
-    <aside class="callout">
+<!-- Llamado a la acción / Separador -->
+<!-- 
+<aside class="callout">
 
-            <h1>Algún otro texto</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum in tortor tempus elementum. Sed id diam ipsum. Pellentesque mauris libero, rutrum hendrerit pulvinar sed, bibendum ut leo. </p>
+        <h1>Algún otro texto</h1>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum in tortor tempus elementum. Sed id diam ipsum. Pellentesque mauris libero, rutrum hendrerit pulvinar sed, bibendum ut leo. </p>
 
-    </aside>
-    -->
+</aside>
+-->
 
-    <!-- Equipo -->
-    <!--
-    <section id="team" class="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Nuestro equipo</h2>
-                    <hr class="small">
-                    <h4>Fotos y descripción del equipo, rotando</h4>
-                </div>
+<!-- Equipo -->
+<!--
+<section id="team" class="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Nuestro equipo</h2>
+                <hr class="small">
+                <h4>Fotos y descripción del equipo, rotando</h4>
             </div>
         </div>
-    </section>
-    -->
+    </div>
+</section>
+-->
 
-    <!-- Llamado a la acción / Separador -->
-    <!-- 
-    <aside class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>Algún otro llamado a la acción</h3>
-                    <a href="#" class="btn btn-lg btn-light">Link 1</a>
-                    <a href="#" class="btn btn-lg btn-dark">Link 2!</a>
-                </div>
+<!-- Llamado a la acción / Separador -->
+<!-- 
+<aside class="call-to-action bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3>Algún otro llamado a la acción</h3>
+                <a href="#" class="btn btn-lg btn-light">Link 1</a>
+                <a href="#" class="btn btn-lg btn-dark">Link 2!</a>
             </div>
         </div>
-    </aside>
-    -->
+    </div>
+</aside>
+-->
 
-    <!-- Compartimos -->
-    <!--
-    <section id="share" class="share">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Compartimos</h2>
-                    <hr class="small">
-                    <h4>Links o promoción de libros, blog posts, eventos comunitarios, etc...</h4>
-                </div>
+<!-- Compartimos -->
+<!--
+<section id="share" class="share">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Compartimos</h2>
+                <hr class="small">
+                <h4>Links o promoción de libros, blog posts, eventos comunitarios, etc...</h4>
             </div>
         </div>
-    </section>
-    -->
+    </div>
+</section>
+-->
 
-    <!-- Mapa -->
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0824455490874!2d-58.374204748997!3d-34.60207666482279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaccb6e2b6e9%3A0xfaaafc7a95eaa913!2sKleer!5e0!3m2!1ses!2sar!4v1478746630071"></iframe>
-        <br />
-        <small>
-            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0824455490874!2d-58.374204748997!3d-34.60207666482279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaccb6e2b6e9%3A0xfaaafc7a95eaa913!2sKleer!5e0!3m2!1ses!2sar!4v1478746630071"></a>
-        </small>
-        </iframe>
+  <!-- Suscripción Newsletter -->
+  <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
+      <div class="container-fluid">
+          <div class="container">
+              <div class="container suscripcion">
+                  <div class="col-md-12 suscripcion-inner">
+                      <%=t('contact.subscription.text1')+ ' ' +t('contact.subscription.text2')%>
+                          <br/>
+                          <img src="img/fondos/flecha-derecha.png">
+                          <input type="button" class="btn btn-warning btn-kleer btn-suscription" value="<%=t('contact.subscription.interested')%>" data-toggle="modal" data-target=".suscription-modal" />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 
-    </section>
+  <div class="modal fade suscription-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <form method="POST" action="/subscribe" class="form-horizontal">
+                  <div class="modal-header">
+                      <button type="button" class="close suscription-modal-title" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h2 class="modal-title" id="myModalLabel">
+                          <%=t('contact.subscription.form.title')%>
+                      </h2>
+                  </div>
+                  <div class="modal-body suscripcion-modal-inner">
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-        <div class="kleero01">
-            <img src="/assets2017/img/kleero01.png">
-        </div>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <input type="email" name="email" class="form-control" placeholder="<%=t('contact.subscription.form.mail_hint')%>" id="suscriptionModalEmail">
+                          </div>
+                      </div>
 
-        <div class="container">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs text-center" role="tablist">
-                <li role="presentation" class="active"><a href="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
-                <li role="presentation"><a href="#Brasil" aria-controls="Brasil" role="tab" data-toggle="tab">Brasil</a></li>
-                <li role="presentation"><a href="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
-                <li role="presentation"><a href="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
-                <li role="presentation"><a href="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
-                <li role="presentation"><a href="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
-                <li role="presentation"><a href="#Europa" aria-controls="Europa" role="tab" data-toggle="tab">Europa</a></li>
-                <li role="presentation"><a href="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
-                <li role="presentation"><a href="#Otro" aria-controls="Otro" role="tab" data-toggle="tab">Otro</a></li>
-            </ul>
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <input type="text" name="fname" class="form-control" placeholder="<%=t('contact.subscription.form.fname_hint')%>">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <input type="text" name="lname" class="form-control" placeholder="<%=t('contact.subscription.form.lname_hint')%>">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <div class="col-sm-12">
+                              <select id="influence_zone_tag" class="form-control" name="influence_zone_tag">
+                                <option value=""><%=t('contact.subscription.form.where_are_you')%></option>
+                                <%=t('contact.subscription.form.countries')%>
+                              </select>
+                          </div>
+                      </div>
+
+                      <br/>
+                  </div>
+                  <div class="modal-footer suscripcion-modal-footer">
+                      <button type="button" class="btn btn-default btn-kleer" data-dismiss="modal"><%=t('contact.subscription.form.cancel')%></button>
+                      <input type="submit" value="<%=t('contact.subscription.form.send')%>" class="btn btn-warning btn-kleer btn-suscription-popup" />
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="kleero01">
+          <img src="app/img/kleero01.png">
+      </div>
+
+      <div class="container">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs text-center" role="tablist">
+            <li role="presentation" class="active"><a data-target="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
+            <li role="presentation"><a data-target="#Brasil" aria-controls="Brasil" role="tab" data-toggle="tab">Brasil</a></li>
+            <li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
+            <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
+            <li role="presentation"><a data-target="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
+            <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
+            <li role="presentation"><a data-target="#Europa" aria-controls="Europa" role="tab" data-toggle="tab">Europa</a></li>
+            <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
+            <li role="presentation"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab"><%=t("contact.locations.other.title")%></a></li>
+        </ul>
 
         <br>
 
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3 text-center">
-             
+
                 <!-- Tab panes -->
                 <div class="tab-content">
 
                     <div role="tabpanel" class="text-center tab-pane active" id="Argentina">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Argentina</strong>
-                            </h4>
-                            <p>Lavalle 362, 4º piso
-                                <br>1049 CABA - Argentina</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> (+54) 011 5236-0314</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:hola@kleer.la">hola@kleer.la</a></li>
-                                <li>Te contactarás con: Constanza y Flor</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-xs-8">
+                              <h4><strong>Kleer Argentina</strong></h4>
+                              <p><%=t("contact.locations.argentina.address1")%>
+                                <br><%=t("contact.locations.argentina.address2")%>
+                                </p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.argentina.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.argentina.contact_email")%>">
+                                    <%=t("contact.locations.argentina.contact_email")%>
+                                  </a></li>
+                                <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.argentina.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-xs-4">
+                              <a href="http://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
+                                <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="100" data-pin-nopin="true">
+                              </a>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Brasil">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Brazil</strong>
-                            </h4>
-                            <p>Alameda Jaú, 310 113-A
-                                <br>São Paulo - Brazil</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +55 11.3284.5878</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:treinamos.br@kleer.la"></a></li>
-                                <li>Você entrará em contato com: Angélica</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Brasil</strong></h4>
+                              <p><%=t("contact.locations.brasil.address1")%>
+                                <br><%=t("contact.locations.brasil.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.brasil.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.brasil.contact_email")%>">
+                                    <%=t("contact.locations.brasil.contact_email")%>
+                                    </a></li>
+                                <li>Você entrará em contato com:
+                                  <%=t("contact.locations.brasil.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Bolivia">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Bolivia</strong>
-                            </h4>
-                            <p>1ro de Mayo No. 542
-                                <br>Qllo., Cochabamba - Bolivia</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +59 1.4.4321690</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.bo@kleer.la">entrenamos.bo@kleer.la</a></li>
-                                <li>Te contactarás con: Israel</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Bolivia</strong></h4>
+                              <p><%=t("contact.locations.bolivia.address1")%>
+                                <br><%=t("contact.locations.bolivia.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.bolivia.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.bolivia.contact_email")%>">
+                                    <%=t("contact.locations.bolivia.contact_email")%>
+                                    </a></li>
+                                    <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.bolivia.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Colombia">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Colombia</strong>
-                            </h4>
-                            <p>Carrera 13 # 78-47
-                                <br>Bogotá - Colombia</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +57 300.327.0604</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.co@kleer.la">entrenamos.co@kleer.la</a></li>
-                                <li>Te contactarás con: Jennifer</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Colombia</strong></h4>
+                              <p><%=t("contact.locations.colombia.address1")%>
+                                <br><%=t("contact.locations.colombia.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.colombia.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.colombia.contact_email")%>">
+                                    <%=t("contact.locations.colombia.contact_email")%>
+                                    </a></li>
+                                  <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.colombia.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Peru">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Perú</strong>
-                            </h4>
-                            <p>Av. Juan De Aliaga 107
-                                <br>Lima - Perú</p>
-                            <ul class="list-unstyled">
-                                <li>&nbsp;</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.pe@kleer.la">entrenamos.pe@kleer.la</a></li>
-                                <li>Te contactarás con: Hiroshi y Gustavo</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Perú</strong></h4>
+                              <p><%=t("contact.locations.peru.address1")%>
+                                <br><%=t("contact.locations.peru.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.peru.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.peru.contact_email")%>">
+                                    <%=t("contact.locations.peru.contact_email")%>
+                                    </a></li>
+                                  <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.peru.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Uruguay">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Uruguay</strong>
-                            </h4>
-                            <p>Dr. Mario Cassinoni 1408
-                                <br>Montevideo, 11200</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +598-94681588</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.uy@kleer.la">entrenamos.uy@kleer.la</a></li>
-                                <li>Te contactarás con Pablo</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Uruguay</strong></h4>
+                              <p><%=t("contact.locations.uruguay.address1")%>
+                                <br><%=t("contact.locations.uruguay.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.uruguay.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.uruguay.contact_email")%>">
+                                    <%=t("contact.locations.uruguay.contact_email")%>
+                                    </a></li>
+                                <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.uruguay.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Europa">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer Europe</strong>
-                            </h4>
-                            <p>Hektoroviceva Ulica 2/V
-                                <br>10000 Zagreb, Croatia</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i> +385 99 244 0000 (9 to 17 hrs Central European Time)</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:training.eu@kleer.la">training.eu@kleer.la</a></li>
-                                <li>Te contactarás con Milan</li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Europe</strong></h4>
+                              <p><%=t("contact.locations.europa.address1")%>
+                                <br><%=t("contact.locations.europa.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.europa.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.europa.contact_email")%>">
+                                    <%=t("contact.locations.europa.contact_email")%>
+                                    </a></li>
+                                <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.europa.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Mexico">
                         <div class="alert alert-info">
-                            <h4><strong>Kleer México</strong>
-                            </h4>
-                            <p>Monte Athos 115
-                                <br>11000, D.F. - México</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>+52 55 5276 4486</li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.mx@kleer.la">entrenamos.mx@kleer.la</a></li>
-                                <li>Te contactarás con nuestros partners <a href="http://scrum.org.mx/" target="_blank">Scrum México</a></li>
-                            </ul>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer México</strong></h4>
+                              <p><%=t("contact.locations.mexico.address1")%>
+                                <br><%=t("contact.locations.mexico.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.mexico.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.mexico.contact_email")%>">
+                                    <%=t("contact.locations.mexico.contact_email")%>
+                                    </a></li>
+                                <li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.mexico.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
 
                     <div role="tabpanel" class="text-center tab-pane" id="Otro">
                         <div class="alert alert-info">
-                            <h4><strong>&nbsp;</strong>
-                            </h4>
-                            <p>&nbsp;
-                                <br>Escribenos a:</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos@kleer.la">entrenamos@kleer.la</a></li>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>&nbsp;</strong>
+                              </h4>
+                              <p>&nbsp;
+                                <br><%=t("contact.locations.other.contact_us")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.other.contact_email")%>">
+                                    <%=t("contact.locations.other.contact_email")%></a></li>
                                 <li>&nbsp;</li>
                                 <li>&nbsp;</li>
-                            </ul>
+                              </ul>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -422,145 +618,161 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <br>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook fa-fw fa-3x sr-contact"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter fa-fw fa-3x sr-contact"></i></a>
-                    </li>
-                </ul>
-                <hr class="small">
-                <p class="text-muted">Copyright &copy; Kleer 2017</p>
-            </div>
+          <div class="text-center">
+            <br>
+            <ul class="list-inline">
+              <li><a href="http://facebook.com/kleer.la" target="_blank">	<i class="fa fa-facebook fa-fw fa-2x sr-contact"></i></a></li>
+              <li><a href="http://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter fa-fw fa-2x sr-contact"></i></a></li>
+              <li><a href="http://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin fa-fw fa-2x sr-contact"></i></a></li>
+              <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus fa-fw fa-2x sr-contact"></i></a></li>
+              <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github fa-fw fa-2x sr-contact"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube fa-fw fa-2x sr-contact"></i></a></li>
+              <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x sr-contact"></i></a></li>
+            </ul>
+            <hr class="small">
+            <p class="text-muted">Copyright &copy; Kleer 2017</p>
+          </div>
         </div>
-        </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
-    </footer>
 
-    <script src="/assets2017/js/jquery.js"></script>
-    <script src="/assets2017/js/bootstrap.min.js"></script>
-    <script src="/assets2017/js/scrollreveal.min.js"></script>
+      </div>
+      <a id="to-top" href="javascript:void(0);" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+    </div>
+  </footer>
 
-    <script>
+<!-- Google Analytics -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    } (window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-21102272-1');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<script src="app/vendor/jquery/dist/jquery.min.js"></script>
+<script src="app/vendor/angular/angular.min.js"></script>
+<script src="app/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="app/vendor/angular-animate/angular-animate.min.js"></script>
+<script src="app/vendor/angular-cookies/angular-cookies.min.js"></script>
+<script src="app/vendor/angular-resource/angular-resource.min.js"></script>
+<script src="app/vendor/angular-route/angular-route.min.js"></script>
+<script src="app/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="app/vendor/angular-touch/angular-touch.min.js"></script>
+<script src="app/vendor/ui-bootstrap/ui-bootstrap-tpls-2.4.0.min.js"></script>
+<script src="app/vendor/scrollreveal.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="app/scripts/app.js"></script>
+<script src="app/scripts/controllers/home.js"></script>
+<!-- endbuild -->
+
+
+<script>
+
+    $(document).ready(function(){
+      $('.suscription-modal').on('shown.bs.modal', function (e) {
+        $("#suscriptionModalEmail").focus();
+      });
+    });
 
     //Para evitar el cambio de tamaño de background al hacer scroll en mobile cuando se esconde la barra de direcciones
-    $(window).resize(function(){
-        resizeBackground();
+    $(window).resize(function () {
+      resizeBackground();
     });
     function resizeBackground() {
-        if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-            if (screen.width>screen.height) {
-                barHeight = 0;
-            } else {
-                barHeight = 60;
-            }   
-            $("#slider").height(screen.height-barHeight);
+      if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
+        if (screen.width > screen.height) {
+          barHeight = 0;
+        } else {
+          barHeight = 60;
         }
+        $("#slider").height(screen.height - barHeight);
+      }
     }
     resizeBackground();
 
     // Cierra el sidebar menu
     function closeSidebar(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
     }
-    
-    $("#menu-close").click(function(e) {
-        closeSidebar(e);
+
+    $("#menu-close").click(function (e) {
+      closeSidebar(e);
     });
     // Abre el sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
+    $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
     });
     // Efecto de animación de iconos
     window.sr = ScrollReveal();
     sr.reveal('.sr-services', {
-        duration: 1000,
-        scale: 0.3,
-        distance: '100px',
-        delay: 200
+      duration: 1000,
+      scale: 0.3,
+      distance: '100px',
+      delay: 200
     }, 200);
     sr.reveal('.sr-button', {
-        duration: 1000,
-        scale: 0.3,
-        delay: 500
+      duration: 1000,
+      scale: 0.3,
+      delay: 500
     });
     sr.reveal('.sr-contact', {
-        duration: 1000,
-        scale: 0.3,
-        distance: '0px',
-        delay: 200
+      duration: 1000,
+      scale: 0.3,
+      distance: '0px',
+      delay: 200
     }, 300);
 
     // Scroll animado a las secciones la página
-    $(function() {
-        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
+    function scrollTo(anchor){
+          var target = $(anchor);
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+    };
+
     // Link to-top aparece cuando hacemos scroll
     var fixed = false;
-    $(document).scroll(function() {
-        if ($(this).scrollTop() > 250) {
-            if (!fixed) {
-                fixed = true;
-                $('#to-top').show("slow", function() {
-                    $('#to-top').css({
-                        position: 'fixed',
-                        display: 'block'
-                    });
-                });
-            }
-        } else {
-            if (fixed) {
-                fixed = false;
-                $('#to-top').hide("slow", function() {
-                    $('#to-top').css({
-                        display: 'none'
-                    });
-                });
-            }
+    $(document).scroll(function () {
+      if ($(this).scrollTop() > 250) {
+        if (!fixed) {
+          fixed = true;
+          $('#to-top').show("slow", function () {
+            $('#to-top').css({
+              position: 'fixed',
+              display: 'block'
+            });
+          });
         }
+      } else {
+        if (fixed) {
+          fixed = false;
+          $('#to-top').hide("slow", function () {
+            $('#to-top').css({
+              display: 'none'
+            });
+          });
+        }
+      }
     });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
-    </script>
 
-    <script>
     $('.carousel').carousel({
-        interval: 10000 
+      interval: 5000
     })
-    </script>
+
+</script>
+
 
 </body>
+
+</html>

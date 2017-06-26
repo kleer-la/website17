@@ -1,22 +1,34 @@
-<div class="container-fluid fondo-celeste slide-header-evento">
-	<div class="container">
-		<div class="container-fluid container-header-generico container-header-evento">
+<div class="blackBg withSubtitleAndDescription">
+
+	<div class="header-small header-courses"></div>
+
+	<div class="header-description">
+
+		<h3 class="headerTitle"><%= @event.event_type.name %></h3>
+		<p class="headerSubtitle">
+			<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
+				<%=@event.event_type.subtitle%>
+			<%end%>
+			<% if @event.is_online %>
+			Online,
+			<% elsif @event.is_classroom %>
+			Presencial,
+			<% elsif @event.is_blended_learning %>
+			Presencial + Online,
+			<% end %>
+			<%= @event.event_type.duration%> <%=t("event.duration")%>
+		</p>
+
+	</div>
+
+</div>
+<!--
+<div class="container mainContent">
+	<div class="">
+		<div class=" container-header-generico container-header-evento">
 			<div class="col-md-7">
 				<div class="evento-title-container">
-					<h2><%= @event.event_type.name %></h2>
-					<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
-						<h3 class="subtitle"><%=@event.event_type.subtitle%></h3>
-					<%end%>
-					<h3 class="subtitle">
-					<% if @event.is_online %>
-						Online,
-					<% elsif @event.is_classroom %>
-						Presencial,
-					<% elsif @event.is_blended_learning %>
-						Presencial + Online,
-					<% end %>
-					<%= @event.event_type.duration%> <%=t("event.duration")%></h3>
-					<p><%= @event.event_type.elevator_pitch %></p>
+
 
 					<% if @event.event_type.has_rate %>
 						<p>
@@ -80,20 +92,20 @@
 		</div>
 	</div>
 </div>
-
+-->
 <!-- ######################### PRICING #################### -->
 
 <% if @event.list_price == 0.0  %>
-<div class="container-fluid fondo-amarillo slide-evento-gratuito">
+<div class=" fondo-amarillo slide-evento-gratuito">
 	<div class="container">
 		<h2><%=t("event.free")%></h2>
 	</div>
 </div>
 <% elsif @event.show_pricing %>
-<div class="container-fluid fondo-amarillo slide-evento-pricing">
+<div class=" fondo-amarillo slide-evento-pricing">
 	<div class="container">
 		<!-- small (sm), medium (md) y large (lg) logistics -->
-		<div class="container-fluid hidden-xs">
+		<div class=" hidden-xs">
 
 			<div class="col-md-3 col-sm-4">
 				&nbsp;
@@ -107,31 +119,31 @@
 				</h2>
 
 				<% if @event.eb_price > 0 %>
-					Pronto pago (hasta el <strong>
+					<%=t("event.early_bird_until")%> <strong>
 						<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-					</strong>):
+					</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.eb_price) %>
         	<br/>
 				<% end %>
 
 				<% if @event.couples_eb_price > 0 %>
-					Parejas (por persona; hasta el <strong>
+					<%=t("event.early_bird_couples_until")%> <strong>
 					<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-				</strong>):
+				</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.couples_eb_price) %><br/>
 				<% end %>
 
         <% if @event.business_eb_price > 0 %>
-        	<br/>¡Pregunta por nuestras tarifas Business (Grupos)!
+        	<br/><%=t("event.ask_for_business_prices")%>
         <% end %>
 			</div>
 		</div>
 		<!-- / small (sm), medium (md) y large (lg) logistics -->
 
 		<!-- extra small (xs) logistics -->
-		<div class="container-fluid no-hpadding visible-xs">
+		<div class=" no-hpadding visible-xs">
 
 			<div class="col-xs-12">
 				<h2><%=t("event.pricing")%>:
@@ -140,25 +152,25 @@
 				</h2>
 
 				<% if @event.eb_price > 0 %>
-					Pronto pago (hasta el <strong>
+					<%=t("event.early_bird_until")%> <strong>
 						<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-					</strong>):
+					</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.eb_price) %>
         	<br/>
 				<% end %>
 
 				<% if @event.couples_eb_price > 0 %>
-					Parejas (por persona; hasta el <strong>
+					<%=t("event.early_bird_couples_until")%> <strong>
 					<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-				</strong>):
+				</strong>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
         	<%= money_format(@event.couples_eb_price) %><br/>
 				<% end %>
 
         <% if @event.business_eb_price > 0 %>
         	<br/>&nbsp;
-        	<br/>¡Pregunta por nuestras tarifas Business (Grupos)!
+        	<br/><%=t("event.ask_for_business_prices")%>
         <% end %>
 			</div>
 
@@ -180,12 +192,12 @@ else
 end
 %>
 
-<div class="container-fluid <%=fondo_logistics%> slide-evento-logistics">
+<div class=" <%=fondo_logistics%> slide-evento-logistics">
 	<div class="container">
 		<!-- small (sm), medium (md) y large (lg) logistics -->
-		<div class="container-fluid hidden-xs">
+		<div class=" hidden-xs">
 
-			<div class="col-md-3 col-sm-4 no-hpadding">
+			<div class="col-md-3 col-sm-3 no-hpadding">
 					<% if @event.trainers.count==1 %>
 						<%= erb :'_events/_single_trainer' %>
 					<% else %>
@@ -193,22 +205,30 @@ end
 					<% end %>
 			</div>
 
-			<div class="col-md-3 col-sm-3 no-hpadding">
+			<div class="col-md-2 col-sm-3 no-hpadding">
 				<div class="col-md-4 col-sm-4 no-hpadding logistic-indicator">
 					<span class="glyphicon glyphicon-calendar big-glyphicon"></span>
 				</div>
 				<div class="col-md-8 col-sm-8 no-hpadding">
 					<strong><%=t("event.date")%>:</strong><br/>
 					<% if @event.finish_date.nil? || @event.date == @event.finish_date %>
-					<%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%>
+						<%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%>
 					<% else %>
-					Inicia: <%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%><br/>
-					Finaliza: <%=@event.finish_date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.finish_date.strftime("%b")]%>
+						<%
+ 						str_date = "#{@event.date.strftime("%d")}-#{DTHelper::MONTHS_ES[@event.date.strftime("%b")]}"
+ 						end_date = "#{@event.finish_date.strftime("%d")}-#{DTHelper::MONTHS_ES[@event.finish_date.strftime("%b")]}"
+ 						if @event.date.strftime("%Y") != @event.finish_date.strftime("%Y")
+ 							str_date += "-#{@event.date.strftime("%Y")}"
+ 							end_date += "-#{@event.finish_date.strftime("%Y")}"
+ 						end
+ 						%>
+ 						<%=t("event.starts")%>: <%=str_date%><br/>
+ 						<%=t("event.finishes")%>: <%=end_date%>
 					<% end %>
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-2 no-hpadding">
+			<div class="col-md-2 col-sm-3 no-hpadding">
 				<div class="col-md-4 col-sm-4 no-hpadding logistic-indicator">
 					<span class="glyphicon glyphicon-time big-glyphicon"></span>
 				</div>
@@ -221,11 +241,11 @@ end
 				</div>
 			</div>
 
-			<div class="col-md-3 col-sm-3 no-hpadding">
-				<div class="col-md-4 col-sm-2 no-hpadding logistic-indicator">
+			<div class="col-md-5 col-sm-3 no-hpadding">
+				<div class="col-md-4 col-sm-4 no-hpadding logistic-indicator">
 					<span class="glyphicon glyphicon-map-marker big-glyphicon"></span>
 				</div>
-				<div class="col-md-8 col-sm-10 no-hpadding">
+				<div class="col-md-8 col-sm-8 no-hpadding">
 					<strong><%=t("event.location")%>:</strong><br/>
 					<% if @event.is_online %>
 						Online<br/>
@@ -243,7 +263,7 @@ end
 		<!-- / small (sm), medium (md) y large (lg) logistics -->
 
 		<!-- extra small (xs) logistics -->
-		<div class="container-fluid no-hpadding visible-xs">
+		<div class=" no-hpadding visible-xs">
 
 			<div class="col-xs-12">
 				<% if @event.trainers.count==1 %>
@@ -263,9 +283,9 @@ end
 					<% if @event.finish_date.nil? || @event.date == @event.finish_date %>
 					<%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%>
 					<% else %>
-					Inicia: <%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%><br/>
-					Finaliza: <%=@event.finish_date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.finish_date.strftime("%b")]%>
-					<% end %>
+					<%=t("event.starts")%>: <%=@event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.date.strftime("%b")]%><br/>
+ 					<%=t("event.finishes")%>: <%=@event.finish_date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[@event.finish_date.strftime("%b")]%>
+  					<% end %>
 					<br/>&nbsp;
 				</div>
 			</div>
@@ -278,7 +298,7 @@ end
 					<strong><%=t("event.hour")%>:</strong><br/>
 					<%=t("event.time", :starts => @event.start_time.strftime("%k:%M"), :ends => @event.end_time.strftime("%k:%M") )%>
 					<% if @event.is_webinar %>
-						<br/>Zona Horaria: <%=@event.time_zone_name%>
+						<br/><%=t("event.time_zone")%>: <%=@event.time_zone_name%>
 					<% end %>
 					<br/>&nbsp;
 				</div>
@@ -307,9 +327,15 @@ end
 </div>
 
 
-<div class="container-fluid fondo-blanco">
+<div class=" fondo-blanco">
 	<div class="container">
 		<div class="col-md-8 event-program-column evento-description-container">
+			<% if @event.banner_text != "" %>
+ 				&nbsp;
+ 				<div class="alert alert-<%= (@event.banner_type != "") ? @event.banner_type : "danger" %>">
+ 				  <%=@markdown_renderer.render( @event.banner_text )%>
+ 				</div>
+ 			<% end %>
 			<h2><%=t("event.tabs.description")%></h2>
 			<%=@markdown_renderer.render( @event.event_type.description )%>
 		</div>
@@ -324,9 +350,9 @@ end
 	</div>
 </div>
 
-<div class="container-fluid fondo-celeste">
+<div class=" fondo-celeste">
 	<div class="container">
-		<div class="container-fluid col-md-10 col-md-offset-1">
+		<div class="col-md-10 col-md-offset-1">
 			<div class="col-md-4">
 				<img src="/img/personajes/03_03_web.png" class="img-responsive"/>
 			</div>
@@ -346,9 +372,9 @@ end
 	</div>
 </div>
 
-<div class="container-fluid fondo-blanco">
+<div class=" fondo-blanco">
 	<div class="container">
-		<div class="container-fluid event-target-column">
+		<div class=" event-target-column">
 			<div class="col-md-6">
 				<h2><%=t("event.tabs.target")%></h2>
 				<%=@markdown_renderer.render( @event.event_type.recipients )%>
@@ -361,15 +387,9 @@ end
 	</div>
 </div>
 
-<div class="container-fluid fondo-pano pano-6"></div>
-
-<%= if not @event.is_community_event
-	erb :_slide_experiencia_kleer, :layout => false
-	end%>
-
 <div class="container-fluid fondo-amarillo">
 	<div class="container">
-		<div class="container-fluid col-md-10 col-md-offset-1 slide-evento-aprovecha">
+		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha text-center">
 			APROVECHA ESTA OPORTUNIDAD PARA APRENDER EN UN ENTORNO DONDE EL PROTAGONISTA ERES TÚ<br/>
 			<br/>
 			<%if @event.is_sold_out %>
@@ -395,23 +415,19 @@ end
 					<%=button_text%>
 				</a>
 			<% end %>
-			<br/>&nbsp;
-			<br/>&nbsp;
 		</div>
 	</div>
 </div>
 
 <% if !@event.event_type.faqs.nil? && @event.event_type.faqs.strip != "" %>
-<div class="container-fluid fondo-blanco">
+<div class=" fondo-blanco">
 	<div class="container">
-		<div class="container-fluid col-md-10 col-md-offset-1">
+		<div class=" col-md-10 col-md-offset-1">
 			<h2><%=t("event.tabs.faqs")%></h2>
 			<%=@markdown_renderer.render( @event.event_type.faqs )%>
-			<br/>&nbsp;
-			<br/>&nbsp;
 		</div>
 	</div>
 </div>
 <% end %>
 
-<div class="container-fluid fondo-pano pano-9"></div>
+<div class=" fondo-pano pano-9"></div>
