@@ -7,6 +7,8 @@ require 'redcarpet'
 require 'json'
 require 'i18n'
 require 'money'
+require 'rss'
+require 'escape_utils'
 
 require File.join(File.dirname(__FILE__),'/lib/keventer_reader')
 require File.join(File.dirname(__FILE__),'/lib/dt_helper')
@@ -124,6 +126,7 @@ end
 
 get '/blog' do
   @active_tab_blog = "active"
+  @rss = RSS::Parser.parse('http://feed.informer.com/digests/EGSKOZF5FA/feeder.rss', false)
   erb :blog, :layout => :layout_2017
 end
 

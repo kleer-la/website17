@@ -1,6 +1,6 @@
 <div class="blackBg">
 	<div class="header-small header-publicamos"></div>
-	
+
 	<div class="header-description">
 		<h1 class="headerTitle">Blog</h1>
 	</div>
@@ -11,15 +11,27 @@
 
 <div class="container mainContent">
 
-	<div class="col-md-9 no-hpadding contenedor-main-izq">
-	
+	<div class="col-md-9 contenedor-main-izq">
 
-			<script id="feed-1471989298363662" type="text/javascript" src="http://rss.bloople.net/?url=http%3A%2F%2Fwww.rssmix.com%2Fu%2F8212920%2Frss.xml&detail=100&limit=20&showtitle=false&type=js&id=1471989298363662"></script>
+		<% @rss.items.first(20).each do |item| %>
+			<!-- Resuelvo potenciales diferencias de serialización (por ahora, Blogger) -->
+			<% content = item.description unless item.description.nil? %>
+			<% content = item.content_encoded unless item.content_encoded.nil? %>
 
-		</div>
-		<div class="col-md-3">
-			<%= erb :_twitter_widget, :layout => false %>
-		</div>
+			<div class="container-fluid">
+				<h3><a href="<%= item.link %>"><%= item.title %></a></h3>
+				<p><%= item.pubDate.strftime("%d/%m/%Y") %> -
+					<a href="<%= item.source.url %>"><%= item.source %></a>
+			</div>
+			<div class="container-fluid">
+				<%= EscapeUtils.unescape_html content %>
+			</div>
+		<% end %>
+	</div>
+
+
+	<div class="col-md-3">
+		<%= erb :_twitter_widget, :layout => false %>
 	</div>
 </div>
 
