@@ -114,6 +114,14 @@ get '/home' do # Dejo esta ruta para que los test de la home peguen contra la ho
 	erb :index_old
 end
 
+get '/en' do
+  redirect "/en/", 301 # permanent redirect
+end
+
+get '/es' do
+  redirect "/es/", 301 # permanent redirect
+end
+
 get '/blog' do
   @active_tab_blog = "active"
   erb :blog, :layout => :layout_2017
@@ -497,6 +505,10 @@ end
 
 get '/preguntas-frecuentes/facturacion-pagos-colombia' do
   erb :facturacion_pagos_colombia
+end
+
+get '/preguntas-frecuentes/facturacion-pagos-peru' do
+  erb :facturacion_pagos_peru
 end
 
 get '/preguntas-frecuentes/certified-scrum-master' do
