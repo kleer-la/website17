@@ -1,6 +1,6 @@
 Website (update 2017)
 ---
-En conjunto con nuestros amigos de Innqube.com
+En conjunto con nuestros amigos de Innqube.com (Mauro Strione)
 
 Website
 =======
