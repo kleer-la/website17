@@ -6,11 +6,10 @@ before_script:
 script:
 - bundle exec rspec
 - bundle exec cucumber
-
 deploy:
   provider: heroku
   api_key:
-    secure: in69Til7y0K6l9zEO5V/F43CcqaZnV7vaQNxj5Za6fmo+fvknA9Dwg38gedeYbS9u81LZqT/PFDSVM/Lvs0MGFy9VF8Uzj5iN+o/52pucvs3Gb4aJ2tX/ERoepYaPGmTi3dnDDxTaro6exBt5EAV+IzmoZvGiMWuLWmlS1vuMbE=
+    secure: kooQ4Ui49XZop7G/XiMl24+5nhxldr4GkZk9qRv8zSR89L8YdmQkN+D+b2ev7vfzI3dtGDBgLU7rAO24RP3+0nyYM13SjEAWqGw2Z+sBW8NcYotf5HVwdPlL3Lo2GwpjxLQAvch0H3JahZPKj/1w361yn6P7bGRSy9WuWMyUTontQrEE5ncP8ecAfA3VR1PS2BfQ9iyfT8FdlhfApVfBXsSlAQzOBI3tRJy2ffvT9uZBxaN9TuSuByNSJ58bdaJjCwjCr6qdP1czVV2K+HaM+dBVdmELwmQVWWFLaAHA/RFvwMEOf3pAIWeLa8CCAMISFeJxL6P8Y5s6E/VOLqI0n34GX6l7vAgDoRTovrsqhsqVsNnDDpiILge7o9ayJCoLqN/2DqGhXpD64FkkXwrCjEE2/4Q/ewa+O5DGG+Wt+/TC+2dy2q8oZMONPjxsZufK9jSoYiCNNm2EYTXIPkeVpjnEaWYixuOHZzctX26Vt3/p6B6nRveNIpZ19uLDzLcGw+ZP9CeqZqbKUcMrKUNMMVmn2ecq6Jl9zOq0FWWBktYXmDN2a9hogaOEVjKDDn0p0uJ7pa5Qj9Iph+4vvNtzRtr5guYDi3Qe1p9Sj9hjtKy4v9TOLSBIo2BZquX6ut+ILXl0712pB0K/LsQI7jTQhDE7+rqivVEIAJDuisZSUwc=
   app:
     master: kleer
     develop: kleer-test
