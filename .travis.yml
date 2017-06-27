@@ -6,6 +6,7 @@ before_script:
 script:
 - bundle exec rspec
 - bundle exec cucumber
+
 deploy:
   provider: heroku
   api_key:
