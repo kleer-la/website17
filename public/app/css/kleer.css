@@ -636,6 +636,10 @@ a.lower {
     text-transform: lowercase !important;
 }
 
+.blogContent {
+    overflow: hidden;
+}
+
 
 /* mobile */
 
