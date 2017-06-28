@@ -631,6 +631,10 @@ footer .nav-tabs>li {
     padding-bottom: 30px;
 }
 
+a.lower {
+    text-transform: lowercase !important;
+}
+
 
 /* mobile */
 
