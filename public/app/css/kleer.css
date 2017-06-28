@@ -319,7 +319,7 @@ hr.small {
 }
 
 #menu-toggle {
-    z-index: 2;
+    z-index: 4;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -540,6 +540,7 @@ footer .nav-tabs>li {
     bottom: 25px;
     right: 25px;
     padding: 10px 12px;
+    z-index: 4;
 }
 
 .sidebar-nav li a {
