@@ -428,8 +428,8 @@ Acompañamos al proyecto desde su inicio para lograr resultados rápidos y valio
                 contact_email: "info.mx@kleer.la"
                 partners: "You will be helped by us <br/>and our partners "
             other:
-                title: "̉¿Otro?"
-                contact_us: "Contactáctanos"
+                title: "¿Otro?"
+                contact_us: "Contáctanos"
                 contact_email: "info@kleer.la"
         subscription:
             text1: "Sé el primero en enterarte"
