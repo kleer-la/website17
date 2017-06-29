@@ -141,5 +141,8 @@ DEPENDENCIES
   tzinfo-data
   webrat
 
+RUBY VERSION
+   ruby 1.9.3p551
+
 BUNDLED WITH
-   1.10.6
+   1.13.7
