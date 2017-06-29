@@ -775,6 +775,10 @@ a.lower {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
+.carousel-caption h3 {
+    text-shadow: 0 0 10px white;
+}
+
 .carousel-indicators .active {
     background-color: #080808 !important;
 }
