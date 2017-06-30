@@ -116,99 +116,98 @@ es:
         title: "Eventos Comunitarios"
     coaching:
         title: "Coaching"
-        subtitle: "Acompañamiento de organizaciones, equipos y profesionales para obtener mejores resultados"
+        subtitle: "Acompañamos organizaciones y equipos para obtener mejores resultados"
         text:
-            top: "<p>Ofrecemos servicios de <b>acompañamiento integral</b> en la implementación de metodologías y técnicas ágiles que potencian tanto a las personas como a sus negocios.</p>
-            <hr/><p>Conocé algunos casos de éxito de nuestros clientes:</p>
-           	<p><a href='prensa/casos/equipos-scrum-en-suramericana-2015'>Paradigma Ágil en <b>Sura</b></a>
+            top: "<p>Ofrecemos servicios de <strong>acompañamiento integral</strong> en la implementación de metodologías ágiles que potencian a personas y negocios.</p>
+            <hr/>
+            <p>Conocé algunos casos de éxito de nuestros clientes:</p>
+           	
+            <p><a href='prensa/casos/equipos-scrum-en-suramericana-2015'>Paradigma Ágil en <b>Sura</b></a>
            	<br/><i>Medellín, Colombia</i>. Testimonios de Carlos Hurtado, Valentina Sierra y Jubel Correa.</p>
            	<p>
            	<a href='prensa/casos/equipos-scrum-en-suramericana-2015'>
-           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png' alt='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' title='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' align='left' height='160'/>
-           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura2.png' alt='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' title='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' height='160'/>
+           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png'  style='width:268px' alt='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' title='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' align='left' height='160'/>
+           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura2.png' style='width:268px' alt='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' title='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' height='160'/>
            	</a></p>
            	<br/>
            	<p><a href='prensa/casos/equipos-scrum-en-plataforma-10-2015'>Equipos Scrum en <b>Plataforma 10</b></a>
            	<br/><i>Buenos Aires, Argentina</i>. Testimonios de Gustavo Markier y Gastón Waisman.</p>
 			<p>
            	<a href='prensa/casos/equipos-scrum-en-plataforma-10-2015'>
-           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png' alt='Gustavo Markier nos cuenta acerca del impacto del trabajo de Kleer en el negocio de Plataforma 10' title='Gustavo Markier nos cuenta acerca del impacto del trabajo de Kleer en el negocio de Plataforma 10' align='left' height='150'/>
-           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-2.png' alt='Gastón Waisman describe la implementación de Scrum en los equipos de Desarrollo de Plataforma 10' title='Gastón Waisman describe la implementación de Scrum en los equipos de Desarrollo de Plataforma 10' height='150'/>
+           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png'  style='width:268px' alt='Gustavo Markier nos cuenta acerca del impacto del trabajo de Kleer en el negocio de Plataforma 10' title='Gustavo Markier nos cuenta acerca del impacto del trabajo de Kleer en el negocio de Plataforma 10' align='left' height='150'/>
+           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-2.png' style='width:268px'  alt='Gastón Waisman describe la implementación de Scrum en los equipos de Desarrollo de Plataforma 10' title='Gastón Waisman describe la implementación de Scrum en los equipos de Desarrollo de Plataforma 10' height='150'/>
            	</a></p>
            	<p><a href='prensa/casos/equipos-scrum-en-technisys-2015'>Equipos Scrum en <b>Technisys</b></a>
            	<br/><i>Argentina y Uruguay</i>. Testimonios de Alejandro Raiczyk y Nico Paez.</p>
 			<p>
            	<a href='prensa/casos/equipos-scrum-en-technisys-2015'>
-           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png' alt='Alejandro Raiczyk describe el impacto del trabajo de Kleer en el área de Producto de Technisys' title='Alejandro Raiczyk describe el impacto del trabajo de Kleer en el área de Producto de Technisys' align='left' height='150'/>
-           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys2.png' alt='Nicolás Paez describe lo que realizó en el proyecto de implementación de Technisys' title='Nicolás Paez describe lo que realizó en el proyecto de implementación de Technisys' height='150'/>
+           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png'  style='width:268px' alt='Alejandro Raiczyk describe el impacto del trabajo de Kleer en el área de Producto de Technisys' title='Alejandro Raiczyk describe el impacto del trabajo de Kleer en el área de Producto de Technisys' align='left' height='150'/>
+           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys2.png'  style='width:268px' alt='Nicolás Paez describe lo que realizó en el proyecto de implementación de Technisys' title='Nicolás Paez describe lo que realizó en el proyecto de implementación de Technisys' height='150'/>
            	</a></p>
 
 			<hr/>
-			<a name='TransformacionAgil'></a>
-			<p class='lead'>Transformación Ágil</p>
-			<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/CoachingIcono1-Transformacion.jpg' alt='Transformación Ágil' title='Transformación Ágil' width='100' align='left' />
-			<p>Acompañamos <b>mejoras integrales</b> a nivel internacional teniendo en cuenta los <b>desafíos y necesidades de cada negocio</b>, involucrando a líderes, managers y equipos.</p>
-			<p>Una cultura organizacional con capacidades de aprendizaje e innovación tiene una serie de desafíos. Enumerados hace tiempo por Steve Denning, autor de 'The Leader’s Guide to Radical Management':
 
-	<ul>
-		<li>Introducir el cambio más allá de los procesos</li>
-		<li>Involucrar a la Alta Dirección</li>
-		<li>Adaptar las metodologías a la propia organización</li>
-		<li>Fomentar la mejora emergente</li>
-		<li>Transparentar la toma de decisiones</li>
-		<li>Impulsar la formación y consultoría</li>
-	</ul>
+			<p class='lead'>Transformación Organizacional </p>
+			<img src='/app/img/coaching_transformacion_organizacional.jpg' alt='Transformación Organizacional' title='Transformación Ágil' class='image_coaching' />
+			<p>Acompañamos el proceso de <b>transformación digital</b> de una organización hacia un enfoque ágil y sostenible. </p>
+            <p>
+            Ayudamos a definir, adoptar y generar el cambio en cuatro ejes: Cultura, Negocio, Metodología y Técnica. 
+            </p>
+			
+                <ul>
+                    <li>Agile Leadership</li>
+                    <li>Change Management</li>
+                    <li>Business Agility</li>
 
-Kleer ayuda en este camino a empresas de América Latina y otras partes del mundo desde hace años, potenciando esta experiencia internacional en favor de sus clientes.
-</p>
-			<a name='AgileJumpStart'></a>
-			<p class='lead'>Agile Jump Start</p>
-			<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/CoachingIcono2-AgileJumpStart.jpg' alt='Agile Jump Start' title='Agile Jump Start' width='100' align='left' />
-			<p>El Agile Jump Start de Kleer es un <b>programa integral de coaching y acompañamiento</b> a organizaciones que buscan mayor ROI en sus proyectos a través de la adopción de Métodos Ágiles.
-A diferencia de otros programas similares, <b>la implementación exitosa de las Metodologías Ágiles se logra en menor tiempo</b> del que tomaría hacerlo sin el acompañamiento de un experto.
-Adicionalmente, no se descuida el negocio ya que se trabaja directamente sobre los proyectos, roles y objetivos de los equipos y demás interesados en la implementación (gerentes, directores de desarrollo, etc.). Esto incluye la identificación de problemas, la comprensión de sus causas y el desarrollo de las habilidades necesarias para que el equipo sea capaz de resolverlos.</p>
+                </ul>
 
-			<a name='ExcelenciaTecnica'></a>
-			<p class='lead'>Excelencia Técnica</p>
-			<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/CoachingIcono3-Excelencia.jpg' alt='Excelencia Técnica' title='Excelencia Técnica' width='100' align='left' />
-			<p>Promovemos el <b>aprendizaje y flexibilidad</b> en la gestión de proyectos y <b>desarrollo de productos</b> a través de equipos auto-organizados.</p>
-			<p>La adopción de métodos y técnicas ágiles implica:
-		<ul>
-			<li>Mejorar la <b>comunicación y colaboración</b> entre todas las personas involucradas en el desarrollo
-			<li>Disminuir los tiempos entre la idea y el inicio del uso del producto. En particular disminuyendo:
-				<ul>
-					<li>Los tiempos de ideación del producto mínimo que satisface las necesidades del usuario y cliente.
-					<li>Los tiempos de desarrollo, mejorando la calidad
-					<li>Los tiempos desde que el producto es liberado por el equipo de desarrollo hasta que empieza a usarse.
-				</ul>
-			<li><b>Automatizar</b> en todos los niveles.
-			<li>Crear ámbitos de <b>aprendizaje y mejora continua</b>.
-		</ul>
-</p>
-			<a name='InnovacionDeNegocio'></a>
-			<p class='lead'>Innovación de Negocio</p>
-			<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/CoachingIcono4-Innovacion.jpg' alt='Innovación de Negocio' title='Innovación de Negocio' width='100' align='left' />
-			<p>Desde hace más de 25 años, <b>la agilidad revolucionó la industria del software</b>: la <b>entrega de valor</b> comenzó a ser más <b>temprana y frecuente</b>, el <b>retorno de las inversiones</b> mejoró, y el <b>compromiso de los equipos</b> creció a la par de su <b>motivación</b>.
+			<p class='lead'>Equipos Ágiles</p>
+			<img src='/app/img/coaching_equipos_agiles.jpg' alt='Equipos ágiles' title='Transformación Ágil' class='image_coaching' />
+			<p>Utilizamos metodologías de trabajo que ponen foco en las personas y sus interacciones para lograr equipos empoderados de alta performance.
+            </p>
+            <ul>
+                <li>Scrum Jump Start</li>
+                <li>Adopción de metodologías Lean y Kanban</li>
+                <li>Incepción de Proyectos</li>
+            </ul>
+            
+			<p class='lead'>Desarrollo de Software</p>
+			<img src='/app/img/coaching_desarrollo_software.jpg' alt='Desarrollo de software' title='Transformación Ágil' class='image_coaching' />
+			<p>El software soporta y habilita al negocio. La forma en que se crea y evoluciona incide en la agilidad de la organización en su conjunto. </p>
+            <p>Colaboramos en la incorporación de prácticas y herramientas que permiten que el proceso completo, desde la ideación a la operación, se realice en ciclos cortos y con alta calidad.</p>
+            <ul>
+                <li>DevOps</li>
+                <li>Arquitectura ágil de software</li>
+                <li>XP: TDD, refactoring, coding standards</li>
+                <li>Lean UX</li>
+                <li>Testing / QA</li>
+            </ul>
 
-Cada vez con mayor fuerza, compañías de distintos rubros mejoran sus resultados incorporando principios y herramientas de la agilidad a su modo habitual de hacer las cosas. Lo hacen empresas que fabrican aviones o tractores, lo hacen empresas que brindan servicios de marketing y también las que se dedican a cuidar la salud de sus asociados. Y lo aplican dónde más valor les aporta: sea el management, los proyectos claves o en la operación del día a día.
-</p>
-			<p><b>Agilidad aplicada a proyectos de negocio</b><br/>
-Cuando los proyectos no se concretan, tardan mucho en hacerlo, o lo hacen sin los resultados esperados, incorporar la agilidad ayuda a obtener valor de negocio en corto plazo, reduce el riesgo de la inversión, e implementa un enfoque científico para maximizar el rendimiento del producto o el servicio en construcción.
+			<p class='lead'>Innovación de Productos</p>
+			<img src='/app/img/coaching_innovacion.jpg' alt='Transformación Organizacional' title='Innovación de Productos' class='image_coaching' />
 
-Acompañamos al proyecto desde su inicio para lograr resultados rápidos y valiosos.
-</p>"
-            bottom: "<hr/><p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más acerca de los servicios de coaching de Kleer! Queremos acompañar equipos que quieran formar parte del listado de <b>casos de éxito</b> :)</p>"
+            <p>Aceleramos el descubrimiento y la creación de productos maximizando la entrega continua de valor al negocio. Acompañamos al proyecto desde su inicio para lograr resultados rápidos y valiosos.</p>
+
+            <ul>
+                <li>Lean Product Management</li>
+                <li>Innovation Strategy</li>
+                <li>Design Thinking</li>
+                <li>Lean Startup</li>
+            </ul>"
+
+            bottom: "<hr/><p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más</p>"
         tabs:
             benefits:
                 title: ""
                 text: ""
             characteristics:
                 title: "Acerca de nuestros servicios de coaching"
-                text: "<p>Se trata de un proceso llevado a cabo in situ y con la asistencia de al menos un experto en Metodologías Ágiles, quien tiene la misión de transmitir de forma activa las <b>prácticas y herramientas ágiles</b> necesarias para <b>impactar positivamente</b> al equipo u organización. La implementación ocurre mientras las personas involucradas se encuentran realizando sus tareas habituales.</p>
-            <p>Una de las ventajas de contratar nuestro Agile Coaching es que la implementación exitosa de Metodologías Ágiles se logra en menor tiempo del que tomaría hacerlo sin el <b>acompañamiento de un Agile Coach experimentado</b>. Adicionalmente, no se descuida el negocio ya que se  trabaja directamente sobre los proyectos, roles y objetivos de los equipos y demás interesados en la implementación (gerentes, directores de desarrollo, etc.). Esto incluye la identificación de problemas, la comprensión de sus causas y el desarrollo de las habilidades necesarias para que el equipo sea capaz de resolverlos.</p>
-            <p>En general, existen dos tipos de situaciones: aquellas en las que nunca antes se había trabajo en un entorno ágil y otras en que ya existe la experiencia y se desea alcanzar un mayor nivel de profundidad. El servicio de acompañamiento de Kleer responde efectivamente a ambas, con la particularidad adicional de que modela el proceso de implementación según las necesidades específicas del equipo u organización.</p>
-            <p>En el caso en que fuera necesario, el acompañamiento es <b>complementado con capacitaciones diseñadas a medida</b> de cada equipo, asegurando un nivel de conocimientos que habilita una mayor efectividad durante  la implementación.</p>"
-            contact:
+                text: "<p>Se trata de un proceso llevado a cabo in situ con la asistencia de coaches quienes tienen la misión de transmitir de forma activa las <b>prácticas y herramientas ágiles</p> necesarias para impactar positivamente al equipo u organización. </p>
+                <p>Se trabaja directamente sobre los proyectos y objetivos de los equipos y demás interesados en la implementación (gerentes, directores de desarrollo, etc.). Esto incluye la <b>identificación de problemas</b>, la <b>comprensión de sus causas</b> y el <b>desarrollo de las habilidades</b> necesarias para que el equipo sea capaz de resolverlos.</p>
+                <p>En general, existen dos tipos de situaciones: aquellas en las que nunca antes se trabajó en un entorno ágil y otras en que ya existe la experiencia y se desea alcanzar un mayor nivel de profundidad. El servicio de coaching responde efectivamente a ambas, modelando la implementación según las necesidades de la organización.</p>
+                <p>En el caso en que fuera necesario, el acompañamiento es complementado con <b>capacitaciones diseñadas a medida de cada equipo</b>, asegurando un nivel de conocimientos que habilita una mayor efectividad durante la implementación.</p>"
+                
+                contact:
                 title: "Solicitar Cotización"
                 text: "<p>Puedes contactarnos a <a href='mailto:hola@kleer.la'>hola@kleer.la</a> para solicitarnos una  cotización.<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</p>"
     publishing:
