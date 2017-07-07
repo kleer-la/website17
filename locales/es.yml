@@ -161,6 +161,9 @@ es:
 
                 </ul>
 
+                <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+                <hr>
+
 			<p class='lead'>Equipos Ágiles</p>
 			<img src='/app/img/coaching_equipos_agiles.jpg' alt='Equipos ágiles' title='Transformación Ágil' class='image_coaching' />
 			<p>Utilizamos metodologías de trabajo que ponen foco en las personas y sus interacciones para lograr equipos empoderados de alta performance.
@@ -170,6 +173,9 @@ es:
                 <li>Adopción de metodologías Lean y Kanban</li>
                 <li>Incepción de Proyectos</li>
             </ul>
+
+            <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+            <hr>
             
 			<p class='lead'>Desarrollo de Software</p>
 			<img src='/app/img/coaching_desarrollo_software.jpg' alt='Desarrollo de software' title='Transformación Ágil' class='image_coaching' />
@@ -183,6 +189,9 @@ es:
                 <li>Testing / QA</li>
             </ul>
 
+            <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+            <hr>
+            
 			<p class='lead'>Innovación de Productos</p>
 			<img src='/app/img/coaching_innovacion.jpg' alt='Transformación Organizacional' title='Innovación de Productos' class='image_coaching' />
 
@@ -193,9 +202,12 @@ es:
                 <li>Innovation Strategy</li>
                 <li>Design Thinking</li>
                 <li>Lean Startup</li>
-            </ul>"
+            </ul>
 
-            bottom: "<hr/><p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más</p>"
+            <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+            <hr>"
+            
+            bottom: "<hr/><p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más!</p>"
         tabs:
             benefits:
                 title: ""
