@@ -545,7 +545,7 @@ not_found do
       flash.now[:error] = get_404_error_text_for_community_event("Yoseki Coding Dojo")
       erb :error404_to_community
   else
-    erb :error404
+    erb :error404, :layout => :layout_2017
   end
 end
 

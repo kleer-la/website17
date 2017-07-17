@@ -1,4 +1,6 @@
 en:
+    not_found: "Not found"
+    page_not_found: "Page not found"
     general:
         kleer:
             vision:
