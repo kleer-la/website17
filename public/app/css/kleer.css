@@ -852,7 +852,7 @@ h3.headerTitle {
 p.lead {
     width: 100%;
     font-size: 24px;
-    color: #e46095;
+    color: #337ab7;
     margin-top: 30px;
     font-weight: lighter;
 }
@@ -861,7 +861,7 @@ p.lead {
 .mainContent h2,
 .mainContent h3,
 .mainContent h4 {
-    color: #e46095;
+    color: #337ab7;
 }
 
 .alertBox {
@@ -1205,13 +1205,13 @@ h3.list-group-item-heading {
 }
 
 h4.feed-item-title a {
-    color: #e46095 !important;
+    color: #337ab7 !important;
 }
 
 p.feed-item-desc a,
 p.feed-item-desc a:link,
 p.feed-item-desc a span {
-    color: #E46091 !important;
+    color: #337ab7 !important;
 }
 
 p.feed-item-desc {
