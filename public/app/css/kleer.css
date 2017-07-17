@@ -1228,3 +1228,19 @@ p.feed-item-desc {
     color: white;
     font-size: 16px;
 }
+
+.pay_tweet_like_button {
+    background: #324c63;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 3px 6px 4px;
+    font-family: "Open Sans", Arial;
+    font-size: 12px;
+}
+
+.pay_tweet_like_button:hover {
+    background: #333333;
+    color: white;
+    text-decoration: none;
+}
