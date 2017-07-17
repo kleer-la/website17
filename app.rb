@@ -212,6 +212,12 @@ end
 get '/publicamos' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos"
+  erb :publicamos, :layout => :layout_2017
+end
+
+get '/libros' do
+  @active_tab_publicamos = "active"
+  @page_title += " | Libros"
   erb :ebooks, :layout => :layout_2017
 end
 

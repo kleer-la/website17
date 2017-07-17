@@ -133,6 +133,18 @@ en:
     publishing:
        title: "We publish"
        description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
+       content: "
+            <ul>
+                <li>We share some of our work so you can know us better :)</li>
+                <li>We love sharing content that seems useful to the world</li>
+                <li>We love sharing knowledge and experiences. Here, a sample...</li>
+                <li>We are fans about writing, drawing and recording valuable material to share</li>
+                <li>We want to positively impact the world we live in. These publications aim to maximize that impact.</li>
+                <li>We dream of a world in which valuable information travels arround. Here, our five cents</li>
+            </ul>"
+    books:
+       title: "Books"
+       description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
        others:
            title: "Other publications"
        buy:
