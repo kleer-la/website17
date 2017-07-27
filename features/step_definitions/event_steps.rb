@@ -11,6 +11,10 @@ When(/^I visit the "(.*?)" plain event page$/) do |loc|
   visit "/#{loc}/entrenamos/evento/44/remote"
 end
 
+When(/^I visit the "(.*?)" event page$/) do |loc|
+  visit "/#{loc}/entrenamos/evento/44"
+end
+
 Given(/^theres one event with subtitle$/) do
   stub_connector( "one_event_w_subtitle.xml")
 end
@@ -23,7 +27,14 @@ When /^I visit the event page$/ do
   visit '/entrenamos/evento/44-workshop-de-retrospectivas-buenos-aires'
 end
 
+When /^I visit the event page with tracking$/ do
+  visit '/entrenamos/evento/44-workshop-de-retrospectivas-buenos-aires?utm_source=cucumber&utm_campaign=feature_test'
+end
+
 When /^I visit the community event page$/ do
   visit '/comunidad/evento/60-yoseki-coding-dojo-buenos-aires'
 end
 
+Then(/^I should see a registration link with tracking$/) do
+  response_body.should have_selector("a[href='http://eventos.kleer.la/events/44/participants/new?lang=es&utm_source=cucumber&utm_campaign=feature_test']")
+end

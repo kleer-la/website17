@@ -93,6 +93,7 @@
 	</div>
 </div>
 -->
+
 <!-- ######################### PRICING #################### -->
 
 <% if @event.list_price == 0.0  %>
@@ -134,7 +135,7 @@
 								if @event.registration_link != ""
 									registration_link = @event.registration_link
 								else
-									registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale]
+									registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
 								end
 
 								%>
@@ -144,7 +145,7 @@
 							<% end %>
 						</span>
 					</h2>
-					
+
 				<% if @event.eb_price > 0 %>
 					<%=t("event.early_bird_until")%> <strong>
 						<%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
@@ -193,7 +194,7 @@
 							if @event.registration_link != ""
 								registration_link = @event.registration_link
 							else
-								registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale]
+								registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
 							end
 
 							%>
@@ -461,7 +462,7 @@ end
 				if @event.registration_link != ""
 					registration_link = @event.registration_link
 				else
-					registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale]
+					registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
 				end
 
 				%>
@@ -485,3 +486,6 @@ end
 <% end %>
 
 <div class=" fondo-pano pano-9"></div>
+
+<!-- ######################### EVENTER VIEW #################### -->
+<img src="http://eventos.kleer.la/events/#{@event.id}/viewed.gif?lang=#{session[:locale]}#{@tracking_parameters}" width="1px" height="1px" onerror='this.style.display = "none"'/>
