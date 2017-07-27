@@ -209,6 +209,22 @@ img {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.btn-buy {
+    margin-left: 30px;
+    top: -4px;
+    position: relative;
+}
+
+@media (max-width: 450px) {
+    .btn-buy {
+        margin-left: 0;
+        top: 0;
+        position: relative;
+        display: inline-grid;
+        width: 100% !important;
+    }
+}
+
 
 /* Barra horizontal */
 
