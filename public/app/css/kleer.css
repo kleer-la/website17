@@ -209,6 +209,22 @@ img {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
+.btn-buy {
+    margin-left: 30px;
+    top: -4px;
+    position: relative;
+}
+
+@media (max-width: 450px) {
+    .btn-buy {
+        margin-left: 0;
+        top: 0;
+        position: relative;
+        display: inline-grid;
+        width: 100% !important;
+    }
+}
+
 
 /* Barra horizontal */
 
@@ -852,7 +868,7 @@ h3.headerTitle {
 p.lead {
     width: 100%;
     font-size: 24px;
-    color: #e46095;
+    color: #337ab7;
     margin-top: 30px;
     font-weight: lighter;
 }
@@ -861,7 +877,7 @@ p.lead {
 .mainContent h2,
 .mainContent h3,
 .mainContent h4 {
-    color: #e46095;
+    color: #337ab7;
 }
 
 .alertBox {
@@ -1205,13 +1221,13 @@ h3.list-group-item-heading {
 }
 
 h4.feed-item-title a {
-    color: #e46095 !important;
+    color: #337ab7 !important;
 }
 
 p.feed-item-desc a,
 p.feed-item-desc a:link,
 p.feed-item-desc a span {
-    color: #E46091 !important;
+    color: #337ab7 !important;
 }
 
 p.feed-item-desc {
@@ -1227,4 +1243,20 @@ p.feed-item-desc {
 .white {
     color: white;
     font-size: 16px;
+}
+
+.pay_tweet_like_button {
+    background: #324c63;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 3px 6px 4px;
+    font-family: "Open Sans", Arial;
+    font-size: 12px;
+}
+
+.pay_tweet_like_button:hover {
+    background: #333333;
+    color: white;
+    text-decoration: none;
 }

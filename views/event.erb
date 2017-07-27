@@ -93,6 +93,7 @@
 	</div>
 </div>
 -->
+
 <!-- ######################### PRICING #################### -->
 
 <% if @event.list_price == 0.0  %>
@@ -112,11 +113,38 @@
 			</div>
 
 			<div class="col-md-9 col-sm-8 no-hpadding">
-				<h2>
-					<%=t("event.pricing")%>:
-          <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
-          <%= money_format(@event.list_price) %>
-				</h2>
+
+					<h2>
+						<%=t("event.pricing")%>:
+						<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
+						<%= money_format(@event.list_price) %>
+
+						<span class="btn-buy">
+							<%if @event.is_sold_out %>
+								<a href="#" class="btn btn-danger btn-kleer btn-caps">
+									<%=t("general.buttons.complete")%>
+								</a>
+							<% else %>
+								<%
+								if @event.is_community_event
+									button_text = t("general.buttons.register")
+								else
+									button_text = t("general.buttons.i_am_interested")
+								end
+
+								if @event.registration_link != ""
+									registration_link = @event.registration_link
+								else
+									registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
+								end
+
+								%>
+								<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
+									<%=button_text%>
+								</a>
+							<% end %>
+						</span>
+					</h2>
 
 				<% if @event.eb_price > 0 %>
 					<%=t("event.early_bird_until")%> <strong>
@@ -149,6 +177,32 @@
 				<h2><%=t("event.pricing")%>:
 					<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
 					<%= money_format(@event.list_price) %>
+
+					<span class="btn-buy">
+						<%if @event.is_sold_out %>
+							<a href="#" class="btn btn-danger btn-kleer btn-caps">
+								<%=t("general.buttons.complete")%>
+							</a>
+						<% else %>
+							<%
+							if @event.is_community_event
+								button_text = t("general.buttons.register")
+							else
+								button_text = t("general.buttons.i_am_interested")
+							end
+
+							if @event.registration_link != ""
+								registration_link = @event.registration_link
+							else
+								registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
+							end
+
+							%>
+							<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
+								<%=button_text%>
+							</a>
+						<% end %>
+					</span>
 				</h2>
 
 				<% if @event.eb_price > 0 %>
@@ -176,6 +230,7 @@
 
 		</div>
 		<!-- /extra small (xs) logistics -->
+
 	</div>
 </div>
 <% end %>
@@ -407,7 +462,7 @@ end
 				if @event.registration_link != ""
 					registration_link = @event.registration_link
 				else
-					registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale]
+					registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
 				end
 
 				%>
@@ -431,3 +486,6 @@ end
 <% end %>
 
 <div class=" fondo-pano pano-9"></div>
+
+<!-- ######################### EVENTER VIEW #################### -->
+<img src="http://eventos.kleer.la/events/<%=@event.id%>/viewed.gif?lang=<%=session[:locale]%><%=@tracking_parameters%>" width="1px" height="1px" onerror='this.style.display = "none"'/>

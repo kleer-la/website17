@@ -212,6 +212,12 @@ end
 get '/publicamos' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos"
+  erb :publicamos, :layout => :layout_2017
+end
+
+get '/libros' do
+  @active_tab_publicamos = "active"
+  @page_title += " | Libros"
   erb :ebooks, :layout => :layout_2017
 end
 
@@ -292,6 +298,12 @@ get '/entrenamos/evento/:event_id_with_name' do
     @active_tab_entrenamos = "active"
     @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event.friendly_title
+
+    @tracking_parameters = ""
+    if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
+      @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+    end
+
     erb :event, :layout => :layout_2017
   end
 end
@@ -389,6 +401,12 @@ get '/comunidad/evento/:event_id_with_name' do
     @active_tab_comunidad = "active"
     @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event.friendly_title
+
+    @tracking_parameters = ""
+    if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
+      @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+    end
+
     erb :event
   end
 end
@@ -539,7 +557,7 @@ not_found do
       flash.now[:error] = get_404_error_text_for_community_event("Yoseki Coding Dojo")
       erb :error404_to_community
   else
-    erb :error404
+    erb :error404, :layout => :layout_2017
   end
 end
 

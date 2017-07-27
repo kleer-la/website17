@@ -1,4 +1,6 @@
 es:
+    not_found: "No encontrado"
+    page_not_found: "Página no encontrada"
     general:
         kleer:
             vision:
@@ -224,6 +226,17 @@ es:
                 text: "<p>Puedes contactarnos a <a href='mailto:hola@kleer.la'>hola@kleer.la</a> para solicitarnos una  cotización.<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</p>"
     publishing:
         title: "Publicamos"
+        description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
+        content: "<ul>
+                <li><strong>Compartimos</strong> un poco de nuestro trabajo para que nos conozcas mejor :)</li>
+                <li>Amamos compartir <strong>contenidos</strong>  que nos parecen útiles para el mundo</li>
+                <li>Nos encanta compartir <strong>conocimiento y experiencias.</strong> Aquí, una muestra...</li>
+                <li>Somos fanáticos de <strong>escribir, dibujar y grabar</strong> material valioso para compartirlo</li>
+                <li>Queremos <strong>impactar positivamente</strong> en el mundo en el que vivimos. Estas publicaciones apuntan a maximizar ese impacto.</li>
+                <li>Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena.</li>
+            </ul>"
+    books:
+        title: "Libros"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
         others:
             title: "Otras publicaciones"
