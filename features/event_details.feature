@@ -29,6 +29,12 @@ Feature: Event Details
 		And I should see "Ene"
 		And I should see "un texto a resaltar"
 
+	Scenario: Detalle de Evento con tracking
+		Given theres only one event
+		When I visit the event page with tracking
+		Then I should see "Workshop de Retrospectivas"
+		And I should see a registration link with tracking
+
 	Scenario: Detalle de Evento con cotrainer
 		Given theres only one event for the following two months
 		When I visit the event page
@@ -97,12 +103,12 @@ Feature: Event Details
 
 	Scenario: Registración en español
 		Given theres only one event
-		When I visit the plain event page
+		When I visit the event page
 		Then the registration link has "lang=es"
 
 	Scenario: Registración en ingles
 		Given theres only one event
-		When I visit the "en" plain event page
+		When I visit the "en" event page
 		Then the registration link has "lang=en"
 
 	Scenario: Eventos con subtitulo
