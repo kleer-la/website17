@@ -42,39 +42,6 @@ Feature: Event Details
 		And I should see "Martín Alaimo"
 		And I should see "Pablitux"
 
-	Scenario: Community event w/3 facilitators
-		Given theres only one community event w/cotrainer
-		When I visit the community event page
-		Then I should see "Mañana tengo una retrospectiva"
-		And I should see "Juan Gabardini"
-		And I should see "Thomas Wallet"
-		And I should see "Hiroshi Hiromoto"
-
-	Scenario: Community event w/3 facilitators in a phone
-		Given theres only one community event w/cotrainer
-		When I visit the community event page
-		Then I should see "Mañana tengo una retrospectiva"
-		And I should see "Juan Gabardini" in a phone
-		And I should see "Thomas Wallet" in a phone
-		And I should see "Hiroshi Hiromoto" in a phone
-
-	Scenario: Detalle de Evento Comunitario
-		Given there are community events
-		When I visit the community event page
-		Then I should see "Yoseki Coding Dojo"
-		And I should see "Es una reunión donde un grupo de desarrolladores trabajan en un desafío de programación."
-		And I should see "Kleer, Tucumán 373 1er Piso"
-		And I should see "Buenos Aires"
-		And I should see "Argentina"
-		And I should see "Ruperto Comunitario"
-		And I should see "06"
-		And I should see "Feb"
-
-	Scenario: Los Eventos Comunitarios no tienen sección de Experiencia Kleer
-		Given there are community events
-		When I visit the community event page
-		Then I should not see "Experiencia Kleer"
-
 	Scenario: Detalle de Evento Inexistente
 		Given theres only one event
 		When I visit a non existing event page

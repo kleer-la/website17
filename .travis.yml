@@ -5,7 +5,7 @@ before_script:
 - sh -e /etc/init.d/xvfb start
 script:
 - bundle exec rspec
-- bundle exec cucumber
+#- bundle exec cucumber
 deploy:
   provider: heroku
   api_key:
