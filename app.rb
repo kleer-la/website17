@@ -127,6 +127,9 @@ end
 get '/blog' do
   @active_tab_blog = "active"
   @rss = RSS::Parser.parse('http://feed.informer.com/digests/EGSKOZF5FA/feeder.rss', false)
+
+#  EXPERIMENT: Kleer Blog
+#  @rss = RSS::Parser.parse('https://feed.informer.com/digests/FBQRCLIHGO/feeder.rss', false)
   erb :blog, :layout => :layout_2017
 end
 

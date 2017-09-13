@@ -382,6 +382,13 @@ end
 </div>
 
 
+<% if ! @event.show_pricing %>
+	<%= erb :event_register_only %>
+<% end %>
+
+
+<!-- =================== DETAILS ======================== -->
+
 <div class=" fondo-blanco">
 	<div class="container">
 		<div class="col-md-8 event-program-column evento-description-container">

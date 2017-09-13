@@ -1,0 +1,22 @@
+<div class="container-fluid fondo-amarillo">
+	<div class="container">
+		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha text-center">
+				<%
+				if @event.is_community_event
+					button_text = t("general.buttons.register")
+				else
+					button_text = t("general.buttons.i_am_interested")
+				end
+
+				if @event.registration_link != ""
+					registration_link = @event.registration_link
+				else
+					registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
+				end
+				%>
+				<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
+					<%=button_text%>
+				</a>
+		</div>
+	</div>
+</div>
