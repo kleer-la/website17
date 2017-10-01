@@ -30,6 +30,7 @@ en:
         search: "Search"
         no_courses_found: "No courses found. We would like you to contact us at <a href=\\\"mailto:hello@kleer.us\\\">hello@kleer.us</a> with your questions."
     side_menu:
+        we_are: "We are"
         we_do: "We do"
         coaching: "Coaching"
         facilitation: "Facilitation"
