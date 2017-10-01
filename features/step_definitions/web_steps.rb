@@ -218,7 +218,7 @@ end
 
 Then /^I should see a linkedin link for a Kleerer with LinkedIn$/ do
   response_body.should have_selector("a[href='http://www.linkedin.com/in/jgabardini']") do |element|
-    element.should have_selector("img[src='/img/icons/linkedin.png']")
+    element.should have_selector("img[src='/img/icons/linkedin_gray.png']")
   end
 end
 
