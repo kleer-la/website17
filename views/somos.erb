@@ -1,72 +1,57 @@
-<div class="container-fluid fondo-verde slide-header-generico">
-	<div class="container">
-		<div class="container-fluid container-header-generico">
-			<div class="col-md-7">
-				<h1><%=t("we_are.title")%></h1>
-			</div>
-			<div class="col-md-5 hidden-xs hidden-sm">
-				&nbsp;<br/>
-				<img src="/img/personajes/your-way-kleerer.png" height="400">
-			</div>
-		</div>
+<div class="blackBg">
+	<div class="header-small header-somos"></div>
+
+	<div class="header-description">
+		<h1 class="headerTitle"><%=t("we_are.title")%></h1>
 	</div>
+
 </div>
 
-<div class="container-fluid fondo-celeste slide-contenedor-generico">
-	<div class="container fondo-blanco contenedor-generico">
-		<div class="col-md-9 no-hpadding contenedor-main-izq">
-			<p class="lead"><%=t("we_are.subtitle")%></p>
-			<p><%=t("we_are.description")%></p><br/>
-			<div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
-			
-				<div class="carousel-inner">
-					<% @kleerers.each do |kleerer| %>
-					<div class="item">
-						<div class="container">
-							<div class="col-md-1"> 
-								<img src="<%=kleerer.gravatar_picture_url%>" class="img-circle">
-							</div>
-							<div class="col-md-7">
-								<div class="container">
-									<div class="col-md-3">
-										<h2><%=kleerer.name%>&nbsp;
-											<% if kleerer.linkedin_url != "" %>
-											<a href="<%=kleerer.linkedin_url%>" target="_blank"><img src="/img/icons/linkedin.png" height="24" width="24"></a>
-											<% end %>
-										</h2>
-									</div>
-									<div class="col-md-4">
-										<% if kleerer.twitter_username != "" %>
-										<%= erb :_twitter_box, :layout => false, :locals => {:screen_name => kleerer.twitter_username.gsub("@",""), :pop_over => 'right'} %>
-										<% end %>
-									</div>
-								</div>
-								<div class="container">
-									<div class="col-md-6">
-										<p><%=@markdown_renderer.render( kleerer.bio )%></p>
-									</div>
-								</div>
-							</div>				
-						</div>
-					</div>
-					<% end %>
-			  	</div><!-- /.carousel-inner -->
-			  	<!--  Next and Previous controls below
-			        href values must reference the id for this carousel -->
-			    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">&lsaquo;</a>
-			    <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
-			</div><!-- /.carousel -->
+<div class="container-fluid fondo-verde">
 
-		</div>
+<div class="vSpace"></div>
+<div class="vSpace"></div>
 
-		<div class="col-md-3">
-			<%= erb :_twitter_widget, :layout => false %>
-		</div>
-	</div>	
+<div class="container">
+
+	<h2 class="text-center"><%=t("we_are.subtitle")%></h2>
+	<h3 class="text-center"><%=t("we_are.description")%></h3>
+
 </div>
-<script>
-  $(document).ready(function(){
-  	$('.item').eq(Math.floor((Math.random() * $('.item').length))).addClass("active");
-    $('.carousel').carousel();
-  });
-</script>
+
+<div class="vSpace"></div>
+<div class="vSpace"></div>
+
+</div>
+
+<div class="vSpace"></div>
+<div class="vSpace"></div>
+
+<div class="container-fluid containerWithPadding text-center">
+
+  <h1><%=t("we_are.title")%></h1>
+
+  <div class="col-md-12 no-hpadding">
+	<div class="item">
+	  <div class="container">
+		<% @kleerers.each do |kleerer| %>
+			<div class="col-sm-3 text-center"> 
+			  <div class="img-container">
+				<img src="<%=kleerer.gravatar_picture_url%>" class="img-circle">
+			  </div>
+		 	  <span class="nombreKleerer"><%=kleerer.name%></span>
+				<% if kleerer.linkedin_url != "" %>
+					<a href="<%=kleerer.linkedin_url%>" target="_blank"><img src="/img/icons/linkedin_gray.png" height="24" width="24"></a>
+				<% end %>
+
+				<% if kleerer.twitter_username != "" %>
+					<a href="https://twitter.com/<%=kleerer.twitter_username%>" target="_blank"><img src="/img/icons/twitter_gray.png" height="24" width="24"></a>
+				<% end %>
+			</div>
+		<% end %>
+	  </div>
+	</div> 
+  </div>
+</div>
+
+<div class="vSpace"></div>

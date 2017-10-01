@@ -77,6 +77,14 @@ img {
     /*opacity: 0.3;*/
 }
 
+.header-somos {
+    background: url(../img/somos.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-publicamos {
     background: url(../img/publicamos.jpg);
     background-size: cover;
@@ -1156,7 +1164,30 @@ ul.featured-icons li {
 }
 
 .img-circle {
+    width: 160px;
+    filter: grayscale(100%);
+}
+
+.img-container {
     border-radius: 50%;
+    border: 4px solid #56f7cd;
+    background: white;
+    padding: 6px;
+    margin: 10px auto;
+    width: 160px;
+    box-shadow: 1px 0px 2px inset;
+    height: 160px;
+}
+
+.nombreKleerer {
+    background: #56f7cd;
+    text-align: center;
+    display: block;
+    position: relative;
+    width: 170px;
+    margin: -12px auto 10px auto;
+    text-transform: uppercase;
+    padding: 2px 0;
 }
 
 h3.list-group-item-heading {
