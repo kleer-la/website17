@@ -1,3 +1,4 @@
+<% if @event.list_price == 0.0  %>
 <div class=" fondo-amarillo slide-evento-gratuito">
 	<div class="container">
 		<h2><%=t("event.free")%></h2>
@@ -133,3 +134,4 @@
 		</div>
 	</div>
 </div>
+<% end %>
