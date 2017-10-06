@@ -30,6 +30,7 @@ es:
         search: "Buscar"
         no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
     side_menu:
+        we_are: "Somos"
         we_do: "Hacemos"
         coaching: "Coaching"
         facilitation: "Facilitación"
@@ -315,8 +316,8 @@ es:
                text: "Este libro recopila las memorias gráficas de cinco facilitadores durante las sesiones y actividades de la conferencia Agile 2015 en Washington DC, EE.UU. ​El propósito de esta iniciativa es compartir sus memorias visuales e inspirarte a tomar apuntes gráficos en cualquier momento"
     we_are:
         title: "Somos"
-        subtitle: "Asistimos a organizaciones, equipos y profesionales"
-        description: 'En Kleer creemos que hay otras formas de relacionarnos para conseguir resultados fantásticos que nos hagan sentir orgullosos. <br/>Colaboramos con personas para lograr <a href="/es/categoria/organizaciones">Organizaciones asombrosas</a>, <a href="/es/categoria/clientes">Clientes felices</a> y <a href="/es/categoria/productos">Productos tecnológicos de calidad</a>.<br/>¿Cómo lo hacemos? Entrenando, acompañando la ejecución, generando videos y libros, participando de las comunidades de práctica.'
+        subtitle: "Disfrutamos co-creando ambientes humanos más conscientes y asombrosos."
+        description: 'Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.'
     press:
         title: "Prensa"
         subtitle: "¡Kleer en los medios!"

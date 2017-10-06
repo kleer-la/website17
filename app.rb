@@ -106,6 +106,7 @@ before '/:locale/*' do
 end
 
 get '/' do
+  @kleerers = KeventerReader.instance.kleerers session[:locale]
 	erb :index, :layout => :layout_angular
 end
 
@@ -418,7 +419,7 @@ get '/somos' do
  	@active_tab_somos = "active"
 	@page_title += " | Somos"
 	@kleerers = KeventerReader.instance.kleerers session[:locale]
-	erb :somos
+	erb :somos, :layout => :layout_2017
 end
 
 get '/prensa' do

@@ -218,7 +218,7 @@ end
 
 Then /^I should see a linkedin link for a Kleerer with LinkedIn$/ do
   response_body.should have_selector("a[href='http://www.linkedin.com/in/jgabardini']") do |element|
-    element.should have_selector("img[src='/img/icons/linkedin.png']")
+    element.should have_selector("img[src='/img/icons/linkedin_gray.png']")
   end
 end
 
@@ -226,24 +226,14 @@ Then /^I should not see an empty linkedin for a Kleerer without LinkedIn$/ do
   response_body.should_not have_selector("a[href='']")
 end
 
-Then /^I should see a Twitter box for a Kleerer with Twiiter$/ do
-  response_body.should have_selector("div[id='jgabardini_twitter_container']") do |element|
-    element.should contain("@jgabardini")
+Then /^I should see a Twitter link for a Kleerer with Twiiter$/ do
+  response_body.should have_selector("a[href='https://twitter.com/jgabardini']") do |element|
+    element.should have_selector("img[src='/img/icons/twitter_gray.png']")
   end
 end
 
 Then /^I should not see a Twitter box for a Kleerer without twiiter$/ do
-  response_body.should_not have_selector("div[id='_twitter_container']")
-end
-
-Then /^I should not see the Kleer Twitter Box$/ do
-    response_body.should_not have_selector("div[id='kleer_la_twitter_container']")
-end
-
-Then /^I should see the Kleer Twitter Box$/ do
-  response_body.should have_selector("div[id='kleer_la_twitter_container']") do |element|
-    element.should contain("@kleer_la")
-  end
+  response_body.should_not have_selector("img[src='/img/icons/twitter_gray.png']")
 end
 
 Then /^I should get a (\d+) error$/ do |error_code|
