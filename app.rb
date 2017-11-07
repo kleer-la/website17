@@ -426,7 +426,7 @@ get '/prensa' do
   @active_tab_prensa = "active"
   @page_title += " | Prensa"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :prensa
+  erb :prensa, :layout => :layout_2017
 end
 
 get '/prensa/casos/equipos-scrum-en-technisys-2015' do
@@ -434,7 +434,7 @@ get '/prensa/casos/equipos-scrum-en-technisys-2015' do
   @meta_description = "Kleer - Coaching & Training - Equipos de desarrollo Scrum y automatización de despliegue de software en Technisys apoyados por Kleer"
   @meta_keywords = "Kleer, Technisys, CyberBank, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, jenkins"
 
-  erb :prensa_casos_technisys_2015
+  erb :prensa_casos_technisys_2015, :layout => :layout_2017
 end
 
 get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
@@ -442,7 +442,7 @@ get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
   @meta_description = "Kleer - Coaching & Training - Equipos de desarrollo Scrum y orientación al valor para el negocio en Plataforma 10, apoyados por Kleer"
   @meta_keywords = "Kleer, Plataforma 10, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, valor negocio"
 
-  erb :prensa_casos_plataforma_10_2015
+  erb :prensa_casos_plataforma_10_2015, :layout => :layout_2017
 end
 
 get '/prensa/casos/equipos-scrum-en-suramericana-2015' do
@@ -450,7 +450,7 @@ get '/prensa/casos/equipos-scrum-en-suramericana-2015' do
   @meta_description = "Kleer - Coaching & Training - Paradigma ágiles en tecnología y en negocio en Suramericana, apoyados por Kleer"
   @meta_keywords = "Kleer, Suramericana, Sura, scrum, equipos, desarrollo ágil, valor negocio, corporaciones ágiles, paradigma ágil en las empresas"
 
-  erb :prensa_casos_suramericana_2015
+  erb :prensa_casos_suramericana_2015, :layout => :layout_2017
 end
 
 get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
@@ -458,7 +458,7 @@ get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
   @meta_description = "Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer"
   @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación, coloaboración, facilitación gráfica, marketing, digital"
 
-  erb :prensa_casos_loreal_2016
+  erb :prensa_casos_loreal_2016, :layout => :layout_2017
 end
 
 get '/clientes' do
