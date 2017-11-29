@@ -466,7 +466,7 @@ get '/clientes' do
   @meta_description = "Kleer - Coaching & Training - Estas organizaciones confían en nosotros"
   @meta_keywords = "Kleer, Clientes, Casos, Casos de Éxito, confianza"
 
-  erb :clientes
+  erb :clientes, :layout => :layout_2017
 end
 
 get '/last-tweet/:screen_name' do

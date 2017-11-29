@@ -31,6 +31,7 @@ es:
         no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
     side_menu:
         we_are: "Somos"
+        clients: "Clientes"
         we_do: "Hacemos"
         coaching: "Coaching"
         facilitation: "Facilitación"
