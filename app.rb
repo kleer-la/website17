@@ -429,12 +429,20 @@ get '/prensa' do
   erb :prensa, :layout => :layout_2017
 end
 
+get '/clientes/equipos-scrum-en-technisys-2015' do
+  redirect '/prensa/casos/equipos-scrum-en-technisys-2015', 301 # permanent redirect
+end
+
 get '/prensa/casos/equipos-scrum-en-technisys-2015' do
   @page_title += " | Equipos de desarrollo Scrum y Automatización en Technisys"
   @meta_description = "Kleer - Coaching & Training - Equipos de desarrollo Scrum y automatización de despliegue de software en Technisys apoyados por Kleer"
   @meta_keywords = "Kleer, Technisys, CyberBank, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, jenkins"
 
   erb :prensa_casos_technisys_2015, :layout => :layout_2017
+end
+
+get '/clientes/equipos-scrum-en-plataforma-10-2015' do
+  redirect '/prensa/casos/equipos-scrum-en-plataforma-10-2015', 301 # permanent redirect
 end
 
 get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
@@ -445,12 +453,20 @@ get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
   erb :prensa_casos_plataforma_10_2015, :layout => :layout_2017
 end
 
+get '/clientes/equipos-scrum-en-suramericana-2015' do
+  redirect '/prensa/casos/equipos-scrum-en-suramericana-2015', 301 # permanent redirect
+end
+
 get '/prensa/casos/equipos-scrum-en-suramericana-2015' do
   @page_title += " | Paradigma ágil en tecnología y en negocio en Suramericana"
   @meta_description = "Kleer - Coaching & Training - Paradigma ágiles en tecnología y en negocio en Suramericana, apoyados por Kleer"
   @meta_keywords = "Kleer, Suramericana, Sura, scrum, equipos, desarrollo ágil, valor negocio, corporaciones ágiles, paradigma ágil en las empresas"
 
   erb :prensa_casos_suramericana_2015, :layout => :layout_2017
+end
+
+get '/clientes/innovacion-en-marketing-digital-loreal-2016' do
+  redirect '/prensa/casos/innovacion-en-marketing-digital-loreal-2016', 301 # permanent redirect
 end
 
 get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
