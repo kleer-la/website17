@@ -79,6 +79,7 @@
                     <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
                   </ul>
                 </li>
+                <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
             </ul>
           </li>
 
@@ -303,7 +304,7 @@
 -->
 
   <!-- Suscripción Newsletter -->
-  <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
+  <!-- <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
       <div class="container-fluid">
           <div class="container">
               <div class="container suscripcion">
@@ -318,10 +319,12 @@
       </div>
   </div>
 
+  -->
+
   <div class="modal fade suscription-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
           <div class="modal-content">
-              <form method="POST" action="/subscribe" class="form-horizontal">
+              <form method="POST" action="/subscribe"  class="form-horizontal">
                   <div class="modal-header">
                       <button type="button" class="close suscription-modal-title" data-dismiss="modal" aria-hidden="true">&times;</button>
                       <h2 class="modal-title" id="myModalLabel">

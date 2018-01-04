@@ -85,6 +85,46 @@ img {
     /*opacity: 0.3;*/
 }
 
+.header-sura {
+    background: url(../img/sura.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-technisys {
+    background: url(../img/technisys.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-plataforma10 {
+    background: url(../img/plataforma10.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-loreal {
+    background: url(../img/loreal.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-prensa {
+    background: url(../img/prensa.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-publicamos {
     background: url(../img/publicamos.jpg);
     background-size: cover;
@@ -1290,4 +1330,22 @@ p.feed-item-desc {
     background: #333333;
     color: white;
     text-decoration: none;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
