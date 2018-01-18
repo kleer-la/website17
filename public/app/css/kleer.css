@@ -93,6 +93,14 @@ img {
     /*opacity: 0.3;*/
 }
 
+.header-epm {
+    background: url(../img/epm.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
 .header-technisys {
     background: url(../img/technisys.jpg);
     background-size: cover;
