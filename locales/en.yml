@@ -137,10 +137,7 @@ en:
     publishing:
        title: "We publish"
        description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
-       content: "
-              <ul>
-                <li>We dream of a world in which valuable information travels arround. Here, our five cents :)</li>
-              </ul>"
+       content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     books:
        title: "Books"
        description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
