@@ -366,7 +366,7 @@ es:
           outof: "de"
         tabs:
             description: "Descripción"
-            target: "Destinado A"
+            target: "Destinado a"
             program: "Programa"
             faqs: "Preguntas Frecuentes"
             linking_with_category: " te ayuda a lograr"
