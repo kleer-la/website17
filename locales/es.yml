@@ -125,7 +125,7 @@ es:
             top: "<p>Ofrecemos servicios de <strong>acompañamiento integral</strong> en la implementación de metodologías ágiles que potencian a personas y negocios.</p>
             <hr/>
             <p>Conocé algunos casos de éxito de nuestros clientes:</p>
-           	
+
             <p><a href='prensa/casos/equipos-scrum-en-suramericana-2015'>Paradigma Ágil en <b>Sura</b></a>
            	<br/><i>Medellín, Colombia</i>. Testimonios de Carlos Hurtado, Valentina Sierra y Jubel Correa.</p>
            	<p>
@@ -155,9 +155,9 @@ es:
 			<img src='/app/img/coaching_transformacion_organizacional.jpg' alt='Transformación Organizacional' title='Transformación Ágil' class='image_coaching' />
 			<p>Acompañamos el proceso de <b>transformación digital</b> de una organización hacia un enfoque ágil y sostenible. </p>
             <p>
-            Ayudamos a definir, adoptar y generar el cambio en cuatro ejes: Cultura, Negocio, Metodología y Técnica. 
+            Ayudamos a definir, adoptar y generar el cambio en cuatro ejes: Cultura, Negocio, Metodología y Técnica.
             </p>
-			
+
                 <ul>
                     <li>Agile Leadership</li>
                     <li>Change Management</li>
@@ -180,7 +180,7 @@ es:
 
             <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>
-            
+
 			<p class='lead'>Desarrollo de Software</p>
 			<img src='/app/img/coaching_desarrollo_software.jpg' alt='Desarrollo de software' title='Transformación Ágil' class='image_coaching' />
 			<p>El software soporta y habilita al negocio. La forma en que se crea y evoluciona incide en la agilidad de la organización en su conjunto. </p>
@@ -195,7 +195,7 @@ es:
 
             <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>
-            
+
 			<p class='lead'>Innovación de Productos</p>
 			<img src='/app/img/coaching_innovacion.jpg' alt='Transformación Organizacional' title='Innovación de Productos' class='image_coaching' />
 
@@ -210,7 +210,7 @@ es:
 
             <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>"
-            
+
             bottom: "<hr/><p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más!</p>"
         tabs:
             benefits:
@@ -222,21 +222,14 @@ es:
                 <p>Se trabaja directamente sobre los proyectos y objetivos de los equipos y demás interesados en la implementación (gerentes, directores de desarrollo, etc.). Esto incluye la <b>identificación de problemas</b>, la <b>comprensión de sus causas</b> y el <b>desarrollo de las habilidades</b> necesarias para que el equipo sea capaz de resolverlos.</p>
                 <p>En general, existen dos tipos de situaciones: aquellas en las que nunca antes se trabajó en un entorno ágil y otras en que ya existe la experiencia y se desea alcanzar un mayor nivel de profundidad. El servicio de coaching responde efectivamente a ambas, modelando la implementación según las necesidades de la organización.</p>
                 <p>En el caso en que fuera necesario, el acompañamiento es complementado con <b>capacitaciones diseñadas a medida de cada equipo</b>, asegurando un nivel de conocimientos que habilita una mayor efectividad durante la implementación.</p>"
-                
+
                 contact:
                 title: "Solicitar Cotización"
                 text: "<p>Puedes contactarnos a <a href='mailto:hola@kleer.la'>hola@kleer.la</a> para solicitarnos una  cotización.<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</p>"
     publishing:
         title: "Publicamos"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
-        content: "<ul>
-                <li><strong>Compartimos</strong> un poco de nuestro trabajo para que nos conozcas mejor :)</li>
-                <li>Amamos compartir <strong>contenidos</strong>  que nos parecen útiles para el mundo</li>
-                <li>Nos encanta compartir <strong>conocimiento y experiencias.</strong> Aquí, una muestra...</li>
-                <li>Somos fanáticos de <strong>escribir, dibujar y grabar</strong> material valioso para compartirlo</li>
-                <li>Queremos <strong>impactar positivamente</strong> en el mundo en el que vivimos. Estas publicaciones apuntan a maximizar ese impacto.</li>
-                <li>Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena.</li>
-            </ul>"
+        content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
     books:
         title: "Libros"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
@@ -373,7 +366,7 @@ es:
           outof: "de"
         tabs:
             description: "Descripción"
-            target: "Destinado A"
+            target: "Destinado a"
             program: "Programa"
             faqs: "Preguntas Frecuentes"
             linking_with_category: " te ayuda a lograr"
