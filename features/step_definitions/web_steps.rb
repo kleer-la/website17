@@ -48,20 +48,20 @@ Given /^there are many events$/ do
   stub_connector( "events.xml")
 end
 
-# When /^I visit the home page$/ do
-#   stub_connector
-#   visit '/home'
-# end
+ When /^I visit the home page$/ do
+   stub_connector
+   visit '/'
+ end
 
-# Given(/^I visit the spanish home page$/) do
-#   stub_connector
-#   visit '/es/home'
-# end
+Given(/^I visit the spanish home page$/) do
+  stub_connector
+  visit '/es/'
+end
 
-# Given(/^I visit the english home page$/) do
-#   stub_connector
-#   visit '/en/home'
-# end
+Given(/^I visit the english home page$/) do
+  stub_connector
+  visit '/en/'
+end
 
 Given(/^I visit the english "(.*?)"$/) do |page|
   stub_connector
@@ -199,13 +199,6 @@ Then /^I should see the Subscribe to newsletter option$/ do
   response_body.should have_selector("input[value='SUSCRÍBETE']")
 end
 
-Then /^the titles should use Roboto webfont$/ do
-  response_body.should have_selector("link[href='http://fonts.googleapis.com/css?family=Roboto:400,700']")
-  response_body.should have_selector("style") do |element|
-    element.should contain("h1, h2, h3, h4, h5, h6 {font-family: 'Roboto';}")
-  end
-end
-
 Then /^I should see all countries highlited$/ do
   response_body.should have_selector("ul[id='country-filter']") do |element|
     element.should have_selector("li[class='active']") do |element|
@@ -220,20 +213,6 @@ Then /^I should see a linkedin link for a Kleerer with LinkedIn$/ do
   response_body.should have_selector("a[href='http://www.linkedin.com/in/jgabardini']") do |element|
     element.should have_selector("img[src='/img/icons/linkedin_gray.png']")
   end
-end
-
-Then /^I should not see an empty linkedin for a Kleerer without LinkedIn$/ do
-  response_body.should_not have_selector("a[href='']")
-end
-
-Then /^I should see a Twitter link for a Kleerer with Twiiter$/ do
-  response_body.should have_selector("a[href='https://twitter.com/jgabardini']") do |element|
-    element.should have_selector("img[src='/img/icons/twitter_gray.png']")
-  end
-end
-
-Then /^I should not see a Twitter box for a Kleerer without twiiter$/ do
-  response_body.should_not have_selector("img[src='/img/icons/twitter_gray.png']")
 end
 
 Then /^I should get a (\d+) error$/ do |error_code|
