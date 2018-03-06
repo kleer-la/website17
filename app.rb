@@ -466,6 +466,14 @@ get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
   erb :prensa_casos_loreal_2016, :layout => :layout_2017
 end
 
+get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
+  @page_title += " | EPM se transforma culturalmente"
+  @meta_description = "Kleer - Coaching & Training - Cómo acompañamos desde Kleer la transformación ágil de TI en EPM"
+  @meta_keywords = "Kleer, epm, empresas publicas medellin, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, sistemas, ti, mejora continua, transformación organizacional, evolución organizacional"
+
+  erb :prensa_casos_epm_2018, :layout => :layout_2017
+end
+
 get '/clientes' do
   @page_title += " | Nuestros clientes"
   @meta_description = "Kleer - Coaching & Training - Estas organizaciones confían en nosotros"
