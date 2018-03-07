@@ -130,243 +130,139 @@
   <!-- <div ng-view="" class="mainContainer"></div> -->
 
 
-    <!-- Slider de imágenes -->
-    <header id="slider" class="carousel slide carousel-fade">
-        <!-- Indicadores -->
-        <ol class="carousel-indicators">
-            <li data-target="#slider" data-slide-to="0" class="active"></li>
-            <li data-target="#slider" data-slide-to="1"></li>
-            <li data-target="#slider" data-slide-to="2"></li>
-        </ol>
+  <!-- Slider de imágenes -->
+  <header id="slider" class="carousel slide carousel-fade">
+      <!-- Indicadores -->
+      <ol class="carousel-indicators">
+          <li data-target="#slider" data-slide-to="0" class="active"></li>
+          <li data-target="#slider" data-slide-to="1"></li>
+          <li data-target="#slider" data-slide-to="2"></li>
+      </ol>
 
-        <!-- Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
-                <div class="carousel-caption">
-                    <div class="text-vertical-center">
-                        <h1><%=t('slider.title_1')%></h1>
-                        <h3><%=t('slider.text_1')%></h3>
-                        <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
-                          <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('app/img/slide03.jpg');"></div>
-                <div class="carousel-caption">
-                    <div class="text-vertical-center">
-                        <h1><%=t('slider.title_2')%></h1>
-                        <h3><%=t('slider.text_2')%></h3>
-                        <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
-                          <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('app/img/slide02.jpg');"></div>
-                <div class="carousel-caption">
-                    <div class="text-vertical-center">
-                        <h1><%=t('slider.title_3')%></h1>
-                        <h3><%=t('slider.text_3')%></h3>
-                        <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
-                          <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header>
-
-<!-- Sobre Kleer / Separador -->
-<section id="about" class="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <img src="/img/personajes/<%=t('kleeros.vision')%>" class="image-about-01">
-                <img src="app/img/01_03_web.png" class="image-about-02">
-                <img src="app/img/02_03_web.png" class="image-about-03">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Servicios -->
-<section id="services" class="services bg-primary">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2><%=t('home.our_services')%></h2>
-                <hr class="small">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x sr-services">
-                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                            <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
-                        </span>
-                            <h4>
-                                <strong><%=t('home.facilitation')%></strong>
-                            </h4>
-                            <p><%=t('home.facilitation_text')%></p>
-                            <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.plus_info')%></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x sr-services">
-                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                            <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
-                        </span>
-                            <h4>
-                                <strong><%=t('home.coaching')%></strong>
-                            </h4>
-                            <p><%=t('home.coaching_text')%></p>
-                            <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.plus_info')%></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="service-item">
-                            <span class="fa-stack fa-4x sr-services">
-                            <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                            <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
-                        </span>
-                            <h4>
-                                <strong><%=t('home.courses')%></strong>
-                            </h4>
-                            <p><%=t('home.courses_text')%></p>
-                            <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.plus_info')%></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Llamado a la acción / Separador -->
-<!--
-<aside class="callout">
-
-        <h1>Algún otro texto</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum in tortor tempus elementum. Sed id diam ipsum. Pellentesque mauris libero, rutrum hendrerit pulvinar sed, bibendum ut leo. </p>
-
-</aside>
--->
-
-<!-- Equipo -->
-<!--
-<section id="team" class="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2>Nuestro equipo</h2>
-                <hr class="small">
-                <h4>Fotos y descripción del equipo, rotando</h4>
-            </div>
-        </div>
-    </div>
-</section>
--->
-
-<!-- Llamado a la acción / Separador -->
-<!--
-<aside class="call-to-action bg-primary">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h3>Algún otro llamado a la acción</h3>
-                <a href="#" class="btn btn-lg btn-light">Link 1</a>
-                <a href="#" class="btn btn-lg btn-dark">Link 2!</a>
-            </div>
-        </div>
-    </div>
-</aside>
--->
-
-<!-- Compartimos -->
-<!--
-<section id="share" class="share">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 text-center">
-                <h2>Compartimos</h2>
-                <hr class="small">
-                <h4>Links o promoción de libros, blog posts, eventos comunitarios, etc...</h4>
-            </div>
-        </div>
-    </div>
-</section>
--->
-
-  <!-- Suscripción Newsletter -->
-  <!-- <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
-      <div class="container-fluid">
-          <div class="container">
-              <div class="container suscripcion">
-                  <div class="col-md-12 suscripcion-inner">
-                      <%=t('contact.subscription.text1')+ ' ' +t('contact.subscription.text2')%>
-                          <br/>
-                          <img src="img/fondos/flecha-derecha.png">
-                          <input type="button" class="btn btn-warning btn-kleer btn-suscription" value="<%=t('contact.subscription.interested')%>" data-toggle="modal" data-target=".suscription-modal" />
+      <!-- Slides -->
+      <div class="carousel-inner">
+          <div class="item active">
+              <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
+              <div class="carousel-caption">
+                  <div class="text-vertical-center">
+                      <h1><%=t('slider.title_1')%></h1>
+                      <h3><%=t('slider.text_1')%></h3>
+                      <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                        <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="fill" style="background-image:url('app/img/slide03.jpg');"></div>
+              <div class="carousel-caption">
+                  <div class="text-vertical-center">
+                      <h1><%=t('slider.title_2')%></h1>
+                      <h3><%=t('slider.text_2')%></h3>
+                      <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                        <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <div class="item">
+              <div class="fill" style="background-image:url('app/img/slide02.jpg');"></div>
+              <div class="carousel-caption">
+                  <div class="text-vertical-center">
+                      <h1><%=t('slider.title_3')%></h1>
+                      <h3><%=t('slider.text_3')%></h3>
+                      <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                        <i class="fa fa-chevron-down fa-fw fa-1x"></i>
+                      </a>
                   </div>
               </div>
           </div>
       </div>
-  </div>
+  </header>
 
-  -->
 
-  <div class="modal fade suscription-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-              <form method="POST" action="/subscribe"  class="form-horizontal">
-                  <div class="modal-header">
-                      <button type="button" class="close suscription-modal-title" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h2 class="modal-title" id="myModalLabel">
-                          <%=t('contact.subscription.form.title')%>
-                      </h2>
+  <!-- Sobre Kleer / Separador -->
+  <section id="about" class="about">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 text-center">
+                  <img src="/img/personajes/<%=t('kleeros.vision')%>" class="image-about-01">
+                  <img src="app/img/01_03_web.png" class="image-about-02">
+                  <img src="app/img/02_03_web.png" class="image-about-03">
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="services" class="services bg-primary">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-10 col-lg-offset-1">
+                  <h2><%=t('home.our_services')%></h2>
+                  <hr class="small">
+                  <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                          <div class="service-item">
+                              <span class="fa-stack fa-4x sr-services">
+                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                              <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
+                          </span>
+                              <h4>
+                                  <strong><%=t('home.facilitation')%></strong>
+                              </h4>
+                              <p><%=t('home.facilitation_text')%></p>
+                              <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.plus_info')%></a>
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                          <div class="service-item">
+                              <span class="fa-stack fa-4x sr-services">
+                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                              <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
+                          </span>
+                              <h4>
+                                  <strong><%=t('home.coaching')%></strong>
+                              </h4>
+                              <p><%=t('home.coaching_text')%></p>
+                              <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.plus_info')%></a>
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-sm-4">
+                          <div class="service-item">
+                              <span class="fa-stack fa-4x sr-services">
+                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
+                              <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
+                          </span>
+                              <h4>
+                                  <strong><%=t('home.courses')%></strong>
+                              </h4>
+                              <p><%=t('home.courses_text')%></p>
+                              <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.plus_info')%></a>
+                          </div>
+                      </div>
+
                   </div>
-                  <div class="modal-body suscripcion-modal-inner">
+              </div>
+          </div>
+      </div>
+  </section>
 
-                      <div class="form-group">
-                          <div class="col-sm-12">
-                              <input type="email" name="email" class="form-control" placeholder="<%=t('contact.subscription.form.mail_hint')%>" id="suscriptionModalEmail">
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-sm-12">
-                              <input type="text" name="fname" class="form-control" placeholder="<%=t('contact.subscription.form.fname_hint')%>">
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-sm-12">
-                              <input type="text" name="lname" class="form-control" placeholder="<%=t('contact.subscription.form.lname_hint')%>">
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-sm-12">
-                              <select id="influence_zone_tag" class="form-control" name="influence_zone_tag">
-                                <option value=""><%=t('contact.subscription.form.where_are_you')%></option>
-                                <%=t('contact.subscription.form.countries')%>
-                              </select>
-                          </div>
-                      </div>
-
-                      <br/>
+  <!-- Suscripcion Newsletter -->
+  <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
+      <div class="container-fluid">
+          <div class="container">
+              <div class="container suscripcion">
+                  <div class="col-md-12 suscripcion-inner">
+                      <%=t('contact.subscription.text')%>
+                          <br/>
+                          <img src="img/fondos/flecha-derecha.png">
+                          <a href="http://kleer.us1.list-manage.com/subscribe?u=98726a706d87424c18b69e332&id=de82c19d8f"
+                           class="btn btn-warning btn-kleer btn-suscription"
+                           target="_blank">
+                           <%=t('contact.subscription.interested')%></a>
                   </div>
-                  <div class="modal-footer suscripcion-modal-footer">
-                      <button type="button" class="btn btn-default btn-kleer" data-dismiss="modal"><%=t('contact.subscription.form.cancel')%></button>
-                      <input type="submit" value="<%=t('contact.subscription.form.send')%>" class="btn btn-warning btn-kleer btn-suscription-popup" />
-                  </div>
-              </form>
+              </div>
           </div>
       </div>
   </div>

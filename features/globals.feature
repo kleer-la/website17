@@ -1,9 +1,5 @@
 Feature: Globals
 
-	Scenario: Dosis Webfont
-		Given I visit the home page
-		Then the titles should use Roboto webfont
-		
 	Scenario: 404 Page
 		Given I visit an invalid Page
 		Then I should get a 404 error

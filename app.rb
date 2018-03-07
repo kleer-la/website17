@@ -225,17 +225,6 @@ get '/libros' do
   erb :ebooks, :layout => :layout_2017
 end
 
-# post '/subscribe' do
-#  @email = params[:email]
-#  @fname = params[:fname]
-#  @lname = params[:lname]
-#  @influence_zone_tag = params[:influence_zone_tag]
-
-#  CrmConnector::subscribe_person( @email, @fname, @lname, @influence_zone_tag )
-
-#  erb :subscribe, :layout => :layout_2017
-# end
-
 get '/publicamos/scrum' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos | Proyectos Ágiles con Scrum"

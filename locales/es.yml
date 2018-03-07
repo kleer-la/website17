@@ -451,8 +451,7 @@ es:
                 contact_us: "Contáctanos"
                 contact_email: "info@kleer.la"
         subscription:
-            text1: "Entérate de todas las"
-            text2: "novedades del mundo ágil"
+            text: "Entérate de todas las novedades del mundo ágil"
             interested: "SUSCRÍBETE"
             form:
                 title: "SUSCRIPCIÓN"
