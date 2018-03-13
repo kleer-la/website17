@@ -100,6 +100,13 @@ img {
     background-position: center center;
 }
 
+.header-bbva {
+    background: url(../img/bbva.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+}
+
 .header-technisys {
     background: url(../img/technisys.jpg);
     background-size: cover;
