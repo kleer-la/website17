@@ -474,7 +474,7 @@ get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
   erb :prensa_casos_epm_2018, :layout => :layout_2017
 end
 
-get '/prensa/casos/transformación-digital-bbva-continental' do
+get '/prensa/casos/transformacion-digital-bbva-continental' do
   @page_title += " | Acompañamiento en la transformación digital de BBVA Continental"
   @meta_description = "Kleer - Coaching & Training -Acompañamiento en la transformación digital de BBVA Continental"
   @meta_keywords = "Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional"
