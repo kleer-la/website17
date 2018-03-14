@@ -474,6 +474,14 @@ get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
   erb :prensa_casos_epm_2018, :layout => :layout_2017
 end
 
+get '/prensa/casos/transformación-digital-bbva-continental' do
+  @page_title += " | Acompañamiento en la transformación digital de BBVA Continental"
+  @meta_description = "Kleer - Coaching & Training - Cómo acompañamos desde Kleer la transformación ágil de TI en EPM"
+  @meta_keywords = "Kleer, epm, empresas publicas medellin, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, sistemas, ti, mejora continua, transformación organizacional, evolución organizacional"
+
+  erb :prensa_casos_bbva_2018, :layout => :layout_2017
+end
+
 get '/clientes' do
   @page_title += " | Nuestros clientes"
   @meta_description = "Kleer - Coaching & Training - Estas organizaciones confían en nosotros"
