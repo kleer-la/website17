@@ -33,9 +33,9 @@
 	<div class="item">
 	  <div class="container">
 		<% @kleerers.each do |kleerer| %>
-			<div class="col-sm-3 text-center"> 
+			<div class="col-sm-3 text-center">
 			  <div class="img-container">
-				<img src="<%=kleerer.gravatar_picture_url%>" class="img-circle">
+				<img src="<%=kleerer.gravatar_picture_url%>?s=400" class="img-circle">
 			  </div>
 		 	  <span class="nombreKleerer"><%=kleerer.name%></span>
 				<% if kleerer.linkedin_url != "" %>
@@ -48,7 +48,7 @@
 			</div>
 		<% end %>
 	  </div>
-	</div> 
+	</div>
   </div>
 </div>
 
