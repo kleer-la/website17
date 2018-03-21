@@ -49,7 +49,7 @@
   <visibility-type>co</visibility-type>
   <webinar-started type="boolean">false</webinar-started>
   <human-date>9 Mar</human-date>
-  <is-webinar type="boolean">true</is-webinar>
+  <is-webinar type="boolean">true</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <country>
