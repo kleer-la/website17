@@ -15,8 +15,8 @@
   <event-type-id type="integer">13</event-type-id>
   <id type="integer">44</id>
   <is-sold-out type="boolean">false</is-sold-out>
-  <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-<is-webinar type="boolean">false</is-webinar>
+  <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
 <banner-text>un texto a resaltar</banner-text>
 <banner-type>success</banner-type>
 <mode>cl</mode>

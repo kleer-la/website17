@@ -289,7 +289,7 @@ describe KeventerEvent do
       <should-ask-for-referer-code type="boolean">false</should-ask-for-referer-code>
       <should-welcome-email type="boolean">true</should-welcome-email>
       <show-pricing type="boolean">false</show-pricing>
-      <specific-conditions>Very specific</specific-conditions>
+      <specific-conditions>Very specific</specific-conditions><specific-subtitle></specific-subtitle>
       <start-time type="datetime">2000-01-01T09:00:00Z</start-time>
       <time-zone-name></time-zone-name>
       <trainer-id type="integer">2</trainer-id>
@@ -298,7 +298,7 @@ describe KeventerEvent do
       <visibility-type>pu</visibility-type>
       <webinar-started type="boolean">false</webinar-started>
       <human-date>18-1 May</human-date>
-      <is-webinar type="boolean">false</is-webinar>
+      <is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
       <banner-text>un texto a resaltar</banner-text>
       <banner-type>success</banner-type>
       <country>

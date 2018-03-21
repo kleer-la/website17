@@ -3,9 +3,9 @@
 		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha text-center">
 
 		<%if @event.is_sold_out %>
-		<a href="#" class="btn btn-danger btn-kleer btn-caps">
-			<%=t("general.buttons.complete")%>
-		</a>
+			<a href="#" class="btn btn-danger btn-kleer btn-caps">
+				<%=t("general.buttons.complete")%>
+			</a>
 		<% else %>
 			<%
 			if @event.is_community_event
@@ -24,6 +24,15 @@
 			<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
 				<%=button_text%>
 			</a>
+			<% if @event.enable_online_payment %>
+				<%
+				payment_and_registration_button_text = t("general.buttons.pay_and_register")
+				payment_and_registration_link = "https://online.kleer.la/#{session[:locale]}/courses/#{@event.online_course_codename}/cohorts/#{@event.online_cohort_codename}/enroll"
+				%>
+				<a href="<%=payment_and_registration_link%>" target="_blank" class="btn btn-info btn-kleer btn-caps">
+					<%=payment_and_registration_button_text%>
+				</a>
+			<% end %>
 		<% end %>
 		</div>
 	</div>

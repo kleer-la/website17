@@ -16,8 +16,8 @@
     <event-type-id type="integer">13</event-type-id>
     <id type="integer">44</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -136,8 +136,8 @@
     <event-type-id type="integer">15</event-type-id>
     <id type="integer">48</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -334,8 +334,8 @@ CSM y Especialista en Innovación
     <event-type-id type="integer">17</event-type-id>
     <id type="integer">58</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -473,8 +473,8 @@ Agile Coach &amp; Trainer
     <event-type-id type="integer">14</event-type-id>
     <id type="integer">45</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -646,8 +646,8 @@ CSC, PMP, PMI-ACP</bio>
     <event-type-id type="integer">7</event-type-id>
     <id type="integer">47</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -792,8 +792,8 @@ CSC, PMP, PMI-ACP</bio>
     <event-type-id type="integer">10</event-type-id>
     <id type="integer">49</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -960,8 +960,8 @@ CSC, PMP, PMI-ACP</bio>
     <event-type-id type="integer">16</event-type-id>
     <id type="integer">55</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1087,8 +1087,8 @@ Este tipo de aplicaciones se ajustan mejor a la separación de conceptos que pla
     <event-type-id type="integer">18</event-type-id>
     <id type="integer">59</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1227,8 +1227,8 @@ Agile Coach &amp; Trainer
     <event-type-id type="integer">7</event-type-id>
     <id type="integer">46</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1373,8 +1373,8 @@ CSC, PMP, PMI-ACP</bio>
     <event-type-id type="integer">7</event-type-id>
     <id type="integer">54</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1519,8 +1519,8 @@ CSC, PMP, PMI-ACP</bio>
     <event-type-id type="integer">4</event-type-id>
     <id type="integer">50</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1652,8 +1652,8 @@ Ing. en Informática, CSM, CSD
     <event-type-id type="integer">3</event-type-id>
     <id type="integer">53</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1802,8 +1802,8 @@ Ing. en Informática, CSM, CSD
     <event-type-id type="integer">5</event-type-id>
     <id type="integer">51</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -1937,8 +1937,8 @@ Ing. en Informática, CSM, CSD
     <event-type-id type="integer">6</event-type-id>
     <id type="integer">52</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -2074,8 +2074,8 @@ Ing. en Informática, CSM, CSD
     <event-type-id type="integer">3</event-type-id>
     <id type="integer">56</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
@@ -2226,8 +2226,8 @@ Ing. Electrónica, CSM, CSD
     <event-type-id type="integer">3</event-type-id>
     <id type="integer">57</id>
     <is-sold-out type="boolean">false</is-sold-out>
-    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
-	<is-webinar type="boolean">false</is-webinar>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions><specific-subtitle></specific-subtitle>
+	<is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
   <banner-text>un texto a resaltar</banner-text>
   <banner-type>success</banner-type>
   <mode>cl</mode>
