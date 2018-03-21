@@ -57,6 +57,10 @@ end
                   <a href="/<%=session[:locale]%>/<%=event.is_community_event ? "comunidad" : "entrenamos" %>/evento/<%=url_sanitize(event.uri_path)%>">
                     <%=event.event_type.name%>
                   </a><br/>
+									<% if event.specific_subtitle != "" %>
+										<%=event.specific_subtitle%>
+										<br/>
+									<% end %>
                   <img src="/img/flags/<%=event.country_code.downcase%>.png"/>
                   <%=event.city%>, <%=event.country%>
                 </div>
