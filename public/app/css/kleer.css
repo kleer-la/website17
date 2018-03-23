@@ -679,6 +679,7 @@ footer .nav-tabs>li {
 .nav>li>a {
     padding: 5px 10px;
     border: 0px;
+    cursor: pointer;
 }
 
 .nav-tabs {
@@ -693,6 +694,7 @@ footer .nav-tabs>li {
 
 .nav-tabs>li>a {
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .nav-tabs>li.active>a,
