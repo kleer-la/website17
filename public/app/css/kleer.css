@@ -701,7 +701,7 @@ footer .nav-tabs>li {
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
     color: #fff;
-    cursor: pointer;
+    cursor: default;
     background-color: #337ab7;
     border: none;
     border-bottom-color: transparent;
