@@ -7,7 +7,8 @@ class KeventerEvent
                   :specific_conditions, :is_community_event, :time_zone_name,
                   :time_zone, :show_pricing, :couples_eb_price, :business_eb_price,
                   :business_price, :enterprise_6plus_price, :enterprise_11plus_price,
-                  :mode, :banner_text, :banner_type
+                  :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment,
+                  :online_course_codename, :online_cohort_codename
 
   def initialize
     @capacity = 0
@@ -46,10 +47,15 @@ class KeventerEvent
     @time_zone = nil
 
     @specific_conditions = ""
+    @specific_subtitle = ""
     @banner_text = ""
     @banner_type = ""
     @is_community_event = false
     @mode = ""
+
+    @enable_online_payment = false
+    @online_course_codename = ""
+    @online_cohort_codename = ""
   end
 
   def is_online
@@ -114,6 +120,10 @@ class KeventerEvent
     @address = event_doc.find_first('address').content
     @registration_link = event_doc.find_first('registration-link').content
 
+    @enable_online_payment = to_boolean( event_doc.find_first('enable-online-payment').content )
+    @online_course_codename = event_doc.find_first('online-course-codename').content
+    @online_cohort_codename = event_doc.find_first('online-cohort-codename').content
+
     @country = event_doc.find_first('country/name').content
     @country_code = event_doc.find_first('country/iso-code').content
     @currency_iso_code = event_doc.find_first('currency-iso-code').content
@@ -126,6 +136,7 @@ class KeventerEvent
   end
 
   def load_details(event_doc)
+    @specific_subtitle = event_doc.find_first('specific-subtitle').content
     @specific_conditions = event_doc.find_first('specific-conditions').content
     @is_community_event = event_doc.find_first('visibility-type').content == 'co'
     @mode = event_doc.find_first('mode').content

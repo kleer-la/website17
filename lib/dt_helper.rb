@@ -49,6 +49,9 @@ class DTHelper
     line += "href=\"/"+locale+"/"+event_details_path+"/evento/" + url_sanitize(event.uri_path) +'"'
     line += ' title="'+event.event_type.subtitle+'"'
     line += ">" + event.event_type.name + "</a><br/>"
+    if event.specific_subtitle != ""
+      line += event.specific_subtitle + "<br/>"
+    end
     if event.is_online
       line += "<img src=\"/img/flags/ol.png\"/> Online"
     elsif event.is_blended_learning
