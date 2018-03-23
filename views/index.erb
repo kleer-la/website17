@@ -59,7 +59,7 @@
         <ul class="sidebar-nav">
 
           <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
-          <li><a href="javascript:void(0);" onclick='scrollTo("#about");closeSidebar(event)'><%=t('side_menu.we_do')%></a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo2("#about");closeSidebar(event)'><%=t('side_menu.we_do')%></a></li>
           <li>
             <ul>
                 <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
@@ -92,7 +92,7 @@
             </ul>
           </li>
 
-          <li><a href="javascript:void(0);" onclick='scrollTo("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
 
         </ul>
 
@@ -147,7 +147,7 @@
                   <div class="text-vertical-center">
                       <h1><%=t('slider.title_1')%></h1>
                       <h3><%=t('slider.text_1')%></h3>
-                      <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                      <a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
                         <i class="fa fa-chevron-down fa-fw fa-1x"></i>
                       </a>
                   </div>
@@ -159,7 +159,7 @@
                   <div class="text-vertical-center">
                       <h1><%=t('slider.title_2')%></h1>
                       <h3><%=t('slider.text_2')%></h3>
-                      <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                      <a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
                         <i class="fa fa-chevron-down fa-fw fa-1x"></i>
                       </a>
                   </div>
@@ -171,7 +171,7 @@
                   <div class="text-vertical-center">
                       <h1><%=t('slider.title_3')%></h1>
                       <h3><%=t('slider.text_3')%></h3>
-                      <a href="javascript:void(0);" onclick='scrollTo("#about");' class="btn btn-dark btn-lg sr-button">
+                      <a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
                         <i class="fa fa-chevron-down fa-fw fa-1x"></i>
                       </a>
                   </div>
@@ -536,7 +536,7 @@
         </div>
 
       </div>
-      <a id="to-top" href="javascript:void(0);" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+      <a id="to-top" href="javascript:void(0);" onclick='scrollTo2("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </div>
   </footer>
 
@@ -632,7 +632,8 @@
     }, 300);
 
     // Scroll animado a las secciones la página
-    function scrollTo(anchor){
+    
+    function scrollTo2(anchor){
           var target = $(anchor);
           if (target.length) {
             $('html,body').animate({
