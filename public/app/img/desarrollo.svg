@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="69.133858"
-   height="55.93161"
-   viewBox="0 0 18.291666 14.798571"
+   width="150"
+   height="115.06905"
+   viewBox="0 0 39.687499 30.44535"
    version="1.1"
    id="svg11636"
    inkscape:version="0.92.1 r15371"
@@ -25,10 +25,10 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="34.920003"
-     inkscape:cy="28.223954"
-     inkscape:document-units="mm"
+     inkscape:zoom="1.979899"
+     inkscape:cx="30.500591"
+     inkscape:cy="28.223956"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="10"
@@ -57,25 +57,25 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(61.021989,-141.50235)">
+     transform="translate(61.02199,-125.85557)">
     <g
-       transform="matrix(0.26083473,0,0,0.26083473,-169.86553,-166.64082)"
+       transform="matrix(0.6901252,0,0,0.6901252,-353.35845,-693.79448)"
        id="g1820"
-       style="stroke-width:1.01437151">
+       style="stroke-width:0.38338453">
       <circle
-         style="fill:#8ed3f1;stroke-width:1.01437151"
+         style="fill:#8ed3f1;stroke-width:0.38338453"
          cx="445.65701"
          cy="1209.741"
          r="18.224001"
          id="circle1760" />
       <g
          id="g1774"
-         style="stroke-width:1.01437151">
+         style="stroke-width:0.38338453">
         <g
            id="g1766"
-           style="stroke-width:1.01437151">
+           style="stroke-width:0.38338453">
           <path
-             style="fill:#ffffff;stroke-width:1.01437151"
+             style="fill:#ffffff;stroke-width:0.38338453"
              inkscape:connector-curvature="0"
              d="m 432.223,1197.763 c 1.234,1.782 -0.682,3.752 -2.498,2.568 -0.088,-0.058 -0.168,-0.135 -0.228,-0.222 -1.233,-1.783 0.682,-3.752 2.498,-2.568 0.088,0.058 0.168,0.135 0.228,0.222 z"
              id="path1762" />
@@ -83,16 +83,16 @@
              inkscape:connector-curvature="0"
              d="m 430.895,1201.41 c -1.363,0.019 -2.489,-1.076 -2.508,-2.44 -0.019,-1.364 1.076,-2.489 2.439,-2.509 1.365,-0.019 2.491,1.076 2.51,2.44 0.019,1.364 -1.076,2.49 -2.441,2.509 z m -0.049,-3.509 c -0.57,0.01 -1.026,0.479 -1.019,1.049 0.007,0.57 0.478,1.027 1.047,1.02 0.57,-0.01 1.029,-0.479 1.021,-1.049 -0.007,-0.569 -0.479,-1.027 -1.049,-1.02 z"
              id="path1764"
-             style="stroke-width:1.01437151" />
+             style="stroke-width:0.38338453" />
         </g>
         <g
            id="g1772"
-           style="stroke-width:1.01437151">
+           style="stroke-width:0.38338453">
           <g
              id="g1770"
-             style="stroke-width:1.01437151">
+             style="stroke-width:0.38338453">
             <path
-               style="fill:#82b945;stroke-width:1.01437151"
+               style="fill:#82b945;stroke-width:0.38338453"
                inkscape:connector-curvature="0"
                d="m 430.871,1201.53 c 2.413,0 2.417,-3.75 0,-3.75 -2.413,0 -2.417,3.75 0,3.75 z"
                id="path1768" />
@@ -101,18 +101,18 @@
       </g>
       <g
          id="g1818"
-         style="stroke-width:1.01437151">
+         style="stroke-width:0.38338453">
         <g
            id="g1810"
-           style="stroke-width:1.01437151">
+           style="stroke-width:0.38338453">
           <g
              id="g1806"
-             style="stroke-width:1.01437151">
+             style="stroke-width:0.38338453">
             <g
                id="g1780"
-               style="stroke-width:1.01437151">
+               style="stroke-width:0.38338453">
               <rect
-                 style="fill:#ffffff;stroke-width:1.01437151"
+                 style="fill:#ffffff;stroke-width:0.38338453"
                  x="436.48099"
                  y="1197.989"
                  width="35.391998"
@@ -122,57 +122,57 @@
                  inkscape:connector-curvature="0"
                  d="m 471.874,1224.077 h -35.392 c -0.414,0 -0.75,-0.336 -0.75,-0.75 v -25.338 c 0,-0.414 0.336,-0.75 0.75,-0.75 h 35.392 c 0.414,0 0.75,0.336 0.75,0.75 v 25.338 c 0,0.414 -0.336,0.75 -0.75,0.75 z m -34.643,-1.5 h 33.892 v -23.838 h -33.892 z"
                  id="path1778"
-                 style="stroke-width:1.01437151" />
+                 style="stroke-width:0.38338453" />
             </g>
             <path
                inkscape:connector-curvature="0"
                d="m 471.572,1202.441 h -34.954 c -0.414,0 -0.75,-0.336 -0.75,-0.75 0,-0.414 0.336,-0.75 0.75,-0.75 h 34.954 c 0.414,0 0.75,0.336 0.75,0.75 0,0.414 -0.336,0.75 -0.75,0.75 z"
                id="path1782"
-               style="stroke-width:1.01437151" />
+               style="stroke-width:0.38338453" />
             <circle
                cx="439.254"
                cy="1199.786"
                r="0.52700001"
                id="circle1784"
-               style="stroke-width:1.01437151" />
+               style="stroke-width:0.38338453" />
             <circle
                cx="441.03799"
                cy="1199.786"
                r="0.52700001"
                id="circle1786"
-               style="stroke-width:1.01437151" />
+               style="stroke-width:0.38338453" />
             <circle
                cx="442.70001"
                cy="1199.786"
                r="0.52700001"
                id="circle1788"
-               style="stroke-width:1.01437151" />
+               style="stroke-width:0.38338453" />
             <g
                id="g1804"
-               style="stroke-width:1.01437151">
+               style="stroke-width:0.38338453">
               <g
                  id="g1792"
-                 style="stroke-width:1.01437151">
+                 style="stroke-width:0.38338453">
                 <path
                    inkscape:connector-curvature="0"
                    d="m 448.774,1215.553 c -0.224,0 -0.447,-0.084 -0.62,-0.253 l -2.972,-2.904 c -0.169,-0.165 -0.265,-0.391 -0.267,-0.627 -0.001,-0.236 0.091,-0.464 0.257,-0.632 l 2.835,-2.856 c 0.345,-0.348 0.906,-0.35 1.254,-0.01 0.348,0.346 0.35,0.907 0.005,1.254 l -2.206,2.224 2.333,2.28 c 0.351,0.342 0.357,0.903 0.015,1.253 -0.174,0.177 -0.404,0.267 -0.634,0.267 z"
                    id="path1790"
-                   style="stroke-width:1.01437151" />
+                   style="stroke-width:0.38338453" />
               </g>
               <g
                  id="g1796"
-                 style="stroke-width:1.01437151">
+                 style="stroke-width:0.38338453">
                 <path
                    inkscape:connector-curvature="0"
                    d="m 458.743,1215.553 c -0.23,0 -0.46,-0.09 -0.634,-0.268 -0.343,-0.35 -0.336,-0.911 0.014,-1.253 l 2.333,-2.28 -2.205,-2.224 c -0.345,-0.347 -0.343,-0.908 0.005,-1.254 0.348,-0.344 0.909,-0.342 1.254,0.01 l 2.835,2.856 c 0.166,0.168 0.259,0.396 0.257,0.632 -0.002,0.236 -0.098,0.462 -0.267,0.627 l -2.972,2.904 c -0.173,0.17 -0.397,0.254 -0.62,0.254 z"
                    id="path1794"
-                   style="stroke-width:1.01437151" />
+                   style="stroke-width:0.38338453" />
               </g>
               <g
                  id="g1802"
-                 style="stroke-width:1.01437151">
+                 style="stroke-width:0.38338453">
                 <line
-                   style="fill:#ffffff;stroke-width:1.01437151"
+                   style="fill:#ffffff;stroke-width:0.38338453"
                    x1="451.03799"
                    y1="1216.514"
                    x2="457.25299"
@@ -182,20 +182,20 @@
                    inkscape:connector-curvature="0"
                    d="m 451.037,1217.4 c -0.162,0 -0.326,-0.044 -0.473,-0.138 -0.414,-0.262 -0.537,-0.81 -0.275,-1.223 l 6.216,-9.816 c 0.262,-0.413 0.81,-0.536 1.223,-0.274 0.414,0.262 0.537,0.81 0.275,1.224 l -6.216,9.815 c -0.168,0.267 -0.456,0.412 -0.75,0.412 z"
                    id="path1800"
-                   style="stroke-width:1.01437151" />
+                   style="stroke-width:0.38338453" />
               </g>
             </g>
           </g>
           <polygon
-             style="fill:#e7829b;stroke-width:1.01437151"
-             points="441.534,1223.097 471.874,1223.097 471.874,1220.13 439.761,1220.13 439.761,1201.903 436.236,1201.903 436.236,1220.766 436.236,1223.097 "
+             style="fill:#e7829b;stroke-width:0.38338453"
+             points="471.874,1223.097 471.874,1220.13 439.761,1220.13 439.761,1201.903 436.236,1201.903 436.236,1220.766 436.236,1223.097 441.534,1223.097 "
              id="polygon1808" />
         </g>
         <g
            id="g1816"
-           style="stroke-width:1.01437151">
+           style="stroke-width:0.38338453">
           <rect
-             style="fill:#ffffff;stroke-width:1.01437151"
+             style="fill:#ffffff;stroke-width:0.38338453"
              x="431.16699"
              y="1223.061"
              width="45.355999"
@@ -205,7 +205,7 @@
              inkscape:connector-curvature="0"
              d="m 476.523,1225.926 h -45.356 c -0.414,0 -0.75,-0.336 -0.75,-0.75 v -2.115 c 0,-0.414 0.336,-0.75 0.75,-0.75 h 45.356 c 0.414,0 0.75,0.336 0.75,0.75 v 2.115 c 0,0.414 -0.336,0.75 -0.75,0.75 z m -44.606,-1.5 h 43.856 v -0.615 h -43.856 z"
              id="path1814"
-             style="stroke-width:1.01437151" />
+             style="stroke-width:0.38338453" />
         </g>
       </g>
     </g>
