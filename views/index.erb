@@ -197,10 +197,9 @@
                               <img src="app/img/facilitaciones.svg" alt="icono facilitaciones">
                           </span>
                               <h4>
-                                  <strong><%=t('home.facilitation')%></strong>
+                                <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.facilitation')%></a>
                               </h4>
                               <p><%=t('home.facilitation_text')%></p>
-                              <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.plus_info')%></a>
                           </div>
                       </div>
                       <div class="col-md-4 col-sm-4">
@@ -209,10 +208,10 @@
                               <img src="app/img/coaching.svg" alt="icono coaching">
                           </span>
                               <h4>
-                                  <strong><%=t('home.coaching')%></strong>
+                                <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.coaching')%>
+                                </a>
                               </h4>
                               <p><%=t('home.coaching_text')%></p>
-                              <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.plus_info')%></a>
                           </div>
                       </div>
                       <div class="col-md-4 col-sm-4">
@@ -221,10 +220,9 @@
                               <img src="app/img/cursos.svg" alt="icono cursos">
                           </span>
                               <h4>
-                                  <strong><%=t('home.courses')%></strong>
+                                  <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.courses')%></a>
                               </h4>
                               <p><%=t('home.courses_text')%></p>
-                              <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.plus_info')%></a>
                           </div>
                       </div>
 
