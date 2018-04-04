@@ -30,18 +30,9 @@
 
   <base href="/app">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body ng-app="kleerApp">
-  <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
   <!-- Add your site or application content here -->
 
@@ -127,8 +118,6 @@
   <div id="top"></div>
 
   <!-- Contenido del sitio -->
-  <!-- <div ng-view="" class="mainContainer"></div> -->
-
 
   <!-- Slider de imágenes -->
   <header id="slider" class="carousel slide carousel-fade">
@@ -204,9 +193,8 @@
                   <div class="row">
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x sr-services">
-                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                              <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
+                              <span class="fa-stack fa-4x">
+                              <img src="app/img/coaching.svg" alt="">
                           </span>
                               <h4>
                                   <strong><%=t('home.facilitation')%></strong>
@@ -632,7 +620,7 @@
     }, 300);
 
     // Scroll animado a las secciones la página
-    
+
     function scrollTo2(anchor){
           var target = $(anchor);
           if (target.length) {

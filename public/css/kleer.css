@@ -367,9 +367,6 @@ h2 {
 	background-color: #fff;
 	font-size: 11pt;
 	box-shadow: 10px 10px #a44f70;
-	/* transform:rotate(3deg);
-	-ms-transform:rotate(3deg);
-	-webkit-transform:rotate(3deg); */
 }
 
 .carousel-publicamos {
@@ -388,9 +385,6 @@ h2 {
 	color: #1c1c1c;
 	top: 50%;
 	box-shadow:5px 5px #a4a4a4;
-	/* transform:rotate(-2deg);
-	-ms-transform:rotate(-2deg);
-	-webkit-transform:rotate(-2deg); */
 	border-radius: 0px;
 	color: #000;
 	font-weight: bold;
@@ -441,9 +435,9 @@ h2 {
 
 .suscription-select {
 	-webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    font-family: 'Chewy', cursive;
+  -moz-appearance:none;
+  appearance:none;
+  font-family: 'Chewy', cursive;
 	font-size: 21pt;
 	color: #1c1c1c;
 	width: 500px
@@ -579,7 +573,6 @@ h2 {
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	margin-top: 40px;
-	/* width: 500px; */
 	min-height: 300px;
 	padding-top: 30px;
 	padding-left: 20px;
@@ -627,9 +620,6 @@ h2 {
 	position: relative;
 	top: -100px;
 	text-align: center;
-	/* transform:rotate(-2deg);
-	-ms-transform:rotate(-2deg);
-	-webkit-transform:rotate(-2deg); */
 }
 
 .paper-agenda-container-comunidad {
@@ -656,9 +646,6 @@ h2 {
 
 .side-cursos {
 	color: #fff;
-	/* transform:rotate(4deg);
-	-ms-transform:rotate(4deg);
-	-webkit-transform:rotate(4deg); */
 	z-index: 10;
 }
 
@@ -779,7 +766,7 @@ h2 {
 
 }
 
-. panel-no-border {
+.panel-no-border {
 	border: none;
 }
 
