@@ -29,21 +29,26 @@
 			<div class="col-md-4 text-center">
 				<a href="/<%=session[:locale]%>/libros">
 					<img class="middle-icon" src="/app/img/libros.svg" alt="icono libros">
-					<h4><%=t('side_menu.books')%></h4>
+					<div class="row">
+						<h4 class="btn btn-light"><%=t('side_menu.books')%></h4>
+					</div>
 				</a>
 			</div>
-
 			<div class="col-md-4">
 				<a href="/<%=session[:locale]%>/blog">
 					<img class="middle-icon" src="/app/img/blog.svg" alt="icono blog">
-					<h4><%=t('side_menu.blog')%></h4>
+					<div class="row">
+						<h4 class="btn btn-light"><%=t('side_menu.blog')%></h4>
+					</div>
 				</a>
 			</div>
 
 			<div class="col-md-4">
 				<a href="http://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank">
 					<img class="middle-icon" src="/app/img/videos.svg" alt="icono videos">
-					<h4><%=t('side_menu.videos')%></h4>
+					<div>
+						<h4 class="btn btn-light"><%=t('side_menu.videos')%></h4>
+					</div>
 				</a>
 			</div>
 
