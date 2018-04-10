@@ -30,18 +30,9 @@
 
   <base href="/app">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body ng-app="kleerApp">
-  <!--[if lte IE 8]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
   <!-- Add your site or application content here -->
 
@@ -127,8 +118,6 @@
   <div id="top"></div>
 
   <!-- Contenido del sitio -->
-  <!-- <div ng-view="" class="mainContainer"></div> -->
-
 
   <!-- Slider de imágenes -->
   <header id="slider" class="carousel slide carousel-fade">
@@ -204,41 +193,36 @@
                   <div class="row">
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x sr-services">
-                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                              <i class="fa fa-users fa-stack-1x text-primary sr-services"></i>
+                              <span class="fa-stack fa-4x">
+                              <img src="app/img/facilitaciones.svg" alt="icono facilitaciones">
                           </span>
                               <h4>
-                                  <strong><%=t('home.facilitation')%></strong>
+                                <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.facilitation')%></a>
                               </h4>
                               <p><%=t('home.facilitation_text')%></p>
-                              <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.plus_info')%></a>
                           </div>
                       </div>
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x sr-services">
-                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                              <i class="fa fa-compass fa-stack-1x text-primary sr-services"></i>
+                              <span class="fa-stack fa-4x">
+                              <img src="app/img/coaching.svg" alt="icono coaching">
                           </span>
                               <h4>
-                                  <strong><%=t('home.coaching')%></strong>
+                                <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.coaching')%>
+                                </a>
                               </h4>
                               <p><%=t('home.coaching_text')%></p>
-                              <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.plus_info')%></a>
                           </div>
                       </div>
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x sr-services">
-                              <i class="fa fa-circle fa-stack-2x sr-services"></i>
-                              <i class="fa fa-graduation-cap fa-stack-1x text-primary sr-services"></i>
+                              <span class="fa-stack fa-4x">
+                              <img src="app/img/cursos.svg" alt="icono cursos">
                           </span>
                               <h4>
-                                  <strong><%=t('home.courses')%></strong>
+                                  <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.courses')%></a>
                               </h4>
                               <p><%=t('home.courses_text')%></p>
-                              <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.plus_info')%></a>
                           </div>
                       </div>
 
@@ -632,7 +616,7 @@
     }, 300);
 
     // Scroll animado a las secciones la página
-    
+
     function scrollTo2(anchor){
           var target = $(anchor);
           if (target.length) {

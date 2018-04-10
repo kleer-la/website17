@@ -110,13 +110,6 @@ get '/' do
 	erb :index, :layout => :layout_angular
 end
 
-get '/home' do # Dejo esta ruta para que los test de la home peguen contra la home antigua y no la nueva home que no pasa
-	@active_tab_index = "active"
-	@categories = KeventerReader.instance.categories session[:locale]
-	@kleerers = KeventerReader.instance.kleerers session[:locale]
-	erb :index_old
-end
-
 get '/en' do
   redirect "/en/", 301 # permanent redirect
 end

@@ -908,6 +908,11 @@ h3.headerTitle {
     color: #56f7cd;
 }
 
+.middle-icon {
+  height: 130px;
+  width: 130px;
+}
+
 @media (max-width: 568px) {
     .withSubtitle .headerTitle {
         font-size: 28px;
