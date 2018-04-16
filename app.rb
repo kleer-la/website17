@@ -475,6 +475,14 @@ get '/prensa/casos/transformacion-digital-bbva-continental' do
   erb :prensa_casos_bbva_2018, :layout => :layout_2017
 end
 
+get '/prensa/casos/capacitaciones-agiles-endava' do
+  @page_title += " | Jornada de capacitaciones ágiles en Endava"
+  @meta_description = "Kleer - Coaching & Training - Endava, una empresa internacional que ofrece servicios de desarrollo de software con presencia en Latinoamérica, Estados Unidos y Europa, se vio en el desafío de mantener la cultura ágil dentro de un contexto de gran crecimiento en poco tiempo."
+  @meta_keywords = "Kleer, Agile training, Scrum, Kanban, Trabajo en equipo, Capacitación"
+
+  erb :prensa_casos_endava_2018, :layout => :layout_2017
+end
+
 get '/clientes' do
   @page_title += " | Nuestros clientes"
   @meta_description = "Kleer - Coaching & Training - Estas organizaciones confían en nosotros"

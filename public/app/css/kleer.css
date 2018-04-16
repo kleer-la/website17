@@ -107,6 +107,13 @@ img {
     background-position: center center;
 }
 
+.header-endava {
+    background: url(../img/endava.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+}
+
 .header-technisys {
     background: url(../img/technisys.jpg);
     background-size: cover;
