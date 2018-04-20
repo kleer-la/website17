@@ -602,14 +602,14 @@ section#about {
 footer {
     padding: 36px 0;
     height: 550px;
-    overflow: hidden;
+    overflow: visible;
     background: #87CEDC;
 }
 
 footer-small {
     padding: 35px 0;
     height: 200px;
-    overflow: hidden;
+    overflow: visible;
     background: #1c1c1b;
     display: inherit;
 }
@@ -1071,11 +1071,11 @@ p.lead {
 }
 
 .slide-home-newsletter {
-    background-color: #62c3d1;
+    background-color: #e45f95;
     text-align: center;
     color: white;
     padding: 20px;
-    background: url('/img/fondos/bg-avion.png') #62c3d1;
+    background: url('/img/fondos/bg-avion.png') #e45f95;
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: 95%;
@@ -1310,6 +1310,10 @@ h3.list-group-item-heading {
     .slide-evento-logistics {
         max-height: 400px;
     }
+    .slide-home-newsletter {
+    background-position-x: 100%;
+    background-size: 30%;
+}
 }
 
 .book-description {
