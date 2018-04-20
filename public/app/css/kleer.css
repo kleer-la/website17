@@ -600,7 +600,7 @@ section#about {
 /* Footer */
 
 footer {
-    padding: 80px 0;
+    padding: 36px 0;
     height: 550px;
     overflow: hidden;
     background: #87CEDC;
@@ -681,7 +681,6 @@ footer .nav-tabs>li {
     height: 500px;
     overflow: hidden;
     left: 5%;
-    margin-top: -50px;
 }
 
 .nav>li>a {
