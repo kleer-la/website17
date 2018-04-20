@@ -253,7 +253,7 @@ img {
 /* Botones custom */
 
 .btn-dark {
-    border-radius: 0;
+    border-radius: 5px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -266,7 +266,7 @@ img {
 }
 
 .btn-light {
-    border-radius: 0;
+    border-radius: 5px;
     color: #333;
     background-color: rgb(255, 255, 255);
 }
@@ -282,6 +282,7 @@ img {
     margin-left: 30px;
     top: -4px;
     position: relative;
+    border-radius: 5px;
 }
 
 @media (max-width: 450px) {
@@ -599,16 +600,16 @@ section#about {
 /* Footer */
 
 footer {
-    padding: 80px 0;
+    padding: 36px 0;
     height: 550px;
-    overflow: hidden;
+    overflow: visible;
     background: #87CEDC;
 }
 
 footer-small {
     padding: 35px 0;
     height: 200px;
-    overflow: hidden;
+    overflow: visible;
     background: #1c1c1b;
     display: inherit;
 }
@@ -680,7 +681,6 @@ footer .nav-tabs>li {
     height: 500px;
     overflow: hidden;
     left: 5%;
-    margin-top: -50px;
 }
 
 .nav>li>a {
@@ -1071,11 +1071,11 @@ p.lead {
 }
 
 .slide-home-newsletter {
-    background-color: #62c3d1;
+    background-color: #e45f95;
     text-align: center;
     color: white;
     padding: 20px;
-    background: url('/img/fondos/bg-avion.png') #62c3d1;
+    background: url('/img/fondos/bg-avion.png') #e45f95;
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: 95%;
@@ -1310,6 +1310,10 @@ h3.list-group-item-heading {
     .slide-evento-logistics {
         max-height: 400px;
     }
+    .slide-home-newsletter {
+    background-position-x: 100%;
+    background-size: 30%;
+}
 }
 
 .book-description {
