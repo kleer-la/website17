@@ -793,6 +793,23 @@ h2 {
 }
 
 .subtitle {
-    margin-top: 2px;
-    margin-bottom: 5px;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.row-clientes {
+	display: flex;
+  flex-wrap: wrap;
+	padding: 10px;
+}
+
+.column-clientes {
+  flex: 25%;
+  max-width: 25%;
+  padding: 10px;
+}
+
+.row-clientes img {
+  margin-top: 8px;
+  vertical-align: middle;
 }
