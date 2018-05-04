@@ -1292,7 +1292,12 @@ h3.list-group-item-heading {
 }
 
 .row-clientes img {
-  max-width: 150px;
+  max-width: 200px;
+}
+
+.no-space {
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 1200px) {
