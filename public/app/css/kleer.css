@@ -517,8 +517,8 @@ section#about {
 
 .image-about-03 {
     position: absolute;
-    width: 25%;
-    right: 8%;
+    width: 15%;
+    right: 15%;
     z-index: 2;
     top: -20px;
 }
