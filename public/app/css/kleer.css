@@ -678,8 +678,8 @@ footer .nav-tabs>li {
 
 .kleero01 {
     position: absolute;
-    height: 500px;
-    overflow: hidden;
+    height: 100px;
+    width: 18vh;
     left: 5%;
 }
 
@@ -801,12 +801,14 @@ a.lower {
         margin-left: -75px;
         width: 150px;
     }
+
     .kleero01 {
         position: absolute;
-        height: 500px;
-        overflow: hidden;
-        left: -35px;
-        margin-top: -40px;
+        height: 100px;
+        width: 18vh;
+        left: 35px;
+        margin-top: 80px;
+        z-index: 99;
     }
     .kleero01 img {
         width: 50%;
