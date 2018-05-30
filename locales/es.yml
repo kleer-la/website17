@@ -680,8 +680,7 @@ es:
                     <option value="ZI-EUR-ES (España)">España - Región de Murcia</option>
                     <option value="ZI-AMN-US (EEUU)">Estados Unidos</option>
                     <option value="ZI-AMS-UY (Uruguay)">Uruguay</option>
-                    <option value="ZI-AMS-VE (Venezuela)">Venezuela</option>
-'
+                    <option value="ZI-AMS-VE (Venezuela)">Venezuela</option>'
     kleexperience:
         title: "Ésta es la Experiencia Kleer"
         professionals:
