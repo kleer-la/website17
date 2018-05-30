@@ -411,16 +411,16 @@ get '/prensa' do
   erb :prensa, :layout => :layout_2017
 end
 
-get '/privacidad' do
+get '/privacy' do
   @active_tab_privacidad = "active"
   @page_title += " | Declaración de privacidad"
-  erb :privacidad, :layout => :layout_2017
+  erb :privacy, :layout => :layout_2017
 end
 
-get '/terminos' do
+get '/terms' do
   @active_tab_terminos = "active"
   @page_title += " | Terminos y condiciones"
-  erb :terminos, :layout => :layout_2017
+  erb :terms, :layout => :layout_2017
 end
 
 get '/clientes/equipos-scrum-en-technisys-2015' do

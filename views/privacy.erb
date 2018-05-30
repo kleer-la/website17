@@ -1,0 +1,51 @@
+<div class="blackBg">
+<div class="header-small header-prensa"></div>
+
+<div class="header-description">
+	<h1 class="headerTitle"><%=t("privacy.title")%></h1>
+</div>
+
+</div>
+
+<div class="vSpace"></div>
+<div class="vSpace"></div>
+
+<div class="container mainContent">
+	<div class="container-fluid">
+
+		<div class="col-md-9 no-hpadding contenedor-main-izq">
+
+			<% if (session[:locale] == "en") %>
+				<p><%=t("privacy.text")%></p>
+			<% end %>
+
+			<h3><%=t("privacy.title1")%></h3>
+			<p><%=t("privacy.text1")%></p>
+			<h3><%=t("privacy.title2")%></h3>
+			<p><%=t("privacy.text2")%></p>
+			<h3><%=t("privacy.title3")%></h3>
+			<p><%=t("privacy.text3")%></p>
+			<h3><%=t("privacy.title4")%></h3>
+			<p><%=t("privacy.text4")%></p>
+			<h3><%=t("privacy.title5")%></h3>
+			<p><%=t("privacy.text5")%></p>
+			<h3><%=t("privacy.title6")%></h3>
+			<p><%=t("privacy.text6")%></p>
+			<h3><%=t("privacy.title7")%></h3>
+			<p><%=t("privacy.text7")%></p>
+
+			<% if (session[:locale] == "es") %>
+				<h3><%=t("privacy.title8")%></h3>
+				<p><%=t("privacy.text8")%></p>
+			<% end %>
+
+
+		</div>
+		<div class="col-md-3 hidden-xs hidden-sm">
+			<%= erb :_twitter_widget, :layout => false %>
+		</div>
+	</div>
+</div>
+
+<div class="vSpace"></div>
+<div class="vSpace"></div>
