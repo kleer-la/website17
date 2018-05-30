@@ -417,6 +417,12 @@ get '/privacidad' do
   erb :privacidad, :layout => :layout_2017
 end
 
+get '/terminos' do
+  @active_tab_terminos = "active"
+  @page_title += " | Terminos y condiciones"
+  erb :terminos, :layout => :layout_2017
+end
+
 get '/clientes/equipos-scrum-en-technisys-2015' do
   redirect '/prensa/casos/equipos-scrum-en-technisys-2015', 301 # permanent redirect
 end
