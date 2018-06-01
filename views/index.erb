@@ -371,9 +371,6 @@
                               <p><%=t("contact.locations.peru.address1")%>
                                 <br><%=t("contact.locations.peru.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
-                                  <%=t("contact.locations.peru.phone")%>
-                                   </li>
                                 <li><i class="fa fa-envelope-o fa-fw"></i>
                                   <a href="mailto:<%=t("contact.locations.peru.contact_email")%>">
                                     <%=t("contact.locations.peru.contact_email")%>
@@ -496,14 +493,22 @@
               <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x sr-contact"></i></a></li>
             </ul>
             <hr class="small">
-            <p class="text-muted">Copyright &copy; Kleer 2017</p>
+            <p class="text-muted">Copyright &copy; Kleer 2017 |
+              <% if (session[:locale] == "es") %>
+                <a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> |
+                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a>
+              <% end %>
+              <% if (session[:locale] == "en") %>
+                <a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> |
+                <a href="/<%=session[:locale]%>/terms"> Terms of service</a>
+              <% end %>
+            </p>
           </div>
         </div>
-
       </div>
       <a id="to-top" href="javascript:void(0);" onclick='scrollTo2("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </div>
-      <!-- Suscripcion Newsletter -->
+<!-- Suscripcion Newsletter -->
     <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
         <div class="container-fluid">
             <div class="container">

@@ -411,6 +411,18 @@ get '/prensa' do
   erb :prensa, :layout => :layout_2017
 end
 
+get '/privacy' do
+  @active_tab_privacidad = "active"
+  @page_title += " | Declaración de privacidad"
+  erb :privacy, :layout => :layout_2017
+end
+
+get '/terms' do
+  @active_tab_terminos = "active"
+  @page_title += " | Terminos y condiciones"
+  erb :terms, :layout => :layout_2017
+end
+
 get '/clientes/equipos-scrum-en-technisys-2015' do
   redirect '/prensa/casos/equipos-scrum-en-technisys-2015', 301 # permanent redirect
 end

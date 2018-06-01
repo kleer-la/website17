@@ -36,3 +36,11 @@ Feature: Static pages - Frequently asked questions
 		Then I should see "Sparkta "
 		And I should see "Persona Natural"
 		And I should see "NIT"
+
+		Scenario: Privacy page
+			Given I visit the Privacy page
+			Then I should see "Declaración de privacidad"
+
+		Scenario: Terms page
+			Given I visit the Terms page
+			Then I should see "Términos de servicio"

@@ -345,3 +345,19 @@ end
 When(/^I get (\d+) community events$/) do |qty|
   visit "/es/comunidad/eventos/proximos/#{qty}"
 end
+
+Given(/^I visit the Privacy page$/) do
+	visit "/es/privacy"
+end
+
+Given(/^I visit the Terms page$/) do
+	visit "/es/terms"
+end
+
+Given(/^I go to the Blog page$/) do
+	visit "/es/blog"
+end
+
+Given(/^I navigate to "(.*?)"$/) do |ruta|
+	visit "/es/#{ruta}/"
+end
