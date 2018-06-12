@@ -145,6 +145,21 @@ img {
     background-position: center center;
     /*opacity: 0.3;*/
 }
+.header-privacy {
+    background: url(../img/privacy.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
+
+.header-terms {
+    background: url(../img/privacy.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+    /*opacity: 0.3;*/
+}
 
 .header-publicamos {
     background: url(../img/publicamos.jpg);
