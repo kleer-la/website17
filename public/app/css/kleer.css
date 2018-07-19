@@ -337,9 +337,12 @@ hr.small {
 }
 
 /*Menu desktop*/
-
+.navbar {
+    border: none;
+}
 .navbar-fixed-top {
     top: 20px;
+    border-width: 0;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -353,6 +356,9 @@ hr.small {
     color: #fff;
 }
 
+.dropdown-menu {
+    border: none;
+}
 .dropdown-submenu{
     position:relative;
 } 
@@ -368,6 +374,10 @@ hr.small {
 } 
 .dropdown-submenu:hover > .dropdown-menu{
     display:block;
+}
+
+.dropdown-menu>li>a {
+    color: #fff;
 }
  
 .dropdown-submenu > a:after{
