@@ -36,51 +36,51 @@
 
   <!-- Add your site or application content here -->
 
-  <!-- Menu desktop -->
-<div class="hidden-xs hidden-sm">
-  <nav class="navbar navbar-default navbar-fixed-top container-fluid text-uppercase" role="navigation">
+    <!-- Menu desktop -->
+  <div class="hidden-xs hidden-sm">
+    <nav class="navbar navbar-default navbar-fixed-top container-fluid text-uppercase" role="navigation">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        <li class="root">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="root">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b>
+              <ul class="dropdown-menu">
+                  <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
+                  <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
+                  <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
+              </ul>
+            </a>
+          </li>
+          <li class="root">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b>
             <ul class="dropdown-menu">
-                <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
-                <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
-                <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
-                  </ul>
-                </li>
-                <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
+              <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
+              <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
+              <li><a href="http://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
             </ul>
-          </a>
-        </li>
-        <li class="root">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b>
-          <ul class="dropdown-menu">
-            <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
-            <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
-            <li><a href="http://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
-          </ul>
-          </a>
-        </li>
-        <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
-        <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
-        <li><a href="http://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
-        <li><a href="http://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
-        <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="social-icons-desktop fa fa-google-plus"></i></a></li>
-        <li><a href="https://github.com/kleer-la" target="_blank"><i class="social-icons-desktop fa fa-github"></i></a></li>
-        <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
-        <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </nav>
-</div>
+            </a>
+          </li>
+          <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
+          <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
+          <li><a href="http://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
+          <li><a href="http://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
+          <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="social-icons-desktop fa fa-google-plus"></i></a></li>
+          <li><a href="https://github.com/kleer-la" target="_blank"><i class="social-icons-desktop fa fa-github"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
+          <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  </div>
 
   <!-- Menu lateral -->
   <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle visible-xs visible-sm"><i class="fa fa-bars"></i></a>
@@ -89,7 +89,7 @@
       <div class="menu-container text-uppercase">
 
         <div id="logoMenu">
-          <a href="/"><img src="app/img/kleer-logo.png"></a>
+          <a href="/"><img src="/app/img/kleer-logo.png"></a>
         </div>
 
         <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
