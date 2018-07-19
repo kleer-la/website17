@@ -351,6 +351,11 @@ hr.small {
     background-color: #87cedc;
 }
 
+.navbar-default .navbar-nav>li>a:hover {
+    color: #337480;
+    background-color: transparent;
+}
+
 .navbar-default .navbar-nav>li>a {
     line-height: 39px;
     color: #fff;
@@ -378,6 +383,10 @@ hr.small {
 
 .dropdown-menu>li>a {
     color: #fff;
+}
+
+.dropdown-menu>li>a:hover {
+    color: #337480;
 }
  
 .dropdown-submenu > a:after{
@@ -425,6 +434,10 @@ hr.small {
 .social-icons-desktop {
     color: #337480;
     font-size: 18px;
+}
+
+.social-icons-desktop:hover {
+    color: #fff;
 }
 
 /* Menu lateral*/
