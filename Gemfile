@@ -23,7 +23,6 @@ gem 'escape_utils'
 
 group :development do
   gem 'foreman'
-  gem 'heroku'
 end
 
 group :development, :test do
