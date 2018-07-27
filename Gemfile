@@ -23,6 +23,7 @@ gem 'escape_utils'
 
 group :development do
   gem 'foreman'
+	gem 'platform-api'
 end
 
 group :development, :test do
