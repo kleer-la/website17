@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kleer - Coaching, Facilitación y Cursos">
+    <meta name="author" content="Mauro Strione - www.innqube.com">
+
+    <title>Kleer - Agile Coaching &nsp; Training</title>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
+
+
+    <!-- build:css(.tmp) styles/main.css -->
+    <link href="css/kleer.css" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
+
+
+    <base href="/app">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="kleerApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <!-- Menu lateral -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+
+        <div class="menu-container text-uppercase">
+
+            <div id="logoMenu">
+                <img src="app/img/kleer-logo.png">
+            </div>
+
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <ul class="sidebar-nav">
+                <li><a href="javascript:void(0);" onclick='scrollTo("#about");closeSidebar(event)'>Hacemos</a></li>
+                <li><a href="javascript:void(0);" onclick='scrollTo("#team");closeSidebar(event)'>Somos</a></li>
+                <li><a href="javascript:void(0);" onclick='scrollTo("#share");closeSidebar(event)'>Compartimos</a></li>
+                <li><a href="javascript:void(0);" onclick='scrollTo("#contact");closeSidebar(event)'>¿Hablamos?</a></li>
+            </ul>
+
+            <div class="social-media">
+                <ul class="list-unstyled list-inline font-family-alt no-letter-spacing text-extra-large">
+                    <li><a href="http://facebook.com/kleer.la" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="http://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="http://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                <span class="display-inline-block font-family-alt text-large email"><a href="mailto:hola@kleer.la">hola@kleer.la</a></span>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Logo Kleer -->
+
+    <div id="logo">
+        <img src="app/img/kleer-logo.png">
+    </div>
+
+    <!-- Márgenes -->
+    <div class="margin top-margin"></div>
+    <div class="margin left-margin"></div>
+    <div class="margin rigth-margin"></div>
+    <div class="margin bottom-margin"></div>
+    <div id="top"></div>
+
+    <!-- Contenido del sitio -->
+    <div ng-view="" class="mainContainer"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="kleero01">
+                <img src="app/img/kleero01.png">
+            </div>
+
+            <div class="container">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs text-center" role="tablist">
+                    <li role="presentation" class="active"><a data-target="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
+                    <li role="presentation"><a data-target="#Brasil" aria-controls="Brasil" role="tab" data-toggle="tab">Brasil</a></li>
+                    <li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
+                    <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
+                    <li role="presentation"><a data-target="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
+                    <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
+                    <li role="presentation"><a data-target="#Europa" aria-controls="Europa" role="tab" data-toggle="tab">Europa</a></li>
+                    <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
+                    <li role="presentation"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab">Otro</a></li>
+                </ul>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 text-center">
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+
+                            <div role="tabpanel" class="text-center tab-pane active" id="Argentina">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <h4><strong>Kleer Argentina</strong></h4>
+                                            <p>Lavalle 362, 4º piso
+                                                <br>1049 CABA - Argentina</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i> (+54) 011 5236-0314</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:hola@kleer.la">hola@kleer.la</a></li>
+                                                <li>Te contactarás con: Constanza y Flor</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
+                                                <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="100" data-pin-nopin="true">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Brasil">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer Brazil</strong></h4>
+                                            <p>Alameda Jaú, 310 113-A
+                                                <br>São Paulo - Brazil</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i> +55 11.3284.5878</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:treinamos.br@kleer.la">treinamos.br@kleer.la</a></li>
+                                                <li>Você entrará em contato com: Angélica</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Bolivia">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer Bolivia</strong>
+                                            </h4>
+                                            <p>1ro de Mayo No. 542
+                                                <br>Qllo., Cochabamba - Bolivia</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i> +59 1.4.4321690</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.bo@kleer.la">entrenamos.bo@kleer.la</a></li>
+                                                <li>Te contactarás con: Israel</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Colombia">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer Colombia</strong>
+                                            </h4>
+                                            <p>Carrera 13 # 78-47
+                                                <br>Bogotá - Colombia</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i> +57 300.327.0604</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.co@kleer.la">entrenamos.co@kleer.la</a></li>
+                                                <li>Te contactarás con: Jennifer</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Peru">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer Perú</strong>
+                                            </h4>
+                                            <p>Av. Juan De Aliaga 107
+                                                <br>Lima - Perú</p>
+                                            <ul class="list-unstyled">
+                                                <li>&nbsp;</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.pe@kleer.la">entrenamos.pe@kleer.la</a></li>
+                                                <li>Te contactarás con: Hiroshi y Gustavo</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Uruguay">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer Uruguay</strong>
+                                            </h4>
+                                            <p>Dr. Mario Cassinoni 1408
+                                                <br>Montevideo, 11200</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i> +598-94681588</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.uy@kleer.la">entrenamos.uy@kleer.la</a></li>
+                                                <li>Te contactarás con Pablo</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Europa">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer Europe</strong>
+                                            </h4>
+                                            <p>Hektoroviceva Ulica 2/V
+                                                <br>10000 Zagreb, Croatia</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i> +385 99 244 0000 (9 to 17 hrs Central European Time)</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:training.eu@kleer.la">training.eu@kleer.la</a></li>
+                                                <li>Te contactarás con Milan</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Mexico">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>Kleer México</strong>
+                                            </h4>
+                                            <p>Monte Athos 115
+                                                <br>11000, D.F. - México</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-phone fa-fw"></i>+52 55 5276 4486</li>
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos.mx@kleer.la">entrenamos.mx@kleer.la</a></li>
+                                                <li>Te contactarás con nuestros partners <a href="http://scrum.org.mx/" target="_blank">Scrum México</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="text-center tab-pane" id="Otro">
+                                <div class="alert alert-info">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4><strong>&nbsp;</strong>
+                                            </h4>
+                                            <p>&nbsp;
+                                                <br>Escribenos a:</p>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:entrenamos@kleer.la">entrenamos@kleer.la</a></li>
+                                                <li>&nbsp;</li>
+                                                <li>&nbsp;</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <br>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="http://facebook.com/kleer.la" target="_blank"> <i class="fa fa-facebook fa-fw fa-2x sr-contact"></i></a>
+                            </li>
+                            <li><a href="http://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter fa-fw fa-2x sr-contact"></i></a></li>
+                            <li><a href="http://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin fa-fw fa-2x sr-contact"></i></a></li>
+                            <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus fa-fw fa-2x sr-contact"></i></a></li>
+                            <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github fa-fw fa-2x sr-contact"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube fa-fw fa-2x sr-contact"></i></a></li>
+                            <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x sr-contact"></i></a></li>
+                        </ul>
+                        <hr class="small">
+                        <p class="text-muted">Copyright &copy; Kleer 2017</p>
+                    </div>
+                </div>
+
+            </div>
+            <a id="to-top" href="javascript:void(0);" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+        </div>
+    </footer>
+
+    <!-- Google Analytics -->
+    <script>
+        ! function(A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-21102272-1');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <script src="app/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="app/vendor/angular/angular.min.js"></script>
+    <script src="app/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="app/vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="app/vendor/angular-cookies/angular-cookies.min.js"></script>
+    <script src="app/vendor/angular-resource/angular-resource.min.js"></script>
+    <script src="app/vendor/angular-route/angular-route.min.js"></script>
+    <script src="app/vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="app/vendor/angular-touch/angular-touch.min.js"></script>
+    <script src="app/vendor/ui-bootstrap/ui-bootstrap-tpls-2.4.0.min.js"></script>
+    <script src="app/vendor/scrollreveal.min.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="app/scripts/app.js"></script>
+    <script src="app/scripts/controllers/home.js"></script>
+    <!-- endbuild -->
+
+
+    <script>
+        //Para evitar el cambio de tamaño de background al hacer scroll en mobile cuando se esconde la barra de direcciones
+        $(window).resize(function() {
+            resizeBackground();
+        });
+
+        function resizeBackground() {
+            if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
+                if (screen.width > screen.height) {
+                    barHeight = 0;
+                } else {
+                    barHeight = 60;
+                }
+                $("#slider").height(screen.height - barHeight);
+            }
+        }
+        resizeBackground();
+
+        // Cierra el sidebar menu
+        function closeSidebar(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        }
+
+        $("#menu-close").click(function(e) {
+            closeSidebar(e);
+        });
+        // Abre el sidebar menu
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Efecto de animación de iconos
+        window.sr = ScrollReveal();
+        sr.reveal('.sr-services', {
+            duration: 1000,
+            scale: 0.3,
+            distance: '100px',
+            delay: 200
+        }, 200);
+        sr.reveal('.sr-button', {
+            duration: 1000,
+            scale: 0.3,
+            delay: 500
+        });
+        sr.reveal('.sr-contact', {
+            duration: 1000,
+            scale: 0.3,
+            distance: '0px',
+            delay: 200
+        }, 300);
+
+        // Scroll animado a las secciones la página
+        function scrollTo(anchor) {
+            var target = $(anchor);
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        };
+
+        // Link to-top aparece cuando hacemos scroll
+        var fixed = false;
+        $(document).scroll(function() {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                    $('#to-top').show("slow", function() {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            } else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function() {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
+                }
+            }
+        });
+        // Disable Google Maps scrolling
+        // See http://stackoverflow.com/a/25904582/1607849
+        // Disable scroll zooming and bind back the click event
+        var onMapMouseleaveHandler = function(event) {
+            var that = $(this);
+            that.on('click', onMapClickHandler);
+            that.off('mouseleave', onMapMouseleaveHandler);
+            that.find('iframe').css("pointer-events", "none");
+        }
+        var onMapClickHandler = function(event) {
+                var that = $(this);
+                // Disable the click handler until the user leaves the map area
+                that.off('click', onMapClickHandler);
+                // Enable scrolling zoom
+                that.find('iframe').css("pointer-events", "auto");
+                // Handle the mouse leave event
+                that.on('mouseleave', onMapMouseleaveHandler);
+            }
+            // Enable map zooming with mouse scroll when the user clicks the map
+        $('.map').on('click', onMapClickHandler);
+    </script>
+
+</body>
+
+</html>
