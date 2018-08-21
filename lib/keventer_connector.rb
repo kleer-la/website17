@@ -1,7 +1,6 @@
 class KeventerConnector
 
-#  KEVENTER_URL = "http://keventer-test.herokuapp.com"
-  KEVENTER_URL = "http://keventer.herokuapp.com"
+  KEVENTER_URL = "https://keventer.herokuapp.com"
   API_ROOT = KEVENTER_URL + "/api"
   API_EVENTS_PATH = "/events.xml"
   API_COMMUNITY_EVENTS_PATH = "/community_events.xml"

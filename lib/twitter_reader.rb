@@ -45,7 +45,7 @@ private
 	def prepare_access_token(oauth_token, oauth_token_secret)
 
 	  consumer = OAuth::Consumer.new(@consumer_key, @consumer_secret, 
-	    { :site => 'http://api.twitter.com', :scheme => :header })
+	    { :site => 'https://api.twitter.com', :scheme => :header })
 
 	  token_hash = { :oauth_token => oauth_token, :oauth_token_secret => oauth_token_secret }
 

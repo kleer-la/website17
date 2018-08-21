@@ -10,18 +10,18 @@
 **Martín Alaimo**
 Agile Coach &amp; Trainer - Professional Coach
 CSC, CST, PMP, PMI-ACP
-http://www.martinalaimo.com/</bio>
+https://www.martinalaimo.com/</bio>
     <bio-en>English Bio Alaimica</bio-en>
     <country-id type="integer">9</country-id>
     <created-at type="datetime">2012-08-23T20:40:28Z</created-at>
     <gravatar-email>malaimo@gmail.com</gravatar-email>
     <id type="integer">4</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/malaimo</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/malaimo</linkedin-url>
     <name>Martín Alaimo</name>
     <twitter-username>@martinalaimo</twitter-username>
     <updated-at type="datetime">2013-01-08T12:05:21Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -46,11 +46,11 @@ Ing. Electrónica, CSM, CSD
     <gravatar-email>carlos.peix@gmail.com</gravatar-email>
     <id type="integer">6</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/carlospeix</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/carlospeix</linkedin-url>
     <name>Carlos Peix</name>
     <twitter-username>@carlospeix</twitter-username>
     <updated-at type="datetime">2013-01-08T12:07:29Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/5abd10347c5500bfab0dd7358b9db5fa</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/5abd10347c5500bfab0dd7358b9db5fa</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -76,11 +76,11 @@ Agile Coach &amp; Trainer
     <gravatar-email>jgabardini@computer.org</gravatar-email>
     <id type="integer">7</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/jgabardini</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/jgabardini</linkedin-url>
     <name>Juan Gabardini</name>
     <twitter-username>@jgabardini</twitter-username>
     <updated-at type="datetime">2013-01-08T12:08:10Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/72c191f31437b3250822b38d5f57705b</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/72c191f31437b3250822b38d5f57705b</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -111,7 +111,7 @@ CSM y Especialista en Innovación
     <name>Ricardo Colusso</name>
     <twitter-username>rcolusso</twitter-username>
     <updated-at type="datetime">2013-01-08T11:59:11Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/5f5a3b1647f7de6d12d2666c1a3ac208</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/5f5a3b1647f7de6d12d2666c1a3ac208</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -136,11 +136,11 @@ Agile Coach &amp; Trainer
     <gravatar-email>martin@salias.com.ar</gravatar-email>
     <id type="integer">11</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/msalias</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/msalias</linkedin-url>
     <name>Martín Salías</name>
     <twitter-username>@MartinSalias</twitter-username>
     <updated-at type="datetime">2013-01-08T12:00:19Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/d30d818ef612cb5f4de1b8514a8b1996</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/d30d818ef612cb5f4de1b8514a8b1996</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -165,9 +165,9 @@ Ing. en Informática, CSM, CSD
     <gravatar-email>pablotortorella@gmail.com</gravatar-email>
     <id type="integer">5</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/pablotortorella</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/pablotortorella</linkedin-url>
 	<twitter-username>@pablitux</twitter-username>
-	<gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+	<gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 	<country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -200,11 +200,11 @@ Agile Coach &amp; Trainer
     <gravatar-email>israelantezana@gmail.com</gravatar-email>
     <id type="integer">9</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/israelantezanar</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/israelantezanar</linkedin-url>
     <name>Israel Antezana</name>
     <twitter-username>@israelantezanar</twitter-username>
     <updated-at type="datetime">2013-01-08T12:09:20Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/8f90ff5fd8ecf9d6fe54953d856bba45</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/8f90ff5fd8ecf9d6fe54953d856bba45</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">25</id>
@@ -229,11 +229,11 @@ Agile Coach &amp; Trainer</bio>
     <gravatar-email>hiromoto.hiroshi@gmail.com</gravatar-email>
     <id type="integer">17</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/hhiroshi</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/hhiroshi</linkedin-url>
     <name>Hiroshi Hiromoto</name>
     <twitter-username>@hhiroshi</twitter-username>
     <updated-at type="datetime">2013-01-08T12:01:55Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/3a39c4fe86b368b3d7499ab28997541d</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/3a39c4fe86b368b3d7499ab28997541d</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:41Z</created-at>
       <id type="integer">171</id>
@@ -253,11 +253,11 @@ Agile Coach &amp; Trainer</bio>
     <gravatar-email>kenneth@tektonlabs.com</gravatar-email>
     <id type="integer">13</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/kenneth3k</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/kenneth3k</linkedin-url>
     <name>Kenneth López</name>
     <twitter-username>@bigbang2k</twitter-username>
     <updated-at type="datetime">2013-01-08T12:04:49Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/d817f471c887ac5eb1784b0238c7c53f</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/d817f471c887ac5eb1784b0238c7c53f</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:41Z</created-at>
       <id type="integer">171</id>

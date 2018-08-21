@@ -16,13 +16,13 @@ def back_cover
 
     @pdf.bounding_box [10.mm,30.mm], :width => 150.mm, :height => 30.mm do
 
-      @pdf.text "<link href='http://www.kleer.la'>www.kleer.la</link>",
+      @pdf.text "<link href='https://www.kleer.la'>www.kleer.la</link>",
         :inline_format => true, :size => 12
       @pdf.text "<link href='mailto:hola@kleer.la'>hola@kleer.la</link>", 
         :inline_format => true, :size => 12
-      @pdf.text "<link href='http://facebook.com/kleer.la'>facebook.com/kleer.la</link>", 
+      @pdf.text "<link href='https://facebook.com/kleer.la'>facebook.com/kleer.la</link>", 
         :inline_format => true, :size => 12
-      @pdf.text "<link href='http://twitter.com/kleer_la'>twitter.com/kleer_la</link>",
+      @pdf.text "<link href='https://twitter.com/kleer_la'>twitter.com/kleer_la</link>",
         :inline_format => true, :size => 12
     end
 

@@ -65,7 +65,7 @@
       <recipients>los destinatarios.</recipients>
       <updated-at type="datetime">2012-11-28T22:43:57Z</updated-at>
 	  <faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -85,9 +85,9 @@
       <id type="integer">4</id>
       <name>Raul Gorgonzola</name>
       <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
-      <linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+      <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 	  <twitter-username>@gorgonzo</twitter-username>
-	  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+	  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 	  <country>
         <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
         <id type="integer">9</id>
@@ -107,9 +107,9 @@
         <id type="integer">4</id>
         <name>Raul Gorgonzola</name>
         <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
-        <linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+        <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
       <twitter-username>@gorgonzo</twitter-username>
-      <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
       <country>
           <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
           <id type="integer">9</id>
@@ -206,7 +206,7 @@ El curso se basa ejercicios y dinámicas con técnicas para una comunicación ef
       <recipients>Gerentes de Proyectos, Product Managers, Equipos de desarrollo, Scrum Masters, Analistas Funcionales y Developers de experiencia de usuario, Líderes Técnicos, Gerentes de Area.</recipients>
       <updated-at type="datetime">2012-12-07T19:27:19Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -221,9 +221,9 @@ El curso se basa ejercicios y dinámicas con técnicas para una comunicación ef
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -254,9 +254,9 @@ CSM y Especialista en Innovación
       <id type="integer">4</id>
       <name>Raul Gorgonzola</name>
       <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
-      <linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+      <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 	  <twitter-username>@gorgonzo</twitter-username>
-	  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+	  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 	  <country>
         <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
         <id type="integer">9</id>
@@ -272,9 +272,9 @@ CSM y Especialista en Innovación
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -305,9 +305,9 @@ CSM y Especialista en Innovación
         <id type="integer">4</id>
         <name>Raul Gorgonzola</name>
         <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
-        <linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+        <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   	  <twitter-username>@gorgonzo</twitter-username>
-  	  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  	  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   	  <country>
           <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
           <id type="integer">9</id>
@@ -393,7 +393,7 @@ El webinar se desarrollará con ejemplos en Ruby, pero se compartirán otros eje
       <recipients>Desarrolladores, líderes de desarrollo y arquitectos de software.</recipients>
       <updated-at type="datetime">2012-12-14T18:43:56Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -408,9 +408,9 @@ El webinar se desarrollará con ejemplos en Ruby, pero se compartirán otros eje
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -435,9 +435,9 @@ Agile Coach &amp; Trainer
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -569,7 +569,7 @@ Patrones de Adopción de Scrum</program>
 - Obtener una nueva visión para la gestión de proyectos y equipos</recipients>
       <updated-at type="datetime">2012-12-07T00:50:16Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -584,9 +584,9 @@ Patrones de Adopción de Scrum</program>
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -609,9 +609,9 @@ CSC, PMP, PMI-ACP</bio>
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -660,7 +660,7 @@ CSC, PMP, PMI-ACP</bio>
     <list-price-plus-tax type="boolean">false</list-price-plus-tax>
     <place>Casa de la Moneda</place>
 	<address>Tucuman 373 Piso 1</address>
-    <registration-link>http://www.openedgetech.com/calendario</registration-link>
+    <registration-link>https://www.openedgetech.com/calendario</registration-link>
     <trainer-id type="integer">4</trainer-id><trainer2-id type="integer" nil="true"/>
     <updated-at type="datetime">2012-12-07T02:07:26Z</updated-at>
     <visibility-type>pu</visibility-type>
@@ -715,7 +715,7 @@ Conocerás Scrum y sus principios fundamentales de la mano de entrenadores certi
 </recipients>
       <updated-at type="datetime">2012-10-17T11:04:54Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -730,9 +730,9 @@ Conocerás Scrum y sus principios fundamentales de la mano de entrenadores certi
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -755,9 +755,9 @@ CSC, PMP, PMI-ACP</bio>
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -883,7 +883,7 @@ Construcción Evolutiva e Iterativa - Sprints
 </recipients>
       <updated-at type="datetime">2012-12-08T10:28:35Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -898,9 +898,9 @@ Construcción Evolutiva e Iterativa - Sprints
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -923,9 +923,9 @@ CSC, PMP, PMI-ACP</bio>
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1016,7 +1016,7 @@ Este tipo de aplicaciones se ajustan mejor a la separación de conceptos que pla
 &lt;ul&gt;&lt;li&gt;Cada vez más, hacen su programación en client-side.&lt;/li&gt;&lt;li&gt;Para los que no han encontrado una manera de desacoplar la lógica de la aplicación de la manipulación de DOM.&lt;/li&gt;&lt;li&gt;Para los que no han encontrado una manera sencilla de probar aplicaciones JavaScript&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Conocimientos requeridos&lt;/strong&gt;: JavaScript, HTML, CSS.&lt;/li&gt;&lt;li&gt;Conocimientos deseables: MVC, TDD (ATDD, BDD), experiencia con otros frameworks (Backbone.js, KO, JQuery), IoC (DI)&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</recipients>
       <updated-at type="datetime">2012-12-11T19:34:17Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -1031,9 +1031,9 @@ Este tipo de aplicaciones se ajustan mejor a la separación de conceptos que pla
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1053,9 +1053,9 @@ Este tipo de aplicaciones se ajustan mejor a la separación de conceptos que pla
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1148,7 +1148,7 @@ Los ejemplos durante el taller se harán principalmente en Ruby, pero se compart
       <recipients>Desarrolladores, líderes de desarrollo y arquitectos de software.</recipients>
       <updated-at type="datetime">2012-12-14T18:59:45Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -1163,9 +1163,9 @@ Los ejemplos durante el taller se harán principalmente en Ruby, pero se compart
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1189,9 +1189,9 @@ Agile Coach &amp; Trainer
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1296,7 +1296,7 @@ Conocerás Scrum y sus principios fundamentales de la mano de entrenadores certi
 </recipients>
       <updated-at type="datetime">2012-10-17T11:04:54Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -1311,9 +1311,9 @@ Conocerás Scrum y sus principios fundamentales de la mano de entrenadores certi
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1336,9 +1336,9 @@ CSC, PMP, PMI-ACP</bio>
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1442,7 +1442,7 @@ Conocerás Scrum y sus principios fundamentales de la mano de entrenadores certi
 </recipients>
       <updated-at type="datetime">2012-10-17T11:04:54Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -1457,9 +1457,9 @@ Conocerás Scrum y sus principios fundamentales de la mano de entrenadores certi
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1482,9 +1482,9 @@ CSC, PMP, PMI-ACP</bio>
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1573,7 +1573,7 @@ Este evento de un día completo proveerá a los asistentes un entendimiento clar
       <recipients>Equipos de desarrollo de software o diseño web/gráfico/de experiencia de usuario, Gerentes de proyectos, Líderes Técnicos y Gerentes de desarrollo.</recipients>
       <updated-at type="datetime">2012-09-06T10:59:01Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
 <average-rating type="float">4.38</average-rating>
@@ -1588,9 +1588,9 @@ Este evento de un día completo proveerá a los asistentes un entendimiento clar
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1614,9 +1614,9 @@ Ing. en Informática, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1723,7 +1723,7 @@ Identificarás requerimientos, estimarás, planificarás, priorizarás, gestiona
 </recipients>
       <updated-at type="datetime">2012-09-06T11:00:12Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
 <average-rating type="float">4.38</average-rating>
@@ -1738,9 +1738,9 @@ Identificarás requerimientos, estimarás, planificarás, priorizarás, gestiona
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1764,9 +1764,9 @@ Ing. en Informática, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1858,7 +1858,7 @@ Este curso enseña nuevas habilidades que los participantes pueden utilizar en l
       <recipients>Equipos de desarrollo de software o diseño web/gráfico/de experiencia de usuario, Gerentes de proyectos, Líderes Técnicos y Gerentes de desarrollo.</recipients>
       <updated-at type="datetime">2012-09-06T11:02:03Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
 <average-rating type="float">4.38</average-rating>
@@ -1873,9 +1873,9 @@ Este curso enseña nuevas habilidades que los participantes pueden utilizar en l
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -1899,9 +1899,9 @@ Ing. en Informática, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -1995,7 +1995,7 @@ El curso proporciona una experiencia de primera mano con respecto a los benefici
       <recipients>Equipos de desarrollo de software o diseño web/gráfico/de experiencia de usuario, Gerentes de proyectos, Líderes Técnicos y Gerentes de desarrollo.</recipients>
       <updated-at type="datetime">2012-09-06T11:04:02Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
 <average-rating type="float">4.38</average-rating>
@@ -2010,9 +2010,9 @@ El curso proporciona una experiencia de primera mano con respecto a los benefici
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -2036,9 +2036,9 @@ Ing. en Informática, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -2145,7 +2145,7 @@ Identificarás requerimientos, estimarás, planificarás, priorizarás, gestiona
 </recipients>
       <updated-at type="datetime">2012-09-06T11:00:12Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 	<include-in-catalog type="boolean">false</include-in-catalog>
 <average-rating type="float">4.38</average-rating>
@@ -2160,9 +2160,9 @@ Identificarás requerimientos, estimarás, planificarás, priorizarás, gestiona
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -2187,9 +2187,9 @@ Ing. Electrónica, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -2310,9 +2310,9 @@ Identificarás requerimientos, estimarás, planificarás, priorizarás, gestiona
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -2337,9 +2337,9 @@ Ing. Electrónica, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>

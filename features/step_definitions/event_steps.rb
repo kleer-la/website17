@@ -36,5 +36,5 @@ When /^I visit the community event page$/ do
 end
 
 Then(/^I should see a registration link with tracking$/) do
-  response_body.should have_selector("a[href='http://eventos.kleer.la/events/44/participants/new?lang=es&utm_source=cucumber&utm_campaign=feature_test']")
+  response_body.should have_selector("a[href='https://eventos.kleer.la/events/44/participants/new?lang=es&utm_source=cucumber&utm_campaign=feature_test']")
 end

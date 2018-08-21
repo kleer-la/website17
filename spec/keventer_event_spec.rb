@@ -49,13 +49,13 @@ describe KeventerEvent do
   end
 
   it "should have a registration_link" do
-    @kevent.registration_link = "http://kleer.la"
-    @kevent.registration_link.should == "http://kleer.la"
+    @kevent.registration_link = "https://kleer.la"
+    @kevent.registration_link.should == "https://kleer.la"
   end
 
   it "should have an address" do
-    @kevent.address = "http://kleer.la"
-    @kevent.address.should == "http://kleer.la"
+    @kevent.address = "https://kleer.la"
+    @kevent.address.should == "https://kleer.la"
   end
 
   it "should have a sold-out flag" do
@@ -350,7 +350,7 @@ describe KeventerEvent do
         <tag-name>TR-JB (Jeff Baurer - Prueba Keventer)</tag-name>
         <twitter-username></twitter-username>
         <updated-at type="datetime">2014-06-29T21:53:13Z</updated-at>
-        <gravatar-picture-url>http://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e</gravatar-picture-url>
+        <gravatar-picture-url>https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e</gravatar-picture-url>
       </trainer>
       <categories type="array">
         <category>

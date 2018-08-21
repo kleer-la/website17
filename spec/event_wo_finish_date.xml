@@ -66,7 +66,7 @@
     <updated-at type="datetime">2012-11-28T22:43:57Z</updated-at>
   <include-in-catalog type="boolean">false</include-in-catalog>
 <faq>
-**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 </faq>
   <average-rating type="float">4.38</average-rating>
 <net-promoter-score type="float">0.96</net-promoter-score>
@@ -88,7 +88,7 @@ CSC, PMP, PMI-ACP</bio>
     <id type="integer">4</id>
     <name>Raul Gorgonzola</name>
     <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
-  <linkedin-url>http://www.linkedin.com/in/pablotortorella</linkedin-url>
+  <linkedin-url>https://www.linkedin.com/in/pablotortorella</linkedin-url>
 <twitter-username>@pablitux</twitter-username>
 <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 <country>
