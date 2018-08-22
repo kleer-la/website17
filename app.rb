@@ -84,7 +84,7 @@ before do
   end
 
   if ! settings.development? && request.scheme == "https"
-    redirect "https://www." + request.host + request.path
+    redirect "https://" + request.host + request.path
   end
 
   if request.host == "kleer.la" || request.host == "kleer.us" || request.host == "kleer.es" || request.host == "kleer.com.ar"
