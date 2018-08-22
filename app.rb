@@ -8,11 +8,6 @@ require 'money'
 require 'rss'
 require 'escape_utils'
 
-require 'rack/ssl-enforcer'
-if !settings.development?
-  use Rack::SslEnforcer
-end
-
 require File.join(File.dirname(__FILE__),'/lib/keventer_reader')
 require File.join(File.dirname(__FILE__),'/lib/dt_helper')
 require File.join(File.dirname(__FILE__),'/lib/twitter_card')
@@ -89,7 +84,10 @@ before do
     session[:locale] = 'es'
   end
 
-
+  if !settings.development? && request.scheme == "http"
+    redirect "https://" + request.host + request.path
+  end
+  
   if request.host == "kleer.la" || request.host == "kleer.us" || request.host == "kleer.es" || request.host == "kleer.com.ar"
     redirect "https://www." + request.host + request.path
   else

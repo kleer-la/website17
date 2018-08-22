@@ -20,7 +20,6 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'money'
 gem 'escape_utils'
-gem 'rack-ssl-enforcer'
 
 group :development do
   gem 'foreman'
