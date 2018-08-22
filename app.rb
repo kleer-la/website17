@@ -1,5 +1,3 @@
-# encoding: utf-8
-require 'rubygems' if RUBY_VERSION < '1.9'
 require 'sinatra'
 require 'sinatra/r18n'
 require 'sinatra/flash'
@@ -10,6 +8,11 @@ require 'money'
 require 'rss'
 require 'escape_utils'
 
+require 'rack/ssl-enforcer'
+if !settings.development?
+  use Rack::SslEnforcer
+end
+
 require File.join(File.dirname(__FILE__),'/lib/keventer_reader')
 require File.join(File.dirname(__FILE__),'/lib/dt_helper')
 require File.join(File.dirname(__FILE__),'/lib/twitter_card')
@@ -17,6 +20,9 @@ require File.join(File.dirname(__FILE__),'/lib/twitter_reader')
 require File.join(File.dirname(__FILE__),'/lib/pdf_catalog')
 require File.join(File.dirname(__FILE__),'/lib/crm_connector')
 require File.join(File.dirname(__FILE__),'/lib/toggle')
+
+
+
 
 helpers do
 
@@ -83,9 +89,6 @@ before do
     session[:locale] = 'es'
   end
 
-  if ! settings.development? && request.scheme == "https"
-    redirect "https://" + request.host + request.path
-  end
 
   if request.host == "kleer.la" || request.host == "kleer.us" || request.host == "kleer.es" || request.host == "kleer.com.ar"
     redirect "https://www." + request.host + request.path
