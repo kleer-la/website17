@@ -1523,3 +1523,21 @@ p.feed-item-desc {
     padding-top: 45px;
     padding-bottom: 80px;
 }
+.prensa .box {
+    border-bottom: solid 1px #ddd;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+.prensa .box:last-child {
+    border-bottom: none;
+}
+.prensa .box .img-responsive {
+    border: solid 1px #ddd;
+    border-radius: 2px;
+    padding: 10px;
+    background: #e8e8e8;
+}
+.prensa .box p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
