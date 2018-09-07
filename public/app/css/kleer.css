@@ -343,6 +343,7 @@ hr.small {
 .navbar-fixed-top {
     top: 20px;
     border-width: 0;
+    background-color:inherit;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
