@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby "2.5.1"
 if RUBY_VERSION =~ /1.9/
   Encoding.default_external = Encoding::UTF_8
   Encoding.default_internal = Encoding::UTF_8
@@ -20,10 +20,11 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'money'
 gem 'escape_utils'
+gem 'rack-ssl-enforcer'
 
 group :development do
   gem 'foreman'
-  gem 'heroku'
+	gem 'platform-api'
 end
 
 group :development, :test do

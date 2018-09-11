@@ -39,5 +39,5 @@ def content( category )
 end
 
 def full_uri( workshop )
-  "http://www.kleer.la/es/categoria/#{@category.codename}/cursos/#{url_sanitize(workshop.uri_path)}"
+  "https://www.kleer.la/es/categoria/#{@category.codename}/cursos/#{url_sanitize(workshop.uri_path)}"
 end

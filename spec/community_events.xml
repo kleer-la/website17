@@ -82,9 +82,9 @@
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -109,9 +109,9 @@ Ing. en Informática, CSM, CSD
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>
@@ -201,7 +201,7 @@ Ing. en Informática, CSM, CSD
 - Líderes Técnicos</recipients>
       <updated-at type="datetime">2013-01-03T15:21:13Z</updated-at>
 	<faq>
-	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](http://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
+	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
 		<include-in-catalog type="boolean">false</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
@@ -216,9 +216,9 @@ Ing. en Informática, CSM, CSD
     <net-promoter-score type="integer">97</net-promoter-score>
     <surveyed-count type="integer">94</surveyed-count>
     <promoter-count type="integer">92</promoter-count>
-		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
 		  <twitter-username>@gorgonzo</twitter-username>
-		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
 		  <country>
 	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
 	        <id type="integer">9</id>
@@ -243,9 +243,9 @@ Agile Coach &amp; Trainer</bio>
       <net-promoter-score type="integer">97</net-promoter-score>
       <surveyed-count type="integer">94</surveyed-count>
       <promoter-count type="integer">92</promoter-count>
-  		<linkedin-url>http://www.linkedin.com/in/gorgonzo</linkedin-url>
+  		<linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
   		  <twitter-username>@gorgonzo</twitter-username>
-  		  <gravatar-picture-url>http://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+  		  <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
   		  <country>
   	        <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
   	        <id type="integer">9</id>

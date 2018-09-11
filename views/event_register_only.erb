@@ -17,7 +17,7 @@
 			if @event.registration_link != ""
 				registration_link = @event.registration_link
 			else
-				registration_link = "http://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
+				registration_link = "https://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
 			end
 
 			%>

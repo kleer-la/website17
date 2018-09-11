@@ -10,6 +10,6 @@ Feature: Posters Agiles 2013
 
 	Examples:
 		|poster_page|poster_video|poster_image|poster_pdf_download|
-		| "/posters/scrum" | "IWUG29VPhUA" | "poster-scrum.jpg" | "http://media.kleer.la/posters/scrum.pdf" |
-		| "/posters/manifesto" | "V5LaKpjcgKQ" | "poster-manifesto.jpg" | "http://media.kleer.la/posters/manifesto.pdf" |
-		| "/posters/xp" | "4nN6Gh79Yg8" | "poster-xp.jpg" | "http://media.kleer.la/posters/xp.pdf" |
+		| "/posters/scrum" | "IWUG29VPhUA" | "poster-scrum.jpg" | "https://media.kleer.la/posters/scrum.pdf" |
+		| "/posters/manifesto" | "V5LaKpjcgKQ" | "poster-manifesto.jpg" | "https://media.kleer.la/posters/manifesto.pdf" |
+		| "/posters/xp" | "4nN6Gh79Yg8" | "poster-xp.jpg" | "https://media.kleer.la/posters/xp.pdf" |

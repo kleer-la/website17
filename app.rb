@@ -1,5 +1,3 @@
-# encoding: utf-8
-require 'rubygems' if RUBY_VERSION < '1.9'
 require 'sinatra'
 require 'sinatra/r18n'
 require 'sinatra/flash'
@@ -17,6 +15,11 @@ require File.join(File.dirname(__FILE__),'/lib/twitter_reader')
 require File.join(File.dirname(__FILE__),'/lib/pdf_catalog')
 require File.join(File.dirname(__FILE__),'/lib/crm_connector')
 require File.join(File.dirname(__FILE__),'/lib/toggle')
+
+if production?
+    require 'rack/ssl-enforcer'
+    use Rack::SslEnforcer
+end
 
 helpers do
 
@@ -84,7 +87,7 @@ before do
   end
 
   if request.host == "kleer.la" || request.host == "kleer.us" || request.host == "kleer.es" || request.host == "kleer.com.ar"
-    redirect "http://www." + request.host + request.path
+    redirect "https://www." + request.host + request.path
   else
     @page_title = "Kleer - Agile Coaching & Training"
     flash.sweep
@@ -120,7 +123,7 @@ end
 
 get '/blog' do
   @active_tab_blog = "active"
-  @rss = RSS::Parser.parse('http://feed.informer.com/digests/EGSKOZF5FA/feeder.rss', false)
+  @rss = RSS::Parser.parse('https://feed.informer.com/digests/EGSKOZF5FA/feeder.rss', false)
 
 #  EXPERIMENT: Kleer Blog
 #  @rss = RSS::Parser.parse('https://feed.informer.com/digests/FBQRCLIHGO/feeder.rss', false)
@@ -168,7 +171,7 @@ end
 
 get '/live' do
   @active_tab_comunidad = "active"
-  redirect "http://live.kleer.la", 301 # permanent redirect
+  redirect "https://live.kleer.la", 301 # permanent redirect
 end
 
 
@@ -249,7 +252,7 @@ get '/posters/:poster_code' do
     @poster_name = "Principios Ágiles"
   end
 
-  @pdf_download_url = "http://media.kleer.la/posters/#{@poster_code}.pdf"
+  @pdf_download_url = "https://media.kleer.la/posters/#{@poster_code}.pdf"
   @image_url = "/img/posters/#{@poster_code}.jpg"
 
   erb :poster
@@ -605,7 +608,7 @@ def create_twitter_card( event )
   card = TwitterCard.new
   card.title = event.friendly_title
   card.description = event.event_type.elevator_pitch
-  card.image_url = "http://media.kleer.la/logos/K_social.jpg"
+  card.image_url = "https://media.kleer.la/logos/K_social.jpg"
   card.site = "@kleer_la"
   card.creator = event.trainers[0].twitter_username
   card

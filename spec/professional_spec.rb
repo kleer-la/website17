@@ -20,11 +20,11 @@ describe Professional do
     <gravatar-email>malaimo@gmail.com</gravatar-email>
     <id type="integer">4</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/malaimo</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/malaimo</linkedin-url>
     <name>Martín Alaimo</name>
     <twitter-username>@martinalaimo</twitter-username>
     <updated-at type="datetime">2013-01-08T12:05:21Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297</gravatar-picture-url>
     <country>
       <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
       <id type="integer">9</id>
@@ -58,11 +58,11 @@ describe Professional do
   end
 
   it "should have a linkein url" do
-    @trainer_es.linkedin_url.should == "http://www.linkedin.com/in/malaimo"
+    @trainer_es.linkedin_url.should == "https://www.linkedin.com/in/malaimo"
   end
 
   it "should have a gravatar picture" do
-    @trainer_es.gravatar_picture_url.should == "http://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297"
+    @trainer_es.gravatar_picture_url.should == "https://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297"
   end
 
   it "should have a twitter username" do

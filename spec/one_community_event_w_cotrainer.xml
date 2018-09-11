@@ -122,7 +122,7 @@ Agile Coach &amp; Trainer</bio-en>
     <gravatar-email>jgabardini@computer.org</gravatar-email>
     <id type="integer">7</id>
     <is-kleerer type="boolean">true</is-kleerer>
-    <linkedin-url>http://www.linkedin.com/in/jgabardini</linkedin-url>
+    <linkedin-url>https://www.linkedin.com/in/jgabardini</linkedin-url>
     <name>Juan Gabardini</name>
     <net-promoter-score type="integer">57</net-promoter-score>
     <promoter-count type="integer">108</promoter-count>
@@ -132,7 +132,7 @@ Agile Coach &amp; Trainer</bio-en>
     <tag-name>TR-JG (Juan Gabardini) </tag-name>
     <twitter-username>@jgabardini</twitter-username>
     <updated-at type="datetime">2016-01-23T17:49:34Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/72c191f31437b3250822b38d5f57705b</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/72c191f31437b3250822b38d5f57705b</gravatar-picture-url>
   </trainer>
   <trainer2>
     <average-rating type="decimal" nil="true"/>
@@ -153,7 +153,7 @@ Agile Coach &amp; Trainer</bio-en>
     <tag-name>TR-TW (Thomas Wallet) </tag-name>
     <twitter-username>WalletThomas</twitter-username>
     <updated-at type="datetime">2015-09-15T20:02:47Z</updated-at>
-    <gravatar-picture-url>http://www.gravatar.com/avatar/6308e2add9f17e6a6a45cbc8891758f5</gravatar-picture-url>
+    <gravatar-picture-url>https://www.gravatar.com/avatar/6308e2add9f17e6a6a45cbc8891758f5</gravatar-picture-url>
   </trainer2>
   <trainers type="array">
     <trainer>
@@ -173,7 +173,7 @@ Agile Coach &amp; Trainer</bio-en>
       <gravatar-email>jgabardini@computer.org</gravatar-email>
       <id type="integer">7</id>
       <is-kleerer type="boolean">true</is-kleerer>
-      <linkedin-url>http://www.linkedin.com/in/jgabardini</linkedin-url>
+      <linkedin-url>https://www.linkedin.com/in/jgabardini</linkedin-url>
       <name>Juan Gabardini</name>
       <net-promoter-score type="integer">57</net-promoter-score>
       <promoter-count type="integer">108</promoter-count>
@@ -183,7 +183,7 @@ Agile Coach &amp; Trainer</bio-en>
       <tag-name>TR-JG (Juan Gabardini) </tag-name>
       <twitter-username>@jgabardini</twitter-username>
       <updated-at type="datetime">2016-01-23T17:49:34Z</updated-at>
-      <gravatar-picture-url>http://www.gravatar.com/avatar/72c191f31437b3250822b38d5f57705b</gravatar-picture-url>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/72c191f31437b3250822b38d5f57705b</gravatar-picture-url>
     </trainer>
     <trainer>
       <average-rating type="decimal" nil="true"/>
@@ -204,7 +204,7 @@ Agile Coach &amp; Trainer</bio-en>
       <tag-name>TR-TW (Thomas Wallet) </tag-name>
       <twitter-username>WalletThomas</twitter-username>
       <updated-at type="datetime">2015-09-15T20:02:47Z</updated-at>
-      <gravatar-picture-url>http://www.gravatar.com/avatar/6308e2add9f17e6a6a45cbc8891758f5</gravatar-picture-url>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/6308e2add9f17e6a6a45cbc8891758f5</gravatar-picture-url>
     </trainer>
     <trainer>
       <average-rating type="decimal">4.66</average-rating>
@@ -215,7 +215,7 @@ Agile Coach &amp; Trainer</bio-en>
 **Hiroshi Hiromoto**
 Agile Coach &amp; Trainer
 CSP, CSM, CSPO, CSD, PMI-ACP
-http://about.me/hhiroshi</bio>
+https://about.me/hhiroshi</bio>
       <bio-en>&gt;I believe that continuous improvement is the key to have productive and happy teams, and that it is achieved by introspection and concrete actions.
 
 &gt;Mi commitment is to help people and companies to drive thru their challenges.
@@ -223,13 +223,13 @@ http://about.me/hhiroshi</bio>
 **Hiroshi Hiromoto**
 Agile Coach &amp; Trainer
 CSP, CSM, CSPO, CSD, PMI-ACP
-http://about.me/hhiroshi</bio-en>
+https://about.me/hhiroshi</bio-en>
       <country-id type="integer">171</country-id>
       <created-at type="datetime">2013-01-03T18:19:15Z</created-at>
       <gravatar-email>hiromoto.hiroshi@gmail.com</gravatar-email>
       <id type="integer">17</id>
       <is-kleerer type="boolean">true</is-kleerer>
-      <linkedin-url>http://www.linkedin.com/in/hhiroshi</linkedin-url>
+      <linkedin-url>https://www.linkedin.com/in/hhiroshi</linkedin-url>
       <name>Hiroshi Hiromoto</name>
       <net-promoter-score type="integer">72</net-promoter-score>
       <promoter-count type="integer">110</promoter-count>
@@ -239,7 +239,7 @@ http://about.me/hhiroshi</bio-en>
       <tag-name>TR-HH (Hiroshi Hiromoto) </tag-name>
       <twitter-username>@hhiroshi</twitter-username>
       <updated-at type="datetime">2016-01-23T17:49:35Z</updated-at>
-      <gravatar-picture-url>http://www.gravatar.com/avatar/3a39c4fe86b368b3d7499ab28997541d</gravatar-picture-url>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/3a39c4fe86b368b3d7499ab28997541d</gravatar-picture-url>
     </trainer>
   </trainers>
   <categories type="array">

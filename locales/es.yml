@@ -33,7 +33,7 @@ es:
     side_menu:
         we_are: "Somos"
         clients: "Clientes"
-        we_do: "Hacemos"
+        we_do: "Que hacemos"
         coaching: "Coaching"
         facilitation: "Facilitación"
         graphic_facilitation: "Facilitación gráfica"
@@ -459,7 +459,7 @@ es:
             argentina:
                 name: "Argentina"
                 address1: "Lavalle 362 4to Piso"
-                address2: "1049 CABA"
+                address2: "C1047AAH CABA"
                 phone: "+54 11.5236.0314 <br> +54 11.5236.0315"
                 contact: "Lucía y Coti"
                 contact_email: "info.ar@kleer.la"
@@ -479,10 +479,10 @@ es:
                 contact_email: "info.bo@kleer.la"
             colombia:
                 name: "Colombia"
-                address1: "Carrera 30 # 49A-34 of 402"
+                address1: "Carrera 45#57-38"
                 address2: "Bogotá"
                 phone: "+57 300.327.0604"
-                contact: "Jennifer"
+                contact: "Ingrith Rojas"
                 contact_email: "info.co@kleer.la"
             peru:
                 name: "Perú"
@@ -508,7 +508,7 @@ es:
                 address1: "Monte Athos 115"
                 address2: "11000, D.F."
                 phone: "+52 55 5276 4486"
-                contact: "nuestros partners <a href=\"http://scrum.org.mx/\" target=\"_blank\">Scrum México</a>"
+                contact: "nuestros partners <a href=\"https://www.scrum.mx/\" target=\"_blank\">Scrum México</a>"
                 contact_email: "info.mx@kleer.la"
                 partners: "You will be helped by us <br/>and our partners "
             other:
