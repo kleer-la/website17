@@ -16,8 +16,11 @@ require File.join(File.dirname(__FILE__),'/lib/pdf_catalog')
 require File.join(File.dirname(__FILE__),'/lib/crm_connector')
 require File.join(File.dirname(__FILE__),'/lib/toggle')
 
-
-
+if production?
+    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PRODUCTION @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    require 'rack/ssl-enforcer'
+    use Rack::SslEnforcer
+end
 
 helpers do
 
