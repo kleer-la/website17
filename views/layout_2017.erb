@@ -80,7 +80,7 @@
             </a>
           </li>
           <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
-          <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
+          <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
@@ -130,7 +130,7 @@
             </ul>
           </li>
           <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
-          <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
+          <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
 
         </ul>
 
