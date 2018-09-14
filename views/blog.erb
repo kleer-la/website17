@@ -19,12 +19,10 @@
 			<% content = item.content_encoded unless item.content_encoded.nil? %>
 
 			<div class="container-fluid">
-				<h3><a href="<%= item.link %>"><%= item.title %></a></h3>
-				<p><%= item.pubDate.strftime("%d/%m/%Y") %> -
-					<a href="<%= item.source.url %>"><%= item.source %></a>
-			</div>
-			<div class="container-fluid">
-				<%= EscapeUtils.unescape_html content %>
+				<h1><a href="<%= item.link %>"><%= item.title %></a></h1>
+				<p class="subtitle"><%= item.pubDate.strftime("%d/%m/%Y") %> -
+					<a href="<%= item.source.url %>"><%= item.source %></a></p>
+				<div class="blog-texto"><%= EscapeUtils.unescape_html content %></div>
 			</div>
 		<% end %>
 	</div>
