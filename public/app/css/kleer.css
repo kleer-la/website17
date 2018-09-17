@@ -838,8 +838,26 @@ a.lower {
 .blogContent {
     overflow: hidden;
 }
-
-
+.blogContent .container-fluid {
+    border-bottom: solid 1px rgba(0,0,0,.1);
+    padding: 15px 0 20px 0;
+}
+.blogContent .container-fluid .subtitle {
+    font-weight: bold;
+}
+.blogContent .container-fluid .blog-texto>span {
+    font-style: italic;
+}
+.blogContent .container-fluid h1 {
+    font-size: 26px;
+}
+.blogContent .container-fluid h2 {
+    font-size: 22px;
+    clear: both;
+}
+.blogContent .container-fluid h3 {
+    font-size: 20px;
+}
 /* mobile */
 
 @media (max-width: 768px) {
