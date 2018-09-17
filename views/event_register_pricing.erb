@@ -48,7 +48,7 @@
 								<% if @event.enable_online_payment %>
 									<%
 									payment_and_registration_button_text = t("general.buttons.pay_and_register")
-									payment_and_registration_link = "https://online.kleer.la/#{session[:locale]}/courses/#{@event.online_course_codename}/cohorts/#{@event.online_cohort_codename}/enroll"
+									payment_and_registration_link = "https://csmpus.kleer.la/#{session[:locale]}/courses/#{@event.online_course_codename}/cohorts/#{@event.online_cohort_codename}/enroll?#{@tracking_parameters}"
 									%>
 									<a href="<%=payment_and_registration_link%>" target="_blank" class="btn btn-info btn-kleer btn-caps">
 										<%=payment_and_registration_button_text%>
