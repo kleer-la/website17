@@ -221,6 +221,12 @@ get '/libros' do
   erb :ebooks, :layout => :layout_2017
 end
 
+get '/recursos' do
+  @active_tab_publicamos = "active"
+  @page_title += " | Recursos"
+  erb :recursos, :layout => :layout_2017
+end
+
 get '/publicamos/scrum' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos | Proyectos Ágiles con Scrum"

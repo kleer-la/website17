@@ -1560,3 +1560,15 @@ p.feed-item-desc {
     font-size: 15px;
     margin-bottom: 20px;
 }
+.tags span {
+    background: #a8dcec;
+    padding: 3px 5px;
+    border-radius: 2px;
+    font-size: 11px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #016d8e;
+}
+.botones {
+    text-align: center;
+}
