@@ -294,9 +294,11 @@ get '/entrenamos/evento/:event_id_with_name' do
     @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event.friendly_title
 
-    @tracking_parameters = ""
+    #@tracking_parameters = ""
     if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
       @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+    else
+      @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
     end
 
     erb :event, :layout => :layout_2017
@@ -397,9 +399,11 @@ get '/comunidad/evento/:event_id_with_name' do
     @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event.friendly_title
 
-    @tracking_parameters = ""
+    #@tracking_parameters = ""
     if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
       @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+    else
+      @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
     end
 
     erb :event
