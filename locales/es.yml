@@ -273,6 +273,34 @@ es:
                     info: <a href='http://guiasagiles.org/#Experimentos' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>experimentos</span> <span>exploración</span> <span>aprendizaje</span> <span>canvas</span> <span>canvas de experimentos</span>"
                     autores: "<a href='https://twitter.com/rmonelos'>Rodrigo Monelos</a> y <a href='https://twitter.com/pablitux'>Pablo Tortorella</a>"
+            recurso6:
+                    title: "Slicing Cards"
+                    description: "Los patrones y las cartas de Slicing de User Stories te ayudarán a encontrar nuevos criterios con los que puedes subdividir las User Stories grandes en otras más pequeñas y simples."
+                    link: <a href='https://www.dropbox.com/s/w04cv0j0nrtl4cl/Kleer_-_Slicing_Cards_-_V3_-_4_por_Hoja.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://guiasagiles.org/#SlicingPatterns' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>Slicing</span> <span>UserStories</span> <span>Scrum</span> <span>Agile</span> <span>ProductOwner</span>"
+                    autores: "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>, <a href='https://twitter.com/rcolusso'>Ricardo Colusso</a> y <a href='https://twitter.com/pablolis'>Pablo Lischinsky</a>"
+            recurso7:
+                    title: "Barómetro de Equipo"
+                    description: " El Barómetro de Equipo es una herramienta poderosa para ayudar a un equipo de trabajo a elevar su nivel de conciencia como tal y evaluarse frente a características de los Equipos de Alto Rendimiento."
+                    link: <a href='https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.caminoagil.com/2016/11/tarjetas-barometro-de-equipos-cartas.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>barómetro</span> <span>equipo</span> <span>scrum</span> <span>sprint</span>"
+                    autores: "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>"
+            recurso8:
+                    title: "Poster de Scrum"
+                    description: "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores."
+                    link: <a href='http://media.kleer.la/posters/scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>"
+                    autores: "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>"
+            recurso9:
+                    title: "Extreme Programming"
+                    description: ""
+                    link: <a href='http://media.kleer.la/posters/xp.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
+                    autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
     books:
         title: "Libros"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
