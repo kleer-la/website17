@@ -95,6 +95,8 @@
           <li><a href="https://github.com/kleer-la" target="_blank"><i class="social-icons-desktop fa fa-github"></i></a></li>
           <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
           <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
+          <li><% if (session[:locale] == "en") %><a href="/es/"><strong>ESP</strong></a><% end %>
+            <% if (session[:locale] == "es") %><a href="/en/"><strong>ENG</strong></a><% end %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -150,6 +152,8 @@
             <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github"></i></a></li>
             <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube"></i></a></li>
             <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><% if (session[:locale] == "en") %><a href="/es/"><strong>ESP</strong></a><% end %>
+            <% if (session[:locale] == "es") %><a href="/en/"><strong>ENG</strong></a><% end %></li>
           </ul>
           <span class="display-inline-block font-family-alt text-large email"><a class="lower" href="mailto:hola@kleer.la">hola@kleer.la</a></span>
         </div>
