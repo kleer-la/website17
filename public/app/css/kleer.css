@@ -137,7 +137,12 @@ img {
     background-position: center center;
     /*opacity: 0.3;*/
 }
-
+.header-falabella {
+    background: url(../img/falabella.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center top;
+}
 .header-prensa {
     background: url(../img/prensa.jpg);
     background-size: cover;

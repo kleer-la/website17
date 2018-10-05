@@ -500,6 +500,14 @@ get '/prensa/casos/transformacion-digital-bbva-continental' do
   erb :prensa_casos_bbva_2018, :layout => :layout_2017
 end
 
+get '/prensa/casos/falabella-financiero' do
+  @page_title += " | Transformación Organizacional en Falabella Financiero"
+  @meta_description = "Kleer - Coaching & Training - Transformación Organizacional en Falabella Financiero"
+  @meta_keywords = "Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional"
+
+  erb :prensa_casos_falabella_financiero, :layout => :layout_2017
+end
+
 get '/prensa/casos/capacitaciones-agiles-endava' do
   @page_title += " | Jornada de capacitaciones ágiles en Endava"
   @meta_description = "Kleer - Coaching & Training - Endava, una empresa internacional que ofrece servicios de desarrollo de software con presencia en Latinoamérica, Estados Unidos y Europa, se vio en el desafío de mantener la cultura ágil dentro de un contexto de gran crecimiento en poco tiempo."
