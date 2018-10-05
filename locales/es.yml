@@ -47,7 +47,7 @@ es:
         books: "Libros"
         blog: "Blog"
         videos: "Videos"
-        recursos: "Recursos y Materiales by Kleer"
+        recursos: "Recursos y Materiales"
         lets_talk: "¿Hablamos?"
     menu:
         home: "Inicio"
@@ -70,7 +70,7 @@ es:
             blog: "Blog"
             book: "Libros"
             video: "Videos"
-            recursos: "Recursos y Materiales by Kleer"
+            recursos: "Recursos y Materiales"
         tv: "Veas"
         we: "Nosotros"
         we_are: "Somos"
@@ -234,7 +234,7 @@ es:
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
     recursos:
-        title: "Recursos y Materiales by Kleer"
+        title: "Recursos y Materiales"
         description: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
         lista:
             recurso1:

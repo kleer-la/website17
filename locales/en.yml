@@ -47,7 +47,7 @@ en:
         books: "Books"
         blog: "Blog"
         videos: "Videos"
-        recursos: "Resources and Materials by Kleer"
+        recursos: "Resources and Materials"
         lets_talk: "Let´s talk!"
     menu:
         home: "Home"
@@ -70,7 +70,7 @@ en:
             blog: "Blog"
             book: "Books"
             video: "Videos"
-            recursos: "Resources and Materials by Kleer"
+            recursos: "Resources and Materials"
         we: "We"
         we_are: "We are"
         press: "Press"
@@ -142,7 +142,7 @@ en:
        description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     recursos:
-        title: "Resources and Materials by Kleer"
+        title: "Resources and Materials"
         description: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
         lista:
             recurso1:

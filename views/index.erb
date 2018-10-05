@@ -95,8 +95,6 @@
           <li><a href="https://github.com/kleer-la" target="_blank"><i class="social-icons-desktop fa fa-github"></i></a></li>
           <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
           <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
-          <li><% if (session[:locale] == "en") %><a href="/es/"><strong>ESP</strong></a><% end %>
-            <% if (session[:locale] == "es") %><a href="/en/"><strong>ENG</strong></a><% end %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -554,12 +552,14 @@
             <p class="text-muted">Copyright &copy; Kleer 2017 |
               <% if (session[:locale] == "es") %>
                 <a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> |
-                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a>
+                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> |
               <% end %>
               <% if (session[:locale] == "en") %>
                 <a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> |
-                <a href="/<%=session[:locale]%>/terms"> Terms of service</a>
+                <a href="/<%=session[:locale]%>/terms"> Terms of service</a> |
               <% end %>
+              <% if (session[:locale] == "en") %><a href="/es/"><strong>ESPAÑOL</strong></a><% end %>
+              <% if (session[:locale] == "es") %><a href="/en/"><strong>ENGLISH</strong></a><% end %>
             </p>
           </div>
         </div>
