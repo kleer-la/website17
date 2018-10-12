@@ -1,10 +1,15 @@
-<div class="col-xs-2 no-hpadding logistic-indicator">
-  <span class="glyphicon glyphicon-user big-glyphicon"></span>
+<div class="row">
+	<strong><%=t("event.facilitator")%>:</strong>
 </div>
-<div class="col-xs-10 no-hpadding event-facilitator-text">
-  <strong><%=t("event.facilitator")%>:</strong><br/>
-  <%@event.trainers.each {|t|%>
-    <%=t.name%></br>
-  <%}%>
-  &nbsp;
-</div>
+<%@event.trainers.each {|t|%>
+	<div class="row">
+		<div class="col-xs-12">
+		  <img src="<%=t.gravatar_picture_url%>?size=125" class="img-circle img-responsive">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 event-facilitator-text">
+		    <strong><%=t.name%></strong>
+		</div>
+	</div>
+<%}%>
