@@ -47,6 +47,7 @@ es:
         books: "Libros"
         blog: "Blog"
         videos: "Videos"
+        recursos: "Recursos y Materiales"
         lets_talk: "¿Hablamos?"
     menu:
         home: "Inicio"
@@ -69,6 +70,7 @@ es:
             blog: "Blog"
             book: "Libros"
             video: "Videos"
+            recursos: "Recursos y Materiales"
         tv: "Veas"
         we: "Nosotros"
         we_are: "Somos"
@@ -166,7 +168,7 @@ es:
 
                 </ul>
 
-                <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+                <a href='mailto:coaching@kleer.la?subject=Transformación Organizacional' class='btn btn-info btn-kleer'>¡Me interesa!</a>
                 <hr>
 
 			<p class='lead'>Equipos Ágiles</p>
@@ -179,7 +181,7 @@ es:
                 <li>Incepción de Proyectos</li>
             </ul>
 
-            <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+            <a href='mailto:coaching@kleer.la?subject=Equipos Ágiles' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>
 
 			<p class='lead'>Desarrollo de Software</p>
@@ -194,7 +196,7 @@ es:
                 <li>Testing / QA</li>
             </ul>
 
-            <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+            <a href='mailto:coaching@kleer.la?subject=Desarrollo de Software' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>
 
 			<p class='lead'>Innovación de Productos</p>
@@ -209,7 +211,7 @@ es:
                 <li>Lean Startup</li>
             </ul>
 
-            <a href='mailto:coaching@kleer.la' class='btn btn-info btn-kleer'>¡Me interesa!</a>
+            <a href='mailto:coaching@kleer.la?subject=Innovación de Productos' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>"
 
             bottom: "<hr/><p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más!</p>"
@@ -231,6 +233,74 @@ es:
         title: "Publicamos"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
+    recursos:
+        title: "Recursos y Materiales"
+        description: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+        lista:
+            recurso1:
+                    title: "Guias Ágiles"
+                    description: "Un lugar, todas las guías: Técnicas y herramientas que potencian a personas y equipos."
+                    link: <a href='http://guiasagiles.org/' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    tags: "<span>Guias agiles</span> <span>guias</span> <span>guide</span> <span>agile</span> <span>cultura ágil</span>"
+                    autores: "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a> - <a href='https://twitter.com/hhiroshi'>Hiroshi Hiromoto</a>"
+            recurso2:
+                    title: "DoD Kards"
+                    description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de terminado."
+                    link: <a href='https://www.dropbox.com/s/52jg9abb6zjmrvj/DoD%20Cards%20-%20ES.pdf?dl=0' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.elproximopaso.net/2017/07/dod-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>DoD</span> <span>Juego</span> <span>Definition</span> <span>done</span> <span>cards</span> <span>tarjetas</span>"
+                    autores: "<a href='https://about.me/cvelasquez'>Camilo Velasquez</a> - <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
+                    observaciones: "<a href='https://medium.com/@twallet/dod-kards-un-jeu-pour-cocr%C3%A9er-la-d%C3%A9finition-de-fini-en-%C3%A9quipe-940f31680032'>Traducción al francés</a> - <a href='https://www.dropbox.com/s/qqf1su06ix96td5/DoD%20Kards%20-%20IN.pdf?dl=0'>Traducción al inglés</a>"
+            recurso3:
+                    title: "Poster Agile Product Ownership"
+                    description: "Traducción al español de un poster de Mia Kolmodin sobre agilidad empresarial y desarrollo ágil de productos digitales de alto valor e impacto."
+                    link: <a href='https://dandypeople.com/blog/translated-to-spanish-agile-product-ownership-in-a-nutshell-poster/' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='https://pablolischinsky.wordpress.com/2017/06/05/poster-agile-product-ownership/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>agile</span> <span>product owner</span> <span>digital product</span> <span>value</span> <span>product discovery</span> <span>agile product development</span> <span>product management</span> <span>leadership</span>"
+                    autores: "<a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a>"
+                    traductor: "<a href='https://www.linkedin.com/in/pablolischinsky'>Pablo Lischinsky</a>"
+            recurso4:
+                    title: "Coaching Canvas"
+                    description: "Para Coaches dispuestos a utilizar diferentes técnicas con sus clientes, El Coaching Canvas es una herramienta de comunicación que te ayudará a facilitar conversaciones de coaching."
+                    link: <a href='http://coachingcanvas.org/es/download/the-coaching-canvas-wall-es.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://coachingcanvas.org/es/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>coaching</span> <span>coachingcanvas</span> <span>agilecoaching</span>"
+                    autores: "<a href='https://twitter.com/martinalaimo?lang=es'>Martín Alaimo</a>"
+            recurso5:
+                    title: "Canvas de Experimentos"
+                    description: "¿Estás llevando adelante una iniciativa en un marco de exploración y aprendizaje? Te invitamos a que tomes como base el Canvas de Experimentos. Adaptalo según tu necesidad, usalo para diseñar experimentos, y compartí tus experiencias!"
+                    link: <a href='http://kl.la/canvas-de-experimentos' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://guiasagiles.org/#Experimentos' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>experimentos</span> <span>exploración</span> <span>aprendizaje</span> <span>canvas</span> <span>canvas de experimentos</span>"
+                    autores: "<a href='https://twitter.com/rmonelos'>Rodrigo Monelos</a> y <a href='https://twitter.com/pablitux'>Pablo Tortorella</a>"
+            recurso6:
+                    title: "Slicing Cards"
+                    description: "Los patrones y las cartas de Slicing de User Stories te ayudarán a encontrar nuevos criterios con los que puedes subdividir las User Stories grandes en otras más pequeñas y simples."
+                    link: <a href='https://www.dropbox.com/s/w04cv0j0nrtl4cl/Kleer_-_Slicing_Cards_-_V3_-_4_por_Hoja.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://guiasagiles.org/#SlicingPatterns' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>Slicing</span> <span>UserStories</span> <span>Scrum</span> <span>Agile</span> <span>ProductOwner</span>"
+                    autores: "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>, <a href='https://twitter.com/rcolusso'>Ricardo Colusso</a> y <a href='https://twitter.com/pablolis'>Pablo Lischinsky</a>"
+            recurso7:
+                    title: "Barómetro de Equipo"
+                    description: " El Barómetro de Equipo es una herramienta poderosa para ayudar a un equipo de trabajo a elevar su nivel de conciencia como tal y evaluarse frente a características de los Equipos de Alto Rendimiento."
+                    link: <a href='https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.caminoagil.com/2016/11/tarjetas-barometro-de-equipos-cartas.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>barómetro</span> <span>equipo</span> <span>scrum</span> <span>sprint</span>"
+                    autores: "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>"
+            recurso8:
+                    title: "Poster de Scrum"
+                    description: "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores."
+                    link: <a href='http://media.kleer.la/posters/scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>"
+                    autores: "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>"
+            recurso9:
+                    title: "Extreme Programming"
+                    description: ""
+                    link: <a href='http://media.kleer.la/posters/xp.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
+                    autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
     books:
         title: "Libros"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"

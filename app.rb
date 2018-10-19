@@ -221,6 +221,12 @@ get '/libros' do
   erb :ebooks, :layout => :layout_2017
 end
 
+get '/recursos' do
+  @active_tab_publicamos = "active"
+  @page_title += " | Recursos"
+  erb :recursos, :layout => :layout_2017
+end
+
 get '/publicamos/scrum' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos | Proyectos Ágiles con Scrum"
@@ -492,6 +498,14 @@ get '/prensa/casos/transformacion-digital-bbva-continental' do
   @meta_keywords = "Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional"
 
   erb :prensa_casos_bbva_2018, :layout => :layout_2017
+end
+
+get '/prensa/casos/falabella-financiero' do
+  @page_title += " | Transformación Organizacional en Falabella Financiero"
+  @meta_description = "Kleer - Coaching & Training - Transformación Organizacional en Falabella Financiero"
+  @meta_keywords = "Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional"
+
+  erb :prensa_casos_falabella_financiero, :layout => :layout_2017
 end
 
 get '/prensa/casos/capacitaciones-agiles-endava' do

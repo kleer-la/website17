@@ -29,7 +29,23 @@
 
 
   <base href="/app">
-
+  <!-- Facebook Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1229278120422076');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1229278120422076&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
 </head>
 
 <body ng-app="kleerApp">
@@ -51,6 +67,7 @@
                   <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
                     <ul class="dropdown-menu">
                       <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                      <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
                     </ul>
                   </li>
                   <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
@@ -63,6 +80,7 @@
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
               <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
               <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
+              <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
             </ul>
             </a>
           </li>
@@ -83,7 +101,7 @@
   </div>
 
   <!-- Menu lateral -->
-  <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle visible-xs visible-sm"><i class="fa fa-bars"></i></a>
+  <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle visible-xs-block visible-sm"><i class="fa fa-bars"></i></a>
   <nav id="sidebar-wrapper">
 
       <div class="menu-container text-uppercase">
@@ -103,6 +121,7 @@
                 <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
                   <ul>
                     <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                    <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
                   </ul>
                 </li>
                 <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
@@ -114,6 +133,7 @@
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
               <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
               <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
+              <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
             </ul>
           </li>
           <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
@@ -130,6 +150,8 @@
             <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github"></i></a></li>
             <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube"></i></a></li>
             <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li><% if (session[:locale] == "en") %><a href="/es/"><strong>ESP</strong></a><% end %>
+            <% if (session[:locale] == "es") %><a href="/en/"><strong>ENG</strong></a><% end %></li>
           </ul>
           <span class="display-inline-block font-family-alt text-large email"><a class="lower" href="mailto:hola@kleer.la">hola@kleer.la</a></span>
         </div>
@@ -530,12 +552,14 @@
             <p class="text-muted">Copyright &copy; Kleer 2017 |
               <% if (session[:locale] == "es") %>
                 <a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> |
-                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a>
+                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> |
               <% end %>
               <% if (session[:locale] == "en") %>
                 <a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> |
-                <a href="/<%=session[:locale]%>/terms"> Terms of service</a>
+                <a href="/<%=session[:locale]%>/terms"> Terms of service</a> |
               <% end %>
+              <% if (session[:locale] == "en") %><a href="/es/"><strong>ESPAÑOL</strong></a><% end %>
+              <% if (session[:locale] == "es") %><a href="/en/"><strong>ENGLISH</strong></a><% end %>
             </p>
           </div>
         </div>
