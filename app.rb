@@ -533,6 +533,10 @@ get '/aca-beta' do
   erb :aca_beta, :layout => false
 end
 
+get '/aca-37yjeueh' do
+  erb :aca_30dto, :layout => false
+end
+
 # JSON ====================
 
 get '/entrenamos/eventos/proximos' do
