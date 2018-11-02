@@ -224,6 +224,10 @@ en:
            pdf-epub: "PDF/ePub"
            pdf: "PDF"
        books:
+            agile_team:
+                title: "Agile Team Facilitator"
+                text: "Este libro es el primero de una serie que busca construir el camino de toda persona que quiera dedicarse al agile coaching. En esta edición el foco está en la facilitación de equipos, entendiendo las habilidades y responsabilidades que conlleva."
+                next: "Obtener libro >>"
            scrum:
                title: "Agiles Projects with Scrum"
                title1: "Agiles Projects with"
