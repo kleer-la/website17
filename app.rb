@@ -537,6 +537,10 @@ get '/aca-37yjeueh' do
   erb :aca_30dto, :layout => false
 end
 
+get '/7-trucos-agile-coaching' do
+  erb :pac_7trucos_agile_coaching, :layout => false
+end
+
 # JSON ====================
 
 get '/entrenamos/eventos/proximos' do
