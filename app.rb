@@ -529,6 +529,14 @@ get '/last-tweet/:screen_name' do
   return reader.last_tweet(params[:screen_name]).text
 end
 
+get '/aca-beta' do
+  erb :aca_beta, :layout => false
+end
+
+get '/aca-37yjeueh' do
+  erb :aca_30dto, :layout => false
+end
+
 # JSON ====================
 
 get '/entrenamos/eventos/proximos' do
