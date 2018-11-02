@@ -80,10 +80,10 @@ end
 
 before do
 
-  if request.env['HTTP_ACCEPT_LANGUAGE'][0..1] == 'es'
-    session[:locale] = 'es'
-  else
+  if request.host.include?( "kleer.us" )
     session[:locale] = 'en'
+  else
+    session[:locale] = 'es'
   end
 
   if request.host == "kleer.la" || request.host == "kleer.us" || request.host == "kleer.es" || request.host == "kleer.com.ar"
