@@ -9,7 +9,7 @@ en:
         buttons:
             see_more: "See more"
             register: "Register!"
-            i_am_interested: "I'm interested!"
+            i_am_interested: "Pre Inscription"
             pay_and_register: "Pay & Register"
             complete: "Complete"
             close: "Close"
@@ -43,6 +43,7 @@ en:
         courses: "Courses"
         agenda: "Schedule"
         catalog: "Catalog"
+        campus: "Campus digital"
         we_publish: "We publish"
         books: "Books"
         blog: "Blog"
@@ -56,6 +57,7 @@ en:
           root: "Courses"
           calendar: "Calendar"
           catalog: "Catalog"
+          campus: "Campus digital"
         coaching: "Coaching"
         facilitation: "Facilitation"
         certifications: "Certifications"
@@ -210,19 +212,23 @@ en:
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
     books:
-       title: "Books"
-       description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
-       others:
-           title: "Other publications"
-       buy:
+        title: "Books"
+        description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
+        others:
+            title: "Other publications"
+        buy:
            paperback: "Paperback"
            paperback_and_kindle: "Paperback + Kindle"
            amazon_matchbook: "If you buy a new print edition of this book, you can buy the Kindle edition for FREE. Print edition must be purchased at Amazon."
            kindle: "Kindle"
            pdf-epub: "PDF/ePub"
            pdf: "PDF"
-       books:
-           scrum:
+        books:
+            agile_team:
+                title: "Agile Team Facilitator"
+                text: "Este libro es el primero de una serie que busca construir el camino de toda persona que quiera dedicarse al agile coaching. En esta edición el foco está en la facilitación de equipos, entendiendo las habilidades y responsabilidades que conlleva."
+                next: "Obtener libro >>"
+            scrum:
                title: "Agiles Projects with Scrum"
                title1: "Agiles Projects with"
                title2: "#Scrum"
@@ -237,10 +243,10 @@ en:
                    download: "Download the PDF poster from<a href='https://media.kleer.la/posters/scrum.pdf'>here</a>"
                download:
                    pdf: "Free PDF"
-           retrospectives:
+            retrospectives:
                title: "Retrospectives techniques"
                text: "Retrospectives are meetings where teams identify areas for improvement and design actions to do so. They may occur at the end of each iteration (sprint), after each new version or anytime a need for improvement is detected. The following is a summary of techniques that can be used.<br/>&nbsp;<br/>You can download this e-book in PDF format with just a tweet!"
-           mas_productivos:
+            mas_productivos:
                title: "Higher performing teams"
                title1: "Higher"
                title2: "#PerformingTeams"
@@ -252,14 +258,14 @@ en:
                next: "Get the book >>"
                download:
                    pdf: "PDF/Kindle/ePub: 50% OFF!"
-           lenguajes_web:
+            lenguajes_web:
                title: "Introducción a los lenguajes de la Web"
                text: "In web development teams, every member must be able to
                understand the web terminology and concepts. This book gives you the minimun
                knowdgement needed. It gives you a quick introduction to HTTP (the communication protocol of the web),
                to HTML (the language of the pages contents), to CSS (the lenguaje of the page styles), and to some additional topics.
                This knowledge helps the team have better conversations and archive better results."
-           agil_ilustrado:
+            agil_ilustrado:
                title: "Libro Ágil Ilustrado"
                text: "El objetivo de este libro es difundir -de forma gráfica- métodos y
                prácticas ágiles. En cuanto al contenido, considero que el paradigma ágil
@@ -269,11 +275,11 @@ en:
                y alegres, en comparación a otros paradigmas tradicionales. En cuanto a la
                forma, elijo comunicar a través de ilustraciones porque 'una imagen vale
                más que mil palabras' y porque -sencillamente- me gusta dibujar, lo disfruto."
-           herramientas_coach:
+            herramientas_coach:
                title: "Herramientas para el Coach Ágil - Ejemplos de visualización"
                text: "Este libro está lleno de ejemplos de visualización para mejorar la colaboración y comunicación de los equipos y para modelar comportamientos. Está escrito para personas y equipos que trabajan en un contexto de desarrollo ágil de software."
                next: "Obtener libro >>"
-           little_book:
+            little_book:
                title: "Agile 2015 - Little Book of Sketchnotes"
                text: "This book compiles the graphical memories from five different facilitators drawn during sessions and activities at the Agile 2015 conference at Washington DC, USA. The purpose of this initiative is to share with you their visual memory of the event and inspire you to take visual notes anytime."
     we_are:
@@ -306,6 +312,30 @@ en:
         release10_text: "Los métodos ágiles llegaron a las agencias digitales para quedarse. Llevan más de dos décadas dando resultados en otras industrias, más que nada en el desarrollo de software, y hace más de dos años desembarcaron en la publicidad."
         release11_title: "Kleer será anfitrión de la 1° Jornada de Metacreatividad en Argentina"
         release11_text: "Kleer se complace en anunciar que será el anfitrión de la Primera Jornada del Movimiento de Metacreatividad en la Argentina. El encuentro, de entrada libre y gratuita, se realizará el próximo lunes 31 de agosto en sus oficinas."
+        release12_title: "La ropa no se negocia"
+        release12_text: "Las nuevas generaciones impusieron el look casual para ir a trabajar, pero hay empresas que hoy quieren volver a la formalidad: ¿cuál es el punto de equilibrio?"
+        release13_title: "De qué se trata la metodología de trabajo inspirada en el rubgy que quiere ganar terreno en las empresas"
+        release13_text: "A través de liderazgos situacionales y deadlines de corto plazo, el scrum busca promover tanto innovación como productividad. En qué consiste."
+        release14_title: "Facilitación Gráfica como recurso para la CI"
+        release14_text: "En Kleer, junto a sus socios, se especializa en metodologías ágiles"
+        release15_title: "Cultura ágil y cultura latina ¿son compatibles?"
+        release15_text: "Cuando adoptas para tu empresa una solución creada en otro contexto ¿Tenés en cuenta la idiosincrasia de tu organización y de tu país? El contexto es un factor crítico para el éxito."
+        release16_title: "RRHH podría matar la agilidad de tu empresa... o potenciarla"
+        release16_text: "Hace unos meses estaba conversando con uno de nuestros clientes sobre la logística de un taller que iba a impartir"
+        release17_title: "Kleer en Congreso Regional de Interacción con Clientes 2017"
+        release17_text: "El Congreso Regional de Interacción con Clientes, que se realizará el 8 de junio en la Ciudad de Buenos Aires, apunta a generar un espacio de"
+        release18_title: "Rápidas y sin furia: cómo toman las decisiones las empresas más creativas"
+        release18_text: "Nuevo paradigma: estructuras más horizontales, menor aversión al riesgo y fuerte dinamismo interno son algunas de las claves de estas compañías"
+        release19_title: "Cómo aprovechar las horas para ser más productivo y descansar"
+        release19_text: "En las películas de acción hay secuencias de persecuciones interminables en las que el protagonista corre detrás del villano o viceversa."
+        release19b_title: "Tiempo que has de usar: cómo aprovechar las horas para ser más productivo y descansar"
+        release19b_text: "Cada vez más personas sienten que no llegan a hacer tantas cosas como quisieran por la interrupción de las apps y no saber decir que no"
+        release20_title: "Nueve decisiones clave para iniciar la transformación organizacional"
+        release20_text: "Muchas organizaciones están en un camino de evolución, embarcándose en la agilidad como principal alternativa. En muchos casos lo hacen con escepticismo,"
+        release21_title: "¿Cómo iniciar la transformación organizacional?"
+        release21_text: "El proceso de la transformación organizacional suele ser un gran desafío para las empresas, que en muchos casos lo llevan a cabo con escepticismo, pero con la presión de la industria"
+        release22_title: "8 amenazas de la transformación digital a las empresas tradicionales"
+        release22_text: "Las empresas tradicionales de muchas industrias no podrán sobrevivir si no desarrollan su capacidad de adaptarse al nuevo contexto que proponen las tecnologías de información y a los hábitos de los nativos digitales."
     privacy:
         title: "Privacy Policy"
         text: "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.kleer.la (the “Site”)."
@@ -446,7 +476,7 @@ en:
                 address1: "Carrera 45#57-38"
                 address2: "Bogota"
                 phone: "+57 300.327.0604"
-                contact: "Ingrith Rojas"
+                contact: "Jennifer Benavides and Ingrith Rojas"
                 contact_email: "info.co@kleer.la"
             peru:
                 name: "Peru"
