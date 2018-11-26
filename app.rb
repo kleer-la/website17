@@ -325,6 +325,13 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
     @event_type = KeventerReader.instance.event_type(event_type_id, true)
   end
 
+  #@tracking_parameters = ""
+  if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
+    @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+  else
+    @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
+  end
+
   if @event_type.nil?
     flash.now[:error] = get_course_not_found_error()
     erb :error404_to_calendar
