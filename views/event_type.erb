@@ -54,7 +54,7 @@ end
                   <div class="klabel-date"><%=date_line%></div>
                 </div>
                 <div class="col-xs-9" style="text-align:left;">
-                  <a href="/<%=session[:locale]%>/<%=event.is_community_event ? "comunidad" : "entrenamos" %>/evento/<%=url_sanitize(event.uri_path)%>">
+                  <a href="/<%=session[:locale]%>/<%=event.is_community_event ? "comunidad" : "entrenamos" %>/evento/<%=url_sanitize(event.uri_path)%>?<%=@tracking_parameters%>">
                     <%=event.event_type.name%>
                   </a><br/>
 									<% if event.specific_subtitle != "" %>

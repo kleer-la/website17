@@ -62,32 +62,35 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
           <li class="root">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b>
-              <ul class="dropdown-menu">
-                  <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
-                  <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
-                  <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
-                      <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
-                      <li><a href="https://campus.kleer.la/es/courses/"><%=t('side_menu.campus')%></a></li>
-                    </ul>
-                  </li>
-                  <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
-              </ul>
-            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
+              <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
+              <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                  <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
+                  <li><a href="https://campus.kleer.la/es/courses/"><%=t('side_menu.campus')%></a></li>
+                </ul>
+              </li>
+              <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
+            </ul>
           </li>
           <li class="root">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
               <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
               <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
               <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
             </ul>
-            </a>
           </li>
-          <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
+          <li class="root">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+            </ul>
+          </li>
           <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -116,8 +119,7 @@
         <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
         <ul class="sidebar-nav">
 
-          <li><a href="javascript:void(0);" onclick='scrollTo2("#about");closeSidebar(event)'><%=t('side_menu.we_do')%></a></li>
-          <li>
+          <li><a href="javascript:void(0);" onclick='scrollTo2("#about");closeSidebar(event)'><%=t('side_menu.we_do')%></a>
             <ul>
                 <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
                 <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
@@ -131,8 +133,7 @@
                 <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
             </ul>
           </li>
-          <li><a href="/<%=session[:locale]%>/publicamos"><span class="white"><%=t('side_menu.we_publish')%></span></a></li>
-          <li>
+          <li><a href="/<%=session[:locale]%>/publicamos"><span class="white"><%=t('side_menu.we_publish')%></span></a>
             <ul>
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
               <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
@@ -140,9 +141,12 @@
               <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
             </ul>
           </li>
-          <li><a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a></li>
+          <li><a href="/<%=session[:locale]%>/somos"><span class="white"><%=t('side_menu.we_are')%></span></a>
+            <ul>
+              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+            </ul>
+          </li>
           <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
-
         </ul>
 
         <div class="social-media">
@@ -291,6 +295,19 @@
           </div>
       </div>
   </section>
+
+  <!-- banner -->
+  <!-- section id="banner_big">
+    <div class="container">
+      <div class="row text-center">
+        &nbsp;<br/>
+        <a href="/es/categoria/clientes/cursos/233-professional-agile-coach-(pac)?utm_source=index&utm_campaign=pac.banner.kleer.la">
+          <img src="/img/banners/pac-long-banner.png" width="70%"/>
+        </a><br/>
+        &nbsp;
+      </div>
+    </div>
+  </section -->
 
   <!-- Footer -->
   <footer>
