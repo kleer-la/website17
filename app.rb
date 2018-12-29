@@ -545,7 +545,8 @@ get '/aca-37yjeueh' do
 end
 
 get '/7-trucos-agile-coaching' do
-  erb :pac_7trucos_agile_coaching, :layout => false
+  #erb :pac_7trucos_agile_coaching, :layout => false
+  redirect "https://agilecoachingpath.com/7-trucos", 301 # permanent redirect
 end
 
 # JSON ====================
