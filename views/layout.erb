@@ -8,9 +8,6 @@
 	<meta name="keywords" content="<%=@meta_keywords%>">
 	<meta name="robots" content="noarchive">
 
-	<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="e51b747b-382f-4b2b-a116-d185b974ba70" type="text/javascript" async></script>
-	<script id="CookieDeclaration" src="https://consent.cookiebot.com/e51b747b-382f-4b2b-a116-d185b974ba70/cd.js" type="text/javascript" async></script>
-
 	<%if !@twitter_card.nil? %>
 	    <meta name="twitter:card" content="summary">
 	    <meta name="twitter:site" content="<%=@twitter_card.site%>">
@@ -94,6 +91,7 @@
 			s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+
 	<!-- Facebook Pixel Code -->
 	<script>
 	!function(f,b,e,v,n,t,s)
@@ -111,6 +109,32 @@
 	src="https://www.facebook.com/tr?id=1229278120422076&ev=PageView&noscript=1"
 	/></noscript>
 	<!-- End Facebook Pixel Code -->
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+  window.addEventListener("load", function(){
+  window.cookieconsent.initialise({
+    "palette": {
+      "popup": {
+        "background": "#87cedc",
+        "text": "#337480"
+      },
+      "button": {
+        "background": "#337480"
+      }
+    },
+    "theme": "classic",
+    "position": "bottom-right",
+    "content": {
+      "message": "Las cookies de este sitio web se usan para brindar la mejor experiencia posible.",
+      "dismiss": "Aceptar",
+      "link": "Conocer más",
+      "href": "https://kleer.la/es/privacy"
+    }
+  })});
+  </script>
+
 </head>
 
 <body>
