@@ -211,6 +211,10 @@ en:
                     info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
+            recurso10:
+                    title: "DoR Kards"
+                    description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR por su sigla en ingles: Definition of Ready)."
+                    info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
     books:
         title: "Books"
         description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
@@ -338,6 +342,13 @@ en:
         release22_text: "Las empresas tradicionales de muchas industrias no podrán sobrevivir si no desarrollan su capacidad de adaptarse al nuevo contexto que proponen las tecnologías de información y a los hábitos de los nativos digitales."
         release23_title: "Del error al aprendizaje en el camino hacia el éxito temprano"
         release23_text: "Hay algo con la frase “Prueba y Error” que no me convence. En general la usamos para referirnos a la estrategia que usamos en un contexto complejo o de"
+        release24_title: "Coaching y transformación ágil en AFP Crecer"
+        release24_text: "<h4>Necesidad</h4>
+                        <p>AFP Crecer, una administradora de fondos de pensiones en El Salvador con más de un millón de afiliados, buscaba agilizar sus procesos internos para mejorar el servicio al cliente.</p> 
+                        <h4>Búsqueda de la solución</h4>
+                        <p>A partir de esta búsqueda surgió la alianza con Kleer, donde se realizó un acompañamiento y capacitaciones para adoptar metodologías ágiles de trabajo con foco en la entrega temprana de valor, comunicación transparente y empoderamiento de equipos.</p> 
+                        <h4>Resultado</h4>
+                        <p>Gracias a la aplicación de metodologías ágiles de trabajo se pasó de tener proyectos que tardaban un año en salir a la luz a propuestas que en 3 meses ya estaban funcionando. El principal efecto que se pudo visualizar es que al conseguir resultados más rápido, los equipos se motivan naturalmente a seguir mejorando y creando nuevas ideas.</p>"
     privacy:
         title: "Privacy Policy"
         text: "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.kleer.la (the “Site”)."
