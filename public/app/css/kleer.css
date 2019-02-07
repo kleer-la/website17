@@ -143,6 +143,12 @@ img {
     height: 400px;
     background-position: center top;
 }
+.header-afp-crecer {
+    background: url(../img/afp-crecer.jpg);
+    background-size: cover;
+    height: 400px;
+    background-position: center top;
+}
 .header-prensa {
     background: url(../img/prensa.jpg);
     background-size: cover;
@@ -1663,4 +1669,7 @@ p.feed-item-desc {
     position: absolute;
     bottom: 10px;
     right: 20px;
+}
+.mb-30 {
+    margin-bottom: 30px;
 }
