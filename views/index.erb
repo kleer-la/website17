@@ -593,18 +593,19 @@
               <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x sr-contact"></i></a></li>
             </ul>
             <hr class="small">
-            <p class="text-muted">Copyright &copy; Kleer 2017 |
+            <ul class="text-muted">
+              <li>Copyright &copy; Kleer 2019 <span>|</span></li>
               <% if (session[:locale] == "es") %>
-                <a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> |
-                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> |
+                <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
+                <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
               <% end %>
               <% if (session[:locale] == "en") %>
-                <a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> |
-                <a href="/<%=session[:locale]%>/terms"> Terms of service</a> |
+                <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
+                <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
               <% end %>
-              <% if (session[:locale] == "en") %><a href="/es/"><strong>ESPAÑOL</strong></a><% end %>
-              <% if (session[:locale] == "es") %><a href="/en/"><strong>ENGLISH</strong></a><% end %>
-            </p>
+              <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
+            </ul>
           </div>
         </div>
       </div>
@@ -613,16 +614,13 @@
 <!-- Suscripcion Newsletter -->
     <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
         <div class="container-fluid">
-            <div class="container">
-                <div class="container suscripcion">
-                    <div class="col-md-12 suscripcion-inner">
-                        <%=t('contact.subscription.text')%>
-                            <br/>
-                            <img src="img/fondos/flecha-derecha.png">
-                             <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
-                    </div>
-                </div>
-            </div>
+          <div class="suscripcion">
+              <div class="col-md-12 suscripcion-inner">
+                <p><%=t('contact.subscription.text')%></p>
+                <img src="img/fondos/flecha-derecha.png">
+                 <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
+              </div>
+          </div>
         </div>
     </div>
   </footer>
