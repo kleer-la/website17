@@ -211,6 +211,10 @@ en:
                     info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
+            recurso10:
+                    title: "DoR Kards"
+                    description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR por su sigla en ingles: Definition of Ready)."
+                    info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
     books:
         title: "Books"
         description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"

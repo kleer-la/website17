@@ -10,6 +10,11 @@
   <meta name="description" content="<%=@meta_description%>">
   <meta name="keywords" content="<%=@meta_keywords%>">
   <meta name="robots" content="noarchive">
+  <meta property="og:url" content="http://www.kleer.la" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kleer" />
+  <meta property="og:description" content="Kleer - Coaching & Training - Equipos de desarrollo Scrum" />
+  <meta property="og:image" content="https://www.kleer.la/img/logos/kleer.png" />
 
   <title><%=@page_title%></title>
 
@@ -26,6 +31,14 @@
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PFM58HF');</script>
+  <!-- End Google Tag Manager -->
 
 
   <base href="/app">
@@ -74,6 +87,10 @@
 </head>
 
 <body ng-app="kleerApp">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFM58HF"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- Add your site or application content here -->
 
@@ -593,18 +610,19 @@
               <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x sr-contact"></i></a></li>
             </ul>
             <hr class="small">
-            <p class="text-muted">Copyright &copy; Kleer 2017 |
+            <ul class="text-muted">
+              <li>Copyright &copy; Kleer 2019 <span>|</span></li>
               <% if (session[:locale] == "es") %>
-                <a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> |
-                <a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> |
+                <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
+                <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
               <% end %>
               <% if (session[:locale] == "en") %>
-                <a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> |
-                <a href="/<%=session[:locale]%>/terms"> Terms of service</a> |
+                <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
+                <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
               <% end %>
-              <% if (session[:locale] == "en") %><a href="/es/"><strong>ESPAÑOL</strong></a><% end %>
-              <% if (session[:locale] == "es") %><a href="/en/"><strong>ENGLISH</strong></a><% end %>
-            </p>
+              <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
+            </ul>
           </div>
         </div>
       </div>
@@ -613,16 +631,13 @@
 <!-- Suscripcion Newsletter -->
     <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
         <div class="container-fluid">
-            <div class="container">
-                <div class="container suscripcion">
-                    <div class="col-md-12 suscripcion-inner">
-                        <%=t('contact.subscription.text')%>
-                            <br/>
-                            <img src="img/fondos/flecha-derecha.png">
-                             <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
-                    </div>
-                </div>
-            </div>
+          <div class="suscripcion">
+              <div class="col-md-12 suscripcion-inner">
+                <p><%=t('contact.subscription.text')%></p>
+                <img src="img/fondos/flecha-derecha.png">
+                 <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
+              </div>
+          </div>
         </div>
     </div>
   </footer>
@@ -652,18 +667,6 @@
 </div>
 <!--Modal: Subscription Newsletter-->
 
-<!-- Google Analytics -->
-<script>
-    !function (A, n, g, u, l, a, r) {
-      A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-        (A[l].q = A[l].q || []).push(arguments)
-      }, A[l].l = +new Date, a = n.createElement(g),
-        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-    } (window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-21102272-1');
-    ga('send', 'pageview');
-</script>
 
 <!-- build:js(.) scripts/vendor.js -->
 <script src="app/vendor/jquery/dist/jquery.min.js"></script>
