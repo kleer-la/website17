@@ -4,7 +4,7 @@
 	</a>
 <% else %>
 	<%
-	registration_link = "https://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
+	registration_link = "http://localhost:3000/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
 	if @event.is_community_event
 		button_text = t("general.buttons.register")
 	else
