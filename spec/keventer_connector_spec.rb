@@ -9,19 +9,19 @@ describe KeventerConnector do
   end
   
   it "should be able to return the default events xml path" do
-    @kconn.events_xml_url.should == "https://eventos.kleer.la/api/events.xml"
+    @kconn.events_xml_url.should == "http://eventos.kleer.la/api/events.xml"
   end
   
   it "should be able to return the default community events xml path" do
-    @kconn.community_events_xml_url.should == "https://eventos.kleer.la/api/community_events.xml"
+    @kconn.community_events_xml_url.should == "http://eventos.kleer.la/api/community_events.xml"
   end
 
   it "should be able to return the default kleerers xml path" do
-    @kconn.kleerers_xml_url.should == "https://eventos.kleer.la/api/kleerers.xml"
+    @kconn.kleerers_xml_url.should == "http://eventos.kleer.la/api/kleerers.xml"
   end
 
   it "should be able to return the event type xml path" do
-    @kconn.event_type_url(1).should == "https://eventos.kleer.la/api/event_types/1.xml"
+    @kconn.event_type_url(1).should == "http://eventos.kleer.la/api/event_types/1.xml"
   end
 
 end
