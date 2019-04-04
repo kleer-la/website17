@@ -1543,11 +1543,23 @@ h3.list-group-item-heading {
         margin-top:0;
     }
 }
+.book-cover {
+    background: #94aabb;
+    padding: 20px 0;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+.book-cover .img-rounded {
+    min-height: 250px;
+}
 .book-description {
     min-height: 320px;
     font-size: 10pt;
     border: none;
     box-shadow: none;
+    border-radius: 0 0 4px 4px;
+    background: #eaeaea;
 }
 
 h4.feed-item-title a {

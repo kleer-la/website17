@@ -1,0 +1,37 @@
+<%if @event.is_sold_out %>
+	<a href="#" class="btn btn-danger btn-kleer btn-caps">
+		<%=t("general.buttons.complete")%>
+	</a>
+<% else %>
+	<%
+	url = ENV['KEVENTER_URL'] || "https://eventos.kleer.la"
+	registration_link = "#{url}/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
+	if @event.is_community_event
+		button_text = t("general.buttons.register")
+	else
+		button_text = t("general.buttons.i_am_interested")
+	end
+
+	if @event.registration_link != ""
+		registration_link = @event.registration_link
+	end
+
+	%>
+	<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
+		<%=button_text%>
+	</a>
+	<% if @event.enable_online_payment %>
+		<% if @event.country == 'Colombia' 
+			payment_and_registration_link = registration_link + "&payment_on_eventer=true"
+		else 
+			payment_and_registration_link = "https://campus.kleer.la/#{session[:locale]}/courses/#{@event.online_course_codename}/cohorts/#{@event.online_cohort_codename}/enroll?#{@tracking_parameters}"
+		end %>
+		<%
+		payment_and_registration_button_text = t("general.buttons.pay_and_register")
+		
+		%>
+		<a href="<%=payment_and_registration_link%>" target="_blank" class="btn btn-info btn-kleer btn-caps">
+			<%=payment_and_registration_button_text%>
+		</a>
+	<% end %>
+<% end %>

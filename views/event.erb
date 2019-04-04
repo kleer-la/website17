@@ -198,39 +198,7 @@ Realmente despiertas a un paradigma de evolución constante, tanto personal como
 		<div class=" col-md-10 col-md-offset-1 slide-evento-aprovecha text-center">
 			APROVECHA ESTA OPORTUNIDAD PARA APRENDER EN UN ENTORNO DONDE EL PROTAGONISTA ERES TÚ<br/>
 			<br/>
-			<%if @event.is_sold_out %>
-				<a href="#" class="btn btn-danger btn-kleer btn-caps">
-					<%=t("general.buttons.complete")%>
-				</a>
-			<% else %>
-				<%
-				if @event.is_community_event
-					button_text = t("general.buttons.register")
-				else
-					button_text = t("general.buttons.i_am_interested")
-				end
-
-				if @event.registration_link != ""
-					registration_link = @event.registration_link
-				else
-					registration_link = "https://eventos.kleer.la/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
-				end
-
-				%>
-				<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
-					<%=button_text%>
-				</a>
-				<% if @event.enable_online_payment %>
-					<%
-					payment_and_registration_button_text = t("general.buttons.pay_and_register")
-					payment_and_registration_link = "https://campus.kleer.la/#{session[:locale]}/courses/#{@event.online_course_codename}/cohorts/#{@event.online_cohort_codename}/enroll?#{@tracking_parameters}"
-					%>
-					&nbsp;
-					<a href="<%=payment_and_registration_link%>" target="_blank" class="btn btn-info btn-kleer btn-caps">
-						<%=payment_and_registration_button_text%>
-					</a>
-				<% end %>
-			<% end %>
+			<%= erb :event_register_inscription_options %>			
 		</div>
 	</div>
 </div>
@@ -249,4 +217,5 @@ Realmente despiertas a un paradigma de evolución constante, tanto personal como
 <div class=" fondo-pano pano-9"></div>
 
 <!-- ######################### EVENTER VIEW #################### -->
-<img style="display:none" src="http://eventos.kleer.la/events/<%=@event.id%>/viewed.gif?lang=<%=session[:locale]%><%=@tracking_parameters%>" width="1px" height="1px" onerror='this.style.display = "none"'/>
+<% url = ENV['KEVENTER_URL'] || "http://eventos.kleer.la" %>
+<img style="display:none" src=<%= url %>/events/<%=@event.id%>/viewed.gif?lang=<%=session[:locale]%><%=@tracking_parameters%>" width="1px" height="1px" onerror='this.style.display = "none"'/>
