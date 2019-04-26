@@ -1103,6 +1103,10 @@ h3.headerTitle {
     .headerSubtitle {
         font-size: 1em;
     }
+    .container p, ul li, .post-it-success table td, .post-it-success .col-xs-9 {
+        font-size: 18px;
+    }
+    .post-it-success table td { text-align: center; }
 }
 
 @media (max-width: 480px) {
@@ -1623,6 +1627,9 @@ p.feed-item-desc {
 .fondo-blanco .container .evento-description-container {
     padding-top: 45px;
     padding-bottom: 80px;
+}
+.fondo-blanco .container .evento-description-container iframe {
+    max-width: 100%;
 }
 .prensa .box {
     border-bottom: solid 1px #ddd;
