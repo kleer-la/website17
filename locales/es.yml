@@ -32,6 +32,7 @@ es:
         no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
     side_menu:
         we_are: "Somos"
+        us: "Nosotros"
         clients: "Clientes"
         we_do: "Que hacemos"
         coaching: "Coaching"
@@ -453,6 +454,8 @@ es:
         release24_text: "Kleer, organización de aprendizaje y coaching para aplicar los métodos ágiles en áreas de innovación, anunció hoy que participará en el Scrum Day Colombia..."
         release25_title: "La unión hace la fuerza: coaching de equipos"
         release25_text: "Trucos para potenciar esta herramienta de motivación en los grupos de trabajo. Del enfoque sistémico a la imposición de límites al propio entrenador"
+        release26_title: "¿Cómo saber si estamos desarrollando el producto equivocado?"
+        release26_text: "La adopción de los valores y herramientas ágiles para el desarrollo de productos está acelerando la transformación digital en las empresas"
     privacy:
       title: "Declaración de privacidad"
       title1: "SECCIÓN 1 - ¿QUÉ HACEMOS CON LA INFORMACIÓN QUE NOS DAS?"
