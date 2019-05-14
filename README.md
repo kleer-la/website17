@@ -1,7 +1,7 @@
 Website (update 2017-2018)
 ---
-En conjunto con nuestros amigos de Innqube.com (Mauro Strione)
-y Cambá (Pablo de los Santos)
+En conjunto con nuestros amigos de Innqube.com (Mauro Strione), Cambá (Pablo de los Santos)
+y actualmente la gran Alina Riba
 
 Website
 =======
