@@ -1,6 +1,6 @@
 class KeventerConnector
 
-  KEVENTER_URL = ENV['KEVENTER_URL'] || "http://eventos.kleer.la"
+  KEVENTER_URL = ENV['KEVENTER_URL'] || "http://localhost:3000"
   API_ROOT = KEVENTER_URL + "/api"
   API_EVENTS_PATH = "/events.xml"
   API_COMMUNITY_EVENTS_PATH = "/community_events.xml"

@@ -2,7 +2,7 @@ class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faqs,
                 :elevator_pitch, :learnings, :takeaways, :elevator_pitch, :include_in_catalog,
                 :public_editions, :average_rating, :net_promoter_score, :surveyed_count,
-                :promoter_count
+                :promoter_count, :external_site_url
 
   def initialize
     @id = nil
@@ -24,6 +24,7 @@ class KeventerEventType
     @net_promoter_score = 0
     @surveyed_count = 0
     @promoter_count = 0
+    @external_site_url=nil
   end
 
   def uri_path
@@ -49,7 +50,7 @@ class KeventerEventType
       :goal, :recipients, :program].each {
       |f| load_string(xml_keventer_event, f)
     }
-
+    @external_site_url = xml_keventer_event.find_first('external-site-url').content
     @faqs  = xml_keventer_event.find_first('faq').content
     @elevator_pitch = xml_keventer_event.find_first('elevator-pitch').content
     @include_in_catalog = to_boolean( xml_keventer_event.find_first('include-in-catalog').content )

@@ -45,8 +45,15 @@ class DTHelper
 
     result << "<div class=\"klabel-date\" style=\"width:#{post_it_width}\">#{date_line}</div>"
 
+
+    href = "href=\"/"+locale+"/"+event_details_path+"/evento/" + url_sanitize(event.uri_path) +'"'
+    unless event.event_type.external_site_url.to_s.empty?
+      href = "href=#{event.event_type.external_site_url}"
+    end
+
+    puts "--------------------------- #{href} =============="
     line = "<a "
-    line += "href=\"/"+locale+"/"+event_details_path+"/evento/" + url_sanitize(event.uri_path) +'"'
+    line += href
     line += ' title="'+event.event_type.subtitle+'"'
     line += ">" + event.event_type.name + "</a><br/>"
     if event.specific_subtitle != ""
