@@ -50,8 +50,6 @@ class DTHelper
     unless event.event_type.external_site_url.to_s.empty?
       href = "href=#{event.event_type.external_site_url}"
     end
-
-    puts "--------------------------- #{href} =============="
     line = "<a "
     line += href
     line += ' title="'+event.event_type.subtitle+'"'
