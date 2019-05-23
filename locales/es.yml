@@ -611,6 +611,13 @@ es:
                 phone: "+598-9468-1588 <br /> +598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
+            chile:
+                name: "Chile"
+                address1: "Agustinas #681 Oficina 1602"
+                address2: "Santiago"
+                phone: "+562 2638 4155<br /> +562 2606 5046"
+                contact: ""
+                contact_email: "info@cys-chile.cl"
             europa:
                 address1: "Hektoroviceva Ulica 2/V"
                 address2: "10000 Zagreb, Croatia"
