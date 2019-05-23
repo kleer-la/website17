@@ -136,14 +136,13 @@
             </ul>
           </li>
           <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
+          <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
           <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
           <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
-          <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="social-icons-desktop fa fa-google-plus"></i></a></li>
-          <li><a href="https://github.com/kleer-la" target="_blank"><i class="social-icons-desktop fa fa-github"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
           <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -192,6 +191,8 @@
             </ul>
           </li>
           <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
+          <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
         </ul>
 
         <div class="social-media">
