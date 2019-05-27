@@ -117,6 +117,10 @@ en:
         event:
             registration:
                 title: "Event Registration"
+    clients:
+        title: Our Clientes
+        description: Companies that trust us
+        more: Our clients
     training:
         title: "Public Courses"
         description: "WE ORGANIZE BOTH PUBLIC AND PRIVATE COURSES"
@@ -146,7 +150,9 @@ en:
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     recursos:
         title: "Resources and Materials"
-        description: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+    facilitation:
+        title: Facilitation
+        contact: ARE YOU READY TO LEAD CHANGE?
         lista:
             recurso1:
                     title: "Guias Ágiles"

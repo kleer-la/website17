@@ -117,6 +117,10 @@ es:
         event:
             registration:
                 title: "Registro a Evento"
+    clients:
+        title: Nuestros Clientes
+        description: Estas organizaciones confían en nosotros
+        more: Algunos de nuestros clientes
     training:
         title: "Cursos Abiertos"
         description: "ORGANIZAMOS ENTRENAMIENTOS PÚBLICOS Y PRIVADOS."
@@ -238,7 +242,9 @@ es:
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
     recursos:
         title: "Recursos y Materiales"
-        description: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+    facilitation:
+        title: Facilitación
+        contact: ¿LISTO PARA INICIAR EL CAMBIO?
         lista:
             recurso1:
                     title: "Guias Ágiles"
