@@ -11,7 +11,7 @@
 <div class="container mainContent">
 
     <div class="col-md-9 no-hpadding contenedor-main-izq">
-            <h4><%=t("recursos.description")%></h4><br/>
+            <% if (session[:locale] == "es") %><h4>Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena.</h4><% end %><br/>
             &nbsp;<br/>
             <div class="container-fluid">
                 <div class="row">

@@ -136,14 +136,13 @@
             </ul>
           </li>
           <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
+          <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
           <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
           <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
-          <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="social-icons-desktop fa fa-google-plus"></i></a></li>
-          <li><a href="https://github.com/kleer-la" target="_blank"><i class="social-icons-desktop fa fa-github"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
           <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -192,6 +191,8 @@
             </ul>
           </li>
           <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
+          <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
         </ul>
 
         <div class="social-media">
@@ -199,9 +200,6 @@
             <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="fa fa-facebook"></i></a></li>
             <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube"></i></a></li>
             <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram"></i></a></li>
             <li><% if (session[:locale] == "en") %><a href="/es/"><strong>ESP</strong></a><% end %>
             <% if (session[:locale] == "es") %><a href="/en/"><strong>ENG</strong></a><% end %></li>
@@ -370,6 +368,7 @@
             <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
             <li role="presentation"><a data-target="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
             <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
+            <li role="presentation"><a data-target="#Chile" aria-controls="Chile" role="tab" data-toggle="tab">Chile</a></li>
             <li role="presentation"><a data-target="#Europa" aria-controls="Europa" role="tab" data-toggle="tab">Europa</a></li>
             <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
             <li role="presentation"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab"><%=t("contact.locations.other.title")%></a></li>
@@ -523,6 +522,30 @@
                                     </a></li>
                                 <li><%=t("contact.helped_by")%>
                                   <%=t("contact.locations.uruguay.contact")%>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="text-center tab-pane" id="Chile">
+                        <div class="alert alert-info">
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <h4><strong>Kleer Chile</strong></h4>
+                              <p><%=t("contact.locations.chile.address1")%>
+                                <br><%=t("contact.locations.chile.address2")%></p>
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-phone fa-fw"></i>
+                                  <%=t("contact.locations.chile.phone")%>
+                                   </li>
+                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                  <a href="mailto:<%=t("contact.locations.chile.contact_email")%>">
+                                    <%=t("contact.locations.chile.contact_email")%>
+                                    </a></li>
+                                <!--<li><%=t("contact.helped_by")%>
+                                  <%=t("contact.locations.chile.contact")%>-->
                                 </li>
                               </ul>
                             </div>

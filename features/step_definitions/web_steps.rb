@@ -63,6 +63,10 @@ Given(/^I visit the english home page$/) do
   visit '/en/'
 end
 
+When("I switch to {string}") do |string|
+  click_link(string)
+end
+
 Given(/^I visit the english "(.*?)"$/) do |page|
   stub_connector
   visit '/en/'+page

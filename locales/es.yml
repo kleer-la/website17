@@ -117,6 +117,10 @@ es:
         event:
             registration:
                 title: "Registro a Evento"
+    clients:
+        title: Nuestros Clientes
+        description: Estas organizaciones confían en nosotros
+        more: Algunos de nuestros clientes
     training:
         title: "Cursos Abiertos"
         description: "ORGANIZAMOS ENTRENAMIENTOS PÚBLICOS Y PRIVADOS."
@@ -238,7 +242,9 @@ es:
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
     recursos:
         title: "Recursos y Materiales"
-        description: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+    facilitation:
+        title: Facilitación
+        contact: ¿LISTO PARA INICIAR EL CAMBIO?
         lista:
             recurso1:
                     title: "Guias Ágiles"
@@ -611,6 +617,13 @@ es:
                 phone: "+598-9468-1588 <br /> +598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
+            chile:
+                name: "Chile"
+                address1: "Agustinas #681 Oficina 1602"
+                address2: "Santiago"
+                phone: "+562 2638 4155<br /> +562 2606 5046"
+                contact: ""
+                contact_email: "info@cys-chile.cl"
             europa:
                 address1: "Hektoroviceva Ulica 2/V"
                 address2: "10000 Zagreb, Croatia"
