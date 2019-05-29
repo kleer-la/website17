@@ -150,9 +150,6 @@ en:
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     recursos:
         title: "Resources and Materials"
-    facilitation:
-        title: Facilitation
-        contact: ARE YOU READY TO LEAD CHANGE?
         lista:
             recurso1:
                     title: "Guias Ágiles"
@@ -222,6 +219,9 @@ en:
                     title: "DoR Kards"
                     description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR por su sigla en ingles: Definition of Ready)."
                     info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+    facilitation:
+        title: Facilitation
+        contact: ARE YOU READY TO LEAD CHANGE?
     books:
         title: "Books"
         description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
