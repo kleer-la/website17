@@ -99,53 +99,57 @@
 
     <!-- Menu desktop -->
   <div class="hidden-xs hidden-sm">
-    <nav class="navbar navbar-default navbar-fixed-top container-fluid text-uppercase" role="navigation">
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
-          <li class="root">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
-              <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
-              <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
-                  <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
-                  <li><a href="https://campus.kleer.la/es/courses/"><%=t('side_menu.campus')%></a></li>
-                </ul>
-              </li>
-              <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
-            </ul>
-          </li>
-          <li class="root">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
-              <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
-              <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
-              <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
-            </ul>
-          </li>
-          <li class="root">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
-              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
-            </ul>
-          </li>
-          <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
-          <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
-          <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
-          <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
-          <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
+    <nav class="navbar navbar-default navbar-fixed-top text-uppercase" role="navigation">
+      <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <a id="logo" class="navbar-brand" href="/">
+            <img src="/app/img/logo.png" alt="Kleer" />
+          </a>
+          <ul class="nav navbar-nav">
+            <li class="root">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/<%=session[:locale]%>/coaching"><%=t('side_menu.coaching')%></a></li>
+                <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
+                <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                    <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
+                    <li><a href="https://campus.kleer.la/es/courses/"><%=t('side_menu.campus')%></a></li>
+                  </ul>
+                </li>
+                <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
+              </ul>
+            </li>
+            <li class="root">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
+                <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
+                <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
+                <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
+              </ul>
+            </li>
+            <li class="root">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
+                <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+              </ul>
+            </li>
+            <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
+            <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+                <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
     </nav>
   </div>
 
@@ -156,7 +160,7 @@
       <div class="menu-container text-uppercase">
 
         <div id="logoMenu">
-          <a href="/"><img src="/app/img/kleer-logo.png"></a>
+          <a href="/"><img src="/app/img/logo.png"></a>
         </div>
 
         <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -213,15 +217,10 @@
 
   <!-- Logo Kleer -->
 
-  <div id="logo">
-    <a href="/"><img src="app/img/kleer-logo.png"></a>
-  </div>
+  <!--<div id="logo">
+    <a href="/"><img src="app/img/logo.png"></a>
+  </div>-->
 
-  <!-- Márgenes -->
-  <div class="margin top-margin"></div>
-  <div class="margin left-margin"></div>
-  <div class="margin rigth-margin"></div>
-  <div class="margin bottom-margin"></div>
   <div id="top"></div>
 
   <!-- Contenido del sitio -->
@@ -239,37 +238,37 @@
       <div class="carousel-inner">
           <div class="item active">
               <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
-              <div class="carousel-caption">
-                  <div class="text-vertical-center">
+              <div class="carousel-caption slider1">
+                  <div class="text-vertical">
                       <h1><%=t('slider.title_1')%></h1>
                       <h3><%=t('slider.text_1')%></h3>
-                      <a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
+                      <!--<a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
                         <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                      </a>
+                      </a>-->
                   </div>
               </div>
           </div>
           <div class="item">
               <div class="fill" style="background-image:url('app/img/slide03.jpg');"></div>
-              <div class="carousel-caption">
-                  <div class="text-vertical-center">
+              <div class="carousel-caption slider2">
+                  <div class="text-vertical">
                       <h1><%=t('slider.title_2')%></h1>
                       <h3><%=t('slider.text_2')%></h3>
-                      <a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
+                      <!--<a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
                         <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                      </a>
+                      </a>-->
                   </div>
               </div>
           </div>
           <div class="item">
               <div class="fill" style="background-image:url('app/img/slide02.jpg');"></div>
-              <div class="carousel-caption">
-                  <div class="text-vertical-center">
+              <div class="carousel-caption slider3">
+                  <div class="text-vertical">
                       <h1><%=t('slider.title_3')%></h1>
                       <h3><%=t('slider.text_3')%></h3>
-                      <a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
+                      <!--<a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
                         <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                      </a>
+                      </a>-->
                   </div>
               </div>
           </div>
@@ -295,16 +294,14 @@
       <div class="container">
           <div class="row text-center">
               <div class="col-lg-10 col-lg-offset-1">
-                  <h2><%=t('home.our_services')%></h2>
-                  <hr class="small">
                   <div class="row">
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
                               <span class="fa-stack fa-4x">
-                              <img src="app/img/facilitaciones.svg" alt="icono facilitaciones">
+                              <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones">
                           </span>
                               <h4>
-                                <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light"><%=t('home.facilitation')%></a>
+                                <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light facilitacion-bt"><%=t('home.facilitation')%></a>
                               </h4>
                               <p><%=t('home.facilitation_text')%></p>
                           </div>
@@ -312,10 +309,10 @@
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
                               <span class="fa-stack fa-4x">
-                              <img src="app/img/coaching.svg" alt="icono coaching">
+                              <img src="app/img/icon-coaching.svg" alt="icono coaching">
                           </span>
                               <h4>
-                                <a href="/<%=session[:locale]%>/coaching" class="btn btn-light"><%=t('home.coaching')%>
+                                <a href="/<%=session[:locale]%>/coaching" class="btn btn-light coaching-bt"><%=t('home.coaching')%>
                                 </a>
                               </h4>
                               <p><%=t('home.coaching_text')%></p>
@@ -324,10 +321,10 @@
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
                               <span class="fa-stack fa-4x">
-                              <img src="app/img/cursos.svg" alt="icono cursos">
+                              <img src="app/img/icon-cursos.svg" alt="icono cursos">
                           </span>
                               <h4>
-                                  <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light"><%=t('home.courses')%></a>
+                                  <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light cursos-bt"><%=t('home.courses')%></a>
                               </h4>
                               <p><%=t('home.courses_text')%></p>
                           </div>
@@ -355,9 +352,6 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="kleero01">
-          <img src="/img/personajes/kleero01.svg">
-      </div>
 
       <div class="container">
         <!-- Nav tabs -->
@@ -377,7 +371,7 @@
         <br>
 
         <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 text-center">
+            <div class="col-sm-12 text-center">
 
                 <!-- Tab panes -->
                 <div class="tab-content">
@@ -385,7 +379,7 @@
                     <div role="tabpanel" class="text-center tab-pane active" id="Argentina">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-xs-8">
+                            <div class="col-xs-6 col-xs-offset-2">
                               <h4><strong>Kleer Argentina</strong></h4>
                               <p><%=t("contact.locations.argentina.address1")%>
                                 <br><%=t("contact.locations.argentina.address2")%>
@@ -626,32 +620,7 @@
         </div>
 
         <div class="row">
-          <div class="text-center">
-            <br>
-            <ul class="list-inline">
-              <li><a href="https://facebook.com/kleer.la" target="_blank">	<i class="fa fa-facebook fa-fw fa-2x sr-contact"></i></a></li>
-              <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter fa-fw fa-2x sr-contact"></i></a></li>
-              <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin fa-fw fa-2x sr-contact"></i></a></li>
-              <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus fa-fw fa-2x sr-contact"></i></a></li>
-              <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github fa-fw fa-2x sr-contact"></i></a></li>
-              <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube fa-fw fa-2x sr-contact"></i></a></li>
-              <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-2x sr-contact"></i></a></li>
-            </ul>
-            <hr class="small">
-            <ul class="text-muted">
-              <li>Copyright &copy; Kleer 2019 <span>|</span></li>
-              <% if (session[:locale] == "es") %>
-                <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
-                <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
-              <% end %>
-              <% if (session[:locale] == "en") %>
-                <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
-                <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
-              <% end %>
-              <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
-            </ul>
-          </div>
+          
         </div>
       </div>
       <a id="to-top" href="javascript:void(0);" onclick='scrollTo2("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
@@ -667,6 +636,32 @@
               </div>
           </div>
         </div>
+    </div>
+    <div class="container-fluid footer-bottom">
+      <div class="text-center">
+        <ul class="list-inline">
+          <li><a href="https://facebook.com/kleer.la" target="_blank">  <i class="fa fa-facebook fa-fw fa-xs sr-contact"></i></a></li>
+          <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="fa fa-twitter fa-fw fa-xs sr-contact"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="fa fa-linkedin fa-fw fa-xs sr-contact"></i></a></li>
+          <li><a href="https://plus.google.com/106280725763107001222" target="_blank"><i class="fa fa-google-plus fa-fw fa-xs sr-contact"></i></a></li>
+          <li><a href="https://github.com/kleer-la" target="_blank"><i class="fa fa-github fa-fw fa-xs sr-contact"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="fa fa-youtube fa-fw fa-xs sr-contact"></i></a></li>
+          <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="fa fa-instagram fa-fw fa-xs sr-contact"></i></a></li>
+        </ul>
+        <ul class="text-muted">
+          <li>Copyright &copy; Kleer 2019 <span>|</span></li>
+          <% if (session[:locale] == "es") %>
+            <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
+            <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
+          <% end %>
+          <% if (session[:locale] == "en") %>
+            <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
+            <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
+          <% end %>
+          <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+          <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
+        </ul>
+      </div>
     </div>
   </footer>
 

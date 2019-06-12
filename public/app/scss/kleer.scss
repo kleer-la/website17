@@ -4,7 +4,8 @@
  * Por Mauro Strione - www.innqube.com
  */
 
-
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
 /* Global */
 
 html,
@@ -14,7 +15,7 @@ body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1,
@@ -23,7 +24,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 300;
 }
 
@@ -294,13 +295,9 @@ hr.small {
 }
 
 /* Logo */
-#logo {
-  position: fixed;
-  z-index: 99999;
-  background: rgb(0, 0, 0);
-  width: 200px;
-  left: 70px;
-  padding: 15px;
+.navbar-brand {
+  width: 180px;
+  height: 85px;
   img {
     width: 100%;
   }
@@ -312,17 +309,13 @@ hr.small {
 /*Menu desktop*/
 .navbar {
   border: none;
+  background: #7bcaea;
 }
 .navbar-fixed-top {
-  top: 20px;
   border-width: 0;
-  background-color:inherit;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  padding-left: 25vw;
-  padding-right: 5vw;
-  background-color: #87cedc;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -331,7 +324,6 @@ hr.small {
 }
 
 .navbar-default .navbar-nav>li>a {
-  line-height: 39px;
   color: #fff;
 }
 
@@ -400,16 +392,16 @@ hr.small {
   display: block;
 }
 .navbar-nav>li>.dropdown-menu {
-  background-color: #87cedc;
+  background-color: #7bcaea;
 }
 .dropdown-submenu > .dropdown-menu {
-  background-color: #87cedc;
+  background-color: #7bcaea;
 }
 .social-icons-desktop {
-  color: #337480;
-  font-size: 18px;
+  color: #fff;
+  font-size: 15px;
   &:hover {
-    color: #fff;
+    color: #337480;
   }
 }
 
@@ -515,7 +507,7 @@ hr.small {
   right: 350px;
   border-radius: 100%;
   border: 4px solid #63c3d1;
-  background: #87cedc;
+  background: #7bcaea;
   color: #fbfbfb;
   margin-right: -27px;
   width: 54px;
@@ -555,10 +547,35 @@ hr.small {
 }
 .service-item {
   margin-bottom: 30px;
+  .btn {
+    padding: 0;
+    display: block;
+  }
+  .facilitacion-bt {
+    background: url('../img/facilitacion-bt.svg') no-repeat center;
+    background-size: cover;
+  }
+  .coaching-bt {
+    background: url('../img/coaching-bt.svg') no-repeat center;
+    background-size: cover;
+  }
+  .cursos-bt {
+    background: url('../img/cursos-bt.svg') no-repeat center;
+    background-size: cover;
+  }
 }
 
 section#services {
-  background-color: rgba(228, 96, 149, 1);
+  background-color: #ffe600;
+  .service-item {
+    color: #000;
+    h4 {
+      font-family: 'Mali', cursive;
+      a {
+        font-size: 18px;
+      }
+    }
+  }
 }
 section#about {
   height: 300px;
@@ -643,24 +660,23 @@ section#about {
 }
 /* Footer */
 footer {
-  padding: 42px 0;
-  height: 560px;
+  padding: 42px 0 0 0;
+  /*height: 560px;*/
   overflow: visible;
-  background: #87CEDC;
+  background: #eb626d;
 }
-footer-small {
-  padding: 35px 0;
-  height: 200px;
-  overflow: visible;
-  background: #1c1c1b;
-  display: inherit;
+footer .tab-content {
+  background: url('../img/contact.svg') no-repeat center;
+  background-size: cover;
 }
 footer-small .text-muted, footer .text-muted {
   padding-left: 0;
+  color: #fff;
 }
 footer-small .text-muted li, footer .text-muted li {
   list-style: none;
   display: inline-block;
+  font-size: 12px;
 }
 @media (max-width: 660px) {
   footer-small {
@@ -675,9 +691,14 @@ footer-small .text-muted li, footer .text-muted li {
   }
 }
 footer .nav-tabs li a {
-  background: rgba(255, 255, 255, 0.7);
+  background: #e13f4a;
+  padding: 2px 10px;
+  color: #fff;
 }
-
+footer .nav-tabs li a:hover {
+  background: #b7333c;
+  border:none;
+}
 footer .nav-tabs>li {
   margin-bottom: 8px;
 }
@@ -704,6 +725,14 @@ footer .suscripcion {
 }
 .sidebar-nav li a {
   color: #fff;
+}
+.footer-bottom {
+  background: #141414;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  a {
+    color: #fff;
+  }
 }
 /* Márgenes */
 .margin {
@@ -739,6 +768,12 @@ footer .suscripcion {
   width: 18vh;
   left: 5%;
 }
+.navbar.navbar-default.navbar-fixed-top {
+  .nav>li>a {
+    padding: 35px 10px 25px 10px;
+    height: 85px;
+  }
+}
 .nav>li>a {
   padding: 5px 10px;
   border: 0px;
@@ -751,9 +786,10 @@ footer .suscripcion {
   margin-bottom: -1px;
   display: inline-block;
   float: none;
+  font-size: 12px;
 }
 .nav-tabs>li>a {
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 .nav-tabs>li.active>a,
@@ -761,11 +797,9 @@ footer .suscripcion {
 .nav-tabs>li.active>a:hover {
   color: #fff;
   cursor: default;
-  background-color: #337ab7;
+  background-color: #b7333c;
   border: none;
   border-bottom-color: transparent;
-  border-radius: 5px;
-  padding: 5px 10px;
 }
 .containerWithPadding {
   padding: 30px;
@@ -925,28 +959,53 @@ a.lower {
 .carousel-caption {
   padding-bottom: 50px;
   text-shadow: none;
-  color: black;
-  h3 {
-    text-shadow: 0 0 10px white;
+  text-align: left;
+  right: 10%;
+  left: auto;
+  .text-vertical {
+    margin: 30px 0 0 50px;
   }
 }
 .carousel-caption h1,
 .headerTitle {
-  font-family: 'Noto Serif', serif;
-  font-weight: 100;
-  color: #000000;
+  font-family: 'Mali', cursive;
+  text-transform: uppercase;
+  color: #fff;
   margin: 0;
   padding: 0;
-  font-size: 4.5em;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  font-size: 2em;
+}
+.carousel-caption h3 {
+  color: #fff;
+  margin: 10px 0 0;
+  font-size: 18px;
 }
 .carousel-indicators {
+  bottom: 20px;
+  left: 10%;
+  margin-left: 0;
+  text-align: left;
   .active {
-    background-color: #080808 !important;
+    background-color: #606060 !important;
   }
   li {
-    border-color: black !important;
+    border-color: #606060 !important;
   }
+}
+.carousel-caption {
+  width: 420px;
+}
+.carousel-caption.slider1 {
+  background: url('../img/coaching-slider.svg') no-repeat;
+  background-size: contain;
+}
+.carousel-caption.slider2 {
+  background: url('../img/facilitacion-slider.svg') no-repeat;
+  background-size: contain;
+}
+.carousel-caption.slider3 {
+  background: url('../img/cursos-slider.svg') no-repeat;
+  background-size: contain;
 }
 .headerTitle {
   text-align: right;
@@ -1135,14 +1194,9 @@ p.lead {
   background-color: #88cddc;
 }
 .slide-home-newsletter {
-  background-color: #e45f95;
   text-align: center;
   color: white;
   padding: 20px;
-  background: url('/img/fondos/bg-avion.png') #e45f95;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: 95%;
 }
 .slide-home-publicaciones {
   padding-top: 100px;
@@ -1169,6 +1223,16 @@ p.lead {
 }
 .categoria-productos {
   background-color: #fef290;
+}
+.tab-content .alert-info {
+  background: none;
+  border:none;
+  text-align: left;
+  color: #000;
+  border-radius: 0;
+  h4 {
+    text-transform: uppercase;
+  }
 }
 ul.featured-icons {
   cursor: default;
