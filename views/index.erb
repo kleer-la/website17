@@ -278,12 +278,12 @@
 
   <!-- Sobre Kleer / Separador -->
   <section id="about" class="about">
-      <div class="container">
+      <div class="container-fluid">
           <div class="row">
-              <div class="col-lg-12 text-center">
-                  <img src="/img/personajes/<%=t('kleeros.vision')%>" class="image-about-01">
-                  <img src="/img/personajes/01_03_web.svg" class="image-about-02">
-                  <img src="/img/personajes/02_03_web.svg" class="image-about-03">
+              <div class="col-md-4 col-md-offset-2">
+                  <h3><%=t('kleeros.vision')%></h3>
+              </div>
+              <div class="col-md-6">
               </div>
           </div>
       </div>
@@ -371,7 +371,7 @@
         <br>
 
         <div class="row">
-            <div class="col-sm-12 text-center">
+            <div class="col-md-8 col-md-offset-2 text-center">
 
                 <!-- Tab panes -->
                 <div class="tab-content">
@@ -379,27 +379,27 @@
                     <div role="tabpanel" class="text-center tab-pane active" id="Argentina">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-xs-6 col-xs-offset-2">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Argentina</strong></h4>
                               <p><%=t("contact.locations.argentina.address1")%>
-                                <br><%=t("contact.locations.argentina.address2")%>
+                                | <%=t("contact.locations.argentina.address2")%>
                                 </p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.argentina.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.argentina.contact_email")%>">
                                     <%=t("contact.locations.argentina.contact_email")%>
                                   </a></li>
-                                <li><%=t("contact.helped_by")%>
+                                <li class="help"><%=t("contact.helped_by")%>
                                   <%=t("contact.locations.argentina.contact")%>
                                 </li>
                               </ul>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-sm-4">
                               <a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
-                                <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="100" data-pin-nopin="true">
+                                <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="70" data-pin-nopin="true">
                               </a>
                             </div>
                           </div>
@@ -409,15 +409,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Brasil">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Brasil</strong></h4>
                               <p><%=t("contact.locations.brasil.address1")%>
                                 <br><%=t("contact.locations.brasil.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.brasil.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.brasil.contact_email")%>">
                                     <%=t("contact.locations.brasil.contact_email")%>
                                     </a></li>
@@ -433,15 +433,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Bolivia">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Bolivia</strong></h4>
                               <p><%=t("contact.locations.bolivia.address1")%>
                                 <br><%=t("contact.locations.bolivia.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.bolivia.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.bolivia.contact_email")%>">
                                     <%=t("contact.locations.bolivia.contact_email")%>
                                     </a></li>
@@ -457,15 +457,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Colombia">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Colombia</strong></h4>
                               <p><%=t("contact.locations.colombia.address1")%>
                                 <br><%=t("contact.locations.colombia.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.colombia.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.colombia.contact_email")%>">
                                     <%=t("contact.locations.colombia.contact_email")%>
                                     </a></li>
@@ -481,12 +481,12 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Peru">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Perú</strong></h4>
                               <p><%=t("contact.locations.peru.address1")%>
                                 <br><%=t("contact.locations.peru.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.peru.contact_email")%>">
                                     <%=t("contact.locations.peru.contact_email")%>
                                     </a></li>
@@ -502,15 +502,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Uruguay">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Uruguay</strong></h4>
                               <p><%=t("contact.locations.uruguay.address1")%>
                                 <br><%=t("contact.locations.uruguay.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.uruguay.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.uruguay.contact_email")%>">
                                     <%=t("contact.locations.uruguay.contact_email")%>
                                     </a></li>
@@ -526,15 +526,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Chile">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Chile</strong></h4>
                               <p><%=t("contact.locations.chile.address1")%>
                                 <br><%=t("contact.locations.chile.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.chile.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.chile.contact_email")%>">
                                     <%=t("contact.locations.chile.contact_email")%>
                                     </a></li>
@@ -550,15 +550,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Europa">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer Europe</strong></h4>
                               <p><%=t("contact.locations.europa.address1")%>
                                 <br><%=t("contact.locations.europa.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.europa.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.europa.contact_email")%>">
                                     <%=t("contact.locations.europa.contact_email")%>
                                     </a></li>
@@ -574,15 +574,15 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Mexico">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>Kleer México</strong></h4>
                               <p><%=t("contact.locations.mexico.address1")%>
                                 <br><%=t("contact.locations.mexico.address2")%></p>
                               <ul class="list-unstyled">
-                                <li><i class="fa fa-phone fa-fw"></i>
+                                <li>
                                   <%=t("contact.locations.mexico.phone")%>
                                    </li>
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
+                                <li>
                                   <a href="mailto:<%=t("contact.locations.mexico.contact_email")%>">
                                     <%=t("contact.locations.mexico.contact_email")%>
                                     </a></li>
@@ -598,7 +598,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Otro">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-5 col-sm-offset-3">
                               <h4><strong>&nbsp;</strong>
                               </h4>
                               <p>&nbsp;
@@ -626,15 +626,12 @@
       <a id="to-top" href="javascript:void(0);" onclick='scrollTo2("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
     </div>
 <!-- Suscripcion Newsletter -->
-    <div class="container-fluid fondo-celeste-oscuro slide-home-newsletter" id="contact">
-        <div class="container-fluid">
-          <div class="suscripcion">
-              <div class="col-md-12 suscripcion-inner">
-                <p><%=t('contact.subscription.text')%></p>
-                <img src="img/fondos/flecha-derecha.png">
-                 <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
-              </div>
-          </div>
+    <div class="container fondo-celeste-oscuro slide-home-newsletter" id="contact">
+        <div class="suscripcion">
+            <div class="col-sm-3 col-sm-offset-7 suscripcion-inner">
+              <p><%=t('contact.subscription.text')%></p>
+               <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
+            </div>
         </div>
     </div>
     <div class="container-fluid footer-bottom">
