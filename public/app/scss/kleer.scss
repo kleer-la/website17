@@ -176,7 +176,7 @@ img {
   position: absolute;
   right: 0;
   left: 0;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .6));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
   height: 300px;
   top: 100px;
 }
@@ -260,7 +260,22 @@ img {
 
 
 /* Botones custom */
-
+.nav-pills>li.active>a {
+  background:#7bcaea;
+}
+.btn-info {
+  background-color: #7bcaea;
+  border: none;
+  color:#000;
+  border-radius: 50px;
+  font-family: 'Mali', cursive;
+  padding: 6px 30px;
+  text-transform: uppercase;
+  &:hover {
+    background:#000;
+    color: #fff;
+  }
+}
 .btn-dark {
   border-radius: 5px;
   color: #fff;
@@ -414,7 +429,7 @@ hr.small {
   height: 100%;
   transform: translateX(390px);
   overflow-y: visible;
-  background: #63c3d1;
+  background: #7bcaea;
   -webkit-transition: all 0.6s ease 0.1s;
   -moz-transition: all 0.6s ease 0.1s;
   -ms-transition: all 0.6s ease 0.1s;
@@ -506,7 +521,7 @@ hr.small {
   margin-top: -27px;
   right: 350px;
   border-radius: 100%;
-  border: 4px solid #63c3d1;
+  border: 4px solid #7bcaea;
   background: #7bcaea;
   color: #fbfbfb;
   margin-right: -27px;
@@ -1032,11 +1047,26 @@ a.lower {
 .headerTitle {
   text-align: right;
 }
-h1.headerTitle {
-  font-size: 4.5em;
+.headerTitle {
+  font-size: 2.5em;
+  display: inline-block;
+  float: right;
+  position: relative;
+  &:before {
+    content: '';
+    background: #ea626e;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    z-index: -1;
+  }
 }
 h2.headerTitle {
-  font-size: 3.5em;
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 h3.headerTitle {
   font-size: 2.5em;
@@ -1046,6 +1076,7 @@ h3.headerTitle {
   color: black;
   font-size: 1.3em;
   text-shadow: 0px 0px 10px white;
+  clear: both;
 }
 .elevatorPitch {
   text-align: right;
@@ -1055,7 +1086,7 @@ h3.headerTitle {
 }
 .bigIcon {
   font-size: 60px;
-  color: #56f7cd;
+  color: #7bcaea;
 }
 .middle-icon {
   height: 130px;
@@ -1112,15 +1143,17 @@ p.lead {
   color: #337ab7;
 }
 .alertBox {
-  background: #63C3D1;
+  background: #7bcaea;
   padding: 20px;
   color: white;
   margin-bottom: 25px;
   text-align: center;
   font-size: 18px;
   font-weight: lighter;
-  hr {
-    display: none;
+  p {
+    font-family: 'Mali', cursive;
+    text-transform: uppercase;
+    margin-bottom: 0;
   }
 }
 .fill {
@@ -1207,10 +1240,10 @@ p.lead {
 }
 /* Estilos de web antigua */
 .fondo-amarillo {
-  background-color: #fef290;
+  background-color: #ffe600;
 }
 .fondo-verde {
-  background-color: #56f7cd;
+  background-color: #7bcaea;
 }
 .fondo-celeste {
   background-color: #88cddc;
@@ -1224,7 +1257,7 @@ p.lead {
   padding-bottom: 100px;
 }
 .fondo-rosa {
-  background: #e46095;
+  background: #eb626d;
 }
 .categoria {
   border-radius: 0px;
@@ -1232,18 +1265,18 @@ p.lead {
   padding: 15px;
 }
 .categoria-clientes {
-  background-color: #88cddc;
+  background-color: #000;
   color: white;
 }
 .categoria-organizaciones {
-  background-color: #56f7cd;
+  background-color: #7bcaea;
 }
 .categoria-software {
-  background-color: #e46095;
+  background-color: #eb626d;
   color: white;
 }
 .categoria-productos {
-  background-color: #fef290;
+  background-color: #ffe600;
 }
 .tab-content .alert-info {
   background: none;
@@ -1303,7 +1336,7 @@ ul.featured-icons {
 .klabel-date {
   min-width: 70px !important;
   font-size: 12px;
-  background: #fef290;
+  background: #ffe600;
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -1386,7 +1419,7 @@ ul.featured-icons {
 }
 .img-container {
   border-radius: 50%;
-  border: 4px solid #56f7cd;
+  border: 4px solid #7bcaea;
   background: white;
   padding: 6px;
   margin: 10px auto;
@@ -1395,7 +1428,7 @@ ul.featured-icons {
   height: 160px;
 }
 .nombreKleerer {
-  background: #56f7cd;
+  background: #7bcaea;
   text-align: center;
   display: block;
   position: relative;
@@ -1501,7 +1534,7 @@ h3.list-group-item-heading {
   min-height: 250px;
 }
 .book-description {
-  min-height: 320px;
+  min-height: 380px;
   font-size: 10pt;
   border: none;
   box-shadow: none;
@@ -1527,16 +1560,16 @@ p.feed-item-desc {
   color: white;
   font-size: 16px;
 }
-.pay_tweet_like_button {
-  background: #324c63;
-  color: white;
+.pay_tweet_like_button, .pwat-button {
+  background: #7bcaea;
+  font-family: 'Mali', cursive;
+  border: none;
+  border-radius: 100px;
+  padding: 5px 10px;
+  color: #000;
   text-transform: uppercase;
-  border-radius: 4px;
-  padding: 3px 6px 4px;
-  font-family: "Open Sans", Arial;
-  font-size: 12px;
   &:hover {
-    background: #333333;
+    background: #000;
     color: white;
     text-decoration: none;
   }
