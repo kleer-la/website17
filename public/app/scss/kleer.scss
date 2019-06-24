@@ -245,6 +245,27 @@ img {
   padding-left: 80px;
   padding-right: 80px;
   bottom: 20px;
+  .headerTitle {
+    display: inline-block;
+    color: #fff;
+    padding: 0 8px 0 32px;
+    font-size: 2em;
+    &:before {
+      width: 100%; 
+      height: 44px; 
+      background: #eb626d;
+      content: '';
+      position: absolute;
+      -webkit-transform: skew(-20deg); 
+      -moz-transform: skew(-20deg); 
+      -o-transform: skew(-20deg); 
+      z-index: -1;
+      border-radius: 1px;
+      right: 15px;
+      left: 15px;
+      bottom: -6px;
+    }
+  }
 }
 
 .blackBg {
@@ -562,21 +583,33 @@ hr.small {
 }
 .service-item {
   margin-bottom: 30px;
-  .btn {
-    padding: 0;
-    display: block;
+  h4 a {
+    display: inline-block;
+    text-decoration:none;
+    padding:4px 10px;
+    border-radius:3px;
+    transform: skewX(-10deg);
+    -o-transform: skewX(-10deg);
+    -moz-transform: skewX(-10deg);
+    -webkit-transform: skewX(-10deg);
+    color:#000;
+    background:#fff;
+    &:hover {
+      background:#000;
+      color: #fff;
+    }
+    span {
+      display: inline-block;
+      transform: skewX(10deg);
+      -o-transform: skewX(10deg);
+      -moz-transform: skewX(10deg);
+      -webkit-transform: skewX(10deg);
+    }
   }
-  .facilitacion-bt {
-    background: url('../img/facilitacion-bt.svg') no-repeat center;
-    background-size: cover;
-  }
-  .coaching-bt {
-    background: url('../img/coaching-bt.svg') no-repeat center;
-    background-size: cover;
-  }
-  .cursos-bt {
-    background: url('../img/cursos-bt.svg') no-repeat center;
-    background-size: cover;
+  p {
+    @media(min-width:768px) {
+      padding: 0 3em;
+    }
   }
 }
 
@@ -597,10 +630,9 @@ section#about {
   .container-fluid {
     background: #7acaea url('../img/about.svg') no-repeat center;
     background-size: cover;
-    padding: 70px 0;
+    padding: 40px 0;
   }
-  h3 {
-    margin-top: 50px;
+  h2 {
     line-height: 1.3;
   }
 }
@@ -1052,17 +1084,6 @@ a.lower {
   display: inline-block;
   float: right;
   position: relative;
-  &:before {
-    content: '';
-    background: #ea626e;
-    position: absolute;
-    width: 100%;
-    height: 5px;
-    bottom: -4px;
-    left: 0;
-    border-radius: 10px;
-    z-index: -1;
-  }
 }
 h2.headerTitle {
   font-size: 3em;
@@ -1246,10 +1267,10 @@ p.lead {
   background-color: #7bcaea;
 }
 .fondo-celeste {
-  background-color: #88cddc;
+  background-color: #7bcaea;
 }
 .slide-home-newsletter {
-  text-align: right;
+  text-align: center;
   padding: 20px;
 }
 .slide-home-publicaciones {
@@ -1281,7 +1302,7 @@ p.lead {
 .tab-content .alert-info {
   background: none;
   border:none;
-  text-align: left;
+  text-align: center;
   color: #000;
   border-radius: 0;
   min-height: 220px;
@@ -1392,7 +1413,16 @@ ul.featured-icons {
   color: black;
   opacity: 0.4;
 }
-
+h3.title-somos {
+  font-size: 22px;
+}
+.somos .fa {
+  font-size: 22px;
+  color: #7bcaea;
+  &:hover {
+    color: #000;
+  }
+}
 @media (max-width: 1200px) {
   .event-facilitator-face {
     left: -50px;
@@ -1416,6 +1446,9 @@ ul.featured-icons {
 .img-circle {
   width: 160px;
   filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0);
+  }
 }
 .img-container {
   border-radius: 50%;

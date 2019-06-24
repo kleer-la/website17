@@ -281,7 +281,7 @@
       <div class="container-fluid">
           <div class="row">
               <div class="col-md-4 col-md-offset-2">
-                  <h3><%=t('kleeros.vision')%></h3>
+                  <h2><%=t('kleeros.vision')%></h2>
               </div>
               <div class="col-md-6">
               </div>
@@ -298,10 +298,10 @@
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
                               <span class="fa-stack fa-4x">
-                              <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones">
-                          </span>
+                                <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones">
+                              </span>
                               <h4>
-                                <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light facilitacion-bt"><%=t('home.facilitation')%></a>
+                                <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light facilitacion-bt"><span><%=t('home.facilitation')%></span></a>
                               </h4>
                               <p><%=t('home.facilitation_text')%></p>
                           </div>
@@ -312,7 +312,7 @@
                               <img src="app/img/icon-coaching.svg" alt="icono coaching">
                           </span>
                               <h4>
-                                <a href="/<%=session[:locale]%>/coaching" class="btn btn-light coaching-bt"><%=t('home.coaching')%>
+                                <a href="/<%=session[:locale]%>/coaching" class="btn btn-light coaching-bt"><span><%=t('home.coaching')%></span>
                                 </a>
                               </h4>
                               <p><%=t('home.coaching_text')%></p>
@@ -324,7 +324,7 @@
                               <img src="app/img/icon-cursos.svg" alt="icono cursos">
                           </span>
                               <h4>
-                                  <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light cursos-bt"><%=t('home.courses')%></a>
+                                  <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light cursos-bt"><span><%=t('home.courses')%></span></a>
                               </h4>
                               <p><%=t('home.courses_text')%></p>
                           </div>
@@ -397,7 +397,7 @@
                                 </li>
                               </ul>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4 text-left">
                               <a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
                                 <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="70" data-pin-nopin="true">
                               </a>
@@ -409,7 +409,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Brasil">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Brasil</strong></h4>
                               <p><%=t("contact.locations.brasil.address1")%>
                                 <br><%=t("contact.locations.brasil.address2")%></p>
@@ -433,7 +433,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Bolivia">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Bolivia</strong></h4>
                               <p><%=t("contact.locations.bolivia.address1")%>
                                 <br><%=t("contact.locations.bolivia.address2")%></p>
@@ -457,7 +457,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Colombia">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Colombia</strong></h4>
                               <p><%=t("contact.locations.colombia.address1")%>
                                 <br><%=t("contact.locations.colombia.address2")%></p>
@@ -481,7 +481,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Peru">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Perú</strong></h4>
                               <p><%=t("contact.locations.peru.address1")%>
                                 <br><%=t("contact.locations.peru.address2")%></p>
@@ -502,7 +502,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Uruguay">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Uruguay</strong></h4>
                               <p><%=t("contact.locations.uruguay.address1")%>
                                 <br><%=t("contact.locations.uruguay.address2")%></p>
@@ -526,7 +526,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Chile">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Chile</strong></h4>
                               <p><%=t("contact.locations.chile.address1")%>
                                 <br><%=t("contact.locations.chile.address2")%></p>
@@ -550,7 +550,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Europa">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer Europe</strong></h4>
                               <p><%=t("contact.locations.europa.address1")%>
                                 <br><%=t("contact.locations.europa.address2")%></p>
@@ -574,7 +574,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Mexico">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>Kleer México</strong></h4>
                               <p><%=t("contact.locations.mexico.address1")%>
                                 <br><%=t("contact.locations.mexico.address2")%></p>
@@ -598,7 +598,7 @@
                     <div role="tabpanel" class="text-center tab-pane" id="Otro">
                         <div class="alert alert-info">
                           <div class="row">
-                            <div class="col-sm-5 col-sm-offset-3">
+                            <div class="col-sm-12">
                               <h4><strong>&nbsp;</strong>
                               </h4>
                               <p>&nbsp;
@@ -628,7 +628,7 @@
 <!-- Suscripcion Newsletter -->
     <div class="container fondo-celeste-oscuro slide-home-newsletter" id="contact">
         <div class="suscripcion">
-            <div class="col-sm-3 col-sm-offset-7 suscripcion-inner">
+            <div class="col-sm-12 suscripcion-inner">
               <p><%=t('contact.subscription.text')%></p>
                <button type="button" class="btn btn-warning btn-kleer btn-suscription" data-toggle="modal" data-target="#modalSN"><%=t('contact.subscription.interested')%></button>
             </div>
