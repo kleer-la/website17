@@ -248,11 +248,11 @@ img {
   .headerTitle {
     display: inline-block;
     color: #fff;
-    padding: 0 8px 0 32px;
+    padding: 10px 8px 0 32px;
     font-size: 2em;
     &:before {
       width: 100%; 
-      height: 44px; 
+      height: 100%; 
       background: #eb626d;
       content: '';
       position: absolute;
@@ -1259,6 +1259,9 @@ p.lead {
 .btn-group-custom {
   padding-top: 4px;
 }
+.mainContent.recursos .img-rounded {
+  width: 100%;
+}
 /* Estilos de web antigua */
 .fondo-amarillo {
   background-color: #ffe600;
@@ -1662,7 +1665,9 @@ p.feed-item-desc {
 }
 .botones {
   text-align: center;
-  position: absolute;
+  @media (min-width: 768px)  {
+    position: absolute;
+  }
   bottom: 30px;
   left: 0;
   right: 0;
