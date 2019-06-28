@@ -972,7 +972,9 @@ a.lower {
     right: 0; }
 
   #about.about h2 {
-    text-align: center; } }
+    text-align: center; }
+  #about.about .container-fluid {
+    padding: 40px 15px; } }
 .headerTitle {
   text-align: right; }
 
@@ -1564,5 +1566,8 @@ p.feed-item-desc {
 
 .mb-30 {
   margin-bottom: 30px; }
+
+.embed-responsive {
+  min-height: 400px; }
 
 /*# sourceMappingURL=kleer.css.map */

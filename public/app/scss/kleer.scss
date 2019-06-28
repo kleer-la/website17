@@ -1093,6 +1093,9 @@ a.lower {
     h2 {
       text-align: center;
     }
+    .container-fluid {
+      padding: 40px 15px;
+    }
   }
 }
 .headerTitle {
@@ -1758,4 +1761,7 @@ p.feed-item-desc {
 }
 .mb-30 {
   margin-bottom: 30px;
+}
+.embed-responsive {
+  min-height: 400px;
 }
