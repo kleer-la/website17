@@ -1012,11 +1012,6 @@ a.lower {
   }
 }
 
-@media (max-width: 480px) {
-  .carousel-caption h1 {
-      font-size: 3em !important;
-  }
-}
 .carousel,
 .item,
 .active {
@@ -1075,6 +1070,30 @@ a.lower {
 .carousel-caption.slider3 {
   background: url('../img/cursos-slider.svg') no-repeat;
   background-size: contain;
+}
+@media (max-width: 480px) {
+  .carousel-caption {
+    left: 0;
+    right: 0;
+    padding-top: 0;
+    bottom: 45px;
+  }
+  .carousel-caption h1 {
+      font-size: 2.5em !important;
+      margin-bottom: 0;
+  }
+  .carousel-indicators {
+    margin: 0 auto;
+    right: 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+  #about.about {
+    h2 {
+      text-align: center;
+    }
+  }
 }
 .headerTitle {
   text-align: right;
