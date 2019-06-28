@@ -974,7 +974,21 @@ a.lower {
   #about.about h2 {
     text-align: center; }
   #about.about .container-fluid {
-    padding: 40px 15px; } }
+    padding: 40px 15px; }
+
+  .btn-info {
+    padding: 6px 12px; }
+
+  .fondo-amarillo ul.featured-icons {
+    padding: 0; }
+
+  .fondo-rosa .btn-group-custom .btn.btn-kleer {
+    margin-bottom: 20px; }
+
+  .carousel-caption.slider3 {
+    background-position: -20px; }
+    .carousel-caption.slider3 .text-vertical {
+      margin: 30px 0 0 27px; } }
 .headerTitle {
   text-align: right; }
 
@@ -1026,7 +1040,7 @@ h3.headerTitle {
     text-align: center; } }
 @media (max-width: 480px) {
   h1.headerTitle {
-    font-size: 3em !important; }
+    font-size: 2.5em !important; }
 
   h2.headerTitle {
     font-size: 2em !important; }
