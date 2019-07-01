@@ -14,7 +14,7 @@
 				<div class="paper-agenda-container">
 					<div class="paper-agenda-top"></div>
 					<div class="paper-agenda-body">
-					<h2>Agenda</h2>
+					<h2><%=t('side_menu.agenda')%></h2>
 					<ul id="country-filter" class="nav nav-pills">
 						<li <%='class="active"' if @country == 'todos'%>><a href="/<%=session[:locale]%>/entrenamos/eventos/pais/todos"><%=t("dt_grid.select_all")%></a></li>
 					    <% @unique_countries.each do |country| %>
