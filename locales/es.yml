@@ -314,6 +314,93 @@ es:
     facilitation:
         title: Facilitación
         contact: ¿LISTO PARA INICIAR EL CAMBIO?
+        description: Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva.
+                    <br><br>
+                    Estas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.
+        event:
+            title: Facilitamos eventos que ayudan a los equipos a lograr sus objetivos.
+            text: Diseñamos ambientes propicios para crear sinergia entre las personas, espacios de encuentro con dinámicas que saquen el máximo provecho de lo que cada participante tiene para aportar. Como facilitadores asistimos al grupo a encauzar sus conversaciones. Evitamos el protagonismo y las distracciones. ​​¡Nuestro foco está en dar ​espacio a los participantes​ para que la magia emerja!​
+        services:
+            title: Nuestros servicios
+            graphic:
+                title: Facilitación gráfica
+                text: Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. También ofrecemos talleres de Facilitación Gráfica.
+                button: <a href="/facilitacion/grafica" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
+            innovation:
+                title: Innovación y creatividad
+                text: Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.
+                button: <a href="/facilitacion/innovacion-creatividad" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
+            planning:
+                title: Planificación estratégica
+                text: Jornadas donde equipos multidisciplinarios trabajan enfocados y en forma iterativa e incremental para lograr un objetivo pre-acordado, en general llevando adelante el desarrollo de un producto o un prototipo, aunque también se puede utilizar este formato para generar o refinar ideas.
+                button: <a href="/facilitacion/planificacion-estrategica" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
+            dynamics:
+                title: Dinámicas y eventos
+                text: Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.
+                button: <a href="/facilitacion/dinamicas-eventos" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
+        graphic: 
+            text: Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. Además facilitamos visualmente reuniones de equipo en las cuales haya que trabajar sobre temáticas complejas, tomar decisiones y generar acuerdos. Allí utilizamos técnicas visuales que facilitan el entendimiento común y posibilitan la comunicación efectiva.
+            button: ¡Me interesa!
+            documents:
+                title: Documentación Gráfica en vivo
+                text: Documentación gráfica en eventos y reuniones. Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.
+            workshops:
+                title: Talleres de Facilitación Gráfica
+                text: Workshops intensivos para aprender a aplicar herramientas visuales de facilitación. Duran entre 2 horas y 16 horas, según lo que se requiera.
+            posters:
+                title: Láminas gráficas
+                text: Realización de contenidos audiovisuales de temas, charlas y exposiciones.
+            videos:
+                title: Videos gráficos
+                text: Contenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.
+        innovation:
+            title: Innovación y creatividad
+            text: Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.
+            button: ¡Me interesa!
+            brainstorming: 
+                title: Powerful brainstorming
+                text: Diseño de actividades para estimular la creación colectiva de ideas. Son jornadas en las cuales se recorren distintas etapas':' estímulos, dinámicas grupales, creación masiva de ideas, feedback, selección y priorización, cross-polinización, refinamiento y puesta en común.
+            workshops:
+                title: Talleres de innovación y creatividad
+                text: Workshops orientados a cubrir todo el ciclo de vida de las ideas':' desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante. En estos encuentros se presentan y practican técnicas como':' Brainstorming efectivo, Escalera de Abstracciones, Principio de Distanciamiento, Estrategias Oblicuas y Sombrero sobre la cerca.
+            events:
+                title: Eventos corporativos y comunitarios
+                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver. 
+            creativity:
+                title: Creatividad analítica *
+                text: Se trata de un conjunto de actividades y herramientas diseñadas para potenciar los proyectos de analytics utilizando herramientas de creatividad. Así se logra que los profesionales que trabajan con datos (estadísticas, matemáticas, data mining, otros) puedan brindar mejor soporte a acciones de negocios. <small>(*) trabajo colaborativo junto a SAS Institute</small>
+        planning:
+            title: Planificación estratégica
+            text: Nos sentamos en la mesa para acompañar a equipos y directivos en la toma de decisiones. Tomamos en cuenta tanto los desafíos con los que cuenta la empresa como también su rumbo estratégico.
+            button: ¡Me interesa!
+            plan1:
+                title: Plan estratégico de organizaciones y equipos
+                text: Generar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro). Consensuar objetivos intermedios a alcanzar y determinar los obstáculos que están impidiendo que lleguemos a esos objetivos. Generar un plan alcanzable, iterativo e incremental para ir alcanzando objetivos concretos a corto, mediano y largo plazo.
+            plan2:
+                title: Inicio de proyectos
+                text: Los sueños de las organizaciones y las personas se suelen alcanzar a partir de proyectos exitosos. Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión, pasando por el análisis y la mitigación de riesgos hasta la planeación en diferentes niveles de detalle. En esta línea, también trabajamos en la formación de equipos para proyectos.
+            plan3:
+                title: Identidad de equipos
+                text: En organizaciones que promueven la realización de sus miembros y buscan el compromiso de los mismos con la obtención de los objetivos organizacionales, la existencia de un propósito compartido y genuino es uno de pilares, junto con la auto-organización y el "estar completos" (wholeness). Es por eso que facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes.
+            plan4:
+                title: Eventos corporativos y comunitarios
+                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
+        dynamics:
+            title: Dinámicas y Eventos
+            text: Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.
+            button: ¡Me interesa!
+            dynamic1:
+                title: World café
+                text: Facilitamos eventos con el formato World Café. Son muy útiles para debatir temas en grandes grupos. Mesas, sillas, papeles y marcadores son suficientes para que todas las ideas y opiniones de los participantes puedan fluir y potenciarse. Acompañados de un rico café, por supuesto ;)
+            dynamic2:
+                title: Hackatones
+                text: Facilitamos Hackathones, que son eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real. ¡Los hemos facilitado en diversos contextos y los resultados suelen ser emocionantes! En general son productos en un estadío inicial, que luego del Hackathon deberán ser evolucionados.
+            dynamic3:
+                title: Eventos con formato open space
+                text: Facilitamos desde hace años, eventos con formato Open Space por toda la región. Estos eventos admiten desde 5 hasta 1000 personas. Son sumamente útiles para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.
+            dynamic4:
+                title: Eventos corporativos y comunitarios
+                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
     books:
         title: "Libros"
         description: "COMPARTIMOS CONOCIMIENTOS Y EXPERIENCIAS. ¡AYUDANOS A CORRER LA VOZ!"
