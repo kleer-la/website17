@@ -222,9 +222,8 @@ en:
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?
-        description:  This service helps groups of people to improve their meetings through specific activities and practices.
-                    <br><br>
-                    These group dynamics enable decision making, problem solving, and exchanging ideas.
+        subtitle: This service helps groups of people to improve their meetings through specific activities and practices.
+        description: These group dynamics enable decision making, problem solving, and exchanging ideas.
         event:
             title: We manage group events to ensure goals are effectively met
             text:  We design favorable environments to create synergies, providing spaces and dynamics to draw on everyone's ideas. As facilitators we help groups to keep their conversation focused. We make sure every voice is heard. <br />Our goal is creating a space where magic happens!

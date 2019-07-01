@@ -69,6 +69,9 @@ img {
   background-size: cover;
   height: 400px;
   background-position: center center; }
+  @media (min-width: 1024px) {
+    .header-somos {
+      background-position: center -110px; } }
 
 .header-sura {
   background: url(../img/sura.jpg);
@@ -546,11 +549,20 @@ section#services {
 section#about {
   padding: 0; }
   section#about .container-fluid {
-    background: #7acaea url("../img/about.svg") no-repeat center;
+    background: #7acaea url("../img/about.svg") no-repeat right;
     background-size: cover;
-    padding: 40px 0; }
-  section#about h2 {
-    line-height: 1.3; }
+    padding: 30px 15px; }
+    section#about .container-fluid h2 {
+      font-size: 20px;
+      margin: 0; }
+    @media (min-width: 480px) {
+      section#about .container-fluid {
+        background-size: cover;
+        background-position: right;
+        padding: 60px 15px; }
+        section#about .container-fluid h2 {
+          line-height: 1.3;
+          font-size: 30px; } }
 
 .image-about-01 {
   position: absolute;
@@ -632,8 +644,11 @@ footer {
   background: #eb626d; }
 
 footer .tab-content {
-  background: url("../img/contact.svg") no-repeat center;
-  background-size: cover; }
+  background: url("../img/contact.svg") no-repeat center top;
+  background-size: contain; }
+  @media (max-width: 480px) {
+    footer .tab-content {
+      background: #fff url("../img/contact-mobile.svg") no-repeat center bottom; } }
 
 footer-small .text-muted, footer .text-muted {
   padding-left: 0;
@@ -687,6 +702,9 @@ footer .suscripcion .suscripcion-inner p {
   font-family: 'Mali', cursive;
   font-size: 18px;
   color: #000; }
+footer .suscripcion .suscripcion-inner .wrap-button {
+  background: url("../img/linea.png") no-repeat center 10px;
+  margin-bottom: 30px; }
 
 #to-top {
   display: none;
@@ -970,11 +988,6 @@ a.lower {
     text-align: center;
     left: 0;
     right: 0; }
-
-  #about.about h2 {
-    text-align: center; }
-  #about.about .container-fluid {
-    padding: 40px 15px; }
 
   .btn-info {
     padding: 6px 12px; }

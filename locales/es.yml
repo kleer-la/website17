@@ -314,9 +314,8 @@ es:
     facilitation:
         title: Facilitación
         contact: ¿LISTO PARA INICIAR EL CAMBIO?
-        description: Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva.
-                    <br><br>
-                    Estas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.
+        subtitle: Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva.
+        description: Estas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.
         event:
             title: Facilitamos eventos que ayudan a los equipos a lograr sus objetivos.
             text: Diseñamos ambientes propicios para crear sinergia entre las personas, espacios de encuentro con dinámicas que saquen el máximo provecho de lo que cada participante tiene para aportar. Como facilitadores asistimos al grupo a encauzar sus conversaciones. Evitamos el protagonismo y las distracciones. ​​¡Nuestro foco está en dar ​espacio a los participantes​ para que la magia emerja!​
