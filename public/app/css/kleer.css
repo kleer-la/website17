@@ -549,7 +549,7 @@ section#services {
 section#about {
   padding: 0; }
   section#about .container-fluid {
-    background: #7acaea url("../img/about.svg") no-repeat right;
+    background: #7acaea url("../img/about-mobile.svg") no-repeat right;
     background-size: cover;
     padding: 30px 15px; }
     section#about .container-fluid h2 {
@@ -557,6 +557,7 @@ section#about {
       margin: 0; }
     @media (min-width: 480px) {
       section#about .container-fluid {
+        background: #7acaea url("../img/about.svg") no-repeat right;
         background-size: cover;
         background-position: right;
         padding: 60px 15px; }
@@ -856,9 +857,9 @@ a.lower {
     text-align: center; }
 
   #menu-close {
-    bottom: 2%;
-    top: initial;
-    right: 50%; }
+    bottom: auto;
+    top: 5%;
+    right: 5%; }
 
   .sidebar-nav {
     padding-left: 70px;
