@@ -302,7 +302,8 @@ hr.small {
   background: #7bcaea; }
 
 .navbar-fixed-top {
-  border-width: 0; }
+  border-width: 0;
+  z-index: 999; }
 
 .navbar-default .navbar-nav > li > a:hover {
   color: #337480;
@@ -453,7 +454,7 @@ hr.small {
   line-height: 14px; }
 
 #menu-toggle {
-  z-index: 9999;
+  z-index: 1000;
   position: fixed;
   top: 20px;
   right: 20px; }
@@ -827,10 +828,6 @@ a.lower {
   .margin {
     display: none; }
 
-  #menu-toggle {
-    top: 5px;
-    right: 5px; }
-
   #to-top {
     bottom: 10px;
     right: 10px; }
@@ -863,7 +860,7 @@ a.lower {
   #menu-close {
     bottom: auto;
     top: 5%;
-    right: 5%; }
+    right: 10%; }
 
   .sidebar-nav {
     padding-left: 70px;
@@ -882,9 +879,7 @@ a.lower {
 
   #logo {
     z-index: 99;
-    left: 50%;
-    margin-left: -75px;
-    width: 150px; }
+    left: 50%; }
 
   .kleero01 {
     position: absolute;
@@ -911,6 +906,7 @@ a.lower {
     margin-bottom: 40px; } }
 @media (max-width: 768px) and (min-height: 480px) {
   #logoMenu {
+    display: none;
     display: inline-block;
     width: 150px;
     left: 50%;
