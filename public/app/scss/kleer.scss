@@ -352,6 +352,7 @@ hr.small {
 }
 .navbar-fixed-top {
   border-width: 0;
+  z-index: 999;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -520,7 +521,7 @@ hr.small {
   line-height: 14px;
 }
 #menu-toggle {
-  z-index: 4;
+  z-index: 1000;
   position: fixed;
   top: 20px;
   right: 20px;
@@ -631,12 +632,12 @@ section#services {
 section#about {
   padding: 0;
   .container-fluid {
-    background: #7acaea url('../img/about-mobile.svg') no-repeat right;
-    background-size: cover;
+    background: #7acaea;
     padding: 30px 15px;
     h2 {
       font-size: 20px;
       margin: 0;
+      text-align: center;
     }
     @media (min-width: 480px) {
       background: #7acaea url('../img/about.svg') no-repeat right;
@@ -646,7 +647,11 @@ section#about {
       h2 {
         line-height: 1.3;
         font-size: 30px;
+        text-align: left;
       }
+    }
+    @media (min-width: 1400px) {
+      padding: 125px 15px;
     }
   }
 }
@@ -930,10 +935,6 @@ a.lower {
   .margin {
     display: none;
   }
-  #menu-toggle {
-    top: 5px;
-    right: 5px;
-  }
   #to-top {
     bottom: 10px;
     right: 10px;
@@ -967,7 +968,7 @@ a.lower {
   #menu-close {
     bottom: auto;
     top: 5%;
-    right: 5%;
+    right: 10%;
   }
   .sidebar-nav {
     padding-left: 70px;
@@ -988,8 +989,6 @@ a.lower {
   #logo {
     z-index: 99;
     left: 50%;
-    margin-left: -75px;
-    width: 150px;
   }
   .kleero01 {
     position: absolute;
@@ -1021,6 +1020,7 @@ a.lower {
 }
 @media (max-width: 768px) and (min-height: 480px) {
   #logoMenu {
+    display: none;
     display: inline-block;
     width: 150px;
     left: 50%;
@@ -1067,9 +1067,9 @@ a.lower {
 }
 .carousel-indicators {
   bottom: 20px;
-  left: 10%;
-  margin-left: 0;
-  text-align: left;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   .active {
     background-color: #606060 !important;
   }
@@ -1102,13 +1102,6 @@ a.lower {
   .carousel-caption h1 {
       font-size: 2.5em !important;
       margin-bottom: 0;
-  }
-  .carousel-indicators {
-    margin: 0 auto;
-    right: 0;
-    text-align: center;
-    left: 0;
-    right: 0;
   }
   .btn-info {
     padding: 6px 12px;
@@ -1474,7 +1467,7 @@ h3.title-somos {
 }
 .somos .fa {
   font-size: 22px;
-  color: #7bcaea;
+  color: #fff;
   &:hover {
     color: #000;
   }
@@ -1508,7 +1501,6 @@ h3.title-somos {
 }
 .img-container {
   border-radius: 50%;
-  border: 4px solid #7bcaea;
   background: white;
   padding: 6px;
   margin: 10px auto;
@@ -1517,7 +1509,7 @@ h3.title-somos {
   height: 160px;
 }
 .nombreKleerer {
-  background: #7bcaea;
+  background: #fff;
   text-align: center;
   display: block;
   position: relative;

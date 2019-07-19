@@ -1,7 +1,7 @@
 Website (update 2017-2018)
 ---
 En conjunto con nuestros amigos de Innqube.com (Mauro Strione), Cambá (Pablo de los Santos)
-y actualmente la gran Alina Riba    :)
+y actualmente la gran Alina Ryba    :)
 
 Website
 =======
@@ -16,3 +16,9 @@ Code climate
 [![Code Climate](https://codeclimate.com/github/kleer-la/website17/badges/gpa.svg)](https://codeclimate.com/github/kleer-la/website17)
 [![Test Coverage](https://codeclimate.com/github/kleer-la/website17/badges/coverage.svg)](https://codeclimate.com/github/kleer-la/website17/coverage)
 [![Issue Count](https://codeclimate.com/github/kleer-la/website17/badges/issue_count.svg)](https://codeclimate.com/github/kleer-la/website17)
+
+CSS/SASS
+---
+
+Para trabajar los estilos ir a la carpeta app y correr:
+sass --watch scss:css

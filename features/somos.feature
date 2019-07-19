@@ -5,3 +5,4 @@ Feature: Somos Page
 		Then I should see "Somos"
 		And I should see "Martín Alaimo"
 		And I should see "@martinalaimo"
+		And I should see a linkedin link for a Kleerer with LinkedIn

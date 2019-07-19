@@ -1,10 +1,7 @@
 <div class="blackBg withSubtitleAndDescription">
 	<div class="header-small header-courses"></div>
 	<div class="header-description">
-		      <h3 class="headerTitle"><%= @event_type.name %></h3>
-          <h3 class="headerSubtitle"><%= @event_type.subtitle %></h3>
-          <p class="headerSubtitle"><%= @event_type.duration%> <%=t("event.duration")%></p>
-          <p class="elevatorPitch"><%= @event_type.elevator_pitch %></p>
+		  <h3 class="headerTitle"><%= @event_type.name %></h3>
 	</div>
 </div>
 
@@ -21,6 +18,11 @@ end
 <div class="container-fluid fondo-blanco">
   <div class="container">
     <div class="col-md-<%=description_column_width%> evento-description-container">
+
+      <h2><i><%= @event_type.subtitle %></i></h2>
+      <p><%= @event_type.duration%> <%=t("event.duration")%></p>
+      <p class="elevatorPitch"><%= @event_type.elevator_pitch %></p>
+
       <h2><%=t("event.tabs.description")%></h2>
       <%=@markdown_renderer.render( @event_type.description )%>
     </div>
@@ -78,7 +80,7 @@ end
   <div class="container">
     <div class="container-fluid col-md-10 col-md-offset-1">
       <div class="col-md-4">
-        <img src="/img/personajes/03_03_web.png" class="img-responsive"/>
+        <img src="/img/personajes/cursos.svg" class="img-responsive"/>
       </div>
       <div class="col-md-4">
         <% if !@event_type.learnings.nil? && @event_type.learnings != "" %>
