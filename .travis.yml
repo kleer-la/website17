@@ -1,5 +1,5 @@
 language: ruby
-rvm: 2.5.1
+rvm: 2.6.4
 sudo: false
 before_script:
 - sh -e /etc/init.d/xvfb start
