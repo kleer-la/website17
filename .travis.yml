@@ -1,8 +1,8 @@
 language: ruby
 rvm: 2.6.4
 sudo: false
-before_script:
-- sh -e /etc/init.d/xvfb start
+services:
+  - xvfb
 script:
 - bundle exec rspec
 - bundle exec cucumber
