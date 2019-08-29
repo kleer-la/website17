@@ -1,9 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.5.1"
-if RUBY_VERSION =~ /1.9/
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
+ruby "2.6.4"
 
 gem 'sinatra'
 gem 'thin'

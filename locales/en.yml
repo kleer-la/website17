@@ -578,10 +578,10 @@ en:
                 contact_email: "info.bo@kleer.la"
             colombia:
                 name: "Colombia"
-                address1: "Carrera 45#57-38"
+                address1: "Calle 39 #21-25 Of. 201"
                 address2: "Bogota"
-                phone: "+57 300.327.0604"
-                contact: "Jennifer Benavides and Ingrith Rojas"
+                phone: "+57 (1)6943457 - +57 300.327.0604"
+                contact: "Laura Vargas y Ginneth Aguilera"
                 contact_email: "info.co@kleer.la"
             peru:
                 name: "Peru"
@@ -602,7 +602,7 @@ en:
                 address1: "Agustinas #681 Oficina 1602"
                 address2: "Santiago"
                 phone: "+562 2638 4155<br /> +562 2606 5046"
-                contact: ""
+                contact: "Natalia, Rodrigo and Roberto"
                 contact_email: "info@cys-chile.cl"
             europa:
                 address1: "Hektoroviceva Ulica 2/V"
