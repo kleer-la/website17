@@ -16,7 +16,7 @@ en:
         texts:
             loading: "loading..."
     slider:
-        title_1: "Coaching"
+        title_1: "Business Agility"
         text_1: "We accompany integral improvements"
         title_2: "Facilitation"
         text_2: "We design environments to promote collective innovation"
@@ -35,7 +35,7 @@ en:
         us: "Us"
         clients: "Clients"
         we_do: "We do"
-        coaching: "Coaching"
+        coaching: "Business Agility"
         facilitation: "Facilitation"
         graphic_facilitation: "Graphic facilitation"
         creativity_innovation: "Innovation & Creativity"
@@ -59,7 +59,7 @@ en:
           calendar: "Calendar"
           catalog: "Catalog"
           campus: "Campus digital"
-        coaching: "Coaching"
+        coaching: "Business Agility"
         facilitation: "Facilitation"
         certifications: "Certifications"
         achieve:
@@ -89,7 +89,7 @@ en:
         our_services: "Our services"
         facilitation: "Facilitation"
         facilitation_text: "We design environments to improve teamwork for meetings and events"
-        coaching: "Coaching"
+        coaching: "Business Agility"
         coaching_text: "We coach individuals, teams and areas to help in Organization Evolution"
         courses: "Courses"
         courses_text: "We train professionals through collaborative learning techniques"
@@ -129,7 +129,7 @@ en:
     community:
         title: "Community Events"
     coaching:
-       title: "Coaching"
+       title: "Business Agility"
        subtitle: "We help organizations, teams and practitioners achieve continuous improvement"
        text:
         top: "<p>We offer coaching services in implementing Agile Methodologies and implementing agile development techniques with valuable results.</p><p>This is a process carried out in situ and with the assistance of an expert in Agile Methodologies, who has the task of transmitting actively practices and tools necessary to transform into Agile a team or organization. The implementation occurs while the people involved are performing their daily duties.</p><p>One advantage of adopting our Agile Coaching is that the successful implementation of Agile methodologies is achieved in less time than it would take to do it without the assistance of an expert. Additionally, the business is not neglected as we works directly on the projects, roles and objectives of the teams and other stakeholders involved in the implementation (managers, development managers, etc.). This includes identifying problems, understanding their causes and developing the skills necessary for the team to be able to solve them successfully.</p><p>There are two kinds of situations: those in which never before had and agile environment been created and and others in which Agile already exists and you want to experience a greater level of depth. Kleer's service responds effectively to both, with the additional feature that models the process of implementation according to the specific needs of the team or organization.</p><p>In the case where necessary, support is preceded by customised training, ensuring a level of knowledge that enables greater effectiveness during deployment.</p>"

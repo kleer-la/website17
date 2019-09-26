@@ -152,10 +152,10 @@ end
 
 
 get '/acompanamos' do
-  redirect "/coaching", 301 # permanent redirect
+  redirect "/agilidadorganizacional", 301 # permanent redirect
 end
 
-get '/coaching' do
+get '/agilidadorganizacional' do
 	@active_tab_coaching = "active"
 	@page_title += " | Coaching"
 	@categories = KeventerReader.instance.categories session[:locale]

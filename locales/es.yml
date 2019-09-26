@@ -16,8 +16,8 @@ es:
         texts:
             loading: "cargando..."
     slider:
-        title_1: "Coaching"
-        text_1: "Acompañamos mejoras integrales"
+        title_1: "Agilidad Organizacional"
+        text_1: ""
         title_2: "Facilitación"
         text_2: "Diseñamos ambientes para potenciar la innovación colectiva"
         title_3: "Cursos"
@@ -35,7 +35,7 @@ es:
         us: "Nosotros"
         clients: "Clientes"
         we_do: "Que hacemos"
-        coaching: "Coaching"
+        coaching: "Agilidad Organizacional"
         facilitation: "Facilitación"
         graphic_facilitation: "Facilitación gráfica"
         creativity_innovation: "Innovación y creatividad"
@@ -59,13 +59,13 @@ es:
             calendar: "Agenda"
             catalog: "Catálogo"
             campus: "Campus digital"
-        coaching: "Coaching"
+        coaching: "Agilidad Organizacional"
         facilitation: "Facilitación"
         certifications: "Certificaciones"
         achieve:
             root: "Logres"
             products: "Coaching Técnico"
-            organization: "Coaching Organizacional y de Equipos"
+            organization: "Agilidad Organizacional y de Equipos"
             clients: "Coaching Comercial y Clientes"
         community: "Comunidad"
         publishing:
@@ -89,7 +89,7 @@ es:
         our_services: "Nuestros servicios"
         facilitation: "Facilitación"
         facilitation_text: "Diseñamos ambientes para potenciar el trabajo en equipo en reuniones y eventos."
-        coaching: "Coaching"
+        coaching: "Agilidad Organizacional"
         coaching_text: "Realizamos un acompañamiento integral en metodologías ágiles y transformación organizacional."
         courses: "Cursos"
         courses_text: "Capacitamos a profesionales a través de técnicas de aprendizaje colaborativo y participativo."
@@ -129,7 +129,7 @@ es:
     community:
         title: "Eventos Comunitarios"
     coaching:
-        title: "Coaching"
+        title: "Agilidad Organizacional"
         subtitle: "Acompañamos organizaciones y equipos para obtener mejores resultados"
         text:
             top: "<p>Ofrecemos servicios de <strong>acompañamiento integral</strong> en la implementación de metodologías ágiles que potencian a personas y negocios.</p>
