@@ -27,6 +27,6 @@ group :development, :test do
   gem 'rspec'
   gem 'cucumber'
   gem 'webrat'
-  gem 'simplecov', '~> 0.7.1'
+  gem 'simplecov'
   gem 'coveralls', require: false
 end
