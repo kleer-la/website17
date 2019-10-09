@@ -155,6 +155,10 @@ get '/acompanamos' do
   redirect "/agilidadorganizacional", 301 # permanent redirect
 end
 
+get '/coaching' do
+  redirect "/agilidadorganizacional", 301 # permanent redirect
+end
+
 get '/agilidadorganizacional' do
 	@active_tab_coaching = "active"
 	@page_title += " | Coaching"
