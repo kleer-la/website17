@@ -20,6 +20,9 @@
 	<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
 		<%=button_text%>
 	</a>
+	<a href="mailto:entrenamos@kleer.la?subject=<%= @event.event_type.name %>&body=<%=t("mail_landing.content")%>" class="btn btn-warning btn-kleer btn-caps"><%=t("mail_landing.title")%></a>
+
+
 	<% if @event.enable_online_payment %>
 		<% if @event.country == 'Colombia' 
 			payment_and_registration_link = registration_link + "&payment_on_eventer=true"
