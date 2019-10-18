@@ -16,7 +16,8 @@ es:
         texts:
             loading: "cargando..."
     mail_landing:
-        title: "Consultanos para realizar este curso en tu empresa"
+        title: "En tu empresa"
+        alt: "Consultanos para realizar este curso en tu empresa"
         content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
     slider:
         title_1: "Agilidad Organizacional"

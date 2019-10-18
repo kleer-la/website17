@@ -20,7 +20,7 @@
 	<a href="<%=registration_link%>" target="_blank" class="btn btn-success btn-kleer btn-caps">
 		<%=button_text%>
 	</a>
-	<a href="mailto:entrenamos@kleer.la?subject=<%= @event.event_type.name %>&body=<%=t("mail_landing.content")%>" class="btn btn-warning btn-kleer btn-caps"><%=t("mail_landing.title")%></a>
+	<a href="mailto:entrenamos@kleer.la?subject=<%= @event.event_type.name %>&body=<%=t("mail_landing.content")%>" class="btn btn-ask btn-kleer btn-caps" title="<%=t("mail_landing.alt")%>"><%=t("mail_landing.title")%></a>
 
 
 	<% if @event.enable_online_payment %>

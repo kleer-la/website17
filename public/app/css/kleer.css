@@ -332,6 +332,22 @@ img {
   position: relative;
 }
 
+.btn-ask {
+  border-radius: 5px;
+  color: #fff;
+  border-color: #70b7d4;
+  background-color: #7bcaea;
+}
+@media (min-width: 480px) {
+  .btn-ask {
+    margin-left: 10px;
+  }
+}
+.btn-ask:hover, .btn-ask:focus, .btn-ask:active {
+  color: #fff;
+  background-color: #70b7d4;
+}
+
 /* Barra horizontal */
 hr.small {
   max-width: 100px;
