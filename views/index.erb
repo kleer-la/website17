@@ -419,20 +419,8 @@
                           <div class="row">
                             <div class="col-sm-12">
                               <h4><strong>Kleer Brasil</strong></h4>
-                              <p><%=t("contact.locations.brasil.address1")%>
-                                <br><%=t("contact.locations.brasil.address2")%></p>
-                              <ul class="list-unstyled">
-                                <!--<li>
-                                  <%=t("contact.locations.brasil.phone")%>
-                                   </li>-->
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.brasil.contact_email")%>">
-                                    <%=t("contact.locations.brasil.contact_email")%>
-                                    </a></li>
-                                <li>Você entrará em contato com:
-                                  <%=t("contact.locations.brasil.contact")%>
-                                </li>
-                              </ul>
+
+                              <button type="button" class="btn btn-info btn-kleer" data-toggle="modal" data-target="#modalForm">Formulario de contacto</button>
                             </div>
                           </div>
                         </div>
@@ -491,17 +479,7 @@
                           <div class="row">
                             <div class="col-sm-12">
                               <h4><strong>Kleer Perú</strong></h4>
-                              <p><%=t("contact.locations.peru.address1")%>
-                                <br><%=t("contact.locations.peru.address2")%></p>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.peru.contact_email")%>">
-                                    <%=t("contact.locations.peru.contact_email")%>
-                                    </a></li>
-                                  <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.peru.contact")%>
-                                </li>
-                              </ul>
+                              <button type="button" class="btn btn-info btn-kleer" data-toggle="modal" data-target="#modalForm">Formulario de contacto</button>
                             </div>
                           </div>
                         </div>
@@ -560,20 +538,7 @@
                           <div class="row">
                             <div class="col-sm-12">
                               <h4><strong>Kleer Europe</strong></h4>
-                              <p><%=t("contact.locations.europa.address1")%>
-                                <br><%=t("contact.locations.europa.address2")%></p>
-                              <ul class="list-unstyled">
-                                <!--<li>
-                                  <%=t("contact.locations.europa.phone")%>
-                                   </li>-->
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.europa.contact_email")%>">
-                                    <%=t("contact.locations.europa.contact_email")%>
-                                    </a></li>
-                                <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.europa.contact")%>
-                                </li>
-                              </ul>
+                              <button type="button" class="btn btn-info btn-kleer" data-toggle="modal" data-target="#modalForm">Formulario de contacto</button>
                             </div>
                           </div>
                         </div>
@@ -584,20 +549,7 @@
                           <div class="row">
                             <div class="col-sm-12">
                               <h4><strong>Kleer México</strong></h4>
-                              <p><%=t("contact.locations.mexico.address1")%>
-                                <br><%=t("contact.locations.mexico.address2")%></p>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <%=t("contact.locations.mexico.phone")%>
-                                   </li>
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.mexico.contact_email")%>">
-                                    <%=t("contact.locations.mexico.contact_email")%>
-                                    </a></li>
-                                <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.mexico.contact")%>
-                                </li>
-                              </ul>
+                              <button type="button" class="btn btn-info btn-kleer" data-toggle="modal" data-target="#modalForm">Formulario de contacto</button>
                             </div>
                           </div>
                         </div>
@@ -609,15 +561,7 @@
                             <div class="col-sm-12">
                               <h4><strong>&nbsp;</strong>
                               </h4>
-                              <p>&nbsp;
-                                <br><%=t("contact.locations.other.contact_us")%></p>
-                              <ul class="list-unstyled">
-                                <li><i class="fa fa-envelope-o fa-fw"></i>
-                                  <a href="mailto:<%=t("contact.locations.other.contact_email")%>">
-                                    <%=t("contact.locations.other.contact_email")%></a></li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                              </ul>
+                              <button type="button" class="btn btn-info btn-kleer" data-toggle="modal" data-target="#modalForm">Formulario de contacto</button>
                             </div>
                           </div>
                         </div>
@@ -685,6 +629,31 @@
   </div>
 </div>
 <!--Modal: Subscription Newsletter-->
+
+<!--Modal: Subscription Formulario de contacto-->
+<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+
+    <!--Content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Formulario de contacto</strong></h4>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://docs.google.com/forms/d/e/1FAIpQLSdMhuh0cnsOkLtWGrdJrOAHlI-LwEHjQiWiM4zCa2qCiPEaWA/viewform?usp=pp_url" allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+    <!--/.Content-->
+
+  </div>
+</div>
+<!--Modal: Formulario de contacto-->
 
 
 <!-- build:js(.) scripts/vendor.js -->

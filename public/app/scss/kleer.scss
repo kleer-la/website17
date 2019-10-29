@@ -1373,6 +1373,9 @@ p.lead {
   color: #000;
   border-radius: 0;
   min-height: 220px;
+  .btn-kleer {
+    margin-top: 30px;
+  }
   @media (min-width: 768px) {
     padding: 40px 20px 0 60px;
   } 
@@ -1596,7 +1599,9 @@ h3.list-group-item-heading {
     right: 0;
   }
 }
-
+.btn-info:focus {
+  outline: none;
+}
 @media (max-width: 768px) {
   .slide-home-newsletter {
     background-position-x: 100%;
