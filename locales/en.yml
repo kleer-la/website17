@@ -387,6 +387,13 @@ en:
        title: "We are"
        subtitle: "We help organizations, teams and practitioners"
        description: 'We believe in other ways to relate to each other to achieve fantastic results that will make us proud.<br/>We help people to create <a href="/en/categoria/organizaciones">amazing organizations</a>, to make <a href="/en/categoria/clientes">clients happy</a> and to craft <a href="/en/categoria/productos">high quality technology products</a>.<br/>¿How do we help? Thru training, working side-by-side, creating videos and books, taking part in communities of practice.'
+    nuestra_filosofia:
+        title: "Nuestra filosofía"
+        txt: "<p>El contexto organizacional predominante hoy en día es de cambio continuo, rápido e impredecible.</p>
+                <p>Entendemos a las organizaciones como sistemas adaptativos complejos en los cuales las personas interactúan, dentro de un contexto que exige innovación y efectividad.</p>
+                <p>En este sentido desde la agilidad estamos llamados a repensar su capacidad de respuesta y adaptación sobre cada aspecto de las organizaciones: el liderazgo, la organización del trabajo y su estructura así como el desarrollo de productos y servicios de cara a los clientes y usuarios.</p>
+                <p>Los sistemas complejos son emergentes, por lo tanto, la inteligencia contextual es una capacidad absolutamente crucial en el nuevo mundo del trabajo. No creamos ni seguimos recetas sino que consideramos cada caso como único. Nos centramos en ofrecer procesos prácticos y experimentales, y trabajamos en iteraciones, re-evaluando constantemente nuestras acciones midiendo impactos reales.</p>
+                <p>Por lo tanto, concebimos a nuestros clientes como socios en la transformación organizacional con los cuales colaboramos para juntos co-crear procesos adecuados para su contexto y propósito.</p>"
     press:
         title: "Press"
         subtitle: "Kleer in the media!"
