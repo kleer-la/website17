@@ -266,6 +266,7 @@ img {
   color: #fff;
   padding: 10px 8px 0 32px;
   font-size: 2em;
+  margin-bottom: 10px;
 }
 .header-description .headerTitle:before {
   width: 100%;

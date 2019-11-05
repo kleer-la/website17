@@ -36,6 +36,7 @@ es:
         no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
     side_menu:
         we_are: "Somos"
+        our_philosophy: "Nuestra Filosofía"
         us: "Nosotros"
         clients: "Clientes"
         we_do: "Que hacemos"
@@ -81,6 +82,7 @@ es:
         tv: "Veas"
         we: "Nosotros"
         we_are: "Somos"
+        our_philosophy: "Nuestra Filosofía"
         press: "Prensa"
         blog: "Blog"
     kleeros:
@@ -136,7 +138,18 @@ es:
         title: "Agilidad Organizacional"
         subtitle: "Acompañamos organizaciones y equipos para obtener mejores resultados"
         text:
-            top: "<p>Ofrecemos servicios de <strong>acompañamiento integral</strong> en la implementación de metodologías ágiles que potencian a personas y negocios.</p>
+            top: "<p>Acompañamos a las organizaciones en su proceso de transformación para obtener mejores resultados.</p>
+
+                <p>Impulsamos la mejora continua para adaptarse a los cambios y hacer frente a contextos de negocio más complejos y desafiantes.</p>
+
+                <h4>CÓMO LO HACEMOS</h4>
+                <p>Impulsamos en las organizaciones formas de trabajo colaborar para entregar mayor valor a sus clientes, estableciendo una cultura de aprendizaje, experimentación con feedback frecuente y mejora continua. Consideramos que es clave crear un contexto donde la personas se sientan protagonistas del cambio y puedan aportar su máximo potencial creativo, de innovación y colaboración.
+
+                <p>Trabajamos sobre todas las capas de una organización: herramientas, el sistema, el liderazgo y la cultura. Buscamos que la empresa mejore su respuesta a las altas expectativas de sus clientes.</p>
+
+                <p>Nuestro foco es ayudar a los equipos multifuncionales y a las organizaciones en su proceso de mejora continua, promoviendo mayor autonomía, calidad de los entregables, comunicación y productividad mediante la incorporación de la mentalidad y prácticas ágiles. Esto impacta en la forma de gestión, la estructura, en los estilos de liderazgo, y en cómo se desarrollan productos y servicios centrados en el valor a los clientes. Lo hacemos de forma colaborativa y pensando también en la sostenibilidad, para lograr que las competencias queden permeadas en la organización una vez que Kleer deje de participar en el ecosistema.</p>
+
+                <p>Es un camino de evolución estratégica que implica definir una estructura organizacional basada en equipos cross-funcionales, un modelo de governance basado en iteraciones para coordinar el valor y el uso de métricas de impacto real de negocio (<i>outcomes)</i> para tanto mitigar los riesgos como dar forma a las actividades de transformación. </p>
             <hr/>
             <p><a href='https://www.kleer.la/es/clientes'>Conocé algunos casos de éxito de nuestros clientes:</a></p>
 

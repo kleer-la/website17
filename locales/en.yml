@@ -36,6 +36,7 @@ en:
         no_courses_found: "No courses found. We would like you to contact us at <a href=\\\"mailto:hello@kleer.us\\\">hello@kleer.us</a> with your questions."
     side_menu:
         we_are: "We are"
+        our_philosophy: "Our Philosophy"
         us: "Us"
         clients: "Clients"
         we_do: "We do"
@@ -80,6 +81,7 @@ en:
             recursos: "Resources and Materials"
         we: "We"
         we_are: "We are"
+        our_philosophy: "Our Philosophy"
         press: "Press"
         tv: "Watch"
         blog: "Blog"
