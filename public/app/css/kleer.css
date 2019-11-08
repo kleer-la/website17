@@ -300,16 +300,16 @@ img {
   background: #7bcaea;
 }
 
-.btn-info {
+.btn-kleer {
   background-color: #7bcaea;
   border: none;
   color: #000;
   border-radius: 50px;
   font-family: "Mali", cursive;
-  padding: 6px 30px;
+  padding: 6px 15px;
   text-transform: uppercase;
 }
-.btn-info:hover {
+.btn-kleer:hover {
   background: #000;
   color: #fff;
 }
@@ -332,12 +332,6 @@ img {
 .btn-light:hover, .btn-light:focus, .btn-light:active {
   color: #333;
   background-color: rgba(255, 255, 255, 0.8);
-}
-
-.btn-buy {
-  margin-left: 30px;
-  top: -4px;
-  position: relative;
 }
 
 .btn-ask {
@@ -1780,27 +1774,21 @@ h3.list-group-item-heading {
     background-position-x: 100%;
     background-size: 30%;
   }
-
-  .btn-buy {
-    margin-left: 0;
-    top: 20px;
-  }
-
-  .btn-info {
-    margin-top: 20px;
-  }
 }
+.btn-buy {
+  display: block;
+}
+.btn-buy a {
+  margin-right: 10px;
+}
+
 @media (max-width: 450px) {
   .btn-buy {
-    margin-left: 0;
-    top: 0;
-    position: relative;
-    display: inline-grid;
-    width: 100% !important;
+    margin-top: 20px;
   }
-
-  .btn-info {
-    margin-top: 0;
+  .btn-buy a {
+    display: block;
+    margin-right: 0;
   }
 }
 .book-cover {
