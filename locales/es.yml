@@ -9,12 +9,16 @@ es:
         buttons:
             see_more: "Ver más"
             register: "¡Registrarme!"
-            i_am_interested: "Pre-Inscripción"
+            i_am_interested: "PRE-INSCRIBIRME"
             pay_and_register: "¡Pagar y Registrarme!"
             complete: "Completo"
             close: "Cerrar"
         texts:
             loading: "cargando..."
+    mail_landing:
+        title: "CONSULTAR IN-COMPANY"
+        alt: "Consultanos para realizar este curso en tu empresa"
+        content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
     slider:
         title_1: "Agilidad Organizacional"
         text_1: ""
@@ -32,6 +36,7 @@ es:
         no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
     side_menu:
         we_are: "Somos"
+        our_philosophy: "Nuestra Filosofía"
         us: "Nosotros"
         clients: "Clientes"
         we_do: "Que hacemos"
@@ -77,6 +82,7 @@ es:
         tv: "Veas"
         we: "Nosotros"
         we_are: "Somos"
+        our_philosophy: "Nuestra Filosofía"
         press: "Prensa"
         blog: "Blog"
     kleeros:
@@ -132,31 +138,26 @@ es:
         title: "Agilidad Organizacional"
         subtitle: "Acompañamos organizaciones y equipos para obtener mejores resultados"
         text:
-            top: "<p>Ofrecemos servicios de <strong>acompañamiento integral</strong> en la implementación de metodologías ágiles que potencian a personas y negocios.</p>
-            <hr/>
-            <p>Conocé algunos casos de éxito de nuestros clientes:</p>
+            top: "<p>Acompañamos a las organizaciones en su proceso de transformación para obtener mejores resultados.</p>
 
-            <p><a href='prensa/casos/equipos-scrum-en-suramericana-2015'>Paradigma Ágil en <b>Sura</b></a>
-           	<br/><i>Medellín, Colombia</i>. Testimonios de Carlos Hurtado, Valentina Sierra y Jubel Correa.</p>
+                <p>Impulsamos la mejora continua para adaptarse a los cambios y hacer frente a contextos de negocio más complejos y desafiantes.</p>
+
+                <h4>CÓMO LO HACEMOS</h4>
+                <p>Impulsamos en las organizaciones formas de trabajo colaborar para entregar mayor valor a sus clientes, estableciendo una cultura de aprendizaje, experimentación con feedback frecuente y mejora continua. Consideramos que es clave crear un contexto donde la personas se sientan protagonistas del cambio y puedan aportar su máximo potencial creativo, de innovación y colaboración.
+
+                <p>Trabajamos sobre todas las capas de una organización: herramientas, el sistema, el liderazgo y la cultura. Buscamos que la empresa mejore su respuesta a las altas expectativas de sus clientes.</p>
+
+                <p>Nuestro foco es ayudar a los equipos multifuncionales y a las organizaciones en su proceso de mejora continua, promoviendo mayor autonomía, calidad de los entregables, comunicación y productividad mediante la incorporación de la mentalidad y prácticas ágiles. Esto impacta en la forma de gestión, la estructura, en los estilos de liderazgo, y en cómo se desarrollan productos y servicios centrados en el valor a los clientes. Lo hacemos de forma colaborativa y pensando también en la sostenibilidad, para lograr que las competencias queden permeadas en la organización una vez que Kleer deje de participar en el ecosistema.</p>
+
+                <p>Es un camino de evolución estratégica que implica definir una estructura organizacional basada en equipos cross-funcionales, un modelo de governance basado en iteraciones para coordinar el valor y el uso de métricas de impacto real de negocio (<i>outcomes)</i> para tanto mitigar los riesgos como dar forma a las actividades de transformación. </p>
+            <hr/>
+            <p><a href='https://www.kleer.la/es/clientes'>Conocé algunos casos de éxito de nuestros clientes:</a></p>
+
+            <p><a href='prensa/casos/equipos-scrum-en-suramericana-2015'>Paradigma Ágil en <b>Sura</b></a></p>
            	<p>
            	<a href='prensa/casos/equipos-scrum-en-suramericana-2015'>
            	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png'  style='width:268px' alt='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' title='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' align='left' height='160'/>
            	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura2.png' style='width:268px' alt='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' title='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' height='160'/>
-           	</a></p>
-           	<br/>
-           	<p><a href='prensa/casos/equipos-scrum-en-plataforma-10-2015'>Equipos Scrum en <b>Plataforma 10</b></a>
-           	<br/><i>Buenos Aires, Argentina</i>. Testimonios de Gustavo Markier y Gastón Waisman.</p>
-			<p>
-           	<a href='prensa/casos/equipos-scrum-en-plataforma-10-2015'>
-           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png'  style='width:268px' alt='Gustavo Markier nos cuenta acerca del impacto del trabajo de Kleer en el negocio de Plataforma 10' title='Gustavo Markier nos cuenta acerca del impacto del trabajo de Kleer en el negocio de Plataforma 10' align='left' height='150'/>
-           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-2.png' style='width:268px'  alt='Gastón Waisman describe la implementación de Scrum en los equipos de Desarrollo de Plataforma 10' title='Gastón Waisman describe la implementación de Scrum en los equipos de Desarrollo de Plataforma 10' height='150'/>
-           	</a></p>
-           	<p><a href='prensa/casos/equipos-scrum-en-technisys-2015'>Equipos Scrum en <b>Technisys</b></a>
-           	<br/><i>Argentina y Uruguay</i>. Testimonios de Alejandro Raiczyk y Nico Paez.</p>
-			<p>
-           	<a href='prensa/casos/equipos-scrum-en-technisys-2015'>
-           	<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png'  style='width:268px' alt='Alejandro Raiczyk describe el impacto del trabajo de Kleer en el área de Producto de Technisys' title='Alejandro Raiczyk describe el impacto del trabajo de Kleer en el área de Producto de Technisys' align='left' height='150'/>
-           	&nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys2.png'  style='width:268px' alt='Nicolás Paez describe lo que realizó en el proyecto de implementación de Technisys' title='Nicolás Paez describe lo que realizó en el proyecto de implementación de Technisys' height='150'/>
            	</a></p>
 
 			<hr/>
@@ -490,6 +491,13 @@ es:
         title: "Somos"
         subtitle: "Disfrutamos co-creando ambientes humanos más conscientes y asombrosos."
         description: 'Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.'
+    nuestra_filosofia:
+        title: "Nuestra filosofía"
+        txt: "<p>El contexto organizacional predominante hoy en día es de cambio continuo, rápido e impredecible.</p>
+                <p>Entendemos a las organizaciones como sistemas adaptativos complejos en los cuales las personas interactúan, dentro de un contexto que exige innovación y efectividad.</p>
+                <p>En este sentido desde la agilidad estamos llamados a repensar su capacidad de respuesta y adaptación sobre cada aspecto de las organizaciones: el liderazgo, la organización del trabajo y su estructura así como el desarrollo de productos y servicios de cara a los clientes y usuarios.</p>
+                <p>Los sistemas complejos son emergentes, por lo tanto, la inteligencia contextual es una capacidad absolutamente crucial en el nuevo mundo del trabajo. No creamos ni seguimos recetas sino que consideramos cada caso como único. Nos centramos en ofrecer procesos prácticos y experimentales, y trabajamos en iteraciones, re-evaluando constantemente nuestras acciones midiendo impactos reales.</p>
+                <p>Por lo tanto, concebimos a nuestros clientes como socios en la transformación organizacional con los cuales colaboramos para juntos co-crear procesos adecuados para su contexto y propósito.</p>"
     press:
         title: "Prensa"
         subtitle: "¡Kleer en los medios!"
@@ -687,7 +695,7 @@ es:
                 address1: "Calle 39 #21-25 Of. 201"
                 address2: "Bogotá"
                 phone: "+57 (1)6943457 - +57 300.327.0604 "
-                contact: "Ginneth Aguilera"
+                contact: "Ingrith y Ginneth"
                 contact_email: "info.co@kleer.la"
             peru:
                 name: "Perú"

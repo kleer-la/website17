@@ -225,7 +225,12 @@ img {
   height: 400px;
   background-position: center center;
 }
-
+.header-filosofia {
+  background: url(../img/nuestra-filosofia.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center center;
+}
 .header-courses {
   background: url(../img/slide03.jpg);
   background-size: cover;
@@ -253,6 +258,7 @@ img {
     color: #fff;
     padding: 10px 8px 0 32px;
     font-size: 2em;
+    margin-bottom: 10px;
     &:before {
       width: 100%; 
       height: 100%; 
@@ -287,13 +293,13 @@ img {
 .nav-pills>li.active>a {
   background:#7bcaea;
 }
-.btn-info {
+.btn-kleer {
   background-color: #7bcaea;
   border: none;
   color:#000;
   border-radius: 50px;
   font-family: 'Mali', cursive;
-  padding: 6px 30px;
+  padding: 6px 15px;
   text-transform: uppercase;
   &:hover {
     background:#000;
@@ -322,12 +328,21 @@ img {
     background-color: rgba(255, 255, 255, 0.8);
   }
 }
-.btn-buy {
-  margin-left: 30px;
-  top: -4px;
-  position: relative;
+.btn-ask {
+  border-radius: 5px;
+  color: #fff;
+  border-color: #70b7d4;
+  background-color: #7bcaea;
+  @media (min-width: 480px) {
+    margin-left: 10px;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: #70b7d4;
+  }
 }
-
 /* Barra horizontal */
 hr.small {
   max-width: 100px;
@@ -1119,6 +1134,10 @@ a.lower {
     }
   }
 }
+.fondo-amarillo .btn {
+  margin-bottom: 10px;
+  white-space: inherit;
+}
 .headerTitle {
   text-align: right;
 }
@@ -1355,6 +1374,9 @@ p.lead {
   color: #000;
   border-radius: 0;
   min-height: 220px;
+  .btn-kleer {
+    margin-top: 30px;
+  }
   @media (min-width: 768px) {
     padding: 40px 20px 0 60px;
   } 
@@ -1578,30 +1600,28 @@ h3.list-group-item-heading {
     right: 0;
   }
 }
-
+.btn-info:focus {
+  outline: none;
+}
 @media (max-width: 768px) {
   .slide-home-newsletter {
     background-position-x: 100%;
     background-size: 30%;
   }
-  .btn-buy {
-    margin-left: 0;
-    top: 20px;
-  }
-  .btn-info {
-    margin-top:20px;
+}
+.btn-buy {
+  display: block;
+  a {
+    margin-right: 10px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .btn-buy {
-    margin-left: 0;
-    top: 0;
-    position: relative;
-    display: inline-grid;
-    width: 100% !important;
-  }
-  .btn-info {
-    margin-top:0;
+    margin-top: 20px;
+    a {
+      display: block;
+      margin-right: 0;
+    }
   }
 }
 .book-cover {

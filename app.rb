@@ -428,6 +428,13 @@ get '/somos' do
 	erb :somos, :layout => :layout_2017
 end
 
+get '/nuestra-filosofia' do
+  @active_tab_somos = "active"
+  @page_title += " | Nuestra filosofía"
+  @kleerers = KeventerReader.instance.kleerers session[:locale]
+  erb :nuestra_filosofia, :layout => :layout_2017
+end
+
 get '/prensa' do
   @active_tab_prensa = "active"
   @page_title += " | Prensa"

@@ -21,11 +21,11 @@
 						<%=t("event.pricing")%>:
 						<%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
 						<%= money_format(@event.list_price) %>
-
-						<span class="btn-buy">
-							<%= erb :event_register_inscription_options %>
-						</span>
 					</h2>
+
+					<span class="btn-buy">
+						<%= erb :event_register_inscription_options %>
+					</span>
 
 				<% if @event.eb_price > 0 %>
 					<%=t("event.early_bird_until")%> <strong>

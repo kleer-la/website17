@@ -134,6 +134,7 @@
             <li class="root">
               <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
               <ul class="dropdown-menu">
+                <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
                 <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
                 <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
               </ul>
@@ -198,6 +199,7 @@
           </li>
           <li><a href="/<%=session[:locale]%>/somos"><span class="white"><%=t('side_menu.we_are')%></span></a>
             <ul>
+              <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
               <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
               <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
             </ul>
@@ -365,13 +367,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs text-center" role="tablist">
             <li role="presentation" class="active"><a data-target="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
-            <li role="presentation"><a data-target="#Brasil" aria-controls="Brasil" role="tab" data-toggle="tab">Brasil</a></li>
             <li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
             <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
             <li role="presentation"><a data-target="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
             <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
             <li role="presentation"><a data-target="#Chile" aria-controls="Chile" role="tab" data-toggle="tab">Chile</a></li>
-            <li role="presentation"><a data-target="#Europa" aria-controls="Europa" role="tab" data-toggle="tab">Europa</a></li>
             <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
             <li role="presentation"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab"><%=t("contact.locations.other.title")%></a></li>
         </ul>
@@ -409,30 +409,6 @@
                               <a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
                                 <img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="70" data-pin-nopin="true">
                               </a>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Brasil">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Brasil</strong></h4>
-                              <p><%=t("contact.locations.brasil.address1")%>
-                                <br><%=t("contact.locations.brasil.address2")%></p>
-                              <ul class="list-unstyled">
-                                <!--<li>
-                                  <%=t("contact.locations.brasil.phone")%>
-                                   </li>-->
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.brasil.contact_email")%>">
-                                    <%=t("contact.locations.brasil.contact_email")%>
-                                    </a></li>
-                                <li>Você entrará em contato com:
-                                  <%=t("contact.locations.brasil.contact")%>
-                                </li>
-                              </ul>
                             </div>
                           </div>
                         </div>
@@ -548,30 +524,6 @@
                                     </a></li>
                                 <li><%=t("contact.helped_by")%>
                                   <%=t("contact.locations.chile.contact")%>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Europa">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Europe</strong></h4>
-                              <p><%=t("contact.locations.europa.address1")%>
-                                <br><%=t("contact.locations.europa.address2")%></p>
-                              <ul class="list-unstyled">
-                                <!--<li>
-                                  <%=t("contact.locations.europa.phone")%>
-                                   </li>-->
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.europa.contact_email")%>">
-                                    <%=t("contact.locations.europa.contact_email")%>
-                                    </a></li>
-                                <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.europa.contact")%>
                                 </li>
                               </ul>
                             </div>
