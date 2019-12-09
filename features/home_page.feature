@@ -4,7 +4,7 @@ Feature: Home Page
 	Scenario: Tres servicios principales
 		Given I visit the home page
 		Then I should see "Facilitación"
-		And I should see "Coaching"
+		And I should see "Agilidad Organizacional"
 		And I should see "Cursos"
 
 	Scenario: Datos de contacto
