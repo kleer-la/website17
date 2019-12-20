@@ -26,8 +26,6 @@
 	<% if @event.enable_online_payment %>
 		<% if @event.country == 'Colombia' 
 			payment_and_registration_link = registration_link + "&payment_on_eventer=true"
-		else 
-			payment_and_registration_link = "https://campus.kleer.la/#{session[:locale]}/courses/#{@event.online_course_codename}/cohorts/#{@event.online_cohort_codename}/enroll?#{@tracking_parameters}"
 		end %>
 		<%
 		payment_and_registration_button_text = t("general.buttons.pay_and_register")
