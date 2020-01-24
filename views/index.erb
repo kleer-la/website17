@@ -116,7 +116,7 @@
                   <ul class="dropdown-menu">
                     <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
                     <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
-                    <li><a href="https://campus.kleer.la/es/courses/"><%=t('side_menu.campus')%></a></li>
+                    <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
                   </ul>
                 </li>
                 <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
@@ -183,7 +183,7 @@
                   <ul>
                     <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
                     <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
-                    <li><a href="https://campus.kleer.la/es/courses/"><%=t('side_menu.campus')%></a></li>
+                    <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
                   </ul>
                 </li>
                 <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
@@ -369,7 +369,6 @@
             <li role="presentation" class="active"><a data-target="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
             <li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
             <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
-            <li role="presentation"><a data-target="#Peru" aria-controls="Peru" role="tab" data-toggle="tab">Perú</a></li>
             <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
             <li role="presentation"><a data-target="#Chile" aria-controls="Chile" role="tab" data-toggle="tab">Chile</a></li>
             <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
@@ -461,28 +460,7 @@
                           </div>
                         </div>
                     </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Peru">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Perú</strong></h4>
-                              <p><%=t("contact.locations.peru.address1")%>
-                                <br><%=t("contact.locations.peru.address2")%></p>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.peru.contact_email")%>">
-                                    <%=t("contact.locations.peru.contact_email")%>
-                                    </a></li>
-                                  <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.peru.contact")%>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
+                    
                     <div role="tabpanel" class="text-center tab-pane" id="Uruguay">
                         <div class="alert alert-info">
                           <div class="row">

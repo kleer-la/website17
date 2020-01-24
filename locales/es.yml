@@ -49,7 +49,7 @@ es:
         courses: "Cursos"
         agenda: "Agenda"
         catalog: "Catálogo"
-        campus: "Campus digital"
+        campus: "Academia Online"
         we_publish: "Publicamos"
         books: "Libros"
         blog: "Blog"
@@ -674,15 +674,8 @@ es:
                 address1: "Lavalle 362 4to Piso"
                 address2: "C1047AAH CABA"
                 phone: "+54 11.5236.0314 <br> +54 11.5236.0315"
-                contact: "Lucía y Coti"
+                contact: "Macarena"
                 contact_email: "info.ar@kleer.la"
-            brasil:
-                name: "Brasil"
-                address1: "Alameda Jaú, 310 113-A"
-                address2: "São Paulo"
-                phone: "+55 11.3284.5878"
-                contact: "Angélica"
-                contact_email: "info.br@kleer.la"
             bolivia:
                 name: "Bolivia"
                 address1: "1ro de Mayo No. 542"
@@ -697,13 +690,6 @@ es:
                 phone: "+57 3207666176"
                 contact: "Ingrith y Ginneth"
                 contact_email: "info.co@kleer.la"
-            peru:
-                name: "Perú"
-                address1: "Av. Juan De Aliaga 107"
-                address2: "Lima"
-                phone: "+51 94 731 5896"
-                contact: "Jessy"
-                contact_email: "info.pe@kleer.la"
             uruguay:
                 name: "Uruguay"
                 address1: "Luis Lamas 3241"
@@ -718,12 +704,6 @@ es:
                 phone: "+562 2606 5046 <br />+562 2638 4155"
                 contact: "Natalia, Rodrigo y Norberto"
                 contact_email: "info@cys-chile.cl"
-            europa:
-                address1: "Hektoroviceva Ulica 2/V"
-                address2: "10000 Zagreb, Croatia"
-                phone: "+385 99 244 0000 (9 to 17 hrs Central European Time)"
-                contact: "Milan"
-                contact_email: "info.eu@kleer.la"
             mexico:
                 address1: "Monte Athos 115"
                 address2: "11000, D.F."
