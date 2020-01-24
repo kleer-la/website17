@@ -1745,8 +1745,16 @@ h3.list-group-item-heading {
   max-width: 200px;
 }
 
+.clientes.mainContent h2 {
+  margin-bottom: 40px;
+}
+
 .clientes .col-xs-12 {
-  margin-bottom: 20px;
+  margin-bottom: 45px;
+}
+
+.clientes .contenedor-main-izq .col-md-4 > p {
+  min-height: 42px;
 }
 
 .no-space {
