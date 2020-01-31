@@ -1170,6 +1170,11 @@ a.lower {
   margin: 10px 0 0;
   font-size: 18px;
 }
+@media (min-width: 780px) {
+  .carousel-caption h3 {
+    margin: 10px 20px 0 0;
+  }
+}
 
 .carousel-indicators {
   bottom: 20px;

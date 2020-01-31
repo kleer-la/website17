@@ -1079,6 +1079,9 @@ a.lower {
   color: #fff;
   margin: 10px 0 0;
   font-size: 18px;
+  @media (min-width: 780px) {
+    margin: 10px 20px 0 0;
+  }
 }
 .carousel-indicators {
   bottom: 20px;
