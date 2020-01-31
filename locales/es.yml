@@ -21,7 +21,7 @@ es:
         content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
     slider:
         title_1: "Agilidad Organizacional"
-        text_1: ""
+        text_1: "Acompañamos a organizaciones y equipos para obtener mejores resultados"
         title_2: "Facilitación"
         text_2: "Diseñamos ambientes para potenciar la innovación colectiva"
         title_3: "Cursos"
@@ -96,7 +96,7 @@ es:
         facilitation: "Facilitación"
         facilitation_text: "Diseñamos ambientes para potenciar el trabajo en equipo en reuniones y eventos."
         coaching: "Agilidad Organizacional"
-        coaching_text: "Realizamos un acompañamiento integral en metodologías ágiles y transformación organizacional."
+        coaching_text: "Acompañamos a organizaciones y equipos para obtener mejores resultados."
         courses: "Cursos"
         courses_text: "Capacitamos a profesionales a través de técnicas de aprendizaje colaborativo y participativo."
         plus_info: "+ Info"
@@ -162,9 +162,9 @@ es:
 
 			<hr/>
 
-			<p class='lead'>Transformación Organizacional </p>
+			<p class='lead'>Agilidad Organizacional</p>
 			<img src='/app/img/coaching_transformacion_organizacional.jpg' alt='Transformación Organizacional' title='Transformación Ágil' class='image_coaching' />
-			<p>Acompañamos el proceso de <b>transformación digital</b> de una organización hacia un enfoque ágil y sostenible. </p>
+			<p>Acompañamos el proceso de <b>transformación digital</b> de una organización hacia un enfoque ágil y sostenible.</p>
             <p>
             Ayudamos a definir, adoptar y generar el cambio en cuatro ejes: Cultura, Negocio, Metodología y Técnica.
             </p>
@@ -688,13 +688,15 @@ es:
                 address1: "Calle 39 #21-25 Of. 201"
                 address2: "Bogotá"
                 phone: "+57 3207666176"
+                whatsapp: "<a href=\"https://wa.me/573207666176\">Contáctanos por WhatsApp</a>"
                 contact: "Ingrith y Ginneth"
                 contact_email: "info.co@kleer.la"
             uruguay:
                 name: "Uruguay"
                 address1: "Luis Lamas 3241"
                 address2: "11300 Montevideo"
-                phone: "+598-9468-1588 <br /> +598-2628-0702"
+                whatsapp: "<a href=\"https://wa.me/59891959360\">Contáctanos por WhatsApp</a>"
+                phone: "+598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
             chile:

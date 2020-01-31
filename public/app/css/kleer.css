@@ -1185,22 +1185,22 @@ a.lower {
 }
 
 .carousel-caption {
-  width: 420px;
+  width: 460px;
 }
 
 .carousel-caption.slider1 {
   background: url("../img/coaching-slider.svg") no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .carousel-caption.slider2 {
   background: url("../img/facilitacion-slider.svg") no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .carousel-caption.slider3 {
   background: url("../img/cursos-slider.svg") no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 @media (max-width: 480px) {
@@ -1531,6 +1531,10 @@ p.lead {
 }
 .tab-content .alert-info li {
   font-size: 12px;
+}
+.tab-content .alert-info li.whatsapp a {
+  background: url("/img/icons/WhatsApp_Logo_1.svg") no-repeat;
+  padding: 4px 0 4px 25px;
 }
 .tab-content .alert-info li a {
   color: #000;

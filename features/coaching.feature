@@ -1,7 +1,7 @@
 Feature: Coaching
 
 	Scenario: Coaching Text
-		Given I visit the "agilidadorganizacional" page
+		Given I visit the "agilidad-organizacional" page
 		Then I should see "Acompañamos organizaciones y equipos para obtener mejores resultados"
 		And I should see "casos de éxito"
 		And I should see "Transformación Organizacional"
