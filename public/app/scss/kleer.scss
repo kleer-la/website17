@@ -1093,7 +1093,7 @@ a.lower {
   }
 }
 .carousel-caption {
-  width: 460px;
+  max-width: 460px;
 }
 .carousel-caption.slider1 {
   background: url('../img/coaching-slider.svg') no-repeat;
@@ -1115,7 +1115,7 @@ a.lower {
     bottom: 45px;
   }
   .carousel-caption h1 {
-      font-size: 2.5em !important;
+      font-size: 2em !important;
       margin-bottom: 0;
   }
   .btn-info {
