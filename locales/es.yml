@@ -222,7 +222,7 @@ es:
             <a href='mailto:coaching@kleer.la?subject=Innovación de Productos' class='btn btn-info btn-kleer'>¡Me interesa!</a>
             <hr>"
 
-            bottom: "<p>¡<a href='maito:coaching@kleer.la'>Contactanos</a> para conocer más!</p>"
+            bottom: "<p>¡<a href='mailto:coaching@kleer.la'>Contactanos</a> para conocer más!</p>"
         tabs:
             benefits:
                 title: ""
