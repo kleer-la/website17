@@ -55,7 +55,7 @@ GEM
     multi_json (1.14.1)
     multi_test (0.1.2)
     mustermann (1.0.3)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     oauth (0.5.4)
     pdf-core (0.7.0)
