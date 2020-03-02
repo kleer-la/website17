@@ -2001,4 +2001,25 @@ p.feed-item-desc a, p.feed-item-desc a:link, p.feed-item-desc a span {
   min-height: 400px;
 }
 
+.share-buttons {
+  display: flex;
+  justify-content: center;
+}
+.share-buttons .share {
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-indent: -999em;
+  margin: 2rem 1rem 0 1rem;
+}
+.share-buttons .share.share-facebook {
+  background: url("/img/icons/share-facebook.png") no-repeat;
+}
+.share-buttons .share.share-twitter {
+  background: url("/img/icons/share-twitter.png") no-repeat;
+}
+.share-buttons .share.share-linkedin {
+  background: url("/img/icons/share-linkedin.png") no-repeat;
+}
+
 /*# sourceMappingURL=kleer.css.map */

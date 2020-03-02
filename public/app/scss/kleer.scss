@@ -1818,3 +1818,23 @@ p.feed-item-desc {
 .embed-responsive {
   min-height: 400px;
 }
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  .share {
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -999em;
+    margin: 2rem 1rem 0 1rem;
+    &.share-facebook {
+      background: url('/img/icons/share-facebook.png') no-repeat;
+    }
+    &.share-twitter {
+      background: url('/img/icons/share-twitter.png') no-repeat;
+    }
+    &.share-linkedin {
+      background: url('/img/icons/share-linkedin.png') no-repeat;
+    }
+  }
+}
