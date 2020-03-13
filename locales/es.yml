@@ -248,6 +248,7 @@ es:
                     title: "Guias Ágiles"
                     description: "Un lugar, todas las guías: Técnicas y herramientas que potencian a personas y equipos."
                     link: <a href='http://guiasagiles.org/' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    info: <a href='http://guiasagiles.org/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>Guias agiles</span> <span>guias</span> <span>guide</span> <span>agile</span> <span>cultura ágil</span>"
                     autores: "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a> - <a href='https://twitter.com/hhiroshi'>Hiroshi Hiromoto</a>"
             recurso2:
@@ -291,7 +292,7 @@ es:
                     title: "Barómetro de Equipo"
                     description: " El Barómetro de Equipo es una herramienta poderosa para ayudar a un equipo de trabajo a elevar su nivel de conciencia como tal y evaluarse frente a características de los Equipos de Alto Rendimiento."
                     link: <a href='https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0' class='btn btn-sm btn-info btn-kleer'>Link</a>
-                    info: <a href='http://www.caminoagil.com/2016/11/tarjetas-barometro-de-equipos-cartas.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    info: <a href='http://www.caminoagil.com/2016/11/02/barometro-de-equipo-descarga-las-tarjetas-en-espanol/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>barómetro</span> <span>equipo</span> <span>scrum</span> <span>sprint</span>"
                     autores: "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>"
             recurso8:
