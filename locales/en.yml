@@ -225,6 +225,8 @@ en:
                     title: "DoR Kards"
                     description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR por su sigla en ingles: Definition of Ready)."
                     info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    autores: "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
+                    observaciones: "Idiomas disponibles: español e inglés."
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?

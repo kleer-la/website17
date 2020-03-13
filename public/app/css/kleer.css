@@ -1821,12 +1821,12 @@ h3.list-group-item-heading {
 }
 
 .book-description {
-  min-height: 380px;
   font-size: 10pt;
   border: none;
   box-shadow: none;
   border-radius: 0 0 4px 4px;
   background: #eaeaea;
+  min-height: 410px;
 }
 
 h4.feed-item-title a {
@@ -1920,13 +1920,14 @@ p.feed-item-desc a, p.feed-item-desc a:link, p.feed-item-desc a span {
 
 .botones {
   text-align: center;
-  bottom: 30px;
-  left: 0;
-  right: 0;
+  margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
   .botones {
     position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -1999,6 +2000,36 @@ p.feed-item-desc a, p.feed-item-desc a:link, p.feed-item-desc a span {
 
 .embed-responsive {
   min-height: 400px;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .share-buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8rem;
+  }
+}
+.share-buttons .share {
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-indent: -999em;
+  padding: 0;
+  margin: 2rem 1rem;
+}
+.share-buttons .share.share-facebook {
+  background: url("/img/icons/share-facebook.png") no-repeat;
+}
+.share-buttons .share.share-twitter {
+  background: url("/img/icons/share-twitter.png") no-repeat;
+}
+.share-buttons .share.share-linkedin {
+  background: url("/img/icons/share-linkedin.png") no-repeat;
 }
 
 /*# sourceMappingURL=kleer.css.map */
