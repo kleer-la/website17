@@ -253,12 +253,12 @@ es:
                     autores: "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a> - <a href='https://twitter.com/hhiroshi'>Hiroshi Hiromoto</a>"
             recurso2:
                     title: "DoD Kards"
-                    description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de terminado."
-                    link: <a href='https://www.dropbox.com/s/52jg9abb6zjmrvj/DoD%20Cards%20-%20ES.pdf?dl=0' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de terminado (DoD por su sigla en inglés: Definition of Done)."
+                    link: <a href='https://drive.google.com/drive/folders/1kmJuVrZaQnYGi-PX-cbmdBsq26Li1OBi?usp=sharing' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='http://www.elproximopaso.net/2017/07/dod-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>DoD</span> <span>Juego</span> <span>Definition</span> <span>done</span> <span>cards</span> <span>tarjetas</span>"
-                    autores: "<a href='https://about.me/cvelasquez'>Camilo Velasquez</a> - <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
-                    observaciones: "<a href='https://medium.com/@twallet/dod-kards-un-jeu-pour-cocr%C3%A9er-la-d%C3%A9finition-de-fini-en-%C3%A9quipe-940f31680032'>Traducción al francés</a> - <a href='https://www.dropbox.com/s/qqf1su06ix96td5/DoD%20Kards%20-%20IN.pdf?dl=0'>Traducción al inglés</a>"
+                    autores: "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> y <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
+                    observaciones: "Idiomas disponibles: español, francés e inglés"
             recurso3:
                     title: "Poster Agile Product Ownership"
                     description: "Traducción al español de un poster de Mia Kolmodin sobre agilidad empresarial y desarrollo ágil de productos digitales de alto valor e impacto."
