@@ -284,7 +284,7 @@ es:
             recurso6:
                     title: "Slicing Cards"
                     description: "Las cartas de Slicing te ayudarán a encontrar nuevos criterios para subdividir las Historias de Usuario  grandes (o épicas) y complejas en otras más pequeñas y simples."
-                    link: <a href='https://www.dropbox.com/s/w04cv0j0nrtl4cl/Kleer_-_Slicing_Cards_-_V3_-_4_por_Hoja.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    link: <a href='https://docs.google.com/document/d/1UbUrXm08OlibJLJUe8KTeTWoWgxSSMlYIfcEsPMlmzg/edit?usp=sharing' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='https://pablolischinsky.wordpress.com/2020/04/01/cartas-de-slicing/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>Slicing</span> <span>UserStories</span> <span>Scrum</span> <span>Agile</span> <span>ProductOwner</span>"
                     autores: "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>, <a href='https://twitter.com/rcolusso'>Ricardo Colusso</a> y <a href='https://twitter.com/pablolis'>Pablo Lischinsky</a>"
