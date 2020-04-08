@@ -13,15 +13,14 @@
 
 	<div class="col-md-9 contenedor-main-izq">
 
-		<% @rss.items.first(20).each do |item| %>
-			<!-- Resuelvo potenciales diferencias de serialización (por ahora, Blogger) -->
-			<% content = item.description unless item.description.nil? %>
+		<% @rss.items.each do |item| %>
+
 			<% content = item.content_encoded unless item.content_encoded.nil? %>
 
 			<div class="container-fluid">
 				<h1><a href="<%= item.link %>"><%= item.title %></a></h1>
 				<p class="subtitle"><%= item.pubDate.strftime("%d/%m/%Y") %> -
-					<a href="<%= item.source.url %>"><%= item.source %></a></p>
+					<%= item.dc_creator %></p>
 				<div class="blog-texto"><%= EscapeUtils.unescape_html content %></div>
 			</div>
 		<% end %>
