@@ -171,7 +171,7 @@ en:
                     info: <a href='http://www.elproximopaso.net/2017/07/dod-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>DoD</span> <span>Juego</span> <span>Definition</span> <span>done</span> <span>cards</span> <span>tarjetas</span>"
                     autores: "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> y <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
-                    observaciones: "Idiomas disponibles: español, francés e inglés"
+                    observaciones: "Versiones disponibles para imprimir y jugar online, en español, francés e inglés."
             recurso3:
                     title: "Poster Agile Product Ownership"
                     description: "Traducción al español de un poster de Mia Kolmodin sobre agilidad empresarial y desarrollo ágil de productos digitales de alto valor e impacto."
@@ -227,7 +227,7 @@ en:
                     description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR por su sigla en ingles: Definition of Ready)."
                     info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     autores: "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
-                    observaciones: "Idiomas disponibles: español e inglés."
+                    observaciones: "Versiones disponibles para imprimir y jugar online, en español, francés e inglés."
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?
