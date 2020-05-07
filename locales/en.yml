@@ -171,7 +171,7 @@ en:
                     info: <a href='http://www.elproximopaso.net/2017/07/dod-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>DoD</span> <span>Juego</span> <span>Definition</span> <span>done</span> <span>cards</span> <span>tarjetas</span>"
                     autores: "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> y <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
-                    observaciones: "Idiomas disponibles: español, francés e inglés"
+                    observaciones: "Versiones disponibles para imprimir y jugar online, en español, francés e inglés."
             recurso3:
                     title: "Poster Agile Product Ownership"
                     description: "Traducción al español de un poster de Mia Kolmodin sobre agilidad empresarial y desarrollo ágil de productos digitales de alto valor e impacto."
@@ -227,7 +227,7 @@ en:
                     description: "Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre todos los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR por su sigla en ingles: Definition of Ready)."
                     info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     autores: "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
-                    observaciones: "Idiomas disponibles: español e inglés."
+                    observaciones: "Versiones disponibles para imprimir y jugar online, en español, francés e inglés."
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?
@@ -465,6 +465,10 @@ en:
         release29_text: "Como emprendedora , seguro te cuesta seguir el ritmo cambiante que llevan tus consumidores (¡y el mundo en general!). Un día les gusta una cosa, al día siguiente, prefieren otra. Las tendencias y las ..."
         release30_title: "Recursos Humanos Cuarentena obligatoria: el teletrabajo ¿llegó para quedarse?"
         release30_text: "El aislamiento forzó a las empresas a implementar el home office, aunque no sin dificultades. Qué pasará después de la pandemia."
+        release31_title: "Teletrabajo en pandemia: entornos distribuidos y liderazgo virtual"
+        release31_text: "El liderazgo virtual implica confianza. Los líderes deben confiar en las capacidades de los colaboradores y delegar las tareas tal como lo harían si estuvieran sentados uno al lado del otro."
+        release32_title: "La fuerza de trabajo pasó a estar en un 90% en hogares: la tecnología existe pero faltan procesos y cultura"
+        release32_text: "Se estima que un 20% de los empleados ya hacía teletrabajo previo al brote de coronavirus, uno o dos días por semana en promedio."
     privacy:
         title: "Privacy Policy"
         text: "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.kleer.la (the “Site”)."
