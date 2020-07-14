@@ -602,13 +602,15 @@ en:
                 address1: "Calle 39 #21-25 Of. 201"
                 address2: "Bogota"
                 phone: "+57 3207666176"
+                whatsapp: "<a href=\"https://wa.me/573207666176\">WhatsApp us!</a>"
                 contact: "Ingrith y Ginneth"
                 contact_email: "info.co@kleer.la"
             uruguay:
                 name: "Uruguay"
                 address1: "Luis Lamas 3241"
                 address2: "11300 Montevideo"
-                phone: "+598-9468-1588 <br /> +598-2628-0702"
+                whatsapp: "<a href=\"https://wa.me/59891959360\">WhatsApp us!</a>"
+                phone: "+598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
             chile:

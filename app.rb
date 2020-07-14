@@ -252,13 +252,16 @@ get '/posters/:poster_code' do
   case @poster_code
   when "scrum"
     @video_url_code = "IWUG29VPhUA"
+    @poster_code = "Scrum"
     @poster_name = "Scrum"
   when "xp"
     @video_url_code = "4nN6Gh79Yg8"
-    @poster_name = "XP"
+    @poster_code = "XP"
+    @poster_name = "eXtreme Programming"
   when "manifesto"
     @video_url_code = "V5LaKpjcgKQ"
-    @poster_name = "Manifiesto"
+    @poster_code = "Manifesto"
+    @poster_name = "Principios Ágiles"
   end
 
   @pdf_download_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.pdf"
