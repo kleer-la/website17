@@ -211,14 +211,14 @@ en:
             recurso8:
                     title: "Poster de Scrum"
                     description: "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores."
-                    link: <a href='http://media.kleer.la/posters/scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='http://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>"
                     autores: "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>"
             recurso9:
                     title: "Extreme Programming"
                     description: ""
-                    link: <a href='http://media.kleer.la/posters/xp.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
@@ -346,7 +346,7 @@ en:
                learnings: "<p> Through this book you will learn:</p> <ul><li>The factors that led to agile methodologies</li><li> The values ​​and principles of the Agile Manifesto </li><li> Complexity contexts where Scrum is more efficient</li><li>Scrum values and principles</li><li>Scrum Team Roles</li><li> Responsibilities and expectations of each role</li><li>Scrum workflow elements and activities</li><li>Agile analysis and evolutionary development techniques</li><li>How to communicate needs (User Stories)</li><li>Agile estimations</li><li>Medium and long term planning</li><li> Budgeting agile projects</li></ul>&nbsp;"
                video:
                    title: "View the 4-minute video describing Scrum"
-                   download: "Download the PDF poster from<a href='https://media.kleer.la/posters/scrum.pdf'>here</a>"
+                   download: "Download the PDF poster from<a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'>here</a>"
                download:
                    pdf: "Free PDF"
             retrospectives:
@@ -602,13 +602,15 @@ en:
                 address1: "Calle 39 #21-25 Of. 201"
                 address2: "Bogota"
                 phone: "+57 3207666176"
+                whatsapp: "<a href=\"https://wa.me/573207666176\">WhatsApp us!</a>"
                 contact: "Ingrith y Ginneth"
                 contact_email: "info.co@kleer.la"
             uruguay:
                 name: "Uruguay"
                 address1: "Luis Lamas 3241"
                 address2: "11300 Montevideo"
-                phone: "+598-9468-1588 <br /> +598-2628-0702"
+                whatsapp: "<a href=\"https://wa.me/59891959360\">WhatsApp us!</a>"
+                phone: "+598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
             chile:

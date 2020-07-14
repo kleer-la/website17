@@ -298,14 +298,14 @@ es:
             recurso8:
                     title: "Poster de Scrum"
                     description: "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores."
-                    link: <a href='http://media.kleer.la/posters/scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='http://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>"
                     autores: "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>"
             recurso9:
                     title: "Extreme Programming"
                     description: ""
-                    link: <a href='http://media.kleer.la/posters/xp.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
@@ -434,7 +434,7 @@ es:
                 learnings: "<p>Mediante este libro conocerás:</p> <ul><li>Los factores que dieron origen a las metodologías ágiles</li><li>Los valores y principios del Manifiesto Ágil</li><li>Los contextos de complejidad donde Scrum es más eficiente</li><li>Los principios y valores de Scrum</li><li>Roles del Equipo Scrum</li><li>Responsabilidades y expectativas de cada rol</li><li>Elementos y actividades del flujo de trabajo de Scrum</li><li>Técnicas de análisis ágil y desarrollo evolutivo</li><li>Técnicas de comunicación de necesidades (Historias de Usuario)</li><li>Estimaciones ágiles</li><li>Planificación del mediano y largo plazo</li> <li>Presupuestación de proyectos ágiles</li></ul>&nbsp;"
                 video:
                     title: "Mirá el video de 4 minutos y medio que describe Scrum"
-                    download: "Baja el PDF con el poster desde <a href='http://media.kleer.la/posters/scrum.pdf'>aquí</a>"
+                    download: "Baja el PDF con el poster desde <a href='hhttps://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'>aquí</a>"
                 download:
                     pdf: "PDF Gratuito"
             mas_productivos:
