@@ -1,9 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (3.2.22.5)
-      i18n (~> 0.6, >= 0.6.4)
-      multi_json (~> 1.0)
+    activesupport (6.0.3.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+      zeitwerk (~> 2.2, >= 2.2.2)
     builder (3.2.4)
     concurrent-ruby (1.1.6)
     coveralls (0.7.2)
@@ -58,7 +61,7 @@ GEM
       excon
       moneta
       multi_json (>= 1.9.2)
-    i18n (0.9.5)
+    i18n (1.8.3)
       concurrent-ruby (~> 1.0)
     json (2.3.1)
     libxml-ruby (3.2.0)
@@ -67,6 +70,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0512)
     mini_portile2 (2.4.0)
+    minitest (5.14.1)
     moneta (1.0.0)
     money (6.13.8)
       i18n (>= 0.6.4, <= 2)
@@ -142,14 +146,15 @@ GEM
     tilt (2.0.10)
     tins (0.13.2)
     ttfunk (1.6.2.1)
-    tzinfo (2.0.2)
-      concurrent-ruby (~> 1.0)
+    tzinfo (1.2.7)
+      thread_safe (~> 0.1)
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
