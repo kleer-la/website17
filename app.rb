@@ -255,14 +255,14 @@ get '/posters/:poster_code' do
     @poster_name = "Scrum"
   when "xp"
     @video_url_code = "4nN6Gh79Yg8"
-    @poster_name = "Extreme Programming"
+    @poster_name = "XP"
   when "manifesto"
     @video_url_code = "V5LaKpjcgKQ"
-    @poster_name = "Principios Ágiles"
+    @poster_name = "Manifiesto"
   end
 
-  @pdf_download_url = "https://media.kleer.la/posters/#{@poster_code}.pdf"
-  @image_url = "/img/posters/#{@poster_code}.jpg"
+  @pdf_download_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.pdf"
+  @image_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.jpg"
 
   erb :poster
 
@@ -664,7 +664,7 @@ def create_twitter_card( event )
   card = TwitterCard.new
   card.title = event.friendly_title
   card.description = event.event_type.elevator_pitch
-  card.image_url = "https://media.kleer.la/logos/K_social.jpg"
+  card.image_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/K_social.jpg"
   card.site = "@kleer_la"
   if event.trainers[0].nil?
     card.creator = ""
