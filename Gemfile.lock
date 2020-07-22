@@ -61,7 +61,7 @@ GEM
       excon
       moneta
       multi_json (>= 1.9.2)
-    i18n (1.8.3)
+    i18n (1.8.4)
       concurrent-ruby (~> 1.0)
     json (2.3.1)
     libxml-ruby (3.2.0)
@@ -154,7 +154,7 @@ GEM
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
-    zeitwerk (2.3.1)
+    zeitwerk (2.4.0)
 
 PLATFORMS
   ruby
