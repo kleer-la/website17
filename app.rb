@@ -496,6 +496,14 @@ get '/clientes/innovacion-en-marketing-digital-loreal-2016' do
   redirect '/prensa/casos/innovacion-en-marketing-digital-loreal-2016', 301 # permanent redirect
 end
 
+get '/prensa/casos/transformacion-agil-ypf-2020' do
+  @page_title += " | Así profundizó YPF su camino de transformación ágil"
+  @meta_description = "Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer"
+  @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación, coloaboración, facilitación gráfica, marketing, digital"
+
+  erb :prensa_casos_ypf_2020, :layout => :layout_2017
+end
+
 get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
   @page_title += " | Innovación en Marketing Digital en L'Oréal"
   @meta_description = "Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer"

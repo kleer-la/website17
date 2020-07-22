@@ -147,6 +147,12 @@ img {
   height: 400px;
   background-position: center top;
 }
+.header-ypf-2020 {
+  background: url(../img/ypf-2020.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center top;
+}
 .header-prensa {
   background: url(../img/prensa.jpg);
   background-size: cover;
@@ -794,7 +800,9 @@ footer .nav-tabs li a:hover {
 footer .nav-tabs>li {
   margin-bottom: 8px;
 }
-
+.mb-50 {
+  margin-bottom: 50px;
+}
 .list-inline>li {
   padding: 0px !important;
 }
