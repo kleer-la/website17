@@ -217,5 +217,5 @@ Realmente despiertas a un paradigma de evolución constante, tanto personal como
 <div class=" fondo-pano pano-9"></div>
 
 <!-- ######################### EVENTER VIEW #################### -->
-<% url = ENV['KEVENTER_URL'] || "http://eventos.kleer.la" %>
+<% url = ENV['KEVENTER_URL'] || "https://eventos.kleer.la" %>
 <img style="display:none" src=<%= url %>/events/<%=@event.id%>/viewed.gif?lang=<%=session[:locale]%><%=@tracking_parameters%>" width="1px" height="1px" onerror='this.style.display = "none"'/>

@@ -190,7 +190,7 @@ en:
             recurso5:
                     title: "Canvas de Experimentos"
                     description: "¿Estás llevando adelante una iniciativa en un marco de exploración y aprendizaje? Te invitamos a que tomes como base el Canvas de Experimentos. Adaptalo según tu necesidad, usalo para diseñar experimentos, y compartí tus experiencias!"
-                    link: <a href='http://kl.la/canvas-de-experimentos' class='btn btn-sm btn-info btn-kleer'>Link</a>
+                    link: <a href='https://kl.la/canvas-de-experimentos' class='btn btn-sm btn-info btn-kleer'>Link</a>
                     info: <a href='http://guiasagiles.org/#Experimentos' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>experimentos</span> <span>exploración</span> <span>aprendizaje</span> <span>canvas</span> <span>canvas de experimentos</span>"
                     autores: "<a href='https://twitter.com/rmonelos'>Rodrigo Monelos</a> y <a href='https://twitter.com/pablitux'>Pablo Tortorella</a>"
@@ -212,14 +212,14 @@ en:
                     title: "Poster de Scrum"
                     description: "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores."
                     link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
-                    info: <a href='http://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    info: <a href='https://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>"
                     autores: "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>"
             recurso9:
                     title: "Extreme Programming"
                     description: ""
                     link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
-                    info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    info: <a href='https://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
             recurso10:
