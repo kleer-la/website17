@@ -701,10 +701,11 @@ es:
             colombia:
                 name: "Colombia"
                 address1: "Calle 39 #21-25 Of. 201"
-                address2: "Bogotá"
+                address2: "Bogotá y Medellín"
                 phone: "+57 3207666176"
                 whatsapp: "<a href=\"https://wa.me/573207666176\">Contáctanos por WhatsApp</a>"
-                contact: "Ingrith y Ginneth"
+                contact1: "Cursos: te contarás con Ingrith  - +57 3207666176"
+                contact2: "Administrativos: te contactarás con Ginneth - +57 3202210200"
                 contact_email: "info.co@kleer.la"
             uruguay:
                 name: "Uruguay"
