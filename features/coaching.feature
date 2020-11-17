@@ -2,7 +2,7 @@ Feature: Coaching
 
 	Scenario: Coaching Text
 		Given I visit the "agilidad-organizacional" page
-		Then I should see "Te acompañamos para lograr mejores resultados"
+		Then I should see "Vayamos hacia una Agilidad Organizacional efectiva"
 		And I should see "casos de éxito"
 		And I should see "Transformación Organizacional"
 		And I should see "Equipos Ágiles"
