@@ -10,7 +10,7 @@ Feature: Home Page
 	Scenario: Datos de contacto
 		Given I visit the home page
 		Then I should see "Argentina"
-		And I should see "Lavalle 362"
+		And I should see "Buenos Aires"
 		And I should see "Bolivia"
 		And I should see "Colombia"
 		And I should see "Uruguay"

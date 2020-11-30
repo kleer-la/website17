@@ -585,8 +585,8 @@ en:
         locations:
             argentina:
                 name: "Argentina"
-                address1: "Lavalle 362 4to Piso"
-                address2: "C1047AAH CABA"
+                address1: "Buenos Aires, Cipolletti and Rosario"
+                address2: ""
                 phone: "+54 11.5236.0314 <br> +54 11.5236.0315"
                 contact: "Macarena"
                 contact_email: "info.ar@kleer.la"
