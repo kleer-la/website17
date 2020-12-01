@@ -1789,8 +1789,12 @@ h3.list-group-item-heading {
   padding: 0;
 }
 
-.margin-tb {
+.agilidad-image {
   margin: 20px 0;
+}
+.agilidad-image.hidden-xs {
+  max-height: 332px;
+  float: right;
 }
 
 .img-trainer {
