@@ -1624,6 +1624,11 @@ h3.list-group-item-heading {
     float: right;
   }
 }
+.title-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .img-trainer {
   position: relative;
   margin-bottom: 10px;
@@ -1641,6 +1646,12 @@ h3.list-group-item-heading {
   .slide-home-newsletter {
     background-position-x: 100%;
     background-size: 30%;
+  }
+  .title-flex {
+    flex-direction: column;
+  }
+  .title-flex a {
+    margin-top: 1.5em;
   }
 }
 .btn-buy {
