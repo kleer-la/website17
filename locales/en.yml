@@ -228,6 +228,18 @@ en:
                     info: <a href='http://www.elproximopaso.net/2018/12/dor-kards.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     autores: "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>"
                     observaciones: "Versiones disponibles para imprimir y jugar online, en español, francés e inglés."
+            recurso11:
+                    title: "Retromat"
+                    description: "Traducción al español de Retromat, la famosa herramienta para ayudar a equipos, Scrum Masters y otras personas a diseñar retrospectivas inspiradoras y variadas, en entornos ágiles o no."
+                    info: <a href='https://www.elproximopaso.net/2014/09/retr-o-mat-en-espanol.html' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    autores: "<a href='https://finding-marbles.com/about/' target='_blank'>Corinna Baldauf</a>"
+                    traductor: "<a href='https://about.me/thomas.wallet' target='_blank'>Thomas Wallet</a> y otros"
+            recurso12:
+                    title: "El cambio de liderazgo"
+                    description: "Algunos de los temas tratados en el póster son: el cambio de liderazgo y de la gerencia para apalancar las transformaciones ágiles, el mindset ágil y contexto organizacional que incluye el Marco Cynefin, el estilo de liderazgo ágil y organizaciones que aprenden en contextos VUCA."
+                    info: <a href='https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    autores: "<a href='https://www.linkedin.com/in/miakolmodin/' target='_blank'>Mia Kolmodin</a> y <a href='https://www.linkedin.com/in/btjsandberg/' target='_blank'>Björn Sandberg</a>"
+                    traductor: "<a href='https://www.linkedin.com/in/pablolischinsky/' target='_blank'>Pablo Lischinsky</a>"
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?

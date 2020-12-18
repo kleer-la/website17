@@ -14,7 +14,8 @@
 				<div class="paper-agenda-container">
 					<div class="paper-agenda-top"></div>
 					<div class="paper-agenda-body">
-					<h2><%=t('side_menu.agenda')%></h2>
+					<h2 class="title-flex"><%=t('side_menu.agenda')%><a href="https://docs.google.com/presentation/d/1jD38zxhv8YggjKP7ALRDrNmXWFlk4ZU9p0V3RqO7TpI/edit" target="_blank">
+					<img src="/img/boton_AB.png" alt="Eres principiante en Agile?"></a></h2>
 					<ul id="country-filter" class="nav nav-pills">
 						<li <%='class="active"' if @country == 'todos'%>><a href="/<%=session[:locale]%>/entrenamos/eventos/pais/todos"><%=t("dt_grid.select_all")%></a></li>
 					    <% @unique_countries.each do |country| %>
