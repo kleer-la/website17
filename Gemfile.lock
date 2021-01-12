@@ -99,7 +99,7 @@ GEM
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rate_throttle_client (0.1.2)
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
