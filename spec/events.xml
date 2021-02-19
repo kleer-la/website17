@@ -2360,4 +2360,242 @@ Ing. Electrónica, CSM, CSD
       </trainer>
     </trainers>
   </event>
+  <event>
+    <start-time type="datetime">2021-03-01T09:00:00Z</start-time>
+    <end-time type="datetime">2021-03-02T18:00:00Z</end-time>
+    <cancelled type="boolean">false</cancelled>
+    <capacity type="integer">24</capacity>
+    <city>Buenos Aires</city>
+    <country-id type="integer">54</country-id>
+    <created-at type="datetime">2012-11-28T22:48:51Z</created-at>
+    <date type="date">2021-03-01</date>
+    <finish-date type="date">2021-03-02</finish-date>
+    <draft type="boolean">false</draft>
+    <eb-end-date type="date">2021-02-15</eb-end-date>
+    <eb-price type="decimal">710.0</eb-price>
+    <event-type-id type="integer">2</event-type-id>
+    <id type="integer">144</id>
+    <is-sold-out type="boolean">false</is-sold-out>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
+    <specific-subtitle>Subtítulo especial</specific-subtitle>
+    <is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
+    <banner-text>un texto a resaltar</banner-text>
+    <banner-type>success</banner-type>
+    <mode>cl</mode>
+    <sepyme-enabled type="boolean" nil="true"/>
+    <list-price type="decimal">750.0</list-price>
+    <show-pricing type="boolean">true</show-pricing>
+  	<currency-iso-code>USD</currency-iso-code>
+    <list-price-2-pax-discount type="integer">10</list-price-2-pax-discount>
+    <list-price-3plus-pax-discount type="integer">15</list-price-3plus-pax-discount>
+    <list-price-plus-tax type="boolean">true</list-price-plus-tax>
+    <place>Online</place>
+    <address>Tucuman 373 Piso 1</address>
+    <registration-link>https://keventer.link</registration-link>
+    <trainer-id type="integer">4</trainer-id>
+    <trainer2-id type="integer" nil="true" />
+    <updated-at type="datetime">2012-11-28T22:56:20Z</updated-at>
+    <visibility-type>pu</visibility-type>
+    <business-eb-price type="decimal">660.0</business-eb-price>
+    <business-price type="decimal">700.0</business-price>
+    <couples-eb-price type="decimal">640.0</couples-eb-price>
+    <enterprise-11plus-price type="decimal" nil="true"/>
+    <enterprise-6plus-price type="decimal">610.0</enterprise-6plus-price>
+    <country>
+      <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
+      <id type="integer">9</id>
+      <iso-code>AR</iso-code>
+      <name>Argentina</name>
+      <updated-at type="datetime">2012-04-26T11:14:40Z</updated-at>
+    </country>
+    <event-type>
+      <average-rating type="decimal">4.45</average-rating>
+      <net-promoter-score type="integer">97</net-promoter-score>
+      <surveyed-count type="integer">94</surveyed-count>
+      <promoter-count type="integer">92</promoter-count>
+      <created-at type="datetime">2012-11-28T22:43:57Z</created-at>
+      <description>una descripción.</description>
+      <elevator-pitch>un elevator pitch</elevator-pitch>
+      <takeaways>pepe</takeaways>
+      <learnings>pipollo</learnings>
+      <duration type="integer">16</duration>
+      <goal>un objetivo.</goal>
+      <id type="integer">2</id>
+      <name>Curso Popular Scrumero</name>
+      <program>el programa</program>
+      <recipients>los destinatarios.</recipients>
+      <updated-at type="datetime">2012-11-28T22:43:57Z</updated-at>
+      <faq>Preguntas Frecuentes</faq>
+      <include-in-catalog type="boolean">true</include-in-catalog>
+      <average-rating type="float">4.38</average-rating>
+      <net-promoter-score type="float">0.96</net-promoter-score>
+      <participant-count type="integer">125</participant-count>
+      <promoter-count type="integer">47</promoter-count>
+      <nps-opinions-count type="integer">2</nps-opinions-count>
+      <rating-opinions-count type="integer">2</rating-opinions-count>
+    </event-type>
+    <trainer>
+      <average-rating type="decimal">4.45</average-rating>
+      <net-promoter-score type="integer">97</net-promoter-score>
+      <surveyed-count type="integer">94</surveyed-count>
+      <promoter-count type="integer">92</promoter-count>
+      <bio>Agile Coach</bio>
+      <created-at type="datetime">2012-08-23T20:40:28Z</created-at>
+      <id type="integer">4</id>
+      <name>Raul Gorgonzola</name>
+      <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
+      <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
+      <twitter-username>@gorgonzo</twitter-username>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+      <country>
+          <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
+          <id type="integer">9</id>
+          <iso-code>AR</iso-code>
+          <name>Argentina</name>
+          <updated-at type="datetime">2012-04-26T11:14:40Z</updated-at>
+        </country>
+    </trainer>
+    <trainers>
+      <trainer>
+        <average-rating type="decimal">4.45</average-rating>
+        <net-promoter-score type="integer">97</net-promoter-score>
+        <surveyed-count type="integer">94</surveyed-count>
+        <promoter-count type="integer">92</promoter-count>
+        <bio>Agile Coach</bio>
+        <created-at type="datetime">2012-08-23T20:40:28Z</created-at>
+        <id type="integer">4</id>
+        <name>Raul Gorgonzola</name>
+        <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
+        <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
+        <twitter-username>@gorgonzo</twitter-username>
+        <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+        <country>
+          <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
+          <id type="integer">9</id>
+          <iso-code>AR</iso-code>
+          <name>Argentina</name>
+          <updated-at type="datetime">2012-04-26T11:14:40Z</updated-at>
+          </country>
+      </trainer>
+    </trainers>
+  </event>
+  <event>
+    <start-time type="datetime">2021-04-05T09:00:00Z</start-time>
+    <end-time type="datetime">2021-04-06T18:00:00Z</end-time>
+    <cancelled type="boolean">false</cancelled>
+    <capacity type="integer">24</capacity>
+    <city>Buenos Aires</city>
+    <country-id type="integer">54</country-id>
+    <created-at type="datetime">2012-11-28T22:48:51Z</created-at>
+    <date type="date">2021-04-04</date>
+    <finish-date type="date">2021-04-06</finish-date>
+    <draft type="boolean">false</draft>
+    <eb-end-date type="date">2021-02-15</eb-end-date>
+    <eb-price type="decimal">710.0</eb-price>
+    <event-type-id type="integer">2</event-type-id>
+    <id type="integer">145</id>
+    <is-sold-out type="boolean">false</is-sold-out>
+    <specific-conditions>Unas condiciones propias del evento</specific-conditions>
+    <specific-subtitle>Subtítulo especial</specific-subtitle>
+    <is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
+    <banner-text>un texto a resaltar</banner-text>
+    <banner-type>success</banner-type>
+    <mode>cl</mode>
+    <sepyme-enabled type="boolean" nil="true"/>
+    <list-price type="decimal">750.0</list-price>
+    <show-pricing type="boolean">true</show-pricing>
+  	<currency-iso-code>USD</currency-iso-code>
+    <list-price-2-pax-discount type="integer">10</list-price-2-pax-discount>
+    <list-price-3plus-pax-discount type="integer">15</list-price-3plus-pax-discount>
+    <list-price-plus-tax type="boolean">true</list-price-plus-tax>
+    <place>Online</place>
+    <address>Tucuman 373 Piso 1</address>
+    <registration-link>https://keventer.link</registration-link>
+    <trainer-id type="integer">4</trainer-id>
+    <trainer2-id type="integer" nil="true" />
+    <updated-at type="datetime">2012-11-28T22:56:20Z</updated-at>
+    <visibility-type>pu</visibility-type>
+    <business-eb-price type="decimal">660.0</business-eb-price>
+    <business-price type="decimal">700.0</business-price>
+    <couples-eb-price type="decimal">640.0</couples-eb-price>
+    <enterprise-11plus-price type="decimal" nil="true"/>
+    <enterprise-6plus-price type="decimal">610.0</enterprise-6plus-price>
+    <country>
+      <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
+      <id type="integer">9</id>
+      <iso-code>AR</iso-code>
+      <name>Argentina</name>
+      <updated-at type="datetime">2012-04-26T11:14:40Z</updated-at>
+    </country>
+    <event-type>
+      <average-rating type="decimal">4.45</average-rating>
+      <net-promoter-score type="integer">97</net-promoter-score>
+      <surveyed-count type="integer">94</surveyed-count>
+      <promoter-count type="integer">92</promoter-count>
+      <created-at type="datetime">2012-11-28T22:43:57Z</created-at>
+      <description>una descripción.</description>
+      <elevator-pitch>un elevator pitch</elevator-pitch>
+      <takeaways>pepe</takeaways>
+      <learnings>pipollo</learnings>
+      <duration type="integer">16</duration>
+      <goal>un objetivo.</goal>
+      <id type="integer">2</id>
+      <name>Curso Popular Scrumero</name>
+      <program>el programa</program>
+      <recipients>los destinatarios.</recipients>
+      <updated-at type="datetime">2012-11-28T22:43:57Z</updated-at>
+      <faq>Preguntas Frecuentes</faq>
+      <include-in-catalog type="boolean">true</include-in-catalog>
+      <average-rating type="float">4.38</average-rating>
+      <net-promoter-score type="float">0.96</net-promoter-score>
+      <participant-count type="integer">125</participant-count>
+      <promoter-count type="integer">47</promoter-count>
+      <nps-opinions-count type="integer">2</nps-opinions-count>
+      <rating-opinions-count type="integer">2</rating-opinions-count>
+    </event-type>
+    <trainer>
+      <average-rating type="decimal">4.45</average-rating>
+      <net-promoter-score type="integer">97</net-promoter-score>
+      <surveyed-count type="integer">94</surveyed-count>
+      <promoter-count type="integer">92</promoter-count>
+      <bio>Agile Coach</bio>
+      <created-at type="datetime">2012-08-23T20:40:28Z</created-at>
+      <id type="integer">4</id>
+      <name>Raul Gorgonzola</name>
+      <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
+      <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
+      <twitter-username>@gorgonzo</twitter-username>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+      <country>
+          <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
+          <id type="integer">9</id>
+          <iso-code>AR</iso-code>
+          <name>Argentina</name>
+          <updated-at type="datetime">2012-04-26T11:14:40Z</updated-at>
+        </country>
+    </trainer>
+    <trainers>
+      <trainer>
+        <average-rating type="decimal">4.45</average-rating>
+        <net-promoter-score type="integer">97</net-promoter-score>
+        <surveyed-count type="integer">94</surveyed-count>
+        <promoter-count type="integer">92</promoter-count>
+        <bio>Agile Coach</bio>
+        <created-at type="datetime">2012-08-23T20:40:28Z</created-at>
+        <id type="integer">4</id>
+        <name>Raul Gorgonzola</name>
+        <updated-at type="datetime">2012-08-23T20:40:28Z</updated-at>
+        <linkedin-url>https://www.linkedin.com/in/gorgonzo</linkedin-url>
+        <twitter-username>@gorgonzo</twitter-username>
+        <gravatar-picture-url>https://www.gravatar.com/avatar/74734f9ceda241e1b2f5c3174e47158c</gravatar-picture-url>
+        <country>
+          <created-at type="datetime">2012-04-26T11:14:40Z</created-at>
+          <id type="integer">9</id>
+          <iso-code>AR</iso-code>
+          <name>Argentina</name>
+          <updated-at type="datetime">2012-04-26T11:14:40Z</updated-at>
+          </country>
+      </trainer>
+    </trainers>
+  </event>
 </events>
