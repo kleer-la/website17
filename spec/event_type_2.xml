@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event-type>
+  <average-rating type="decimal">4.84</average-rating>
+  <created-at type="datetime">2012-09-06T10:59:01Z</created-at>
+  <csd-eligible type="boolean">false</csd-eligible>
+  <description>####Descripción del Curso
+  </description>
+  <duration type="integer">16</duration>
+  <elevator-pitch>Este taller</elevator-pitch>
+  <faq>####¿Cómo se obtiene la certificación</faq>
+  <goal>Algo más que ertificar, claro.</goal>
+  <id type="integer">2</id>
+  <include-in-catalog type="boolean">true</include-in-catalog>
+  <learnings>Al participar del taller aprenderás mucho.</learnings>
+  <materials></materials>
+  <name>Taller Popular de Scrum</name>
+  <net-promoter-score type="integer">82</net-promoter-score>
+  <program>Introducción a Scrum</program>
+  <promoter-count type="integer">46</promoter-count>
+  <recipients>- Gerentes y líderes de proyecto</recipients>
+  <surveyed-count type="integer">55</surveyed-count>
+  <tag-name>C-SCRUM</tag-name>
+  <takeaways>Cafe</takeaways>
+  <updated-at type="datetime">2014-10-09T14:37:31Z</updated-at>
+  <categories type="array">
+    <category>
+      <codename>organizaciones</codename>
+      <created-at type="datetime">2013-04-19T17:36:06Z</created-at>
+      <description>Proponemos un nuevo enfoque</description>
+      <description-en>We propose a new approach</description-en>
+      <id type="integer">2</id>
+      <name>Organizaciones asombrosas</name>
+      <name-en>Amazing organizations</name-en>
+      <order type="integer">1</order>
+      <tagline>A partir del aprendizaje</tagline>
+      <tagline-en>Thru learning</tagline-en>
+      <updated-at type="datetime">2014-10-03T11:24:04Z</updated-at>
+      <visible type="boolean">true</visible>
+    </category>
+  </categories>
+</event-type>
