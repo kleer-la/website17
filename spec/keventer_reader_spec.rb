@@ -41,7 +41,7 @@ describe KeventerReader do
     @connector.stub(:events_xml_url).and_return( File.join(File.dirname(__FILE__),'../spec/events.xml') )
 
     KeventerReader.build_with(@connector)
-    KeventerReader.instance.events.count.should == 16
+    KeventerReader.instance.events.count.should == 18
   end
 
   it "Should Be Able to Load an Xml File for an Event Type" do
@@ -73,7 +73,7 @@ describe KeventerReader do
     ev.finish_date.should be_nil
   end
 
-  context "When loading the testing XML source with 16 events" do
+  context "When loading the testing XML source with 18 events" do
 
     before(:each) do
       @connector = double("KeventerConnector")
@@ -85,7 +85,7 @@ describe KeventerReader do
     end
 
     it "Should allow access to an events array with all events" do
-      @kevr.events.count.should == 16
+      @kevr.events.count.should == 18
     end
 
     it "Should allow access to an events array for the next two months" do
@@ -202,12 +202,12 @@ describe KeventerReader do
       @kevr = KeventerReader.instance
     end
 
-    it "Filtering for all countries should return 16 events" do
-      @kevr.commercial_events_by_country("todos").count.should == 16
+    it "Filtering for all countries should return 18 events" do
+      @kevr.commercial_events_by_country("todos").count.should == 18
     end
 
-    it "Filtering for Argentina should return 8 events plus 3 Webinars" do
-      @kevr.commercial_events_by_country("ar").count.should == 8+3
+    it "Filtering for Argentina should return 10 events plus 3 Webinars" do
+      @kevr.commercial_events_by_country("ar").count.should == 10+3
     end
 
     it "Filtering for Mexico should return no events and 3 Webinars" do
