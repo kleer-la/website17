@@ -13,6 +13,8 @@ Feature: Event Type Details
 		Given theres an event type with several editions
 		When I visit the event type full page
 		Then the page title should be "Taller Popular de Scrum"
+		And I should see "01"
+		And I should see "05"
 
 
 	Scenario: Detalle de Evento Comunitario

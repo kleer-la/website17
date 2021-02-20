@@ -684,8 +684,13 @@ h2 {
 }
 
 .logistic-indicator {
-	text-align: right;
+	text-align: center;
 	padding-right: 10px;
+}
+
+.logistic-edition {
+	border-top-style: inset;
+	border-top-width: thin;
 }
 
 .event-facilitator-face {

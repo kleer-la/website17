@@ -1589,8 +1589,12 @@ h3.list-group-item-heading {
   font-size: 10pt;
 }
 .logistic-indicator {
-  text-align: right;
+  text-align: center;
   padding-right: 10px;
+}
+.logistic-edition {
+	border-top-style: inset;
+	border-top-width: thin;
 }
 .img-experiencia {
   width: 100%;

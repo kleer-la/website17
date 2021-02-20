@@ -1,0 +1,109 @@
+        &nbsp;
+        <div class="row">
+          <!-- TODO: Ver con @Alu .logistic-indicator -->
+          <div class="col-sm-2 no-hpadding">
+  					<span class="glyphicon glyphicon-calendar big-glyphicon"></span>
+          </div>
+          <div class="col-sm-2 no-hpadding">
+  					<span class="glyphicon glyphicon-time big-glyphicon"></span>
+          </div>
+          <div class="col-sm-2 no-hpadding event-facilitator-text-single">
+  					<strong><%=t("event.facilitator")%> </strong><br/>
+          </div>
+          <div class="col-sm-2 no-hpadding">
+  					<span class="glyphicon glyphicon-map-marker big-glyphicon"></span>
+          </div>
+          <div class="col-sm-2 no-hpadding event-facilitator-text-single">
+  					<strong><%=t("event.pricing")%> </strong><br/>
+          </div>
+          <div class="col-sm-2 no-hpadding">
+            &nbsp;
+          </div>
+        </div>
+
+        <% @event_type.public_editions.each do |event| %>
+          <!-- TODO: Sacar esto que está solo por BACKWARD COMPATIBILITY -->
+          <% @event = event %>
+
+          <div class="row logistic-edition">
+            <!-- Fecha -->
+            <div class="col-sm-2 no-hpadding">
+              <% if event.finish_date.nil? || event.date == event.finish_date %>
+                <%=event.date.strftime("%d")%>-<%=DTHelper::MONTHS_ES[event.date.strftime("%b")]%>
+              <% else %>
+                <%
+                str_date = "#{event.date.strftime("%d")}-#{DTHelper::MONTHS_ES[event.date.strftime("%b")]}"
+                end_date = "#{event.finish_date.strftime("%d")}-#{DTHelper::MONTHS_ES[event.finish_date.strftime("%b")]}"
+                if event.date.strftime("%Y") != event.finish_date.strftime("%Y")
+                  str_date += "-#{event.date.strftime("%Y")}"
+                  end_date += "-#{event.finish_date.strftime("%Y")}"
+                end
+                %>
+                <%=t("event.starts")%>: <%=str_date%><br/>
+                <%=t("event.finishes")%>: <%=end_date%>
+              <% end %>
+            </div>
+
+            <!-- Horario -->
+            <div class="col-sm-2 no-hpadding">
+              <%=t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
+              <% if event.is_online || event.is_blended_learning %>
+                <br/><%=event.place%>
+              <% end %>
+            </div>
+
+            <!-- Facilitadores -->
+            <div class="col-sm-2 no-hpadding">
+                <%= erb :'_events/_with_cotrainer' %>
+            </div>
+
+            <!-- Lugar -->
+            <div class="col-sm-2 no-hpadding">
+              <% if @event.is_online %>
+                Online<br/>
+              <% else %>
+                <%=@event.place%><br/>
+                <%=@event.address%><br/>
+                <%=@event.city%>, <%=@event.country%>
+              <% end %>
+            </div>
+
+            <!-- Precio -->
+            <div class="col-sm-2 no-hpadding">
+              <% if @event.show_pricing %>
+                <strong>
+                <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
+                <%= money_format(@event.list_price) %></strong><br/>
+
+                <% if @event.eb_price > 0 %>
+                  <%=t("event.early_bird_until")%> <strong>
+                    <%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
+                  </strong>:
+                  <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
+                  <%= money_format(@event.eb_price) %>
+                  <br/>
+                <% end %>
+
+                <% if @event.couples_eb_price > 0 %>
+                  <%=t("event.early_bird_couples_until")%> <strong>
+                  <%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
+                </strong>:
+                  <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
+                  <%= money_format(@event.couples_eb_price) %><br/>
+                <% end %>
+
+
+              <% else %>
+                &nbsp;
+              <% end %>
+            </div>
+
+            <!-- boton -->
+            <div class="col-sm-2 no-hpadding">
+              <span class="btn-buy">
+                <%= erb :event_type_p_register %>
+              </span>
+            </div>
+          </div>
+        <% end %>
+
