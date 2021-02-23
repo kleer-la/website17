@@ -253,6 +253,23 @@ h2 {
 	text-align: center;
 }
 
+.klabel-calendar-container {
+	text-align: center;
+}
+
+.klabel-calendar {
+	background-color: #ffffff;
+	text-align: center;
+	height: auto;
+	font-weight: bold;
+	transform:rotate(5deg);
+	-ms-transform:rotate(5deg);
+	-webkit-transform:rotate(5deg);
+	margin-left: 5px;
+	box-shadow:5px 5px #a4a4a4;
+	text-align: center;
+}
+
 .btn-kleer {
 	box-shadow:5px 5px #a4a4a4;
 	transform:rotate(-2deg);

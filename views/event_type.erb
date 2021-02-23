@@ -17,6 +17,7 @@
     <div class="container">
       <!-- EDICIONES ABIERTAS -->
       <% if @event_type.public_editions.size > 0 %>
+          <h2><%=t("event.public_editions")%></h2>
           <%= erb :event_type_p_editions %>
       <% else %>
           &nbsp; <br/>
@@ -34,7 +35,7 @@
     <div class="col-md-8 evento-description-container">
 
       <h2><i><%= @event_type.subtitle %></i></h2>
-      <p><%= @event_type.duration%> <%=t("event.duration")%></p>
+      <h3><%= @event_type.duration%> <%=t("event.duration")%></h3>
       <p class="elevatorPitch"><%= @event_type.elevator_pitch %></p>
 
       <h2><%=t("event.tabs.description")%></h2>
