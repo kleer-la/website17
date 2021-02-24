@@ -18,7 +18,7 @@
         <% if @same_trainer %>
           <div class="fondo-amarillo slide-evento-logistics">
             <div class="container">
-              <div class="row logistic-edition">
+              <div class="row">
                   <% @event = @event_type.public_editions[0] %>
                   <%= erb :'_events/_with_cotrainer' %>
               </div>
@@ -39,7 +39,7 @@
 
             <div class="container">
 
-              <div class="row logistic-edition">
+              <div class="row logistic-indicator">
                 <div class="col-sm-2 no-hpadding">
 
                   <%
@@ -60,9 +60,10 @@
                   end
                   date_line += "</tr></table>"
                   %>
-                  <div class="klabel-calendar"><%=date_line%></div>
 
-
+                  <div class="col-xs-4"> &nbsp; </div>
+                  <div class="col-xs-4 klabel-calendar"><%=date_line%></div>
+                  <div class="col-xs-4"> &nbsp; </div>
 
                 </div>
 

@@ -6,24 +6,22 @@
 	</div>
 </div>
 
-<!-- PEDIDOS IN-COMPANY -->
 <div class="container-fluid fondo-blanco">
-    <div class="container">
-  </div>
-</div>
+  <!-- EDICIONES ABIERTAS -->
+  <div class="container">
+    <% if @event_type.public_editions.size > 0 %>
+        <h2><%=t("event.public_editions")%></h2>
+        <%= erb :event_type_p_editions %>
+    <% else %>
+        &nbsp; <br/>
+    <% end %>
 
-<div class="container-fluid fondo-blanco">
-  <div class="fondo-amarillo slide-evento-logistics">
-    <div class="container">
-      <!-- EDICIONES ABIERTAS -->
-      <% if @event_type.public_editions.size > 0 %>
-          <h2><%=t("event.public_editions")%></h2>
-          <%= erb :event_type_p_editions %>
-      <% else %>
-          &nbsp; <br/>
-      <% end %>
-          <a href="mailto:entrenamos@kleer.la?subject=<%= @event_type.name %>&body=<%=t("mail_landing.content")%>" class="btn btn-kleer btn-caps" title="<%=t("mail_landing.alt")%>"><%=t("mail_landing.title")%></a>
-          <br/>
+    <!-- PEDIDOS IN-COMPANY -->
+    <div class="fondo-amarillo slide-evento-logistics">
+      <div class="container">
+            <a href="mailto:entrenamos@kleer.la?subject=<%= @event_type.name %>&body=<%=t("mail_landing.content")%>" class="btn btn-kleer btn-caps" title="<%=t("mail_landing.alt")%>"><%=t("mail_landing.title")%></a>
+            <br/>
+      </div>
     </div>
   </div>
 </div>
