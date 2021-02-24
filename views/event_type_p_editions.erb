@@ -40,8 +40,9 @@
             <div class="container">
 
               <div class="row logistic-indicator">
-                <div class="col-sm-2 no-hpadding">
+                <div class="col-xs-12 col-sm-3 no-hpadding">
 
+                  <!-- Fechas -->
                   <%
                   date_line = "<table border=\"0\" align=\"center\" cellpadding=\"2\"><tr>"
                   if event.date != event.finish_date && !event.finish_date.nil?
@@ -68,7 +69,7 @@
                 </div>
 
                 <!-- Horario -->
-                <div class="col-sm-2 no-hpadding">
+                <div class="col-xs-12 col-sm-2 no-hpadding">
                   <%=t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
                   <% if event.is_online || event.is_blended_learning %>
                     <br/><%=event.place%>
@@ -76,7 +77,7 @@
                 </div>
 
                 <!-- Precio -->
-                <div class="col-sm-2 no-hpadding">
+                <div class="col-xs-6 col-sm-2 no-hpadding">
                   <% if @event.show_pricing %>
                     <strong>
                     <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
@@ -87,7 +88,7 @@
                 </div>
 
                 <!-- Early Bird -->
-                <div class="col-sm-2 no-hpadding">
+                <div class="col-xs-6 col-sm-2 no-hpadding">
                   <% if @event.show_pricing && @event.eb_price > 0 %>
                       <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
                       <%= money_format(@event.eb_price) %><br/>
@@ -101,26 +102,9 @@
                   <% end %>
                 </div>
 
-                <!-- Early Bird Parejas -->
-                <div class="col-sm-2 no-hpadding">
-                  <% if false &&  @event.show_pricing && @event.couples_eb_price > 0 %>
-                    <%=t("event.early_bird_couples")%><br/>
-                    <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
-                    <%= money_format(@event.couples_eb_price) %><br/>
-                    <%=t("event.early_bird_until")%> 
-                    <strong>
-                      <%=@event.eb_end_date.strftime("%d")%>-<%=month_es(@event.eb_end_date.strftime("%b"))%>
-                    </strong>
-                  <% else %>
-                    &nbsp;
-                  <% end %>
-                </div>
-
                 <!-- boton -->
-                <div class="col-sm-2 no-hpadding">
-                  <span class="btn-buy">
-                    <%= erb :event_type_p_register %>
-                  </span>
+                <div class="col-xs-12 col-sm-3 no-hpadding">
+                  <span class="btn-buy"> <%= erb :event_type_p_register %> </span>
                 </div>
 
               </div>
