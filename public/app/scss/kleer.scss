@@ -1150,6 +1150,12 @@ a.lower {
       margin: 30px 0 0 27px;
     }
   }
+  .slide-evento-logistics .logistic-indicator .btn-buy {
+    margin: 20px 20px 0 20px;
+  }
+  .slide-evento-logistics .logistic-indicator .less-price {
+    margin-top: 15px;
+  }
 }
 .fondo-amarillo .btn {
   margin-bottom: 10px;
@@ -1351,6 +1357,9 @@ p.lead {
 .fondo-celeste {
   background-color: #7bcaea;
 }
+.fondo-gris {
+  background-color: #e6eae6;
+}
 .slide-home-newsletter {
   text-align: center;
   padding: 20px;
@@ -1454,13 +1463,36 @@ ul.featured-icons {
   padding-bottom: 5px;
 }
 
-.klabel-calendar {
-  min-width: 70px !important;
+.klabel-calendar td {
   font-size: 12px;
   background: #ffffff;
   background-color:rgba(255, 255, 255, 0.8);
-  padding-top: 5px;
-  padding-bottom: 5px;
+}
+.klabel-calendar tr:first-child td:first-child {
+  border-radius: 5px 0 0 0;
+  padding: 5px 0 0 5px;
+}
+.klabel-calendar tr:first-child td:last-child {
+  border-radius: 0 5px 0 0;
+  padding: 5px 5px 0 0;
+}
+.klabel-calendar tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+  padding: 0 0 5px 5px;
+}
+.klabel-calendar tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+  padding: 0 5px 5px 0;
+}
+.slide-evento-logistics.in-company {
+  border-top: solid 1px #ffc801;
+  text-align: right;
+}
+.fondo-gris.slide-evento-logistics.first-slide {
+  border-radius: 4px 4px 0 0;
+}
+.fondo-gris.slide-evento-logistics:last-child {
+  border-radius: 0 0 4px 4px;
 }
 .post-it-success {
   padding-bottom: 20px;
@@ -1577,7 +1609,7 @@ h3.list-group-item-heading {
 
 .slide-evento-logistics {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   font-size: 10pt;
   .img-circle {
     width: auto;
@@ -1591,6 +1623,9 @@ h3.list-group-item-heading {
     margin-bottom: 15px;
     text-align: left;
   }
+  .btn-kleer {
+    margin: 0;
+  }
 }
 .slide-evento-pricing {
   padding-top: 10px;
@@ -1599,7 +1634,6 @@ h3.list-group-item-heading {
 }
 .logistic-indicator {
   text-align: center;
-  padding-right: 10px;
 }
 .img-experiencia {
   width: 100%;
