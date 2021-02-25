@@ -8,13 +8,13 @@ require 'money'
 require 'rss'
 require 'escape_utils'
 
-require File.join(File.dirname(__FILE__),'/lib/keventer_reader')
-require File.join(File.dirname(__FILE__),'/lib/dt_helper')
-require File.join(File.dirname(__FILE__),'/lib/twitter_card')
-require File.join(File.dirname(__FILE__),'/lib/twitter_reader')
-require File.join(File.dirname(__FILE__),'/lib/pdf_catalog')
-require File.join(File.dirname(__FILE__),'/lib/crm_connector')
-require File.join(File.dirname(__FILE__),'/lib/toggle')
+require './lib/keventer_reader'
+require './lib/dt_helper'
+require './lib/twitter_card'
+require './lib/twitter_reader'
+require './lib/pdf_catalog'
+require './lib/crm_connector'
+require './lib/toggle'
 
 if production?
     require 'rack/ssl-enforcer'
@@ -124,8 +124,6 @@ end
 get '/blog' do
   @active_tab_blog = "active"
   @rss = RSS::Parser.parse('https://medium.com/feed/kleer', false)
-#  EXPERIMENT: Kleer Blog
-#  @rss = RSS::Parser.parse('https://feed.informer.com/digests/FBQRCLIHGO/feeder.rss', false)
   erb :blog, :layout => :layout_2017
 end
 
@@ -285,6 +283,7 @@ get '/categoria/:category_codename' do
   end
 end
 
+# Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
 get '/entrenamos/evento/:event_id_with_name' do
   event_id_with_name = params[:event_id_with_name]
   event_id = event_id_with_name.split('-')[0]
@@ -296,20 +295,39 @@ get '/entrenamos/evento/:event_id_with_name' do
     flash.now[:error] = get_course_not_found_error()
     erb :error404_to_calendar
   else
-    @active_tab_entrenamos = "active"
-    @twitter_card = create_twitter_card( @event )
-    @page_title = "Kleer - " + @event.friendly_title
+    uri = "/cursos/#{ @event.event_type.id }-#{@event.event_type.name }"
 
-    #@tracking_parameters = ""
-    if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
-      @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
-    else
-      @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
-    end
-
-    erb :event, :layout => :layout_2017
+    redirect uri #, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
   end
 end
+
+# MUEREN LAS PAGINAS TEMPORALES PARA CADA EVENTO 
+#
+# get '/entrenamos/evento/:event_id_with_name' do
+#   event_id_with_name = params[:event_id_with_name]
+#   event_id = event_id_with_name.split('-')[0]
+#   if is_valid_id(event_id)
+#     @event = KeventerReader.instance.event(event_id, true)
+#   end
+
+#   if @event.nil?
+#     flash.now[:error] = get_course_not_found_error()
+#     erb :error404_to_calendar
+#   else
+#     @active_tab_entrenamos = "active"
+#     @twitter_card = create_twitter_card( @event )
+#     @page_title = "Kleer - " + @event.friendly_title
+
+#     #@tracking_parameters = ""
+#     if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
+#       @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+#     else
+#       @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
+#     end
+
+#     erb :event, :layout => :layout_2017
+#   end
+# end
 
 get '/catalogo' do
   @active_tab_entrenamos = "active"
@@ -319,6 +337,33 @@ get '/catalogo' do
   erb :catalogo, :layout => :layout_2017
 end
 
+# Nueva (y simplificada) ruta para Tipos de Evento
+get '/cursos/:event_type_id_with_name' do
+  @active_tab_entrenamos = "active"
+
+  event_type_id_with_name = params[:event_type_id_with_name]
+  event_type_id = event_type_id_with_name.split('-')[0]
+
+  if is_valid_id(event_type_id)
+    @event_type = KeventerReader.instance.event_type(event_type_id, true)
+  end
+
+  if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
+    @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
+  else
+    @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
+  end
+
+  if @event_type.nil?
+    flash.now[:error] = get_course_not_found_error()
+    erb :error404_to_calendar
+  else
+    @page_title = "Kleer - " + @event_type.name
+    erb :event_type, :layout => :layout_2017
+  end
+end
+
+# Ruta antigua para Tipos de Evento (redirige a la nueva)
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
   @active_tab_entrenamos = "active"
 
@@ -331,7 +376,6 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
     @event_type = KeventerReader.instance.event_type(event_type_id, true)
   end
 
-  #@tracking_parameters = ""
   if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
     @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
   else
@@ -342,8 +386,6 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
     flash.now[:error] = get_course_not_found_error()
     erb :error404_to_calendar
   else
-   # @active_tab_entrenamos = "active"
-   # @twitter_card = create_twitter_card( @event )
     @page_title = "Kleer - " + @event_type.name
     erb :event_type, :layout => :layout_2017
   end
@@ -582,7 +624,7 @@ end
 
 get '/entrenamos/eventos/proximos' do
   content_type :json
-  DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_commercial_events(), true, "entrenamos")
+  DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_commercial_events(), true, "cursos")
 end
 
 get '/entrenamos/eventos/proximos/:amount' do
@@ -591,36 +633,39 @@ get '/entrenamos/eventos/proximos/:amount' do
   if !amount.nil?
     amount = amount.to_i
   end
-  DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_commercial_events(), true, "entrenamos", I18n, session[:locale], amount, false)
+  DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_commercial_events(), true, "cursos", I18n, session[:locale], amount, false)
 end
 
 get '/entrenamos/eventos/pais/:country_iso_code' do
   content_type :json
   country_iso_code = params[:country_iso_code]
-  if (!is_valid_country_iso_code(country_iso_code, "entrenamos"))
+  if (!is_valid_country_iso_code(country_iso_code, "cursos"))
     country_iso_code = "todos"
   end
   session[:filter_country]= country_iso_code
-  DTHelper::to_dt_event_array_json(KeventerReader.instance.commercial_events_by_country(country_iso_code), false, "entrenamos", I18n, session[:locale])
+  DTHelper::to_dt_event_array_json(KeventerReader.instance.commercial_events_by_country(country_iso_code), false, "cursos", I18n, session[:locale])
 end
+#BACK
 
-get '/comunidad/eventos/proximos/:amount' do
-  content_type :json
-  amount = params[:amount]
-  if !amount.nil?
-    amount = amount.to_i
-  end
-  DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_community_events(), true, "comunidad", I18n, session[:locale], amount, false)
-end
+# COMUNIDAD no existe más en el sitio - DESACTIVADO 25 feb 2021
+#
+# get '/comunidad/eventos/proximos/:amount' do
+#   content_type :json
+#   amount = params[:amount]
+#   if !amount.nil?
+#     amount = amount.to_i
+#   end
+#   DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_community_events(), true, "comunidad", I18n, session[:locale], amount, false)
+# end
 
-get '/comunidad/eventos/pais/:country_iso_code' do
-  content_type :json
-  country_iso_code = params[:country_iso_code]
-  if (!is_valid_country_iso_code(country_iso_code, "comunidad"))
-    country_iso_code = "todos"
-  end
-  DTHelper::to_dt_event_array_json(KeventerReader.instance.community_events_by_country(country_iso_code), false, "comunidad", I18n, session[:locale])
-end
+# get '/comunidad/eventos/pais/:country_iso_code' do
+#   content_type :json
+#   country_iso_code = params[:country_iso_code]
+#   if (!is_valid_country_iso_code(country_iso_code, "comunidad"))
+#     country_iso_code = "todos"
+#   end
+#   DTHelper::to_dt_event_array_json(KeventerReader.instance.community_events_by_country(country_iso_code), false, "comunidad", I18n, session[:locale])
+# end
 
 # STATIC FILES ==============
 

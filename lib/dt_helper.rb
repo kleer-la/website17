@@ -7,7 +7,7 @@ class DTHelper
   MONTHS_ES = { "Jan" => "Ene", "Feb" => "Feb", "Mar" => "Mar", "Apr" => "Abr", "May" => "May", "Jun" => "Jun",
                 "Jul" => "Jul", "Aug" => "Ago", "Sep" => "Sep", "Oct" => "Oct", "Nov" => "Nov", "Dec" => "Dic"}
 
-  def self.to_dt_event_array_json(events, remote = true, event_details_path = "entrenamos", i18n = I18n, locale = "es", amount = nil, registration_btn = true)
+  def self.to_dt_event_array_json(events, remote = true, event_details_path = "cursos", i18n = I18n, locale = "es", amount = nil, registration_btn = true)
     result = Array.new
 
     printed = 0
@@ -23,7 +23,7 @@ class DTHelper
     "{ \"data\": " + result.to_json + "}"
   end
 
-  def self.event_result_json(event, remote = true, event_details_path = "entrenamos", i18n, locale, registration_btn)
+  def self.event_result_json(event, remote = true, event_details_path = "cursos", i18n, locale, registration_btn)
     result = Array.new
 
     date_line = "<table border=\"0\" align=\"center\" cellpadding=\"2\"><tr>"
@@ -45,8 +45,11 @@ class DTHelper
 
     result << "<div class=\"klabel-date\" style=\"width:#{post_it_width}\">#{date_line}</div>"
 
-
-    href = "href=\"/"+locale+"/"+event_details_path+"/evento/" + url_sanitize(event.uri_path) +'"'
+    # VERSION ANTERIOR QUE IBA UNA PAGINA POR EDICION
+    # href = "href=\"/"+locale+"/"+event_details_path+"/evento/" + url_sanitize(event.uri_path) +'"'
+    
+    # Nueva versión yendo al tipo de evento
+    href = "href=\"/"+locale+"/cursos/" + url_sanitize(event.event_type.uri_path) +'"'
     unless event.event_type.external_site_url.to_s.empty?
       href = "href=#{event.event_type.external_site_url}"
     end
@@ -54,6 +57,9 @@ class DTHelper
     line += href
     line += ' title="'+event.event_type.subtitle+'"'
     line += ">" + event.event_type.name + "</a><br/>"
+    if event.is_sold_out
+      line += "<strong>CUPOS AGOTADOS</strong><br/>"
+    end
     if event.specific_subtitle != ""
       line += event.specific_subtitle + "<br/>"
     end
