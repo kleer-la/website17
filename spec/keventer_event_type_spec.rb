@@ -88,7 +88,7 @@ describe KeventerEventType do
   end
 
   context "Loding from xml" do
-    def build_and_parse(xml_element)
+    def build_and_parse(xml_element='')
       initial = %(<?xml version="1.0" encoding="UTF-8"?>
       <event-type>
         <average-rating type="decimal" nil="true"/>
@@ -140,7 +140,12 @@ describe KeventerEventType do
 
       expect(@keventtype.subtitle).to eq("Good to see you!")
     end
+    
+    it "should have categories" do
+      @keventtype.load build_and_parse
 
+      expect(@keventtype.categories).to eq [[3,"clientes"]]
+    end
 
   end
 
