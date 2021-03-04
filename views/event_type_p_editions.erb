@@ -64,14 +64,15 @@
                   <div class="wrap-info">
                     <div class="klabel-calendar"><%=date_line%></div>
 
-                    <!-- @Alu: el botón solamente va si hay algo cargado en ese campo -->
-                    <% if !@event.specific_conditions.nil? && @event.specific_conditions.strip != "" %>
-                      <button type="button" class="btn btn-kleer btn-small" data-toggle="modal" data-target="#myModal">
-                      <i class="fa fa-info"></i></button>
-                      <!-- @Alu: id para divs, Titulo y texto (html) -->
+                    <!-- botón INFO solamente si hay algo condiciones especificas del evento -->
+                    <% info_popup = !@event.specific_conditions.nil? && @event.specific_conditions.strip != "" %>
+                    <% if info_popup %>
+                      <!-- id para el popup, Titulo y texto (html) -->
                       <% info_name = "info_#{counter}" %>
                       <% info_title = t("event.important") %>
                       <% info_text = @markdown_renderer.render( @event.specific_conditions.to_s ) %>
+                      <button type="button" class="btn btn-kleer btn-small" data-toggle="modal" data-target="#<%= info_name %>">
+                      <i class="fa fa-info"></i></button>
                     <% end %>
                     
                   </div>
@@ -121,18 +122,17 @@
           </div>
 
           <!-- Modal -->
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal fade" id="<%= info_name %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   <h4 class="modal-title" id="myModalLabel">
-                      <% info_title = t("event.important") %>
+                      <%= info_title %>
                   </h4>
                 </div>
                 <div class="modal-body">
-                  <% info_name = "info_#{counter}" %>
-                  <% info_text = @markdown_renderer.render( @event.specific_conditions.to_s ) %>
+                  <%= info_text %>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-kleer" data-dismiss="modal">Cerrar</button>
@@ -141,9 +141,9 @@
             </div>
           </div>
 
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
           
 
           <% counter += 1 %>
         <% end %>
 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
