@@ -16,7 +16,7 @@
         %>
 
         <% if @same_trainer %>
-          <div class="fondo-gris slide-evento-logistics first-slide">
+          <div class="fondo-marron slide-evento-logistics first-slide">
             <div class="container">
               <div class="row">
                   <% @event = @event_type.public_editions[0] %>
@@ -39,7 +39,7 @@
             <div class="text-center">
 
               <div class="row logistic-indicator">
-                <div class="col-xs-4 col-sm-3">
+                <div class="col-xs-5 col-sm-3">
 
                   <!-- Fechas -->
                   <%
@@ -61,20 +61,24 @@
                   date_line += "</tr></table>"
                   %>
 
-                  <div class="klabel-calendar"><%=date_line%></div>
+                  <div class="wrap-info">
+                    <div class="klabel-calendar"><%=date_line%></div>
 
-                  <!-- @Alu: el botón solamente va si hay algo cargado en ese campo -->
-                  <% if !@event.specific_conditions.nil? && @event.specific_conditions.strip != "" %>
-                    <!-- @Alu: id para divs, Titulo y texto (html) -->
-                    <% info_name = "info_#{counter}" %>
-                    <% info_title = t("event.important") %>
-                    <% info_text = @markdown_renderer.render( @event.specific_conditions.to_s ) %>
-                  <% end %>
-                  
+                    <!-- @Alu: el botón solamente va si hay algo cargado en ese campo -->
+                    <% if !@event.specific_conditions.nil? && @event.specific_conditions.strip != "" %>
+                      <button type="button" class="btn btn-kleer btn-small" data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-info"></i></button>
+                      <!-- @Alu: id para divs, Titulo y texto (html) -->
+                      <% info_name = "info_#{counter}" %>
+                      <% info_title = t("event.important") %>
+                      <% info_text = @markdown_renderer.render( @event.specific_conditions.to_s ) %>
+                    <% end %>
+                    
+                  </div>
                 </div>
 
                 <!-- Horario -->
-                <div class="col-xs-8 col-sm-2">
+                <div class="col-xs-7 col-sm-2">
                   <%=t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
                   <% if event.is_online || event.is_blended_learning %>
                     <br/><%=event.place%>
@@ -82,7 +86,7 @@
                 </div>
 
                 <!-- Precio -->
-                <div class="col-xs-8 col-xs-offset-4 col-sm-offset-0 col-sm-2">
+                <div class="col-xs-7 col-xs-offset-5 col-sm-offset-0 col-sm-2">
                   <% if @event.show_pricing %>
                     <strong>
                     <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
@@ -93,7 +97,7 @@
                 </div>
 
                 <!-- Early Bird -->
-                <div class="col-xs-8 col-xs-offset-4 col-sm-offset-0 col-sm-2 less-price">
+                <div class="col-xs-7 col-xs-offset-5 col-sm-offset-0 col-sm-2 less-price">
                   <% if @event.show_pricing && @event.eb_price > 0 %>
                       <%= "#{@event.currency_iso_code}#{currency_symbol_for( @event.currency_iso_code )}" %>
                       <%= money_format(@event.eb_price) %><br/>
@@ -115,6 +119,30 @@
               </div>
             </div>
           </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">
+                      <% info_title = t("event.important") %>
+                  </h4>
+                </div>
+                <div class="modal-body">
+                  <% info_name = "info_#{counter}" %>
+                  <% info_text = @markdown_renderer.render( @event.specific_conditions.to_s ) %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-kleer" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+          
 
           <% counter += 1 %>
         <% end %>

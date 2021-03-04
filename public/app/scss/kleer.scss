@@ -1357,8 +1357,8 @@ p.lead {
 .fondo-celeste {
   background-color: #7bcaea;
 }
-.fondo-gris {
-  background-color: #e6eae6;
+.fondo-marron {
+  background-color: #FCDC2D;
 }
 .slide-home-newsletter {
   text-align: center;
@@ -1429,6 +1429,16 @@ p.lead {
     }
   }
 }
+
+.logistic-indicator .wrap-info {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.logistic-indicator .wrap-info .klabel-calendar {
+  margin-right: 10px;
+}
 ul.featured-icons {
   cursor: default;
   margin: 0 0 0 0;
@@ -1447,7 +1457,6 @@ ul.featured-icons {
   ul.featured-icons li {
     width: 25%;
   }
-
 }
 @media (max-width: 991px) {
   .container-fluid.containerWithPadding .col-md-3,
@@ -1686,6 +1695,9 @@ h3.list-group-item-heading {
   outline: none;
 }
 @media (max-width: 768px) {
+  .slide-evento-logistics.in-company {
+    text-align: center;
+  }
   .slide-home-newsletter {
     background-position-x: 100%;
     background-size: 30%;
@@ -1919,4 +1931,9 @@ p.feed-item-desc {
       background: url('/img/icons/share-linkedin.png') no-repeat;
     }
   }
+}
+.btn-buy .btn.btn-danger.btn-kleer {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  pointer-events: none;
 }
