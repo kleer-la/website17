@@ -32,22 +32,6 @@ When /^I press "(.*)"$/ do |name|
 	click_button(name)
 end
 
-Given /^theres only one event$/ do
-  stub_connector
-end
-
-Given /^theres only one event for the following two months$/ do
-  stub_connector( "just_two_events.xml")
-end
-
-Given /^there are two events$/ do
-  stub_connector( "just_two_events.xml")
-end
-
-Given /^there are many events$/ do
-  stub_connector( "events.xml")
-end
-
  When /^I visit the home page$/ do
    stub_connector
    visit '/'

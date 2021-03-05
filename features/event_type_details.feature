@@ -9,6 +9,14 @@ Feature: Event Type Details
 		And I should see " principios fundamentales de las metodologías ágiles y de Scrum"
 		And I should see "Este taller práctico de un día provee a los asistentes"
 
+	Scenario: Detalle de Evento con varias fechas programadas
+		Given theres an event type with several editions
+		When I visit the event type full page
+		Then the page title should be "Taller Popular de Scrum"
+		And I should see "01"
+		And I should see "05"
+
+
 	Scenario: Detalle de Evento Comunitario
 		Given there are community event type
 		When I visit the community event type page
@@ -18,8 +26,6 @@ Feature: Event Type Details
 	Scenario: Detalle de Evento Inexistente
 		When I visit a non existing event type page
 		Then I should see "El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado."
-#		And I should see "Te invitamos a visitar nuestro calendario para ver los cursos vigentes y probables nuevas fechas para el curso que estás buscando."
-#		And I should see a link to "/entrenamos" with text "Ver Calendario de Cursos >>"
 
 	Scenario: Detalle muestra subtitulo
 		Given there is a event type with subtitle

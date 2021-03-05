@@ -25,12 +25,7 @@ Feature: Page Titles
 	Scenario: Somos Title
 		Given I visit the "somos" page
 		Then the page title should be "Kleer - Agile Coaching & Training | Somos"
-	
-	Scenario: Detalle de Evento
-		Given theres only one event
-		When I visit the event page
-		Then the page title should be "Workshop de Retrospectivas - Buenos Aires"
-		
+			
 	Scenario: Landing de Categoria
 		Given I visit the "high-performance" categoria page
 		Then the page title should be "Kleer - Agile Coaching & Training | High Performance"

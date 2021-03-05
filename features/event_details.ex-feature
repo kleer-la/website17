@@ -23,7 +23,7 @@ Feature: Event Details
 		And I should see "Kleer, Tucumán 373 1er Piso"
 		And I should see "Buenos Aires"
 		And I should see "Argentina"
-		And I should see "Facilitador:"
+		And I should see "Facilitado por:"
 		And I should see "Raul Gorgonzola"
 		And I should see "09"
 		And I should see "Ene"

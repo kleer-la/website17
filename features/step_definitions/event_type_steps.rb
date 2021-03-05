@@ -19,8 +19,16 @@ Given(/^theres an event type$/) do
     get_event_type(4)
 end
 
+Given(/^theres an event type with several editions$/) do
+    get_event_type(2)
+end
+
 When(/^I visit the plain event type page$/) do
   visit '/categoria/productos-robustos/cursos/4-xxx'
+end
+
+When('I visit the event type full page') do
+  visit '/categoria/productos-robustos/cursos/2-yyy'
 end
 
 Given(/^there are community event type$/) do

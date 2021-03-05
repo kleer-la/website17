@@ -1257,6 +1257,14 @@ a.lower {
   .carousel-caption.slider3 .text-vertical {
     margin: 30px 0 0 27px;
   }
+
+  .slide-evento-logistics .logistic-indicator .btn-buy {
+    margin: 20px 20px 0 20px;
+  }
+
+  .slide-evento-logistics .logistic-indicator .less-price {
+    margin-top: 15px;
+  }
 }
 .fondo-amarillo .btn {
   margin-bottom: 10px;
@@ -1482,6 +1490,10 @@ p.lead {
   background-color: #7bcaea;
 }
 
+.fondo-marron {
+  background-color: #FCDC2D;
+}
+
 .slide-home-newsletter {
   text-align: center;
   padding: 20px;
@@ -1563,6 +1575,17 @@ p.lead {
   color: #000;
 }
 
+.logistic-indicator .wrap-info {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.logistic-indicator .wrap-info .klabel-calendar {
+  margin-right: 10px;
+}
+
 ul.featured-icons {
   cursor: default;
   margin: 0 0 0 0;
@@ -1595,6 +1618,45 @@ ul.featured-icons li {
   background: #ffe600;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.klabel-calendar td {
+  font-size: 12px;
+  background: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.klabel-calendar tr:first-child td:first-child {
+  border-radius: 5px 0 0 0;
+  padding: 5px 0 0 5px;
+}
+
+.klabel-calendar tr:first-child td:last-child {
+  border-radius: 0 5px 0 0;
+  padding: 5px 5px 0 0;
+}
+
+.klabel-calendar tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+  padding: 0 0 5px 5px;
+}
+
+.klabel-calendar tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+  padding: 0 5px 5px 0;
+}
+
+.slide-evento-logistics.in-company {
+  border-top: solid 1px #ffc801;
+  text-align: right;
+}
+
+.fondo-gris.slide-evento-logistics.first-slide {
+  border-radius: 4px 4px 0 0;
+}
+
+.fondo-gris.slide-evento-logistics:last-child {
+  border-radius: 0 0 4px 4px;
 }
 
 .post-it-success {
@@ -1730,7 +1792,7 @@ h3.list-group-item-heading {
 
 .slide-evento-logistics {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   font-size: 10pt;
 }
 .slide-evento-logistics .img-circle {
@@ -1745,6 +1807,9 @@ h3.list-group-item-heading {
   margin-bottom: 15px;
   text-align: left;
 }
+.slide-evento-logistics .btn-kleer {
+  margin: 0;
+}
 
 .slide-evento-pricing {
   padding-top: 10px;
@@ -1753,8 +1818,7 @@ h3.list-group-item-heading {
 }
 
 .logistic-indicator {
-  text-align: right;
-  padding-right: 10px;
+  text-align: center;
 }
 
 .img-experiencia {
@@ -1819,6 +1883,10 @@ h3.list-group-item-heading {
 }
 
 @media (max-width: 768px) {
+  .slide-evento-logistics.in-company {
+    text-align: center;
+  }
+
   .slide-home-newsletter {
     background-position-x: 100%;
     background-size: 30%;
@@ -1922,7 +1990,6 @@ p.feed-item-desc a, p.feed-item-desc a:link, p.feed-item-desc a span {
 }
 
 .fondo-blanco .container .evento-description-container {
-  padding-top: 45px;
   padding-bottom: 80px;
 }
 .fondo-blanco .container .evento-description-container iframe {
@@ -2070,6 +2137,12 @@ p.feed-item-desc a, p.feed-item-desc a:link, p.feed-item-desc a span {
 }
 .share-buttons .share.share-linkedin {
   background: url("/img/icons/share-linkedin.png") no-repeat;
+}
+
+.btn-buy .btn.btn-danger.btn-kleer {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=kleer.css.map */

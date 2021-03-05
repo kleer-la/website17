@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  website17:
+    image: ruby:2.6 
+    container_name: website17
+    ports:
+      - '4567:4567'
+    volumes:
+      - .:/app
+    tty: true

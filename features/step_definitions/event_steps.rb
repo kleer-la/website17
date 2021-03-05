@@ -1,6 +1,22 @@
 #encoding: utf-8
 require File.join(File.dirname(__FILE__),'../../lib/keventer_reader')
 
+Given /^theres only one event$/ do
+  stub_connector
+end
+
+Given /^theres only one event for the following two months$/ do
+  stub_connector( "just_two_events.xml")
+end
+
+Given /^there are two events$/ do
+  stub_connector( "just_two_events.xml")
+end
+
+Given /^there are many events$/ do
+  stub_connector( "events.xml")
+end
+
 Then(/^the registration link has "(.*?)"$/) do |text|
   last_response.body.should have_selector("a.btn.btn-success") do |element|
     element.to_html.should =~ /#{text}/m
@@ -8,11 +24,11 @@ Then(/^the registration link has "(.*?)"$/) do |text|
 end
 
 When(/^I visit the "(.*?)" plain event page$/) do |loc|
-  visit "/#{loc}/entrenamos/evento/44/remote"
+  visit "/#{loc}/cursos/13-/remote"
 end
 
 When(/^I visit the "(.*?)" event page$/) do |loc|
-  visit "/#{loc}/entrenamos/evento/44"
+  visit "/#{loc}/cursos/13-"
 end
 
 Given(/^theres one event with subtitle$/) do
@@ -24,15 +40,11 @@ Given(/^theres only one community event w\/cotrainer$/) do
 end
 
 When /^I visit the event page$/ do
-  visit '/entrenamos/evento/44-workshop-de-retrospectivas-buenos-aires'
+  visit '/cursos/13-workshop-de-retrospectivas'
 end
 
 When /^I visit the event page with tracking$/ do
-  visit '/entrenamos/evento/44-workshop-de-retrospectivas-buenos-aires?utm_source=cucumber&utm_campaign=feature_test'
-end
-
-When /^I visit the community event page$/ do
-  visit '/comunidad/evento/60-yoseki-coding-dojo-buenos-aires'
+  visit '/cursos/13-workshop-de-retrospectivas?utm_source=cucumber&utm_campaign=feature_test'
 end
 
 Then(/^I should see a registration link with tracking$/) do
