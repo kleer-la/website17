@@ -212,14 +212,14 @@ en:
                     title: "Poster de Scrum"
                     description: "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores."
                     link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
-                    info: <a href='http://www.kleer.la/posters/scrum' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    info: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>"
                     autores: "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>"
             recurso9:
                     title: "Extreme Programming"
-                    description: ""
+                    description: "Lámina con la prácticas principales de eXtreme Programming, el marco de trabajo para desarrollo de software que nació en paralelo con Scrum y que actualmente sigue siendo el complemento ideal que promueve la excelencia técnica en equipos de desarrollo de software."
                     link: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf' class='btn btn-sm btn-info btn-kleer'>Link</a>
-                    info: <a href='http://www.kleer.la/posters/xp' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    info: <a href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     tags: "<span>XP</span> <span>extreme programming</span> <span>pair programming</span><span>scrum</span> <span>desarrollo de software</span>"
                     autores: "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>"
             recurso10:
