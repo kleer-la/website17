@@ -16,6 +16,8 @@ require './lib/pdf_catalog'
 require './lib/crm_connector'
 require './lib/toggle'
 
+require './lib/event_type'
+
 if production?
     require 'rack/ssl-enforcer'
     use Rack::SslEnforcer
@@ -373,6 +375,7 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
   @category = KeventerReader.instance.category params[:category_codename], session[:locale]
 
   if is_valid_id(event_type_id)
+    @event_type = EventType.createKeventer event_type_id
     @event_type = KeventerReader.instance.event_type(event_type_id, true)
   end
 

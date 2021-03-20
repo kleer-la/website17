@@ -1,11 +1,16 @@
 class EventType
   def self.createNull(file)
-    EventType.new NullEventType.new(file)
+    EventType.new XmlAPI.new(file)
+  end
+
+  def self.createKeventer(id)
+    EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
   end
 
   attr_accessor :id, :duration, 
                 :name, :subtitle, :description, :learnings, :takeaways,
-                :goal, :recipients, :program
+                :goal, :recipients, :program,
+                :categories
 
   def initialize(provider)
     @provider= provider
@@ -24,20 +29,34 @@ class EventType
     @faqs  = xml_doc.find('faq').first.content
     @elevator_pitch = xml_doc.find('elevator-pitch').first.content
     @include_in_catalog = to_boolean( xml_doc.find('include-in-catalog').first.content )
+    load_categories xml_doc
   end
 
   def load_string(xml, field)
     element= xml.find("/event-type/#{field}").first
     send("#{field}=", element.content) if not element.nil?
   end
+
+  def load_categories xml_doc
+    @categories= []
+    xml_doc.find('//categories/category').each do |xml_cat|
+      id= xml_cat.find('id').first.content.to_i
+      codename= xml_cat.find('codename').first.content
+      @categories << [id,codename]
+    end
+    @categories
+  end
 end
 
 
-class NullEventType
+class XmlAPI
   attr_accessor :xml_doc
-  def initialize(file)
-    xml= LibXML::XML::Parser.file(file)
-    @xml_doc= xml.parse
+  def initialize(file_uri)
+    begin      
+      xml= LibXML::XML::Parser.file(file_uri)
+      @xml_doc= xml.parse
+    rescue LibXML::XML::Error
+      nil
+    end
   end
-
 end
