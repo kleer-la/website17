@@ -361,6 +361,11 @@ get '/cursos/:event_type_id_with_name' do
     erb :error404_to_calendar
   else
     @page_title = "Kleer - " + @event_type.name
+
+    if @event_type.categories.count > 0
+      # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
+      @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
+    end
     erb :event_type, :layout => :layout_2017
   end
 end
