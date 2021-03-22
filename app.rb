@@ -16,6 +16,8 @@ require './lib/pdf_catalog'
 require './lib/crm_connector'
 require './lib/toggle'
 
+require './lib/event_type'
+
 if production?
     require 'rack/ssl-enforcer'
     use Rack::SslEnforcer
@@ -359,6 +361,11 @@ get '/cursos/:event_type_id_with_name' do
     erb :error404_to_calendar
   else
     @page_title = "Kleer - " + @event_type.name
+
+    if @event_type.categories.count > 0
+      # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
+      @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
+    end
     erb :event_type, :layout => :layout_2017
   end
 end
@@ -373,6 +380,7 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
   @category = KeventerReader.instance.category params[:category_codename], session[:locale]
 
   if is_valid_id(event_type_id)
+    @event_type = EventType.createKeventer event_type_id
     @event_type = KeventerReader.instance.event_type(event_type_id, true)
   end
 
