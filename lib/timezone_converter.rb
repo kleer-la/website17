@@ -24,7 +24,9 @@ Timezones= [
 
 class TimezoneConverter
     def self.timezone(name)
-        (Timezones.detect {|tz| name.match /#{tz[1]}/ } )[0]
+        (
+            Timezones.detect {|tz| name.match /#{tz[1]}/ } 
+        )&.[](0)
     end
 end
 
