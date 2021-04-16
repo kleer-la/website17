@@ -39,7 +39,8 @@ def event_from_parsed_xml(xml_keventer_event)
     event.load xml_keventer_event
     return event
 
-    event.id = xml_keventer_event.find_first('id').content.to_i
+=begin     
+event.id = xml_keventer_event.find_first('id').content.to_i
     event.date = Date.parse( xml_keventer_event.find_first('date').content )
     event.finish_date = validated_Date_parse(xml_keventer_event.find_first('finish-date'))
     # event.human_date = xml_keventer_event.find_first('human-date').content
@@ -78,7 +79,8 @@ def event_from_parsed_xml(xml_keventer_event)
     event.country_code = xml_keventer_event.find_first('country/iso-code').content
     event.currency_iso_code = xml_keventer_event.find_first('currency-iso-code').content
 
-  event
+  event 
+=end
 end
 
 
