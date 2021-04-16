@@ -426,4 +426,28 @@ describe KeventerEvent do
 
   end
 
+  context 'timezone convertion' do
+    context 'generate an url when city is known' do
+      before(:example) do
+        @kevent.date= Date.parse('2015-05-18')
+        @kevent.start_time= DateTime.parse('2000-01-01T09:00:00Z')
+        @kevent.place= '(GMT-05:00) Bogota'
+        an_event_type = KeventerEventType.new
+        an_event_type.name = "CSM Online"
+        @kevent.event_type = an_event_type
+      end
+      it 'name' do
+        expect(@kevent.timezone_url).to include 'msg=CSM+Online'
+      end
+      it 'date & time' do
+        expect(@kevent.timezone_url).to include 'iso=20150518T0900'
+      end
+      it 'city' do
+        expect(@kevent.timezone_url).to include 'p1=41'
+      end
+      it 'whole url' do
+        expect(@kevent.timezone_url).to include 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=CSM+Online&iso=20150518T0900&p1=41&ah=10'
+      end
+    end
+  end
 end

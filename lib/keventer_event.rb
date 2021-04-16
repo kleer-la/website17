@@ -1,3 +1,5 @@
+require './lib/timezone_converter'
+
 class KeventerEvent
     attr_accessor :capacity, :city, :country, :country_code, :event_type, :date,
                   :finish_date, :registration_link, :is_sold_out, :id, :uri_path,
@@ -162,6 +164,15 @@ class KeventerEvent
     @enterprise_6plus_price = event_doc.find_first('enterprise-6plus-price').content.nil? ? 0.0 : event_doc.find_first('enterprise-6plus-price').content.to_f
     @enterprise_11plus_price = event_doc.find_first('enterprise-11plus-price').content.nil? ? 0.0 : event_doc.find_first('enterprise-11plus-price').content.to_f
 
+  end
+  def timezone_url
+    "https://www.timeanddate.com/worldclock/fixedtime.html?" +
+      URI.encode_www_form(
+        msg: @event_type.name, 
+        iso: date.strftime("%Y%m%d") + "T" + start_time.strftime("%H%M"),
+        p1: TimezoneConverter.timezone(place),
+        ah: 10
+      )
   end
 
 end

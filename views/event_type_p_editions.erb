@@ -82,7 +82,9 @@
                 <div class="col-xs-7 col-sm-2">
                   <%=t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
                   <% if event.is_online || event.is_blended_learning %>
-                    <br/><%=event.place%>
+                    <br/><a href="<%= event.timezone_url%>">
+                    <%=event.place%>
+                    </a>
                   <% end %>
                 </div>
 
