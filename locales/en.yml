@@ -16,7 +16,7 @@ en:
         texts:
             loading: "loading..."
     mail_landing:
-        title: "CONSULTAR IN-COMPANY"
+        title: "CONSULTAR"
         alt: "Consultanos para realizar este curso en tu empresa"
         content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
     slider:
