@@ -1,7 +1,6 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__),'../lib/keventer_event_type')
 require 'spec_helper'
+require 'xml'
+require './lib/keventer_event_type'
 
 describe KeventerEventType do
 
@@ -112,9 +111,32 @@ describe KeventerEventType do
         <tag-name></tag-name>
         <takeaways></takeaways>
         <updated-at type="datetime">2014-09-27T17:34:01Z</updated-at>
+      <categories type="array">
+      <category>
+        <codename>organizaciones</codename>
+        <created-at type="datetime">2013-04-19T17:36:06Z</created-at>
+        <description>Proponemos un nuevo enfoque de gestión de organizaciones, áreas, departamentos y equipos de trabajo que se enfoca en las personas y sus interacciones por sobre los procesos y las herramientas utilizadas.
+
+        Las organizaciones y los equipos de trabajo están compuestos por personas y las personas tienen comportamientos, deseos, emociones; no son "recursos". La creación de productos y/o servicios innovadores es, principalmente, una actividad social que tiene lugar dentro de un equipo de personas, en contextos más participativos, colaborativos y humanos. Por consiguiente, la manera más efectiva de mejorar los resultados es mejorando las relaciones que existen entre los miembros y no solamente atendiendo los procesos y las tareas que ellos realizan.
+
+        **Te podemos asistir para lograr que tu organización, área, departamento o equipo de trabajo, logre un nivel de rendimiento superior al actual.**
+
+        Contactate con nosotros en coaching@kleer.la</description>
+        <description-en>We propose a new approach to management of organizations, departments and teams that focuses on people and their interactions over processes and tools used.
+        </description-en>
+        <id type="integer">2</id>
+        <name>Organizaciones asombrosas</name>
+        <name-en>Amazing organizations</name-en>
+        <order type="integer">1</order>
+        <tagline>A partir del aprendizaje, la confianza, el compromiso, la visibilidad y la flexibilidad tu organización, departamento o equipo de trabajo logrará resultados nunca antes vistos.</tagline>
+        <tagline-en>Thru learning, trust, commitment, visibility and flexibility your organization, department or team achieve results never seen before.</tagline-en>
+        <updated-at type="datetime">2014-10-03T11:24:04Z</updated-at>
+        <visible type="boolean">true</visible>
+        </category>
+      </categories>      
       )
       closing= "</event-type>"
-      parser =  LibXML::XML::Parser.string( initial + xml_element + closing )
+      parser =  XML::Parser.string( initial + xml_element + closing )
       doc = parser.parse
       doc.find('/event_type')
       doc
@@ -144,7 +166,7 @@ describe KeventerEventType do
     it "should have categories" do
       @keventtype.load build_and_parse
 
-      expect(@keventtype.categories).to eq [[3,"clientes"]]
+      expect(@keventtype.categories).to eq [[2, "organizaciones"]]
     end
 
   end
