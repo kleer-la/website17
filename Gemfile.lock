@@ -163,10 +163,6 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2020.1)
       tzinfo (>= 1.0.0)
-    webrat (0.7.3)
-      nokogiri (>= 1.2.0)
-      rack (>= 1.0)
-      rack-test (>= 0.5.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.0)
@@ -198,7 +194,6 @@ DEPENDENCIES
   thin
   tzinfo
   tzinfo-data
-  webrat
 
 RUBY VERSION
    ruby 2.6.7p197
