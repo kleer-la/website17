@@ -165,13 +165,6 @@ get '/agilidad-organizacional' do
 	erb :coaching, :layout => :layout_2017
 end
 
-get '/comunidad' do
-  @active_tab_comunidad = "active"
-  @page_title += " | Comunidad"
-  @unique_countries = KeventerReader.instance.unique_countries_for_community_events()
-  erb :comunidad
-end
-
 get '/live' do
   @active_tab_comunidad = "active"
   redirect "https://live.kleer.la", 301 # permanent redirect
@@ -447,8 +440,20 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
   end
 end
 
+=begin  
+# Discontinuado 17 abril 2021
+
+get '/comunidad' do
+  @active_tab_comunidad = "active"
+  @page_title += " | Comunidad"
+  @unique_countries = KeventerReader.instance.unique_countries_for_community_events()
+  erb :comunidad
+end
 get '/comunidad/evento/:event_id_with_name' do
-  event_id_with_name = params[:event_id_with_name]
+  flash.now[:error] = get_community_event_not_found_error()
+  return erb :error404_to_community
+
+ event_id_with_name = params[:event_id_with_name]
   event_id = event_id_with_name.split('-')[0]
   if is_valid_id(event_id)
     @event = KeventerReader.instance.event(event_id, true)
@@ -472,6 +477,7 @@ get '/comunidad/evento/:event_id_with_name' do
     erb :event
   end
 end
+=end
 
 get '/somos' do
  	@active_tab_somos = "active"
@@ -713,13 +719,7 @@ end
 
 not_found do
   @page_title = "404 - No encontrado"
-
-  if !request.path.index("/comunidad/yoseki").nil?
-      flash.now[:error] = get_404_error_text_for_community_event("Yoseki Coding Dojo")
-      erb :error404_to_community
-  else
-    erb :error404, :layout => :layout_2017
-  end
+  erb :error404, :layout => :layout_2017
 end
 
 private

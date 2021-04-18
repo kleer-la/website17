@@ -18,10 +18,6 @@ Feature: Page Titles
 		Given I visit the "agilidad-organizacional" page
 		Then the page title should be "Kleer - Agile Coaching & Training | Coaching"	
 		
-	Scenario: Comunidad Title
-		Given I visit the "comunidad" page
-		Then the page title should be "Kleer - Agile Coaching & Training | Comunidad"	
-
 	Scenario: Somos Title
 		Given I visit the "somos" page
 		Then the page title should be "Kleer - Agile Coaching & Training | Somos"
