@@ -49,11 +49,11 @@ Given(/^I visit an event type detail page$/) do
 end
 
 Then(/^I should see a rating$/) do
-  expect(last_response.body).to have_selector('.stars')
+  expect(page).to have_selector('.stars')
 end
 
 Then(/^I should not see a rating$/) do
-  expect(last_response.body).not_to have_selector('.stars')
+  expect(page).not_to have_selector('.stars')
 end
 
 Given(/^there is a event type with subtitle$/) do

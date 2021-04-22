@@ -9,14 +9,14 @@ es:
         buttons:
             see_more: "Ver más"
             register: "¡Registrarme!"
-            i_am_interested: "PRE-INSCRIBIRME"
+            i_am_interested: "¡Me interesa!"
             pay_and_register: "¡Pagar y Registrarme!"
             complete: "Completo"
             close: "Cerrar"
         texts:
             loading: "cargando..."
     mail_landing:
-        title: "CONSULTAR IN-COMPANY"
+        title: "CONSULTAR"
         alt: "Consultanos para realizar este curso en tu empresa"
         content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
     slider:

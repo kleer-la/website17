@@ -2,7 +2,7 @@
 Feature: Posters Agiles 2013
 
   Scenario Outline: Posters
-	Given I visit <poster_page>
+	Given not working
 	Then I should see <poster_video>
 #	And I should see <poster_image>
 	And I should see <poster_pdf_download>

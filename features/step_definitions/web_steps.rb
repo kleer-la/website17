@@ -11,7 +11,7 @@ When /^I click on "(.*)"$/ do |text|
 end
 
 Then /^I should see "(.*)"$/ do |text|
-  last_response.body.should =~ /#{text}/m
+  expect(page).to have_text text
 end
 
 Then /^I should see "(.*)" in a phone$/ do |text|
@@ -21,7 +21,7 @@ Then /^I should see "(.*)" in a phone$/ do |text|
 end
 
 Then /^I should not see "(.*?)"$/ do |text|
-  expect(last_response.body).to_not include text
+  expect(page).to_not have_content text
 end
 
 When /^I fill "(.*)" with "(.*)"$/ do |field, value|
@@ -47,8 +47,14 @@ Given(/^I visit the english home page$/) do
   visit '/en/'
 end
 
-When("I switch to {string}") do |string|
-  click_link(string)
+When("I switch to {string}") do |lang_long|
+  if "ENGLISH" == lang_long
+    lang="en"
+  else
+    lang="es"
+  end
+  #change_to_en_top
+  click_link("change_to_#{lang}_top")
 end
 
 Given(/^I visit the english "(.*?)"$/) do |page|
@@ -118,9 +124,7 @@ Then /^I should see the SnapEngage plugin$/ do
 end
 
 Then /^the page title should be "(.*?)"$/ do |title_text|
-  response_body.should have_selector("title") do |element|
-      element.should contain(title_text)
-  end
+  expect(page).to have_title title_text
 end
 
   Given /^I visit the "(.*?)" page$/ do |page_url|
@@ -170,22 +174,18 @@ Then /^I should see the Subscribe to newsletter option$/ do
 end
 
 Then /^I should see all countries highlited$/ do
-  response_body.should have_selector("ul[id='country-filter']") do |element|
-    element.should have_selector("li[class='active']") do |element|
-      element.should have_selector("a") do |element|
-        element.should contain("Todos")
-      end
-    end
-  end
+  expect( find("ul[id='country-filter']").
+          find("li[class='active']").
+          find("a")
+        ).to have_text "Todos"
 end
 
 Then /^I should see a linkedin link for a Kleerer with LinkedIn$/ do
-  response_body.should have_selector("a[href='https://www.linkedin.com/in/jgabardini']") do |element|
-  end
+  expect(page).to have_selector("a[href='https://www.linkedin.com/in/jgabardini']")
 end
 
 Then /^I should get a (\d+) error$/ do |error_code|
-  last_response.status.should == error_code.to_i
+  expect(page.status_code).to eq error_code.to_i
 end
 
 Given /^I visit the former Introducción a Scrum Page$/ do
@@ -304,12 +304,11 @@ Then(/^I should have a link to the "(.*?)" page$/) do |event_type_name|
 end
 
 Then(/^I should see the Argentinian fiscal data QR$/) do
-#  response_body.should have_selector("img[src='https://www.afip.gob.ar/images/f960/DATAWEB.jpg']")
-  expect(response_body).to have_selector("img[src='https://www.afip.gob.ar/images/f960/DATAWEB.jpg']")
+  expect(page).to have_selector("img[src='https://www.afip.gob.ar/images/f960/DATAWEB.jpg']")
 end
 
 Then(/^I should see the Argentinian fiscal data link$/) do
-  response_body.should have_selector("a[href='https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,,']")
+  expect(page).to have_selector("a[href='https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,,']")
 end
 
 When(/^I get (\d+) community events$/) do |qty|

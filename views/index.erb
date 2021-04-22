@@ -140,8 +140,14 @@
               </ul>
             </li>
             <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
-            <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-                <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
+            <li><% if (session[:locale] == "en") 
+                      lang= "es"
+                      lang_long= "ESPAÑOL"
+                    else
+                      lang= "en"
+                      lang_long= "ENGLISH"
+                 end %>
+                <a id="change_to_<%=lang%>_top" href="/<%=lang%>/"><strong><%=lang_long%></strong></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
