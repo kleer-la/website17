@@ -9,7 +9,7 @@ es:
         buttons:
             see_more: "Ver más"
             register: "¡Registrarme!"
-            i_am_interested: "¡Me interesa!"
+            i_am_interested: "Pre-inscribir"
             pay_and_register: "¡Pagar y Registrarme!"
             complete: "Completo"
             close: "Cerrar"
