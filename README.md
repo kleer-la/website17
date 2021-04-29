@@ -33,3 +33,7 @@ gem install bundler:2.0.2
 bundle install
 ruby app.rb -o 0.0.0.0
 
+
+Routes
+---
+rake routes
