@@ -35,10 +35,6 @@ Given(/^theres one event with subtitle$/) do
   stub_connector( "one_event_w_subtitle.xml")
 end
 
-Given(/^theres only one community event w\/cotrainer$/) do
-    stub_connector_community( "one_community_event_w_cotrainer.xml")
-end
-
 When /^I visit the event page$/ do
   visit '/cursos/13-workshop-de-retrospectivas'
 end

@@ -72,10 +72,6 @@ class KeventerReader
     coming_events(@connector.events_xml_url, from , months )
   end
 
-  def coming_community_events(from = Date.today, months = 2)
-    coming_events(@connector.community_events_xml_url, from , months )
-  end
-
   def commercial_events_by_country(country_iso_code)
     events_by_country( @connector.events_xml_url, country_iso_code )
   end
@@ -100,10 +96,7 @@ class KeventerReader
     unique_countries( @connector.events_xml_url )
   end
 
-  def unique_countries_for_community_events
-    unique_countries( @connector.community_events_xml_url )
-  end
-
+  # TODO: check error when getting API resource
   def parse file, node
       parser =  LibXML::XML::Parser.file( file )
       doc = parser.parse
@@ -251,16 +244,6 @@ class KeventerReader
       if event_found.id == event_id
         event = event_found
       end
-    end
-
-    if event.nil?
-
-      load_remote_events(@connector.community_events_xml_url, force_read).each do |event_found|
-        if event_found.id == event_id
-          event = event_found
-        end
-      end
-
     end
 
     event

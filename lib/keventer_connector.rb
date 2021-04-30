@@ -11,10 +11,6 @@ class KeventerConnector
       API_ROOT + API_EVENTS_PATH
   end
 
-  def community_events_xml_url
-      API_ROOT + API_COMMUNITY_EVENTS_PATH
-  end
-
   def kleerers_xml_url
     API_ROOT + API_KLEERERS_PATH
   end
