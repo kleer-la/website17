@@ -9,7 +9,7 @@ en:
         buttons:
             see_more: "See more"
             register: "Register!"
-            i_am_interested: "Pre Inscription"
+            i_am_interested: "Buy"
             pay_and_register: "Pay & Register"
             complete: "Complete"
             close: "Close"
@@ -481,6 +481,12 @@ en:
         release31_text: "El liderazgo virtual implica confianza. Los líderes deben confiar en las capacidades de los colaboradores y delegar las tareas tal como lo harían si estuvieran sentados uno al lado del otro."
         release32_title: "La fuerza de trabajo pasó a estar en un 90% en hogares: la tecnología existe pero faltan procesos y cultura"
         release32_text: "Se estima que un 20% de los empleados ya hacía teletrabajo previo al brote de coronavirus, uno o dos días por semana en promedio."
+        release33_title: "9 prácticas clave para potenciar la colaboración distribuida"
+        release33_text: "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales, es justo reivindicar la potencia y el valor de la virtualidad."
+        release34_title: "9 prácticas clave para potenciar la colaboración distribuida"
+        release34_text: "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales, es justo reivindicar la potencia y el valor de la virtualidad."
+        release35_title: "Nueve prácticas para potenciar la colaboración de equipos distribuidos"
+        release35_text: "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales. Pues bien, ahora es necesario reivindicar la potencia y el valor de la virtualidad."
     privacy:
         title: "Privacy Policy"
         text: "This Privacy Policy describes how your personal information is collected, used, and shared when you visit or make a purchase from https://www.kleer.la (the “Site”)."

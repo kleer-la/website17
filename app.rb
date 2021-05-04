@@ -288,7 +288,7 @@ get '/entrenamos/evento/:event_id_with_name' do
 
   if @event.nil?
     flash.now[:error] = get_course_not_found_error()
-    erb :error404_to_calendar
+    redirect to('/entrenamos')
   else
     uri = "/cursos/#{ @event.event_type.id }-#{@event.event_type.name }"
 
@@ -439,45 +439,6 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
     erb :event_remote_registration, :layout => :layout_empty
   end
 end
-
-=begin  
-# Discontinuado 17 abril 2021
-
-get '/comunidad' do
-  @active_tab_comunidad = "active"
-  @page_title += " | Comunidad"
-  @unique_countries = KeventerReader.instance.unique_countries_for_community_events()
-  erb :comunidad
-end
-get '/comunidad/evento/:event_id_with_name' do
-  flash.now[:error] = get_community_event_not_found_error()
-  return erb :error404_to_community
-
- event_id_with_name = params[:event_id_with_name]
-  event_id = event_id_with_name.split('-')[0]
-  if is_valid_id(event_id)
-    @event = KeventerReader.instance.event(event_id, true)
-  end
-
-  if @event.nil?
-    flash.now[:error] = get_community_event_not_found_error()
-    erb :error404_to_community
-  else
-    @active_tab_comunidad = "active"
-    @twitter_card = create_twitter_card( @event )
-    @page_title = "Kleer - " + @event.friendly_title
-
-    #@tracking_parameters = ""
-    if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
-      @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
-    else
-      @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
-    end
-
-    erb :event
-  end
-end
-=end
 
 get '/somos' do
  	@active_tab_somos = "active"
@@ -659,27 +620,6 @@ get '/entrenamos/eventos/pais/:country_iso_code' do
   session[:filter_country]= country_iso_code
   DTHelper::to_dt_event_array_json(KeventerReader.instance.commercial_events_by_country(country_iso_code), false, "cursos", I18n, session[:locale])
 end
-#BACK
-
-# COMUNIDAD no existe más en el sitio - DESACTIVADO 25 feb 2021
-#
-# get '/comunidad/eventos/proximos/:amount' do
-#   content_type :json
-#   amount = params[:amount]
-#   if !amount.nil?
-#     amount = amount.to_i
-#   end
-#   DTHelper::to_dt_event_array_json(KeventerReader.instance.coming_community_events(), true, "comunidad", I18n, session[:locale], amount, false)
-# end
-
-# get '/comunidad/eventos/pais/:country_iso_code' do
-#   content_type :json
-#   country_iso_code = params[:country_iso_code]
-#   if (!is_valid_country_iso_code(country_iso_code, "comunidad"))
-#     country_iso_code = "todos"
-#   end
-#   DTHelper::to_dt_event_array_json(KeventerReader.instance.community_events_by_country(country_iso_code), false, "comunidad", I18n, session[:locale])
-# end
 
 # STATIC FILES ==============
 
@@ -742,16 +682,8 @@ def get_404_error_text_for_course(course_name)
   "Hemos movido la información sobre el curso '<strong>#{course_name}</strong>'. Por favor, verifica nuestro calendario para ver los detalles de dicho curso"
 end
 
-def get_404_error_text_for_community_event(event_name)
-  "Hemos movido la información sobre el evento comunitario '<strong>#{event_name}</strong>'. Por favor, verifica nuestro calendario para ver los detalles de dicho evento"
-end
-
 def get_course_not_found_error
   "El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado.<br/>Te invitamos a visitar nuestro calendario para ver los cursos vigentes y probables nuevas fechas para el curso que estás buscando."
-end
-
-def get_community_event_not_found_error
-  "El evento comunitario que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado.<br/>Te invitamos a visitar nuestro calendario para ver los eventos vigentes y probables nuevas fechas para el evento que estás buscando."
 end
 
 def is_valid_id(event_id_to_test)
@@ -761,11 +693,7 @@ end
 def is_valid_country_iso_code(country_iso_code_to_test, event_type)
   return true if (country_iso_code_to_test == "otro" or country_iso_code_to_test == "todos")
 
-  if event_type == "entrenamos"
-    unique_countries = KeventerReader.instance.unique_countries_for_commercial_events()
-  else
-    unique_countries = KeventerReader.instance.unique_countries_for_community_events()
-  end
+  unique_countries = KeventerReader.instance.unique_countries_for_commercial_events()
   unique_countries.each { |country|
     if (country.iso_code == country_iso_code_to_test)
       return true

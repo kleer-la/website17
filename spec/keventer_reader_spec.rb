@@ -78,7 +78,6 @@ describe KeventerReader do
     before(:each) do
       @connector = double("KeventerConnector")
       @connector.stub(:events_xml_url).and_return( File.join(File.dirname(__FILE__),'../spec/events.xml') )
-      @connector.stub(:community_events_xml_url).and_return( File.join(File.dirname(__FILE__),'../spec/community_events.xml') )
 
       KeventerReader.build_with( @connector )
       @kevr = KeventerReader.instance
@@ -103,10 +102,6 @@ describe KeventerReader do
 
     it "should be able to fetch a certain event if the parameter is a string" do
       @kevr.event("44").event_type.name.should == "Workshop de Retrospectivas"
-    end
-
-    it "should be able to fetch a certain community event" do
-      @kevr.event(60).event_type.name.should == "Yoseki Coding Dojo"
     end
 
     it "should be signaled as community event" do
@@ -236,7 +231,6 @@ describe KeventerReader do
     before(:each) do
       @connector = double("KeventerConnector")
       @connector.stub(:events_xml_url).and_return( File.join(File.dirname(__FILE__),'../spec/events.xml') )
-      @connector.stub(:community_events_xml_url).and_return( File.join(File.dirname(__FILE__),'../spec/community_events.xml') )
 
       KeventerReader.build_with( @connector )
       @kevr = KeventerReader.instance
@@ -244,10 +238,6 @@ describe KeventerReader do
 
     it "Should return 5 countries for commercial events" do
       @kevr.unique_countries_for_commercial_events().count.should == 5
-    end
-
-    it "Should return 2 countries for community events" do
-      @kevr.unique_countries_for_community_events().count.should == 2
     end
 
     it "First country should be Argentina" do

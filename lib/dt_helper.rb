@@ -95,11 +95,7 @@ class DTHelper
   end
 
   def self.event_link(event, i18n, locale)
-    if event.is_community_event
-      button_text = i18n.t("general.buttons.register", :locale => locale)
-    else
-      button_text = i18n.t("general.buttons.i_am_interested", :locale => locale)
-    end
+    button_text = i18n.t("general.buttons.i_am_interested", :locale => locale)
     if event.registration_link != ""
       "<a href=\""+event.registration_link+"\" target=\"_blank\" class=\"btn btn-success btn-kleer\">#{button_text}</a>"
     else
