@@ -240,6 +240,12 @@ en:
                     info: <a href='https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/' class='btn btn-sm btn-info btn-kleer'>Más info</a>
                     autores: "<a href='https://www.linkedin.com/in/miakolmodin/' target='_blank'>Mia Kolmodin</a> y <a href='https://www.linkedin.com/in/btjsandberg/' target='_blank'>Björn Sandberg</a>"
                     traductor: "<a href='https://www.linkedin.com/in/pablolischinsky/' target='_blank'>Pablo Lischinsky</a>"
+            recurso13:
+                    title: "KanbanCakes"
+                    description: "#KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Tanto presencial como online. ¡Todo lo que necesitas para facilitarlo está aquí!"
+                    observaciones: <a href='https://youtu.be/28O6rV5bFr0' target='_blank'>Ver video</a>
+                    info: <a href='https://caminoagil.com/2016/05/27/kanban-cakes-como-explicar-kanban-de-forma-practica/' target='_blank' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    autores: "<a href='linkedin.com/in/buonamico' target='_blank'>Damian Buonamico</a>"
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?
