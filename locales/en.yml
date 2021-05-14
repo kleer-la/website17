@@ -243,9 +243,9 @@ en:
             recurso13:
                     title: "KanbanCakes"
                     description: "#KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Tanto presencial como online. ¡Todo lo que necesitas para facilitarlo está aquí!"
-                    observaciones: <a href='https://youtu.be/28O6rV5bFr0' target='_blank'>Ver video</a>
-                    info: <a href='https://caminoagil.com/2016/05/27/kanban-cakes-como-explicar-kanban-de-forma-practica/' target='_blank' class='btn btn-sm btn-info btn-kleer'>Más info</a>
-                    autores: "<a href='linkedin.com/in/buonamico' target='_blank'>Damian Buonamico</a>"
+                    observaciones: <a href='https://youtu.be/ctqJyrcfXr4' target='_blank'>Ver video</a>
+                    info: <a href='https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e' target='_blank' class='btn btn-sm btn-info btn-kleer'>Más info</a>
+                    autores: "<a href='https://twitter.com/dbuo' target='_blank'>Damián Buonamico</a>"
     facilitation:
         title: Facilitation
         contact: ARE YOU READY TO LEAD CHANGE?
