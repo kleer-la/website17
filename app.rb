@@ -223,6 +223,13 @@ get '/recursos' do
   erb :recursos, :layout => :layout_2017
 end
 
+get '/recursos/principiantes' do
+  @active_tab_publicamos = "active"
+  @page_title += " | Recursos"
+  erb :recursos_principiantes, :layout => :layout_2017
+end
+
+
 get '/publicamos/scrum' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos | Proyectos Ágiles con Scrum"
