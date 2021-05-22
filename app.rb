@@ -296,34 +296,6 @@ get '/entrenamos/evento/:event_id_with_name' do
   end
 end
 
-# MUEREN LAS PAGINAS TEMPORALES PARA CADA EVENTO 
-#
-# get '/entrenamos/evento/:event_id_with_name' do
-#   event_id_with_name = params[:event_id_with_name]
-#   event_id = event_id_with_name.split('-')[0]
-#   if is_valid_id(event_id)
-#     @event = KeventerReader.instance.event(event_id, true)
-#   end
-
-#   if @event.nil?
-#     flash.now[:error] = get_course_not_found_error()
-#     erb :error404_to_calendar
-#   else
-#     @active_tab_entrenamos = "active"
-#     @twitter_card = create_twitter_card( @event )
-#     @page_title = "Kleer - " + @event.friendly_title
-
-#     #@tracking_parameters = ""
-#     if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
-#       @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
-#     else
-#       @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
-#     end
-
-#     erb :event, :layout => :layout_2017
-#   end
-# end
-
 get '/catalogo' do
   @active_tab_entrenamos = "active"
   #pdf_catalog
@@ -624,27 +596,23 @@ end
 # STATIC FILES ==============
 
 get '/preguntas-frecuentes/facturacion-pagos-internacionales' do
-  erb :facturacion_pagos_internacionales
+  redirect '/', 301 # permanent redirect
 end
 
 get '/preguntas-frecuentes/facturacion-pagos-argentina' do
-  erb :facturacion_pagos_argentina
+  redirect '/', 301 # permanent redirect
 end
 
 get '/preguntas-frecuentes/facturacion-pagos-colombia' do
-  erb :facturacion_pagos_colombia
-end
-
-get '/preguntas-frecuentes/facturacion-pagos-peru' do
-  erb :facturacion_pagos_peru
+  redirect '/', 301 # permanent redirect
 end
 
 get '/preguntas-frecuentes/certified-scrum-master' do
-  erb :certified_scrum_master
+  redirect '/categoria/clientes/cursos/7-certified-scrum-master-(csm)', 301 # permanent redirect
 end
 
 get '/preguntas-frecuentes/certified-scrum-developer' do
-  erb :certified_scrum_developer
+  redirect '/categoria/clientes/cursos/342-certified-scrum-developer-(csd)', 301 # permanent redirect
 end
 
 get '/sepyme' do
