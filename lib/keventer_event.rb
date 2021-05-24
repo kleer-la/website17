@@ -166,12 +166,17 @@ class KeventerEvent
 
   end
   def timezone_url
+    duration= end_time.to_time-start_time.to_time
+    hours= (duration /3600).to_i
+    minutes= ((duration % 3600)/60).to_i
+
     "https://www.timeanddate.com/worldclock/fixedtime.html?" +
       URI.encode_www_form(
         msg: @event_type.name, 
         iso: date.strftime("%Y%m%d") + "T" + start_time.strftime("%H%M"),
         p1: TimezoneConverter.timezone(place),
-        ah: 10
+        ah: hours,
+        am: minutes 
       )
   end
 
