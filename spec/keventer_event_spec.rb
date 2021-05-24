@@ -1,7 +1,8 @@
 # encoding: utf-8
 
-require File.join(File.dirname(__FILE__),'../lib/keventer_event')
-require File.join(File.dirname(__FILE__),'../lib/professional')
+require './lib/keventer_event'
+require './lib/professional'
+require './lib/keventer_event_type'
 
 describe KeventerEvent do
 
@@ -427,10 +428,11 @@ describe KeventerEvent do
   end
 
   context 'timezone convertion' do
-    context 'generate an url when city is known' do
+    context 'generate an url' do
       before(:example) do
         @kevent.date= Date.parse('2015-05-18')
         @kevent.start_time= DateTime.parse('2000-01-01T09:00:00Z')
+        @kevent.end_time= DateTime.parse('2000-01-01T18:00:00Z')
         @kevent.place= '(GMT-05:00) Bogota'
         an_event_type = KeventerEventType.new
         an_event_type.name = "CSM Online"
@@ -445,8 +447,12 @@ describe KeventerEvent do
       it 'city' do
         expect(@kevent.timezone_url).to include 'p1=41'
       end
+      it 'duration' do
+        @kevent.end_time= DateTime.parse('2000-01-01T17:15:00Z')
+        expect(@kevent.timezone_url).to include 'ah=8&am=15' 
+      end
       it 'whole url' do
-        expect(@kevent.timezone_url).to include 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=CSM+Online&iso=20150518T0900&p1=41&ah=10'
+        expect(@kevent.timezone_url).to include 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=CSM+Online&iso=20150518T0900&p1=41&ah=9&am=0'
       end
     end
   end
