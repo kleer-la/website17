@@ -223,10 +223,10 @@ get '/recursos' do
   erb :recursos, :layout => :layout_2017
 end
 
-get '/recursos/principiantes' do
+get '/recursos/primeros_pasos' do
   @active_tab_publicamos = "active"
   @page_title += " | Recursos"
-  erb :recursos_principiantes, :layout => :layout_2017
+  erb :recursos_primeros_pasos, :layout => :layout_2017
 end
 
 
