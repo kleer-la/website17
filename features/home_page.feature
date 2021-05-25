@@ -17,10 +17,6 @@ Feature: Home Page
 		And I should see "México"
 		And I should see "¿Otro?"
 
-	# Scenario: Integracion con SnapEngage
-	# 	Given I visit the home page
-	# 	Then I should see the SnapEngage plugin
-
 	Scenario: Subscripcion a newsletter
 		Given I visit the home page
 		Then I should see "SUSCRÍBETE"

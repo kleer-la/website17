@@ -165,12 +165,6 @@ get '/agilidad-organizacional' do
 	erb :coaching, :layout => :layout_2017
 end
 
-get '/live' do
-  @active_tab_comunidad = "active"
-  redirect "https://live.kleer.la", 301 # permanent redirect
-end
-
-
 get '/e-books' do
   redirect "/publicamos", 301 # permanent redirect
 end
