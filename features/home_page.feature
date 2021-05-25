@@ -14,7 +14,6 @@ Feature: Home Page
 		And I should see "Bolivia"
 		And I should see "Colombia"
 		And I should see "Uruguay"
-		And I should see "México"
 		And I should see "¿Otro?"
 
 	Scenario: Subscripcion a newsletter
