@@ -211,6 +211,16 @@ get '/libros' do
   erb :ebooks, :layout => :layout_2017
 end
 
+require './lib/books'
+get '/libros2' do
+  @active_tab_publicamos = "active"
+  @page_title += " | Libros"
+  @books= (Books.new).load.all
+
+  erb :ebooks2, :layout => :layout_2017
+end
+
+
 get '/recursos' do
   @active_tab_publicamos = "active"
   @page_title += " | Recursos"

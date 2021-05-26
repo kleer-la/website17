@@ -1,0 +1,92 @@
+<div class="blackBg">
+	<div class="header-small header-publicamos"></div>
+
+	<div class="header-description">
+		<h1 class="headerTitle"><%=t("books.title")%></h1>
+	</div>
+</div>
+
+<div class="vSpace"></div>
+
+<div class="container mainContent">
+
+	<div class="col-md-9 no-hpadding contenedor-main-izq">
+		<h4><%=t("books.description")%></h4><br/>
+		&nbsp;<br/>
+
+        <% 
+        indice=0
+        @books.each do |book_loc|
+        book= book_loc[session[:locale]]%>
+        <%if indice ==0%>
+		<div class="container-fluid">
+        <%end%>
+			<div class="col-md-4">
+                <%if book['id']!= ""%>
+                    <a id="<%=book['id']%>"></a>
+                <%end%>
+                <%if book['landing']!= ""%>
+                    <a id="<%=book['landing']%>">
+                <%end%>
+				<p class="book-cover"><img src="<%= book['cover']%>" class="img-rounded"></p>
+                <%if book['landing']!= ""%>
+                    </a>
+                <%end%>
+                
+				<div class="well well-small book-description">
+					<h4><%=book['title']%></h4>
+					<p><%=book['description']%></p>
+					<p><a class="pay_tweet_like_button" target="_bank" href="<%= book['buy']%>"><%=book['button']%></a></p>
+				</div>
+			</div>
+        <%if indice==2%>
+			</div>
+        <%end
+        indice= (indice+1) % 3
+        end
+        %>
+        <%if indice>0%>
+			</div>
+        <%end%>
+
+		<div class="container-fluid">
+
+			<div class="col-md-4">
+				<p class="book-cover"><img src="/img/ebooks/retrospectivas.jpg" class="img-rounded"></p>
+
+				<div class="well well-small book-description">
+					<h4><%=t("books.books.retrospectives.title")%></h4>
+					<p><%=t("books.books.retrospectives.text")%></p>
+					<iframe src="https://www.paywithatweet.com/dlbutton01.php?id=d999f0797cb600c38e17891503cb3b05" name="paytweet_button" scrolling="no" frameborder="no" height = "24px" width = "145px"></iframe>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<p class="book-cover"><img src="/img/ebooks/lenguajes-web.jpg" class="img-rounded"></p>
+
+				<div class="well well-small book-description">
+					<h4><%=t("books.books.lenguajes_web.title")%></h4>
+					<p><%=t("books.books.lenguajes_web.text")%></p>
+					<iframe src="https://www.paywithapost.de/dlbutton01.php?id=d3806d13-1b7b-4419-b087-78c22a3a7c7f" name="paytweet_button" scrolling="no" frameborder="no" height="24px" width="145px"></iframe>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<p class="book-cover"><img src="/img/ebooks/agil-ilustrado.jpg" class="img-rounded"></p>
+
+				<div class="well well-small book-description">
+					<h4><%=t("books.books.agil_ilustrado.title")%></h4>
+					<p><%=t("books.books.agil_ilustrado.text")%></p>
+					<iframe src="https://www.paywithapost.de/dlbutton01.php?id=b896fb12-e807-4ed9-ba8f-d929d8c7957d" name="paytweet_button" scrolling="no" frameborder="no" height="24px" width="145px"></iframe>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="col-md-3">
+		<%= erb :_twitter_widget, :layout => false %>
+	</div>
+
+</div>

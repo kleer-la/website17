@@ -1,0 +1,44 @@
+{ "books":
+    [
+        {"es": {   
+            "id": "",
+            "landing": "",
+            "cover": "/img/ebooks/agile-team.jpg",
+            "title": "Agile Team Facilitator", 
+            "description": "Este libro es el primero de una serie que busca construir el camino de toda persona que quiera dedicarse al agile coaching. En esta edición el foco está en la facilitación de equipos, entendiendo las habilidades y responsabilidades que conlleva.",
+            "buy": "https://www.amazon.es/Agile-Team-Facilitator-Towards-Enterprise-ebook/dp/B018V9MQ30",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "MasProductivos",
+            "landing": "/es/publicamos/mas-productivos",
+            "cover": "/img/ebooks/mas-productivos-288-2.jpg",
+            "title": "Equipos más productivos", 
+            "description": "El modelo de gestión tradicional está siendo reemplazado por formas más participativas, más colaborativas y más humanas de hacer empresa.</br></br>",
+            "buy": "/es/publicamos/mas-productivos",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "",
+            "landing": "/es/publicamos/scrum",
+            "cover": "/img/ebooks/scrum.jpg",
+            "title": "Proyectos Ágiles con Scrum", 
+            "description": "Scrum es un marco de trabajo que nos permite encontrar prácticas emergentes en dominios complejos, como la gestión de proyectos de innovación.",
+            "buy": "/es/publicamos/scrum",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "",
+            "landing": "",
+            "cover": "/img/ebooks/herramientas-coach-agil.png",
+            "title": "Herramientas para el Coach Ágil - Ejemplos de visualización", 
+            "description": "Este libro está lleno de ejemplos de visualización para mejorar la colaboración y comunicación de los equipos y para modelar comportamientos. Está escrito para personas y equipos que trabajan en un contexto de desarrollo ágil de software.",
+            "buy": "https://leanpub.com/ejemplosdevisualizacin",
+            "button": "Obtener libro >>"
+            }
+        }
+    ]
+}
