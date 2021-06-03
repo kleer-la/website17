@@ -31,7 +31,7 @@ docker-compose run --service-ports website17 bash
 cd app
 gem install bundler:2.0.2
 bundle install
-ruby app.rb -o 0.0.0.0
+ruby app.rb -o 0
 
 
 Routes
