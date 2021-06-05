@@ -15,7 +15,7 @@ jobs:
       with:
         ruby-version: 2.6.7
     - name: Install curb
-    - run: gem install curb -v '0.9.10'
+      run: gem install curb -v '0.9.10'
     - name: Install dependencies
       run: bundle install
     - name: Run tests
