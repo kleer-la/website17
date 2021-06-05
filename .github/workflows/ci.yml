@@ -28,7 +28,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           branch: "develop"
-          heroku_app_name: "keventer-test"
+          heroku_app_name: "kleer-test"
           heroku_email: "juan.gabardini@kleer.la"
 
 #    - name: Check rubycritic
