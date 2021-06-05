@@ -30,6 +30,7 @@ jobs:
           branch: "develop"
           heroku_app_name: "kleer-test"
           heroku_email: "juan.gabardini@kleer.la"
+          remote_branch: "master"
 
 #    - name: Check rubycritic
 #      run: rubycritic -f html --no-browser
