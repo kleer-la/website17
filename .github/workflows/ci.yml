@@ -24,6 +24,13 @@ jobs:
         run: rspec
       - name: Run acceptance tests
         run: cucumber
+      - uses: akhileshns/heroku-deploy@v3.12.12   # https://github.com/AkhileshNS/heroku-deploy
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          branch: "develop"
+          heroku_app_name: "keventer-test"
+          heroku_email: "juan.gabardini@kleer.la"
+
 #    - name: Check rubycritic
 #      run: rubycritic -f html --no-browser
     # - name: update index
