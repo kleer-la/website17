@@ -1,0 +1,27 @@
+on:
+  push:
+    branches: [ develop, master]
+  pull_request:
+    branches: [ develop, master]
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: akhileshns/heroku-deploy@v3.12.12   # https://github.com/AkhileshNS/heroku-deploy
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          branch: "develop"
+          heroku_app_name: "kleer-test"
+          heroku_email: "juan.gabardini@kleer.la"
+
+#     - name: Discord notification
+#       if: ${{ success() }}
+#       uses: Ilshidur/action-discord@759f6ea4dc493b8bd1bb35ae7fbd7ae10fcea129
+#       with:
+#         args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} looks ok!!.'
+#     - name: The job has failed
+#       if: ${{ failure() }}
+#       uses: Ilshidur/action-discord@759f6ea4dc493b8bd1bb35ae7fbd7ae10fcea129
+#       with:
+#         args: 'UPS something fails in {{ EVENT_PAYLOAD.repository.full_name }}, please check the IC flow!.'

@@ -24,13 +24,6 @@ jobs:
         run: rspec
       - name: Run acceptance tests
         run: cucumber
-      - uses: akhileshns/heroku-deploy@v3.12.12   # https://github.com/AkhileshNS/heroku-deploy
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          branch: "develop"
-          heroku_app_name: "kleer-test"
-          heroku_email: "juan.gabardini@kleer.la"
-          remote_branch: "master"
 
 #    - name: Check rubycritic
 #      run: rubycritic -f html --no-browser
@@ -59,4 +52,3 @@ jobs:
 #       uses: Ilshidur/action-discord@759f6ea4dc493b8bd1bb35ae7fbd7ae10fcea129
 #       with:
 #         args: 'UPS something fails in {{ EVENT_PAYLOAD.repository.full_name }}, please check the IC flow!.'
-# © 2021 GitHub, Inc.
