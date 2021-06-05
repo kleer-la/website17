@@ -14,10 +14,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6.7
-    - name: Install curb lib
-      run: sudo apt-get -y install libcurl4-gnutls-dev libcurl4-nss-dev libcurl4-openssl-dev
     - name: Install curb gem
-      run: gem install curb -v '0.9.10'
+      run: gem install curb
     - name: Install dependencies
       run: bundle install
     - name: Run tests
