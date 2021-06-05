@@ -28,5 +28,5 @@ group :development, :test do
   gem 'cucumber'
   gem 'capybara'
   gem 'simplecov'
-  gem 'coveralls', "~> 0.8", require: false
+  gem 'coveralls_reborn'
 end
