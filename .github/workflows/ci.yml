@@ -4,22 +4,22 @@ on:
   pull_request:
     branches: [ develop, master]
 
-    jobs:
-      CI:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Set up Ruby
-          # automatic versioning https://github.com/ruby/setup-ruby#versioning):
-          uses: ruby/setup-ruby@v1
-          with:
-            ruby-version: 2.6.7
-        - name: Install dependencies
-          run: bundle install
-        - name: Run tests
-          run: rspec
-        - name: Run acceptance tests
-          run: cucumber
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      # automatic versioning https://github.com/ruby/setup-ruby#versioning):
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6.7
+    - name: Install dependencies
+      run: bundle install
+    - name: Run tests
+      run: rspec
+    - name: Run acceptance tests
+      run: cucumber
 #    - name: Check rubycritic
 #      run: rubycritic -f html --no-browser
     # - name: update index
