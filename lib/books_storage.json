@@ -39,6 +39,16 @@
             "buy": "https://leanpub.com/ejemplosdevisualizacin",
             "button": "Obtener libro >>"
             }
+        },
+        {"es": {   
+            "id": "planespararetrospectivas",
+            "landing": "",
+            "cover": "/img/ebooks/planes-para-retrospectivas-agiles.jpg",
+            "title": "Planes para Retrospectivas Ágiles", 
+            "description": "¿Te gustaría facilitar retrospectivas ágiles? ¿Dudas de cuáles son las actividades que habilitarán una buena experiencia para el equipo y permitirán el cambio? La creadora de Retromat te lo resuelve con 15 planes + 1 de bonus para retrospectivas ágiles efectivas, listas para facilitar y con una duración de 60-90 minutos.",
+            "buy": "https://leanpub.com/planes-para-retrospectivas-agiles",
+            "button": "Obtener libro >>"
+            }
         }
     ]
 }
