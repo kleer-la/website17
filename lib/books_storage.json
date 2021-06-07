@@ -2,26 +2,6 @@
     [
         {"es": {   
             "id": "",
-            "landing": "",
-            "cover": "/img/ebooks/agile-team.jpg",
-            "title": "Agile Team Facilitator", 
-            "description": "Este libro es el primero de una serie que busca construir el camino de toda persona que quiera dedicarse al agile coaching. En esta edición el foco está en la facilitación de equipos, entendiendo las habilidades y responsabilidades que conlleva.",
-            "buy": "https://www.amazon.es/Agile-Team-Facilitator-Towards-Enterprise-ebook/dp/B018V9MQ30",
-            "button": "Obtener libro >>"
-            }
-        },
-        {"es": {   
-            "id": "MasProductivos",
-            "landing": "/es/publicamos/mas-productivos",
-            "cover": "/img/ebooks/mas-productivos-288-2.jpg",
-            "title": "Equipos más productivos", 
-            "description": "El modelo de gestión tradicional está siendo reemplazado por formas más participativas, más colaborativas y más humanas de hacer empresa.</br></br>",
-            "buy": "/es/publicamos/mas-productivos",
-            "button": "Obtener libro >>"
-            }
-        },
-        {"es": {   
-            "id": "",
             "landing": "/es/publicamos/scrum",
             "cover": "/img/ebooks/scrum.jpg",
             "title": "Proyectos Ágiles con Scrum", 
@@ -43,10 +23,60 @@
         {"es": {   
             "id": "planespararetrospectivas",
             "landing": "",
-            "cover": "/img/ebooks/planes-para-retrospectivas-agiles.jpg",
+            "cover": "/img/ebooks/planes-para-retrospectivas-agiles.png",
             "title": "Planes para Retrospectivas Ágiles", 
             "description": "¿Te gustaría facilitar retrospectivas ágiles? ¿Dudas de cuáles son las actividades que habilitarán una buena experiencia para el equipo y permitirán el cambio? La creadora de Retromat te lo resuelve con 15 planes + 1 de bonus para retrospectivas ágiles efectivas, listas para facilitar y con una duración de 60-90 minutos.",
             "buy": "https://leanpub.com/planes-para-retrospectivas-agiles",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "lenguajesdelaweb",
+            "landing": "",
+            "cover": "/img/ebooks/lenguajes-web.jpg",
+            "title": "Introducción a los lenguajes de la Web", 
+            "description": "Este libro cubre lo básico a conocer sobre desarrollo web. Los temas principales del libro son el protocolo HTTP, crear contenido HTML, y darle formato con CSS.",
+            "buy": "https://leanpub.com/introlenguajesweb",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "libroagililustrado",
+            "landing": "",
+            "cover": "/img/ebooks/agil-ilustrado.jpg",
+            "title": "Libro Ágil Ilustrado",
+            "description": "El objetivo de este libro es difundir -de forma gráfica- métodos y prácticas ágiles, con foco en las relaciones interpersonales, como forma de organización del trabajo y -arriesgando más- como filosofía de vida.",
+            "buy": "https://leanpub.com/libro-agil-ilustrado",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "",
+            "landing": "",
+            "cover": "/img/ebooks/agile-team.jpg",
+            "title": "Agile Team Facilitator", 
+            "description": "Este libro es el primero de una serie que busca construir el camino de toda persona que quiera dedicarse al agile coaching. En esta edición el foco está en la facilitación de equipos, entendiendo las habilidades y responsabilidades que conlleva.",
+            "buy": "https://www.amazon.es/Agile-Team-Facilitator-Towards-Enterprise-ebook/dp/B018V9MQ30",
+            "button": "Obtener libro >>"
+            }
+        },
+        {"es": {   
+            "id": "MasProductivos",
+            "landing": "/es/publicamos/mas-productivos",
+            "cover": "/img/ebooks/mas-productivos-288-2.jpg",
+            "title": "Equipos más productivos", 
+            "description": "El modelo de gestión tradicional está siendo reemplazado por formas más participativas, más colaborativas y más humanas de hacer empresa.</br></br>",
+            "buy": "/es/publicamos/mas-productivos",
+            "button": "Obtener libro >>"
+            }
+        },
+       {"es": {   
+            "id": "tecnicasretrospectivas",
+            "landing": "",
+            "cover": "/img/ebooks/retrospectivas.jpg",
+            "title": "Técnicas de retrospectivas", 
+            "description": "Este libro aporta varias técnicas para que los equipos varíen el formato de sus retrospectivas, evitando el aburimiento y manteniéndolos motivados",
+            "buy": "https://kleer-materiales.s3.us-east-2.amazonaws.com/kleer-tecnicas-de-retrospectivas-es+v7.pdf",
             "button": "Obtener libro >>"
             }
         }
