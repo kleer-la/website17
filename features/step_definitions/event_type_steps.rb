@@ -31,14 +31,6 @@ When('I visit the event type full page') do
   visit '/categoria/productos-robustos/cursos/2-yyy'
 end
 
-Given(/^there are community event type$/) do
-    get_event_type(19)
-end
-
-When(/^I visit the community event type page$/) do
-  visit '/categoria/productos-robustos/cursos/19-xxx'
-end
-
 When(/^I visit a non existing event type page$/) do
   get_event_type(1, false)
   visit '/categoria/productos-robustos/cursos/1-xxx'

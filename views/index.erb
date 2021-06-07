@@ -2,6 +2,15 @@
 <html>
 
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21102272-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-21102272-2');
+</script>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,15 +43,6 @@
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
-
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PFM58HF');</script>
-  <!-- End Google Tag Manager -->
-
 
   <base href="/app">
   <!-- Facebook Pixel Code -->
@@ -90,14 +90,7 @@
 </head>
 
 <body ng-app="kleerApp">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFM58HF"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Add your site or application content here -->
-
-    <!-- Menu desktop -->
+  <!-- Menu desktop -->
   <div class="hidden-xs hidden-sm">
     <nav class="navbar navbar-default navbar-fixed-top text-uppercase" role="navigation">
       <div class="container">
@@ -378,8 +371,6 @@
             <li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
             <li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
             <li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
-            <li role="presentation"><a data-target="#Chile" aria-controls="Chile" role="tab" data-toggle="tab">Chile</a></li>
-            <li role="presentation"><a data-target="#Mexico" aria-controls="Mexico" role="tab" data-toggle="tab">México</a></li>
             <li role="presentation"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab"><%=t("contact.locations.other.title")%></a></li>
         </ul>
 
@@ -496,54 +487,6 @@
                         </div>
                     </div>
 
-                    <div role="tabpanel" class="text-center tab-pane" id="Chile">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer Chile</strong></h4>
-                              <p><%=t("contact.locations.chile.address1")%>
-                                <br><%=t("contact.locations.chile.address2")%></p>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <%=t("contact.locations.chile.phone")%>
-                                   </li>
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.chile.contact_email")%>">
-                                    <%=t("contact.locations.chile.contact_email")%>
-                                    </a></li>
-                                <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.chile.contact")%>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
-                    <div role="tabpanel" class="text-center tab-pane" id="Mexico">
-                        <div class="alert alert-info">
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <h4><strong>Kleer México</strong></h4>
-                              <p><%=t("contact.locations.mexico.address1")%>
-                                <br><%=t("contact.locations.mexico.address2")%></p>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <%=t("contact.locations.mexico.phone")%>
-                                   </li>
-                                <li>
-                                  <a href="mailto:<%=t("contact.locations.mexico.contact_email")%>">
-                                    <%=t("contact.locations.mexico.contact_email")%>
-                                    </a></li>
-                                <li><%=t("contact.helped_by")%>
-                                  <%=t("contact.locations.mexico.contact")%>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-
                     <div role="tabpanel" class="text-center tab-pane" id="Otro">
                         <div class="alert alert-info">
                           <div class="row">
@@ -631,7 +574,6 @@
 <!-- build:js(.) scripts/vendor.js -->
 <script src="app/vendor/jquery/dist/jquery.min.js"></script>
 <script src="app/vendor/angular/angular.min.js"></script>
-<script src="app/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="app/vendor/angular-animate/angular-animate.min.js"></script>
 <script src="app/vendor/angular-cookies/angular-cookies.min.js"></script>
 <script src="app/vendor/angular-resource/angular-resource.min.js"></script>
@@ -749,16 +691,6 @@
       interval: 5000
     })
 
-</script>
-
-<!-- SnapEngage
-================================================== -->
-<script type="text/javascript">
-  document.write(unescape("%3Cscript src='//www.snapengage.com/snapabug.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-  SnapABug.setLocale("<%=session[:locale]%>");
-  SnapABug.addButton("ab0964bc-0c2b-4b9b-8f59-b3e3cdb81b04","0","55%");
 </script>
 
 </body>

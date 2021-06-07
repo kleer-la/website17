@@ -6,11 +6,7 @@
 	<%
 	url = ENV['KEVENTER_URL'] || "https://eventos.kleer.la"
 	registration_link = "#{url}/events/#{@event.id}/participants/new?lang=" + session[:locale] + @tracking_parameters
-	if @event.is_community_event
-		button_text = t("general.buttons.register")
-	else
-		button_text = t("general.buttons.i_am_interested")
-	end
+	button_text = t("general.buttons.i_am_interested")
 
 	if @event.registration_link != ""
 		registration_link = @event.registration_link

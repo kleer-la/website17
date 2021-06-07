@@ -116,13 +116,6 @@ Then /^I should see an image pointing to "(.*?)"$/ do |url|
   response_body.should have_selector("img[src='#{ url }']")
 end
 
-Then /^I should see the SnapEngage plugin$/ do
-  response_body.should have_selector("script[type='text\/javascript']") do |element|
-      element.should contain("SnapABug.setLocale(\"es\")")
-      element.should contain("SnapABug.addButton(\"ab0964bc-0c2b-4b9b-8f59-b3e3cdb81b04\",\"0\",\"55%\")")
-  end
-end
-
 Then /^the page title should be "(.*?)"$/ do |title_text|
   expect(page).to have_title title_text
 end
@@ -236,25 +229,6 @@ Given /^I visit an invalid Page$/ do
   visit "/bazzzzingaaaa"
 end
 
-Given /^there are community events$/ do
-  stub_connector( "events.xml")
-end
-
-Then /^I should see the json string for the Argentina community events$/ do
-  text = '\"aaData\": \[' +
-            '\[\"<span class=\\\"label label-info\\\">06<br><span class=\\\"lead\\\">Feb</span></span>\",\"<a href=\\\"/es/comunidad/evento/60-yoseki-coding-dojo-buenos-aires\\\">Yoseki Coding Dojo</a><br/><img src=\\\"/img/flags/ar.png\\\"/> Buenos Aires, Argentina\",\"<a href=\\\"mailto:dojo@kleer.la\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Registrarme!</a>\"\]' +
-         '\]'
-  last_response.body.should =~ /#{text}/m
-end
-
-Given /^I visit the former Yoseki Page$/ do
-  visit "/comunidad/yoseki"
-end
-
-Given /^I visit the former Yoseki spanish Page$/ do
-  visit "/es/comunidad/yoseki"
-end
-
 Given /^I visit the former entrenamos spanish Page$/ do
   visit "/es/entrenamos"
 end
@@ -264,30 +238,13 @@ Then /^I should be redirected to entrenamos Page$/ do
   last_response.location.gsub("https://example.org","").should == "/entrenamos"
 end
 
-Given /^I visit the former comunidad spanish Page$/ do
-  visit "/es/comunidad"
-end
-
-Then /^I should be redirected to comunidad Page$/ do
-  last_response.redirection?.should == true
-  last_response.location.gsub("https://example.org","").should == "/comunidad"
-end
-
 When /^I visit a non existing event page$/ do
   visit '/entrenamos/evento/1-un-evento-inexistente'
-end
-
-When /^I visit a non existing community event page$/ do
-  visit '/comunidad/evento/1-un-evento-inexistente'
 end
 
 When /^I visit a non existing popup event page$/ do
   visit '/entrenamos/evento/1-un-evento-inexistente/remote'
 end
-
-#Given(/^I visit "(.*?)"$/) do |page_url|
-# visit page_url
-#end
 
 Then(/^I should have a link to the "(.*?)" page$/) do |event_type_name|
   response_body.should have_selector("a[text()='#{event_type_name}']") do |element|
@@ -301,10 +258,6 @@ end
 
 Then(/^I should see the Argentinian fiscal data link$/) do
   expect(page).to have_selector("a[href='https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,,']")
-end
-
-When(/^I get (\d+) community events$/) do |qty|
-  visit "/es/comunidad/eventos/proximos/#{qty}"
 end
 
 Given(/^I visit the Privacy page$/) do

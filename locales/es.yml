@@ -88,7 +88,6 @@ es:
     kleeros:
         vision: "En Kleer disfrutamos <br/>co-creando ambientes<br/> humanos más conscientes<br/> y asombrosos."
         live: "vive-las-met.png"
-        community: "actividades-comunitarias.png"
         team: "equipo-kleer.png"
         nps: "nps-eventos.png"
     home:
@@ -733,20 +732,7 @@ es:
                 phone: "+598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
-            chile:
-                name: "Chile"
-                address1: "Agustinas #681 Oficina 1602"
-                address2: "Santiago"
-                phone: "+562 2606 5046 <br />+562 2638 4155"
-                contact: "Natalia, Rodrigo y Norberto"
-                contact_email: "info@cys-chile.cl"
-            mexico:
-                address1: "Monte Athos 115"
-                address2: "11000, D.F."
-                phone: "+52 55 5276 4486"
-                contact: "nuestros partners <a href=\"https://www.scrum.mx/\" target=\"_blank\">Scrum México</a>"
-                contact_email: "info.mx@kleer.la"
-                partners: "You will be helped by us <br/>and our partners "
+
             other:
                 title: "¿Otro?"
                 contact_us: "Contáctanos"

@@ -76,10 +76,6 @@ class KeventerReader
     events_by_country( @connector.events_xml_url, country_iso_code )
   end
 
-  def community_events_by_country(country_iso_code)
-    events_by_country( @connector.community_events_xml_url, country_iso_code )
-  end
-
   def event(event_id, force_read = false)
     load_remote_event(event_id, force_read)
   end

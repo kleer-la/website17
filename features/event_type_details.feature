@@ -16,13 +16,6 @@ Feature: Event Type Details
 		And I should see "01"
 		And I should see "05"
 
-
-	Scenario: Detalle de Evento Comunitario
-		Given there are community event type
-		When I visit the community event type page
-		Then the page title should be "Yoseki Coding Dojo"
-		And I should see "El Dojo es, en la tradición japonesa"
-
 	Scenario: Detalle de Evento Inexistente
 		When I visit a non existing event type page
 		Then I should see "El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado."
