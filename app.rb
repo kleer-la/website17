@@ -348,31 +348,7 @@ end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
-  @active_tab_entrenamos = "active"
-
-  event_type_id_with_name = params[:event_type_id_with_name]
-  event_type_id = event_type_id_with_name.split('-')[0]
-
-  @category = KeventerReader.instance.category params[:category_codename], session[:locale]
-
-  if is_valid_id(event_type_id)
-    @event_type = EventType.createKeventer event_type_id
-    @event_type = KeventerReader.instance.event_type(event_type_id, true)
-  end
-
-  if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
-    @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
-  else
-    @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
-  end
-
-  if @event_type.nil?
-    flash.now[:error] = get_course_not_found_error()
-    erb :error404_to_calendar
-  else
-    @page_title = "Kleer - " + @event_type.name
-    erb :event_type, :layout => :layout_2017
-  end
+  redirect to "/cursos/#{params[:event_type_id_with_name]}"
 end
 
 get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
