@@ -604,19 +604,14 @@ get '/entrenamos/eventos/pais/:country_iso_code' do
   DTHelper::to_dt_event_array_json(KeventerReader.instance.commercial_events_by_country(country_iso_code), false, "cursos", I18n, session[:locale])
 end
 
-# STATIC FILES ==============
-
-get '/preguntas-frecuentes/facturacion-pagos-internacionales' do
-  redirect '/', 301 # permanent redirect
-end
-
-get '/preguntas-frecuentes/facturacion-pagos-argentina' do
-  redirect '/', 301 # permanent redirect
-end
-
-get '/preguntas-frecuentes/facturacion-pagos-colombia' do
-  redirect '/', 301 # permanent redirect
-end
+[ '/preguntas-frecuentes/facturacion-pagos-internacionales',
+  '/preguntas-frecuentes/facturacion-pagos-argentina',
+  '/preguntas-frecuentes/facturacion-pagos-colombia'
+].each do |path| 
+  get path do
+    redirect '/', 301 # permanent redirect
+  end
+end 
 
 get '/preguntas-frecuentes/certified-scrum-master' do
   redirect '/categoria/clientes/cursos/7-certified-scrum-master-(csm)', 301 # permanent redirect

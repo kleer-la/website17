@@ -417,6 +417,7 @@ es:
     books:
         title: "Libros"
         description: "Compartimos coocimiento y experiencias. ¡Ayúdanos a correr la voz!"
+        get_it: "Obtener libro >>"
         others:
             title: "Otras publicaciones"
         buy:
