@@ -112,7 +112,7 @@ end
 
 get '/' do
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-	erb :index, :layout => :layout_angular
+	erb :index, :layout => false
 end
 
 get '/en' do
@@ -205,14 +205,14 @@ get '/publicamos' do
   erb :publicamos, :layout => :layout_2017
 end
 
-get '/libros' do
+get '/libros2' do
   @active_tab_publicamos = "active"
   @page_title += " | Libros"
   erb :ebooks, :layout => :layout_2017
 end
 
 require './lib/books'
-get '/libros2' do
+get '/libros' do
   @active_tab_publicamos = "active"
   @page_title += " | Libros"
   @books= (Books.new).load.all
@@ -348,31 +348,7 @@ end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
-  @active_tab_entrenamos = "active"
-
-  event_type_id_with_name = params[:event_type_id_with_name]
-  event_type_id = event_type_id_with_name.split('-')[0]
-
-  @category = KeventerReader.instance.category params[:category_codename], session[:locale]
-
-  if is_valid_id(event_type_id)
-    @event_type = EventType.createKeventer event_type_id
-    @event_type = KeventerReader.instance.event_type(event_type_id, true)
-  end
-
-  if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
-    @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
-  else
-    @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
-  end
-
-  if @event_type.nil?
-    flash.now[:error] = get_course_not_found_error()
-    erb :error404_to_calendar
-  else
-    @page_title = "Kleer - " + @event_type.name
-    erb :event_type, :layout => :layout_2017
-  end
+  redirect to "/cursos/#{params[:event_type_id_with_name]}"
 end
 
 get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
@@ -604,19 +580,14 @@ get '/entrenamos/eventos/pais/:country_iso_code' do
   DTHelper::to_dt_event_array_json(KeventerReader.instance.commercial_events_by_country(country_iso_code), false, "cursos", I18n, session[:locale])
 end
 
-# STATIC FILES ==============
-
-get '/preguntas-frecuentes/facturacion-pagos-internacionales' do
-  redirect '/', 301 # permanent redirect
-end
-
-get '/preguntas-frecuentes/facturacion-pagos-argentina' do
-  redirect '/', 301 # permanent redirect
-end
-
-get '/preguntas-frecuentes/facturacion-pagos-colombia' do
-  redirect '/', 301 # permanent redirect
-end
+[ '/preguntas-frecuentes/facturacion-pagos-internacionales',
+  '/preguntas-frecuentes/facturacion-pagos-argentina',
+  '/preguntas-frecuentes/facturacion-pagos-colombia'
+].each do |path| 
+  get path do
+    redirect '/', 301 # permanent redirect
+  end
+end 
 
 get '/preguntas-frecuentes/certified-scrum-master' do
   redirect '/categoria/clientes/cursos/7-certified-scrum-master-(csm)', 301 # permanent redirect

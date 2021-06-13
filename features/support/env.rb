@@ -11,7 +11,6 @@ Sinatra::Application.app_file = File.join(File.dirname(__FILE__), *%w[.. .. app.
 require 'rspec/expectations'
 require 'cucumber/rspec/doubles'
 require 'rack/test'
-# require 'webrat'
 require 'capybara/cucumber'
 require 'simplecov'
 
