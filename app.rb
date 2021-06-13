@@ -112,7 +112,7 @@ end
 
 get '/' do
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-	erb :index, :layout => :layout_angular
+	erb :index, :layout => false
 end
 
 get '/en' do
@@ -205,14 +205,14 @@ get '/publicamos' do
   erb :publicamos, :layout => :layout_2017
 end
 
-get '/libros' do
+get '/libros2' do
   @active_tab_publicamos = "active"
   @page_title += " | Libros"
   erb :ebooks, :layout => :layout_2017
 end
 
 require './lib/books'
-get '/libros2' do
+get '/libros' do
   @active_tab_publicamos = "active"
   @page_title += " | Libros"
   @books= (Books.new).load.all
