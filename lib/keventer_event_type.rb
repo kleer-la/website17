@@ -61,10 +61,10 @@ class KeventerEventType
     @elevator_pitch = xml_keventer_event.find_first('elevator-pitch').content
     @include_in_catalog = to_boolean( xml_keventer_event.find_first('include-in-catalog').content )
 
-    @average_rating = xml_keventer_event.find_first('average-rating').content.nil? ? nil : xml_keventer_event.find_first('average-rating').content.to_f.round(2)
-    @net_promoter_score = xml_keventer_event.find_first('net-promoter-score').content.nil? ? nil : xml_keventer_event.find_first('net-promoter-score').content.to_i
-    @surveyed_count = xml_keventer_event.find_first('surveyed-count').content.to_i
-    @promoter_count = xml_keventer_event.find_first('promoter-count').content.to_i
+    # @average_rating = xml_keventer_event.find_first('average-rating').content.nil? ? nil : xml_keventer_event.find_first('average-rating').content.to_f.round(2)
+    # @net_promoter_score = xml_keventer_event.find_first('net-promoter-score').content.nil? ? nil : xml_keventer_event.find_first('net-promoter-score').content.to_i
+    # @surveyed_count = xml_keventer_event.find_first('surveyed-count').content.to_i
+    # @promoter_count = xml_keventer_event.find_first('promoter-count').content.to_i
 
     load_categories xml_keventer_event
   end
