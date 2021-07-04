@@ -17,7 +17,6 @@ class Resources
         # ]
         file = File.read('./lib/resources_storage.json')
         @resources= JSON.parse(file)['resources']
-        p @resources
         self
     end    
 end
