@@ -154,11 +154,12 @@
         },
         {"es": {   
             "id": "poster-liderazgo-ágil",
-            "landing": "https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e",
+            "landing": "https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/",
             "cover": "/img/recursos/liderazgo.png",
-            "title": "KanbanCakes",
-            "description":  "#KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Tanto presencial como online. ¡Todo lo que necesitas para facilitarlo está aquí!",
-            "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>",
+            "title": "El cambio de liderazgo",
+            "description":  "Algunos de los temas tratados en el póster son: el cambio de liderazgo y de la gerencia para apalancar las transformaciones ágiles, el mindset ágil y contexto organizacional que incluye el Marco Cynefin, el estilo de liderazgo ágil y organizaciones que aprenden en contextos VUCA.",
+            "authors": "<a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a> y <a href='https://www.linkedin.com/in/btjsandberg/'>Björn Sandberg</a>",
+            "translators": "<a href='https://www.linkedin.com/in/pablolischinsky/'>Pablo Lischinsky</a>",
             "share_fb": "u=https://kl.la/poster-liderazgo",
             "share_tw": "text=El cambio de liderazgo. https://kl.la/poster-liderazgo&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,liderazgo",
             "share_li": "mini=true&url=https://kl.la/poster-liderazgo&title=&summary=El cambio de liderazgo. https://kl.la/poster-liderazgo #AgilidadOrganizacional #Agile #Scrum #equiposagiles #liderazgo&source="
