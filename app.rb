@@ -217,7 +217,7 @@ end
 get '/recursos' do
   @active_tab_publicamos = "active"
   @page_title += " | Recursos"
-  erb :recursos, :layout => :layout_2017
+  erb :recursos2, :layout => :layout_2017
 end
 
 require './lib/resources'
@@ -226,7 +226,7 @@ get '/recursos2' do
   @page_title += " | Recursos"
   @resources= (Resources.new).load.all
 
-  erb :recursos2, :layout => :layout_2017
+  erb :recursos, :layout => :layout_2017
 end
 
 
