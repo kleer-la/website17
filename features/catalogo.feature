@@ -5,10 +5,10 @@ Feature: Catalogo de cursos
 		Given I visit the "catalogo" page
 		Then I should see "High Performance"
 
-  Scenario: Mostrar ratings
-      Given feature "show_rates_on_catalog" is on
-      When I visit the "catalogo" page
-      Then I should see a rating
+#   Scenario: Mostrar ratings
+#       Given feature "show_rates_on_catalog" is on
+#       When I visit the "catalogo" page
+#       Then I should see a rating
 
   Scenario: No mostrar ratings
       Given feature "show_rates_on_catalog" is off
