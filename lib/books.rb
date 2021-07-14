@@ -17,7 +17,11 @@ class Books
         # ]
         file = File.read('./lib/books_storage.json')
         @books= JSON.parse(file)['books']
-        # p @books
+        copy_lang('es', 'en')
+        # p @books[0]
         self
-    end    
+    end
+    def copy_lang(orig, dest)
+        @books.each {|b| b[dest]= b[orig] if b[dest].nil?}
+    end
 end

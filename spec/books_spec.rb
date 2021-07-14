@@ -10,9 +10,13 @@ describe Books do
         books.load
         expect(books.all.count).to be > 0        
     end
-    it 'a book has sp title' do
+    it 'a book has es title' do
         book= (Books.new).load.all[0]
         expect(book['es']['title'].length).to be > 0
+    end
+    it 'each es book has en counterpart' do
+        book= (Books.new).load.all[0]
+        expect(book['es']).to eq book['en']
     end
 
 end
