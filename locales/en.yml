@@ -337,6 +337,7 @@ en:
     books:
         title: "Books"
         description: "WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!"
+        get_it: "Get it >>"
         others:
             title: "Other publications"
         buy:
