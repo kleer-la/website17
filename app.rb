@@ -257,7 +257,7 @@ get '/posters/:poster_code' do
   poster_code = params[:poster_code].downcase
 
   case poster_code
-  when "scrum"
+  when "scrum" 
     redirect "/recursos#poster-scrum", 301 # permanent redirect
   when "xp"
     redirect "/recursos#poster-XP", 301 # permanent redirect
@@ -588,14 +588,6 @@ end
 
 get '/preguntas-frecuentes/certified-scrum-developer' do
   redirect '/categoria/clientes/cursos/342-certified-scrum-developer-(csd)', 301 # permanent redirect
-end
-
-get '/sepyme' do
-  erb :sepyme
-end
-
-get '/sepyme/remote' do
-  erb :sepyme_remote, :layout => :layout_empty
 end
 
 # LEGACY ====================
