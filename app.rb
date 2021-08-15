@@ -254,28 +254,18 @@ get '/publicamos/mas-productivos' do
 end
 
 get '/posters/:poster_code' do
-  @poster_code = params[:poster_code]
+  poster_code = params[:poster_code].downcase
 
-  case @poster_code
+  case poster_code
   when "scrum"
-    @video_url_code = "IWUG29VPhUA"
-    @poster_code = "Scrum"
-    @poster_name = "Scrum"
+    redirect "/recursos#poster-scrum", 301 # permanent redirect
   when "xp"
-    @video_url_code = "4nN6Gh79Yg8"
-    @poster_code = "XP"
-    @poster_name = "eXtreme Programming"
+    redirect "/recursos#poster-XP", 301 # permanent redirect
   when "manifesto"
-    @video_url_code = "V5LaKpjcgKQ"
-    @poster_code = "Manifesto"
-    @poster_name = "Principios Ágiles"
+    redirect "/recursos#poster-manifesto", 301 # permanent redirect
+  else
+    not_found
   end
-
-  @pdf_download_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.pdf"
-  @image_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.jpg"
-
-  erb :poster
-
 end
 
 get '/categoria/:category_codename' do
