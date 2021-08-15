@@ -18,7 +18,7 @@ Feature: Event Type Details
 
 	Scenario: Detalle de Evento Inexistente
 		When I visit a non existing event type page
-		Then I should see "El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado."
+		Then I should see "Curso no encontrado"
 
 	Scenario: Detalle muestra subtitulo
 		Given there is a event type with subtitle
