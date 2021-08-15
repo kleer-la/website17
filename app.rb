@@ -229,7 +229,6 @@ get '/recursos/primeros_pasos' do
   erb :recursos_primeros_pasos, :layout => :layout_2017
 end
 
-
 get '/publicamos/scrum' do
   @active_tab_publicamos = "active"
   @page_title += " | Publicamos | Proyectos Ágiles con Scrum"
@@ -320,7 +319,7 @@ get '/cursos/:event_type_id_with_name' do
 
   if @event_type.nil?
     flash.now[:error] = get_course_not_found_error()
-    erb :error404_to_calendar
+    erb :error404_to_calendar, :layout => :layout_2017
   else
     @page_title = "Kleer - " + @event_type.name
 
