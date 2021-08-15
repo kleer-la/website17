@@ -278,7 +278,7 @@ get '/categoria/:category_codename' do
     @page_title += " | " + @category.name
     @event_types = @category.event_types.sort_by { |et| et.name}
 
-    erb :category
+    erb :category, :layout => :layout_2017
   end
 end
 
