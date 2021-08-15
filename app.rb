@@ -17,6 +17,8 @@ require './lib/crm_connector'
 require './lib/toggle'
 
 require './lib/event_type'
+require './lib/books'
+require './lib/resources'
 
 if production?
     require 'rack/ssl-enforcer'
@@ -205,7 +207,7 @@ get '/publicamos' do
   erb :publicamos, :layout => :layout_2017
 end
 
-require './lib/books'
+
 get '/libros' do
   @active_tab_publicamos = "active"
   @page_title += " | Libros"
@@ -218,17 +220,8 @@ get '/recursos' do
   @active_tab_publicamos = "active"
   @page_title += " | Recursos"
   @resources= (Resources.new).load.all
-  erb :recursos2, :layout => :layout_2017
-end
-
-require './lib/resources'
-get '/recursos2' do
-  @active_tab_publicamos = "active"
-  @page_title += " | Recursos"
-
   erb :recursos, :layout => :layout_2017
 end
-
 
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = "active"

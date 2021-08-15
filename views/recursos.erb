@@ -9,234 +9,52 @@
 <div class="vSpace"></div>
 
 <div class="container mainContent recursos">
-
     <div class="col-md-9 no-hpadding contenedor-main-izq">
             <% if (session[:locale] == "es") %><h4>Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena.</h4><% end %><br/>
             &nbsp;<br/>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <a href="http://guiasagiles.org/" name="guias-agiles"><img src="/img/recursos/guias-agiles.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="http://guiasagiles.org/"><%=t("recursos.lista.recurso1.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso1.description")%></p>
-                            <p><strong>Autores:</strong> <%=t("recursos.lista.recurso1.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkl.la%2Fguias-agiles" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a rel="canonical" href="https://twitter.com/intent/tweet?text=¿Conoces la 22 guías de técnicas y herramientas que potencian a personas y equipos? Te comparto las GuiasAgiles, de @kleer_la. Busca la tuya y descárgarla aquí&url=https://kl.la/guias-agiles&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles" class="share share-twitter" data-size="large" rel="me" target="_blank">SHARE TWITTER</a>
-                                <a href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fkl.la%2Fguias-agiles&title=%C2%BFConoces%20la%2022%20gu%C3%ADas%20de%20t%C3%A9cnicas%20y%20herramientas%20que%20potencian%20a%20personas%20y%20equipos%3F%20Te%20comparto%20las%20%23GuiasAgiles%20de%20Kleer.%20Busca%20la%20tuya%20y%20desc%C3%A1rgarla%20aqu%C3%AD%20https%3A%2F%2Fkl.la%2Fguias-agiles%20%23AgilidadOrganizacional%20%20%23ReunionesProductivas%20%23MasColaboracion%20%23Agile%20%23Scrum%20%23equiposagiles" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones">
-                                <%=t("recursos.lista.recurso1.info")%>
-                            </p>
-                        </div>
+        <% 
+        indice=0
+        @resources.each do |resource_loc|
+        resource= resource_loc[session[:locale]]%>
+        <%if indice ==0%>
+		<div class="container-fluid">
+        <%end%>
+			<div class="col-md-4">
+                <a id="<%=resource['id']%>"></a>
+                <%if resource['landing']!= ""%>
+                    <a href="<%=resource['landing']%>" id="<%=resource['id']%>" name="<%=resource['id']%>">
+                <%end%>
+                <img src="<%= resource['cover']%>" class="img-rounded">
+                <%if resource['landing']!= ""%>
+                    </a>
+                <%end%>
+				<div class="well well-small book-description">
+					<h4><a href="<%=resource['landing']%>"><%=resource['title']%></a></h4>
+					<p><%=resource['description']%></p>
+                    <p><strong>Autores:</strong> <%=resource['authors']%></p>
+                    <%if not resource['translators'].to_s.empty?%>
+                        <p><strong>Traductores:</strong> <%=resource['translators']%></p>
+                    <%end%>
+                    <%if not resource['comments'].to_s.empty?%>
+                        <p><strong>Observaciones:</strong> <%=resource['comments']%></p>
+                    <%end%>
+                    <div class="share-buttons">
+                        <a href="https://www.facebook.com/sharer/sharer.php?<%= resource['share_fb']%>" class="share share-facebook" target="_blank">SHARE FB</a>
+                        <a rel="canonical" href="https://twitter.com/intent/tweet?<%= resource['share_tw']%>" class="share share-twitter" data-size="large" rel="me" target="_blank">SHARE TWITTER</a>
+                        <a href="http://www.linkedin.com/shareArticle?<%= resource['share_li']%>" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
                     </div>
-
-                    <div class="col-sm-4">
-                        <a href="http://www.elproximopaso.net/2017/07/dod-kards.html" name="DoD-kards"><img src="/img/recursos/DoD-Kards.png" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="http://www.elproximopaso.net/2017/07/dod-kards.html"><%=t("recursos.lista.recurso2.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso2.description")%></p>
-                            <p><strong>Autores:</strong> <%=t("recursos.lista.recurso2.autores")%></p>
-                            <p><strong>Observaciones:</strong> <%=t("recursos.lista.recurso2.observaciones")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/dod-kards" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de @kleer_la. Descárgalas aquí&url=https://kl.la/dod-kards&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/dod-kards&title=&summary=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de Kleer. Descárgalas aquí https://kl.la/dod-kards #AgilidadOrganizacional  #ReunionesProductivas #MasColaboracion #Agile #Scrum #equiposagiles&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones">
-
-                                <%=t("recursos.lista.recurso2.info")%>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="https://pablolischinsky.wordpress.com/2017/06/05/poster-agile-product-ownership/" name="poster-agile-PO"><img src="/img/recursos/poster-agile.png" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://pablolischinsky.wordpress.com/2017/06/05/poster-agile-product-ownership/"><%=t("recursos.lista.recurso3.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso3.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso3.autores")%></p>
-                            <p><strong>Traductor:</strong> <%=t("recursos.lista.recurso3.traductor")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/poster-agile-PO" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Conocés el poster Agile Product Ownership in a Nutshell? Te comparto el poster traducido por Pablo Lischinsky. Descárgarlo aquí&url=https://kl.la/poster-agile-PO&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,ProductOwner,ProdMgmt,ProductDiscovery" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/poster-agile-PO&title=&summary=¿Conocés el poster Agile Product Ownership in a Nutshell? Te comparto el poster traducido por Pablo Lischinsky. Descárgarlo aquí https://kl.la/poster-agile-PO #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #ProductOwner #ProdMgmt #ProductDiscovery&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso3.info")%></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="http://coachingcanvas.org/es/download/the-coaching-canvas-wall-es.pdf 
-" name="coaching-canvas"><img src="/img/recursos/coaching-canvas.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="http://coachingcanvas.org/es/download/the-coaching-canvas-wall-es.pdf 
-"><%=t("recursos.lista.recurso4.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso4.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso4.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/coaching-canvas" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Quieres facilitar conversaciones de Coaching? Te comparto el Coaching Canvas de @kleer_la. Descárgarlo aquí&url=https://kl.la/coaching-canvas&hashtags=AgilidadOrganizacional,AgileCoaching,Coaching,Agile,Scrum,facilitacion,Acompañamiento" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/coaching-canvas&title=&summary=¿Quieres facilitar conversaciones de Coaching? Te comparto el Coaching Canvas de Kleer. Descárgarlo aquí https://kl.la/coaching-canvas #AgilidadOrganizacional  #AgileCoaching #Coaching #Agile #Scrum #facilitacion #Acompañamiento&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso4.info")%></p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="http://kl.la/canvas-de-experimentos" name="canvas-experimentos"><img src="/img/recursos/canvas-experimentos.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="http://kl.la/canvas-de-experimentos"><%=t("recursos.lista.recurso5.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso5.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso5.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/canvas-experimento" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Estás pensando en hacer experimentos para validar hipótesis? Te comparto el Canvas de Experimentos de @kleer_la. Descárgarlo aquí&url=https://kl.la/canvas-experimento&hashtags=AgilidadOrganizacional,Agile,Scrum,HDD,Experimentación,Aprendizaje" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/canvas-experimento&title=&summary=¿Estás pensando en hacer experimentos para validar hipótesis? Te comparto el Canvas de Experimentos de Kleer. Descárgarlo aquí https://kl.la/canvas-experimento #AgilidadOrganizacional  #Agile #Scrum #HDD #Experimentación #Aprendizaje &source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso5.info")%></p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="https://pablolischinsky.wordpress.com/2020/04/01/cartas-de-slicing/" name="slicing-cards"><img src="/img/recursos/cartas-de-slicing.png" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://pablolischinsky.wordpress.com/2020/04/01/cartas-de-slicing/"><%=t("recursos.lista.recurso6.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso6.description")%></p>
-                            <p><strong>Autores:</strong> <%=t("recursos.lista.recurso6.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/slicing-kards" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Estás creando tu product backlog y encuentras con ítems muy grandes? Te comparto las Slicing Cards de @kleer_la. Descárgalas aquí&url=https://kl.la/slicing-kards&hashtags=AgilidadOrganizacional,Agile,Scrum,HDD,Experimentación,Aprendizaje" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/slicing-kards&title=&summary=¿Estás creando tu product backlog y encuentras con ítems muy grandes? Te comparto las Slicing Cards de @kleer_la. Descárgalas aquí https://kl.la/slicing-kards #AgilidadOrganizacional #Agile #Scrum #HDD #Experimentación #Aprendizaje&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso6.info")%></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0" name="barometro-equipo"><img src="/img/recursos/barometro.png" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0"><%=t("recursos.lista.recurso7.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso7.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso7.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/barometro-equipo" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Quieres llevar tu equipo a un mayor nivel de performance? Te comparto el Barómetro de Equipo de @kleer_la y Crisp. Descárgarlo aquí&url=https://kl.la/barometro-equipo&hashtags=AgilidadOrganizacional,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/barometro-equipo" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso7.info")%></p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf" name="poster-scrum"><img src="/img/recursos/poster-de-scrum.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf"><%=t("recursos.lista.recurso8.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso8.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso8.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/poster-de-scrum" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Quieres tener e imprimir un resumen ilustrado de Scrum? Te comparto el poster de Scrum de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-scrum&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/poster-de-scrum&title=&summary=¿Quieres tener e imprimir un resumen ilustrado de Scrum? Te comparto el poster de Scrum de Kleer. Descárgarlo aquí https://kl.la/poster-de-scrum #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #facilitacion #ScrumMaster&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso8.info")%></p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4">
-                        <a href="https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf" name="poster-XP"><img src="/img/recursos/poster-xp.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf"><%=t("recursos.lista.recurso9.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso9.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso9.autores")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/poster-de-xp" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-xp&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster,ExtremeProgramming,XP" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/poster-de-xp&title=&summary=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de Kleer. Descárgarlo aquí https://kl.la/poster-de-xp #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #facilitacion #ScrumMaster #ExtremeProgramming #XP&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso9.info")%></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="http://www.elproximopaso.net/2018/12/dor-kards.html" name="DoR-kards"><img src="/img/recursos/DoR_Kards.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="http://www.elproximopaso.net/2018/12/dor-kards.html"><%=t("recursos.lista.recurso10.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso10.description")%></p>
-                            <p><strong>Autores:</strong> <%=t("recursos.lista.recurso10.autores")%></p>
-                            <p><strong>Observaciones:</strong> <%=t("recursos.lista.recurso10.observaciones")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/dor-kards" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de @kleer_la. Descárgalas aquí&url=https://kl.la/dor-kards&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/dor-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. Descárgalas aquí https://kl.la/dor-kards #AgilidadOrganizacional  #ReunionesProductivas #MasColaboracion #Agile #Scrum #equiposagiles&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso10.info")%></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="https://retromat.org/es" name="Retromat"><img src="/img/recursos/retromat.png" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://retromat.org/es"><%=t("recursos.lista.recurso11.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso11.description")%></p>
-                            <p><strong>Autora:</strong> <%=t("recursos.lista.recurso11.autores")%></p>
-                            <p><strong>Traductor:</strong> <%=t("recursos.lista.recurso11.traductor")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/Retromat" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=Traducción al español de Retromat. https://kl.la/Retromat&hashtags=Retromat,Agile,Scrum,equiposagiles,retrospectiva" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/Retromat&title=&summary=Traducción al español de Retromat. https://kl.la/Retromat #Retromat #Agile #Scrum #equiposagiles #retrospectiva&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso11.info")%></p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <a href="https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/" target="_blank" name="poster-liderazgo-ágil"><img src="/img/recursos/liderazgo.png" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/" target="_blank"><%=t("recursos.lista.recurso12.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso12.description")%></p>
-                            <p><strong>Autoras:</strong> <%=t("recursos.lista.recurso12.autores")%></p>
-                            <p><strong>Traductor:</strong> <%=t("recursos.lista.recurso12.traductor")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kl.la/poster-liderazgo" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=El cambio de liderazgo. https://kl.la/poster-liderazgo&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,liderazgo" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/poster-liderazgo&title=&summary=El cambio de liderazgo. https://kl.la/poster-liderazgo #AgilidadOrganizacional #Agile #Scrum #equiposagiles #liderazgo&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones"><%=t("recursos.lista.recurso12.info")%></p>
-                        </div>
-                    </div>
-
-                <div class="col-sm-4">
-                        <a href="https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e" target="_blank" name="KanbanCakes"><img src="/img/recursos/recursos-kanban-cakes.jpg" class="img-rounded"></a>
-
-                        <div class="well well-small book-description">
-                            <h4><a href="https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e" target="_blank"><%=t("recursos.lista.recurso13.title")%></a></h4>
-                            <p><%=t("recursos.lista.recurso13.description")%></p>
-                            <p><strong>Autor:</strong> <%=t("recursos.lista.recurso13.autores")%></p>
-                            <p><strong>Observaciones:</strong> <%=t("recursos.lista.recurso13.observaciones")%></p>
-                            <div class="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=http://kl.la/KanbanCakes" class="share share-facebook" target="_blank">SHARE FB</a>
-                                <a href="https://twitter.com/intent/tweet?text=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Link aquí&url=https://kl.la/KanbanCakes&hashtags=Kanban,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles" class="share share-twitter" target="_blank">SHARE TWITTER</a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=" class="share share-linkedin" target="_blank">SHARE LINKEDIN</a>
-                            </div>
-                            <p class="botones">
-                                <%=t("recursos.lista.recurso13.info")%>
-                            </p>
-                        </div>
-                    </div>
-                </div><!-- row -->
-            </div>
-
-            
-
+                    <p class="botones"><a href="<%=resource['landing']%>" class='btn btn-sm btn-info btn-kleer'>Más info</a></p>
+				</div>
+			</div>
+        <%if indice==2%>
+			</div>
+        <%end
+        indice= (indice+1) % 3
+        end
+        %>
+        <%if indice>0%>
+			</div>
+        <%end%>
     </div>
 
     <div class="col-md-3">
