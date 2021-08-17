@@ -17,6 +17,8 @@ require './lib/crm_connector'
 require './lib/toggle'
 
 require './lib/event_type'
+require './lib/books'
+require './lib/resources'
 
 if production?
     require 'rack/ssl-enforcer'
@@ -205,7 +207,7 @@ get '/publicamos' do
   erb :publicamos, :layout => :layout_2017
 end
 
-require './lib/books'
+
 get '/libros' do
   @active_tab_publicamos = "active"
   @page_title += " | Libros"
@@ -218,24 +220,14 @@ get '/recursos' do
   @active_tab_publicamos = "active"
   @page_title += " | Recursos"
   @resources= (Resources.new).load.all
-  erb :recursos2, :layout => :layout_2017
-end
-
-require './lib/resources'
-get '/recursos2' do
-  @active_tab_publicamos = "active"
-  @page_title += " | Recursos"
-
   erb :recursos, :layout => :layout_2017
 end
-
 
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = "active"
   @page_title += " | Recursos"
   erb :recursos_primeros_pasos, :layout => :layout_2017
 end
-
 
 get '/publicamos/scrum' do
   @active_tab_publicamos = "active"
@@ -254,28 +246,18 @@ get '/publicamos/mas-productivos' do
 end
 
 get '/posters/:poster_code' do
-  @poster_code = params[:poster_code]
+  poster_code = params[:poster_code].downcase
 
-  case @poster_code
-  when "scrum"
-    @video_url_code = "IWUG29VPhUA"
-    @poster_code = "Scrum"
-    @poster_name = "Scrum"
+  case poster_code
+  when "scrum" 
+    redirect "/recursos#poster-scrum", 301 # permanent redirect
   when "xp"
-    @video_url_code = "4nN6Gh79Yg8"
-    @poster_code = "XP"
-    @poster_name = "eXtreme Programming"
+    redirect "/recursos#poster-XP", 301 # permanent redirect
   when "manifesto"
-    @video_url_code = "V5LaKpjcgKQ"
-    @poster_code = "Manifesto"
-    @poster_name = "Principios Ágiles"
+    redirect "/recursos#poster-manifesto", 301 # permanent redirect
+  else
+    not_found
   end
-
-  @pdf_download_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.pdf"
-  @image_url = "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/#{@poster_code}.jpg"
-
-  erb :poster
-
 end
 
 get '/categoria/:category_codename' do
@@ -288,7 +270,7 @@ get '/categoria/:category_codename' do
     @page_title += " | " + @category.name
     @event_types = @category.event_types.sort_by { |et| et.name}
 
-    erb :category
+    erb :category, :layout => :layout_2017
   end
 end
 
@@ -337,7 +319,7 @@ get '/cursos/:event_type_id_with_name' do
 
   if @event_type.nil?
     flash.now[:error] = get_course_not_found_error()
-    erb :error404_to_calendar
+    erb :error404_to_calendar, :layout => :layout_2017
   else
     @page_title = "Kleer - " + @event_type.name
 
@@ -598,14 +580,6 @@ end
 
 get '/preguntas-frecuentes/certified-scrum-developer' do
   redirect '/categoria/clientes/cursos/342-certified-scrum-developer-(csd)', 301 # permanent redirect
-end
-
-get '/sepyme' do
-  erb :sepyme
-end
-
-get '/sepyme/remote' do
-  erb :sepyme_remote, :layout => :layout_empty
 end
 
 # LEGACY ====================
