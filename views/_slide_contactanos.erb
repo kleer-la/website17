@@ -1,154 +1,151 @@
-<div class="container-fluid fondo-amarillo slide-home-contactanos">
+<div class="container">
+
 	<div class="container">
-		<div class="container-fluid">
-			<div class="col-md-3 contactanos-side visible-lg visible-md">
-				<img src="/img/personajes/contactanos-izq.png" height="550">
-			</div>
-			<div class="col-md-9 col-lg-6 contactanos">
-				<h2><%=t("contact.contact_us")%></h2>
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs text-center" role="tablist">
+		<li role="presentation" class="active"><a data-target="#Otro" aria-controls="Otro" role="tab" data-toggle="tab"><%=t("contact.locations.other.title")%></a></li>
+		<li role="presentation"><a data-target="#Argentina" aria-controls="Argentina" role="tab" data-toggle="tab">Argentina</a></li>
+		<li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
+		<li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
+		<li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
+	</ul>
 
-				<ul class="nav nav-tabs" id="contactanos-tabs">
-					<li class="active"><a href="#argentina" data-toggle="tab">
-						<img src="/img/flags/ar.png"><br/>AR
-					</a></li>
-					<li><a href="#brasil" data-toggle="tab">
-						<img src="/img/flags/br.png"><br/>BR
-					</a></li>
-					<li><a href="#bolivia" data-toggle="tab">
-						<img src="/img/flags/bo.png"><br/>BO
-					</a></li>
-					<li><a href="#colombia" data-toggle="tab">
-						<img src="/img/flags/co.png"><br/>CO
-					</a></li>
-					<li><a href="#peru" data-toggle="tab">
-						<img src="/img/flags/pe.png"><br/>PE
-					</a></li>
-					<li><a href="#uruguay" data-toggle="tab">
-						<img src="/img/flags/uy.png"><br/>UY
-					</a></li>
-					<li><a href="#europa" data-toggle="tab">
-						<img src="/img/flags/eu.png"><br/>EU
-					</a></li>
-					<li><a href="#mexico" data-toggle="tab">
-						<img src="/img/flags/mx.png"><br/>MX
-					</a></li>
-					<li><a href="#otro" data-toggle="tab">
-						<img src="/img/flags/ol.png"><br/><%=t("contact.locations.other.title")%>
-					</a></li>
-				</ul>
+	<br>
 
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div class="tab-pane active contactanos-tab-content" id="argentina">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 text-center">
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="text-center tab-pane active" id="Otro">
+					<div class="alert alert-info">
 						<div class="row">
-							<div class="col-md-9">
-                              <%=t("contact.locations.argentina.address1")%><br/>
-                              <%=t("contact.locations.argentina.address2")%><br/>
-                              <%=t("contact.locations.argentina.phone")%> (9 a 18 hs)<br/>
-							<a href="mailto:entrenamos.ar@kleer.la">entrenamos.ar@kleer.la</a><br/>
-							&nbsp;<br/>
-							<%=t("contact.helped_by")%>: Constanza y Flor
-							</div>
-							<div class="col-md-3">
-								<a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo"><img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="100"></a>
-							</div>
+						<div class="col-xs-5 col-xs-offset-3">
+							<h4><strong>Kleer Global</strong></h4>
+							<ul class="list-unstyled">
+							<li class="whatsapp">
+								<%=t("contact.locations.other.whatsapp")%>
+								</li>
+							<li>&nbsp;</li>
+							<li><i class="fa fa-envelope-o fa-fw"></i>
+								<a href="mailto:<%=t("contact.locations.other.contact_email")%>">
+								<%=t("contact.locations.other.contact_email")%></a></li>
+							</ul>
+						</div>
 						</div>
 					</div>
-					<div class="tab-pane contactanos-tab-content" id="brasil">
-                      <%=t("contact.locations.brasil.address1")%><br/>
-                      <%=t("contact.locations.brasil.address2")%><br/>
-                      <%=t("contact.locations.brasil.phone")%><br/>
-						<a href="mailto:treinamos.br@kleer.la">treinamos.br@kleer.la</a><br/>
-						&nbsp;<br/>
-						Você entrará em contato com: Angélica
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="bolivia">
-                      <%=t("contact.locations.bolivia.address1")%><br/>
-                      <%=t("contact.locations.bolivia.address2")%><br/>
-                      <%=t("contact.locations.bolivia.phone")%><br/>
-						<a href="mailto:entrenamos.bo@kleer.la">entrenamos.bo@kleer.la</a><br/>
-						&nbsp;<br/>
-						<%=t("contact.helped_by")%>: Israel
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="colombia">
-                      <%=t("contact.locations.colombia.address1")%><br/>
-                      <%=t("contact.locations.colombia.address2")%><br/>
-                      <%=t("contact.locations.colombia.phone")%><br/>
-						<a href="mailto:entrenamos.co@kleer.la">entrenamos.co@kleer.la</a><br/>
-						&nbsp;<br/>
-						<%=t("contact.helped_by")%>: Jennifer
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="peru">
-                      <%=t("contact.locations.peru.address1")%><br/>
-                      <%=t("contact.locations.peru.address2")%><br/>
-						&nbsp;<br/>
-						<a href="mailto:entrenamos.pe@kleer.la">entrenamos.pe@kleer.la</a><br/>
-						&nbsp;<br/>
-						<%=t("contact.helped_by")%>: Jessy
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="uruguay">
-                      <%=t("contact.locations.uruguay.address1")%><br/>
-                      <%=t("contact.locations.uruguay.address2")%><br/>
-											<%=t("contact.locations.uruguay.phone")%><br/>
-						&nbsp;<br/>
-						<a href="mailto:entrenamos.uy@kleer.la">entrenamos.uy@kleer.la</a><br/>
-						&nbsp;<br/>
-						<%=t("contact.helped_by")%>: Pablo
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="europa">
-                      <%=t("contact.locations.europa.address1")%><br/>
-                      <%=t("contact.locations.europa.address2")%><br/>
-                      <%=t("contact.locations.europa.phone")%><br/>
-						<a href="mailto:training.eu@kleer.la">training.eu@kleer.la</a><br/>
-						&nbsp;<br/>
-						<%=t("contact.helped_by")%>: Milan
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="mexico">
-						<a href="mailto:entrenamos.mx@kleer.la">entrenamos.mx@kleer.la</a><br/>
-						&nbsp;<br/>
-						<%=t("contact.locations.mexico.partners")%> <a href="http://scrum.org.mx" target="_blank">Scrum México</a
-						><br/>
-						Monte Athos 115  - 11000, D.F.<br/>
-						+52 55 5276 4486
-					</div>
-					<div class="tab-pane contactanos-tab-content" id="otro">
-						&nbsp;<br/>
-						&nbsp;<br/>
-						<%=t("contact.locations.other.contact_us")%>:<br/>
-						<a href="mailto:entrenamos@kleer.la">entrenamos@kleer.la</a><br/>
-						&nbsp;<br/>
-						&nbsp;
+				</div>
+
+				<div role="tabpanel" class="text-center tab-pane" id="Argentina">
+					<div class="alert alert-info">
+						<div class="row">
+						<div class="col-xs-5 col-xs-offset-3">
+							<h4><strong>Kleer Argentina</strong></h4>
+							<p><%=t("contact.locations.argentina.address1")%>
+							 <%=t("contact.locations.argentina.address2")%>
+							</p>
+							<ul class="list-unstyled">
+							<li>&nbsp;</li>
+							<li>
+								<%=t("contact.locations.argentina.phone")%>
+								</li>
+							<li>
+								<a href="mailto:<%=t("contact.locations.argentina.contact_email")%>">
+								<%=t("contact.locations.argentina.contact_email")%>
+								</a></li>
+							</ul>
+						</div>
+						<div class="col-xs-4 text-left">
+							<a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
+							<img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="70" data-pin-nopin="true">
+							</a>
+						</div>
+						</div>
 					</div>
 				</div>
-				&nbsp;<br/>
-				<a class="btn btn-social-icon btn-facebook" href="https://facebook.com/kleer.la" target="_blank">
-					<i class="fa fa-facebook"></i>
-				</a>
-				<a class="btn btn-social-icon btn-twitter" href="https://twitter.com/kleer_la" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-				<a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/company/541684" target="_blank">
-					<i class="fa fa-linkedin"></i>
-				</a>
-				<a class="btn btn-social-icon btn-google-plus" href="https://plus.google.com/106280725763107001222" target="_blank">
-					<i class="fa fa-google-plus"></i>
-				</a>
-				<a class="btn btn-social-icon btn-github" href="https://github.com/kleer-la" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-				&nbsp;<br/>
-				&nbsp;<br/>
-				&nbsp;<br/>
+
+				<div role="tabpanel" class="text-center tab-pane" id="Bolivia">
+					<div class="alert alert-info">
+						<div class="row">
+						<div class="col-sm-12">
+							<h4><strong>Kleer Bolivia</strong></h4>
+							<p><%=t("contact.locations.bolivia.address1")%>
+							<br><%=t("contact.locations.bolivia.address2")%></p>
+							<ul class="list-unstyled">
+							<li>
+								<%=t("contact.locations.bolivia.phone")%>
+								</li>
+							<li>
+								<a href="mailto:<%=t("contact.locations.bolivia.contact_email")%>">
+								<%=t("contact.locations.bolivia.contact_email")%>
+								</a></li>
+								<li><%=t("contact.helped_by")%>
+								<%=t("contact.locations.bolivia.contact")%>
+							</li>
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
+
+				<div role="tabpanel" class="text-center tab-pane" id="Colombia">
+					<div class="alert alert-info">
+						<div class="row">
+						<div class="col-sm-12">
+							<h4><strong>Kleer Colombia</strong></h4>
+							<%=t("contact.locations.colombia.address2")%></p>
+							<ul class="list-unstyled">
+							<li><%=t("contact.locations.colombia.contact1")%>
+								</li>
+								<li class="whatsapp">
+								<%=t("contact.locations.colombia.whatsapp")%>
+								</li>
+								<li><%=t("contact.locations.colombia.contact2")%></li>
+							<li>
+								<a href="mailto:<%=t("contact.locations.colombia.contact_email")%>">
+								<%=t("contact.locations.colombia.contact_email")%>
+								</a></li>
+							</li>
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
+				
+				<div role="tabpanel" class="text-center tab-pane" id="Uruguay">
+					<div class="alert alert-info">
+						<div class="row">
+						<div class="col-sm-12">
+							<h4><strong>Kleer Uruguay</strong></h4>
+							<p><%=t("contact.locations.uruguay.address1")%>
+							- <%=t("contact.locations.uruguay.address2")%></p>
+							<ul class="list-unstyled">
+							<li>
+								<%=t("contact.locations.uruguay.phone")%>
+								</li>
+							<li class="whatsapp">
+								<%=t("contact.locations.uruguay.whatsapp")%>
+								</li>
+							<li>
+								<a href="mailto:<%=t("contact.locations.uruguay.contact_email")%>">
+								<%=t("contact.locations.uruguay.contact_email")%>
+								</a></li>
+							<li><%=t("contact.helped_by")%>
+								<%=t("contact.locations.uruguay.contact")%>
+							</li>
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-3 contactanos-side visible-lg">
-				<img src="/img/personajes/contactanos-dcha.png" height="550">
-			</div>
+
 		</div>
 	</div>
-</div>
 
-<script>
-  $(document).ready(function(){
-    $('#contactanos-tabs').tab();
-  });
-</script>
+	<div class="row">
+		
+	</div>
+	</div>
+	<a id="to-top" href="javascript:void(0);" onclick='scrollTo2("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+</div>
