@@ -643,7 +643,7 @@ en:
                 title: "Global"
                 name: "Global"
                 contact_us: "Contact us at"
-                whatsapp: "For trainings, WhatsApp us!<br><a href=\"https://wa.me/59891959360\">+598 91959360</a><br><a href=\"https://wa.me/573207666176\">+57 3207666176</a>"
+                whatsapp: "WhatsApp us!<br><a href=\"https://wa.me/59891959360\">+598 91959360</a><br><a href=\"https://wa.me/573207666176\">+57 3207666176</a>"
                 contact_email: "info@kleer.la"
         subscription:
             text: "Be the first to get all the agile news!"
