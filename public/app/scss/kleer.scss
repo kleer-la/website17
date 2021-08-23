@@ -1937,3 +1937,11 @@ p.feed-item-desc {
   border-color: #d43f3a;
   pointer-events: none;
 }
+.min-height {
+  display: flex;
+  height:  100vh;
+  .container-fluid.col-md-10.col-md-offset-1 {
+    display: flex;
+    align-items: center;
+  }
+}
