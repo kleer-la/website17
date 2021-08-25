@@ -83,16 +83,10 @@ configure do
   KeventerReader.build
 
   use Rack::ReverseProxy do
-    # options = { 
-    #   preserve_host: true,
-    #   username: 'basic-auth-username',
-    #   password: 'basic-auth-password',
-    #   timeout: 30
-    # }
     reverse_proxy_options timeout: 30
     reverse_proxy_options preserve_host: true
     # reverse_proxy_options username: 'basic-auth-username', password: 'basic-auth-password'
-    reverse_proxy /^\/blog(\/.*)$/, 'https://kleer.evolucionagil.com/blog$1' #, opts = options
+    reverse_proxy /^\/blog(\/.*)$/, 'https://kleer.evolucionagil.com/blog$1'
   end
 end
 
@@ -146,7 +140,7 @@ end
 # end
 
 get '/blog' do
-  redirect "https://www.kleer.la/blog/", 301 # permanent redirect
+  redirect "/blog/", 301 # permanent redirect
 end
 
 get '/entrenamos/:country?' do |country|
