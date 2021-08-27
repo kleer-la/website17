@@ -86,7 +86,7 @@ configure do
     reverse_proxy_options timeout: 30
     reverse_proxy_options preserve_host: true
     # reverse_proxy_options username: 'basic-auth-username', password: 'basic-auth-password'
-    reverse_proxy /^\/blog-nuevo(\/.*)$/, 'https://kleer.evolucionagil.com/blog$1'
+    reverse_proxy /^\/blog-nuevo(\/.*)$/, 'https://kleer.evolucionagil.com/blog-nuevo$1'
   end
 end
 
