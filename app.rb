@@ -7,6 +7,7 @@ require 'i18n'
 require 'money'
 require 'rss'
 require 'escape_utils'
+require 'rack/reverse_proxy'
 
 require './lib/keventer_reader'
 require './lib/dt_helper'
@@ -80,6 +81,13 @@ configure do
 
   enable :sessions
   KeventerReader.build
+
+  use Rack::ReverseProxy do
+    reverse_proxy_options timeout: 30
+    reverse_proxy_options preserve_host: true
+    # reverse_proxy_options username: 'basic-auth-username', password: 'basic-auth-password'
+    reverse_proxy /^\/blog-nuevo(\/.*)$/, 'https://kleer.evolucionagil.com/blog-nuevo$1'
+  end
 end
 
 before do
@@ -129,6 +137,10 @@ get '/blog' do
   @active_tab_blog = "active"
   @rss = RSS::Parser.parse('https://medium.com/feed/kleer', false)
   erb :blog, :layout => :layout_2017
+end
+
+get '/blog-nuevo' do
+  redirect "/blog-nuevo/", 301 # permanent redirect
 end
 
 get '/entrenamos/:country?' do |country|

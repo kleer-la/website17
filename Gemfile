@@ -17,6 +17,7 @@ gem 'tzinfo-data'
 gem 'money'
 gem 'escape_utils'
 gem 'rack-ssl-enforcer'
+gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
 
 group :development do
   gem 'foreman'
