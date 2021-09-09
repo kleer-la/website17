@@ -24,3 +24,9 @@ Feature: Event Type Details
 		Given there is a event type with subtitle
 		When I visit this event type page
 		Then I should see "Subtítulo con más información"
+
+	Scenario: SEO description
+		Given there is a event type with description "SEO description"
+		When I visit this event type page
+		Then SEO meta "description" should be "" 
+		#"SEO description"

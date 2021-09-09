@@ -1,5 +1,4 @@
 #encoding: utf-8
-
 require File.join(File.dirname(__FILE__),'../../lib/keventer_reader')
 
 def get_event_type(event_type_id, find_it=true)
@@ -55,4 +54,19 @@ end
 
 When(/^I visit this event type page$/) do
   visit "/categoria/productos-robustos/cursos/#{@event_type_id}-xxx"
+end
+
+Given('there is a event type with description {string}') do |description|
+#  visit '/categoria/productos-robustos/cursos/2-yyy'
+end
+
+Then('SEO meta {string} should be {string}') do |tag, text|
+  expect(page).to have_tag('meta', 
+    :with => {
+      :name => tag,
+      :content => text
+    }
+  )
+
+#  <meta name="description" content="Acelera el diseño, la creación y la mejora continua de productos innovadores, con mayor impacto y menor riesgo.">
 end
