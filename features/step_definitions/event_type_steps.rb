@@ -3,14 +3,14 @@ require File.join(File.dirname(__FILE__),'../../lib/keventer_reader')
 
 def get_event_type(event_type_id, find_it=true)
   connector = double("KeventerConnector")
-  connector.should_receive(:event_type_url).with(event_type_id)
+  expect(connector).to receive(:event_type_url).with(event_type_id)
   if find_it
-    connector.stub(:event_type_url).and_return( File.join(File.dirname(__FILE__),"../../spec/event_type_#{event_type_id}.xml") )
+    allow(connector).to receive(:event_type_url).and_return( File.join(File.dirname(__FILE__),"../../spec/event_type_#{event_type_id}.xml") )
   else
-    connector.stub(:event_type_url).and_return('')
+    allow(connector).to receive(:event_type_url).and_return('')
   end
-  connector.stub(:events_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/events.xml") )
-  connector.stub(:categories_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/categories.xml") )
+  allow(connector).to receive(:events_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/events.xml") )
+  allow(connector).to receive(:categories_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/categories.xml") )
   KeventerReader.build_with( connector )
 end
 
