@@ -639,6 +639,14 @@ en:
                 phone: "+598-2628-0702"
                 contact: "Elysabeth y Pablo"
                 contact_email: "info.uy@kleer.la"
+            usa:
+                name: "USA"
+                address1: ""
+                address2: ""
+                whatsapp: ""
+                phone: ""
+                contact: ""
+                contact_email: "info.us@kleer.la"
             other:
                 title: "Global"
                 name: "Global"
