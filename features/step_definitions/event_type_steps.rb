@@ -75,3 +75,13 @@ Then('SEO meta property {string} should be {string}') do |tag, text|
     }
   )
 end
+
+Given(/^there is a event type with duration$/) do
+  @event_type_id=1
+end
+Given(/^there is a event type with no duration$/) do
+  @event_type_id=3
+end
+Given('I expect duration to be {string}') do |text|
+  expect(page).to have_selector("#duration-#{@event_type_id}", :exact_text => text)
+end

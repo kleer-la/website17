@@ -57,7 +57,7 @@
 	  <elevator-pitch>un elevator pitch</elevator-pitch>
 	  <takeaways>pepe</takeaways>
 	  <learnings>pipollo</learnings>
-      <duration type="integer">8</duration>
+      <duration type="integer"></duration>
       <goal>un objetivo.</goal>
       <id type="integer">13</id>
       <name>Workshop de Retrospectivas</name>
@@ -67,7 +67,7 @@
 	  <faq>
 	**¿Más preguntas?** Visita nuestra sección de [Preguntas Frecuentes](https://www.kleer.la/preguntas-frecuentes/certified-scrum-master).
 	</faq>
-	<include-in-catalog type="boolean">false</include-in-catalog>
+	<include-in-catalog type="boolean">true</include-in-catalog>
     <average-rating type="float">4.38</average-rating>
 <net-promoter-score type="float">0.96</net-promoter-score>
 <participant-count type="integer">125</participant-count>
