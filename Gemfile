@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.6.7"
+ruby "2.7.4"
 
 gem 'sinatra'
 gem 'thin'
@@ -17,6 +17,7 @@ gem 'tzinfo-data'
 gem 'money'
 gem 'escape_utils'
 gem 'rack-ssl-enforcer'
+gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
 
 group :development do
   gem 'foreman'
@@ -29,4 +30,5 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'coveralls_reborn'
+  gem 'rspec-html-matchers', '~> 0.9.4'
 end

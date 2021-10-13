@@ -27,13 +27,20 @@ Docker
 ---
 
 Para desarrollar con docker
+```cli
 docker-compose run --service-ports website17 bash
 cd app
 gem install bundler:2.0.2
 bundle install
 ruby app.rb -o 0
-
+```
 
 Routes
----
+```cli
 rake routes
+```
+
+Referencias para configurar el Wordpress por reverse proxy
+* https://www.cloudanix.com/blog/wordpress-installation-on-a-subdirectory-of-an-existing-app-ruby-on-rails/
+* https://medium.com/@technoblogueur/wordpress-blog-for-ruby-on-rails-the-configuration-that-worked-for-me-a8a7a989a68d
+* https://www.netlingshq.com/blog/wordpress-with-ruby-on-rails/

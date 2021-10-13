@@ -102,10 +102,10 @@
     <promoter-count type="integer">92</promoter-count>
         <created-at type="datetime">2013-07-10T20:53:56Z</created-at>
         <description>esta es la descripción</description>
-        <duration type="integer">1</duration>
+        <duration type="integer"></duration>
         <faq>¿más preguntas?</faq>
         <goal>acá va el objetivo</goal>
-        <id type="integer">2</id>
+        <id type="integer">3</id>
         <include-in-catalog type="boolean">true</include-in-catalog>
         <materials></materials>
         <name>Taller de TDD</name>

@@ -1,17 +1,16 @@
 #encoding: utf-8
-
 require File.join(File.dirname(__FILE__),'../../lib/keventer_reader')
 
 def get_event_type(event_type_id, find_it=true)
   connector = double("KeventerConnector")
-  connector.should_receive(:event_type_url).with(event_type_id)
+  expect(connector).to receive(:event_type_url).with(event_type_id)
   if find_it
-    connector.stub(:event_type_url).and_return( File.join(File.dirname(__FILE__),"../../spec/event_type_#{event_type_id}.xml") )
+    allow(connector).to receive(:event_type_url).and_return( File.join(File.dirname(__FILE__),"../../spec/event_type_#{event_type_id}.xml") )
   else
-    connector.stub(:event_type_url).and_return('')
+    allow(connector).to receive(:event_type_url).and_return('')
   end
-  connector.stub(:events_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/events.xml") )
-  connector.stub(:categories_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/categories.xml") )
+  allow(connector).to receive(:events_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/events.xml") )
+  allow(connector).to receive(:categories_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/categories.xml") )
   KeventerReader.build_with( connector )
 end
 
@@ -54,5 +53,35 @@ Given(/^there is a event type with subtitle$/) do
 end
 
 When(/^I visit this event type page$/) do
-  visit "/categoria/productos-robustos/cursos/#{@event_type_id}-xxx"
+  visit "/cursos/#{@event_type_id}-xxx"
+  # visit "/categoria/productos-robustos/cursos/#{@event_type_id}-xxx"
+end
+
+#  <meta name="description" content="Acelera el diseño, la creación y la mejora continua de productos innovadores, con mayor impacto y menor riesgo.">
+Then('SEO meta name {string} should be {string}') do |tag, text|
+  expect(page).to have_tag('meta', 
+    :with => {
+      :name => tag,
+      :content => text
+    }
+  )
+end
+
+Then('SEO meta property {string} should be {string}') do |tag, text|
+  expect(page).to have_tag('meta', 
+    :with => {
+      :property => tag,
+      :content => text
+    }
+  )
+end
+
+Given(/^there is a event type with duration$/) do
+  @event_type_id=1
+end
+Given(/^there is a event type with no duration$/) do
+  @event_type_id=3
+end
+Given('I expect duration to be {string}') do |text|
+  expect(page).to have_selector("#duration-#{@event_type_id}", :exact_text => text)
 end

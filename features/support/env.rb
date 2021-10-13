@@ -13,6 +13,7 @@ require 'cucumber/rspec/doubles'
 require 'rack/test'
 require 'capybara/cucumber'
 require 'simplecov'
+require 'rspec-html-matchers'
 
 SimpleCov.start
 
@@ -20,6 +21,7 @@ class MyWorld
 	include Capybara::DSL
 	include RSpec::Expectations
 	include RSpec::Matchers
+	include RSpecHtmlMatchers
 end
 
 Capybara.app = Sinatra::Application
@@ -29,7 +31,6 @@ World{MyWorld.new}
 # Capybara.register_driver :rack_test do |app|
 # 	Capybara::RackTest::Driver.new(app, headers: { 'HTTP_USER_AGENT' => 'Capybara' })
 # end
-
 
 # Webrat.configure do |config|
 # 	config.mode = :rack

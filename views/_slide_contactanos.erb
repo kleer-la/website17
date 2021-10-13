@@ -8,6 +8,7 @@
 		<li role="presentation"><a data-target="#Bolivia" aria-controls="Bolivia" role="tab" data-toggle="tab">Bolivia</a></li>
 		<li role="presentation"><a data-target="#Colombia" aria-controls="Colombia" role="tab" data-toggle="tab">Colombia</a></li>
 		<li role="presentation"><a data-target="#Uruguay" aria-controls="Uruguay" role="tab" data-toggle="tab">Uruguay</a></li>
+		<li role="presentation"><a data-target="#USA" aria-controls="USA" role="tab" data-toggle="tab">USA</a></li>
 	</ul>
 
 	<br>
@@ -41,9 +42,7 @@
 						<div class="row">
 						<div class="col-xs-5 col-xs-offset-3">
 							<h4><strong>Kleer Argentina</strong></h4>
-							<p><%=t("contact.locations.argentina.address1")%>
-							 <%=t("contact.locations.argentina.address2")%>
-							</p>
+							<%=t("contact.locations.argentina.address1")%>
 							<ul class="list-unstyled">
 							<li>&nbsp;</li>
 							<li>
@@ -56,7 +55,7 @@
 							</ul>
 						</div>
 						<div class="col-xs-4 text-left">
-							<a href="https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,," target="_F960AFIPInfo">
+							<a href="https://qr.afip.gob.ar/?qr=26JRVR0SP0Cezc2Y9C7Yvg,," target="_F960AFIPInfo">
 							<img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0" height="70" data-pin-nopin="true">
 							</a>
 						</div>
@@ -69,8 +68,7 @@
 						<div class="row">
 						<div class="col-sm-12">
 							<h4><strong>Kleer Bolivia</strong></h4>
-							<p><%=t("contact.locations.bolivia.address1")%>
-							<br><%=t("contact.locations.bolivia.address2")%></p>
+							<%=t("contact.locations.bolivia.address1")%>
 							<ul class="list-unstyled">
 							<li>
 								<%=t("contact.locations.bolivia.phone")%>
@@ -93,7 +91,7 @@
 						<div class="row">
 						<div class="col-sm-12">
 							<h4><strong>Kleer Colombia</strong></h4>
-							<%=t("contact.locations.colombia.address2")%></p>
+							<%=t("contact.locations.colombia.address1")%>
 							<ul class="list-unstyled">
 							<li><%=t("contact.locations.colombia.contact1")%>
 								</li>
@@ -117,8 +115,7 @@
 						<div class="row">
 						<div class="col-sm-12">
 							<h4><strong>Kleer Uruguay</strong></h4>
-							<p><%=t("contact.locations.uruguay.address1")%>
-							- <%=t("contact.locations.uruguay.address2")%></p>
+							<%=t("contact.locations.uruguay.address1")%>
 							<ul class="list-unstyled">
 							<li>
 								<%=t("contact.locations.uruguay.phone")%>
@@ -133,6 +130,22 @@
 							<li><%=t("contact.helped_by")%>
 								<%=t("contact.locations.uruguay.contact")%>
 							</li>
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div role="tabpanel" class="text-center tab-pane" id="USA">
+					<div class="alert alert-info">
+						<div class="row">
+						<div class="col-sm-12">
+							<h4><strong>Kleer USA</strong></h4>
+							<ul class="list-unstyled">
+							<li>&nbsp;</li>
+							<li><i class="fa fa-envelope-o fa-fw"></i>
+								<a href="mailto:<%=t("contact.locations.usa.contact_email")%>">
+								<%=t("contact.locations.usa.contact_email")%>
+								</a></li>
 							</ul>
 						</div>
 						</div>

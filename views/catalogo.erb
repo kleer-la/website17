@@ -31,8 +31,8 @@
 												<%=event_type.subtitle%> <br/>
 											<% end %>
 											<div class="row">
-												<div class="col-md-8">
-													<%= event_type.duration%> horas
+												<div class="col-md-8" id="duration-<%= event_type.id%>">
+													<%= (event_type.duration.to_s + ' horas') if event_type.duration>0%>
 												</div>
 											</div>
 								    	<% if feature_on?("show_rates_on_catalog") && event_type.has_rate %>
