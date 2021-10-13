@@ -257,7 +257,7 @@ Then(/^I should see the Argentinian fiscal data QR$/) do
 end
 
 Then(/^I should see the Argentinian fiscal data link$/) do
-  expect(page).to have_selector("a[href='https://qr.afip.gob.ar/?qr=5DjfcAnZHIhtGI65mHIRlA,,']")
+  expect(page).to have_selector("a[target='_F960AFIPInfo']")
 end
 
 Given(/^I visit the Privacy page$/) do
