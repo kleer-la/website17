@@ -2,7 +2,7 @@
     [
         {"es": {   
             "id": "guias-agiles",
-            "landing": "http://guiasagiles.org/",
+            "landing": "https://guiasagiles.herokuapp.com/",
             "cover": "/img/recursos/guias-agiles.jpg",
             "title": "Guias Ágiles", 
             "description": "Un lugar, todas las guías: Técnicas y herramientas que potencian a personas y equipos.",
@@ -42,7 +42,7 @@
         },
         {"es": {   
             "id": "canvas-experimentos",
-            "landing": "http://guiasagiles.org/#Experimentos",
+            "landing": "https://guiasagiles.herokuapp.com/#Experimentos",
             "cover": "/img/recursos/canvas-experimentos.jpg",
             "title": "Canvas de Experimentos",
             "description": "¿Estás llevando adelante una iniciativa en un marco de exploración y aprendizaje? Te invitamos a que tomes como base el Canvas de Experimentos. Adaptalo según tu necesidad, usalo para diseñar experimentos, y compartí tus experiencias!",
