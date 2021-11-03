@@ -149,7 +149,6 @@ end
 get '/entrenamos' do
 	entrenamos_view
 end
-
 def entrenamos_view(country=nil)
 	if !country.nil? && country!='todos' && country.length>2
 	    status 404
@@ -162,7 +161,6 @@ def entrenamos_view(country=nil)
     erb :entrenamos, :layout => :layout_2017
 	end
 end
-
 
 get '/acompanamos' do
   redirect "/agilidad-organizacional", 301 # permanent redirect
@@ -312,28 +310,32 @@ get '/catalogo' do
   erb :catalogo, :layout => :layout_2017
 end
 
+def event_type_from_qstring(event_type_id_with_name)
+  event_type_id = event_type_id_with_name.split('-')[0]
+  KeventerReader.instance.event_type(event_type_id, true) if is_valid_id(event_type_id)
+end
+
+def tracking_mantain_or_default(utm_source, utm_campaign)
+  if !utm_source.nil? && !utm_campaign.nil? && utm_source != "" && utm_campaign != ""
+    tracking_parameters = "&utm_source=#{utm_source}&utm_campaign=#{utm_campaign}"
+  else
+    tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
+  end
+  return tracking_parameters
+end
+
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
   @active_tab_entrenamos = "active"
 
-  event_type_id_with_name = params[:event_type_id_with_name]
-  event_type_id = event_type_id_with_name.split('-')[0]
-
-  if is_valid_id(event_type_id)
-    @event_type = KeventerReader.instance.event_type(event_type_id, true)
-  end
-
-  if !params[:utm_source].nil? && !params[:utm_campaign].nil? && params[:utm_source] != "" && params[:utm_campaign] != ""
-    @tracking_parameters = "&utm_source=#{params[:utm_source]}&utm_campaign=#{params[:utm_campaign]}"
-  else
-    @tracking_parameters = "&utm_source=kleer.la&utm_campaign=kleer.la"
-  end
+  @event_type = event_type_from_qstring params[:event_type_id_with_name]      
+  @tracking_parameters= tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
   if @event_type.nil?
     flash.now[:error] = get_course_not_found_error()
     erb :error404_to_calendar, :layout => :layout_2017
   else
-    # SEO
+    # SEO (title, meta)
     @page_title = "Kleer - " + @event_type.name
     @meta_description = @event_type.elevator_pitch
     if @event_type.categories.count > 0
@@ -341,6 +343,34 @@ get '/cursos/:event_type_id_with_name' do
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
     erb :event_type, :layout => :layout_2017
+  end
+end
+
+get '/cursos2/:event_type_id_with_name' do
+  @active_tab_entrenamos = "active"
+
+  @event_type = event_type_from_qstring params[:event_type_id_with_name]      
+  @tracking_parameters= tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
+
+  if @event_type.nil?
+    flash.now[:error] = get_course_not_found_error()
+    erb :error404_to_calendar, :layout => :layout_2017
+  else
+    # SEO (title, meta)
+    @page_title = "Kleer - " + @event_type.name
+    @meta_description = @event_type.elevator_pitch
+    if @event_type.categories.count > 0
+      # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
+      @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
+    end
+    erb :event_type2, :layout => :layout_2017
+  end
+end
+
+post '/cursos/:event_type_id/contact' do
+  @event_type = event_type_from_qstring params[:event_type_id]      
+  if not @event_type.nil?
+    p params
   end
 end
 
