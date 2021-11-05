@@ -133,11 +133,11 @@ get '/es' do
   redirect "/es/", 301 # permanent redirect
 end
 
-get '/blog' do
-  @active_tab_blog = "active"
-  @rss = RSS::Parser.parse('https://medium.com/feed/kleer', false)
-  erb :blog, :layout => :layout_2017
-end
+# get '/blog' do
+#   @active_tab_blog = "active"
+#   @rss = RSS::Parser.parse('https://medium.com/feed/kleer', false)
+#   erb :blog, :layout => :layout_2017
+# end
 
 get '/blog' do
   redirect "/blog/", 301 # permanent redirect
