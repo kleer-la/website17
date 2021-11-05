@@ -85,8 +85,8 @@ configure do
   use Rack::ReverseProxy do
     reverse_proxy_options timeout: 30
     reverse_proxy_options preserve_host: true
-    # reverse_proxy_options username: 'basic-auth-username', password: 'basic-auth-password'
-    reverse_proxy /^\/blog-nuevo(\/.*)$/, 'https://kleer.evolucionagil.com/blog-nuevo$1'
+    reverse_proxy_options username: 'blogkleer', password: 'kleerkleer'
+    reverse_proxy /^\/blog(\/.*)$/, 'https://blog.kleer.la/blog$1'
   end
 end
 
@@ -139,8 +139,8 @@ get '/blog' do
   erb :blog, :layout => :layout_2017
 end
 
-get '/blog-nuevo' do
-  redirect "/blog-nuevo/", 301 # permanent redirect
+get '/blog' do
+  redirect "/blog/", 301 # permanent redirect
 end
 
 get '/entrenamos/:country?' do |country|
