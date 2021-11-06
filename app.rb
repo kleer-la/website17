@@ -83,10 +83,10 @@ configure do
   KeventerReader.build
 
   use Rack::ReverseProxy do
-    reverse_proxy /^\/blog-nuevo(\/.*)$/, 'https://kleer.evolucionagil.com/blog-nuevo$1', opts = {
+    reverse_proxy /^\/blog(\/.*)$/, 'https://blog.kleer.la/blog$1', opts = {
       preserve_host: true,
-      :username => 'kleer', # username: 'blogkleer'
-      :password => 'kleer', # password: 'kleerkleer'
+      :username => 'blogkleer',
+      :password => 'kleerkleer',
       timeout: 30
     }
   end
@@ -136,13 +136,7 @@ get '/es' do
 end
 
 get '/blog' do
-  @active_tab_blog = "active"
-  @rss = RSS::Parser.parse('https://medium.com/feed/kleer', false)
-  erb :blog, :layout => :layout_2017
-end
-
-get '/blog-nuevo' do
-  redirect "/blog-nuevo/", 301 # permanent redirect
+  redirect "/blog/", 301 # permanent redirect
 end
 
 get '/entrenamos/:country?' do |country|
