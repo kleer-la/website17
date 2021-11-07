@@ -1,5 +1,4 @@
 require './lib/keventer_reader'     # to_boolean
-require './lib/keventer_reader'     # to_boolean
 
 class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faqs,
