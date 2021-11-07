@@ -89,6 +89,10 @@ configure do
       :password => 'kleerkleer',
       timeout: 30
     }
+    reverse_proxy /^\/blog-nuevo(\/.*)$/, 'https://kleer.evolucionagil.com/blog-nuevo$1', opts = {
+      preserve_host: true,
+      timeout: 30
+    }
   end
 end
 
@@ -137,6 +141,10 @@ end
 
 get '/blog' do
   redirect "/blog/", 301 # permanent redirect
+end
+
+get '/blog-nuevo' do
+  redirect "/blog-nuevo/", 301 # permanent redirect
 end
 
 get '/entrenamos/:country?' do |country|
