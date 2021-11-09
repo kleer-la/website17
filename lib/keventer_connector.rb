@@ -26,4 +26,7 @@ class KeventerConnector
     KEVENTER_URL
   end
 
+  def self.interest_url
+    API_ROOT + '/v3/participants/interest'
+  end
 end
