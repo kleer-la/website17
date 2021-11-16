@@ -82,14 +82,16 @@ configure do
   enable :sessions
   KeventerReader.build
 
-  # use Rack::ReverseProxy do
-  #   reverse_proxy /^\/blog(\/.*)$/, 'https://blog.kleer.la/blog$1', opts = {
-  #     preserve_host: true,
-  #     :username => 'blogkleer',
-  #     :password => 'kleerkleer',
-  #     timeout: 30
-  #   }
-  # end
+  if ENV['BLOG_REDIRECT'] == "enabled"
+    use Rack::ReverseProxy do
+      reverse_proxy /^\/blog(\/.*)$/, 'https://blog.kleer.la/blog$1', opts = {
+        preserve_host: true,
+        :username => ENV['BLOG_REDIRECT_USERNAME'],
+        :password => ENV['BLOG_REDIRECT_PASSWORD'],
+        timeout: 30
+      }
+    end
+  end
 end
 
 before do
