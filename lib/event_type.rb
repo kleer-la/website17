@@ -1,3 +1,5 @@
+require './lib/xml_api.rb'
+
 class EventType
   def self.createNull(file)
     EventType.new XmlAPI.new(file)
@@ -45,18 +47,5 @@ class EventType
       @categories << [id,codename]
     end
     @categories
-  end
-end
-
-
-class XmlAPI
-  attr_accessor :xml_doc
-  def initialize(file_uri)
-    begin      
-      xml= LibXML::XML::Parser.file(file_uri)
-      @xml_doc= xml.parse
-    rescue LibXML::XML::Error
-      nil
-    end
   end
 end
