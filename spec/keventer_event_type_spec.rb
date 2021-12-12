@@ -9,29 +9,29 @@ describe KeventerEventType do
 
   it 'should have a name' do
     @keventtype.name = 'Workshop de Retrospectivas'
-    @keventtype.name.should == 'Workshop de Retrospectivas'
+    expect(@keventtype.name).to eq 'Workshop de Retrospectivas'
   end
 
   it 'should have a goal' do
     @keventtype.goal = 'Buenos Aires'
-    @keventtype.goal.should == 'Buenos Aires'
+    expect(@keventtype.goal).to eq 'Buenos Aires'
   end
 
   it 'should have a description' do
     @keventtype.description = 'Argentina'
-    @keventtype.description.should == 'Argentina'
+    expect(@keventtype.description).to eq 'Argentina'
   end
 
   it 'should have a elevator_pitch' do
     @keventtype.elevator_pitch = 'Argentina'
-    @keventtype.elevator_pitch.should == 'Argentina'
+    expect(@keventtype.elevator_pitch).to eq 'Argentina'
   end
 
   it 'should have rating instance variable' do
-    @keventtype.average_rating.should == 0.0
-    @keventtype.net_promoter_score.should == 0
-    @keventtype.surveyed_count.should == 0.0
-    @keventtype.promoter_count.should == 0
+    expect(@keventtype.average_rating).to eq 0.0
+    expect(@keventtype.net_promoter_score).to eq 0
+    expect(@keventtype.surveyed_count).to eq 0.0
+    expect(@keventtype.promoter_count).to eq 0
   end
 
   it "new event_type doesn't have rate" do
@@ -52,32 +52,32 @@ describe KeventerEventType do
 
   it 'should have a learnings' do
     @keventtype.learnings = 'Argentina'
-    @keventtype.learnings.should == 'Argentina'
+    expect(@keventtype.learnings).to eq 'Argentina'
   end
 
   it 'should have a takeaways' do
     @keventtype.takeaways = 'Argentina'
-    @keventtype.takeaways.should == 'Argentina'
+    expect(@keventtype.takeaways).to eq 'Argentina'
   end
 
   it 'should have a program' do
     @keventtype.program = 'ar'
-    @keventtype.program.should == 'ar'
+    expect(@keventtype.program).to eq 'ar'
   end
 
   it 'should have a duration' do
     @keventtype.duration = 16
-    @keventtype.duration.should == 16
+    expect(@keventtype.duration).to eq 16
   end
 
   it 'should have some recipients' do
     @keventtype.recipients = 'sdkjfhskjfhskdjf'
-    @keventtype.recipients.should == 'sdkjfhskjfhskdjf'
+    expect(@keventtype.recipients).to eq 'sdkjfhskjfhskdjf'
   end
 
   it 'should have some FAQs' do
     @keventtype.faqs = 'sdkjfhskjfhskdjf'
-    @keventtype.faqs.should == 'sdkjfhskjfhskdjf'
+    expect(@keventtype.faqs).to eq 'sdkjfhskjfhskdjf'
   end
 
   it 'should have an empty subtitle on creatio' do

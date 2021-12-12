@@ -104,66 +104,66 @@ describe KeventerEvent do
 
   it 'should have a list_price' do
     @kevent.list_price = 12.0
-    @kevent.list_price.should == 12.0
+    expect(@kevent.list_price).to eq 12.0
   end
 
   it 'should have a eb_price' do
     @kevent.eb_price = 12.0
-    @kevent.eb_price.should == 12.0
+    expect(@kevent.eb_price).to eq 12.0
   end
 
   it 'should have a couples_eb_price' do
     @kevent.couples_eb_price = 12.0
-    @kevent.couples_eb_price.should == 12.0
+    expect(@kevent.couples_eb_price).to eq 12.0
   end
 
   it 'should have a business_eb_price' do
     @kevent.business_eb_price = 12.0
-    @kevent.business_eb_price.should == 12.0
+    expect(@kevent.business_eb_price).to eq 12.0
   end
 
   it 'should have a business_price' do
     @kevent.business_price = 12.0
-    @kevent.business_price.should == 12.0
+    expect(@kevent.business_price).to eq 12.0
   end
 
   it 'should have a enterprise_6plus_price' do
     @kevent.enterprise_6plus_price = 12.0
-    @kevent.enterprise_6plus_price.should == 12.0
+    expect(@kevent.enterprise_6plus_price).to eq 12.0
   end
 
   it 'should have a enterprise_11plus_price' do
     @kevent.enterprise_11plus_price = 12.0
-    @kevent.enterprise_11plus_price.should == 12.0
+    expect(@kevent.enterprise_11plus_price).to eq 12.0
   end
 
   it 'should have a discount' do
     @kevent.list_price = 12.0
     @kevent.eb_price = 10.5
-    @kevent.discount.should == 1.5
+    expect(@kevent.discount).to eq 1.5
   end
 
   it 'should have a discount' do
     @kevent.list_price = 12.0
     @kevent.eb_price = 0.0
-    @kevent.discount.should == 0.0
+    expect(@kevent.discount).to eq 0.0
   end
 
   it 'should have a discount' do
     @kevent.list_price = 12.0
     @kevent.eb_price = nil
-    @kevent.discount.should == 0.0
+    expect(@kevent.discount).to eq 0.0
   end
 
   it 'should have a eb_end_date' do
     a_date = Date.new
     @kevent.eb_end_date = a_date
-    @kevent.eb_end_date.should == a_date
+    expect(@kevent.eb_end_date).to eq a_date
   end
 
   it 'should have a currency_iso_code' do
     @kevent.currency_iso_code = 'ARS'
-    @kevent.currency_iso_code.should == 'ARS'
+    expect(@kevent.currency_iso_code).to eq 'ARS'
   end
 
   it 'should have specific_conditions' do
@@ -206,21 +206,21 @@ describe KeventerEvent do
 
     it 'should have a co-trainer' do
       @kevent.add_trainer @cotrainer
-      @kevent.trainers[0].should == @cotrainer
-      @kevent.trainers.should == [@cotrainer]
+      expect(@kevent.trainers[0]).to eq @cotrainer
+      expect(@kevent.trainers).to eq [@cotrainer]
     end
     it 'should have a trainer and NO co-trainer' do
       @kevent.add_trainer @trainer
       @kevent.add_trainer nil
-      @kevent.trainers[0].should == @trainer
+      expect(@kevent.trainers[0]).to eq @trainer
       @kevent.trainers[1].should.nil?
-      @kevent.trainers.should == [@trainer]
+      expect(@kevent.trainers).to eq [@trainer]
     end
 
     it 'NG should have a trainer and co-trainer' do
       @kevent.add_trainer @trainer
       @kevent.add_trainer @cotrainer
-      @kevent.trainers.should == [@trainer, @cotrainer]
+      expect(@kevent.trainers).to eq [@trainer, @cotrainer]
     end
   end
 

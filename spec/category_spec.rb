@@ -54,8 +54,8 @@ describe Category do
 
     category = Category.new doc.find('/category')[0], 'es'
 
-    category.description.should == 'una descripción...'
-    category.name.should == 'High Performance'
+    expect(category.description).to eq 'una descripción...'
+    expect(category.name).to eq 'High Performance'
   end
 
   it 'should load from XML (en)' do
@@ -64,8 +64,8 @@ describe Category do
 
     category = Category.new doc.find('/category')[0], 'en'
 
-    category.description.should == 'description EN'
-    category.name.should == 'name EN'
-    category.tagline.should == 'tagline EN'
+    expect(category.description).to eq 'description EN'
+    expect(category.name).to eq 'name EN'
+    expect(category.tagline).to eq 'tagline EN'
   end
 end

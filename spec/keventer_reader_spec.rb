@@ -310,8 +310,8 @@ describe KeventerReader do
     end
 
     it "should get Tipo de Evento de Prueba for the category 'high-performance'" do
-      @high_performance.event_types[0].name.should == 'Tipo de Evento de Prueba'
-      @high_performance.event_types[0].description.should == 'Una descripción'
+      expect(@high_performance.event_types[0].name).to eq 'Tipo de Evento de Prueba'
+      expect(@high_performance.event_types[0].description).to eq 'Una descripción'
     end
   end
 
@@ -325,7 +325,6 @@ describe KeventerReader do
     end
     it 'should return nil if element is not present' do
       xml = double
-      element = double
       xml.stub(:find_first).and_return(nil)
       expect(first_content(xml, 'pepe')).to eq('')
     end
