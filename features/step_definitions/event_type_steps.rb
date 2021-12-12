@@ -1,25 +1,29 @@
-#encoding: utf-8
-require File.join(File.dirname(__FILE__),'../../lib/keventer_reader')
+# encoding: utf-8
 
-def get_event_type(event_type_id, find_it=true)
-  connector = double("KeventerConnector")
+require File.join(File.dirname(__FILE__), '../../lib/keventer_reader')
+
+def get_event_type(event_type_id, find_it = true)
+  connector = double('KeventerConnector')
   expect(connector).to receive(:event_type_url).with(event_type_id)
   if find_it
-    allow(connector).to receive(:event_type_url).and_return( File.join(File.dirname(__FILE__),"../../spec/event_type_#{event_type_id}.xml") )
+    allow(connector).to receive(:event_type_url).and_return(File.join(File.dirname(__FILE__),
+                                                                      "../../spec/event_type_#{event_type_id}.xml"))
   else
     allow(connector).to receive(:event_type_url).and_return('')
   end
-  allow(connector).to receive(:events_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/events.xml") )
-  allow(connector).to receive(:categories_xml_url).and_return( File.join(File.dirname(__FILE__),"../../spec/categories.xml") )
-  KeventerReader.build_with( connector )
+  allow(connector).to receive(:events_xml_url).and_return(File.join(File.dirname(__FILE__),
+                                                                    '../../spec/events.xml'))
+  allow(connector).to receive(:categories_xml_url).and_return(File.join(File.dirname(__FILE__),
+                                                                        '../../spec/categories.xml'))
+  KeventerReader.build_with(connector)
 end
 
 Given(/^theres an event type$/) do
-    get_event_type(4)
+  get_event_type(4)
 end
 
 Given(/^theres an event type with several editions$/) do
-    get_event_type(2)
+  get_event_type(2)
 end
 
 When(/^I visit the plain event type page$/) do
@@ -48,7 +52,7 @@ Then(/^I should not see a rating$/) do
 end
 
 Given(/^there is a event type with subtitle$/) do
-  @event_type_id=1
+  @event_type_id = 1
   get_event_type(@event_type_id)
 end
 
@@ -59,29 +63,27 @@ end
 
 #  <meta name="description" content="Acelera el diseño, la creación y la mejora continua de productos innovadores, con mayor impacto y menor riesgo.">
 Then('SEO meta name {string} should be {string}') do |tag, text|
-  expect(page).to have_tag('meta', 
-    :with => {
-      :name => tag,
-      :content => text
-    }
-  )
+  expect(page).to have_tag('meta',
+                           with: {
+                             name: tag,
+                             content: text
+                           })
 end
 
 Then('SEO meta property {string} should be {string}') do |tag, text|
-  expect(page).to have_tag('meta', 
-    :with => {
-      :property => tag,
-      :content => text
-    }
-  )
+  expect(page).to have_tag('meta',
+                           with: {
+                             property: tag,
+                             content: text
+                           })
 end
 
 Given(/^there is a event type with duration$/) do
-  @event_type_id=1
+  @event_type_id = 1
 end
 Given(/^there is a event type with no duration$/) do
-  @event_type_id=3
+  @event_type_id = 3
 end
 Given('I expect duration to be {string}') do |text|
-  expect(page).to have_selector("#duration-#{@event_type_id}", :exact_text => text)
+  expect(page).to have_selector("#duration-#{@event_type_id}", exact_text: text)
 end

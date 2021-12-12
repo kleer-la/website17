@@ -1,23 +1,23 @@
 require './lib/timezone_converter'
 
 class KeventerEvent
-    attr_accessor :capacity, :city, :country, :country_code, :event_type, :date,
-                  :finish_date, :registration_link, :is_sold_out, :id, :uri_path,
-                  :trainers, :keventer_connector, :place, :sepyme_enabled,
-                  :human_date, :start_time, :end_time, :address, :list_price,
-                  :eb_price, :eb_end_date, :currency_iso_code, :is_webinar,
-                  :specific_conditions, :is_community_event, :time_zone_name,
-                  :time_zone, :show_pricing, :couples_eb_price, :business_eb_price,
-                  :business_price, :enterprise_6plus_price, :enterprise_11plus_price,
-                  :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment,
-                  :online_course_codename, :online_cohort_codename
+  attr_accessor :capacity, :city, :country, :country_code, :event_type, :date,
+                :finish_date, :registration_link, :is_sold_out, :id, :uri_path,
+                :trainers, :keventer_connector, :place, :sepyme_enabled,
+                :human_date, :start_time, :end_time, :address, :list_price,
+                :eb_price, :eb_end_date, :currency_iso_code, :is_webinar,
+                :specific_conditions, :is_community_event, :time_zone_name,
+                :time_zone, :show_pricing, :couples_eb_price, :business_eb_price,
+                :business_price, :enterprise_6plus_price, :enterprise_11plus_price,
+                :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment,
+                :online_course_codename, :online_cohort_codename
 
   def initialize
     @capacity = 0
-    @city = ""
-    @place = ""
-    @country = ""
-    @country_code = ""
+    @city = ''
+    @place = ''
+    @country = ''
+    @country_code = ''
     @event_type = nil
     @date = nil
     @finish_date = nil
@@ -25,13 +25,13 @@ class KeventerEvent
     @end_time = nil
     @is_sold_out = false
     @sepyme_enabled = false
-    @registration_link = ""
+    @registration_link = ''
     @id = 0
     @trainers = []
     @uri_path
     @keventer_connector = nil
     @human_date
-    @address = ""
+    @address = ''
 
     @show_pricing = false
     @list_price = 0.0
@@ -42,34 +42,34 @@ class KeventerEvent
     @business_price = 0.0
     @enterprise_6plus_price = 0.0
     @enterprise_11plus_price = 0.0
-    @currency_iso_code = ""
+    @currency_iso_code = ''
 
     @is_webinar = false
-    @time_zone_name = ""
+    @time_zone_name = ''
     @time_zone = nil
 
-    @specific_conditions = ""
-    @specific_subtitle = ""
-    @banner_text = ""
-    @banner_type = ""
+    @specific_conditions = ''
+    @specific_subtitle = ''
+    @banner_text = ''
+    @banner_type = ''
     @is_community_event = false
-    @mode = ""
+    @mode = ''
 
     @enable_online_payment = false
-    @online_course_codename = ""
-    @online_cohort_codename = ""
+    @online_course_codename = ''
+    @online_cohort_codename = ''
   end
 
   def is_online
-    self.mode == "ol"
+    mode == 'ol'
   end
 
   def is_classroom
-    self.mode == "cl"
+    mode == 'cl'
   end
 
   def is_blended_learning
-    self.mode == "bl"
+    mode == 'bl'
   end
 
   def discount
@@ -83,14 +83,14 @@ class KeventerEvent
   def uri_path
     uri_path_to_return = @id.to_s
     uri_event_type_name = @event_type.name.downcase
-    uri_path_to_return += "-" + uri_event_type_name.gsub(/ /, "-")
+    uri_path_to_return += '-' + uri_event_type_name.gsub(/ /, '-')
     uri_city = @city.downcase
-    uri_path_to_return += "-" + uri_city.gsub(/ /, "-")
+    uri_path_to_return += '-' + uri_city.gsub(/ /, '-')
     uri_path_to_return
   end
 
   def friendly_title
-    @event_type.name + " - " + @city
+    @event_type.name + ' - ' + @city
   end
 
   def to_s
@@ -98,14 +98,10 @@ class KeventerEvent
   end
 
   def add_trainer(trainer)
-    if !trainer.nil?
-      @trainers <<= trainer
-    end
+    @trainers <<= trainer unless trainer.nil?
   end
 
-  def trainers
-    @trainers
-  end
+  attr_reader :trainers
 
   def load(event_doc)
     load_descripcion(event_doc)
@@ -114,6 +110,7 @@ class KeventerEvent
     load_status(event_doc)
     load_price(event_doc)
   end
+
   def load_descripcion(event_doc)
     @id = event_doc.find_first('id').content.to_i
     @capacity = event_doc.find_first('capacity').content.to_i
@@ -122,7 +119,7 @@ class KeventerEvent
     @address = event_doc.find_first('address').content
     @registration_link = event_doc.find_first('registration-link').content
 
-    @enable_online_payment = to_boolean( event_doc.find_first('enable-online-payment').content )
+    @enable_online_payment = to_boolean(event_doc.find_first('enable-online-payment').content)
     @online_course_codename = event_doc.find_first('online-course-codename').content
     @online_cohort_codename = event_doc.find_first('online-cohort-codename').content
 
@@ -130,11 +127,12 @@ class KeventerEvent
     @country_code = event_doc.find_first('country/iso-code').content
     @currency_iso_code = event_doc.find_first('currency-iso-code').content
   end
+
   def load_date(event_doc)
-    @date = Date.parse( event_doc.find_first('date').content )
+    @date = Date.parse(event_doc.find_first('date').content)
     @finish_date = validated_Date_parse(event_doc.find_first('finish-date'))
-    @start_time = DateTime.parse( event_doc.find_first('start-time').content )
-    @end_time = DateTime.parse( event_doc.find_first('end-time').content )
+    @start_time = DateTime.parse(event_doc.find_first('start-time').content)
+    @end_time = DateTime.parse(event_doc.find_first('end-time').content)
   end
 
   def load_details(event_doc)
@@ -142,42 +140,39 @@ class KeventerEvent
     @specific_conditions = event_doc.find_first('specific-conditions').content
     @is_community_event = event_doc.find_first('visibility-type').content == 'co'
     @mode = event_doc.find_first('mode').content
-    @is_webinar = to_boolean( event_doc.find_first('is-webinar').content )
+    @is_webinar = to_boolean(event_doc.find_first('is-webinar').content)
     @banner_text = event_doc.find_first('banner-text').content
     @banner_type = event_doc.find_first('banner-type').content
   end
 
   def load_status(event_doc)
-    @is_sold_out = to_boolean( event_doc.find_first('is-sold-out').content )
+    @is_sold_out = to_boolean(event_doc.find_first('is-sold-out').content)
   end
 
   def load_price(event_doc)
-    @show_pricing = to_boolean( event_doc.find_first('show-pricing').content )
+    @show_pricing = to_boolean(event_doc.find_first('show-pricing').content)
     @list_price = event_doc.find_first('list-price').content.nil? ? 0.0 : event_doc.find_first('list-price').content.to_f
     @eb_price = event_doc.find_first('eb-price').content.nil? ? 0.0 : event_doc.find_first('eb-price').content.to_f
-    if @eb_price > 0.0
-        @eb_end_date = validated_Date_parse(event_doc.find_first('eb-end-date'))
-    end
+    @eb_end_date = validated_Date_parse(event_doc.find_first('eb-end-date')) if @eb_price > 0.0
     @couples_eb_price = event_doc.find_first('couples-eb-price').content.nil? ? 0.0 : event_doc.find_first('couples-eb-price').content.to_f
     @business_eb_price = event_doc.find_first('business-eb-price').content.nil? ? 0.0 : event_doc.find_first('business-eb-price').content.to_f
     @business_price = event_doc.find_first('business-price').content.nil? ? 0.0 : event_doc.find_first('business-price').content.to_f
     @enterprise_6plus_price = event_doc.find_first('enterprise-6plus-price').content.nil? ? 0.0 : event_doc.find_first('enterprise-6plus-price').content.to_f
     @enterprise_11plus_price = event_doc.find_first('enterprise-11plus-price').content.nil? ? 0.0 : event_doc.find_first('enterprise-11plus-price').content.to_f
-
   end
-  def timezone_url
-    duration= end_time.to_time-start_time.to_time
-    hours= (duration /3600).to_i
-    minutes= ((duration % 3600)/60).to_i
 
-    "https://www.timeanddate.com/worldclock/fixedtime.html?" +
+  def timezone_url
+    duration = end_time.to_time - start_time.to_time
+    hours = (duration / 3600).to_i
+    minutes = ((duration % 3600) / 60).to_i
+
+    'https://www.timeanddate.com/worldclock/fixedtime.html?' +
       URI.encode_www_form(
-        msg: @event_type.name, 
-        iso: date.strftime("%Y%m%d") + "T" + start_time.strftime("%H%M"),
+        msg: @event_type.name,
+        iso: date.strftime('%Y%m%d') + 'T' + start_time.strftime('%H%M'),
         p1: TimezoneConverter.timezone(place),
         ah: hours,
-        am: minutes 
+        am: minutes
       )
   end
-
 end

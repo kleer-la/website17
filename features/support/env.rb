@@ -1,4 +1,4 @@
-#encoding: utf-8
+# encoding: utf-8
 
 require 'coveralls'
 Coveralls.wear!
@@ -18,16 +18,16 @@ require 'rspec-html-matchers'
 SimpleCov.start
 
 class MyWorld
-	include Capybara::DSL
-	include RSpec::Expectations
-	include RSpec::Matchers
-	include RSpecHtmlMatchers
+  include Capybara::DSL
+  include RSpec::Expectations
+  include RSpec::Matchers
+  include RSpecHtmlMatchers
 end
 
 Capybara.app = Sinatra::Application
 
-World{MyWorld.new}
-  
+World { MyWorld.new }
+
 # Capybara.register_driver :rack_test do |app|
 # 	Capybara::RackTest::Driver.new(app, headers: { 'HTTP_USER_AGENT' => 'Capybara' })
 # end

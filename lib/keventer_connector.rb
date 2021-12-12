@@ -1,13 +1,12 @@
 class KeventerConnector
-
-  KEVENTER_URL = ENV['KEVENTER_URL'] || "http://eventos.kleer.la"
-  API_ROOT = KEVENTER_URL + "/api"
-  API_EVENTS_PATH = "/events.xml"
-  API_KLEERERS_PATH = "/kleerers.xml"
-  API_CATEGORIES_PATH = "/categories.xml"
+  KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
+  API_ROOT = KEVENTER_URL + '/api'
+  API_EVENTS_PATH = '/events.xml'
+  API_KLEERERS_PATH = '/kleerers.xml'
+  API_CATEGORIES_PATH = '/categories.xml'
 
   def events_xml_url
-      API_ROOT + API_EVENTS_PATH
+    API_ROOT + API_EVENTS_PATH
   end
 
   def kleerers_xml_url

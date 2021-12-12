@@ -1,11 +1,10 @@
 # encoding: utf-8
 
-require File.join(File.dirname(__FILE__),'../lib/category')
+require File.join(File.dirname(__FILE__), '../lib/category')
 require 'libxml'
 require 'spec_helper'
 
 describe Category do
-  
   before(:each) do
     @category = Category.new
     @xml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -21,54 +20,54 @@ describe Category do
     <visible type="boolean">true</visible>
     <description-en>description EN</description-en>
     <name-en>name EN</name-en>
-    <tagline-en>tagline EN</tagline-en> 
+    <tagline-en>tagline EN</tagline-en>
   </category>
     '
   end
 
-  it "should have a name" do
-    @category.name = "pepepe"
-    @category.name.should == "pepepe"
-  end
-  
-  it "should have a codename" do
-    @category.codename = "pepepe"
-    @category.codename.should == "pepepe"
-  end
-  
-  it "should have a tagline" do
-    @category.tagline = "pepepe"
-    @category.tagline.should == "pepepe"
+  it 'should have a name' do
+    @category.name = 'pepepe'
+    @category.name.should == 'pepepe'
   end
 
-  it "should have a description" do
-    @category.description = "pepepe"
-    @category.description.should == "pepepe"
+  it 'should have a codename' do
+    @category.codename = 'pepepe'
+    @category.codename.should == 'pepepe'
   end
-  
-  it "should have a order" do
+
+  it 'should have a tagline' do
+    @category.tagline = 'pepepe'
+    @category.tagline.should == 'pepepe'
+  end
+
+  it 'should have a description' do
+    @category.description = 'pepepe'
+    @category.description.should == 'pepepe'
+  end
+
+  it 'should have a order' do
     @category.order = 12
     @category.order.should == 12
-  end  
-  
-  it "should load from XML (es)" do
-    parser =  LibXML::XML::Parser.string( @xml )
-    doc = parser.parse
-
-    category = Category.new doc.find('/category')[0], "es"
-
-    category.description.should == "una descripción..."
-    category.name.should == "High Performance"
   end
 
-  it "should load from XML (en)" do
-    parser =  LibXML::XML::Parser.string( @xml )
+  it 'should load from XML (es)' do
+    parser = LibXML::XML::Parser.string(@xml)
     doc = parser.parse
 
-    category = Category.new doc.find('/category')[0], "en"
+    category = Category.new doc.find('/category')[0], 'es'
 
-    category.description.should == "description EN"
-    category.name.should == "name EN"
-    category.tagline.should == "tagline EN"
+    category.description.should == 'una descripción...'
+    category.name.should == 'High Performance'
+  end
+
+  it 'should load from XML (en)' do
+    parser = LibXML::XML::Parser.string(@xml)
+    doc = parser.parse
+
+    category = Category.new doc.find('/category')[0], 'en'
+
+    category.description.should == 'description EN'
+    category.name.should == 'name EN'
+    category.tagline.should == 'tagline EN'
   end
 end

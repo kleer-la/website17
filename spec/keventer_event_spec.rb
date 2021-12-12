@@ -5,252 +5,246 @@ require './lib/professional'
 require './lib/keventer_event_type'
 
 describe KeventerEvent do
-
   before(:each) do
     @kevent = KeventerEvent.new
   end
 
-  it "should have an id" do
+  it 'should have an id' do
     @kevent.id = 10
     @kevent.id.should == 10
   end
 
-  it "should have a keventer connector" do
+  it 'should have a keventer connector' do
     kc = KeventerConnector.new
     @kevent.keventer_connector = kc
     @kevent.keventer_connector.should == kc
   end
 
-  it "should have a capacity" do
+  it 'should have a capacity' do
     @kevent.capacity = 10
     @kevent.capacity.should == 10
   end
 
-  it "should have a date" do
+  it 'should have a date' do
     a_date = Date.new
     @kevent.date = a_date
     @kevent.date.should == a_date
   end
 
-  it "should have a start time" do
+  it 'should have a start time' do
     a_time = Time.new
     @kevent.start_time = a_time
     @kevent.start_time.should == a_time
   end
 
-  it "should have an end time" do
+  it 'should have an end time' do
     a_time = Time.new
     @kevent.end_time = a_time
     @kevent.end_time.should == a_time
   end
 
-  it "should have a human date" do
-    @kevent.human_date = "18-19 Abr"
-    @kevent.human_date.should == "18-19 Abr"
+  it 'should have a human date' do
+    @kevent.human_date = '18-19 Abr'
+    @kevent.human_date.should == '18-19 Abr'
   end
 
-  it "should have a registration_link" do
-    @kevent.registration_link = "https://www.kleer.la"
-    @kevent.registration_link.should == "https://www.kleer.la"
+  it 'should have a registration_link' do
+    @kevent.registration_link = 'https://www.kleer.la'
+    @kevent.registration_link.should == 'https://www.kleer.la'
   end
 
-  it "should have an address" do
-    @kevent.address = "https://www.kleer.la"
-    @kevent.address.should == "https://www.kleer.la"
+  it 'should have an address' do
+    @kevent.address = 'https://www.kleer.la'
+    @kevent.address.should == 'https://www.kleer.la'
   end
 
-  it "should have a sold-out flag" do
+  it 'should have a sold-out flag' do
     @kevent.is_sold_out = false
     @kevent.is_sold_out.should == false
   end
 
-  it "should have a sepyme_enabled flag" do
+  it 'should have a sepyme_enabled flag' do
     @kevent.sepyme_enabled = false
     @kevent.sepyme_enabled.should == false
   end
 
-  it "should have a show_pricing flag" do
+  it 'should have a show_pricing flag' do
     @kevent.show_pricing = false
     @kevent.show_pricing.should == false
   end
 
-  it "should have a place" do
-    @kevent.place = "Kleer, Tucuman 373 1er Piso"
-    @kevent.place.should == "Kleer, Tucuman 373 1er Piso"
+  it 'should have a place' do
+    @kevent.place = 'Kleer, Tucuman 373 1er Piso'
+    @kevent.place.should == 'Kleer, Tucuman 373 1er Piso'
   end
 
-  it "should have a city" do
-    @kevent.city = "Buenos Aires"
-    @kevent.city.should == "Buenos Aires"
+  it 'should have a city' do
+    @kevent.city = 'Buenos Aires'
+    @kevent.city.should == 'Buenos Aires'
   end
 
-  it "should have a country" do
-    @kevent.country = "Argentina"
-    @kevent.country.should == "Argentina"
+  it 'should have a country' do
+    @kevent.country = 'Argentina'
+    @kevent.country.should == 'Argentina'
   end
 
-  it "should have a country_code" do
-    @kevent.country_code = "ar"
-    @kevent.country_code.should == "ar"
+  it 'should have a country_code' do
+    @kevent.country_code = 'ar'
+    @kevent.country_code.should == 'ar'
   end
 
-  it "should have a mode" do
-    @kevent.mode = "ar"
-    @kevent.mode.should == "ar"
+  it 'should have a mode' do
+    @kevent.mode = 'ar'
+    @kevent.mode.should == 'ar'
   end
 
-  it "should have an event type" do
-      an_event_type = KeventerEventType.new
-      @kevent.event_type = an_event_type
-      @kevent.event_type.should == an_event_type
+  it 'should have an event type' do
+    an_event_type = KeventerEventType.new
+    @kevent.event_type = an_event_type
+    @kevent.event_type.should == an_event_type
   end
 
-  it "should have a list_price" do
+  it 'should have a list_price' do
     @kevent.list_price = 12.0
     @kevent.list_price.should == 12.0
   end
 
-  it "should have a eb_price" do
+  it 'should have a eb_price' do
     @kevent.eb_price = 12.0
     @kevent.eb_price.should == 12.0
   end
 
-  it "should have a couples_eb_price" do
+  it 'should have a couples_eb_price' do
     @kevent.couples_eb_price = 12.0
     @kevent.couples_eb_price.should == 12.0
   end
 
-  it "should have a business_eb_price" do
+  it 'should have a business_eb_price' do
     @kevent.business_eb_price = 12.0
     @kevent.business_eb_price.should == 12.0
   end
 
-  it "should have a business_price" do
+  it 'should have a business_price' do
     @kevent.business_price = 12.0
     @kevent.business_price.should == 12.0
   end
 
-  it "should have a enterprise_6plus_price" do
+  it 'should have a enterprise_6plus_price' do
     @kevent.enterprise_6plus_price = 12.0
     @kevent.enterprise_6plus_price.should == 12.0
   end
 
-  it "should have a enterprise_11plus_price" do
+  it 'should have a enterprise_11plus_price' do
     @kevent.enterprise_11plus_price = 12.0
     @kevent.enterprise_11plus_price.should == 12.0
   end
 
-  it "should have a discount" do
+  it 'should have a discount' do
     @kevent.list_price = 12.0
     @kevent.eb_price = 10.5
     @kevent.discount.should == 1.5
   end
 
-  it "should have a discount" do
+  it 'should have a discount' do
     @kevent.list_price = 12.0
     @kevent.eb_price = 0.0
     @kevent.discount.should == 0.0
   end
 
-  it "should have a discount" do
+  it 'should have a discount' do
     @kevent.list_price = 12.0
     @kevent.eb_price = nil
     @kevent.discount.should == 0.0
   end
 
-  it "should have a eb_end_date" do
+  it 'should have a eb_end_date' do
     a_date = Date.new
     @kevent.eb_end_date = a_date
     @kevent.eb_end_date.should == a_date
   end
 
-  it "should have a currency_iso_code" do
-    @kevent.currency_iso_code = "ARS"
-    @kevent.currency_iso_code.should == "ARS"
+  it 'should have a currency_iso_code' do
+    @kevent.currency_iso_code = 'ARS'
+    @kevent.currency_iso_code.should == 'ARS'
   end
 
-  it "should have specific_conditions" do
-    @kevent.specific_conditions = "Condiciones Especiales de Evento"
-    @kevent.specific_conditions.should == "Condiciones Especiales de Evento"
+  it 'should have specific_conditions' do
+    @kevent.specific_conditions = 'Condiciones Especiales de Evento'
+    @kevent.specific_conditions.should == 'Condiciones Especiales de Evento'
   end
 
-  context "If the trainer is Raul Gorgonzola" do
-
+  context 'If the trainer is Raul Gorgonzola' do
     before(:each) do
       @trainer = Professional.new
-      @trainer.name = "Raul Gorgonzola"
-      @trainer.bio = "hg jgjhagsdjhagsdkjahgsfkjahgsj ja sfkjahs fkjahsfg"
+      @trainer.name = 'Raul Gorgonzola'
+      @trainer.bio = 'hg jgjhagsdjhagsdkjahgsfkjahgsj ja sfkjahs fkjahsfg'
 
       @kevent.add_trainer @trainer
     end
 
-    it "should have a trainer" do
-        @kevent.trainers[0].should == @trainer
+    it 'should have a trainer' do
+      @kevent.trainers[0].should == @trainer
     end
 
-    it "should have a deprecated trainer name backward compatible" do
-        @kevent.trainers[0].name.should == @trainer.name
+    it 'should have a deprecated trainer name backward compatible' do
+      @kevent.trainers[0].name.should == @trainer.name
     end
 
-    it "should have a trainer bio backward compatible" do
-        @kevent.trainers[0].bio.should ==@trainer.bio
+    it 'should have a trainer bio backward compatible' do
+      @kevent.trainers[0].bio.should == @trainer.bio
     end
   end
 
-  context "Trainers and cotrainers" do
-
+  context 'Trainers and cotrainers' do
     before(:each) do
       @trainer = Professional.new
-      @trainer.name = "Rogna Castro"
-      @trainer.bio  = "Da clases de guitarra por fax"
+      @trainer.name = 'Rogna Castro'
+      @trainer.bio  = 'Da clases de guitarra por fax'
 
       @cotrainer = Professional.new
-      @cotrainer.name = "Natty Dread"
-      @cotrainer.bio  = "Artifice del Mate Loco"
+      @cotrainer.name = 'Natty Dread'
+      @cotrainer.bio  = 'Artifice del Mate Loco'
     end
 
-    it "should have a co-trainer" do
-        @kevent.add_trainer @cotrainer
-        @kevent.trainers[0].should == @cotrainer
-        @kevent.trainers.should == [@cotrainer]
+    it 'should have a co-trainer' do
+      @kevent.add_trainer @cotrainer
+      @kevent.trainers[0].should == @cotrainer
+      @kevent.trainers.should == [@cotrainer]
     end
-    it "should have a trainer and NO co-trainer" do
+    it 'should have a trainer and NO co-trainer' do
       @kevent.add_trainer @trainer
       @kevent.add_trainer nil
       @kevent.trainers[0].should == @trainer
-      @kevent.trainers[1].should == nil
+      @kevent.trainers[1].should.nil?
       @kevent.trainers.should == [@trainer]
     end
 
-    it "NG should have a trainer and co-trainer" do
+    it 'NG should have a trainer and co-trainer' do
       @kevent.add_trainer @trainer
       @kevent.add_trainer @cotrainer
-      @kevent.trainers.should == [@trainer,@cotrainer]
+      @kevent.trainers.should == [@trainer, @cotrainer]
     end
   end
 
-
-  it "should form the uri path automatically" do
+  it 'should form the uri path automatically' do
     @kevent.id = 44
     an_event_type = KeventerEventType.new
-    an_event_type.name = "Workshop de Retrospectivas"
+    an_event_type.name = 'Workshop de Retrospectivas'
     @kevent.event_type = an_event_type
-    @kevent.city = "Buenos Aires"
-    @kevent.uri_path.should == "44-workshop-de-retrospectivas-buenos-aires"
+    @kevent.city = 'Buenos Aires'
+    @kevent.uri_path.should == '44-workshop-de-retrospectivas-buenos-aires'
   end
 
-
-  it "should form the friendly title automatically" do
+  it 'should form the friendly title automatically' do
     @kevent.id = 44
     an_event_type = KeventerEventType.new
-    an_event_type.name = "Workshop de Retrospectivas"
+    an_event_type.name = 'Workshop de Retrospectivas'
     @kevent.event_type = an_event_type
-    @kevent.city = "Buenos Aires"
-    @kevent.friendly_title.should == "Workshop de Retrospectivas - Buenos Aires"
+    @kevent.city = 'Buenos Aires'
+    @kevent.friendly_title.should == 'Workshop de Retrospectivas - Buenos Aires'
   end
 
-  context "Loding from xml" do
-
+  context 'Loding from xml' do
     before(:each) do
       @xml = %(<?xml version="1.0" encoding="UTF-8"?>
     <event>
@@ -374,68 +368,66 @@ describe KeventerEvent do
       </categories>
     </event>
       )
-      parser =  LibXML::XML::Parser.string( @xml )
+      parser = LibXML::XML::Parser.string(@xml)
       doc = parser.parse
       doc.find('/event')
       @kevent.is_webinar = true
       @kevent.load doc
     end
 
-    it "should load a description" do
+    it 'should load a description' do
       expect(@kevent.id).to eq(35)
       expect(@kevent.capacity).to eq(11)
-      expect(@kevent.place).to eq("the place pp")
-      expect(@kevent.city).to eq("city yy")
-      expect(@kevent.address).to eq("address qq")
-      expect(@kevent.registration_link).to eq("")
-      expect(@kevent.country).to eq("Algeria")
-      expect(@kevent.country_code).to eq("DZ")
+      expect(@kevent.place).to eq('the place pp')
+      expect(@kevent.city).to eq('city yy')
+      expect(@kevent.address).to eq('address qq')
+      expect(@kevent.registration_link).to eq('')
+      expect(@kevent.country).to eq('Algeria')
+      expect(@kevent.country_code).to eq('DZ')
     end
 
-    it "should load the dates and time" do
+    it 'should load the dates and time' do
       expect(@kevent.event_type).to eq(nil)
-      expect(@kevent.date).to eq(Date.new(2015,5,18))
-      expect(@kevent.finish_date).to eq(Date.new(2015,5,21))
-      expect(@kevent.start_time).to eq(DateTime.new(2000,1,1,9))
-      expect(@kevent.end_time).to eq(DateTime.new(2000,1,1,18))
+      expect(@kevent.date).to eq(Date.new(2015, 5, 18))
+      expect(@kevent.finish_date).to eq(Date.new(2015, 5, 21))
+      expect(@kevent.start_time).to eq(DateTime.new(2000, 1, 1, 9))
+      expect(@kevent.end_time).to eq(DateTime.new(2000, 1, 1, 18))
     end
 
-    it "should load details" do
-      expect(@kevent.specific_conditions).to eq("Very specific")
+    it 'should load details' do
+      expect(@kevent.specific_conditions).to eq('Very specific')
       expect(@kevent.sepyme_enabled).to eq(false)
-      expect(@kevent.mode).to eq("cl")
+      expect(@kevent.mode).to eq('cl')
       expect(@kevent.is_webinar).to eq(false)
     end
 
-    it "should load status" do
+    it 'should load status' do
       expect(@kevent.is_sold_out).to eq(false)
     end
 
-    it "should load prices" do
+    it 'should load prices' do
       expect(@kevent.is_sold_out).to eq(false)
       expect(@kevent.show_pricing).to eq(false)
       expect(@kevent.list_price).to eq(100)
       expect(@kevent.eb_price).to eq(95)
-      expect(@kevent.eb_end_date).to eq(Date.new(2015,5,8))
+      expect(@kevent.eb_end_date).to eq(Date.new(2015, 5, 8))
       expect(@kevent.couples_eb_price).to eq(90)
       expect(@kevent.business_eb_price).to eq(85)
       expect(@kevent.business_price).to eq(88)
       expect(@kevent.enterprise_6plus_price).to eq(83)
-      expect(@kevent.enterprise_11plus_price).to eq(80  )
-
+      expect(@kevent.enterprise_11plus_price).to eq(80)
     end
-
   end
 
   context 'timezone convertion' do
     context 'generate an url' do
       before(:example) do
-        @kevent.date= Date.parse('2015-05-18')
-        @kevent.start_time= DateTime.parse('2000-01-01T09:00:00Z')
-        @kevent.end_time= DateTime.parse('2000-01-01T18:00:00Z')
-        @kevent.place= '(GMT-05:00) Bogota'
+        @kevent.date = Date.parse('2015-05-18')
+        @kevent.start_time = DateTime.parse('2000-01-01T09:00:00Z')
+        @kevent.end_time = DateTime.parse('2000-01-01T18:00:00Z')
+        @kevent.place = '(GMT-05:00) Bogota'
         an_event_type = KeventerEventType.new
-        an_event_type.name = "CSM Online"
+        an_event_type.name = 'CSM Online'
         @kevent.event_type = an_event_type
       end
       it 'name' do
@@ -448,8 +440,8 @@ describe KeventerEvent do
         expect(@kevent.timezone_url).to include 'p1=41'
       end
       it 'duration' do
-        @kevent.end_time= DateTime.parse('2000-01-01T17:15:00Z')
-        expect(@kevent.timezone_url).to include 'ah=8&am=15' 
+        @kevent.end_time = DateTime.parse('2000-01-01T17:15:00Z')
+        expect(@kevent.timezone_url).to include 'ah=8&am=15'
       end
       it 'whole url' do
         expect(@kevent.timezone_url).to include 'https://www.timeanddate.com/worldclock/fixedtime.html?msg=CSM+Online&iso=20150518T0900&p1=41&ah=9&am=0'

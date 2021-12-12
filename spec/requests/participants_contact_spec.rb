@@ -2,10 +2,10 @@
 
 # When('posting a new participant') do
 #     # page.driver.
-#     page.post('/cursos/4/contact', { :params => { 
+#     page.post('/cursos/4/contact', { :params => {
 #         :participant_mail => "a@b.com",
-#         :participant_notes => 'More info'  } 
-#     }) 
+#         :participant_notes => 'More info'  }
+#     })
 # end
 
 # Then('response is OK') do
