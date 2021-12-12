@@ -22,6 +22,7 @@ gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
 group :development do
   gem 'foreman'
 	gem 'platform-api'
+  gem 'rubocop'
 end
 
 group :development, :test do
