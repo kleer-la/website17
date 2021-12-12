@@ -2,8 +2,8 @@ require './lib/timezone_converter'
 
 class KeventerEvent
   attr_accessor :capacity, :city, :country, :country_code, :event_type, :date,
-                :finish_date, :registration_link, :is_sold_out, :id, :uri_path,
-                :trainers, :keventer_connector, :place, :sepyme_enabled,
+                :finish_date, :registration_link, :is_sold_out, :id,
+                :keventer_connector, :place, :sepyme_enabled,
                 :human_date, :start_time, :end_time, :address, :list_price,
                 :eb_price, :eb_end_date, :currency_iso_code, :is_webinar,
                 :specific_conditions, :is_community_event, :time_zone_name,
@@ -11,6 +11,8 @@ class KeventerEvent
                 :business_price, :enterprise_6plus_price, :enterprise_11plus_price,
                 :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment,
                 :online_course_codename, :online_cohort_codename
+  attr_reader :trainers
+
 
   def initialize
     @capacity = 0
@@ -28,9 +30,8 @@ class KeventerEvent
     @registration_link = ''
     @id = 0
     @trainers = []
-    @uri_path
     @keventer_connector = nil
-    @human_date
+    @human_date = ''
     @address = ''
 
     @show_pricing = false
@@ -73,7 +74,7 @@ class KeventerEvent
   end
 
   def discount
-    if @eb_price.nil? || @eb_price == 0.0 || @list_price.nil? || @list_price == 0.0
+    if @eb_price.nil? || @eb_price < 0.01 || @list_price.nil? || @list_price < 0.01
       0.0
     else
       @list_price - @eb_price
@@ -100,8 +101,6 @@ class KeventerEvent
   def add_trainer(trainer)
     @trainers <<= trainer unless trainer.nil?
   end
-
-  attr_reader :trainers
 
   def load(event_doc)
     load_descripcion(event_doc)

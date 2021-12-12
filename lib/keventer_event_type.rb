@@ -2,7 +2,7 @@ require './lib/keventer_reader'     # to_boolean
 
 class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faqs,
-                :elevator_pitch, :learnings, :takeaways, :elevator_pitch, :include_in_catalog,
+                :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :average_rating, :net_promoter_score, :surveyed_count,
                 :promoter_count, :external_site_url,
                 :categories

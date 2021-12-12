@@ -241,7 +241,7 @@ class KeventerReader
       doc = parser.parse
       create_event_type(doc)
     rescue LibXML::XML::Error => e
-      nil
+      puts(e)
     end
   end
 

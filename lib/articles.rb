@@ -2,7 +2,6 @@ class Article
   attr_accessor :title, :description, :tabtitle, :body, :published, :created_at, :updated_at
 
   def initialize(doc)
-    p doc
     @title = doc['title']
     @body = doc['body']
     @tabtitle = doc['tabtitle']

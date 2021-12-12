@@ -231,7 +231,7 @@ Given(/^I visit the former entrenamos spanish Page$/) do
 end
 
 Then(/^I should be redirected to entrenamos Page$/) do
-  last_response.redirection?.should == true
+  expect(last_response.redirection?).to be_truthy
   last_response.location.gsub('https://example.org', '').should == '/entrenamos'
 end
 

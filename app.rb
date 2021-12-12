@@ -13,7 +13,6 @@ require './lib/dt_helper'
 require './lib/twitter_card'
 require './lib/twitter_reader'
 require './lib/pdf_catalog'
-require './lib/crm_connector'
 require './lib/toggle'
 
 require './lib/event_type'
@@ -55,7 +54,7 @@ helpers do
     sanitized = sanitized.gsub('E', 'E')
     sanitized = sanitized.gsub('Í', 'I')
     sanitized = sanitized.gsub('Ó', 'O')
-    sanitized = sanitized.gsub('Ú', 'U')
+    sanitized.gsub('Ú', 'U')
   end
 
   def currency_symbol_for(iso_code)
