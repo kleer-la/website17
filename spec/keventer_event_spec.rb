@@ -50,13 +50,13 @@ describe KeventerEvent do
   end
 
   it "should have a registration_link" do
-    @kevent.registration_link = "https://kleer.la"
-    @kevent.registration_link.should == "https://kleer.la"
+    @kevent.registration_link = "https://www.kleer.la"
+    @kevent.registration_link.should == "https://www.kleer.la"
   end
 
   it "should have an address" do
-    @kevent.address = "https://kleer.la"
-    @kevent.address.should == "https://kleer.la"
+    @kevent.address = "https://www.kleer.la"
+    @kevent.address.should == "https://www.kleer.la"
   end
 
   it "should have a sold-out flag" do

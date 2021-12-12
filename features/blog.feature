@@ -1,4 +1,4 @@
-Feature: Federated Kleer Blogs
+Feature: Kleer Blogs
 
 Scenario: Blog page
   Given I go to the Blog page

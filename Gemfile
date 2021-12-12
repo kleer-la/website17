@@ -18,6 +18,7 @@ gem 'money'
 gem 'escape_utils'
 gem 'rack-ssl-enforcer'
 gem 'rack-reverse-proxy', :require => 'rack/reverse_proxy'
+gem 'faraday' # new way to connect to eventer
 
 group :development do
   gem 'foreman'

@@ -5,7 +5,6 @@ require 'redcarpet'
 require 'json'
 require 'i18n'
 require 'money'
-require 'rss'
 require 'escape_utils'
 require 'rack/reverse_proxy'
 
@@ -20,6 +19,8 @@ require './lib/toggle'
 require './lib/event_type'
 require './lib/books'
 require './lib/resources'
+
+require './controllers/blog_controller'
 
 if production?
     require 'rack/ssl-enforcer'
@@ -81,21 +82,9 @@ configure do
 
   enable :sessions
   KeventerReader.build
-
-  if ENV['BLOG_REDIRECT'] == "enabled"
-    use Rack::ReverseProxy do
-      reverse_proxy /^\/blog(\/.*)$/, 'https://blog.kleer.la/blog$1', opts = {
-        preserve_host: true,
-        :username => ENV['BLOG_REDIRECT_USERNAME'],
-        :password => ENV['BLOG_REDIRECT_PASSWORD'],
-        timeout: 30
-      }
-    end
-  end
 end
 
 before do
-
   if request.host.include?( "kleer.us" )
     session[:locale] = 'en'
   else
@@ -135,10 +124,6 @@ end
 
 get '/es' do
   redirect "/es/", 301 # permanent redirect
-end
-
-get '/blog' do
-  redirect "/blog/", 301 # permanent redirect
 end
 
 get '/entrenamos/:country?' do |country|
