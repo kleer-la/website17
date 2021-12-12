@@ -13,8 +13,8 @@ class TwitterReader
 
     @modo_test = false
 
-    if @access_token.nil? or @access_token_secret.nil? or
-       @consumer_key.nil? or @consumer_secret.nil?
+    if @access_token.nil? || @access_token_secret.nil? ||
+       @consumer_key.nil? || @consumer_secret.nil?
       @modo_test = true
     end
   end
