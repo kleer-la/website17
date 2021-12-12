@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 Feature: Event Details
 
 	Scenario: Evento Plano para Popup

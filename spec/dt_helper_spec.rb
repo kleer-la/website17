@@ -1,11 +1,9 @@
-# encoding: utf-8
-
 require 'date'
 require 'i18n'
 require 'spec_helper'
-require File.join(File.dirname(__FILE__), '../lib/dt_helper')
-require File.join(File.dirname(__FILE__), '../lib/keventer_event')
-require File.join(File.dirname(__FILE__), '../lib/keventer_event_type')
+require './lib/dt_helper'
+require './lib/keventer_event'
+require './lib/keventer_event_type'
 
 describe DTHelper do
   before(:each) do

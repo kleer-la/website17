@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), '../lib/category')
+require './lib/category'
 require 'libxml'
 require 'spec_helper'
 

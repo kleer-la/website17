@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), '../lib/twitter_card')
+require './lib/twitter_card'
 require 'spec_helper'
 
 describe TwitterCard do

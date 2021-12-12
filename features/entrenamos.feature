@@ -1,4 +1,3 @@
-# encoding: utf-8
 Feature: Entrenamos
 		
 	Scenario: Country options in entrenamos page

@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), '../lib/pdf_trainers')
+require './lib/pdf_trainers'
 
 describe 'cuanto_dura' do
   it 'should return empty when 0' do

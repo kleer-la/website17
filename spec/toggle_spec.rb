@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), '../lib/toggle')
+require './lib/toggle'
 
 describe Toggle do
   it 'should have a unknow feature disabled' do

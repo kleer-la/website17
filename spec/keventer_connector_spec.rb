@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), '../lib/keventer_connector')
+require './lib/keventer_connector'
 require 'spec_helper'
 
 describe KeventerConnector do

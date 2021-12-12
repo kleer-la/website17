@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require 'libxml'
 require 'date'
 require 'tzinfo'

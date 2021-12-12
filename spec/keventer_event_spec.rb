@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require './lib/keventer_event'
 require './lib/professional'
 require './lib/keventer_event_type'

@@ -1,8 +1,6 @@
-# encoding: utf-8
-
 require 'libxml'
 require 'spec_helper'
-require File.join(File.dirname(__FILE__), '../lib/professional')
+require './lib/professional'
 
 describe Professional do
   before(:each) do

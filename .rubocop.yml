@@ -1,5 +1,10 @@
 Style/Encoding:
   Enabled: false
 
+# Add the frozen_string_literal comment to the top of files 
+# to help transition to frozen string literals by default.
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 Layout/LineLength:
   Max: 99

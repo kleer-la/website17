@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 require File.join(File.dirname(__FILE__), '../../lib/keventer_reader')
 
 Then(/^event list is empty$/) do

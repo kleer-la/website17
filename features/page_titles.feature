@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 Feature: Page Titles
 
 	Scenario: Home Page Title

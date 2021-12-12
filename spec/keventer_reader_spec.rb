@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-require File.join(File.dirname(__FILE__), '../lib/keventer_reader')
+require './lib/keventer_reader'
 require 'date'
 require 'spec_helper'
 

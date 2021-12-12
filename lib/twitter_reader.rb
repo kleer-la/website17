@@ -1,7 +1,7 @@
 require 'oauth'
 require 'json'
 
-require File.join(File.dirname(__FILE__), '../lib/tweet')
+require './lib/tweet'
 
 class TwitterReader
   def initialize
