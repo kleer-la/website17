@@ -15,8 +15,8 @@ get '/blog-preview/:slug' do |slug|
     @meta_description = @article.description
 
     erb :blog_preview_one, layout: :layout_2017
-  rescue => e
-    print_exception(e, false)
+  rescue => exception
+    puts exception.backtrace
     status 404
   end
 end
@@ -30,7 +30,8 @@ get '/blog-preview' do
     # @meta_description = @article.description
 
     erb :blog_preview, layout: :layout_2017
-  rescue
+  rescue => exception
+    puts exception.backtrace
     status 404
   end
 end

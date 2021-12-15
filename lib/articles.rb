@@ -21,11 +21,16 @@ class Article
     end
   end
 
-  def self.createListNull(arts)
-    Article.load_list(arts)
+  def self.createListNull(arts, opt= {})
+    @@next_null = opt[:next_null] == true
+    @@articlesNull = Article.load_list(arts)
   end
   
   def self.createListKeventer
+    if @@next_null
+      @@next_null=false
+      return @@articlesNull
+    end
     # KeventerConnector.new.event_type_url(id)
     uri = "http://keventer-test.herokuapp.com/articles.json"
     api_resp = JsonAPI.new(uri)
@@ -47,9 +52,9 @@ class Article
     @tabtitle = @title if @tabtitle == ''
     @description = doc['description']
     @published = doc['published']
-    @trainers = doc['trainers']&.reduce([]) {|ac,t| ac << t['name']}
-    @created_at = doc['created_at']
-    @updated_at = doc['updated_at']
+    @trainers = [] << doc['trainers']&.reduce([]) {|ac,t| ac << t['name']}
+    @created_at = doc['created_at'] || ''
+    @updated_at = doc['updated_at'] || ''
   end
 
   def self.load_list(doc)

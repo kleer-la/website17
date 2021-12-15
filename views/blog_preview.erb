@@ -2,18 +2,21 @@
 <div class="header-small header-coaching"></div>
 
 <div class="header-description">
-	<h1 class="headerTitle"><%= @article.title%></h1>
+	<h1 class="headerTitle">Blog</h1>
 </div>
 </div>
 
 <div class="container mainContent clientes">
 	<div class="container fondo-blanco contenedor-generico">
 		<div class="col-md-9 contenedor-main-izq">
-      <%=@markdown_renderer.render( @article.body )%>
-
+    <%@articles.each do |article|%> 
+      <h2><%=article.title%></h2>
+      <p><%=article.trainers.join(',')%> - <%=article.created_at[0..9]  %></p>
+      <%=@markdown_renderer.render( article.body )%>
+    <%end%>
 		</div>
 		<div class="col-md-3 hidden-xs hidden-sm">
-			TDB - navegación blog
+      <%# navigation			 %>
 		</div>
 	</div>
 </div>
