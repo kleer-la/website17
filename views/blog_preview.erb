@@ -10,7 +10,9 @@
 	<div class="container fondo-blanco contenedor-generico">
 		<div class="col-md-9 contenedor-main-izq">
     <%@articles.each do |article|%> 
-      <h2><%=article.title%></h2>
+      <h2><a href='/blog-preview/<%= article.slug%>'>
+      <%=article.title%>
+      </a></h2>
       <p><%=article.trainers.join(',')%> - <%=article.created_at[0..9]  %></p>
       <%=@markdown_renderer.render( article.body )%>
     <%end%>

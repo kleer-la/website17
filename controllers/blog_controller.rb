@@ -8,7 +8,6 @@ end
 get '/blog-preview/:slug' do |slug|
   begin
     @article = Article.createOneKeventer(slug)
-    p @article
 
     # @meta_keywords
     @page_title = @article.tabtitle
@@ -16,7 +15,7 @@ get '/blog-preview/:slug' do |slug|
 
     erb :blog_preview_one, layout: :layout_2017
   rescue => exception
-    puts exception.backtrace
+    puts exception
     status 404
   end
 end
@@ -31,7 +30,7 @@ get '/blog-preview' do
 
     erb :blog_preview, layout: :layout_2017
   rescue => exception
-    puts exception.backtrace
+    puts exception
     status 404
   end
 end

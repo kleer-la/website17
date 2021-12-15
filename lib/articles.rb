@@ -42,17 +42,18 @@ class Article
   end
 
   attr_accessor :title, :description, :tabtitle, :body, :published, 
-                :trainers,
+                :trainers, :slug,
                 :created_at, :updated_at
 
   def initialize(doc)
     @title = doc['title']
     @body = doc['body'] || ''
+    @slug = doc['slug']
     @tabtitle = doc['tabtitle']
     @tabtitle = @title if @tabtitle == ''
     @description = doc['description']
     @published = doc['published']
-    @trainers = [] << doc['trainers']&.reduce([]) {|ac,t| ac << t['name']}
+    @trainers = doc['trainers']&.reduce([]) {|ac,t| ac << t['name']} || []
     @created_at = doc['created_at'] || ''
     @updated_at = doc['updated_at'] || ''
   end
