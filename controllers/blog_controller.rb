@@ -6,17 +6,31 @@ get '/blog' do
 end
 
 get '/blog-preview/:slug' do |slug|
-  uri = "http://keventer-test.herokuapp.com/articles/#{slug}.json"
-  api_resp = JsonAPI.new(uri)
-  if !api_resp.ok?
-    status 404
-  else
-    @article = Article.new(api_resp.doc)
+  begin
+    @article = Article.createOneKeventer(slug)
+    p @article
 
     # @meta_keywords
     @page_title = @article.tabtitle
     @meta_description = @article.description
 
+    erb :blog_preview_one, layout: :layout_2017
+  rescue => e
+    print_exception(e, false)
+    status 404
+  end
+end
+
+get '/blog-preview' do 
+  begin
+    @articles = Article.createListKeventer
+
+    # @meta_keywords
+    # @page_title = @article.tabtitle
+    # @meta_description = @article.description
+
     erb :blog_preview, layout: :layout_2017
+  rescue
+    status 404
   end
 end
