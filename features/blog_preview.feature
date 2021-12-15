@@ -6,6 +6,13 @@ Scenario: One article preview page
   When I go to the 'lorem-ipsum' article preview page
   Then Title should be "Lorem ipsum"
 
+Scenario: One article preview page
+  Given A list of articles with
+  * an article 'lorem-ipsum' with title 'Lorem ipsum'
+  And the article has author 'Luke Skywalker'
+  When I go to the 'lorem-ipsum' article preview page
+  Then I should see "Luke Skywalker"
+
 Scenario: Article list preview page
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'

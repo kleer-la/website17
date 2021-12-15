@@ -9,6 +9,7 @@
 <div class="container mainContent clientes">
 	<div class="container fondo-blanco contenedor-generico">
 		<div class="col-md-9 contenedor-main-izq">
+      <p><%=@article.trainers.join(',')%> - <%=@article.created_at[0..9]  %></p>
       <%=@markdown_renderer.render( @article.body )%>
 		</div>
 		<div class="col-md-3 hidden-xs hidden-sm">
