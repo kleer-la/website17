@@ -23,7 +23,7 @@ class Article
 
   def self.createListNull(arts, opt= {})
     @@next_null = opt[:next_null] == true
-    @@articlesNull = Article.load_list(arts,only_published:opt[:only_published])
+    @@articlesNull = Article.load_list(arts,opt[:only_published])
   end
 
   def self.createListKeventer(only_published)
@@ -52,7 +52,7 @@ class Article
     @tabtitle = doc['tabtitle']
     @tabtitle = @title if @tabtitle == ''
     @description = doc['description']
-    @published = doc['published'] == 'true'
+    @published = doc['published']
     @trainers = doc['trainers']&.reduce([]) {|ac,t| ac << t['name']} || []
     @created_at = doc['created_at'] || ''
     @updated_at = doc['updated_at'] || ''
@@ -61,8 +61,6 @@ class Article
   def self.load_list(doc,only_published=false)
     doc.reduce([]) do |ac, art|
       a = Article.new(art)
-      p a
-      p only_published, a.published
       if !only_published || a.published
         ac << a
       end

@@ -16,7 +16,7 @@ describe Article do
   it 'Load list full (publish and unpublish)' do
     doc = [{ 'title' => 'Lorem Ipsum', 
             'trainers' => [{'name' => 'Luke'}] },
-          { 'title' => 'Dolor sit', 'published' => 'true', 
+          { 'title' => 'Dolor sit', 'published' => true, 
             'trainers' => [{'name' => 'Luke'}] }  
     ]
     articles = Article.load_list(doc)
@@ -26,7 +26,7 @@ describe Article do
   it 'Load list - only published' do
     doc = [{ 'title' => 'Lorem Ipsum', 
       'trainers' => [{'name' => 'Luke'}] },
-    { 'title' => 'Dolor sit', 'published' => 'true', 
+    { 'title' => 'Dolor sit', 'published' => true, 
       'trainers' => [{'name' => 'Luke'}] }  
     ]
     articles = Article.load_list(doc,only_published: true)
