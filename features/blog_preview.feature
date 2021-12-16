@@ -20,4 +20,3 @@ Scenario: Article list preview page
   When I go to the article list preview page
   Then I should see "Lorem ipsum"
   And I should see "Dolor sit amet"
-

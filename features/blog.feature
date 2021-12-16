@@ -2,4 +2,10 @@ Feature: Kleer Blogs
 
 Scenario: Blog page
   Given I go to the Blog page
-  Then I should see "Blog"
+  Then Title should be "Blog"
+
+Scenario: unpublished Article dont shown at list page
+  Given A list of articles with
+  * an article 'lorem-ipsum' with title 'Lorem ipsum'
+  When I go to the article list page
+  Then I should not see "Lorem ipsum"

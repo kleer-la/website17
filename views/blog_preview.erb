@@ -2,20 +2,24 @@
 <div class="header-small header-coaching"></div>
 
 <div class="header-description">
-	<h1 class="headerTitle">Blog</h1>
+	<h1 class="headerTitle">Blog <%= @preview%></h1>
 </div>
 </div>
 
 <div class="container mainContent clientes">
 	<div class="container fondo-blanco contenedor-generico">
 		<div class="col-md-9 contenedor-main-izq">
-    <%@articles.each do |article|%> 
+    <%if @articles.nil? || @articles == [] %>
+      <h2>En construcción</h2>
+    <% else
+      @articles.each do |article|%> 
       <h2><a href='/blog-preview/<%= article.slug%>'>
       <%=article.title%>
       </a></h2>
       <p><%=article.trainers.join(',')%> - <%=article.created_at[0..9]  %></p>
       <%=@markdown_renderer.render( article.body )%>
-    <%end%>
+    <%end
+    end%>
 		</div>
 		<div class="col-md-3 hidden-xs hidden-sm">
       <%# navigation			 %>

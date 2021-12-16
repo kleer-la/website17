@@ -13,6 +13,10 @@ When('I go to the {string} article preview page') do |slug|
   visit "/blog-preview/#{slug}"
 end
 
+When('I go to the article list page') do
+  Article.createListNull(@articles, {next_null: true,only_published: true})
+  visit "/blog"
+end
 When('I go to the article list preview page') do
   Article.createListNull(@articles, {next_null: true})
   visit "/blog-preview"
