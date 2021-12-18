@@ -1,3 +1,5 @@
+require './lib/keventer_connector'
+
 class Article
   @@next_null = false
 
@@ -11,8 +13,8 @@ class Article
       @@next_null=false
       return @@articleNull
     end
-    # KeventerConnector.new.event_type_url(id)
-    uri = "http://keventer-test.herokuapp.com/articles/#{slug}.json"
+    uri = KeventerConnector.article_url(slug)
+    p uri
     api_resp = JsonAPI.new(uri)
     if !api_resp.ok?
       raise :NotFound
@@ -31,8 +33,8 @@ class Article
       @@next_null=false
       return @@articlesNull
     end
-    # KeventerConnector.new.event_type_url(id)
-    uri = "http://keventer-test.herokuapp.com/articles.json"
+    uri = KeventerConnector.articles_url
+    p uri
     api_resp = JsonAPI.new(uri)
     if !api_resp.ok?
       raise :NotFound

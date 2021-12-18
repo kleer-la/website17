@@ -1,10 +1,9 @@
+KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
+API_ROOT = KEVENTER_URL + '/api'.freeze
+API_EVENTS_PATH = '/events.xml'.freeze
+API_KLEERERS_PATH = '/kleerers.xml'.freeze
+API_CATEGORIES_PATH = '/categories.xml'.freeze
 class KeventerConnector
-  KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
-  API_ROOT = KEVENTER_URL + '/api'
-  API_EVENTS_PATH = '/events.xml'
-  API_KLEERERS_PATH = '/kleerers.xml'
-  API_CATEGORIES_PATH = '/categories.xml'
-
   def events_xml_url
     API_ROOT + API_EVENTS_PATH
   end
@@ -18,7 +17,7 @@ class KeventerConnector
   end
 
   def event_type_url(event_type_id)
-    API_ROOT + "/event_types/#{event_type_id}.xml"
+    API_ROOT + "/event_types/#{event_type_id}.xml".freeze
   end
 
   def keventer_url
@@ -26,6 +25,12 @@ class KeventerConnector
   end
 
   def self.interest_url
-    API_ROOT + '/v3/participants/interest'
+    API_ROOT + '/v3/participants/interest'.freeze
+  end
+  def self.articles_url
+    KEVENTER_URL + '/articles.json'.freeze
+  end
+  def self.article_url(slug)
+    KEVENTER_URL + "/articles/#{slug}.json"
   end
 end
