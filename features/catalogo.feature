@@ -1,4 +1,3 @@
-# encoding: utf-8
 Feature: Catalogo de cursos
 
 	Scenario: Mostrar las categorías

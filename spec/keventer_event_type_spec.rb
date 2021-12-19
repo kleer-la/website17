@@ -3,91 +3,89 @@ require 'xml'
 require './lib/keventer_event_type'
 
 describe KeventerEventType do
-
   before(:each) do
     @keventtype = KeventerEventType.new
   end
 
-  it "should have a name" do
-    @keventtype.name = "Workshop de Retrospectivas"
-    @keventtype.name.should == "Workshop de Retrospectivas"
+  it 'should have a name' do
+    @keventtype.name = 'Workshop de Retrospectivas'
+    expect(@keventtype.name).to eq 'Workshop de Retrospectivas'
   end
 
-  it "should have a goal" do
-    @keventtype.goal = "Buenos Aires"
-    @keventtype.goal.should == "Buenos Aires"
+  it 'should have a goal' do
+    @keventtype.goal = 'Buenos Aires'
+    expect(@keventtype.goal).to eq 'Buenos Aires'
   end
 
-  it "should have a description" do
-    @keventtype.description = "Argentina"
-    @keventtype.description.should == "Argentina"
+  it 'should have a description' do
+    @keventtype.description = 'Argentina'
+    expect(@keventtype.description).to eq 'Argentina'
   end
 
-  it "should have a elevator_pitch" do
-    @keventtype.elevator_pitch = "Argentina"
-    @keventtype.elevator_pitch.should == "Argentina"
+  it 'should have a elevator_pitch' do
+    @keventtype.elevator_pitch = 'Argentina'
+    expect(@keventtype.elevator_pitch).to eq 'Argentina'
   end
 
-  it "should have rating instance variable" do
-    @keventtype.average_rating.should == 0.0
-    @keventtype.net_promoter_score.should == 0
-    @keventtype.surveyed_count.should == 0.0
-    @keventtype.promoter_count.should == 0
+  it 'should have rating instance variable' do
+    expect(@keventtype.average_rating).to eq 0.0
+    expect(@keventtype.net_promoter_score).to eq 0
+    expect(@keventtype.surveyed_count).to eq 0.0
+    expect(@keventtype.promoter_count).to eq 0
   end
 
   it "new event_type doesn't have rate" do
     @keventtype.has_rate.should be false
   end
 
-  it "should have rate" do
+  it 'should have rate' do
     @keventtype.average_rating = 3
-    @keventtype.surveyed_count= 100
+    @keventtype.surveyed_count = 100
     @keventtype.has_rate.should be true
   end
 
   it "empty event_type doesn't have rate" do
     @keventtype.average_rating = nil
-    @keventtype.surveyed_count= 100
+    @keventtype.surveyed_count = 100
     @keventtype.has_rate.should be false
   end
 
-
-  it "should have a learnings" do
-    @keventtype.learnings = "Argentina"
-    @keventtype.learnings.should == "Argentina"
+  it 'should have a learnings' do
+    @keventtype.learnings = 'Argentina'
+    expect(@keventtype.learnings).to eq 'Argentina'
   end
 
-  it "should have a takeaways" do
-    @keventtype.takeaways = "Argentina"
-    @keventtype.takeaways.should == "Argentina"
+  it 'should have a takeaways' do
+    @keventtype.takeaways = 'Argentina'
+    expect(@keventtype.takeaways).to eq 'Argentina'
   end
 
-  it "should have a program" do
-    @keventtype.program = "ar"
-    @keventtype.program.should == "ar"
+  it 'should have a program' do
+    @keventtype.program = 'ar'
+    expect(@keventtype.program).to eq 'ar'
   end
 
-  it "should have a duration" do
+  it 'should have a duration' do
     @keventtype.duration = 16
-    @keventtype.duration.should == 16
+    expect(@keventtype.duration).to eq 16
   end
 
-  it "should have some recipients" do
-    @keventtype.recipients = "sdkjfhskjfhskdjf"
-    @keventtype.recipients.should == "sdkjfhskjfhskdjf"
+  it 'should have some recipients' do
+    @keventtype.recipients = 'sdkjfhskjfhskdjf'
+    expect(@keventtype.recipients).to eq 'sdkjfhskjfhskdjf'
   end
 
-  it "should have some FAQs" do
-    @keventtype.faqs = "sdkjfhskjfhskdjf"
-    @keventtype.faqs.should == "sdkjfhskjfhskdjf"
+  it 'should have some FAQs' do
+    @keventtype.faqs = 'sdkjfhskjfhskdjf'
+    expect(@keventtype.faqs).to eq 'sdkjfhskjfhskdjf'
   end
 
-  it "should have an empty subtitle on creatio" do
-    expect(@keventtype.subtitle).to eq("")
+  it 'should have an empty subtitle on creatio' do
+    expect(@keventtype.subtitle).to eq('')
   end
 
-  context "Loding from xml" do
-    def build_and_parse(xml_element='')
+  context 'Loding from xml' do
+    def build_and_parse(xml_element = '')
       initial = %(<?xml version="1.0" encoding="UTF-8"?>
       <event-type>
         <average-rating type="decimal" nil="true"/>
@@ -133,42 +131,39 @@ describe KeventerEventType do
         <updated-at type="datetime">2014-10-03T11:24:04Z</updated-at>
         <visible type="boolean">true</visible>
         </category>
-      </categories>      
+      </categories>
       )
-      closing= "</event-type>"
-      parser =  XML::Parser.string( initial + xml_element + closing )
+      closing = '</event-type>'
+      parser = XML::Parser.string(initial + xml_element + closing)
       doc = parser.parse
       doc.find('/event_type')
       doc
     end
 
-
-    it "should load basic info: id, description & duration" do
-      @keventtype.load build_and_parse("")
+    it 'should load basic info: id, description & duration' do
+      @keventtype.load build_and_parse('')
 
       expect(@keventtype.id).to eq(5)
-      expect(@keventtype.name).to eq("Curso de 3 días")
+      expect(@keventtype.name).to eq('Curso de 3 días')
       expect(@keventtype.duration).to eq(24)
     end
 
-    it "should load an emtpy subtitle" do
+    it 'should load an emtpy subtitle' do
       @keventtype.load build_and_parse('<subtitle type="string" nil="true"/>')
 
-      expect(@keventtype.subtitle).to eq("")
+      expect(@keventtype.subtitle).to eq('')
     end
 
-    it "should load a subtitle" do
+    it 'should load a subtitle' do
       @keventtype.load build_and_parse('<subtitle>Good to see you!</subtitle>')
 
-      expect(@keventtype.subtitle).to eq("Good to see you!")
+      expect(@keventtype.subtitle).to eq('Good to see you!')
     end
-    
-    it "should have categories" do
+
+    it 'should have categories' do
       @keventtype.load build_and_parse
 
-      expect(@keventtype.categories).to eq [[2, "organizaciones"]]
+      expect(@keventtype.categories).to eq [[2, 'organizaciones']]
     end
-
   end
-
 end

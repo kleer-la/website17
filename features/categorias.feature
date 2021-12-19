@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 Feature: Categories
 
 	Scenario: Category Landing Page

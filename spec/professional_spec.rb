@@ -1,11 +1,8 @@
-# encoding: utf-8
-
 require 'libxml'
 require 'spec_helper'
-require File.join(File.dirname(__FILE__),'../lib/professional')
+require './lib/professional'
 
 describe Professional do
-
   before(:each) do
     xml = '<?xml version="1.0" encoding="UTF-8"?>
   <trainer>
@@ -34,47 +31,45 @@ describe Professional do
     </country>
   </trainer>
     '
-    parser =  LibXML::XML::Parser.string xml
+    parser = LibXML::XML::Parser.string xml
     doc = parser.parse
 
-    @trainer_en = Professional.new doc.find('/trainer')[0], "en"
-    @trainer_es = Professional.new doc.find('/trainer')[0], "es"
-
+    @trainer_en = Professional.new doc.find('/trainer')[0], 'en'
+    @trainer_es = Professional.new doc.find('/trainer')[0], 'es'
   end
 
-  it "should initialize with defaults" do
+  it 'should initialize with defaults' do
     professional = Professional.new
-    expect(professional.id).to eq("")
-    expect(professional.name).to eq("")
-    expect(professional.bio).to eq("")
+    expect(professional.id).to eq('')
+    expect(professional.name).to eq('')
+    expect(professional.bio).to eq('')
   end
 
-  it "should have an id" do
+  it 'should have an id' do
     @trainer_es.id.should == 4
   end
 
-  it "should have a name" do
-    @trainer_es.name.should == "Martín Alaimo"
+  it 'should have a name' do
+    @trainer_es.name.should == 'Martín Alaimo'
   end
 
-  it "should have a linkein url" do
-    @trainer_es.linkedin_url.should == "https://www.linkedin.com/in/malaimo"
+  it 'should have a linkein url' do
+    @trainer_es.linkedin_url.should == 'https://www.linkedin.com/in/malaimo'
   end
 
-  it "should have a gravatar picture" do
-    @trainer_es.gravatar_picture_url.should == "https://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297"
+  it 'should have a gravatar picture' do
+    @trainer_es.gravatar_picture_url.should == 'https://www.gravatar.com/avatar/e92b3ae0ce91e1baf19a7bc62ac03297'
   end
 
-  it "should have a twitter username" do
-    @trainer_es.twitter_username.should == "@martinalaimo"
+  it 'should have a twitter username' do
+    @trainer_es.twitter_username.should == '@martinalaimo'
   end
 
-  it "should load bio from XML (en)" do
-    @trainer_en.bio.should == "English Bio Alaimica"
+  it 'should load bio from XML (en)' do
+    @trainer_en.bio.should == 'English Bio Alaimica'
   end
 
-  it "should load bio from XML (sp)" do
-    @trainer_es.bio.should == "Mi compromiso es asistir"
+  it 'should load bio from XML (sp)' do
+    @trainer_es.bio.should == 'Mi compromiso es asistir'
   end
-
 end

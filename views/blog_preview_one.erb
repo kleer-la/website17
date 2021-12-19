@@ -1,0 +1,30 @@
+<div class="blackBg">
+<div class="header-small header-coaching"></div>
+
+<div class="header-description">
+	<h1 class="headerTitle"><%= @article.title%></h1>
+</div>
+</div>
+
+<div class="container mainContent clientes">
+	<div class="container fondo-blanco contenedor-generico">
+		<div class="col-md-9 contenedor-main-izq">
+      <article>
+      <header>
+      <div style="color:black;font-weight: bold;font-variant: small-caps;font-size: 1.5em;">
+      <i class="fa fa-user"></i>
+      <%=@article.trainers.join(' & ')%>
+      <i class="fa fa-calendar"></i>
+      <time datetime="<%=@article.created_at[0..9]%>">
+      <%=@article.created_at[0..9]%>
+      </time>
+      </div>
+      </header>
+      <%=@markdown_renderer.render( @article.body )%>
+      </article>
+		</div>
+		<div class="col-md-3 hidden-xs hidden-sm">
+    <%# navigation			 %>
+		</div>
+	</div>
+</div>

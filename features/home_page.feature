@@ -1,4 +1,3 @@
-# encoding: utf-8
 Feature: Home Page
 
 	Scenario: Tres servicios principales

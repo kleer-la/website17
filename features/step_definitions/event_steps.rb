@@ -1,24 +1,23 @@
-#encoding: utf-8
-require File.join(File.dirname(__FILE__),'../../lib/keventer_reader')
+require './lib/keventer_reader'
 
-Given /^theres only one event$/ do
+Given(/^theres only one event$/) do
   stub_connector
 end
 
-Given /^theres only one event for the following two months$/ do
-  stub_connector( "just_two_events.xml")
+Given(/^theres only one event for the following two months$/) do
+  stub_connector('just_two_events.xml')
 end
 
-Given /^there are two events$/ do
-  stub_connector( "just_two_events.xml")
+Given(/^there are two events$/) do
+  stub_connector('just_two_events.xml')
 end
 
-Given /^there are many events$/ do
-  stub_connector( "events.xml")
+Given(/^there are many events$/) do
+  stub_connector('events.xml')
 end
 
 Then(/^the registration link has "(.*?)"$/) do |text|
-  last_response.body.should have_selector("a.btn.btn-success") do |element|
+  last_response.body.should have_selector('a.btn.btn-success') do |element|
     element.to_html.should =~ /#{text}/m
   end
 end
@@ -32,14 +31,14 @@ When(/^I visit the "(.*?)" event page$/) do |loc|
 end
 
 Given(/^theres one event with subtitle$/) do
-  stub_connector( "one_event_w_subtitle.xml")
+  stub_connector('one_event_w_subtitle.xml')
 end
 
-When /^I visit the event page$/ do
+When(/^I visit the event page$/) do
   visit '/cursos/13-workshop-de-retrospectivas'
 end
 
-When /^I visit the event page with tracking$/ do
+When(/^I visit the event page with tracking$/) do
   visit '/cursos/13-workshop-de-retrospectivas?utm_source=cucumber&utm_campaign=feature_test'
 end
 

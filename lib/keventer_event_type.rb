@@ -1,40 +1,39 @@
 require './lib/keventer_reader'     # to_boolean
-require './lib/keventer_reader'     # to_boolean
 
 class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faqs,
-                :elevator_pitch, :learnings, :takeaways, :elevator_pitch, :include_in_catalog,
+                :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :average_rating, :net_promoter_score, :surveyed_count,
                 :promoter_count, :external_site_url,
                 :categories
 
   def initialize
     @id = nil
-    @name = ""
-    @subtitle= ""
-    @goal = ""
-    @description = ""
-    @recipients = ""
-    @program = ""
-    @faqs = ""
+    @name = ''
+    @subtitle = ''
+    @goal = ''
+    @description = ''
+    @recipients = ''
+    @program = ''
+    @faqs = ''
     @duration = 0
-    @elevator_pitch = ""
-    @learnings = ""
-    @takeaways = ""
+    @elevator_pitch = ''
+    @learnings = ''
+    @takeaways = ''
     @include_in_catalog = false
-    @public_editions = Array.new
+    @public_editions = []
 
     @average_rating = 0.0
     @net_promoter_score = 0
     @surveyed_count = 0
     @promoter_count = 0
-    @external_site_url=nil
+    @external_site_url = nil
 
-    @categories= []
+    @categories = []
   end
 
   def uri_path
-    @id.to_s + "-" + @name.downcase.gsub(/ /, "-")
+    @id.to_s + '-' + @name.downcase.gsub(/ /, '-')
   end
 
   def has_rate
@@ -42,24 +41,22 @@ class KeventerEventType
   end
 
   def load_string(xml, field)
-    element= xml.find_first(field.to_s)
-    if not element.nil?
-      send(field.to_s+"=", element.content)
-    end
+    element = xml.find_first(field.to_s)
+    send(field.to_s + '=', element.content) unless element.nil?
   end
 
   def load(xml_keventer_event)
-    @id  = xml_keventer_event.find_first('id').content.to_i
+    @id = xml_keventer_event.find_first('id').content.to_i
     @duration = xml_keventer_event.find_first('duration').content.to_i
 
-    [:name, :subtitle, :description, :learnings, :takeaways,
-      :goal, :recipients, :program].each {
-      |f| load_string(xml_keventer_event, f)
-    }
+    %i[name subtitle description learnings takeaways
+       goal recipients program].each do |f|
+      load_string(xml_keventer_event, f)
+    end
     @external_site_url = xml_keventer_event.find_first('external-site-url')&.content
-    @faqs  = xml_keventer_event.find_first('faq').content
+    @faqs = xml_keventer_event.find_first('faq').content
     @elevator_pitch = xml_keventer_event.find_first('elevator-pitch').content
-    @include_in_catalog = to_boolean( xml_keventer_event.find_first('include-in-catalog').content )
+    @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)
 
     # @average_rating = xml_keventer_event.find_first('average-rating').content.nil? ? nil : xml_keventer_event.find_first('average-rating').content.to_f.round(2)
     # @net_promoter_score = xml_keventer_event.find_first('net-promoter-score').content.nil? ? nil : xml_keventer_event.find_first('net-promoter-score').content.to_i
@@ -69,7 +66,7 @@ class KeventerEventType
     load_categories xml_keventer_event
   end
 
-  def load_categories xml_keventer_event
+  def load_categories(xml_keventer_event)
     xml_keventer_event.find('//category').each do |category|
       categories << [
         category.find_first('id').content.to_i,
