@@ -263,7 +263,6 @@ class KeventerReader
     trainer.average_rating = xml.find_first('average-rating').content.nil? ? nil : xml.find_first('average-rating').content.to_f.round(2)
     trainer.net_promoter_score = xml.find_first('net-promoter-score').content.nil? ? nil : xml.find_first('net-promoter-score').content.to_i
     trainer.surveyed_count = xml.find_first('surveyed-count').content.to_i
-    trainer.promoter_count = xml.find_first('promoter-count').content.to_i
     trainer
   end
 

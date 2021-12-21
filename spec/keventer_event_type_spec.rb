@@ -88,7 +88,6 @@ describe KeventerEventType do
     expect(@keventtype.average_rating).to eq 0.0
     expect(@keventtype.net_promoter_score).to eq 0
     expect(@keventtype.surveyed_count).to eq 0.0
-    expect(@keventtype.promoter_count).to eq 0
   end
 
   it "new event_type doesn't have rate" do
