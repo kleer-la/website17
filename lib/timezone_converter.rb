@@ -1,4 +1,4 @@
-Timezones = [
+TIMEZONES = [
   [155, 'Mexico City', '-06:00'],
   [41, 'Bogota', '-05:00'],
   [131, 'Lima', '-05:00'],
@@ -24,8 +24,8 @@ Timezones = [
 class TimezoneConverter
   def self.timezone(name)
     (
-        Timezones.detect { |tz| name.match(/#{tz[1]}/) }
-      )&.[](0)
+      TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }
+    )&.[](0)
   end
 end
 
