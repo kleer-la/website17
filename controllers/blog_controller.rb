@@ -6,47 +6,41 @@ require './lib/articles'
 # end
 
 get '/blog-preview/:slug' do |slug|
-  begin
-    @article = Article.createOneKeventer(slug)
+  @article = Article.createOneKeventer(slug)
 
-    # @meta_keywords
-    @page_title = @article.tabtitle
-    @meta_description = @article.description
+  # @meta_keywords
+  @page_title = @article.tabtitle
+  @meta_description = @article.description
 
-    erb :blog_preview_one, layout: :layout_2017
-  rescue => exception
-    puts exception
-    status 404
-  end
+  erb :blog_preview_one, layout: :layout_2017
+rescue StandardError => e
+  puts e
+  status 404
 end
 
-get '/blog-preview' do 
-  begin
-    @articles = Article.createListKeventer(false)
+get '/blog-preview' do
+  @articles = Article.createListKeventer(false)
 
-    # @meta_keywords
-    # @page_title = @article.tabtitle
-    # @meta_description = @article.description
+  # @meta_keywords
+  # @page_title = @article.tabtitle
+  # @meta_description = @article.description
 
-    @preview = 'Preview'
-    erb :blog_preview, layout: :layout_2017
-  rescue => exception
-    puts exception
-    status 404
-  end
+  @preview = 'Preview'
+  erb :blog_preview, layout: :layout_2017
+rescue StandardError => e
+  puts e
+  status 404
 end
 
-get '/blog' do 
-  begin
-    @articles = Article.createListKeventer(true)
+get '/blog' do
+  @articles = Article.createListKeventer(true)
 
-    # @meta_keywords
-    # @page_title = @article.tabtitle
-    # @meta_description = @article.description
+  # @meta_keywords
+  # @page_title = @article.tabtitle
+  # @meta_description = @article.description
 
-    erb :blog_preview, layout: :layout_2017
-  rescue => exception
-    puts exception
-    status 404
-  end
+  erb :blog_preview, layout: :layout_2017
+rescue StandardError => e
+  puts e
+  status 404
 end

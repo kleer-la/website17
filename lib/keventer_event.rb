@@ -13,7 +13,6 @@ class KeventerEvent
                 :online_course_codename, :online_cohort_codename
   attr_reader :trainers
 
-
   def initialize
     @capacity = 0
     @city = ''
@@ -84,14 +83,14 @@ class KeventerEvent
   def uri_path
     uri_path_to_return = @id.to_s
     uri_event_type_name = @event_type.name.downcase
-    uri_path_to_return += '-' + uri_event_type_name.gsub(/ /, '-')
+    uri_path_to_return += "-#{uri_event_type_name.gsub(/ /, '-')}"
     uri_city = @city.downcase
-    uri_path_to_return += '-' + uri_city.gsub(/ /, '-')
+    uri_path_to_return += "-#{uri_city.gsub(/ /, '-')}"
     uri_path_to_return
   end
 
   def friendly_title
-    @event_type.name + ' - ' + @city
+    "#{@event_type.name} - #{@city}"
   end
 
   def to_s
@@ -168,7 +167,7 @@ class KeventerEvent
     'https://www.timeanddate.com/worldclock/fixedtime.html?' +
       URI.encode_www_form(
         msg: @event_type.name,
-        iso: date.strftime('%Y%m%d') + 'T' + start_time.strftime('%H%M'),
+        iso: "#{date.strftime('%Y%m%d')}T#{start_time.strftime('%H%M')}",
         p1: TimezoneConverter.timezone(place),
         ah: hours,
         am: minutes

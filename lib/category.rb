@@ -12,10 +12,10 @@ class Category
       @description = ''
       @tagline = ''
     else
-      @name = xml.find_first('name' + suffix).content
+      @name = xml.find_first("name#{suffix}").content
       @codename = xml.find_first('codename').content
-      @tagline = xml.find_first('tagline' + suffix).content
-      @description = xml.find_first('description' + suffix).content
+      @tagline = xml.find_first("tagline#{suffix}").content
+      @description = xml.find_first("description#{suffix}").content
       @order = xml.find_first('order').content.to_i
     end
   end

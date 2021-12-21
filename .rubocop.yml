@@ -8,3 +8,8 @@ Style/FrozenStringLiteralComment:
 
 Layout/LineLength:
   Max: 119
+
+Metrics/BlockLength:
+  IgnoredMethods:
+    - 'describe'
+    - 'context'

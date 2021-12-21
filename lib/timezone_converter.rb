@@ -19,7 +19,7 @@ Timezones = [
   [215, 'Rome', '+01:00'],
   [225, 'San Jose', '-06:00'],
   [228, 'San Salvador', '-06:00']
-]
+].freeze
 
 class TimezoneConverter
   def self.timezone(name)

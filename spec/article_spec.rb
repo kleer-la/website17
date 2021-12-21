@@ -33,7 +33,7 @@ describe Article do
         'published' => true,
         'trainers' => [{ 'name' => 'Luke' }] }
     ]
-    articles = Article.load_list(doc,only_published: true)
+    articles = Article.load_list(doc, only_published: true)
     expect(articles[0].title).to eq 'Dolor sit'
     expect(articles.count).to eq 1
   end

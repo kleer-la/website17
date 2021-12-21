@@ -11,9 +11,7 @@ require File.join(File.dirname(__FILE__), '/category')
 
 def to_boolean(string)
   return true if string == true || string =~ (/(true|t|yes|y|1)$/i)
-  if string == false || string.nil? || string == '' || string =~ (/(false|f|no|n|0)$/i)
-    return false
-  end
+  return false if string == false || string.nil? || string == '' || string =~ (/(false|f|no|n|0)$/i)
 
   raise ArgumentError, "invalid value for Boolean: \"#{string}\""
 end
@@ -79,9 +77,7 @@ class KeventerReader
 
   def event_type(event_type_id, force_read = false)
     event_type = load_remote_event_type(event_type_id, force_read)
-    unless event_type.nil?
-      event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read)
-    end
+    event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read) unless event_type.nil?
     event_type
   end
 
@@ -146,12 +142,10 @@ class KeventerReader
 
   def load_event_types(event_types_xml_node)
     event_types = []
-    unless event_types_xml_node.nil?
-      event_types_xml_node.find('event-types/event-type ').each do |event_type_node|
-        event_type = create_event_type(event_type_node)
+    event_types_xml_node&.find('event-types/event-type ')&.each do |event_type_node|
+      event_type = create_event_type(event_type_node)
 
-        event_types << event_type if event_type.include_in_catalog
-      end
+      event_types << event_type if event_type.include_in_catalog
     end
     event_types
   end
@@ -175,9 +169,9 @@ class KeventerReader
     return events_by_country if country_iso_code == 'otro'
 
     load_remote_events(event_type_xml_url).each do |event|
-      next unless country_iso_code == 'todos' or
-                  event.country_code.downcase == 'ol' or
-                  event.country_code.downcase == country_iso_code
+      next unless (country_iso_code == 'todos') ||
+                  (event.country_code.downcase == 'ol') ||
+                  (event.country_code.downcase == country_iso_code)
 
       events_by_country << event
     end

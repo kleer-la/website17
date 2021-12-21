@@ -33,7 +33,7 @@ class KeventerEventType
   end
 
   def uri_path
-    @id.to_s + '-' + @name.downcase.gsub(/ /, '-')
+    "#{@id}-#{@name.downcase.gsub(/ /, '-')}"
   end
 
   def has_rate
@@ -42,7 +42,7 @@ class KeventerEventType
 
   def load_string(xml, field)
     element = xml.find_first(field.to_s)
-    send(field.to_s + '=', element.content) unless element.nil?
+    send("#{field}=", element.content) unless element.nil?
   end
 
   def load(xml_keventer_event)

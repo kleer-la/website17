@@ -27,9 +27,8 @@ if production?
 end
 
 MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'May' => 'May', 'Jun' => 'Jun',
-              'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }
+              'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
 helpers do
-
   def month_es(month_en)
     MONTHS_ES[month_en]
   end
@@ -90,7 +89,7 @@ before do
                      end
 
   if request.host == 'kleer.la' || request.host == 'kleer.us' || request.host == 'kleer.es' || request.host == 'kleer.com.ar'
-    redirect 'https://www.' + request.host + request.path
+    redirect "https://www.#{request.host}#{request.path}"
   else
     @page_title = 'Kleer - Agile Coaching & Training'
     flash.sweep
@@ -106,7 +105,7 @@ before '/:locale/*' do
 
   if %w[es en].include?(locale)
     session[:locale] = locale
-    request.path_info = '/' + params[:splat][0]
+    request.path_info = "/#{params[:splat][0]}"
   else
     session[:locale] = 'es'
   end
@@ -258,8 +257,8 @@ get '/categoria/:category_codename' do
   if @category.nil?
     status 404
   else
-    @page_title += ' | ' + @category.name
-    @event_types = @category.event_types.sort_by { |et| et.name }
+    @page_title += " | #{@category.name}"
+    @event_types = @category.event_types.sort_by(&:name)
 
     erb :category, layout: :layout_2017
   end
@@ -296,11 +295,10 @@ end
 
 def tracking_mantain_or_default(utm_source, utm_campaign)
   if !utm_source.nil? && !utm_campaign.nil? && utm_source != '' && utm_campaign != ''
-    tracking_parameters = "&utm_source=#{utm_source}&utm_campaign=#{utm_campaign}"
+    "&utm_source=#{utm_source}&utm_campaign=#{utm_campaign}"
   else
-    tracking_parameters = '&utm_source=kleer.la&utm_campaign=kleer.la'
+    '&utm_source=kleer.la&utm_campaign=kleer.la'
   end
-  tracking_parameters
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
@@ -315,9 +313,9 @@ get '/cursos/:event_type_id_with_name' do
     erb :error404_to_calendar, layout: :layout_2017
   else
     # SEO (title, meta)
-    @page_title = 'Kleer - ' + @event_type.name
+    @page_title = "Kleer - #{@event_type.name}"
     @meta_description = @event_type.elevator_pitch
-    if @event_type.categories.count > 0
+    if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
@@ -336,9 +334,9 @@ get '/cursos2/:event_type_id_with_name' do
     erb :error404_to_calendar, layout: :layout_2017
   else
     # SEO (title, meta)
-    @page_title = 'Kleer - ' + @event_type.name
+    @page_title = "Kleer - #{@event_type.name}"
     @meta_description = @event_type.elevator_pitch
-    if @event_type.categories.count > 0
+    if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
