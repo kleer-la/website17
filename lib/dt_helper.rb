@@ -54,9 +54,9 @@ class DTHelper
     line += ">#{event.event_type.name}</a><br/>"
     line += '<strong>CUPOS AGOTADOS</strong><br/>' if event.is_sold_out
     line += "#{event.specific_subtitle}<br/>" if event.specific_subtitle != ''
-    line += if event.is_online
+    line += if event.online?
               '<img src="/img/flags/ol.png"/> Online'
-            elsif event.is_blended_learning
+            elsif event.blended_learning?
               '<img src="/img/flags/ol.png"/> Online + Presencial'
             else
               "<img src=\"/img/flags/#{event.country_code.downcase}.png\"/> #{event.city}, #{event.country}"

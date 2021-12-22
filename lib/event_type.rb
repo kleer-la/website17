@@ -32,7 +32,7 @@ class EventType
     load_categories xml_doc
   end
 
-  #TODO remove duplicarion w/keventer_reader
+  # TODO: remove duplicarion w/keventer_reader
   def load_string(xml, field)
     element = xml.find("/event-type/#{field.to_s.gsub('_', '-')}").first
     send("#{field}=", element.content) unless element.nil?

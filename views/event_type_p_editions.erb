@@ -6,7 +6,7 @@
   counter = 0
 
   @event_type.public_editions.each do |event|
-    if !event.is_online
+    if !event.online?
       @online_only = false
     end
     if event.trainers[0].name != first_trainer
@@ -81,7 +81,7 @@
         <!-- Horario -->
         <div class="col-xs-7 col-sm-2">
           <%=t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
-          <% if event.is_online || event.is_blended_learning %>
+          <% if event.online? || event.blended_learning? %>
             <br/><a href="<%= event.timezone_url%>">
             <%=event.place%>
             </a>

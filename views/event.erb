@@ -9,11 +9,11 @@
 			<%if !@event.event_type.subtitle.nil? && !@event.event_type.subtitle.empty?%>
 				<%=@event.event_type.subtitle%>
 			<%end%>
-			<% if @event.is_online %>
+			<% if @event.online? %>
 			Online,
-			<% elsif @event.is_classroom %>
+			<% elsif @event.classroom? %>
 			Presencial,
-			<% elsif @event.is_blended_learning %>
+			<% elsif @event.blended_learning? %>
 			Presencial + Online,
 			<% end %>
 			<%= @event.event_type.duration%> <%=t("event.duration")%>

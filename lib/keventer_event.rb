@@ -14,31 +14,34 @@ class KeventerEvent
   attr_reader :trainers
 
   def initialize
-    @capacity = 0
-    @city = @place = @country = @country_code = ''
-    @event_type = nil
-    @date = @finish_date = @start_time = @end_time = nil
-    @is_sold_out = false
-    @sepyme_enabled = false
     @id = 0
+    @capacity = 0
+    @city = @place = @country = @country_code = @address = ''
+    @event_type = nil
     @trainers = []
     @keventer_connector = nil
-    @registration_link = @human_date = @address = ''
 
     init_prices
-    @time_zone_name = ''
-    @time_zone = nil
+    init_datetime
+    init_flags
+    init_registration
+  end
 
-    @specific_conditions = ''
-    @specific_subtitle = ''
-    @banner_text = ''
-    @banner_type = ''
-    @is_community_event = false
-    @mode = ''
+  def init_registration
+    @registration_link = ''
+    @specific_conditions = @specific_subtitle = ''
+    @banner_text = @banner_type = ''
 
     @enable_online_payment = false
     @online_course_codename = ''
     @online_cohort_codename = ''
+  end
+
+  def init_flags
+    @is_sold_out = false
+    @sepyme_enabled = false
+    @is_community_event = false
+    @mode = ''
   end
 
   def init_prices
@@ -54,15 +57,21 @@ class KeventerEvent
     @currency_iso_code = ''
   end
 
-  def is_online
+  def init_datetime
+    @date = @finish_date = @start_time = @end_time = nil
+    @human_date = @time_zone_name = ''
+    @time_zone = nil
+  end
+
+  def online?
     mode == 'ol'
   end
 
-  def is_classroom
+  def classroom?
     mode == 'cl'
   end
 
-  def is_blended_learning
+  def blended_learning?
     mode == 'bl'
   end
 
