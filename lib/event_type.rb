@@ -11,7 +11,8 @@ class EventType
 
   attr_accessor :id, :duration,
                 :name, :subtitle, :description, :learnings, :takeaways,
-                :goal, :recipients, :program,
+                :goal, :recipients, :program, :faq,
+                :external_site_url, :elevator_pitch, :include_in_catalog,
                 :categories
 
   def initialize(provider)
@@ -24,18 +25,16 @@ class EventType
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
 
     %i[name subtitle description learnings takeaways
-       goal recipients program].each do |f|
+       goal recipients program faq
+       external_site_url elevator_pitch include_in_catalog].each do |f|
       load_string(xml_doc, f)
     end
-    @external_site_url = xml_doc.find('external-site-url')&.first&.content
-    @faq = xml_doc.find('faq').first.content
-    @elevator_pitch = xml_doc.find('elevator-pitch').first.content
-    @include_in_catalog = to_boolean(xml_doc.find('include-in-catalog').first.content)
     load_categories xml_doc
   end
 
+  #TODO remove duplicarion w/keventer_reader
   def load_string(xml, field)
-    element = xml.find("/event-type/#{field}").first
+    element = xml.find("/event-type/#{field.to_s.gsub('_', '-')}").first
     send("#{field}=", element.content) unless element.nil?
   end
 
