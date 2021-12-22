@@ -679,7 +679,7 @@ es:
             description: "Descripción"
             target: "Destinado a"
             program: "Programa"
-            faqs: "Preguntas Frecuentes"
+            faq: "Preguntas Frecuentes"
             linking_with_category: " te ayuda a lograr"
         details:
             sections:

@@ -113,9 +113,9 @@ describe KeventerEventType do
     expect(@keventtype.recipients).to eq 'sdkjfhskjfhskdjf'
   end
 
-  it 'should have some FAQs' do
-    @keventtype.faqs = 'sdkjfhskjfhskdjf'
-    expect(@keventtype.faqs).to eq 'sdkjfhskjfhskdjf'
+  it 'should have some faq' do
+    @keventtype.faq = 'sdkjfhskjfhskdjf'
+    expect(@keventtype.faq).to eq 'sdkjfhskjfhskdjf'
   end
 
   it 'should have an empty subtitle on creatio' do

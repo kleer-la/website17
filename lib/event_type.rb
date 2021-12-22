@@ -28,7 +28,7 @@ class EventType
       load_string(xml_doc, f)
     end
     @external_site_url = xml_doc.find('external-site-url')&.first&.content
-    @faqs = xml_doc.find('faq').first.content
+    @faq = xml_doc.find('faq').first.content
     @elevator_pitch = xml_doc.find('elevator-pitch').first.content
     @include_in_catalog = to_boolean(xml_doc.find('include-in-catalog').first.content)
     load_categories xml_doc

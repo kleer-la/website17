@@ -34,9 +34,9 @@
 
     <div class="col-md-4">
       <!-- FAQ -->
-      <% if !@event_type.faqs.nil? && @event_type.faqs.strip != "" %>
-          <h2><%=t("event.tabs.faqs")%></h2>
-          <%=@markdown_renderer.render( @event_type.faqs )%>
+      <% if !@event_type.faq.nil? && @event_type.faq.strip != "" %>
+          <h2><%=t("event.tabs.faq")%></h2>
+          <%=@markdown_renderer.render( @event_type.faq )%>
           <br/>&nbsp;
           <br/>&nbsp;
       <% end %>
