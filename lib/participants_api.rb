@@ -2,11 +2,11 @@ require 'net/http'
 require './lib/keventer_connector'
 
 class ParticipantsApi
-  def self.createNull
+  def self.create_null
     ParticipantsApi.new NullApi.new
   end
 
-  def self.createKeventer
+  def self.create_keventer
     ParticipantsApi.new KeventerApi.new
   end
 

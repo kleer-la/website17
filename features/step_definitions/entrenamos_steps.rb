@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), '../../lib/keventer_reader')
+require './lib/keventer_reader'
 
 Then(/^event list is empty$/) do
   pending # express the regexp above with the code you wish you had
