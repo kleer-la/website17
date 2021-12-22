@@ -2,34 +2,13 @@ require 'libxml'
 require 'date'
 require 'tzinfo'
 
-require File.join(File.dirname(__FILE__), '/keventer_event')
-require File.join(File.dirname(__FILE__), '/keventer_event_type')
-require File.join(File.dirname(__FILE__), '/country')
-require File.join(File.dirname(__FILE__), '/keventer_connector')
-require File.join(File.dirname(__FILE__), '/professional')
-require File.join(File.dirname(__FILE__), '/category')
-
-def to_boolean(string)
-  return true if string == true || string =~ (/(true|t|yes|y|1)$/i)
-  return false if string == false || string.nil? || string == '' || string =~ (/(false|f|no|n|0)$/i)
-
-  raise ArgumentError, "invalid value for Boolean: \"#{string}\""
-end
-
-def validated_Date_parse(date_xml)
-  Date.parse(date_xml.content)
-rescue StandardError
-  nil
-end
-
-def first_content(xml, element_name)
-  element = xml.find_first(element_name)
-  if element.nil?
-    ''
-  else
-    element.content
-  end
-end
+require './lib/keventer_helper'
+require './lib/keventer_event'
+require './lib/keventer_event_type'
+require './lib/country'
+require './lib/keventer_connector'
+require './lib/professional'
+require './lib/category'
 
 def event_from_parsed_xml(xml_keventer_event)
   event = KeventerEvent.new

@@ -1,4 +1,5 @@
 require './lib/timezone_converter'
+require './lib/keventer_helper'
 
 class KeventerEvent
   attr_accessor :capacity, :city, :country, :country_code, :event_type, :date,
@@ -106,6 +107,7 @@ class KeventerEvent
 
   def load(event_doc)
     load_descripcion(event_doc)
+    load_country(event_doc)
     load_date(event_doc)
     load_details(event_doc)
     load_status(event_doc)
@@ -113,52 +115,54 @@ class KeventerEvent
   end
 
   def load_descripcion(event_doc)
-    @id = event_doc.find_first('id').content.to_i
-    @capacity = event_doc.find_first('capacity').content.to_i
-    @city = event_doc.find_first('city').content
-    @place = event_doc.find_first('place').content
-    @address = event_doc.find_first('address').content
-    @registration_link = event_doc.find_first('registration-link').content
+    @id = first_content(event_doc, 'id').to_i
+    @capacity = first_content(event_doc, 'capacity').to_i
+    @city = first_content(event_doc, 'city')
+    @place = first_content(event_doc, 'place')
+    @address = first_content(event_doc, 'address')
+    @registration_link = first_content(event_doc, 'registration-link')
 
-    @enable_online_payment = to_boolean(event_doc.find_first('enable-online-payment').content)
-    @online_course_codename = event_doc.find_first('online-course-codename').content
-    @online_cohort_codename = event_doc.find_first('online-cohort-codename').content
+    @enable_online_payment = to_boolean(first_content(event_doc, 'enable-online-payment'))
+    @online_course_codename = first_content(event_doc, 'online-course-codename')
+    @online_cohort_codename = first_content(event_doc, 'online-cohort-codename')
+  end
 
-    @country = event_doc.find_first('country/name').content
-    @country_code = event_doc.find_first('country/iso-code').content
-    @currency_iso_code = event_doc.find_first('currency-iso-code').content
+  def load_country(event_doc)
+    @country = first_content(event_doc, 'country/name')
+    @country_code = first_content(event_doc, 'country/iso-code')
+    @currency_iso_code = first_content(event_doc, 'currency-iso-code')
   end
 
   def load_date(event_doc)
-    @date = Date.parse(event_doc.find_first('date').content)
-    @finish_date = validated_Date_parse(event_doc.find_first('finish-date'))
-    @start_time = DateTime.parse(event_doc.find_first('start-time').content)
-    @end_time = DateTime.parse(event_doc.find_first('end-time').content)
+    @date = Date.parse(first_content(event_doc, 'date'))
+    @finish_date = validated_date_parse(event_doc.find_first('finish-date'))
+    @start_time = DateTime.parse(first_content(event_doc, 'start-time'))
+    @end_time = DateTime.parse(first_content(event_doc, 'end-time'))
   end
 
   def load_details(event_doc)
-    @specific_subtitle = event_doc.find_first('specific-subtitle').content
-    @specific_conditions = event_doc.find_first('specific-conditions').content
-    @is_community_event = event_doc.find_first('visibility-type').content == 'co'
-    @mode = event_doc.find_first('mode').content
-    @banner_text = event_doc.find_first('banner-text').content
-    @banner_type = event_doc.find_first('banner-type').content
+    @specific_subtitle = first_content(event_doc, 'specific-subtitle')
+    @specific_conditions = first_content(event_doc, 'specific-conditions')
+    @is_community_event = first_content(event_doc, 'visibility-type') == 'co'
+    @mode = first_content(event_doc, 'mode')
+    @banner_text = first_content(event_doc, 'banner-text')
+    @banner_type = first_content(event_doc, 'banner-type')
   end
 
   def load_status(event_doc)
-    @is_sold_out = to_boolean(event_doc.find_first('is-sold-out').content)
+    @is_sold_out = to_boolean(first_content(event_doc, 'is-sold-out'))
   end
 
   def load_price(event_doc)
     @show_pricing = to_boolean(event_doc.find_first('show-pricing').content)
-    @list_price = event_doc.find_first('list-price').content.nil? ? 0.0 : event_doc.find_first('list-price').content.to_f
-    @eb_price = event_doc.find_first('eb-price').content.nil? ? 0.0 : event_doc.find_first('eb-price').content.to_f
-    @eb_end_date = validated_Date_parse(event_doc.find_first('eb-end-date')) if @eb_price > 0.0
-    @couples_eb_price = event_doc.find_first('couples-eb-price').content.nil? ? 0.0 : event_doc.find_first('couples-eb-price').content.to_f
-    @business_eb_price = event_doc.find_first('business-eb-price').content.nil? ? 0.0 : event_doc.find_first('business-eb-price').content.to_f
-    @business_price = event_doc.find_first('business-price').content.nil? ? 0.0 : event_doc.find_first('business-price').content.to_f
-    @enterprise_6plus_price = event_doc.find_first('enterprise-6plus-price').content.nil? ? 0.0 : event_doc.find_first('enterprise-6plus-price').content.to_f
-    @enterprise_11plus_price = event_doc.find_first('enterprise-11plus-price').content.nil? ? 0.0 : event_doc.find_first('enterprise-11plus-price').content.to_f
+    @list_price = event_doc.find_first('list-price').content.to_f
+    @eb_price = event_doc.find_first('eb-price').content.to_f
+    @eb_end_date = validated_date_parse(event_doc.find_first('eb-end-date')) if @eb_price > 0.0
+    @couples_eb_price = event_doc.find_first('couples-eb-price').content.to_f
+    @business_eb_price = event_doc.find_first('business-eb-price').content.to_f
+    @business_price = event_doc.find_first('business-price').content.to_f
+    @enterprise_6plus_price = event_doc.find_first('enterprise-6plus-price').content.to_f
+    @enterprise_11plus_price = event_doc.find_first('enterprise-11plus-price').content.to_f
   end
 
   def timezone_url
