@@ -3,7 +3,7 @@ require './lib/keventer_reader'     # to_boolean
 class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faqs,
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
-                :public_editions, :average_rating, :net_promoter_score, :surveyed_count,
+                :public_editions, :surveyed_count,
                 :external_site_url,
                 :categories
 
@@ -23,8 +23,6 @@ class KeventerEventType
     @include_in_catalog = false
     @public_editions = []
 
-    @average_rating = 0.0
-    @net_promoter_score = 0
     @surveyed_count = 0
     @external_site_url = nil
 
@@ -33,10 +31,6 @@ class KeventerEventType
 
   def uri_path
     "#{@id}-#{@name.downcase.gsub(/ /, '-')}"
-  end
-
-  def rate?
-    surveyed_count > 20 && !average_rating.nil?
   end
 
   def load_string(xml, field)
@@ -57,8 +51,6 @@ class KeventerEventType
     @elevator_pitch = xml_keventer_event.find_first('elevator-pitch').content
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)
 
-    # @average_rating = xml_keventer_event.find_first('average-rating').content.nil? ? nil : xml_keventer_event.find_first('average-rating').content.to_f.round(2)
-    # @net_promoter_score = xml_keventer_event.find_first('net-promoter-score').content.nil? ? nil : xml_keventer_event.find_first('net-promoter-score').content.to_i
     # @surveyed_count = xml_keventer_event.find_first('surveyed-count').content.to_i
 
     load_categories xml_keventer_event

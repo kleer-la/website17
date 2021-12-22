@@ -88,15 +88,6 @@ describe KeventerEventType do
     expect(@keventtype.surveyed_count).to eq 0.0
   end
 
-  it "new event_type doesn't have rate" do
-    @keventtype.rate?.should be false
-  end
-
-  it 'should have rate' do
-    @keventtype.surveyed_count = 100
-    @keventtype.rate?.should be true
-  end
-
   it 'should have a learnings' do
     @keventtype.learnings = 'Argentina'
     expect(@keventtype.learnings).to eq 'Argentina'
