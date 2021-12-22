@@ -28,13 +28,12 @@ class Article
     @@articlesNull = Article.load_list(arts, opt[:only_published])
   end
 
-  def self.createListKeventer(only_published)
+  def self.create_list_keventer(only_published)
     if @@next_null
       @@next_null = false
       return @@articlesNull
     end
     uri = KeventerConnector.articles_url
-    p uri
     api_resp = JsonAPI.new(uri)
     if !api_resp.ok?
       raise :NotFound

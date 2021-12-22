@@ -19,13 +19,13 @@ rescue StandardError => e
 end
 
 get '/blog-preview' do
-  @articles = Article.createListKeventer(false)
+  @articles = Article.create_list_keventer(false)
 
   # @meta_keywords
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
-  @preview = 'Preview'
+  @where = 'Blog Preview'
   erb :blog_preview
 rescue StandardError => e
   puts e
@@ -33,13 +33,26 @@ rescue StandardError => e
 end
 
 get '/blog' do
-  @articles = Article.createListKeventer(true)
+  @articles = Article.create_list_keventer(true)
 
+  @where = 'Blog'
   # @meta_keywords
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
   erb :blog_preview
+rescue StandardError => e
+  puts e
+  status 404
+end
+get '/blog/:slug' do |slug|
+  @article = Article.createOneKeventer(slug)
+
+  # @meta_keywords
+  @page_title = @article.tabtitle
+  @meta_description = @article.description
+
+  erb :blog_preview_one
 rescue StandardError => e
   puts e
   status 404
