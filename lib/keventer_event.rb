@@ -5,7 +5,7 @@ class KeventerEvent
                 :finish_date, :registration_link, :is_sold_out, :id,
                 :keventer_connector, :place, :sepyme_enabled,
                 :human_date, :start_time, :end_time, :address, :list_price,
-                :eb_price, :eb_end_date, :currency_iso_code, :is_webinar,
+                :eb_price, :eb_end_date, :currency_iso_code,
                 :specific_conditions, :is_community_event, :time_zone_name,
                 :time_zone, :show_pricing, :couples_eb_price, :business_eb_price,
                 :business_price, :enterprise_6plus_price, :enterprise_11plus_price,
@@ -15,36 +15,17 @@ class KeventerEvent
 
   def initialize
     @capacity = 0
-    @city = ''
-    @place = ''
-    @country = ''
-    @country_code = ''
+    @city = @place = @country = @country_code = ''
     @event_type = nil
-    @date = nil
-    @finish_date = nil
-    @start_time = nil
-    @end_time = nil
+    @date = @finish_date = @start_time = @end_time = nil
     @is_sold_out = false
     @sepyme_enabled = false
-    @registration_link = ''
     @id = 0
     @trainers = []
     @keventer_connector = nil
-    @human_date = ''
-    @address = ''
+    @registration_link = @human_date = @address = ''
 
-    @show_pricing = false
-    @list_price = 0.0
-    @eb_price = 0.0
-    @eb_end_date = nil
-    @couples_eb_price = 0.0
-    @business_eb_price = 0.0
-    @business_price = 0.0
-    @enterprise_6plus_price = 0.0
-    @enterprise_11plus_price = 0.0
-    @currency_iso_code = ''
-
-    @is_webinar = false
+    init_prices
     @time_zone_name = ''
     @time_zone = nil
 
@@ -58,6 +39,19 @@ class KeventerEvent
     @enable_online_payment = false
     @online_course_codename = ''
     @online_cohort_codename = ''
+  end
+
+  def init_prices
+    @show_pricing = false
+    @list_price = 0.0
+    @eb_price = 0.0
+    @eb_end_date = nil
+    @couples_eb_price = 0.0
+    @business_eb_price = 0.0
+    @business_price = 0.0
+    @enterprise_6plus_price = 0.0
+    @enterprise_11plus_price = 0.0
+    @currency_iso_code = ''
   end
 
   def is_online
@@ -138,7 +132,6 @@ class KeventerEvent
     @specific_conditions = event_doc.find_first('specific-conditions').content
     @is_community_event = event_doc.find_first('visibility-type').content == 'co'
     @mode = event_doc.find_first('mode').content
-    @is_webinar = to_boolean(event_doc.find_first('is-webinar').content)
     @banner_text = event_doc.find_first('banner-text').content
     @banner_type = event_doc.find_first('banner-type').content
   end
@@ -164,7 +157,7 @@ class KeventerEvent
     hours = (duration / 3600).to_i
     minutes = ((duration % 3600) / 60).to_i
 
-    'https://www.timeanddate.com/worldclock/fixedtime.html?' +
+    "https://www.timeanddate.com/worldclock/fixedtime.html?#{
       URI.encode_www_form(
         msg: @event_type.name,
         iso: "#{date.strftime('%Y%m%d')}T#{start_time.strftime('%H%M')}",
@@ -172,5 +165,6 @@ class KeventerEvent
         ah: hours,
         am: minutes
       )
+    }"
   end
 end

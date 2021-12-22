@@ -27,7 +27,8 @@ class KeventerEventType
   end
 
   def load_string(xml, field)
-    element = xml.find_first(field.to_s)
+    s = field.to_s.gsub('_', '-')
+    element = xml.find_first(s)
     send("#{field}=", element.content) unless element.nil?
   end
 
@@ -36,12 +37,10 @@ class KeventerEventType
     @duration = xml_keventer_event.find_first('duration').content.to_i
 
     %i[name subtitle description learnings takeaways
-       goal recipients program faq].each do |f|
+       goal recipients program faq
+       external_site_url elevator_pitch].each do |f|
       load_string(xml_keventer_event, f)
     end
-    @external_site_url = xml_keventer_event.find_first('external-site-url')&.content
-    # @faqs = xml_keventer_event.find_first('faq').content
-    @elevator_pitch = xml_keventer_event.find_first('elevator-pitch').content
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)
 
     # @surveyed_count = xml_keventer_event.find_first('surveyed-count').content.to_i
