@@ -12,7 +12,7 @@ get '/blog-preview/:slug' do |slug|
   @page_title = @article.tabtitle
   @meta_description = @article.description
 
-  erb :blog_preview_one, layout: :layout_2017
+  erb :blog_preview_one
 rescue StandardError => e
   puts e
   status 404
@@ -26,7 +26,7 @@ get '/blog-preview' do
   # @meta_description = @article.description
 
   @preview = 'Preview'
-  erb :blog_preview, layout: :layout_2017
+  erb :blog_preview
 rescue StandardError => e
   puts e
   status 404
@@ -39,7 +39,7 @@ get '/blog' do
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
-  erb :blog_preview, layout: :layout_2017
+  erb :blog_preview
 rescue StandardError => e
   puts e
   status 404
