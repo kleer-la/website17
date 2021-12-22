@@ -260,8 +260,6 @@ class KeventerReader
     trainer.gravatar_picture_url = xml.find_first('gravatar-picture-url').content
     trainer.twitter_username = xml.find_first('twitter-username').content
 
-    trainer.average_rating = xml.find_first('average-rating').content.nil? ? nil : xml.find_first('average-rating').content.to_f.round(2)
-    trainer.net_promoter_score = xml.find_first('net-promoter-score').content.nil? ? nil : xml.find_first('net-promoter-score').content.to_i
     trainer.surveyed_count = xml.find_first('surveyed-count').content.to_i
     trainer
   end

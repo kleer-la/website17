@@ -1,7 +1,6 @@
 class Toggle
   @flags = {
-    'test' => true,
-    'show_rates_on_catalog' => false
+    'test' => true
   }
 
   def self.turn(flag, value)

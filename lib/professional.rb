@@ -1,6 +1,6 @@
 class Professional
   attr_accessor :name, :bio, :linkedin_url, :gravatar_picture_url, :twitter_username, :id,
-                :average_rating, :net_promoter_score, :surveyed_count
+                :surveyed_count
 
   def initialize(xml = nil, lang = 'es')
     @id =
@@ -11,8 +11,6 @@ class Professional
               @twitter_username = ''.freeze
     load_xml(xml, lang) unless xml.nil?
 
-    @average_rating = 0.0
-    @net_promoter_score = 0
     @surveyed_count = 0
   end
 

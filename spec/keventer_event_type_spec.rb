@@ -85,8 +85,6 @@ describe KeventerEventType do
   end
 
   it 'should have rating instance variable' do
-    expect(@keventtype.average_rating).to eq 0.0
-    expect(@keventtype.net_promoter_score).to eq 0
     expect(@keventtype.surveyed_count).to eq 0.0
   end
 
@@ -95,15 +93,8 @@ describe KeventerEventType do
   end
 
   it 'should have rate' do
-    @keventtype.average_rating = 3
     @keventtype.surveyed_count = 100
     @keventtype.rate?.should be true
-  end
-
-  it "empty event_type doesn't have rate" do
-    @keventtype.average_rating = nil
-    @keventtype.surveyed_count = 100
-    @keventtype.rate?.should be false
   end
 
   it 'should have a learnings' do
