@@ -12,7 +12,6 @@ require './lib/keventer_reader'
 require './lib/dt_helper'
 require './lib/twitter_card'
 require './lib/twitter_reader'
-require './lib/pdf_catalog'
 require './lib/toggle'
 
 require './lib/event_type'
@@ -282,7 +281,6 @@ end
 
 get '/catalogo' do
   @active_tab_entrenamos = 'active'
-  # pdf_catalog
   @page_title += ' | Catálogo'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :catalogo
