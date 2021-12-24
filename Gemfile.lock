@@ -94,14 +94,10 @@ GEM
     parallel (1.21.0)
     parser (3.0.3.2)
       ast (~> 2.4.1)
-    pdf-core (0.8.1)
     platform-api (3.0.0)
       heroics (~> 0.1.1)
       moneta (~> 1.0.0)
       rate_throttle_client (~> 0.1.0)
-    prawn (2.3.0)
-      pdf-core (~> 0.8.1)
-      ttfunk (~> 1.6)
     public_suffix (4.0.6)
     r18n-core (4.0.0)
     racc (1.5.2)
@@ -179,7 +175,6 @@ GEM
     tilt (2.0.10)
     tins (1.29.1)
       sync
-    ttfunk (1.6.2.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2020.1)
@@ -205,7 +200,6 @@ DEPENDENCIES
   money
   oauth
   platform-api
-  prawn
   rack-reverse-proxy
   rack-ssl-enforcer
   redcarpet
