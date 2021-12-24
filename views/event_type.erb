@@ -41,9 +41,9 @@
 
     <div class="col-md-4">
       <!-- FAQ -->
-      <% if !@event_type.faqs.nil? && @event_type.faqs.strip != "" %>
-          <h2><%=t("event.tabs.faqs")%></h2>
-          <%=@markdown_renderer.render( @event_type.faqs )%>
+      <% if !@event_type.faq.nil? && @event_type.faq.strip != "" %>
+          <h2><%=t("event.tabs.faq")%></h2>
+          <%=@markdown_renderer.render( @event_type.faq )%>
           <br/>&nbsp;
           <br/>&nbsp;
       <% end %>
@@ -59,16 +59,6 @@
                 <h3 class="list-group-item-heading"><%=event_type.name%></h3>
                 <p class="list-group-item-text">
                   <%=event_type.duration%> horas.
-                  <% if event_type.has_rate %>
-                    &nbsp;<div class="stars" id="rating<%= event_type.id %>" data-toggle="tooltip" data-placement="top" title="Rating: <%=event_type.average_rating%>/5 en base a <%=event_type.surveyed_count%> opiniones">
-                      <div style="width:<%=event_type.average_rating.to_f*16%>px;"/></div>
-                    </div>
-                    <script type="text/javascript">
-                      $(document).ready(function(){
-                          $('#rating<%= event_type.id %>').tooltip();
-                        });
-                    </script>
-                  <% end %>
                 </p>
               </a>
             <% end %>

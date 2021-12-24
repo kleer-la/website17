@@ -2,9 +2,10 @@
 <div class="header-small header-coaching"></div>
 
 <div class="header-description">
-	<h1 class="headerTitle">Blog <%= @preview%></h1>
+	<h1 class="headerTitle"><%= @where%></h1>
 </div>
 </div>
+<%where_uri= "/#{@where.downcase.gsub(' ','-')}/" %>
 
 <div class="container mainContent clientes">
 	<div class="container fondo-blanco contenedor-generico">
@@ -15,7 +16,7 @@
       @articles.each do |article|%> 
       <article>
       <header>
-      <h1><a href='/blog-preview/<%= article.slug%>'>
+      <h1><a href='<%= where_uri+article.slug%>'>
       <%=article.title%>
       </a></h1>
       <div style="color:black;font-weight: bold;font-variant: small-caps;font-size: 1.5em;">

@@ -585,7 +585,7 @@ en:
            description: "Description"
            target: "Who should attend?"
            program: "Program"
-           faqs: "FAQs"
+           faq: "faq"
            linking_with_category: " helps you achieve"
        details:
            sections:

@@ -27,9 +27,8 @@ if production?
 end
 
 MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'May' => 'May', 'Jun' => 'Jun',
-              'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }
+              'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
 helpers do
-
   def month_es(month_en)
     MONTHS_ES[month_en]
   end
@@ -89,8 +88,8 @@ before do
                        'es'
                      end
 
-  if request.host == 'kleer.la' || request.host == 'kleer.us' || request.host == 'kleer.es' || request.host == 'kleer.com.ar'
-    redirect 'https://www.' + request.host + request.path
+  if ['kleer.la', 'kleer.us', 'kleer.es', 'kleer.com.ar'].include? request.host
+    redirect "https://www.#{request.host}#{request.path}"
   else
     @page_title = 'Kleer - Agile Coaching & Training'
     flash.sweep
@@ -106,7 +105,7 @@ before '/:locale/*' do
 
   if %w[es en].include?(locale)
     session[:locale] = locale
-    request.path_info = '/' + params[:splat][0]
+    request.path_info = "/#{params[:splat][0]}"
   else
     session[:locale] = 'es'
   end
@@ -140,7 +139,7 @@ def entrenamos_view(country = nil)
     @unique_countries = KeventerReader.instance.unique_countries_for_commercial_events
     @country = country || session[:filter_country] || 'todos'
     session[:filter_country] = @country
-    erb :entrenamos, layout: :layout_2017
+    erb :entrenamos
   end
 end
 
@@ -156,7 +155,7 @@ get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
   @page_title += ' | Coaching'
   @categories = KeventerReader.instance.categories session[:locale]
-  erb :coaching, layout: :layout_2017
+  erb :coaching
 end
 
 get '/e-books' do
@@ -166,37 +165,37 @@ end
 get '/facilitacion' do
   @active_tab_facilitacion = 'active'
   @page_title += ' | Facilicación'
-  erb :facilitacion, layout: :layout_2017
+  erb :facilitacion
 end
 
 get '/facilitacion/grafica' do
   @active_tab_facilitacion = 'active'
   @page_title += ' | Facilicación gráfica'
-  erb :facilitacion_grafica, layout: :layout_2017
+  erb :facilitacion_grafica
 end
 
 get '/facilitacion/innovacion-creatividad' do
   @active_tab_facilitacion = 'active'
   @page_title += ' | Innovación y creatividad'
-  erb :facilitacion_innovacion_creatividad, layout: :layout_2017
+  erb :facilitacion_innovacion_creatividad
 end
 
 get '/facilitacion/planificacion-estrategica' do
   @active_tab_facilitacion = 'active'
   @page_title += ' | Planificación estratégica'
-  erb :facilitacion_planificacion_estrategica, layout: :layout_2017
+  erb :facilitacion_planificacion_estrategica
 end
 
 get '/facilitacion/dinamicas-eventos' do
   @active_tab_facilitacion = 'active'
   @page_title += ' | Dinámicas y eventos'
-  erb :facilitacion_dinamicas_eventos, layout: :layout_2017
+  erb :facilitacion_dinamicas_eventos
 end
 
 get '/publicamos' do
   @active_tab_publicamos = 'active'
   @page_title += ' | Publicamos'
-  erb :publicamos, layout: :layout_2017
+  erb :publicamos
 end
 
 get '/libros' do
@@ -204,20 +203,20 @@ get '/libros' do
   @page_title += ' | Libros'
   @books = Books.new.load.all
 
-  erb :ebooks, layout: :layout_2017
+  erb :ebooks
 end
 
 get '/recursos' do
   @active_tab_publicamos = 'active'
   @page_title += ' | Recursos'
   @resources = Resources.new.load.all
-  erb :recursos, layout: :layout_2017
+  erb :recursos
 end
 
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = 'active'
   @page_title += ' | Recursos'
-  erb :recursos_primeros_pasos, layout: :layout_2017
+  erb :recursos_primeros_pasos
 end
 
 get '/publicamos/scrum' do
@@ -258,10 +257,10 @@ get '/categoria/:category_codename' do
   if @category.nil?
     status 404
   else
-    @page_title += ' | ' + @category.name
-    @event_types = @category.event_types.sort_by { |et| et.name }
+    @page_title += " | #{@category.name}"
+    @event_types = @category.event_types.sort_by(&:name)
 
-    erb :category, layout: :layout_2017
+    erb :category
   end
 end
 
@@ -286,7 +285,7 @@ get '/catalogo' do
   # pdf_catalog
   @page_title += ' | Catálogo'
   @categories = KeventerReader.instance.categories session[:locale]
-  erb :catalogo, layout: :layout_2017
+  erb :catalogo
 end
 
 def event_type_from_qstring(event_type_id_with_name)
@@ -296,11 +295,10 @@ end
 
 def tracking_mantain_or_default(utm_source, utm_campaign)
   if !utm_source.nil? && !utm_campaign.nil? && utm_source != '' && utm_campaign != ''
-    tracking_parameters = "&utm_source=#{utm_source}&utm_campaign=#{utm_campaign}"
+    "&utm_source=#{utm_source}&utm_campaign=#{utm_campaign}"
   else
-    tracking_parameters = '&utm_source=kleer.la&utm_campaign=kleer.la'
+    '&utm_source=kleer.la&utm_campaign=kleer.la'
   end
-  tracking_parameters
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
@@ -312,16 +310,16 @@ get '/cursos/:event_type_id_with_name' do
 
   if @event_type.nil?
     flash.now[:error] = get_course_not_found_error
-    erb :error404_to_calendar, layout: :layout_2017
+    erb :error404_to_calendar
   else
     # SEO (title, meta)
-    @page_title = 'Kleer - ' + @event_type.name
+    @page_title = "Kleer - #{@event_type.name}"
     @meta_description = @event_type.elevator_pitch
-    if @event_type.categories.count > 0
+    if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
-    erb :event_type, layout: :layout_2017
+    erb :event_type
   end
 end
 
@@ -333,16 +331,16 @@ get '/cursos2/:event_type_id_with_name' do
 
   if @event_type.nil?
     flash.now[:error] = get_course_not_found_error
-    erb :error404_to_calendar, layout: :layout_2017
+    erb :error404_to_calendar
   else
     # SEO (title, meta)
-    @page_title = 'Kleer - ' + @event_type.name
+    @page_title = "Kleer - #{@event_type.name}"
     @meta_description = @event_type.elevator_pitch
-    if @event_type.categories.count > 0
+    if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
-    erb :event_type2, layout: :layout_2017
+    erb :event_type2
   end
 end
 
@@ -402,33 +400,33 @@ get '/somos' do
   @active_tab_somos = 'active'
   @page_title += ' | Somos'
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :somos, layout: :layout_2017
+  erb :somos
 end
 
 get '/nuestra-filosofia' do
   @active_tab_somos = 'active'
   @page_title += ' | Nuestra filosofía'
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :nuestra_filosofia, layout: :layout_2017
+  erb :nuestra_filosofia
 end
 
 get '/prensa' do
   @active_tab_prensa = 'active'
   @page_title += ' | Prensa'
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :prensa, layout: :layout_2017
+  erb :prensa
 end
 
 get '/privacy' do
   @active_tab_privacidad = 'active'
   @page_title += ' | Declaración de privacidad'
-  erb :privacy, layout: :layout_2017
+  erb :privacy
 end
 
 get '/terms' do
   @active_tab_terminos = 'active'
   @page_title += ' | Terminos y condiciones'
-  erb :terms, layout: :layout_2017
+  erb :terms
 end
 
 get '/clientes/equipos-scrum-en-technisys-2015' do
@@ -440,7 +438,7 @@ get '/prensa/casos/equipos-scrum-en-technisys-2015' do
   @meta_description = 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y automatización de despliegue de software en Technisys apoyados por Kleer'
   @meta_keywords = 'Kleer, Technisys, CyberBank, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, jenkins'
 
-  erb :prensa_casos_technisys_2015, layout: :layout_2017
+  erb :prensa_casos_technisys_2015
 end
 
 get '/clientes/equipos-scrum-en-plataforma-10-2015' do
@@ -452,7 +450,7 @@ get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
   @meta_description = 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y orientación al valor para el negocio en Plataforma 10, apoyados por Kleer'
   @meta_keywords = 'Kleer, Plataforma 10, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, valor negocio'
 
-  erb :prensa_casos_plataforma_10_2015, layout: :layout_2017
+  erb :prensa_casos_plataforma_10_2015
 end
 
 get '/clientes/equipos-scrum-en-suramericana-2015' do
@@ -464,7 +462,7 @@ get '/prensa/casos/equipos-scrum-en-suramericana-2015' do
   @meta_description = 'Kleer - Coaching & Training - Paradigma ágiles en tecnología y en negocio en Suramericana, apoyados por Kleer'
   @meta_keywords = 'Kleer, Suramericana, Sura, scrum, equipos, desarrollo ágil, valor negocio, corporaciones ágiles, paradigma ágil en las empresas'
 
-  erb :prensa_casos_suramericana_2015, layout: :layout_2017
+  erb :prensa_casos_suramericana_2015
 end
 
 get '/clientes/innovacion-en-marketing-digital-loreal-2016' do
@@ -476,7 +474,7 @@ get '/prensa/casos/transformacion-agil-ypf-2020' do
   @meta_description = 'Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer'
   @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación, coloaboración, facilitación gráfica, marketing, digital"
 
-  erb :prensa_casos_ypf_2020, layout: :layout_2017
+  erb :prensa_casos_ypf_2020
 end
 
 get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
@@ -484,7 +482,7 @@ get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
   @meta_description = 'Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer'
   @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación, coloaboración, facilitación gráfica, marketing, digital"
 
-  erb :prensa_casos_loreal_2016, layout: :layout_2017
+  erb :prensa_casos_loreal_2016
 end
 
 get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
@@ -492,7 +490,7 @@ get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
   @meta_description = 'Kleer - Coaching & Training - Cómo acompañamos desde Kleer la transformación ágil de TI en EPM'
   @meta_keywords = 'Kleer, epm, empresas publicas medellin, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, sistemas, ti, mejora continua, transformación organizacional, evolución organizacional'
 
-  erb :prensa_casos_epm_2018, layout: :layout_2017
+  erb :prensa_casos_epm_2018
 end
 
 get '/prensa/casos/transformacion-digital-bbva-continental' do
@@ -500,7 +498,7 @@ get '/prensa/casos/transformacion-digital-bbva-continental' do
   @meta_description = 'Kleer - Coaching & Training -Acompañamiento en la transformación digital de BBVA Continental'
   @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional'
 
-  erb :prensa_casos_bbva_2018, layout: :layout_2017
+  erb :prensa_casos_bbva_2018
 end
 
 get '/prensa/casos/falabella-financiero' do
@@ -508,7 +506,7 @@ get '/prensa/casos/falabella-financiero' do
   @meta_description = 'Kleer - Coaching & Training - Transformación Organizacional en Falabella Financiero'
   @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional'
 
-  erb :prensa_casos_falabella_financiero, layout: :layout_2017
+  erb :prensa_casos_falabella_financiero
 end
 
 get '/prensa/casos/afp-crecer' do
@@ -516,7 +514,7 @@ get '/prensa/casos/afp-crecer' do
   @meta_description = 'Kleer - Coaching & Training - Coaching y transformación ágil en AFP Crecer'
   @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional'
 
-  erb :prensa_casos_afp_crecer, layout: :layout_2017
+  erb :prensa_casos_afp_crecer
 end
 
 get '/prensa/casos/capacitaciones-agiles-endava' do
@@ -524,7 +522,7 @@ get '/prensa/casos/capacitaciones-agiles-endava' do
   @meta_description = 'Kleer - Coaching & Training - Endava, una empresa internacional que ofrece servicios de desarrollo de software con presencia en Latinoamérica, Estados Unidos y Europa, se vio en el desafío de mantener la cultura ágil dentro de un contexto de gran crecimiento en poco tiempo.'
   @meta_keywords = 'Kleer, Agile training, Scrum, Kanban, Trabajo en equipo, Capacitación'
 
-  erb :prensa_casos_endava_2018, layout: :layout_2017
+  erb :prensa_casos_endava_2018
 end
 
 get '/clientes' do
@@ -532,7 +530,7 @@ get '/clientes' do
   @meta_description = 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
   @meta_keywords = 'Kleer, Clientes, Casos, Casos de Éxito, confianza'
 
-  erb :clientes, layout: :layout_2017
+  erb :clientes
 end
 
 get '/last-tweet/:screen_name' do
@@ -599,7 +597,7 @@ end
 
 not_found do
   @page_title = '404 - No encontrado'
-  erb :error404, layout: :layout_2017
+  erb :error404
 end
 
 private

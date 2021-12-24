@@ -2,36 +2,13 @@ require 'libxml'
 require 'date'
 require 'tzinfo'
 
-require File.join(File.dirname(__FILE__), '/keventer_event')
-require File.join(File.dirname(__FILE__), '/keventer_event_type')
-require File.join(File.dirname(__FILE__), '/country')
-require File.join(File.dirname(__FILE__), '/keventer_connector')
-require File.join(File.dirname(__FILE__), '/professional')
-require File.join(File.dirname(__FILE__), '/category')
-
-def to_boolean(string)
-  return true if string == true || string =~ (/(true|t|yes|y|1)$/i)
-  if string == false || string.nil? || string == '' || string =~ (/(false|f|no|n|0)$/i)
-    return false
-  end
-
-  raise ArgumentError, "invalid value for Boolean: \"#{string}\""
-end
-
-def validated_Date_parse(date_xml)
-  Date.parse(date_xml.content)
-rescue StandardError
-  nil
-end
-
-def first_content(xml, element_name)
-  element = xml.find_first(element_name)
-  if element.nil?
-    ''
-  else
-    element.content
-  end
-end
+require './lib/keventer_helper'
+require './lib/keventer_event'
+require './lib/keventer_event_type'
+require './lib/country'
+require './lib/keventer_connector'
+require './lib/professional'
+require './lib/category'
 
 def event_from_parsed_xml(xml_keventer_event)
   event = KeventerEvent.new
@@ -79,9 +56,7 @@ class KeventerReader
 
   def event_type(event_type_id, force_read = false)
     event_type = load_remote_event_type(event_type_id, force_read)
-    unless event_type.nil?
-      event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read)
-    end
+    event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read) unless event_type.nil?
     event_type
   end
 
@@ -146,12 +121,10 @@ class KeventerReader
 
   def load_event_types(event_types_xml_node)
     event_types = []
-    unless event_types_xml_node.nil?
-      event_types_xml_node.find('event-types/event-type ').each do |event_type_node|
-        event_type = create_event_type(event_type_node)
+    event_types_xml_node&.find('event-types/event-type ')&.each do |event_type_node|
+      event_type = create_event_type(event_type_node)
 
-        event_types << event_type if event_type.include_in_catalog
-      end
+      event_types << event_type if event_type.include_in_catalog
     end
     event_types
   end
@@ -175,9 +148,9 @@ class KeventerReader
     return events_by_country if country_iso_code == 'otro'
 
     load_remote_events(event_type_xml_url).each do |event|
-      next unless country_iso_code == 'todos' or
-                  event.country_code.downcase == 'ol' or
-                  event.country_code.downcase == country_iso_code
+      next unless (country_iso_code == 'todos') ||
+                  (event.country_code.downcase == 'ol') ||
+                  (event.country_code.downcase == country_iso_code)
 
       events_by_country << event
     end
@@ -266,10 +239,7 @@ class KeventerReader
     trainer.gravatar_picture_url = xml.find_first('gravatar-picture-url').content
     trainer.twitter_username = xml.find_first('twitter-username').content
 
-    trainer.average_rating = xml.find_first('average-rating').content.nil? ? nil : xml.find_first('average-rating').content.to_f.round(2)
-    trainer.net_promoter_score = xml.find_first('net-promoter-score').content.nil? ? nil : xml.find_first('net-promoter-score').content.to_i
     trainer.surveyed_count = xml.find_first('surveyed-count').content.to_i
-    trainer.promoter_count = xml.find_first('promoter-count').content.to_i
     trainer
   end
 

@@ -2,6 +2,133 @@ require './lib/keventer_event'
 require './lib/professional'
 require './lib/keventer_event_type'
 
+EVENT_XML = %(<?xml version="1.0" encoding="UTF-8"?>
+  <event>
+    <address>address qq</address>
+    <average-rating type="decimal" nil="true"/>
+    <business-eb-price type="decimal">85.0</business-eb-price>
+    <business-price type="decimal">88.0</business-price>
+    <cancelled type="boolean">false</cancelled>
+    <capacity type="integer">11</capacity>
+    <city>city yy</city>
+    <country-id type="integer">2</country-id>
+    <couples-eb-price type="decimal">90.0</couples-eb-price>
+    <created-at type="datetime">2015-05-11T22:48:10Z</created-at>
+    <currency-iso-code>AED</currency-iso-code>
+    <custom-prices-email-text></custom-prices-email-text>
+    <date type="date">2015-05-18</date>
+    <draft type="boolean">false</draft>
+    <duration type="integer">1</duration>
+    <eb-end-date type="date">2015-05-08</eb-end-date>
+    <eb-price type="decimal">95.0</eb-price>
+    <embedded-player nil="true"/>
+    <end-time type="datetime">2000-01-01T18:00:00Z</end-time>
+    <enterprise-11plus-price type="decimal">80.0</enterprise-11plus-price>
+    <enterprise-6plus-price type="decimal">83.0</enterprise-6plus-price>
+    <event-type-id type="integer">5</event-type-id>
+    <finish-date type="date">2015-05-21</finish-date>
+    <id type="integer">35</id>
+    <is-sold-out type="boolean">false</is-sold-out>
+    <list-price type="decimal">100.0</list-price>
+    <mode>cl</mode>
+    <monitor-email></monitor-email>
+    <net-promoter-score type="integer" nil="true"/>
+    <notify-webinar-start type="boolean">false</notify-webinar-start>
+    <place>the place pp</place>
+    <registration-link></registration-link>
+    <sepyme-enabled type="boolean">false</sepyme-enabled>
+    <should-ask-for-referer-code type="boolean">false</should-ask-for-referer-code>
+    <should-welcome-email type="boolean">true</should-welcome-email>
+    <show-pricing type="boolean">false</show-pricing>
+    <specific-conditions>Very specific</specific-conditions><specific-subtitle></specific-subtitle>
+    <start-time type="datetime">2000-01-01T09:00:00Z</start-time>
+    <time-zone-name></time-zone-name>
+    <trainer-id type="integer">2</trainer-id>
+    <twitter-embedded-search nil="true"/>
+    <updated-at type="datetime">2015-05-11T23:06:08Z</updated-at>
+    <visibility-type>pu</visibility-type>
+    <webinar-started type="boolean">false</webinar-started>
+    <human-date>18-1 May</human-date>
+    <is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment>
+    <online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
+    <banner-text>un texto a resaltar</banner-text>
+    <banner-type>success</banner-type>
+    <country>
+      <created-at type="datetime">2012-04-25T20:31:03Z</created-at>
+      <id type="integer">2</id>
+      <iso-code>DZ</iso-code>
+      <name>Algeria</name>
+      <updated-at type="datetime">2012-04-25T20:31:03Z</updated-at>
+    </country>
+    <event-type>
+      <average-rating type="decimal" nil="true"/>
+      <created-at type="datetime">2014-09-27T17:34:01Z</created-at>
+      <csd-eligible type="boolean">false</csd-eligible>
+      <description>de tres dias</description>
+      <duration type="integer">24</duration>
+      <elevator-pitch>de tres dias</elevator-pitch>
+      <faq></faq>
+      <goal></goal>
+      <id type="integer">5</id>
+      <include-in-catalog type="boolean">false</include-in-catalog>
+      <learnings></learnings>
+      <materials></materials>
+      <name>Curso de 3 días</name>
+      <net-promoter-score type="integer" nil="true"/>
+      <program>de tres dias</program>
+      <promoter-count type="integer" nil="true"/>
+      <recipients>de tres dias</recipients>
+      <surveyed-count type="integer" nil="true"/>
+      <tag-name></tag-name>
+      <takeaways></takeaways>
+      <updated-at type="datetime">2014-09-27T17:34:01Z</updated-at>
+    </event-type>
+    <trainer>
+      <average-rating type="decimal">5.0</average-rating>
+      <bio></bio>
+      <bio-en nil="true"/>
+      <country-id type="integer">1</country-id>
+      <created-at type="datetime">2012-04-25T20:31:04Z</created-at>
+      <gravatar-email></gravatar-email>
+      <id type="integer">2</id>
+      <is-kleerer type="boolean">true</is-kleerer>
+      <linkedin-url></linkedin-url>
+      <name>Jeff Baurer</name>
+      <net-promoter-score type="integer">100</net-promoter-score>
+      <promoter-count type="integer">1</promoter-count>
+      <signature-credentials>Agile Coach &amp; Trainer</signature-credentials>
+      <signature-image>PT.png</signature-image>
+      <surveyed-count type="integer">1</surveyed-count>
+      <tag-name>TR-JB (Jeff Baurer - Prueba Keventer)</tag-name>
+      <twitter-username></twitter-username>
+      <updated-at type="datetime">2014-06-29T21:53:13Z</updated-at>
+      <gravatar-picture-url>https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e</gravatar-picture-url>
+    </trainer>
+    <categories type="array">
+      <category>
+        <codename>productos</codename>
+        <created-at type="datetime">2013-04-19T14:28:15Z</created-at>
+        <description>Nos enfocamos en las prácticas de diseño e ingeniería necesarias para garantizar
+        la calidad durante la concepción y construcción, el mantenimiento y el uso de tus productos.
+        La calidad importa y hace la diferencia pero no ocurre magicamente. Deben aplicarse, disciplinada
+        y consistentemente las mejores prácticas de la industria para lograrlo.
+        **Desde Kleer podemos ayudarte a integrar las mejores prácticas a la cultura de su empresa.**
+        Para eso demostramos y ensayamos técnicas y estrategias, y te acompañamos junto a tu equipo en diferentes
+        momentos del ciclo de vida de tus proyectos.</description>
+        <description-en></description-en>
+        <id type="integer">3</id>
+        <name>Productos tecnológicos de calidad</name>
+        <name-en>Quality technological products</name-en>
+        <order type="integer">2</order>
+        <tagline>Integración continua, Test Driven Development, Pair Programming, Refactoring.</tagline>
+        <tagline-en></tagline-en>
+        <updated-at type="datetime">2014-10-02T10:24:26Z</updated-at>
+        <visible type="boolean">true</visible>
+      </category>
+    </categories>
+  </event>
+).freeze
+
 describe KeventerEvent do
   before(:each) do
     @kevent = KeventerEvent.new
@@ -244,132 +371,10 @@ describe KeventerEvent do
 
   context 'Loding from xml' do
     before(:each) do
-      @xml = %(<?xml version="1.0" encoding="UTF-8"?>
-    <event>
-      <address>address qq</address>
-      <average-rating type="decimal" nil="true"/>
-      <business-eb-price type="decimal">85.0</business-eb-price>
-      <business-price type="decimal">88.0</business-price>
-      <cancelled type="boolean">false</cancelled>
-      <capacity type="integer">11</capacity>
-      <city>city yy</city>
-      <country-id type="integer">2</country-id>
-      <couples-eb-price type="decimal">90.0</couples-eb-price>
-      <created-at type="datetime">2015-05-11T22:48:10Z</created-at>
-      <currency-iso-code>AED</currency-iso-code>
-      <custom-prices-email-text></custom-prices-email-text>
-      <date type="date">2015-05-18</date>
-      <draft type="boolean">false</draft>
-      <duration type="integer">1</duration>
-      <eb-end-date type="date">2015-05-08</eb-end-date>
-      <eb-price type="decimal">95.0</eb-price>
-      <embedded-player nil="true"/>
-      <end-time type="datetime">2000-01-01T18:00:00Z</end-time>
-      <enterprise-11plus-price type="decimal">80.0</enterprise-11plus-price>
-      <enterprise-6plus-price type="decimal">83.0</enterprise-6plus-price>
-      <event-type-id type="integer">5</event-type-id>
-      <finish-date type="date">2015-05-21</finish-date>
-      <id type="integer">35</id>
-      <is-sold-out type="boolean">false</is-sold-out>
-      <list-price type="decimal">100.0</list-price>
-      <mode>cl</mode>
-      <monitor-email></monitor-email>
-      <net-promoter-score type="integer" nil="true"/>
-      <notify-webinar-start type="boolean">false</notify-webinar-start>
-      <place>the place pp</place>
-      <registration-link></registration-link>
-      <sepyme-enabled type="boolean">false</sepyme-enabled>
-      <should-ask-for-referer-code type="boolean">false</should-ask-for-referer-code>
-      <should-welcome-email type="boolean">true</should-welcome-email>
-      <show-pricing type="boolean">false</show-pricing>
-      <specific-conditions>Very specific</specific-conditions><specific-subtitle></specific-subtitle>
-      <start-time type="datetime">2000-01-01T09:00:00Z</start-time>
-      <time-zone-name></time-zone-name>
-      <trainer-id type="integer">2</trainer-id>
-      <twitter-embedded-search nil="true"/>
-      <updated-at type="datetime">2015-05-11T23:06:08Z</updated-at>
-      <visibility-type>pu</visibility-type>
-      <webinar-started type="boolean">false</webinar-started>
-      <human-date>18-1 May</human-date>
-      <is-webinar type="boolean">false</is-webinar><enable-online-payment type="boolean">false</enable-online-payment><online-course-codename></online-course-codename><online-cohort-codename></online-cohort-codename>
-      <banner-text>un texto a resaltar</banner-text>
-      <banner-type>success</banner-type>
-      <country>
-        <created-at type="datetime">2012-04-25T20:31:03Z</created-at>
-        <id type="integer">2</id>
-        <iso-code>DZ</iso-code>
-        <name>Algeria</name>
-        <updated-at type="datetime">2012-04-25T20:31:03Z</updated-at>
-      </country>
-      <event-type>
-        <average-rating type="decimal" nil="true"/>
-        <created-at type="datetime">2014-09-27T17:34:01Z</created-at>
-        <csd-eligible type="boolean">false</csd-eligible>
-        <description>de tres dias</description>
-        <duration type="integer">24</duration>
-        <elevator-pitch>de tres dias</elevator-pitch>
-        <faq></faq>
-        <goal></goal>
-        <id type="integer">5</id>
-        <include-in-catalog type="boolean">false</include-in-catalog>
-        <learnings></learnings>
-        <materials></materials>
-        <name>Curso de 3 días</name>
-        <net-promoter-score type="integer" nil="true"/>
-        <program>de tres dias</program>
-        <promoter-count type="integer" nil="true"/>
-        <recipients>de tres dias</recipients>
-        <surveyed-count type="integer" nil="true"/>
-        <tag-name></tag-name>
-        <takeaways></takeaways>
-        <updated-at type="datetime">2014-09-27T17:34:01Z</updated-at>
-      </event-type>
-      <trainer>
-        <average-rating type="decimal">5.0</average-rating>
-        <bio></bio>
-        <bio-en nil="true"/>
-        <country-id type="integer">1</country-id>
-        <created-at type="datetime">2012-04-25T20:31:04Z</created-at>
-        <gravatar-email></gravatar-email>
-        <id type="integer">2</id>
-        <is-kleerer type="boolean">true</is-kleerer>
-        <linkedin-url></linkedin-url>
-        <name>Jeff Baurer</name>
-        <net-promoter-score type="integer">100</net-promoter-score>
-        <promoter-count type="integer">1</promoter-count>
-        <signature-credentials>Agile Coach &amp; Trainer</signature-credentials>
-        <signature-image>PT.png</signature-image>
-        <surveyed-count type="integer">1</surveyed-count>
-        <tag-name>TR-JB (Jeff Baurer - Prueba Keventer)</tag-name>
-        <twitter-username></twitter-username>
-        <updated-at type="datetime">2014-06-29T21:53:13Z</updated-at>
-        <gravatar-picture-url>https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e</gravatar-picture-url>
-      </trainer>
-      <categories type="array">
-        <category>
-          <codename>productos</codename>
-          <created-at type="datetime">2013-04-19T14:28:15Z</created-at>
-          <description>Nos enfocamos en las prácticas de diseño e ingeniería necesarias para garantizar la calidad durante la concepción y construcción, el mantenimiento y el uso de tus productos.
-    La calidad importa y hace la diferencia pero no ocurre magicamente. Deben aplicarse, disciplinada y consistentemente las mejores prácticas de la industria para lograrlo.
-    **Desde Kleer podemos ayudarte a integrar las mejores prácticas a la cultura de su empresa, a su tecnología.**
-    Para eso demostramos y ensayamos técnicas y estrategias, y te acompañamos junto a tu equipo en diferentes momentos del ciclo de vida de tus proyectos.</description>
-          <description-en></description-en>
-          <id type="integer">3</id>
-          <name>Productos tecnológicos de calidad</name>
-          <name-en>Quality technological products</name-en>
-          <order type="integer">2</order>
-          <tagline>Integración continua, Test Driven Development, Pair Programming, Refactoring y Código Límpio.</tagline>
-          <tagline-en></tagline-en>
-          <updated-at type="datetime">2014-10-02T10:24:26Z</updated-at>
-          <visible type="boolean">true</visible>
-        </category>
-      </categories>
-    </event>
-      )
+      @xml = EVENT_XML
       parser = LibXML::XML::Parser.string(@xml)
       doc = parser.parse
       doc.find('/event')
-      @kevent.is_webinar = true
       @kevent.load doc
     end
 
@@ -396,7 +401,6 @@ describe KeventerEvent do
       expect(@kevent.specific_conditions).to eq('Very specific')
       expect(@kevent.sepyme_enabled).to eq(false)
       expect(@kevent.mode).to eq('cl')
-      expect(@kevent.is_webinar).to eq(false)
     end
 
     it 'should load status' do

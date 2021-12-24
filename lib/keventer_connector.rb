@@ -27,9 +27,11 @@ class KeventerConnector
   def self.interest_url
     API_ROOT + '/v3/participants/interest'.freeze
   end
+
   def self.articles_url
     KEVENTER_URL + '/articles.json'.freeze
   end
+
   def self.article_url(slug)
     KEVENTER_URL + "/articles/#{slug}.json"
   end
