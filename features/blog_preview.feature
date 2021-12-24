@@ -20,3 +20,10 @@ Scenario: Article list preview page
   When I go to the article list preview page
   Then I should see "Lorem ipsum"
   And I should see "Dolor sit amet"
+
+Scenario: Article list shows abstract
+  Given A list of articles with
+  * an article 'lorem-ipsum' with title 'Lorem ipsum'
+  And  the article has abstract 'abstract lorem'
+  When I go to the article list preview page
+  Then I should see "abstract lorem"

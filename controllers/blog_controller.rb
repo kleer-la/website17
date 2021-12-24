@@ -25,6 +25,7 @@ get '/blog-preview' do
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
+  @show_abstract = true
   @where = 'Blog Preview'
   erb :blog_preview
 rescue StandardError => e
@@ -40,6 +41,7 @@ get '/blog' do
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
+  @show_abstract = false
   erb :blog_preview
 rescue StandardError => e
   puts e

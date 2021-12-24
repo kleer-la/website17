@@ -28,7 +28,7 @@
       </time>
       </div>
       </header>
-      <%=@markdown_renderer.render( article.body )%>
+      <%=@markdown_renderer.render( @show_abstract ? article.abstract : article.body)%>
       </article>
     <%end
     end%>

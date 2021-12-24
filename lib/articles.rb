@@ -43,7 +43,7 @@ class Article
   end
 
   attr_accessor :title, :description, :tabtitle, :body, :published,
-                :trainers, :slug,
+                :trainers, :slug, :abstract,
                 :created_at, :updated_at
 
   def initialize(doc)
@@ -57,6 +57,7 @@ class Article
     @trainers = doc['trainers']&.reduce([]) { |ac, t| ac << t['name'] } || []
     @created_at = doc['created_at'] || ''
     @updated_at = doc['updated_at'] || ''
+    @abstract = doc['abstract'] || ''
   end
 
   def self.load_list(doc, only_published = false)

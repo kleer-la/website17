@@ -8,6 +8,10 @@ Given('the article has author {string}') do |author|
   @articles[-1]['trainers'] = (@articles[-1]['trainers'] || []) << { 'name' => author }
 end
 
+Given('the article has abstract {string}') do |abstract|
+  @articles[-1]['abstract'] = abstract
+end
+
 When('I go to the {string} article preview page') do |slug|
   Article.createOneNull(@articles[0], { next_null: true, only_published: false })
   visit "/blog-preview/#{slug}"
