@@ -25,6 +25,10 @@ if production?
   use Rack::SslEnforcer
 end
 
+helpers do
+  include Helpers
+end
+
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
 

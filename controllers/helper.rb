@@ -2,9 +2,9 @@ require './lib/toggle'
 # Define las funciones accesibles en controllers y views
 
 MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'May' => 'May', 'Jun' => 'Jun',
-  'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
+              'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
 
-helpers do
+module Helpers
   def month_es(month_en)
     MONTHS_ES[month_en]
   end
@@ -19,17 +19,8 @@ helpers do
   end
 
   def url_sanitize(data)
-    sanitized = data
-    sanitized = sanitized.gsub('á', 'a')
-    sanitized = sanitized.gsub('é', 'e')
-    sanitized = sanitized.gsub('í', 'i')
-    sanitized = sanitized.gsub('ó', 'o')
-    sanitized = sanitized.gsub('ú', 'u')
-    sanitized = sanitized.gsub('Á', 'A')
-    sanitized = sanitized.gsub('E', 'E')
-    sanitized = sanitized.gsub('Í', 'I')
-    sanitized = sanitized.gsub('Ó', 'O')
-    sanitized.gsub('Ú', 'U')
+    # normalize to NFD, which separates every character into base character + diacritics, then remove diacritics
+    data.unicode_normalize(:nfd).gsub(/\p{M}/, '')
   end
 
   def currency_symbol_for(iso_code)
@@ -50,6 +41,7 @@ helpers do
   def external_url_anchor(url)
     "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\">"
   end
+
   def media_url_anchor(url)
     "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\">"
   end
