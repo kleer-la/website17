@@ -111,7 +111,7 @@
               <ul class="dropdown-menu">
                 <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
                 <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
-                <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><%=t('side_menu.videos')%></a></li>
+                <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" rel="noopener noreferrer" target="_blank"><%=t('side_menu.videos')%></a></li>
                 <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
               </ul>
             </li>
@@ -134,11 +134,11 @@
                 <a id="change_to_<%=lang%>_top" href="/<%=lang%>/"><strong><%=lang_long%></strong></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://www.linkedin.com/company/541684" target="_blank"><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
-            <li><a href="https://twitter.com/kleer_la" target="_blank"><i class="social-icons-desktop fa fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" target="_blank"><i class="social-icons-desktop fa fa-youtube"></i></a></li>
-            <li><a href="https://www.instagram.com/kleer.la/" target="_blank"><i class="social-icons-desktop fa fa-instagram"></i></a></li>
-            <li><a href="https://facebook.com/kleer.la" target="_blank"><i class="social-icons-desktop fa fa-facebook"></i></a></li>
+            <li><%= external_url_anchor "https://www.linkedin.com/company/541684" %><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
+            <li><%= external_url_anchor "https://twitter.com/kleer_la" %><i class="social-icons-desktop fa fa-twitter"></i></a></li>
+            <li><%= media_url_anchor "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"  %><i class="social-icons-desktop fa fa-youtube"></i></a></li>
+            <li><%= external_url_anchor "https://www.instagram.com/kleer.la/" %><i class="social-icons-desktop fa fa-instagram"></i></a></li>
+            <li><%= external_url_anchor "https://facebook.com/kleer.la" %><i class="social-icons-desktop fa fa-facebook"></i></a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -404,7 +404,6 @@
 
 <!-- build:js(.) scripts/vendor.js -->
 <script src="app/vendor/jquery/dist/jquery.min.js"></script>
-<script src="app/vendor/ui-bootstrap/ui-bootstrap-tpls-2.4.0.min.js"></script>
 <script src="app/vendor/scrollreveal.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
