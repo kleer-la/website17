@@ -5,7 +5,7 @@ screen_name = screen_name||'kleer_la'
 <div class="popover <%=pop_over%>" style="display:inline-block;position:relative" id="<%=screen_name%>_twitter_container">
     <div class="arrow"></div>
     <h3 class="popover-title">
-        <a href="https://twitter.com/<%=screen_name%>" target="_blank"><img src="/img/icons/twitter.png" height="24" width="24"></a> @<%=screen_name%>
+        <%= external_url_anchor "https://twitter.com/<%=screen_name%>" %>%<img src="/img/icons/twitter.png" height="24" width="24"></a> @<%=screen_name%>
     </h3>
     <div class="popover-content" id="<%=screen_name%>_last_tweet">
         Buscando último tweet...
