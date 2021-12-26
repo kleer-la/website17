@@ -3,10 +3,10 @@
 		<img src="<%=@event.trainers[0].gravatar_picture_url%>" class="img-circle">
 		<br/><br/>
 		<% if @event.trainers[0].linkedin_url != "" %>
-		&nbsp;<a href="<%=@event.trainers[0].linkedin_url%>" target="_blank"><img src="/img/icons/linkedin.png" height="24" width="24"></a>
+		&nbsp;<%=external_url_anchor @event.trainers[0].linkedin_url%><img src="/img/icons/linkedin.png" height="24" width="24"></a>
 		<% end %>
 		<% if @event.trainers[0].twitter_username != "" %>
-		&nbsp;<a href="https://twitter.com/<%=@event.trainers[0].twitter_username.gsub("@","")%>" target="_blank"><img src="/img/icons/twitter.png" height="24" width="24"></a>
+		&nbsp;<%=external_url_anchor "https://twitter.com/#{@event.trainers[0].twitter_username.gsub('@','')}"%><img src="/img/icons/twitter.png" height="24" width="24"></a>
 		<% end %>
 	</div>
 	<div class="span4">

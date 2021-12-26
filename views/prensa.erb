@@ -9,250 +9,242 @@
 
 <div class="vSpace"></div>
 <div class="vSpace"></div>
+<%
+prs = [
+  { title: t('press.release35_title'),
+    subtitle: 'cio.com.mx - 15.4.21',
+    text: t('press.release35_text'),
+    url: 'https://cio.com.mx/nueve-practicas-para-potenciar-la-colaboracion-de-equipos-distribuidos/',
+    img: '/img/prensa/prensa-35.jpg'
+  },
+  { title: t('press.release34_title'),
+    subtitle: 'revistaeconomia.com - 14.4.21',
+    text: t('press.release34_text'),
+    url: 'https://www.revistaeconomia.com/9-practicas-clave-para-potenciar-la-colaboracion-distribuida',
+    img: '/img/prensa/prensa-34.jpg'
+  },
+  { title: t('press.release33_title'),
+    subtitle: 'acis.org.co - Abril 2021',
+    text: t('press.release33_text'),
+    url: 'https://acis.org.co/portal/content/noticiasdeinteres/9-pr%C3%A1cticas-clave-para-potenciar-la-colaboraci%C3%B3n-distribuida',
+    img: '/img/prensa/prensa-33.jpg'
+  },
+  { title: t('press.release32_title'),
+    subtitle: 'convergencialatina.com - 6.5.20',
+    text: t('press.release32_text'),
+    url: 'http://www.convergencialatina.com/Nota-Desarrollo/313104-3-9-La_fuerza_de_trabajo_paso_a_estar_en_un_90_en_hogares_la_tecnologia_existe_pero_faltan_procesos_y_cultura',
+    img: '/img/prensa/prensa-32.jpg'
+  },
+  { title: t('press.release31_title'),
+    subtitle: 'searchdatacenter.techtarget.com - 29.4.20',
+    text: t('press.release31_text'),
+    url: 'https://searchdatacenter.techtarget.com/es/cronica/Teletrabajo-en-pandemia-entornos-distribuidos-y-liderazgo-virtual',
+    img: '/img/prensa/prensa-31.jpg'
+  },
+  { title: t('press.release30_title'),
+    subtitle: 'clarin.com - 29.3.20',
+    text: t('press.release30_text'),
+    url: 'https://www.clarin.com/economia/cuarentena-obligatoria-teletrabajo-llego-quedarse-_0_Q8MJN7pgz.html',
+    img: '/img/prensa/prensa-30.jpg'
+  },
+  { title: t('press.release29_title'),
+    subtitle: 'lanacion.com - 1.10.19',
+    text: t('press.release29_text'),
+    url: 'https://www.lanacion.com.ar/lifestyle/umbral-maya-se-puede-innovar-todo-tiempo-nid2292651',
+    img: '/img/prensa/prensa-29.jpg'
+  },
+  { title: t('press.release28_title'),
+    subtitle: 'DiarioTi.com - 05.08.19',
+    text: t('press.release28_text'),
+    url: 'https://diarioti.com/opinion-que-es-lo-esencial-para-una-transformacion-organizacional-exitosa/110448',
+    img: '/img/prensa/prensa-28.jpg'
+  },
+  { title: t('press.release27_title'),
+    subtitle: 'Canal Ar - 20.5.19',
+    text: t('press.release27_text'),
+    url: 'https://www.canal-ar.com.ar/27949-Que-es-eso-de-la-agilidad-Existe-mas-alla-del-software.html',
+    img: '/img/prensa/prensa-27.jpg'
+  },
+  { title: t('press.release26_title'),
+    subtitle: 'Libreta de apuntes - 10.04.2019',
+    text: t('press.release26_text'),
+    url: 'https://libretadeapuntes.com/2019/04/como-saber-si-estamos-desarrollando-el-producto-equivocado/',
+    img: '/img/prensa/libreta.jpg'
+  },
+  { title: t('press.release25_title'),
+    subtitle: 'BAE Negocios - 01.04.2019',
+    text: t('press.release25_text'),
+    url: 'https://www.baenegocios.com/edicion-impresa/La-union-hace-la-fuerza-coaching-de-equipos-20190331-0028.html',
+    img: '/img/prensa/bae-coaching.jpg'
+  },
+  { title: t('press.release24_title'),
+    subtitle: 'Latinspots.com - 15.03.2019',
+    text: t('press.release24_text'),
+    url: 'https://www.latinspots.com/sp/empresas-y-negocios/detalle/19896/kleer-participa-en-el-scrum-day-colombia-con-una-charla-sobre-agilidad',
+    img: '/img/prensa/latincolombia.jpg'
+  },
+  { title: t('press.release23_title'),
+    subtitle: 'Canal Ar - 6.11.2018',
+    text: t('press.release23_text'),
+    url: 'https://www.canal-ar.com.ar/27488-Del-error-al-aprendizaje-en-el-camino-hacia-el-exito-temprano.html',
+    img: '/img/prensa/canala2.jpg'
+  },
+  { title: t('press.release22_title'),
+    subtitle: 'Totalmedios.com - 10.09.2018',
+    text: t('press.release22_text'),
+    url: 'https://www.totalmedios.com/nota/36141/8-amenazas-de-la-transformacion-digital-a-las-empresas-tradicionales',
+    img: '/img/prensa/total-medios.jpg'
+  },
+  { title: t('press.release21_title'),
+    subtitle: 'infochannel.info - 16.04.2018',
+    text: t('press.release21_text'),
+    url: 'https://www.infochannel.info/como-iniciar-la-transformacion-organizacional',
+    img: '/img/prensa/infochannel.jpg'
+  },
+  { title: t('press.release20_title'),
+    subtitle: 'Argendustria - 13.04.2018',
+    text: t('press.release20_text'),
+    url: 'http://argendustria.com.ar/nueve-decisiones-clave-para-iniciar-la-transformacion-organizacional/',
+    img: '/img/prensa/argendustria.jpg'
+  },
+  { title: t('press.release19_title'),
+    subtitle: 'somos-pymes.com - 01.02.2018',
+    text: t('press.release18_text'),
+    url: 'http://www.somos-pymes.com/noticias/economia/como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar.html',
+    img: '/img/prensa/descanso.jpg'
+  },
+  { title: t('press.release18_title'),
+    subtitle: 'lanacion.com - 01.02.2018',
+    text: t('press.release18_text'),
+    url: 'https://www.lanacion.com.ar/2105093-tiempo-que-has-de-usar-como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar',
+    img: '/img/prensa/tiempodescanso.jpg'
+  },
+  { title: t('press.release17_title'),
+    subtitle: 'CCSur - 25.01.2017',
+    text: t('press.release17_text'),
+    url: 'https://ccsur.com/congreso-regional-interaccion-clientes-2017/',
+    img: '/img/prensa/congreso.jpg'
+  },
+  { title: t('press.release16_title'),
+    subtitle: 'Canal Ar - 05.04.2017',
+    text: t('press.release16_text'),
+    url: 'https://www.canal-ar.com.ar/24139-RRHH-podria-matar-la-agilidad-de-tu-empresa--o-potenciarla.html',
+    img: '/img/prensa/canalar.jpg'
+  },
+  { title: t('press.release15_title'),
+    subtitle: 'Latinspots.com y Totalmedios.com - 10.02.2017',
+    text: t('press.release15_text'),
+    url: 'https://www.totalmedios.com/nota/30798/cultura-agil-y-cultura-latina-son-compatibles',
+    img: '/img/prensa/cultura2.jpg'
+  },
+  { title: t('press.release14_title'),
+    subtitle: 'issuu.com - 14.09.2016',
+    text: t('press.release14_text'),
+    url: 'https://issuu.com/sociosonline/docs/s24-issuu/55',
+    img: '/img/prensa/facilitacion.jpg'
+  },
+  { title: t('press.release13_title'),
+    subtitle: 'apertura.com - 19.05.2016',
+    text: t('press.release13_text'),
+    url: 'https://www.apertura.com/management/De-que-se-trata-la-metodologia-de-trabajo-inspirada-en-el-rubgy-que-quiere-ganar-terreno-en-las-empresas-20160519-0005.html',
+    img: '/img/prensa/rugby.jpg'
+  },
+  { title: t('press.release12_title'),
+    subtitle: 'lanacion.com - 03.10.2015',
+    text: t('press.release12_text'),
+    url: 'https://www.lanacion.com.ar/1833251-la-ropa-no-se-negocia',
+    img: '/img/prensa/ropa.jpg'
+  },
+  { title: t('press.release11_title'),
+    subtitle: 'ElContact.com - 18/Ago/2015',
+    text: t('press.release11_text'),
+    url: 'http://www.elcontact.com/2015/08/kleer-sera-anfitrion-de-la-1-jornada-de.html',
+    img: '/img/prensa/1ra-jornada-de-metacreatividad.png'
+  },
+  { title: t('press.release10_title'),
+    subtitle: 'LatinSpots.com - 10/Jul/2015',
+    text: t('press.release10_text'),
+    url: 'http://www.latinspots.com/site/sp/nota/detalle/36734/5-beneficios-de-las-agencias-ms-giles',
+    img: '/img/prensa/5-beneficios-de-las-agencias-agiles.png'
+  },
+  { title: t('press.release09_title'),
+    subtitle: 'Canal AR - 8/Jul/2015',
+    text: t('press.release09_text'),
+    url: 'https://canal-ar.com.ar/21854-7-claves-del-Coaching-de-Equipos.html',
+    img: '/img/prensa/7-claves-del-coaching-de-equipos.png'
+  },
+  { title: t('press.release08_title'),
+    subtitle: 'CustomerIn - Radio Palermo - 7/Jul/2015',
+    text: t('press.release08_text'),
+    url: '',
+    img: '',
+    video: 'https://www.youtube.com/embed/edh5xz7vyUI'
+  },
+  { title: t('press.release07_title'),
+    subtitle: 'CIO Perú - 7/Jul/2015',
+    text: t('press.release07_text'),
+    url: 'http://cioperu.pe/articulo/19181/como-el-tipo-de-contrato-puede-condicionar-un-proyecto-complejo/',
+    img: '/img/prensa/cio-peru-2015.png'
+  },
+  { title: t('press.release06_title'),
+    subtitle: 'La burbuja - Radio Milenium - 5/Jul/2015',
+    text: t('press.release06_text'),
+    url: '',
+    img: '',
+    audio: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/218800859&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'
+  },
+  { title: t('press.release05_title'),
+    subtitle: 'CCSur - 16/Jun/2015',
+    text: t('press.release05_text'),
+    url: 'http://www.ccsur.com/kleer-participara-en-agile-open-spain-2015/',
+    img: '/img/prensa/kleer-en-el-aos.png'
+  },
+  { title: t('press.release04_title'),
+    subtitle: 'CRONISTA.COM - 3/Abr/2014',
+    text: t('press.release04_text'),
+    url: 'http://www.cronista.com/pyme/Una-tribu-de-coaches-que-hace-escuela-en-la-region-20140403-0010.html',
+    img: '/img/prensa/tribu-de-coaches.jpg'
+  },
+  { title: t('press.release03_title'),
+    subtitle: 'PulsoSocial - 7/Mar/2014',
+    text: t('press.release03_text'),
+    url: 'https://pulsosocial.com/2014/03/07/scrum-el-adios-para-siempre-productos-eternos-que-tardan-meses-en-ver-la-luz/',
+    img: '/img/prensa/scrum-el-adios-para-siempre.jpg'
+  },
+  { title: t('press.release02_title'),
+    subtitle: 'lanacion.com - 15/Feb/201',
+    text: t('press.release02_text'),
+    url: 'https://www.lanacion.com.ar/1664230-el-secreto-de-tus-ojos-a-veces-las-imagenes-ayudan-a-innovar',
+    img: '/img/prensa/secreto-de-sus-ojos.jpg'
+  },
+  { title: t('press.release01_title'),
+    subtitle: 'GESTION.PE - 12/Feb/2014',
+    text: t('press.release01_text'),
+    url: 'https://archivo.gestion.pe/empleo-management/scrum-rugby-oficina-2088899',
+    img: '/img/prensa/scrum-del-rugby-a-la-oficina.jpg'
+  }
+]
 
+%>
 <div class="container mainContent">
 	<div class="container-fluid">
-
 		<div class="col-md-9 no-hpadding contenedor-main-izq prensa">
+  <% prs.each do |pr|%>
 			<div class="box">
-				<h3><%=t("press.release35_title")%></h3>
-				<p><i>cio.com.mx - 15.4.21</i></p>
-				<p><%=t("press.release35_text")%>&nbsp;<a href="https://cio.com.mx/nueve-practicas-para-potenciar-la-colaboracion-de-equipos-distribuidos/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://cio.com.mx/nueve-practicas-para-potenciar-la-colaboracion-de-equipos-distribuidos/" target="_blank"><img src="/img/prensa/prensa-35.jpg" class="img-responsive"></a></p>
+				<h3><%= pr[:title]%></h3>
+				<p><i><%= pr[:subtitle]%></i></p>
+				<p><i><%= pr[:text]%></i> &nbsp; <%= external_url_anchor(pr[:url]) + t("general.buttons.see_more")%></a></p>
+        <% if ! pr[:video].nil?%>
+          <div class="video-container">
+            <iframe width="420" height="315" src="<%= pr[:video]%>" frameborder="0" allowfullscreen></iframe>
+          </div>
+        <% elsif ! pr[:audio].nil?%>
+          <iframe width="50%" height="200" scrolling="no" frameborder="no" src="<%= pr[:audio]%>"></iframe>
+        <%else%>
+				  <p><%= external_url_anchor(pr[:url])%><img src="<%= pr[:img]%>" class="img-responsive"></a></p>
+        <%end%>
 			</div>
-			<div class="box">
-				<h3><%=t("press.release34_title")%></h3>
-				<p><i>revistaeconomia.com - 14.4.21</i></p>
-				<p><%=t("press.release34_text")%>&nbsp;<a href="https://www.revistaeconomia.com/9-practicas-clave-para-potenciar-la-colaboracion-distribuida/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.revistaeconomia.com/9-practicas-clave-para-potenciar-la-colaboracion-distribuida/" target="_blank"><img src="/img/prensa/prensa-34.jpg" class="img-responsive"></a></p>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release33_title")%></h3>
-				<p><i>acis.org.co - Abril 2021</i></p>
-				<p><%=t("press.release33_text")%>&nbsp;<a href="https://acis.org.co/portal/content/noticiasdeinteres/9-pr%C3%A1cticas-clave-para-potenciar-la-colaboraci%C3%B3n-distribuida" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://acis.org.co/portal/content/noticiasdeinteres/9-pr%C3%A1cticas-clave-para-potenciar-la-colaboraci%C3%B3n-distribuida" target="_blank"><img src="/img/prensa/prensa-33.jpg" class="img-responsive"></a></p>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release32_title")%></h3>
-				<p><i>convergencialatina.com - 6.5.20</i></p>
-				<p><%=t("press.release32_text")%>&nbsp;<a href="http://www.convergencialatina.com/Nota-Desarrollo/313104-3-9-La_fuerza_de_trabajo_paso_a_estar_en_un_90_en_hogares_la_tecnologia_existe_pero_faltan_procesos_y_cultura" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="http://www.convergencialatina.com/Nota-Desarrollo/313104-3-9-La_fuerza_de_trabajo_paso_a_estar_en_un_90_en_hogares_la_tecnologia_existe_pero_faltan_procesos_y_cultura" target="_blank"><img src="/img/prensa/prensa-32.jpg" class="img-responsive"></a></p>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release31_title")%></h3>
-				<p><i>searchdatacenter.techtarget.com - 29.4.20</i></p>
-				<p><%=t("press.release31_text")%>&nbsp;<a href="https://searchdatacenter.techtarget.com/es/cronica/Teletrabajo-en-pandemia-entornos-distribuidos-y-liderazgo-virtual" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://searchdatacenter.techtarget.com/es/cronica/Teletrabajo-en-pandemia-entornos-distribuidos-y-liderazgo-virtual" target="_blank"><img src="/img/prensa/prensa-31.jpg" class="img-responsive"></a></p>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release30_title")%></h3>
-				<p><i>clarin.com - 29.3.20</i></p>
-				<p><%=t("press.release30_text")%>&nbsp;<a href="https://www.clarin.com/economia/cuarentena-obligatoria-teletrabajo-llego-quedarse-_0_Q8MJN7pgz.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.clarin.com/economia/cuarentena-obligatoria-teletrabajo-llego-quedarse-_0_Q8MJN7pgz.html" target="_blank"><img src="/img/prensa/prensa-30.jpg" class="img-responsive"></a></p>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release29_title")%></h3>
-				<p><i>lanacion.com - 1.10.19</i></p>
-				<p><%=t("press.release29_text")%>&nbsp;<a href="https://www.lanacion.com.ar/lifestyle/umbral-maya-se-puede-innovar-todo-tiempo-nid2292651" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.lanacion.com.ar/lifestyle/umbral-maya-se-puede-innovar-todo-tiempo-nid2292651" target="_blank"><img src="/img/prensa/prensa-29.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release28_title")%></h3>
-				<p><i>DiarioTi.com - 05.08.19</i></p>
-				<p><%=t("press.release28_text")%>&nbsp;<a href="https://diarioti.com/opinion-que-es-lo-esencial-para-una-transformacion-organizacional-exitosa/110448" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://diarioti.com/opinion-que-es-lo-esencial-para-una-transformacion-organizacional-exitosa/110448" target="_blank"><img src="/img/prensa/prensa-28.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release27_title")%></h3>
-				<p><i>Canal Ar - 20.5.19</i></p>
-				<p><%=t("press.release27_text")%>&nbsp;<a href="https://www.canal-ar.com.ar/27949-Que-es-eso-de-la-agilidad-Existe-mas-alla-del-software.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.canal-ar.com.ar/27949-Que-es-eso-de-la-agilidad-Existe-mas-alla-del-software.html" target="_blank"><img src="/img/prensa/prensa-27.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release26_title")%></h3>
-				<p><i>Libreta de apuntes - 10.04.2019</i></p>
-				<p><%=t("press.release26_text")%>&nbsp;<a href="https://libretadeapuntes.com/2019/04/como-saber-si-estamos-desarrollando-el-producto-equivocado/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://libretadeapuntes.com/2019/04/como-saber-si-estamos-desarrollando-el-producto-equivocado/" target="_blank"><img src="/img/prensa/libreta.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release25_title")%></h3>
-				<p><i>BAE Negocios - 01.04.2019</i></p>
-				<p><%=t("press.release25_text")%>&nbsp;<a href="https://www.baenegocios.com/edicion-impresa/La-union-hace-la-fuerza-coaching-de-equipos-20190331-0028.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.baenegocios.com/edicion-impresa/La-union-hace-la-fuerza-coaching-de-equipos-20190331-0028.html" target="_blank"><img src="/img/prensa/bae-coaching.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release24_title")%></h3>
-				<p><i>Latinspots.com - 15.03.2019</i></p>
-				<p><%=t("press.release24_text")%>&nbsp;<a href="https://www.latinspots.com/sp/empresas-y-negocios/detalle/19896/kleer-participa-en-el-scrum-day-colombia-con-una-charla-sobre-agilidad" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.latinspots.com/sp/empresas-y-negocios/detalle/19896/kleer-participa-en-el-scrum-day-colombia-con-una-charla-sobre-agilidad" target="_blank"><img src="/img/prensa/latincolombia.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release23_title")%></h3>
-				<p><i>Canal Ar - 6.11.2018</i></p>
-				<p><%=t("press.release23_text")%>&nbsp;<a href="https://www.canal-ar.com.ar/27488-Del-error-al-aprendizaje-en-el-camino-hacia-el-exito-temprano.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.canal-ar.com.ar/27488-Del-error-al-aprendizaje-en-el-camino-hacia-el-exito-temprano.html" target="_blank"><img src="/img/prensa/canala2.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release22_title")%></h3>
-				<p><i>Totalmedios.com - 10.09.2018</i></p>
-				<p><%=t("press.release22_text")%>&nbsp;<a href="https://www.totalmedios.com/nota/36141/8-amenazas-de-la-transformacion-digital-a-las-empresas-tradicionales" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.totalmedios.com/nota/36141/8-amenazas-de-la-transformacion-digital-a-las-empresas-tradicionales" target="_blank"><img src="/img/prensa/total-medios.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release21_title")%></h3>
-				<p><i>infochannel.info - 16.04.2018</i></p>
-				<p><%=t("press.release21_text")%>&nbsp;<a href="http://www.infochannel.info/como-iniciar-la-transformacion-organizacional" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="http://www.infochannel.info/como-iniciar-la-transformacion-organizacional" target="_blank"><img src="/img/prensa/infochannel.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release20_title")%></h3>
-				<p><i>Argendustria - 13.04.2018</i></p>
-				<p><%=t("press.release20_text")%>&nbsp;<a href="http://argendustria.com.ar/nueve-decisiones-clave-para-iniciar-la-transformacion-organizacional/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="http://argendustria.com.ar/nueve-decisiones-clave-para-iniciar-la-transformacion-organizacional/" target="_blank"><img src="/img/prensa/argendustria.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release19_title")%></h3>
-				<p><i>somos-pymes.com - 01.02.2018</i></p>
-				<p><%=t("press.release19_text")%>&nbsp;<a href="http://www.somos-pymes.com/noticias/economia/como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="http://www.somos-pymes.com/noticias/economia/como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar.html" target="_blank"><img src="/img/prensa/descanso.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release19b_title")%></h3>
-				<p><i>lanacion.com - 01.02.2018</i></p>
-				<p><%=t("press.release19b_text")%>&nbsp;<a href="https://www.lanacion.com.ar/2105093-tiempo-que-has-de-usar-como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.lanacion.com.ar/2105093-tiempo-que-has-de-usar-como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar" target="_blank"><img src="/img/prensa/tiempodescanso.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release18_title")%></h3>
-				<p><i>lanacion.com - 23.08.2017</i></p>
-				<p><%=t("press.release18_text")%>&nbsp;<a href="https://www.lanacion.com.ar/2055660-rapidas-y-sin-furia-como-toman-las-decisiones-las-empresas-mas-creativas" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.lanacion.com.ar/2055660-rapidas-y-sin-furia-como-toman-las-decisiones-las-empresas-mas-creativas" target="_blank"><img src="/img/prensa/rapidas.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release17_title")%></h3>
-				<p><i>CCSur - 25.01.2017</i></p>
-				<p><%=t("press.release17_text")%>&nbsp;<a href="http://ccsur.com/congreso-regional-interaccion-clientes-2017/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="http://ccsur.com/congreso-regional-interaccion-clientes-2017/" target="_blank"><img src="/img/prensa/congreso.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release16_title")%></h3>
-				<p><i>Canal Ar - 05.04.2017</i></p>
-				<p><%=t("press.release16_text")%>&nbsp;<a href="http://www.canal-ar.com.ar/24139-RRHH-podria-matar-la-agilidad-de-tu-empresa--o-potenciarla.html
-" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="http://www.canal-ar.com.ar/24139-RRHH-podria-matar-la-agilidad-de-tu-empresa--o-potenciarla.html" target="_blank"><img src="/img/prensa/canalar.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release15_title")%></h3>
-				<p><i>Latinspots.com y Totalmedios.com - 10.02.2017</i></p>
-				<p><a href="http://www.latinspots.com/sp/noticias/detalle/42924/cultura-gil-y-cultura-latina-son-compatibles" target="_blank"><img src="/img/prensa/cultura.jpg" class="img-responsive"></a></p>
-				<p><a href="https://www.totalmedios.com/nota/30798/cultura-agil-y-cultura-latina-son-compatibles" target="_blank"><img src="/img/prensa/cultura2.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release14_title")%></h3>
-				<p><i>issuu.com - 14.09.2016</i></p>
-				<p><%=t("press.release14_text")%>&nbsp;<a href="https://issuu.com/sociosonline/docs/s24-issuu/55" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://issuu.com/sociosonline/docs/s24-issuu/55" target="_blank"><img src="/img/prensa/facilitacion.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release13_title")%></h3>
-				<p><i>apertura.com - 19.05.2016</i></p>
-				<p><%=t("press.release13_text")%>&nbsp;<a href="https://www.apertura.com/management/De-que-se-trata-la-metodologia-de-trabajo-inspirada-en-el-rubgy-que-quiere-ganar-terreno-en-las-empresas-20160519-0005.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.apertura.com/management/De-que-se-trata-la-metodologia-de-trabajo-inspirada-en-el-rubgy-que-quiere-ganar-terreno-en-las-empresas-20160519-0005.html" target="_blank"><img src="/img/prensa/rugby.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release12_title")%></h3>
-				<p><i>lanacion.com - 03.10.2015</i></p>
-				<p><%=t("press.release12_text")%>&nbsp;<a href="https://www.lanacion.com.ar/1833251-la-ropa-no-se-negocia" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<p><a href="https://www.lanacion.com.ar/1833251-la-ropa-no-se-negocia" target="_blank"><img src="/img/prensa/ropa.jpg" class="img-responsive"></a></p>
-			</div>
-
-			<div class="box">
-				<h3><%=t("press.release11_title")%></h3>
-				<p><i>ElContact.com - 18/Ago/2015</i></p>
-				<p><%=t("press.release11_text")%>&nbsp;<a href="http://www.elcontact.com/2015/08/kleer-sera-anfitrion-de-la-1-jornada-de.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://www.elcontact.com/2015/08/kleer-sera-anfitrion-de-la-1-jornada-de.html" target="_blank"><img src="/img/prensa/1ra-jornada-de-metacreatividad.png" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release10_title")%></h3>
-				<p><i>LatinSpots.com - 10/Jul/2015</i></p>
-				<p><%=t("press.release10_text")%>&nbsp;<a href="http://www.latinspots.com/site/sp/nota/detalle/36734/5-beneficios-de-las-agencias-ms-giles" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://www.latinspots.com/site/sp/nota/detalle/36734/5-beneficios-de-las-agencias-ms-giles" target="_blank"><img src="/img/prensa/5-beneficios-de-las-agencias-agiles.png" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release09_title")%></h3>
-				<p><i>Canal AR - 8/Jul/2015</i></p>
-				<p><%=t("press.release09_text")%>&nbsp;<a href="http://canal-ar.com.ar/21854-7-claves-del-Coaching-de-Equipos.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://canal-ar.com.ar/21854-7-claves-del-Coaching-de-Equipos.html" target="_blank"><img src="/img/prensa/7-claves-del-coaching-de-equipos.png" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release08_title")%></h3>
-				<p><i>CustomerIn - Radio Palermo - 7/Jul/2015</i></p>
-				<p><%=t("press.release08_text")%></p>
-	      		<div class="video-container">
-	        		<iframe width="420" height="315" src="https://www.youtube.com/embed/edh5xz7vyUI" frameborder="0" allowfullscreen></iframe>
-	      		</div>
-	      	</div>
-	      	<div class="box">
-				<h3><%=t("press.release07_title")%></h3>
-				<p><i>CIO Perú - 7/Jul/2015</i></p>
-				<p><%=t("press.release07_text")%>&nbsp;<a href="http://cioperu.pe/articulo/19181/como-el-tipo-de-contrato-puede-condicionar-un-proyecto-complejo/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://cioperu.pe/articulo/19181/como-el-tipo-de-contrato-puede-condicionar-un-proyecto-complejo/" target="_blank"><img src="/img/prensa/cio-peru-2015.png" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release06_title")%></h3>
-				<p><i>La burbuja - Radio Milenium - 5/Jul/2015</i></p>
-				<p><%=t("press.release06_text")%></p>
-	      <iframe width="50%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/218800859&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-	      	</div>
-	      	<div class="box">
-				<h3><%=t("press.release05_title")%></h3>
-				<p><i>CCSur - 16/Jun/2015</i></p>
-				<p><%=t("press.release05_text")%>&nbsp;<a href="http://www.ccsur.com/kleer-participara-en-agile-open-spain-2015/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://www.ccsur.com/kleer-participara-en-agile-open-spain-2015/" target="_blank"><img src="/img/prensa/kleer-en-el-aos.png" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release04_title")%></h3>
-				<p><i>CRONISTA.COM - 3/Abr/2014</i></p>
-				<p><%=t("press.release04_text")%>&nbsp;<a href="http://www.cronista.com/pyme/Una-tribu-de-coaches-que-hace-escuela-en-la-region-20140403-0010.html" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://www.cronista.com/pyme/Una-tribu-de-coaches-que-hace-escuela-en-la-region-20140403-0010.html" target="_blank"><img src="/img/prensa/tribu-de-coaches.jpg" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release03_title")%></h3>
-				<p><i>PulsoSocial - 7/Mar/2014</i></p>
-				<p><%=t("press.release03_text")%>&nbsp;<a href="http://pulsosocial.com/2014/03/07/scrum-el-adios-para-siempre-productos-eternos-que-tardan-meses-en-ver-la-luz/" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://pulsosocial.com/2014/03/07/scrum-el-adios-para-siempre-productos-eternos-que-tardan-meses-en-ver-la-luz/" target="_blank"><img src="/img/prensa/scrum-el-adios-para-siempre.jpg" class="img-responsive"></a>
-			</div>
-			<div class="box">		
-				<h3><%=t("press.release02_title")%></h3>
-				<p><i>lanacion.com - 15/Feb/2014</i></p>
-				<p><%=t("press.release02_text")%>&nbsp;<a href="http://www.lanacion.com.ar/1664230-el-secreto-de-tus-ojos-a-veces-las-imagenes-ayudan-a-innovar" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://www.lanacion.com.ar/1664230-el-secreto-de-tus-ojos-a-veces-las-imagenes-ayudan-a-innovar" target="_blank"><img src="/img/prensa/secreto-de-sus-ojos.jpg" class="img-responsive"></a>
-			</div>
-			<div class="box">
-				<h3><%=t("press.release01_title")%></h3>
-				<p><i>GESTION.PE - 12/Feb/2014</i></p>
-				<p><%=t("press.release02_text")%>&nbsp;<a href="http://gestion.pe/empleo-management/scrum-rugby-oficina-2088899" target="_blank"><%=t("general.buttons.see_more")%></a></p>
-				<a href="http://gestion.pe/empleo-management/scrum-rugby-oficina-2088899" target="_blank"><img src="/img/prensa/scrum-del-rugby-a-la-oficina.jpg" class="img-responsive"></a>
-			</div>
-		</div>
+  <% end %>
 		<div class="col-md-3 hidden-xs hidden-sm">
 			<%= erb :_twitter_widget, :layout => false %>
 		</div>

@@ -38,11 +38,11 @@ module Helpers
     parts.join '.'
   end
 
-  def external_url_anchor(url)
-    "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\">"
+  def external_url_anchor(url, attributes = '')
+    "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\" #{attributes}>"
   end
 
-  def media_url_anchor(url)
-    "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\">"
+  def media_url_anchor(url, attributes = '')
+    "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\" #{attributes}>"
   end
 end
