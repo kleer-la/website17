@@ -64,38 +64,6 @@ Given(/^I visit "(.*?)"$/) do |page_url|
   visit page_url
 end
 
-Then(/^I should see the json string for all of the events$/) do
-  text = '\"aaData\": \[' \
-         '\[\"<span class=\\\"label label-info\\\">09<br><span class=\\\"lead\\\">Ene</span></span>\",\"<a href=\\\"/es/entrenamos/evento/44-workshop-de-retrospectivas-buenos-aires\\\">Workshop de Retrospectivas</a><br/><img src=\\\"/img/flags/ar.png\\\"/> Buenos Aires, Argentina\",\"<a href=\\\"https://eventioz.com.ar/retrospectivas-9-ene-2012/registrations/new\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\],' \
-         '\[\"<span class=\\\"label label-info\\\">31<br><span class=\\\"lead\\\">Ene</span></span>\",\"<a href=\\\"/es/entrenamos/evento/47-certified-scrummaster-\(csm\)-lima\\\">Certified ScrumMaster \(CSM\)</a><br/><img src=\\\"/img/flags/pe.png\\\"/> Lima, Peru\",\"<a href=\\\"http://www.openedgetech.com/calendario\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\]' \
-         '\]'
-  last_response.body.should =~ /#{text}/m
-end
-
-Then(/^I should see the json string for the Argentina events$/) do
-  text = '\"aaData\": \[' \
-         '\[\"<span class=\\\"label label-info\\\">09<br><span class=\\\"lead\\\">Ene</span></span>\",\"<a href=\\\"/es/entrenamos/evento/44-workshop-de-retrospectivas-buenos-aires\\\">Workshop de Retrospectivas</a><br/><img src=\\\"/img/flags/ar.png\\\"/> Buenos Aires, Argentina\",\"<a href=\\\"https://eventioz.com.ar/retrospectivas-9-ene-2012/registrations/new\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\]' \
-         '\]'
-  last_response.body.should =~ /#{text}/m
-end
-
-Then(/^I should see the json string for the Bolivia events$/) do
-  text = '\"aaData\": \[' \
-         '\[\"<span class=\\\"label label-info\\\">16<br><span class=\\\"lead\\\">Ene</span></span>\",\"<a href=\\\"/es/entrenamos/evento/48-comunicacion-efectiva-en-proyectos-de-software-webinar\\\">Comunicacion Efectiva en Proyectos de Software</a><br/><img src=\\\"/img/flags/ol.png\\\"/> Webinar, -- OnLine --\",\"<a href=\\\"https://eventioz.com.ar/webinar-com-efectiva-16-ene/registrations/new\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\],' \
-         '\[\"<span class=\\\"label label-info\\\">23<br><span class=\\\"lead\\\">Ene</span></span>\",\"<a href=\\\"/es/entrenamos/evento/58-webinar-de-tdd-intermedio-webinar\\\">Webinar de TDD Intermedio</a><br/><img src=\\\"/img/flags/ol.png\\\"/> Webinar, -- OnLine --\",\"<a href=\\\"https://eventioz.com.ar/web-tdd1-201301\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\],' \
-         '\[\"<span class=\\\"label label-info\\\">20<br><span class=\\\"lead\\\">Feb</span></span>\",\"<a href=\\\"/es/entrenamos/evento/59-webinar-de-tdd-avanzado-webinar\\\">Webinar de TDD Avanzado</a><br/><img src=\\\"/img/flags/ol.png\\\"/> Webinar, -- OnLine --\",\"<a href=\\\"https://eventioz.com.ar/web-tdd2-201302\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\],' \
-         '\[\"<span class=\\\"label label-info\\\">07<br><span class=\\\"lead\\\">Mar</span></span>\",\"<a href=\\\"/es/entrenamos/evento/54-certified-scrummaster-\(csm\)-cochabamba\\\">Certified ScrumMaster \(CSM\)</a><br/><img src=\\\"/img/flags/bo.png\\\"/> Cochabamba, Bolivia\",\"<a href=\\\"https://docs.google.com/a/kleer.la/spreadsheet/viewform?formkey=dEF0Qmp2dUphN1pqRGtldFVLeGV6RXc6MA#gid=0\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\],' \
-         '\[\"<span class=\\\"label label-info\\\">25<br><span class=\\\"lead\\\">Mar</span></span>\",\"<a href=\\\"/es/entrenamos/evento/56-certified-scrum-developer-\(csd-track-completo\)-santa-cruz-de-la-sierra\\\">Certified Scrum Developer \(CSD Track Completo\)</a><br/><img src=\\\"/img/flags/bo.png\\\"/> Santa Cruz de la Sierra, Bolivia\",\"<a href=\\\"https://docs.google.com/a/kleer.la/spreadsheet/viewform?formkey=dFk5ZUtrWlE5SUw2elJyNjQ3ZHR2bUE6MA#gid=0\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\],' \
-         '\[\"<span class=\\\"label label-info\\\">01<br><span class=\\\"lead\\\">Abr</span></span>\",\"<a href=\\\"/es/entrenamos/evento/57-certified-scrum-developer-\(csd-track-completo\)-cochabamba\\\">Certified Scrum Developer \(CSD Track Completo\)</a><br/><img src=\\\"/img/flags/bo.png\\\"/> Cochabamba, Bolivia\",\"<a href=\\\"https://docs.google.com/a/kleer.la/spreadsheet/viewform?formkey=dFdfYlJhQzlVWG9uWk5yODRGVDcxVGc6MA#gid=0\\\" target=\\\"_blank\\\" class=\\\"btn btn-success\\\">¡Me interesa!</a>\"\]' \
-         '\]'
-  last_response.body.should =~ /#{text}/m
-end
-
-Then(/^I should see the json string with no events$/) do
-  text = '\"aaData\": \[\]'
-  last_response.body.should =~ /#{text}/m
-end
-
 When(/^I visit the plain event page$/) do
   visit '/entrenamos/evento/44/remote'
 end
