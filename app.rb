@@ -228,7 +228,7 @@ get '/entrenamos/evento/:event_id_with_name' do
   @event = KeventerReader.instance.event(event_id, true) if is_valid_id(event_id)
 
   if @event.nil?
-    flash.now[:error] = get_course_not_found_error
+    flash.now[:error] = course_not_found_error
     redirect to('/entrenamos')
   else
     uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}"
@@ -265,8 +265,8 @@ get '/cursos/:event_type_id_with_name' do
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
   if @event_type.nil?
-    flash.now[:error] = get_course_not_found_error
-    erb :error404_to_calendar
+    flash.now[:error] = course_not_found_error
+    erb :error_404_to_calendar
   else
     # SEO (title, meta)
     @page_title = "Kleer - #{@event_type.name}"
@@ -276,27 +276,6 @@ get '/cursos/:event_type_id_with_name' do
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
     erb :event_type
-  end
-end
-
-get '/cursos2/:event_type_id_with_name' do
-  @active_tab_entrenamos = 'active'
-
-  @event_type = event_type_from_qstring params[:event_type_id_with_name]
-  @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
-
-  if @event_type.nil?
-    flash.now[:error] = get_course_not_found_error
-    erb :error404_to_calendar
-  else
-    # SEO (title, meta)
-    @page_title = "Kleer - #{@event_type.name}"
-    @meta_description = @event_type.elevator_pitch
-    if @event_type.categories.count.positive?
-      # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
-      @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
-    end
-    erb :event_type2
   end
 end
 
@@ -317,8 +296,8 @@ get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
   @event = KeventerReader.instance.event(event_id, false) if is_valid_id(event_id)
 
   if @event.nil?
-    @error = get_course_not_found_error
-    erb :error404_remote_to_calendar, layout: :layout_empty
+    @error = course_not_found_error
+    erb :error_404_remote_to_calendar, layout: :layout_empty
   else
     erb :trainer_remote, layout: :layout_empty
   end
@@ -331,8 +310,8 @@ get '/entrenamos/evento/:event_id_with_name/remote' do
   @event = KeventerReader.instance.event(event_id, false) if is_valid_id(event_id)
 
   if @event.nil?
-    @error = get_course_not_found_error
-    erb :error404_remote_to_calendar, layout: :layout_empty
+    @error = course_not_found_error
+    erb :error_404_remote_to_calendar, layout: :layout_empty
   else
     erb :event_remote, layout: :layout_empty
   end
@@ -345,8 +324,8 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
   @event = KeventerReader.instance.event(event_id, false) if is_valid_id(event_id)
 
   if @event.nil?
-    @error = get_course_not_found_error
-    erb :error404_remote_to_calendar, layout: :layout_empty
+    @error = course_not_found_error
+    erb :error_404_remote_to_calendar, layout: :layout_empty
   else
     erb :event_remote_registration, layout: :layout_empty
   end
@@ -553,7 +532,7 @@ end
 
 not_found do
   @page_title = '404 - No encontrado'
-  erb :error404
+  erb :error_404
 end
 
 private
@@ -576,7 +555,7 @@ def get_404_error_text_for_course(course_name)
   "Hemos movido la información sobre el curso '<strong>#{course_name}</strong>'. Por favor, verifica nuestro calendario para ver los detalles de dicho curso"
 end
 
-def get_course_not_found_error
+def course_not_found_error
   'El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado.<br/>Te invitamos a visitar nuestro calendario para ver los cursos vigentes y probables nuevas fechas para el curso que estás buscando.'
 end
 
