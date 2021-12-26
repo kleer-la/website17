@@ -13,7 +13,7 @@ Given('the article has abstract {string}') do |abstract|
 end
 
 When('I go to the {string} article preview page') do |slug|
-  Article.createOneNull(@articles[0], { next_null: true, only_published: false })
+  Article.create_one_null(@articles[0], { next_null: true, only_published: false })
   visit "/blog-preview/#{slug}"
 end
 

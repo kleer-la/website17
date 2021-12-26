@@ -1,37 +1,34 @@
 require './lib/keventer_connector'
 
 class Article
-  @@next_null = false
+  @next_null = false
 
-  def self.createOneNull(art, opt = {})
-    @@next_null = opt[:next_null] == true
-    @@articleNull = Article.new(art)
+  def self.create_one_null(art, opt = {})
+    @next_null = opt[:next_null] == true
+    @article_null = Article.new(art)
   end
 
-  def self.createOneKeventer(slug)
-    if @@next_null
-      @@next_null = false
-      return @@articleNull
+  def self.create_one_keventer(slug)
+    if @next_null
+      @next_null = false
+      return @article_null
     end
     uri = KeventerConnector.article_url(slug)
-    p uri
     api_resp = JsonAPI.new(uri)
-    if !api_resp.ok?
-      raise :NotFound
-    else
-      Article.new(api_resp.doc)
-    end
+    raise :NotFound unless api_resp.ok?
+
+    Article.new(api_resp.doc)
   end
 
   def self.createListNull(arts, opt = {})
-    @@next_null = opt[:next_null] == true
-    @@articlesNull = Article.load_list(arts, opt[:only_published])
+    @next_null = opt[:next_null] == true
+    @articlesNull = Article.load_list(arts, opt[:only_published])
   end
 
   def self.create_list_keventer(only_published)
-    if @@next_null
-      @@next_null = false
-      return @@articlesNull
+    if @next_null
+      @next_null = false
+      return @articlesNull
     end
     uri = KeventerConnector.articles_url
     api_resp = JsonAPI.new(uri)

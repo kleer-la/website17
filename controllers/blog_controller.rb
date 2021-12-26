@@ -6,7 +6,7 @@ require './lib/articles'
 # end
 
 get '/blog-preview/:slug' do |slug|
-  @article = Article.createOneKeventer(slug)
+  @article = Article.create_one_keventer(slug)
 
   # @meta_keywords
   @page_title = @article.tabtitle
@@ -48,7 +48,7 @@ rescue StandardError => e
   status 404
 end
 get '/blog/:slug' do |slug|
-  @article = Article.createOneKeventer(slug)
+  @article = Article.create_one_keventer(slug)
 
   # @meta_keywords
   @page_title = @article.tabtitle
