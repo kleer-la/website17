@@ -18,11 +18,11 @@ When('I go to the {string} article preview page') do |slug|
 end
 
 When('I go to the article list page') do
-  Article.createListNull(@articles, { next_null: true, only_published: true })
+  Article.create_list_null(@articles, { next_null: true, only_published: true })
   visit '/blog'
 end
 When('I go to the article list preview page') do
-  Article.createListNull(@articles, { next_null: true, only_published: false })
+  Article.create_list_null(@articles, { next_null: true, only_published: false })
   visit '/blog-preview'
 end
 
