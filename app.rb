@@ -32,7 +32,7 @@ helpers do
 end
 
 configure do
-  set :static_cache_control, [:public, max_age: 60 * 60 * 24 * 3] # 3 days
+  set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 3 }] # 3 days
 
   set :views, "#{File.dirname(__FILE__)}/views"
 
@@ -59,7 +59,6 @@ before do
       autolink: true
     )
   end
-
 end
 
 before '/:locale/*' do

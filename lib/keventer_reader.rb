@@ -20,17 +20,15 @@ class KeventerReader
   attr_accessor :connector
 
   def self.build
-    @@instance = KeventerReader.new(KeventerConnector.new)
+    @instance = KeventerReader.new(KeventerConnector.new)
   end
 
   def self.build_with(connector)
-    @@instance = KeventerReader.new(connector)
+    @instance = KeventerReader.new(connector)
   end
 
-  # private_class_method :new
-
-  def self.instance
-    @@instance
+  class << self
+    attr_reader :instance
   end
 
   def initialize(connector = nil)
@@ -72,15 +70,9 @@ class KeventerReader
   end
 
   def kleerers(lang = 'es')
-    kleerers = []
-
     begin
       loaded_kleerers = parse @connector.kleerers_xml_url, '/trainers/trainer'
-
-      loaded_kleerers.each do |one_kleerer|
-        kleerer = Professional.new one_kleerer, lang
-        kleerers << kleerer
-      end
+      kleerers = loaded_kleerers.reduce([]) { |ac, one_kleerer| ac << Professional.new(one_kleerer, lang) }
     rescue StandardError => e
       puts "Error al cargar kleerers: #{e}"
       kleerers = []
@@ -108,7 +100,7 @@ class KeventerReader
         categories << category
       end
 
-      categories.sort! { |p1, p2| p1.order <=> p2.order }
+      categories.sort! { |p, q| p.order <=> q.order }
     rescue StandardError => e
       puts "Error al cargar las categorías: #{e}"
       categories = []
@@ -232,14 +224,14 @@ class KeventerReader
 
   def create_one_trainer(xml)
     trainer = Professional.new
-    trainer.name = xml.find_first('name').content
-    trainer.bio = xml.find_first('bio').content
-    trainer.id = xml.find_first('id').content
-    trainer.linkedin_url = xml.find_first('linkedin-url').content
-    trainer.gravatar_picture_url = xml.find_first('gravatar-picture-url').content
-    trainer.twitter_username = xml.find_first('twitter-username').content
+    trainer.name = first_content(xml, 'name')
+    trainer.bio = first_content(xml, 'bio')
+    trainer.id = first_content(xml, 'id')
+    trainer.linkedin_url = first_content(xml, 'linkedin-url')
+    trainer.gravatar_picture_url = first_content(xml, 'gravatar-picture-url')
+    trainer.twitter_username = first_content(xml, 'twitter-username')
 
-    trainer.surveyed_count = xml.find_first('surveyed-count').content.to_i
+    trainer.surveyed_count = first_content(xml, 'surveyed-count').to_i
     trainer
   end
 
