@@ -17,19 +17,23 @@ require './lib/event_type'
 require './lib/books'
 require './lib/resources'
 
-require './controllers/blog_controller'
 require './controllers/helper'
+require './controllers/blog_controller'
+require './controllers/press_controller'
 
 if production?
   require 'rack/ssl-enforcer'
   use Rack::SslEnforcer
 end
+use Rack::Deflater
 
 helpers do
   include Helpers
 end
 
 configure do
+  set :static_cache_control, [:public, max_age: 60 * 60 * 24 * 3] # 3 days
+
   set :views, "#{File.dirname(__FILE__)}/views"
 
   I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
@@ -55,6 +59,7 @@ before do
       autolink: true
     )
   end
+
 end
 
 before '/:locale/*' do
@@ -225,7 +230,7 @@ end
 get '/entrenamos/evento/:event_id_with_name' do
   event_id_with_name = params[:event_id_with_name]
   event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, true) if is_valid_id(event_id)
+  @event = KeventerReader.instance.event(event_id, true) if valid_id?(event_id)
 
   if @event.nil?
     flash.now[:error] = course_not_found_error
@@ -246,7 +251,7 @@ end
 
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
-  KeventerReader.instance.event_type(event_type_id, true) if is_valid_id(event_type_id)
+  KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
 end
 
 def tracking_mantain_or_default(utm_source, utm_campaign)
@@ -293,7 +298,7 @@ get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
   event_id_with_name = params[:event_id_with_name]
 
   event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, false) if is_valid_id(event_id)
+  @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
 
   if @event.nil?
     @error = course_not_found_error
@@ -307,7 +312,7 @@ get '/entrenamos/evento/:event_id_with_name/remote' do
   event_id_with_name = params[:event_id_with_name]
 
   event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, false) if is_valid_id(event_id)
+  @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
 
   if @event.nil?
     @error = course_not_found_error
@@ -321,7 +326,7 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
   event_id_with_name = params[:event_id_with_name]
 
   event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, false) if is_valid_id(event_id)
+  @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
 
   if @event.nil?
     @error = course_not_found_error
@@ -362,102 +367,6 @@ get '/terms' do
   @active_tab_terminos = 'active'
   @page_title += ' | Terminos y condiciones'
   erb :terms
-end
-
-get '/clientes/equipos-scrum-en-technisys-2015' do
-  redirect '/prensa/casos/equipos-scrum-en-technisys-2015', 301 # permanent redirect
-end
-
-get '/prensa/casos/equipos-scrum-en-technisys-2015' do
-  @page_title += ' | Equipos de desarrollo Scrum y Automatización en Technisys'
-  @meta_description = 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y automatización de despliegue de software en Technisys apoyados por Kleer'
-  @meta_keywords = 'Kleer, Technisys, CyberBank, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, jenkins'
-
-  erb :prensa_casos_technisys_2015
-end
-
-get '/clientes/equipos-scrum-en-plataforma-10-2015' do
-  redirect '/prensa/casos/equipos-scrum-en-plataforma-10-2015', 301 # permanent redirect
-end
-
-get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
-  @page_title += ' | Equipos de desarrollo Scrum y Automatización en Plataforma 10'
-  @meta_description = 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y orientación al valor para el negocio en Plataforma 10, apoyados por Kleer'
-  @meta_keywords = 'Kleer, Plataforma 10, scrum, equipos, desarrollo ágil, devops, automatización, integración continua, valor negocio'
-
-  erb :prensa_casos_plataforma_10_2015
-end
-
-get '/clientes/equipos-scrum-en-suramericana-2015' do
-  redirect '/prensa/casos/equipos-scrum-en-suramericana-2015', 301 # permanent redirect
-end
-
-get '/prensa/casos/equipos-scrum-en-suramericana-2015' do
-  @page_title += ' | Paradigma ágil en tecnología y en negocio en Suramericana'
-  @meta_description = 'Kleer - Coaching & Training - Paradigma ágiles en tecnología y en negocio en Suramericana, apoyados por Kleer'
-  @meta_keywords = 'Kleer, Suramericana, Sura, scrum, equipos, desarrollo ágil, valor negocio, corporaciones ágiles, paradigma ágil en las empresas'
-
-  erb :prensa_casos_suramericana_2015
-end
-
-get '/clientes/innovacion-en-marketing-digital-loreal-2016' do
-  redirect '/prensa/casos/innovacion-en-marketing-digital-loreal-2016', 301 # permanent redirect
-end
-
-get '/prensa/casos/transformacion-agil-ypf-2020' do
-  @page_title += ' | Así profundizó YPF su camino de transformación ágil'
-  @meta_description = 'Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer'
-  @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación, coloaboración, facilitación gráfica, marketing, digital"
-
-  erb :prensa_casos_ypf_2020
-end
-
-get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
-  @page_title += " | Innovación en Marketing Digital en L'Oréal"
-  @meta_description = 'Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer'
-  @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación, coloaboración, facilitación gráfica, marketing, digital"
-
-  erb :prensa_casos_loreal_2016
-end
-
-get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
-  @page_title += ' | EPM se transforma culturalmente'
-  @meta_description = 'Kleer - Coaching & Training - Cómo acompañamos desde Kleer la transformación ágil de TI en EPM'
-  @meta_keywords = 'Kleer, epm, empresas publicas medellin, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, sistemas, ti, mejora continua, transformación organizacional, evolución organizacional'
-
-  erb :prensa_casos_epm_2018
-end
-
-get '/prensa/casos/transformacion-digital-bbva-continental' do
-  @page_title += ' | Acompañamiento en la transformación digital de BBVA Continental'
-  @meta_description = 'Kleer - Coaching & Training -Acompañamiento en la transformación digital de BBVA Continental'
-  @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional'
-
-  erb :prensa_casos_bbva_2018
-end
-
-get '/prensa/casos/falabella-financiero' do
-  @page_title += ' | Transformación Organizacional en Falabella Financiero'
-  @meta_description = 'Kleer - Coaching & Training - Transformación Organizacional en Falabella Financiero'
-  @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional'
-
-  erb :prensa_casos_falabella_financiero
-end
-
-get '/prensa/casos/afp-crecer' do
-  @page_title += ' | Coaching y transformación ágil en AFP Crecer'
-  @meta_description = 'Kleer - Coaching & Training - Coaching y transformación ágil en AFP Crecer'
-  @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora continua, transformación organizacional, evolución organizacional'
-
-  erb :prensa_casos_afp_crecer
-end
-
-get '/prensa/casos/capacitaciones-agiles-endava' do
-  @page_title += ' | Jornada de capacitaciones ágiles en Endava'
-  @meta_description = 'Kleer - Coaching & Training - Endava, una empresa internacional que ofrece servicios de desarrollo de software con presencia en Latinoamérica, Estados Unidos y Europa, se vio en el desafío de mantener la cultura ágil dentro de un contexto de gran crecimiento en poco tiempo.'
-  @meta_keywords = 'Kleer, Agile training, Scrum, Kanban, Trabajo en equipo, Capacitación'
-
-  erb :prensa_casos_endava_2018
 end
 
 get '/clientes' do
@@ -505,7 +414,7 @@ end
 get '/entrenamos/eventos/pais/:country_iso_code' do
   content_type :json
   country_iso_code = params[:country_iso_code]
-  country_iso_code = 'todos' unless is_valid_country_iso_code(country_iso_code, 'cursos')
+  country_iso_code = 'todos' unless valid_country_iso_code?(country_iso_code, 'cursos')
   session[:filter_country] = country_iso_code
   DTHelper.to_dt_event_array_json(
     KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
@@ -543,27 +452,26 @@ def create_twitter_card(event)
   card.description = event.event_type.elevator_pitch
   card.image_url = 'https://kleer-images.s3-sa-east-1.amazonaws.com/K_social.jpg'
   card.site = '@kleer_la'
-  card.creator = if event.trainers[0].nil?
-                   ''
-                 else
-                   event.trainers[0].twitter_username
-                 end
+  card.creator = event.trainers[0].nil? ? '' : event.trainers[0].twitter_username
   card
 end
 
 def get_404_error_text_for_course(course_name)
-  "Hemos movido la información sobre el curso '<strong>#{course_name}</strong>'. Por favor, verifica nuestro calendario para ver los detalles de dicho curso"
+  "Hemos movido la información sobre el curso '<strong>#{course_name}</strong>'. Por favor, verifica nuestro
+ calendario para ver los detalles de dicho curso"
 end
 
 def course_not_found_error
-  'El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado.<br/>Te invitamos a visitar nuestro calendario para ver los cursos vigentes y probables nuevas fechas para el curso que estás buscando.'
+  'El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado.<br/>
+Te invitamos a visitar nuestro calendario para ver los cursos vigentes y probables nuevas fechas para el curso
+ que estás buscando.'
 end
 
-def is_valid_id(event_id_to_test)
+def valid_id?(event_id_to_test)
   !event_id_to_test.match(/^[0-9]+$/).nil?
 end
 
-def is_valid_country_iso_code(country_iso_code_to_test, _event_type)
+def valid_country_iso_code?(country_iso_code_to_test, _event_type)
   return true if %w[otro todos].include?(country_iso_code_to_test)
 
   unique_countries = KeventerReader.instance.unique_countries_for_commercial_events

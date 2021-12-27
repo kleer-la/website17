@@ -1,11 +1,11 @@
 require './lib/xml_api'
 
 class EventType
-  def self.createNull(file)
+  def self.create_null(file)
     EventType.new XmlAPI.new(file)
   end
 
-  def self.createKeventer(id)
+  def self.create_keventer(id)
     EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
   end
 

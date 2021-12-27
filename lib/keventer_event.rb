@@ -154,15 +154,15 @@ class KeventerEvent
   end
 
   def load_price(event_doc)
-    @show_pricing = to_boolean(event_doc.find_first('show-pricing').content)
-    @list_price = event_doc.find_first('list-price').content.to_f
-    @eb_price = event_doc.find_first('eb-price').content.to_f
+    @show_pricing = to_boolean(first_content(event_doc, 'show-pricing'))
+    @list_price = first_content_f(event_doc, 'list-price')
+    @eb_price = first_content_f(event_doc, 'eb-price')
     @eb_end_date = validated_date_parse(event_doc.find_first('eb-end-date')) if @eb_price > 0.0
-    @couples_eb_price = event_doc.find_first('couples-eb-price').content.to_f
-    @business_eb_price = event_doc.find_first('business-eb-price').content.to_f
-    @business_price = event_doc.find_first('business-price').content.to_f
-    @enterprise_6plus_price = event_doc.find_first('enterprise-6plus-price').content.to_f
-    @enterprise_11plus_price = event_doc.find_first('enterprise-11plus-price').content.to_f
+    @couples_eb_price = first_content_f(event_doc, 'couples-eb-price')
+    @business_eb_price = first_content_f(event_doc, 'business-eb-price')
+    @business_price = first_content_f(event_doc, 'business-price')
+    @enterprise_6plus_price = first_content_f(event_doc, 'enterprise-6plus-price')
+    @enterprise_11plus_price = first_content_f(event_doc, 'enterprise-11plus-price')
   end
 
   def timezone_url
@@ -170,14 +170,12 @@ class KeventerEvent
     hours = (duration / 3600).to_i
     minutes = ((duration % 3600) / 60).to_i
 
-    "https://www.timeanddate.com/worldclock/fixedtime.html?#{
-      URI.encode_www_form(
-        msg: @event_type.name,
-        iso: "#{date.strftime('%Y%m%d')}T#{start_time.strftime('%H%M')}",
-        p1: TimezoneConverter.timezone(place),
-        ah: hours,
-        am: minutes
-      )
-    }"
+    "https://www.timeanddate.com/worldclock/fixedtime.html?#{URI.encode_www_form(
+      msg: @event_type.name,
+      iso: "#{date.strftime('%Y%m%d')}T#{start_time.strftime('%H%M')}",
+      p1: TimezoneConverter.timezone(place),
+      ah: hours,
+      am: minutes
+    ) }"
   end
 end

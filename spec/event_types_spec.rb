@@ -4,7 +4,7 @@ require './lib/event_type'
 describe EventType do
   context 'Null Infra' do
     before(:each) do
-      @event_type = EventType.createNull('./spec/event_type_1.xml')
+      @event_type = EventType.create_null('./spec/event_type_1.xml')
     end
     it 'has name' do
       expect(@event_type.id).to eq 4
@@ -18,7 +18,7 @@ describe EventType do
   end
   context 'Keventer Infra' do
     before(:each) do
-      @event_type = EventType.createKeventer('4')
+      @event_type = EventType.create_keventer('4')
     end
     it 'has name' do
       expect(@event_type.id).to eq 4

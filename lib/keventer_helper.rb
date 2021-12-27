@@ -19,3 +19,7 @@ def first_content(xml, element_name)
     element.content
   end
 end
+
+def first_content_f(xml, element_name)
+  first_content(xml, element_name).to_f
+end

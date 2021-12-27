@@ -19,6 +19,8 @@ Style/Documentation:
 
 Naming/VariableNumber:
   EnforcedStyle: snake_case
+  # Exclude: 
+  #   - 'p1'
 
 Metrics/AbcSize:
   # The ABC size is a calculated magnitude, so this number can be a Fixnum or
