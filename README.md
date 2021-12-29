@@ -21,7 +21,10 @@ CSS/SASS
 ---
 
 Para trabajar los estilos ir a la carpeta app y correr:
+```cli
+gem install sass
 sass --watch scss:css
+```
 
 Docker
 ---
@@ -29,8 +32,6 @@ Docker
 Para desarrollar con docker
 ```cli
 docker-compose run --service-ports website17 bash
-cd app
-gem install bundler:2.0.2
 bundle install
 ruby app.rb -o 0
 ```
