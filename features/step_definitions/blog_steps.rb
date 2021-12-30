@@ -8,17 +8,21 @@ Given('the article has author {string}') do |author|
   @articles[-1]['trainers'] = (@articles[-1]['trainers'] || []) << { 'name' => author }
 end
 
+Given('the article has abstract {string}') do |abstract|
+  @articles[-1]['abstract'] = abstract
+end
+
 When('I go to the {string} article preview page') do |slug|
-  Article.createOneNull(@articles[0], { next_null: true, only_published: false })
+  Article.create_one_null(@articles[0], { next_null: true, only_published: false })
   visit "/blog-preview/#{slug}"
 end
 
 When('I go to the article list page') do
-  Article.createListNull(@articles, { next_null: true, only_published: true })
+  Article.create_list_null(@articles, { next_null: true, only_published: true })
   visit '/blog'
 end
 When('I go to the article list preview page') do
-  Article.createListNull(@articles, { next_null: true, only_published: false })
+  Article.create_list_null(@articles, { next_null: true, only_published: false })
   visit '/blog-preview'
 end
 

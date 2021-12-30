@@ -1,6 +1,7 @@
 Feature: Blog preview
 
 Scenario: One article preview page
+  Given PENDING: currently have two h1
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   When I go to the 'lorem-ipsum' article preview page
@@ -20,3 +21,10 @@ Scenario: Article list preview page
   When I go to the article list preview page
   Then I should see "Lorem ipsum"
   And I should see "Dolor sit amet"
+
+Scenario: Article list shows abstract
+  Given A list of articles with
+  * an article 'lorem-ipsum' with title 'Lorem ipsum'
+  And  the article has abstract 'abstract lorem'
+  When I go to the article list preview page
+  Then I should see "abstract lorem"

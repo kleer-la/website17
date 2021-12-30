@@ -60,9 +60,9 @@ $('body').on('hidden', '#myModalSepymeInside', function () {
 		<h5>Destinado A</h5><p><%=@markdown_renderer.render( @event.event_type.recipients )%></p>
 		<h5>Programa</h5><p><%=@markdown_renderer.render( @event.event_type.program )%></p>
 		<%if @event.is_sold_out%>
-			<a href="javascript:void();" target="_blank"  class="btn btn-danger">Completo</a>
+     	<%= media_url_anchor "javascript:void();", 'class="btn btn-danger"'%>Completo</a>
 		<%elsif @event.registration_link != "" %>
-			<a href="<%=@event.registration_link%>?lang=<%=session[:locale]%>" target="_blank" class="btn btn-success">Registrarme!</a>
+     	<%= media_url_anchor "#{event.registration_link}?lang=#{session[:locale]}", 'class="btn btn-success"'%>¡Registrarme!</a>
 		<%else %>
 			<a data-toggle="modal" data-target="#myModalRegistrationInside" href="/entrenamos/evento/<%=@event.id%>/registration" class="btn btn-success">Registrarme!</a>
 		<%end%>

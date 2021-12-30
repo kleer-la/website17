@@ -6,7 +6,7 @@ require './lib/articles'
 # end
 
 get '/blog-preview/:slug' do |slug|
-  @article = Article.createOneKeventer(slug)
+  @article = Article.create_one_keventer(slug)
 
   # @meta_keywords
   @page_title = @article.tabtitle
@@ -25,6 +25,7 @@ get '/blog-preview' do
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
+  @show_abstract = true
   @where = 'Blog Preview'
   erb :blog_preview
 rescue StandardError => e
@@ -40,13 +41,14 @@ get '/blog' do
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
+  @show_abstract = true
   erb :blog_preview
 rescue StandardError => e
   puts e
   status 404
 end
 get '/blog/:slug' do |slug|
-  @article = Article.createOneKeventer(slug)
+  @article = Article.create_one_keventer(slug)
 
   # @meta_keywords
   @page_title = @article.tabtitle

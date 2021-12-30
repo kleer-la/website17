@@ -39,13 +39,13 @@
 			  </div>
 		 	  <span class="nombreKleerer"><%=kleerer.name%></span>
 				<% if kleerer.linkedin_url != "" %>
-					<a href="<%=kleerer.linkedin_url%>" target="_blank">
+          <%= external_url_anchor kleerer.linkedin_url%>
 						<i class="fa fa-linkedin"></i>
 					</a>
 				<% end %>
 
 				<% if kleerer.twitter_username != "" %>
-					<a href="https://twitter.com/<%=kleerer.twitter_username%>" target="_blank">
+          <%= external_url_anchor "https://twitter.com/#{kleerer.twitter_username}"%>
 						<i class="fa fa-twitter"></i>
 					</a>
 				<% end %>
