@@ -41,7 +41,7 @@ get '/blog' do
   # @page_title = @article.tabtitle
   # @meta_description = @article.description
 
-  @show_abstract = false
+  @show_abstract = true
   erb :blog_preview
 rescue StandardError => e
   puts e
