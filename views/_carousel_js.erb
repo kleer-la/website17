@@ -2,20 +2,20 @@
   resizeBackground();
   Para evitar el cambio de tamaño de background al hacer scroll en mobile cuando se esconde la barra de direcciones%>
 <script>
-$(window).resize(function () {
-  resizeBackground();
-});
-function resizeBackground() {
-  if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-    if (screen.width > screen.height) {
-      barHeight = 0;
-    } else {
-      barHeight = 60;
-    }
-    $("#slider").height(screen.height - barHeight);
-  }
-}
-resizeBackground();
+// $(window).resize(function () {
+//   resizeBackground();
+// });
+// function resizeBackground() {
+//   if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
+//     if (screen.width > screen.height) {
+//       barHeight = 0;
+//     } else {
+//       barHeight = 60;
+//     }
+//     $("#slider").height(screen.height - barHeight);
+//   }
+// }
+// resizeBackground();
 
 $('.carousel').carousel({
   interval: 5000

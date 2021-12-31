@@ -31,7 +31,20 @@
 .webp .slider3BG{
   background-image:url('app/img/slide03.webp');
 }
-</style>
+@media (max-width: 480px) {
+.slide {
+    height: 350px  }
+}
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+.slide {
+    height: 400px  }
+}
+@media (min-width: 1025px) {
+.slide {
+    height: 500px  }
+}
+}</style>
 
 <!-- Slider de imágenes -->
 <header id="slider" class="carousel slide carousel-fade">
