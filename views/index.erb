@@ -23,7 +23,6 @@
   <!-- build:css(.) styles/vendor.css -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" type="text/css">
   <%# <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> %>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" integrity="sha512-i8+QythOYyQke6XbStjt9T4yQHhhM+9Y9yTY1fOxoDQwsQpKMEpIoSQZ8mVomtnVCf9PBvoQDnKl06gGOOD19Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
@@ -204,8 +203,8 @@
                   <div class="row">
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x">
-                                <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones" loading="lazy">
+                              <span>
+                                <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones" loading="lazy" height="112px" width="116px">
                               </span>
                               <h4>
                                 <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light facilitacion-bt"><span><%=t('home.facilitation')%></span></a>
@@ -215,8 +214,8 @@
                       </div>
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x">
-                              <img src="app/img/icon-coaching.svg" alt="icono coaching" loading="lazy">
+                              <span>
+                              <img src="app/img/icon-coaching.svg" alt="icono coaching" loading="lazy" height="112px" width="116px">
                           </span>
                               <h4>
                                 <a href="/<%=session[:locale]%>/agilidad-organizacional" class="btn btn-light coaching-bt"><span><%=t('home.coaching')%></span>
@@ -227,8 +226,8 @@
                       </div>
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x">
-                              <img src="app/img/icon-cursos.svg" alt="icono cursos" loading="lazy">
+                              <span>
+                              <img src="app/img/icon-cursos.svg" alt="icono cursos" loading="lazy" height="112px" width="116px">
                           </span>
                               <h4>
                                   <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light cursos-bt"><span><%=t('home.courses')%></span></a>
@@ -243,23 +242,11 @@
       </div>
   </section>
 
-  <!-- banner -->
-  <!-- section id="banner_big">
-    <div class="container">
-      <div class="row text-center">
-        &nbsp;<br/>
-        <a href="/es/categoria/clientes/cursos/233-professional-agile-coach-(pac)?utm_source=index&utm_campaign=pac.banner.kleer.la">
-          <img src="/img/banners/pac-long-banner.png" width="70%"/>
-        </a><br/>
-        &nbsp;
-      </div>
-    </div>
-  </section -->
-
   <!-- Footer -->
   <footer>
   	<%= erb :_slide_contactanos, :layout => false %>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" integrity="sha512-i8+QythOYyQke6XbStjt9T4yQHhhM+9Y9yTY1fOxoDQwsQpKMEpIoSQZ8mVomtnVCf9PBvoQDnKl06gGOOD19Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <%= erb :_suscribe_newsletter%>
 
 <!-- build:js(.) scripts/vendor.js -->
