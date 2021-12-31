@@ -45,3 +45,16 @@ Referencias para configurar el Wordpress por reverse proxy
 * https://www.cloudanix.com/blog/wordpress-installation-on-a-subdirectory-of-an-existing-app-ruby-on-rails/
 * https://medium.com/@technoblogueur/wordpress-blog-for-ruby-on-rails-the-configuration-that-worked-for-me-a8a7a989a68d
 * https://www.netlingshq.com/blog/wordpress-with-ruby-on-rails/
+
+
+Soporte de HTTP/2?
+```cli
+curl -sI https://www.kleer.la -o/dev/null -w '%{http_version}\n'
+```
+
+WebP
+```cli
+sudo apt install webp
+cwebp public/app/img/slide01.jpg -o public/app/img/slide01.webp
+```
+https://web.dev/serve-images-webp/
