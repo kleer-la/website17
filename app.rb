@@ -6,7 +6,6 @@ require 'json'
 require 'i18n'
 require 'money'
 require 'escape_utils'
-require 'rack/reverse_proxy'
 
 require './lib/keventer_reader'
 require './lib/twitter_card'
