@@ -1,6 +1,5 @@
 <!doctype html>
-<html>
-
+<html class="no-js">
 <head>
   <%= erb :_gtag %>
   <meta charset="utf-8">
@@ -19,18 +18,25 @@
   <meta property="og:image:secure_url" content="https://www.kleer.la/img/logos/kleer.png" />
   <meta property="fb:app_id" content="116606177078" />
   <title><%=@page_title%></title>
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" type="text/css">
-  <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <%# <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> %>
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i&display=swap" rel="stylesheet" type="text/css">
   <base href="/app">
+<% #no es necesario, alquien ya lo está haciendo
+#   <script>
+#   document.documentElement.classList.remove("no-js");
+# </script>
+%>
 </head>
 
 <body ng-app="kleerApp">
@@ -176,57 +182,7 @@
 
   <!-- Contenido del sitio -->
 
-  <!-- Slider de imágenes -->
-  <header id="slider" class="carousel slide carousel-fade">
-      <!-- Indicadores -->
-      <ol class="carousel-indicators">
-          <li data-target="#slider" data-slide-to="0" class="active"></li>
-          <li data-target="#slider" data-slide-to="1"></li>
-          <li data-target="#slider" data-slide-to="2"></li>
-      </ol>
-
-      <!-- Slides -->
-      <div class="carousel-inner">
-          <div class="item active">
-              <div class="fill" style="background-image:url('app/img/slide01.jpg');"></div>
-              <div class="carousel-caption slider1">
-                  <div class="text-vertical">
-                      <h1><%=t('slider.title_1')%></h1>
-                      <h3><%=t('slider.text_1')%></h3>
-                      <!--<a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
-                        <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                      </a>-->
-                  </div>
-              </div>
-          </div>
-          <div class="item">
-              <div class="fill" style="background-image:url('app/img/slide02.jpg');"></div>
-              <div class="carousel-caption slider2">
-                  <div class="text-vertical">
-                      <h1><%=t('slider.title_2')%></h1>
-                      <h3><%=t('slider.text_2')%></h3>
-                      <!--<a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
-                        <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                      </a>-->
-                  </div>
-              </div>
-          </div>
-          <div class="item">
-              <div class="fill" style="background-image:url('app/img/slide03.jpg');"></div>
-              <div class="carousel-caption slider3">
-                  <div class="text-vertical">
-                      <h1><%=t('slider.title_3')%></h1>
-                      <h3><%=t('slider.text_3')%></h3>
-                      <!--<a href="javascript:void(0);" onclick='scrollTo2("#about");' class="btn btn-dark btn-lg sr-button">
-                        <i class="fa fa-chevron-down fa-fw fa-1x"></i>
-                      </a>-->
-                  </div>
-              </div>
-          </div>
-      </div>
-  </header>
-
-
+<%=erb :_carousel%>
   <!-- Sobre Kleer / Separador -->
   <section id="about" class="about">
       <div class="container-fluid">
@@ -248,8 +204,8 @@
                   <div class="row">
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x">
-                                <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones" loading="lazy">
+                              <span>
+                                <img src="app/img/icon-facilitacion.svg" alt="icono facilitaciones" loading="lazy" height="112px" width="116px">
                               </span>
                               <h4>
                                 <a href="/<%=session[:locale]%>/facilitacion" class="btn btn-light facilitacion-bt"><span><%=t('home.facilitation')%></span></a>
@@ -259,8 +215,8 @@
                       </div>
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x">
-                              <img src="app/img/icon-coaching.svg" alt="icono coaching" loading="lazy">
+                              <span>
+                              <img src="app/img/icon-coaching.svg" alt="icono coaching" loading="lazy" height="112px" width="116px">
                           </span>
                               <h4>
                                 <a href="/<%=session[:locale]%>/agilidad-organizacional" class="btn btn-light coaching-bt"><span><%=t('home.coaching')%></span>
@@ -271,8 +227,8 @@
                       </div>
                       <div class="col-md-4 col-sm-4">
                           <div class="service-item">
-                              <span class="fa-stack fa-4x">
-                              <img src="app/img/icon-cursos.svg" alt="icono cursos" loading="lazy">
+                              <span>
+                              <img src="app/img/icon-cursos.svg" alt="icono cursos" loading="lazy" height="112px" width="116px">
                           </span>
                               <h4>
                                   <a href="/<%=session[:locale]%>/entrenamos" class="btn btn-light cursos-bt"><span><%=t('home.courses')%></span></a>
@@ -287,131 +243,97 @@
       </div>
   </section>
 
-  <!-- banner -->
-  <!-- section id="banner_big">
-    <div class="container">
-      <div class="row text-center">
-        &nbsp;<br/>
-        <a href="/es/categoria/clientes/cursos/233-professional-agile-coach-(pac)?utm_source=index&utm_campaign=pac.banner.kleer.la">
-          <img src="/img/banners/pac-long-banner.png" width="70%"/>
-        </a><br/>
-        &nbsp;
-      </div>
-    </div>
-  </section -->
-
   <!-- Footer -->
   <footer>
   	<%= erb :_slide_contactanos, :layout => false %>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" integrity="sha512-i8+QythOYyQke6XbStjt9T4yQHhhM+9Y9yTY1fOxoDQwsQpKMEpIoSQZ8mVomtnVCf9PBvoQDnKl06gGOOD19Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <%= erb :_suscribe_newsletter%>
 
 <!-- build:js(.) scripts/vendor.js -->
 <script src="app/vendor/jquery/dist/jquery.min.js"></script>
 <script src="app/vendor/scrollreveal.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <!-- endbuild -->
 
 <script>
+$(document).ready(function(){
+  $('.suscription-modal').on('shown.bs.modal', function (e) {
+    $("#suscriptionModalEmail").focus();
+  });
+});
+// Cierra el sidebar menu
+function closeSidebar(e) {
+  e.preventDefault();
+  $("#sidebar-wrapper").toggleClass("active");
+}
 
-    $(document).ready(function(){
-      $('.suscription-modal').on('shown.bs.modal', function (e) {
-        $("#suscriptionModalEmail").focus();
+$("#menu-close").click(function (e) {
+  closeSidebar(e);
+});
+// Abre el sidebar menu
+$("#menu-toggle").click(function (e) {
+  e.preventDefault();
+  $("#sidebar-wrapper").toggleClass("active");
+});
+// Efecto de animación de iconos
+window.sr = ScrollReveal();
+sr.reveal('.sr-services', {
+  duration: 1000,
+  scale: 0.3,
+  distance: '100px',
+  delay: 200
+}, 200);
+sr.reveal('.sr-button', {
+  duration: 1000,
+  scale: 0.3,
+  delay: 500
+});
+sr.reveal('.sr-contact', {
+  duration: 1000,
+  scale: 0.3,
+  distance: '0px',
+  delay: 200
+}, 300);
+
+// Scroll animado a las secciones la página
+
+function scrollTo2(anchor){
+      var target = $(anchor);
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+};
+
+// Link to-top aparece cuando hacemos scroll
+var fixed = false;
+$(document).scroll(function () {
+  if ($(this).scrollTop() > 250) {
+    if (!fixed) {
+      fixed = true;
+      $('#to-top').show("slow", function () {
+        $('#to-top').css({
+          position: 'fixed',
+          display: 'block'
+        });
       });
-    });
-
-    //Para evitar el cambio de tamaño de background al hacer scroll en mobile cuando se esconde la barra de direcciones
-    $(window).resize(function () {
-      resizeBackground();
-    });
-    function resizeBackground() {
-      if ((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-        if (screen.width > screen.height) {
-          barHeight = 0;
-        } else {
-          barHeight = 60;
-        }
-        $("#slider").height(screen.height - barHeight);
-      }
     }
-    resizeBackground();
-
-    // Cierra el sidebar menu
-    function closeSidebar(e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
+  } else {
+    if (fixed) {
+      fixed = false;
+      $('#to-top').hide("slow", function () {
+        $('#to-top').css({
+          display: 'none'
+        });
+      });
     }
-
-    $("#menu-close").click(function (e) {
-      closeSidebar(e);
-    });
-    // Abre el sidebar menu
-    $("#menu-toggle").click(function (e) {
-      e.preventDefault();
-      $("#sidebar-wrapper").toggleClass("active");
-    });
-    // Efecto de animación de iconos
-    window.sr = ScrollReveal();
-    sr.reveal('.sr-services', {
-      duration: 1000,
-      scale: 0.3,
-      distance: '100px',
-      delay: 200
-    }, 200);
-    sr.reveal('.sr-button', {
-      duration: 1000,
-      scale: 0.3,
-      delay: 500
-    });
-    sr.reveal('.sr-contact', {
-      duration: 1000,
-      scale: 0.3,
-      distance: '0px',
-      delay: 200
-    }, 300);
-
-    // Scroll animado a las secciones la página
-
-    function scrollTo2(anchor){
-          var target = $(anchor);
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-    };
-
-    // Link to-top aparece cuando hacemos scroll
-    var fixed = false;
-    $(document).scroll(function () {
-      if ($(this).scrollTop() > 250) {
-        if (!fixed) {
-          fixed = true;
-          $('#to-top').show("slow", function () {
-            $('#to-top').css({
-              position: 'fixed',
-              display: 'block'
-            });
-          });
-        }
-      } else {
-        if (fixed) {
-          fixed = false;
-          $('#to-top').hide("slow", function () {
-            $('#to-top').css({
-              display: 'none'
-            });
-          });
-        }
-      }
-    });
-
-    $('.carousel').carousel({
-      interval: 5000
-    })
+  }
+});
 </script>
+<%= erb :_carousel_js%>
 <%= erb :_cookies%>
 </body>
 </html>
