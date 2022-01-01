@@ -25,6 +25,7 @@ Para trabajar los estilos ir a la carpeta app y correr:
 gem install sass
 sass --watch scss:css
 ```
+y forzar refrezco Crtl+Shft+R
 
 Docker
 ---
@@ -33,7 +34,8 @@ Para desarrollar con docker
 ```cli
 docker-compose run --service-ports website17 bash
 bundle install
-ruby app.rb -o 0
+# ruby app.rb -o 0
+puma -p 4567
 ```
 
 Routes
