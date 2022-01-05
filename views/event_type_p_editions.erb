@@ -78,13 +78,24 @@
           </div>
         </div>
 
-        <!-- Horario -->
+        <!-- Horario / Ciudad ó timeZone -->
         <div class="col-xs-7 col-sm-2">
-          <%=t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
+          <% info_time = t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
+
           <% if event.online? || event.blended_learning? %>
-            <br/><a href="<%= event.timezone_url%>">
-            <%=event.place%>
-            </a>
+            <!-- ONLINE -->
+            <img src="/img/flags/ol.png"/> 
+            <strong>Online</strong>
+            <br/><%= info_time %>
+            <br/><a href="<%= event.timezone_url%>"> <%= event.place %>
+            </a><br/>
+          <% else%>
+            <!-- PRESENCIAL -->
+            <img src="/img/flags/<%= @event.country_code.downcase %>.png"/> 
+            <strong><%=@event.city%>, <%=@event.country%></strong>
+            <br/><%=@event.place%>
+						<br/><%=@event.address%>
+            <br/><%= info_time %><br/>
           <% end %>
         </div>
 
