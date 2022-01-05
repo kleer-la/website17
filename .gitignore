@@ -21,6 +21,7 @@ _yardoc
 doc/
 
 .DS_Store
+.ruby-version
 webrat.log
 
 public/.DS_Store
