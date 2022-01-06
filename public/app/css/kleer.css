@@ -1022,6 +1022,42 @@ a.lower {
 
   #logoMenu img {
     width: 100%; } }
+.no-js .slider1BG {
+  background-image: url("../img/slide01.jpg"); }
+
+.no-webp .slider1BG {
+  background-image: url("../img/slide01.jpg"); }
+
+.webp .slider1BG {
+  background-image: url("../img/slide01.webp"); }
+
+.no-js .slider2BG {
+  background-image: url("../img/slide02.jpg"); }
+
+.no-webp .slider2BG {
+  background-image: url("../img/slide02.jpg"); }
+
+.webp .slider2BG {
+  background-image: url("../img/slide02.webp"); }
+
+.no-js .slider3BG {
+  background-image: url("../img/slide03.jpg"); }
+
+.no-webp .slider3BG {
+  background-image: url("../img/slide03.jpg"); }
+
+.webp .slider3BG {
+  background-image: url("../img/slide03.webp"); }
+
+@media (max-width: 480px) {
+  .slide {
+    height: 350px; } }
+@media (min-width: 481px) and (max-width: 1024px) {
+  .slide {
+    height: 400px; } }
+@media (min-width: 1025px) {
+  .slide {
+    height: px; } }
 .item,
 .active {
   height: 100%; }
