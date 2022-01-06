@@ -733,22 +733,39 @@ section#about {
 }
 
 /*BLOG*/
+.header-blog {
+  height: 142px;
+  background: #FFE600;
+  display: flex;
+  align-items: flex-end;
+
+  h1 {
+    font-size: 26px;
+    margin: 10px 0 13px 10px;
+    font-weight: 500;
+
+    span {
+      font-size: 18px;
+    }
+  }
+}
+
 .blog {
   > .container {
     padding-top: 3em;
   }
 
-  h1 {
+  h2 {
     font-size: 26px;
     margin-bottom: 1em;
   }
 
-  h2 {
+  h3 {
     font-size: 22px;
     margin: 1.5em 0 1em 0;
   }
 
-  h3 {
+  h4 {
     font-size: 20px;
     margin-top: 1.5em;
   }
@@ -792,13 +809,28 @@ section#about {
         font-size: 12px;
       }
     }
+
+    .btn.btn-kleer {
+      font-family: 'Raleway', sans-serif;
+      text-transform: inherit;
+    }
   }
+
+  &__abstract,
+  &__body  {
+    margin-bottom: 1.5em;
+  }
+
   &.blog-uniq {
     border: none;
   }
 }
 
 @media(max-width:768px) {
+  .header-blog .container {
+    width: 97%;
+  }
+
   .map {
     padding: 0;
   }
@@ -1516,8 +1548,7 @@ p.lead {
   li {
     font-size: 12px;
     &.whatsapp a {
-      background: url('/img/icons/WhatsApp_Logo_1.svg') no-repeat;
-      padding: 4px 0 4px 25px;
+      padding: 4px 0 4px;
     }
     a {
       color: #000;

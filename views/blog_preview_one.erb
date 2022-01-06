@@ -1,8 +1,6 @@
-<div class="blackBg blackBg-small">
-<div class="header-small header-coaching header-blog"></div>
-
-<div class="header-description">
-	<h1 class="headerTitle blog__title">Blog</h1>
+<div class="blackBg-small">
+<div class="header-blog">
+  <div class="container"><h1>Blog / <span>Post</span></h1></div>
 </div>
 </div>
 
@@ -10,7 +8,7 @@
 	<div class="container fondo-blanco contenedor-generico">
 		<div class="col-md-8 col-md-offset-2 contenedor-main-izq">
       <article class="blog__article">
-        <h1><%= @article.title%></h1>
+        <h2><%= @article.title%></h2>
         <div class="blog__data">
           <div class="blog__name">
             <i class="fa fa-user"></i>
@@ -23,8 +21,8 @@
             </time>
           </div>
         </div>
-        <%=@markdown_renderer.render( @article.body )%>
-        <a href="/blog"><< Volver</a>
+        <div class="blog__body"><%=@markdown_renderer.render( @article.body )%></div>
+        <a href="/blog" class="btn btn-info btn-kleer"><< Volver</a>
       </article>
 		</div>
 		<!--<div class="col-md-3 hidden-xs hidden-sm">
