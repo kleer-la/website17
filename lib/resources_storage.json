@@ -13,7 +13,7 @@
             "comments": ""
             }
         },
-        {"es": {   
+        {"es": {
             "id": "DoD-kards",
             "landing": "http://www.elproximopaso.net/2017/07/dod-kards.html",
             "cover": "/img/recursos/DoD-Kards.png",
@@ -177,6 +177,18 @@
             "share_li": "mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=",
             "comments": "<a href='https://youtu.be/ctqJyrcfXr4'>Video sobre como facilitar la actividad</a>"
             }
+        },
+        {"es": {
+          "id": "Kartas de Conexión",
+          "landing": "http://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html",
+          "cover": "/img/recursos/kartas-conexion.jpg",
+          "title": "Kartas de Conexión",
+          "description": "Mazo de cartas con distintos juegos para aumentar la conexión propia y con otras personas y desarrollar el vocabulario emocional.",
+          "authors": "<a href='https://www.linkedin.com/in/nataliadavidovich/'>Natty Davidovich</a>",
+         "share_fb": "u=",
+          "share_tw": "text=¿Te gustaría mejorar la conexión entre las personas de tu equipo? Te comparto el juego de Kartas de Conexión de @kleer_la. Descárgalas aquí https://kl.la/kartas-conexión&hashtags=ComunicaciónColaborativa,CNV,ComunicaciónEfectiva",
+          "share_li": ""
+          }
         }
    ]
 }
