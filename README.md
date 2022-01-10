@@ -1,4 +1,4 @@
-Website (update 2017-2018)
+Website (update 2022)
 ---
 En conjunto con nuestros amigos de Innqube.com (Mauro Strione), Cambá (Pablo de los Santos)
 y actualmente la gran Alina Ryba    :)
@@ -8,7 +8,7 @@ Website
 
 Build & Coveralls
 ---
-[![Build Status](https://travis-ci.org/kleer-la/website17.png?branch=master)](https://travis-ci.org/kleer-la/website17)
+![Build Status](https://github.com/kleer-la/website17/actions/workflows/ci.yml/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/kleer-la/website17/badge.svg?branch=master)](https://coveralls.io/github/kleer-la/website17?branch=master)
 
 Code climate
@@ -25,7 +25,7 @@ Para trabajar los estilos ir a la carpeta app y correr:
 gem install sass
 sass --watch scss:css
 ```
-y forzar refrezco Crtl+Shft+R
+y forzar refresco Crtl+Shft+R
 
 Docker
 ---
@@ -43,12 +43,6 @@ Routes
 rake routes
 ```
 
-Referencias para configurar el Wordpress por reverse proxy
-* https://www.cloudanix.com/blog/wordpress-installation-on-a-subdirectory-of-an-existing-app-ruby-on-rails/
-* https://medium.com/@technoblogueur/wordpress-blog-for-ruby-on-rails-the-configuration-that-worked-for-me-a8a7a989a68d
-* https://www.netlingshq.com/blog/wordpress-with-ruby-on-rails/
-
-
 Soporte de HTTP/2?
 ```cli
 curl -sI https://www.kleer.la -o/dev/null -w '%{http_version}\n'
@@ -60,3 +54,5 @@ sudo apt install webp
 cwebp public/app/img/slide01.jpg -o public/app/img/slide01.webp
 ```
 https://web.dev/serve-images-webp/
+
+MetaTags inspirado en https://github.com/kpumuk/meta-tags
