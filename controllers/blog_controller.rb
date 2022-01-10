@@ -1,60 +1,53 @@
 require './lib/json_api'
 require './lib/articles'
 
-# get '/blog' do
-#   redirect '/blog/', 301 # permanent redirect
-# end
+get '/blog/' do
+  redirect '/blog', 301 # permanent redirect
+end
 
 get '/blog-preview/:slug' do |slug|
-  @article = Article.create_one_keventer(slug)
+  meta_tags! noindex: true, nofollow: true
 
-  # @meta_keywords
-  @page_title = @article.tabtitle
-  @meta_description = @article.description
-
-  erb :blog_preview_one
-rescue StandardError => e
-  puts e
-  status 404
+  blog_one Article.create_one_keventer(slug)
 end
 
 get '/blog-preview' do
-  @articles = Article.create_list_keventer(false)
+  meta_tags! noindex: true, nofollow: true
 
-  # @meta_keywords
-  # @page_title = @article.tabtitle
-  # @meta_description = @article.description
-
-  @show_abstract = true
   @where = 'Blog Preview'
-  erb :blog_preview
-rescue StandardError => e
-  puts e
-  status 404
+
+  blog_list Article.create_list_keventer(false)
 end
 
 get '/blog' do
-  @articles = Article.create_list_keventer(true)
-
   @where = 'Blog'
-  # @meta_keywords
-  # @page_title = @article.tabtitle
-  # @meta_description = @article.description
 
-  @show_abstract = true
-  erb :blog_preview
-rescue StandardError => e
-  puts e
-  status 404
+  blog_list Article.create_list_keventer(true)
 end
-get '/blog/:slug' do |slug|
-  @article = Article.create_one_keventer(slug)
 
-  # @meta_keywords
+get '/blog/:slug' do |slug|
+  blog_one Article.create_one_keventer(slug)
+end
+
+def blog_one(article)
+  @article = article
   @page_title = @article.tabtitle
   @meta_description = @article.description
 
   erb :blog_preview_one
+rescue StandardError => e
+  puts e
+  status 404
+end
+
+def blog_list(articles)
+  @articles = articles
+
+  # @page_title = @article.tabtitle
+  # @meta_description = @article.description
+
+  @show_abstract = true
+  erb :blog_preview
 rescue StandardError => e
   puts e
   status 404
