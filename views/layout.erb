@@ -32,7 +32,6 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400i" rel="stylesheet" type="text/css">
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -232,7 +231,7 @@
               <% if (session[:locale] == "en") %>
                 <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
                 <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
-              <% end %> 
+              <% end %>
               <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
               <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
             </ul>

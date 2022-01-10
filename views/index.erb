@@ -30,7 +30,6 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap" rel="stylesheet" type="text/css">
   <base href="/app">
 <% #no es necesario, alquien ya lo está haciendo
 #   <script>
@@ -84,7 +83,7 @@
               </ul>
             </li>
             <li><a href="javascript:void(0);" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
-            <li><% if (session[:locale] == "en") 
+            <li><% if (session[:locale] == "en")
                       lang= "es"
                       lang_long= "ESPAÑOL"
                     else
