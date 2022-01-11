@@ -1,9 +1,6 @@
-<div class="blackBg blackBg-small">
-<div class="header-small header-coaching header-blog"></div>
-
-<div class="header-description">
-	<h1 class="headerTitle blog__title"><%= @where%></h1>
-</div>
+<div class="blackBg-small">
+<div class="header-blog">
+  <div class="container"><h1><%= @where%> / <span>Inicio</span></h1></div>
 </div>
 <%where_uri= "/#{@where.downcase.gsub(' ','-')}/" %>
 
@@ -15,9 +12,9 @@
       <% else
       @articles.each do |article|%>
       <article class="blog__article">
-        <h1><a href='<%= where_uri+article.slug%>'>
+        <h2><a href='<%= where_uri+article.slug%>'>
         <%=article.title%>
-        </a></h1>
+        </a></h2>
         <div class="blog__data">
           <div class="blog__name">
             <i class="fa fa-user"></i>
@@ -30,7 +27,8 @@
             </time>
           </div>
         </div>
-        <%=@markdown_renderer.render( @show_abstract ? article.abstract : article.body)%>
+        <div class="blog__abstract"><%=@markdown_renderer.render( @show_abstract ? article.abstract : article.body)%></div>
+        <a href='<%= where_uri+article.slug%>' class="btn btn-info btn-kleer">Continuar leyendo</a>
       </article>
     <%end
     end%>

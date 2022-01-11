@@ -7,6 +7,7 @@ require 'i18n'
 require 'money'
 require 'escape_utils'
 
+require './lib/metatags'
 require './lib/keventer_reader'
 require './lib/twitter_card'
 require './lib/twitter_reader'
@@ -18,6 +19,8 @@ require './controllers/helper'
 require './controllers/blog_controller'
 require './controllers/press_controller'
 require './controllers/training_controller'
+
+include MetaTags
 
 if production?
   require 'rack/ssl-enforcer'

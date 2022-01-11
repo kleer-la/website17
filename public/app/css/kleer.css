@@ -645,15 +645,27 @@ section#about {
   padding: 0 20px; }
 
 /*BLOG*/
+.header-blog {
+  height: 142px;
+  background: #FFE600;
+  display: flex;
+  align-items: flex-end; }
+  .header-blog h1 {
+    font-size: 26px;
+    margin: 10px 0 13px 10px;
+    font-weight: 500; }
+    .header-blog h1 span {
+      font-size: 18px; }
+
 .blog > .container {
   padding-top: 3em; }
-.blog h1 {
+.blog h2 {
   font-size: 26px;
   margin-bottom: 1em; }
-.blog h2 {
+.blog h3 {
   font-size: 22px;
   margin: 1.5em 0 1em 0; }
-.blog h3 {
+.blog h4 {
   font-size: 20px;
   margin-top: 1.5em; }
 .blog p, .blog li {
@@ -681,10 +693,18 @@ section#about {
       text-align: center;
       color: #747474;
       font-size: 12px; }
+  .blog__article .btn.btn-kleer {
+    font-family: 'Raleway', sans-serif;
+    text-transform: inherit; }
+.blog__abstract, .blog__body {
+  margin-bottom: 1.5em; }
 .blog.blog-uniq {
   border: none; }
 
 @media (max-width: 768px) {
+  .header-blog .container {
+    width: 97%; }
+
   .map {
     padding: 0; }
 
@@ -1002,6 +1022,42 @@ a.lower {
 
   #logoMenu img {
     width: 100%; } }
+.no-js .slider1BG {
+  background-image: url("../img/slide01.jpg"); }
+
+.no-webp .slider1BG {
+  background-image: url("../img/slide01.jpg"); }
+
+.webp .slider1BG {
+  background-image: url("../img/slide01.webp"); }
+
+.no-js .slider2BG {
+  background-image: url("../img/slide02.jpg"); }
+
+.no-webp .slider2BG {
+  background-image: url("../img/slide02.jpg"); }
+
+.webp .slider2BG {
+  background-image: url("../img/slide02.webp"); }
+
+.no-js .slider3BG {
+  background-image: url("../img/slide03.jpg"); }
+
+.no-webp .slider3BG {
+  background-image: url("../img/slide03.jpg"); }
+
+.webp .slider3BG {
+  background-image: url("../img/slide03.webp"); }
+
+@media (max-width: 480px) {
+  .slide {
+    height: 350px; } }
+@media (min-width: 481px) and (max-width: 1024px) {
+  .slide {
+    height: 400px; } }
+@media (min-width: 1025px) {
+  .slide {
+    height: px; } }
 .item,
 .active {
   height: 100%; }
@@ -1334,8 +1390,7 @@ p.lead {
   .tab-content .alert-info li {
     font-size: 12px; }
     .tab-content .alert-info li.whatsapp a {
-      background: url("/img/icons/WhatsApp_Logo_1.svg") no-repeat;
-      padding: 4px 0 4px 25px; }
+      padding: 4px 0 4px; }
     .tab-content .alert-info li a {
       color: #000; }
 
