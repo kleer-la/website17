@@ -20,7 +20,7 @@ Code climate
 CSS/SASS
 ---
 
-Para trabajar los estilos ir a la carpeta app y correr:
+Para trabajar los estilos ir a la carpeta public/app y correr:
 ```cli
 gem install sass
 sass --watch scss:css

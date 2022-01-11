@@ -1,6 +1,18 @@
 { "resources":
     [
-        {"es": {   
+      {"es": {
+        "id": "Kartas de Conexión",
+        "landing": "https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html",
+        "cover": "/img/recursos/kartas-conexion.jpg",
+        "title": "Kartas de Conexión",
+        "description": "Mazo de cartas con distintos juegos para aumentar la conexión propia y con otras personas y desarrollar el vocabulario emocional.",
+        "authors": "<a href='https://www.linkedin.com/in/nataliadavidovich/'>Natty Davidovich</a>",
+        "share_fb": "u=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html",
+        "share_tw": "text=¿Te gustaría mejorar la conexión entre las personas de tu equipo? Te comparto el juego de Kartas de Conexión de @kleer_la. Descárgalas aquí https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html&hashtags=ComunicaciónColaborativa,CNV,ComunicaciónEfectiva",
+        "share_li": "mini=true&url=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html&title=Mejora%20la%20conexion%20entre%20las%20personas%20de%20tu%20equipo.%20Busca%20las%20cartas%20https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html%20%23ComunicacionColaborativa%20%23CNV%20%23ComunicacionEfectiva"
+        }
+      },
+      {"es": {   
             "id": "guias-agiles",
             "landing": "https://guiasagiles.herokuapp.com/",
             "cover": "/img/recursos/guias-agiles.jpg",
@@ -177,18 +189,6 @@
             "share_li": "mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=",
             "comments": "<a href='https://youtu.be/ctqJyrcfXr4'>Video sobre como facilitar la actividad</a>"
             }
-        },
-        {"es": {
-          "id": "Kartas de Conexión",
-          "landing": "http://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html",
-          "cover": "/img/recursos/kartas-conexion.jpg",
-          "title": "Kartas de Conexión",
-          "description": "Mazo de cartas con distintos juegos para aumentar la conexión propia y con otras personas y desarrollar el vocabulario emocional.",
-          "authors": "<a href='https://www.linkedin.com/in/nataliadavidovich/'>Natty Davidovich</a>",
-         "share_fb": "u=",
-          "share_tw": "text=¿Te gustaría mejorar la conexión entre las personas de tu equipo? Te comparto el juego de Kartas de Conexión de @kleer_la. Descárgalas aquí https://kl.la/kartas-conexión&hashtags=ComunicaciónColaborativa,CNV,ComunicaciónEfectiva",
-          "share_li": ""
-          }
         }
    ]
 }
