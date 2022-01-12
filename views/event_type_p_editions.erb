@@ -60,19 +60,17 @@
           end
           date_line += "</tr></table>"
           %>
-
           <div class="wrap-info">
             <div class="klabel-calendar"><%=date_line%></div>
-
-            <!-- botón INFO solamente si hay algo condiciones especificas del evento -->
-            <% info_popup = !@event.specific_conditions.nil? && @event.specific_conditions.strip != "" %>
-            <% if info_popup %>
-              <!-- id para el popup, Titulo y texto (html) -->
-              <% info_name = "info_#{counter}" %>
-              <% info_title = t("event.important") %>
-              <% info_text = @markdown_renderer.render( @event.specific_conditions.to_s ) %>
+            <% #botón INFO solamente si hay algo condiciones especificas del evento
+              info_popup = !@event.specific_conditions.nil? && @event.specific_conditions.strip != "" 
+               if info_popup # id para el popup, Titulo y texto (html)
+               info_name = "info_#{counter}"
+               info_title = t("event.important")
+               info_text = @markdown_renderer.render( @event.specific_conditions.to_s )
+              %>
               <button type="button" class="btn btn-kleer btn-small" data-toggle="modal" data-target="#<%= info_name %>">
-              <i class="fa fa-info"></i></button>
+              + info</button>
             <% end %>
             
           </div>
