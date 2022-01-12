@@ -33,7 +33,7 @@
     <div class="col-md-8 evento-description-container">
 
       <h2><i><%= @event_type.subtitle %></i></h2>
-      <h3><%= @event_type.duration%> <%=t("event.duration")%></h3>
+      <h3><%= "#{@event_type.duration} #{t('event.duration')}" if @event_type.duration > 0 %></h3>
       <p class="elevatorPitch"><%= @event_type.elevator_pitch %></p>
 
       <%=@markdown_renderer.render( @event_type.description )%>
