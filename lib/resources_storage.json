@@ -1,7 +1,7 @@
 { "resources":
     [
       {"es": {
-        "id": "Kartas de Conexión",
+        "id": "kartas-conexion",
         "landing": "https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html",
         "cover": "/img/recursos/kartas-conexion.jpg",
         "title": "Kartas de Conexión",
