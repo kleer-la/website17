@@ -1,0 +1,17 @@
+<div class="container-fluid footer-bottom">
+  <div class="text-center">
+    <ul class="text-muted">
+      <li>Copyright &copy; Kleer 2022 <span>|</span></li>
+      <% if (session[:locale] == "es") %>
+        <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
+        <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
+      <% end %>
+      <% if (session[:locale] == "en") %>
+        <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
+        <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
+      <% end %>
+      <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+      <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
+    </ul>
+  </div>
+</div>

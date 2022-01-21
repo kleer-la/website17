@@ -64,28 +64,9 @@
 
 <%= yield %>
 
-  <!-- Footer -->
-  <footer-small>
-    <div class="container-fluid footer-bottom">
-
-      <div class="text-center">
-            <ul class="text-muted">
-              <li>Copyright &copy; Kleer 2021 <span>|</span> </li>
-              <% if (session[:locale] == "es") %>
-                <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
-                <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a>  <span>|</span></li>
-              <% end %>
-              <% if (session[:locale] == "en") %>
-                <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
-                <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
-              <% end %>
-              <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
-            </ul>
-        </div>
-      <a id="to-top" href="javascript:void(0);" onclick='scrollTo("#top")' class="btn btn-dark btn-lg scroll"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
-    </div>
-  </footer>
+<footer>
+<%= erb :_footer%>
+</footer>
 
 <script>
 
