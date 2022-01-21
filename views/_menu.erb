@@ -41,9 +41,9 @@
             </ul>
           </li>
           <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
-          <li><% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-              <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
-        </ul>
+          <li><% if (session[:locale] == "en") %><li><a id="change_to_es_top" href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+              <% if (session[:locale] == "es") %><li><a id="change_to_en_top" href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
+           </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><%= external_url_anchor"https://www.linkedin.com/company/541684" %><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
           <li><%= external_url_anchor"https://twitter.com/kleer_la" %><i class="social-icons-desktop fa fa-twitter"></i></a></li>
