@@ -4,7 +4,7 @@ class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faq,
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
-                :external_site_url,
+                :external_site_url, :canonical_slug,
                 :categories
 
   def initialize
@@ -26,6 +26,10 @@ class KeventerEventType
     "#{@id}-#{@name.downcase.gsub(/ /, '-')}"
   end
 
+  def canonical_url
+    "cursos/#{@canonical_slug}"
+  end
+
   def load_string(xml, field)
     s = field.to_s.gsub('_', '-')
     element = xml.find_first(s)
@@ -38,7 +42,7 @@ class KeventerEventType
 
     %i[name subtitle description learnings takeaways
        goal recipients program faq
-       external_site_url elevator_pitch].each do |f|
+       external_site_url elevator_pitch canonical_slug].each do |f|
       load_string(xml_keventer_event, f)
     end
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)

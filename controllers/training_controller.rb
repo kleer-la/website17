@@ -1,5 +1,6 @@
 require './lib/dt_helper'
 require './lib/event_type'
+require './lib/metatags'
 
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
@@ -69,6 +70,7 @@ get '/cursos/:event_type_id_with_name' do
     # SEO (title, meta)
     @page_title = "Kleer - #{@event_type.name}"
     @meta_description = @event_type.elevator_pitch
+    MetaTags::meta_tags! canonical: @event_type.canonical_url
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]

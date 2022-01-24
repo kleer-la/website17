@@ -17,7 +17,8 @@ module MetaTags
     # default values
     def initialize
       @tags = {
-        charset: 'utf-8'
+        charset: 'utf-8',
+        base_url: ''
       }
     end
 
@@ -58,8 +59,13 @@ module MetaTags
           "<meta property=\"og:title\" content=\"#{tag[1]}\"/>
           <title>#{tab}#{tag[1]}</title>"
         end
+      when :base_url
+        @base_url = tag[1]
+        nil
+      when :canonical
+        "<link rel=\"canonical\" href=\"#{@base_url}/#{tag[1]}\"/>"
       else
-        puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]}  "
+        puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end
     end
   end
