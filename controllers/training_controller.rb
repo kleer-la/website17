@@ -2,6 +2,10 @@ require './lib/dt_helper'
 require './lib/event_type'
 require './lib/metatags'
 
+REDIRECT = {
+  '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'
+}
+
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
   KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
@@ -58,6 +62,13 @@ get '/entrenamos/evento/:event_id_with_name' do
 end
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
+  redirect_to = REDIRECT[params[:event_type_id_with_name]]
+  unless redirect_to.nil?
+    uri = "/cursos/#{redirect_to}"
+
+    return redirect uri , 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
+  end
+
   @active_tab_entrenamos = 'active'
 
   @event_type = event_type_from_qstring params[:event_type_id_with_name]
