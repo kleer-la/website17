@@ -53,7 +53,7 @@ before do
   if ['kleer.la', 'kleer.us', 'kleer.es', 'kleer.com.ar'].include? request.host
     redirect "https://www.#{request.host}#{request.path}"
   else
-    @page_title = 'Kleer - Agile Coaching & Training'
+    @page_title = 'Kleer - Agile Coaching, Consulting & Training'
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),
@@ -74,6 +74,9 @@ before '/:locale/*' do
 end
 
 get '/' do
+  @meta_description = 'Te acompañamos hacia la agilidad organizacional.' +
+  ' Ofrecemos capacitaciones y estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+
   @kleerers = KeventerReader.instance.kleerers session[:locale]
   erb :index, layout: false
 end
