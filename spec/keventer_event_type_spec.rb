@@ -36,12 +36,7 @@ INITIAL_XML = %(<?xml version="1.0" encoding="UTF-8"?>
     deseos, emociones; no son "recursos". La creación de productos y/o servicios innovadores es, principalmente, una
     actividad social que tiene lugar dentro de un equipo de personas, en contextos más participativos, colaborativos
     y humanos. Por consiguiente, la manera más efectiva de mejorar los resultados es mejorando las relaciones que
-    existen entre los miembros y no solamente atendiendo los procesos y las tareas que ellos realizan.
-
-    **Te podemos asistir para lograr que tu organización, área, departamento o equipo de trabajo, logre un nivel de
-    rendimiento superior al actual.**
-
-    Contactate con nosotros en coaching@kleer.la</description>
+    </description>
     <description-en>We propose a new approach to management of organizations, departments and teams that focuses on
     people and their interactions over processes and tools used.
     </description-en>
@@ -155,6 +150,17 @@ describe KeventerEventType do
       @keventtype.load build_and_parse
 
       expect(@keventtype.categories).to eq [[2, 'organizaciones']]
+    end
+    context 'canonical' do
+      it 'dont have canonical' do
+        @keventtype.load build_and_parse('<canonical-id type="integer" nil="true"/><canonical-slug>247-agile-coach</canonical-slug>')
+        expect(@keventtype.canonical_url).to eq 'cursos/247-agile-coach'
+      end
+  
+      it 'have canonical' do
+        @keventtype.load build_and_parse('<canonical-id type="integer">47</canonical-id><canonical-slug>47-taller-del-tiempo</canonical-slug>')
+        expect(@keventtype.canonical_url).to eq 'cursos/47-taller-del-tiempo'
+      end
     end
   end
 end

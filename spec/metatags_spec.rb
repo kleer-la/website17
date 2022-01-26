@@ -53,4 +53,14 @@ describe 'metatags' do
       expect(head).to include '<title>Pepe | Sarambanga</title>'
     end
   end
+  context 'canonical' do
+    it 'has not canonical' do
+      head = display_meta_tags base_url: 'https://www.kleer.la', charset: ''
+      expect(head).to eq ''
+    end
+    it 'has canonical' do
+      head = display_meta_tags base_url: 'https://www.kleer.la', canonical: 'randanganga'
+      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/randanganga"/>'
+    end
+  end
 end

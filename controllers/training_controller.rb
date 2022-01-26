@@ -1,5 +1,10 @@
 require './lib/dt_helper'
 require './lib/event_type'
+require './lib/metatags'
+
+REDIRECT = {
+  '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'
+}
 
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
@@ -52,11 +57,18 @@ get '/entrenamos/evento/:event_id_with_name' do
   else
     uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}"
 
-    redirect uri # , 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
+    redirect uri # , 301 # permanent redirect
   end
 end
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
+  redirect_to = REDIRECT[params[:event_type_id_with_name]]
+  unless redirect_to.nil?
+    uri = "/cursos/#{redirect_to}"
+
+    return redirect uri , 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
+  end
+
   @active_tab_entrenamos = 'active'
 
   @event_type = event_type_from_qstring params[:event_type_id_with_name]
@@ -69,6 +81,8 @@ get '/cursos/:event_type_id_with_name' do
     # SEO (title, meta)
     @page_title = "Kleer - #{@event_type.name}"
     @meta_description = @event_type.elevator_pitch
+    # problema con url certified-scrum-master-(csm)
+    # MetaTags::meta_tags! canonical: @event_type.canonical_url
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
@@ -84,7 +98,7 @@ end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
-  redirect to "/cursos/#{params[:event_type_id_with_name]}"
+  redirect to "/cursos/#{params[:event_type_id_with_name]}", 301
 end
 
 get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do

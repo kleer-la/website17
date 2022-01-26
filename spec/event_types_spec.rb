@@ -11,7 +11,7 @@ describe EventType do
       expect(@event_type.name).to eq 'Introducción a Scrum (Módulo 1 - CSD Track)'
     end
 
-    it 'has caegory' do
+    it 'has category' do
       expect(@event_type.categories.count).to eq 1
       expect(@event_type.categories[0][1]).to eq 'organizaciones'
     end
@@ -25,7 +25,7 @@ describe EventType do
       expect(@event_type.name).to eq 'Introducción a Scrum (Módulo 1 - CSD Track)'
     end
 
-    it 'has caegory' do
+    it 'has category' do
       expect(@event_type.categories.count).to eq 1
       expect(@event_type.categories[0][1]).to eq 'organizaciones'
     end
