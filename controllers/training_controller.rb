@@ -57,7 +57,7 @@ get '/entrenamos/evento/:event_id_with_name' do
   else
     uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}"
 
-    redirect uri # , 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
+    redirect uri # , 301 # permanent redirect
   end
 end
 # Nueva (y simplificada) ruta para Tipos de Evento
@@ -98,7 +98,7 @@ end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
-  redirect to "/cursos/#{params[:event_type_id_with_name]}"
+  redirect to "/cursos/#{params[:event_type_id_with_name]}", 301
 end
 
 get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
