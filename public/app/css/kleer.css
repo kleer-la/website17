@@ -48,6 +48,11 @@ img {
   display: block;
   height: 20px; }
 
+.home__title {
+  position: absolute;
+  visibility: hidden;
+  top: 70px; }
+
 .carousel-inner .text-center {
   display: inline-block;
   text-align: center;
@@ -572,7 +577,7 @@ section#about {
   section#about .container-fluid {
     background: #7acaea;
     padding: 30px 15px; }
-    section#about .container-fluid h2 {
+    section#about .container-fluid h3 {
       font-size: 20px;
       margin: 0;
       text-align: center; }
@@ -582,7 +587,7 @@ section#about {
         background-size: cover;
         background-position: right;
         padding: 60px 15px; }
-        section#about .container-fluid h2 {
+        section#about .container-fluid h3 {
           line-height: 1.3;
           font-size: 30px;
           text-align: left; } }
@@ -650,15 +655,19 @@ section#about {
   background: #FFE600;
   display: flex;
   align-items: flex-end; }
-  .header-blog h1 {
+  .header-blog h1, .header-blog .breadcrumb-nav {
     font-size: 26px;
     margin: 10px 0 13px 10px;
-    font-weight: 500; }
-    .header-blog h1 span {
+    font-weight: 500;
+    line-height: 1.1; }
+    .header-blog h1 span, .header-blog .breadcrumb-nav span {
       font-size: 18px; }
 
 .blog > .container {
   padding-top: 3em; }
+.blog .blog__article h1 {
+  font-size: 26px;
+  margin-bottom: 1em; }
 .blog h2 {
   font-size: 26px;
   margin-bottom: 1em; }
@@ -1057,7 +1066,7 @@ a.lower {
     height: 400px; } }
 @media (min-width: 1025px) {
   .slide {
-    height: px; } }
+    height: 498px; } }
 .item,
 .active {
   height: 100%; }
@@ -1077,7 +1086,7 @@ a.lower {
   .carousel-caption .text-vertical {
     margin: 30px 0 0 50px; }
 
-.carousel-caption h1,
+.carousel-caption h2,
 .headerTitle {
   font-family: 'Mali', cursive;
   text-transform: uppercase;
@@ -1126,7 +1135,7 @@ a.lower {
     padding-top: 0;
     bottom: 45px; }
 
-  .carousel-caption h1 {
+  .carousel-caption h2 {
     font-size: 2em !important;
     margin-bottom: 0; }
 

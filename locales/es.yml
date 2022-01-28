@@ -86,7 +86,7 @@ es:
         press: "Prensa"
         blog: "Blog"
     kleeros:
-        vision: "En Kleer disfrutamos <br/>co-creando ambientes<br/> humanos más conscientes<br/> y asombrosos."
+        vision: "En Kleer disfrutamos <br/>cocreando ambientes<br/> humanos más conscientes<br/> y asombrosos."
         live: "vive-las-met.png"
         team: "equipo-kleer.png"
         nps: "nps-eventos.png"
@@ -351,7 +351,7 @@ es:
                 title: Dinámicas y eventos
                 text: Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.
                 button: <a href="/facilitacion/dinamicas-eventos" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
-        graphic: 
+        graphic:
             text: Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. Además facilitamos visualmente reuniones de equipo en las cuales haya que trabajar sobre temáticas complejas, tomar decisiones y generar acuerdos. Allí utilizamos técnicas visuales que facilitan el entendimiento común y posibilitan la comunicación efectiva.
             button: ¡Me interesa!
             documents:
@@ -370,7 +370,7 @@ es:
             title: Innovación y creatividad
             text: Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.
             button: ¡Me interesa!
-            brainstorming: 
+            brainstorming:
                 title: Powerful brainstorming
                 text: Diseño de actividades para estimular la creación colectiva de ideas. Son jornadas en las cuales se recorren distintas etapas':' estímulos, dinámicas grupales, creación masiva de ideas, feedback, selección y priorización, cross-polinización, refinamiento y puesta en común.
             workshops:
@@ -378,7 +378,7 @@ es:
                 text: Workshops orientados a cubrir todo el ciclo de vida de las ideas':' desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante. En estos encuentros se presentan y practican técnicas como':' Brainstorming efectivo, Escalera de Abstracciones, Principio de Distanciamiento, Estrategias Oblicuas y Sombrero sobre la cerca.
             events:
                 title: Eventos corporativos y comunitarios
-                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver. 
+                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
             creativity:
                 title: Creatividad analítica *
                 text: Se trata de un conjunto de actividades y herramientas diseñadas para potenciar los proyectos de analytics utilizando herramientas de creatividad. Así se logra que los profesionales que trabajan con datos (estadísticas, matemáticas, data mining, otros) puedan brindar mejor soporte a acciones de negocios. <small>(*) trabajo colaborativo junto a SAS Institute</small>
@@ -503,7 +503,7 @@ es:
                text: "Este libro recopila las memorias gráficas de cinco facilitadores durante las sesiones y actividades de la conferencia Agile 2015 en Washington DC, EE.UU. ​El propósito de esta iniciativa es compartir sus memorias visuales e inspirarte a tomar apuntes gráficos en cualquier momento"
     we_are:
         title: "Somos"
-        subtitle: "Disfrutamos co-creando ambientes humanos más conscientes y asombrosos."
+        subtitle: "Disfrutamos cocreando ambientes humanos más conscientes y asombrosos."
         description: 'Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.'
     nuestra_filosofia:
         title: "Nuestra filosofía"
