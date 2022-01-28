@@ -75,7 +75,7 @@ end
 
 get '/' do
   @meta_description = 'Te acompañamos hacia la agilidad organizacional.' +
-  ' Ofrecemos capacitaciones y estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+  ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
   @kleerers = KeventerReader.instance.kleerers session[:locale]
   erb :index, layout: false
