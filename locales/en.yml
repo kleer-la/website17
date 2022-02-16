@@ -80,7 +80,7 @@ en:
             video: "Videos"
             recursos: "Resources and Materials"
         we: "We"
-        we_are: "We are" 
+        we_are: "We are"
         our_philosophy: "Our Philosophy"
         press: "Press"
         tv: "Watch"
@@ -271,7 +271,7 @@ en:
                 title: Dynamics and events
                 text: We design environments for team-building. We focus on ideas and solutions co-creation.
                 button: <a href="/en/facilitacion/dinamicas-eventos" class="btn btn-info">Find out more about these services!</a>
-        graphic: 
+        graphic:
             text: We use graphic displays to illustrate conversations, speeches, presentations, and teamwork outcomes. This discipline is also called graphic recording, which builds shared understanding and provides memory hooks with powerful imagery. We also visual facilitate real-time conversations in which the goal is to make decisions or generate agreements. We use visual tools that help common understanding and improve communication.
             button: More info
             documents:
@@ -290,7 +290,7 @@ en:
             title: Innovación y creatividad
             text: Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.
             button: ¡Me interesa!
-            brainstorming: 
+            brainstorming:
                 title: Powerful brainstorming
                 text: Diseño de actividades para estimular la creación colectiva de ideas. Son jornadas en las cuales se recorren distintas etapas':' estímulos, dinámicas grupales, creación masiva de ideas, feedback, selección y priorización, cross-polinización, refinamiento y puesta en común.
             workshops:
@@ -298,7 +298,7 @@ en:
                 text: Workshops orientados a cubrir todo el ciclo de vida de las ideas':' desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante. En estos encuentros se presentan y practican técnicas como':' Brainstorming efectivo, Escalera de Abstracciones, Principio de Distanciamiento, Estrategias Oblicuas y Sombrero sobre la cerca.
             events:
                 title: Eventos corporativos y comunitarios
-                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver. 
+                text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
             creativity:
                 title: Creatividad analítica *
                 text: Se trata de un conjunto de actividades y herramientas diseñadas para potenciar los proyectos de analytics utilizando herramientas de creatividad. Así se logra que los profesionales que trabajan con datos (estadísticas, matemáticas, data mining, otros) puedan brindar mejor soporte a acciones de negocios. <small>(*) trabajo colaborativo junto a SAS Institute</small>
@@ -719,7 +719,7 @@ en:
         title: "A different Experience"
         description: "We are the first Spanish-speaking company to become a Scrum Alliance Registered Education Provider (REP)."
         why: "Why would you take a course of the
-                    <h2>Scrum Alliance</h1>
+                    <h3>Scrum Alliance</h3>
 
                     <ul>
                         <li>

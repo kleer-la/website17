@@ -30,7 +30,9 @@ def entrenamos_view(country = nil)
     status 404
   else
     @active_tab_entrenamos = 'active'
-    @page_title += ' | Entrenamos'
+    @page_title = 'Agenda de cursos online sobre Agilidad y Scrum'
+    @meta_description = 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
+
     @unique_countries = KeventerReader.instance.unique_countries_for_commercial_events
     @country = country || session[:filter_country] || 'todos'
     session[:filter_country] = @country
@@ -40,7 +42,8 @@ end
 
 get '/catalogo' do
   @active_tab_entrenamos = 'active'
-  @page_title += ' | Catálogo'
+  @page_title = 'Capacitación empresarial en agilidad organizacional'
+  @meta_description = 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :catalogo
 end

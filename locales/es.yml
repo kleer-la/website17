@@ -127,10 +127,10 @@ es:
         description: Estas organizaciones confían en nosotros
         more: Algunos de nuestros clientes
     training:
-        title: "Cursos Abiertos"
+        title: "Cursos de Agilidad y Scrum"
         description: "ORGANIZAMOS ENTRENAMIENTOS PÚBLICOS Y PRIVADOS."
-        incompany: "PODEMOS REALIZAR LOS CURSOS EN TU ORGANIZACIÓN"
-        more_info: "Más Información"
+        incompany: "PODEMOS REALIZAR LOS CURSOS EN TU EMPRESA"
+        more_info: "Catálogo de cursos"
     community:
         title: "Eventos Comunitarios"
     coaching:
@@ -234,7 +234,7 @@ es:
         description: "Compartimos conocimientosy experiencias. ¡Ayudanos a correr la voz!"
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
     recursos:
-        title: "Recursos y Materiales"
+        title: "Recursos y materiales sobre agilidad"
         lista:
             recurso1:
                     title: "Guias Ágiles"
@@ -690,8 +690,8 @@ es:
             title: "<strong>Ouch!</strong> El cupo para este evento se encuentra completo."
             text: "Puedes contactarnos a <a href=\"mailto:entrenamos@kleer.la?subject=Nuevas Fechas: %{title}\">entrenamos@kleer.la</a> para conocer nuevas fechas."
     catalog:
-        title: "Entrenamientos Privados"
-        description: "PODEMOS REALIZAR LOS CURSOS EN TU ORGANIZACIÓN.<br/>NUESTRAS CERTIFICACIONES ESTÁN AVALADAS POR LA SCRUM ALLIANCE."
+        title: "Capacitación empresarial en Agilidad"
+        description: "PODEMOS REALIZAR LOS CURSOS EN TU EMPRESA.<br/>NUESTRAS CERTIFICACIONES ESTÁN AVALADAS POR LA SCRUM ALLIANCE."
         missing_elevator_pitch: "Por favor, completar el elevator pitch del tipo de evento."
     category:
         training: "Cursos"
@@ -930,7 +930,7 @@ es:
         title: "Una Experiencia Diferente"
         description: "Somos la primera empresa de habla hispana en ser reconocida por Scrum Alliance como Representante Educativo (REP)."
         why: "Por qué tomar cursos respaldados por
-                    <h2>Scrum Alliance</h1>
+                    <h3>Scrum Alliance</h3>
 
                     <ul>
                         <li>

@@ -53,7 +53,7 @@ before do
   if ['kleer.la', 'kleer.us', 'kleer.es', 'kleer.com.ar'].include? request.host
     redirect "https://www.#{request.host}#{request.path}"
   else
-    @page_title = 'Kleer - Agile Coaching, Consulting & Training'
+    @page_title = 'Kleer | Agile Coaching, Consulting & Training'
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),
@@ -74,7 +74,7 @@ before '/:locale/*' do
 end
 
 get '/' do
-  @meta_description = 'Te acompañamos hacia la agilidad organizacional.' +
+  @meta_description = 'Acompañamos hacia la agilidad organizacional.' +
   ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
   @kleerers = KeventerReader.instance.kleerers session[:locale]
@@ -99,7 +99,8 @@ end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
-  @page_title += ' | Coaching'
+  @page_title = 'Te acompañamos hacia la agilidad organizacional'
+  @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño,  metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
 end
@@ -154,7 +155,8 @@ end
 
 get '/recursos' do
   @active_tab_publicamos = 'active'
-  @page_title += ' | Recursos'
+  @page_title = 'Materiales y Recursos sobre prácticas ágiles'
+  @meta_description = 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
   @resources = Resources.new.load.all
   erb :recursos
 end
