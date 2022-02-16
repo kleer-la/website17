@@ -41,6 +41,7 @@ rescue StandardError => e
 end
 
 def blog_list(articles)
+  @page_title = '' # TODO: remove when migration to meta_tags is completed
   meta_tags! title: 'Blog - Artículos sobre agilidad organizacional'
   meta_tags! description: 'Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @articles = articles
