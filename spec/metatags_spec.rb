@@ -53,6 +53,19 @@ describe 'metatags' do
       expect(head).to include '<title>Pepe | Sarambanga</title>'
     end
   end
+  context 'description' do
+    it 'no description, no meta' do
+      head = display_meta_tags
+      expect(head).not_to include '<meta property="og:description"'
+      expect(head).not_to include '<meta name="description"'
+    end
+
+    it 'description -> OG & description' do
+      head = display_meta_tags description: 'Sarambanga'
+      expect(head).to include '<meta property="og:description" content="Sarambanga"/>'
+      expect(head).to include '<meta name="description" content="Sarambanga"/>'
+    end
+  end
   context 'canonical' do
     it 'has not canonical' do
       head = display_meta_tags base_url: 'https://www.kleer.la', charset: ''
