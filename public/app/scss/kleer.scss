@@ -64,6 +64,14 @@ img {
   top: 70px;
 }
 
+.title {
+  &__company {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+  }
+}
+
 .carousel-inner .text-center {
   display: inline-block;
   text-align: center;
