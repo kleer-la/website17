@@ -4,7 +4,7 @@ require './lib/metatags'
 
 REDIRECT = {
   '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'
-}
+}.freeze
 
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
@@ -69,7 +69,7 @@ get '/cursos/:event_type_id_with_name' do
   unless redirect_to.nil?
     uri = "/cursos/#{redirect_to}"
 
-    return redirect uri , 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
+    return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
   end
 
   @active_tab_entrenamos = 'active'

@@ -3,14 +3,16 @@
 
 <head>
   <%= erb :_gtag %>
-  <%= display_meta_tags site: 'Kleer', title: @page_title, base_url: 'https://www.kleer.la' %>
+  <%= 
+  (meta_tags! title: @page_title) if defined?(@page_title) && @page_title.to_s != ''
+  (meta_tags! description: @meta_description) if defined?(@meta_description) && @meta_description.to_s != ''
+  display_meta_tags site: 'Kleer', base_url: 'https://www.kleer.la' 
+  %>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Kleer - https://www.kleer.la">
-  <meta name="description" content="<%=@meta_description%>">
   <meta property="og:url" content="https://www.kleer.la" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="<%=@meta_description%>" />
   <meta property="og:image" content="https://www.kleer.la/img/logos/kleer.png" />
   <meta property="og:image:url" content="https://www.kleer.la/img/logos/kleer.png" />
   <meta property="og:image:secure_url" content="https://www.kleer.la/img/logos/kleer.png" />

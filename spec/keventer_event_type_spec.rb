@@ -156,7 +156,7 @@ describe KeventerEventType do
         @keventtype.load build_and_parse('<canonical-id type="integer" nil="true"/><canonical-slug>247-agile-coach</canonical-slug>')
         expect(@keventtype.canonical_url).to eq 'cursos/247-agile-coach'
       end
-  
+
       it 'have canonical' do
         @keventtype.load build_and_parse('<canonical-id type="integer">47</canonical-id><canonical-slug>47-taller-del-tiempo</canonical-slug>')
         expect(@keventtype.canonical_url).to eq 'cursos/47-taller-del-tiempo'

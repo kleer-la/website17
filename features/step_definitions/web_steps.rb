@@ -87,7 +87,7 @@ Then(/^the page title should be "(.*?)"$/) do |title_text|
 end
 
 Then(/^the page title should includes "(.*?)"$/) do |title_text|
-  expect(page).to have_title /#{title_text}/
+  expect(page).to have_title(/#{title_text}/)
 end
 
 Given(/^I visit the "(.*?)" page$/) do |page_url|
