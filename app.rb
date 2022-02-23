@@ -105,6 +105,13 @@ get '/agilidad-organizacional' do
   erb :coaching
 end
 
+get '/agilidad-organizacional/mejora-continua' do
+  @active_tab_coaching = 'active'
+  # @page_title = 'Te acompañamos hacia la agilidad organizacional'
+  # @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño,  metodologías e innovación para equipos colaborativos.'
+  erb :mejora_continua
+end
+
 get '/e-books' do
   redirect '/publicamos', 301 # permanent redirect
 end
@@ -266,9 +273,8 @@ get '/aca-37yjeueh' do
   erb :aca_30dto, layout: false
 end
 
-get '/7-trucos-agile-coaching' do
-  # erb :pac_7trucos_agile_coaching, :layout => false
-  redirect 'https://agilecoachingpath.com/7-trucos', 301 # permanent redirect
+get '/retro-cono-sur' do
+  erb :retro_cono_sur
 end
 
 # JSON ====================
