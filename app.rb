@@ -107,8 +107,9 @@ end
 
 get '/agilidad-organizacional/mejora-continua' do
   @active_tab_coaching = 'active'
-  # @page_title = 'Te acompañamos hacia la agilidad organizacional'
-  # @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño,  metodologías e innovación para equipos colaborativos.'
+  meta_tags! title: 'Generamos el hábito de mejora continua - Kaizen'
+  meta_tags! description: 'Entrenamos, hacemos mentoría y generamos un proceso sostenible de mejora continua o kaizen'
+
   erb :mejora_continua
 end
 
