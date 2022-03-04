@@ -39,13 +39,11 @@
 						      <div class="panel-body">
 						        	<%= event_type.elevator_pitch %>
 								<br/>
-								<a href="/<%=session[:locale]%>/categoria/<%=@category.codename%>/cursos/<%= event_type.uri_path%>"><%=t("category.see_more")%> >></a>
+								<a href="/<%=session[:locale]%>/categoria/<%=@category.codename%>/<%= event_type.uri_path%>"><%=t("category.see_more")%> >></a>
 						      </div>
 						    </div>
 						  </div>
-					
 					<% end %>
-					
 				<% end %>
 			</div>
 			&nbsp;<br/>

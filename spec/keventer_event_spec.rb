@@ -351,7 +351,7 @@ describe KeventerEvent do
     end
   end
 
-  it 'should form the uri path automatically' do
+  it 'should form the uri path automatically' do #TODO deprecated
     @kevent.id = 44
     an_event_type = KeventerEventType.new
     an_event_type.name = 'Workshop de Retrospectivas'

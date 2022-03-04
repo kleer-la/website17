@@ -23,7 +23,7 @@ class KeventerEventType
   end
 
   def uri_path
-    "#{@id}-#{@name.downcase.gsub(/ /, '-')}"
+    "cursos/#{@slug}"
   end
 
   def canonical_url
@@ -42,7 +42,7 @@ class KeventerEventType
 
     %i[name subtitle description learnings takeaways
        goal recipients program faq
-       external_site_url elevator_pitch canonical_slug].each do |f|
+       external_site_url elevator_pitch slug canonical_slug].each do |f|
       load_string(xml_keventer_event, f)
     end
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)

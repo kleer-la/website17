@@ -84,7 +84,7 @@ class KeventerEvent
     end
   end
 
-  def uri_path
+  def uri_path #TODO depecated
     uri_path_to_return = @id.to_s
     uri_event_type_name = @event_type.name.downcase
     uri_path_to_return += "-#{uri_event_type_name.gsub(/ /, '-')}"

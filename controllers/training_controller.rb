@@ -58,7 +58,7 @@ get '/entrenamos/evento/:event_id_with_name' do
     flash.now[:error] = course_not_found_error
     redirect to('/entrenamos')
   else
-    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}"
+    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" #TODO use slug
 
     redirect uri # , 301 # permanent redirect
   end
