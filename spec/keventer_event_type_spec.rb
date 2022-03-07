@@ -151,7 +151,7 @@ describe KeventerEventType do
 
       expect(@keventtype.categories).to eq [[2, 'organizaciones']]
     end
-    context 'canonical' do
+    context 'slug & canonical' do
       it 'dont have canonical' do
         @keventtype.load build_and_parse('<canonical-id type="integer" nil="true"/><canonical-slug>247-agile-coach</canonical-slug>')
         expect(@keventtype.canonical_url).to eq 'cursos/247-agile-coach'
@@ -160,6 +160,10 @@ describe KeventerEventType do
       it 'have canonical' do
         @keventtype.load build_and_parse('<canonical-id type="integer">47</canonical-id><canonical-slug>47-taller-del-tiempo</canonical-slug>')
         expect(@keventtype.canonical_url).to eq 'cursos/47-taller-del-tiempo'
+      end
+      it 'have slug' do
+        @keventtype.load build_and_parse('<slug>47-taller-del-tiempo</slug>')
+        expect(@keventtype.slug).to eq '47-taller-del-tiempo'
       end
     end
   end

@@ -4,7 +4,7 @@ class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faq,
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
-                :external_site_url, :canonical_slug,
+                :external_site_url, :slug, :canonical_slug,
                 :categories
 
   def initialize

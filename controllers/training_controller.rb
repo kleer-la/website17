@@ -145,3 +145,29 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
     erb :event_remote_registration, layout: :layout_empty
   end
 end
+
+# JSON ====================
+
+get '/entrenamos/eventos/proximos' do
+  content_type :json
+  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
+                                  'cursos')
+end
+
+get '/entrenamos/eventos/proximos/:amount' do
+  content_type :json
+  amount = params[:amount]
+  amount = amount.to_i unless amount.nil?
+  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
+                                  'cursos', I18n, session[:locale], amount, false)
+end
+
+get '/entrenamos/eventos/pais/:country_iso_code' do
+  content_type :json
+  country_iso_code = params[:country_iso_code]
+  country_iso_code = 'todos' unless valid_country_iso_code?(country_iso_code, 'cursos')
+  session[:filter_country] = country_iso_code
+  DTHelper.to_dt_event_array_json(
+    KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
+  )
+end
