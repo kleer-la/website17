@@ -82,10 +82,11 @@ get '/cursos/:event_type_id_with_name' do
     erb :error_404_to_calendar
   else
     # SEO (title, meta)
-    @page_title = @event_type.name
-    @meta_description = @event_type.elevator_pitch
-    # problema con url certified-scrum-master-(csm)
-    # MetaTags::meta_tags! canonical: @event_type.canonical_url
+    @page_title = '' #TODO remove when migration completed
+    meta_tags! title: @event_type.name
+    meta_tags! description: @event_type.elevator_pitch
+    meta_tags! canonical: @event_type.canonical_url
+
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
