@@ -82,7 +82,7 @@ get '/cursos/:event_type_id_with_name' do
     erb :error_404_to_calendar
   else
     # SEO (title, meta)
-    @page_title = "Kleer - #{@event_type.name}"
+    @page_title = @event_type.name
     @meta_description = @event_type.elevator_pitch
     # problema con url certified-scrum-master-(csm)
     # MetaTags::meta_tags! canonical: @event_type.canonical_url
