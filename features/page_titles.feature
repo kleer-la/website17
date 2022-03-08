@@ -30,5 +30,4 @@ Feature: StaticPage Titles
 		Given I visit the "high-performance" categoria page
 		Then the page title should includes "^Kleer"
 		And the page title includes "Kleer" just once
-		And the page title should includes "Agile Coaching, Consulting & Training"
 		And the page title should includes "High Performance"

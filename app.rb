@@ -213,7 +213,7 @@ get '/categoria/:category_codename' do
   if @category.nil?
     status 404
   else
-    @page_title += " | #{@category.name}"
+    @page_title = @category.name
     @event_types = @category.event_types.sort_by(&:name)
 
     erb :category
