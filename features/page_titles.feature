@@ -1,4 +1,4 @@
-Feature: Page Titles
+Feature: StaticPage Titles
 
 	Scenario: Home Page Title
 		Given I visit the home page
@@ -29,5 +29,5 @@ Feature: Page Titles
 	Scenario: Landing de Categoria
 		Given I visit the "high-performance" categoria page
 		Then the page title should includes "^Kleer"
-		And the page title should includes "Agile Coaching, Consulting & Training"
+		And the page title includes "Kleer" just once
 		And the page title should includes "High Performance"

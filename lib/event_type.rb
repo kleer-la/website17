@@ -13,7 +13,7 @@ class EventType
                 :name, :subtitle, :description, :learnings, :takeaways,
                 :goal, :recipients, :program, :faq,
                 :external_site_url, :elevator_pitch, :include_in_catalog,
-                :categories
+                :categories, :slug, :canonical_slug
 
   def initialize(provider)
     @provider = provider
@@ -25,7 +25,7 @@ class EventType
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
 
     %i[name subtitle description learnings takeaways
-       goal recipients program faq
+       goal recipients program faq slug canonical_slug
        external_site_url elevator_pitch include_in_catalog].each do |f|
       load_string(xml_doc, f)
     end

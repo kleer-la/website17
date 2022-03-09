@@ -16,4 +16,21 @@ class Category
     @description = xml.find_first("description#{suffix}").content
     @order = xml.find_first('order').content.to_i
   end
+
+  # load catalog data: category/event_type
+  # from a parsed xml
+  def self.categories(loaded_categories, lang = 'es')
+    categories = []
+    loaded_categories.each do |loaded_category|
+      category = Category.new loaded_category, lang
+
+      category.event_types = load_event_types loaded_category
+
+      categories << category
+    end
+
+    categories.sort! { |p, q| p.order <=> q.order }
+
+    categories
+  end
 end

@@ -29,3 +29,9 @@ Feature: Event Type Details
 		When I visit the plain event type page
 		Then SEO meta name "description" should be "Este taller práctico de un día provee a los asistentes..." 
 		Then SEO meta property "og:description" should be "Este taller práctico de un día provee a los asistentes..." 
+
+	Scenario: Event type detail Title
+		Given theres an event type
+		When I visit the plain event type page
+		Then the page title should includes "^Kleer"
+		And the page title includes "Kleer" just once

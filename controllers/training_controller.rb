@@ -58,7 +58,7 @@ get '/entrenamos/evento/:event_id_with_name' do
     flash.now[:error] = course_not_found_error
     redirect to('/entrenamos')
   else
-    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}"
+    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" #TODO use slug
 
     redirect uri # , 301 # permanent redirect
   end
@@ -82,10 +82,11 @@ get '/cursos/:event_type_id_with_name' do
     erb :error_404_to_calendar
   else
     # SEO (title, meta)
-    @page_title = "Kleer - #{@event_type.name}"
-    @meta_description = @event_type.elevator_pitch
-    # problema con url certified-scrum-master-(csm)
-    # MetaTags::meta_tags! canonical: @event_type.canonical_url
+    @page_title = '' #TODO remove when migration completed
+    meta_tags! title: @event_type.name
+    meta_tags! description: @event_type.elevator_pitch
+    meta_tags! canonical: @event_type.canonical_url
+
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
@@ -144,4 +145,30 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
   else
     erb :event_remote_registration, layout: :layout_empty
   end
+end
+
+# JSON ====================
+
+get '/entrenamos/eventos/proximos' do
+  content_type :json
+  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
+                                  'cursos')
+end
+
+get '/entrenamos/eventos/proximos/:amount' do
+  content_type :json
+  amount = params[:amount]
+  amount = amount.to_i unless amount.nil?
+  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
+                                  'cursos', I18n, session[:locale], amount, false)
+end
+
+get '/entrenamos/eventos/pais/:country_iso_code' do
+  content_type :json
+  country_iso_code = params[:country_iso_code]
+  country_iso_code = 'todos' unless valid_country_iso_code?(country_iso_code, 'cursos')
+  session[:filter_country] = country_iso_code
+  DTHelper.to_dt_event_array_json(
+    KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
+  )
 end

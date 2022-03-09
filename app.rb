@@ -107,8 +107,9 @@ end
 
 get '/agilidad-organizacional/mejora-continua' do
   @active_tab_coaching = 'active'
-  # @page_title = 'Te acompañamos hacia la agilidad organizacional'
-  # @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño,  metodologías e innovación para equipos colaborativos.'
+  meta_tags! title: 'Generamos el hábito de mejora continua - Kaizen'
+  meta_tags! description: 'Entrenamos, hacemos mentoría y generamos un proceso sostenible de mejora continua o kaizen'
+
   erb :mejora_continua
 end
 
@@ -212,7 +213,7 @@ get '/categoria/:category_codename' do
   if @category.nil?
     status 404
   else
-    @page_title += " | #{@category.name}"
+    @page_title = @category.name
     @event_types = @category.event_types.sort_by(&:name)
 
     erb :category
@@ -275,32 +276,6 @@ end
 
 get '/retro-cono-sur' do
   erb :retro_cono_sur
-end
-
-# JSON ====================
-
-get '/entrenamos/eventos/proximos' do
-  content_type :json
-  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
-                                  'cursos')
-end
-
-get '/entrenamos/eventos/proximos/:amount' do
-  content_type :json
-  amount = params[:amount]
-  amount = amount.to_i unless amount.nil?
-  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
-                                  'cursos', I18n, session[:locale], amount, false)
-end
-
-get '/entrenamos/eventos/pais/:country_iso_code' do
-  content_type :json
-  country_iso_code = params[:country_iso_code]
-  country_iso_code = 'todos' unless valid_country_iso_code?(country_iso_code, 'cursos')
-  session[:filter_country] = country_iso_code
-  DTHelper.to_dt_event_array_json(
-    KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
-  )
 end
 
 ['/preguntas-frecuentes/facturacion-pagos-internacionales',

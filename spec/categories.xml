@@ -15,32 +15,37 @@
     <tagline-en>tagline EN</tagline-en>
     <event-types type="array">
       <event-type>
-      <average-rating type="decimal">4.45</average-rating>
-    <net-promoter-score type="integer">97</net-promoter-score>
-    <surveyed-count type="integer">94</surveyed-count>
-    <promoter-count type="integer">92</promoter-count>
-        <created-at type="datetime">2013-07-10T20:48:22Z</created-at>
+        <id type="integer">1</id>
+        <name>Tipo de Evento de Prueba</name>
         <description>Una descripción</description>
         <duration type="integer">8</duration>
-        <faq></faq>
-        <goal>Un objetivo</goal>
-        <id type="integer">1</id>
+        <recipients>Programadores, Líderes técnicos, Devops, Release Managers.</recipients>
+        <program> </program>
+        <created-at type="dateTime">2013-07-05T15:43:02Z</created-at>
+        <updated-at type="dateTime">2013-07-05T15:43:02Z</updated-at>
+        <goal>Este webinar tiene como objetivo presentar algunas técnicas de versionado de código para trabajar en un esquema de entrega contínua (continuous delivery).</goal>
+        <duration type="integer">40</duration>
+        <faq/>
+        <materials/>
         <include-in-catalog type="boolean">true</include-in-catalog>
-        <materials></materials>
-        <name>Tipo de Evento de Prueba</name>
-        <program>El programa</program>
-        <recipients>Un destinatario</recipients>
-		<elevator-pitch>Un elevator</elevator-pitch>
-        <updated-at type="datetime">2013-07-10T20:54:21Z</updated-at>
-	  <learnings></learnings>
-	  <takeaways></takeaways>
-      <average-rating type="float">4.38</average-rating>
-<net-promoter-score type="float">0.96</net-promoter-score>
-<participant-count type="integer">125</participant-count>
-<promoter-count type="integer">47</promoter-count>
-<nps-opinions-count type="integer">2</nps-opinions-count>
-<rating-opinions-count type="integer">2</rating-opinions-count>
-</event-type>
+        <elevator-pitch nil="true"/>
+        <learnings nil="true"/>
+        <takeaways nil="true"/>
+        <tag-name nil="true"/>
+        <csd-eligible type="boolean" nil="true"/>
+        <average-rating type="decimal" nil="true"/>
+        <net-promoter-score type="integer" nil="true"/>
+        <surveyed-count type="integer" nil="true"/>
+        <promoter-count type="integer" nil="true"/>
+        <subtitle nil="true"/>
+        <cancellation-policy nil="true"/>
+        <is-kleer-certification type="boolean">false</is-kleer-certification>
+        <kleer-cert-seal-image nil="true"/>
+        <external-site-url nil="true"/>
+        <canonical-id type="integer" nil="true"/>
+        <slug>1-webinar-tecnicas-de-versionado-para-entrega-continua</slug>
+        <canonical-slug>1-webinar-tecnicas-de-versionado-para-entrega-continua</canonical-slug>
+      </event-type>
     </event-types>
   </category>
   <category>
@@ -55,10 +60,6 @@
     <visible type="boolean">true</visible>
     <event-types type="array">
       <event-type>
-      <average-rating type="decimal">4.45</average-rating>
-    <net-promoter-score type="integer">97</net-promoter-score>
-    <surveyed-count type="integer">94</surveyed-count>
-    <promoter-count type="integer">92</promoter-count>
         <created-at type="datetime">2013-07-10T20:53:56Z</created-at>
         <description>esta es la descripción</description>
         <duration type="integer">1</duration>
@@ -73,15 +74,9 @@
         <recipients>esto es a quien está destinado</recipients>
         <updated-at type="datetime">2013-07-10T20:53:56Z</updated-at>
         <elevator-pitch>Un elevator</elevator-pitch>
-	  <learnings></learnings>
-	  <takeaways></takeaways>
-      <average-rating type="float">4.38</average-rating>
-<net-promoter-score type="float">0.96</net-promoter-score>
-<participant-count type="integer">125</participant-count>
-<promoter-count type="integer">47</promoter-count>
-<nps-opinions-count type="integer">2</nps-opinions-count>
-<rating-opinions-count type="integer">2</rating-opinions-count>
-</event-type>
+        <learnings></learnings>
+        <takeaways></takeaways>
+      </event-type>
     </event-types>
   </category>
   <category>

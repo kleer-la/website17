@@ -86,6 +86,21 @@ class KeventerReader
     all.select { |category| category.codename == code_name }.first
   end
 
+  #TODO remove category logic from reader
+  # def categories(lang = 'es')
+  #   begin
+  #     puts @connector.categories_xml_url
+  #     categories = Category.categories(
+  #       parse(@connector.categories_xml_url, '/categories/category'), 
+  #       lang
+  #     )
+  #   rescue StandardError => e
+  #     puts "Error al cargar las categorías: #{e}"
+  #     categories = []
+  #   end
+  #   categories
+  # end
+
   def categories(lang = 'es')
     categories = []
 
@@ -95,8 +110,7 @@ class KeventerReader
       loaded_categories.each do |loaded_category|
         category = Category.new loaded_category, lang
 
-        category.event_types = load_event_types loaded_category
-
+        category.event_types = load_event_types(loaded_category)
         categories << category
       end
 
@@ -113,9 +127,8 @@ class KeventerReader
 
   def load_event_types(event_types_xml_node)
     event_types = []
-    event_types_xml_node&.find('event-types/event-type ')&.each do |event_type_node|
+    event_types_xml_node&.find('event-types/event-type')&.each do |event_type_node|
       event_type = create_event_type(event_type_node)
-
       event_types << event_type if event_type.include_in_catalog
     end
     event_types

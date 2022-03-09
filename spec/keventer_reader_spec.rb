@@ -286,32 +286,33 @@ describe KeventerReader do
     end
 
     it 'should return 3 categories' do
-      @kevr.categories.count.should == 3
+      expect(@kevr.categories.count).to eq 3
     end
 
     it "should return the category 'high-performance' by id" do
-      @high_performance.name.should == 'High Performance'
+      expect(@high_performance.name).to eq 'High Performance'
     end
 
     it 'should return nil for an unknown category' do
-      @kevr.category('chiste-bueno-peix').should.nil?
+      expect(@kevr.category('chiste-bueno-peix')).to be_nil
     end
 
     it "should get tagline for the category 'high-performance'" do
-      @high_performance.tagline.should == 'Personas, Equipos y Organizaciones Eficientes'
+      expect(@high_performance.tagline).to eq 'Personas, Equipos y Organizaciones Eficientes'
     end
 
     it "should get the description for the category 'high-performance'" do
-      @high_performance.description.should == 'una descripción...'
+      expect(@high_performance.description).to eq 'una descripción...'
     end
 
     it "should get one event type for the category 'high-performance'" do
-      @high_performance.event_types.count.should == 1
+      expect(@high_performance.event_types.count).to eq 1
     end
 
     it "should get Tipo de Evento de Prueba for the category 'high-performance'" do
       expect(@high_performance.event_types[0].name).to eq 'Tipo de Evento de Prueba'
       expect(@high_performance.event_types[0].description).to eq 'Una descripción'
+      expect(@high_performance.event_types[0].slug).to eq '1-webinar-tecnicas-de-versionado-para-entrega-continua'
     end
   end
 
