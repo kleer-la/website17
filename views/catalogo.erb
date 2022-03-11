@@ -6,45 +6,60 @@
 	</div>
 
 </div>
-
-	<div class="vSpace"></div>
-	<div class="container">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					<h3 class="mb-30 title-flex"><%=t("catalog.description")%> 
-					<a href="/recursos/primeros_pasos">
-					<img src="/img/boton_AB.png" alt="¿Eres principiante en Agile?"></a></h3>
-				</div>
-			</div>
-			<div class="row">
-				<% @categories.each do |category| %>
-					<div class="col-md-3">
-						<div class="well categoria categoria-<%= category.codename %>">
-							<h3><%= category.name %></h3>
-							<div class="list-group">
-								<% category.event_types.sort_by { |et| et.name}.each do |event_type| %>
-								  <a href="/<%=session[:locale]%>/<%= event_type.uri_path%>" class="list-group-item">
-								    <h3 class="list-group-item-heading"><%=event_type.name%></h3>
-								    <p class="list-group-item-text">
-											<%if event_type.subtitle.to_s!=""%>
-												<%=event_type.subtitle%> <br/>
-											<% end %>
-											<div class="row">
-												<div class="col-md-8" id="duration-<%= event_type.id%>">
-													<%= (event_type.duration.to_s + ' horas') if event_type.duration>0%>
-												</div>
-											</div>
-								    </p>
-								  </a>
-								<% end %>
-							</div>
-						</div>
-					</div>
-				<% end %>
-			</div>
-		</div>
-	</div>
+<div class="container">
+  <div class="container-fluid">
+    <%flash.each do |type, msg| %>
+      <div class="row">
+        <br>
+        <div class="col-md-12 alert alert-danger">
+          <%= 'error' + msg%>
+        </div>
+      </div>
+    <%end %>
+    <%if @error.to_s != ''%>
+      <div class="row">
+        <br>
+        <div class="col-md-12 alert alert-danger">
+          <%= @error%>
+        </div>
+      </div>
+    <%@error = ''
+    end%>
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="mb-30 title-flex"><%=t("catalog.description")%> 
+        <a href="/recursos/primeros_pasos">
+        <img src="/img/boton_AB.png" alt="¿Eres principiante en Agile?"></a></h3>
+      </div>
+    </div>
+    <div class="row">
+      <% @categories.each do |category| %>
+        <div class="col-md-3">
+          <div class="well categoria categoria-<%= category.codename %>">
+            <h3><%= category.name %></h3>
+            <div class="list-group">
+              <% category.event_types.sort_by { |et| et.name}.each do |event_type| %>
+                <a href="/<%=session[:locale]%>/<%= event_type.uri_path%>" class="list-group-item">
+                  <h3 class="list-group-item-heading"><%=event_type.name%></h3>
+                  <p class="list-group-item-text">
+                    <%if event_type.subtitle.to_s!=""%>
+                      <%=event_type.subtitle%> <br/>
+                    <% end %>
+                    <div class="row">
+                      <div class="col-md-8" id="duration-<%= event_type.id%>">
+                        <%= (event_type.duration.to_s + ' horas') if event_type.duration>0%>
+                      </div>
+                    </div>
+                  </p>
+                </a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <div class="container-fluid fondo-pano pano-9"></div>
 

@@ -43,6 +43,7 @@ class DTHelper
     result << "<div class=\"klabel-date\" style=\"width:#{post_it_width}\">#{date_line}</div>"
 
     # Nueva versión yendo al tipo de evento
+    
     href = "href=\"/#{locale}/#{event.event_type.uri_path}\""
     href = "href=#{event.event_type.external_site_url}" unless event.event_type.external_site_url.to_s.empty?
     line = '<a '

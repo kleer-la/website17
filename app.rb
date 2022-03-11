@@ -318,12 +318,6 @@ def get_404_error_text_for_course(course_name)
  calendario para ver los detalles de dicho curso"
 end
 
-def course_not_found_error
-  'El curso que estás buscando no fue encontrado. Es probable que ya haya ocurrido o haya sido cancelado.<br/>
-Te invitamos a visitar nuestro calendario para ver los cursos vigentes y probables nuevas fechas para el curso
- que estás buscando.'
-end
-
 def valid_id?(event_id_to_test)
   !event_id_to_test.match(/^[0-9]+$/).nil?
 end

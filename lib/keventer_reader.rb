@@ -151,7 +151,6 @@ class KeventerReader
     # esto es feo, tenemos que resolver de otra manera la situacion
     # en la cual el usuario no encuentra cursos.
     return events_by_country if country_iso_code == 'otro'
-
     load_remote_events(event_type_xml_url).each do |event|
       next unless (country_iso_code == 'todos') ||
                   (event.country_code.downcase == 'ol') ||

@@ -6,6 +6,12 @@ REDIRECT = {
   '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'
 }.freeze
 
+
+def course_not_found_error
+  'El curso que indicas no fue encontrado.<br/>
+Revisa los cursos vigentes y nuevas fechas para cursoa similares al que estás buscando.'
+end
+
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
   KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
@@ -45,6 +51,10 @@ get '/catalogo' do
   @page_title = 'Capacitación empresarial en agilidad organizacional'
   @meta_description = 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
+  if defined?(@@error)
+    @error = @@error #TODO por qué no anda flash!!
+    @@error = ''
+  end
   erb :catalogo
 end
 
@@ -55,7 +65,8 @@ get '/entrenamos/evento/:event_id_with_name' do
   @event = KeventerReader.instance.event(event_id, true) if valid_id?(event_id)
 
   if @event.nil?
-    flash.now[:error] = course_not_found_error
+    @@error = course_not_found_error
+    flash.now[:alert] = course_not_found_error
     redirect to('/entrenamos')
   else
     uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" #TODO use slug
@@ -63,21 +74,32 @@ get '/entrenamos/evento/:event_id_with_name' do
     redirect uri # , 301 # permanent redirect
   end
 end
+
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
   unless redirect_to.nil?
     uri = "/cursos/#{redirect_to}"
-
     return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
+  end
+  
+  @event_type = event_type_from_qstring params[:event_type_id_with_name]
+  if @event_type.nil? || @event_type.deleted
+    if @event_type.nil? || @event_type.canonical_url != @event_type.slug
+      @@error = course_not_found_error
+      flash.now[:alert] = course_not_found_error
+      return redirect(to('/catalogo'))
+    else      
+      redirect uri @event_type.canonical_url, 301 # permanent redirect
+    end
   end
 
   @active_tab_entrenamos = 'active'
 
-  @event_type = event_type_from_qstring params[:event_type_id_with_name]
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
   if @event_type.nil?
+    @@error = course_not_found_error
     flash.now[:error] = course_not_found_error
     erb :error_404_to_calendar
   else

@@ -351,14 +351,14 @@ describe KeventerEvent do
     end
   end
 
-  it 'should form the uri path automatically' do #TODO deprecated
-    @kevent.id = 44
-    an_event_type = KeventerEventType.new
-    an_event_type.name = 'Workshop de Retrospectivas'
-    @kevent.event_type = an_event_type
-    @kevent.city = 'Buenos Aires'
-    @kevent.uri_path.should == '44-workshop-de-retrospectivas-buenos-aires'
-  end
+  # it 'should form the uri path automatically' do #TODO deprecated
+  #   @kevent.id = 44
+  #   an_event_type = KeventerEventType.new
+  #   an_event_type.name = 'Workshop de Retrospectivas'
+  #   @kevent.event_type = an_event_type
+  #   @kevent.city = 'Buenos Aires'
+  #   @kevent.uri_path.should == '44-workshop-de-retrospectivas-buenos-aires'
+  # end
 
   it 'should form the friendly title automatically' do
     @kevent.id = 44
