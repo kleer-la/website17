@@ -75,6 +75,19 @@ get '/entrenamos/evento/:event_id_with_name' do
   end
 end
 
+
+def should_redirect(event_type)
+  if @event_type.nil? || @event_type.deleted
+    if @event_type.nil? || @event_type.canonical_slug == @event_type.slug
+      @@error = course_not_found_error
+      flash.now[:alert] = course_not_found_error
+      redirect(to('/catalogo'))
+    else      
+      redirect uri @event_type.canonical_url, 301 # permanent redirect
+    end
+  end
+end
+
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
@@ -84,15 +97,8 @@ get '/cursos/:event_type_id_with_name' do
   end
   
   @event_type = event_type_from_qstring params[:event_type_id_with_name]
-  if @event_type.nil? || @event_type.deleted
-    if @event_type.nil? || @event_type.canonical_url != @event_type.slug
-      @@error = course_not_found_error
-      flash.now[:alert] = course_not_found_error
-      return redirect(to('/catalogo'))
-    else      
-      redirect uri @event_type.canonical_url, 301 # permanent redirect
-    end
-  end
+  redirecting = should_redirect(@event_type)
+  (return redirecting) unless redirecting.nil?
 
   @active_tab_entrenamos = 'active'
 
