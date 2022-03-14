@@ -4,7 +4,7 @@ class KeventerEventType
   attr_accessor :id, :name, :subtitle, :goal, :description, :recipients, :program, :duration, :faq,
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
-                :external_site_url, :slug, :canonical_slug,
+                :external_site_url, :slug, :canonical_slug, :deleted, :noindex,
                 :categories
 
   def initialize
@@ -27,7 +27,7 @@ class KeventerEventType
   end
 
   def canonical_url
-    "cursos/#{@canonical_slug}"
+    "cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
   def load_string(xml, field)
@@ -46,6 +46,8 @@ class KeventerEventType
       load_string(xml_keventer_event, f)
     end
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)
+    @deleted = to_boolean(xml_keventer_event.find_first('deleted')&.content)
+    @noindex = to_boolean(xml_keventer_event.find_first('noindex')&.content)
 
     # @surveyed_count = xml_keventer_event.find_first('surveyed-count').content.to_i
 

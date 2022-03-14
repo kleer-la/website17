@@ -165,6 +165,14 @@ describe KeventerEventType do
         @keventtype.load build_and_parse('<slug>47-taller-del-tiempo</slug>')
         expect(@keventtype.slug).to eq '47-taller-del-tiempo'
       end
+      it 'have deleted' do
+        @keventtype.load build_and_parse('<deleted type="boolean">true</deleted>')
+        expect(@keventtype.deleted).to eq true
+      end
+      it 'have noindex' do
+        @keventtype.load build_and_parse('<noindex type="boolean">true</noindex>')
+        expect(@keventtype.noindex).to eq true
+      end
     end
   end
 end

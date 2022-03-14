@@ -10,20 +10,20 @@ describe DTHelper do
     I18n.enforce_available_locales = true
     I18n.load_path += Dir[File.join(File.dirname(__FILE__), '../locales', '*.yml').to_s]
 
-    @some_events = []
     an_event = KeventerEvent.new
     an_event.event_type = KeventerEventType.new
 
     an_event.date = Date.parse('2012-12-04')
     an_event.id = 14
     an_event.event_type.name = 'Análisis, Estimación y Planificación con Scrum (Día 2 - CSD Track)'
+    an_event.event_type.slug = '14-analisis-y-estimacion'
     an_event.country = 'Argentina'
     an_event.country_code = 'AR'
     an_event.city = 'Buenos Aires'
     an_event.is_sold_out = true
     an_event.registration_link = 'https://eventioz.com.ar/retrospectivas-9-ene-2012/registrations/new'
 
-    @some_events << an_event
+    @some_events = [an_event]
   end
 
   it 'should return a certain string for a sold out event' do
@@ -51,5 +51,10 @@ describe DTHelper do
   it 'should add a title (from event type subtitle) to the event link' do
     @some_events[0].event_type.subtitle = 'Some subtitle'
     expect(DTHelper.to_dt_event_array_json(@some_events)).to include('title=\"Some subtitle\"')
+  end
+
+  it 'url' do
+    @some_events[0].registration_link = ''
+    expect(DTHelper.to_dt_event_array_json(@some_events)).to include('href=\"/es/cursos/14-analisis')
   end
 end

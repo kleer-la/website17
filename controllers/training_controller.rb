@@ -6,6 +6,11 @@ REDIRECT = {
   '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'
 }.freeze
 
+def course_not_found_error
+  'El curso que indicas no fue encontrado.<br/>
+Revisa los cursos vigentes y nuevas fechas para cursoa similares al que estás buscando.'
+end
+
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
   KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
@@ -45,6 +50,10 @@ get '/catalogo' do
   @page_title = 'Capacitación empresarial en agilidad organizacional'
   @meta_description = 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
+  if defined?(@@error)
+    @error = @@error # TODO: por qué no anda flash!!
+    @@error = ''
+  end
   erb :catalogo
 end
 
@@ -55,34 +64,57 @@ get '/entrenamos/evento/:event_id_with_name' do
   @event = KeventerReader.instance.event(event_id, true) if valid_id?(event_id)
 
   if @event.nil?
-    flash.now[:error] = course_not_found_error
+    @@error = course_not_found_error
+    flash.now[:alert] = course_not_found_error
     redirect to('/entrenamos')
   else
-    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" #TODO use slug
+    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" # TODO: use slug
 
     redirect uri # , 301 # permanent redirect
   end
 end
+
+# Redirect
+#  To /catalogo when
+#  - event type not found
+#  - event type deleted and canonical is missing (replaced for slug)
+#  To canonical when
+#  - event type deleted and canonical is present
+def should_redirect(event_type)
+  if event_type.nil? || event_type.deleted
+    if event_type.nil? || event_type.canonical_slug == event_type.slug
+      @@error = course_not_found_error
+      flash.now[:alert] = course_not_found_error
+      redirect(to('/catalogo'))
+    else
+      redirect uri event_type.canonical_url, 301 # permanent redirect
+    end
+  end
+end
+
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
   unless redirect_to.nil?
     uri = "/cursos/#{redirect_to}"
-
     return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
   end
 
+  @event_type = event_type_from_qstring params[:event_type_id_with_name]
+  redirecting = should_redirect(@event_type)
+  (return redirecting) unless redirecting.nil?
+
   @active_tab_entrenamos = 'active'
 
-  @event_type = event_type_from_qstring params[:event_type_id_with_name]
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
   if @event_type.nil?
+    @@error = course_not_found_error
     flash.now[:error] = course_not_found_error
     erb :error_404_to_calendar
   else
     # SEO (title, meta)
-    @page_title = '' #TODO remove when migration completed
+    @page_title = '' # TODO: remove when migration completed
     meta_tags! title: @event_type.name
     meta_tags! description: @event_type.elevator_pitch
     meta_tags! canonical: @event_type.canonical_url

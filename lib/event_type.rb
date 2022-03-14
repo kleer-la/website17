@@ -13,6 +13,7 @@ class EventType
                 :name, :subtitle, :description, :learnings, :takeaways,
                 :goal, :recipients, :program, :faq,
                 :external_site_url, :elevator_pitch, :include_in_catalog,
+                :deleted, :noindex,
                 :categories, :slug, :canonical_slug
 
   def initialize(provider)

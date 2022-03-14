@@ -84,14 +84,14 @@ class KeventerEvent
     end
   end
 
-  def uri_path #TODO depecated
-    uri_path_to_return = @id.to_s
-    uri_event_type_name = @event_type.name.downcase
-    uri_path_to_return += "-#{uri_event_type_name.gsub(/ /, '-')}"
-    uri_city = @city.downcase
-    uri_path_to_return += "-#{uri_city.gsub(/ /, '-')}"
-    uri_path_to_return
-  end
+  # def uri_path #TODO depecated
+  #   uri_path_to_return = @id.to_s
+  #   uri_event_type_name = @event_type.name.downcase
+  #   uri_path_to_return += "-#{uri_event_type_name.gsub(/ /, '-')}"
+  #   uri_city = @city.downcase
+  #   uri_path_to_return += "-#{uri_city.gsub(/ /, '-')}"
+  #   uri_path_to_return
+  # end
 
   def friendly_title
     "#{@event_type.name} - #{@city}"
