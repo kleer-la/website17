@@ -86,12 +86,12 @@ class KeventerReader
     all.select { |category| category.codename == code_name }.first
   end
 
-  #TODO remove category logic from reader
+  # TODO: remove category logic from reader
   # def categories(lang = 'es')
   #   begin
   #     puts @connector.categories_xml_url
   #     categories = Category.categories(
-  #       parse(@connector.categories_xml_url, '/categories/category'), 
+  #       parse(@connector.categories_xml_url, '/categories/category'),
   #       lang
   #     )
   #   rescue StandardError => e
@@ -151,6 +151,7 @@ class KeventerReader
     # esto es feo, tenemos que resolver de otra manera la situacion
     # en la cual el usuario no encuentra cursos.
     return events_by_country if country_iso_code == 'otro'
+
     load_remote_events(event_type_xml_url).each do |event|
       next unless (country_iso_code == 'todos') ||
                   (event.country_code.downcase == 'ol') ||

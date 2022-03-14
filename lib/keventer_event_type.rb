@@ -27,7 +27,7 @@ class KeventerEventType
   end
 
   def canonical_url
-    "cursos/#{@canonical_slug}" if @canonical_slug.to_s != '' 
+    "cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
   def load_string(xml, field)

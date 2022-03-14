@@ -12,7 +12,7 @@ describe DTHelper do
 
     an_event = KeventerEvent.new
     an_event.event_type = KeventerEventType.new
-    
+
     an_event.date = Date.parse('2012-12-04')
     an_event.id = 14
     an_event.event_type.name = 'Análisis, Estimación y Planificación con Scrum (Día 2 - CSD Track)'
@@ -23,7 +23,7 @@ describe DTHelper do
     an_event.is_sold_out = true
     an_event.registration_link = 'https://eventioz.com.ar/retrospectivas-9-ene-2012/registrations/new'
 
-    @some_events = [ an_event ]
+    @some_events = [an_event]
   end
 
   it 'should return a certain string for a sold out event' do
