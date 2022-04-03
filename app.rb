@@ -71,6 +71,7 @@ before '/:locale/*' do
   else
     session[:locale] = 'es'
   end
+  I18n.locale = session[:locale]
 end
 
 get '/' do

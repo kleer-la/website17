@@ -7,8 +7,7 @@ REDIRECT = {
 }.freeze
 
 def course_not_found_error
-  'El curso que indicas no fue encontrado.<br/>
-Revisa los cursos vigentes y nuevas fechas para cursoa similares al que estás buscando.'
+  I18n.t('event.not_found')
 end
 
 def event_type_from_qstring(event_type_id_with_name)
