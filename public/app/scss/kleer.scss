@@ -1904,6 +1904,9 @@ h3.list-group-item-heading {
   .title-flex a {
     margin-top: 1.5em;
   }
+  .hidden-in-mobile {
+    display: none;
+  }
 }
 .btn-buy {
   display: block;
