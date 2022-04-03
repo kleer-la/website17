@@ -617,6 +617,7 @@ es:
         is_full:
             title: "<strong>Ouch!</strong> El cupo para este evento se encuentra completo."
             text: "Puedes contactarnos a <a href=\"mailto:entrenamos@kleer.la?subject=Nuevas Fechas: %{title}\">entrenamos@kleer.la</a> para conocer nuevas fechas."
+        not_found: "El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares."
     catalog:
         title: "Capacitación empresarial en Agilidad"
         description: "PODEMOS REALIZAR LOS CURSOS EN TU EMPRESA.<br/>NUESTRAS CERTIFICACIONES ESTÁN AVALADAS POR LA SCRUM ALLIANCE."
