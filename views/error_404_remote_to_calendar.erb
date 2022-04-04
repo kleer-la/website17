@@ -9,7 +9,7 @@
 				<br/>&nbsp;
 				<br/>&nbsp;
 				<br/>&nbsp;
-				<div class="alert alert-error"><%= @error %></div>
+				<div class="alert alert-error"><%= session[:error_msg] %> <% session[:error_msg] = nil%> </div>
 				&nbsp;<br/>
 				&nbsp;<br/>
 				<a class="btn btn-large btn-primary" href="/entrenamos">Ver Calendario de Cursos >></a><br/>

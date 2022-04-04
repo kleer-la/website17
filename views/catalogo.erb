@@ -16,14 +16,14 @@
         </div>
       </div>
     <%end %>
-    <%if @error.to_s != ''%>
+    <%if session[:error_msg].to_s != ''%>
       <div class="row">
         <br>
         <div class="col-md-12 alert alert-danger">
-          <%= @error%>
+          <%= session[:error_msg]%>
         </div>
       </div>
-    <%@error = ''
+    <% session[:error_msg] = nil
     end%>
     <div class="row">
       <div class="col-md-12">
