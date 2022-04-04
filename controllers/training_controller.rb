@@ -49,10 +49,7 @@ get '/catalogo' do
   @page_title = 'Capacitación empresarial en agilidad organizacional'
   @meta_description = 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
-  if defined?(@@error)
-    @error = @@error # TODO: por qué no anda flash!!
-    @@error = ''
-  end
+
   erb :catalogo
 end
 
@@ -63,9 +60,7 @@ get '/entrenamos/evento/:event_id_with_name' do
   @event = KeventerReader.instance.event(event_id, true) if valid_id?(event_id)
 
   if @event.nil?
-    @@error = course_not_found_error
-    flash.now[:alert] = course_not_found_error
-    redirect to('/entrenamos')
+    redirect_not_found_course
   else
     uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" # TODO: use slug
 
@@ -82,13 +77,17 @@ end
 def should_redirect(event_type)
   if event_type.nil? || event_type.deleted
     if event_type.nil? || event_type.canonical_slug == event_type.slug
-      @@error = course_not_found_error
-      flash.now[:alert] = course_not_found_error
-      redirect(to('/catalogo'))
+      redirect_not_found_course
     else
       redirect uri event_type.canonical_url, 301 # permanent redirect
     end
   end
+end
+
+def redirect_not_found_course
+  session[:error_msg] = course_not_found_error
+  flash.now[:alert] = course_not_found_error
+  redirect(to('/catalogo'))
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
@@ -108,9 +107,7 @@ get '/cursos/:event_type_id_with_name' do
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
   if @event_type.nil?
-    @@error = course_not_found_error
-    flash.now[:error] = course_not_found_error
-    erb :error_404_to_calendar
+    redirect_not_found_course
   else
     # SEO (title, meta)
     @page_title = '' # TODO: remove when migration completed
@@ -143,7 +140,7 @@ get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
   @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
 
   if @event.nil?
-    @error = course_not_found_error
+    session[:error_msg] = course_not_found_error
     erb :error_404_remote_to_calendar, layout: :layout_empty
   else
     erb :trainer_remote, layout: :layout_empty
@@ -157,7 +154,7 @@ get '/entrenamos/evento/:event_id_with_name/remote' do
   @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
 
   if @event.nil?
-    @error = course_not_found_error
+    session[:error_msg] = course_not_found_error
     erb :error_404_remote_to_calendar, layout: :layout_empty
   else
     erb :event_remote, layout: :layout_empty
@@ -171,7 +168,7 @@ get '/entrenamos/evento/:event_id_with_name/registration' do
   @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
 
   if @event.nil?
-    @error = course_not_found_error
+    session[:error_msg] = course_not_found_error
     erb :error_404_remote_to_calendar, layout: :layout_empty
   else
     erb :event_remote_registration, layout: :layout_empty
