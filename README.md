@@ -56,3 +56,19 @@ cwebp public/app/img/slide01.jpg -o public/app/img/slide01.webp
 https://web.dev/serve-images-webp/
 
 MetaTags inspirado en https://github.com/kpumuk/meta-tags
+
+Deploy Heroku sin pipeline
+```cli
+# una vez - ambiente test (qa2.kleer.la)
+heroku git:remote -a kleer-test
+git remote rename heroku heroku-test
+# cada deploy a test
+git push heroku-test develop:main
+```
+
+```cli
+# una vez - ambiente prod (www.kleer.la)
+heroku git:remote -a kleer
+# cada deploy a prod
+git push heroku master
+```
