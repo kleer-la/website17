@@ -70,5 +70,5 @@ git push heroku-test develop:main
 # una vez - ambiente prod (www.kleer.la)
 heroku git:remote -a kleer
 # cada deploy a prod
-git push heroku master
+git push heroku master:main
 ```
