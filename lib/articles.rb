@@ -15,7 +15,7 @@ class Article
     end
     uri = KeventerConnector.article_url(slug)
     api_resp = JsonAPI.new(uri)
-    raise :NotFound unless api_resp.ok?
+    raise StandardError.new('[info] Blog not found') unless api_resp.ok?
 
     Article.new(api_resp.doc)
   end

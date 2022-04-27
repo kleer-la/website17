@@ -8,7 +8,12 @@ end
 get '/blog-preview/:slug' do |slug|
   meta_tags! noindex: true, nofollow: true
 
-  blog_one Article.create_one_keventer(slug)
+  begin
+    blog_one Article.create_one_keventer(slug)
+  rescue StandardError => e
+    puts e
+    status 404
+  end
 end
 
 get '/blog-preview' do
