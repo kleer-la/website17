@@ -75,12 +75,12 @@ end
 #  To canonical when
 #  - event type deleted and canonical is present
 def should_redirect(event_type)
-  if event_type.nil? || event_type.deleted
-    if event_type.nil? || event_type.canonical_slug == event_type.slug
-      redirect_not_found_course
-    else
-      redirect uri event_type.canonical_url, 301 # permanent redirect
-    end
+  return unless event_type.nil? || event_type.deleted
+
+  if event_type.nil? || event_type.canonical_slug == event_type.slug
+    redirect_not_found_course
+  else
+    redirect uri event_type.canonical_url, 301 # permanent redirect
   end
 end
 
