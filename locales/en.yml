@@ -16,9 +16,13 @@ en:
         texts:
             loading: "loading..."
     mail_landing:
-        title: "CONSULTAR"
-        alt: "Consultanos para realizar este curso en tu empresa"
-        content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
+        title: "IN-COMPANY"
+        alt: "Take this trainig in your company"
+        content: "Please give us the following information answer you better:%0AWhat city are you in?%0AWhat organization do you belong to?%0AHow many people do you estimate would take this training?"
+    mail_scholarship:
+        title: "SCHOLARSHIP"
+        alt: "Scholarships available for NGOs and individuals"
+        content: "We have limited scholarships, tell us how this course help you and something about yourself."
     slider:
         title_1: "Business Agility"
         text_1: "We accompany integral improvements"

@@ -5,7 +5,8 @@ class DTHelper
   MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'May' => 'May', 'Jun' => 'Jun',
                 'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
 
-  def self.to_dt_event_array_json(events, remote = true, event_details_path = 'cursos', i18n = I18n, locale = 'es', amount = nil, registration_btn = true)
+  def self.to_dt_event_array_json(events, remote = true, event_details_path = 'cursos',
+                                  i18n = I18n, locale = 'es', amount = nil, registration_btn = true)
     result = []
 
     printed = 0

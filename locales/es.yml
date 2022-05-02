@@ -16,9 +16,13 @@ es:
         texts:
             loading: "cargando..."
     mail_landing:
-        title: "CONSULTAR"
+        title: "IN-COMPANY"
         alt: "Consultanos para realizar este curso en tu empresa"
         content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
+    mail_scholarship:
+        title: "BECAS"
+        alt: "Becas disponibles para ONG e individuos"
+        content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
     slider:
         title_1: "Agilidad Organizacional"
         text_1: "Acompañamos a organizaciones y equipos para obtener mejores resultados"
