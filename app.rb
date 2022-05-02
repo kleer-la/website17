@@ -101,7 +101,7 @@ end
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
   @page_title = 'Te acompañamos hacia la agilidad organizacional'
-  @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño,  metodologías e innovación para equipos colaborativos.'
+  @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
 end
