@@ -1,14 +1,23 @@
 { "books":
     [
-        {"es": {   
-            "id": "",
-            "landing": "/es/publicamos/scrum",
-            "cover": "/img/ebooks/scrum.jpg",
-            "title": "Proyectos Ágiles con Scrum", 
-            "description": "Scrum es un marco de trabajo que nos permite encontrar prácticas emergentes en dominios complejos, como la gestión de proyectos de innovación.",
-            "buy": "/es/publicamos/scrum"
-            }
-        },
+      {"es": {   
+        "id": "",
+        "landing": "/es/publicamos/scrum",
+        "cover": "/img/ebooks/scrum.jpg",
+        "title": "Proyectos Ágiles con Scrum", 
+        "description": "Scrum es un marco de trabajo que nos permite encontrar prácticas emergentes en dominios complejos, como la gestión de proyectos de innovación.",
+        "buy": "/es/publicamos/scrum"
+        }
+      },
+      {"es": {   
+          "id": "",
+          "landing": "https://alemarcote.com/libro-como-transformar-el-sindrome-del-impostor-en-tu-aliado-ale-marcote/",
+          "cover": "/img/ebooks/como-transformar-el-sindrome.jpg",
+          "title": " Cómo transformar el síndrome del impostor en tu aliado", 
+          "description": "¿Alguna vez sentiste que dejaste pasar oportunidades valiosas por dudar de tus propias capacidades? ¿O que alguien se va a dar cuenta que no sos la persona indicada para este trabajo? El libro explora las creencias y emociones asociadas a la idea de ser un fraude, así como estrategias. Incluye 2 apéndices: Las mujeres y el Síndrome del Impostor, y el Síndrome del Impostor en las organizaciones.",
+          "buy": "https://t.co/vjMK3LLHnJ"
+          }
+      },
         {"es": {   
             "id": "",
             "landing": "",
