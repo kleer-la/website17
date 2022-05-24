@@ -23,6 +23,7 @@
                 <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
             </ul>
           </li>
+          <%if session[:locale] == 'es'%>          
           <li class="root">
             <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -32,13 +33,18 @@
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
             </ul>
           </li>
+          <%end%>
           <li class="root">
+              <%if session[:locale] == 'es'%>        
             <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
               <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
-              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+                <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
             </ul>
+                <%else%>
+            <a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a>
+                <%end%>
           </li>
           <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
           <li><% if (session[:locale] == "en") %><li><a id="change_to_es_top" href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
@@ -90,6 +96,7 @@
             <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
           </ul>
         </li>
+        <%if session[:locale] == 'es'%>
         <li><a href="/<%=session[:locale]%>/publicamos"><span class="white"><%=t('side_menu.we_publish')%></span></a>
           <ul>
             <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
@@ -98,12 +105,15 @@
             <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
           </ul>
         </li>
+        <%end%>
         <li><a href="/<%=session[:locale]%>/somos"><span class="white"><%=t('side_menu.we_are')%></a></span>
+        <%if session[:locale] == 'es'%>
           <ul>
             <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
             <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
-            <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
           </ul>
+        <%end%>
         </li>
         <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
       </ul>
