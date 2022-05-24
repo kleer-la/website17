@@ -4,7 +4,7 @@
     <div class="container">
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <a id="logo" class="navbar-brand" href="/">
+        <a id="logo" class="navbar-brand" href="/<%=session[:locale]%>">
           <img src="/app/img/logo.png" alt="Kleer" />
         </a>
         <ul class="nav navbar-nav">
@@ -76,7 +76,7 @@
     <div class="menu-container text-uppercase">
 
       <div id="logoMenu">
-        <a href="/"><img src="/app/img/logo.png"></a>
+        <a href="/<%=session[:locale]%>"><img src="/app/img/logo.png"></a>
       </div>
 
       <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
