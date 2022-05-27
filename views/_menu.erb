@@ -1,10 +1,19 @@
-<%# Menu desktop %> 
+<% if (session[:locale] == "en") 
+    lang_id = 'change_to_es_top'
+    lang_url = '/es/'
+    lang_text = 'ESPAÑOL'
+  else
+    lang_id = 'change_to_en_top'
+    lang_url = '/en/'
+    lang_text = 'ENGLISH'
+  end
+%>
+<%# Menu desktop %>
 <div class="hidden-xs hidden-sm">
   <nav class="navbar navbar-default navbar-fixed-top text-uppercase" role="navigation">
     <div class="container">
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <a id="logo" class="navbar-brand" href="/">
+        <a id="logo" class="navbar-brand" href="/<%=session[:locale]%>">
           <img src="/app/img/logo.png" alt="Kleer" />
         </a>
         <ul class="nav navbar-nav">
@@ -13,6 +22,7 @@
             <ul class="dropdown-menu">
                 <li><a href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a></li>
                 <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
+                <%if session[:locale] == 'es'%>
                 <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
                   <ul class="dropdown-menu">
                     <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
@@ -20,9 +30,14 @@
                     <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
                   </ul>
                 </li>
+                <%else%>
+                <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+                </li>
+                <%end%>
                 <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
             </ul>
           </li>
+          <%if session[:locale] == 'es'%>          
           <li class="root">
             <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -32,18 +47,22 @@
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
             </ul>
           </li>
+          <%end%>
           <li class="root">
+              <%if session[:locale] == 'es'%>        
             <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
               <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
-              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+                <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
             </ul>
+                <%else%>
+            <a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a>
+                <%end%>
           </li>
           <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
-          <li><% if (session[:locale] == "en") %><li><a id="change_to_es_top" href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-              <% if (session[:locale] == "es") %><li><a id="change_to_en_top" href="/en/"><strong>ENGLISH</strong></a></li><% end %></li>
-           </ul>
+          <li><a id="<%=lang_id%>" href="<%=lang_url%>"><strong><%=lang_text%></strong></a></li>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><%= external_url_anchor"https://www.linkedin.com/company/541684" %><i class="social-icons-desktop fa fa-linkedin"></i></a></li>
           <li><%= external_url_anchor"https://twitter.com/kleer_la" %><i class="social-icons-desktop fa fa-twitter"></i></a></li>
@@ -70,7 +89,7 @@
     <div class="menu-container text-uppercase">
 
       <div id="logoMenu">
-        <a href="/"><img src="/app/img/logo.png"></a>
+        <a href="/<%=session[:locale]%>"><img src="/app/img/logo.png"></a>
       </div>
 
       <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -80,6 +99,7 @@
           <ul>
             <li><a href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a></li>
             <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
+            <%if session[:locale] == 'es'%>
             <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
               <ul>
                 <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
@@ -87,9 +107,14 @@
                 <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
               </ul>
             </li>
+            <%else%>
+            <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+            </li>
+            <%end%>
             <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
           </ul>
         </li>
+        <%if session[:locale] == 'es'%>
         <li><a href="/<%=session[:locale]%>/publicamos"><span class="white"><%=t('side_menu.we_publish')%></span></a>
           <ul>
             <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
@@ -98,14 +123,18 @@
             <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
           </ul>
         </li>
+        <%end%>
         <li><a href="/<%=session[:locale]%>/somos"><span class="white"><%=t('side_menu.we_are')%></a></span>
+        <%if session[:locale] == 'es'%>
           <ul>
             <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
             <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
-            <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
           </ul>
+        <%end%>
         </li>
         <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
+        <li><a id="<%=lang_id%>side" href="<%=lang_url%>"><strong><%=lang_text%></strong></a></li>
       </ul>
       <div class="social-media">
         <ul class="list-unstyled list-inline font-family-alt no-letter-spacing text-extra-large">

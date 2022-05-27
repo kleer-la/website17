@@ -63,12 +63,12 @@ Deploy Heroku sin pipeline
 heroku git:remote -a kleer-test
 git remote rename heroku heroku-test
 # cada deploy a test
-git push heroku-test develop:master
+git push heroku-test develop:main
 ```
 
 ```cli
 # una vez - ambiente prod (www.kleer.la)
 heroku git:remote -a kleer
 # cada deploy a prod
-git push heroku master:master
+git push heroku master:main
 ```
