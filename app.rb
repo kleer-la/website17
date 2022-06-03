@@ -74,6 +74,11 @@ before '/:locale/*' do
   I18n.locale = session[:locale]
 end
 
+
+get '/home2022' do
+  erb :'home/index', layout: :'layout/layout2022'
+end
+
 get '/' do
   @meta_description = 'Acompañamos hacia la agilidad organizacional.' \
                       ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
