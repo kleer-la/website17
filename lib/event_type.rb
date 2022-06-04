@@ -9,7 +9,7 @@ class EventType
     EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
   end
 
-  attr_accessor :id, :duration,
+  attr_accessor :id, :duration, :lang,
                 :name, :subtitle, :description, :learnings, :takeaways,
                 :goal, :recipients, :program, :faq,
                 :external_site_url, :elevator_pitch, :include_in_catalog,
@@ -26,7 +26,7 @@ class EventType
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
 
     %i[name subtitle description learnings takeaways
-       goal recipients program faq slug canonical_slug
+       goal recipients program faq slug canonical_slug lang
        external_site_url elevator_pitch include_in_catalog].each do |f|
       load_string(xml_doc, f)
     end
