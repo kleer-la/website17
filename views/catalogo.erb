@@ -8,30 +8,12 @@
 </div>
 <div class="container">
   <div class="container-fluid">
-    <%flash.each do |type, msg| %>
-      <div class="row">
-        <br>
-        <div class="col-md-12 alert alert-danger">
-          <%= 'error' + msg%>
-        </div>
-      </div>
-    <%end %>
-    <%if session[:error_msg].to_s != ''%>
-      <div class="row">
-        <br>
-        <div class="col-md-12 alert alert-danger">
-          <%= session[:error_msg]%>
-        </div>
-      </div>
-    <% session[:error_msg] = nil
-    end%>
+    <%= erb :'component/_flash_error' %>
     <div class="row">
       <div class="col-md-12">
         <h3 class="mb-30 title-flex"><%=t("catalog.description")%> 
-        <%if session[:locale] == 'es'%>
         <a href="/recursos/primeros_pasos">
         <img src="/img/boton_AB.png" alt="¿Eres principiante en Agile?"></a>
-        <% end %>
         </h3>
       </div>
     </div>
@@ -41,8 +23,7 @@
           <div class="well categoria categoria-<%= category.codename %>">
             <h3><%= category.name %></h3>
             <div class="list-group">
-              <% category.event_types.sort_by { |et| et.name}.each do |event_type| %>
-                <%if event_type.lang == session[:locale]%>
+              <% category.event_types.select {|et| et.lang == 'es'}.sort_by { |et| et.name}.each do |event_type| %>
                 <a href="/<%=session[:locale]%>/<%= event_type.uri_path%>" class="list-group-item">
                   <h3 class="list-group-item-heading"><%=event_type.name%></h3>
                   <p class="list-group-item-text">
@@ -56,7 +37,6 @@
                     </div>
                   </p>
                 </a>
-                <% end %>
               <% end %>
             </div>
           </div>
@@ -65,13 +45,4 @@
     </div>
   </div>
 </div>
-
-<div class="container-fluid fondo-pano pano-9"></div>
-
-<div class="container-fluid fondo-rosa containerWithPadding text-center text-white">
-	<div class="container">
-		<div class="col-md-12"><p><%=t('training.incompany')%></p></div>
-		<div class="col-md-12">
-			<a href="mailto:<%=t('contact.training_email')%>" class="btn btn-info btn-kleer"><%=t('contact.contact_us')%></a></div>
-	</div>
-</div>
+<%= erb :'training/_training_footer' %>

@@ -604,8 +604,8 @@ en:
       not_found: "Course not found. Check dates available or similar courses."
 
     catalog:
-        title: "Private Trainings"
-        description: "WE CAN TEACH ALL OUR COURSES IN YOUR ORGANIZATION.<br/>OUR CERTIFICATIONS ARE ENDORSED BY THE SCRUM ALLIANCE."
+        title: "Trainings"
+        description: "We can bring our courses to your company / organization.<br/>CSM, CSPO and CSD certifications by the Scrum Alliance."
         missing_elevator_pitch: "Please, fill the elevator pitch field for this event type."
     category:
         training: "Trainings"
