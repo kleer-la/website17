@@ -80,6 +80,7 @@ get '/home2022' do
   meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
+  @coming_courses = coming_courses
   erb :'home/index', layout: :'layout/layout2022'
 end
 

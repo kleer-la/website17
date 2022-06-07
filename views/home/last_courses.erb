@@ -2,14 +2,14 @@
 <div class='container'>
   <div class='row'>
   <% 
-  courses = [
-    {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
-    {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
-    {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
-   ]
-   
-  courses.each do |course| 
-    @course =  course
+  # courses = [
+  #   {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
+  #   {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
+  #   {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
+  #  ]
+
+  @coming_courses.select {|e| e.event_type.lang == session[:locale]}.each do |course| 
+    @course =  {title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, country: 'OL', certified: true}
   %>
   <div class='col-3 m-2'>
   <%= erb :'component/_course_card' %>
