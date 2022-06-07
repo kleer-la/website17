@@ -34,7 +34,9 @@ img {
   max-width: 100%;
 }
 
+//COMPONENTS
 
+//navbar
 .navbar {
   border: none;
   background: $soft-grey !important;
@@ -129,4 +131,42 @@ img {
   &:hover {
     color: #337480;
   }
+}
+
+//course card
+.course_card{
+  width: 100% !important;
+  padding: 15px;
+}
+
+.course_card__title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.course_card__subtitle{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+
+  height: 100px;
+}
+
+.course_card__items{
+  height: 100px;
+}
+
+.course_card__item{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.course_card__image{
+  height: auto;
+  width: auto;
 }

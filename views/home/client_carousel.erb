@@ -1,0 +1,23 @@
+<%
+  clients = [
+    {name: 'Coca-cola', img: '/img/clientes/logo-cocacola.png'},
+    {name: 'Disney', img: '/img/clientes/logo-disney.png'},
+    {name: 'Loreal París', img: '/img/clientes/logo-loreal.jpg'},
+    {name: 'LATAM', img: '/img/clientes/logo-latam.jpg'},
+  ]
+%>
+<section id="client-carousel" class="p-3">
+  <div class="container">
+    <h2 class="client-carousel__title mt-3">Todas estas organizaciones ya confían en nosotros</h2>
+    <div class="row">
+      <% clients.each do |client| %>
+        <div class="col-3">
+          <img src="<%= client[:img]%>" alt="<%= client[:name] %>"/>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</section>
+
+

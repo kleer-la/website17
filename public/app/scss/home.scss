@@ -4,12 +4,63 @@ $grey: #8B8888;
 $white: white;
 
 //hero
+#hero{
+
+}
+
 .carousel-item{
   background-color: $grey;
 }
 
-//contact us
+//promotion
+#promotion{
+  margin-top: 70px;
+}
 
+.promotion__title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.promotion__text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.promotion__image{
+
+}
+
+//client-carousel
+#client-carousel{
+  margin-top: 180px;
+}
+
+.client-carousel__title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+}
+
+//last courses
+#last-courses{
+  background-color: $soft-grey;
+}
+
+.last-courses__title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+//contact us
 #contact-us{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -25,3 +76,9 @@ $white: white;
   height: 664px;
   padding: 50px;
 }
+
+//news letter
+#newsletter-subscription{
+  background-color: $soft-grey;
+}
+

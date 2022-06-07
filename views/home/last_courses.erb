@@ -1,19 +1,21 @@
-<h3>Próximos cursos</h3>
-<div class='container'>
-  <div class='row'>
-  <% 
-  courses = [
-    {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
-    {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
-    {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
-   ]
-   
-  courses.each do |course| 
-    @course =  course
-  %>
-  <div class='col-3 m-2'>
-  <%= erb :'component/_course_card' %>
+<section id="last-courses" class="p-5 mt-4">
+  <div class='container'>
+    <h2 class="text-center m-4 last-courses__tittle">Próximos cursos</h2>
+    <div class='row mt-5'>
+      <%
+        courses = [
+          {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
+          {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
+          {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
+        ]
+
+        courses.each do |course|
+          @course =  course
+      %>
+        <div class='col-3 m-2'>
+          <%= erb :'component/_course_card' %>
+        </div>
+      <% end%>
+    </div>
   </div>
-  <% end%>
-  </div>
-</div>
+</section>
