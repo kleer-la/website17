@@ -8,8 +8,21 @@
   #   {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
   #  ]
 
-  @coming_courses.select {|e| e.event_type.lang == session[:locale]}.each do |course| 
-    @course =  {title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, country: 'OL', certified: true}
+  imgs = {
+    7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
+    342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
+    268 => '/img/personajes/cursos.svg'
+  }
+
+  @coming_courses
+    .select {|e| e.event_type.lang == session[:locale]}
+    .first(3)
+    .each do |course| 
+      @course =  {
+        title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, 
+        cover: imgs[course.event_type.id.to_i], uri_path: course.event_type.uri_path,
+        country: 'OL', certified: true
+      }
   %>
   <div class='col-3 m-2'>
   <%= erb :'component/_course_card' %>

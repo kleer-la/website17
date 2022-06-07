@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-  <img src="https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png" class="card-img-top" alt="...">
+  <img src="<%= @course[:cover]%>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><%= @course[:title]%></h5>
     <p class="card-text"><%= @course[:subtitle]%></p>
@@ -10,6 +10,6 @@
       <%# <li>Certificado</li> %>
       <%end%>
     </ul>
-    <a href="#" class="btn btn-primary">Más Info</a>
+    <a href="/<%=session[:locale]%>/<%= @course[:uri_path]%>" class="btn btn-primary">Más Info</a>
   </div>
 </div>
