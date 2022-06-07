@@ -54,7 +54,7 @@ before do
     redirect "https://www.#{request.host}#{request.path}"
   else
     @page_title = 'Kleer | Agile Coaching, Consulting & Training'
-    meta_tags! title: 'Kleer | Agile Coaching, Consulting & Training'
+    meta_tags! title: 'Agile Coaching, Consulting & Training'
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),
