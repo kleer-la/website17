@@ -1,0 +1,27 @@
+$blue-kleer: #7bcaea;
+$soft-grey: #D9D9D9;
+$grey: #8B8888;
+$white: white;
+
+//hero
+.carousel-item{
+  background-color: $grey;
+}
+
+//contact us
+
+#contact-us{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.contact__info{
+  background-color: $grey;
+  border-radius: 30px;
+  height: 664px;
+  padding: 50px;
+}
+
+.contact__form{
+  height: 664px;
+  padding: 50px;
+}

@@ -45,6 +45,7 @@
         <canonical-id type="integer" nil="true"/>
         <slug>1-webinar-tecnicas-de-versionado-para-entrega-continua</slug>
         <canonical-slug>1-webinar-tecnicas-de-versionado-para-entrega-continua</canonical-slug>
+        <lang type="integer">es</lang>
       </event-type>
     </event-types>
   </category>
@@ -76,6 +77,7 @@
         <elevator-pitch>Un elevator</elevator-pitch>
         <learnings></learnings>
         <takeaways></takeaways>
+        <lang type="integer">es</lang>
       </event-type>
     </event-types>
   </category>
@@ -110,12 +112,14 @@
         <elevator-pitch>Un elevator</elevator-pitch>
       <learnings></learnings>
       <takeaways></takeaways>
+      <lang type="integer">es</lang>
       <average-rating type="float">4.38</average-rating>
 <net-promoter-score type="float">0.96</net-promoter-score>
 <participant-count type="integer">125</participant-count>
 <promoter-count type="integer">47</promoter-count>
 <nps-opinions-count type="integer">2</nps-opinions-count>
 <rating-opinions-count type="integer">2</rating-opinions-count>
+    <lang type="integer">es</lang>
 </event-type>
     </event-types>
   </category>

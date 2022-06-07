@@ -50,7 +50,11 @@ get '/catalogo' do
   @meta_description = 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
 
-  erb :catalogo
+  if session[:locale] == 'en'
+    erb :catalogo_en
+  else
+    erb :catalogo
+  end
 end
 
 # Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
