@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;">
+  <img src="https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= @course[:title]%></h5>
+    <p class="card-text"><%= @course[:subtitle]%></p>
+    <ul>
+      <li><%= @course[:duration]%> hs</li>
+      <li>Online <%#= @course[:country]%></li>
+      <%if @course[:certified]%>
+      <li>Certificado</li>
+      <%end%>
+    </ul>
+    <a href="#" class="btn btn-primary">Más Info</a>
+  </div>
+</div>
