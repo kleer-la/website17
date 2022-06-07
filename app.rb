@@ -54,6 +54,7 @@ before do
     redirect "https://www.#{request.host}#{request.path}"
   else
     @page_title = 'Kleer | Agile Coaching, Consulting & Training'
+    meta_tags! title: 'Kleer | Agile Coaching, Consulting & Training'
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),
@@ -76,6 +77,9 @@ end
 
 
 get '/home2022' do
+  meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
+                    ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+
   erb :'home/index', layout: :'layout/layout2022'
 end
 
