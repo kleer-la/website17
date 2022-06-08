@@ -75,9 +75,8 @@ before '/:locale/*' do
   I18n.locale = session[:locale]
 end
 
-
 get '/home2022' do
-  puts 'al entrar imprime algo'
+  meta_tags! title: 'Agile Coaching, Consulting & Training'
   meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
@@ -112,6 +111,7 @@ end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
+  @page_title = nil
   meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
   meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
