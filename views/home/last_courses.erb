@@ -6,16 +6,20 @@
         courses = [
           {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
           {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
-          {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
+          {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false},
+          {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
         ]
 
         courses.each do |course|
           @course =  course
       %>
-        <div class='col-3 m-2'>
+        <div class='col-3 p-2'>
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
+    </div>
+    <div class="text-center mt-5">
+      <button class="btn btn-secondary">Ver todos los cursos</button>
     </div>
   </div>
 </section>

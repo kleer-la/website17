@@ -1,6 +1,6 @@
 <%
 carousel = [
-  {subject: 'Agilidad Organizacional', description: 'Lorem ipsum...', url: '/agilidad-organizacional', 
+  {subject: 'Agilidad Organizacional', description: 'Lorem ipsum...', url: '/agilidad-organizacional',
   img: '...', alt: 'Lorem ipsum...', active: true},
   {subject: 'Cursos', description: 'Lorem ipsum...', url: '/catalogo', img: '...'},
   {subject: 'Nuestros clientes', description: 'Lorem ipsum...', url: '/clientes', img: '...'}
@@ -20,6 +20,7 @@ carousel = [
         <div class="carousel-caption d-none d-md-block">
           <h5><%=item[:subject]%></h5>
           <p><%=item[:description]%></p>
+          <button class="btn btn-secondary">More info</button>
         </div>
       </div>
       <%end%>
