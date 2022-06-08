@@ -23,6 +23,12 @@ def tracking_mantain_or_default(utm_source, utm_campaign)
   end
 end
 
+def coming_courses()
+  puts 'keventer'
+  puts KeventerReader.instance.coming_commercial_events
+  KeventerReader.instance.coming_commercial_events
+end
+
 get '/entrenamos/:country?' do |country|
   entrenamos_view(country)
 end

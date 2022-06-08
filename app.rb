@@ -77,14 +77,17 @@ end
 
 
 get '/home2022' do
+  puts 'al entrar imprime algo'
   meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
+  @coming_courses = coming_courses
   erb :'home/index', layout: :'layout/layout2022'
 end
 
 get '/' do
-  @meta_description = 'Acompañamos hacia la agilidad organizacional.' \
+  meta_tags! title: 'Agile Coaching, Consulting & Training'
+  meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                       ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
   @kleerers = KeventerReader.instance.kleerers session[:locale]
@@ -109,8 +112,8 @@ end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
-  @page_title = 'Te acompañamos hacia la agilidad organizacional'
-  @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
+  meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
 end
@@ -173,8 +176,9 @@ end
 
 get '/recursos' do
   @active_tab_publicamos = 'active'
-  @page_title = 'Materiales y Recursos sobre prácticas ágiles'
-  @meta_description = 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+  meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
+  meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+
   @resources = Resources.new.load.all
   erb :recursos
 end
@@ -265,7 +269,7 @@ end
 
 get '/clientes' do
   @page_title += ' | Nuestros clientes'
-  @meta_description = 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
+  meta_tags! description: 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
   @meta_keywords = 'Kleer, Clientes, Casos, Casos de Éxito, confianza'
 
   erb :clientes

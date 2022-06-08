@@ -1,25 +1,60 @@
-<section id="last-courses" class="p-5 mt-4">
-  <div class='container'>
-    <h2 class="text-center m-4 last-courses__tittle">Próximos cursos</h2>
-    <div class='row mt-5'>
-      <%
-        courses = [
-          {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
-          {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
-          {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false},
-          {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
-        ]
+<!--<<<<<<< HEAD-->
+<!--<section id="last-courses" class="p-5 mt-4">-->
+<!--  <div class='container'>-->
+<!--    <h2 class="text-center m-4 last-courses__tittle">Próximos cursos</h2>-->
+<!--    <div class='row mt-5'>-->
+      <%#
+<!--        courses = [-->
+<!--          {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},-->
+<!--          {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},-->
+<!--          {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false},-->
+<!--          {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},-->
+<!--        ]-->
 
-        courses.each do |course|
-          @course =  course
+<!--        courses.each do |course|-->
+<!--          @course =  course-->
       %>
-        <div class='col-3 p-2'>
-          <%= erb :'component/_course_card' %>
-        </div>
-      <% end%>
-    </div>
-    <div class="text-center mt-5">
-      <button class="btn btn-secondary">Ver todos los cursos</button>
-    </div>
+<!--        <div class='col-3 p-2'>-->
+          <%#= erb :'component/_course_card' %>
+<!--        </div>-->
+      <%# end%>
+<!--    </div>-->
+<!--    <div class="text-center mt-5">-->
+<!--      <button class="btn btn-secondary">Ver todos los cursos</button>-->
+<!--    </div>-->
+<!--=======-->
+<h3>Próximos cursos</h3>
+<div class='container'>
+  <div class='row'>
+  <%
+  # courses = [
+  #   {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
+  #   {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
+  #   {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
+  #  ]
+
+  imgs = {
+    7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
+    342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
+    268 => '/img/personajes/cursos.svg'
+  }
+
+  @coming_courses
+    .select {|e| e.event_type.lang == session[:locale]}
+    .first(3)
+    .each do |course|
+      @course =  {
+        title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
+        cover: imgs[course.event_type.id.to_i], uri_path: course.event_type.uri_path,
+        country: 'OL', certified: true
+      }
+  %>
+  <div class='col-3 m-2'>
+  <%= erb :'component/_course_card' %>
   </div>
-</section>
+      <%end %>
+      </div>
+      </div>
+<!-- >>>>>>> d2e2d9335b251925002fb0f882b15fed354065c7-->
+<!--  </div>-->
+<!--</section>-->
