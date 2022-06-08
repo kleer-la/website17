@@ -1,15 +1,33 @@
-<div class="card" style="width: 18rem;">
-  <img src="<%= @course[:cover]%>" class="card-img-top" alt="...">
+<div class="card course-card" style="width: 18rem;">
+  <div class="course-card__image-container">
+    <img src="<%= @course[:cover]%>" class="card-img-top" alt="...">
+    <div class="course-card__flags">
+      <div>ABIERTO</div>
+      <div>IN COMPANY</div>
+    </div>
+  </div>
   <div class="card-body">
-    <h5 class="card-title"><%= @course[:title]%></h5>
-    <p class="card-text"><%= @course[:subtitle]%></p>
-    <ul>
-      <li><%= @course[:duration]%> hs</li>
-      <li>Online <%#= @course[:country]%></li>
+    <h5 class="card-title course-card__title"><%= @course[:title]%></h5>
+    <p class="card-text course-card__subtitle"><%= @course[:subtitle]%></p>
+    <ul class="course-card__items">
+      <li class="course-card__item">
+        <i class="fa fa-clock-o"></i>
+        <%= @course[:duration]%> hs
+      </li>
+      <li class="course-card__item">
+        <i class="fa fa-rss"></i>
+        Online <%#= @course[:country]%>
+      </li>
       <%if @course[:certified]%>
-      <li>Certificado</li>
+        <li class="course-card__item">
+          <i class="fa fa-certificate"></i>
+          Certificado
+        </li>
       <%end%>
     </ul>
-    <a href="#" class="btn btn-primary">Más Info</a>
+    <div class="text-center mt-4">
+      <a href="#" class="btn btn-secondary">Más Info</a>
+    </div>
+
   </div>
 </div>
