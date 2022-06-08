@@ -2,21 +2,9 @@
 <html class="no-js">
 <head>
 <%= erb :_gtag %>
-<%= display_meta_tags site: 'Kleer', base_url: 'https://www.kleer.la' %>
-  <meta name="author" content="Kleer - https://www.kleer.la">
-  <meta name="description" content="<%=@meta_description%>">
-  <meta name="keywords" content="<%=@meta_keywords%>">
-  <meta name="robots" content="noarchive">
-  <meta property="og:url" content="https://www.kleer.la" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.kleer.la/img/logos/kleer.png" />
-  <meta property="og:image:url" content="https://www.kleer.la/img/logos/kleer.png" />
-  <meta property="og:image:secure_url" content="https://www.kleer.la/img/logos/kleer.png" />
-  <meta property="fb:app_id" content="116606177078" />
+<%= erb :'component/_metatags'%>
   <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
 	<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
-
-  <link rel="shortcut icon" href="/img/favicon.ico">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" type="text/css">
