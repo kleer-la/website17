@@ -18,7 +18,9 @@ module MetaTags
     def initialize
       @tags = {
         charset: 'utf-8',
-        base_url: ''
+        base_url: '',
+        'http-equiv': ['X-UA-Compatible', 'IE=edge'],
+        viewport: 'width=device-width, initial-scale=1.0"'
       }
     end
 
@@ -48,8 +50,12 @@ module MetaTags
 
     def display_one(tag)
       case tag[0]
+      when :'http-equiv'
+        "<meta http-equiv=\"#{tag[1][0]}\" content=\"#{tag[1][1]}\"/>" if tag[1]
       when :robot
         "<meta name=\"robots\" content=\"#{tag[1]}\"/>" if tag[1]
+      when :viewport
+        "<meta name=\"viewport\" content=\"#{tag[1]}\"/>" if tag[1]
       when :charset
         "<meta charset=\"#{tag[1]}\">" if tag[1].to_s.length.positive?
       when :title

@@ -68,12 +68,27 @@ describe 'metatags' do
   end
   context 'canonical' do
     it 'has not canonical' do
-      head = display_meta_tags base_url: 'https://www.kleer.la', charset: ''
+      head = display_meta_tags base_url: 'https://www.kleer.la', charset: '', 'http-equiv': nil, viewport: nil
       expect(head).to eq ''
     end
     it 'has canonical' do
       head = display_meta_tags base_url: 'https://www.kleer.la', canonical: 'randanganga'
       expect(head).to include '<link rel="canonical" href="https://www.kleer.la/randanganga"/>'
+    end
+  end
+  context 'http-equiv' do
+    it 'defaukt has http-equiv' do
+      head = display_meta_tags
+      expect(head).to include 'http-equiv='
+    end
+    it 'has not http-equiv' do
+      head = display_meta_tags 'http-equiv': nil
+      expect(head).not_to include 'http-equiv='
+    end
+    it 'has http-equiv' do
+      head = display_meta_tags
+      expect(head).to include 'http-equiv="X-UA-Compatible'
+      expect(head).to include 'content="IE=edge"'
     end
   end
 end
