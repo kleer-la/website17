@@ -24,8 +24,6 @@ def tracking_mantain_or_default(utm_source, utm_campaign)
 end
 
 def coming_courses()
-  puts 'keventer'
-  puts KeventerReader.instance.coming_commercial_events
   KeventerReader.instance.coming_commercial_events
 end
 
