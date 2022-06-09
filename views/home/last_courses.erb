@@ -17,7 +17,7 @@
 
         @coming_courses
           .select {|e| e.event_type.lang == session[:locale]}
-          .first(3)
+          .first(4)
           .each do |course|
           @course =  {
             title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,

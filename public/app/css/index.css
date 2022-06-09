@@ -268,10 +268,11 @@ footer .nav-tabs > li {
 .course-card__image-container {
   position: relative;
   display: inline-block;
-  text-align: center; }
+  text-align: center;
+  min-height: 180px; }
 
 .course-card__image {
-  height: auto;
+  max-height: 300px;
   width: auto;
   border: 1px solid red; }
 
