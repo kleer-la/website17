@@ -48,7 +48,7 @@ img {
 .navbar {
   border: none;
   background: $soft-grey !important;
-  height: 100px !important;
+  min-height: 100px !important;
 }
 .navbar-fixed-top {
   border-width: 0;
