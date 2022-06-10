@@ -8,7 +8,6 @@
     lang_text = 'ENGLISH'
   end
 %>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a id="logo" class="navbar-brand a" href="/<%=session[:locale]%>">
@@ -20,32 +19,32 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/<%=session[:locale]%>/agilidad-organizacional">AGILIDAD ORGANIZACIONAL</a>
+          <a class="nav-link active" aria-current="page" href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            CURSOS
+            <%=t('side_menu.courses')%>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/catalogo">NUESTROS CURSOS</a></li>
-            <li><a class="dropdown-item" href="https://academia.kleer.la/">ACADEMIA ONLINE</a></li>
+            <li><a class="dropdown-item" href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.sync_courses')%></a></li>
+            <li><a class="dropdown-item" href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/<%=session[:locale]%>/clientes">CLIENTES</a>
+          <a class="nav-link" href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            PUBLICAMOS
+            <%=t('side_menu.we_publish')%>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/recursos">RECURSOS Y MATERIALES</a></li>
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/blog">BLOG Y VIDEOS</a></li>
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/libros">LIBROS</a></li>
+            <li><a class="dropdown-item" href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
+            <li><a class="dropdown-item" href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
+            <li><a class="dropdown-item" href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/<%=session[:locale]%>/somos">SOMOS</a>
+          <a class="nav-link" href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/en">ENGLISH</a>
@@ -62,7 +61,6 @@
           </ul>
 <!--          <span class="display-inline-block font-family-alt text-large email"><a class="lower" href="mailto:hola@kleer.la">hola@kleer.la</a></span>-->
         </div>
-
       </form>
     </div>
   </div>
