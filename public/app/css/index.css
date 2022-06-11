@@ -21,9 +21,6 @@
   .carousel-caption .text-vertical {
     margin: 30px 0 0 50px; }
 
-nav {
-  text-transform: uppercase; }
-
 #promotion {
   margin-top: 70px; }
 
@@ -50,7 +47,8 @@ nav {
   text-align: center; }
 
 #last-courses {
-  background-color: #D9D9D9; }
+  background-color: #D9D9D9;
+  visibility: visible; }
 
 .last-courses__title {
   font-style: normal;
@@ -58,6 +56,18 @@ nav {
   font-size: 32px;
   line-height: 32px; }
 
+#mobile-carousel {
+  visibility: hidden;
+  height: 0; }
+
+@media screen and (max-width: 420px) {
+  #last-courses {
+    visibility: hidden;
+    height: 0; }
+
+  #mobile-carousel {
+    visibility: visible;
+    height: auto; } }
 #contact-us {
   margin-top: 50px;
   margin-bottom: 50px; }
@@ -87,6 +97,7 @@ nav {
 html,
 body {
   width: 100%;
+  max-width: 100%;
   height: 100%; }
 
 body {

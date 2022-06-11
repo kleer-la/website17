@@ -1,38 +1,64 @@
+<%
+  imgs = {
+    7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
+    342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
+    268 => '/img/personajes/cursos.svg',
+    247 => '/img/personajes/cursos.svg'
+  }
+
+  @coming_courses = @coming_courses
+    .select {|e| e.event_type.lang == session[:locale]}
+    .first(4)
+    .map.with_index { |course, index| {
+      title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
+      cover: imgs[course.event_type.id.to_i], uri_path: course.event_type.uri_path,
+      country: 'OL', certified: true, active: index == 0
+    }}
+%>
+
 <section id="last-courses" class="p-5 mt-4">
   <div class='container'>
     <h2 class="text-center m-4 last-courses__tittle">Próximos cursos</h2>
     <div class='row mt-5'>
-      <%
-        # courses = [
-        #   {title: 'CSM', duration: '16', subtitle: 'Be the Change Agent to improve the World of Work!', country: 'OL', certified: true},
-        #   {title: 'CSD', duration: '16', subtitle: 'Software development, from idea to deployed product, for distributed teams', country: 'OL', certified: true},
-        #   {title: 'PAS', duration: '16', subtitle: '', country: 'OL', certified: false}
-        #  ]
 
-        imgs = {
-          7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
-          342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
-          268 => '/img/personajes/cursos.svg',
-          247 => '/img/personajes/cursos.svg'
-        }
-
-        @coming_courses
-          .select {|e| e.event_type.lang == session[:locale]}
-          .first(4)
-          .each do |course|
-          @course =  {
-            title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
-            cover: imgs[course.event_type.id.to_i], uri_path: course.event_type.uri_path,
-            country: 'OL', certified: true
-          }
+      <% @coming_courses.each do |course|
+        @course = course
       %>
         <div class='col-3 p-2'>
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
     </div>
+  </div>
+</section>
+
+<!--    responsive carousel-->
+<section id="mobile-carousel">
+  <div class="container">
+    <div class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% @coming_courses.each do |course|
+          @course = course
+        %>
+          <div class="carousel-item <%= course[:active] ? 'active' : '' %>">
+            <%= erb :'component/_course_card' %>
+          </div>
+        <%end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
     <div class="text-center mt-5">
       <button class="btn btn-secondary">Ver todos los cursos</button>
     </div>
   </div>
+
 </section>
