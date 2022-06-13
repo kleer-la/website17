@@ -17,33 +17,28 @@
           <img src="/app/img/logo.png" alt="Kleer" />
         </a>
         <ul class="nav navbar-nav">
+          <li><a href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a></li>
           <li class="root">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" onclick='scrollTo2("#about");'><%=t('side_menu.we_do')%> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a></li>
-                <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
-                <%if session[:locale] == 'es'%>
-                <li class="dropdown-submenu"><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
-                    <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
-                    <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
-                  </ul>
-                </li>
-                <%else%>
-                <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-                </li>
-                <%end%>
-                <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
-            </ul>
+            <%if session[:locale] == 'es'%>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+                <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
+                <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
+              </ul>
+            </li>
+            <%else%>
+            <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+            </li>
+            <%end%>
           </li>
+          <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
           <%if session[:locale] == 'es'%>          
           <li class="root">
             <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
               <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
-              <li><%= media_url_anchor "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"%><%=t('side_menu.videos')%></a></li>
               <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
             </ul>
           </li>
@@ -52,7 +47,6 @@
               <%if session[:locale] == 'es'%>        
             <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%> <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
               <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
               <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
             </ul>
@@ -60,7 +54,6 @@
             <a href="/<%=session[:locale]%>/somos"><%=t('side_menu.we_are')%></a>
                 <%end%>
           </li>
-          <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");'><%=t('side_menu.lets_talk')%></a></li>
           <li><a id="<%=lang_id%>" href="<%=lang_url%>"><strong><%=lang_text%></strong></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -94,32 +87,25 @@
 
       <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
       <ul class="sidebar-nav">
-
-        <li><a href="javascript:void(0);" onclick='scrollTo2("#about");closeSidebar(event)'><%=t('side_menu.we_do')%></a>
+        <li><a href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a></li>
+        <%if session[:locale] == 'es'%>
+        <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
           <ul>
-            <li><a href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a></li>
-            <li><a href="/<%=session[:locale]%>/facilitacion"><%=t('side_menu.facilitation')%></a></li>
-            <%if session[:locale] == 'es'%>
-            <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-              <ul>
-                <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
-                <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
-                <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
-              </ul>
-            </li>
-            <%else%>
-            <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
-            </li>
-            <%end%>
-            <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
+            <li><a href="/<%=session[:locale]%>/entrenamos"><%=t('side_menu.agenda')%></a></li>
+            <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.catalog')%></a></li>
+            <li><a href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
           </ul>
         </li>
+        <%else%>
+        <li><a href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.courses')%></a>
+        </li>
+        <%end%>
+        <li><a href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a></li>
         <%if session[:locale] == 'es'%>
         <li><a href="/<%=session[:locale]%>/publicamos"><span class="white"><%=t('side_menu.we_publish')%></span></a>
           <ul>
             <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
             <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
-            <li><%= media_url_anchor "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw" %><%=t('side_menu.videos')%></a></li>
             <li><a href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
           </ul>
         </li>
@@ -127,13 +113,11 @@
         <li><a href="/<%=session[:locale]%>/somos"><span class="white"><%=t('side_menu.we_are')%></a></span>
         <%if session[:locale] == 'es'%>
           <ul>
-            <li><a href="/<%=session[:locale]%>/nuestra-filosofia"><%=t("side_menu.our_philosophy")%></a></li>
             <li><a href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a></li>
-              <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
+            <li><a href="/<%=session[:locale]%>/prensa"><%=t("menu.press")%></a></li>
           </ul>
         <%end%>
         </li>
-        <li><a href="/<%=session[:locale]%>/#contact" onclick='scrollTo2("#contact");closeSidebar(event)'><%=t('side_menu.lets_talk')%></a></li>
         <li><a id="<%=lang_id%>side" href="<%=lang_url%>"><strong><%=lang_text%></strong></a></li>
       </ul>
       <div class="social-media">
