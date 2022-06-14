@@ -250,13 +250,20 @@ img {
   height: 400px;
   background-position: center center;
 }
-.header-courses {
-  background: url(../img/slide03.jpg);
-  background-size: cover;
-  height: 400px;
-  background-position: center center;
-}
 
+.header-courses {
+    background-image:url('../img/cursos-kleer.webp');
+    background-size: cover;
+    height: 400px;
+    background-position: center center;
+  }
+.no-js .header-courses {
+  background-image:url('../img/cursos-kleer.jpg'); }
+.no-webp .header-courses {
+  background-image:url('../img/cursos-kleer.jpg');  }
+.webp .header-courses{
+  background-image:url('../img/cursos-kleer.webp'); }
+    
 .header-catalogo {
   background: url(../img/slide02.jpg);
   background-size: cover;
@@ -1230,15 +1237,15 @@ a.lower {
 }
 
 .no-js .slider3BG {
-  background-image:url('../img/slide03.jpg');
+  background-image:url('../img/cursos-kleer.jpg');
 }
 
 .no-webp .slider3BG {
-  background-image:url('../img/slide03.jpg');
+  background-image:url('../img/cursos-kleer.jpg');
 }
 
 .webp .slider3BG{
-  background-image:url('../img/slide03.webp');
+  background-image:url('../img/cursos-kleer.webp');
 }
 
 @media (max-width: 480px) {

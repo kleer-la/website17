@@ -13,7 +13,7 @@ $white: white;
   height: 100%;
 }
 
-.carousel {
+.hero__carousel {
   height: 70vh;
 }
 
@@ -21,7 +21,7 @@ $white: white;
   height: 100%;
 }
 
-.carousel-item{
+.hero__carousel-item{
   background-color: $grey;
 }
 
@@ -74,6 +74,7 @@ $white: white;
 //last courses
 #last-courses{
   background-color: $soft-grey;
+  visibility: visible;
 }
 
 .last-courses__title{
@@ -81,6 +82,22 @@ $white: white;
   font-weight: 600;
   font-size: 32px;
   line-height: 32px;
+}
+
+#mobile-carousel{
+  visibility: hidden;
+  height: 0;
+}
+
+@media screen and (max-width:420px) {
+  #last-courses{
+    visibility: hidden;
+    height: 0;
+  }
+  #mobile-carousel{
+    visibility: visible;
+    height: auto;
+  }
 }
 
 //contact us

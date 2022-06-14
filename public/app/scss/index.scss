@@ -13,6 +13,7 @@ $white: white;
 html,
 body {
   width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 
@@ -48,7 +49,7 @@ img {
 .navbar {
   border: none;
   background: $soft-grey !important;
-  height: 100px !important;
+  min-height: 100px !important;
 }
 .navbar-fixed-top {
   border-width: 0;
