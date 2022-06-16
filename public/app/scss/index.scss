@@ -1,4 +1,5 @@
 @import 'home';
+@import 'resources';
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
@@ -309,5 +310,29 @@ footer .nav-tabs>li {
   line-height: 32px;
 }
 
+//Generic cards
 
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+
+  .share {
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -999em;
+    padding: 0;
+    margin: 2rem 1rem;
+    &.share-facebook {
+      background: url('/img/icons/share-facebook.png') no-repeat;
+    }
+    &.share-twitter {
+      background: url('/img/icons/share-twitter.png') no-repeat;
+    }
+    &.share-linkedin {
+      background: url('/img/icons/share-linkedin.png') no-repeat;
+    }
+  }
+}
 

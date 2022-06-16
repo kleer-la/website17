@@ -84,6 +84,15 @@ get '/home2022' do
   erb :'home/index', layout: :'layout/layout2022'
 end
 
+get '/recursos2022' do
+  # @active_tab_publicamos = 'active'
+  meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
+  meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+
+  @resources = Resources.new.load.all
+  erb :'resources_page/index', layout: :'layout/layout2022'
+end
+
 get '/' do
   meta_tags! title: 'Agile Coaching, Consulting & Training'
   meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
