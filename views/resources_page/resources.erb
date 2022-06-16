@@ -1,0 +1,41 @@
+
+<div class="container">
+  <% if (session[:locale] == "es") %>
+    <h4>Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena.</h4>
+  <% end %>
+
+  <br/>
+  &nbsp;
+  <br/>
+
+
+  <%
+    @resources.each do |resource_loc|
+      resource= resource_loc[session[:locale]]
+
+      @id = resource['id']
+      @image_cover = resource['cover']
+      @landing = resource['landing']
+      @title = resource['title']
+      @description = resource['description']
+      @authors = resource['authors']
+      @translators = resource['translators']
+      @comments = resource['comments']
+      @resource =resource
+  %>
+
+    <%=erb :'component/_generic_card' %>
+
+  <p><%=resource['id'] %></p>
+    <p><%=resource['landing'] %></p>
+    <p><%=resource['cover'] %></p>
+    <p><%=resource['title'] %></p>
+    <p><%=resource['description'] %></p>
+    <p><%=resource['authors'] %></p>
+    <p><%=resource['translators'] %></p>
+    <p><%=resource['comments'] %></p>
+
+    <hr/>
+
+  <%end %>
+</div>

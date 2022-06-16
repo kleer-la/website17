@@ -1,0 +1,56 @@
+<div class="card" style="width: 18rem;">
+  <img src="<%=@image_cover %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=@title %></h5>
+    <p class="card-text">
+      <%= @description %>
+    </p>
+    <ul>
+      <%if @authors %>
+        <li>
+          <strong>Autores: </strong>
+          <%= @authors %>
+        </li>
+      <%end %>
+      <%if @translators %>
+        <li>
+          <strong>Traductores: </strong>
+          <%= @translators %>
+        </li>
+      <%end %>
+      <%if @comments %>
+        <li>
+          <strong>Observaciones: </strong>
+          <%= @comments %>
+        </li>
+      <%end %>
+    </ul>
+    <div class="container share-buttons">
+<!--      <div class="row">-->
+<!--        <div class="col-4">-->
+          <%=
+            external_url_anchor2 "https://www.facebook.com/sharer/sharer.php?#{@resource['share_fb']}",
+                                'class="share share-facebook"',
+                                'SHARE FB'
+          %>
+<!--        </div>-->
+<!--        <div class="col-4">-->
+          <%=
+            external_url_anchor2 "https://twitter.com/intent/tweet?#{@resource['share_tw']}",
+                                'class="share share-twitter" data-size="large" rel="me" rel="canonical"',
+                                'SHARE TWITTER'
+
+          %>
+<!--        </div>-->
+<!--        <div class="col-4">-->
+          <%=
+            external_url_anchor2 "http://www.linkedin.com/shareArticle?#{@resource['share_li']}",
+                                'class="share share-linkedin"',
+                                'SHARE LINKEDIN'
+          %>
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
