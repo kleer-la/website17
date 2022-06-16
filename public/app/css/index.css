@@ -91,7 +91,8 @@
   background-color: #D9D9D9; }
 
 #newsletter-subscription {
-  background-color: #D9D9D9; }
+  background-color: #D9D9D9;
+  height: 250px; }
 
 /* Global */
 html,
@@ -294,7 +295,7 @@ footer .nav-tabs > li {
   font-weight: 500;
   font-size: 16px;
   line-height: 25px;
-  height: 100px; }
+  min-height: 100px; }
 
 .course-card__image-container {
   position: relative;

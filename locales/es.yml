@@ -881,3 +881,10 @@ es:
                         </li>
                     </ul>"
         top: "Principales cursos"
+    social_media:
+        twitter: ""
+        facebook: ""
+        whatsapp: ""
+        instagram: ""
+        youtube: ""
+        linkedin: ""
