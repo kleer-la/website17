@@ -31,7 +31,12 @@ get '/blog' do
 end
 
 get '/blog/:slug' do |slug|
-  blog_one Article.create_one_keventer(slug)
+  begin
+    blog_one Article.create_one_keventer(slug)
+  rescue StandardError => e
+    puts e
+    status 404
+  end
 end
 
 def blog_one(article)
