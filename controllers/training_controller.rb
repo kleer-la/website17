@@ -23,7 +23,7 @@ def tracking_mantain_or_default(utm_source, utm_campaign)
   end
 end
 
-def coming_courses()
+def coming_courses
   KeventerReader.instance.coming_commercial_events
 end
 
@@ -39,7 +39,7 @@ def entrenamos_view(country = nil)
   else
     @active_tab_entrenamos = 'active'
     meta_tags! title: 'Agenda de cursos online sobre Agilidad y Scrum'
-    @meta_description = 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
+    meta_tags! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
 
     @unique_countries = KeventerReader.instance.unique_countries_for_commercial_events
     @country = country || session[:filter_country] || 'todos'
@@ -51,7 +51,7 @@ end
 get '/catalogo' do
   @active_tab_entrenamos = 'active'
   meta_tags! title: 'Capacitación empresarial en agilidad organizacional'
-  @meta_description = 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
+  meta_tags! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
 
   if session[:locale] == 'en'

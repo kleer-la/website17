@@ -31,18 +31,16 @@ get '/blog' do
 end
 
 get '/blog/:slug' do |slug|
-  begin
-    blog_one Article.create_one_keventer(slug)
-  rescue StandardError => e
-    puts e
-    status 404
-  end
+  blog_one Article.create_one_keventer(slug)
+rescue StandardError => e
+  puts e
+  status 404
 end
 
 def blog_one(article)
   @article = article
-  meta_tags! title: @article.tabtitle
-  @meta_description = @article.description
+  meta_tags! title: @article.tabtitle,
+             description: @article.description
 
   erb :blog_preview_one
 rescue StandardError => e

@@ -41,7 +41,8 @@ module Helpers
   def external_url_anchor(url, attributes = '')
     "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\" #{attributes}>"
   end
-  #TODO: delete old
+
+  # TODO: delete old
   def external_url_anchor2(url, attributes = '', text)
     "<a href=\"#{url}\" rel=\"noopener noreferrer\" target=\"_blank\" #{attributes}>#{text}</a>"
   end
