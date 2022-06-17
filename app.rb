@@ -50,7 +50,7 @@ before do
                        'es'
                      end
 
-  if ['kleer.la', 'kleer.us', 'kleer.es', 'kleer.com.ar'].include? request.host
+  if ['kleer.la', 'kleer.us'].include? request.host
     redirect "https://www.#{request.host}#{request.path}"
   else
     @page_title = 'Kleer | Agile Coaching, Consulting & Training'
