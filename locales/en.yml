@@ -742,3 +742,34 @@ en:
                         </li>
                     </ul>"
         top: "Top Trainings"
+
+#    page 2022
+    generals:
+      social_media:
+        twitter: ""
+        facebook: ""
+        whatsapp: ""
+        instagram: ""
+        youtube: ""
+        linkedin: ""
+    home2022:
+      title: 'abr'
+      home_hero:
+        - {
+          title: "",
+          text: "",
+          action: ""
+        }
+        - {
+          title: "",
+          text: "",
+          action: ""
+        }
+        - {
+          title: "",
+          text: "",
+          action: ""
+        }
+    resources:
+      title: ""
+      subtitle: ""

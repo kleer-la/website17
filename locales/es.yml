@@ -23,6 +23,7 @@ es:
         title: "BECAS"
         alt: "Becas disponibles para ONG e individuos"
         content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
+#   refactor
     slider:
         title_1: "Agilidad Organizacional"
         text_1: "Acompañamos a organizaciones y equipos para obtener mejores resultados"
@@ -888,3 +889,30 @@ es:
         instagram: ""
         youtube: ""
         linkedin: ""
+    home2022:
+        title: 'abr'
+        home_hero:
+            - {
+                subject: "Agilidad Organizacional",
+                description: "lorem ipsum...",
+                url: "/agilidad-organizacional",
+                img: "...",
+                alt: "Imagen de agilidad organizacional"
+            }
+            - {
+                subject: "Cursos",
+                description: "lorem ipsum...",
+                url: "/catalogo",
+                img: "...",
+                alt: "Cursos"
+            }
+            - {
+                subject: "Nuestros Clientes",
+                description: "lorem ipsum",
+                url: "/clientes",
+                img: "...",
+                alt: "Imagen de clientes"
+            }
+    resources:
+        title: "resources"
+        subtitle: ""

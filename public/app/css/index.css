@@ -401,7 +401,7 @@ footer .nav-tabs > li {
     display: block;
     text-indent: -999em;
     padding: 0;
-    margin: 2rem 1rem; }
+    margin: 2rem 10px; }
     .share-buttons .share.share-facebook {
       background: url("/img/icons/share-facebook.png") no-repeat; }
     .share-buttons .share.share-twitter {

@@ -1,10 +1,13 @@
 <%
-carousel = [
-  {subject: 'Agilidad Organizacional', description: 'Lorem ipsum...', url: '/agilidad-organizacional',
-  img: '...', alt: 'Lorem ipsum...', active: true},
-  {subject: 'Cursos', description: 'Lorem ipsum...', url: '/catalogo', img: '...'},
-  {subject: 'Nuestros clientes', description: 'Lorem ipsum...', url: '/clientes', img: '...'}
-]
+carousel = t("home2022.home_hero").map.with_index{|e, index| {
+  subject: e[:subject],
+  description: e[:description],
+  url: e[:url],
+  img: e[:img],
+  alt: e[:alt],
+  active: index == 0
+}}
+
 %>
 <section id="hero">
   <div id="carouselExampleCaptions" class="carousel hero__carousel slide" data-bs-ride="false">
