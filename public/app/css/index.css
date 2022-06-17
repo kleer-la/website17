@@ -380,6 +380,18 @@ footer .nav-tabs > li {
   font-size: 16px;
   line-height: 32px; }
 
+.generic-card__description {
+  font-size: 10pt;
+  background: #eaeaea;
+  min-height: 470px; }
+
+.generic-card__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .generic-card__list li {
+    margin-top: 10px; }
+
 .share-buttons {
   display: flex;
   justify-content: center; }

@@ -7,35 +7,26 @@
   <br/>
   &nbsp;
   <br/>
+  <div class="row">
+    <%
+      @resources.each do |resource_loc|
+        resource= resource_loc[session[:locale]]
 
-
-  <%
-    @resources.each do |resource_loc|
-      resource= resource_loc[session[:locale]]
-
-      @id = resource['id']
-      @image_cover = resource['cover']
-      @landing = resource['landing']
-      @title = resource['title']
-      @description = resource['description']
-      @authors = resource['authors']
-      @translators = resource['translators']
-      @comments = resource['comments']
-      @resource =resource
-  %>
-
-    <%=erb :'component/_generic_card' %>
-
-  <p><%=resource['id'] %></p>
-    <p><%=resource['landing'] %></p>
-    <p><%=resource['cover'] %></p>
-    <p><%=resource['title'] %></p>
-    <p><%=resource['description'] %></p>
-    <p><%=resource['authors'] %></p>
-    <p><%=resource['translators'] %></p>
-    <p><%=resource['comments'] %></p>
-
-    <hr/>
-
-  <%end %>
+        @id = resource['id']
+        @image_cover = resource['cover']
+        @landing = resource['landing']
+        @title = resource['title']
+        @description = resource['description']
+        @authors = resource['authors']
+        @translators = resource['translators']
+        @comments = resource['comments']
+        @fb_share = resource['share_fb']
+        @tw_share = resource['share_tw']
+        @li_share = resource['share_li']
+    %>
+      <div class="col-4">
+        <%=erb :'component/_generic_card' %>
+      </div>
+    <%end%>
+  </div>
 </div>

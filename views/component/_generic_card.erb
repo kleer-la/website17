@@ -1,11 +1,11 @@
-<div class="card" style="width: 18rem;">
-  <img src="<%=@image_cover %>" class="card-img-top" alt="...">
-  <div class="card-body">
+<div class="card generic-card m-4" style="width: 16rem;" id="@id">
+  <img src="<%=@image_cover %>" class="card-img-top" alt="<%=@title %>">
+  <div class="card-body generic-card__description">
     <h5 class="card-title"><%=@title %></h5>
     <p class="card-text">
       <%= @description %>
     </p>
-    <ul>
+    <ul class="generic-card__list">
       <%if @authors %>
         <li>
           <strong>Autores: </strong>
@@ -29,14 +29,14 @@
 <!--      <div class="row">-->
 <!--        <div class="col-4">-->
           <%=
-            external_url_anchor2 "https://www.facebook.com/sharer/sharer.php?#{@resource['share_fb']}",
+            external_url_anchor2 "https://www.facebook.com/sharer/sharer.php?#{@fb_share}",
                                 'class="share share-facebook"',
                                 'SHARE FB'
           %>
 <!--        </div>-->
 <!--        <div class="col-4">-->
           <%=
-            external_url_anchor2 "https://twitter.com/intent/tweet?#{@resource['share_tw']}",
+            external_url_anchor2 "https://twitter.com/intent/tweet?#{@tw_share}",
                                 'class="share share-twitter" data-size="large" rel="me" rel="canonical"',
                                 'SHARE TWITTER'
 
@@ -44,13 +44,13 @@
 <!--        </div>-->
 <!--        <div class="col-4">-->
           <%=
-            external_url_anchor2 "http://www.linkedin.com/shareArticle?#{@resource['share_li']}",
+            external_url_anchor2 "http://www.linkedin.com/shareArticle?#{@li_share}",
                                 'class="share share-linkedin"',
                                 'SHARE LINKEDIN'
           %>
 <!--        </div>-->
 <!--      </div>-->
     </div>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="<%= @landing %>>" class="btn btn-primary">Más Info</a>
   </div>
 </div>

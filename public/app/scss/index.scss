@@ -8,6 +8,7 @@ $blue-kleer: #7bcaea;
 $soft-grey: #D9D9D9;
 $grey: #8B8888;
 $white: white;
+$grey-card: #eaeaea;
 
 /* Global */
 
@@ -311,6 +312,28 @@ footer .nav-tabs>li {
 }
 
 //Generic cards
+
+.generic-card{
+
+}
+
+.generic-card__description{
+  font-size: 10pt;
+  background: $grey-card;
+  min-height: 470px;
+}
+
+.generic-card__list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    margin-top: 10px;
+  }
+}
+
+
 
 
 .share-buttons {
