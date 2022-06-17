@@ -3,7 +3,6 @@
 <head>
   <%= erb :_gtag %>
   <%= 
-  (meta_tags! title: @page_title) if defined?(@page_title) && @page_title.to_s != ''
   (meta_tags! description: @meta_description) if defined?(@meta_description) && @meta_description.to_s != ''
   display_meta_tags site: 'Kleer', base_url: 'https://www.kleer.la' 
   %>

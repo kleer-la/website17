@@ -3,7 +3,7 @@ get '/clientes/equipos-scrum-en-technisys-2015' do
 end
 
 get '/prensa/casos/equipos-scrum-en-technisys-2015' do
-  @page_title += ' | Equipos de desarrollo Scrum y Automatización en Technisys'
+ meta_tags! title: "Equipos de desarrollo Scrum y Automatización en Technisys"
   @meta_description = 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y
  automatización de despliegue de software en Technisys apoyados por Kleer'
   @meta_keywords = 'Kleer, Technisys, CyberBank, scrum, equipos, desarrollo ágil,
@@ -17,7 +17,7 @@ get '/clientes/equipos-scrum-en-plataforma-10-2015' do
 end
 
 get '/prensa/casos/equipos-scrum-en-plataforma-10-2015' do
-  @page_title += ' | Equipos de desarrollo Scrum y Automatización en Plataforma 10'
+ meta_tags! title: "Equipos de desarrollo Scrum y Automatización en Plataforma 10"
   @meta_description = 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y
  orientación al valor para el negocio en Plataforma 10, apoyados por Kleer'
   @meta_keywords = 'Kleer, Plataforma 10, scrum, equipos, desarrollo ágil, devops,
@@ -31,7 +31,7 @@ get '/clientes/equipos-scrum-en-suramericana-2015' do
 end
 
 get '/prensa/casos/equipos-scrum-en-suramericana-2015' do
-  @page_title += ' | Paradigma ágil en tecnología y en negocio en Suramericana'
+ meta_tags! title: "Paradigma ágil en tecnología y en negocio en Suramericana"
   @meta_description = 'Kleer - Coaching & Training - Paradigma ágiles en tecnología y
  en negocio en Suramericana, apoyados por Kleer'
   @meta_keywords = 'Kleer, Suramericana, Sura, scrum, equipos, desarrollo ágil, valor
@@ -45,7 +45,7 @@ get '/clientes/innovacion-en-marketing-digital-loreal-2016' do
 end
 
 get '/prensa/casos/transformacion-agil-ypf-2020' do
-  @page_title += ' | Así profundizó YPF su camino de transformación ágil'
+  meta_tags! title: "Así profundizó YPF su camino de transformación ágil"
   @meta_description = 'Kleer - Coaching & Training - Creación incremental y colaborativa de
  estrategias digitales facilitada por Kleer'
   @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación,
@@ -55,7 +55,7 @@ get '/prensa/casos/transformacion-agil-ypf-2020' do
 end
 
 get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
-  @page_title += " | Innovación en Marketing Digital en L'Oréal"
+  meta_tags! title: "Innovación en Marketing Digital en L'Oréal"
   @meta_description = 'Kleer - Coaching & Training - Creación incremental y colaborativa de
  estrategias digitales facilitada por Kleer'
   @meta_keywords = "Kleer, L'Oréal, Loreal, Innovación, Design Thinking, facilitación,
@@ -65,7 +65,7 @@ get '/prensa/casos/innovacion-en-marketing-digital-loreal-2016' do
 end
 
 get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
-  @page_title += ' | EPM se transforma culturalmente'
+  meta_tags! title: "EPM se transforma culturalmente"
   @meta_description = 'Kleer - Coaching & Training - Cómo acompañamos desde Kleer la transformación ágil de TI en EPM'
   @meta_keywords = 'Kleer, epm, empresas publicas medellin, scrum, equipos, coaching, cambio cultural, agilidad,
  agile, caso de exito, sistemas, ti, mejora continua, transformación organizacional, evolución organizacional'
@@ -74,7 +74,7 @@ get '/prensa/casos/transformacion-cultural-agil-ti-epm-2018' do
 end
 
 get '/prensa/casos/transformacion-digital-bbva-continental' do
-  @page_title += ' | Acompañamiento en la transformación digital de BBVA Continental'
+  meta_tags! title: "Acompañamiento en la transformación digital de BBVA Continental"
   @meta_description = 'Kleer - Coaching & Training -Acompañamiento en la transformación digital de BBVA Continental'
   @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora
  continua, transformación organizacional, evolución organizacional'
@@ -83,7 +83,7 @@ get '/prensa/casos/transformacion-digital-bbva-continental' do
 end
 
 get '/prensa/casos/falabella-financiero' do
-  @page_title += ' | Transformación Organizacional en Falabella Financiero'
+  meta_tags! title: "#ransformación Organizacional en Falabella Financiero"
   @meta_description = 'Kleer - Coaching & Training - Transformación Organizacional en Falabella Financiero'
   @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora
  continua, transformación organizacional, evolución organizacional'
@@ -92,7 +92,7 @@ get '/prensa/casos/falabella-financiero' do
 end
 
 get '/prensa/casos/afp-crecer' do
-  @page_title += ' | Coaching y transformación ágil en AFP Crecer'
+  meta_tags! title: "Coaching y transformación ágil en AFP Crecer"
   @meta_description = 'Kleer - Coaching & Training - Coaching y transformación ágil en AFP Crecer'
   @meta_keywords = 'Kleer, scrum, equipos, coaching, cambio cultural, agilidad, agile, caso de exito, mejora
  continua, transformación organizacional, evolución organizacional'
@@ -101,7 +101,7 @@ get '/prensa/casos/afp-crecer' do
 end
 
 get '/prensa/casos/capacitaciones-agiles-endava' do
-  @page_title += ' | Jornada de capacitaciones ágiles en Endava'
+  meta_tags! title: "Jornada de capacitaciones ágiles en Endava"
   @meta_description = 'Kleer - Coaching & Training - Endava, una empresa internacional que ofrece servicios
  de desarrollo de software con presencia en Latinoamérica, Estados Unidos y Europa, se vio en el desafío de
  mantener la cultura ágil dentro de un contexto de gran crecimiento en poco tiempo.'
