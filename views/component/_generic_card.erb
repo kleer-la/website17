@@ -18,9 +18,12 @@
           <%= @translators %>
         </li>
       <%end %>
-      <%if @comments %>
+      <%if @comments == '' %>
         <li>
           <strong>Observaciones: </strong>
+          <%
+            puts "comments #{@comments}"
+          %>
           <%= @comments %>
         </li>
       <%end %>
