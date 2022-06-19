@@ -1,0 +1,50 @@
+<%
+  @title = t("ebooks.title")
+  @subtitle = t("ebooks.subtitle")
+%>
+
+<%=erb :'resources_page/hero' %>
+<div class="container">
+  <div class="row">
+
+    <div class="container">
+      <h4 class="resources_subtitle mt-5">
+        <%= @subtitle %>
+      </h4>
+      <br/>
+      &nbsp;
+      <br/>
+      <div class="row">
+        <%
+          @books.each do |book|
+            book = book[session[:locale]]
+            @is_book = true
+
+            @id = book['id']
+            @image_cover = book['cover']
+            @landing = book['buy']
+            @title = book['title']
+            @description = book['description']
+          # @resources.each do |resource_loc|
+          #   resource= resource_loc[session[:locale]]
+          #
+          #   @id = resource['id']
+          #   @image_cover = resource['cover']
+          #   @landing = resource['landing']
+          #   @title = resource['title']
+          #   @description = resource['description']
+          #   @authors = resource['authors']
+          #   @translators = resource['translators']
+          #   @comments = resource['comments']
+          #   @fb_share = resource['share_fb']
+          #   @tw_share = resource['share_tw']
+          #   @li_share = resource['share_li']
+        %>
+          <div class="col-4">
+            <%=erb :'component/_generic_card' %>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

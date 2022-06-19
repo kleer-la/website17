@@ -914,5 +914,8 @@ es:
                 alt: "Imagen de clientes"
             }
     resources:
-        title: "resources"
-        subtitle: ""
+        title: "Recursos y materiales sobre agilidad"
+        subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+    ebooks:
+        title: "Libros"
+        subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"

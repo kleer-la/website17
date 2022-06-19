@@ -134,6 +134,12 @@
       left: 15px;
       bottom: -6px; }
 
+.resources_subtitle {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #337ab7;
+  margin: 10px 0; }
+
 /* Global */
 html,
 body {
@@ -380,6 +386,12 @@ footer .nav-tabs > li {
   font-size: 16px;
   line-height: 32px; }
 
+.generic-card__title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #337ab7;
+  margin: 10px 0; }
+
 .generic-card__description {
   font-size: 10pt;
   background: #eaeaea;
@@ -391,6 +403,18 @@ footer .nav-tabs > li {
   padding: 0; }
   .generic-card__list li {
     margin-top: 10px; }
+
+.generic-card__button {
+  background-color: #7bcaea;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+  font-family: 'Mali', cursive;
+  padding: 6px 15px;
+  text-transform: uppercase; }
+
+.button-container {
+  width: 100%; }
 
 .share-buttons {
   display: flex;

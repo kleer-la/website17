@@ -85,12 +85,20 @@ get '/home2022' do
 end
 
 get '/recursos2022' do
-  # @active_tab_publicamos = 'active'
   meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
   meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
 
   @resources = Resources.new.load.all
   erb :'resources_page/index', layout: :'layout/layout2022'
+end
+
+get '/ebooks2022' do
+  meta_tags! title: 'Libros'
+  meta_tags! description: 'Descripcion libros o recursos'
+
+  @books = Books.new.load.all
+
+  erb :'resources_page/index_books', layout: :'layout/layout2022'
 end
 
 get '/' do

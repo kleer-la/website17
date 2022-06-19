@@ -317,6 +317,13 @@ footer .nav-tabs>li {
 
 }
 
+.generic-card__title{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #337ab7;
+  margin: 10px 0;
+}
+
 .generic-card__description{
   font-size: 10pt;
   background: $grey-card;
@@ -333,8 +340,19 @@ footer .nav-tabs>li {
   }
 }
 
+.generic-card__button{
+  background-color: #7bcaea;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+  font-family: 'Mali', cursive;
+  padding: 6px 15px;
+  text-transform: uppercase;
+}
 
-
+.button-container{
+  width: 100%;
+}
 
 .share-buttons {
   display: flex;
