@@ -9,7 +9,7 @@
   height: 100%; }
 
 .hero__carousel-item {
-  background-color: #8B8888; }
+  background-color: #B3B3B3; }
 
 .carousel-caption {
   padding-bottom: 50px;
@@ -71,7 +71,7 @@
   margin-bottom: 50px; }
 
 .contact__info {
-  background-color: #8B8888;
+  background-color: #B3B3B3;
   border-radius: 30px;
   height: 664px;
   padding: 50px; }
@@ -89,7 +89,7 @@
   background-color: #D9D9D9; }
 
 #newsletter-subscription {
-  background-color: #D9D9D9;
-  height: 250px; }
+  background-color: #FFE600;
+  padding: 72px 0; }
 
 /*# sourceMappingURL=home.css.map */

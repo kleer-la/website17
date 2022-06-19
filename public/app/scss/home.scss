@@ -3,6 +3,19 @@ $soft-grey: #D9D9D9;
 $grey: #8B8888;
 $white: white;
 
+
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+
 //hero
 #hero{
 
@@ -128,7 +141,7 @@ $white: white;
 }
 //news letter
 #newsletter-subscription{
-  background-color: $soft-grey;
-  height: 250px;
+  background-color: $primary-yellow;
+  padding: 72px 0;
 }
 

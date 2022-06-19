@@ -1,8 +1,20 @@
 @import 'home';
 @import 'resources';
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
+
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
 
 $blue-kleer: #7bcaea;
 $soft-grey: #D9D9D9;
@@ -23,14 +35,54 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+h1{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 76px;
+}
+
+h2{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 64px;
+}
+
+h3{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h4{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h5{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h6{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+p{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
 }
 
 img {
@@ -168,74 +220,49 @@ img {
 /* Footer */
 
 footer {
-  padding: 42px 0 0 0;
   /*height: 560px;*/
+  padding-top: 78px;
   overflow: visible;
-  background: $grey;
-}
-//
-//footer .tab-content {
-//  background: url('../img/contact.svg') no-repeat center top;
-//  background-size: contain;
-//  @media(max-width:480px) {
-//    background: #fff url('../img/contact-mobile.svg') no-repeat center bottom;
-//  }
-//}
-footer-small .text-muted, footer .text-muted {
-  padding-left: 0;
-  color: #fff;
+  background: $primary-blue;
 }
 
-footer-small .text-muted li, footer .text-muted li {
-  list-style: none;
-  display: inline-block;
-  font-size: 12px;
-}
+.footer__body{
+  margin: 0 8% 78px 5%;
+  justify-content: center;
 
-@media (max-width: 660px) {
-  footer-small {
-    height: auto;
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
-  footer-small .text-muted li, footer .text-muted li  {
-    display: block;
-    margin-bottom: 5px;
-  }
-  footer-small .text-muted li span, footer .text-muted li span {
-    display: none;
-  }
-}
-
-footer .nav-tabs li a {
-  background: #e13f4a;
-  padding: 2px 10px;
-  color: #fff;
-}
-
-footer .nav-tabs li a:hover {
-  background: #b7333c;
-  border:none;
-}
-
-footer .nav-tabs>li {
-  margin-bottom: 8px;
-}
-
-.mb-50 {
-  margin-bottom: 50px;
-}
-
-.list-inline>li {
-  padding: 0px !important;
 }
 
 .footer-bottom {
-  background: #141414;
+  background: $black;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: relative;
+  bottom: 0;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+
   a {
     color: #fff;
   }
 }
+
+.footer-botom__list{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
 
 //course card
 .course-card{
