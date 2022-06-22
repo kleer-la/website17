@@ -137,91 +137,55 @@ img {
   z-index: 999;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
-  color: #337480;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav>li>a {
-  color: #fff;
-}
-
 .dropdown-menu {
   border: none;
-  padding:0;
+  padding: 45px 0 20px 0;
 }
-.dropdown-submenu {
-  position:relative;
-}
-.dropdown-submenu > .dropdown-menu {
-  top:0;
-  left:100%;
-  margin-top:-1px;
-  margin-left:-1px;
-  -webkit-border-radius:0 4px 4px 4px;
-  -moz-border-radius:0 4px 4px 4px;
-  border-radius:0 4px 4px 4px;
-}
-.dropdown-submenu:hover > .dropdown-menu{
-  display:block;
-}
-.dropdown-submenu > .dropdown-menu li:first-child a:hover {
-  border-radius: 4px 4px 0 0;
-}
-.dropdown-menu>li>a {
-  color: #fff;
-  padding: 5px 20px;
-}
+//.dropdown-submenu {
+//  position:relative;
+//}
+//.dropdown-submenu > .dropdown-menu {
+//  top:0;
+//  left:100%;
+//  margin-top:-1px;
+//  margin-left:-1px;
+//  -webkit-border-radius:0 4px 4px 4px;
+//  -moz-border-radius:0 4px 4px 4px;
+//  border-radius:0 4px 4px 4px;
+//}
+//.dropdown-submenu:hover > .dropdown-menu{
+//  display:block;
+//}
+//.dropdown-submenu > .dropdown-menu li:first-child a:hover {
+//  border-radius: 4px 4px 0 0;
+//}
+//.dropdown-menu>li>a {
+//  color: #fff;
+//  padding: 5px 20px;
+//}
 
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:hover:after {
-  color: #337480;
-  border-left-color:#337480;
-}
-.dropdown-menu>li:last-child>a:hover {
-  border-radius: 0 0 4px 4px;
-}
-.dropdown-submenu > a:after{
-  display:block;
-  content:" ";
-  float:right;
-  width:0;
-  height:0;
-  border-color:transparent;
-  border-style:solid;
-  border-width:5px 0 5px 5px;
-  border-left-color:#cccccc;
-  margin-top:5px;
-  margin-right:-10px;
-}
+//.dropdown-menu>li:last-child>a:hover {
+//  border-radius: 0 0 4px 4px;
+//}
+//.dropdown-submenu > a:after{
+//  display:block;
+//  content:" ";
+//  float:right;
+//  width:0;
+//  height:0;
+//  border-color:transparent;
+//  border-style:solid;
+//  border-width:5px 0 5px 5px;
+//  border-left-color:#cccccc;
+//  margin-top:5px;
+//  margin-right:-10px;
+//}
 
-.dropdown-submenu:hover > a:after{
-  border-left-color:#ffffff;
-}
-.dropdown-submenu .pull-left {
-  float:none;
-}
-.dropdown-submenu.pull-left > .dropdown-menu{
-  left:-100%;
-  margin-left:10px;
-  -webkit-border-radius:6px 0 6px 6px;
-  -moz-border-radius:6px 0 6px 6px;
-  border-radius:6px 0 6px 6px;
-}
-.root:hover > .dropdown-menu{
-  display: block;
-}
 .navbar-nav>li>.dropdown-menu {
-  background-color: #7bcaea;
+  background-color: $white;
 }
 .dropdown-submenu > .dropdown-menu {
-  background-color: #7bcaea;
-}
-.social-icons-desktop {
-  color: #fff;
-  font-size: 16px;
-  &:hover {
-    color: #337480;
-  }
+  background-color: $white;
 }
 
 .social-media{
@@ -231,6 +195,10 @@ img {
 .social-media__list{
   margin: auto 0 auto 0 !important;
   padding: 0 !important;
+
+  li:hover{
+    height: 120%;
+  }
 }
 
 //whatsapp button

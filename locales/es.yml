@@ -887,20 +887,20 @@ es:
         - {
             text: 'AGILIDAD ORGANIZACIONAL',
             url: '/agilidad-organizacional',
-            in-side: true
+            inside: true
         }
         - {
-            text: 'cursos',
+            text: 'CURSOS',
             options: [
                 {
                     text: 'NUESTROS CURSOS',
                     url: '/catalogo',
-                    in-side: true
+                    inside: true
                 },
                 {
                     text: 'ACADEMIA ONLINE',
                     url: 'https://academia.kleer.la/',
-                    in-side: false
+                    inside: false
                 }
             ]
         }
@@ -909,15 +909,25 @@ es:
             options: [
                 {
                     text: 'RECURSOS Y MATERIALES',
-                    url: '',
-                    in-side: true
+                    url: '/recursos',
+                    inside: true
                 },
                 {
                     text: 'BLOG Y VIDEOS',
-                    url: '',
-                    in-side: true
+                    url: '/blog',
+                    inside: true
                 }
             ]
+        }
+        - {
+            text: 'CLIENTES',
+            url: '/clientes',
+            inside: true
+        }
+        - {
+            text: 'SOMOS',
+            url: '/somos',
+            inside: true
         }
 
     social_media:

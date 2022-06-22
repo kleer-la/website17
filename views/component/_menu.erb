@@ -7,7 +7,7 @@
     lang_url = '/en/'
     lang_text = 'ENGLISH'
   end
-
+   navbar_items = t('navbar')
    puts t('navbar')[2][:options][0][:text]
 %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -20,34 +20,58 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/<%=session[:locale]%>/agilidad-organizacional"><%=t('side_menu.coaching')%></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%=t('side_menu.courses')%>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/catalogo"><%=t('side_menu.sync_courses')%></a></li>
-            <li><a class="dropdown-item" href="https://academia.kleer.la/"><%=t('side_menu.campus')%></a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/<%=session[:locale]%>/clientes"><%=t('side_menu.clients')%></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%=t('side_menu.we_publish')%>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
-            <li><a class="dropdown-item" href="/<%=session[:locale]%>/libros"><%=t('side_menu.books')%></a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/<%=session[:locale]%>/somos"><%=t("side_menu.us")%></a>
-        </li>
+        <%navbar_items.each do |item| %>
+          <%if item[:options] %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <%=item[:text]%>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%item[:options].each do |option| %>
+                  <li>
+                    <a class="dropdown-item" href="<%= "#{option[:inside] ? '/'+session[:locale] : ''}#{option[:url]}" %>">
+                      <%=option[:text]%>
+                    </a>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+          <%else %>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<%= "#{item[:inside] ? '/'+session[:locale] : ''}#{item[:url]}" %>">
+                <%=item[:text]%>
+              </a>
+            </li>
+          <%end %>
+        <% end %>
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="/<%#=session[:locale]%>/agilidad-organizacional"><%#=t('side_menu.coaching')%></a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+            <%#=t('side_menu.courses')%>
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/catalogo"><%#=t('side_menu.sync_courses')%></a></li>-->
+<!--            <li><a class="dropdown-item" href="https://academia.kleer.la/"><%#=t('side_menu.campus')%></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/<%#=session[:locale]%>/clientes"><%#=t('side_menu.clients')%></a>-->
+<!--        </li>-->
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+            <%#=t('side_menu.we_publish')%>
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/recursos"><%#=t('side_menu.recursos')%></a></li>-->
+<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/blog"><%#=t('side_menu.blog')%></a></li>-->
+<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/libros"><%#=t('side_menu.books')%></a></li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="/<%#=session[:locale]%>/somos"><%#=t("side_menu.us")%></a>-->
+<!--        </li>-->
         <li class="nav-item">
           <a class="nav-link" href="/en">ENGLISH</a>
         </li>
