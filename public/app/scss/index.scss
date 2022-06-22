@@ -33,6 +33,7 @@ body {
 
 body {
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
 h1{
@@ -85,6 +86,21 @@ p{
   line-height: 26px;
 }
 
+a{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+a:hover{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+
 img {
   max-width: 100%;
 }
@@ -92,19 +108,30 @@ img {
 //COMPONENTS
 
 //navbar
-.navbar-brand {
-  width: 140px;
-  height: 50px;
-  img {
-    width: 100%;
+.navbar {
+  border: none;
+  background: $white !important;
+  min-height: 100px !important;
+  padding: 0 7% 0 7%;
+
+  color: $black;
+
+  a{
+    color: $black
   }
 }
 
-.navbar {
-  border: none;
-  background: $soft-grey !important;
-  min-height: 100px !important;
+.navbar-brand {
+  width: 115px;
+  height: 50px;
+  padding-top: 9px !important;
+
+  img {
+    width: 100%;
+    margin: auto 0 auto 0 !important;
+  }
 }
+
 .navbar-fixed-top {
   border-width: 0;
   z-index: 999;
@@ -195,6 +222,15 @@ img {
   &:hover {
     color: #337480;
   }
+}
+
+.social-media{
+  width: 125px;
+}
+
+.social-media__list{
+  margin: auto 0 auto 0 !important;
+  padding: 0 !important;
 }
 
 //whatsapp button
