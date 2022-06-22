@@ -882,6 +882,44 @@ es:
                         </li>
                     </ul>"
         top: "Principales cursos"
+
+    navbar:
+        - {
+            text: 'AGILIDAD ORGANIZACIONAL',
+            url: '/agilidad-organizacional',
+            in-side: true
+        }
+        - {
+            text: 'cursos',
+            options: [
+                {
+                    text: 'NUESTROS CURSOS',
+                    url: '/catalogo',
+                    in-side: true
+                },
+                {
+                    text: 'ACADEMIA ONLINE',
+                    url: 'https://academia.kleer.la/',
+                    in-side: false
+                }
+            ]
+        }
+        - {
+            text: 'PUBLICAMOS',
+            options: [
+                {
+                    text: 'RECURSOS Y MATERIALES',
+                    url: '',
+                    in-side: true
+                },
+                {
+                    text: 'BLOG Y VIDEOS',
+                    url: '',
+                    in-side: true
+                }
+            ]
+        }
+
     social_media:
         twitter: ""
         facebook: ""
