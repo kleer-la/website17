@@ -79,3 +79,5 @@ git push heroku master:main
 
     sudo apt-get install webp
     cwebp -q 80 input.png -o output.webp
+
+    for f in *.png; do cwebp $f -o $(echo $f | sed s/png$/webp/); done
