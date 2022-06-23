@@ -214,6 +214,31 @@
               "share_li": "mini=true&url=https://www.kleer.la/en/recursos#MentoringBoard&title=&summary=MentoringBoard is a canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. https://www.kleer.la/en/recursos#MentoringBoard #MentoringBoard&source=",
               "comments": ""
               }
+        },
+        { "es": {
+            "id": "TarotdeArquitectura",
+            "landing": "https://www.codeandbeyond.org/p/tarot-de-arquitectura.html",
+            "cover": "/img/recursos/tarot.png",
+            "title": "Tarot de Arquitectura",
+            "description":  "El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas.",
+            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+            "share_fb": "u=https://www.kleer.la/en/recursos#TarotdeArquitectura",
+            "share_tw": "text=El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas. &url=https://www.kleer.la/es/recursos#TarotdeArquitectura&hashtags=TarotdeArquitectura",
+            "share_li": "mini=true&url=https://www.kleer.la/es/recursos#TarotdeArquitectura&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#TarotdeArquitectura #TarotdeArquitectura&source=",
+            "comments": ""
+            },
+          "en": {
+            "id": "ArchitecturalTarot",
+            "landing": "https://www.codeandbeyond.org/p/architectural-tarot.html",
+            "cover": "/img/recursos/tarot.png",
+            "title": "Architectural Tarot",
+            "description": "Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.",
+            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+            "share_fb": "u=https://www.kleer.la/en/recursos#ArchitecturalTarot",
+            "share_tw": "text=Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders. &url=https://www.kleer.la/en/recursos#ArchitecturalTarot&hashtags=ArchitecturalTarot",
+            "share_li": "mini=true&url=https://www.kleer.la/en/recursos#ArchitecturalTarot&title=&summary=Architectural Tarot: Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.  https://www.kleer.la/en/recursos#ArchitecturalTarot #ArchitecturalTarot&source=",
+            "comments": ""
+            }
         }
    ]
 }
