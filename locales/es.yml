@@ -913,7 +913,7 @@ es:
                     inside: true
                 },
                 {
-                    text: 'BLOG Y VIDEOS',
+                    text: 'BLOG',
                     url: '/blog',
                     inside: true
                 }
