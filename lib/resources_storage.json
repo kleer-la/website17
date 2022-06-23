@@ -189,6 +189,31 @@
             "share_li": "mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=",
             "comments": "<a href='https://youtu.be/ctqJyrcfXr4'>Video sobre como facilitar la actividad</a>"
             }
+        },
+        {"es": {
+            "id": "MentoringBoard",
+            "landing": "https://www.codeandbeyond.org/p/mentoring-board.html",
+            "cover": "/img/recursos/mentoring_board.png",
+            "title": "Mentoring Board",
+            "description":  "Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto.",
+            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+            "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
+            "share_tw": "text=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. &url=https://www.kleer.la/es/recursos#MentoringBoard&hashtags=MentoringBoard",
+            "share_li": "mini=true&url=https://www.kleer.la/es/recursos#MentoringBoard&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#MentoringBoard #MentoringBoard&source=",
+            "comments": ""
+            },
+            "en": {
+              "id": "MentoringBoard",
+              "landing": "https://www.codeandbeyond.org/p/mentoring-board-english-edition.html",
+              "cover": "/img/recursos/mentoring_board.png",
+              "title": "Mentoring Board",
+              "description":  "This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal.",
+              "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+              "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
+              "share_tw": "text=This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. &url=https://www.kleer.la/en/recursos#MentoringBoard&hashtags=MentoringBoard",
+              "share_li": "mini=true&url=https://www.kleer.la/en/recursos#MentoringBoard&title=&summary=MentoringBoard is a canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. https://www.kleer.la/en/recursos#MentoringBoard #MentoringBoard&source=",
+              "comments": ""
+              }
         }
    ]
 }

@@ -14,7 +14,7 @@
       &nbsp;<br/>
       <% 
       indice=0
-      @resources.each do |resource_loc|
+      @resources.filter { |r| r[session[:locale]]}.each do |resource_loc|
       resource= resource_loc[session[:locale]]%>
       <%if indice ==0%>
         <div class="container-fluid">
