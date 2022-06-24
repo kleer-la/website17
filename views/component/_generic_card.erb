@@ -1,0 +1,54 @@
+<div class="card generic-card m-4" style="width: 18rem;" id="@id">
+  <img src="<%=@image_cover %>" class="card-img-top" alt="<%=@title %>">
+  <div class="card-body generic-card__description">
+    <h5 class="card-title generic-card__title"><%=@title %></h5>
+    <p class="card-text">
+      <%= @description %>
+    </p>
+    <ul class="generic-card__list">
+      <%if @authors %>
+        <li>
+          <strong>Autores: </strong>
+          <%= @authors %>
+        </li>
+      <%end %>
+      <%if @translators %>
+        <li>
+          <strong>Traductores: </strong>
+          <%= @translators %>
+        </li>
+      <%end %>
+      <%if @comments != ''  and @comments%>
+        <li>
+          <strong>Observaciones: </strong>
+          <%= @comments %>
+        </li>
+      <%end %>
+    </ul>
+
+    <% if not @is_book %>
+      <div class="container share-buttons">
+            <%=
+              external_url_anchor2 "https://www.facebook.com/sharer/sharer.php?#{@fb_share}",
+                                  'class="share share-facebook"',
+                                  'SHARE FB'
+            %>
+            <%=
+              external_url_anchor2 "https://twitter.com/intent/tweet?#{@tw_share}",
+                                  'class="share share-twitter" data-size="large" rel="me" rel="canonical"',
+                                  'SHARE TWITTER'
+
+            %>
+            <%=
+              external_url_anchor2 "http://www.linkedin.com/shareArticle?#{@li_share}",
+                                  'class="share share-linkedin"',
+                                  'SHARE LINKEDIN'
+            %>
+      </div>
+    <%end %>
+    <div class="button-container text-center">
+      <a href="<%= @landing %>>" class="btn btn-primary generic-card__button">Más Info</a>
+    </div>
+
+  </div>
+</div>

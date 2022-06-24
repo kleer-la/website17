@@ -50,10 +50,11 @@ before do
                        'es'
                      end
 
-  if ['kleer.la', 'kleer.us', 'kleer.es', 'kleer.com.ar'].include? request.host
+  if ['kleer.la', 'kleer.us'].include? request.host
     redirect "https://www.#{request.host}#{request.path}"
   else
-    @page_title = 'Kleer | Agile Coaching, Consulting & Training'
+    @base_title = 'Agile Coaching, Consulting & Training'
+    meta_tags! title: @base_title
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),
@@ -74,13 +75,35 @@ before '/:locale/*' do
   I18n.locale = session[:locale]
 end
 
-
 get '/home2022' do
+  meta_tags! title: 'Agile Coaching, Consulting & Training'
+  meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
+                    ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+
+  @coming_courses = coming_courses
   erb :'home/index', layout: :'layout/layout2022'
 end
 
+get '/recursos2022' do
+  meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
+  meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+
+  @resources = Resources.new.load.all
+  erb :'resources_page/index', layout: :'layout/layout2022'
+end
+
+get '/ebooks2022' do
+  meta_tags! title: 'Libros'
+  meta_tags! description: 'Descripcion libros o recursos'
+
+  @books = Books.new.load.all
+
+  erb :'resources_page/index_books', layout: :'layout/layout2022'
+end
+
 get '/' do
-  @meta_description = 'Acompañamos hacia la agilidad organizacional.' \
+  meta_tags! title: 'Agile Coaching, Consulting & Training'
+  meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                       ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
   @kleerers = KeventerReader.instance.kleerers session[:locale]
@@ -105,8 +128,8 @@ end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
-  @page_title = 'Te acompañamos hacia la agilidad organizacional'
-  @meta_description = 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
+  meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
 end
@@ -125,43 +148,43 @@ end
 
 get '/facilitacion' do
   @active_tab_facilitacion = 'active'
-  @page_title += ' | Facilicación'
+  meta_tags! title: "#{@base_title} | Facilicación"
   erb :facilitacion
 end
 
 get '/facilitacion/grafica' do
   @active_tab_facilitacion = 'active'
-  @page_title += ' | Facilicación gráfica'
+  meta_tags! title: "#{@base_title} | Facilicación gráfica"
   erb :facilitacion_grafica
 end
 
 get '/facilitacion/innovacion-creatividad' do
   @active_tab_facilitacion = 'active'
-  @page_title += ' | Innovación y creatividad'
+  meta_tags! title: "#{@base_title} | Innovación y creatividad"
   erb :facilitacion_innovacion_creatividad
 end
 
 get '/facilitacion/planificacion-estrategica' do
   @active_tab_facilitacion = 'active'
-  @page_title += ' | Planificación estratégica'
+  meta_tags! title: "#{@base_title} | Planificación estratégica"
   erb :facilitacion_planificacion_estrategica
 end
 
 get '/facilitacion/dinamicas-eventos' do
   @active_tab_facilitacion = 'active'
-  @page_title += ' | Dinámicas y eventos'
+  meta_tags! title: "#{@base_title} | Dinámicas y eventos"
   erb :facilitacion_dinamicas_eventos
 end
 
 get '/publicamos' do
   @active_tab_publicamos = 'active'
-  @page_title += ' | Publicamos'
+  meta_tags! title: "#{@base_title} | Publicamos"
   erb :publicamos
 end
 
 get '/libros' do
   @active_tab_publicamos = 'active'
-  @page_title += ' | Libros'
+  meta_tags! title: "#{@base_title} | Libros"
   @books = Books.new.load.all
 
   erb :ebooks
@@ -169,21 +192,22 @@ end
 
 get '/recursos' do
   @active_tab_publicamos = 'active'
-  @page_title = 'Materiales y Recursos sobre prácticas ágiles'
-  @meta_description = 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+  meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
+  meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+
   @resources = Resources.new.load.all
   erb :recursos
 end
 
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = 'active'
-  @page_title += ' | Recursos'
+  meta_tags! title: "#{@base_title} | Recursos"
   erb :recursos_primeros_pasos
 end
 
 get '/publicamos/scrum' do
   @active_tab_publicamos = 'active'
-  @page_title += ' | Publicamos | Proyectos Ágiles con Scrum'
+  meta_tags! title: "#{@base_title} | Publicamos | Proyectos Ágiles con Scrum"
   erb :ebook_scrum_plain, layout: :layout_ebook_landing
 end
 
@@ -193,7 +217,7 @@ end
 
 get '/publicamos/mas-productivos' do
   @active_tab_publicamos = 'active'
-  @page_title += ' | Publicamos | Equipos más productivos'
+  meta_tags! title: "#{@base_title} | Publicamos | Equipos más productivos"
   erb :ebook_masproductivos_plain, layout: :layout_ebook_landing
 end
 
@@ -219,7 +243,7 @@ get '/categoria/:category_codename' do
   if @category.nil?
     status 404
   else
-    @page_title = @category.name
+    meta_tags! title: @category.name
     @event_types = @category.event_types.sort_by(&:name)
 
     erb :category
@@ -228,40 +252,40 @@ end
 
 get '/somos' do
   @active_tab_somos = 'active'
-  @page_title += ' | Somos'
+  meta_tags! title: "#{@base_title} | Somos"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
   erb :somos
 end
 
 get '/nuestra-filosofia' do
   @active_tab_somos = 'active'
-  @page_title += ' | Nuestra filosofía'
+  meta_tags! title: "#{@base_title} | Nuestra filosofía"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
   erb :nuestra_filosofia
 end
 
 get '/prensa' do
   @active_tab_prensa = 'active'
-  @page_title += ' | Prensa'
+  meta_tags! title: "#{@base_title} | Prensa"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
   erb :prensa
 end
 
 get '/privacy' do
   @active_tab_privacidad = 'active'
-  @page_title += ' | Declaración de privacidad'
+  meta_tags! title: "#{@base_title} | Declaración de privacidad"
   erb :privacy
 end
 
 get '/terms' do
   @active_tab_terminos = 'active'
-  @page_title += ' | Terminos y condiciones'
+  meta_tags! title: "#{@base_title} | Terminos y condiciones"
   erb :terms
 end
 
 get '/clientes' do
-  @page_title += ' | Nuestros clientes'
-  @meta_description = 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
+  meta_tags! title: "#{@base_title} | Nuestros clientes"
+  meta_tags! description: 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
   @meta_keywords = 'Kleer, Clientes, Casos, Casos de Éxito, confianza'
 
   erb :clientes
@@ -303,7 +327,7 @@ end
 # LEGACY ====================
 
 not_found do
-  @page_title = '404 - No encontrado'
+  meta_tags! title: '404 - No encontrado'
   erb :error_404
 end
 

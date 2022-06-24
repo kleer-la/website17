@@ -23,6 +23,7 @@ es:
         title: "BECAS"
         alt: "Becas disponibles para ONG e individuos"
         content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
+#   refactor
     slider:
         title_1: "Agilidad Organizacional"
         text_1: "Acompañamos a organizaciones y equipos para obtener mejores resultados"
@@ -51,6 +52,7 @@ es:
         strategic_panning: "Planificación estratégica"
         dynamics_events: "Dinámicas y eventos"
         courses: "Cursos"
+        sync_courses: "Nuestros Cursos"
         agenda: "Agenda"
         catalog: "Catálogo"
         campus: "Academia Online"
@@ -880,3 +882,88 @@ es:
                         </li>
                     </ul>"
         top: "Principales cursos"
+
+    navbar:
+        - {
+            text: 'AGILIDAD ORGANIZACIONAL',
+            url: '/agilidad-organizacional',
+            inside: true
+        }
+        - {
+            text: 'CURSOS',
+            options: [
+                {
+                    text: 'NUESTROS CURSOS',
+                    url: '/catalogo',
+                    inside: true
+                },
+                {
+                    text: 'ACADEMIA ONLINE',
+                    url: 'https://academia.kleer.la/',
+                    inside: false
+                }
+            ]
+        }
+        - {
+            text: 'PUBLICAMOS',
+            options: [
+                {
+                    text: 'RECURSOS Y MATERIALES',
+                    url: '/recursos',
+                    inside: true
+                },
+                {
+                    text: 'BLOG',
+                    url: '/blog',
+                    inside: true
+                }
+            ]
+        }
+        - {
+            text: 'CLIENTES',
+            url: '/clientes',
+            inside: true
+        }
+        - {
+            text: 'SOMOS',
+            url: '/somos',
+            inside: true
+        }
+
+    social_media:
+        twitter: ""
+        facebook: ""
+        whatsapp: ""
+        instagram: ""
+        youtube: ""
+        linkedin: ""
+    home2022:
+        title: 'abr'
+        home_hero:
+            - {
+                subject: "Agilidad Organizacional",
+                description: "lorem ipsum...",
+                url: "/agilidad-organizacional",
+                img: "...",
+                alt: "Imagen de agilidad organizacional"
+            }
+            - {
+                subject: "Cursos",
+                description: "lorem ipsum...",
+                url: "/catalogo",
+                img: "...",
+                alt: "Cursos"
+            }
+            - {
+                subject: "Nuestros Clientes",
+                description: "lorem ipsum",
+                url: "/clientes",
+                img: "...",
+                alt: "Imagen de clientes"
+            }
+    resources:
+        title: "Recursos y materiales sobre agilidad"
+        subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+    ebooks:
+        title: "Libros"
+        subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"

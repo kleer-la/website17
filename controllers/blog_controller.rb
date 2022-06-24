@@ -32,12 +32,15 @@ end
 
 get '/blog/:slug' do |slug|
   blog_one Article.create_one_keventer(slug)
+rescue StandardError => e
+  puts e
+  status 404
 end
 
 def blog_one(article)
   @article = article
-  @page_title = @article.tabtitle
-  @meta_description = @article.description
+  meta_tags! title: @article.tabtitle,
+             description: @article.description
 
   erb :blog_preview_one
 rescue StandardError => e
@@ -46,7 +49,6 @@ rescue StandardError => e
 end
 
 def blog_list(articles)
-  @page_title = '' # TODO: remove when migration to meta_tags is completed
   meta_tags! title: 'Blog - Artículos sobre agilidad organizacional'
   meta_tags! description: 'Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @articles = articles

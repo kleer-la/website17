@@ -51,6 +51,7 @@ en:
         strategic_panning: "Strategic Planning"
         dynamics_events: "Event Dynamics"
         courses: "Courses"
+        sync_courses: "Our Courses"
         agenda: "Schedule"
         catalog: "Catalog"
         campus: "Online Academy"
@@ -58,7 +59,7 @@ en:
         books: "Books"
         blog: "Blog"
         videos: "Videos"
-        recursos: "Resources and Materials"
+        recursos: "Resources"
         lets_talk: "Let´s talk!"
     menu:
         home: "Home"
@@ -82,7 +83,7 @@ en:
             blog: "Blog"
             book: "Books"
             video: "Videos"
-            recursos: "Resources and Materials"
+            recursos: "Resources"
         we: "We"
         we_are: "We are"
         our_philosophy: "Our Philosophy"
@@ -158,7 +159,7 @@ en:
        description: "We share knowledge and experiences. Help us spread the word!"
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     recursos:
-        title: "Resources and Materials"
+        title: "Resources"
         lista:
             recurso1:
                     title: "Guias Ágiles"
@@ -571,7 +572,7 @@ en:
       early_bird_couples_until: "Couples (each) until"
       public_editions: "Upcoming open courses"
       other_trainings: "Other trainings from this category"
-      facilitator: "Facilitated byß∑"
+      facilitator: "Facilitated by"
       facilitators: "Facilitators"
       save90percent: "Up to 90% savings!"
       free: "Free event"
@@ -741,3 +742,83 @@ en:
                         </li>
                     </ul>"
         top: "Top Trainings"
+
+#    page 2022
+    navbar:
+      - {
+        text: 'BUSINESS AGILITY',
+        url: '/agilidad-organizacional',
+        inside: true
+      }
+      - {
+        text: 'COURSES',
+        options: [
+          {
+            text: 'OUR COURSES',
+            url: '/catalogo',
+            inside: true
+          },
+          {
+            text: 'ACADEMY',
+            url: 'https://academia.kleer.la/',
+            inside: false
+          }
+        ]
+      }
+      - {
+        text: 'WE PUBLISH',
+        options: [
+          {
+            text: 'RESOURCES',
+            url: '/recursos',
+            inside: true
+          },
+          {
+            text: 'BLOG',
+            url: '/blog',
+            inside: true
+          }
+        ]
+      }
+      - {
+        text: 'CLIENTS',
+        url: '/clientes',
+        inside: true
+      }
+      - {
+        text: 'WE ARE',
+        url: '/somos',
+        inside: true
+      }
+    generals:
+      social_media:
+        twitter: ""
+        facebook: ""
+        whatsapp: ""
+        instagram: ""
+        youtube: ""
+        linkedin: ""
+    home2022:
+      title: 'abr'
+      home_hero:
+        - {
+          title: "",
+          text: "",
+          action: ""
+        }
+        - {
+          title: "",
+          text: "",
+          action: ""
+        }
+        - {
+          title: "",
+          text: "",
+          action: ""
+        }
+    resources:
+      title: ""
+      subtitle: "We dream a world where valuable information is shared by everyone. Here, our bit of knowledge."
+    ebooks:
+      title: ""
+      subtitle: ""

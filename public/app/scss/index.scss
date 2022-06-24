@@ -1,132 +1,410 @@
 @import 'home';
+@import 'resources';
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
+
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
 
 $blue-kleer: #7bcaea;
 $soft-grey: #D9D9D9;
 $grey: #8B8888;
 $white: white;
+$grey-card: #eaeaea;
 
 /* Global */
 
 html,
 body {
   width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 
 body {
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+h1{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 76px;
 }
+
+h2{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 64px;
+}
+
+h3{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h4{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h5{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h6{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+p{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+a{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+a:hover{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+
 
 img {
   max-width: 100%;
 }
 
+//COMPONENTS
 
+//navbar
 .navbar {
   border: none;
-  background: $soft-grey !important;
+  background: $white !important;
+  min-height: 100px !important;
+  padding: 0 7% 0 7%;
+
+  color: $black;
+
+  a{
+    color: $black
+  }
 }
+
+.navbar-brand {
+  width: 115px;
+  height: 50px;
+  padding-top: 9px !important;
+
+  img {
+    width: 100%;
+    margin: auto 0 auto 0 !important;
+  }
+}
+
 .navbar-fixed-top {
   border-width: 0;
   z-index: 999;
 }
 
-.navbar-default .navbar-nav>li>a:hover {
-  color: #337480;
-  background-color: transparent;
-}
-
-.navbar-default .navbar-nav>li>a {
-  color: #fff;
-}
-
 .dropdown-menu {
   border: none;
-  padding:0;
+  padding: 45px 0 20px 0;
 }
-.dropdown-submenu {
-  position:relative;
-}
-.dropdown-submenu > .dropdown-menu {
-  top:0;
-  left:100%;
-  margin-top:-1px;
-  margin-left:-1px;
-  -webkit-border-radius:0 4px 4px 4px;
-  -moz-border-radius:0 4px 4px 4px;
-  border-radius:0 4px 4px 4px;
-}
-.dropdown-submenu:hover > .dropdown-menu{
-  display:block;
-}
-.dropdown-submenu > .dropdown-menu li:first-child a:hover {
-  border-radius: 4px 4px 0 0;
-}
-.dropdown-menu>li>a {
-  color: #fff;
-  padding: 5px 20px;
-}
+//.dropdown-submenu {
+//  position:relative;
+//}
+//.dropdown-submenu > .dropdown-menu {
+//  top:0;
+//  left:100%;
+//  margin-top:-1px;
+//  margin-left:-1px;
+//  -webkit-border-radius:0 4px 4px 4px;
+//  -moz-border-radius:0 4px 4px 4px;
+//  border-radius:0 4px 4px 4px;
+//}
+//.dropdown-submenu:hover > .dropdown-menu{
+//  display:block;
+//}
+//.dropdown-submenu > .dropdown-menu li:first-child a:hover {
+//  border-radius: 4px 4px 0 0;
+//}
+//.dropdown-menu>li>a {
+//  color: #fff;
+//  padding: 5px 20px;
+//}
 
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:hover:after {
-  color: #337480;
-  border-left-color:#337480;
-}
-.dropdown-menu>li:last-child>a:hover {
-  border-radius: 0 0 4px 4px;
-}
-.dropdown-submenu > a:after{
-  display:block;
-  content:" ";
-  float:right;
-  width:0;
-  height:0;
-  border-color:transparent;
-  border-style:solid;
-  border-width:5px 0 5px 5px;
-  border-left-color:#cccccc;
-  margin-top:5px;
-  margin-right:-10px;
-}
+//.dropdown-menu>li:last-child>a:hover {
+//  border-radius: 0 0 4px 4px;
+//}
+//.dropdown-submenu > a:after{
+//  display:block;
+//  content:" ";
+//  float:right;
+//  width:0;
+//  height:0;
+//  border-color:transparent;
+//  border-style:solid;
+//  border-width:5px 0 5px 5px;
+//  border-left-color:#cccccc;
+//  margin-top:5px;
+//  margin-right:-10px;
+//}
 
-.dropdown-submenu:hover > a:after{
-  border-left-color:#ffffff;
-}
-.dropdown-submenu .pull-left {
-  float:none;
-}
-.dropdown-submenu.pull-left > .dropdown-menu{
-  left:-100%;
-  margin-left:10px;
-  -webkit-border-radius:6px 0 6px 6px;
-  -moz-border-radius:6px 0 6px 6px;
-  border-radius:6px 0 6px 6px;
-}
-.root:hover > .dropdown-menu{
-  display: block;
-}
 .navbar-nav>li>.dropdown-menu {
-  background-color: #7bcaea;
+  background-color: $white;
 }
 .dropdown-submenu > .dropdown-menu {
-  background-color: #7bcaea;
+  background-color: $white;
 }
-.social-icons-desktop {
-  color: #fff;
-  font-size: 16px;
-  &:hover {
-    color: #337480;
+
+.social-media{
+  width: 125px;
+}
+
+.social-media__list{
+  margin: auto 0 auto 0 !important;
+  padding: 0 !important;
+
+  li:hover{
+    height: 120%;
   }
 }
+
+//whatsapp button
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+  margin-top:16px;
+}
+
+/* Footer */
+
+footer {
+  /*height: 560px;*/
+  padding-top: 78px;
+  overflow: visible;
+  background: $primary-blue;
+}
+
+.footer__body{
+  margin: 0 8% 78px 5%;
+  justify-content: center;
+
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.footer-bottom {
+  background: $black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  bottom: 0;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+
+  a {
+    color: #fff;
+  }
+}
+
+.footer-botom__list{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+//course card
+.course-card{
+  width: 100% !important;
+  padding: 15px;
+}
+
+.course-card__title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.course-card__subtitle{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+
+  min-height: 100px;
+}
+
+.course-card__image-container{
+  position:relative;
+  display:inline-block;
+  text-align: center;
+  min-height: 180px;
+}
+
+.course-card__image{
+  max-height: 300px;
+  width: auto;
+  border:1px solid red;
+}
+
+.course-card__flags{
+  position:absolute;
+  top:10px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+  div{
+    border-radius: 100px;
+    background-color: $soft-grey;
+    height: 35px;
+    width: 45%;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60%;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+
+
+.course-card__items{
+  height: 100px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.course-card__item{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+//Generic cards
+
+.generic-card{
+
+}
+
+.generic-card__title{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #337ab7;
+  margin: 10px 0;
+}
+
+.generic-card__description{
+  font-size: 10pt;
+  background: $grey-card;
+  min-height: 470px;
+}
+
+.generic-card__list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    margin-top: 10px;
+  }
+}
+
+.generic-card__button{
+  background-color: #7bcaea;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+  font-family: 'Mali', cursive;
+  padding: 6px 15px;
+  text-transform: uppercase;
+}
+
+.button-container{
+  width: 100%;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+
+  .share {
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -999em;
+    padding: 0;
+    margin: 2rem 10px;
+    &.share-facebook {
+      background: url('/img/icons/share-facebook.png') no-repeat;
+    }
+    &.share-twitter {
+      background: url('/img/icons/share-twitter.png') no-repeat;
+    }
+    &.share-linkedin {
+      background: url('/img/icons/share-linkedin.png') no-repeat;
+    }
+  }
+}
+

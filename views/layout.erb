@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<html>
-
+<html class="no-js">
 <head>
   <%= erb :_gtag %>
-  <%= 
-  (meta_tags! title: @page_title) if defined?(@page_title) && @page_title.to_s != ''
-  (meta_tags! description: @meta_description) if defined?(@meta_description) && @meta_description.to_s != ''
-  display_meta_tags site: 'Kleer', base_url: 'https://www.kleer.la' 
-  %>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= display_meta_tags site: 'Kleer', base_url: 'https://www.kleer.la' %>
   <meta name="author" content="Kleer - https://www.kleer.la">
   <meta property="og:url" content="https://www.kleer.la" />
   <meta property="og:type" content="website" />
@@ -18,7 +11,6 @@
   <meta property="og:image:secure_url" content="https://www.kleer.la/img/logos/kleer.png" />
   <meta property="fb:app_id" content="116606177078" />
 	<link rel="shortcut icon" href="/img/favicon.ico">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" type="text/css">
   <link href="/app/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -28,50 +20,24 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link href="/app/css/kleer.css" rel="stylesheet" type="text/css">
   <!-- endbuild -->
-    <!-- build:js(.) scripts/vendor.js -->
-    <script src="/app/vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="/app/vendor/scrollreveal.min.js" type="text/javascript"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- endbuild -->
   <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
   <script>
-  window.addEventListener("load", function(){
-  window.cookieconsent.initialise({
-    "palette": {
-      "popup": {
-        "background": "#87cedc",
-        "text": "#337480"
-      },
-      "button": {
-        "background": "#337480"
-      }
-    },
-    "theme": "classic",
-    "position": "bottom-right",
-    "content": {
-      "message": "Las cookies de este sitio web se usan para brindar la mejor experiencia posible.",
-      "dismiss": "Aceptar",
-      "link": "Conocer más",
-      "href": "/es/privacy"
-    }
-  })});
+   document.documentElement.classList.remove("no-js");
   </script>
+<%# Need jquery for DataTable in /entrenamos %>
+<script src="/app/vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
 </head>
-
 <body>
 <%=erb :_menu%>
-
   <div id="top"></div>
-
 <%= yield %>
-
 <footer>
 <%= erb :_footer%>
 </footer>
-
+<script src="/app/vendor/scrollreveal.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-
     //Para evitar el cambio de tamaño de background al hacer scroll en mobile cuando se esconde la barra de direcciones
     $(window).resize(function () {
       resizeBackground();
@@ -178,7 +144,6 @@
     // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
 </script>
-
+<%= erb :_cookies%>
 </body>
-
 </html>

@@ -36,6 +36,18 @@
             "share_tw": "text=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de @kleer_la. Descárgalas aquí&url=https://kl.la/dod-kards&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles",
             "share_li": "mini=true&url=https://kl.la/dod-kards&title=&summary=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de Kleer. Descárgalas aquí https://kl.la/dod-kards #AgilidadOrganizacional  #ReunionesProductivas #MasColaboracion #Agile #Scrum #equiposagiles&source=",
             "comments": "Versiones disponibles para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+            },
+          "en": {
+            "id": "DoD-kards",
+            "landing": "https://medium.com/@twallet/dod-kards-a-game-to-co-create-the-team-definition-of-done-7eda68f6dbec",
+            "cover": "/img/recursos/DoD-Kards-en.png",
+            "title": "DoD Kards", 
+            "description": "A card game to reflect and reach consensus among all team members on the criteria to be included in its Definition of Done (DoD).",
+            "authors": "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> & <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+            "share_fb": "u=https://kleer.la/en/recursos#DoD-kards",
+            "share_tw": "text=How do we agree on a definition of done with the team? I share the card game DoD Kards of @kleer_la. &url=https://kleer.la/en/recursos#DoD-kards&hashtags=BizAgility,Agile,Scrum",
+            "share_li": "mini=true&url=https://kleer.la/en/recursos#DoD-kards&title=&summary=How do we agree on a definition of done with the team? I share the card game DoD Kards of Kleer. https://kleer.la/en/recursos#DoD-kards #BizAgility #Agile #Scrum&source=",
+            "comments": "Available to print & to play online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
             }
         },
         {"es": {   
@@ -144,10 +156,22 @@
             "title": "DoR Kards",
             "description":  "Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR: Definition of Ready).",
             "authors": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
-            "share_fb": "u=https://kl.la/dor-kards",
-            "share_tw": "text=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-xp&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster,ExtremeProgramming,XP",
-            "share_li": "mini=true&url=https://kl.la/dor-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. Descárgalas aquí https://kl.la/dor-kards #AgilidadOrganizacional  #ReunionesProductivas #MasColaboracion #Agile #Scrum #equiposagiles&source=",
+            "share_fb": "u=https://kleer.la/es/recursos#DoR-kards",
+            "share_tw": "text=Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR Kards) @kleer_la. Descárgarlo aquí&url= &hashtags=AgilidadOrganizacional,Agile,Scrum",
+            "share_li": "mini=true&url=https://kleer.la/en/recursos#DoR-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. https://kleer.la/es/recursos#DoR-kards #AgilidadOrganizacional #Agile #Scrum #ExtremeProgramming&source=",
             "comments": "Versiones disponibles para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+            },
+          "en": {   
+            "id": "DoR-kards",
+            "landing": "https://medium.com/@twallet/dor-kards-a-game-to-co-create-the-team-definition-of-ready-72e3cc13f484",
+            "cover": "/img/recursos/DoR-Kards-en.png",
+            "title": "DoR Kards",
+            "description":  "A card game where the goal is to brainstorm and reach consensus as a team on the criteria to be included in its Definition of Ready (DoR).",
+            "authors": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+            "share_fb": "u=https://kleer.la/es/recursos#DoR-kards",
+            "share_tw": "text=How do we agree on a definition of done with the team? I share the card game DoR Kards of @kleer_la. &url=https://kleer.la/es/recursos#DoR-kards&hashtags=BizOrganizacional,Agile,Scrum",
+            "share_li": "mini=true&url=https://kleer.la/es/recursos#DoR-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. https://kleer.la/es/recursos#DoR-kards #BizAgility #Agile #Scrum&source=",
+            "comments": "Available to print & to play online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
             }
         },
         {"es": {   
@@ -188,6 +212,56 @@
             "share_tw": "text=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Link aquí&url=https://kl.la/KanbanCakes&hashtags=Kanban,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles",
             "share_li": "mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=",
             "comments": "<a href='https://youtu.be/ctqJyrcfXr4'>Video sobre como facilitar la actividad</a>"
+            }
+        },
+        {"es": {
+            "id": "MentoringBoard",
+            "landing": "https://www.codeandbeyond.org/p/mentoring-board.html",
+            "cover": "/img/recursos/mentoring-board.png",
+            "title": "Mentoring Board",
+            "description":  "Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto.",
+            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+            "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
+            "share_tw": "text=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. &url=https://www.kleer.la/es/recursos#MentoringBoard&hashtags=MentoringBoard",
+            "share_li": "mini=true&url=https://www.kleer.la/es/recursos#MentoringBoard&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#MentoringBoard #MentoringBoard&source=",
+            "comments": ""
+            },
+            "en": {
+              "id": "MentoringBoard",
+              "landing": "https://www.codeandbeyond.org/p/mentoring-board-english-edition.html",
+              "cover": "/img/recursos/mentoring-board.png",
+              "title": "Mentoring Board",
+              "description":  "This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal.",
+              "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+              "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
+              "share_tw": "text=This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. &url=https://www.kleer.la/en/recursos#MentoringBoard&hashtags=MentoringBoard",
+              "share_li": "mini=true&url=https://www.kleer.la/en/recursos#MentoringBoard&title=&summary=MentoringBoard is a canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. https://www.kleer.la/en/recursos#MentoringBoard #MentoringBoard&source=",
+              "comments": ""
+              }
+        },
+        { "es": {
+            "id": "TarotdeArquitectura",
+            "landing": "https://www.codeandbeyond.org/p/tarot-de-arquitectura.html",
+            "cover": "/img/recursos/tarot-deck.png",
+            "title": "Tarot de Arquitectura",
+            "description":  "El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas.",
+            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+            "share_fb": "u=https://www.kleer.la/en/recursos#TarotdeArquitectura",
+            "share_tw": "text=El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas. &url=https://www.kleer.la/es/recursos#TarotdeArquitectura&hashtags=TarotdeArquitectura",
+            "share_li": "mini=true&url=https://www.kleer.la/es/recursos#TarotdeArquitectura&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#TarotdeArquitectura #TarotdeArquitectura&source=",
+            "comments": ""
+            },
+          "en": {
+            "id": "ArchitecturalTarot",
+            "landing": "https://www.codeandbeyond.org/p/architectural-tarot.html",
+            "cover": "/img/recursos/tarot-deck.png",
+            "title": "Architectural Tarot",
+            "description": "Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.",
+            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+            "share_fb": "u=https://www.kleer.la/en/recursos#ArchitecturalTarot",
+            "share_tw": "text=Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders. &url=https://www.kleer.la/en/recursos#ArchitecturalTarot&hashtags=ArchitecturalTarot",
+            "share_li": "mini=true&url=https://www.kleer.la/en/recursos#ArchitecturalTarot&title=&summary=Architectural Tarot: Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.  https://www.kleer.la/en/recursos#ArchitecturalTarot #ArchitecturalTarot&source=",
+            "comments": ""
             }
         }
    ]

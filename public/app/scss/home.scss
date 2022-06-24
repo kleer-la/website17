@@ -3,13 +3,117 @@ $soft-grey: #D9D9D9;
 $grey: #8B8888;
 $white: white;
 
+
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+
 //hero
-.carousel-item{
+#hero{
+
+}
+
+.item,
+.active {
+  height: 100%;
+}
+
+.hero__carousel {
+  height: 70vh;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.hero__carousel-item{
   background-color: $grey;
 }
 
-//contact us
+.carousel-caption {
+  padding-bottom: 50px;
+  text-shadow: none;
+  text-align: left;
+  right: auto;
+  .text-vertical {
+    margin: 30px 0 0 50px;
+  }
+}
 
+//promotion
+#promotion{
+  margin-top: 70px;
+}
+
+.promotion__title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.promotion__text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.promotion__image{
+
+}
+
+//client-carousel
+#client-carousel{
+  margin-top: 180px;
+}
+
+.client-carousel__title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+}
+
+//last courses
+#last-courses{
+  background-color: $soft-grey;
+  visibility: visible;
+}
+
+.last-courses__title{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+}
+
+#mobile-carousel{
+  visibility: hidden;
+  height: 0;
+}
+
+@media screen and (max-width:420px) {
+  #last-courses{
+    visibility: hidden;
+    height: 0;
+  }
+  #mobile-carousel{
+    visibility: visible;
+    height: auto;
+  }
+}
+
+//contact us
 #contact-us{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -25,3 +129,19 @@ $white: white;
   height: 664px;
   padding: 50px;
 }
+
+.contact-country-button{
+  font-family: 'Mali';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 24px;
+
+  background-color: $soft-grey;
+}
+//news letter
+#newsletter-subscription{
+  background-color: $primary-yellow;
+  padding: 72px 0;
+}
+

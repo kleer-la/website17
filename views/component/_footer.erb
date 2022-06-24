@@ -1,19 +1,52 @@
 <footer>
-<div class="container-fluid footer-bottom">
-  <div class="text-center">
-    <ul class="text-muted">
-      <li>Copyright &copy; Kleer 2022 <span>|</span></li>
-      <% if (session[:locale] == "es") %>
-        <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
-        <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
-      <% end %>
-      <% if (session[:locale] == "en") %>
-        <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
-        <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
-      <% end %>
-      <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-      <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
-    </ul>
+  <div class="container-fluid footer__body">
+    <div class="row">
+      <div class="col-md-3">
+        <h6>Qué hacemos</h6>
+        <ul>
+          <li><a>Agilidad organizacional</a></li>
+          <li><a>Cursos</a></li>
+          <li><a>Clientes</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6>Publicamos</h6>
+        <ul>
+          <li><a>Recursos y materiales</a></li>
+          <li><a>Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6>Somos</h6>
+        <ul>
+          <li><a>Nuestra filosofía</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6>Nuestras redes</h6>
+        <ul>
+          <li><a>Linked In</a></li>
+          <li><a>Twitter</a></li>
+          <li><a>Youtube</a></li>
+          <li><a>Instagram</a></li>
+          <li><a>Facebook</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="container-fluid footer-bottom">
+      <ul class="footer-botom__list">
+        <li>Copyright &copy; Kleer 2022 <span>|</span></li>
+        <% if (session[:locale] == "es") %>
+          <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
+          <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
+        <% end %>
+        <% if (session[:locale] == "en") %>
+          <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
+          <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
+        <% end %>
+        <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
+        <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
+      </ul>
+  </div>
 </footer>
