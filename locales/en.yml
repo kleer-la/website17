@@ -744,6 +744,52 @@ en:
         top: "Top Trainings"
 
 #    page 2022
+    navbar:
+      - {
+        text: 'BUSINESS AGILITY',
+        url: '/agilidad-organizacional',
+        inside: true
+      }
+      - {
+        text: 'COURSES',
+        options: [
+          {
+            text: 'OUR COURSES',
+            url: '/catalogo',
+            inside: true
+          },
+          {
+            text: 'ACADEMY',
+            url: 'https://academia.kleer.la/',
+            inside: false
+          }
+        ]
+      }
+      - {
+        text: 'WE PUBLISH',
+        options: [
+          {
+            text: 'MATERIALS AND RESOURCES',
+            url: '/recursos',
+            inside: true
+          },
+          {
+            text: 'BLOG',
+            url: '/blog',
+            inside: true
+          }
+        ]
+      }
+      - {
+        text: 'CLIENTS',
+        url: '/clientes',
+        inside: true
+      }
+      - {
+        text: 'WE ARE',
+        url: '/somos',
+        inside: true
+      }
     generals:
       social_media:
         twitter: ""
