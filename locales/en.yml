@@ -159,7 +159,7 @@ en:
        description: "We share knowledge and experiences. Help us spread the word!"
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     recursos:
-        title: "Resources and Materials"
+        title: "Resources"
         lista:
             recurso1:
                     title: "Guias Ágiles"
