@@ -59,7 +59,7 @@ en:
         books: "Books"
         blog: "Blog"
         videos: "Videos"
-        recursos: "Resources and Materials"
+        recursos: "Resources"
         lets_talk: "Let´s talk!"
     menu:
         home: "Home"
@@ -83,7 +83,7 @@ en:
             blog: "Blog"
             book: "Books"
             video: "Videos"
-            recursos: "Resources and Materials"
+            recursos: "Resources"
         we: "We"
         we_are: "We are"
         our_philosophy: "Our Philosophy"
@@ -769,7 +769,7 @@ en:
         text: 'WE PUBLISH',
         options: [
           {
-            text: 'MATERIALS AND RESOURCES',
+            text: 'RESOURCES',
             url: '/recursos',
             inside: true
           },
