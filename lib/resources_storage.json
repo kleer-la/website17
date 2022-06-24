@@ -193,7 +193,7 @@
         {"es": {
             "id": "MentoringBoard",
             "landing": "https://www.codeandbeyond.org/p/mentoring-board.html",
-            "cover": "/img/recursos/mentoring_board.png",
+            "cover": "/img/recursos/mentoring-board.png",
             "title": "Mentoring Board",
             "description":  "Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto.",
             "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
@@ -205,7 +205,7 @@
             "en": {
               "id": "MentoringBoard",
               "landing": "https://www.codeandbeyond.org/p/mentoring-board-english-edition.html",
-              "cover": "/img/recursos/mentoring_board.png",
+              "cover": "/img/recursos/mentoring-board.png",
               "title": "Mentoring Board",
               "description":  "This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal.",
               "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
@@ -218,7 +218,7 @@
         { "es": {
             "id": "TarotdeArquitectura",
             "landing": "https://www.codeandbeyond.org/p/tarot-de-arquitectura.html",
-            "cover": "/img/recursos/tarot.png",
+            "cover": "/img/recursos/tarot-deck.png",
             "title": "Tarot de Arquitectura",
             "description":  "El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas.",
             "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
@@ -230,7 +230,7 @@
           "en": {
             "id": "ArchitecturalTarot",
             "landing": "https://www.codeandbeyond.org/p/architectural-tarot.html",
-            "cover": "/img/recursos/tarot.png",
+            "cover": "/img/recursos/tarot-deck.png",
             "title": "Architectural Tarot",
             "description": "Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.",
             "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
