@@ -59,7 +59,7 @@ en:
         books: "Books"
         blog: "Blog"
         videos: "Videos"
-        recursos: "Resources and Materials"
+        recursos: "Resources"
         lets_talk: "Let´s talk!"
     menu:
         home: "Home"
@@ -83,7 +83,7 @@ en:
             blog: "Blog"
             book: "Books"
             video: "Videos"
-            recursos: "Resources and Materials"
+            recursos: "Resources"
         we: "We"
         we_are: "We are"
         our_philosophy: "Our Philosophy"
@@ -159,7 +159,7 @@ en:
        description: "We share knowledge and experiences. Help us spread the word!"
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
     recursos:
-        title: "Resources and Materials"
+        title: "Resources"
         lista:
             recurso1:
                     title: "Guias Ágiles"
@@ -778,7 +778,7 @@ en:
         text: 'WE PUBLISH',
         options: [
           {
-            text: 'MATERIALS AND RESOURCES',
+            text: 'RESOURCES',
             url: '/recursos',
             inside: true
           },
