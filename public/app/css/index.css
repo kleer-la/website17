@@ -11,13 +11,14 @@
   height: 100%; }
 
 .hero__carousel-item {
-  background-color: #B3B3B3; }
+  background-color: #FFFFFF; }
 
 .carousel-caption {
   padding-bottom: 50px;
   text-shadow: none;
   text-align: left;
-  right: auto; }
+  right: auto;
+  color: #333333; }
   .carousel-caption .text-vertical {
     margin: 30px 0 0 50px; }
 
@@ -62,16 +63,16 @@
   line-height: 32px; }
 
 #mobile-carousel {
-  visibility: hidden;
+  display: none;
   height: 0; }
 
 @media screen and (max-width: 420px) {
   #last-courses {
-    visibility: hidden;
+    display: none;
     height: 0; }
 
   #mobile-carousel {
-    visibility: visible;
+    display: block;
     height: auto; } }
 #contact-us {
   margin-top: 50px;
@@ -154,7 +155,8 @@ body {
 
 body {
   font-family: 'Raleway', sans-serif;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  height: 100%; }
 
 h1 {
   font-style: normal;
@@ -218,6 +220,36 @@ a:hover {
 img {
   max-width: 100%; }
 
+.my-primary-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  height: 52px;
+  background: #68CEF2;
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  margin: auto; }
+
+.my-secondary-button {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  height: 52px;
+  background: white;
+  border-radius: 100px;
+  border: #68CEF2 2px solid; }
+
 .navbar {
   border: none;
   background: white !important;
@@ -277,10 +309,10 @@ img {
 
 /* Footer */
 footer {
-  /*height: 560px;*/
   padding-top: 78px;
   overflow: visible;
-  background: #68CEF2; }
+  background: #68CEF2;
+  margin-bottom: 0 !important; }
 
 .footer__body {
   margin: 0 8% 78px 5%;
