@@ -91,6 +91,8 @@ a{
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
+  color: black;
+  text-decoration: none;
 }
 
 a:hover{
@@ -98,6 +100,8 @@ a:hover{
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
+  color: black;
+  text-decoration: none;
 }
 
 
@@ -264,6 +268,11 @@ footer {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: $white;
+
+  li{
+    margin-left: 15px;
+  }
 }
 
 

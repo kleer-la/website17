@@ -84,10 +84,16 @@ $white: #FFFFFF;
   text-align: center;
 }
 
+.client-carousel__container{
+  background-color: $primary-blue;
+  border-radius: 16px;
+  padding: 50px 80px;
+}
+
 //last courses
 #last-courses{
-  background-color: $soft-grey;
   visibility: visible;
+  margin-bottom: 50px;
 }
 
 .last-courses__title{

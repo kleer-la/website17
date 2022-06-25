@@ -883,6 +883,16 @@ es:
                     </ul>"
         top: "Principales cursos"
 
+
+    generals:
+        social_media:
+            twitter: "https://twitter.com/kleer_la"
+            facebook: "https://www.facebook.com/kleer.la"
+            whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
+            instagram: "https://www.instagram.com/kleer.la/"
+            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
+            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+
     navbar:
         - {
             text: 'AGILIDAD ORGANIZACIONAL',
@@ -930,13 +940,6 @@ es:
             inside: true
         }
 
-    social_media:
-        twitter: ""
-        facebook: ""
-        whatsapp: ""
-        instagram: ""
-        youtube: ""
-        linkedin: ""
     home2022:
         title: 'abr'
         home_hero:
