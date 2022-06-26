@@ -48,6 +48,17 @@ $white: #FFFFFF;
     margin: 30px 0 0 50px;
   }
 }
+//bootstrap edited
+.carousel-indicators [data-bs-target]{
+  background-color: $grey;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+//bootstrap edited
+.carousel-indicators .active {
+  background-color: $primary-red;
+}
 
 //promotion
 #promotion{
@@ -74,13 +85,10 @@ $white: #FFFFFF;
 
 //client-carousel
 #client-carousel{
-  margin-top: 180px;
+  margin: 120px 10px;
 }
 
 .client-carousel__title{
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
   line-height: 32px;
   text-align: center;
 }
@@ -89,6 +97,10 @@ $white: #FFFFFF;
   background-color: $primary-blue;
   border-radius: 16px;
   padding: 50px 80px;
+
+  @media screen and (max-width:420px) {
+    padding: 10px 20px 20px 30px;
+  }
 }
 
 //last courses

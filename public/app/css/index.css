@@ -22,6 +22,15 @@
   .carousel-caption .text-vertical {
     margin: 30px 0 0 50px; }
 
+.carousel-indicators [data-bs-target] {
+  background-color: #B3B3B3;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%; }
+
+.carousel-indicators .active {
+  background-color: #EF5662; }
+
 #promotion {
   margin-top: 70px; }
 
@@ -38,12 +47,9 @@
   line-height: 32px; }
 
 #client-carousel {
-  margin-top: 180px; }
+  margin: 120px 10px; }
 
 .client-carousel__title {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
   line-height: 32px;
   text-align: center; }
 
@@ -51,6 +57,9 @@
   background-color: #68CEF2;
   border-radius: 16px;
   padding: 50px 80px; }
+  @media screen and (max-width: 420px) {
+    .client-carousel__container {
+      padding: 10px 20px 20px 30px; } }
 
 #last-courses {
   visibility: visible;
@@ -150,8 +159,7 @@
 html,
 body {
   width: 100%;
-  max-width: 100%;
-  height: 100%; }
+  max-width: 100%; }
 
 body {
   font-family: 'Raleway', sans-serif;
@@ -220,6 +228,12 @@ a:hover {
 img {
   max-width: 100%; }
 
+@media screen and (max-width: 420px) {
+  a {
+    font-size: 14px; }
+
+  h4 {
+    font-size: 24px; } }
 .my-primary-button {
   display: flex;
   flex-direction: row;
