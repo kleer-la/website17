@@ -1,3 +1,6 @@
+#hero {
+  max-width: 100vw; }
+
 .item,
 .active {
   height: 100%; }
@@ -80,7 +83,11 @@
 
   #mobile-carousel {
     display: block;
-    height: auto; } }
+    height: auto; }
+
+  .course-card {
+    margin: auto;
+    max-width: 285px; } }
 #contact-us {
   margin-top: 50px;
   margin-bottom: 50px; }
