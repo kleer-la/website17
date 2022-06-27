@@ -38,7 +38,7 @@ class Article
   end
 
   attr_accessor :title, :description, :tabtitle, :body, :published,
-                :trainers, :slug, :abstract,
+                :trainers, :slug, :abstract, :lang,
                 :created_at, :updated_at
 
   def initialize(doc)
@@ -47,6 +47,7 @@ class Article
     @slug = doc['slug']
     @tabtitle = doc['tabtitle'] || @title
     @description = doc['description']
+    @lang = doc['lang']
     @published = doc['published']
     @abstract = doc['abstract'] || ''
     init_trainers(doc)
