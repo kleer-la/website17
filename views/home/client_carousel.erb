@@ -40,8 +40,8 @@
 <% clients_per_row = 4
 active= "active"%>
 <section id="client-carousel" class="p-3">
-  <div class="container">
-    <h2 class="client-carousel__title mt-3">Estas organizaciones ya confían en nosotros</h2>
+  <div class="container client-carousel__container">
+    <h5 class="client-carousel__title mt-3">Estas organizaciones ya confían en nosotros</h5>
     <div id="carouselClients" class="carousel slide mt-5" data-bs-ride="carousel">
       <div class="carousel-inner">
       <% clients.each_with_index  do |client, index| %>

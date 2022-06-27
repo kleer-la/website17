@@ -7,8 +7,8 @@
     lang_url = '/en/'
     lang_text = 'ENGLISH'
   end
+
    navbar_items = t('navbar')
-   puts t('navbar')[2][:options][0][:text]
 %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <div class="container-fluid">
@@ -44,48 +44,12 @@
             </li>
           <%end %>
         <% end %>
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link active" aria-current="page" href="/<%#=session[:locale]%>/agilidad-organizacional"><%#=t('side_menu.coaching')%></a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-            <%#=t('side_menu.courses')%>
-<!--          </a>-->
-<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/catalogo"><%#=t('side_menu.sync_courses')%></a></li>-->
-<!--            <li><a class="dropdown-item" href="https://academia.kleer.la/"><%#=t('side_menu.campus')%></a></li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link" href="/<%#=session[:locale]%>/clientes"><%#=t('side_menu.clients')%></a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
-            <%#=t('side_menu.we_publish')%>
-<!--          </a>-->
-<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/recursos"><%#=t('side_menu.recursos')%></a></li>-->
-<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/blog"><%#=t('side_menu.blog')%></a></li>-->
-<!--            <li><a class="dropdown-item" href="/<%#=session[:locale]%>/libros"><%#=t('side_menu.books')%></a></li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link" href="/<%#=session[:locale]%>/somos"><%#=t("side_menu.us")%></a>-->
-<!--        </li>-->
         <li class="nav-item">
           <a class="nav-link" href="/en">ENGLISH</a>
         </li>
       </ul>
       <div>
-        <div class="social-media navbar-text">
-          <ul class="social-media__list">
-            <li class="list-inline-item"><a href="https://www.linkedin.com/company/541684"><i class="fa fa-linkedin"></i></a></li>
-            <li class="list-inline-item"><a href="https://twitter.com/kleer_la"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"><i class="fa fa-youtube"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/kleer.la/"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="https://facebook.com/kleer.la"><i class="fa fa-facebook"></i></a></li>
-          </ul>
-        </div>
+        <%= erb :'component/_social_media' %>
       </div>
     </div>
   </div>
