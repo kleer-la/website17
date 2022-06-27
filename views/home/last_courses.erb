@@ -7,10 +7,10 @@
   # }
 
   imgs = {
-    7 => 'app/img/default/work.png',
-    342 => 'app/img/default/work.png',
-    268 => 'app/img/default/work.png',
-    247 => 'app/img/default/work.png'
+    7 => '/app/img/default/work.png',
+    342 => '/app/img/default/work.png',
+    268 => '/app/img/default/work.png',
+    247 => '/app/img/default/work.png'
   }
 
   @coming_courses = @coming_courses
@@ -25,7 +25,9 @@
 
 <section id="last-courses" class="p-5 mt-4">
   <div class='container'>
-    <h4 class="text-center m-4 last-courses__tittle">Próximos cursos</h4>
+    <h4 class="text-center m-4 last-courses__tittle">
+      <%= t('home2022.home_courses.title')%>
+    </h4>
     <div class='row mt-5'>
 
       <% @coming_courses.each do |course|
@@ -37,7 +39,9 @@
       <% end%>
     </div>
     <div class="text-center mt-5">
-      <button class="btn my-primary-button">Ver todos los cursos</button>
+      <a class="btn my-primary-button">
+        <%= t('home2022.home_courses.button.title') %>
+      </a>
     </div>
   </div>
 </section>
@@ -67,7 +71,9 @@
 
 
     <div class="text-center mt-5">
-      <button class="btn btn-secondary">Ver todos los cursos</button>
+      <a class="btn my-primary-button">
+        <%= t('home2022.home_courses.button.title') %>
+      </a>
     </div>
   </div>
 

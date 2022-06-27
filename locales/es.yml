@@ -941,7 +941,18 @@ es:
         }
 
     home2022:
-        title: 'abr'
+        home_business_agility:
+            title: 'Agilidad organizacional'
+            text: '
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dignissimos dolorem eius eos eum
+                  impedit iure quam quo reprehenderit sint, voluptatibus! Accusamus, assumenda beatae commodi facere hic
+                  molestias provident.
+                </p>
+                <p>Alias at autem, consectetur consequatur doloremque ea earum enim eum itaque laborum nemo non numquam
+                  obcaecati odio provident quam quos tempora tenetur unde voluptas? Delectus dignissimos excepturi facilis
+                  nesciunt quaerat!
+                </p>
+                '
         home_hero:
             - {
                 subject: "Agilidad Organizacional",
@@ -964,6 +975,16 @@ es:
                 img: "...",
                 alt: "Imagen de clientes"
             }
+        home_clients:
+            title: 'Estas organizaciones confían en nosotros'
+        home_courses:
+            title: 'Nuestros próximos cursos'
+            button:
+                title: 'Todos nuestros cursos'
+        home_newsletter:
+            title: 'Enterate de todas las novedades del mundo ágil'
+            button:
+                title: 'Suscribete'
     resources:
         title: "Recursos y materiales sobre agilidad"
         subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
