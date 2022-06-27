@@ -10,7 +10,7 @@
       <%if @articles.nil? || @articles == [] %>
         <h2>En construcción</h2>
       <% else
-      @articles.each do |article|%>
+      @articles.filter {|a| a.lang == session[:locale]}.each do |article|%>
       <article class="blog__article">
         <h2><a href='<%= where_uri+article.slug%>'>
         <%=article.title%>
