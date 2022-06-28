@@ -9,7 +9,7 @@
   <div class="row">
     <%
       @resources.each do |resource_loc|
-        resource= resource_loc[session[:locale]]
+        resource= resource_loc['es']
 
         @id = resource['id']
         @image_cover = resource['cover']

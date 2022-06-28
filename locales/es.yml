@@ -168,6 +168,9 @@ es:
         title: "Publicamos"
         description: "Compartimos conocimientosy experiencias. ¡Ayudanos a correr la voz!"
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
+    blog:
+        readit: "Continuar leyendo"
+        back: "<< Volver"
     recursos:
         title: "Recursos y materiales sobre agilidad"
         lista:
@@ -883,6 +886,16 @@ es:
                     </ul>"
         top: "Principales cursos"
 
+
+    generals:
+        social_media:
+            twitter: "https://twitter.com/kleer_la"
+            facebook: "https://www.facebook.com/kleer.la"
+            whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
+            instagram: "https://www.instagram.com/kleer.la/"
+            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
+            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+
     navbar:
         - {
             text: 'AGILIDAD ORGANIZACIONAL',
@@ -930,15 +943,19 @@ es:
             inside: true
         }
 
-    social_media:
-        twitter: ""
-        facebook: ""
-        whatsapp: ""
-        instagram: ""
-        youtube: ""
-        linkedin: ""
     home2022:
-        title: 'abr'
+        home_business_agility:
+            title: 'Agilidad organizacional'
+            text: '
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dignissimos dolorem eius eos eum
+                  impedit iure quam quo reprehenderit sint, voluptatibus! Accusamus, assumenda beatae commodi facere hic
+                  molestias provident.
+                </p>
+                <p>Alias at autem, consectetur consequatur doloremque ea earum enim eum itaque laborum nemo non numquam
+                  obcaecati odio provident quam quos tempora tenetur unde voluptas? Delectus dignissimos excepturi facilis
+                  nesciunt quaerat!
+                </p>
+                '
         home_hero:
             - {
                 subject: "Agilidad Organizacional",
@@ -961,6 +978,16 @@ es:
                 img: "...",
                 alt: "Imagen de clientes"
             }
+        home_clients:
+            title: 'Estas organizaciones confían en nosotros'
+        home_courses:
+            title: 'Nuestros próximos cursos'
+            button:
+                title: 'Todos nuestros cursos'
+        home_newsletter:
+            title: 'Enterate de todas las novedades del mundo ágil'
+            button:
+                title: 'Suscribete'
     resources:
         title: "Recursos y materiales sobre agilidad"
         subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."

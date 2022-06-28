@@ -15,7 +15,8 @@ Scenario: One article preview page
   Then I should see "Luke Skywalker"
 
 Scenario: Article list preview page
-  Given A list of articles with
+  Given With 'es' locale
+  * A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   * an article 'dolor-sit-amet' with title 'Dolor sit amet'
   When I go to the article list preview page
@@ -23,7 +24,8 @@ Scenario: Article list preview page
   And I should see "Dolor sit amet"
 
 Scenario: Article list shows abstract
-  Given A list of articles with
+  Given With 'es' locale
+  * A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   And  the article has abstract 'abstract lorem'
   When I go to the article list preview page

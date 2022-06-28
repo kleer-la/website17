@@ -158,6 +158,9 @@ en:
        title: "We publish"
        description: "We share knowledge and experiences. Help us spread the word!"
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
+    blog:
+        readit: "Read more"
+        back: "<< Back"
     recursos:
         title: "Resources"
         lista:
@@ -744,6 +747,15 @@ en:
         top: "Top Trainings"
 
 #    page 2022
+    generals:
+        social_media:
+            twitter: "https://twitter.com/kleer_la"
+            facebook: "https://www.facebook.com/kleer.la"
+            whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
+            instagram: "https://www.instagram.com/kleer.la/"
+            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
+            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+
     navbar:
       - {
         text: 'BUSINESS AGILITY',
@@ -790,32 +802,52 @@ en:
         url: '/somos',
         inside: true
       }
-    generals:
-      social_media:
-        twitter: ""
-        facebook: ""
-        whatsapp: ""
-        instagram: ""
-        youtube: ""
-        linkedin: ""
     home2022:
-      title: 'abr'
+      home_business_agility:
+        title: 'Business agility'
+        text: '
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dignissimos dolorem eius eos eum
+                      impedit iure quam quo reprehenderit sint, voluptatibus! Accusamus, assumenda beatae commodi facere hic
+                      molestias provident.
+                    </p>
+                    <p>Alias at autem, consectetur consequatur doloremque ea earum enim eum itaque laborum nemo non numquam
+                      obcaecati odio provident quam quos tempora tenetur unde voluptas? Delectus dignissimos excepturi facilis
+                      nesciunt quaerat!
+                    </p>
+                    '
       home_hero:
         - {
-          title: "",
-          text: "",
-          action: ""
+          subject: "Business agility",
+          description: "lorem ipsum...",
+          url: "/agilidad-organizacional",
+          img: "...",
+          alt: "Business agility image"
         }
         - {
-          title: "",
-          text: "",
-          action: ""
+          subject: "Courses",
+          description: "lorem ipsum...",
+          url: "/catalogo",
+          img: "...",
+          alt: "Courses image"
         }
         - {
-          title: "",
-          text: "",
-          action: ""
+          subject: "Our clients",
+          description: "lorem ipsum...",
+          url: "/clients",
+          img: "...",
+          alt: "Clients image"
         }
+      home_clients:
+        title: 'EThese organizations already trust us'
+      home_courses:
+        title: 'Coming soon'
+        button:
+          title: 'All courses'
+      home_newsletter:
+        title: 'Find out about all the news of the agile world'
+        button:
+          title: 'Suscribe'
+
     resources:
       title: ""
       subtitle: "We dream a world where valuable information is shared by everyone. Here, our bit of knowledge."

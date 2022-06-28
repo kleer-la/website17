@@ -18,7 +18,7 @@ $white: #FFFFFF;
 
 //hero
 #hero{
-
+  max-width: 100vw;
 }
 
 .item,
@@ -35,7 +35,7 @@ $white: #FFFFFF;
 }
 
 .hero__carousel-item{
-  background-color: $grey;
+  background-color: $white;
 }
 
 .carousel-caption {
@@ -43,9 +43,21 @@ $white: #FFFFFF;
   text-shadow: none;
   text-align: left;
   right: auto;
+  color: $black;
   .text-vertical {
     margin: 30px 0 0 50px;
   }
+}
+//bootstrap edited
+.carousel-indicators [data-bs-target]{
+  background-color: $grey;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+//bootstrap edited
+.carousel-indicators .active {
+  background-color: $primary-red;
 }
 
 //promotion
@@ -73,21 +85,28 @@ $white: #FFFFFF;
 
 //client-carousel
 #client-carousel{
-  margin-top: 180px;
+  margin: 120px 10px;
 }
 
 .client-carousel__title{
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
   line-height: 32px;
   text-align: center;
 }
 
+.client-carousel__container{
+  background-color: $primary-blue;
+  border-radius: 16px;
+  padding: 50px 80px;
+
+  @media screen and (max-width:420px) {
+    padding: 10px 20px 20px 30px;
+  }
+}
+
 //last courses
 #last-courses{
-  background-color: $soft-grey;
   visibility: visible;
+  margin-bottom: 50px;
 }
 
 .last-courses__title{
@@ -98,18 +117,23 @@ $white: #FFFFFF;
 }
 
 #mobile-carousel{
-  visibility: hidden;
+  display: none;
   height: 0;
 }
 
 @media screen and (max-width:420px) {
   #last-courses{
-    visibility: hidden;
+    display: none;
     height: 0;
   }
   #mobile-carousel{
-    visibility: visible;
+    display: block;
     height: auto;
+  }
+
+  .course-card{
+    margin: auto;
+    max-width: 285px;
   }
 }
 

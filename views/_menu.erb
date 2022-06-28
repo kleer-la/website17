@@ -43,7 +43,13 @@
               </ul>
             </li>
           <%else%>
-            <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
+            <li class="root">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="/<%=session[:locale]%>/publicamos"><%=t('side_menu.we_publish')%> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
+                <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
+              </ul>
+            </li>
           <%end%>
           <li class="root">
               <%if session[:locale] == 'es'%>        
@@ -112,7 +118,12 @@
             </ul>
           </li>
         <%else%>
-          <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
+          <li><a href="/<%=session[:locale]%>/publicamos"><span class="white"><%=t('side_menu.we_publish')%></span></a>
+            <ul>
+              <li><a href="/<%=session[:locale]%>/recursos"><%=t('side_menu.recursos')%></a></li>
+              <li><a href="/<%=session[:locale]%>/blog"><%=t('side_menu.blog')%></a></li>
+            </ul>
+          </li>
         <%end%>
         <li><a href="/<%=session[:locale]%>/somos"><span class="white"><%=t('side_menu.we_are')%></a></span>
         <%if session[:locale] == 'es'%>

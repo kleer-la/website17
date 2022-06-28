@@ -1,9 +1,16 @@
 <%
+  # imgs = {
+  #   7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
+  #   342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
+  #   268 => '/img/personajes/cursos.svg',
+  #   247 => '/img/personajes/cursos.svg'
+  # }
+
   imgs = {
-    7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
-    342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
-    268 => '/img/personajes/cursos.svg',
-    247 => '/img/personajes/cursos.svg'
+    7 => '/app/img/default/work.png',
+    342 => '/app/img/default/work.png',
+    268 => '/app/img/default/work.png',
+    247 => '/app/img/default/work.png'
   }
 
   @coming_courses = @coming_courses
@@ -18,7 +25,9 @@
 
 <section id="last-courses" class="p-5 mt-4">
   <div class='container'>
-    <h2 class="text-center m-4 last-courses__tittle">Próximos cursos</h2>
+    <h4 class="text-center m-4 last-courses__tittle">
+      <%= t('home2022.home_courses.title')%>
+    </h4>
     <div class='row mt-5'>
 
       <% @coming_courses.each do |course|
@@ -28,6 +37,11 @@
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
+    </div>
+    <div class="text-center mt-5">
+      <a class="btn my-primary-button">
+        <%= t('home2022.home_courses.button.title') %>
+      </a>
     </div>
   </div>
 </section>
@@ -40,16 +54,16 @@
         <% @coming_courses.each do |course|
           @course = course
         %>
-          <div class="carousel-item <%= course[:active] ? 'active' : '' %>">
+          <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
             <%= erb :'component/_course_card' %>
           </div>
         <%end %>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <button class="carousel-control-prev me-5" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <button class="carousel-control-next ms-5" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -57,7 +71,9 @@
 
 
     <div class="text-center mt-5">
-      <button class="btn btn-secondary">Ver todos los cursos</button>
+      <a class="btn my-primary-button">
+        <%= t('home2022.home_courses.button.title') %>
+      </a>
     </div>
   </div>
 

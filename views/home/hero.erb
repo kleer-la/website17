@@ -12,9 +12,15 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
 <section id="hero">
   <div id="carouselExampleCaptions" class="carousel hero__carousel slide" data-bs-ride="false">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <% carousel.each_with_index do |item, index| %>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="<%=index%>" aria-label="Slide <%=index+1%>"
+          <%= item[:active] ? "class='active' aria-current='true'" : '' %>
+        >
+        </button>
+      <% end %>
     </div>
     <div class="carousel-inner">
     <%carousel.each do |item|%>
@@ -23,7 +29,7 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
         <div class="carousel-caption d-none d-md-block">
           <h5><%=item[:subject]%></h5>
           <p><%=item[:description]%></p>
-          <button class="btn btn-secondary">More info</button>
+          <a src="<%= item[:url] %>" class="btn my-primary-button">More info</a>
         </div>
       </div>
       <%end%>
@@ -37,4 +43,5 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+<!--  <img src="app/img/view_figures/green_rectangle1.svg" class=""/>-->
 </section>
