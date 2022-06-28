@@ -956,6 +956,11 @@ es:
                   nesciunt quaerat!
                 </p>
                 '
+            buttons:
+                more:
+                    text: 'Conoce más'
+                questions:
+                    text: '¿Tienes alguna pregunta?'
         home_hero:
             - {
                 subject: "Agilidad Organizacional",
