@@ -1,4 +1,5 @@
 require 'sinatra'
+require "sinatra/reloader" if development?
 require 'sinatra/r18n'
 require 'sinatra/flash'
 require 'redcarpet'
@@ -80,7 +81,7 @@ get '/home2022' do
   meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
-  @coming_courses = coming_courses
+  @coming_courses = coming_courses + fake_event_from_catalog(KeventerReader.instance.categories)
   erb :'home/index', layout: :'layout/layout2022'
 end
 

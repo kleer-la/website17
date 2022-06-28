@@ -154,6 +154,12 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.2.0)
       tilt (~> 2.0)
+    sinatra-contrib (2.2.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.2.0)
+      sinatra (= 2.2.0)
+      tilt (~> 2.0)
     sinatra-flash (0.3.0)
       sinatra (>= 1.0.0)
     sinatra-r18n (5.0.2)
@@ -201,6 +207,7 @@ DEPENDENCIES
   rubocop
   simplecov
   sinatra
+  sinatra-contrib
   sinatra-flash
   sinatra-r18n
   tzinfo

@@ -1,6 +1,10 @@
 require './lib/dt_helper'
-require './lib/event_type'
 require './lib/metatags'
+
+require './lib/event_type'
+require './lib/event'
+
+require './controllers/event_helper'
 
 REDIRECT = {
   '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'

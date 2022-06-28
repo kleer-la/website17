@@ -22,6 +22,7 @@ group :development do
   gem 'foreman'
   gem 'platform-api'
   gem 'rubocop'
+  gem 'sinatra-contrib' # "sinatra/reloader"
 end
 
 group :development, :test do
