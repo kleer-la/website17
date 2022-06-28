@@ -168,6 +168,9 @@ es:
         title: "Publicamos"
         description: "Compartimos conocimientosy experiencias. ¡Ayudanos a correr la voz!"
         content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
+    blog:
+        readit: "Continuar leyendo"
+        back: "<< Volver"
     recursos:
         title: "Recursos y materiales sobre agilidad"
         lista:

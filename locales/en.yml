@@ -158,6 +158,9 @@ en:
        title: "We publish"
        description: "We share knowledge and experiences. Help us spread the word!"
        content: "We dream of a world in which valuable information travels arround. Here, our five cents :)"
+    blog:
+        readit: "Read more"
+        back: "<< Back"
     recursos:
         title: "Resources"
         lista:
