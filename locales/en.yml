@@ -802,6 +802,27 @@ en:
         url: '/somos',
         inside: true
       }
+    footer_menu:
+      - {
+        title: '',
+        items:
+          [
+            {},
+            {},
+            {}
+          ]
+      }
+      - {
+        title: '',
+        items:
+          [
+            { },
+            { },
+            { }
+          ]
+      }
+
+
     home2022:
       home_business_agility:
         title: 'Business agility'
@@ -815,6 +836,11 @@ en:
                       nesciunt quaerat!
                     </p>
                     '
+        buttons:
+          more:
+            text: 'Know more'
+          questions:
+            text: 'Questions?'
       home_hero:
         - {
           subject: "Business agility",
@@ -838,7 +864,7 @@ en:
           alt: "Clients image"
         }
       home_clients:
-        title: 'EThese organizations already trust us'
+        title: 'These organizations already trust us'
       home_courses:
         title: 'Coming soon'
         button:
