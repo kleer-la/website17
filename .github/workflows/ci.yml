@@ -15,7 +15,7 @@ jobs:
         with:
           ruby-version: 2.7.5
       - name: Install curb lib
-        run: sudo apt-get install libcurl4-gnutls-dev libcurl4-nss-dev libcurl4-openssl-dev curl
+        run: sudo apt-get install libcurl4-gnutls-dev
       - name: Install curb gem
         run: gem install curb
       - name: Install dependencies
