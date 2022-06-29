@@ -25,32 +25,32 @@ $white: #FFFFFF;
 .active {
   height: 100%;
 }
-
+//bootstrap edit
 .hero__carousel {
-  height: 70vh;
+  height: calc(100vh - 100px)
 }
-
+//bootstrap edit
 .carousel-inner {
   height: 100%;
 }
+.carousel__item{
+  height: 100%;
+}
 
-.hero__carousel-item{
-  padding: 20px 100px;
-  background-color: $white;
+.carousel__text{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.carousel__img-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.carousel__img{
+  max-width: 440px;
 }
 
-.carousel-caption {
-  padding-bottom: 50px;
-  text-shadow: none;
-  text-align: left;
-  right: auto;
-  color: $black;
-  .text-vertical {
-    margin: 30px 0 0 50px;
-  }
-}
 //bootstrap edited
 .carousel-indicators [data-bs-target]{
   background-color: $grey;
@@ -62,8 +62,21 @@ $white: #FFFFFF;
 .carousel-indicators .active {
   background-color: $primary-red;
 }
+//bootstrap edited
+.carousel-control-next{
+  width: 10% !important;
+}
+//bootstrap edited
+.carousel-control-prev{
+  width: 10% !important;
+}
 
-//promotion
+.hero_green_bean{
+  left: 50px;
+  bottom: 70px
+}
+
+//promotion----------------
 #promotion{
   margin-top: 70px;
 }

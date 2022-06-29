@@ -132,7 +132,6 @@ img {
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
-  margin: auto;
 }
 
 .my-secondary-button{
@@ -150,6 +149,10 @@ img {
   background: $white;
   border-radius: 100px;
   border: $primary-blue 2px solid ;
+}
+
+.desktop_figure{
+  position: relative;
 }
 
 //COMPONENTS
