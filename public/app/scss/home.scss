@@ -35,7 +35,10 @@ $white: #FFFFFF;
 }
 
 .hero__carousel-item{
+  padding: 20px 100px;
   background-color: $white;
+  display: flex;
+  align-items: center;
 }
 
 .carousel-caption {

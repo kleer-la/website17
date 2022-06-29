@@ -14,7 +14,10 @@
   height: 100%; }
 
 .hero__carousel-item {
-  background-color: #FFFFFF; }
+  padding: 20px 100px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center; }
 
 .carousel-caption {
   padding-bottom: 50px;

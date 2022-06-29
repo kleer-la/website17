@@ -25,12 +25,12 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
     <div class="carousel-inner">
     <%carousel.each do |item|%>
       <div class="carousel-item hero__carousel-item<%=' active' if item[:active]%>">
-        <img src="<%=item[:img]%>" class="d-block w-100" alt="<%=item[:alt]%>">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="">
           <h5><%=item[:subject]%></h5>
           <p><%=item[:description]%></p>
           <a src="<%= item[:url] %>" class="btn my-primary-button">More info</a>
         </div>
+        <img src="/app/img/hero_cover.png" class="" alt="<%=item[:alt]%>">
       </div>
       <%end%>
     </div>
@@ -43,5 +43,4 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<!--  <img src="app/img/view_figures/green_rectangle1.svg" class=""/>-->
 </section>
