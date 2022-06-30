@@ -22,23 +22,26 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
         </button>
       <% end %>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner hero_carousel-inner">
       <%carousel.each do |item|%>
-        <div class="carousel-item <%=' active' if item[:active]%>">
+        <div class="carousel-item hero_carousel__item <%=' active' if item[:active]%>">
 
           <div class="container carousel__item">
             <div class="row h-100">
-              <div class="col-md-6 carousel__text">
+              <div class="offset-md-1 col-md-6 carousel__text">
                 <h1><%=item[:subject]%></h1>
                 <p><%=item[:description]%></p>
                 <a src="<%= item[:url] %>" class="btn my-primary-button">More info</a>
               </div>
-              <div class="col-md-6 carousel__img-container">
+              <div class="col-md-5 carousel__img-container">
                 <img src="/app/img/hero_cover.png" class="carousel__img" alt="<%=item[:alt]%>">
               </div>
             </div>
 
           </div>
+          <img src="/app/img/view_figures/yellow_bean.svg" class="desktop_figure hero_yellow_bean" />
+          <img src="/app/img/view_figures/green_bean.svg" class="desktop_figure hero_green_bean" />
+
         </div>
       <%end%>
     </div>
@@ -50,7 +53,5 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-
-    <img src="/app/img/view_figures/green_bean.svg" class="desktop_figure hero_green_bean" />
   </div>
 </section>

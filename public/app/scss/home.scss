@@ -19,6 +19,7 @@ $white: #FFFFFF;
 //hero
 #hero{
   max-width: 100vw;
+  margin-top: 100px;
 }
 
 .item,
@@ -27,14 +28,14 @@ $white: #FFFFFF;
 }
 //bootstrap edit
 .hero__carousel {
-  height: calc(100vh - 100px)
+  height: calc(90vh - 100px)
 }
-//bootstrap edit
-.carousel-inner {
-  height: 100%;
+
+.hero_carousel-inner {
+  height: calc(90vh - 100px)
 }
-.carousel__item{
-  height: 100%;
+.hero_carousel__item{
+  height: calc(90vh - 100px)
 }
 
 .carousel__text{
@@ -72,8 +73,13 @@ $white: #FFFFFF;
 }
 
 .hero_green_bean{
-  left: 50px;
+  left: 70px;
   bottom: 70px
+}
+
+.hero_yellow_bean{
+  top: 30px;
+  right: 80px;
 }
 
 //promotion----------------
@@ -99,6 +105,10 @@ $white: #FFFFFF;
 
 }
 
+.promotion_img-container{
+  height: 100%;
+  margin-top: auto;
+}
 //client-carousel
 #client-carousel{
   margin: 120px 10px;
@@ -117,6 +127,28 @@ $white: #FFFFFF;
   @media screen and (max-width:420px) {
     padding: 10px 20px 20px 30px;
   }
+}
+
+.promotion_green_triangle{
+  height: 140px;
+  top: -200px;
+  left: -150px;
+  z-index: 20;
+}
+
+.promotion_yellow_circle{
+  bottom: -100px;
+  right: -150px;
+  z-index: -1;
+}
+
+.promotion_rustic_line{
+  bottom: -75px;
+}
+
+.promotion_rustic_spring{
+  top: -160px;
+  right: 50px
 }
 
 //last courses
