@@ -90,6 +90,10 @@
   display: none;
   height: 0; }
 
+.last-courses__blue_square {
+  top: 300px;
+  left: -50px; }
+
 @media screen and (max-width: 420px) {
   #last-courses {
     display: none;

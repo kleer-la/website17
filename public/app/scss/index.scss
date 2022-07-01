@@ -151,6 +151,12 @@ img {
   border: $primary-blue 2px solid ;
 }
 
+.btn-center-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .desktop_figure{
   position: relative;
 }
