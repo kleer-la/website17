@@ -24,10 +24,7 @@
       </ol>
     </p>
     <br>
-    <picture>
-      <source type="image/webp" srcset="/img/coaching/mejora_continua.webp">
-      <img src="/img/coaching/mejora_continua.jpg" class="img-rounded" alt="Mejoa continua con Toyota Kata">
-    </picture>
+    <%= erb :'component/_image', locals: {image_url: '/img/coaching/mejora_continua.webp', css_class: 'img-rounded', alt: 'Mejora continua con Toyota Kata'}%>
   </div>
 
   <div class="col-md-4">
