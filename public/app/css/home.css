@@ -7,13 +7,13 @@
   height: 100%; }
 
 .hero__carousel {
-  height: calc(90vh - 100px); }
+  height: calc(100vh - 100px); }
 
 .hero_carousel-inner {
-  height: calc(90vh - 100px); }
+  height: calc(100vh - 100px); }
 
 .hero_carousel__item {
-  height: calc(90vh - 100px); }
+  height: calc(100vh - 100px); }
 
 .carousel__text {
   display: flex;
@@ -105,7 +105,8 @@
 
 #last-courses {
   visibility: visible;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  position: relative; }
 
 .last-courses__title {
   font-style: normal;
@@ -117,9 +118,13 @@
   display: none;
   height: 0; }
 
-.last-courses__blue_square {
-  top: 300px;
-  left: -50px; }
+.last-courses__blue-square {
+  top: 120px;
+  left: 50px; }
+
+.last-courses__red-circle {
+  bottom: 60px;
+  right: 30px; }
 
 @media screen and (max-width: 420px) {
   #last-courses {
@@ -157,6 +162,17 @@
 
 #newsletter-subscription {
   background-color: #FFE600;
-  padding: 72px 0; }
+  padding: 72px 0;
+  position: relative; }
+
+.newsletter__rustic-circle {
+  bottom: -30px;
+  left: -20px;
+  z-index: 0; }
+
+.newsletter__green-circle {
+  bottom: -120px;
+  right: 0;
+  z-index: 0; }
 
 /*# sourceMappingURL=home.css.map */

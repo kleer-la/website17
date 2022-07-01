@@ -28,14 +28,14 @@ $white: #FFFFFF;
 }
 //bootstrap edit
 .hero__carousel {
-  height: calc(90vh - 100px)
+  height: calc(100vh - 100px)
 }
 
 .hero_carousel-inner {
-  height: calc(90vh - 100px)
+  height: calc(100vh - 100px)
 }
 .hero_carousel__item{
-  height: calc(90vh - 100px)
+  height: calc(100vh - 100px)
 }
 
 .carousel__text{
@@ -155,6 +155,7 @@ $white: #FFFFFF;
 #last-courses{
   visibility: visible;
   margin-bottom: 50px;
+  position: relative;
 }
 
 .last-courses__title{
@@ -169,9 +170,15 @@ $white: #FFFFFF;
   height: 0;
 }
 
-.last-courses__blue_square{
-  top: 300px;
-  left: -50px
+.last-courses__blue-square{
+  top: 120px;
+  left: 50px;
+  //position: static !important;
+}
+
+.last-courses__red-circle{
+  bottom: 60px;
+  right: 30px;
 }
 
 @media screen and (max-width:420px) {
@@ -220,6 +227,19 @@ $white: #FFFFFF;
 #newsletter-subscription{
   background-color: $primary-yellow;
   padding: 72px 0;
+  position: relative;
 }
 
+.newsletter__rustic-circle{
+  //position: absolute;
+  bottom: -30px;
+  left: -20px;
+  z-index: 0;
+}
+
+.newsletter__green-circle{
+  bottom: -120px;
+  right: 0;
+  z-index: 0;
+}
 

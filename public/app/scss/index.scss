@@ -286,6 +286,7 @@ footer {
   overflow: visible;
   background: $primary-blue;
   margin-bottom: 0 !important;
+  z-index: 50;
 }
 
 .footer__body{
@@ -322,6 +323,7 @@ footer {
   margin: 0;
   padding: 0;
   color: $white;
+  z-index: 50;
 
   li{
     margin-left: 15px;
@@ -341,6 +343,11 @@ footer {
 }
 
 .course-card__title{}
+
+.course-card__body{
+  height: 250px;
+  padding: 0;
+}
 
 .course-card__subtitle{}
 
