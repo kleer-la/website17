@@ -26,7 +26,7 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
       <%carousel.each do |item|%>
         <div class="carousel-item hero_carousel__item <%=' active' if item[:active]%>">
 
-          <div class="container carousel__item">
+          <div class="container carousel__item h-100">
             <div class="row h-100">
               <div class="offset-md-1 col-md-6 carousel__text">
                 <h1><%=item[:subject]%></h1>
