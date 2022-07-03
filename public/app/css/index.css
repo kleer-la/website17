@@ -128,7 +128,7 @@
   bottom: 60px;
   right: 30px; }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 820px) {
   #last-courses {
     display: none;
     height: 0; }
