@@ -2,14 +2,20 @@
   @coming_courses = @coming_courses
     .select {|e| e.event_type.lang == session[:locale]}
     .first(4)
-    .map.with_index { |course, index| {
+    .map.with_index { |course, index|
+    {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
       cover: course.event_type.cover, uri_path: course.event_type.uri_path,
       country: 'OL', certified: true, active: index == 0
     }}
+
 %>
 
 <section id="last-courses" class="p-5 mt-4">
+  <!--    decoration figures-->
+  <img src="/app/img/view_figures/blue_square.svg" class="desktop_figure last-courses__blue-square"/>
+  <img src="/app/img/view_figures/red_circle.svg" class="desktop_figure last-courses__red-circle"/>
+  <!--    -------->
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
       <%= t('home2022.home_courses.title')%>
@@ -24,7 +30,7 @@
         </div>
       <% end%>
     </div>
-    <div class="text-center mt-5">
+    <div class="btn-center-container mt-5">
       <a class="btn my-primary-button">
         <%= t('home2022.home_courses.button.title') %>
       </a>
@@ -56,7 +62,7 @@
     </div>
 
 
-    <div class="text-center mt-5">
+    <div class="btn-center-container mt-5">
       <a class="btn my-primary-button">
         <%= t('home2022.home_courses.button.title') %>
       </a>

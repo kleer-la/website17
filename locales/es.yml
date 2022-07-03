@@ -889,6 +889,7 @@ es:
 
     generals:
         social_media:
+            title: 'Nuestras redes'
             twitter: "https://twitter.com/kleer_la"
             facebook: "https://www.facebook.com/kleer.la"
             whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
@@ -941,6 +942,51 @@ es:
             text: 'SOMOS',
             url: '/somos',
             inside: true
+        }
+
+    footer_menu:
+        - {
+            title: 'Qué hacemos',
+            items:
+              [
+                  {
+                      title: 'Agilidad organizacional',
+                      url: '/agilidad-organizacional'
+                  },
+                  {
+                      title: 'Cursos',
+                      url: '/catalogo'
+                  },
+                  {
+                      title: 'Clientes',
+                      url: '/clientes'
+                  }
+              ]
+        }
+        - {
+            title: 'Publicamos',
+            items:
+              [
+                  {
+                      title: 'Recursos y materiales',
+                      url: '/recursos'
+                  },
+                  {
+                      title: 'Somos',
+                      url: '/somos'
+                  },
+                  { }
+              ]
+        }
+        - {
+            title: 'Somos',
+            items:
+              [
+                  {
+                      title: 'Nuestra filosofía',
+                      url: '/somos'
+                  },
+              ]
         }
 
     home2022:
