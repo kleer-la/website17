@@ -1,24 +1,10 @@
 <%
-  # imgs = {
-  #   7 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csm.png', # CSM es
-  #   342 => 'https://www.scrumalliance.org/_scrum/images/badges300x300/active/SA_badge_csd.png', # CSD es
-  #   268 => '/img/personajes/cursos.svg',
-  #   247 => '/img/personajes/cursos.svg'
-  # }
-
-  imgs = {
-    7 => '/app/img/default/work.png',
-    342 => '/app/img/default/work.png',
-    268 => '/app/img/default/work.png',
-    247 => '/app/img/default/work.png'
-  }
-
   @coming_courses = @coming_courses
     .select {|e| e.event_type.lang == session[:locale]}
     .first(4)
     .map.with_index { |course, index| {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
-      cover: imgs[course.event_type.id.to_i], uri_path: course.event_type.uri_path,
+      cover: course.event_type.cover, uri_path: course.event_type.uri_path,
       country: 'OL', certified: true, active: index == 0
     }}
 %>

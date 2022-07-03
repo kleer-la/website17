@@ -1,6 +1,6 @@
 <div class="card course-card" style="width: 18rem;">
   <div class="course-card__image-container">
-    <img src="<%= @course[:cover]%>" class="card-img-top course-card__image" alt="...">
+    <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...'}%>
     <div class="course-card__flags">
       <div>Abierto</div>
     </div>

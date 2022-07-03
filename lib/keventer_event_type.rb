@@ -1,7 +1,7 @@
 require './lib/keventer_reader'     # to_boolean
 
 class KeventerEventType
-  attr_accessor :id, :name, :subtitle, :lang,
+  attr_accessor :id, :name, :subtitle, :lang, :cover,
                 :goal, :description, :recipients, :program, :duration, :faq,
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
@@ -42,7 +42,7 @@ class KeventerEventType
     @duration = xml_keventer_event.find_first('duration').content.to_i
 
     %i[name subtitle description learnings takeaways
-       goal recipients program faq lang
+       goal recipients program faq lang cover
        external_site_url elevator_pitch slug canonical_slug].each do |f|
       load_string(xml_keventer_event, f)
     end
