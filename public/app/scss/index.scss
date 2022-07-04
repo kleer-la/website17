@@ -231,6 +231,19 @@ img {
   }
    .navbar-content{
      max-height: 100vh;
+     ul{
+       margin-top: 20px;
+     }
+     li{
+       margin: 16px 0 16px 0;
+     }
+
+     .social-media{
+       a{
+         font-size: 18px;
+         color: $secondary-blue;
+       }
+     }
    }
 }
 

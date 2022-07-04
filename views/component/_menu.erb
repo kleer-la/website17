@@ -38,7 +38,7 @@
             </li>
           <%else %>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<%= "#{item[:inside] ? '/'+session[:locale] : ''}#{item[:url]}" %>">
+              <a class="nav-link" aria-current="page" href="<%= "#{item[:inside] ? '/'+session[:locale] : ''}#{item[:url]}" %>">
                 <%=item[:text]%>
               </a>
             </li>

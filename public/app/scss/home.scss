@@ -47,9 +47,15 @@ $white: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 .carousel__img{
   max-width: 440px;
+}
+
+.hero__mobile-button{
+  display: none !important;
 }
 
 //bootstrap edited
@@ -81,7 +87,36 @@ $white: #FFFFFF;
   top: 30px;
   right: 80px;
 }
+@media screen and (max-width:420px){
+  #hero{
+    text-align: center;
+  }
+  .carousel__text{
+    display: block;
+    height: auto;
+  }
 
+  .carousel__img{
+    max-width: 300px;
+  }
+
+  .carousel-control-prev-icon{
+    height: 10px;
+  }
+  .carousel-control-next-icon{
+    height: 10px;
+  }
+
+   .hero__desktop-button{
+     display: none !important;
+   }
+
+  .hero__mobile-button{
+    display: flex !important;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}
 //promotion----------------
 #promotion{
   margin-top: 70px;
