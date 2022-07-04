@@ -294,12 +294,6 @@ a:hover {
 img {
   max-width: 100%; }
 
-@media screen and (max-width: 420px) {
-  a {
-    font-size: 14px; }
-
-  h4 {
-    font-size: 24px; } }
 .my-primary-button {
   display: flex;
   flex-direction: row;
@@ -319,7 +313,7 @@ img {
 .my-secondary-button {
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
   display: flex;
   flex-direction: row;
@@ -339,12 +333,31 @@ img {
 .desktop_figure {
   position: absolute; }
 
+@media screen and (max-width: 420px) {
+  a {
+    font-size: 14px; }
+
+  h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px; }
+
+  h4 {
+    font-size: 24px; }
+
+  .desktop_figure {
+    display: none; }
+
+  .social-container {
+    position: absolute;
+    bottom: 20px; } }
 .navbar {
   max-width: 100vw !important;
   border: none;
   background: white !important;
   min-height: 100px !important;
-  padding: 0 7% 0 7%;
+  padding: 25px 7%  25px 7%;
   color: #333333; }
   .navbar a {
     color: #333333; }
@@ -371,6 +384,12 @@ img {
 .dropdown-submenu > .dropdown-menu {
   background-color: white; }
 
+@media screen and (max-width: 420px) {
+  .navbar-collapse {
+    height: calc(100vh - 100px); }
+
+  .navbar-content {
+    max-height: 100vh; } }
 .social-media {
   width: 125px; }
 

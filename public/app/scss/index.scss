@@ -106,15 +106,6 @@ img {
   max-width: 100%;
 }
 
-@media screen and (max-width:420px) {
-  a{
-    font-size: 14px;
-  }
-
-  h4{
-    font-size: 24px;
-  }
-}
 
 .my-primary-button{
   display: flex;
@@ -138,7 +129,7 @@ img {
   //font-family: 'Degular';
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 20px;
   display: flex;
   flex-direction: row;
@@ -161,6 +152,33 @@ img {
   position: absolute;
 }
 
+
+@media screen and (max-width:420px) {
+  a{
+    font-size: 14px;
+  }
+
+  h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  h4{
+    font-size: 24px;
+  }
+
+  .desktop_figure{
+    display: none;
+  }
+
+  .social-container{
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
 //COMPONENTS
 
 //navbar
@@ -169,7 +187,7 @@ img {
   border: none;
   background: $white !important;
   min-height: 100px !important;
-  padding: 0 7% 0 7%;
+  padding: 25px 7%  25px 7%;
 
   color: $black;
 
@@ -198,51 +216,22 @@ img {
   border: none;
   padding: 45px 0 20px 0;
 }
-//.dropdown-submenu {
-//  position:relative;
-//}
-//.dropdown-submenu > .dropdown-menu {
-//  top:0;
-//  left:100%;
-//  margin-top:-1px;
-//  margin-left:-1px;
-//  -webkit-border-radius:0 4px 4px 4px;
-//  -moz-border-radius:0 4px 4px 4px;
-//  border-radius:0 4px 4px 4px;
-//}
-//.dropdown-submenu:hover > .dropdown-menu{
-//  display:block;
-//}
-//.dropdown-submenu > .dropdown-menu li:first-child a:hover {
-//  border-radius: 4px 4px 0 0;
-//}
-//.dropdown-menu>li>a {
-//  color: #fff;
-//  padding: 5px 20px;
-//}
-
-//.dropdown-menu>li:last-child>a:hover {
-//  border-radius: 0 0 4px 4px;
-//}
-//.dropdown-submenu > a:after{
-//  display:block;
-//  content:" ";
-//  float:right;
-//  width:0;
-//  height:0;
-//  border-color:transparent;
-//  border-style:solid;
-//  border-width:5px 0 5px 5px;
-//  border-left-color:#cccccc;
-//  margin-top:5px;
-//  margin-right:-10px;
-//}
 
 .navbar-nav>li>.dropdown-menu {
   background-color: $white;
 }
 .dropdown-submenu > .dropdown-menu {
   background-color: $white;
+}
+
+@media screen and (max-width:420px){
+  //bootstrap edit
+  .navbar-collapse{
+    height: calc(100vh - 100px);
+  }
+   .navbar-content{
+     max-height: 100vh;
+   }
 }
 
 .social-media{
