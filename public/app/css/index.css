@@ -276,43 +276,49 @@ body {
   height: 100%; }
 
 h1 {
+  font-family: "degular",sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 72px;
   line-height: 76px; }
 
 h2 {
+  font-family: "degular-text",sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 56px;
   line-height: 64px; }
 
 h3 {
+  font-family: "degular-text",sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 48px; }
 
 h4 {
+  font-family: "degular-text",sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px; }
 
 h5 {
+  font-family: "degular-text",sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px; }
 
 h6 {
+  font-family: "degular-text",sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px; }
 
 p {
-  font-family: 'Raleway';
+  font-family: 'Raleway',sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
