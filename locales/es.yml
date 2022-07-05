@@ -993,13 +993,14 @@ es:
         home_business_agility:
             title: 'Agilidad organizacional'
             text: '
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dignissimos dolorem eius eos eum
-                  impedit iure quam quo reprehenderit sint, voluptatibus! Accusamus, assumenda beatae commodi facere hic
-                  molestias provident.
+                <p>
+                    En Kleer nuestro principal foco es la Agilidad Organizacional desde 2011. Nuestra <strong>cercanía</strong> y <strong>experiencia</strong> nos permiten hacerlo de una manera diferencial.
                 </p>
-                <p>Alias at autem, consectetur consequatur doloremque ea earum enim eum itaque laborum nemo non numquam
-                  obcaecati odio provident quam quos tempora tenetur unde voluptas? Delectus dignissimos excepturi facilis
-                  nesciunt quaerat!
+                <p>
+                    Somos un equipo de profesionales cada vez más <strong>diverso</strong>, que busca aprender e <strong>impactar</strong> en cada intervención que diseñamos y llevamos adelante.
+                </p>
+                <p>
+                    Y perseguimos cada día nuestro propósito: ¡Disfrutamos cocreando ambientes humanos más conscientes y asombrosos!
                 </p>
                 '
             buttons:
@@ -1010,24 +1011,27 @@ es:
         home_hero:
             - {
                 subject: "Agilidad Organizacional",
-                description: "lorem ipsum...",
+                description: "Acompañamos a las organizaciones en la mejora sostenible de sus formas de trabajo y a adaptarse oportunamente a los cambios del entorno.",
                 url: "/agilidad-organizacional",
                 img: "...",
-                alt: "Imagen de agilidad organizacional"
+                alt: "Imagen de agilidad organizacional",
+                button_text: "¡Conoce más!"
             }
             - {
                 subject: "Cursos",
-                description: "lorem ipsum...",
+                description: "Experiencias de aprendizaje dinámicas y memorables para potenciar el desarrollo de tus habilidades y las de tu organización.",
                 url: "/catalogo",
                 img: "...",
-                alt: "Cursos"
+                alt: "Cursos",
+                button_text: "Ver cursos"
             }
             - {
                 subject: "Nuestros Clientes",
-                description: "lorem ipsum",
+                description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
                 url: "/clientes",
                 img: "...",
-                alt: "Imagen de clientes"
+                alt: "Imagen de clientes",
+                button_text: "Ver casos"
             }
         home_clients:
             title: 'Estas organizaciones confían en nosotros'
@@ -1036,7 +1040,7 @@ es:
             button:
                 title: 'Todos nuestros cursos'
         home_newsletter:
-            title: 'Enterate de todas las novedades del mundo ágil'
+            title: 'Entérate de todas las novedades del mundo ágil'
             button:
                 title: 'Suscribete'
     resources:

@@ -5,6 +5,7 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
   url: e[:url],
   img: e[:img],
   alt: e[:alt],
+  button_text: e[:button_text],
   active: index == 0
 }}
 
@@ -32,12 +33,12 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
               <div class="offset-md-1 col-md-6 carousel__text">
                 <h1><%=item[:subject]%></h1>
                 <p><%=item[:description]%></p>
-                <a src="<%= item[:url] %>" class="btn my-primary-button hero__desktop-button">More info</a>
+                <a src="<%= item[:url] %>" class="btn my-primary-button hero__desktop-button"><%= item[:button_text] %></a>
               </div>
               <div class="col-md-5 carousel__img-container">
                 <img src="/app/img/hero_cover.png" class="carousel__img" alt="<%=item[:alt]%>">
               </div>
-              <a src="<%= item[:url] %>" class="btn my-primary-button hero__mobile-button">More info</a>
+              <a src="<%= item[:url] %>" class="btn my-primary-button hero__mobile-button"><%= item[:button_text] %></a>
             </div>
 
           </div>
