@@ -10,7 +10,7 @@
     {name: "BBVA Continental", img:"/img/clientes/logo-bbvacontinental.png" },
     {name: "Banco de Chile", img:"/img/clientes/logo-bancodechile.png" },
     {name: "BCI", img:"/img/clientes/logo-bci.jpg" },
-    {name: "Banchile", img:"/img/clientes/logo-banchile.png" },
+    {name: "Banchile", img:"/img/clientes2/logo-banchile.png" },
     {name: "Interbank", img:"/img/clientes/logo-interbank.jpg" },
     {name: "BCP", img:"/img/clientes/logo-bcp.png" },
     {name: "Interbanking", img:"/img/clientes/logo-interbanking.png" },
@@ -40,8 +40,10 @@
 <%
   clients_per_row = 4
   clients_per_row_mobile = 3
-active= "active"%>
-<section id="client-carousel" class="p-3">
+  active= "active"
+  mobile_active="active"
+%>
+<section id="client-carousel" class="p-3 client-carousel">
   <div class="container client-carousel__container">
 
     <h5 class="client-carousel__title mt-3">
@@ -69,6 +71,35 @@ active= "active"%>
         <% end %>
           <% active= ""%>
       <% end %>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="mobile-client-carousel" class="p-3 mobile-client-carousel">
+  <div class="container client-carousel__container">
+
+    <h5 class="client-carousel__title mt-3">
+      <%= t('home2022.home_clients.title') %>
+    </h5>
+    <div id="carouselClients" class="carousel slide mt-5" data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+        <% clients.each_with_index  do |client, index| %>
+          <% if index % clients_per_row_mobile == 0 %>
+            <div class="carousel-item <%= mobile_active%>" data-bs-interval="3000">
+              <div class="row">
+          <% end %>
+          <div class="col-<%=12 / clients_per_row_mobile %>">
+            <img src="<%= client[:img]%>" alt="<%= client[:name] %>"/>
+          </div>
+          <% if index % clients_per_row_mobile == clients_per_row_mobile-1 %>
+            </div>
+            </div>
+          <% end %>
+          <% mobile_active= ""%>
+        <% end %>
       </div>
     </div>
 

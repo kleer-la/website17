@@ -102,6 +102,17 @@
 #client-carousel {
   margin: 120px 10px; }
 
+.mobile-client-carousel {
+  padding: 16px 0 !important;
+  margin: 120px 0;
+  display: none; }
+
+@media screen and (max-width: 420px) {
+  .mobile-client-carousel {
+    display: block; }
+
+  .client-carousel {
+    display: none !important; } }
 .client-carousel__title {
   line-height: 32px;
   text-align: center; }
@@ -112,7 +123,8 @@
   padding: 50px 80px; }
   @media screen and (max-width: 420px) {
     .client-carousel__container {
-      padding: 10px 20px 20px 30px; } }
+      padding: 10px 20px 20px 30px;
+      border-radius: 0; } }
 
 .promotion_green_triangle {
   height: 140px;

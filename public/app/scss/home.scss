@@ -144,9 +144,26 @@ $white: #FFFFFF;
   height: 100%;
   margin-top: auto;
 }
+
+
 //client-carousel
 #client-carousel{
   margin: 120px 10px;
+}
+
+.mobile-client-carousel{
+  padding: 16px 0 !important;
+  margin: 120px 0;
+  display: none;
+}
+
+@media screen and (max-width:420px){
+   .mobile-client-carousel{
+     display: block;
+   }
+  .client-carousel{
+    display: none !important;
+  }
 }
 
 .client-carousel__title{
@@ -161,6 +178,7 @@ $white: #FFFFFF;
 
   @media screen and (max-width:420px) {
     padding: 10px 20px 20px 30px;
+    border-radius: 0;
   }
 }
 
