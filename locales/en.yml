@@ -30,7 +30,7 @@ en:
         resources:
             title: 'Resources and tools for agility'
             description: 'Resources and tools for Scrum, Product Owner, Scrum Master, Team development, Retrospectives, Leadership, Communication, Kanban, Agile Coaching'
-            
+
     slider:
         title_1: "Business Agility"
         text_1: "We accompany integral improvements"
@@ -767,49 +767,59 @@ en:
 
     navbar:
       - {
-        text: 'BUSINESS AGILITY',
+        text: 'Business agility',
         url: '/agilidad-organizacional',
         inside: true
       }
       - {
-        text: 'COURSES',
+        text: 'Courses',
         options: [
           {
-            text: 'OUR COURSES',
+            text: 'Our courses',
             url: '/catalogo',
             inside: true
           },
           {
-            text: 'ACADEMY',
+            text: 'Academy',
             url: 'https://academia.kleer.la/',
             inside: false
           }
         ]
       }
       - {
-        text: 'WE PUBLISH',
+        text: 'We publish',
         options: [
           {
-            text: 'RESOURCES',
+            text: 'Resources',
             url: '/recursos',
             inside: true
           },
           {
-            text: 'BLOG',
+            text: 'Blog',
             url: '/blog',
             inside: true
           }
         ]
       }
       - {
-        text: 'CLIENTS',
+        text: 'Clients',
         url: '/clientes',
         inside: true
       }
       - {
-        text: 'WE ARE',
-        url: '/somos',
-        inside: true
+        text: 'We are',
+        options: [
+          {
+            text: 'About us',
+            url: '/nosotros',
+            inside: true
+          },
+          {
+            text: 'News',
+            url: '/prensa',
+            inside: true
+          }
+        ]
       }
 
     footer_menu:

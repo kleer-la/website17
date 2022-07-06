@@ -30,7 +30,7 @@ es:
         resources:
             title: 'Materiales y Recursos sobre prácticas ágiles'
             description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
-            
+
 #   refactor
     slider:
         title_1: "Agilidad Organizacional"
@@ -907,49 +907,59 @@ es:
 
     navbar:
         - {
-            text: 'AGILIDAD ORGANIZACIONAL',
+            text: 'Agilidad organizacional',
             url: '/agilidad-organizacional',
             inside: true
         }
         - {
-            text: 'CURSOS',
+            text: 'Cursos',
             options: [
                 {
-                    text: 'NUESTROS CURSOS',
+                    text: 'Nuestros cursos',
                     url: '/catalogo',
                     inside: true
                 },
                 {
-                    text: 'ACADEMIA ONLINE',
+                    text: 'Academia online',
                     url: 'https://academia.kleer.la/',
                     inside: false
                 }
             ]
         }
         - {
-            text: 'PUBLICAMOS',
+            text: 'Publicamos',
             options: [
                 {
-                    text: 'RECURSOS Y MATERIALES',
+                    text: 'Recursos y materiales',
                     url: '/recursos',
                     inside: true
                 },
                 {
-                    text: 'BLOG',
+                    text: 'Blog',
                     url: '/blog',
                     inside: true
                 }
             ]
         }
         - {
-            text: 'CLIENTES',
+            text: 'Clientes',
             url: '/clientes',
             inside: true
         }
         - {
-            text: 'SOMOS',
-            url: '/somos',
-            inside: true
+            text: 'Somos',
+            options: [
+                {
+                    text: 'Nosotros',
+                    url: '/nosotros',
+                    inside: true
+                },
+                {
+                    text: 'Prensa',
+                    url: '/prensa',
+                    inside: true
+                }
+            ]
         }
 
     footer_menu:
