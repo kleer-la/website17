@@ -23,6 +23,14 @@ es:
         title: "BECAS"
         alt: "Becas disponibles para ONG e individuos"
         content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
+    meta_tag:
+        home:
+            title: 'Agile Coaching, Consulting & Training'
+            description: 'Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+        resources:
+            title: 'Materiales y Recursos sobre prácticas ágiles'
+            description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+            
 #   refactor
     slider:
         title_1: "Agilidad Organizacional"

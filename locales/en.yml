@@ -23,6 +23,14 @@ en:
         title: "SCHOLARSHIP"
         alt: "Scholarships available for NGOs and individuals"
         content: "We have limited scholarships, tell us how this course help you and something about yourself."
+    meta_tag:
+        home:
+            title: 'Agile Coaching, Consulting & Training'
+            description: 'We help you go towards Business Agility. We offer training and co-create strategies for adopting goal-oriented agile ways of working.'
+        resources:
+            title: 'Resources and tools for agility'
+            description: 'Resources and tools for Scrum, Product Owner, Scrum Master, Team development, Retrospectives, Leadership, Communication, Kanban, Agile Coaching'
+            
     slider:
         title_1: "Business Agility"
         text_1: "We accompany integral improvements"
