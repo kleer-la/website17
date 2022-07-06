@@ -6,9 +6,10 @@
     {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
       cover: course.event_type.cover, uri_path: course.event_type.uri_path,
-      country: 'OL', certified: true, active: index == 0
+      country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i + 
+                                (1 if course.event_type.is_kleer_cert).to_i, 
+      active: index == 0
     }}
-
 %>
 
 <section id="last-courses" class="p-5 mt-4">

@@ -1047,6 +1047,10 @@ es:
             title: 'Nuestros próximos cursos'
             button:
                 title: 'Todos nuestros cursos'
+            card:
+                certified:
+                    kleer: 'por Kleer'
+                    scrumalliance: 'por Scrum Alliance'
         home_newsletter:
             title: 'Entérate de todas las novedades del mundo ágil'
             button:

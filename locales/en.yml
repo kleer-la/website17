@@ -904,10 +904,14 @@ en:
         title: 'Coming soon'
         button:
           title: 'All courses'
+        card:
+          certified:
+              kleer: 'by Kleer'
+              scrumalliance: 'by Scrum Alliance'
       home_newsletter:
-        title: 'Find out about all the news of the agile world'
-        button:
-          title: 'Suscribe'
+          title: 'Find out about all the news of the agile world'
+          button:
+            title: 'Suscribe'
 
     resources:
       title: ""

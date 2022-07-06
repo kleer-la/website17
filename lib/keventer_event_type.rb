@@ -6,7 +6,7 @@ class KeventerEventType
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
                 :external_site_url, :slug, :canonical_slug, :deleted, :noindex,
-                :categories
+                :categories, :is_kleer_cert, :is_sa_cert
 
   def initialize
     @id = nil
@@ -49,6 +49,8 @@ class KeventerEventType
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)
     @deleted = to_boolean(xml_keventer_event.find_first('deleted')&.content)
     @noindex = to_boolean(xml_keventer_event.find_first('noindex')&.content)
+    @is_kleer_cert = to_boolean(xml_keventer_event.find_first('is-kleer-certification')&.content)
+    @is_sa_cert = to_boolean(xml_keventer_event.find_first('csd-eligible')&.content)
 
     # @surveyed_count = xml_keventer_event.find_first('surveyed-count').content.to_i
 

@@ -1,5 +1,6 @@
 <div class="card course-card" style="width: 18rem;">
   <div class="course-card__image-container">
+  <%#TODO: alt text%>
     <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...'}%>
     <div class="course-card__flags">
       <div>Abierto</div>
@@ -13,14 +14,20 @@
         <i class="fa fa-clock-o"></i>
         <%= @course[:duration]%> hs
       </li>
+  <%#TODO: country%>
       <li class="course-card__item">
         <i class="fa fa-rss"></i>
         Online <%#= @course[:country]%>
       </li>
-      <%if @course[:certified]%>
+      <%if @course[:certified] > 0%>
         <li class="course-card__item">
           <i class="fa fa-certificate"></i>
-          Certificado
+          <%= if @course[:certified] == 1 
+                t('home2022.home_courses.card.certified.kleer')
+             else
+                t('home2022.home_courses.card.certified.scrumalliance')
+             end
+          %>
         </li>
       <%end%>
     </ul>
