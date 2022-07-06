@@ -1064,7 +1064,7 @@ es:
         home_newsletter:
             title: 'Entérate de todas las novedades del mundo ágil'
             button:
-                title: 'Suscribete'
+                title: 'Suscríbete'
     resources:
         title: "Recursos y materiales sobre agilidad"
         subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
