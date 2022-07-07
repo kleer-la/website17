@@ -18,8 +18,11 @@
 .carousel__text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-bottom: 5%; }
+  justify-content: space-around;
+  padding-bottom: 15%;
+  padding-top: 8%; }
+  .carousel__text h1 {
+    margin-bottom: 7%; }
 
 .carousel__img-container {
   display: flex;
@@ -30,7 +33,7 @@
   padding-bottom: 5%; }
 
 .carousel__img {
-  max-width: 440px; }
+  max-width: 90%; }
 
 .hero__mobile-button {
   display: none !important; }
@@ -58,16 +61,15 @@
   top: 30px;
   right: 80px; }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 992px) {
   #hero {
     text-align: center; }
 
   .carousel__text {
-    display: block;
     height: auto; }
 
   .carousel__img {
-    max-width: 300px; }
+    max-width: 90%; }
 
   .carousel-control-prev-icon {
     height: 10px; }

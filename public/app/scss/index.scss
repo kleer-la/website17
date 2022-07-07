@@ -159,8 +159,13 @@ img {
   position: absolute;
 }
 
+@media screen and (max-width: 992px){
+  .desktop_figure{
+    display: none;
+  }
+}
 
-@media screen and (max-width:420px) {
+@media screen and (max-width:420px) { //sm size
   a{
     font-size: 14px;
   }
@@ -246,7 +251,7 @@ img {
   }
 }
 
-@media screen and (max-width:420px){
+@media screen and (max-width:992px){
   //bootstrap edit
   .navbar-collapse{
     height: calc(100vh - 100px);
