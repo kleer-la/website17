@@ -24,14 +24,18 @@ $grey-card: #eaeaea;
 
 /* Global */
 
-html,
+//html{
+//  font-family: 'Raleway', sans-serif;
+//  background-color: $white;
+//  overflow-x: hidden;
+//}
+//html,
 body {
-  width: 100%;
-  max-width: 100vw;
   font-family: 'Raleway', sans-serif;
-  overflow-x: hidden;
-  height: 100%;
   background-color: $white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 
@@ -373,6 +377,7 @@ footer {
 //course card
 .course-card{
   width: 100% !important;
+  max-width: 250px !important;
   padding: 24px 24px 32px;
   gap: 32px;
   isolation: isolate;

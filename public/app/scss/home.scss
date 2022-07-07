@@ -44,6 +44,7 @@ $white: #FFFFFF;
   justify-content: space-around;
   padding-bottom: 15%;
   padding-top: 8%;
+  padding-right: 10%;
 
   h1{
     margin-bottom: 7%;
@@ -93,6 +94,7 @@ $white: #FFFFFF;
 .hero_yellow_bean{
   top: 30px;
   right: 80px;
+  z-index: 30;
 }
 @media screen and (max-width:992px){ //lg size
   #hero{
@@ -155,6 +157,8 @@ $white: #FFFFFF;
 //client-carousel
 #client-carousel{
   margin: 120px 10px;
+  z-index: 0;
+  position: relative;
 }
 
 .mobile-client-carousel{
@@ -181,6 +185,7 @@ $white: #FFFFFF;
   background-color: $primary-blue;
   border-radius: 16px;
   padding: 50px 80px;
+  z-index: 2;
 
   @media screen and (max-width:420px) {
     padding: 10px 20px 20px 30px;
@@ -196,8 +201,8 @@ $white: #FFFFFF;
 }
 
 .promotion_yellow_circle{
-  bottom: -100px;
-  right: -150px;
+  bottom: -10%;
+  right: 7%;
   z-index: -1;
 }
 

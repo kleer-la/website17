@@ -20,7 +20,8 @@
   flex-direction: column;
   justify-content: space-around;
   padding-bottom: 15%;
-  padding-top: 8%; }
+  padding-top: 8%;
+  padding-right: 10%; }
   .carousel__text h1 {
     margin-bottom: 7%; }
 
@@ -59,7 +60,8 @@
 
 .hero_yellow_bean {
   top: 30px;
-  right: 80px; }
+  right: 80px;
+  z-index: 30; }
 
 @media screen and (max-width: 992px) {
   #hero {
@@ -104,7 +106,9 @@
   margin-top: auto; }
 
 #client-carousel {
-  margin: 120px 10px; }
+  margin: 120px 10px;
+  z-index: 0;
+  position: relative; }
 
 .mobile-client-carousel {
   padding: 16px 0 !important;
@@ -124,7 +128,8 @@
 .client-carousel__container {
   background-color: #68CEF2;
   border-radius: 16px;
-  padding: 50px 80px; }
+  padding: 50px 80px;
+  z-index: 2; }
   @media screen and (max-width: 420px) {
     .client-carousel__container {
       padding: 10px 20px 20px 30px;
@@ -137,8 +142,8 @@
   z-index: 20; }
 
 .promotion_yellow_circle {
-  bottom: -100px;
-  right: -150px;
+  bottom: -10%;
+  right: 7%;
   z-index: -1; }
 
 .promotion_rustic_line {
