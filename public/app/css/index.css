@@ -624,6 +624,9 @@ footer {
   font-size: 16px;
   line-height: 32px; }
 
+.icon-card {
+  height: 18px; }
+
 .carousel-control-next-icon {
   background-image: url("../img/view_figures/arrow.svg");
   transform: rotate(-90deg); }
