@@ -898,12 +898,39 @@ es:
     generals:
         social_media:
             title: 'Nuestras redes'
-            twitter: "https://twitter.com/kleer_la"
-            facebook: "https://www.facebook.com/kleer.la"
+#            twitter: "https://twitter.com/kleer_la"
+#            facebook: "https://www.facebook.com/kleer.la"
             whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
-            instagram: "https://www.instagram.com/kleer.la/"
-            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
-            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+#            instagram: "https://www.instagram.com/kleer.la/"
+#            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
+#            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+            options: [
+                {
+                    title: 'Twitter',
+                    image: '/app/img/icons/Twitter.svg',
+                    url: 'https://twitter.com/kleer_la'
+                },
+                {
+                    title: 'Facebook',
+                    image: '/app/img/icons/Facebook.svg',
+                    url: 'https://www.facebook.com/kleer.la'
+                },
+                {
+                    title: 'Instagram',
+                    image: '/app/img/icons/Instagram.svg',
+                    url: 'https://www.instagram.com/kleer.la/'
+                },
+                {
+                    title: 'Youtube',
+                    image: '/app/img/icons/Youtube.svg',
+                    url: 'https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw'
+                },
+                {
+                    title: 'LinkedIn',
+                    image: '/app/img/icons/Linkedin.svg',
+                    url: 'https://www.linkedin.com/company/kleer/mycompany/'
+                }
+            ]
 
     navbar:
         - {

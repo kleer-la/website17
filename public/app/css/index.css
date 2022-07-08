@@ -484,15 +484,23 @@ img {
       margin: 16px 0 16px 0; }
     .navbar-content .social-media a {
       font-size: 18px;
+      color: #00BBEE; }
+    .navbar-content .social-media img {
       color: #00BBEE; } }
 .social-media {
-  width: 125px; }
+  width: 150px; }
 
 .social-media__list {
   margin: auto 0 auto 0 !important;
   padding: 0 !important; }
   .social-media__list li:hover {
     height: 120%; }
+
+.icon-social {
+  height: 18px; }
+
+.icon-social:hover {
+  height: 20px; }
 
 .float {
   position: fixed;
@@ -507,6 +515,13 @@ img {
   font-size: 30px;
   box-shadow: 2px 2px 3px #999;
   z-index: 100; }
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .whatsapp-button img:hover {
+    height: 70%; }
 
 .my-float {
   margin-top: 16px; }

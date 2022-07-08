@@ -284,12 +284,16 @@ img {
          font-size: 18px;
          color: $secondary-blue;
        }
+
+       img{
+         color: $secondary-blue;
+       }
      }
    }
 }
 
 .social-media{
-  width: 125px;
+  width: 150px;
 }
 
 .social-media__list{
@@ -299,6 +303,14 @@ img {
   li:hover{
     height: 120%;
   }
+}
+
+.icon-social{
+  height: 18px;
+}
+
+.icon-social:hover {
+  height: 20px;
 }
 
 //whatsapp button
@@ -316,7 +328,15 @@ img {
   box-shadow: 2px 2px 3px #999;
   z-index:100;
 }
+.whatsapp-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  img:hover{
+    height: 70%;
+  }
+}
 .my-float{
   margin-top:16px;
 }
