@@ -7,8 +7,8 @@
     {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
       cover: course.event_type.cover, uri_path: course.event_type.uri_path,
-      country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i + 
-                                (1 if course.event_type.is_kleer_cert).to_i, 
+      country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
+                                (1 if course.event_type.is_kleer_cert).to_i,
       active: index == 0
     }}
 %>
@@ -53,11 +53,11 @@
           </div>
         <%end %>
       </div>
-      <button class="carousel-control-prev me-5" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next ms-5" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>

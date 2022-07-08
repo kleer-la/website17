@@ -990,20 +990,24 @@ es:
                       url: '/recursos'
                   },
                   {
-                      title: 'Somos',
-                      url: '/somos'
+                      title: 'Blog',
+                      url: '/blog'
                   },
                   { }
               ]
         }
         - {
-            title: 'Somos',
+            title: 'Acerca de',
             items:
               [
                   {
-                      title: 'Nuestra filosofía',
+                      title: 'Somos',
                       url: '/somos'
                   },
+                  {
+                      title: 'Prensa',
+                      url: '/prensa'
+                  }
               ]
         }
 

@@ -23,18 +23,13 @@ $white: white;
 $grey-card: #eaeaea;
 
 /* Global */
-
-//html{
-//  font-family: 'Raleway', sans-serif;
-//  background-color: $white;
-//  overflow-x: hidden;
-//}
-//html,
+html{
+  overflow-x: hidden;
+}
 body {
   font-family: 'Raleway', sans-serif;
   background-color: $white;
   overflow-x: hidden;
-  overflow-y: scroll;
   height: 100%;
 }
 
@@ -129,15 +124,19 @@ img {
   max-width: 300px;
   background: $primary-blue;
   border-radius: 100px;
-  //font-family: 'Degular';
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
 }
 
+.my-primary-button:hover{
+  box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.2);
+  border-radius: 100px;
+  background-color: $secondary-blue;
+}
+
 .my-secondary-button{
-  //font-family: 'Degular';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -146,11 +145,16 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 16px 32px;
   height: 52px;
   background: $white;
   border-radius: 100px;
   border: $primary-blue 2px solid ;
+}
+
+.my-secondary-button:hover{
+  border: 2px solid $secondary-blue;
+  box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.15);
+  border-radius: 100px;
 }
 
 .btn-center-container{
@@ -175,14 +179,20 @@ img {
   }
 
   h1{
-    font-style: normal;
-    font-weight: 600;
     font-size: 40px;
     line-height: 48px;
   }
-
-  h4{
+  h2{
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h3{
     font-size: 24px;
+    line-height: 28px;
+  }
+  h4{
+    font-size: 20px;
+    line-height: 26px;
   }
 
   .desktop_figure{
@@ -351,6 +361,7 @@ footer {
 
 .footer-botom__list{
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style-type: none;
   margin: 0;

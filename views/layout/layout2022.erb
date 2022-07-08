@@ -20,7 +20,8 @@
         const navbar = document.getElementById('navbar');
         const body = document.getElementById('body')
         function scrolling() {
-            if (body.getBoundingClientRect().top < 100 ) {
+            console.log(body.getBoundingClientRect().top)
+            if (body.getBoundingClientRect().top < 0 ) {
 
                 navbar.classList.add("navbar-scrolled");
             }

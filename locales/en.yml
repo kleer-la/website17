@@ -850,20 +850,24 @@ en:
               url: '/recursos'
             },
             {
-              title: 'We are',
-              url: '/somos'
+              title: 'Blog',
+              url: '/blog'
             },
             { }
           ]
       }
       - {
-        title: 'We are',
+        title: 'About us',
         items:
           [
             {
-              title: 'Nuestra filosofía',
+              title: 'We are',
               url: '/somos'
             },
+            {
+              title: 'News',
+              url: '/prensa'
+            }
           ]
       }
 

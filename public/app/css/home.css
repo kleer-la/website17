@@ -68,7 +68,8 @@
     text-align: center; }
 
   .carousel__text {
-    height: auto; }
+    height: auto;
+    padding: 0 5%; }
 
   .carousel__img {
     max-width: 90%; }
