@@ -80,11 +80,11 @@ get '/home2022' do
   meta_tags!  title: t('meta_tag.home.title'),
               description: t('meta_tag.home.description')
 
-  if session[:locale] == 'es'
-    @coming_courses = coming_courses
-  else
-    @coming_courses = fake_event_from_catalog(KeventerReader.instance.categories)
-  end
+  @coming_courses = if session[:locale] == 'es'
+                      coming_courses
+                    else
+                      fake_event_from_catalog(KeventerReader.instance.categories)
+                    end
 
   erb :'home/index', layout: :'layout/layout2022'
 end
@@ -192,12 +192,10 @@ get '/recursos' do
   @active_tab_publicamos = 'active'
   meta_tags!  title: t('meta_tag.resources.title'),
               description: t('meta_tag.resources.description')
-  
+
   @resources = Resources.new.load.all
 
-  if session[:version] == 2022
-    return erb :'resources_page/index', layout: :'layout/layout2022'
-  end
+  return erb :'resources_page/index', layout: :'layout/layout2022' if session[:version] == 2022
 
   erb :recursos
 end
