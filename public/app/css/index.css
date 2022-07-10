@@ -587,6 +587,9 @@ footer {
   height: 250px;
   padding: 0; }
 
+.course-card__subtitle {
+  font-size: 14px; }
+
 .course-card__image {
   max-height: 300px;
   width: auto; }
