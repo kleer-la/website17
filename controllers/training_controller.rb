@@ -58,7 +58,15 @@ get '/catalogo' do
   meta_tags! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
 
-  if session[:locale] == 'en'
+  if session[:version] == 2022
+    @coming_courses = if session[:locale] == 'es'
+                        coming_courses
+                      else
+                        fake_event_from_catalog(KeventerReader.instance.categories)
+                      end
+
+    return erb :'training/index', layout: :'layout/layout2022'
+  elsif session[:locale] == 'en'
     erb :catalogo_en
   else
     erb :catalogo

@@ -9,15 +9,15 @@ describe 'fake_event_from_catalog' do
     KeventerReader.build_with(@connector)
     @kevr = KeventerReader.instance
   end
-  
+
   it 'has many' do
     cat = @kevr.categories
-    events= fake_event_from_catalog(@kevr.categories)
+    events = fake_event_from_catalog(@kevr.categories)
     expect(events.count).to eq 3
   end
   it 'has many' do
     cat = @kevr.categories
-    events= fake_event_from_catalog(@kevr.categories)
+    events = fake_event_from_catalog(@kevr.categories)
     expect(events[0].event_type.name).to eq 'Tipo de Evento de Prueba'
   end
 end
