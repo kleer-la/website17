@@ -756,6 +756,8 @@ en:
 
 #    page 2022
     generals:
+        texts:
+          soon: 'Comming soon'
         buttons:
             more_info: 'More info'
         social_media:
