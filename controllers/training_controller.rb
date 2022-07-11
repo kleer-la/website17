@@ -60,7 +60,7 @@ get '/catalogo' do
 
   if session[:version] == 2022
     @coming_courses = if session[:locale] == 'es'
-                        coming_courses
+                        KeventerReader.instance.coming_commercial_events(Date.today, 10)
                       else
                         fake_event_from_catalog(KeventerReader.instance.categories)
                       end
