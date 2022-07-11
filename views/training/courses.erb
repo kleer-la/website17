@@ -1,8 +1,5 @@
 <%
   @coming_courses = @coming_courses
-    .select {|e| e.event_type.lang == session[:locale]}
-    .uniq { |e| e.event_type.id}
-    .first(4)
     .map.with_index { |course, index|
     {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,

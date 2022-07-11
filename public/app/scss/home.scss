@@ -19,7 +19,6 @@ $white: #FFFFFF;
 //hero
 #hero{
   max-width: 100vw;
-  margin-top: 100px;
 }
 
 .item,
@@ -27,9 +26,7 @@ $white: #FFFFFF;
   height: 100%;
 }
 //bootstrap edit
-.hero__carousel {
-  height: calc(100vh - 100px)
-}
+.hero__carousel {}
 
 .hero_carousel-inner {
   height: calc(100vh - 100px)
