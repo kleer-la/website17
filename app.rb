@@ -76,20 +76,17 @@ before '/:locale/*' do
 end
 
 get '/home2022' do
-  meta_tags! title: 'Agile Coaching, Consulting & Training'
-  meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
-                    ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+  session[:version] = 2022
+  meta_tags!  title: t('meta_tag.home.title'),
+              description: t('meta_tag.home.description')
 
-  @coming_courses = coming_courses
+  @coming_courses = if session[:locale] == 'es'
+                      coming_courses
+                    else
+                      fake_event_from_catalog(KeventerReader.instance.categories)
+                    end
+
   erb :'home/index', layout: :'layout/layout2022'
-end
-
-get '/recursos2022' do
-  meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
-  meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
-
-  @resources = Resources.new.load.all
-  erb :'resources_page/index', layout: :'layout/layout2022'
 end
 
 get '/ebooks2022' do
@@ -102,6 +99,7 @@ get '/ebooks2022' do
 end
 
 get '/' do
+  session[:version] = 2021
   meta_tags! title: 'Agile Coaching, Consulting & Training'
   meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
                       ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
@@ -192,10 +190,13 @@ end
 
 get '/recursos' do
   @active_tab_publicamos = 'active'
-  meta_tags! title: 'Materiales y Recursos sobre prácticas ágiles'
-  meta_tags! description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+  meta_tags!  title: t('meta_tag.resources.title'),
+              description: t('meta_tag.resources.description')
 
   @resources = Resources.new.load.all
+
+  return erb :'resources_page/index', layout: :'layout/layout2022' if session[:version] == 2022
+
   erb :recursos
 end
 
@@ -286,7 +287,6 @@ end
 get '/clientes' do
   meta_tags! title: "#{@base_title} | Nuestros clientes"
   meta_tags! description: 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
-  @meta_keywords = 'Kleer, Clientes, Casos, Casos de Éxito, confianza'
 
   erb :clientes
 end

@@ -10,8 +10,8 @@
 
    navbar_items = t('navbar')
 %>
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
+  <div class="container-fluid navbar-content">
     <a id="logo" class="navbar-brand a" href="/<%=session[:locale]%>">
       <img src="/app/img/black_logo.png" alt="Kleer" />
     </a>
@@ -38,7 +38,7 @@
             </li>
           <%else %>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<%= "#{item[:inside] ? '/'+session[:locale] : ''}#{item[:url]}" %>">
+              <a class="nav-link" aria-current="page" href="<%= "#{item[:inside] ? '/'+session[:locale] : ''}#{item[:url]}" %>">
                 <%=item[:text]%>
               </a>
             </li>
@@ -48,12 +48,14 @@
           <a class="nav-link" href="/en">ENGLISH</a>
         </li>
       </ul>
-      <div>
+      <div class="social-container">
         <%= erb :'component/_social_media' %>
       </div>
     </div>
   </div>
 </nav>
-<a href="https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0" class="float" target="_blank">
-  <i class="fa fa-whatsapp my-float"></i>
+<a href="https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0" class="float whatsapp-button" target="_blank">
+  <img class="" src="/app/img/icons/Whatsapp.svg" />
 </a>
+
+

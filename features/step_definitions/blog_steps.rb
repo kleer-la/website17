@@ -31,5 +31,5 @@ Then('Title should be {string}') do |title|
 end
 
 Given('With {string} locale') do |lang|
- @lang = lang
+  @lang = lang
 end

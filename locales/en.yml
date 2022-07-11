@@ -23,6 +23,14 @@ en:
         title: "SCHOLARSHIP"
         alt: "Scholarships available for NGOs and individuals"
         content: "We have limited scholarships, tell us how this course help you and something about yourself."
+    meta_tag:
+        home:
+            title: 'Agile Coaching, Consulting & Training'
+            description: 'We help you go towards Business Agility. We offer training and co-create strategies for adopting goal-oriented agile ways of working.'
+        resources:
+            title: 'Resources and tools for agility'
+            description: 'Resources and tools for Scrum, Product Owner, Scrum Master, Team development, Retrospectives, Leadership, Communication, Kanban, Agile Coaching'
+
     slider:
         title_1: "Business Agility"
         text_1: "We accompany integral improvements"
@@ -748,60 +756,148 @@ en:
 
 #    page 2022
     generals:
+        texts:
+          soon: 'Comming soon'
+        buttons:
+            more_info: 'More info'
         social_media:
-            twitter: "https://twitter.com/kleer_la"
-            facebook: "https://www.facebook.com/kleer.la"
+            title: 'Social media'
             whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
-            instagram: "https://www.instagram.com/kleer.la/"
-            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
-            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+            options: [
+              {
+                title: 'Twitter',
+                image: '/app/icons/Twitter.svg',
+                url: 'https://twitter.com/kleer_la'
+              },
+              {
+                title: 'Facebook',
+                image: '',
+                url: 'https://www.facebook.com/kleer.la'
+              },
+              {
+                title: 'Instagram',
+                image: '',
+                url: 'https://www.instagram.com/kleer.la/'
+              },
+              {
+                title: 'Youtube',
+                image: '',
+                url: 'https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw'
+              },
+              {
+                title: 'LinkedIn',
+                image: '',
+                url: 'https://www.linkedin.com/company/kleer/mycompany/'
+              }
+            ]
 
     navbar:
       - {
-        text: 'BUSINESS AGILITY',
+        text: 'Business agility',
         url: '/agilidad-organizacional',
         inside: true
       }
       - {
-        text: 'COURSES',
+        text: 'Courses',
         options: [
           {
-            text: 'OUR COURSES',
+            text: 'Our courses',
             url: '/catalogo',
             inside: true
           },
           {
-            text: 'ACADEMY',
+            text: 'Academy',
             url: 'https://academia.kleer.la/',
             inside: false
           }
         ]
       }
       - {
-        text: 'WE PUBLISH',
+        text: 'We publish',
         options: [
           {
-            text: 'RESOURCES',
+            text: 'Resources',
             url: '/recursos',
             inside: true
           },
           {
-            text: 'BLOG',
+            text: 'Blog',
             url: '/blog',
             inside: true
           }
         ]
       }
       - {
-        text: 'CLIENTS',
+        text: 'Clients',
         url: '/clientes',
         inside: true
       }
       - {
-        text: 'WE ARE',
-        url: '/somos',
-        inside: true
+        text: 'We are',
+        options: [
+          {
+            text: 'About us',
+            url: '/nosotros',
+            inside: true
+          },
+          {
+            text: 'News',
+            url: '/prensa',
+            inside: true
+          }
+        ]
       }
+
+    footer_menu:
+      - {
+        title: 'We do',
+        items:
+          [
+            {
+              title: 'Business agility',
+              url: '/agilidad-organizacional'
+            },
+            {
+              title: 'Courses',
+              url: '/catalogo'
+            },
+            {
+              title: 'Clients',
+              url: '/clientes'
+            }
+          ]
+      }
+      - {
+        title: 'We publish',
+        items:
+          [
+            {
+              title: 'Resources',
+              url: '/recursos'
+            },
+            {
+              title: 'Blog',
+              url: '/blog'
+            },
+            { }
+          ]
+      }
+      - {
+        title: 'About us',
+        items:
+          [
+            {
+              title: 'We are',
+              url: '/somos'
+            },
+            {
+              title: 'News',
+              url: '/prensa'
+            }
+          ]
+      }
+
+
     home2022:
       home_business_agility:
         title: 'Business agility'
@@ -815,6 +911,11 @@ en:
                       nesciunt quaerat!
                     </p>
                     '
+        buttons:
+          more:
+            text: 'Know more'
+          questions:
+            text: 'Questions?'
       home_hero:
         - {
           subject: "Business agility",
@@ -838,15 +939,19 @@ en:
           alt: "Clients image"
         }
       home_clients:
-        title: 'EThese organizations already trust us'
+        title: 'These organizations already trust us'
       home_courses:
         title: 'Coming soon'
         button:
           title: 'All courses'
+        card:
+          certified:
+              kleer: 'by Kleer'
+              scrumalliance: 'by Scrum Alliance'
       home_newsletter:
-        title: 'Find out about all the news of the agile world'
-        button:
-          title: 'Suscribe'
+          title: 'Find out about all the news of the agile world'
+          button:
+            title: 'Suscribe'
 
     resources:
       title: ""

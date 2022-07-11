@@ -18,3 +18,7 @@ Feature: Home Page
 	Scenario: Subscripcion a newsletter
 		Given I visit the home page
 		Then I should see "SUSCRÍBETE"
+
+  Scenario: Home 2022
+    Given I visit 'home2022' page
+    Then I should see "Agilidad Organizacional"

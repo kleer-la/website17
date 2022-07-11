@@ -1,51 +1,21 @@
 <footer>
+
   <div class="container-fluid footer__body">
     <div class="row">
-      <div class="col-6 col-md-3">
-        <h6>Qué hacemos</h6>
-        <ul>
-          <li>
-            <a href="/agilidad-organizacional">
-              Agilidad organizacional
-            </a>
-          </li>
-          <li >
-            <a href="/catalogo">
-              Cursos
-            </a>
-          </li>
-          <li>
-            <a href="/clientes">
-              Clientes
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-3">
-        <h6>Publicamos</h6>
-        <ul>
-          <li>
-            <a href="/recursos">
-              Recursos y materiales
-            </a>
-          </li>
-          <li>
-            <a href="/blog">
-              Blog
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-3">
-        <h6>Somos</h6>
-        <ul>
-          <li>
-            <a href="/somos">
-              Nuestra filosofía
-            </a>
-          </li>
-        </ul>
-      </div>
+      <% t('footer_menu').each do  |item| %>
+        <div class="col-6 col-md-3">
+          <h6><%= item[:title] %></h6>
+          <ul>
+            <% item[:items].each do |subitem| %>
+              <li>
+                <a href='<%= subitem[:url] %>'>
+                  <%= subitem[:title] %>
+                </a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
       <div class="col-6 col-md-3">
         <h6>Nuestras redes</h6>
         <%= erb :'component/_social_media' %>

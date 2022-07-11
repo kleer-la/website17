@@ -23,6 +23,14 @@ es:
         title: "BECAS"
         alt: "Becas disponibles para ONG e individuos"
         content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
+    meta_tag:
+        home:
+            title: 'Agile Coaching, Consulting & Training'
+            description: 'Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+        resources:
+            title: 'Materiales y Recursos sobre prácticas ágiles'
+            description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+
 #   refactor
     slider:
         title_1: "Agilidad Organizacional"
@@ -888,95 +896,188 @@ es:
 
 
     generals:
+        buttons:
+            more_info: 'Conoce más'
         social_media:
-            twitter: "https://twitter.com/kleer_la"
-            facebook: "https://www.facebook.com/kleer.la"
+            title: 'Nuestras redes'
             whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
-            instagram: "https://www.instagram.com/kleer.la/"
-            youtube: "https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw"
-            linkedin: "https://www.linkedin.com/company/kleer/mycompany/"
+            options: [
+                {
+                    title: 'Twitter',
+                    image: '/app/img/icons/Twitter.svg',
+                    url: 'https://twitter.com/kleer_la'
+                },
+                {
+                    title: 'Facebook',
+                    image: '/app/img/icons/Facebook.svg',
+                    url: 'https://www.facebook.com/kleer.la'
+                },
+                {
+                    title: 'Instagram',
+                    image: '/app/img/icons/Instagram.svg',
+                    url: 'https://www.instagram.com/kleer.la/'
+                },
+                {
+                    title: 'Youtube',
+                    image: '/app/img/icons/Youtube.svg',
+                    url: 'https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw'
+                },
+                {
+                    title: 'LinkedIn',
+                    image: '/app/img/icons/Linkedin.svg',
+                    url: 'https://www.linkedin.com/company/kleer/mycompany/'
+                }
+            ]
 
     navbar:
         - {
-            text: 'AGILIDAD ORGANIZACIONAL',
+            text: 'Agilidad organizacional',
             url: '/agilidad-organizacional',
             inside: true
         }
         - {
-            text: 'CURSOS',
+            text: 'Cursos',
             options: [
                 {
-                    text: 'NUESTROS CURSOS',
+                    text: 'Nuestros cursos',
                     url: '/catalogo',
                     inside: true
                 },
                 {
-                    text: 'ACADEMIA ONLINE',
+                    text: 'Academia online',
                     url: 'https://academia.kleer.la/',
                     inside: false
                 }
             ]
         }
         - {
-            text: 'PUBLICAMOS',
+            text: 'Publicamos',
             options: [
                 {
-                    text: 'RECURSOS Y MATERIALES',
+                    text: 'Recursos y materiales',
                     url: '/recursos',
                     inside: true
                 },
                 {
-                    text: 'BLOG',
+                    text: 'Blog',
                     url: '/blog',
                     inside: true
                 }
             ]
         }
         - {
-            text: 'CLIENTES',
+            text: 'Clientes',
             url: '/clientes',
             inside: true
         }
         - {
-            text: 'SOMOS',
-            url: '/somos',
-            inside: true
+            text: 'Somos',
+            options: [
+                {
+                    text: 'Nosotros',
+                    url: '/nosotros',
+                    inside: true
+                },
+                {
+                    text: 'Prensa',
+                    url: '/prensa',
+                    inside: true
+                }
+            ]
+        }
+
+    footer_menu:
+        - {
+            title: 'Qué hacemos',
+            items:
+              [
+                  {
+                      title: 'Agilidad organizacional',
+                      url: '/agilidad-organizacional'
+                  },
+                  {
+                      title: 'Cursos',
+                      url: '/catalogo'
+                  },
+                  {
+                      title: 'Clientes',
+                      url: '/clientes'
+                  }
+              ]
+        }
+        - {
+            title: 'Publicamos',
+            items:
+              [
+                  {
+                      title: 'Recursos y materiales',
+                      url: '/recursos'
+                  },
+                  {
+                      title: 'Blog',
+                      url: '/blog'
+                  },
+                  { }
+              ]
+        }
+        - {
+            title: 'Acerca de',
+            items:
+              [
+                  {
+                      title: 'Somos',
+                      url: '/somos'
+                  },
+                  {
+                      title: 'Prensa',
+                      url: '/prensa'
+                  }
+              ]
         }
 
     home2022:
         home_business_agility:
             title: 'Agilidad organizacional'
             text: '
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dignissimos dolorem eius eos eum
-                  impedit iure quam quo reprehenderit sint, voluptatibus! Accusamus, assumenda beatae commodi facere hic
-                  molestias provident.
+                <p>
+                    En Kleer nuestro principal foco es la Agilidad Organizacional desde 2011. Nuestra <strong>cercanía</strong> y <strong>experiencia</strong> nos permiten hacerlo de una manera diferencial.
                 </p>
-                <p>Alias at autem, consectetur consequatur doloremque ea earum enim eum itaque laborum nemo non numquam
-                  obcaecati odio provident quam quos tempora tenetur unde voluptas? Delectus dignissimos excepturi facilis
-                  nesciunt quaerat!
+                <p>
+                    Somos un equipo de profesionales cada vez más <strong>diverso</strong>, que busca aprender e <strong>impactar</strong> en cada intervención que diseñamos y llevamos adelante.
+                </p>
+                <p>
+                    Y perseguimos cada día nuestro propósito: ¡Disfrutamos cocreando ambientes humanos más conscientes y asombrosos!
                 </p>
                 '
+            buttons:
+                more:
+                    text: 'Conoce más'
+                questions:
+                    text: '¿Tienes alguna pregunta?'
         home_hero:
             - {
                 subject: "Agilidad Organizacional",
-                description: "lorem ipsum...",
+                description: "Acompañamos a las organizaciones en la mejora sostenible de sus formas de trabajo y a adaptarse oportunamente a los cambios del entorno.",
                 url: "/agilidad-organizacional",
                 img: "...",
-                alt: "Imagen de agilidad organizacional"
+                alt: "Imagen de agilidad organizacional",
+                button_text: "¡Conoce más!"
             }
             - {
                 subject: "Cursos",
-                description: "lorem ipsum...",
+                description: "Experiencias de aprendizaje dinámicas y memorables para potenciar el desarrollo de tus habilidades y las de tu organización.",
                 url: "/catalogo",
                 img: "...",
-                alt: "Cursos"
+                alt: "Cursos",
+                button_text: "Ver cursos"
             }
             - {
                 subject: "Nuestros Clientes",
-                description: "lorem ipsum",
+                description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
                 url: "/clientes",
                 img: "...",
-                alt: "Imagen de clientes"
+                alt: "Imagen de clientes",
+                button_text: "Ver casos"
             }
         home_clients:
             title: 'Estas organizaciones confían en nosotros'
@@ -984,10 +1085,14 @@ es:
             title: 'Nuestros próximos cursos'
             button:
                 title: 'Todos nuestros cursos'
+            card:
+                certified:
+                    kleer: 'por Kleer'
+                    scrumalliance: 'por Scrum Alliance'
         home_newsletter:
-            title: 'Enterate de todas las novedades del mundo ágil'
+            title: 'Entérate de todas las novedades del mundo ágil'
             button:
-                title: 'Suscribete'
+                title: 'Suscríbete'
     resources:
         title: "Recursos y materiales sobre agilidad"
         subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."

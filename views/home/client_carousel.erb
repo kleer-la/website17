@@ -1,48 +1,62 @@
 <%
   clients = [
-    {name: 'Coca-cola', img: '/img/clientes/logo-cocacola.png'},
-    {name: 'Disney', img: '/img/clientes/logo-disney.png'},
-    {name: 'Loreal París', img: '/img/clientes/logo-loreal.jpg'},
-    {name: 'LATAM', img: '/img/clientes/logo-latam.jpg'},
-    {name: "epm", img:"/img/clientes/logo-epm.jpg" },
-    {name: "Protección", img:"/img/clientes/logo-proteccion.jpg" },
-    {name: "Banco de Occidente", img:"/img/clientes/logo-bancodeoccidente.png" },
-    {name: "BBVA Continental", img:"/img/clientes/logo-bbvacontinental.png" },
-    {name: "Banco de Chile", img:"/img/clientes/logo-bancodechile.png" },
-    {name: "BCI", img:"/img/clientes/logo-bci.jpg" },
-    {name: "Banchile", img:"/img/clientes/logo-banchile.png" },
-    {name: "Interbank", img:"/img/clientes/logo-interbank.jpg" },
-    {name: "BCP", img:"/img/clientes/logo-bcp.png" },
-    {name: "Interbanking", img:"/img/clientes/logo-interbanking.png" },
-    {name: "Grupo Galicia", img:"/img/clientes/logo-galicia.png" },
-    {name: "OSDE", img:"/img/clientes/logo-osde.png" },
-    {name: "Cablevisión", img:"/img/clientes/logo-cablevision.png" },
-    {name: "Fibertel", img:"/img/clientes/logo-fibertel.jpg" },
-    {name: "YPF" , img:"/img/clientes/logo-ypf.jpg" },
-    {name: "Oracle", img:"/img/clientes/logo-oracle.png" },
-    {name: "Artear", img:"/img/clientes/logo-artear.jpg" },
-    {name: "Telecom", img:"/img/clientes/logo-telecom.jpg" },
-    {name: "Farmacity", img:"/img/clientes/logo-farmacity.png" },
-    {name: "Cencosud", img:"/img/clientes/logo-cencosud.png" },
-    {name: "Plataforma 10", img: "/img/clientes/logo-plataforma10.jpg" },
-    {name: "Intraway", img: "/img/clientes/logo-intraway.png" },
-    {name: "Exxon Mobil", img: "/img/clientes/logo-exxonmobil.png" },
-    {name: "Technisys", img: "/img/clientes/logo-technisys.jpg" },
-    {name: "GlobalLogic", img: "/img/clientes/logo-globallogic.png" },
-    {name: "Neoris", img: "/img/clientes/logo-neoris.png" },
-    {name: "Asesuisa", img: "/img/clientes/logo-asesuisa.jpg" },
-    {name: "Bancolombia", img: "/img/clientes/logo-bancolombia.jpg" },
-    {name: "Colpatria", img: "/img/clientes/logo-colpatria.jpg" },
-    {name: "Edenor", img: "/img/clientes/logo-Edenor.jpg" },
-    {name: "Falabella", img: "/img/clientes/logo-Falabella.jpg" }
+    {name: 'Coca-cola', img: '/img/clientes/coca.webp'},
+    {name: 'Disney', img: '/img/clientes/disney.webp'},
+    {name: 'Loreal París', img: '/img/clientes/loreal.webp'},
+    {name: 'LATAM', img: '/img/clientes/latam.webp'},
+    {name: "epm", img:"/img/clientes/epm.webp" },
+    {name: "Protección", img:"/img/clientes/proteccion.webp" },
+    {name: "Banco de Occidente", img:"/img/clientes/ban_occidente.webp" },
+    {name: "BBVA Continental", img:"/img/clientes/BBVA.webp" },
+    {name: "Banco de Chile", img:"/img/clientes/ban_chile.webp" },
+    {name: "BCI", img:"/img/clientes/BCI.webp" },
+    # {name: "Banchile", img:"/img/clientes2/" },
+    {name: "Interbank", img:"/img/clientes/interbank.webp" },
+    {name: "BCP", img:"/img/clientes/BCP.webp" },
+    {name: "Interbanking", img:"/img/clientes/interbanking.webp" },
+    {name: "Grupo Galicia", img:"/img/clientes/galicia.webp" },
+    {name: "OSDE", img:"/img/clientes/osde.webp" },
+    # {name: "Cablevisión", img:"/img/clientes/logo-cablevision.png" },
+    {name: "Fibertel", img:"/img/clientes/fibertel.webp" },
+    {name: "YPF" , img:"/img/clientes/YPF.webp" },
+    {name: "Oracle", img:"/img/clientes/oracle.webp" },
+    {name: "Artear", img:"/img/clientes/artear.webp" },
+    # {name: "Telecom", img:"/img/clientes/logo-telecom.jpg" },
+    {name: "Farmacity", img:"/img/clientes/farmacity.webp" },
+    {name: "Cencosud", img:"/img/clientes/cencosud.webp" },
+    {name: "Plataforma 10", img: "/img/clientes/plataforma10.webp" },
+    {name: "Intraway", img: "/img/clientes/intraway.webp" },
+    {name: "Exxon Mobil", img: "/img/clientes/exxo_mobil.webp" },
+    {name: "Technisys", img: "/img/clientes/technisys.webp" },
+    {name: "GlobalLogic", img: "/img/clientes/global_logic.webp" },
+    # {name: "Neoris", img: "/img/clientes/logo-neoris.png" },
+    {name: "Asesuisa", img: "/img/clientes/asesuisa.webp" },
+    {name: "Bancolombia", img: "/img/clientes/bancolombia.webp" },
+    {name: "Colpatria", img: "/img/clientes/colpatria.webp" },
+    {name: "Edenor", img: "/img/clientes/edenor.webp" },
+    {name: "Falabella", img: "/img/clientes/falabella.webp" }
   ]
 %>
-<% clients_per_row = 4
-active= "active"%>
-<section id="client-carousel" class="p-3">
+<%
+  clients_per_row = 4
+  clients_per_row_mobile = 3
+  active= "active"
+  mobile_active="active"
+%>
+<section id="client-carousel" class="p-3 client-carousel">
+
+  <img src="/app/img/view_figures/yellow_circle.svg" class="desktop_figure promotion_yellow_circle" />
   <div class="container client-carousel__container">
-    <h5 class="client-carousel__title mt-3">Estas organizaciones ya confían en nosotros</h5>
+
+    <h5 class="client-carousel__title mt-3">
+      <%= t('home2022.home_clients.title') %>
+    </h5>
     <div id="carouselClients" class="carousel slide mt-5" data-bs-ride="carousel">
+<!--      decoration figures-->
+      <img src="/app/img/view_figures/green_triangle.svg" class="desktop_figure promotion_green_triangle" />
+      <img src="/app/img/view_figures/rustic_line.svg" class="desktop_figure promotion_rustic_line" />
+      <img src="/app/img/view_figures/rustic_spring.svg" class="desktop_figure promotion_rustic_spring" />
+<!--      ---->
       <div class="carousel-inner">
       <% clients.each_with_index  do |client, index| %>
         <% if index % clients_per_row == 0 %>
@@ -60,5 +74,35 @@ active= "active"%>
       <% end %>
       </div>
     </div>
+
+  </div>
+</section>
+
+<section id="mobile-client-carousel" class="p-3 mobile-client-carousel">
+  <div class="container client-carousel__container">
+
+    <h5 class="client-carousel__title mt-3">
+      <%= t('home2022.home_clients.title') %>
+    </h5>
+    <div id="carouselClients" class="carousel slide mt-5" data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+        <% clients.each_with_index  do |client, index| %>
+          <% if index % clients_per_row_mobile == 0 %>
+            <div class="carousel-item <%= mobile_active%>" data-bs-interval="3000">
+              <div class="row">
+          <% end %>
+          <div class="col-<%=12 / clients_per_row_mobile %>">
+            <img src="<%= client[:img]%>" alt="<%= client[:name] %>"/>
+          </div>
+          <% if index % clients_per_row_mobile == clients_per_row_mobile-1 %>
+            </div>
+            </div>
+          <% end %>
+          <% mobile_active= ""%>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </section>

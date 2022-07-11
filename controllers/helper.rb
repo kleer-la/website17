@@ -5,6 +5,19 @@ MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'M
               'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
 
 module Helpers
+  def format_date_range(start_date, finish_date, languaje)
+
+    start_month = languaje == 'en' ? start_date.strftime("%d") : month_es(start_date.strftime("%b"))
+    finish_month = languaje == 'en' ? finish_date.strftime("%d") : month_es(finish_date.strftime("%b"))
+
+    if start_month == finish_month
+      "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")}, #{start_month}"
+    else
+      "#{start_date.strftime("%d")} #{start_month} - #{finish_date.strftime("%d")} #{finish_month}"
+    end
+
+  end
+
   def month_es(month_en)
     MONTHS_ES[month_en]
   end
