@@ -10,17 +10,23 @@
     }}
 %>
 
-<section id="last-courses" class="p-5 mt-4">
-  <!--    decoration figures-->
-  <img src="/app/img/view_figures/blue_square.svg" class="desktop_figure last-courses__blue-square"/>
-  <img src="/app/img/view_figures/red_circle.svg" class="desktop_figure last-courses__red-circle"/>
-  <!--    -------->
+<section id="courses" class="p-5 mt-4">
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
-      <%= t('home2022.home_courses.title')%>
+      Capacitación personal y empresarial en agilidad
     </h4>
+    <div class="courses-filters">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Abiertos</label>
+        <input class="form-check-input switch" type="checkbox" id="flexSwitchCheckDefault">
+      </div>
+      <button class="tag">Categorias</button>
+      <button class="tag">Categorias</button>
+      <button class="tag">Categorias</button>
+      <button class="tag">Categorias</button>
+      <button class="tag">Categorias</button>
+    </div>
     <div class='row mt-5'>
-
       <% @coming_courses.each do |course|
         @course = course
       %>

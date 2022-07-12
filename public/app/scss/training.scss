@@ -2,10 +2,23 @@ $celeste: #E8F8FD;
 
 #training-hero{}
 
-#training-info{}
+#training-info{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
 .training-info__container{
   border-radius: 16px;
   background-color: $celeste;
+  padding: 80px 10%;
 }
+
 #training-courses{}
+
+.courses-filters{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 15%;
+}
