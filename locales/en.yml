@@ -766,27 +766,27 @@ en:
             options: [
               {
                 title: 'Twitter',
-                image: '/app/icons/Twitter.svg',
+                image: '/app/img/icons/Twitter.svg',
                 url: 'https://twitter.com/kleer_la'
               },
               {
                 title: 'Facebook',
-                image: '',
+                image: '/app/img/icons/Facebook.svg',
                 url: 'https://www.facebook.com/kleer.la'
               },
               {
                 title: 'Instagram',
-                image: '',
+                image: '/app/img/icons/Instagram.svg',
                 url: 'https://www.instagram.com/kleer.la/'
               },
               {
                 title: 'Youtube',
-                image: '',
+                image: '/app/img/icons/Youtube.svg',
                 url: 'https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw'
               },
               {
                 title: 'LinkedIn',
-                image: '',
+                image: '/app/img/icons/Linkedin.svg',
                 url: 'https://www.linkedin.com/company/kleer/mycompany/'
               }
             ]
@@ -902,14 +902,14 @@ en:
       home_business_agility:
         title: 'Business agility'
         text: '
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dicta dignissimos dolorem eius eos eum
-                      impedit iure quam quo reprehenderit sint, voluptatibus! Accusamus, assumenda beatae commodi facere hic
-                      molestias provident.
-                    </p>
-                    <p>Alias at autem, consectetur consequatur doloremque ea earum enim eum itaque laborum nemo non numquam
-                      obcaecati odio provident quam quos tempora tenetur unde voluptas? Delectus dignissimos excepturi facilis
-                      nesciunt quaerat!
-                    </p>
+                <p>
+                    At Kleer our main focus is Business Agility since 2011. Our <strong>closeness</strong> and <strong>experience</strong> allow us to do it in an alternative way.
+                </p>
+                <p>
+                    We are an increasingly <strong>diverse</strong> team of professionals, looking for to learn and <strong>make an impact</strong> in each intervention that we design and carry out.</p>
+                <p>
+                    And we pursue our purpose every day: We enjoy co-creating more conscious and amazing human environments!
+                </p>
                     '
         buttons:
           more:
@@ -919,24 +919,27 @@ en:
       home_hero:
         - {
           subject: "Business agility",
-          description: "lorem ipsum...",
+          description: "We accompany organizations in the sustainable improvement of their ways of working and to adapt in a timely manner to changes in the environment.",
           url: "/agilidad-organizacional",
           img: "...",
-          alt: "Business agility image"
+          alt: "Business agility image",
+          button_text: "More info!"
         }
         - {
           subject: "Courses",
-          description: "lorem ipsum...",
+          description: "Dynamic and memorable learning experiences to enhance the development of your skills and those of your organization.",
           url: "/catalogo",
           img: "...",
-          alt: "Courses image"
+          alt: "Courses image",
+          button_text: "Our courses"
         }
         - {
           subject: "Our clients",
-          description: "lorem ipsum...",
-          url: "/clients",
+          description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
+          url: "/clientes",
           img: "...",
-          alt: "Clients image"
+          alt: "Clients image",
+          button_text: "See cases"
         }
       home_clients:
         title: 'These organizations already trust us'
