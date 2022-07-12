@@ -1,3 +1,39 @@
+<%
+	clients = [
+		{name: 'Coca-cola', img: '/img/clientes/coca.webp'},
+		{name: 'Disney', img: '/img/clientes/disney.webp'},
+		{name: 'Loreal París', img: '/img/clientes/loreal.webp'},
+		{name: 'LATAM', img: '/img/clientes/latam.webp'},
+		{name: "epm", img:"/img/clientes/epm.webp" },
+		{name: "Protección", img:"/img/clientes/proteccion.webp" },
+		{name: "Banco de Occidente", img:"/img/clientes/ban_occidente.webp" },
+		{name: "BBVA Continental", img:"/img/clientes/BBVA.webp" },
+		{name: "Banco de Chile", img:"/img/clientes/ban_chile.webp" },
+		{name: "BCI", img:"/img/clientes/BCI.webp" },
+		{name: "Interbank", img:"/img/clientes/interbank.webp" },
+		{name: "BCP", img:"/img/clientes/BCP.webp" },
+		{name: "Interbanking", img:"/img/clientes/interbanking.webp" },
+		{name: "Grupo Galicia", img:"/img/clientes/galicia.webp" },
+		{name: "OSDE", img:"/img/clientes/osde.webp" },
+		{name: "Fibertel", img:"/img/clientes/fibertel.webp" },
+		{name: "YPF" , img:"/img/clientes/YPF.webp" },
+		{name: "Oracle", img:"/img/clientes/oracle.webp" },
+		{name: "Artear", img:"/img/clientes/artear.webp" },
+		{name: "Farmacity", img:"/img/clientes/farmacity.webp" },
+		{name: "Cencosud", img:"/img/clientes/cencosud.webp" },
+		{name: "Plataforma 10", img: "/img/clientes/plataforma10.webp" },
+		{name: "Intraway", img: "/img/clientes/intraway.webp" },
+		{name: "Exxon Mobil", img: "/img/clientes/exxo_mobil.webp" },
+		{name: "Technisys", img: "/img/clientes/technisys.webp" },
+		{name: "GlobalLogic", img: "/img/clientes/global_logic.webp" },
+		{name: "Asesuisa", img: "/img/clientes/asesuisa.webp" },
+		{name: "Bancolombia", img: "/img/clientes/bancolombia.webp" },
+		{name: "Colpatria", img: "/img/clientes/colpatria.webp" },
+		{name: "Edenor", img: "/img/clientes/edenor.webp" },
+		{name: "Falabella", img: "/img/clientes/falabella.webp" }
+	]
+%>
+
 <div class="blackBg">
 <div class="header-small header-coaching"></div>
 
@@ -120,10 +156,10 @@
 							</p>
 						</div>
 						<div class="col-md-4 col-xs-12">
-							
+
 						</div>
 						<div class="col-md-4 col-xs-12">
-							
+
 						</div>
 					</div>
 			</div>
@@ -132,58 +168,11 @@
 				<hr/>
 				<h3><%=t("clients.more")%></h3>
     <%end%>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-cocacola.png" alt="Coca Cola" />
-					<img class="col-md-3" src="/img/clientes/logo-disney.png" alt="Disney" />
-					<img class="col-md-3" src="/img/clientes/logo-loreal.jpg" alt="L'Oréal" />
-					<img class="col-md-3" src="/img/clientes/logo-latam.jpg" alt="Latam" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-epm.jpg" alt="epm" />
-					<img class="col-md-3" src="/img/clientes/logo-proteccion.jpg" alt="Protección" />
-					<img class="col-md-3" src="/img/clientes/logo-bancodeoccidente.png" alt="Banco de Occidente" />
-					<img class="col-md-3" src="/img/clientes/logo-bbvacontinental.png" alt="BBVA Continental" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-bancodechile.png" alt="Banco de Chile" />
-					<img class="col-md-3" src="/img/clientes/logo-bci.jpg" alt="BCI" />
-					<img class="col-md-3" src="/img/clientes/logo-banchile.png" alt="Banchile" />
-					<img class="col-md-3" src="/img/clientes/logo-interbank.jpg" alt="Interbank" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-bcp.png" alt="BCP" />
-					<img class="col-md-3" src="/img/clientes/logo-interbanking.png" alt="Interbanking" />
-					<img class="col-md-3" src="/img/clientes/logo-galicia.png" alt="Grupo Galicia" />
-					<img class="col-md-3" src="/img/clientes/logo-osde.png" alt="OSDE" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-cablevision.png" alt="Cablevisión" />
-					<img class="col-md-3" src="/img/clientes/logo-fibertel.jpg" alt="Fibertel" />
-					<img class="col-md-3" src="/img/clientes/logo-ypf.jpg" alt="YPF" />
-					<img class="col-md-3" src="/img/clientes/logo-oracle.png" alt="Oracle" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-artear.jpg" alt="Artear" />
-					<img class="col-md-3" src="/img/clientes/logo-telecom.jpg" alt="Telecom" />
-					<img class="col-md-3" src="/img/clientes/logo-farmacity.png" alt="Farmacity" />
-					<img class="col-md-3" src="/img/clientes/logo-cencosud.png" alt="Cencosud" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3" src="/img/clientes/logo-plataforma10.jpg" alt="Plataforma 10" />
-					<img class="col-md-3" src="/img/clientes/logo-intraway.png" alt="Intraway" />
-					<img class="col-md-3" src="/img/clientes/logo-exxonmobil.png" alt="Exxon Mobil" />
-					<img class="col-md-3" src="/img/clientes/logo-technisys.jpg" alt="Technisys" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-globallogic.png" alt="GlobalLogic" />
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-neoris.png" alt="Neoris" />
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-asesuisa.jpg" alt="Asesuisa" />
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-bancolombia.jpg" alt="Bancolombia" />
-				</div>
-				<div class="row-clientes">
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-colpatria.jpg" alt="Colpatria" />
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-Edenor.jpg" alt="Edenor" />
-					<img class="col-md-3 column-clientes" src="/img/clientes/logo-Falabella.jpg" alt="Falabella" />
+
+				<div class="row row-clientes">
+					<% clients.each do |client| %>
+							<img class="col-md-3" src="<%= client[:img] %>" alt="<%= client[:name] %>" />
+					<% end %>
 				</div>
 			</div>
 		</div>
