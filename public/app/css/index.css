@@ -432,6 +432,9 @@ img {
 .desktop_figure {
   position: absolute; }
 
+.hidden-element {
+  display: none; }
+
 @media screen and (max-width: 992px) {
   .desktop_figure {
     display: none; } }
