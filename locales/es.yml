@@ -939,7 +939,12 @@ es:
             text: 'Cursos',
             options: [
                 {
-                    text: 'Nuestros cursos',
+                    text: 'Agenda',
+                    url: '/entrenamos/todos',
+                    inside: true
+                },
+                {
+                    text: 'Catálogo de cursos',
                     url: '/catalogo',
                     inside: true
                 },
@@ -949,6 +954,11 @@ es:
                     inside: false
                 }
             ]
+        }
+        - {
+            text: 'Clientes',
+            url: '/clientes',
+            inside: true
         }
         - {
             text: 'Publicamos',
@@ -962,20 +972,20 @@ es:
                     text: 'Blog',
                     url: '/blog',
                     inside: true
+                },
+                {
+                    text: 'Libros',
+                    url: '/libros',
+                    inside: true
                 }
             ]
-        }
-        - {
-            text: 'Clientes',
-            url: '/clientes',
-            inside: true
         }
         - {
             text: 'Somos',
             options: [
                 {
                     text: 'Nosotros',
-                    url: '/nosotros',
+                    url: '/somos',
                     inside: true
                 },
                 {
@@ -1059,7 +1069,7 @@ es:
                 subject: "Agilidad Organizacional",
                 description: "Acompañamos a las organizaciones en la mejora sostenible de sus formas de trabajo y a adaptarse oportunamente a los cambios del entorno.",
                 url: "/agilidad-organizacional",
-                img: "...",
+                img: "/app/img/ag_org.png",
                 alt: "Imagen de agilidad organizacional",
                 button_text: "¡Conoce más!"
             }
@@ -1067,7 +1077,7 @@ es:
                 subject: "Cursos",
                 description: "Experiencias de aprendizaje dinámicas y memorables para potenciar el desarrollo de tus habilidades y las de tu organización.",
                 url: "/catalogo",
-                img: "...",
+                img: "/app/img/cursos.png",
                 alt: "Cursos",
                 button_text: "Ver cursos"
             }
@@ -1075,7 +1085,7 @@ es:
                 subject: "Nuestros Clientes",
                 description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
                 url: "/clientes",
-                img: "...",
+                img: "/app/img/clientes.png",
                 alt: "Imagen de clientes",
                 button_text: "Ver casos"
             }
@@ -1087,8 +1097,8 @@ es:
                 title: 'Todos nuestros cursos'
             card:
                 certified:
-                    kleer: 'por Kleer'
-                    scrumalliance: 'por Scrum Alliance'
+                    kleer: 'Por Kleer'
+                    scrumalliance: 'Por Scrum Alliance'
         home_newsletter:
             title: 'Entérate de todas las novedades del mundo ágil'
             button:
