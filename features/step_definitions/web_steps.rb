@@ -46,13 +46,7 @@ Given(/^I visit the english home page$/) do
 end
 
 When('I switch to {string}') do |lang_long|
-  lang = if lang_long == 'ENGLISH'
-           'en'
-         else
-           'es'
-         end
-  # change_to_en_top
-  click_link("change_to_#{lang}_top")
+  first(:link, lang_long).click
 end
 
 Given(/^I visit the english "(.*?)"$/) do |page|
