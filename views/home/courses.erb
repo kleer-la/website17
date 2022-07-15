@@ -53,6 +53,8 @@
         <% @coming_courses.each do |course|
           @course = course
         %>
+
+
           <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
             <%= erb :'component/_course_card' %>
           </div>

@@ -100,12 +100,25 @@ end
 
 get '/' do
   session[:version] = 2021
-  meta_tags! title: 'Agile Coaching, Consulting & Training'
-  meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
-                      ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
 
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :index, layout: false
+  #Old version
+  # meta_tags! title: 'Agile Coaching, Consulting & Training'
+  # meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
+  #                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+  #
+  # @kleerers = KeventerReader.instance.kleerers session[:locale]
+  # erb :index, layout: false
+
+  meta_tags!  title: t('meta_tag.home.title'),
+              description: t('meta_tag.home.description')
+
+  @coming_courses = if session[:locale] == 'es'
+                      coming_courses
+                    else
+                      fake_event_from_catalog(KeventerReader.instance.categories)
+                    end
+
+  erb :'home/index', layout: :'layout/layout2022'
 end
 
 get '/en' do
