@@ -103,7 +103,7 @@
   margin-top: auto; }
 
 #client-carousel {
-  margin: 120px 10px;
+  margin: 250px 10px 150px 10px;
   z-index: 0;
   position: relative; }
 
@@ -134,7 +134,7 @@
 
 .promotion_green_triangle {
   height: 140px;
-  top: -200px;
+  top: -150px;
   left: -150px;
   z-index: 20; }
 
@@ -144,7 +144,7 @@
   z-index: -1; }
 
 .promotion_rustic_line {
-  bottom: -75px; }
+  bottom: -70px; }
 
 .promotion_rustic_spring {
   top: -160px;

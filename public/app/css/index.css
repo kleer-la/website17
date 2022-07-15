@@ -105,7 +105,7 @@
   margin-top: auto; }
 
 #client-carousel {
-  margin: 120px 10px;
+  margin: 250px 10px 150px 10px;
   z-index: 0;
   position: relative; }
 
@@ -136,7 +136,7 @@
 
 .promotion_green_triangle {
   height: 140px;
-  top: -200px;
+  top: -150px;
   left: -150px;
   z-index: 20; }
 
@@ -146,7 +146,7 @@
   z-index: -1; }
 
 .promotion_rustic_line {
-  bottom: -75px; }
+  bottom: -70px; }
 
 .promotion_rustic_spring {
   top: -160px;
@@ -361,6 +361,9 @@ a:hover {
   color: black;
   text-decoration: none; }
 
+a:active {
+  background-color: #00BBEE; }
+
 img {
   max-width: 100%; }
 
@@ -383,8 +386,7 @@ img {
 
 .my-primary-button:hover {
   box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.2);
-  border-radius: 100px;
-  background-color: #00BBEE; }
+  border-radius: 100px; }
 
 .my-secondary-button {
   font-style: normal;
@@ -507,6 +509,8 @@ img {
   padding: 20px 24px;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px; }
+  .dropdown-menu a:active {
+    background-color: #00BBEE; }
 
 .navbar-nav > li > .dropdown-menu {
   background-color: white; }
@@ -637,8 +641,8 @@ footer {
   font-size: 14px; }
 
 .course-card__image {
-  max-height: 300px;
-  width: auto; }
+  height: 140px;
+  width: 200px; }
 
 .course-card__flags {
   position: absolute;
