@@ -38,7 +38,7 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
                 <a href="<%= item[:url] %>" class="btn my-primary-button hero__desktop-button"><%= item[:button_text] %></a>
               </div>
               <div class="col-lg-5 carousel__img-container">
-                <img src="/app/img/hero_cover.png" class="carousel__img" alt="<%=item[:alt]%>">
+                <img src="<%= item[:img] %>" class="carousel__img" alt="<%=item[:alt]%>">
               </div>
               <a href="<%= item[:url] %>" class="btn my-primary-button hero__mobile-button"><%= item[:button_text] %></a>
             </div>

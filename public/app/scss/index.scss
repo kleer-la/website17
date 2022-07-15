@@ -109,6 +109,10 @@ a:hover{
   text-decoration: none;
 }
 
+a:active{
+  background-color: $secondary-blue;
+}
+
 img {
   max-width: 100%;
 }
@@ -129,12 +133,12 @@ img {
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
+  border: none;
 }
 
 .my-primary-button:hover{
   box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.2);
   border-radius: 100px;
-  background-color: $secondary-blue;
 }
 
 .my-secondary-button{
@@ -158,6 +162,27 @@ img {
   border-radius: 100px;
 }
 
+.tag{
+  border-radius: 39px;
+  background-color: $primary-blue;
+  width: 71px;
+  height: 29px;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60%;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.switch{
+  width: 45px !important;
+  height: 25px;
+}
+
 .btn-center-container{
   width: 100%;
   display: flex;
@@ -166,6 +191,10 @@ img {
 
 .desktop_figure{
   position: absolute;
+}
+
+.hidden-element{
+  display: none;
 }
 
 @media screen and (max-width: 992px){
@@ -211,7 +240,13 @@ img {
   max-height: 150vh;
   height: calc(100vh - 100px);
   margin-top: 100px;
+}
 
+.hero__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
 }
 
 //navbar
@@ -256,6 +291,10 @@ img {
   padding: 20px 24px;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px;
+
+  a:active{
+    background-color: $secondary-blue;
+  }
 }
 
 .navbar-nav>li>.dropdown-menu {
@@ -437,8 +476,8 @@ footer {
 .course-card__image-container{}
 
 .course-card__image{
-  max-height: 300px;
-  width: auto;
+  height: 140px;
+  width: 200px;
 }
 
 .course-card__flags{
@@ -449,21 +488,6 @@ footer {
   display: flex;
   justify-content: end;
 
-  div{
-    border-radius: 39px;
-    background-color: $primary-blue;
-    width: 71px;
-    height: 29px;
-    margin-left: 10px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60%;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
 }
 
 

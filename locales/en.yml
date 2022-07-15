@@ -787,7 +787,7 @@ en:
               {
                 title: 'LinkedIn',
                 image: '/app/img/icons/Linkedin.svg',
-                url: 'https://www.linkedin.com/company/kleer/mycompany/'
+                url: 'https://www.linkedin.com/company/kleer/'
               }
             ]
 
@@ -798,19 +798,14 @@ en:
         inside: true
       }
       - {
-        text: 'Courses',
-        options: [
-          {
-            text: 'Our courses',
-            url: '/catalogo',
-            inside: true
-          },
-          {
-            text: 'Academy',
-            url: 'https://academia.kleer.la/',
-            inside: false
-          }
-        ]
+          text: 'Courses',
+          url: '/catalogo',
+          inside: true
+      }
+      - {
+        text: 'Clients',
+        url: '/clientes',
+        inside: true
       }
       - {
         text: 'We publish',
@@ -828,24 +823,9 @@ en:
         ]
       }
       - {
-        text: 'Clients',
-        url: '/clientes',
-        inside: true
-      }
-      - {
         text: 'We are',
-        options: [
-          {
-            text: 'About us',
-            url: '/nosotros',
-            inside: true
-          },
-          {
-            text: 'News',
-            url: '/prensa',
-            inside: true
-          }
-        ]
+        url: '/somos',
+        inside: true
       }
 
     footer_menu:
@@ -921,7 +901,7 @@ en:
           subject: "Business agility",
           description: "We accompany organizations in the sustainable improvement of their ways of working and to adapt in a timely manner to changes in the environment.",
           url: "/agilidad-organizacional",
-          img: "...",
+          img: "/app/img/ag_org.png",
           alt: "Business agility image",
           button_text: "More info!"
         }
@@ -929,7 +909,7 @@ en:
           subject: "Courses",
           description: "Dynamic and memorable learning experiences to enhance the development of your skills and those of your organization.",
           url: "/catalogo",
-          img: "...",
+          img: "/app/img/cursos.png",
           alt: "Courses image",
           button_text: "Our courses"
         }
@@ -937,7 +917,7 @@ en:
           subject: "Our clients",
           description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
           url: "/clientes",
-          img: "...",
+          img: "/app/img/clientes.png",
           alt: "Clients image",
           button_text: "See cases"
         }
@@ -949,8 +929,8 @@ en:
           title: 'All courses'
         card:
           certified:
-              kleer: 'by Kleer'
-              scrumalliance: 'by Scrum Alliance'
+              kleer: 'By Kleer'
+              scrumalliance: 'By Scrum Alliance'
       home_newsletter:
           title: 'Find out about all the news of the agile world'
           button:

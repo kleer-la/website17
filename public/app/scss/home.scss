@@ -154,7 +154,7 @@ $white: #FFFFFF;
 
 //client-carousel
 #client-carousel{
-  margin: 120px 10px;
+  margin: 250px 10px 150px 10px;
   z-index: 0;
   position: relative;
 }
@@ -185,15 +185,19 @@ $white: #FFFFFF;
   padding: 50px 80px;
   z-index: 2;
 
+
   @media screen and (max-width:420px) {
     padding: 10px 20px 20px 30px;
     border-radius: 0;
   }
 }
 
+.logos-container{
+}
+
 .promotion_green_triangle{
   height: 140px;
-  top: -200px;
+  top: -150px;
   left: -150px;
   z-index: 20;
 }
@@ -205,7 +209,7 @@ $white: #FFFFFF;
 }
 
 .promotion_rustic_line{
-  bottom: -75px;
+  bottom: -70px;
 }
 
 .promotion_rustic_spring{

@@ -1,71 +1,112 @@
 <%
-  @coming_courses = @coming_courses
-    .map.with_index { |course, index|
-    {
-      title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
-      cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false,
-      country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
-                                (1 if course.event_type.is_kleer_cert).to_i,
-      active: index == 0
-    }}
+  courses = []
+  categories = []
+  @categories.each{|e|
+    categories.push(e.name)
+    e.event_types.each{|course|
+      courses.push(
+      {
+        title: course.name, duration: course.duration, subtitle: course.subtitle,
+        cover: course.cover, uri_path: course.uri_path, open: false, category: e.name,
+        country: 'OL', certified: (2 if course.is_sa_cert).to_i +
+        (1 if course.is_kleer_cert).to_i,
+      })
+    }
+  }
+
 %>
 
-<section id="last-courses" class="p-5 mt-4">
-  <!--    decoration figures-->
-  <img src="/app/img/view_figures/blue_square.svg" class="desktop_figure last-courses__blue-square"/>
-  <img src="/app/img/view_figures/red_circle.svg" class="desktop_figure last-courses__red-circle"/>
-  <!--    -------->
+<section id="courses" class="p-5 mt-4">
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
-      <%= t('home2022.home_courses.title')%>
+      Capacitación personal y empresarial en agilidad
     </h4>
-    <div class='row mt-5'>
+    <div class="courses-filters">
+      <div class="form-check form-switch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Abiertos</label>
+        <input class="form-check-input switch" type="checkbox" id="flexSwitchCheckDefault">
+      </div>
+      <% categories.each do |category| %>
+        <button
+          class="my-secondary-button filter-category-button"
+          onclick="filterByCategory('<%= category %>')"
+        ><%= category %></button>
+      <% end %>
 
-      <% @coming_courses.each do |course|
+    </div>
+    <div class='row mt-5' id="courses-container">
+      <% courses.each do |course|
         @course = course
       %>
-        <div class='col-3 p-2'>
+        <div class='col-3 p-2' id="<%= "#{course[:category]}--#{course[:title]}"%>">
+          <%= course[:category] %>
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
     </div>
-    <div class="btn-center-container mt-5">
-      <a class="btn my-primary-button">
-        <%= t('home2022.home_courses.button.title') %>
-      </a>
-    </div>
+<!--    <div class="btn-center-container mt-5">-->
+<!--      <a class="btn my-primary-button">-->
+        <%#= t('home2022.home_courses.button.title') %>
+<!--      </a>-->
+<!--    </div>-->
   </div>
 </section>
 
-<!--    responsive carousel-->
-<section id="mobile-carousel">
-  <div class="container">
-    <div class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <% @coming_courses.each do |course|
-          @course = course
-        %>
-          <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
-            <%= erb :'component/_course_card' %>
-          </div>
-        <%end %>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+<script>
+  const container = document.getElementById('courses-container')
+  const courseCards = container.children
+  const courseCardsObjects = Array.from(container.children).map((element) => {
+      const id = element.id.split('--')[0]
+      const name = element.id.split('--')[1]
+      return {
+          element: element,
+          category: id,
+          name: name
+      }
+  })
+
+  let categoryButtons = courseCardsObjects.map(card => card.id)
+  categoryButtons = document.getElementsByClassName('filter-category-button')
+  categoryButtons = Array.from(categoryButtons).map(category => {
+      return{
+          element: category,
+          name: category.outerText
+      }
+  })
+
+  let actualFilters = categoryButtons.map(category => category.name)
+
+  const filterByCategory = (category) => {
+    if(actualFilters.includes(category)){
+        actualFilters = actualFilters.filter(item => item !== category)
+    }else{
+        actualFilters.push(category)
+    }
+    visualFilters()
+  }
+
+  const visualFilters = () => {
+      for (let card of courseCardsObjects){
+          if(actualFilters.includes(card.category)){
+              card.element.classList.remove('hidden-element')
+          }else{
+              card.element.classList.add('hidden-element')
+          }
+      }
+
+      for(let button of categoryButtons){
+          if(actualFilters.includes(button.name)){
+              button.element.classList.add('my-primary-button')
+              button.element.classList.remove('my-secondary-button')
+          }else{
+              button.element.classList.remove('my-primary-button')
+              button.element.classList.add('my-secondary-button')
+          }
+      }
+  }
+
+  visualFilters()
 
 
-    <div class="btn-center-container mt-5">
-      <a class="btn my-primary-button">
-        <%= t('home2022.home_courses.button.title') %>
-      </a>
-    </div>
-  </div>
 
-</section>
+</script>
