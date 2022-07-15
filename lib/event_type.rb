@@ -9,12 +9,13 @@ class EventType
     EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
   end
 
-  attr_accessor :id, :duration, :lang,
+  attr_accessor :id, :duration, :lang, :cover,
                 :name, :subtitle, :description, :learnings, :takeaways,
                 :goal, :recipients, :program, :faq,
                 :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex,
-                :categories, :slug, :canonical_slug
+                :categories, :slug, :canonical_slug,
+                :is_kleer_cert, :is_sa_cert
 
   def initialize(provider)
     @provider = provider
@@ -24,8 +25,13 @@ class EventType
   def load(xml_doc)
     @id = xml_doc.find('/event-type/id').first.content.to_i
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
+    @include_in_catalog = to_boolean(xml_doc.find_first('include-in-catalog').content)
+    @deleted = to_boolean(xml_doc.find_first('deleted')&.content)
+    @noindex = to_boolean(xml_doc.find_first('noindex')&.content)
+    @is_kleer_cert = to_boolean(xml_doc.find_first('is-kleer-certification')&.content)
+    @is_sa_cert = to_boolean(xml_doc.find_first('csd-eligible')&.content)
 
-    %i[name subtitle description learnings takeaways
+    %i[name subtitle description learnings takeaways cover
        goal recipients program faq slug canonical_slug lang
        external_site_url elevator_pitch include_in_catalog].each do |f|
       load_string(xml_doc, f)

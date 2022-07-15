@@ -4,7 +4,7 @@ class XmlAPI
   def initialize(file_uri)
     xml = LibXML::XML::Parser.file(file_uri)
     @xml_doc = xml.parse
-  rescue LibXML::XML::Error
-    nil
+    rescue LibXML::XML::Error
+      nil
   end
 end
