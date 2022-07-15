@@ -925,7 +925,7 @@ es:
                 {
                     title: 'LinkedIn',
                     image: '/app/img/icons/Linkedin.svg',
-                    url: 'https://www.linkedin.com/company/kleer/mycompany/'
+                    url: 'https://www.linkedin.com/company/kleer/'
                 }
             ]
 
@@ -1103,6 +1103,7 @@ es:
     resources:
         title: "Recursos y materiales sobre agilidad"
         subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+
     ebooks:
         title: "Libros"
         subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"
