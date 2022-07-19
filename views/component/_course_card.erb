@@ -10,7 +10,12 @@
 
   </div>
   <div class="card-body course-card__body">
-    <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
+    <div>
+      <% if defined? (@course[:category]) %>
+        <p class="course-card__categories"><%= @course[:category] %></p>
+      <%end %>
+      <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
+    </div>
     <p class="card-text course-card__subtitle"><%= @course[:subtitle]%></p>
     <ul class="course-card__items">
       <li class="course-card__item">
