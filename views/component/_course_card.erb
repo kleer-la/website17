@@ -2,11 +2,15 @@
   <div class="course-card__image-container">
   <%#TODO: alt text%>
     <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...'}%>
-    <% if @course[:open] %>
+
       <div class="course-card__flags">
-        <div>Abierto</div>
+        <% if @course[:is_open] %>
+          <div>Abierto</div>
+        <%end %>
+        <% if @course[:is_incompany] %>
+          <div>In Company</div>
+        <% end %>
       </div>
-    <% end %>
 
   </div>
   <div class="card-body course-card__body">

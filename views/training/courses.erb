@@ -5,11 +5,13 @@
     categories.push(e.name)
     e.event_types.each{|course|
       date = defined?(course.date) ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
+      is_open = defined?(course.date)
+      is_incompany = true
       courses.push(
       {
         title: course.name, duration: course.duration, subtitle: course.subtitle,
-        cover: course.cover, uri_path: course.uri_path, open: false, category: e.name, date: date,
-        url: course.uri_path,
+        cover: course.cover, uri_path: course.uri_path, is_open: is_open, is_incompany: is_incompany,
+        category: e.name, date: date, url: course.uri_path,
         country: 'OL', certified: (2 if course.is_sa_cert).to_i +
         (1 if course.is_kleer_cert).to_i,
       })
@@ -24,9 +26,36 @@
       Capacitación personal y empresarial en agilidad
     </h4>
     <div class="courses-filters">
-      <div class="form-check form-switch">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Abiertos</label>
-        <input class="form-check-input switch" type="checkbox" id="flexSwitchCheckDefault">
+      <div class="dropdown d-flex courses-filters__drop">
+        <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Tipo de evento
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <div class="form-check">
+              <input class="form-check-input check-delivery" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Abiertos
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input check-delivery" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                In company
+              </label>
+            </div>
+          </li>
+          <li>
+            <div class="form-check">
+              <input class="form-check-input check-delivery" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                E-learning
+              </label>
+            </div>
+          </li>
+        </ul>
       </div>
       <% categories.each do |category| %>
         <button
@@ -74,6 +103,9 @@
           name: category.outerText
       }
   })
+
+  let deliveryChecks = Array.from(document.getElementsByClassName('check-delivery'))
+  console.log(deliveryChecks)
 
   let actualFilters = categoryButtons.map(category => category.name)
 
