@@ -44,26 +44,38 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li>
             <div class="form-check">
-              <input class="form-check-input check-delivery" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Abiertos
-              </label>
+              <input
+                class="form-check-input check-delivery"
+                type="checkbox"
+                value="Abiertos"
+                onchange="handleChangeDelivery(this.value)"
+                checked="true"
+                id="abiertosCheck">
+              <label class="form-check-label " for="abiertosCheck">Abiertos</label>
             </div>
           </li>
           <li>
             <div class="form-check">
-              <input class="form-check-input check-delivery" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                In company
-              </label>
+              <input
+                class="form-check-input check-delivery"
+                type="checkbox"
+                value="In Company"
+                onchange="handleChangeDelivery(this.value)"
+                checked="true"
+                id="incompanyCheck">
+              <label class="form-check-label" for="incompanyCheck">In Company</label>
             </div>
           </li>
           <li>
             <div class="form-check">
-              <input class="form-check-input check-delivery" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                E-learning
-              </label>
+              <input
+                class="form-check-input check-delivery"
+                type="checkbox"
+                value="E-learning"
+                checked="true"
+                onchange="handleChangeDelivery(this.value)"
+                id="elearningCheck">
+              <label class="form-check-label" for="elearningCheck">E-learning</label>
             </div>
           </li>
         </ul>
@@ -71,7 +83,7 @@
       <% categories.each do |category| %>
         <button
           class="courses-filters__tag courses-filters__tag--selected"
-          onclick="filterByCategory('<%= category %>')"
+          onclick="handleClickCategory('<%= category %>')"
         ><%= category %></button>
       <% end %>
 
@@ -94,63 +106,76 @@
 </section>
 
 <script>
+
   const container = document.getElementById('courses-container')
-  const courseCards = container.children
-  const courseCardsObjects = Array.from(container.children).map((element) => {
-      const id = element.id.split('--')[0]
-      const name = element.id.split('--')[1]
+  const categoryButtons = Array.from(document.getElementsByClassName('courses-filters__tag'))
+  const deliveryChecks = Array.from(document.getElementsByClassName('check-delivery'))
+
+  let deliveryFilters = deliveryChecks.map(element => element.labels[0].outerText)
+  let categoryFilters = categoryButtons.map(element => element.outerText)
+
+  const getCourseCategories = (element) => {
+      const divs = element.children[0].children[0].children[1].children;
+      return Array.from(divs).map(div => div.outerText)
+  }
+
+  const courses = Array.from(container.children).map((element) => {
+      let idSplitted = element.id.split('--')
+      const name = idSplitted.pop()
+
       return {
-          element: element,
-          category: id,
+          card: element,
+          categories: idSplitted,
+          deliveryOptions: getCourseCategories(element),
           name: name
       }
   })
 
-  let categoryButtons = courseCardsObjects.map(card => card.id)
-  categoryButtons = document.getElementsByClassName('courses-filters__tag')
-  categoryButtons = Array.from(categoryButtons).map(category => {
-      return{
-          element: category,
-          name: category.outerText
-      }
-  })
 
-  let deliveryChecks = Array.from(document.getElementsByClassName('check-delivery'))
-  console.log(deliveryChecks)
-
-  let actualFilters = categoryButtons.map(category => category.name)
-
-  const filterByCategory = (category) => {
-    if(actualFilters.includes(category)){
-        actualFilters = actualFilters.filter(item => item !== category)
-    }else{
-        actualFilters.push(category)
-    }
-    visualFilters()
+  const compareCourse = (course) => {
+    const deliveryCheck = deliveryFilters.some(item => course.deliveryOptions.includes(item))
+    const categoryCheck = categoryFilters.some(item => course.categories.includes(item))
+    return deliveryCheck && categoryCheck
   }
 
   const visualFilters = () => {
-      for (let card of courseCardsObjects){
-          if(actualFilters.includes(card.category)){
-              card.element.classList.remove('hidden-element')
-          }else{
-              card.element.classList.add('hidden-element')
-          }
-      }
+      courses.forEach(course => {
+        if(compareCourse(course)){
+            course.card.classList.remove('hidden-element')
+        }else{
+            course.card.classList.add('hidden-element')
+        }
+      })
 
-      for(let button of categoryButtons){
-          if(actualFilters.includes(button.name)){
-              button.element.classList.add('courses-filters__tag--selected')
-              button.element.classList.remove('courses-filters__tag--unselected')
+      categoryButtons.forEach(button => {
+          if(categoryFilters.includes(button.outerText)){
+              button.classList.add('courses-filters__tag--selected')
+              button.classList.remove('courses-filters__tag--unselected')
           }else{
-              button.element.classList.remove('courses-filters__tag--selected')
-              button.element.classList.add('courses-filters__tag--unselected')
+              button.classList.remove('courses-filters__tag--selected')
+              button.classList.add('courses-filters__tag--unselected')
           }
+      })
+  }
+
+  const handleClickCategory = (category) => {
+      if(categoryFilters.includes(category)){
+          categoryFilters = categoryFilters.filter(item => item !== category)
+      }else{
+          categoryFilters.push(category)
       }
+      visualFilters()
+  }
+
+  const handleChangeDelivery = (type) => {
+    if(deliveryFilters.includes(type)){
+        deliveryFilters = deliveryFilters.filter(item => item !== type)
+    }else{
+        deliveryFilters.push(type)
+    }
+
+    visualFilters()
   }
 
   visualFilters()
-
-
-
 </script>
