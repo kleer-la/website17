@@ -97,19 +97,23 @@
         </div>
       <% end%>
     </div>
-<!--    <div class="btn-center-container mt-5">-->
-<!--      <a class="btn my-primary-button">-->
-        <%#= t('home2022.home_courses.button.title') %>
-<!--      </a>-->
-<!--    </div>-->
+    <div>
+      <button
+        class="my-primary-button"
+        id="see-more"
+        onclick="handleClickSeeMore()"
+      >Ver mas</button>
+    </div>
   </div>
 </section>
 
 <script>
 
+  let showFirst = 8
   const container = document.getElementById('courses-container')
   const categoryButtons = Array.from(document.getElementsByClassName('courses-filters__tag'))
   const deliveryChecks = Array.from(document.getElementsByClassName('check-delivery'))
+  const seeMoreButton = document.getElementById("see-more")
 
   let deliveryFilters = deliveryChecks.map(element => element.labels[0].outerText)
   let categoryFilters = categoryButtons.map(element => element.outerText)
@@ -139,13 +143,17 @@
   }
 
   const visualFilters = () => {
-      courses.forEach(course => {
-        if(compareCourse(course)){
+      courses.forEach((course, index) => {
+        if(compareCourse(course) && index < showFirst){
             course.card.classList.remove('hidden-element')
         }else{
             course.card.classList.add('hidden-element')
         }
       })
+
+      if(showFirst >= courses.length){
+          seeMoreButton.classList.add('hidden-element')
+      }
 
       categoryButtons.forEach(button => {
           if(categoryFilters.includes(button.outerText)){
@@ -156,6 +164,7 @@
               button.classList.add('courses-filters__tag--unselected')
           }
       })
+
   }
 
   const handleClickCategory = (category) => {
@@ -175,6 +184,11 @@
     }
 
     visualFilters()
+  }
+
+  const handleClickSeeMore = () => {
+      showFirst += 8
+      visualFilters()
   }
 
   visualFilters()
