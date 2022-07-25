@@ -143,8 +143,12 @@
   }
 
   const visualFilters = () => {
+      let counter = 1
       courses.forEach((course, index) => {
-        if(compareCourse(course) && index < showFirst){
+          console.log(`${index} ${course.name}`)
+        if(compareCourse(course) && counter <= showFirst){
+            console.log('se muestra')
+            counter++
             course.card.classList.remove('hidden-element')
         }else{
             course.card.classList.add('hidden-element')
