@@ -52,6 +52,12 @@
     </ul>
   </div>
   <div class="text-center mt-4">
-    <a href="<%= @course[:url] %>" class="btn my-secondary-button"><%= t('generals.buttons.more_info') %></a>
+    <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-4 me-4">
+      <% if !@course[:is_elearning]  %>
+        <%= t('generals.buttons.more_info') %>
+      <% else %>
+        <%= t('generals.buttons.go_academy') %>
+      <% end %>
+    </a>
   </div>
 </div>

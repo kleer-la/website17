@@ -898,6 +898,7 @@ es:
   generals:
     buttons:
       more_info: 'Conoce más'
+      go_academy: 'Ir a academia'
     social_media:
       title: 'Nuestras redes'
       whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"

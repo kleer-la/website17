@@ -1570,7 +1570,7 @@ en:
           Caribe)">El Salvador</option> <option value="ZI-AMN-US
           (EEUU)">USA</option> <option value="ZI-AMS-UY
           (Uruguay)">Uruguay</option> <option value="ZI-AMS-VE
-          (Venezuela)">Venezuela</option> 
+          (Venezuela)">Venezuela</option>
   kleexperience:
     title: This is the Kleer Experience
     professionals:
@@ -1623,6 +1623,7 @@ en:
       soon: Comming soon
     buttons:
       more_info: More info
+      go_academy: Go to the academy
     social_media:
       title: Social media
       whatsapp: https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0
