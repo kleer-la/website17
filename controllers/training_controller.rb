@@ -1,6 +1,6 @@
 require './lib/dt_helper'
 require './lib/metatags'
-
+require './lib/academy_courses'
 require './lib/event_type'
 require './lib/event'
 
@@ -57,6 +57,7 @@ get '/catalogo' do
   meta_tags! title: 'Capacitación empresarial en agilidad organizacional'
   meta_tags! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
+  @academy = AcademyCourses.new.load.all
 
   if session[:version] == 2022
     @coming_courses = if session[:locale] == 'es'

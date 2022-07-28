@@ -2,15 +2,27 @@
   <div class="course-card__image-container">
   <%#TODO: alt text%>
     <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...'}%>
-    <% if @course[:open] %>
+
       <div class="course-card__flags">
-        <div>Abierto</div>
+        <% if @course[:is_open] %>
+          <div>Abierto</div>
+        <%end %>
+        <% if @course[:is_incompany] %>
+          <div>In Company</div>
+        <% end %>
+        <% if @course[:is_elearning] %>
+          <div>E-learning</div>
+        <% end %>
       </div>
-    <% end %>
 
   </div>
   <div class="card-body course-card__body">
-    <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
+    <div>
+      <% if defined? (@course[:category]) %>
+        <p class="course-card__categories"><%= @course[:category] %></p>
+      <%end %>
+      <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
+    </div>
     <p class="card-text course-card__subtitle"><%= @course[:subtitle]%></p>
     <ul class="course-card__items">
       <li class="course-card__item">
@@ -40,6 +52,12 @@
     </ul>
   </div>
   <div class="text-center mt-4">
-    <a href="<%= @course[:url] %>" class="btn my-secondary-button"><%= t('generals.buttons.more_info') %></a>
+    <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-4 me-4">
+      <% if !@course[:is_elearning]  %>
+        <%= t('generals.buttons.more_info') %>
+      <% else %>
+        <%= t('generals.buttons.go_academy') %>
+      <% end %>
+    </a>
   </div>
 </div>

@@ -1,6 +1,24 @@
 $celeste: #E8F8FD;
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
 
-#training-hero{}
+#training-hero{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.training-hero__text{
+  padding-bottom: 8%;
+}
 
 #training-info{
   height: 100vh;
@@ -8,10 +26,24 @@ $celeste: #E8F8FD;
   align-items: center;
 }
 
+.training-info__redir-button{
+  margin-top: 30px;
+  padding: 0 !important;
+  font-size: 14px !important;
+  width: 160px !important;
+  height: 50px !important;
+}
+
 .training-info__container{
   border-radius: 16px;
   background-color: $celeste;
   padding: 80px 10%;
+}
+
+.training-info__subcontainer{
+  height: 100%;
+  width: 100%;
+  padding-left: 10%;
 }
 
 #training-courses{}
@@ -22,3 +54,57 @@ $celeste: #E8F8FD;
   justify-content: space-around;
   padding: 30px 15%;
 }
+
+.courses-filters__drop{
+  button{
+    background-color: $white;
+    color: $black;
+    border: none;
+  }
+
+  button:hover{
+    background-color: $white;
+    color: $primary-blue;
+  }
+
+  button:focus{
+    background-color: $white;
+    color: $primary-blue;
+  }
+
+  .dropdown-menu {
+    border: none;
+    padding: 20px 24px;
+    box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
+    border-radius: 8px;
+  }
+
+  .navbar-nav>li>.dropdown-menu {
+    background-color: $white;
+  }
+  .dropdown-submenu > .dropdown-menu {
+    background-color: $white;
+  }
+}
+
+
+.courses-filters__tag{
+  border-radius: 39px;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 5px 10px;
+  border: 1px solid $primary-blue;
+  margin: 10px;
+}
+
+.courses-filters__tag--selected{
+  background-color: $primary-blue;
+}
+
+.courses-filters__tag--unselected{
+  background-color: white;
+}
+

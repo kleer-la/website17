@@ -1,11 +1,10 @@
 <%
-
   @coming_courses = @coming_courses
     .select {|e| e.event_type.lang == session[:locale]}
     .uniq { |e| e.event_type.id}
     .first(4)
     .map.with_index { |course, index|
-    date = defined?(course.date) ? format_date_range(course.date, course.finish_date, 'es') : 'Proximamente'
+    date = defined?(course.date) ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
     {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
       cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false,date: date, url: course.event_type.uri_path,
