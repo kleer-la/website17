@@ -59,6 +59,8 @@ get '/catalogo' do
   @categories = KeventerReader.instance.categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
+  KeventerReader.instance.catalog_events()
+
   if session[:version] == 2022
     @coming_courses = if session[:locale] == 'es'
                         KeventerReader.instance.coming_commercial_events(Date.today, 10)

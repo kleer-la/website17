@@ -100,6 +100,13 @@ class KeventerReader
   #   end
   #   categories
   # end
+  #
+  def catalog_events()
+    courses = []
+
+    loaded_courses = parse(@connector.catalog_xml_url, '/')
+    puts loaded_courses
+  end
 
   def categories(lang = 'es')
     categories = []
