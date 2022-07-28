@@ -1,9 +1,15 @@
+require './lib/json_api'
+
 KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
 API_ROOT = KEVENTER_URL + '/api'.freeze
 API_EVENTS_PATH = '/events.xml'.freeze
 API_KLEERERS_PATH = '/kleerers.xml'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
 class KeventerConnector
+  def initialize(response = nil)
+    @response = response
+  end
+
   def events_xml_url
     API_ROOT + API_EVENTS_PATH
   end
@@ -34,5 +40,10 @@ class KeventerConnector
 
   def self.article_url(slug)
     KEVENTER_URL + "/articles/#{slug}.json"
+  end
+
+  def get_catalog
+    return JSON.parse(@response) unless @response.nil?
+    JsonAPI.new(API_ROOT + '/catalog')
   end
 end
