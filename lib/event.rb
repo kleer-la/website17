@@ -24,7 +24,7 @@ class EventFacade
     @cover = et.cover
     @certified= (2 if et.is_sa_cert).to_i +
                 (1 if et.is_kleer_cert).to_i
-    @slug = et.slug 
+    @slug = et.slug
     @categories = et.categories
     self
   end

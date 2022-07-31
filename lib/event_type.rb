@@ -17,9 +17,14 @@ class EventType
                 :categories, :slug, :canonical_slug,
                 :is_kleer_cert, :is_sa_cert
 
-  def initialize(provider)
-    @provider = provider
-    load provider.xml_doc
+  def initialize(provider = nil, hash_provider = nil)
+    if provider
+      @provider = provider
+      load provider.xml_doc
+    else
+      @hash_provider = hash_provider
+      load_complete_event(hash_provider)
+    end
   end
 
   def load(xml_doc)
@@ -53,5 +58,19 @@ class EventType
       @categories << [id, codename]
     end
     @categories
+  end
+
+  def load_complete_event(hash_event) #json provider
+    # puts hash_event['specific_subtitle']
+    @id = hash_event['slug']
+    # duration = hash_event[:id]
+    @lang = hash_event['lang']
+    @cover = hash_event['cover']
+    @name = hash_event['name']
+    @subtitle = hash_event['specific_subtitle']
+    @certified = (2 if !hash_event['is_kleer_certification']).to_i +
+      (1 if hash_event['is_kleer_certification']).to_i
+
+    @categories = hash_event['categories'].map{|e| e['name']}
   end
 end

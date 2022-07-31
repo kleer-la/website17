@@ -102,10 +102,20 @@ class KeventerReader
   # end
   #
   def catalog_events()
-    courses = []
+    events = []
+    begin
+      loaded_events = @connector.get_catalog.get_response
+      loaded_events.each do |loaded_event|
+        event_type = EventType.new(nil, loaded_event)
+        event = Event.new(event_type)
+        event.country = loaded_event['country_iso']
+        events.push(event)
+      end
+    rescue e
+      puts "Error al cargar las catalogo: #{e}"
+    end
 
-    loaded_courses = parse(@connector.catalog_xml_url, '/')
-    puts loaded_courses
+    events
   end
 
   def categories(lang = 'es')
