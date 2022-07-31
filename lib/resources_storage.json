@@ -1,268 +1,396 @@
 { "resources":
-    [
-      {"es": {
-        "id": "kartas-conexion",
-        "landing": "https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html",
-        "cover": "/img/recursos/kartas-conexion.jpg",
-        "title": "Kartas de Conexión",
-        "description": "Mazo de cartas con distintos juegos para aumentar la conexión propia y con otras personas y desarrollar el vocabulario emocional.",
-        "authors": "<a href='https://www.linkedin.com/in/nataliadavidovich/'>Natty Davidovich</a>",
-        "share_fb": "u=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html",
-        "share_tw": "text=¿Te gustaría mejorar la conexión entre las personas de tu equipo? Te comparto el juego de Kartas de Conexión de @kleer_la. Descárgalas aquí https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html&hashtags=ComunicaciónColaborativa,CNV,ComunicaciónEfectiva",
-        "share_li": "mini=true&url=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html&title=Mejora%20la%20conexion%20entre%20las%20personas%20de%20tu%20equipo.%20Busca%20las%20cartas%20https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html%20%23ComunicacionColaborativa%20%23CNV%20%23ComunicacionEfectiva"
+  [
+    {"es": {
+      "id": "kartas-conexion",
+      "type": "card",
+      "categories": "personas",
+      "landing": "https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html",
+      "cover": "/img/recursos/kartas-conexion.jpg",
+      "title": "Kartas de Conexión",
+      "description": "Mazo de cartas con distintos juegos para aumentar la conexión propia y con otras personas y desarrollar el vocabulario emocional.",
+      "authors": "<a href='https://www.linkedin.com/in/nataliadavidovich/'>Natty Davidovich</a>",
+      "share_fb": "u=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html",
+      "share_tw": "text=¿Te gustaría mejorar la conexión entre las personas de tu equipo? Te comparto el juego de Kartas de Conexión de @kleer_la. Descárgalas aquí https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html&hashtags=ComunicaciónColaborativa,CNV,ComunicaciónEfectiva",
+      "share_li": "mini=true&url=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html&title=Mejora%20la%20conexion%20entre%20las%20personas%20de%20tu%20equipo.%20Busca%20las%20cartas%20https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html%20%23ComunicacionColaborativa%20%23CNV%20%23ComunicacionEfectiva"
+      }
+    },
+    {"es": {
+          "id": "expresion-honesta",
+          "type": "guide",
+          "categories": "personas",
+          "landing": "/blog/expresionhonesta",
+          "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/Comunicacion+Colaborativa/GuiaExpresionHonesta.png",
+          "title": "ExpresiónHonesta", 
+          "description": "Esta guía te ayudará a ordenar tus pensamientos y a conectar con tu experiencia interna cuando estés en medio de una situación conflictiva a partir del uso de los 4 componentes del modelo de la Comunicación No Violenta (CNV)",
+          "authors": "<a href='https://twitter.com/nattydavidocich'>Natty Davidovich</a>",
+          "comments": ""
+          }
+      },
+    {
+      "es": {
+        "id": "DoD-kards",
+        "type": "card",
+        "categories": "organizaciones",
+        "landing": "http://www.elproximopaso.net/2017/07/dod-kards.html",
+        "cover": "/img/recursos/DoD-Kards.png",
+        "title": "DoD Kards", 
+        "description": "Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de terminado (DoD: Definition of Done).",
+        "authors": "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> y <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+        "share_fb": "u=https://kl.la/dod-kards",
+        "share_tw": "text=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de @kleer_la. Descárgalas aquí&url=https://kl.la/dod-kards&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles",
+        "share_li": "mini=true&url=https://kl.la/dod-kards&title=&summary=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de Kleer. Descárgalas aquí https://kl.la/dod-kards #AgilidadOrganizacional  #ReunionesProductivas #MasColaboracion #Agile #Scrum #equiposagiles&source=",
+        "comments": "Versiones disponibles para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+        },
+      "en": {
+        "id": "DoD-kards",
+        "type": "card",
+        "categories": "organizaciones",
+        "landing": "https://medium.com/@twallet/dod-kards-a-game-to-co-create-the-team-definition-of-done-7eda68f6dbec",
+        "cover": "/img/recursos/DoD-Kards-en.png",
+        "title": "DoD Kards", 
+        "description": "A card game to reflect and reach consensus among all team members on the criteria to be included in its Definition of Done (DoD).",
+        "authors": "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> & <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+        "share_fb": "u=https://kleer.la/en/recursos#DoD-kards",
+        "share_tw": "text=How do we agree on a definition of done with the team? I share the card game DoD Kards of @kleer_la. &url=https://kleer.la/en/recursos#DoD-kards&hashtags=BizAgility,Agile,Scrum",
+        "share_li": "mini=true&url=https://kleer.la/en/recursos#DoD-kards&title=&summary=How do we agree on a definition of done with the team? I share the card game DoD Kards of Kleer. https://kleer.la/en/recursos#DoD-kards #BizAgility #Agile #Scrum&source=",
+        "comments": "Available to print & to play online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+        }
+    },
+    {
+      "es": {   
+          "id": "poster-agile-PO",
+          "type": "infographic",
+          "categories": "producto",
+          "landing": "https://pablolischinsky.wordpress.com/2017/06/05/poster-agile-product-ownership/",
+          "cover": "/img/recursos/poster-agile.png",
+          "title": "Poster Agile Product Ownership",
+          "description": "Traducción al español de un poster de Mia Kolmodin sobre agilidad empresarial y desarrollo ágil de productos digitales de alto valor e impacto.",
+          "authors": "<a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a>",
+          "translators": "<a href='https://www.linkedin.com/in/pablolischinsky'>Pablo Lischinsky</a>",
+          "share_fb": "u=https://kl.la/poster-agile-PO",
+          "share_tw": "text=¿Conocés el poster Agile Product Ownership in a Nutshell? Te comparto el poster traducido por Pablo Lischinsky. Descárgarlo aquí&url=https://kl.la/poster-agile-PO&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,ProductOwner,ProdMgmt,ProductDiscovery",
+          "share_li": "mini=true&url=https://kl.la/poster-agile-PO&title=&summary=¿Conocés el poster Agile Product Ownership in a Nutshell? Te comparto el poster traducido por Pablo Lischinsky. Descárgarlo aquí https://kl.la/poster-agile-PO #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #ProductOwner #ProdMgmt #ProductDiscovery&source=",
+          "comments": ""
+        }
+    },
+    {"es": {   
+        "id": "canvas-experimentos",
+        "type": "canvas",
+        "categories": "producto",
+        "landing": "https://guiasagiles.herokuapp.com/#Experimentos",
+        "cover": "/img/recursos/canvas-experimentos.jpg",
+        "title": "Canvas de Experimentos",
+        "description": "¿Estás llevando adelante una iniciativa en un marco de exploración y aprendizaje? Te invitamos a que tomes como base el Canvas de Experimentos. Adaptalo según tu necesidad, usalo para diseñar experimentos, y compartí tus experiencias!",
+        "authors": "<a href='https://twitter.com/rmonelos'>Rodrigo Monelos</a> y <a href='https://twitter.com/pablitux'>Pablo Tortorella</a>",
+        "share_fb": "u=https://kl.la/canvas-experimento",
+        "share_tw": "text=¿Estás pensando en hacer experimentos para validar hipótesis? Te comparto el Canvas de Experimentos de @kleer_la. Descárgarlo aquí&url=https://kl.la/canvas-experimento&hashtags=AgilidadOrganizacional,Agile,Scrum,HDD,Experimentación,Aprendizaje",
+        "share_li": "mini=true&url=https://kl.la/canvas-experimento&title=&summary=¿Estás pensando en hacer experimentos para validar hipótesis? Te comparto el Canvas de Experimentos de Kleer. Descárgarlo aquí https://kl.la/canvas-experimento #AgilidadOrganizacional  #Agile #Scrum #HDD #Experimentación #Aprendizaje &source="
+        }
+    },
+    {"es": {   
+        "id": "canvas-experimentos",
+        "type": "canvas",
+        "categories": "producto",
+        "landing": "http://coachingcanvas.org/es/",
+        "cover": "/img/recursos/coaching-canvas.jpg",
+        "title": "Coaching Canvas",
+        "description": "Para Coaches dispuestos a utilizar diferentes técnicas con sus clientes, El Coaching Canvas es una herramienta de comunicación que te ayudará a facilitar conversaciones de coaching. <a href='http://coachingcanvas.org/es/download/the-coaching-canvas-wall-es.pdf'>Descarga el pdf</a>",
+        "authors": "<a href='https://twitter.com/martinalaimo?lang=es'>Martín Alaimo</a>",
+        "share_fb": "u=https://kl.la/coaching-canvas",
+        "share_tw": "text=¿Quieres facilitar conversaciones de Coaching? Te comparto el Coaching Canvas de @kleer_la. Descárgarlo aquí&url=https://kl.la/coaching-canvas&hashtags=AgilidadOrganizacional,AgileCoaching,Coaching,Agile,Scrum,facilitacion,Acompañamiento",
+        "share_li": "mini=true&url=https://kl.la/coaching-canvas&title=&summary=¿Quieres facilitar conversaciones de Coaching? Te comparto el Coaching Canvas de Kleer. Descárgarlo aquí https://kl.la/coaching-canvas #AgilidadOrganizacional  #AgileCoaching #Coaching #Agile #Scrum #facilitacion #Acompañamiento&source="
+        }            
+    },
+    {"es": {   
+        "id": "slicing-cards",
+        "type": "card",
+        "categories": "producto",
+        "landing": "https://pablolischinsky.wordpress.com/2020/04/01/cartas-de-slicing/",
+        "cover": "/img/recursos/cartas-de-slicing.png",
+        "title": "Slicing Cards",
+        "description": "Las cartas de Slicing te ayudarán a encontrar nuevos criterios para subdividir las Historias de Usuario  grandes (o épicas) y complejas en otras más pequeñas y simples.",
+        "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>, <a href='https://twitter.com/rcolusso'>Ricardo Colusso</a> y <a href='https://twitter.com/pablolis'>Pablo Lischinsky</a>",
+        "share_fb": "u=https://kl.la/slicing-kards",
+        "share_tw": "text=¿Estás creando tu product backlog y encuentras con ítems muy grandes? Te comparto las Slicing Cards de @kleer_la. Descárgalas aquí&url=https://kl.la/slicing-kards&hashtags=AgilidadOrganizacional,Agile,Scrum,HDD,Experimentación,Aprendizaje",
+        "share_li": "mini=true&url=https://kl.la/slicing-kards&title=&summary=¿Estás creando tu product backlog y encuentras con ítems muy grandes? Te comparto las Slicing Cards de @kleer_la. Descárgalas aquí https://kl.la/slicing-kards #AgilidadOrganizacional #Agile #Scrum #HDD #Experimentación #Aprendizaje&source="
+        }
+    },
+    {"es": {   
+        "id": "barometro-equipo",
+        "type": "card",
+        "categories": "organizaciones",
+        "landing": "http://www.caminoagil.com/2016/11/02/barometro-de-equipo-descarga-las-tarjetas-en-espanol/",
+        "cover": "/img/recursos/barometro.png",
+        "title": "Barómetro de Equipo",
+        "description": "El Barómetro de Equipo es una herramienta poderosa para ayudar a un equipo de trabajo a elevar su nivel de conciencia como tal y evaluarse frente a características de los Equipos de Alto Rendimiento. <a href='https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0'>Descarga el pdf.</a>",
+        "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>",
+        "share_fb": "u=https://kl.la/barometro-equipo",
+        "share_tw": "text=¿Quieres llevar tu equipo a un mayor nivel de performance? Te comparto el Barómetro de Equipo de @kleer_la y Crisp. Descárgarlo aquí&url=https://kl.la/barometro-equipo&hashtags=AgilidadOrganizacional,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles",
+        "share_li": "mini=true&url=https://kl.la/barometro-equipo&title=&summary=¿Quieres llevar tu equipo a un mayor nivel de performance? Te comparto el Barómetro de Equipo de @kleer_la y Crisp. Descárgalas aquí https://kl.la/barometro-equipo #AgilidadOrganizacional #Agile #Scrum #facilitacion #Acompañamiento #MasColaboracion #equiposagiles&source="
+        }
+    },
+    {"es": {   
+        "id": "poster-scrum",
+        "type": "infographic",
+        "categories": "organizaciones",
+        "landing": "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf",
+        "cover": "/img/recursos/poster-de-scrum.jpg",
+        "title": "Poster de Scrum",
+        "description": "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores.",
+        "authors": "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>",
+        "share_fb": "u=https://kl.la/poster-de-scrum",
+        "share_tw": "text=¿Quieres tener e imprimir un resumen ilustrado de Scrum? Te comparto el poster de Scrum de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-scrum&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster",
+        "share_li": "mini=true&url=https://kl.la/poster-de-scrum&title=&summary=¿Quieres tener e imprimir un resumen ilustrado de Scrum? Te comparto el poster de Scrum de Kleer. Descárgarlo aquí https://kl.la/poster-de-scrum #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #facilitacion #ScrumMaster&source="
+        }
+    },
+    {"es": {   
+        "id": "poster-XP",
+        "type": "infographic",
+        "categories": "software",
+        "landing": "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf",
+        "cover": "/img/recursos/poster-xp.jpg",
+        "title": "Extreme Programming",
+        "description": "Lámina con la prácticas principales de eXtreme Programming, el marco de trabajo para desarrollo de software que nació en paralelo con Scrum y que actualmente sigue siendo el complemento ideal que promueve la excelencia técnica en equipos de desarrollo de software.",
+        "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>",
+        "share_fb": "u=https://kl.la/poster-de-xp",
+        "share_tw": "text=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-xp&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster,ExtremeProgramming,XP",
+        "share_li": "mini=true&url=https://kl.la/poster-de-xp&title=&summary=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de Kleer. Descárgarlo aquí https://kl.la/poster-de-xp #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #facilitacion #ScrumMaster #ExtremeProgramming #XP&source="
+        }
+    },
+    {"es": {   
+        "id": "poster-manifesto",
+        "type": "infographic",
+        "categories": "organizaciones",
+        "landing": "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Manifesto.pdf",
+        "cover": "/img/recursos/poster-manifesto.png",
+        "title": "Principios ágiles", 
+        "description": "Poster de los 12 principios ágiles definidos en el Agile Manifesto. Y podés ver el <a href='https://youtu.be/V5LaKpjcgKQ'>video de cómo se hizo</a>",
+        "authors": "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a>",
+        "share_fb": "u=https://www.kleer.la/recursos/poster-manifesto",
+        "share_tw": "text=Poster de los 12 principios ágiles definidos en el Agile Manifesto y video de cómo lo hizo @pablitux. Descárgalo aquí&url=https://www.kleer.la/recursos#poster-manifesto,Agile,Scrum,equiposagiles",
+        "share_li": "mini=true&url=https://www.kleer.la/recursos#poster-manifesto&title=&summary=Poster de los 12 principios ágiles definidos en el Agile Manifesto y video de cómo lo hizo Pablo Tortorella. Descárgalo aquí https://www.kleer.la/recursos#poster-manifesto #Agile #Scrum #EquiposAgiles&source=",
+        "comments": ""
+            }
+    },
+    {"es": {   
+        "id": "DoR-kards",
+        "type": "card",
+        "categories": "organizaciones",
+        "landing": "http://www.elproximopaso.net/2018/12/dor-kards.html",
+        "cover": "/img/recursos/DoR_Kards.jpg",
+        "title": "DoR Kards",
+        "description":  "Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR: Definition of Ready).",
+        "authors": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+        "share_fb": "u=https://kleer.la/es/recursos#DoR-kards",
+        "share_tw": "text=Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR Kards) @kleer_la. Descárgarlo aquí&url= &hashtags=AgilidadOrganizacional,Agile,Scrum",
+        "share_li": "mini=true&url=https://kleer.la/en/recursos#DoR-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. https://kleer.la/es/recursos#DoR-kards #AgilidadOrganizacional #Agile #Scrum #ExtremeProgramming&source=",
+        "comments": "Versiones disponibles para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+        },
+      "en": {   
+        "id": "DoR-kards",
+        "type": "card",
+        "categories": "organizaciones",
+        "landing": "https://medium.com/@twallet/dor-kards-a-game-to-co-create-the-team-definition-of-ready-72e3cc13f484",
+        "cover": "/img/recursos/DoR-Kards-en.png",
+        "title": "DoR Kards",
+        "description":  "A card game where the goal is to brainstorm and reach consensus as a team on the criteria to be included in its Definition of Ready (DoR).",
+        "authors": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+        "share_fb": "u=https://kleer.la/es/recursos#DoR-kards",
+        "share_tw": "text=How do we agree on a definition of done with the team? I share the card game DoR Kards of @kleer_la. &url=https://kleer.la/es/recursos#DoR-kards&hashtags=BizOrganizacional,Agile,Scrum",
+        "share_li": "mini=true&url=https://kleer.la/es/recursos#DoR-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. https://kleer.la/es/recursos#DoR-kards #BizAgility #Agile #Scrum&source=",
+        "comments": "Available to print & to play online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+        }
+    },
+    {"es": {   
+        "id": "retromat",
+        "type": "card",
+        "categories": "organizaciones",
+        "landing": "https://www.elproximopaso.net/2014/09/retr-o-mat-en-espanol.html",
+        "cover": "/img/recursos/retromat.png",
+        "title": "Retromat",
+        "description": "Traducción al español de Retromat, la famosa herramienta para ayudar a equipos, Scrum Masters y otras personas a diseñar retrospectivas inspiradoras y variadas, en entornos ágiles o no.",
+        "authors": "<a href='https://finding-marbles.com/about/'>Corinna Baldauf</a>",
+        "translators": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+        "share_fb": "u=https://kl.la/Retromat",
+        "share_tw": "text=Traducción al español de Retromat. https://kl.la/Retromat&hashtags=Retromat,Agile,Scrum,equiposagiles,retrospectiva",
+        "share_li": "mini=true&url=https://kl.la/Retromat&title=&summary=Traducción al español de Retromat. https://kl.la/Retromat #Retromat #Agile #Scrum #equiposagiles #retrospectiva&source=",
+        "comments": "<a href='https://retromat.org/es'>Versiones disponibles</a> para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
+        }
+    },
+    {"es": {   
+        "id": "poster-liderazgo-ágil",
+        "type": "infographic",
+        "categories": "profesional",
+        "landing": "https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/",
+        "cover": "/img/recursos/liderazgo.png",
+        "title": "El cambio de liderazgo",
+        "description":  "Poster con el cambio de liderazgo y de la gerencia para apalancar las transformaciones ágiles y contextos VUCA, el mindset ágil y contexto organizacional que incluye el Marco Cynefin.",
+        "authors": "<a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a> y <a href='https://www.linkedin.com/in/btjsandberg/'>Björn Sandberg</a>",
+        "translators": "<a href='https://www.linkedin.com/in/pablolischinsky/'>Pablo Lischinsky</a>",
+        "share_fb": "u=https://kl.la/poster-liderazgo",
+        "share_tw": "text=El cambio de liderazgo. https://kl.la/poster-liderazgo&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,liderazgo",
+        "share_li": "mini=true&url=https://kl.la/poster-liderazgo&title=&summary=El cambio de liderazgo. https://kl.la/poster-liderazgo #AgilidadOrganizacional #Agile #Scrum #equiposagiles #liderazgo&source="
+        }
+    }, 
+    {"es": {   
+        "id": "KanbanCakes",
+        "type": "game",
+        "categories": "organizaciones",
+        "landing": "https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e",
+        "cover": "/img/recursos/recursos-kanban-cakes.jpg",
+        "title": "KanbanCakes",
+        "description":  "#KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Tanto presencial como online. ¡Todo lo que necesitas para facilitarlo está aquí!",
+        "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>",
+        "share_fb": "u=http://kl.la/KanbanCakes",
+        "share_tw": "text=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Link aquí&url=https://kl.la/KanbanCakes&hashtags=Kanban,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles",
+        "share_li": "mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=",
+        "comments": "<a href='https://youtu.be/ctqJyrcfXr4'>Video sobre como facilitar la actividad</a>"
+        }
+    },
+    {"es": {
+        "id": "MentoringBoard",
+        "type": "canvas",
+        "categories": "personas",
+        "landing": "https://www.codeandbeyond.org/p/mentoring-board.html",
+        "cover": "/img/recursos/mentoring-board.png",
+        "title": "Mentoring Board",
+        "description":  "Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto.",
+        "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+        "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
+        "share_tw": "text=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. &url=https://www.kleer.la/es/recursos#MentoringBoard&hashtags=MentoringBoard",
+        "share_li": "mini=true&url=https://www.kleer.la/es/recursos#MentoringBoard&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#MentoringBoard #MentoringBoard&source=",
+        "comments": ""
+        },
+      "en": {
+        "id": "MentoringBoard",
+        "type": "canvas",
+        "categories": "personas",
+        "landing": "https://www.codeandbeyond.org/p/mentoring-board-english-edition.html",
+        "cover": "/img/recursos/mentoring-board.png",
+        "title": "Mentoring Board",
+        "description":  "This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal.",
+        "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+        "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
+        "share_tw": "text=This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. &url=https://www.kleer.la/en/recursos#MentoringBoard&hashtags=MentoringBoard",
+        "share_li": "mini=true&url=https://www.kleer.la/en/recursos#MentoringBoard&title=&summary=MentoringBoard is a canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. https://www.kleer.la/en/recursos#MentoringBoard #MentoringBoard&source=",
+        "comments": ""
+        }
+      },
+      { "es": {
+          "id": "TarotdeArquitectura",
+          "type": "card",
+          "categories": "software",
+          "landing": "https://www.codeandbeyond.org/p/tarot-de-arquitectura.html",
+          "cover": "/img/recursos/tarot-deck.png",
+          "title": "Tarot de Arquitectura",
+          "description":  "El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas.",
+          "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+          "share_fb": "u=https://www.kleer.la/en/recursos#TarotdeArquitectura",
+          "share_tw": "text=El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas. &url=https://www.kleer.la/es/recursos#TarotdeArquitectura&hashtags=TarotdeArquitectura",
+          "share_li": "mini=true&url=https://www.kleer.la/es/recursos#TarotdeArquitectura&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#TarotdeArquitectura #TarotdeArquitectura&source=",
+          "comments": ""
+          },
+        "en": {
+          "id": "ArchitecturalTarot",
+          "type": "card",
+          "categories": "software",
+          "landing": "https://www.codeandbeyond.org/p/architectural-tarot.html",
+          "cover": "/img/recursos/tarot-deck.png",
+          "title": "Architectural Tarot",
+          "description": "Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.",
+          "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+          "share_fb": "u=https://www.kleer.la/en/recursos#ArchitecturalTarot",
+          "share_tw": "text=Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders. &url=https://www.kleer.la/en/recursos#ArchitecturalTarot&hashtags=ArchitecturalTarot",
+          "share_li": "mini=true&url=https://www.kleer.la/en/recursos#ArchitecturalTarot&title=&summary=Architectural Tarot: Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.  https://www.kleer.la/en/recursos#ArchitecturalTarot #ArchitecturalTarot&source=",
+          "comments": ""
+        }
+      },
+      {
+        "es": {
+          "id": "ProyectosAgilesScrum",
+          "type": "book",
+          "categories": "organizaciones",
+          "landing": "/es/publicamos/scrum",
+          "cover": "/img/ebooks/scrum.jpg",
+          "title": "Proyectos Ágiles con Scrum", 
+          "description": "Scrum es un marco de trabajo que nos permite encontrar prácticas emergentes en dominios complejos, como la gestión de proyectos de innovación.",
+          "authors": "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>, <a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+          "comments": ""
+        }
+      },
+      { "es": {
+          "id": "SindromeImpostor",
+          "type": "book",
+          "categories": "personas",
+          "landing": "https://alemarcote.com/libro-como-transformar-el-sindrome-del-impostor-en-tu-aliado-ale-marcote/",
+          "cover": "/img/ebooks/como-transformar-el-sindrome.jpg",
+          "title": "Cómo transformar el síndrome del impostor en tu aliado", 
+          "description": "¿Dejaste pasar oportunidades valiosas por dudar de tus propias capacidades? ¿O que alguien se va a dar cuenta que no sos la persona indicada para este trabajo? El libro explora las creencias y emociones asociadas a la idea de ser un fraude, así como estrategias. Incluye: Las mujeres y el Síndrome del Impostor, y el Síndrome del Impostor en las organizaciones.",
+          "authors": "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>, <a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+          "buy": "https://t.co/vjMK3LLHnJ",
+          "comments": ""
         }
       },
       {"es": {   
-            "id": "guias-agiles",
-            "landing": "https://guiasagiles.herokuapp.com/",
-            "cover": "/img/recursos/guias-agiles.jpg",
-            "title": "Guias Ágiles", 
-            "description": "Un lugar, todas las guías: Técnicas y herramientas que potencian a personas y equipos.",
-            "authors": "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a> - <a href='https://twitter.com/hhiroshi'>Hiroshi Hiromoto</a>",
-            "share_fb": "u=https%3A%2F%2Fkl.la%2Fguias-agiles",
-            "share_tw": "text=¿Conoces la 22 guías de técnicas y herramientas que potencian a personas y equipos? Te comparto las GuiasAgiles, de @kleer_la. Busca la tuya y descárgarla aquí&url=https://kl.la/guias-agiles&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles",
-            "share_li": "mini=true&url=https%3A%2F%2Fkl.la%2Fguias-agiles&title=%C2%BFConoces%20la%2022%20gu%C3%ADas%20de%20t%C3%A9cnicas%20y%20herramientas%20que%20potencian%20a%20personas%20y%20equipos%3F%20Te%20comparto%20las%20%23GuiasAgiles%20de%20Kleer.%20Busca%20la%20tuya%20y%20desc%C3%A1rgarla%20aqu%C3%AD%20https%3A%2F%2Fkl.la%2Fguias-agiles%20%23AgilidadOrganizacional%20%20%23ReunionesProductivas%20%23MasColaboracion%20%23Agile%20%23Scrum%20%23equiposagiles",
-            "comments": ""
-            }
-        },
-        {"es": {
-            "id": "DoD-kards",
-            "landing": "http://www.elproximopaso.net/2017/07/dod-kards.html",
-            "cover": "/img/recursos/DoD-Kards.png",
-            "title": "DoD Kards", 
-            "description": "Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de terminado (DoD: Definition of Done).",
-            "authors": "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> y <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
-            "share_fb": "u=https://kl.la/dod-kards",
-            "share_tw": "text=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de @kleer_la. Descárgalas aquí&url=https://kl.la/dod-kards&hashtags=AgilidadOrganizacional,ReunionesProductivas,MasColaboracion,Agile,Scrum,equiposagiles",
-            "share_li": "mini=true&url=https://kl.la/dod-kards&title=&summary=¿Cómo acordamos una definición de terminado con el equipo? Te comparto el juego de cartas DoD Kards de Kleer. Descárgalas aquí https://kl.la/dod-kards #AgilidadOrganizacional  #ReunionesProductivas #MasColaboracion #Agile #Scrum #equiposagiles&source=",
-            "comments": "Versiones disponibles para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
-            },
-          "en": {
-            "id": "DoD-kards",
-            "landing": "https://medium.com/@twallet/dod-kards-a-game-to-co-create-the-team-definition-of-done-7eda68f6dbec",
-            "cover": "/img/recursos/DoD-Kards-en.png",
-            "title": "DoD Kards", 
-            "description": "A card game to reflect and reach consensus among all team members on the criteria to be included in its Definition of Done (DoD).",
-            "authors": "<a href='https://about.me/cvelasquez'>Camilo Velásquez</a> & <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
-            "share_fb": "u=https://kleer.la/en/recursos#DoD-kards",
-            "share_tw": "text=How do we agree on a definition of done with the team? I share the card game DoD Kards of @kleer_la. &url=https://kleer.la/en/recursos#DoD-kards&hashtags=BizAgility,Agile,Scrum",
-            "share_li": "mini=true&url=https://kleer.la/en/recursos#DoD-kards&title=&summary=How do we agree on a definition of done with the team? I share the card game DoD Kards of Kleer. https://kleer.la/en/recursos#DoD-kards #BizAgility #Agile #Scrum&source=",
-            "comments": "Available to print & to play online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
-            }
-        },
-        {"es": {   
-            "id": "poster-agile-PO",
-            "landing": "https://pablolischinsky.wordpress.com/2017/06/05/poster-agile-product-ownership/",
-            "cover": "/img/recursos/poster-agile.png",
-            "title": "Poster Agile Product Ownership",
-            "description": "Traducción al español de un poster de Mia Kolmodin sobre agilidad empresarial y desarrollo ágil de productos digitales de alto valor e impacto.",
-            "authors": "<a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a>",
-            "translators": "<a href='https://www.linkedin.com/in/pablolischinsky'>Pablo Lischinsky</a>",
-            "share_fb": "u=https://kl.la/poster-agile-PO",
-            "share_tw": "text=¿Conocés el poster Agile Product Ownership in a Nutshell? Te comparto el poster traducido por Pablo Lischinsky. Descárgarlo aquí&url=https://kl.la/poster-agile-PO&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,ProductOwner,ProdMgmt,ProductDiscovery",
-            "share_li": "mini=true&url=https://kl.la/poster-agile-PO&title=&summary=¿Conocés el poster Agile Product Ownership in a Nutshell? Te comparto el poster traducido por Pablo Lischinsky. Descárgarlo aquí https://kl.la/poster-agile-PO #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #ProductOwner #ProdMgmt #ProductDiscovery&source=",
-            "comments": ""
-            }
-        },
-        {"es": {   
-            "id": "canvas-experimentos",
-            "landing": "https://guiasagiles.herokuapp.com/#Experimentos",
-            "cover": "/img/recursos/canvas-experimentos.jpg",
-            "title": "Canvas de Experimentos",
-            "description": "¿Estás llevando adelante una iniciativa en un marco de exploración y aprendizaje? Te invitamos a que tomes como base el Canvas de Experimentos. Adaptalo según tu necesidad, usalo para diseñar experimentos, y compartí tus experiencias!",
-            "authors": "<a href='https://twitter.com/rmonelos'>Rodrigo Monelos</a> y <a href='https://twitter.com/pablitux'>Pablo Tortorella</a>",
-            "share_fb": "u=https://kl.la/canvas-experimento",
-            "share_tw": "text=¿Estás pensando en hacer experimentos para validar hipótesis? Te comparto el Canvas de Experimentos de @kleer_la. Descárgarlo aquí&url=https://kl.la/canvas-experimento&hashtags=AgilidadOrganizacional,Agile,Scrum,HDD,Experimentación,Aprendizaje",
-            "share_li": "mini=true&url=https://kl.la/canvas-experimento&title=&summary=¿Estás pensando en hacer experimentos para validar hipótesis? Te comparto el Canvas de Experimentos de Kleer. Descárgarlo aquí https://kl.la/canvas-experimento #AgilidadOrganizacional  #Agile #Scrum #HDD #Experimentación #Aprendizaje &source="
-            }
-        },
-        {"es": {   
-            "id": "canvas-experimentos",
-            "landing": "http://coachingcanvas.org/es/",
-            "cover": "/img/recursos/coaching-canvas.jpg",
-            "title": "Coaching Canvas",
-            "description": "Para Coaches dispuestos a utilizar diferentes técnicas con sus clientes, El Coaching Canvas es una herramienta de comunicación que te ayudará a facilitar conversaciones de coaching. <a href='http://coachingcanvas.org/es/download/the-coaching-canvas-wall-es.pdf'>Descarga el pdf</a>",
-            "authors": "<a href='https://twitter.com/martinalaimo?lang=es'>Martín Alaimo</a>",
-            "share_fb": "u=https://kl.la/coaching-canvas",
-            "share_tw": "text=¿Quieres facilitar conversaciones de Coaching? Te comparto el Coaching Canvas de @kleer_la. Descárgarlo aquí&url=https://kl.la/coaching-canvas&hashtags=AgilidadOrganizacional,AgileCoaching,Coaching,Agile,Scrum,facilitacion,Acompañamiento",
-            "share_li": "mini=true&url=https://kl.la/coaching-canvas&title=&summary=¿Quieres facilitar conversaciones de Coaching? Te comparto el Coaching Canvas de Kleer. Descárgarlo aquí https://kl.la/coaching-canvas #AgilidadOrganizacional  #AgileCoaching #Coaching #Agile #Scrum #facilitacion #Acompañamiento&source="
-            }            
-        },
-        {"es": {   
-            "id": "slicing-cards",
-            "landing": "https://pablolischinsky.wordpress.com/2020/04/01/cartas-de-slicing/",
-            "cover": "/img/recursos/cartas-de-slicing.png",
-            "title": "Slicing Cards",
-            "description": "Las cartas de Slicing te ayudarán a encontrar nuevos criterios para subdividir las Historias de Usuario  grandes (o épicas) y complejas en otras más pequeñas y simples.",
-            "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>, <a href='https://twitter.com/rcolusso'>Ricardo Colusso</a> y <a href='https://twitter.com/pablolis'>Pablo Lischinsky</a>",
-            "share_fb": "u=https://kl.la/slicing-kards",
-            "share_tw": "text=¿Estás creando tu product backlog y encuentras con ítems muy grandes? Te comparto las Slicing Cards de @kleer_la. Descárgalas aquí&url=https://kl.la/slicing-kards&hashtags=AgilidadOrganizacional,Agile,Scrum,HDD,Experimentación,Aprendizaje",
-            "share_li": "mini=true&url=https://kl.la/slicing-kards&title=&summary=¿Estás creando tu product backlog y encuentras con ítems muy grandes? Te comparto las Slicing Cards de @kleer_la. Descárgalas aquí https://kl.la/slicing-kards #AgilidadOrganizacional #Agile #Scrum #HDD #Experimentación #Aprendizaje&source="
-            }
-        },
-        {"es": {   
-            "id": "barometro-equipo",
-            "landing": "http://www.caminoagil.com/2016/11/02/barometro-de-equipo-descarga-las-tarjetas-en-espanol/",
-            "cover": "/img/recursos/barometro.png",
-            "title": "Barómetro de Equipo",
-            "description": "El Barómetro de Equipo es una herramienta poderosa para ayudar a un equipo de trabajo a elevar su nivel de conciencia como tal y evaluarse frente a características de los Equipos de Alto Rendimiento. <a href='https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0'>Descarga el pdf.</a>",
-            "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>",
-            "share_fb": "u=https://kl.la/barometro-equipo",
-            "share_tw": "text=¿Quieres llevar tu equipo a un mayor nivel de performance? Te comparto el Barómetro de Equipo de @kleer_la y Crisp. Descárgarlo aquí&url=https://kl.la/barometro-equipo&hashtags=AgilidadOrganizacional,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles",
-            "share_li": "mini=true&url=https://kl.la/barometro-equipo&title=&summary=¿Quieres llevar tu equipo a un mayor nivel de performance? Te comparto el Barómetro de Equipo de @kleer_la y Crisp. Descárgalas aquí https://kl.la/barometro-equipo #AgilidadOrganizacional #Agile #Scrum #facilitacion #Acompañamiento #MasColaboracion #equiposagiles&source="
-            }
-        },
-        {"es": {   
-            "id": "poster-scrum",
-            "landing": "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf",
-            "cover": "/img/recursos/poster-de-scrum.jpg",
-            "title": "Poster de Scrum",
-            "description": "Lámina con el framework de Scrum detallando sus roles, ceremonias y valores.",
-            "authors": "<a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>",
-            "share_fb": "u=https://kl.la/poster-de-scrum",
-            "share_tw": "text=¿Quieres tener e imprimir un resumen ilustrado de Scrum? Te comparto el poster de Scrum de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-scrum&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster",
-            "share_li": "mini=true&url=https://kl.la/poster-de-scrum&title=&summary=¿Quieres tener e imprimir un resumen ilustrado de Scrum? Te comparto el poster de Scrum de Kleer. Descárgarlo aquí https://kl.la/poster-de-scrum #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #facilitacion #ScrumMaster&source="
-            }
-        },
-        {"es": {   
-            "id": "poster-XP",
-            "landing": "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf",
-            "cover": "/img/recursos/poster-xp.jpg",
-            "title": "Extreme Programming",
-            "description": "Lámina con la prácticas principales de eXtreme Programming, el marco de trabajo para desarrollo de software que nació en paralelo con Scrum y que actualmente sigue siendo el complemento ideal que promueve la excelencia técnica en equipos de desarrollo de software.",
-            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salías</a>",
-            "share_fb": "u=https://kl.la/poster-de-xp",
-            "share_tw": "text=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de @kleer_la. Descárgarlo aquí&url=https://kl.la/poster-de-xp&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,facilitacion,ScrumMaster,ExtremeProgramming,XP",
-            "share_li": "mini=true&url=https://kl.la/poster-de-xp&title=&summary=¿Quieres tener e imprimir un resumen ilustrado de Extreme Programming? Te comparto el poster de XP de Kleer. Descárgarlo aquí https://kl.la/poster-de-xp #AgilidadOrganizacional  #Agile #Scrum #equiposagiles #facilitacion #ScrumMaster #ExtremeProgramming #XP&source="
-            }
-        },
-        {"es": {   
-            "id": "poster-manifesto",
-            "landing": "https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Manifesto.pdf",
-            "cover": "/img/recursos/poster-manifesto.png",
-            "title": "Principios ágiles", 
-            "description": "Poster de los 12 principios ágiles definidos en el Agile Manifesto. Y podés ver el <a href='https://youtu.be/V5LaKpjcgKQ'>video de cómo se hizo</a>",
-            "authors": "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a>",
-            "share_fb": "u=https://www.kleer.la/recursos/poster-manifesto",
-            "share_tw": "text=Poster de los 12 principios ágiles definidos en el Agile Manifesto y video de cómo lo hizo @pablitux. Descárgalo aquí&url=https://www.kleer.la/recursos#poster-manifesto,Agile,Scrum,equiposagiles",
-            "share_li": "mini=true&url=https://www.kleer.la/recursos#poster-manifesto&title=&summary=Poster de los 12 principios ágiles definidos en el Agile Manifesto y video de cómo lo hizo Pablo Tortorella. Descárgalo aquí https://www.kleer.la/recursos#poster-manifesto #Agile #Scrum #EquiposAgiles&source=",
-            "comments": ""
-                }
-        },
-        {"es": {   
-            "id": "DoR-kards",
-            "landing": "http://www.elproximopaso.net/2018/12/dor-kards.html",
-            "cover": "/img/recursos/DoR_Kards.jpg",
-            "title": "DoR Kards",
-            "description":  "Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR: Definition of Ready).",
-            "authors": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
-            "share_fb": "u=https://kleer.la/es/recursos#DoR-kards",
-            "share_tw": "text=Un juego de cartas para reflexionar y consensuar entre los miembros de un equipo cuáles son los criterios a incluir en su definición de listo (DoR Kards) @kleer_la. Descárgarlo aquí&url= &hashtags=AgilidadOrganizacional,Agile,Scrum",
-            "share_li": "mini=true&url=https://kleer.la/en/recursos#DoR-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. https://kleer.la/es/recursos#DoR-kards #AgilidadOrganizacional #Agile #Scrum #ExtremeProgramming&source=",
-            "comments": "Versiones disponibles para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
-            },
-          "en": {   
-            "id": "DoR-kards",
-            "landing": "https://medium.com/@twallet/dor-kards-a-game-to-co-create-the-team-definition-of-ready-72e3cc13f484",
-            "cover": "/img/recursos/DoR-Kards-en.png",
-            "title": "DoR Kards",
-            "description":  "A card game where the goal is to brainstorm and reach consensus as a team on the criteria to be included in its Definition of Ready (DoR).",
-            "authors": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
-            "share_fb": "u=https://kleer.la/es/recursos#DoR-kards",
-            "share_tw": "text=How do we agree on a definition of done with the team? I share the card game DoR Kards of @kleer_la. &url=https://kleer.la/es/recursos#DoR-kards&hashtags=BizOrganizacional,Agile,Scrum",
-            "share_li": "mini=true&url=https://kleer.la/es/recursos#DoR-kards&title=&summary=¿Cómo acordamos una definición de listo con el equipo? Te comparto el juego de cartas DoR Kards de Kleer. https://kleer.la/es/recursos#DoR-kards #BizAgility #Agile #Scrum&source=",
-            "comments": "Available to print & to play online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
-            }
-        },
-        {"es": {   
-            "id": "retromat",
-            "landing": "https://www.elproximopaso.net/2014/09/retr-o-mat-en-espanol.html",
-            "cover": "/img/recursos/retromat.png",
-            "title": "Retromat",
-            "description": "Traducción al español de Retromat, la famosa herramienta para ayudar a equipos, Scrum Masters y otras personas a diseñar retrospectivas inspiradoras y variadas, en entornos ágiles o no.",
-            "authors": "<a href='https://finding-marbles.com/about/'>Corinna Baldauf</a>",
-            "translators": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
-            "share_fb": "u=https://kl.la/Retromat",
-            "share_tw": "text=Traducción al español de Retromat. https://kl.la/Retromat&hashtags=Retromat,Agile,Scrum,equiposagiles,retrospectiva",
-            "share_li": "mini=true&url=https://kl.la/Retromat&title=&summary=Traducción al español de Retromat. https://kl.la/Retromat #Retromat #Agile #Scrum #equiposagiles #retrospectiva&source=",
-            "comments": "<a href='https://retromat.org/es'>Versiones disponibles</a> para imprimir y jugar online <img src='/img/flags/es.png'/> <img src='/img/flags/fr.png'/> <img src='/img/flags/us.png'/>"
-            }
-        },
-        {"es": {   
-            "id": "poster-liderazgo-ágil",
-            "landing": "https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/",
-            "cover": "/img/recursos/liderazgo.png",
-            "title": "El cambio de liderazgo",
-            "description":  "Poster con el cambio de liderazgo y de la gerencia para apalancar las transformaciones ágiles y contextos VUCA, el mindset ágil y contexto organizacional que incluye el Marco Cynefin.",
-            "authors": "<a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a> y <a href='https://www.linkedin.com/in/btjsandberg/'>Björn Sandberg</a>",
-            "translators": "<a href='https://www.linkedin.com/in/pablolischinsky/'>Pablo Lischinsky</a>",
-            "share_fb": "u=https://kl.la/poster-liderazgo",
-            "share_tw": "text=El cambio de liderazgo. https://kl.la/poster-liderazgo&hashtags=AgilidadOrganizacional,Agile,Scrum,equiposagiles,liderazgo",
-            "share_li": "mini=true&url=https://kl.la/poster-liderazgo&title=&summary=El cambio de liderazgo. https://kl.la/poster-liderazgo #AgilidadOrganizacional #Agile #Scrum #equiposagiles #liderazgo&source="
-            }
-        }, 
-        {"es": {   
-            "id": "KanbanCakes",
-            "landing": "https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e",
-            "cover": "/img/recursos/recursos-kanban-cakes.jpg",
-            "title": "KanbanCakes",
-            "description":  "#KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Tanto presencial como online. ¡Todo lo que necesitas para facilitarlo está aquí!",
-            "authors": "<a href='https://twitter.com/dbuo'>Damián Buonamico</a>",
-            "share_fb": "u=http://kl.la/KanbanCakes",
-            "share_tw": "text=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. Link aquí&url=https://kl.la/KanbanCakes&hashtags=Kanban,Agile,Scrum,facilitacion,Acompañamiento,MasColaboracion,equiposagiles",
-            "share_li": "mini=true&url=https://kl.la/KanbanCakes&title=&summary=KanbanCakes es una dinámica grupal para aprender Kanban de forma divertida. https://kl.la/KanbanCakes #Kanban #Agile #Scrum #equiposagiles #liderazgo&source=",
-            "comments": "<a href='https://youtu.be/ctqJyrcfXr4'>Video sobre como facilitar la actividad</a>"
-            }
-        },
-        {"es": {
-            "id": "MentoringBoard",
-            "landing": "https://www.codeandbeyond.org/p/mentoring-board.html",
-            "cover": "/img/recursos/mentoring-board.png",
-            "title": "Mentoring Board",
-            "description":  "Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto.",
-            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
-            "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
-            "share_tw": "text=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. &url=https://www.kleer.la/es/recursos#MentoringBoard&hashtags=MentoringBoard",
-            "share_li": "mini=true&url=https://www.kleer.la/es/recursos#MentoringBoard&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#MentoringBoard #MentoringBoard&source=",
-            "comments": ""
-            },
-            "en": {
-              "id": "MentoringBoard",
-              "landing": "https://www.codeandbeyond.org/p/mentoring-board-english-edition.html",
-              "cover": "/img/recursos/mentoring-board.png",
-              "title": "Mentoring Board",
-              "description":  "This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal.",
-              "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
-              "share_fb": "u=https://www.kleer.la/en/recursos#MentoringBoard",
-              "share_tw": "text=This canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. &url=https://www.kleer.la/en/recursos#MentoringBoard&hashtags=MentoringBoard",
-              "share_li": "mini=true&url=https://www.kleer.la/en/recursos#MentoringBoard&title=&summary=MentoringBoard is a canvas-like tool helps you make a Mentoring Agreement and plan, as well as monitoring progress towards its Goal. https://www.kleer.la/en/recursos#MentoringBoard #MentoringBoard&source=",
-              "comments": ""
-              }
-        },
-        { "es": {
-            "id": "TarotdeArquitectura",
-            "landing": "https://www.codeandbeyond.org/p/tarot-de-arquitectura.html",
-            "cover": "/img/recursos/tarot-deck.png",
-            "title": "Tarot de Arquitectura",
-            "description":  "El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas.",
-            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
-            "share_fb": "u=https://www.kleer.la/en/recursos#TarotdeArquitectura",
-            "share_tw": "text=El Mazo de Tarot contiene 22 Atributos de Calidad que puedes utilizar para tener conversaciones de arquitectura divertidas y profundas con personas no-técnicas. &url=https://www.kleer.la/es/recursos#TarotdeArquitectura&hashtags=TarotdeArquitectura",
-            "share_li": "mini=true&url=https://www.kleer.la/es/recursos#TarotdeArquitectura&title=&summary=Esta herramienta (simil canvas) te ayuda a establecer un Acuerdo de Mentoring, elaborar un plan iterativo y monitorear el progreso hacia un objetivo concreto. https://www.kleer.la/es/recursos#TarotdeArquitectura #TarotdeArquitectura&source=",
-            "comments": ""
-            },
-          "en": {
-            "id": "ArchitecturalTarot",
-            "landing": "https://www.codeandbeyond.org/p/architectural-tarot.html",
-            "cover": "/img/recursos/tarot-deck.png",
-            "title": "Architectural Tarot",
-            "description": "Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.",
-            "authors": "<a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
-            "share_fb": "u=https://www.kleer.la/en/recursos#ArchitecturalTarot",
-            "share_tw": "text=Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders. &url=https://www.kleer.la/en/recursos#ArchitecturalTarot&hashtags=ArchitecturalTarot",
-            "share_li": "mini=true&url=https://www.kleer.la/en/recursos#ArchitecturalTarot&title=&summary=Architectural Tarot: Covering 22 Quality Attributes, these cards provide a fun and engaging way to have architectural conversations with non-technical stakeholders.  https://www.kleer.la/en/recursos#ArchitecturalTarot #ArchitecturalTarot&source=",
-            "comments": ""
-            }
+          "id": "EjemplosDeVisualizacion",
+          "type": "book",
+          "categories": "organizaciones",
+          "landing": "https://leanpub.com/ejemplosdevisualizacin",
+          "cover": "/img/ebooks/herramientas-coach-agil.png",
+          "title": "Herramientas para el Coach Ágil - Ejemplos de visualización", 
+          "description": "Este libro está lleno de ejemplos de visualización para mejorar la colaboración y comunicación de los equipos y para modelar comportamientos. Está escrito para personas y equipos que trabajan en un contexto de desarrollo ágil de software.",
+          "authors": "Jimmy Jaién",
+          "translators": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+          "buy": "https://leanpub.com/ejemplosdevisualizacin"
         }
-   ]
+      },
+      {"es": {   
+        "id": "planespararetrospectivas",
+        "type": "book",
+        "categories": "organizaciones",
+        "landing": "https://leanpub.com/planes-para-retrospectivas-agiles",
+        "cover": "/img/ebooks/planes-para-retrospectivas-agiles.png",
+        "title": "Planes para Retrospectivas Ágiles", 
+        "description": "¿Te gustaría facilitar retrospectivas ágiles? ¿Dudas de cuáles son las actividades que habilitarán una buena experiencia para el equipo y permitirán el cambio? La creadora de Retromat te lo resuelve con 15 planes + 1 de bonus para retrospectivas ágiles efectivas, listas para facilitar y con una duración de 60-90 minutos.",
+        "authors": "Corinna Baldauf",
+        "translators": "<a href='https://about.me/thomas.wallet'>Thomas Wallet</a>",
+        "buy": "https://leanpub.com/planes-para-retrospectivas-agiles"
+        }
+    },
+    {"es": {   
+      "id": "lenguajesdelaweb",
+      "type": "book",
+      "categories": "software",
+      "landing": "https://leanpub.com/introlenguajesweb",
+      "cover": "/img/ebooks/lenguajes-web.jpg",
+      "title": "Introducción a los lenguajes de la Web", 
+      "description": "Este libro cubre lo básico a conocer sobre desarrollo web. Los temas principales del libro son el protocolo HTTP, crear contenido HTML, y darle formato con CSS.",
+      "authors": "<a href='https://twitter.com/jgabardini'>Juan Gabardini, <a href='https://twitter.com/MartinSalias'>Martín Salias</a>",
+      "buy": "https://leanpub.com/introlenguajesweb"
+      }
+    },
+    {"es": {   
+        "id": "libroagililustrado",
+        "type": "book",
+        "categories": "organizaciones",
+        "landing": "https://leanpub.com/libro-agil-ilustrado",
+        "cover": "/img/ebooks/agil-ilustrado.jpg",
+        "title": "Libro Ágil Ilustrado",
+        "description": "El objetivo de este libro es difundir -de forma gráfica- métodos y prácticas ágiles, con foco en las relaciones interpersonales, como forma de organización del trabajo y -arriesgando más- como filosofía de vida.",
+        "authors": "<a href='https://twitter.com/pablitux'>Pablo Tortorella</a>",
+        "buy": "https://leanpub.com/libro-agil-ilustrado"
+        }
+    },
+  {"es": {   
+        "id": "tecnicasretrospectivas",
+        "type": "book",
+        "categories": "organizaciones",
+        "landing": "https://kleer-materiales.s3.us-east-2.amazonaws.com/kleer-tecnicas-de-retrospectivas-es+v7.pdf",
+        "cover": "/img/ebooks/retrospectivas.jpg",
+        "title": "Técnicas de retrospectivas", 
+        "description": "Este libro aporta varias técnicas para que los equipos varíen el formato de sus retrospectivas, evitando el aburimiento y manteniéndolos motivados",
+        "authors": "<a href='https://twitter.com/jgabardini'>Juan Gabardini</a>"
+        }
+    }
+  ]
 }

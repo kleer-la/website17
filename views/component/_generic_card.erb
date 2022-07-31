@@ -26,24 +26,25 @@
       <%end %>
     </ul>
 
-    <% if not @is_book %>
+    <% unless @is_book %>
       <div class="container share-buttons">
             <%=
-              external_url_anchor2 "https://www.facebook.com/sharer/sharer.php?#{@fb_share}",
+              external_url_anchor2("https://www.facebook.com/sharer/sharer.php?#{@fb_share}",
                                   'class="share share-facebook"',
-                                  'SHARE FB'
+                                  'SHARE FB') unless @fb_share.to_s == ''
             %>
             <%=
-              external_url_anchor2 "https://twitter.com/intent/tweet?#{@tw_share}",
+              external_url_anchor2("https://twitter.com/intent/tweet?#{@tw_share}",
                                   'class="share share-twitter" data-size="large" rel="me" rel="canonical"',
-                                  'SHARE TWITTER'
+                                  'SHARE TWITTER') unless @li_share.to_s == ''
 
             %>
             <%=
-              external_url_anchor2 "http://www.linkedin.com/shareArticle?#{@li_share}",
+              external_url_anchor2("http://www.linkedin.com/shareArticle?#{@li_share}",
                                   'class="share share-linkedin"',
-                                  'SHARE LINKEDIN'
+                                  'SHARE LINKEDIN') unless @li_share.to_s == ''
             %>
+            &nbsp;
       </div>
     <%end %>
     <div class="button-container text-center">
