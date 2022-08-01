@@ -111,7 +111,7 @@ class KeventerReader
         event.country = loaded_event['country_iso']
         events.push(event)
       end
-    rescue e
+      rescue StandardError => e
       puts "Error al cargar las catalogo: #{e}"
     end
 

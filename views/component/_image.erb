@@ -1,5 +1,7 @@
-<%image_url = '/app/img/default/work.png' if image_url.to_s ==''  %>
+<%image_url = '/app/img/default/work.png' if image_url.to_s ==''%>
 <picture>
-  <source type="image/webp" srcset="<%= image_url[0..image_url.rindex('.')] + 'webp'%>">
+  <%if has_webp%>
+    <source type="image/webp" srcset="<%= image_url[0..image_url.rindex('.')] + 'webp'%>">
+  <%end%>
   <img src="<%= image_url%>" class="<%= css_class%>" alt="<%= alt%>">
 </picture>

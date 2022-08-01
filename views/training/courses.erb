@@ -28,17 +28,18 @@
         title: course.name, duration: course.duration, subtitle: course.subtitle,
         cover: course.cover, uri_path: course.uri_path, is_open: is_open, is_incompany: is_incompany, is_elearning: false,
         category: e.name, date: date, url: course.uri_path,
+        has_webp: true,
         country: 'OL', certified: (2 if course.is_sa_cert).to_i +
         (1 if course.is_kleer_cert).to_i,
       })
     }
   }
-
   @academy.each{|e|
     courses.push(
       {
         title: e['es']['title'], duration: e['es']['duration'], subtitle: e['es']['subtitle'],
         cover: e['es']['cover'], uri_path: e['es']['url'], is_open: false, is_incompany: false, is_elearning: true,
+        has_webp: false,
         category: e['es']['category'], date: 'Asincrono', certified: 1
       }
     )
