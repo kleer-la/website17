@@ -47,13 +47,13 @@
 
 %>
 
-<section id="courses" class="p-5 mt-4">
+<section id="training-courses" class="p-5 mt-4">
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
       Capacitación personal y empresarial en agilidad
     </h4>
-    <div class="courses-filters">
-      <div class="dropdown d-flex courses-filters__drop">
+    <div class="courses-filters row">
+      <div class="dropdown d-flex courses-filters__drop col-12 col-lg-3">
         <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           Tipo de evento
         </button>
@@ -96,22 +96,29 @@
           </li>
         </ul>
       </div>
-      <% categories.each do |category| %>
-        <button
-          class="courses-filters__tag courses-filters__tag--selected"
-          onclick="handleClickCategory('<%= category %>')"
-        ><%= category %></button>
-      <% end %>
+      <div class="buttons-container col-12 col-lg-9">
+        <div class="courses-filters-container d-flex">
+          <% categories.each do |category| %>
+            <button
+              class="courses-filters__tag courses-filters__tag--selected"
+              onclick="handleClickCategory('<%= category %>')"
+            ><%= category %></button>
+          <% end %>
+        </div>
+      </div>
+
+
 
     </div>
     <div class='row mt-5 w-100' id="courses-container">
       <% courses.each do |course|
         @course = course
       %>
-        <div class="col-10 col-sm-6 col-md-4 col-lg-3 p-2" id="<%= "#{course[:category]}--#{course[:title]}"%>">
+        <div class="col-10 col-sm-6 col-md-4 col-lg-3 p-2 course-card-container" id="<%= "#{course[:category]}--#{course[:title]}"%>">
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
+
     </div>
     <div class="btn-center-container mt-5">
       <button
@@ -120,7 +127,12 @@
         onclick="handleClickSeeMore()"
       >Ver mas</button>
     </div>
+
+    <img src="/app/img/view_figures/red_circle3.svg" class="desktop_figure training-courses_red-circle" />
+    <img src="/app/img/view_figures/green_triangle.svg" class="desktop_figure training-courses_green-triangle" />
+    <img src="/app/img/view_figures/rustic_sigsac.svg" class="desktop_figure training-courses_rustic-sigsac" />
   </div>
+
 </section>
 
 <script>

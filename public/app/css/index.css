@@ -282,7 +282,8 @@
   left: 50px; }
 
 #training-info {
-  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   position: relative; }
@@ -297,27 +298,41 @@
 .training-info__container {
   border-radius: 16px;
   background-color: #E8F8FD;
-  padding: 80px 10%; }
+  padding: 80px 0;
+  margin-right: 7%;
+  margin-left: 7%;
+  position: relative;
+  width: calc(100vw - 14%); }
 
 .training-info__subcontainer {
   height: 100%;
   width: 100%;
   padding-left: 10%; }
+  .training-info__subcontainer ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0; }
 
 .training-hero_blue-circle {
   right: 0;
-  bottom: 0;
+  bottom: calc(50% - 400px);
   z-index: -1; }
 
 .training-hero_yellow-triangle {
-  top: 80px;
+  top: calc(50% - 200px);
   left: 30px;
   z-index: 0; }
 
 .training-hero_rustic-sigsac {
-  left: 150px;
-  bottom: 80px;
+  left: 25%;
+  bottom: calc(50% - 230px);
   z-index: 0; }
+
+#training-courses {
+  position: relative; }
+
+#courses-container {
+  position: relative; }
 
 .courses-filters {
   width: 100%;
@@ -362,6 +377,52 @@
 .courses-filters__tag--unselected {
   background-color: white; }
 
+.training-courses_red-circle {
+  top: 500px;
+  left: calc(50% - 750px);
+  z-index: -1; }
+
+.training-courses_green-triangle {
+  bottom: 600px;
+  right: calc(50% - 650px);
+  z-index: -1; }
+
+.training-courses_rustic-sigsac {
+  bottom: 130px;
+  left: 20%;
+  z-index: -1; }
+
+@media screen and (max-width: 992px) {
+  .training-hero__text {
+    text-align: center; }
+
+  #training-info h4 {
+    margin: 0 10%; }
+
+  .training-info__subcontainer {
+    max-height: 100%;
+    text-align: center;
+    padding-left: 0;
+    width: auto;
+    margin: 15% 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: #00BBEE solid 1px; }
+    .training-info__subcontainer h5 {
+      margin-top: 20px; }
+
+  .courses-filters {
+    margin-left: -20%;
+    width: 100vw; }
+
+  .buttons-container {
+    margin-left: -20%;
+    width: 100vw; }
+
+  .course-card-container {
+    width: 100%;
+    margin-left: 5%; } }
 /* Global */
 html {
   overflow-x: hidden; }
@@ -495,6 +556,9 @@ img {
 .desktop_figure {
   position: absolute; }
 
+.mobile_figure {
+  display: none; }
+
 .hidden-element {
   display: none; }
 
@@ -521,8 +585,19 @@ img {
     font-size: 20px;
     line-height: 26px; }
 
+  h5 {
+    font-size: 18px;
+    line-height: 24px; }
+
   .desktop_figure {
     display: none; }
+
+  .mobile_figure {
+    position: absolute;
+    display: flex; }
+
+  .only-desktop {
+    display: none !important; }
 
   .social-container {
     position: absolute;
