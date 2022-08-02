@@ -1,6 +1,6 @@
 { "resources":
   [
-    {"es": {
+    { "es": {
       "id": "kartas-conexion",
       "type": "card",
       "categories": "personas",
@@ -12,6 +12,16 @@
       "share_fb": "u=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html",
       "share_tw": "text=¿Te gustaría mejorar la conexión entre las personas de tu equipo? Te comparto el juego de Kartas de Conexión de @kleer_la. Descárgalas aquí https://www.nataliadavidovich.com.ar/p/kartas-de-conexion.html&hashtags=ComunicaciónColaborativa,CNV,ComunicaciónEfectiva",
       "share_li": "mini=true&url=https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html&title=Mejora%20la%20conexion%20entre%20las%20personas%20de%20tu%20equipo.%20Busca%20las%20cartas%20https%3A%2F%2Fwww.nataliadavidovich.com.ar%2Fp%2Fkartas-de-conexion.html%20%23ComunicacionColaborativa%20%23CNV%20%23ComunicacionEfectiva"
+      },
+      "en": {
+      "id": "connection-kards",
+      "type": "card",
+      "categories": "personas",
+      "landing": "https://www.nataliadavidovich.com.ar/p/connection-kards.html",
+      "cover": "https://kleer-materiales.s3.us-east-2.amazonaws.com/img/connection-kards-cover.png",
+      "title": "Connection Kards",
+      "description": "Connection Kards: A deck of cards with different games to improve your connection with others and develop an emotional vocabulary.",
+      "authors": "<a href='https://www.linkedin.com/in/nataliadavidovich/'>Natty Davidovich</a>"
       }
     },
     {"es": {
