@@ -101,14 +101,6 @@ end
 get '/' do
   session[:version] = 2021
 
-  #Old version
-  # meta_tags! title: 'Agile Coaching, Consulting & Training'
-  # meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
-  #                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
-  #
-  # @kleerers = KeventerReader.instance.kleerers session[:locale]
-  # erb :index, layout: false
-
   meta_tags!  title: t('meta_tag.home.title'),
               description: t('meta_tag.home.description')
 

@@ -52,7 +52,10 @@ def entrenamos_view(country = nil)
   end
 end
 
-get '/catalogo' do
+get('/catalogo2022') { session[:version] = 2022; catalog }
+get('/catalogo') { catalog }
+
+def catalog
   @active_tab_entrenamos = 'active'
   meta_tags! title: 'Capacitación empresarial en agilidad organizacional'
   meta_tags! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
