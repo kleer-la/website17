@@ -176,6 +176,10 @@ img {
   position: absolute;
 }
 
+.mobile_figure{
+  display: none;
+}
+
 .hidden-element{
   display: none;
 }
@@ -207,9 +211,22 @@ img {
     font-size: 20px;
     line-height: 26px;
   }
+  h5{
+    font-size: 18px;
+    line-height: 24px;
+  }
 
   .desktop_figure{
     display: none;
+  }
+
+  .mobile_figure{
+    position: absolute;
+    display: flex;
+  }
+
+  .only-desktop{
+    display: none !important;
   }
 
   .social-container{
