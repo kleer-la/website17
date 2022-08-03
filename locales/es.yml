@@ -973,11 +973,6 @@ es:
           text: 'Blog',
           url: '/blog',
           inside: true
-        },
-        {
-          text: 'Libros',
-          url: '/libros',
-          inside: true
         }
       ]
     }
