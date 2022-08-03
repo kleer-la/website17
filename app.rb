@@ -200,10 +200,7 @@ get '/recursos' do
 
   @resources = Resources.new.load.all
 
-  return erb :'resources_page/index', layout: :'layout/layout2022'
-
-  # return erb :'resources_page/index', layout: :'layout/layout2022' if session[:version] == 2022
-  # erb :recursos
+  erb :'resources_page/index', layout: :'layout/layout2022'
 end
 
 get '/recursos/primeros_pasos' do

@@ -8,8 +8,8 @@
   <br/>
   <div class="row">
     <%
-      @resources.each do |resource_loc|
-        resource= resource_loc['es']
+      @resources.filter { |r| r[session[:locale]]}.each do |resource_loc|
+        resource= resource_loc[session[:locale]]
 
         @id = resource['id']
         @image_cover = resource['cover']
