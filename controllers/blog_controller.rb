@@ -24,6 +24,11 @@ get '/blog-preview' do
   blog_list Article.create_list_keventer(false)
 end
 
+get '/blog2022' do
+  session[:version] = 2022
+  @where = 'Blog'
+  blog_list Article.create_list_keventer(true)
+end
 get '/blog' do
   @where = 'Blog'
 
@@ -42,6 +47,7 @@ def blog_one(article)
   meta_tags! title: @article.tabtitle,
              description: @article.description
 
+  erb :blog_preview_one, layout: :'layout/layout2022' if session[:version] == 2022
   erb :blog_preview_one
 rescue StandardError => e
   puts e
@@ -54,7 +60,10 @@ def blog_list(articles)
   @articles = articles
 
   @show_abstract = true
+  return  erb :'blog/index', layout: :'layout/layout2022' if session[:version] == 2022
+
   erb :blog_preview
+
 rescue StandardError => e
   puts e
   status 404
