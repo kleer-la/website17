@@ -1102,6 +1102,24 @@ es:
     title: "Recursos y materiales sobre agilidad"
     subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
 
+  courses_page:
+    title: "Catálogo de cursos"
+    subtitle: "Impulsa tu crecimiento profesional, el de tus equipos y de tu organización, con nuestros programas de formación en agilidad organizacional."
+    in_company:
+      text: "Potencia las habilidades de tus equipos y promueve la agilidad en tu empresa."
+    open:
+      text: "Comparte una experiencia de aprendizaje con colegas."
+      button:
+        text: "Ver Agenda"
+        link: "/entrenamos/todos"
+    e-learing:
+      text: "Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta, y cuándo terminar."
+      button:
+        text: "Ir a academia"
+        link: "academia.kleer.la"
+    catalog:
+      title: "Capacitación profesional en agilidad"
+
   ebooks:
     title: "Libros"
     subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"

@@ -307,7 +307,8 @@
 .training-info__subcontainer {
   height: 100%;
   width: 100%;
-  padding-left: 10%; }
+  padding-left: 10%;
+  padding-right: 10%; }
   .training-info__subcontainer ul {
     list-style-type: none;
     margin-left: 0;

@@ -6,7 +6,6 @@ MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'M
 
 module Helpers
   def format_date_range(start_date, finish_date, languaje)
-
     start_month = languaje == 'en' ? start_date.strftime("%d") : month_es(start_date.strftime("%b"))
     finish_month = languaje == 'en' ? finish_date.strftime("%d") : month_es(finish_date.strftime("%b"))
 
@@ -15,7 +14,16 @@ module Helpers
     else
       "#{start_date.strftime("%d")} #{start_month} - #{finish_date.strftime("%d")} #{finish_month}"
     end
+  end
 
+  def format_categories(categories)
+    categories_string = ""
+
+    categories.each do |category|
+      categories_string += "#{category}--"
+    end
+
+    return categories_string
   end
 
   def month_es(month_en)

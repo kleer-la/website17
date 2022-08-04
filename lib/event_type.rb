@@ -67,10 +67,10 @@ class EventType
     @lang = hash_event['lang']
     @cover = hash_event['cover']
     @name = hash_event['name']
-    @subtitle = hash_event['specific_subtitle']
-    @certified = (2 if !hash_event['is_kleer_certification']).to_i +
-      (1 if hash_event['is_kleer_certification']).to_i
-
+    @subtitle = hash_event['subtitle']
+    @is_kleer_cert = hash_event['is_kleer_certification']
+    @is_sa_cert = hash_event['csd_eligible']
     @categories = hash_event['categories'].map{|e| e['name']}
+
   end
 end

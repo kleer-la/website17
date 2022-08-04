@@ -1,21 +1,20 @@
 <%
-  courseses = @events.map do |course|
-    date = defined?(course.date) ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
-    is_open = defined?(course.date)
+  courses = @events.map do |course|
+    date = (not course.date.nil?) ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
+    is_open = (not course.date.nil?)
     is_incompany = true
     {
       title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
       cover: course.event_type.cover, uri_path: 'course.event_type.uri_path', open: false, date: date, url: 'course.event_type.uri_path',
-      categories: course.event_type.categories, is_open: is_open, is_incompany: is_incompany, is_elearning: false,
+      categories: format_categories(course.event_type.categories), is_open: is_open, is_incompany: is_incompany, is_elearning: false,
       country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
       (1 if course.event_type.is_kleer_cert).to_i,
     }
   end
 
-  # puts courseses
-
-  #solucion completamente temporal
-  courses = []
+  #Deprecado
+  #TODO: sacar logica de categorias
+  old_courses = []
   categories = []
   @categories.each{|e|
     categories.push(e.name)
@@ -23,7 +22,7 @@
       date = defined?(course.date) ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
       is_open = defined?(course.date)
       is_incompany = true
-      courses.push(
+      old_courses.push(
       {
         title: course.name, duration: course.duration, subtitle: course.subtitle,
         cover: course.cover, uri_path: course.uri_path, is_open: is_open, is_incompany: is_incompany, is_elearning: false,
@@ -34,6 +33,7 @@
       })
     }
   }
+
   @academy.each{|e|
     courses.push(
       {
@@ -50,7 +50,7 @@
 <section id="training-courses" class="p-5 mt-4">
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
-      Capacitación personal y empresarial en agilidad
+      <%= t("courses_page.catalog.title") %>
     </h4>
     <div class="courses-filters row">
       <div class="dropdown d-flex courses-filters__drop col-12 col-lg-3">
@@ -114,7 +114,7 @@
       <% courses.each do |course|
         @course = course
       %>
-        <div class="col-10 col-sm-6 col-md-4 col-lg-3 p-2 course-card-container" id="<%= "#{course[:category]}--#{course[:title]}"%>">
+        <div class="col-10 col-sm-6 col-md-4 col-lg-3 p-2 course-card-container" id="<%= "#{course[:categories]}#{course[:title]}"%>">
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
