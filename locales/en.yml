@@ -1102,7 +1102,7 @@ en:
       Personal Information, as described above. For example, we use Mailchimp to
       send information about our courses. We also use Google Analytics to help
       us understand how our customers use the Site--you can read more about how
-      Google uses your Personal Information here: 
+      Google uses your Personal Information here:
       https://www.google.com/intl/en/policies/privacy/.You can also opt-out of
       Google Analytics here:
       https://tools.google.com/dlpage/gaoptout.<br>Finally, we may also share
@@ -1735,6 +1735,26 @@ en:
       title: Find out about all the news of the agile world
       button:
         title: Suscribe
+
+#  TODO: migrar a ingles
+  courses_page:
+    title: "Catálogo de cursos"
+    subtitle: "Impulsa tu crecimiento profesional, el de tus equipos y de tu organización, con nuestros programas de formación en agilidad organizacional."
+    in_company:
+      text: "Potencia las habilidades de tus equipos y promueve la agilidad en tu empresa"
+    open:
+      text: "Comparte una experiencia de aprendizaje con colegas."
+      button:
+        text: "Ver Agenda"
+        link: "/entrenamos/todos"
+    e-learing:
+      text: "Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta, y cuándo terminar."
+      button:
+        text: "Ir a academia"
+        link: "academia.kleer.la"
+    catalog:
+      title: "Capacitación profesional en agilidad"
+
   resources:
     title: Resources
     subtitle: >-

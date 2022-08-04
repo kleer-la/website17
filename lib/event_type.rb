@@ -70,7 +70,6 @@ class EventType
     @subtitle = hash_event['subtitle']
     @is_kleer_cert = hash_event['is_kleer_certification']
     @is_sa_cert = hash_event['csd_eligible']
-    puts hash_event['categories']
     @categories = hash_event['categories'].map{|e| e['name']}
 
   end
