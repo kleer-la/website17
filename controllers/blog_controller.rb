@@ -31,11 +31,12 @@ get '/blog2022' do
 end
 get '/blog' do
   @where = 'Blog'
-
+  
   blog_list Article.create_list_keventer(true)
 end
 
 get '/blog/:slug' do |slug|
+  @where = 'Blog'
   blog_one Article.create_one_keventer(slug)
 rescue StandardError => e
   puts e
@@ -47,7 +48,8 @@ def blog_one(article)
   meta_tags! title: @article.tabtitle,
              description: @article.description
 
-  erb :blog_preview_one, layout: :'layout/layout2022' if session[:version] == 2022
+  return erb :'blog/article', layout: :'layout/layout2022'  if session[:version] == 2022
+
   erb :blog_preview_one
 rescue StandardError => e
   puts e

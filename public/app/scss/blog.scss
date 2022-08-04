@@ -9,7 +9,15 @@
   height: calc(20vh - 100px);
   margin-top: 100px;
 } 
-  
+
+.breadcrumb-nav {
+  font-family: "degular",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 76px;
+}
+
 .blog {
   > .container {
     padding-top: 3em;
@@ -21,6 +29,11 @@
   }
 
   h2 > a {
+    font-size: 26px;
+    margin-bottom: 1em;
+    color: #337ab7; 
+  }
+  h2 {
     font-size: 26px;
     margin-bottom: 1em;
     color: #337ab7; 
