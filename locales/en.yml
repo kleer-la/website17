@@ -228,6 +228,8 @@ en:
   blog:
     readit: Read more
     back: << Back
+    home: "Home"
+
   recursos:
     title: Resources
     lista:

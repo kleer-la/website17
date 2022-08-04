@@ -179,6 +179,7 @@ es:
   blog:
     readit: "Continuar leyendo"
     back: "<< Volver"
+    home: "Inicio"
   recursos:
     title: "Recursos y materiales sobre agilidad"
     lista:
