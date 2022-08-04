@@ -1,5 +1,5 @@
 class Event
-  attr_accessor :event_type, :country, :certified
+  attr_accessor :event_type, :country, :certified, :date,:finish_date
 
   def initialize(event_type)
     @event_type = event_type
@@ -10,7 +10,7 @@ end
 class EventFacade
   attr_reader :name, :subtitle, :cover,
               :certified, :slug, :categories,
-              :date,:country
+              :date,:finish_date, :country
 
   def initialize()
     @name = @subtitle= @cover =

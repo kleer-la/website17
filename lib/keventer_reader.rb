@@ -109,6 +109,12 @@ class KeventerReader
         event_type = EventType.new(nil, loaded_event)
         event = Event.new(event_type)
         event.country = loaded_event['country_iso']
+
+        unless loaded_event['date'].nil?
+          event.date = Date.parse(loaded_event['date'])
+          event.finish_date = Date.parse(loaded_event['finish_date'])
+        end
+
         events.push(event)
       end
       rescue StandardError => e
