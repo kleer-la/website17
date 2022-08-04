@@ -227,7 +227,7 @@ get '/prensa' do
   @active_tab_prensa = 'active'
   meta_tags! title: "#{@base_title} | Prensa"
   # @kleerers = KeventerReader.instance.kleerers session[:locale]
-  if true || session[:version] == 2022
+  if session[:version] == 2022
     @news = get_news
     return erb :'news/index', layout: :'layout/layout2022'
   end
