@@ -268,13 +268,6 @@ get '/nuestra-filosofia' do
   erb :nuestra_filosofia
 end
 
-get '/prensa' do
-  @active_tab_prensa = 'active'
-  meta_tags! title: "#{@base_title} | Prensa"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :prensa
-end
-
 get '/privacy' do
   @active_tab_privacidad = 'active'
   meta_tags! title: "#{@base_title} | Declaración de privacidad"
