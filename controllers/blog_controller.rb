@@ -62,7 +62,7 @@ def blog_list(articles)
   @articles = articles
 
   @show_abstract = true
-  return  erb :'blog/index', layout: :'layout/layout2022' if session[:version] == 2022
+  return erb :'blog/index', layout: :'layout/layout2022' if session[:version] == 2022
 
   erb :blog_preview
 
