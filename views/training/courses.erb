@@ -12,27 +12,6 @@
     }
   end
 
-  #Deprecado
-  #TODO: sacar logica de categorias
-  old_courses = []
-  categories = []
-  @categories.each{|e|
-    categories.push(e.name)
-    e.event_types.each{|course|
-      date = defined?(course.date) ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
-      is_open = defined?(course.date)
-      is_incompany = true
-      old_courses.push(
-      {
-        title: course.name, duration: course.duration, subtitle: course.subtitle,
-        cover: course.cover, uri_path: course.uri_path, is_open: is_open, is_incompany: is_incompany, is_elearning: false,
-        category: e.name, date: date, url: course.uri_path,
-        has_webp: true,
-        country: 'OL', certified: (2 if course.is_sa_cert).to_i +
-        (1 if course.is_kleer_cert).to_i,
-      })
-    }
-  }
 
   @academy.each{|e|
     courses.push(
@@ -45,10 +24,16 @@
     )
   }
 
+
+  categories = []
+  @categories.each{|e|
+    categories.push(e.name)
+  }
+
 %>
 
 <section id="training-courses" class="p-5 mt-4">
-  <div class='container'>
+  <div class='container training-courses__container'>
     <h4 class="text-center m-4 last-courses__tittle">
       <%= t("courses_page.catalog.title") %>
     </h4>
