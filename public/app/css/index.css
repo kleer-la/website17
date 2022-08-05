@@ -233,11 +233,6 @@
   background-size: cover;
   height: 400px;
   background-position: center center; }
-.header-prensa {
-  background: url(../img/prensa.jpg);
-  background-size: cover;
-  height: 400px;
-  background-position: center center; }
 
 .header-description {
   position: absolute;
@@ -418,17 +413,33 @@
     .training-info__subcontainer h5 {
       margin-top: 20px; }
 
+  #training-courses {
+    padding: 0 !important; }
+
+  .training-courses__container {
+    width: 100vw; }
+
   .courses-filters {
-    margin-left: -20%;
+    padding: 30px 0;
     width: 100vw; }
 
   .buttons-container {
-    margin-left: -20%;
+    overflow-y: hidden;
+    overflow-x: scroll;
     width: 100vw; }
 
+  ::-webkit-scrollbar {
+    display: none; }
+
+  .courses-filters-container {
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    width: 100vw;
+    white-space: nowrap; }
+
   .course-card-container {
-    width: 100%;
-    margin-left: 5%; } }
+    width: 100%; } }
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,
