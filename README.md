@@ -23,7 +23,7 @@ CSS/SASS
 Para trabajar los estilos ir a la carpeta public/app y correr:
 ```cli
 gem install sass
-sass --watch scss:css
+sass --watch scss/index.scss:css/index.css
 ```
 y forzar refresco Crtl+Shft+R
 

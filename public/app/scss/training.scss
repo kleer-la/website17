@@ -200,43 +200,53 @@ $white: #FFFFFF;
     }
   }
 
-  .courses-filters{
-    margin-left: -20%;
+  #training-courses{
+    padding: 0 !important;
+  }
+
+  .training-courses__container{
     width: 100vw;
   }
+
+  .courses-filters{
+    padding: 30px 0;
+    width: 100vw;
+  }
+
 
   .buttons-container{
-    //overflow-y: hidden;
-    //overflow-x: scroll;
-    //padding-left: 30px;
-    //position: relative;
-    margin-left: -20%;
+    overflow-y: hidden;
+    overflow-x: scroll;
     width: 100vw;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-  //.courses-filters-container{
-  //  transition: 450ms -webkit-transform;
-  //  transition: 450ms transform;
-  //  transition: 450ms transform, 450ms -webkit-transform;
-  //  white-space: nowrap;
-  //  margin: 70px 0 0 0;
-  //  padding: 0 0 50px 0;
-  //
-  //  button{
-  //    border-radius: 20px;
-  //    margin-right: 10px;
-  //    display: inline-block;
-  //    cursor: pointer;
-  //    transition: 150ms all;
-  //    transform-origin: center left;
-  //    overflow: hidden;
-  //    position: relative;
-  //    width: 200px;
-  //  }
-  //}
+  .courses-filters-container{
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    width: 100vw;
+    white-space: nowrap;
+    //margin: 70px 0 0 0;
+    //padding: 0 0 50px 0;
+
+    //button{
+    //  border-radius: 20px;
+    //  margin-right: 10px;
+    //  display: inline-block;
+    //  cursor: pointer;
+    //  transition: 150ms all;
+    //  transform-origin: center left;
+    //  overflow: hidden;
+    //  position: relative;
+    //  width: 200px;
+    //}
+  }
+
 
   .course-card-container{
     width: 100%;
-    margin-left: 5%;
   }
 }
