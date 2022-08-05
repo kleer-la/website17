@@ -8,7 +8,7 @@
                 "title": "Taller del tiempo",
                 "subtitle": "¡Revierte tu relación con el tiempo!",
                 "url": "https://academia.kleer.la/p/taller-del-tiempo",
-                "category": "Desarrollo Profesional",
+                "categories": ["Desarrollo Profesional"],
                 "duration": 2
               }
             },
@@ -19,7 +19,7 @@
                 "title": "Incepción ágil",
                 "subtitle": "La manera más efectiva de iniciar tus proyectos de desarrollo de productos o servicios",
                 "url": "https://academia.kleer.la/p/incepcion-agil",
-                "category": "Diseño de Productos",
+                "categories": ["Diseño de Productos"],
                 "duration": 2
               }
             },
@@ -30,7 +30,7 @@
                 "title": "Agilidad y scrum",
                 "subtitle": "Lo básico que necesitas para conocer sobre Agilidad y Scrum antes de profundizar en lo que prefieras",
                 "url": "https://academia.kleer.la/p/agilidad-y-scrum",
-                "category": "Desarrollo Profesional",
+                "categories": ["Desarrollo Profesional"],
                 "duration": 1
               }
             },
@@ -41,7 +41,7 @@
                 "title": "Estimaciones ágiles",
                 "subtitle": "Una introducción al complejo tema de las estimaciones dentro del paradigma ágil.",
                 "url": "https://academia.kleer.la/p/estimaciones-agiles",
-                "category": "Equipos y Organizaciones",
+                "categories": ["Equipos y Organizaciones"],
                 "duration": 2
               }
             },
@@ -52,7 +52,7 @@
                 "title": "Agilidad: Primeros pasos",
                 "subtitle": "El curso fundamental para iniciar tu camino en la agilidad",
                 "url": "https://academia.kleer.la/p/agilidad-primeros-pasos",
-                "category": "Desarrollo Profesional",
+                "categories": ["Desarrollo Profesional"],
                 "duration": 3
               }
             }
