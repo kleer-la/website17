@@ -233,11 +233,6 @@
   background-size: cover;
   height: 400px;
   background-position: center center; }
-.header-prensa {
-  background: url(../img/prensa.jpg);
-  background-size: cover;
-  height: 400px;
-  background-position: center center; }
 
 .header-description {
   position: absolute;
@@ -440,12 +435,18 @@
   height: calc(20vh - 100px);
   margin-top: 100px; }
 
-.breadcrumb-nav {
+.blog-home {
   font-family: "degular",sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 72px;
-  line-height: 76px; }
+  font-size: 32px;
+  line-height: 32px; }
+
+.blog-title {
+  color: #337ab7;
+  font-family: "degular",sans-serif;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 32px; }
 
 .blog > .container {
   padding-top: 3em; }
