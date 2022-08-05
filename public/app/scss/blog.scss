@@ -10,13 +10,18 @@
   margin-top: 100px;
 } 
 
-.breadcrumb-nav {
+.blog-home {
   font-family: "degular",sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 72px;
-  line-height: 76px;
-}
+  font-size: 32px;
+  line-height: 32px;}
+
+.blog-title {
+  color: #337ab7;
+  font-family: "degular",sans-serif;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 32px; }
 
 .blog {
   > .container {

@@ -1,15 +1,21 @@
 <section id="blog-hero">
 <div class="container">
   <div class="row">
-    <div class="breadcrumb-nav"><%= @where%> / <span><%= t("blog.article") %></span></div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/<%= @where.downcase%>"><%= @where%></a></li>
+        <li class="breadcrumb-item active"  aria-current="page"><h1 class="blog-title"><%= @article.title%></h1></li>
+      </ol>
+    </nav>
   </div>
 </div>
 </section>
+
 <div class="container mainContent blog blog-uniq">
 	<div class="container fondo-blanco contenedor-generico">
 		<div class="col-md-8 col-md-offset-2 contenedor-main-izq">
       <article class="blog__article">
-        <h1><%= @article.title%></h1>
+        <!-- h1><%= @article.title%></h1 -->
         <div class="blog__data">
           <div class="blog__name">
             <i class="fa fa-user"></i>
