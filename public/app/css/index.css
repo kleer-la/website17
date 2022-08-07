@@ -556,6 +556,12 @@
     font-size: 18px; }
   .blog .container p, .blog .container li {
     font-size: 16px; } }
+.header-prensa {
+  background: url(../img/prensa.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center center; }
+
 /* Global */
 html {
   overflow-x: hidden; }

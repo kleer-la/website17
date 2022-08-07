@@ -6,19 +6,19 @@ def get_news
       subtitle: 'iPro UP - 10.5.22',
       text: I18n.t('press.release36_text'),
       url: 'https://www.iproup.com/innovacion/31364-mejora-continua-como-crear-el-habito-con-impacto-para-tu-negocio',
-      img: '/img/prensa/prensa-36.webp'
+      img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/news/leo-agudelo-en-ipro-up.png'
     },
     { title: I18n.t('press.release35_title'),
       subtitle: 'cio.com.mx - 15.4.21',
       text: I18n.t('press.release35_text'),
       url: 'https://cio.com.mx/nueve-practicas-para-potenciar-la-colaboracion-de-equipos-distribuidos/',
-      img: '/img/prensa/prensa-35.jpg'
+      img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/news/veronica-arganaraz-en-cio-mx.jpg'
     },
     { title: I18n.t('press.release34_title'),
       subtitle: 'revistaeconomia.com - 14.4.21',
       text: I18n.t('press.release34_text'),
       url: 'https://www.revistaeconomia.com/9-practicas-clave-para-potenciar-la-colaboracion-distribuida',
-      img: '/img/prensa/prensa-34.jpg'
+      img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/news/veronica-arganaraz-en-revista-economica.jpg'
     },
     { title: I18n.t('press.release33_title'),
       subtitle: 'acis.org.co - Abril 2021',
@@ -173,8 +173,8 @@ def get_news
     { title: I18n.t('press.release08_title'),
       subtitle: 'CustomerIn - Radio Palermo - 7/Jul/2015',
       text: I18n.t('press.release08_text'),
-      url: '',
-      img: '',
+      url: 'https://www.youtube.com/embed/edh5xz7vyUI',
+      img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/news/pablo-tortorella-en-radio-palermo.png',
       video: 'https://www.youtube.com/embed/edh5xz7vyUI'
     },
     { title: I18n.t('press.release07_title'),
@@ -186,8 +186,8 @@ def get_news
     { title: I18n.t('press.release06_title'),
       subtitle: 'La burbuja - Radio Milenium - 5/Jul/2015',
       text: I18n.t('press.release06_text'),
-      url: '',
-      img: '',
+      url: 'https://soundcloud.com/kleer_agile_coaching_and_training/entrevista-a-carlos-peix-en-radio-fm-milenium-1067?utm_source=www.kleer.la&utm_campaign=wtshare&utm_medium=widget&utm_content=https%253A%252F%252Fsoundcloud.com%252Fkleer_agile_coaching_and_training%252Fentrevista-a-carlos-peix-en-radio-fm-milenium-1067',
+      img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/news/carlos-peix-en-programa-la-burbuja.png',
       audio: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/218800859&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true'
     },
     { title: I18n.t('press.release05_title'),
@@ -227,12 +227,8 @@ get '/prensa' do
   @active_tab_prensa = 'active'
   meta_tags! title: "#{@base_title} | Prensa"
   # @kleerers = KeventerReader.instance.kleerers session[:locale]
-  if session[:version] == 2022
-    @news = get_news
-    return erb :'news/index', layout: :'layout/layout2022'
-  end
-
-  erb :prensa
+  @news = get_news
+  return erb :'news/index', layout: :'layout/layout2022'
 end
 
 get '/clientes/equipos-scrum-en-technisys-2015' do
