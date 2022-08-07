@@ -80,10 +80,25 @@ $white: #FFFFFF;
   z-index: 0;
 }
 
+.training-hero_yellow-middle-circle{
+  right: 0;
+  top: 20%
+}
+
+.training-hero_green-worm {
+  right: 0;
+  bottom: 10%;
+}
+
+.training-hero_blue-bean{
+  left: 0;
+  bottom: 12%;
+}
+
 .training-hero_rustic-sigsac{
-  left: 25%;
-  bottom: calc(50% - 230px);
-  z-index: 0;
+  left: -5px;
+  top: 30%;
+  transform: rotate(90deg);
 }
 
 #training-courses{
@@ -92,6 +107,7 @@ $white: #FFFFFF;
 
 #courses-container{
   position: relative;
+  margin: 0;
 }
 
 .courses-filters{
@@ -173,8 +189,13 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:992px) { //lg size
+  #training-hero{
+    padding: 5% 5% 10% 5%;
+  }
+
   .training-hero__text{
     text-align: center;
+    height: auto !important;
   }
 
   #training-info{
@@ -188,13 +209,13 @@ $white: #FFFFFF;
   .training-info__subcontainer{
     max-height: 100%;
     text-align: center;
-    padding-left: 0;
+    padding: 0;
     width: auto;
     margin: 15% 10% 0 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-bottom: $secondary-blue solid 1px;
+    border-top: $secondary-blue solid 1px;
     h5{
       margin-top: 20px;
     }
@@ -247,6 +268,6 @@ $white: #FFFFFF;
 
 
   .course-card-container{
-    width: 100%;
+    width: 100vw;
   }
 }

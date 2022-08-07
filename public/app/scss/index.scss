@@ -189,6 +189,11 @@ img {
   .desktop_figure{
     display: none;
   }
+
+  .mobile_figure{
+    position: absolute;
+    display: flex !important;
+  }
 }
 
 @media screen and (max-width:420px) { //sm size

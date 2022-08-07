@@ -18,8 +18,8 @@
   </div>
   <div class="card-body course-card__body">
     <div>
-      <% if defined? (@course[:category]) %>
-        <p class="course-card__categories"><%= @course[:category] %></p>
+      <% if defined? (@course[:categories]) and not @course[:categories].nil? %>
+        <p class="course-card__categories"><%= @course[:categories][0...-2] %></p>
       <%end %>
       <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
     </div>

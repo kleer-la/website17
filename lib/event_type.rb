@@ -63,7 +63,7 @@ class EventType
   def load_complete_event(hash_event) #json provider
     # puts hash_event['specific_subtitle']
     @id = hash_event['slug']
-    # duration = hash_event[:id]
+    @duration = hash_event['duration']
     @lang = hash_event['lang']
     @cover = hash_event['cover']
     @name = hash_event['name']

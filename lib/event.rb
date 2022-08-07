@@ -1,5 +1,5 @@
 class Event
-  attr_accessor :event_type, :country, :certified, :date,:finish_date
+  attr_accessor :event_type, :country, :certified, :date, :finish_date
 
   def initialize(event_type)
     @event_type = event_type
