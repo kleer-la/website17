@@ -31,6 +31,10 @@ def coming_courses
   KeventerReader.instance.coming_commercial_events
 end
 
+get '/agenda' do
+  erb :'training/agenda/index', layout: :'layout/layout2022'
+end
+
 get '/entrenamos/:country?' do |country|
   entrenamos_view(country)
 end
