@@ -19,6 +19,7 @@ require './controllers/helper'
 require './controllers/blog_controller'
 require './controllers/press_controller'
 require './controllers/training_controller'
+require './controllers/clients_controller'
 
 include MetaTags
 
@@ -278,13 +279,6 @@ get '/terms' do
   @active_tab_terminos = 'active'
   meta_tags! title: "#{@base_title} | Terminos y condiciones"
   erb :terms
-end
-
-get '/clientes' do
-  meta_tags! title: "#{@base_title} | Nuestros clientes"
-  meta_tags! description: 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
-
-  erb :clientes
 end
 
 get '/last-tweet/:screen_name' do

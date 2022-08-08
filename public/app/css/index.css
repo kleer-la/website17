@@ -562,6 +562,12 @@
   height: 400px;
   background-position: center center; }
 
+.header-clients {
+  background: url(../img/publicamos.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center center; }
+
 /* Global */
 html {
   overflow-x: hidden; }
