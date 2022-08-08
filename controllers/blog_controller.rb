@@ -7,11 +7,12 @@ end
 
 get '/blog-preview/:slug' do |slug|
   meta_tags! noindex: true, nofollow: true
+  @where = 'Blog-Preview'
 
   begin
     blog_one Article.create_one_keventer(slug)
   rescue StandardError => e
-    puts e
+    puts e.message + ' - ' + e.backtrace.grep_v(%r{/gems/}).join('\n')
     status 404
   end
 end
@@ -19,16 +20,11 @@ end
 get '/blog-preview' do
   meta_tags! noindex: true, nofollow: true
 
-  @where = 'Blog Preview'
+  @where = 'Blog-Preview'
 
   blog_list Article.create_list_keventer(false)
 end
 
-get '/blog2022' do
-  session[:version] = 2022
-  @where = 'Blog'
-  blog_list Article.create_list_keventer(true)
-end
 get '/blog' do
   @where = 'Blog'
   
@@ -48,9 +44,8 @@ def blog_one(article)
   meta_tags! title: @article.tabtitle,
              description: @article.description
 
-  return erb :'blog/article', layout: :'layout/layout2022'  if session[:version] == 2022
+  erb :'blog/article', layout: :'layout/layout2022'
 
-  erb :blog_preview_one
 rescue StandardError => e
   puts e
   status 404
@@ -62,9 +57,7 @@ def blog_list(articles)
   @articles = articles
 
   @show_abstract = true
-  return erb :'blog/index', layout: :'layout/layout2022' if session[:version] == 2022
-
-  erb :blog_preview
+  erb :'blog/index', layout: :'layout/layout2022'
 
 rescue StandardError => e
   puts e

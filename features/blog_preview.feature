@@ -1,7 +1,6 @@
 Feature: Blog preview
 
 Scenario: One article preview page
-  Given PENDING: currently have two h1
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   When I go to the 'lorem-ipsum' article preview page

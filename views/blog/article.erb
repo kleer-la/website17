@@ -3,10 +3,14 @@
   <div class="row">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/<%= @where.downcase%>"><%= @where%></a></li>
-        <li class="breadcrumb-item active"  aria-current="page"><h1 class="blog-title"><%= @article.title%></h1></li>
+        <li class="breadcrumb-item"><a href="/<%= @where.to_s.downcase%>"><%= @where%></a></li>
+        <li class="breadcrumb-item active"  aria-current="page">Post
+        </li>
       </ol>
     </nav>
+  </div>
+  <div class="row">
+    <h1 class="blog-title"><%= @article.title%></h1>
   </div>
 </div>
 </section>
