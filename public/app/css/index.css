@@ -568,6 +568,15 @@
   height: 400px;
   background-position: center center; }
 
+.header-about-us {
+  background: url(../img/somos.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center center; }
+  @media (min-width: 1024px) {
+    .header-about-us {
+      background-position: center -110px; } }
+
 /* Global */
 html {
   overflow-x: hidden; }
