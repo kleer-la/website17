@@ -1,3 +1,5 @@
+.brojo {border: 1px #f00 solid;}
+
 .header-about-us {
   background: url(../img/somos.jpg);
   background-size: cover;
@@ -5,5 +7,55 @@
   background-position: center center;
   @media(min-width:1024px) {
     background-position: center -110px;
+  }
+}
+
+h3.title-somos {
+  font-size: 22px;
+}
+@media (max-width: 767px) {
+  .somos .col-sm-3 {
+    margin-bottom: 40px;
+  }
+}
+
+.vSpace {
+  display: block;
+  height: 20px;
+}
+
+.somos .fa {
+  font-size: 22px;
+  color: #fff; }
+.somos .fa:hover {
+  color: #000; }
+
+.img-circle {
+  width: 160px;
+  filter: grayscale(100%); }
+  .img-circle:hover {
+    filter: grayscale(0); }
+.img-circle {
+      width: auto;
+      margin: 0 auto;
+    }
+
+.img-container {
+  border-radius: 50%;
+  background: white;
+  padding: 6px;
+  margin: 10px auto;
+  width: 160px;
+  box-shadow: 1px 0px 2px inset;
+  height: 160px; }
+  
+.img-trainer {
+  position: relative;
+  margin-bottom: 10px;
+  .img-name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
   }
 }
