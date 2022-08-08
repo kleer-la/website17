@@ -67,10 +67,15 @@ class EventType
     @lang = hash_event['lang']
     @cover = hash_event['cover']
     @name = hash_event['name']
+    @slug = hash_event['slug']
     @subtitle = hash_event['subtitle']
     @is_kleer_cert = hash_event['is_kleer_certification']
     @is_sa_cert = hash_event['csd_eligible']
     @categories = hash_event['categories'].map{|e| e['name']}
 
   end
+  def uri_path
+    "cursos/#{@slug}"
+  end
+
 end

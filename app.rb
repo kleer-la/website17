@@ -20,6 +20,7 @@ require './controllers/blog_controller'
 require './controllers/press_controller'
 require './controllers/training_controller'
 require './controllers/clients_controller'
+require './controllers/about_us_controller'
 
 include MetaTags
 
@@ -253,32 +254,6 @@ get '/categoria/:category_codename' do
 
     erb :category
   end
-end
-
-get '/somos' do
-  @active_tab_somos = 'active'
-  meta_tags! title: "#{@base_title} | Somos"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :somos
-end
-
-get '/nuestra-filosofia' do
-  @active_tab_somos = 'active'
-  meta_tags! title: "#{@base_title} | Nuestra filosofía"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :nuestra_filosofia
-end
-
-get '/privacy' do
-  @active_tab_privacidad = 'active'
-  meta_tags! title: "#{@base_title} | Declaración de privacidad"
-  erb :privacy
-end
-
-get '/terms' do
-  @active_tab_terminos = 'active'
-  meta_tags! title: "#{@base_title} | Terminos y condiciones"
-  erb :terms
 end
 
 get '/last-tweet/:screen_name' do
