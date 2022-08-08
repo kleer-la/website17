@@ -1,4 +1,4 @@
-<%where_uri= "/#{session[:locale]}/#{@where.to_s.gsub(' ','-')}/" %>
+<%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
 
 <div class="container mainContent blog">
 	<div class="container fondo-blanco contenedor-generico">
