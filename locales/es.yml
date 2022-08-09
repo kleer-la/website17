@@ -976,16 +976,6 @@ es:
           text: 'Blog',
           url: '/blog',
           inside: true
-        }
-      ]
-    }
-    - {
-      text: 'Somos',
-      options: [
-        {
-          text: 'Nosotros',
-          url: '/somos',
-          inside: true
         },
         {
           text: 'Prensa',
@@ -993,6 +983,11 @@ es:
           inside: true
         }
       ]
+    }
+    - {
+      text: 'Somos',
+      url: '/somos',
+      inside: true
     }
 
   footer_menu:
@@ -1026,7 +1021,10 @@ es:
             title: 'Blog',
             url: '/blog'
           },
-          { }
+          {
+            title: 'Prensa',
+            url: '/prensa'
+          }
         ]
     }
     - {
