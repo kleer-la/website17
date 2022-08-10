@@ -251,6 +251,15 @@ img {
   margin-top: 100px;
 }
 
+.generic-hero{
+  background-color: $primary-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 30%;
+}
+
 .hero__text{
   display: flex;
   flex-direction: column;
