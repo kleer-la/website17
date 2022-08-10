@@ -252,6 +252,7 @@ img {
 }
 
 .generic-hero{
+  position: relative;
   background-color: $primary-blue;
   display: flex;
   flex-direction: column;
@@ -640,3 +641,14 @@ footer {
   }
 }
 
+//generic hero
+
+.generic-hero__red-circle{
+  bottom: 0;
+  right: -60px;
+}
+
+.generic-hero__yellow-bean{
+  top: 50px;
+  left: 30px
+}

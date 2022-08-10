@@ -815,6 +815,7 @@ img {
   margin-top: 100px; }
 
 .generic-hero {
+  position: relative;
   background-color: #68CEF2;
   display: flex;
   flex-direction: column;
@@ -1101,5 +1102,13 @@ footer {
       background: url("/img/icons/share-twitter.png") no-repeat; }
     .share-buttons .share.share-linkedin {
       background: url("/img/icons/share-linkedin.png") no-repeat; }
+
+.generic-hero__red-circle {
+  bottom: 0;
+  right: -60px; }
+
+.generic-hero__yellow-bean {
+  top: 50px;
+  left: 30px; }
 
 /*# sourceMappingURL=index.css.map */
