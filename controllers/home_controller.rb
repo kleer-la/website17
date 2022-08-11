@@ -2,11 +2,9 @@ require './lib/clients'
 
 get('/home2022') { session[:version] = 2022; home }
 
-get('/') {home}
+get('/') {  session[:version] = 2021;  home}
 
 def home
-  session[:version] = 2021
-
   meta_tags!  title: t('meta_tag.home.title'),
               description: t('meta_tag.home.description')
 
