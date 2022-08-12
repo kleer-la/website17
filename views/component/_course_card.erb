@@ -38,17 +38,16 @@
         <img class="icon-card" src="/app/img/icons/VideoCamera.svg" />
         Online <%#= @course[:country]%>
       </li>
-      <%if @course[:certified] > 0%>
-        <li class="course-card__item">
-          <img class="icon-card" src="/app/img/icons/Medal.svg" />
-          <%= if @course[:certified] == 1
-                t('home2022.home_courses.card.certified.kleer')
-             else
-                t('home2022.home_courses.card.certified.scrumalliance')
-             end
-          %>
-        </li>
-      <%end%>
+      <%#if @course[:certified] > 0%>
+<!--        <li class="course-card__item">-->
+<!--          <img class="icon-card" src="/app/img/icons/Medal.svg" />-->
+<!--          # if @course[:certified] == 1-->
+<!--                t('home2022.home_courses.card.certified.kleer')-->
+<!--             # else-->
+<!--                # t('home2022.home_courses.card.certified.scrumalliance')-->
+<!--             # end -->
+<!--        </li>-->
+      <%#end%>
     </ul>
   </div>
   <div class="text-center mt-4">
