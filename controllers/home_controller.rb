@@ -17,3 +17,10 @@ def home
 
   erb :'home/index', layout: :'layout/layout2022'
 end
+
+
+not_found do
+  meta_tags! title: t('page_not_found')
+
+  erb :'home/error_404', layout: :'layout/layout2022'
+end

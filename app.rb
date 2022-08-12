@@ -263,11 +263,6 @@ end
 
 # LEGACY ====================
 
-not_found do
-  meta_tags! title: '404 - No encontrado'
-  erb :error_404
-end
-
 private
 
 def create_twitter_card(event)
