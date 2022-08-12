@@ -815,6 +815,9 @@ img {
   margin-top: 100px; }
 
 .generic-hero {
+  max-height: 150vh;
+  height: calc(70vh - 100px);
+  margin-top: 100px;
   position: relative;
   background-color: #68CEF2;
   display: flex;
@@ -985,7 +988,7 @@ footer {
     padding: 30px 20px; } }
 .course-card {
   width: 100% !important;
-  max-width: 250px !important;
+  max-width: 260px !important;
   padding: 24px 24px 32px;
   gap: 32px;
   isolation: isolate;
@@ -1001,7 +1004,7 @@ footer {
   line-height: 18px; }
 
 .course-card__body {
-  height: 300px;
+  height: 250px;
   padding: 0; }
 
 .course-card__subtitle {
