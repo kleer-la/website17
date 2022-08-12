@@ -850,7 +850,7 @@ en:
       organizacional con los cuales colaboramos para juntos co-crear procesos
       adecuados para su contexto y propósito.</p>
   press:
-    title: Press
+    title: News
     subtitle: Kleer in the media!
     description: >-
       We believe in the power of shared knowledge in action. That's why we share
@@ -1741,22 +1741,31 @@ en:
 
 #  TODO: migrar a ingles
   courses_page:
-    title: "Catálogo de cursos"
-    subtitle: "Impulsa tu crecimiento profesional, el de tus equipos y de tu organización, con nuestros programas de formación en agilidad organizacional."
+    title: "Trainings"
+    subtitle: >-
+      Boost your professional growth, your teams and your organization, with our training programs that enable organizational agility. 
+      CSM, CSPO and CSD certifications by the Scrum Alliance.
+    type: How do we deliver our courses?
     in_company:
-      text: "Potencia las habilidades de tus equipos y promueve la agilidad en tu empresa"
-    open:
-      text: "Comparte una experiencia de aprendizaje con colegas."
+      title: In Company
+      text: >-
+        We bring our learning experiences to your organization. We can customize the experience by 
+        co-designing content that adapts to the needs and objectives of your company.
+    public:
+      title: Public
+      text: Enrol in the published courses, sign up in pairs or groups to obtain discounts and share a unique learning experience among colleagues.
       button:
-        text: "Ver Agenda"
+        text: "Public courses"
         link: "/entrenamos/todos"
     e-learing:
-      text: "Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta, y cuándo terminar."
+      title: Self-paced
+      text: Self-paced online courses. You decide when to start, the rhythm you like, and when to finish.
       button:
-        text: "Ir a academia"
+        text: "Academia"
         link: "academia.kleer.la"
     catalog:
-      title: "Capacitación profesional en agilidad"
+      title: "Professional agility training"
+      more: See more
 
   resources:
     title: Resources
@@ -1768,5 +1777,7 @@ en:
     subtitle: ''
 
   blog2022:
-    title: Reflexiones y pensamientos agiles
-    subtitle: Nos gusta compartir con la comunidad, plasmar nuestras ideas en la tinta y emprender en la escritura autodescubrimiento y reflexión sobre nuestro camino en la agilidad, compartimos contigo algunos de esos pensamientos.
+    title: Agile essays and thoughts
+    subtitle: >- 
+      We love to share, to capture our ideas in ink and to undertake self-discovery reflecting and writing 
+      on our path in agility. Here we share some of those thoughts with you.

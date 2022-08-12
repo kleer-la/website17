@@ -1,11 +1,5 @@
 
 <div class="container">
-    <h4 class="resources_subtitle mt-5">
-      <%= t("resources.subtitle") %>
-    </h4>
-  <br/>
-  &nbsp;
-  <br/>
   <div class="row">
     <%
       @resources.filter { |r| r[session[:locale]]}.each do |resource_loc|

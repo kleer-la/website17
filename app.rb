@@ -21,6 +21,7 @@ require './controllers/press_controller'
 require './controllers/training_controller'
 require './controllers/clients_controller'
 require './controllers/about_us_controller'
+require './controllers/home_controller'
 
 include MetaTags
 
@@ -77,20 +78,6 @@ before '/:locale/*' do
   I18n.locale = session[:locale]
 end
 
-get '/home2022' do
-  session[:version] = 2022
-  meta_tags!  title: t('meta_tag.home.title'),
-              description: t('meta_tag.home.description')
-
-  @coming_courses = if session[:locale] == 'es'
-                      coming_courses
-                    else
-                      fake_event_from_catalog(KeventerReader.instance.categories)
-                    end
-
-  erb :'home/index', layout: :'layout/layout2022'
-end
-
 get '/ebooks2022' do
   meta_tags! title: 'Libros'
   meta_tags! description: 'Descripcion libros o recursos'
@@ -98,21 +85,6 @@ get '/ebooks2022' do
   @books = Books.new.load.all
 
   erb :'resources_page/index_books', layout: :'layout/layout2022'
-end
-
-get '/' do
-  session[:version] = 2021
-
-  meta_tags!  title: t('meta_tag.home.title'),
-              description: t('meta_tag.home.description')
-
-  @coming_courses = if session[:locale] == 'es'
-                      coming_courses
-                    else
-                      fake_event_from_catalog(KeventerReader.instance.categories)
-                    end
-
-  erb :'home/index', layout: :'layout/layout2022'
 end
 
 get '/en' do

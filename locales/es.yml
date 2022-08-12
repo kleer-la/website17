@@ -1105,20 +1105,27 @@ es:
   courses_page:
     title: "Catálogo de cursos"
     subtitle: "Impulsa tu crecimiento profesional, el de tus equipos y de tu organización, con nuestros programas de formación en agilidad organizacional."
+    type: ¿Cómo brindamos nuestros cursos?
     in_company:
-      text: "Potencia las habilidades de tus equipos y promueve la agilidad en tu empresa."
-    open:
-      text: "Comparte una experiencia de aprendizaje con colegas."
+      title: In Company
+      text: >-
+        Llevamos nuestras experiencias de aprendizaje a tu organización, podemos personalizar la experiencia 
+        codiseñando contenidos que se adapten a las necesidades y objetivos de tu compañía.
+    public:
+      title: Abierto
+      text: Participa de los cursos publicados en nuestra agenda, inscribete en parejas o grupos para obtener descuentos y comparte una experiencia de aprendizaje única entre colegas.
       button:
         text: "Ver Agenda"
         link: "/entrenamos/todos"
     e-learing:
-      text: "Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta, y cuándo terminar."
+      title: E-Learning
+      text: Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta y cuándo terminar.
       button:
-        text: "Ir a academia"
+        text: "Ir a Academia"
         link: "academia.kleer.la"
     catalog:
       title: "Capacitación profesional en agilidad"
+      more: Ver más
 
   ebooks:
     title: "Libros"
