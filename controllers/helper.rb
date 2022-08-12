@@ -26,6 +26,10 @@ module Helpers
     return categories_string
   end
 
+  def webp_ext(img_path)
+    img_path[0..img_path.rindex('.')] + 'webp'
+  end
+
   def month_es(month_en)
     MONTHS_ES[month_en]
   end

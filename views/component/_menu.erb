@@ -13,7 +13,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
   <div class="container-fluid navbar-content">
     <a id="logo" class="navbar-brand a" href="/<%=session[:locale]%>">
-      <img src="/app/img/black_logo.png" alt="Kleer" />
+      <picture>
+        <source srcset="/app/img/black_logo.webp" type="image/webp">
+        <img src="/app/img/black_logo.png" alt="Kleer" />
+      </picture>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
