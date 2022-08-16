@@ -1,28 +1,30 @@
-<div class="container-fluid containerWithPadding text-center fondo-celeste">
-
-  <div class="col-md-12 no-hpadding">
-    <div class="item">
-      <div class="container row somos">
+<section class="containter" id="aboutus-kleerers">
+      <div class="row somos w-100 m-0">
         <% @kleerers.each do |kleerer| %>
-          <div class="col-sm-3 text-center">
-            <div class="img-container">
-              <img src="<%=kleerer.gravatar_picture_url%>?s=400" class="img-circle">
-            </div>
-            <span class="nombreKleerer"><%=kleerer.name%></span>
-            <% if kleerer.linkedin_url != "" %>
-              <%= external_url_anchor kleerer.linkedin_url%>
-              <i class="fa fa-linkedin"></i>
-              </a>
-            <% end %>
+          <div class="col-md-4 col-lg-3">
+            <div class="text-center kleerer-container">
+              <div class="img-container">
+                <img src="<%=kleerer.gravatar_picture_url%>?s=400" class="rounded-circle">
+              </div>
+              <h5 class="kleerer-name"><%=kleerer.name%></h5>
+              <div>
+                <% if kleerer.linkedin_url != "" %>
+                  <%= external_url_anchor kleerer.linkedin_url%>
+                  <i class="fa fa-linkedin"></i>
+                  </a>
+                <% end %>
 
-            <% if kleerer.twitter_username != "" %>
-              <%= external_url_anchor "https://twitter.com/#{kleerer.twitter_username}"%>
-              <i class="fa fa-twitter"></i>
-              </a>
-            <% end %>
+                <% if kleerer.twitter_username != "" %>
+                  <%= external_url_anchor "https://twitter.com/#{kleerer.twitter_username}"%>
+                  <i class="fa fa-twitter"></i>
+                  </a>
+                <% end %>
+              </div>
+
+            </div>
+
           </div>
         <% end %>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
+
