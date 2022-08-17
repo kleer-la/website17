@@ -111,6 +111,13 @@ get '/agilidad-organizacional' do
   erb :coaching
 end
 
+get '/agilidad-organizacional2022' do
+  @active_tab_coaching = 'active'
+  meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
+  meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  erb :'business_agility/index', layout: :'layout/layout2022'
+end
+
 get '/agilidad-organizacional/mejora-continua' do
   @active_tab_coaching = 'active'
   meta_tags! title: 'Generamos el hábito de mejora continua - Kaizen'
