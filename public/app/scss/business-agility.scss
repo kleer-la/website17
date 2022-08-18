@@ -1,0 +1,75 @@
+
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+
+#businessa-hero{
+
+  margin-top: 100px;
+  margin-bottom: 20%;
+  //height: calc(100vh - 100px);
+}
+
+.businessa-hero__container{
+  margin: 120px 5% 5% 5%;
+  border-radius: 30px;
+  background-color: $primary-yellow;
+  min-height: 560px;
+  height: 70%;
+  position: relative;
+  text-align: center;
+  padding: 70px 20% 20% 20%;
+}
+
+.businessa-hero__title{
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 64px;
+  margin-bottom: 50px;
+}
+
+.businessa-hero__img-container{
+  position: absolute;
+  width: 70%;
+  bottom: -20%;
+  left: 15%;
+
+  .principal-img{
+    width: 100%;
+  }
+}
+
+.down-button{
+  width: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  bottom: -25px;
+}
+
+.businessa-hero__white-triangle{
+  top: 50px;
+  right: -50px;
+}
+
+.businessa-hero__blue-bean{
+  left: 10%;
+  top: 60px
+}
+
+.businessa-hero__lines{
+  left: -40px;
+  bottom: 30px;
+}
+
+.businessa-hero__green-worm{
+  top: 60px;
+  right: -20px;
+}
