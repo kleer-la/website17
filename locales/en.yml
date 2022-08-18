@@ -1743,13 +1743,13 @@ en:
   courses_page:
     title: "Trainings"
     subtitle: >-
-      Boost your professional growth, your teams and your organization, with our training programs that enable organizational agility. 
+      Boost your professional growth, your teams and your organization, with our training programs that enable organizational agility.
       CSM, CSPO and CSD certifications by the Scrum Alliance.
     type: How do we deliver our courses?
     in_company:
       title: In Company
       text: >-
-        We bring our learning experiences to your organization. We can customize the experience by 
+        We bring our learning experiences to your organization. We can customize the experience by
         co-designing content that adapts to the needs and objectives of your company.
     public:
       title: Public
@@ -1778,6 +1778,11 @@ en:
 
   blog2022:
     title: Agile essays and thoughts
-    subtitle: >- 
-      We love to share, to capture our ideas in ink and to undertake self-discovery reflecting and writing 
+    subtitle: >-
+      We love to share, to capture our ideas in ink and to undertake self-discovery reflecting and writing
       on our path in agility. Here we share some of those thoughts with you.
+
+  aboutus:
+    title: Somos Kleer
+    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos
+    text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.

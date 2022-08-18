@@ -1109,7 +1109,7 @@ es:
     in_company:
       title: In Company
       text: >-
-        Llevamos nuestras experiencias de aprendizaje a tu organización, podemos personalizar la experiencia 
+        Llevamos nuestras experiencias de aprendizaje a tu organización, podemos personalizar la experiencia
         codiseñando contenidos que se adapten a las necesidades y objetivos de tu compañía.
     public:
       title: Abierto
@@ -1134,3 +1134,8 @@ es:
   blog2022:
     title: Reflexiones y pensamientos agiles
     subtitle: Nos gusta compartir con la comunidad, plasmar nuestras ideas en la tinta y emprender en la escritura autodescubrimiento y reflexión sobre nuestro camino en la agilidad, compartimos contigo algunos de esos pensamientos.
+
+  aboutus:
+    title: Somos Kleer
+    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos
+    text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
