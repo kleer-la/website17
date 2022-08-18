@@ -18,6 +18,26 @@ $white: #FFFFFF;
   //height: calc(100vh - 100px);
 }
 
+
+@media screen and (max-width:420px) {
+  h1{
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    line-height: 48px !important;
+  }
+  .businessa-hero__container{
+    margin-bottom: 50px;
+    padding: 10% !important;
+    margin: 0 !important;
+  }
+
+  .businessa-hero__img-container{
+    width: 90% !important;
+    left: 5% !important;
+    bottom: -40px !important;
+  }
+}
+
 .businessa-hero__container{
   margin: 120px 5% 5% 5%;
   border-radius: 30px;
@@ -34,6 +54,7 @@ $white: #FFFFFF;
   font-size: 56px;
   line-height: 64px;
   margin-bottom: 50px;
+
 }
 
 .businessa-hero__img-container{
