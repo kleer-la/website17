@@ -1,0 +1,28 @@
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-655974348">
+</script>
+
+<script>
+    var enhanced_conversion_data = {}
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-330738073', { 'allow_enhanced_conversions' : true });
+
+
+    document.addEventListener('DOMContentLoaded', function(){
+        if(window.location.href.includes('order-received')){
+            var clientInfo = document.querySelector('address').innerText.split('\n')
+
+            enhanced_conversion_data.email = document.querySelector('.email strong').innerText
+            enhanced_conversion_data.phone_number = document.querySelector('.woocommerce-customer-details--phone').innerText
+            gtag('event', 'conversion', {
+                'send_to': 'AW-330738073/WLUBCLrjztYDEJnT2p0B',
+                'value': Number(document.querySelector('.total .amount').innerText.replace('€','').replaceAll('.','').replace(',','.')),
+                'currency': 'EUR',
+                'transaction_id': document.querySelector('.order strong').innerText
+            });
+        }});
+
+</script>
