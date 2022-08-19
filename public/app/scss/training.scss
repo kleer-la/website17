@@ -15,7 +15,7 @@ $white: #FFFFFF;
   padding-left: 8%;
   padding-right: 5%;
   margin-bottom: 50px;
-  height: auto;
+
 }
 
 .training-hero__text{
@@ -185,6 +185,7 @@ $white: #FFFFFF;
 @media screen and (max-width:992px) { //lg size
   #training-hero{
     padding: 5% 5% 10% 5%;
+    height: auto;
   }
 
   .training-hero__text{

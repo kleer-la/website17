@@ -226,8 +226,7 @@
 #training-hero {
   padding-left: 8%;
   padding-right: 5%;
-  margin-bottom: 50px;
-  height: auto; }
+  margin-bottom: 50px; }
 
 .training-hero__text {
   padding-bottom: 8%;
@@ -357,7 +356,8 @@
 
 @media screen and (max-width: 992px) {
   #training-hero {
-    padding: 5% 5% 10% 5%; }
+    padding: 5% 5% 10% 5%;
+    height: auto; }
 
   .training-hero__text {
     text-align: center;
@@ -1066,8 +1066,7 @@ footer {
   font-size: 14px; }
 
 .course-card__image {
-  height: 140px;
-  width: 200px; }
+  height: 140px; }
 
 .course-card__flags {
   position: absolute;
