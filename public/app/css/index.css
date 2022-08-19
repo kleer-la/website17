@@ -261,6 +261,9 @@
   width: calc(100vw - 14%); }
 
 .training-info__subcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   padding-left: 10%;
@@ -542,7 +545,7 @@
   margin: 15px 15px 0 15px;
   padding: 5px;
   border-radius: 50%;
-  background-color: #FFE600; }
+  background-color: #FFFFFF; }
   .img-container :hover {
     transform: scale(1.2); }
 

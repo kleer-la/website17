@@ -1111,6 +1111,9 @@ es:
       text: >-
         Potencia las habilidades de tus equipos y promueve la Agilidad en tu empresa.
         Brindamos soluciones de aprendizaje adaptadas a tu organización. Diseñamos una experiencia personalizada con capacitaciones ajustadas a las necesidades y objetivos de tu empresa.
+      button:
+        text: "Catálogo"
+        link: "#training-courses"
 
     public:
       title: Abierto
@@ -1118,6 +1121,7 @@ es:
       button:
         text: "Ver Agenda"
         link: "/entrenamos/todos"
+
     e-learing:
       title: E-Learning
       text: Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta y cuándo terminar.
@@ -1138,5 +1142,8 @@ es:
 
   aboutus:
     title: Somos Kleer
-    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos
+    subtitle: "<p>Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.</p>
+    <p>
+    Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
+    </p>"
     text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
