@@ -53,8 +53,9 @@ before do
                        'es'
                      end
 
-  if ['kleer.la', 'kleer.us'].include? request.host
-    redirect "https://www.#{request.host}#{request.path}"
+  if ['kleer.us', 'kleer.es'].include? request.host
+    # redirect "https://www.#{request.host}#{request.path}"
+    redirect "https://www.kleer.la#{request.path}"
   else
     @base_title = 'Agile Coaching, Consulting & Training'
     meta_tags! title: @base_title
