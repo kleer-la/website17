@@ -12,4 +12,8 @@ class JsonAPI
   def ok?
     @response.status == 200
   end
+
+  def get_response()
+    @doc
+  end
 end

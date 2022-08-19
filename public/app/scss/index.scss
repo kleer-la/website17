@@ -1,6 +1,11 @@
 @import 'home';
 @import 'resources';
 @import 'training';
+@import 'blog';
+@import 'news';
+@import 'clients';
+@import 'about_us';
+@import "business-agility";
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css?family=Mali&display=swap');
@@ -176,6 +181,10 @@ img {
   position: absolute;
 }
 
+.mobile_figure{
+  display: none;
+}
+
 .hidden-element{
   display: none;
 }
@@ -183,6 +192,11 @@ img {
 @media screen and (max-width: 992px){
   .desktop_figure{
     display: none;
+  }
+
+  .mobile_figure{
+    position: absolute;
+    display: flex !important;
   }
 }
 
@@ -207,9 +221,22 @@ img {
     font-size: 20px;
     line-height: 26px;
   }
+  h5{
+    font-size: 18px;
+    line-height: 24px;
+  }
 
   .desktop_figure{
     display: none;
+  }
+
+  .mobile_figure{
+    position: absolute;
+    display: flex;
+  }
+
+  .only-desktop{
+    display: none !important;
   }
 
   .social-container{
@@ -223,6 +250,19 @@ img {
   max-height: 150vh;
   height: calc(100vh - 100px);
   margin-top: 100px;
+}
+
+.generic-hero{
+  max-height: 150vh;
+  height: calc(70vh - 100px);
+  margin-top: 100px;
+  position: relative;
+  background-color: $primary-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 30%;
 }
 
 .hero__text{
@@ -451,7 +491,7 @@ footer {
 //course card
 .course-card{
   width: 100% !important;
-  max-width: 250px !important;
+  max-width: 260px !important;
   padding: 24px 24px 32px;
   gap: 32px;
   isolation: isolate;
@@ -471,8 +511,7 @@ footer {
 }
 
 .course-card__body{
-  height: 300px;
-  padding: 0;
+  height: 270px;  padding: 0;
 }
 
 .course-card__subtitle{
@@ -483,7 +522,6 @@ footer {
 
 .course-card__image{
   height: 140px;
-  width: 200px;
 }
 
 .course-card__flags{
@@ -605,3 +643,14 @@ footer {
   }
 }
 
+//generic hero
+
+.generic-hero__red-circle{
+  bottom: 0;
+  right: -60px;
+}
+
+.generic-hero__yellow-bean{
+  top: 50px;
+  left: 30px
+}

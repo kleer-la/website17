@@ -31,6 +31,10 @@ def coming_courses
   KeventerReader.instance.coming_commercial_events
 end
 
+get '/agenda' do
+  erb :'training/agenda/index', layout: :'layout/layout2022'
+end
+
 get '/entrenamos/:country?' do |country|
   entrenamos_view(country)
 end
@@ -52,12 +56,17 @@ def entrenamos_view(country = nil)
   end
 end
 
-get '/catalogo' do
+get('/catalogo2022') { session[:version] = 2022; catalog }
+get('/catalogo') { catalog }
+
+def catalog
   @active_tab_entrenamos = 'active'
   meta_tags! title: 'Capacitación empresarial en agilidad organizacional'
   meta_tags! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
   @academy = AcademyCourses.new.load.all
+
+  @events = KeventerReader.instance.catalog_events()
 
   if session[:version] == 2022
     @coming_courses = if session[:locale] == 'es'

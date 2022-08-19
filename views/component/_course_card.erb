@@ -1,7 +1,7 @@
 <div class="card course-card" style="width: 18rem;">
   <div class="course-card__image-container">
   <%#TODO: alt text%>
-    <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...'}%>
+    <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...', has_webp: @course[:has_webp]}%>
 
       <div class="course-card__flags">
         <% if @course[:is_open] %>
@@ -18,8 +18,8 @@
   </div>
   <div class="card-body course-card__body">
     <div>
-      <% if defined? (@course[:category]) %>
-        <p class="course-card__categories"><%= @course[:category] %></p>
+      <% if defined? (@course[:categories]) and not @course[:categories].nil? %>
+        <p class="course-card__categories"><%= @course[:categories][0...-2] %></p>
       <%end %>
       <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
     </div>
@@ -38,17 +38,16 @@
         <img class="icon-card" src="/app/img/icons/VideoCamera.svg" />
         Online <%#= @course[:country]%>
       </li>
-      <%if @course[:certified] > 0%>
-        <li class="course-card__item">
-          <img class="icon-card" src="/app/img/icons/Medal.svg" />
-          <%= if @course[:certified] == 1
-                t('home2022.home_courses.card.certified.kleer')
-             else
-                t('home2022.home_courses.card.certified.scrumalliance')
-             end
-          %>
-        </li>
-      <%end%>
+      <%#if @course[:certified] > 0%>
+<!--        <li class="course-card__item">-->
+<!--          <img class="icon-card" src="/app/img/icons/Medal.svg" />-->
+<!--          # if @course[:certified] == 1-->
+<!--                t('home2022.home_courses.card.certified.kleer')-->
+<!--             # else-->
+<!--                # t('home2022.home_courses.card.certified.scrumalliance')-->
+<!--             # end -->
+<!--        </li>-->
+      <%#end%>
     </ul>
   </div>
   <div class="text-center mt-4">

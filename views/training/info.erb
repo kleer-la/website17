@@ -1,39 +1,66 @@
 <section id="training-info">
-  <div class="container training-info__container">
-    <h4 class="text-center mb-5">¿Cómo brindamos nuestros cursos?</h4>
+  <div class="training-info__container">
+    <h4 class="text-center mb-5"><%=t('courses_page.type')%></h4>
     <div class="row">
       <div class="col-md-4">
         <div class="training-info__subcontainer">
-          <h5 >In Company</h5>
-          <ul>
-            <li>lorem ipsum....</li>
-            <li>lorem ipsum....</li>
-            <li>lorem ipsum....</li>
-          </ul>
+          <div>
+            <h5 ><%=t('courses_page.in_company.title')%></h5>
+            <ul>
+              <li><%= t("courses_page.in_company.text") %></li>
+              <!--            <li>lorem ipsum....</li>-->
+              <!--            <li>lorem ipsum....</li>-->
+            </ul>
+          </div>
+          <div class="btn-center-container">
+            <a
+              class="my-primary-button training-info__redir-button"
+              href="<%= t("courses_page.in_company.button.link") %>"
+            ><%= t("courses_page.in_company.button.text") %></a>
+          </div>
         </div>
       </div>
       <div class="col-md-4 border-start border-end">
         <div class="training-info__subcontainer">
-          <h5>Abiertos</h5>
-          <ul>
-            <li>lorem ipsum....</li>
-            <li>lorem ipsum....</li>
-            <li>lorem ipsum....</li>
-          </ul>
-          <a class="my-primary-button training-info__redir-button">Ver Agenda</a>
+          <div>
+            <h5><%=t('courses_page.public.title')%></h5>
+            <ul>
+              <li><%= t("courses_page.public.text") %></li>
+              <!--            <li>lorem ipsum....</li>-->
+              <!--            <li>lorem ipsum....</li>-->
+            </ul>
+          </div>
+
+          <div class="btn-center-container">
+            <a class="my-primary-button training-info__redir-button"
+              href="<%= t("courses_page.public.button.link") %>">
+              <%= t("courses_page.public.button.text") %>
+            </a>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="training-info__subcontainer">
-          <h5>E-learning</h5>
-          <ul>
-            <li>lorem ipsum....</li>
-            <li>lorem ipsum....</li>
-            <li>lorem ipsum....</li>
-          </ul>
-          <a class="my-primary-button training-info__redir-button">Academia</a>
+          <div>
+            <h5><%= t("courses_page.e-learing.title") %></h5>
+            <ul>
+              <li><%= t("courses_page.e-learing.text") %></li>
+              <!--            <li>lorem ipsum....</li>-->
+              <!--            <li>lorem ipsum....</li>-->
+            </ul>
+          </div>
+
+          <div class="btn-center-container">
+            <a
+              class="my-primary-button training-info__redir-button"
+              href="<%= t("courses_page.e-learing.button.link") %>"
+            ><%= t("courses_page.e-learing.button.text") %></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <img src="/app/img/view_figures/yellow_triangle.svg" class="desktop_figure training-hero_yellow-triangle" />
+  <img src="/app/img/view_figures/blue_circle.svg" class="desktop_figure training-hero_blue-circle" />
+  <img src="/app/img/view_figures/rustic_sigsac.svg" class="desktop_figure training-hero_rustic-sigsac" />
 </section>

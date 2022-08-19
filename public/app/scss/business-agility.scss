@@ -1,0 +1,132 @@
+
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+
+#businessa-hero{
+
+  margin-top: 100px;
+  margin-bottom: 20%;
+  //height: calc(100vh - 100px);
+}
+
+
+
+.businessa-hero__container{
+  margin: 120px 5% 5% 5%;
+  border-radius: 30px;
+  background-color: $primary-yellow;
+  min-height: 560px;
+  height: 70%;
+  position: relative;
+  text-align: center;
+  padding: 70px 20% 20% 20%;
+}
+
+.businessa-hero__title{
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 64px;
+  margin-bottom: 50px;
+
+}
+
+.businessa-hero__img-container{
+  position: absolute;
+  width: 70%;
+  bottom: -20%;
+  left: 15%;
+
+  .principal-img{
+    width: 100%;
+  }
+}
+
+.down-button{
+  width: 50px;
+  position: absolute;
+  left: calc(50% - 25px);
+  bottom: -25px;
+}
+
+.howto__item{
+  max-width: 284px;
+  width: 100%;
+  height: 218px;
+  border-radius: 16px;
+  background-color: $primary-yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 0px;
+}
+
+.businessa-hero__white-triangle{
+  top: 50px;
+  right: -50px;
+}
+
+.businessa-hero__blue-bean{
+  position: absolute;
+  left: 10%;
+  top: 60px
+}
+
+.businessa-hero__lines{
+  position: absolute;
+  left: -40px;
+  bottom: 30px;
+}
+
+.businessa-hero__green-worm{
+  position: absolute;
+  top: 60px;
+  right: -20px;
+}
+
+
+@media screen and (max-width:420px) {
+  h1{
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    line-height: 48px !important;
+  }
+  .businessa-hero__container{
+    border-radius: 0 0 30px 30px !important;
+    padding: 10% !important;
+    margin: 0 0 110px 0 !important;
+  }
+
+  .businessa-hero__img-container{
+    width: 90% !important;
+    left: 5% !important;
+    bottom: -40px !important;
+  }
+
+  .businessa-hero__blue-bean{
+    top: 20px !important;
+    left: -20% !important;
+  }
+
+  .businessa-hero__lines{
+    bottom: -80px !important;
+    left: auto !important;
+    right: 4% !important;
+    transform: scaleX(-0.7);
+  }
+
+  .businessa-hero__green-worm{
+    top: 30px !important;
+    right: -20% !important;
+  }
+
+}

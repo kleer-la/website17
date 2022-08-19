@@ -179,6 +179,9 @@ es:
   blog:
     readit: "Continuar leyendo"
     back: "<< Volver"
+    home: Inicio
+    article: Artículo
+
   recursos:
     title: "Recursos y materiales sobre agilidad"
     lista:
@@ -541,7 +544,7 @@ es:
     title1: "SECCIÓN 1 - ¿QUÉ HACEMOS CON LA INFORMACIÓN QUE NOS DAS?"
     text1: "Cuando te registras en un curso que te interesa, como parte del proceso de compra venta, nosotros recolectamos la información personal que nos das tales como nombre, dirección y correo electrónico. Esta información la utilizamos para poder contactarte y enviarte la información del curso. Tu teléfono únicamente lo utilizaremos para poder comunicarnos rápidamente contigo a la hora de informarte sobre un cambio en el curso que te hayas registrado. Cuando navegas en nuestro sitio también recibimos de manera automática la dirección de protocolo de internet de tu computadora (IP) con el fin de proporcionarnos información que nos ayuda a conocer acerca de su navegador, sistema operativo y país de residencia. Sumado a esto, si nos das tu permiso, podremos enviarte correos electrónicos con nuestro newsletter y novedades de cursos."
     title2: "SECCIÓN 2 - CONSENTIMIENTO"
-    text2: "¿Cómo obtienen mi consentimiento? Cuando nos provees tu información personal para completar una transacción, crear una orden de compra, concretar un delivery de entrenamiento o coaching o hacer una devolución, implicamos que aceptas la recolección y uso por esa razón específica solamente. Si te pedimos tu información personal por una razón secundaria, como marketing, te pediremos directamente tu expreso consentimiento, o te daremos la oportunidad de negarte.<br>¿Cómo puedo anular mi consentimiento? Si luego de haber aceptado cambias de opinión, puedes anular tu consentimiento para que te contactemos, por la recolección, uso o divulgación de tu información, en cualquier momento, contactándonos a info@kleer.la o escribiéndonos a: Kleer SRL Lavalle 362 4to Piso, Buenos Aires, CP 1047, Argentina."
+    text2: "¿Cómo obtienen mi consentimiento? Cuando nos provees tu información personal para completar una transacción, crear una orden de compra, concretar un delivery de entrenamiento o coaching o hacer una devolución, implicamos que aceptas la recolección y uso por esa razón específica solamente. Si te pedimos tu información personal por una razón secundaria, como marketing, te pediremos directamente tu expreso consentimiento, o te daremos la oportunidad de negarte.<br>¿Cómo puedo anular mi consentimiento? Si luego de haber aceptado cambias de opinión, puedes anular tu consentimiento para que te contactemos, por la recolección, uso o divulgación de tu información, en cualquier momento, contactándonos a info@kleer.la"
     title3: "SECCIÓN 3 - DIVULGACIÓN"
     text3: "Podemos divulgar tu información personal únicamente si se nos requiere por ley o si violas nuestros Términos de Servicio."
     title4: "SECCIÓN 4 - SERVICIOS DE TERCERAS PARTES"
@@ -551,7 +554,7 @@ es:
     title6: "SECCIÓN 6 - CAMBIOS A ESTA POLÍTICA DE PRIVACIDAD"
     text6: "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento, así que por favor revísala frecuentemente. Cambios y aclaraciones entrarán en vigencia inmediatamente después de su publicación en el sitio web. Si hacemos cambios materiales a esta política, notificaremos aquí que ha sido actualizada, por lo que cual estás enterado de qué información recopilamos, cómo y bajo qué circunstancias, si las hubiere, la utilizamos y/o divulgamos. Si nuestro sitio es adquirido o fusionado con otra empresa, tu información puede ser transferida a los nuevos propietarios, para que podamos seguir vendiéndote servicios."
     title7: "PREGUNTAS E INFORMACIÓN DE CONTACTO"
-    text7: "Si quieres: acceder, corregir, enmendar o borrar cualquier información personal que poseamos sobre ti, registrar una queja, o simplemente quieres más información contactanos a info@kleer.la o por correo postal a Kleer SRL [Lavalle 362 4to Piso, Buenos Aires, C, 1047, Argentina]"
+    text7: "Si quieres: acceder, corregir, enmendar o borrar cualquier información personal que poseamos sobre ti, registrar una queja, o simplemente quieres más información contactanos a info@kleer.la o por correo postal a Kleer SRL [Billinghurst 1935 1ro A, Buenos Aires, C, 1425, Argentina]"
   terms:
     title: "Términos de servicio"
     title1: "INFORMACIÓN GENERAL"
@@ -975,26 +978,16 @@ es:
           inside: true
         },
         {
-          text: 'Libros',
-          url: '/libros',
+          text: 'Prensa',
+          url: '/prensa',
           inside: true
         }
       ]
     }
     - {
       text: 'Somos',
-      options: [
-        {
-          text: 'Nosotros',
-          url: '/somos',
-          inside: true
-        },
-        {
-          text: 'Prensa',
-          url: '/prensa',
-          inside: true
-        }
-      ]
+      url: '/somos',
+      inside: true
     }
 
   footer_menu:
@@ -1028,7 +1021,10 @@ es:
             title: 'Blog',
             url: '/blog'
           },
-          { }
+          {
+            title: 'Prensa',
+            url: '/prensa'
+          }
         ]
     }
     - {
@@ -1106,6 +1102,100 @@ es:
     title: "Recursos y materiales sobre agilidad"
     subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
 
+  courses_page:
+    title: Capacitación profesional en Agilidad
+    subtitle: Desarrolla tus habilidades y la de tus equipos. Ofrecemos programas de formación, desde niveles iniciales hasta avanzados. En Kleer ponemos foco en un aprendizaje participativo y dinámico, basado en comprender y experimentar tempranamente los conceptos y prácticas. Capacitaciones sobre Scrum, Mejora Continua, Agile Coaching, Agile Facilitator, Design Thinking, Product Discovery, desarrollo de Liderazgo Ágil y más.
+    type: Nuestra oferta de cursos en tres modalidades
+    in_company:
+      title: In Company
+      text: >-
+        Potencia las habilidades de tus equipos y promueve la Agilidad en tu empresa.
+        Brindamos soluciones de aprendizaje adaptadas a tu organización. Diseñamos una experiencia personalizada con capacitaciones ajustadas a las necesidades y objetivos de tu empresa.
+      button:
+        text: "Catálogo"
+        link: "#training-courses"
+
+    public:
+      title: Abierto
+      text: Eleva tus habilidades profesionales.Únete a nuestra propuesta de cursos abiertos al público, registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar la Agilidad al siguiente nivel.
+      button:
+        text: "Ver Agenda"
+        link: "/entrenamos/todos"
+
+    e-learing:
+      title: E-Learning
+      text: Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta y cuándo terminar.
+      button:
+        text: "Ir a Academia"
+        link: "academia.kleer.la"
+    catalog:
+      title: "Capacitación profesional en agilidad"
+      more: Ver más
+
   ebooks:
     title: "Libros"
     subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"
+
+  blog2022:
+    title: Reflexiones y pensamientos agiles
+    subtitle: Nos gusta compartir con la comunidad, plasmar nuestras ideas en la tinta y emprender en la escritura autodescubrimiento y reflexión sobre nuestro camino en la agilidad, compartimos contigo algunos de esos pensamientos.
+
+  aboutus:
+    title: Somos Kleer
+    subtitle: "<p>Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.</p>
+    <p>
+    Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
+    </p>"
+    text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
+
+  business-agility:
+    howto:
+      items:
+        - {
+          text: Diseño organizacional,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Product Strategy,
+          img: /app/img/icons/Strategy.svg,
+        }
+        - {
+          text: Desarrollo de equipos ágiles - Agile team building,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Facilitación de eventos ágiles,
+          img: /app/img/icons/Microphone.svg,
+        }
+        - {
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+          text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+        }
+        - {
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+           text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+        }

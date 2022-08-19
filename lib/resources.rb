@@ -9,7 +9,6 @@ class Resources
 
   def load(file = File.read('./lib/resources_storage.json'))
     @resources = JSON.parse(file)['resources']
-    # copy_lang('es', 'en')
     self
   end
 

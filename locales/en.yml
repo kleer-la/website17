@@ -228,6 +228,9 @@ en:
   blog:
     readit: Read more
     back: << Back
+    home: Home
+    article: Post
+
   recursos:
     title: Resources
     lista:
@@ -847,7 +850,7 @@ en:
       organizacional con los cuales colaboramos para juntos co-crear procesos
       adecuados para su contexto y propósito.</p>
   press:
-    title: Press
+    title: News
     subtitle: Kleer in the media!
     description: >-
       We believe in the power of shared knowledge in action. That's why we share
@@ -1102,7 +1105,7 @@ en:
       Personal Information, as described above. For example, we use Mailchimp to
       send information about our courses. We also use Google Analytics to help
       us understand how our customers use the Site--you can read more about how
-      Google uses your Personal Information here: 
+      Google uses your Personal Information here:
       https://www.google.com/intl/en/policies/privacy/.You can also opt-out of
       Google Analytics here:
       https://tools.google.com/dlpage/gaoptout.<br>Finally, we may also share
@@ -1135,8 +1138,7 @@ en:
     text7: >-
       For more information about our privacy practices, if you have questions,
       or if you would like to make a complaint, please contact us by e-mail
-      info@kleer.la or by mail using the details provided below: Lavalle 362
-      Piso 4, Ciudad Autónoma de Buenos Aires, B, 1195, Argentina
+      info@kleer.la
   terms:
     title: Terms of Service
     title1: OVERVIEW
@@ -1411,7 +1413,7 @@ en:
     text19: >-
       These Terms of Service and any separate agreements whereby we provide you
       Services shall be governed by and construed in accordance with the laws of
-      Lavalle 362 Piso 4, Ciudad Autónoma de Buenos Aires, B, 1195, Argentina.
+      Billinghurst 1935 1ro A, Buenos Aires, C, 1425, Argentina.
     title20: SECTION 19 - CHANGES TO TERMS OF SERVICE
     text20: >-
       You can review the most current version of the Terms of Service at any
@@ -1424,7 +1426,7 @@ en:
     title21: SECTION 20 - CONTACT INFORMATION
     text21: >-
       Questions about the Terms of Service should be sent to us at
-      constanza.molinari@kleer.la.
+      info@kleer.la.
   event:
     course: Course
     time_zone: 'Time Zone:'
@@ -1736,11 +1738,51 @@ en:
       title: Find out about all the news of the agile world
       button:
         title: Suscribe
+
+#  TODO: migrar a ingles
+  courses_page:
+    title: Professional agility training
+    subtitle: >-
+      Boost your professional growth, your teams and your organization, with our training programs that enable organizational agility.
+      CSM, CSPO and CSD certifications by the Scrum Alliance.
+    type: How do we deliver our courses?
+    in_company:
+      title: In Company
+      text: >-
+        We bring our learning experiences to your organization. We can customize the experience by
+        co-designing content that adapts to the needs and objectives of your company.
+    public:
+      title: Public
+      text: Enrol in the published courses, sign up in pairs or groups to obtain discounts and share a unique learning experience among colleagues.
+      button:
+        text: "Public courses"
+        link: "/entrenamos/todos"
+    e-learing:
+      title: Self-paced
+      text: Self-paced online courses. You decide when to start, the rhythm you like, and when to finish.
+      button:
+        text: "Academia"
+        link: "academia.kleer.la"
+    catalog:
+      title: "Professional agility training"
+      more: See more
+
   resources:
-    title: ''
+    title: Resources
     subtitle: >-
       We dream a world where valuable information is shared by everyone. Here,
       our bit of knowledge.
   ebooks:
     title: ''
     subtitle: ''
+
+  blog2022:
+    title: Agile essays and thoughts
+    subtitle: >-
+      We love to share, to capture our ideas in ink and to undertake self-discovery reflecting and writing
+      on our path in agility. Here we share some of those thoughts with you.
+
+  aboutus:
+    title: Somos Kleer
+    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos
+    text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.

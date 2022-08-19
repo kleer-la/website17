@@ -8,7 +8,7 @@ Feature: Categories
 	Scenario: Category not found
 		Given I visit the "unknown" categoria page
 		Then I should get a 404 error
-		And the page title should be "404 - No encontrado"
+		And the page title should be "Página no encontrada"
 		And I should see "Página no encontrada"
 
 	Scenario: Event type list in Category Landing Page

@@ -2,7 +2,7 @@
 <div class="header-blog">
   <div class="container"><h1><%= @where%> / <span>Inicio</span></h1></div>
 </div>
-<%where_uri= "/#{session[:locale]}/#{@where.downcase.gsub(' ','-')}/" %>
+<%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
 
 <div class="container mainContent blog">
 	<div class="container fondo-blanco contenedor-generico">

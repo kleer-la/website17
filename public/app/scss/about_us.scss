@@ -1,0 +1,104 @@
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+
+#aboutus-info{
+  width: 100%;
+  padding: 5% 30px 5% 30px;
+}
+
+#aboutus-kleerers{
+  padding: 20px 10% 20px 10%;
+}
+.kleerer-container{
+  background-color: $primary-blue;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 20px;
+  height: 350px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img-container {
+  margin: 15px 15px 0 15px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: $white;
+
+  :hover{
+    transform: scale(1.2);
+  }
+}
+
+.kleerer-name{
+  text-transform: uppercase;
+  height: 30px;
+}
+
+////////////////////////////
+
+.brojo {border: 1px #f00 solid;}
+
+.header-about-us {
+  background: url(../img/somos.jpg);
+  background-size: cover;
+  height: 400px;
+  background-position: center center;
+  @media(min-width:1024px) {
+    background-position: center -110px;
+  }
+}
+
+h3.title-somos {
+  font-size: 22px;
+}
+@media (max-width: 767px) {
+  .somos .col-sm-3 {
+    margin-bottom: 40px;
+  }
+}
+
+.vSpace {
+  display: block;
+  height: 20px;
+}
+
+.somos .fa {
+  font-size: 22px;
+  color: #fff; }
+.somos .fa:hover {
+  color: #000; }
+
+.img-circle {
+  width: 160px;
+  filter: grayscale(100%); }
+  .img-circle:hover {
+    filter: grayscale(0); }
+.img-circle {
+      width: auto;
+      margin: 0 auto;
+    }
+
+
+
+.img-trainer {
+  position: relative;
+  margin-bottom: 10px;
+  .img-name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+}

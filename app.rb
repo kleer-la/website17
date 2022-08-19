@@ -19,6 +19,9 @@ require './controllers/helper'
 require './controllers/blog_controller'
 require './controllers/press_controller'
 require './controllers/training_controller'
+require './controllers/clients_controller'
+require './controllers/about_us_controller'
+require './controllers/home_controller'
 
 include MetaTags
 
@@ -50,8 +53,9 @@ before do
                        'es'
                      end
 
-  if ['kleer.la', 'kleer.us'].include? request.host
-    redirect "https://www.#{request.host}#{request.path}"
+  if ['kleer.us', 'kleer.es'].include? request.host
+    # redirect "https://www.#{request.host}#{request.path}"
+    redirect "https://www.kleer.la#{request.path}"
   else
     @base_title = 'Agile Coaching, Consulting & Training'
     meta_tags! title: @base_title
@@ -75,20 +79,6 @@ before '/:locale/*' do
   I18n.locale = session[:locale]
 end
 
-get '/home2022' do
-  session[:version] = 2022
-  meta_tags!  title: t('meta_tag.home.title'),
-              description: t('meta_tag.home.description')
-
-  @coming_courses = if session[:locale] == 'es'
-                      coming_courses
-                    else
-                      fake_event_from_catalog(KeventerReader.instance.categories)
-                    end
-
-  erb :'home/index', layout: :'layout/layout2022'
-end
-
 get '/ebooks2022' do
   meta_tags! title: 'Libros'
   meta_tags! description: 'Descripcion libros o recursos'
@@ -96,29 +86,6 @@ get '/ebooks2022' do
   @books = Books.new.load.all
 
   erb :'resources_page/index_books', layout: :'layout/layout2022'
-end
-
-get '/' do
-  session[:version] = 2021
-
-  #Old version
-  # meta_tags! title: 'Agile Coaching, Consulting & Training'
-  # meta_tags! description: 'Acompañamos hacia la agilidad organizacional.' \
-  #                     ' Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
-  #
-  # @kleerers = KeventerReader.instance.kleerers session[:locale]
-  # erb :index, layout: false
-
-  meta_tags!  title: t('meta_tag.home.title'),
-              description: t('meta_tag.home.description')
-
-  @coming_courses = if session[:locale] == 'es'
-                      coming_courses
-                    else
-                      fake_event_from_catalog(KeventerReader.instance.categories)
-                    end
-
-  erb :'home/index', layout: :'layout/layout2022'
 end
 
 get '/en' do
@@ -143,6 +110,13 @@ get '/agilidad-organizacional' do
   meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
+end
+
+get '/agilidad-organizacional2022' do
+  @active_tab_coaching = 'active'
+  meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
+  meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  erb :'business_agility/index', layout: :'layout/layout2022'
 end
 
 get '/agilidad-organizacional/mejora-continua' do
@@ -208,9 +182,7 @@ get '/recursos' do
 
   @resources = Resources.new.load.all
 
-  return erb :'resources_page/index', layout: :'layout/layout2022' if session[:version] == 2022
-
-  erb :recursos
+  erb :'resources_page/index', layout: :'layout/layout2022'
 end
 
 get '/recursos/primeros_pasos' do
@@ -264,46 +236,6 @@ get '/categoria/:category_codename' do
   end
 end
 
-get '/somos' do
-  @active_tab_somos = 'active'
-  meta_tags! title: "#{@base_title} | Somos"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :somos
-end
-
-get '/nuestra-filosofia' do
-  @active_tab_somos = 'active'
-  meta_tags! title: "#{@base_title} | Nuestra filosofía"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :nuestra_filosofia
-end
-
-get '/prensa' do
-  @active_tab_prensa = 'active'
-  meta_tags! title: "#{@base_title} | Prensa"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :prensa
-end
-
-get '/privacy' do
-  @active_tab_privacidad = 'active'
-  meta_tags! title: "#{@base_title} | Declaración de privacidad"
-  erb :privacy
-end
-
-get '/terms' do
-  @active_tab_terminos = 'active'
-  meta_tags! title: "#{@base_title} | Terminos y condiciones"
-  erb :terms
-end
-
-get '/clientes' do
-  meta_tags! title: "#{@base_title} | Nuestros clientes"
-  meta_tags! description: 'Kleer - Coaching & Training - Estas organizaciones confían en nosotros'
-
-  erb :clientes
-end
-
 get '/last-tweet/:screen_name' do
   reader = TwitterReader.new
   return reader.last_tweet(params[:screen_name]).text
@@ -338,11 +270,6 @@ get '/preguntas-frecuentes/certified-scrum-developer' do
 end
 
 # LEGACY ====================
-
-not_found do
-  meta_tags! title: '404 - No encontrado'
-  erb :error_404
-end
 
 private
 

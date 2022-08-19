@@ -1,0 +1,100 @@
+
+<section class="container ps-5 w-100" id="content">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row ">
+        <div class="mb-4">
+          <h4 class=""><%=t("coaching.subtitle")%></h4>
+          <%=t("coaching.text.top")%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7 contenedor-main-izq">
+          <%if session[:locale] == 'es' # show product details %>
+            <p class='lead'>Agilidad Organizacional</p>
+            <img src='/app/img/coaching_transformacion_organizacional.jpg' alt='Transformación Organizacional' title='Transformación Ágil' class='image_coaching' />
+            <p>Acompañamos el proceso de <b>transformación digital</b> de una organización hacia un enfoque ágil y sostenible.</p>
+            <p>
+              Ayudamos a definir, adoptar y generar el cambio en cuatro ejes: Cultura, Negocio, Metodología y Técnica.
+            </p>
+            <ul>
+              <li>Agile Leadership</li>
+              <li>Change Management</li>
+              <li>Business Agility</li>
+
+            </ul>
+
+            <a href='mailto:coaching@kleer.la?subject=Transformación Organizacional' class='btn btn-info btn-kleer'><%=t('coaching.contact_us')%></a>
+            <hr>
+
+            <p class='lead'>Equipos Ágiles</p>
+            <img src='/app/img/coaching_equipos_agiles.jpg' alt='Equipos ágiles' title='Transformación Ágil' class='image_coaching' />
+            <p>Utilizamos metodologías de trabajo que ponen foco en las personas y sus interacciones para lograr equipos empoderados de alta performance.
+            </p>
+            <ul>
+              <li>Scrum Jump Start</li>
+              <li><a href='/es/agilidad-organizacional/mejora-continua'>Mejora Continua (Kaizen)</a></li>
+              <li>Adopción de metodologías Lean y Kanban</li>
+              <li>Incepción de Proyectos</li>
+            </ul>
+
+            <a href='mailto:coaching@kleer.la?subject=Equipos Ágiles' class='btn btn-info btn-kleer'><%=t('coaching.contact_us')%></a>
+            <hr>
+
+            <p class='lead'>Desarrollo de Software</p>
+            <img src='/app/img/coaching_desarrollo_software.jpg' alt='Desarrollo de software' title='Transformación Ágil' class='image_coaching' />
+            <p>El software soporta y habilita al negocio. La forma en que se crea y evoluciona incide en la agilidad de la organización en su conjunto. </p>
+            <p>Colaboramos en la incorporación de prácticas y herramientas que permiten que el proceso completo, desde la ideación a la operación, se realice en ciclos cortos y con alta calidad.</p>
+            <ul>
+              <li>DevOps</li>
+              <li>Arquitectura ágil de software</li>
+              <li>XP: TDD, refactoring, coding standards</li>
+              <li>Lean UX</li>
+              <li>Testing / QA</li>
+            </ul>
+
+            <a href='mailto:coaching@kleer.la?subject=Desarrollo de Software' class='btn btn-info btn-kleer'><%=t('coaching.contact_us')%></a>
+            <hr>
+
+            <p class='lead'>Innovación de Productos</p>
+            <img src='/app/img/coaching_innovacion.jpg' alt='Transformación Organizacional' title='Innovación de Productos' class='image_coaching' />
+
+            <p>Aceleramos el descubrimiento y la creación de productos maximizando la entrega continua de valor al negocio. Acompañamos al proyecto desde su inicio para lograr resultados rápidos y valiosos.</p>
+
+            <ul>
+              <li>Lean Product Management</li>
+              <li>Innovation Strategy</li>
+              <li>Design Thinking</li>
+              <li>Lean Startup</li>
+            </ul>
+
+            <a href='mailto:coaching@kleer.la?subject=Innovación de Productos' class='btn btn-info btn-kleer'><%=t('coaching.contact_us')%></a>
+            <hr/>
+            <p><a href='https://www.kleer.la/es/clientes'>Conocé algunos casos de éxito de nuestros clientes:</a></p>
+
+            <p><a href='prensa/casos/equipos-scrum-en-suramericana-2015'>Paradigma Ágil en <b>Sura</b></a></p>
+            <p>
+              <a href='prensa/casos/equipos-scrum-en-suramericana-2015'>
+                <img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png'  style='width:268px' alt='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' title='Carlos Hurtado nos cuenta su experiencia de trabajo con Kleer en Sura' align='left' height='160'/>
+                &nbsp;<img src='https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura2.png' style='width:268px' alt='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' title='Valentina Sierra cuenta el impacto que tuvo el equipo de tesorería de Sura al aplicar métodos y prácticas Ágiles' height='160'/>
+              </a></p>
+            <hr/>
+          <%end%>
+          <h2><%=t("coaching.tabs.benefits.title")%></h2>
+          <%=t("coaching.tabs.benefits.text")%>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="alertBox">
+          <%=t("coaching.text.bottom")%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <img src="/img/agilidad-organizacional.jpg" alt="Agilidad organizacional" class="agilidad-image visible-xs">
+    </div>
+  </div>
+
+</section>
+
