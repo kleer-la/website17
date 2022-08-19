@@ -27,7 +27,8 @@ $white: #FFFFFF;
 }
 
 #training-info{
-  min-height: 100vh;
+  max-height: 500px;
+  height: 80vh;
   width: 100vw;
   display: flex;
   align-items: center;

@@ -61,7 +61,6 @@ class EventType
   end
 
   def load_complete_event(hash_event) #json provider
-    # puts hash_event['specific_subtitle']
     @id = hash_event['slug']
     @duration = hash_event['duration']
     @lang = hash_event['lang']
