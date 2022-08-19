@@ -19,24 +19,6 @@ $white: #FFFFFF;
 }
 
 
-@media screen and (max-width:420px) {
-  h1{
-    font-weight: 600 !important;
-    font-size: 40px !important;
-    line-height: 48px !important;
-  }
-  .businessa-hero__container{
-    margin-bottom: 50px;
-    padding: 10% !important;
-    margin: 0 !important;
-  }
-
-  .businessa-hero__img-container{
-    width: 90% !important;
-    left: 5% !important;
-    bottom: -40px !important;
-  }
-}
 
 .businessa-hero__container{
   margin: 120px 5% 5% 5%;
@@ -81,16 +63,57 @@ $white: #FFFFFF;
 }
 
 .businessa-hero__blue-bean{
+  position: absolute;
   left: 10%;
   top: 60px
 }
 
 .businessa-hero__lines{
+  position: absolute;
   left: -40px;
   bottom: 30px;
 }
 
 .businessa-hero__green-worm{
+  position: absolute;
   top: 60px;
   right: -20px;
+}
+
+
+@media screen and (max-width:420px) {
+  h1{
+    font-weight: 600 !important;
+    font-size: 40px !important;
+    line-height: 48px !important;
+  }
+  .businessa-hero__container{
+    border-radius: 0 0 30px 30px !important;
+    padding: 10% !important;
+    margin: 0 0 110px 0 !important;
+  }
+
+  .businessa-hero__img-container{
+    width: 90% !important;
+    left: 5% !important;
+    bottom: -40px !important;
+  }
+
+  .businessa-hero__blue-bean{
+    top: 20px !important;
+    left: -20% !important;
+  }
+
+  .businessa-hero__lines{
+    bottom: -80px !important;
+    left: auto !important;
+    right: 4% !important;
+    transform: scaleX(-0.7);
+  }
+
+  .businessa-hero__green-worm{
+    top: 30px !important;
+    right: -20% !important;
+  }
+
 }
