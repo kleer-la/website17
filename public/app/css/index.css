@@ -225,7 +225,9 @@
 
 #training-hero {
   padding-left: 8%;
-  padding-right: 5%; }
+  padding-right: 5%;
+  margin-bottom: 50px;
+  height: auto; }
 
 .training-hero__text {
   padding-bottom: 8%;
@@ -236,8 +238,8 @@
   left: 50px; }
 
 #training-info {
-  max-height: 500px;
-  height: 80vh;
+  max-height: 550px;
+  height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -282,14 +284,6 @@
 .training-hero_yellow-middle-circle {
   right: 0;
   top: 20%; }
-
-.training-hero_green-worm {
-  right: 0;
-  bottom: 10%; }
-
-.training-hero_blue-bean {
-  left: 0;
-  bottom: 12%; }
 
 .training-hero_rustic-sigsac {
   left: -5px;
@@ -369,8 +363,11 @@
     text-align: center;
     height: auto !important; }
 
-  #training-info h4 {
-    margin: 0 10%; }
+  #training-info {
+    max-height: none;
+    height: auto; }
+    #training-info h4 {
+      margin: 0 10%; }
 
   .training-info__subcontainer {
     max-height: 100%;
