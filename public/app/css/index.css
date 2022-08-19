@@ -636,6 +636,18 @@ h3.title-somos {
   left: calc(50% - 25px);
   bottom: -25px; }
 
+.howto__item {
+  max-width: 284px;
+  width: 100%;
+  height: 218px;
+  border-radius: 16px;
+  background-color: #FFE600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 0px; }
+
 .businessa-hero__white-triangle {
   top: 50px;
   right: -50px; }

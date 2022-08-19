@@ -1147,3 +1147,55 @@ es:
     Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
     </p>"
     text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
+
+  business-agility:
+    howto:
+      items:
+        - {
+          text: Diseño organizacional,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Product Strategy,
+          img: /app/img/icons/Strategy.svg,
+        }
+        - {
+          text: Desarrollo de equipos ágiles - Agile team building,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Facilitación de eventos ágiles,
+          img: /app/img/icons/Microphone.svg,
+        }
+        - {
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+          text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+        }
+        - {
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+           text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+        }
