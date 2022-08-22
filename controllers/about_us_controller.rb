@@ -3,8 +3,7 @@ get '/somos' do
   meta_tags! title: "#{@base_title} | Somos"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
 
-  return erb :'about_us/index', layout: :'layout/layout2022' if session[:version] == 2022
-  erb :somos
+  erb :'about_us/index', layout: :'layout/layout2022'
 end
 
 get '/nuestra-filosofia' do
