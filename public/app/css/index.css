@@ -236,6 +236,11 @@
   bottom: 50px;
   left: 50px; }
 
+.training-hero__rustic-sigsac {
+  left: -5px;
+  top: 30%;
+  transform: rotate(90deg); }
+
 #training-info {
   max-height: 550px;
   height: 100vh;
@@ -279,7 +284,7 @@
   z-index: -1; }
 
 .training-hero_yellow-triangle {
-  top: calc(50% - 200px);
+  top: calc(50% - 250px);
   left: 30px;
   z-index: 0; }
 
@@ -287,10 +292,9 @@
   right: 0;
   top: 20%; }
 
-.training-hero_rustic-sigsac {
-  left: -5px;
-  top: 30%;
-  transform: rotate(90deg); }
+.training-info_rustic-sigsac {
+  bottom: -5%;
+  left: 10%; }
 
 #training-courses {
   position: relative; }
@@ -619,7 +623,7 @@ h3.title-somos {
 
 #businessa-hero {
   margin-top: 100px;
-  margin-bottom: 20%; }
+  margin-bottom: 13%; }
 
 .businessa-hero__container {
   margin: 120px 5% 5% 5%;

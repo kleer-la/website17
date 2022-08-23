@@ -1761,7 +1761,7 @@ en:
       text: Self-paced online courses. You decide when to start, the rhythm you like, and when to finish.
       button:
         text: "Academia"
-        link: "academia.kleer.la"
+        link: https://academia.kleer.la/
     catalog:
       title: "Professional agility training"
       more: See more
