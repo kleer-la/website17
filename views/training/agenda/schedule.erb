@@ -1,0 +1,22 @@
+<%
+  events = @events.map do |event|
+    is_open = (event.date.to_s != '')
+    p "|#{event.date.class}|#{event.date.to_s}|#{is_open}"
+    date = is_open ? format_date_range(event.date, event.finish_date, 'es') : nil
+    if not date.nil?
+      {
+        name: event.event_type.name, duration: event.event_type.duration, subtitle: event.event_type.subtitle,
+        uri_path: event.event_type.uri_path, date: date, url: event.event_type.uri_path, is_sold_out: event.is_sold_out,
+        price: event.price, eb_price: event.eb_price, eb_date: event.eb_date
+      }
+    end
+  end
+
+  events = events.compact
+%>
+
+<div class="container mt-5">
+  <% events.each do |event| %>
+    <%= erb :'training/agenda/event_item', locals: {event: event}%>
+  <% end %>
+</div>

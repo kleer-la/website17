@@ -1,0 +1,31 @@
+<div class="row event-item pb-4 mt-4">
+  <div class="col-lg-3">
+    <h6><%= event[:name] %></h6>
+    <p>
+      <img src="/app/img/icons/Clock.svg">
+      Online
+    </p>
+  </div>
+  <div class="col-lg-1">
+    <p>
+      <img src="/app/img/icons/VideoCamera.svg">
+      <%= event[:duration] %>hs
+    </p>
+
+  </div>
+  <div class="col-lg-2">
+    <p>8:00 - 12:00 hs</p>
+    <p class="small-label time-zone">Santiago (GTM-04:00)</p>
+  </div>
+  <div class="col-lg-2">
+    <strong>$<%= event[:price] || 'precio' %></strong>
+  </div>
+  <div class="col-lg-2">
+    <strong class="price">$<%= event[:eb_price]  || 'promo' %></strong>
+    <p class="small-label">hasta <%= event[:eb_date]  || 'fecha' %></p>
+  </div>
+  <div class="col-lg-2">
+    <a class="my-primary-button p-2" href="<%= event[:url] %>" >Comprar</a>
+  </div>
+
+</div>
