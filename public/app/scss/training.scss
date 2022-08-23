@@ -185,6 +185,32 @@ $white: #FFFFFF;
   z-index: -1;
 }
 
+.event-item{
+  border-bottom: solid 1px $black;
+
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  p{
+    margin-bottom: 0;
+  }
+
+  img{
+    width: 24px
+  }
+
+  .time-zone{
+    color: $grey;
+  }
+
+  .price{
+    color: $primary-green
+  }
+}
+
 @media screen and (max-width:992px) { //lg size
   #training-hero{
     padding: 5% 5% 10% 5%;
@@ -271,3 +297,5 @@ $white: #FFFFFF;
     width: 100vw;
   }
 }
+
+

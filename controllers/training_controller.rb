@@ -32,6 +32,11 @@ def coming_courses
 end
 
 get '/agenda' do
+
+  meta_tags! title: 'Agenda de cursos online sobre Agilidad y Scrum'
+  meta_tags! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
+
+  @events = KeventerReader.instance.catalog_events()
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
@@ -225,7 +230,10 @@ get '/entrenamos/eventos/pais/:country_iso_code' do
   country_iso_code = params[:country_iso_code]
   country_iso_code = 'todos' unless valid_country_iso_code?(country_iso_code, 'cursos')
   session[:filter_country] = country_iso_code
-  DTHelper.to_dt_event_array_json(
+  data = DTHelper.to_dt_event_array_json(
     KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
   )
+
+  puts data
+  data
 end

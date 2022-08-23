@@ -1097,9 +1097,11 @@ es:
       title: 'Entérate de todas las novedades del mundo ágil'
       button:
         title: 'Suscríbete'
+
   resources:
     title: "Recursos y materiales sobre agilidad"
-    subtitle: "Soñamos con un mundo en el que la información valiosa sea compartida por todos. Aquí, nuestro granito de arena."
+    subtitle: >-
+      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: guías ágiles, cartas, infografías, traducciones y más.
 
   courses_page:
     title: Capacitación profesional en Agilidad
@@ -1136,18 +1138,24 @@ es:
     subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"
 
   blog2022:
-    title: Reflexiones y pensamientos agiles
-    subtitle: Nos gusta compartir con la comunidad, plasmar nuestras ideas en la tinta y emprender en la escritura autodescubrimiento y reflexión sobre nuestro camino en la agilidad, compartimos contigo algunos de esos pensamientos.
+    title: Blog - Artículos sobre Agilidad Organizacional
+    subtitle: Descubre nuestras experiencias y otros temas relevantes relacionados con la Agilidad. Encuentra aquí nuestras reflexiones y pensamientos. Esperamos que disfrutes leernos.
+
+  clients2022:
+    title: Nuestros Clientes
+    subtitle: Algunos testimonios de clientes sobre nuestras intervenciones en sus empresas.
 
   aboutus:
-    title: Somos Kleer
+    title: Sobre Kleer
     subtitle: "<p>Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.</p>
     <p>
     Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
     </p>"
-    text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
 
   business-agility:
+    title: Agilidad Organizacional
+    subtitle: >-
+      Acompañamos a tu organización en el desafiante camino de la transformación ágil. Trabajamos sobre múltiples dimensiones para tener una visión holística del cambio organizacional, desde la estructura, retos en el liderazgo, cambio cultural, hasta implementación de prácticas, herramientas, frameworks y mucho más.
     howto:
       items:
         - {
