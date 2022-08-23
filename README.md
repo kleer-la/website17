@@ -88,3 +88,9 @@ git push heroku master:main
     cwebp -q 80 input.png -o output.webp
 
     for f in *.png; do cwebp $f -o $(echo $f | sed s/png$/webp/); done
+
+
+Para probar con ambiente de prueba de keventer
+```cli
+export KEVENTER_URL="http://keventer-test.herokuapp.com"
+```

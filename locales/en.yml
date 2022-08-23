@@ -1768,21 +1768,84 @@ en:
       more: See more
 
   resources:
-    title: Resources
+    title: Agile Resources and Materials
     subtitle: >-
-      We dream a world where valuable information is shared by everyone. Here,
-      our bit of knowledge.
+      Our bit with downloadables that can help you in different moments of team collaboration: agile guides, letters, infographics, translations and more.
   ebooks:
     title: ''
     subtitle: ''
 
   blog2022:
-    title: Agile essays and thoughts
+    title: Blog - Articles on Organizational Agility
     subtitle: >-
       We love to share, to capture our ideas in ink and to undertake self-discovery reflecting and writing
       on our path in agility. Here we share some of those thoughts with you.
 
+  clients2022:
+    title: Our Clients
+    subtitle: Some testimonials from clients about our interventions in their companies.
+
   aboutus:
-    title: Somos Kleer
-    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos
-    text: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
+    title: About Kleer
+    subtitle: "<p>
+    We enjoy co-creating  conscious and amazing human environments
+    </p>
+    <p>
+    We are a team focused on improving the way people work. We accompany professionals, teams and organizations in their evolution towards continuous improvement, enhancing and balancing productivity, quality and happiness. 
+    </p>
+    "
+
+  business-agility:
+    title: Business Agility
+    subtitle: >-
+      We accompany your organization on the challenging path of agile transformation. We work on multiple dimensions to have a holistic view of organizational change, from structure, leadership challenges, cultural change, to implementation of practices, tools, framework and much more.
+    howto:
+      items:
+        - {
+          text: Diseño organizacional,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Product Strategy,
+          img: /app/img/icons/Strategy.svg,
+        }
+        - {
+          text: Desarrollo de equipos ágiles - Agile team building,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Facilitación de eventos ágiles,
+          img: /app/img/icons/Microphone.svg,
+        }
+        - {
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+          text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+        }
+        - {
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+          text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+        }

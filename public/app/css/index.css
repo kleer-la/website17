@@ -357,6 +357,21 @@
   left: 20%;
   z-index: -1; }
 
+.event-item {
+  border-bottom: solid 1px #333333; }
+  .event-item div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+  .event-item p {
+    margin-bottom: 0; }
+  .event-item img {
+    width: 24px; }
+  .event-item .time-zone {
+    color: #B3B3B3; }
+  .event-item .price {
+    color: #43B045; }
+
 @media screen and (max-width: 992px) {
   #training-hero {
     padding: 5% 5% 10% 5%;
@@ -754,6 +769,20 @@ p {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px; }
+
+.small-label {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px; }
+
+.small-label-bold {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px; }
 
 a {
   font-style: normal;
