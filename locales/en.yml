@@ -12,7 +12,6 @@ en:
       see_more: See more
       register: Register!
       i_am_interested: Buy
-      pay_and_register: Pay & Register
       complete: Complete
       close: Close
     texts:

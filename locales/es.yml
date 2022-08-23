@@ -10,7 +10,6 @@ es:
       see_more: "Ver más"
       register: "¡Registrarme!"
       i_am_interested: "Comprar"
-      pay_and_register: "¡Pagar y Registrarme!"
       complete: "Completo"
       close: "Cerrar"
     texts:
