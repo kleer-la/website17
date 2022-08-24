@@ -6,6 +6,7 @@
     if not date.nil?
       {
         name: event.event_type.name, duration: event.event_type.duration, subtitle: event.event_type.subtitle,
+        id: event.event_type.slug.split('-')[0],
         uri_path: event.event_type.uri_path, date: date, url: event.event_type.uri_path, is_sold_out: event.is_sold_out,
         price: event.price, eb_price: event.eb_price, eb_date: event.eb_date
       }

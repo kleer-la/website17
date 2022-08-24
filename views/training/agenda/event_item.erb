@@ -1,6 +1,6 @@
 <div class="row event-item pb-4 mt-4">
   <div class="col-lg-3">
-    <h6><%= event[:name] %></h6>
+    <a href="<%= event[:url] %>"><h6><%= event[:name] %></h6></a>
     <p>
       <img src="/app/img/icons/Clock.svg">
       Online
@@ -25,7 +25,8 @@
     <p class="small-label">hasta <%= event[:eb_date]  || 'fecha' %></p>
   </div>
   <div class="col-lg-2">
-    <a class="my-primary-button p-2" href="<%= event[:url] %>" >Comprar</a>
+    <a class="my-primary-button p-2"
+       href='<%= "https://eventos.kleer.la/events/#{event[:id]}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
   </div>
 
 </div>
