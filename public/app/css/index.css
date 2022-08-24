@@ -431,6 +431,21 @@
 
   .course-card-container {
     width: 100vw; } }
+#course-hero {
+  margin: 100px 0 40px 0;
+  height: calc(80vh - 100px);
+  width: 100vw;
+  background-color: #68CEF2; }
+
+.course-hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; }
+
+.course-hero__flag {
+  background-color: #FFE600; }
+
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,

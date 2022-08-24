@@ -88,6 +88,7 @@ def catalog
   end
 end
 
+
 # Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
 get '/entrenamos/evento/:event_id_with_name' do
   event_id_with_name = params[:event_id_with_name]
@@ -141,6 +142,7 @@ get '/cursos/:event_type_id_with_name' do
 
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
+
   if @event_type.nil?
     redirect_not_found_course
   else
@@ -153,6 +155,12 @@ get '/cursos/:event_type_id_with_name' do
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
+
+
+    if session[:version] == 2022
+      return erb :'training/landing_course/index', layout: :'layout/layout2022'
+    end
+
     erb :event_type
   end
 end

@@ -308,4 +308,24 @@ $white: #FFFFFF;
   }
 }
 
+//LANDING INDIVIDUAL COURSE
+#course-hero{
+  margin: 100px 0 40px 0;
+  height: calc(80vh - 100px);
+  width: 100vw;
+  background-color: $primary-blue;
+}
+
+.course-hero__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.course-hero__flag{
+  background-color: $primary-yellow;
+}
+
+#course-description{}
 
