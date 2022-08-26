@@ -104,7 +104,7 @@ get '/coaching' do
   redirect '/agilidad-organizacional', 301 # permanent redirect
 end
 
-get '/agilidad-organizacional' do
+get '/agilidad-organizacional-old' do
   @active_tab_coaching = 'active'
   meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
   meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
@@ -112,7 +112,7 @@ get '/agilidad-organizacional' do
   erb :coaching
 end
 
-get '/agilidad-organizacional2022' do
+get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
   meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
   meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
