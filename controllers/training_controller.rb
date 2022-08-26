@@ -62,7 +62,7 @@ def entrenamos_view(country = nil)
 end
 
 get('/catalogo2022') { session[:version] = 2022; catalog }
-get('/catalogo') { catalog }
+get('/catalogo') {  catalog }
 
 def catalog
   @active_tab_entrenamos = 'active'
@@ -73,19 +73,13 @@ def catalog
 
   @events = KeventerReader.instance.catalog_events()
 
-  if session[:version] == 2022
-    @coming_courses = if session[:locale] == 'es'
-                        KeventerReader.instance.coming_commercial_events(Date.today, 10)
-                      else
-                        fake_event_from_catalog(KeventerReader.instance.categories)
-                      end
+  @coming_courses = if session[:locale] == 'es'
+                      KeventerReader.instance.coming_commercial_events(Date.today, 10)
+                    else
+                      fake_event_from_catalog(KeventerReader.instance.categories)
+                    end
 
-    return erb :'training/index', layout: :'layout/layout2022'
-  elsif session[:locale] == 'en'
-    erb :catalogo_en
-  else
-    erb :catalogo
-  end
+  erb :'training/index', layout: :'layout/layout2022'
 end
 
 
