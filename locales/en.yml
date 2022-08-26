@@ -1750,12 +1750,15 @@ en:
       text: >-
         We bring our learning experiences to your organization. We can customize the experience by
         co-designing content that adapts to the needs and objectives of your company.
+      button:
+        text: "Catalog"
+        link: "#training-courses"
     public:
       title: Public
       text: Enrol in the published courses, sign up in pairs or groups to obtain discounts and share a unique learning experience among colleagues.
       button:
         text: "Public courses"
-        link: "/entrenamos/todos"
+        link: "/agenda"
     e-learing:
       title: Self-paced
       text: Self-paced online courses. You decide when to start, the rhythm you like, and when to finish.
@@ -1790,7 +1793,7 @@ en:
     We enjoy co-creating  conscious and amazing human environments
     </p>
     <p>
-    We are a team focused on improving the way people work. We accompany professionals, teams and organizations in their evolution towards continuous improvement, enhancing and balancing productivity, quality and happiness. 
+    We are a team focused on improving the way people work. We accompany professionals, teams and organizations in their evolution towards continuous improvement, enhancing and balancing productivity, quality and happiness.
     </p>
     "
 
