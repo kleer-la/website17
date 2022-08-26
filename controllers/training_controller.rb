@@ -7,7 +7,9 @@ require './lib/event'
 require './controllers/event_helper'
 
 REDIRECT = {
-  '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo'
+  '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo',
+  'entrenamos' => 'agenda',
+  'entrenamos/todos' => 'agenda'
 }.freeze
 
 def course_not_found_error
