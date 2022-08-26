@@ -1848,3 +1848,15 @@ en:
           text: Desarrollo del Liderazgo Ágil,
           img: /app/img/icons/GitFork.svg,
         }
+    differential:
+      title: Nuestro diferencial, la experiencia kleerer
+      items:
+        - Cocreamos con nuestros clientes las estrategias y cursos de acción para lograr sus objetivos de negocio. Impulsamos formas de trabajo que permitan entregar mayor valor a los clientes.
+        - "Trabajamos de forma colaborativa en todas las capas de la organización: las prácticas, los procesos, el liderazgo y la cultura. Con ello, se mejora la respuesta a las altas expectativas de los clientes, lo cual va de la mano de la mejora en la rentabilidad."
+        - Capacitamos a los equipos internos que lideran el aprendizaje, remueven los impedimentos organizacionales y sostienen el cambio.
+        - Promovemos una cultura de aprendizaje y experimentación con feedback frecuente y mejora continua para mejorar la adaptación a contextos cambiantes. Cultivamos espacios donde las personas aportan su máximo potencial creativo, de innovación y colaboración.
+    contact:
+      title: Cuéntanos más de tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
+      button:
+        text: ¿Conversamos?
+        link: mailto:info@kleer.la?subject=Business Agility&amp;body=Please describe your context and how could we help you
