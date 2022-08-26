@@ -6,7 +6,8 @@ Feature: StaticPage Titles
 		And the page title should includes "Agile Coaching, Consulting & Training"
 	
 	Scenario: Entrenamos Title
-		Given I visit the "entrenamos" page
+    Given PENDING
+		Given I visit the "agenda" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agenda de cursos online sobre Agilidad y Scrum"
 		

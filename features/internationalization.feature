@@ -15,10 +15,6 @@ Feature: i18n
 		And I should see "Business Agility"
 		And I should see "Courses"
 
-	Scenario: English entrenamos
-		Given I visit the english "entrenamos"
-		Then I should see "All"
-
 	Scenario: Default menu in Spanish; then select "English"
 		Given I visit the home page
 		When I switch to "ENGLISH"
