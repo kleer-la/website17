@@ -117,6 +117,7 @@ class KeventerReader
           event.eb_price = loaded_event['eb_price']
           event.eb_date = loaded_event['eb_end_date']
           event.is_sold_out = loaded_event['is_sold_out']
+          event.id = loaded_event['event_id']
         end
 
         events.push(event)

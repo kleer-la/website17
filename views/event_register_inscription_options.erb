@@ -17,18 +17,4 @@
 		<%=button_text%>
 	</a>
 	<a href="mailto:entrenamos@kleer.la?subject=<%= @event.event_type.name %>&body=<%=t("mail_landing.content")%>" class="btn btn-kleer btn-caps" title="<%=t("mail_landing.alt")%>"><%=t("mail_landing.title")%></a>
-
-
-	<% if @event.enable_online_payment %>
-		<% if @event.country == 'Colombia' 
-			payment_and_registration_link = registration_link + "&payment_on_eventer=true"
-		end %>
-		<%
-		payment_and_registration_button_text = t("general.buttons.pay_and_register")
-		
-		%>
-	  <%= media_url_anchor payment_and_registration_link, 'class="btn btn-info btn-kleer btn-caps"'%>
-			<%=payment_and_registration_button_text%>
-		</a>
-	<% end %>
 <% end %>

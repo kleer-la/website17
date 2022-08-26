@@ -28,6 +28,15 @@ $white: #FFFFFF;
   left: 50px;
 }
 
+.training-hero__rustic-sigsac{
+  left: -5px;
+  top: 30%;
+  transform: rotate(90deg);
+}
+
+//INFO PANEL
+
+
 #training-info{
   max-height: 550px;
   height: 100vh;
@@ -81,7 +90,7 @@ $white: #FFFFFF;
 }
 
 .training-hero_yellow-triangle{
-  top: calc(50% - 200px);
+  top: calc(50% - 250px);
   left: 30px;
   z-index: 0;
 }
@@ -91,12 +100,13 @@ $white: #FFFFFF;
   top: 20%
 }
 
-
-.training-hero_rustic-sigsac{
-  left: -5px;
-  top: 30%;
-  transform: rotate(90deg);
+.training-info_rustic-sigsac{
+  bottom: -5%;
+  left: 10%;
 }
+
+
+
 
 #training-courses{
   position: relative;
@@ -298,4 +308,60 @@ $white: #FFFFFF;
   }
 }
 
+//LANDING INDIVIDUAL COURSE
+#course-hero{
+  margin: 100px 0 40px 0;
+  height: calc(80vh - 100px);
+  width: 100vw;
+  background-color: $primary-blue;
+  padding: 10%;
+
+}
+
+.course-hero__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.course-hero__flag{
+  background-color: $primary-yellow;
+  width: 100px;
+  height: 34px;
+  padding: 4px 12px;
+  gap: 8px;
+  border-radius: 8px;
+  img{
+    width: 20px;
+  }
+}
+
+#course-description{}
+
+#course-learnings{}
+
+.course-learnings__container{
+  background-color: $celeste;
+  border-radius: 30px;
+  padding: 40px;
+}
+
+#course-qna{
+  padding: 40px;
+  width: 100vw;
+}
+
+.course-qna__question{
+  padding: 40px;
+  border-bottom: $grey solid 1px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-qna__answer{
+  padding: 40px;
+  width: 100%;
+}
 

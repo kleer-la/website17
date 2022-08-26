@@ -10,7 +10,6 @@ es:
       see_more: "Ver más"
       register: "¡Registrarme!"
       i_am_interested: "Comprar"
-      pay_and_register: "¡Pagar y Registrarme!"
       complete: "Completo"
       close: "Cerrar"
     texts:
@@ -944,7 +943,7 @@ es:
       options: [
         {
           text: 'Agenda',
-          url: '/entrenamos/todos',
+          url: '/agenda',
           inside: true
         },
         {
@@ -1057,6 +1056,7 @@ es:
         more:
           text: 'Conoce más'
         questions:
+          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
           text: '¿Tienes alguna pregunta?'
     home_hero:
       - {
@@ -1122,14 +1122,14 @@ es:
       text: Eleva tus habilidades profesionales.Únete a nuestra propuesta de cursos abiertos al público, registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar la Agilidad al siguiente nivel.
       button:
         text: "Ver Agenda"
-        link: "/entrenamos/todos"
+        link: "/agenda"
 
     e-learing:
       title: E-Learning
       text: Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta y cuándo terminar.
       button:
         text: "Ir a Academia"
-        link: "academia.kleer.la"
+        link: https://academia.kleer.la
     catalog:
       title: "Capacitación profesional en agilidad"
       more: Ver más
@@ -1156,8 +1156,18 @@ es:
   business-agility:
     title: Agilidad Organizacional
     subtitle: >-
-      Acompañamos a tu organización en el desafiante camino de la transformación ágil. Trabajamos sobre múltiples dimensiones para tener una visión holística del cambio organizacional, desde la estructura, retos en el liderazgo, cambio cultural, hasta implementación de prácticas, herramientas, frameworks y mucho más.
+      Acompañamos a tu organización en el desafiante camino de la transformación ágil.
+      Trabajamos sobre múltiples dimensiones para tener una visión holística del cambio organizacional. Desde la estructura, el liderazgo, el cambio cultural, hasta la implementación de prácticas, herramientas, frameworks y mucho más.
+
     howto:
+      title: "¿Cómo funciona?"
+      text: >-
+        <p>
+          El proceso de cambio no es lineal y suele ser distinto para cada organización. Nuestro equipo de especialistas cuenta con la experiencia para codiseñar la estrategia de agilidad alineada con los retos que persigue tu empresa.
+        </p>
+        <p>
+          A continuación encontrarás productos y servicios que ofrecemos en procesos de transformación organizacional.
+        </p>
       items:
         - {
           text: Diseño organizacional,
@@ -1192,18 +1202,30 @@ es:
           img: /app/img/icons/GitFork.svg,
         }
         - {
-          text: Product discovery,
-          img: /app/img/icons/Binoculars.svg,
+          text: Aceleración de la innovación,
+          img: /app/img/icons/innovation.png,
         }
         - {
-          text: Agile Coaching,
-          img: /app/img/icons/Kanban.svg,
+          text: Mejora Continua con Toyota Kata,
+          img: /app/img/icons/improvement.png,
         }
         - {
-           text: Agile HR,
-          img: /app/img/icons/People.svg,
+          text: Structural Agility,
+          img: /app/img/icons/sprint.png,
         }
         - {
-          text: Desarrollo del Liderazgo Ágil,
-          img: /app/img/icons/GitFork.svg,
+          text: Prácticas técnicas,
+          img: /app/img/icons/code.png,
         }
+    differential:
+      title: Nuestro diferencial, la experiencia kleerer
+      items:
+        - Cocreamos con nuestros clientes las estrategias y cursos de acción para lograr sus objetivos de negocio. Impulsamos formas de trabajo que permitan entregar mayor valor a los clientes.
+        - "Trabajamos de forma colaborativa en todas las capas de la organización: las prácticas, los procesos, el liderazgo y la cultura. Con ello, se mejora la respuesta a las altas expectativas de los clientes, lo cual va de la mano de la mejora en la rentabilidad."
+        - Capacitamos a los equipos internos que lideran el aprendizaje, remueven los impedimentos organizacionales y sostienen el cambio.
+        - Promovemos una cultura de aprendizaje y experimentación con feedback frecuente y mejora continua para mejorar la adaptación a contextos cambiantes. Cultivamos espacios donde las personas aportan su máximo potencial creativo, de innovación y colaboración.
+    contact:
+      title: Cuéntanos más de tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
+      button:
+        text: ¿Conversamos?
+        link: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
