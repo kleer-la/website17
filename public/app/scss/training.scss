@@ -314,6 +314,8 @@ $white: #FFFFFF;
   height: calc(80vh - 100px);
   width: 100vw;
   background-color: $primary-blue;
+  padding: 10%;
+
 }
 
 .course-hero__text{
@@ -325,7 +327,41 @@ $white: #FFFFFF;
 
 .course-hero__flag{
   background-color: $primary-yellow;
+  width: 100px;
+  height: 34px;
+  padding: 4px 12px;
+  gap: 8px;
+  border-radius: 8px;
+  img{
+    width: 20px;
+  }
 }
 
 #course-description{}
+
+#course-learnings{}
+
+.course-learnings__container{
+  background-color: $celeste;
+  border-radius: 30px;
+  padding: 40px;
+}
+
+#course-qna{
+  padding: 40px;
+  width: 100vw;
+}
+
+.course-qna__question{
+  padding: 40px;
+  border-bottom: $grey solid 1px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-qna__answer{
+  padding: 40px;
+  width: 100%;
+}
 

@@ -435,7 +435,8 @@
   margin: 100px 0 40px 0;
   height: calc(80vh - 100px);
   width: 100vw;
-  background-color: #68CEF2; }
+  background-color: #68CEF2;
+  padding: 10%; }
 
 .course-hero__text {
   display: flex;
@@ -444,7 +445,34 @@
   height: 100%; }
 
 .course-hero__flag {
-  background-color: #FFE600; }
+  background-color: #FFE600;
+  width: 100px;
+  height: 34px;
+  padding: 4px 12px;
+  gap: 8px;
+  border-radius: 8px; }
+  .course-hero__flag img {
+    width: 20px; }
+
+.course-learnings__container {
+  background-color: #E8F8FD;
+  border-radius: 30px;
+  padding: 40px; }
+
+#course-qna {
+  padding: 40px;
+  width: 100vw; }
+
+.course-qna__question {
+  padding: 40px;
+  border-bottom: #B3B3B3 solid 1px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
+
+.course-qna__answer {
+  padding: 40px;
+  width: 100%; }
 
 .mainContent h1,
 .mainContent h2,

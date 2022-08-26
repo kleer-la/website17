@@ -1,0 +1,27 @@
+<%
+  qna = @event_type.faq.split('**')
+  answers = qna.select.with_index{|q, index| index%2 == 0}
+  questions = qna.select.with_index{|q, index| index%2 == 1}
+
+
+%>
+
+<section id="course-qna">
+  <div class="container p-5">
+    <h4 class="text-center mb-5">Preguntas frecuentes</h4>
+    <% questions.each.with_index do |question, index| %>
+
+      <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
+        <div class="course-qna__question">
+          <%= question %>
+          <img src="/app/img/icons/arrow.svg"/>
+        </div>
+
+      </a>
+      <div class="collapse course-qna__answer" id="question<%=index %>">
+        <%= answers[index] %>
+      </div>
+    <% end %>
+
+  </div>
+</section>
