@@ -943,7 +943,7 @@ es:
       options: [
         {
           text: 'Agenda',
-          url: '/entrenamos/todos',
+          url: '/agenda',
           inside: true
         },
         {
@@ -1163,7 +1163,7 @@ es:
       title: "¿Cómo funciona?"
       text: >-
         <p>
-          El proceso de cambio no es lineal y suele ser distinto para cada organización. Nuestro equipo de especialistas cuenta con la experiencia para codiseñar la estrategia de agilidad alineada con los retos que persigue tu empresa. 
+          El proceso de cambio no es lineal y suele ser distinto para cada organización. Nuestro equipo de especialistas cuenta con la experiencia para codiseñar la estrategia de agilidad alineada con los retos que persigue tu empresa.
         </p>
         <p>
           A continuación encontrarás productos y servicios que ofrecemos en procesos de transformación organizacional.
