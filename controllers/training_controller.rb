@@ -6,6 +6,7 @@ require './lib/event'
 
 require './controllers/event_helper'
 
+#TODO redirect
 REDIRECT = {
   '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo',
   'entrenamos' => 'agenda',
@@ -122,6 +123,7 @@ def redirect_not_found_course
   redirect(to('/catalogo'))
 end
 
+#TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
@@ -161,6 +163,7 @@ get '/cursos/:event_type_id_with_name' do
   end
 end
 
+#TODO
 post '/cursos/:event_type_id/contact' do
   @event_type = event_type_from_qstring params[:event_type_id]
   p params unless @event_type.nil?
