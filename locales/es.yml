@@ -1056,6 +1056,7 @@ es:
         more:
           text: 'Conoce más'
         questions:
+          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
           text: '¿Tienes alguna pregunta?'
     home_hero:
       - {
