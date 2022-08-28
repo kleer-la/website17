@@ -1,9 +1,20 @@
 <%
-  qna = @event_type.faq.split('**')
-  answers = qna.select.with_index{|q, index| index%2 == 0}
-  questions = qna.select.with_index{|q, index| index%2 == 1}
+  separator = '<h4>'
+  question_separator = '</h4>'
 
+  answers = []
+  questions = []
 
+  qna = @markdown_renderer.render(@event_type.faq).split(separator)
+
+  qna.each do |complete_question|
+    separated_question = complete_question.split(question_separator)
+    questions.push(separated_question[0])
+    answers.push(separated_question[1])
+  end
+
+  questions = questions.compact
+  answers = answers.compact
 %>
 
 <section id="course-qna">
@@ -13,7 +24,7 @@
 
       <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
         <div class="course-qna__question">
-          <%= question %>
+          <h5><%= question %></h5>
           <img src="/app/img/icons/arrow.svg"/>
         </div>
 
@@ -25,3 +36,4 @@
 
   </div>
 </section>
+
