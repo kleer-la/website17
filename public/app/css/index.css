@@ -474,6 +474,9 @@
   padding: 40px;
   width: 100%; }
 
+.schedule-titles {
+  color: #00BBEE; }
+
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,

@@ -1,0 +1,54 @@
+
+<section id="course-next-editions" class="container">
+  <h4 class="mb-5">Próximas ediciones</h4>
+  <% unless @event_type.public_editions == [] %>
+    <div class="row mb-4 schedule-titles">
+      <h6 class="col-lg-1">Fecha</h6>
+      <h6 class="col-lg-2">Modalidad</h6>
+      <h6 class="col-lg-2">Duración</h6>
+      <h6 class="col-lg-2">Horario</h6>
+      <h6 class="col-lg-1">Valor</h6>
+      <h6 class="col-lg-2">Venta anticipada</h6>
+    </div>
+
+    <% @event_type.public_editions.each do |event| %>
+      <div class="row event-item pb-4 mt-4">
+        <div class="col-lg-1">
+          <%= format_date_range(event.date, event.finish_date, session[:locale]) %>
+        </div>
+        <div class="col-lg-2">
+          <p>
+            <img src="/app/img/icons/VideoCamera.svg".>
+            Online
+          </p>
+        </div>
+        <div class="col-lg-2">
+          <p>
+            <img src="/app/img/icons/Clock.svg">
+            <%= event.event_type.duration %>hs
+          </p>
+
+        </div>
+        <div class="col-lg-2">
+          <% info_time = t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )%>
+          <%= info_time %>
+            <a class="small-label time-zone" href="<%= event.timezone_url%>"> <%= event.place %></a>
+        </div>
+        <div class="col-lg-1">
+          <strong>$<%= event.list_price || 'precio' %></strong>
+        </div>
+        <div class="col-lg-2">
+          <strong class="price">$<%= event.eb_price || 'promo' %></strong>
+          <p class="small-label">hasta <%= event.eb_end_date || 'fecha' %></p>
+        </div>
+        <div class="col-lg-2">
+          <a class="my-primary-button p-2"
+             href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
+        </div>
+
+      </div>
+    <% end %>
+  <% end %>
+</section>
+
+
