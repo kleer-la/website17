@@ -111,6 +111,7 @@ class KeventerReader
         event.country = loaded_event['country_iso']
 
         unless loaded_event['date'].nil?
+          #TODO: migrate to Event method
           event.date = Date.parse(loaded_event['date'])
           event.finish_date = Date.parse(loaded_event['finish_date'])
           event.price = loaded_event['list_price']
@@ -118,6 +119,10 @@ class KeventerReader
           event.eb_date = loaded_event['eb_end_date']
           event.is_sold_out = loaded_event['is_sold_out']
           event.id = loaded_event['event_id']
+          event.start_time = DateTime.parse(loaded_event['start_time'])
+          event.end_time = DateTime.parse(loaded_event['end_time'])
+          event.timezone_url = loaded_event['timezone_url']
+          event.place = loaded_event['time_zone_name']
         end
 
         events.push(event)

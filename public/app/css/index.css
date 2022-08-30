@@ -477,6 +477,21 @@
 .schedule-titles {
   color: #00BBEE; }
 
+.course-trainers__individual-container {
+  background-color: #E8F8FD;
+  padding: 48px;
+  border-radius: 16px;
+  height: 380px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  justify-items: center; }
+  .course-trainers__individual-container img {
+    height: 130px; }
+
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,
