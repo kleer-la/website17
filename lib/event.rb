@@ -1,5 +1,8 @@
 class Event
-  attr_accessor :event_type, :country, :certified, :date, :finish_date, :price, :eb_price, :eb_date, :is_sold_out, :id
+  attr_accessor :event_type, :country, :certified, :date,
+                :finish_date, :price, :eb_price, :eb_date,
+                :is_sold_out, :id, :start_time, :end_time,
+                :timezone_url, :place
 
   def initialize(event_type)
     @event_type = event_type

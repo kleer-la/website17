@@ -80,7 +80,7 @@ module Helpers
   def keventer_to_card(events)
     events.map {|course|
       is_open = (course.date.to_s != '')
-      p "|#{course.date.class}|#{course.date.to_s}|#{is_open}"
+      # p "|#{course.date.class}|#{course.date.to_s}|#{is_open}"
       date = is_open ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
       is_incompany = true
       if course.event_type.lang == 'es'

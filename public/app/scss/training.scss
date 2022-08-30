@@ -365,3 +365,29 @@ $white: #FFFFFF;
   width: 100%;
 }
 
+.schedule-titles{
+  color: $secondary-blue;
+}
+
+#course-trainers{
+
+}
+
+.course-trainers__individual-container{
+  background-color: $celeste;
+  padding: 48px;
+  border-radius: 16px;
+  height: 380px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  justify-items: center;
+
+  img{
+    height: 130px;
+  }
+}
+

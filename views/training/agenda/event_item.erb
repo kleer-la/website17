@@ -1,22 +1,24 @@
+
+
 <div class="row event-item pb-4 mt-4">
   <div class="col-lg-3">
     <a href="<%= event[:url] %>"><h6><%= event[:name] %></h6></a>
     <p>
-      <img src="/app/img/icons/Clock.svg">
+      <img src="/app/img/icons/VideoCamera.svg">
       Online
     </p>
   </div>
   <div class="col-lg-1">
     <p>
-      <img src="/app/img/icons/VideoCamera.svg">
+      <img src="/app/img/icons/Clock.svg">
       <%= event[:duration] %>hs
     </p>
 
   </div>
   <div class="col-lg-2">
     <strong><%= event[:date] %></strong>
-    <p>8:00 - 12:00 hs</p>
-    <p class="small-label time-zone">Santiago (GTM-04:00)</p>
+    <p><%= event[:info_time] %></p>
+    <p class="small-label time-zone"> <%= event[:place] %></p>
   </div>
   <div class="col-lg-2">
     <strong>$<%= event[:price] || 'precio' %></strong>

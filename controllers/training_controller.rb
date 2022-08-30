@@ -9,9 +9,15 @@ require './controllers/event_helper'
 #TODO redirect
 REDIRECT = {
   '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo',
-  'entrenamos' => 'agenda',
-  'entrenamos/todos' => 'agenda'
+  'entrenamos/todos' => 'agenda',
+  'entrenamos' => 'agenda'
 }.freeze
+
+REDIRECT.each do |uris| 
+  get '/'+uris[0] do
+     redirect '/'+uris[1] #, 301
+  end
+end
 
 def course_not_found_error
   I18n.t('event.not_found')
@@ -35,33 +41,11 @@ def coming_courses
 end
 
 get '/agenda' do
-
   meta_tags! title: 'Agenda de cursos online sobre Agilidad y Scrum'
   meta_tags! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
 
   @events = KeventerReader.instance.catalog_events()
   erb :'training/agenda/index', layout: :'layout/layout2022'
-end
-
-get '/entrenamos/:country?' do |country|
-  entrenamos_view(country)
-end
-get '/entrenamos' do
-  entrenamos_view
-end
-def entrenamos_view(country = nil)
-  if !country.nil? && country != 'todos' && country.length > 2
-    status 404
-  else
-    @active_tab_entrenamos = 'active'
-    meta_tags! title: 'Agenda de cursos online sobre Agilidad y Scrum'
-    meta_tags! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
-
-    @unique_countries = KeventerReader.instance.unique_countries_for_commercial_events
-    @country = country || session[:filter_country] || 'todos'
-    session[:filter_country] = @country
-    erb :entrenamos
-  end
 end
 
 get('/catalogo2022') { session[:version] = 2022; catalog }
@@ -240,7 +224,5 @@ get '/entrenamos/eventos/pais/:country_iso_code' do
   data = DTHelper.to_dt_event_array_json(
     KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
   )
-
-  puts data
   data
 end

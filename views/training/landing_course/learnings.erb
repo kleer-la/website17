@@ -1,28 +1,9 @@
-<%
-  learnings = @event_type.learnings.split('*')
-  takeaways = @event_type.takeaways.split('*')
-
-  learnings -= ['']
-  takeaways -= ['']
-%>
-
 <section id="course-learnings" >
   <div class="course-learnings__container container">
     <h4 class="text-center mb-5">¿Qué obtendrás?</h4>
-    <div class="row">
-      <div class="col-md-6">
-        <ul>
-          <% learnings.each do |learning| %>
-            <li><%= learning %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul>
-          <% takeaways.each do |takeaway| %>
-            <li><%=@markdown_renderer.render( takeaway) %></li>
-          <% end %>
-        </ul>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <%= @markdown_renderer.render( @event_type.learnings) %>
       </div>
     </div>
   </div>

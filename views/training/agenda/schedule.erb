@@ -1,22 +1,18 @@
 <%
   events = @events.map do |event|
     is_open = (event.date.to_s != '')
-    p "|#{event.date.class}|#{event.date.to_s}|#{is_open}"
+    # p "|#{event.date.class}|#{event.date.to_s}|#{is_open}"
     date = is_open ? format_date_range(event.date, event.finish_date, 'es') : nil
     if not date.nil?
-      puts 'id'
-      puts event.id
+      info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
       {
         name: event.event_type.name, duration: event.event_type.duration, subtitle: event.event_type.subtitle,
-        id: event.id,
+        id: event.id, info_time: info_time, timezone_url: event.timezone_url, place: event.place,
         uri_path: event.event_type.uri_path, date: date, url: event.event_type.uri_path, is_sold_out: event.is_sold_out,
         price: event.price, eb_price: event.eb_price, eb_date: event.eb_date
       }
     end
   end
-
-  puts events[0][:id]
-
   events = events.compact
 %>
 
