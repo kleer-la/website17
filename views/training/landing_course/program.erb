@@ -1,0 +1,33 @@
+<%
+
+  separator = '<h4>'
+  item_separator = '</h4>'
+
+  separated_program = []
+
+  program = @markdown_renderer.render(@event_type.program).split(separator)
+
+  program.each do |item|
+    separated_item = item.split(item_separator)
+    separated_program.push({item: separated_item[0], subitem: separated_item[1]})
+  end
+%>
+
+<section id="course-program" class="container">
+  <h4></h4>
+  <p></p>
+  <div class="course-program__container">
+    <% separated_program.each do |item| %>
+      <div class="course-program__item">
+        <%= item[:item] %>
+      </div>
+      <div class="course-program__specific-item">
+        <%= item[:subitem] %>
+      </div>
+      <hr/>
+    <% end %>
+  </div>
+  <button>
+
+  </button>
+</section>
