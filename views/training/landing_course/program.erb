@@ -1,5 +1,4 @@
 <%
-
   separator = '<h4>'
   item_separator = '</h4>'
 
@@ -9,25 +8,47 @@
 
   program.each do |item|
     separated_item = item.split(item_separator)
+
+    if separated_item[0].nil?
+      next
+    end
     separated_program.push({item: separated_item[0], subitem: separated_item[1]})
   end
+
+  program = program.compact
+
+  middle_space = program.length / 2
 %>
 
 <section id="course-program" class="container">
   <h4></h4>
   <p></p>
-  <div class="course-program__container">
-    <% separated_program.each do |item| %>
-      <div class="course-program__item">
-        <%= item[:item] %>
-      </div>
-      <div class="course-program__specific-item">
-        <%= item[:subitem] %>
-      </div>
-      <hr/>
-    <% end %>
-  </div>
-  <button>
+  <div class="course-program__container row mb-5">
+    <div class="col-md-6">
+      <% separated_program.each.with_index do |item, index| %>
+        <% if index >= middle_space
+             break
+           end
+        %>
+        <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+      <% end %>
+    </div>
 
-  </button>
+    <div class="col-md-6">
+      <% separated_program.each.with_index do |item, index| %>
+        <%
+            if index < middle_space + 1
+             next
+           end
+        %>
+        <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+      <% end %>
+    </div>
+  </div>
+  <div class="button-container mt-5 mb-5 d-flex justify-content-center">
+    <button class="my-primary-button">
+      Descargar programa
+    </button>
+  </div>
+
 </section>
