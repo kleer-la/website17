@@ -309,8 +309,21 @@ $white: #FFFFFF;
 }
 
 //LANDING INDIVIDUAL COURSE
+.course-company-panel{
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 60px;
+  background-color: $primary-green;
+  padding: 0 10% 0 10%;
+}
+
 #course-hero{
-  margin: 100px 0 40px 0;
+  margin: 160px 0 40px 0;
   height: calc(80vh - 100px);
   width: 100vw;
   background-color: $primary-blue;
@@ -370,15 +383,22 @@ $white: #FFFFFF;
 }
 
 #course-trainers{
+}
 
+.course-trainers__container{
+  display: flex;
+  justify-content: space-around;
 }
 
 .course-trainers__individual-container{
   background-color: $celeste;
   padding: 48px;
+  margin: 40px;
   border-radius: 16px;
   height: 380px;
   max-width: 500px;
+  min-width: 300px;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -391,3 +411,15 @@ $white: #FFFFFF;
   }
 }
 
+.course-program__item{
+  width: 100%;
+  border-left: $primary-yellow solid 3px;
+  margin: 14px 0 14px 0;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.course-program__specific-item{
+  padding: 20px;
+}

@@ -6,21 +6,24 @@
 %>
 
 <section id="course-trainers" class="container mt-5 mb-5">
-  <% trainers.each do |trainer| %>
-    <% bio = @markdown_renderer.render(trainer.bio).split('<strong>')[1] %>
+  <h4  class="text-center">El próximo curso será facilitado por</h4>
+  <div class="course-trainers__container">
+    <% trainers.each do |trainer| %>
+      <% bio = @markdown_renderer.render(trainer.bio).split('<strong>')[1] %>
 
-    <div class="course-trainers__individual-container">
-      <img src="<%= trainer.gravatar_picture_url %>" class="rounded-circle mb-3" />
-      <h6><%= trainer.name %> </h6>
-      <p><%=bio%></p>
-      <div>
-        <a href="<%= trainer.linkedin_url %>" class="me-2">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a href="https://twitter.com/<%= trainer.twitter_username %>">
-          <i class="fa fa-twitter"></i>
-        </a>
+      <div class="course-trainers__individual-container">
+        <img src="<%= trainer.gravatar_picture_url %>" class="rounded-circle mb-3" />
+        <h6><%= trainer.name %> </h6>
+        <p><%=bio%></p>
+        <div>
+          <a href="<%= trainer.linkedin_url %>" class="me-2">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/<%= trainer.twitter_username %>">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </section>

@@ -431,8 +431,20 @@
 
   .course-card-container {
     width: 100vw; } }
+.course-company-panel {
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 60px;
+  background-color: #43B045;
+  padding: 0 10% 0 10%; }
+
 #course-hero {
-  margin: 100px 0 40px 0;
+  margin: 160px 0 40px 0;
   height: calc(80vh - 100px);
   width: 100vw;
   background-color: #68CEF2;
@@ -477,12 +489,19 @@
 .schedule-titles {
   color: #00BBEE; }
 
+.course-trainers__container {
+  display: flex;
+  justify-content: space-around; }
+
 .course-trainers__individual-container {
   background-color: #E8F8FD;
   padding: 48px;
+  margin: 40px;
   border-radius: 16px;
   height: 380px;
   max-width: 500px;
+  min-width: 300px;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -491,6 +510,17 @@
   justify-items: center; }
   .course-trainers__individual-container img {
     height: 130px; }
+
+.course-program__item {
+  width: 100%;
+  border-left: #FFE600 solid 3px;
+  margin: 14px 0 14px 0;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  justify-content: space-between; }
+
+.course-program__specific-item {
+  padding: 20px; }
 
 .mainContent h1,
 .mainContent h2,
