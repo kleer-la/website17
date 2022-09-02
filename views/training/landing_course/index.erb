@@ -1,10 +1,12 @@
 <div class="course-company-panel">
-  <p class="m-0">
-    ¡No te pierdas el próximo cursos a comenzar el #/#
-  </p>
-  <a>
-    Inscribeme ahora
-  </a>
+  <% unless @event_type.public_editions == [] %>
+    <p class="m-0">
+      ¡No te pierdas el próximo cursos a comenzar el <%= format_date_range(@event_type.public_editions[0].date, @event_type.public_editions[0].finish_date, session[:locale]) %>!
+    </p>
+    <a href="next_editions.erb">
+      Inscribeme ahora
+    </a>
+  <% end %>
 </div>
 <%= erb :'training/landing_course/hero' %>
 <%= erb :'training/landing_course/description' %>
