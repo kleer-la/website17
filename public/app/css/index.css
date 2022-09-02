@@ -441,7 +441,10 @@
   width: 100vw;
   height: 60px;
   background-color: #43B045;
-  padding: 0 10% 0 10%; }
+  padding: 0 10% 0 10%;
+  color: #FFFFFF; }
+  .course-company-panel a {
+    color: #FFFFFF !important; }
 
 #course-hero {
   margin: 160px 0 40px 0;
@@ -525,6 +528,16 @@
 
 .course-program__specific-item {
   padding: 20px; }
+
+#course-testimonies {
+  margin: 50px auto; }
+
+.testimony-container {
+  background-color: #FFE600;
+  width: 495px;
+  height: 366px;
+  padding: 40px;
+  border-radius: 16px; }
 
 .mainContent h1,
 .mainContent h2,

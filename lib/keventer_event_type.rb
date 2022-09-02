@@ -6,7 +6,7 @@ class KeventerEventType
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
                 :external_site_url, :slug, :canonical_slug, :deleted, :noindex,
-                :categories, :is_kleer_cert, :is_sa_cert
+                :categories, :is_kleer_cert, :is_sa_cert, :testimonies
 
   def initialize
     @id = nil
@@ -16,6 +16,7 @@ class KeventerEventType
     @elevator_pitch = @learnings = @takeaways = ''
     @include_in_catalog = false
     @public_editions = []
+    @testimonies = []
 
     @surveyed_count = 0
     @external_site_url = nil

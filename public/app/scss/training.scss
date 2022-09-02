@@ -320,6 +320,10 @@ $white: #FFFFFF;
   height: 60px;
   background-color: $primary-green;
   padding: 0 10% 0 10%;
+  color: $white;
+  a{
+    color: $white !important;
+  }
 }
 
 #course-hero{
@@ -426,3 +430,22 @@ $white: #FFFFFF;
 .course-program__specific-item{
   padding: 20px;
 }
+
+#course-testimonies{
+  margin: 50px auto;
+}
+
+.testimony-container{
+  background-color: $primary-yellow;
+  width: 495px;
+  height: 366px;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.testimonies-container{
+}
+
+.testimony-info{}
+
+.testimony-message{}
