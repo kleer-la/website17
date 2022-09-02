@@ -466,6 +466,10 @@
   .course-hero__flag img {
     width: 20px; }
 
+#course-description {
+  margin-top: 100px;
+  margin-bottom: 100px; }
+
 .course-learnings__container {
   background-color: #E8F8FD;
   border-radius: 30px;
