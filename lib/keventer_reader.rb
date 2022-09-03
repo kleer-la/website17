@@ -55,8 +55,8 @@ class KeventerReader
 
   def event_type(event_type_id, force_read = false)
     event_type = load_remote_event_type(event_type_id, force_read)
+    # event_type.testimonies = testimonies(event_type_id) unless event_type.nil?
     event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read) unless event_type.nil?
-    event_type.testimonies = testimonies(event_type_id)
     event_type
   end
 
@@ -161,7 +161,7 @@ class KeventerReader
   def testimonies(id)
     plane_testimonies = connector.get_testimonies(id).get_response
 
-    testimonies = []
+    testimonies_list = []
     plane_testimonies.each do |testimony|
       new_testimony = Testimony.new
       new_testimony.load_from_json(testimony)
@@ -169,7 +169,7 @@ class KeventerReader
       testimonies.push(new_testimony)
     end
 
-    testimonies
+    testimonies_list
   end
 
   private

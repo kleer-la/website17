@@ -27,8 +27,8 @@ Feature: Event Type Details
 	Scenario: SEO description
 		Given theres an event type
 		When I visit the plain event type page
-		Then SEO meta name "description" should be "Este taller práctico de un día provee a los asistentes..." 
-		Then SEO meta property "og:description" should be "Este taller práctico de un día provee a los asistentes..." 
+		Then SEO meta name "description" should be "Este taller práctico de un día provee a los asistentes..."
+		Then SEO meta property "og:description" should be "Este taller práctico de un día provee a los asistentes..."
 
 	Scenario: Event type detail Title
 		Given theres an event type

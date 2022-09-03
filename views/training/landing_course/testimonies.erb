@@ -1,7 +1,7 @@
 <section id="course-testimonies" class="container">
   <h4 class="mb-5 text-center">Testimonios de nuestros participantes</h4>
   <div class="testimonies-container">
-    <% @event_type.testimonies.each do |testimony| %>
+    <% @testimonies.each do |testimony| %>
       <div class="testimony-container">
         <div class="testimony-info">
           <strong><%= "#{testimony.name} #{testimony.last_name}" %></strong>
