@@ -1,8 +1,17 @@
 <div class="course-company-panel">
-  <% unless @event_type.public_editions == [] %>
+  <% if @event_type.public_editions == [] %>
     <p class="m-0">
       <strong>
-        ¡No te pierdas el próximo cursos a comenzar el <%= format_date_range(@event_type.public_editions[0].date, @event_type.public_editions[0].finish_date, session[:locale]) %>!
+        ¡No dudes contactarnos para tu curso in company!
+      </strong>
+    </p>
+    <a href="<%= t('generals.social_media.whatsapp') %>>">
+      <strong>Contáctanos🔥</strong>
+    </a>
+  <% else %>
+    <p class="m-0">
+      <strong>
+        ¡No te pierdas el próximo cursos a comenzar el <%= @event_type.public_editions[0].date %>!
       </strong>
     </p>
     <a href="#course-next-editions">

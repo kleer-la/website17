@@ -327,12 +327,27 @@ $white: #FFFFFF;
 }
 
 #course-hero{
+  position: relative;
   margin: 160px 0 40px 0;
   height: calc(80vh - 100px);
   width: 100vw;
   background-color: $primary-blue;
   padding: 10%;
+}
 
+.course-hero__yellow-oval{
+  left: -70px;
+  bottom: -80px;
+}
+
+.course-hero__red-bean{
+  right: 5%;
+  top: 40px;
+}
+
+.course-hero__rustic-worm{
+  right: 8%;
+  bottom: 15px;
 }
 
 .course-hero__text{
@@ -340,6 +355,19 @@ $white: #FFFFFF;
   flex-direction: column;
   justify-content: center;
   height: 100%;
+}
+
+.course-hero__button{
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  button{
+    background-color: $celeste;
+    border-radius: 100px;
+    padding: 16px 32px;
+    border: none;
+  }
 }
 
 .course-hero__flag{
@@ -431,8 +459,16 @@ $white: #FFFFFF;
   padding: 20px;
 }
 
+#course-recipients{
+  margin-top: 50px;
+}
+
 #course-testimonies{
   margin: 50px auto;
+}
+
+#course-next-editions{
+  padding-top: 120px;
 }
 
 .testimony-container{
