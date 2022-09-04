@@ -321,6 +321,7 @@ $white: #FFFFFF;
   background-color: $primary-green;
   padding: 0 10% 0 10%;
   color: $white;
+  z-index: 5;
   a{
     color: $white !important;
   }
@@ -362,11 +363,17 @@ $white: #FFFFFF;
   align-items: center;
   height: 100%;
 
-  button{
+  a{
     background-color: $celeste;
     border-radius: 100px;
     padding: 16px 32px;
     border: none;
+
+    img{
+      margin-left: 10px;
+      height: 20px;
+      height: 20px;
+    }
   }
 }
 
@@ -387,12 +394,25 @@ $white: #FFFFFF;
   margin-bottom: 100px;
 }
 
-#course-learnings{}
+#course-learnings{
+  margin-bottom: 100px;
+}
 
 .course-learnings__container{
   background-color: $celeste;
   border-radius: 30px;
   padding: 40px;
+  position: relative;
+}
+
+.course-learnings__rustic-circle{
+  top: 5%;
+  left: -15%;
+}
+
+.course-learnings__green-circle{
+  bottom: 5%;
+  right: -50px
 }
 
 #course-qna{
@@ -446,8 +466,16 @@ $white: #FFFFFF;
   }
 }
 
-.course-program__item{
+#course-program{
+  position: relative;
   width: 100%;
+  margin-bottom: 50px;
+  padding: 50px 150px 50px 150px;
+
+}
+
+.course-program__item{
+  width: 100vw;
   border-left: $primary-yellow solid 3px;
   margin: 14px 0 14px 0;
   padding: 10px 10px 10px 20px;
@@ -458,6 +486,17 @@ $white: #FFFFFF;
 .course-program__specific-item{
   padding: 20px;
 }
+
+.course-program__blue-oval{
+  top: -140px;
+  left: -180px
+}
+
+.course-program__red-oval{
+  bottom: -50px;
+  right: -5%;
+}
+
 
 #course-recipients{
   margin-top: 50px;

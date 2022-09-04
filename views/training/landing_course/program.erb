@@ -20,29 +20,30 @@
   middle_space = program.length / 2
 %>
 
-<section id="course-program" class="container mt-5">
-  <h4 class="mb-5">Programa del curso</h4>
-  <p></p>
-  <div class="course-program__container row mb-5">
-    <div class="col-md-6">
-      <% separated_program.each.with_index do |item, index| %>
+<section id="course-program">
+  <div class="container mt-5">
+    <h4 class="mb-5">Programa del curso</h4>
+    <p></p>
+    <div class="course-program__container row mb-5">
+      <div class="col-md-6">
+      <% separated_program.each.with_index do  |item, index| %>
         <% if index >= middle_space
              break
            end
         %>
         <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
       <% end %>
-    </div>
-
-    <div class="col-md-6">
-      <% separated_program.each.with_index do |item, index| %>
-        <%
+      </div>
+      <div class="col-md-6">
+        <% separated_program.each.with_index do |item, index| %>
+          <%
             if index < middle_space + 1
-             next
-           end
-        %>
-        <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
-      <% end %>
+              next
+            end
+          %>
+          <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+        <% end %>
+      </div>
     </div>
   </div>
 <!--  <div class="button-container mt-5 mb-5 d-flex justify-content-center">-->
@@ -50,5 +51,6 @@
 <!--      Descargar programa-->
 <!--    </button>-->
 <!--  </div>-->
-
+  <img src="/app/img/view_figures/blue_oval.svg" class="desktop_figure course-program__blue-oval" />
+  <img src="/app/img/view_figures/red_oval.svg" class="desktop_figure course-program__red-oval" />
 </section>
