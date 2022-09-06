@@ -2,7 +2,7 @@ Feature: Kleer Blogs
 
 Scenario: Blog page
   Given I go to the Blog page
-  Then Title should be "Blog - Artículos sobre Agilidad Organizacional"
+  Then Title should be "Blog"
 
 Scenario: unpublished Article dont shown at list page
   Given A list of articles with
