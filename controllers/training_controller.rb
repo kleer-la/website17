@@ -13,7 +13,7 @@ REDIRECT = {
   'entrenamos' => 'agenda'
 }.freeze
 
-REDIRECT.each do |uris| 
+REDIRECT.each do |uris|
   get '/'+uris[0] do
      redirect '/'+uris[1] #, 301
   end
@@ -117,6 +117,9 @@ get '/cursos/:event_type_id_with_name' do
   end
 
   @event_type = event_type_from_qstring params[:event_type_id_with_name]
+
+  # @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
+
   redirecting = should_redirect(@event_type)
   (return redirecting) unless redirecting.nil?
 

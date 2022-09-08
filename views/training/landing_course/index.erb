@@ -1,8 +1,32 @@
+<div class="course-company-panel">
+  <% if @event_type.public_editions == [] %>
+    <p class="m-0">
+      <strong>
+        ¡No dudes contactarnos para tu curso in company!
+      </strong>
+    </p>
+    <a href="<%= t('generals.social_media.whatsapp') %>>">
+      <strong>Contáctanos🔥</strong>
+    </a>
+  <% else %>
+    <p class="m-0">
+      <strong>
+        ¡No te pierdas el próximo cursos a comenzar el <%= @event_type.public_editions[0].date %>!
+      </strong>
+    </p>
+    <a href="#course-next-editions">
+      <strong>Inscribeme ahora🔥</strong>
+    </a>
+  <% end %>
+</div>
 <%= erb :'training/landing_course/hero' %>
 <%= erb :'training/landing_course/description' %>
 <%= erb :'training/landing_course/learnings' %>
-<%= erb :'training/landing_course/qna' %>
 <%= erb :'training/landing_course/recipients' %>
 <%= erb :'training/landing_course/next_editions' %>
+<%= erb :'training/landing_course/program' %>
 <%= erb :'training/landing_course/trainers' %>
+<%#= erb :'training/landing_course/testimonies' %>
+<%= erb :'training/landing_course/qna' %>
+
 

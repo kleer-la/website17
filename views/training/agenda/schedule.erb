@@ -1,7 +1,6 @@
 <%
   events = @events.map do |event|
     is_open = (event.date.to_s != '')
-    # p "|#{event.date.class}|#{event.date.to_s}|#{is_open}"
     date = is_open ? format_date_range(event.date, event.finish_date, 'es') : nil
     if not date.nil?
       info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )

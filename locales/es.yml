@@ -1100,9 +1100,11 @@ es:
         title: 'Suscríbete'
 
   resources:
-    title: "Recursos y materiales sobre agilidad"
+    title: Recursos y materiales sobre agilidad
     subtitle: >-
-      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: guías ágiles, cartas, infografías, traducciones y más.
+      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
+
+
 
   courses_page:
     title: Capacitación profesional en Agilidad
@@ -1134,24 +1136,32 @@ es:
       title: "Capacitación profesional en agilidad"
       more: Ver más
 
+  agenda:
+    title: Agenda de cursos
+    subtitle: Nuestra programación de cursos abiertos al público.
+
   ebooks:
     title: "Libros"
     subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"
 
   blog2022:
-    title: Blog - Artículos sobre Agilidad Organizacional
-    subtitle: Descubre nuestras experiencias y otros temas relevantes relacionados con la Agilidad. Encuentra aquí nuestras reflexiones y pensamientos. Esperamos que disfrutes leernos.
+    title: Blog
+    subtitle: Artículos sobre este fascinante mundo de la Agilidad Organizacional.
 
   clients2022:
     title: Nuestros Clientes
-    subtitle: Algunos testimonios de clientes sobre nuestras intervenciones en sus empresas.
+    subtitle: Testimonios sobre algunas de nuestras intervenciones.
 
   aboutus:
     title: Sobre Kleer
-    subtitle: "<p>Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.</p>
+    subtitle: "<p>Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su transformación integral para lograr mejores resultados.</p>
     <p>
-    Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
+     En Kleer disfrutamos cocreando ambientes humanos más conscientes y asombrosos
     </p>"
+
+  news:
+    title: Prensa
+    subtitle: Notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
 
   business-agility:
     title: Agilidad Organizacional
@@ -1163,10 +1173,10 @@ es:
       title: "¿Cómo funciona?"
       text: >-
         <p>
-          El proceso de cambio no es lineal y suele ser distinto para cada organización. Nuestro equipo de especialistas cuenta con la experiencia para codiseñar la estrategia de agilidad alineada con los retos que persigue tu empresa.
+          El proceso de cambio no es lineal y es distinto en cada organización. En Kleer contamos con más de 13 años de experiencia en Agilidad Organizacional. Juntos podemos codiseñar la estrategia de transformación coherente con los resultados que persigue tu empresa.
         </p>
         <p>
-          A continuación encontrarás productos y servicios que ofrecemos en procesos de transformación organizacional.
+            Algunas de las actividades, productos o servicios que nos podemos encontrar en un proceso de cambio son:
         </p>
       items:
         - {

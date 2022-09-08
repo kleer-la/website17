@@ -9,6 +9,7 @@ require './lib/country'
 require './lib/keventer_connector'
 require './lib/professional'
 require './lib/category'
+require './lib/testimony'
 
 def event_from_parsed_xml(xml_keventer_event)
   event = KeventerEvent.new
@@ -54,6 +55,7 @@ class KeventerReader
 
   def event_type(event_type_id, force_read = false)
     event_type = load_remote_event_type(event_type_id, force_read)
+    # event_type.testimonies = testimonies(event_type_id) unless event_type.nil?
     event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read) unless event_type.nil?
     event_type
   end
@@ -154,6 +156,20 @@ class KeventerReader
     end
 
     categories
+  end
+
+  def testimonies(id)
+    plane_testimonies = connector.get_testimonies(id).get_response
+
+    testimonies_list = []
+    plane_testimonies.each do |testimony|
+      new_testimony = Testimony.new
+      new_testimony.load_from_json(testimony)
+
+      testimonies.push(new_testimony)
+    end
+
+    testimonies_list
   end
 
   private

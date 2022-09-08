@@ -46,4 +46,9 @@ class KeventerConnector
     return JSON.parse(@response) unless @response.nil?
     JsonAPI.new(API_ROOT + '/catalog')
   end
+
+  def get_testimonies(id)
+    return JSON.parse(@response) unless @response.nil?
+    JsonAPI.new("#{API_ROOT}/event_types/#{id}/testimonies.json")
+  end
 end

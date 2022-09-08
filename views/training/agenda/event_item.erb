@@ -1,5 +1,5 @@
-
-
+<% require './lib/timezone_converter'
+%>
 <div class="row event-item pb-4 mt-4">
   <div class="col-lg-3">
     <a href="<%= event[:url] %>"><h6><%= event[:name] %></h6></a>
@@ -18,7 +18,7 @@
   <div class="col-lg-2">
     <strong><%= event[:date] %></strong>
     <p><%= event[:info_time] %></p>
-    <p class="small-label time-zone"> <%= event[:place] %></p>
+    <p class="small-label time-zone"> <%= "#{TimezoneConverter.gmt(event[:place])} #{event[:place]}" %></p>
   </div>
   <div class="col-lg-2">
     <strong>$<%= event[:price] || 'precio' %></strong>
