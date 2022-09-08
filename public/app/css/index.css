@@ -430,7 +430,13 @@
     white-space: nowrap; }
 
   .course-card-container {
-    width: 100vw; } }
+    width: 100vw; }
+
+  .schedule-titles {
+    display: none; }
+
+  .next-edition-item {
+    margin-top: 30px; } }
 .course-company-panel {
   position: fixed;
   top: 100px;

@@ -142,7 +142,8 @@ get '/cursos/:event_type_id_with_name' do
     end
 
 
-    if session[:version] == 2022
+
+    if @event_type.is_new_version
       return erb :'training/landing_course/index', layout: :'layout/layout2022'
     end
 
