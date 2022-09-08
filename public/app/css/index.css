@@ -591,6 +591,8 @@
 
 #course-recipients {
   margin-top: 50px; }
+  #course-recipients img {
+    max-height: 500px; }
 
 #course-testimonies {
   margin: 50px auto; }
