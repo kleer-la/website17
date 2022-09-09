@@ -222,6 +222,18 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:992px) { //lg size
+  .course-company-panel{
+    padding: 0 24px !important;
+    p{
+      font-size: 14px !important;
+      line-height: 18px;
+    }
+    strong{
+      font-weight: 400 !important;
+      line-height: 18px;
+    }
+  }
+
   #training-hero{
     padding: 5% 5% 10% 5%;
     height: auto;
@@ -238,9 +250,66 @@ $white: #FFFFFF;
     h4{
       margin: 0 10%;
     }
-
   }
 
+  ///////////////////////////////////////////
+
+  .course-hero__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto !important;
+  }
+
+  .course-hero__button{
+    height: 40px !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  #course-description{
+    padding: 0 20px;
+  }
+
+  #course-next-editions{
+    margin-top: 30px;
+    padding: 20px !important;
+
+    h4{
+      margin-bottom: 20px !important;
+    }
+  }
+
+  #course-recipients{
+    margin-top: 20px;
+    padding: 20px;
+
+    img{
+      margin-left: calc(50% - 100px);
+      margin-bottom: 40px;
+      max-height: 300px !important;
+    }
+  }
+
+  #course-program{
+    padding: 20px !important;
+  }
+
+  #course-qna{}
+
+  .course-qna-container{
+    margin: 0 !important;
+    padding: 0 !important;
+
+    h5{
+      margin-right: 20px;
+    }
+  }
+
+  .course-qna__question{
+    padding: 40px 0 !important;
+  }
 
   .training-info__subcontainer{
     max-height: 100%;
@@ -483,7 +552,7 @@ $white: #FFFFFF;
 }
 
 .course-program__item{
-  width: 100vw;
+  width: 100%;
   border-left: $primary-yellow solid 3px;
   margin: 14px 0 14px 0;
   padding: 10px 10px 10px 20px;
