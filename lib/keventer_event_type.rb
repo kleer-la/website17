@@ -6,7 +6,8 @@ class KeventerEventType
                 :elevator_pitch, :learnings, :takeaways, :include_in_catalog,
                 :public_editions, :surveyed_count,
                 :external_site_url, :slug, :canonical_slug, :deleted, :noindex,
-                :categories, :is_kleer_cert, :is_sa_cert, :testimonies, :is_new_version
+                :categories, :is_kleer_cert, :is_sa_cert, :testimonies, :is_new_version,
+                :cover
 
   def initialize
     @id = nil
@@ -44,7 +45,7 @@ class KeventerEventType
 
     %i[name subtitle description learnings takeaways
        goal recipients program faq lang cover
-       external_site_url elevator_pitch slug canonical_slug].each do |f|
+       external_site_url elevator_pitch slug canonical_slug cover].each do |f|
       load_string(xml_keventer_event, f)
     end
     @include_in_catalog = to_boolean(xml_keventer_event.find_first('include-in-catalog').content)
