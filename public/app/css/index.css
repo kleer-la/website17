@@ -657,6 +657,9 @@
   padding: 40px;
   border-radius: 16px; }
 
+.testimonies-container {
+  display: flex; }
+
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,
