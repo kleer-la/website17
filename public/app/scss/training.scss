@@ -593,17 +593,50 @@ $white: #FFFFFF;
 
 .testimony-container{
   background-color: $primary-yellow;
-  width: 495px;
-  height: 366px;
+  height: 250px;
   padding: 40px;
   border-radius: 16px;
+  margin: 10px;
+  min-width: 370px;
 }
 
 .testimonies-container{
   display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: 94vw;
+  margin-left: 3vw;
+  padding-bottom: 20px;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+}
+.testimonies-container::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: $secondary-blue;
+  //background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+}
+.testimonies-container::-webkit-scrollbar-track {
+  background: $celeste;
+}
+.testimonies-container::-webkit-scrollbar {
+  padding: 10px;
+  height: 5px;
+}
+
+
+.testimony-info{
+  margin-bottom: 15px;
+}
+
+.testimony-message{
+  max-width: 90%;
+}
+
+.buttons-container{
 
 }
 
-.testimony-info{}
+.courses-filters-container {
 
-.testimony-message{}
+}

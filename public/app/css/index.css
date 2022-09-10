@@ -652,13 +652,39 @@
 
 .testimony-container {
   background-color: #FFE600;
-  width: 495px;
-  height: 366px;
+  height: 250px;
   padding: 40px;
-  border-radius: 16px; }
+  border-radius: 16px;
+  margin: 10px;
+  min-width: 370px; }
 
 .testimonies-container {
-  display: flex; }
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  width: 94vw;
+  margin-left: 3vw;
+  padding-bottom: 20px;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform; }
+
+.testimonies-container::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #00BBEE; }
+
+.testimonies-container::-webkit-scrollbar-track {
+  background: #E8F8FD; }
+
+.testimonies-container::-webkit-scrollbar {
+  padding: 10px;
+  height: 5px; }
+
+.testimony-info {
+  margin-bottom: 15px; }
+
+.testimony-message {
+  max-width: 90%; }
 
 .mainContent h1,
 .mainContent h2,
