@@ -166,7 +166,7 @@ class KeventerReader
       new_testimony = Testimony.new
       new_testimony.load_from_json(testimony)
 
-      testimonies.push(new_testimony)
+      testimonies_list.push(new_testimony)
     end
 
     testimonies_list

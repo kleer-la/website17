@@ -15,7 +15,7 @@ Feature: Categories
 		Given I visit the "high-performance" categoria page
 		Then broken: I should see "Tipo de Evento de Prueba"
 
-	Scenario: Event type details Page
-		Given theres an event type
-		When I visit an event type detail page
-		Then I should see "Kleer"
+#	Scenario: Event type details Page
+#		Given theres an event type
+#		When I visit an event type detail page
+#		Then I should see "Kleer"

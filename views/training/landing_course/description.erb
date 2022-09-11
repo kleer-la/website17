@@ -1,17 +1,10 @@
-<% new_course_id = 418 %>
-
-
 <section id="course-description" class="container">
-  <% if @event_type.id ==  new_course_id%>
       <div class="row">
         <div class="col-md-6">
-          <%= @event_type.description%>
+          <%=@markdown_renderer.render( @event_type.description )%>
         </div>
         <div class="col-md-6 ps-5 pe-5">
            <img src="/img/generics/description_generic.png"/>
         </div>
       </div>
-  <% else %>
-      <%=@markdown_renderer.render( @event_type.description )%>
-  <% end %>
 </section>

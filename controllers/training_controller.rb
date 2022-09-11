@@ -117,8 +117,7 @@ get '/cursos/:event_type_id_with_name' do
   end
 
   @event_type = event_type_from_qstring params[:event_type_id_with_name]
-
-  # @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
+  @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
 
   redirecting = should_redirect(@event_type)
   (return redirecting) unless redirecting.nil?
@@ -142,7 +141,8 @@ get '/cursos/:event_type_id_with_name' do
     end
 
 
-    if session[:version] == 2022
+
+    if @event_type.is_new_version
       return erb :'training/landing_course/index', layout: :'layout/layout2022'
     end
 
