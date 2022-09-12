@@ -17,12 +17,16 @@
           <h6><%= trainer.name %> </h6>
           <p><%=bio%></p>
           <div>
-            <a href="<%= trainer.linkedin_url %>" class="me-2">
-              <i class="fa fa-linkedin"></i>
-            </a>
-            <a href="https://twitter.com/<%= trainer.twitter_username %>">
-              <i class="fa fa-twitter"></i>
-            </a>
+            <% if trainer.linkedin_url != '' %>
+              <a href="<%= trainer.linkedin_url %>" class="me-2">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            <% end %>
+            <% if trainer.twitter_username != '' %>
+              <a href="https://twitter.com/<%= trainer.twitter_username %>">
+                <i class="fa fa-twitter"></i>
+              </a>
+            <% end %>
           </div>
         </div>
       <% end %>
