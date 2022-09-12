@@ -1,5 +1,7 @@
 <section id="course-testimonies" class="">
-  <h4 class="mb-5 text-center">Testimonios de nuestros participantes</h4>
+  <% unless @testimonies == [] %>
+    <h4 class="mb-5 text-center">Testimonios de nuestros participantes</h4>
+  <% end %>
   <div class="testimonies-container">
     <% @testimonies.each do |testimony| %>
       <div class="testimony-container">
