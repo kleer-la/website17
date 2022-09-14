@@ -4,8 +4,12 @@
   <div class="col-lg-3">
     <a href="<%= event[:url] %>"><h6><%= event[:name] %></h6></a>
     <p>
-      <img src="/app/img/icons/VideoCamera.svg">
-      Online
+      <% if event[:country_iso] == 'OL' %>    
+        <img src="/app/img/icons/VideoCamera.svg">
+        Online
+      <% else %>
+        <%= "#{event[:city]} - #{event[:country_name]}" %>
+      <% end %>
     </p>
   </div>
   <div class="col-lg-1">
