@@ -7,7 +7,7 @@ class KeventerEventType
                 :public_editions, :surveyed_count,
                 :external_site_url, :slug, :canonical_slug, :deleted, :noindex,
                 :categories, :is_kleer_cert, :is_sa_cert, :testimonies, :is_new_version,
-                :cover
+                :cover, :side_image
 
   def initialize
     @id = nil
@@ -44,7 +44,7 @@ class KeventerEventType
     @duration = xml_keventer_event.find_first('duration').content.to_i
 
     %i[name subtitle description learnings takeaways
-       goal recipients program faq lang cover
+       goal recipients program faq lang cover side_image
        external_site_url elevator_pitch slug canonical_slug cover].each do |f|
       load_string(xml_keventer_event, f)
     end
