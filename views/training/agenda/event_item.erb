@@ -8,6 +8,7 @@
         <img src="/app/img/icons/VideoCamera.svg">
         Online
       <% else %>
+        <img src="/img/flags/<%= event[:country_iso].downcase %>.png"/> 
         <%= "#{event[:city]} - #{event[:country_name]}" %>
       <% end %>
     </p>
