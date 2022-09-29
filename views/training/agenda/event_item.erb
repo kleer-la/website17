@@ -33,8 +33,12 @@
     <p class="small-label">hasta <%= event[:eb_date]  || 'fecha' %></p>
   </div>
   <div class="col-lg-2">
-    <a class="my-primary-button p-2"
-       href='<%= "https://eventos.kleer.la/events/#{event[:id]}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
+    <%if event[:is_sold_out]%>
+      <a class="my-primary-button p-2"
+        href='' style="filter: grayscale(100%);">Completo</a>
+    <%else%>
+      <a class="my-primary-button p-2"
+        href='<%= "https://eventos.kleer.la/events/#{event[:id]}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
+    <%end%>
   </div>
-
 </div>
