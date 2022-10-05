@@ -1,15 +1,19 @@
-<section id="course-testimonies" class="">
-  <h4 class="mb-5 text-center">Testimonios de nuestros participantes</h4>
-  <div class="testimonies-container">
-    <% @testimonies.each do |testimony| %>
-      <div class="testimony-container">
-        <div class="testimony-info">
-          <strong><%= "#{testimony.name} #{testimony.last_name}" %></strong>
+<% unless @testimonies == []%>
+  <section id="course-testimonies" class="">
+    <h4 class="mb-5 text-center">Testimonios de nuestros participantes</h4>
+    <div class="testimonies-container">
+      <% @testimonies.each do |testimony| %>
+        <div class="testimony-container">
+          <div class="testimony-info">
+            <strong><%= "#{testimony.name} #{testimony.last_name}" %></strong>
+          </div>
+          <div class="testimony-message">
+            "<%= testimony.message %>"
+          </div>
         </div>
-        <div class="testimony-message">
-          "<%= testimony.message %>"
-        </div>
-      </div>
-    <% end %>
-  </div>
-</section>
+      <% end %>
+    </div>
+  </section>
+<% end %>
+
+
