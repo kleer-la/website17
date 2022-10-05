@@ -565,7 +565,7 @@ $white: #FFFFFF;
 }
 
 .course-program__blue-oval{
-  top: -140px;
+  top: -80px;
   left: -180px
 }
 
@@ -595,10 +595,28 @@ $white: #FFFFFF;
   background-color: $primary-yellow;
   height: 250px;
   padding: 40px;
-  border-radius: 16px;
+  border-radius: 10px;
   margin: 10px;
-  min-width: 370px;
+  min-width: 500px;
+  max-width: 510px;
+  height: 350px;
+  overflow-y: auto;
 }
+.testimony-container::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: $secondary-blue;
+  max-width: 10px;
+}
+.testimony-container::-webkit-scrollbar-track {
+  padding: 4px;
+  background: $primary-yellow;
+  border-radius: 0 16px 16px 0;
+}
+.testimony-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+
 
 .testimonies-container{
   display: flex;
@@ -612,6 +630,7 @@ $white: #FFFFFF;
   transition: 450ms transform, 450ms -webkit-transform;
 }
 .testimonies-container::-webkit-scrollbar-thumb {
+  margin: 5px;
   border-radius: 1rem;
   background-color: $secondary-blue;
   //background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);

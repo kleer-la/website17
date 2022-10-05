@@ -5,8 +5,8 @@
     <h4 class="mb-5 text-center">Próximas ediciones</h4>
     <div class="row mb-4 schedule-titles">
       <h6 class="col-lg-1">Fecha</h6>
-      <h6 class="col-lg-2">Modalidad</h6>
       <h6 class="col-lg-2">Duración</h6>
+      <h6 class="col-lg-2">Modalidad</h6>
       <h6 class="col-lg-2">Horario</h6>
       <h6 class="col-lg-1">Valor</h6>
       <h6 class="col-lg-2">Venta anticipada</h6>
@@ -25,8 +25,13 @@
         </div>
         <div class="col-4 col-lg-2 next-edition-item">
           <p>
-            <img src="/app/img/icons/VideoCamera.svg"/>
+          <% if event.online? || event.blended_learning? %>
+            <img src="/app/img/icons/VideoCamera.svg">
             Online
+          <% else %>
+            <img src="/img/flags/<%= event.country_code.downcase %>.png"/> 
+            <%= "#{event.city}, #{event.country}" %>
+          <% end %>
           </p>
         </div>
 

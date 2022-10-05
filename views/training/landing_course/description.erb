@@ -4,7 +4,11 @@
           <%=@markdown_renderer.render( @event_type.description )%>
         </div>
         <div class="col-md-6 ps-5 pe-5">
-           <img src="/img/generics/description_generic.png"/>
+          <%if @event_type.side_image.to_s == ''%>
+            <img src="/img/generics/description_generic.png"/>
+          <% else %>
+            <img src="<%= @event_type.side_image%>"/>
+          <% end %>
         </div>
       </div>
 </section>
