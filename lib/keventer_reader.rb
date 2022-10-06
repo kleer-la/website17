@@ -162,13 +162,15 @@ class KeventerReader
 
   def testimonies(id)
     plane_testimonies = connector.get_testimonies(id).get_response
-
     testimonies_list = []
-    plane_testimonies.each do |testimony|
-      new_testimony = Testimony.new
-      new_testimony.load_from_json(testimony)
 
-      testimonies_list.push(new_testimony)
+    unless plane_testimonies.nil?
+      plane_testimonies.each do |testimony|
+        new_testimony = Testimony.new
+        new_testimony.load_from_json(testimony)
+
+        testimonies_list.push(new_testimony)
+      end
     end
 
     testimonies_list
