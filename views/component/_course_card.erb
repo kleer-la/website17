@@ -25,10 +25,12 @@
     </div>
     <p class="card-text course-card__subtitle"><%= @course[:subtitle]%></p>
     <ul class="course-card__items">
-      <li class="course-card__item">
-        <img class="icon-card" src="/app/img/icons/Clock.svg" />
-        <%= @course[:duration]%> hs
-      </li>
+      <% unless @course[:duration].nil? %>
+        <li class="course-card__item">
+          <img class="icon-card" src="/app/img/icons/Clock.svg" />
+          <%= @course[:duration]%> hs
+        </li>
+      <% end %>
       <li class="course-card__item">
         <i class="fa fa-calendar"></i>
         <%= @course[:date]%>
