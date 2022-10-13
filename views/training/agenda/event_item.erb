@@ -4,8 +4,13 @@
   <div class="col-lg-3">
     <a href="<%= event[:url] %>"><h6><%= event[:name] %></h6></a>
     <p>
-      <img src="/app/img/icons/VideoCamera.svg">
-      Online
+      <% if event[:country_iso] == 'OL' %>
+        <img src="/app/img/icons/VideoCamera.svg">
+        Online
+      <% else %>
+        <img src="/img/flags/<%= event[:country_iso].downcase %>.png"/>
+        <%= "#{event[:city]} - #{event[:country_name]}" %>
+      <% end %>
     </p>
   </div>
   <div class="col-lg-1">
@@ -28,8 +33,14 @@
     <p class="small-label">hasta <%= event[:eb_date]  || 'fecha' %></p>
   </div>
   <div class="col-lg-2">
-    <a class="my-primary-button p-2"
-       href='<%= "https://eventos.kleer.la/events/#{event[:id]}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
+    <%if event[:is_sold_out]%>
+      <button class="my-primary-button p-2"
+        href='' style="filter: grayscale(100%);">
+        Completo
+      </button>
+    <%else%>
+      <a class="my-primary-button p-2"
+        href='<%= "https://eventos.kleer.la/events/#{event[:id]}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
+    <%end%>
   </div>
-
 </div>

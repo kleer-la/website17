@@ -15,7 +15,7 @@
     separated_program.push({item: separated_item[0], subitem: separated_item[1]})
   end
 
-  program = program.compact
+  separated_program = separated_program.compact
 
   middle_space = program.length / 2
 %>
@@ -37,7 +37,7 @@
       <div class="col-md-6">
         <% separated_program.each.with_index do |item, index| %>
           <%
-            if index < middle_space + 1
+            if index < middle_space
               next
             end
           %>

@@ -122,7 +122,7 @@
 
   const getCourseCategory = (element) => {
       const divs = element.children[0].children[0].children[1].children;
-      return Array.from(divs).map(div => div.outerText)[0]
+      return Array.from(divs).map(div => div.outerText)
   }
 
   const courses = Array.from(container.children).map((element) => {
@@ -132,7 +132,7 @@
       return {
           card: element,
           categories: idSplitted,
-          deliveryOption: getCourseCategory(element),
+          deliveryOptions: getCourseCategory(element),
           name: name
       }
   })
@@ -142,7 +142,7 @@
 
     const deliveryCheck = deliveryFilters.some(item => {
         // console.log(`${item} - ${course.deliveryOption}`)
-        return item === course.deliveryOption
+        return course.deliveryOptions.includes(item)
     })
     const categoryCheck = categoryFilters.some(item => course.categories.includes(item))
     return deliveryCheck && categoryCheck
@@ -153,6 +153,7 @@
       courses.forEach((course, index) => {
         if(compareCourse(course) && counter <= showFirst){
             counter++
+            console.log(counter)
             course.card.classList.remove('hidden-element')
         }else{
             course.card.classList.add('hidden-element')
@@ -190,8 +191,6 @@
     }else{
         deliveryFilters.push(type)
     }
-
-    console.log(deliveryFilters)
     visualFilters()
   }
 

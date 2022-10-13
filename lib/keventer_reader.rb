@@ -110,7 +110,8 @@ class KeventerReader
       loaded_events.each do |loaded_event|
         event_type = EventType.new(nil, loaded_event)
         event = Event.new(event_type)
-        event.country = loaded_event['country_iso']
+        event.country_iso = loaded_event['country_iso']
+        event.country_name = loaded_event['country_name']
 
         unless loaded_event['date'].nil?
           #TODO: migrate to Event method
@@ -125,12 +126,13 @@ class KeventerReader
           event.end_time = DateTime.parse(loaded_event['end_time'])
           event.timezone_url = loaded_event['timezone_url']
           event.place = loaded_event['time_zone_name']
+          event.city = loaded_event['city']
         end
 
         events.push(event)
       end
       rescue StandardError => e
-      puts "Error al cargar las catalogo: #{e}"
+      puts "Error al cargar el catalogo: #{e}"
     end
 
     events
@@ -160,13 +162,15 @@ class KeventerReader
 
   def testimonies(id)
     plane_testimonies = connector.get_testimonies(id).get_response
-
     testimonies_list = []
-    plane_testimonies.each do |testimony|
-      new_testimony = Testimony.new
-      new_testimony.load_from_json(testimony)
 
-      testimonies_list.push(new_testimony)
+    unless plane_testimonies.nil?
+      plane_testimonies.each do |testimony|
+        new_testimony = Testimony.new
+        new_testimony.load_from_json(testimony)
+
+        testimonies_list.push(new_testimony)
+      end
     end
 
     testimonies_list

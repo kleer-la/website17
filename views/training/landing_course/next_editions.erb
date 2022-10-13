@@ -25,8 +25,13 @@
         </div>
         <div class="col-4 col-lg-2 next-edition-item">
           <p>
-            <img src="/app/img/icons/VideoCamera.svg"/>
+          <% if event.online? || event.blended_learning? %>
+            <img src="/app/img/icons/VideoCamera.svg">
             Online
+          <% else %>
+            <img src="/img/flags/<%= event.country_code.downcase %>.png"/>
+            <%= "#{event.city}, #{event.country}" %>
+          <% end %>
           </p>
         </div>
 
@@ -43,9 +48,17 @@
           <p class="small-label">hasta <%= event.eb_end_date || 'fecha' %></p>
         </div>
         <div class="col-12 col-lg-2 next-edition-item">
-          <a class="my-primary-button p-2"
-             href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
-        </div>
+          <% if event.is_sold_out %>
+            <button class="my-primary-button p-2"
+                    href='' style="filter: grayscale(100%);">
+              Completo
+            </button>
+          <% else %>
+            <a class="my-primary-button p-2"
+               href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar
+            </a>
+        <% end %>
+           </div>
 
       </div>
     <% end %>
