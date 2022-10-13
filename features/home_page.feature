@@ -19,6 +19,10 @@ Feature: Home Page
 		Given I visit the home page
 		Then I should see "Suscríbete"
 
-  Scenario: Home 2022
-    Given I visit 'home2022' page
-    Then I should see "Agilidad Organizacional"
+  	Scenario: Home 2022
+		Given I visit 'home2022' page
+		Then I should see "Agilidad Organizacional"
+
+	Scenario: SEO tags
+		Given I visit the home page
+#		Then Page should have the title "ola"
