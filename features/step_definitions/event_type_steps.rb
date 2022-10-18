@@ -55,23 +55,6 @@ When(/^I visit this event type page$/) do
   # visit "/categoria/productos-robustos/cursos/#{@event_type_id}-xxx"
 end
 
-#  <meta name="description" content="Acelera el diseño, la creación y la mejora continua...">
-Then('SEO meta name {string} should be {string}') do |tag, text|
-  expect(page).to have_tag('meta',
-                           with: {
-                             name: tag,
-                             content: text
-                           })
-end
-
-Then('SEO meta property {string} should be {string}') do |tag, text|
-  expect(page).to have_tag('meta',
-                           with: {
-                             property: tag,
-                             content: text
-                           })
-end
-
 Given(/^there is a event type with duration$/) do
   @event_type_id = 1
 end

@@ -1,6 +1,6 @@
 Feature: Home Page
 
-	Scenario: Two main serices
+	Scenario: Two main services
 		Given I visit the home page
 		And I should see "Agilidad Organizacional"
 		And I should see "Cursos"
@@ -19,6 +19,11 @@ Feature: Home Page
 		Given I visit the home page
 		Then I should see "Suscríbete"
 
-  Scenario: Home 2022
-    Given I visit 'home2022' page
-    Then I should see "Agilidad Organizacional"
+    Scenario: Home 2022
+      Given I visit the home page
+      Then I should see "Agilidad Organizacional"
+
+	Scenario: SEO description
+		Given I visit the home page
+		Then SEO meta name "description" should be "Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos."
+		Then SEO meta property "og:description" should be "Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos."

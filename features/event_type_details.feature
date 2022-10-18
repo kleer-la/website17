@@ -24,11 +24,11 @@ Feature: Event Type Details
 		When I visit this event type page
 		Then I should see "Subtítulo con más información"
 
-Scenario: SEO description
-  Given theres an event type
-  When I visit the plain event type page
-  Then SEO meta name "description" should be "Este taller práctico de un día provee a los asistentes..."
-  Then SEO meta property "og:description" should be "Este taller práctico de un día provee a los asistentes..."
+	Scenario: SEO description
+	  Given theres an event type
+	  When I visit the plain event type page
+	  Then SEO meta name "description" should be "Este taller práctico de un día provee a los asistentes..."
+	  Then SEO meta property "og:description" should be "Este taller práctico de un día provee a los asistentes..."
 
 	Scenario: Event type detail Title
 		Given theres an event type
