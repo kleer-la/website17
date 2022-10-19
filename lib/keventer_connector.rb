@@ -22,8 +22,8 @@ class KeventerConnector
     API_ROOT + API_CATEGORIES_PATH
   end
 
-  def event_type_url(event_type_id)
-    API_ROOT + "/event_types/#{event_type_id}.xml".freeze
+  def event_type_url(event_type_id, format = :xml)
+    API_ROOT + "/event_types/#{event_type_id}.#{format}".freeze
   end
 
   def keventer_url

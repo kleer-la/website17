@@ -1,3 +1,5 @@
+require 'libxml'
+
 class XmlAPI
   attr_accessor :xml_doc
 
