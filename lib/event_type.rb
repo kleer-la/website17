@@ -23,7 +23,7 @@ class EventType
                 :deleted, :noindex,
                 :categories, :slug, :canonical_slug,
                 :is_kleer_cert, :is_sa_cert,
-                :public_editions, :side_image, :is_new_version
+                :public_editions, :side_image, :brochure, :is_new_version
 
   def initialize(provider = nil, hash_provider = nil)
     if provider
@@ -73,13 +73,13 @@ class EventType
     @duration = hash_event['duration'].to_i
     @is_kleer_cert = to_boolean(hash_event['is_kleer_certification'])
     @is_sa_cert = to_boolean(hash_event['csd_eligible'])
-    @is_new_version = to_boolean(hash_event['is_new_version'])
+    @is_new_version = to_boolean(hash_event['new_version'])
     @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
 
     %i[name subtitle description learnings takeaways cover
       goal recipients program faq slug canonical_slug lang
       external_site_url elevator_pitch include_in_catalog
-      side_image
+      side_image brochure
     ].each do |field|
         # p "#{field}=#{hash_event[field.to_s]}"
         send("#{field}=", hash_event[field.to_s])
