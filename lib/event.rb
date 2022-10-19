@@ -1,5 +1,6 @@
 require './lib/timezone_converter'
 require './lib/keventer_helper'
+require './lib/trainer'
 
 class Event
   attr_accessor :country_iso, :country_name, :certified,
@@ -18,7 +19,7 @@ class Event
                 #:couples_eb_price, :business_eb_price,
                 #:business_price, :enterprise_6plus_price, :enterprise_11plus_price,
                 #:online_course_codename, :online_cohort_codename
-  # attr_reader :trainers
+  attr_reader :trainers
 
   def initialize(event_type)
     @event_type = event_type
@@ -38,11 +39,12 @@ class Event
     load_basic(ev_json)
     load_date(ev_json)
     load_details(ev_json)
+    @trainers = load_trainers(ev_json['trainers'])
     self
   end
 
   def load_basic(hash_event)
-    @id = hash_event['id']
+    @id = hash_event['id'].to_i
     load_str(%i[city place address registration_link], hash_event)
 
     # @id = first_content(event_doc, 'id').to_i
@@ -103,8 +105,12 @@ class Event
     # @enterprise_11plus_price = first_content_f(event_doc, 'enterprise-11plus-price')
   end
 
-  def trainers
-    []
+  def load_trainers(hash_trainers)
+    return [] if hash_trainers.nil?
+
+    hash_trainers.reduce([]) do |trainers, t_json|
+      trainers << Trainer.new.load_from_json(t_json)
+    end
   end
 
 end
