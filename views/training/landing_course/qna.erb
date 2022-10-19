@@ -19,12 +19,12 @@
 
 <section id="course-qna">
   <div class="container p-5 course-qna-container">
-    <h4 class="text-center mb-5">Preguntas frecuentes</h4>
+    <h2 class="text-center mb-5 common-subtitle">Preguntas frecuentes</h2>
     <% questions.each.with_index do |question, index| %>
 
       <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
         <div class="course-qna__question">
-          <h5><%= question %></h5>
+          <h3 class="common-item"><%= question %></h3>
           <img src="/app/img/icons/arrow.svg"/>
         </div>
 
