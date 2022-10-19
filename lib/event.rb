@@ -6,6 +6,7 @@ class Event
   attr_accessor :country_iso, :country_name, :certified,
                 :city, :country, :country_code, :event_type, :date,
                 :finish_date, :registration_link, :is_sold_out, :id,
+                :price, :eb_date,
                 :list_price, :eb_price, :eb_end_date, :currency_iso_code,
                 :show_pricing, 
                 :place, :address,
