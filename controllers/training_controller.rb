@@ -23,6 +23,11 @@ def course_not_found_error
   I18n.t('event.not_found')
 end
 
+def event_type_from_json(event_type_id_with_name)
+  event_type_id = event_type_id_with_name.split('-')[0]
+  EventType.create_keventer_json(event_type_id) if valid_id?(event_type_id)
+end
+
 def event_type_from_qstring(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
   KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
@@ -110,14 +115,21 @@ end
 #TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
+  from_json = params['json'].to_s.length > 0
+
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
   unless redirect_to.nil?
     uri = "/cursos/#{redirect_to}"
     return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
   end
 
-  @event_type = event_type_from_qstring params[:event_type_id_with_name]
-  @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
+  if from_json
+    @event_type = event_type_from_json params[:event_type_id_with_name]
+    @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0]) # TODO
+  else
+    @event_type = event_type_from_qstring params[:event_type_id_with_name]
+    @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
+  end
 
   redirecting = should_redirect(@event_type)
   (return redirecting) unless redirecting.nil?
@@ -125,7 +137,6 @@ get '/cursos/:event_type_id_with_name' do
   @active_tab_entrenamos = 'active'
 
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
-
 
   if @event_type.nil?
     redirect_not_found_course
@@ -140,9 +151,7 @@ get '/cursos/:event_type_id_with_name' do
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
 
-
-
-    if @event_type.is_new_version
+    if @event_type.is_new_version 
       return erb :'training/landing_course/index', layout: :'layout/layout2022'
     end
 

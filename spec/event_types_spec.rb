@@ -30,4 +30,12 @@ describe EventType do
       expect(@event_type.categories[0][1]).to eq 'organizaciones'
     end
   end
+  context 'JSON' do
+    before(:each) do
+      @event_type = EventType.new(nil, {'subtitle'=> 'One subtitle' } )
+    end
+    it 'has subtitle' do
+      expect(@event_type.subtitle).to eq 'One subtitle'
+    end
+  end
 end

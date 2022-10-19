@@ -106,7 +106,7 @@ class KeventerReader
   def catalog_events()
     events = []
     begin
-      loaded_events = @connector.get_catalog.get_response
+      loaded_events = @connector.get_catalog&.get_response
       loaded_events.each do |loaded_event|
         event_type = EventType.new(nil, loaded_event)
         event = Event.new(event_type)
@@ -161,7 +161,7 @@ class KeventerReader
   end
 
   def testimonies(id)
-    plane_testimonies = connector.get_testimonies(id).get_response
+    plane_testimonies = connector.get_testimonies(id)&.get_response
     testimonies_list = []
 
     unless plane_testimonies.nil?

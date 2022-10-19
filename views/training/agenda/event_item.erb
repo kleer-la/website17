@@ -26,11 +26,13 @@
     <p class="small-label time-zone"> <%= "#{TimezoneConverter.gmt(event[:place])} #{event[:place]}" %></p>
   </div>
   <div class="col-lg-2">
-    <strong>$<%= event[:price] || 'precio' %></strong>
+    <strong> USD $<%= event[:price] || 'precio' %></strong>
   </div>
   <div class="col-lg-2">
-    <strong class="price">$<%= event[:eb_price]  || 'promo' %></strong>
-    <p class="small-label">hasta <%= event[:eb_date]  || 'fecha' %></p>
+    <% if event[:eb_price] and event[:eb_date] %>
+      <strong class="price">USD $<%= event[:eb_price]%></strong>
+      <p class="small-label">hasta <%= event[:eb_date] %></p>
+    <% end %>
   </div>
   <div class="col-lg-2">
     <%if event[:is_sold_out]%>
