@@ -13,7 +13,8 @@ class EventType
   end
 
   def self.create_keventer_json(id)
-    EventType.new(nil, JsonAPI.new(KeventerConnector.new.event_type_url(id, :json)).doc )
+    et = EventType.new(nil, JsonAPI.new(KeventerConnector.new.event_type_url(id, :json)).doc )
+    et unless et.id.nil?
   end
 
   attr_accessor :id, :duration, :lang, :cover,
@@ -31,6 +32,7 @@ class EventType
       load provider.xml_doc
     else
       @hash_provider = hash_provider
+      @id= nil
       load_complete_event(hash_provider)
     end
   end
@@ -69,6 +71,8 @@ class EventType
   end
 
   def load_complete_event(hash_event) #json provider
+    return if hash_event.nil? || ['id'].nil?
+
     @id = hash_event['id'].to_i
     @duration = hash_event['duration'].to_i
     @is_kleer_cert = to_boolean(hash_event['is_kleer_certification'])
@@ -80,11 +84,17 @@ class EventType
       goal recipients program faq slug canonical_slug lang
       external_site_url elevator_pitch include_in_catalog
       side_image brochure
-    ].each do |field|
-        # p "#{field}=#{hash_event[field.to_s]}"
-        send("#{field}=", hash_event[field.to_s])
+    ].each { |field| send("#{field}=", hash_event[field.to_s]) }
+
+    @public_editions = load_public_editions(hash_event['next_events'])
+  end
+
+  def load_public_editions(next_events)
+    return [] if next_events.nil?
+
+    next_events.reduce([]) do |events, ev_json|
+      events << Event.new(self).load_from_json(ev_json)
     end
-    @public_editions = []      #TODO
   end
 
   def uri_path
