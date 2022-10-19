@@ -1101,6 +1101,34 @@ a:active {
 img {
   max-width: 100%; }
 
+.p {
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px; }
+
+.hero-description {
+  font-family: 'Raleway',sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px; }
+
+.common-subtitle {
+  font-family: "degular-text",sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px; }
+
+.common-item {
+  font-family: "degular-text",sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px; }
+
 .my-primary-button {
   display: flex;
   flex-direction: row;
@@ -1189,6 +1217,20 @@ img {
   h5 {
     font-size: 18px;
     line-height: 24px; }
+
+  .hero-description {
+    font-family: 'Raleway',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px; }
+
+  .common-subtitle {
+    font-family: "degular-text",sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px; }
 
   .desktop_figure {
     display: none; }
