@@ -6,7 +6,7 @@ class Event
   attr_accessor :country_iso, :country_name, :certified,
                 :city, :country, :country_code, :event_type, :date,
                 :finish_date, :registration_link, :is_sold_out, :id,
-                :price, :eb_date,
+                :price, :eb_date,                                             #TODO remove duplicate fields
                 :list_price, :eb_price, :eb_end_date, :currency_iso_code,
                 :show_pricing, 
                 :place, :address,
@@ -40,6 +40,7 @@ class Event
     load_basic(ev_json)
     load_date(ev_json)
     load_details(ev_json)
+    load_price(ev_json)
     @trainers = load_trainers(ev_json['trainers'])
     self
   end
@@ -61,12 +62,8 @@ class Event
   end
 
   def load_date(hash_event)
-    %i[date finish_date start_time end_time
-    ].each { |field| send("#{field}=", Date.parse(hash_event[field.to_s])) }
-    # @date = Date.parse(first_content(event_doc, 'date'))
-    # @finish_date = validated_date_parse(event_doc.find_first('finish-date'))
-    # @start_time = DateTime.parse(first_content(event_doc, 'start-time'))
-    # @end_time = DateTime.parse(first_content(event_doc, 'end-time'))
+    %i[date finish_date   ].each { |field| send("#{field}=", Date.parse(    hash_event[field.to_s])) }
+    %i[start_time end_time].each { |field| send("#{field}=", DateTime.parse(hash_event[field.to_s])) }
   end
 
   def load_details(hash_event)
@@ -84,6 +81,9 @@ class Event
   def online?
     @mode == 'ol'
   end
+  def blended_learning?
+    mode == 'bl'
+  end
 
   def load_str(syms, hash)
     syms.each { |field| send("#{field}=", hash[field.to_s]) }
@@ -93,8 +93,11 @@ class Event
     @show_pricing = to_boolean(hash_event['show_pricing'])
     %i[list_price eb_price
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
-    @eb_end_date = to_boolean(hash_event['eb_end_date'])
-    
+    @eb_end_date = Date.parse(hash_event['eb_end_date'])
+
+    @price = @list_price          
+    @eb_date = hash_event['eb_end_date']
+
     # @show_pricing = to_boolean(first_content(event_doc, 'show-pricing'))
     # @list_price = first_content_f(event_doc, 'list-price')
     # @eb_price = first_content_f(event_doc, 'eb-price')
