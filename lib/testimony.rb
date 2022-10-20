@@ -1,10 +1,10 @@
 class Testimony
 
   attr_accessor :name, :last_name, :email, :phone, :event_id, :created_at,
-                :message
+                :message, :linkedin_url, :photo_url
 
   def initialize
-    @name = @last_name = @email = @phone = @message = ""
+    @name = @last_name = @email = @phone = @message = @photo_url = @linkedin_url = ""
     @event_id = 0
   end
 
@@ -16,5 +16,7 @@ class Testimony
     @event_id = json["event_id"]
     @event_id = Date.parse(json["created_at"])
     @message = json["testimony"]
+    @linkedin_url = json["profile_url"]
+    @photo_url = json["photo_url"]
   end
 end

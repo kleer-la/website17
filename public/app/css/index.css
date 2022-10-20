@@ -703,7 +703,17 @@
   height: 5px; }
 
 .testimony-info {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center; }
+
+.testimony-info__photo {
+  height: 80px;
+  margin-right: 24px; }
+
+.testimony-linkedin {
+  background-color: #68CEF2;
+  border-radius: 5px; }
 
 .testimony-message {
   max-width: 90%; }

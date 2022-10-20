@@ -646,9 +646,24 @@ $white: #FFFFFF;
   height: 5px;
 }
 
+.testimony-info__photo-container{
+  //background-color: $primary-blue;
+}
 
 .testimony-info{
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.testimony-info__photo{
+  height: 80px;
+  margin-right: 24px;
+}
+
+.testimony-linkedin{
+  background-color: $primary-blue;
+  border-radius: 5px;
 }
 
 .testimony-message{

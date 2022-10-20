@@ -5,7 +5,23 @@
       <% @testimonies.each do |testimony| %>
         <div class="testimony-container">
           <div class="testimony-info">
-            <strong><%= "#{testimony.name} #{testimony.last_name}" %></strong>
+            <div class="testimony-info__photo-container">
+              <img
+                src="<%= testimony.photo_url ? testimony.photo_url : "/app/img/icons/People.svg"%>"
+                class="rounded-circle testimony-info__photo"
+              >
+            </div>
+            <div>
+              <strong>
+                <%= "#{testimony.name} #{testimony.last_name}" %>
+              </strong>
+              <br/>
+              <% if testimony.linkedin_url %>
+                <a href="<%= testimony.linkedin_url %>">
+                  <img class="testimony-linkedin" src="/app/img/icons/Linkedin.svg">
+                </a>
+              <% end %>
+            </div>
           </div>
           <div class="testimony-message">
             "<%= testimony.message %>"
