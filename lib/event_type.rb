@@ -8,7 +8,7 @@ class EventType
     EventType.new XmlAPI.new(file)
   end
 
-  def self.create_keventer(id)
+  def self.create_keventer(id) #TODO deprecate 
     EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
   end
 
@@ -30,14 +30,14 @@ class EventType
     if provider
       @provider = provider
       load provider.xml_doc
-    else
+    else #TODO check if hash_provider is nil
       @hash_provider = hash_provider
       @id= nil
       load_complete_event(hash_provider)
     end
   end
 
-  def load(xml_doc)
+  def load(xml_doc)   #TODO deprecate 
     @id = xml_doc.find('/event-type/id').first.content.to_i
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
     @include_in_catalog = to_boolean(xml_doc.find_first('include-in-catalog').content)
@@ -60,7 +60,7 @@ class EventType
     send("#{field}=", element.content) unless element.nil?
   end
 
-  def load_categories(xml_doc)
+  def load_categories(xml_doc) #TODO deprecate 
     @categories = []
     xml_doc.find('//categories/category').each do |xml_cat|
       id = xml_cat.find('id').first.content.to_i
