@@ -5,14 +5,13 @@ require './lib/trainer'
 class Event
   attr_accessor :country_iso, :country_name, :certified,
                 :city, :country, :country_code, :event_type, :date,
-                :finish_date, :registration_link, :is_sold_out, :id,
-                :price, :eb_date,                                             #TODO remove duplicate fields
+                :finish_date, :registration_link, :is_sold_out, :id, :eb_date,                                             #TODO remove duplicate fields
                 :list_price, :eb_price, :eb_end_date, :currency_iso_code,
-                :show_pricing, 
+                :show_pricing,
                 :place, :address,
                 :start_time, :end_time, :time_zone_name, :time_zone,
-                :timezone_url, 
-                :is_sold_out, :id, 
+                :timezone_url,
+                :is_sold_out, :id,
                 :specific_conditions,
                 :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment
 
@@ -29,13 +28,13 @@ class Event
     @capacity = 0
     @city = @place = @country = @country_code = @address = ''
     @trainers = []
-    
+
     # init_prices
     # init_datetime
     # init_flags
     # init_registration
   end
-  
+
   def load_from_json(ev_json)
     load_basic(ev_json)
     load_date(ev_json)
@@ -95,7 +94,7 @@ class Event
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
     @eb_end_date = Date.parse(hash_event['eb_end_date'])
 
-    @price = @list_price          
+    @price = @list_price
     @eb_date = hash_event['eb_end_date']
 
     # @show_pricing = to_boolean(first_content(event_doc, 'show-pricing'))

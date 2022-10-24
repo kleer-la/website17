@@ -117,7 +117,7 @@ class KeventerReader
           #TODO: migrate to Event method
           event.date = Date.parse(loaded_event['date'])
           event.finish_date = Date.parse(loaded_event['finish_date'])
-          event.price = loaded_event['list_price']
+          event.list_price = loaded_event['list_price']
           event.eb_price = loaded_event['eb_price']
           event.eb_date = loaded_event['eb_end_date']
           event.is_sold_out = loaded_event['is_sold_out']
