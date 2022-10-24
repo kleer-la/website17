@@ -106,7 +106,7 @@ class KeventerReader
   def catalog_events()
     events = []
     begin
-      loaded_events = @connector.get_catalog.get_response
+      loaded_events = @connector.get_catalog&.get_response
       loaded_events.each do |loaded_event|
         event_type = EventType.new(nil, loaded_event)
         event = Event.new(event_type)
@@ -117,7 +117,7 @@ class KeventerReader
           #TODO: migrate to Event method
           event.date = Date.parse(loaded_event['date'])
           event.finish_date = Date.parse(loaded_event['finish_date'])
-          event.price = loaded_event['list_price']
+          event.list_price = loaded_event['list_price']
           event.eb_price = loaded_event['eb_price']
           event.eb_date = loaded_event['eb_end_date']
           event.is_sold_out = loaded_event['is_sold_out']
@@ -161,7 +161,7 @@ class KeventerReader
   end
 
   def testimonies(id)
-    plane_testimonies = connector.get_testimonies(id).get_response
+    plane_testimonies = connector.get_testimonies(id)&.get_response
     testimonies_list = []
 
     unless plane_testimonies.nil?

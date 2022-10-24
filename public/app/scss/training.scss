@@ -296,8 +296,6 @@ $white: #FFFFFF;
     padding: 20px !important;
   }
 
-  #course-qna{}
-
   .course-qna-container{
     margin: 0 !important;
     padding: 0 !important;
@@ -414,16 +412,19 @@ $white: #FFFFFF;
 }
 
 .course-hero__yellow-oval{
+  position: absolute;
   left: -70px;
   bottom: -80px;
 }
 
 .course-hero__red-bean{
+  position: absolute;
   right: 5%;
   top: 40px;
 }
 
 .course-hero__rustic-worm{
+  position: absolute;
   right: 8%;
   bottom: 15px;
 }
@@ -473,6 +474,7 @@ $white: #FFFFFF;
 
 #course-learnings{
   margin-bottom: 100px;
+  position: relative;
 }
 
 .course-learnings__container{
@@ -493,6 +495,7 @@ $white: #FFFFFF;
 }
 
 #course-qna{
+  position: relative;
   padding: 40px;
   width: 100vw;
 }
@@ -565,12 +568,12 @@ $white: #FFFFFF;
 }
 
 .course-program__blue-oval{
-  top: -80px;
+  top: 80px;
   left: -180px
 }
 
 .course-program__red-oval{
-  bottom: -50px;
+  bottom: 8%;
   right: -5%;
 }
 
@@ -643,19 +646,49 @@ $white: #FFFFFF;
   height: 5px;
 }
 
+.testimony-info__photo-container{
+  //background-color: $primary-blue;
+}
 
 .testimony-info{
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.testimony-info__photo{
+  height: 80px;
+  margin-right: 24px;
+}
+
+.testimony-linkedin{
+  background-color: $primary-blue;
+  border-radius: 5px;
 }
 
 .testimony-message{
   max-width: 90%;
 }
 
-.buttons-container{
+.buttons-container{}
 
-}
 
-.courses-filters-container {
+@media screen and (max-width:576px) {
+  .course-hero__yellow-oval{
+    left: -130px;
+  }
 
+  .course-hero__red-bean{
+    right: 1%;
+    top: 20px;
+  }
+
+  .course-trainers__container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .course-trainers__individual-container{
+    margin: 10px !important;
+  }
 }

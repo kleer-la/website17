@@ -7,6 +7,7 @@ def get_event_type(event_type_id, find_it: true)
   allow(connector).to receive(:event_type_url).and_return(find_it ? "./spec/event_type_#{event_type_id}.xml" : '')
   allow(connector).to receive(:events_xml_url).and_return('./spec/events.xml')
   allow(connector).to receive(:categories_xml_url).and_return('./spec/categories.xml')
+  allow(connector).to receive(:get_testimonies ).and_return(nil)
 
   KeventerReader.build_with(connector)
 end
@@ -52,23 +53,6 @@ end
 When(/^I visit this event type page$/) do
   visit "/cursos/#{@event_type_id}-xxx"
   # visit "/categoria/productos-robustos/cursos/#{@event_type_id}-xxx"
-end
-
-#  <meta name="description" content="Acelera el diseño, la creación y la mejora continua...">
-Then('SEO meta name {string} should be {string}') do |tag, text|
-  expect(page).to have_tag('meta',
-                           with: {
-                             name: tag,
-                             content: text
-                           })
-end
-
-Then('SEO meta property {string} should be {string}') do |tag, text|
-  expect(page).to have_tag('meta',
-                           with: {
-                             property: tag,
-                             content: text
-                           })
 end
 
 Given(/^there is a event type with duration$/) do

@@ -1,12 +1,20 @@
 require './lib/xml_api'
+require './lib/json_api'
+require './lib/keventer_helper'
+require './lib/keventer_connector'
 
 class EventType
   def self.create_null(file)
     EventType.new XmlAPI.new(file)
   end
 
-  def self.create_keventer(id)
+  def self.create_keventer(id) #TODO deprecate 
     EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
+  end
+
+  def self.create_keventer_json(id)
+    et = EventType.new(nil, JsonAPI.new(KeventerConnector.new.event_type_url(id, :json)).doc )
+    et unless et.id.nil?
   end
 
   attr_accessor :id, :duration, :lang, :cover,
@@ -15,19 +23,21 @@ class EventType
                 :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex,
                 :categories, :slug, :canonical_slug,
-                :is_kleer_cert, :is_sa_cert
+                :is_kleer_cert, :is_sa_cert,
+                :public_editions, :side_image, :brochure, :is_new_version
 
   def initialize(provider = nil, hash_provider = nil)
     if provider
       @provider = provider
       load provider.xml_doc
-    else
+    else #TODO check if hash_provider is nil
       @hash_provider = hash_provider
+      @id= nil
       load_complete_event(hash_provider)
     end
   end
 
-  def load(xml_doc)
+  def load(xml_doc)   #TODO deprecate 
     @id = xml_doc.find('/event-type/id').first.content.to_i
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
     @include_in_catalog = to_boolean(xml_doc.find_first('include-in-catalog').content)
@@ -50,7 +60,7 @@ class EventType
     send("#{field}=", element.content) unless element.nil?
   end
 
-  def load_categories(xml_doc)
+  def load_categories(xml_doc) #TODO deprecate 
     @categories = []
     xml_doc.find('//categories/category').each do |xml_cat|
       id = xml_cat.find('id').first.content.to_i
@@ -61,20 +71,37 @@ class EventType
   end
 
   def load_complete_event(hash_event) #json provider
-    @id = hash_event['slug']
-    @duration = hash_event['duration']
-    @lang = hash_event['lang']
-    @cover = hash_event['cover']
-    @name = hash_event['name']
-    @slug = hash_event['slug']
-    @subtitle = hash_event['subtitle']
-    @is_kleer_cert = hash_event['is_kleer_certification']
-    @is_sa_cert = hash_event['csd_eligible']
-    @categories = hash_event['categories'].map{|e| e['name']}
+    return if hash_event.nil? || ['id'].nil?
 
+    @id = hash_event['id'].to_i
+    @duration = hash_event['duration'].to_i
+    @is_kleer_cert = to_boolean(hash_event['is_kleer_certification'])
+    @is_sa_cert = to_boolean(hash_event['csd_eligible'])
+    @is_new_version = to_boolean(hash_event['new_version'])
+    @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
+
+    %i[name subtitle description learnings takeaways cover
+      goal recipients program faq slug canonical_slug lang
+      external_site_url elevator_pitch include_in_catalog
+      side_image brochure
+    ].each { |field| send("#{field}=", hash_event[field.to_s]) }
+
+    @public_editions = load_public_editions(hash_event['next_events'])
   end
+
+  def load_public_editions(next_events)
+    return [] if next_events.nil?
+
+    next_events.reduce([]) do |events, ev_json|
+      events << Event.new(self).load_from_json(ev_json)
+    end
+  end
+
   def uri_path
     "cursos/#{@slug}"
+  end
+  def canonical_url
+    "cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
 end
