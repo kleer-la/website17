@@ -46,7 +46,7 @@ class Event
 
   def load_basic(hash_event)
     @id = hash_event['id'].to_i
-    load_str(%i[city place address registration_link], hash_event)
+    load_str(%i[city place address registration_link time_zone_name], hash_event)
 
     # @id = first_content(event_doc, 'id').to_i
     # @capacity = first_content(event_doc, 'capacity').to_i
@@ -94,7 +94,6 @@ class Event
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
     @eb_end_date = Date.parse(hash_event['eb_end_date'])
 
-    @price = @list_price
     @eb_date = hash_event['eb_end_date']
 
     # @show_pricing = to_boolean(first_content(event_doc, 'show-pricing'))
