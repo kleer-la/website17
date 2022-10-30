@@ -115,7 +115,7 @@ end
 #TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
-  from_json = params['json'].to_s.length > 0
+  from_json = !(params['json'].to_s.length > 0)
 
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
   unless redirect_to.nil?
@@ -151,11 +151,11 @@ get '/cursos/:event_type_id_with_name' do
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
 
-    if @event_type.is_new_version 
-      return erb :'training/landing_course/index', layout: :'layout/layout2022'
-    end
+    # unless @event_type.is_new_version 
+    #   return erb :event_type
+    # end
 
-    erb :event_type
+    erb :'training/landing_course/index', layout: :'layout/layout2022'
   end
 end
 

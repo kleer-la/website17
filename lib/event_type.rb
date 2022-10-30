@@ -13,9 +13,20 @@ class EventType
   end
 
   def self.create_keventer_json(id)
-    et = EventType.new(nil, JsonAPI.new(KeventerConnector.new.event_type_url(id, :json)).doc )
-    et unless et.id.nil?
+    if defined? @@json_api
+      json_api = @@json_api
+    else
+      json_api = JsonAPI.new(KeventerConnector.new.event_type_url(id, :json))
+    end
+
+    et = EventType.new(nil, json_api.doc ) unless json_api.doc.nil?
+    et unless et&.id.nil?
   end
+
+  def self.null_json_api(null_api)
+    @@json_api = null_api
+  end
+
 
   attr_accessor :id, :duration, :lang, :cover,
                 :name, :subtitle, :description, :learnings, :takeaways,
