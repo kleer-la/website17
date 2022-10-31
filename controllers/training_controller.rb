@@ -151,7 +151,7 @@ get '/cursos/:event_type_id_with_name' do
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
 
-    # unless @event_type.is_new_version 
+    # unless @event_type.is_new_version
     #   return erb :event_type
     # end
 

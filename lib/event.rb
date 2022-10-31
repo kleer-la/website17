@@ -92,8 +92,8 @@ class Event
     @show_pricing = to_boolean(hash_event['show_pricing'])
     %i[list_price eb_price
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
-    @eb_end_date = Date.parse(hash_event['eb_end_date'])
 
+    @eb_end_date = hash_event['eb_end_date'] ? Date.parse(hash_event['eb_end_date']) : nil
     @eb_date = hash_event['eb_end_date']
 
     # @show_pricing = to_boolean(first_content(event_doc, 'show-pricing'))

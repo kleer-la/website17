@@ -1,48 +1,54 @@
 <% require './lib/timezone_converter'
+
+   event_type = event.event_type
+   date = format_date_range(event.date, event.finish_date, session[:locale])
+   info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
+
+
 %>
 <div class="row event-item pb-4 mt-4">
   <div class="col-lg-3">
-    <a href="<%= event[:url] %>"><h6><%= event[:name] %></h6></a>
+    <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
     <p>
-      <% if event[:country_iso] == 'OL' %>
+      <% if event.country_iso == 'OL' %>
         <img src="/app/img/icons/VideoCamera.svg">
         Online
       <% else %>
-        <img src="/img/flags/<%= event[:country_iso].downcase %>.png"/>
-        <%= "#{event[:city]} - #{event[:country_name]}" %>
+        <img src="/img/flags/<%= event.country_iso.downcase %>.png"/>
+        <%= "#{event.city} - #{event.country_name}" %>
       <% end %>
     </p>
   </div>
   <div class="col-lg-1">
     <p>
       <img src="/app/img/icons/Clock.svg">
-      <%= event[:duration] %>hs
+      <%= event_type.duration %>hs
     </p>
 
   </div>
   <div class="col-lg-2">
-    <strong><%= event[:date] %></strong>
-    <p><%= event[:info_time] %></p>
-    <p class="small-label time-zone"> <%= "#{TimezoneConverter.gmt(event[:place])} #{event[:place]}" %></p>
+    <strong><%= date %></strong>
+    <p><%= info_time %></p>
+    <p class="small-label time-zone"> <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %></p>
   </div>
   <div class="col-lg-2">
-    <strong> USD $<%= event[:price] || 'precio' %></strong>
+    <strong> USD $<%= event.list_price || 'precio' %></strong>
   </div>
   <div class="col-lg-2">
-    <% if event[:eb_price] and event[:eb_date] %>
-      <strong class="price">USD $<%= event[:eb_price]%></strong>
-      <p class="small-label">hasta <%= event[:eb_date] %></p>
+    <% if event.eb_price and event.eb_date %>
+      <strong class="price">USD $<%= event.eb_price%></strong>
+      <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>
   <div class="col-lg-2">
-    <%if event[:is_sold_out]%>
+    <%if event.is_sold_out%>
       <button class="my-primary-button p-2"
         href='' style="filter: grayscale(100%);">
         Completo
       </button>
     <%else%>
       <a class="my-primary-button p-2"
-        href='<%= "https://eventos.kleer.la/events/#{event[:id]}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
+        href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar</a>
     <%end%>
   </div>
 </div>
