@@ -1186,7 +1186,9 @@ img {
 .btn-center-container {
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
 
 .desktop_figure {
   position: absolute; }
