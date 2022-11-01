@@ -46,9 +46,13 @@
       </div>
     </div>
   </div>
-<!--  <div class="button-container mt-5 mb-5 d-flex justify-content-center">-->
-<!--    <button class="my-primary-button">-->
-<!--      Descargar programa-->
-<!--    </button>-->
-<!--  </div>-->
+  <% if @event_type.brochure and @event_type.brochure != "" %>
+
+    <div class="button-container mt-5 mb-5 d-flex justify-content-center">
+      <a class="my-primary-button" href="<%=@event_type.brochure %>">
+        Descargar programa
+      </a>
+    </div>
+  <% end %>
+
 </section>
