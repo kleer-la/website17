@@ -10,7 +10,6 @@ class Event
                 :show_pricing,
                 :place, :address,
                 :start_time, :end_time, :time_zone_name, :time_zone,
-                :timezone_url,
                 :is_sold_out, :id,
                 :specific_conditions,
                 :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment
@@ -113,6 +112,20 @@ class Event
     hash_trainers.reduce([]) do |trainers, t_json|
       trainers << Trainer.new.load_from_json(t_json)
     end
+  end
+
+  def timezone_url
+    duration = @end_time.to_time - @start_time.to_time
+    hours = (duration / 3600).to_i
+    minutes = ((duration % 3600) / 60).to_i
+
+    "https://www.timeanddate.com/worldclock/fixedtime.html?#{URI.encode_www_form(
+      msg: @event_type.name,
+      iso: "#{date.strftime('%Y%m%d')}T#{start_time.strftime('%H%M')}",
+      p1: TimezoneConverter.timezone(@time_zone_name),
+      ah: hours,
+      am: minutes
+    ) }"
   end
 
 end

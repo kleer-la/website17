@@ -4,7 +4,6 @@
    date = format_date_range(event.date, event.finish_date, session[:locale])
    info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
 
-
 %>
 <div class="row event-item pb-4 mt-4">
   <div class="col-lg-3">
@@ -29,7 +28,10 @@
   <div class="col-lg-2">
     <strong><%= date %></strong>
     <p><%= info_time %></p>
-    <p class="small-label time-zone"> <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %></p>
+    <a class="small-label time-zone"
+       href="<%= event.timezone_url%>">
+      <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
+    </a>
   </div>
   <div class="col-lg-2">
     <strong> USD $<%= event.list_price || 'precio' %></strong>
