@@ -528,12 +528,13 @@ $white: #FFFFFF;
 .course-trainers__individual-container{
   background-color: $celeste;
   padding: 48px;
-  margin: 40px;
+  margin: 25px;
   border-radius: 16px;
-  height: 380px;
-  max-width: 500px;
+  height: auto;
+  max-height: 500px;
+  max-width: 90vw;
   min-width: 300px;
-  width: auto;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -690,5 +691,6 @@ $white: #FFFFFF;
 
   .course-trainers__individual-container{
     margin: 10px !important;
+    padding: 30px !important;
   }
 }
