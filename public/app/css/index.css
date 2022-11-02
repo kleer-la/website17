@@ -559,6 +559,30 @@
 #course-description {
   margin-top: 100px;
   margin-bottom: 100px; }
+  #course-description h3 {
+    font-family: 'Degular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 30px; }
+  #course-description h4 {
+    font-family: 'Degular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px; }
+  #course-description h5 {
+    font-family: 'Degular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px; }
+  #course-description h6 {
+    font-family: 'Degular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px; }
 
 #course-learnings {
   margin-bottom: 100px;
