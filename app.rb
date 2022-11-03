@@ -59,7 +59,7 @@ before do
   else
     @base_title = 'Agile Coaching, Consulting & Training'
     @meta_tags= Tags.new
-    @meta_tags.set! title: @base_title
+    @meta_tags.set! title: @base_title, path: request.path
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),

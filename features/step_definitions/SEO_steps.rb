@@ -22,3 +22,8 @@ end
 Then('The page should have at least two H2 tags') do
   expect(all('h2').length >= 2)
 end
+
+Then('SEO hreflang {string} should have href {string}') do |lang, url|
+  expect(page.html).to match /<link.*hreflang=\"#{lang}\" href=\"#{url}\"/
+  #\"
+end
