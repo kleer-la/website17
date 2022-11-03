@@ -6,7 +6,7 @@ get '/blog/' do
 end
 
 get '/blog-preview/:slug' do |slug|
-  meta_tags! noindex: true, nofollow: true
+  @meta_tags.set! noindex: true, nofollow: true
   @where = 'Blog-Preview'
 
   begin
@@ -18,7 +18,7 @@ get '/blog-preview/:slug' do |slug|
 end
 
 get '/blog-preview' do
-  meta_tags! noindex: true, nofollow: true
+  @meta_tags.set! noindex: true, nofollow: true
 
   @where = 'Blog-Preview'
 
@@ -41,7 +41,7 @@ end
 
 def blog_one(article)
   @article = article
-  meta_tags! title: @article.tabtitle,
+  @meta_tags.set! title: @article.tabtitle,
              description: @article.description
 
   erb :'blog/article', layout: :'layout/layout2022'
@@ -52,8 +52,8 @@ rescue StandardError => e
 end
 
 def blog_list(articles)
-  meta_tags! title: 'Blog - Artículos sobre agilidad organizacional'
-  meta_tags! description: 'Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
+  @meta_tags.set! title: 'Blog - Artículos sobre agilidad organizacional'
+  @meta_tags.set! description: 'Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @articles = articles
 
   @show_abstract = true

@@ -1,30 +1,33 @@
 module MetaTags
   class Tags
-    @_tags = nil
+    # @_tags = nil
 
-    def self.meta_tags!(...)
-      @_tags = Tags.new if @_tags.nil?
-      @_tags.set(...)
-    end
+    # def self.meta_tags!(...)
+    #   @_tags = Tags.new if @_tags.nil?
+    #   @_tags.set(...)
+    # end
 
-    def self.display_meta_tags(...)
-      meta_tags!(...)
-      head = @_tags.display
-      @_tags = nil
-      head
-    end
+    # def self.display_meta_tags(...)
+    #   meta_tags!(...)
+    #   head = @_tags.display
+    #   @_tags = nil
+    #   head
+    # end
 
     # default values
     def initialize
       @tags = {
         charset: 'utf-8',
-        base_url: '',
+        base_url: 'https://kleer.la',
         'http-equiv': ['X-UA-Compatible', 'IE=edge'],
-        viewport: 'width=device-width, initial-scale=1.0"'
+        viewport: 'width=device-width, initial-scale=1.0"',
+        hreflang: [:es, :en]
       }
+      @path = ''
+      @shown= false
     end
 
-    def set(**keyw)
+    def set!(**keyw)
       @tags.merge! keyw
     end
     ROBOT_ATTR = %i[noindex nofollow noarchive].freeze
@@ -41,10 +44,19 @@ module MetaTags
       @site = @tags[:site]
       @tags.delete :site
     end
+    def path
+      @path = @tags[:path]
+      @tags.delete :path
+    end
 
-    def display
+    def display(...)
+      return '' if @shown
+      set!(...)
+      @shown = true
       robot
       site
+      path
+      @tags.delete :hreflang if !!@tags[:canonical]
       (@tags.map { |tag| display_one tag }).join('')
     end
 
@@ -75,6 +87,8 @@ module MetaTags
         nil
       when :canonical
         "<link rel=\"canonical\" href=\"#{@base_url}/#{tag[1]}\"/>"
+      when :hreflang
+        tag[1].reduce('') {|ac, lang| ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"} unless @path.nil?
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end

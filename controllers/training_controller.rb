@@ -46,8 +46,8 @@ def coming_courses
 end
 
 get '/agenda' do
-  meta_tags! title: 'Agenda de cursos online sobre Agilidad y Scrum'
-  meta_tags! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
+  @meta_tags.set! title: 'Agenda de cursos online sobre Agilidad y Scrum'
+  @meta_tags.set! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
 
   @events = KeventerReader.instance.catalog_events()
   erb :'training/agenda/index', layout: :'layout/layout2022'
@@ -58,8 +58,8 @@ get('/catalogo') {  catalog }
 
 def catalog
   @active_tab_entrenamos = 'active'
-  meta_tags! title: 'Capacitación empresarial en agilidad organizacional'
-  meta_tags! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
+  @meta_tags.set! title: 'Capacitación empresarial en agilidad organizacional'
+  @meta_tags.set! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
   @categories = KeventerReader.instance.categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
@@ -142,9 +142,9 @@ get '/cursos/:event_type_id_with_name' do
     redirect_not_found_course
   else
     # SEO (title, meta)
-    meta_tags! title: @event_type.name
-    meta_tags! description: @event_type.elevator_pitch
-    meta_tags! canonical: @event_type.canonical_url
+    @meta_tags.set! title: @event_type.name
+    @meta_tags.set! description: @event_type.elevator_pitch
+    @meta_tags.set! canonical: @event_type.canonical_url
 
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
