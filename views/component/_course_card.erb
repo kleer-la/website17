@@ -25,16 +25,18 @@
     </div>
     <p class="card-text course-card__subtitle"><%= @course[:subtitle]%></p>
     <ul class="course-card__items">
-      <% unless @course[:duration].nil? %>
+      <% unless @course[:duration].nil? || @course[:duration].to_i == 0 %>
         <li class="course-card__item">
           <img class="icon-card" src="/app/img/icons/Clock.svg" />
           <%= @course[:duration]%> hs
         </li>
       <% end %>
-      <li class="course-card__item">
-        <i class="fa fa-calendar"></i>
-        <%= @course[:date]%>
-      </li>
+      <% unless @course[:date].to_s == '' %>
+        <li class="course-card__item">
+          <i class="fa fa-calendar"></i>
+          <%= @course[:date]%>
+        </li>
+      <% end %>
   <%#TODO: country%>
       <li class="course-card__item">
         <img class="icon-card" src="/app/img/icons/VideoCamera.svg" />
