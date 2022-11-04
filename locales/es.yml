@@ -1210,6 +1210,7 @@ es:
         - {
           text: Desarrollo del Liderazgo Ágil,
           img: /app/img/icons/GitFork.svg,
+          url: /servicios/desarrollo-liderazgo-agil
         }
         - {
           text: Aceleración de la innovación,
