@@ -114,7 +114,8 @@ end
 
 class Service
   attr_accessor :public_editions, :name, :subtitle, :description, :side_image, :takeaways, 
-                :recipients, :program, :brochure
+                :recipients, :program, :brochure,
+                :cta
   def initialize()
     @public_editions = []
     @side_image = ''
@@ -207,6 +208,10 @@ Etapas del Cambio con ADKAR (Prosci), Cambio Sistémico con Doble Bucle (Berkana
 El contenido es tentativo se adapta en función del contexto, de las necesidades de la organización y participantes, y de la cantidad de sesiones grupales
 '''
 
+@event_type.cta = 
+'''
+<img src="https://kleer-images.s3.sa-east-1.amazonaws.com/DLA+CTA.png"/>
+'''
 
   erb :'services/landing/index', layout: :'layout/layout2022'
 end
