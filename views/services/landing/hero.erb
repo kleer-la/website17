@@ -1,0 +1,23 @@
+<section id="course-hero">
+  <div class="row h-100">
+    <div class="col-md-9 course-hero__text">
+      <h1><%= @event_type.name %></h1>
+      <h2 class="hero-description"><%= @event_type.subtitle %></h2>
+    </div>
+    <div class="col-md-3 course-hero__button">
+        <% if @event_type.public_editions.length > 0 %>
+          <a href="#course-next-editions">
+            <strong>Ver fechas</strong>
+            <img src="/app/img/view_figures/rustic_arrow2.svg"/>
+          </a>
+        <% else %>
+          <a href="<%= t("generals.social_media.whatsapp") %>">
+            <strong>Contáctanos</strong>
+          </a>
+        <% end %>
+    </div>
+  </div>
+  <img src="/app/img/view_figures/yellow_oval.svg" class="course-hero__yellow-oval" />
+  <img src="/app/img/view_figures/red_bean.svg" class="course-hero__red-bean" />
+  <img src="/app/img/view_figures/rustic_worm.svg" class="course-hero__rustic-worm" />
+</section>
