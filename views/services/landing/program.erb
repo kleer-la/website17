@@ -1,0 +1,57 @@
+<%
+  separator = '<h4>'
+  item_separator = '</h4>'
+
+  separated_program = []
+
+  program = @markdown_renderer.render(@event_type.program).split(separator)
+
+  program.each do |item|
+    separated_item = item.split(item_separator)
+
+    if separated_item[0].nil?
+      next
+    end
+    separated_program.push({item: separated_item[0], subitem: separated_item[1]})
+  end
+
+  separated_program = separated_program.compact
+
+  middle_space = program.length / 2
+%>
+
+<section id="course-program">
+  <div class="container mt-5">
+    <h2 class="mb-5 text-center common-subtitle">Contenido del Programa de Desarrollo del Liderazgo Ágil</h2>
+    <p></p>
+    <div class="course-program__container row mb-5">
+      <div class="col-md-6">
+      <% separated_program.each.with_index do  |item, index| %>
+        <% if index >= middle_space
+             break
+           end
+        %>
+        <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+      <% end %>
+      </div>
+      <div class="col-md-6">
+        <% separated_program.each.with_index do |item, index| %>
+          <%
+            if index < middle_space
+              next
+            end
+          %>
+          <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% if @event_type.brochure and @event_type.brochure != "" %>
+    <div class="button-container mt-5 mb-5 d-flex justify-content-center">
+      <a class="my-primary-button" href="<%=@event_type.brochure %>">
+        Descargar programa
+      </a>
+    </div>
+  <% end %>
+
+</section>
