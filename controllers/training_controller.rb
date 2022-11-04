@@ -160,14 +160,14 @@ DLA está diseñado para construir unas bases sólidas para la evolución organi
 
 - **Radar de Liderazgo Ágil**:  autoevaluación y evaluación por sus colaboradores.
 - **Sesiones individuales** que incluyen:
-- **Debrief**, para interpretar los resultados del Radar de Liderazgo Ágil e identificar los desafíos de liderazgo a trabajar.
-- **Coaching Ejecutivo**, para acompañar a la persona en la evolución de su liderazgo, y guiarla en su experimentación de mejoras.
-- **Cierre**, para hacer un balance del desarrollo individual y delinear los próximos pasos.
+  - **Debrief**, para interpretar los resultados del Radar de Liderazgo Ágil e identificar los desafíos de liderazgo a trabajar.
+  - **Coaching Ejecutivo**, para acompañar a la persona en la evolución de su liderazgo, y guiarla en su experimentación de mejoras.
+-   **Cierre**, para hacer un balance del desarrollo individual y delinear los próximos pasos.
 - **Encuentros grupales** online en vivo semanales:
-- **Encuentro de Lanzamiento** del Programa
-- Talleres de **Entrenamiento**
-- Encuentros de **Checkpoints** con Clínicas de Casos y Actividades Grupales de Repaso
-- Encuentro de Cierre del Programa
+  - **Encuentro de Lanzamiento** del Programa
+  - Talleres de **Entrenamiento**
+  - Encuentros de **Checkpoints** con Clínicas de Casos y Actividades Grupales de Repaso
+  - Encuentro de Cierre del Programa
 - **Plataforma online** del programa, con materiales de trabajo, videos, referencias adicionales para profundizar, actividades individuales o grupales de puesta en práctica.
 '''
 
