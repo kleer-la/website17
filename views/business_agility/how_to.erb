@@ -9,13 +9,18 @@
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
         <%if item[:url].to_s != '' %>
           <a href="<%= item[:url]%>">
-        <% end %>
+            <div class="howto__item p-4 rotable-item">
+        <% else %>
           <div class="howto__item p-4">
+        <% end %>
             <img src="<%= item[:img] %>" class="mb-3"/>
             <p><%= item[:text] %></p>
-          </div>
       <%if item[:url].to_s != '' %>
+            <b>Ver más</b>
+          </div>
         </a>
+      <% else %>
+          </div>
       <% end %>
       </div>
     <% end %>
