@@ -24,4 +24,7 @@
 <%= erb :'services/landing/takeaways' %>
 <%= erb :'services/landing/recipients' %>
 <%= erb :'services/landing/program' %>
+<div class="container text-center center-block">
+  <%= @event_type.cta %>
+</div>
 <%= erb :'component/_contact_banner_button', locals: {text: 'Contáctanos para llevar el Progama de Liderazgo Ágil a tu organización.', text_button: '¿Conversamos?'} %>
