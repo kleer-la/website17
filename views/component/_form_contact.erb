@@ -1,33 +1,47 @@
-<form>
+<form action="/send-mail" method="post">
   <div class="row">
-    <div class="mb-3 col-xs-12 col-md-6">
-      <label for="exampleInputEmail1" class="form-label">Tu nombre</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="mb-3 col-xs-12 col-md-6">
-      <label for="exampleInputEmail1" class="form-label">Tu apellido</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div class="mb-3 col-xs-12">
+      <label for="exampleInputEmail1" class="form-label">Tu nombre completo</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name">
     </div>
   </div>
   <div class="row">
     <div class="mb-3 col-xs-12 col-md-6">
       <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input
+        type="email"
+        class="form-control"
+        name="email">
     </div>
     <div class="mb-3 col-xs-12 col-md-6">
       <label for="exampleInputEmail1" class="form-label">Número de teléfono</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        name="phone">
     </div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Subject de tu consulta</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text"
+           class="form-control"
+           id="exampleInputEmail1"
+          name="subject">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Mensaje</label>
     <div id="emailHelp" class="form-text">¡Contános como podemos ayudarte!</div>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      name="message"
+      rows="3"></textarea>
   </div>
-  <!--  <button type="submit" class="btn btn-primary">Submit</button>-->
+  <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>

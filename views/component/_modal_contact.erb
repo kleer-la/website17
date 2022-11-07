@@ -1,6 +1,6 @@
 <div class="btn-center-container m-3">
   <button type="button" class="btn my-primary-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Contáctanos
+    <%= text_button %>
   </button>
 </div>
 
@@ -14,10 +14,6 @@
       </div>
       <div class="modal-body">
         <%= erb :'component/_form_contact' %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Enviar</button>
       </div>
     </div>
   </div>

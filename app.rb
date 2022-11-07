@@ -22,6 +22,7 @@ require './controllers/training_controller'
 require './controllers/clients_controller'
 require './controllers/about_us_controller'
 require './controllers/home_controller'
+require './controllers/mailer_controller'
 
 include MetaTags
 
