@@ -23,10 +23,8 @@
 <%= erb :'services/landing/description' %>
 <%= erb :'services/landing/takeaways' %>
 <%= erb :'services/landing/recipients' %>
-<%#= erb :'services/landing/next_editions' %>
 <%= erb :'services/landing/program' %>
-<%#= erb :'services/landing/trainers' %>
-<%#= erb :'services/landing/testimonies' %>
-<%#= erb :'services/landing/qna' %>
-<%= erb :'services/landing/contact' %>
-<%= erb :'component/_contact_modal' %>
+<div class="container text-center center-block">
+  <%= @event_type.cta %>
+</div>
+<%= erb :'component/_contact_banner_button', locals: {text: 'Contáctanos para llevar el Progama de Liderazgo Ágil a tu organización.', text_button: '¿Conversamos?'} %>

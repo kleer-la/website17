@@ -132,8 +132,8 @@ get '/servicios/desarrollo-liderazgo-agil' do
   @event_type.subtitle = 'Hacia un liderazgo con impacto más consciente y humano'
   @event_type.description = 
 '''
-El nivel de agilidad que una organización sea capaz de alcanzar está acotado por el nivel de
-agilidad colectiva de quienes la lideran.
+El nivel de agilidad que una organización sea capaz de alcanzar está acotado por el nivel de agilidad colectiva de quienes la lideran.
+
 ### ¿Por qué desarrollar el liderazgo ágil?
 
 Con la transformación digital de las organizaciones, emerge el desafío clave de la evolución de su management hacia un liderazgo ágil. Se vuelve crítico evolucionar el modelo de liderazgo colectivo, lo que en última instancia, impactará en la cultura organizacional.
@@ -342,3 +342,4 @@ get '/entrenamos/eventos/pais/:country_iso_code' do
   )
   data
 end
+

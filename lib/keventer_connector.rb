@@ -1,10 +1,13 @@
 require './lib/json_api'
+require './lib/keventer_connection/mailer'
 
 KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
 API_ROOT = KEVENTER_URL + '/api'.freeze
 API_EVENTS_PATH = '/events.xml'.freeze
 API_KLEERERS_PATH = '/kleerers.xml'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
+
+API_MAILER = '/contact_us'.freeze
 class KeventerConnector
   def initialize(response = nil)
     @response = response
@@ -50,5 +53,9 @@ class KeventerConnector
   def get_testimonies(id)
     return JSON.parse(@response) unless @response.nil?
     JsonAPI.new("#{API_ROOT}/event_types/#{id}/testimonies.json")
+  end
+
+  def send_mail(data)
+    Mailer.new("#{API_ROOT}#{API_MAILER}",data)
   end
 end
