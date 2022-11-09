@@ -142,7 +142,7 @@ En esta evolución, no es suficiente la adopción de prácticas ágiles por los 
 
 Este desarrollo sistémico del liderazgo ágil es clave para lograr una agilidad organizacional efectiva y sostenible.
 
-### ¿Cómo lo hacemos …?
+### ¿Cómo lo hacemos?
 
 Para lograr un impacto en el liderazgo de las personas que participan del programa, combinamos distintos enfoques pedagógicos, tanto a nivel individual como a nivel grupal.
 
@@ -181,7 +181,7 @@ El programa está destinado tanto a personas con experiencia en liderazgo y agil
 - Agentes de cambio en la organización
 - Líderes de equipos
 - Líderes técnicos
-- Personas con liderazgo en distintas áreas: recursos humanos
+- Personas con liderazgo en distintas áreas: recursos humanos, administración, compras, legales, entre otras
 '''
 
 @event_type.program = 
@@ -210,7 +210,13 @@ El contenido es tentativo se adapta en función del contexto, de las necesidades
 
 @event_type.cta = 
 '''
-<img src="https://kleer-images.s3.sa-east-1.amazonaws.com/DLA+CTA.png"/>
+<div class="container">
+<p>
+Contactanos por correo electrónico o por WhatsApp para cocrear un Programa de Desarrollo del Liderazgo Ágil adaptado a tu contexto organizacional, partiendo de las opciones típicas que ofrecemos para grupos de 10 a 16 líderes:
+</p>
+<img src="https://kleer-images.s3.sa-east-1.amazonaws.com/dla_program.png"/>
+
+</div>
 '''
 
   erb :'services/landing/index', layout: :'layout/layout2022'
