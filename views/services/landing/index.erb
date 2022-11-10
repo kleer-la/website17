@@ -1,0 +1,30 @@
+<div class="course-company-panel">
+  <% if @event_type.public_editions == [] %>
+    <p class="m-0">
+      <strong>
+        ¡Contactarnos para aplicar este sercicio en tu organizacion!
+      </strong>
+    </p>
+    <a href="#newsletter-subscription">
+      <strong>Contáctanos🔥</strong>
+    </a>
+  <% else %>
+    <p class="m-0">
+      <strong>
+        ¡No te pierdas el próximo curso a comenzar el <%= @event_type.public_editions[0].date %>!
+      </strong>
+    </p>
+    <a href="#course-next-editions">
+      <strong>Inscribeme ahora🔥</strong>
+    </a>
+  <% end %>
+</div>
+<%= erb :'services/landing/hero' %>
+<%= erb :'services/landing/description' %>
+<%= erb :'services/landing/takeaways' %>
+<%= erb :'services/landing/recipients' %>
+<%= erb :'services/landing/program' %>
+<div class="container text-center center-block">
+  <%= @event_type.cta %>
+</div>
+<%= erb :'component/_contact_banner_button', locals: {text: 'Contáctanos para llevar el Programa de Liderazgo Ágil a tu organización.', text_button: '¿Conversamos?'} %>

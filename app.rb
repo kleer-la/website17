@@ -22,6 +22,7 @@ require './controllers/training_controller'
 require './controllers/clients_controller'
 require './controllers/about_us_controller'
 require './controllers/home_controller'
+require './controllers/mailer_controller'
 
 include MetaTags
 
@@ -58,7 +59,8 @@ before do
     redirect "https://www.kleer.la#{request.path}"
   else
     @base_title = 'Agile Coaching, Consulting & Training'
-    meta_tags! title: @base_title
+    @meta_tags= Tags.new
+    @meta_tags.set! title: @base_title, path: request.path
     flash.sweep
     @markdown_renderer = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),
@@ -80,8 +82,8 @@ before '/:locale/*' do
 end
 
 get '/ebooks2022' do
-  meta_tags! title: 'Libros'
-  meta_tags! description: 'Descripcion libros o recursos'
+  @meta_tags.set! title: 'Libros'
+  @meta_tags.set! description: 'Descripcion libros o recursos'
 
   @books = Books.new.load.all
 
@@ -106,23 +108,23 @@ end
 
 get '/agilidad-organizacional-old' do
   @active_tab_coaching = 'active'
-  meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
-  meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional'
+  @meta_tags.set! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
 end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
-  meta_tags! title: 'Te acompañamos hacia la agilidad organizacional'
-  meta_tags! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional'
+  @meta_tags.set! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   erb :'business_agility/index', layout: :'layout/layout2022'
 end
 
 get '/agilidad-organizacional/mejora-continua' do
   @active_tab_coaching = 'active'
-  meta_tags! title: 'Generamos el hábito de mejora continua - Kaizen'
-  meta_tags! description: 'Entrenamos, hacemos mentoría y generamos un proceso sostenible de mejora continua o kaizen'
+  @meta_tags.set! title: 'Generamos el hábito de mejora continua - Kaizen'
+  @meta_tags.set! description: 'Entrenamos, hacemos mentoría y generamos un proceso sostenible de mejora continua o kaizen'
 
   erb :mejora_continua
 end
@@ -133,43 +135,43 @@ end
 
 get '/facilitacion' do
   @active_tab_facilitacion = 'active'
-  meta_tags! title: "#{@base_title} | Facilicación"
+  @meta_tags.set! title: "#{@base_title} | Facilicación"
   erb :facilitacion
 end
 
 get '/facilitacion/grafica' do
   @active_tab_facilitacion = 'active'
-  meta_tags! title: "#{@base_title} | Facilicación gráfica"
+  @meta_tags.set! title: "#{@base_title} | Facilicación gráfica"
   erb :facilitacion_grafica
 end
 
 get '/facilitacion/innovacion-creatividad' do
   @active_tab_facilitacion = 'active'
-  meta_tags! title: "#{@base_title} | Innovación y creatividad"
+  @meta_tags.set! title: "#{@base_title} | Innovación y creatividad"
   erb :facilitacion_innovacion_creatividad
 end
 
 get '/facilitacion/planificacion-estrategica' do
   @active_tab_facilitacion = 'active'
-  meta_tags! title: "#{@base_title} | Planificación estratégica"
+  @meta_tags.set! title: "#{@base_title} | Planificación estratégica"
   erb :facilitacion_planificacion_estrategica
 end
 
 get '/facilitacion/dinamicas-eventos' do
   @active_tab_facilitacion = 'active'
-  meta_tags! title: "#{@base_title} | Dinámicas y eventos"
+  @meta_tags.set! title: "#{@base_title} | Dinámicas y eventos"
   erb :facilitacion_dinamicas_eventos
 end
 
 get '/publicamos' do
   @active_tab_publicamos = 'active'
-  meta_tags! title: "#{@base_title} | Publicamos"
+  @meta_tags.set! title: "#{@base_title} | Publicamos"
   erb :publicamos
 end
 
 get '/libros' do
   @active_tab_publicamos = 'active'
-  meta_tags! title: "#{@base_title} | Libros"
+  @meta_tags.set! title: "#{@base_title} | Libros"
   @books = Books.new.load.all
 
   erb :ebooks
@@ -177,7 +179,7 @@ end
 
 get '/recursos' do
   @active_tab_publicamos = 'active'
-  meta_tags!  title: t('meta_tag.resources.title'),
+  @meta_tags.set!  title: t('meta_tag.resources.title'),
               description: t('meta_tag.resources.description')
 
   @resources = Resources.new.load.all
@@ -187,13 +189,13 @@ end
 
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = 'active'
-  meta_tags! title: "#{@base_title} | Recursos"
+  @meta_tags.set! title: "#{@base_title} | Recursos"
   erb :recursos_primeros_pasos
 end
 
 get '/publicamos/scrum' do
   @active_tab_publicamos = 'active'
-  meta_tags! title: "#{@base_title} | Publicamos | Proyectos Ágiles con Scrum"
+  @meta_tags.set! title: "#{@base_title} | Publicamos | Proyectos Ágiles con Scrum"
   erb :ebook_scrum_plain, layout: :layout_ebook_landing
 end
 
@@ -203,7 +205,7 @@ end
 
 get '/publicamos/mas-productivos' do
   @active_tab_publicamos = 'active'
-  meta_tags! title: "#{@base_title} | Publicamos | Equipos más productivos"
+  @meta_tags.set! title: "#{@base_title} | Publicamos | Equipos más productivos"
   erb :ebook_masproductivos_plain, layout: :layout_ebook_landing
 end
 
@@ -229,7 +231,7 @@ get '/categoria/:category_codename' do
   if @category.nil?
     status 404
   else
-    meta_tags! title: @category.name
+    @meta_tags.set! title: @category.name
     @event_types = @category.event_types.sort_by(&:name)
 
     erb :category

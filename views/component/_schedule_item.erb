@@ -1,0 +1,82 @@
+<% require './lib/timezone_converter'
+
+   event_type = event.event_type
+   date = format_date_range(event.date, event.finish_date, session[:locale])
+   info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
+
+%>
+
+<div class="row event-item pb-4 mt-4">
+  <% if with_name %>
+    <div class="col-lg-3">
+      <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
+      <p>
+        <% if event.country_iso == 'OL' %>
+          <img src="/app/img/icons/VideoCamera.svg">
+          Online
+        <% else %>
+          <img src="/img/flags/<%= event.country_iso.downcase %>.png"/>
+          <%= "#{event.city} - #{event.country_name}" %>
+        <% end %>
+      </p>
+    </div>
+  <% else %>
+    <div class="col-4 col-lg-1 next-edition-item">
+      <%= format_date_range(event.date, event.finish_date, session[:locale]) %>
+    </div>
+  <% end %>
+  <div class="col-4 col-lg-1 next-edition-item">
+    <p>
+      <img src="/app/img/icons/Clock.svg">
+      <%= event.event_type.duration %>hs
+    </p>
+  </div>
+  <% unless with_name %>
+    <div class="col-4 col-lg-2 next-edition-item">
+      <p>
+        <% if event.online? || event.blended_learning? %>
+          <img src="/app/img/icons/VideoCamera.svg">
+          Online
+        <% else %>
+          <img src="/img/flags/<%= event.country_code.downcase %>.png"/>
+          <%= "#{event.city}, #{event.country}" %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+  <div class="col-4 col-lg-2 next-edition-item">
+    <% if with_name %>
+      <strong><%= date %></strong>
+    <% end %>
+    <%= info_time %>
+    <a class="small-label time-zone" href="<%=event.timezone_url%>">
+      <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
+    </a>
+  </div>
+  <div class="col-4 col-lg-2 next-edition-item">
+    <strong>USD $<%= event.list_price || 'precio' %></strong>
+  </div>
+  <div class="col-4 col-lg-2 next-edition-item">
+    <% if event.eb_price and event.eb_date %>
+      <strong class="price">USD $<%= event.eb_price%></strong>
+      <p class="small-label">hasta <%= event.eb_date %></p>
+    <% end %>
+  </div>
+  <div class="col-12 col-lg-2 next-edition-item">
+    <div class="btn-center-container">
+      <% if event.is_sold_out %>
+        <button class="my-primary-button p-2"
+                href='' style="filter: grayscale(100%); max-width: 250px; width: 180px">
+          Completo
+        </button>
+      <% else %>
+        <a class="my-primary-button p-2"
+           style="max-width: 250px; width: 180px"
+           href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar
+        </a>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

@@ -17,3 +17,23 @@ class JsonAPI
     @doc
   end
 end
+
+class NullJsonAPI
+  attr_accessor :doc
+
+  def initialize(uri)
+    if uri.nil? 
+      @doc = nil
+    else
+      @doc = JSON.parse(File.read(uri))
+    end
+  end
+
+  def ok?
+    !@doc.nil?
+  end
+
+  def get_response()
+    @doc
+  end
+end

@@ -35,3 +35,9 @@ Feature: Event Type Details
 		When I visit the plain event type page
 		Then the page title should includes "^Kleer"
 		And the page title includes "Kleer" just once
+
+	Scenario: SEO H-tags structure
+		Given theres an event type
+		When I visit the plain event type page
+		Then The page should have one H1 tag
+		And The page should have at least two H2 tags

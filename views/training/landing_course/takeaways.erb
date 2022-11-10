@@ -1,0 +1,15 @@
+<section id="course-learnings" >
+  <div class="course-learnings__container container">
+    <h2 class="text-center mb-5 common-subtitle">¿Qué obtendrás?</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <%= @markdown_renderer.render( @event_type.takeaways.to_s) %>
+      </div>
+    </div>
+
+    <img src="/app/img/view_figures/rustic_circleb.svg" class="desktop_figure course-learnings__rustic-circle" />
+    <img src="/app/img/view_figures/green_circle2.svg" class="desktop_figure course-learnings__green-circle" />
+
+  </div>
+
+</section>

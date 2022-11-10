@@ -14,3 +14,15 @@ Then('SEO meta property {string} should be {string}') do |tag, text|
                              content: text
                            })
 end
+
+Then('The page should have one H1 tag') do
+  expect(all('h1').length == 1)
+end
+
+Then('The page should have at least two H2 tags') do
+  expect(all('h2').length >= 2)
+end
+
+Then('SEO hreflang {string} should have href {string}') do |lang, url|
+  expect(page.html).to match /<link.*hreflang=\"#{lang}\" href=\"#{url}\"/
+end

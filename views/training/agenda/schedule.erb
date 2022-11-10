@@ -1,23 +1,10 @@
 <%
-  events = @events.map do |event|
-    is_open = (event.date.to_s != '')
-    date = is_open ? format_date_range(event.date, event.finish_date, 'es') : nil
-    if not date.nil?
-      info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
-      {
-        name: event.event_type.name, duration: event.event_type.duration, subtitle: event.event_type.subtitle,
-        id: event.id, info_time: info_time, timezone_url: event.timezone_url, place: event.place,
-        uri_path: event.event_type.uri_path, date: date, url: event.event_type.uri_path, is_sold_out: event.is_sold_out,
-        price: event.list_price, eb_price: event.eb_price, eb_date: event.eb_date,
-        city: event.city, country_iso: event.country_iso, country_name: event.country_name
-      }
-    end
-  end
-  events = events.compact
+  events = @events.select{|e| not e.date.to_s == ''}
 %>
 
 <div class="container mt-5">
   <% events.each do |event| %>
-    <%= erb :'training/agenda/event_item', locals: {event: event}%>
+    <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
+
   <% end %>
 </div>
