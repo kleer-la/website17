@@ -3,6 +3,7 @@ require './lib/metatags'
 require './lib/academy_courses'
 require './lib/event_type'
 require './lib/event'
+require './lib/models/service_model'
 
 require './controllers/event_helper'
 
@@ -112,25 +113,16 @@ def redirect_not_found_course
   redirect(to('/catalogo'))
 end
 
-class Service
-  attr_accessor :public_editions, :name, :subtitle, :description, :side_image, :takeaways, 
-                :recipients, :program, :brochure,
-                :cta
-  def initialize()
-    @public_editions = []
-    @side_image = ''
-  end
-end
 
 #TODO move to services controller
 get '/servicios/desarrollo-liderazgo-agil' do
   @meta_tags.set! title: 'Programa de Desarrollo del Liderazgo Ágil'
   @meta_tags.set! description: 'Hacia un liderazgo con impacto más consciente y humano'
-  # @meta_tags.set! canonical: 
+  # @meta_tags.set! canonical:
   @event_type = Service.new
   @event_type.name = 'Programa de Desarrollo del Liderazgo Ágil'
   @event_type.subtitle = 'Hacia un liderazgo con impacto más consciente y humano'
-  @event_type.description = 
+  @event_type.description =
 '''
 El nivel de agilidad que una organización sea capaz de alcanzar está acotado por el nivel de agilidad colectiva de quienes la lideran.
 
@@ -151,7 +143,7 @@ Para lograr un impacto en el liderazgo de las personas que participan del progra
 - **Desarrollo Grupal**: sesiones de entrenamiento, ejercicios de acercamiento y puesta en práctica, clínicas de casos reales y resolución de dudas.
 '''
 
-@event_type.takeaways = 
+@event_type.takeaways =
 '''
 Este programa es más que un curso de liderazgo ágil.
 
@@ -172,7 +164,7 @@ DLA está diseñado para construir unas bases sólidas para la evolución organi
 - **Plataforma online** del programa, con materiales de trabajo, videos, referencias adicionales para profundizar, actividades individuales o grupales de puesta en práctica.
 '''
 
-@event_type.recipients = 
+@event_type.recipients =
 '''
 El programa está destinado tanto a personas con experiencia en liderazgo y agilidad, como a quienes recién empiezan.
 
@@ -184,22 +176,22 @@ El programa está destinado tanto a personas con experiencia en liderazgo y agil
 - Personas con liderazgo en distintas áreas: recursos humanos, administración, compras, legales, entre otras
 '''
 
-@event_type.program = 
+@event_type.program =
 '''
 #### Modelos para el Liderazgo Ágil
-Reinventando las Organizaciones (Laloux, Wilber, Beck & Cowan), 
-Corazón de la Agilidad (Cockburn), Liderando en la Complejidad con 
+Reinventando las Organizaciones (Laloux, Wilber, Beck & Cowan),
+Corazón de la Agilidad (Cockburn), Liderando en la Complejidad con
 Cynefin (Snowden), Liderazgo Tribal (Logan), Pensamiento Sistémico (Meadows).
 
 #### Empoderar los Equipos
-Toma de Decisión Colaborativa (Kaner), Delegación Progresiva (Apello), 
+Toma de Decisión Colaborativa (Kaner), Delegación Progresiva (Apello),
 Facilitación de Conversaciones Grupales, Preguntas Poderosas (Bandler & Grinder).
 
 #### Desarrollar los Equipos
 Motivación Intrínseca y Extrínseca (Pink), Formación de Equipo (Tuckman), Evolución de la Confianza (Case), Feedback Efectivo (Apello, Rosenberg, Cessan).
 
 #### Cuidar e Integrar
-Priorización y Decir No, Comunicación No Violenta (Rosenberg), Escucha Empática (Rosenberg, Schamer), Actos Sutiles de Exclusión (Jana & Baran). 
+Priorización y Decir No, Comunicación No Violenta (Rosenberg), Escucha Empática (Rosenberg, Schamer), Actos Sutiles de Exclusión (Jana & Baran).
 
 #### Conducir el Cambio
 Etapas del Cambio con ADKAR (Prosci), Cambio Sistémico con Doble Bucle (Berkana), Modelado Sistémico (Meadows), Experimentación y Errores, Diversidad, Equidad e Inclusión.
@@ -208,7 +200,7 @@ Etapas del Cambio con ADKAR (Prosci), Cambio Sistémico con Doble Bucle (Berkana
 El contenido es tentativo se adapta en función del contexto, de las necesidades de la organización y participantes, y de la cantidad de sesiones grupales
 '''
 
-@event_type.cta = 
+@event_type.cta =
 '''
 <div class="container">
 <p>
@@ -218,6 +210,8 @@ Contactanos por correo electrónico o por WhatsApp para cocrear un Programa de D
 
 </div>
 '''
+
+  @event_type.brochure = 'https://kleer-materiales.s3.us-east-2.amazonaws.com/Kleer+-+Programa+Desarrollo+Liderazgo+%C3%81gil.pdf'
 
   erb :'services/landing/index', layout: :'layout/layout2022'
 end
