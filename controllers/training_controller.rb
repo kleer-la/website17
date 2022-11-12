@@ -203,8 +203,8 @@ El contenido es tentativo se adapta en función del contexto, de las necesidades
 @event_type.cta =
 '''
 <div class="container">
-<p>
-Contáctanos por correo electrónico o por WhatsApp para cocrear un Programa de Desarrollo del Liderazgo Ágil adaptado a tu contexto organizacional, partiendo de las opciones típicas que ofrecemos para grupos de 10 a 16 líderes:
+<p class="mb-4">
+Algunas opciones del programa que ofrecemos para grupos (de 10 a 16 líderes):
 </p>
 <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/dla_program.png"/>
 
