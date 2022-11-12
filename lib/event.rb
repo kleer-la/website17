@@ -10,7 +10,7 @@ class Event
                 :show_pricing,
                 :place, :address,
                 :start_time, :end_time, :time_zone_name, :time_zone,
-                :is_sold_out, :id,
+                :is_sold_out,
                 :specific_conditions,
                 :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment
 
@@ -44,8 +44,8 @@ class Event
   end
 
   def load_basic(hash_event)
-    @id = hash_event['id'].to_i
-    load_str(%i[city place address registration_link time_zone_name], hash_event)
+    @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
+    load_str(%i[city place address registration_link time_zone_name is_sold_out], hash_event)
 
     # @id = first_content(event_doc, 'id').to_i
     # @capacity = first_content(event_doc, 'capacity').to_i
