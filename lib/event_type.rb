@@ -94,7 +94,7 @@ class EventType
     %i[name subtitle description learnings takeaways cover
       goal recipients program faq slug canonical_slug lang
       external_site_url elevator_pitch include_in_catalog
-      side_image brochure
+      side_image brochure deleted
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
 
     @public_editions = load_public_editions(hash_event['next_events'])
