@@ -55,7 +55,7 @@ before do
                        'es'
                      end
 
-  if ['kleer.us', 'kleer.es'].include? request.host
+  if ['kleer.us', 'kleer.es','www.kleer.us','www.kleer.es'].include? request.host
     # redirect "https://www.#{request.host}#{request.path}"
     redirect "https://www.kleer.la#{request.path}"
   else
