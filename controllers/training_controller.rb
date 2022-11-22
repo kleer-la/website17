@@ -3,6 +3,8 @@ require './lib/metatags'
 require './lib/academy_courses'
 require './lib/event_type'
 require './lib/event'
+require 'ruby-prof'
+
 
 require './controllers/event_helper'
 
@@ -46,10 +48,18 @@ def coming_courses
 end
 
 get '/agenda' do
+
+  RubyProf.start
+  RubyProf.measure_mode = RubyProf::MEMORY
   @meta_tags.set! title: 'Agenda de cursos online sobre Agilidad y Scrum'
   @meta_tags.set! description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.'
 
   @events = KeventerReader.instance.catalog_events()
+
+  result = RubyProf.stop
+
+  printer = RubyProf::FlatPrinter.new(result)
+  printer.print(STDOUT)
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
@@ -70,6 +80,7 @@ def catalog
                     else
                       fake_event_from_catalog(KeventerReader.instance.categories)
                     end
+
 
   erb :'training/index', layout: :'layout/layout2022'
 end
