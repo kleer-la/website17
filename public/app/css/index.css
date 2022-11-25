@@ -1405,26 +1405,37 @@ img {
 .icon-social:hover {
   height: 20px; }
 
-.float {
+.floating-absolute-buttons {
   position: fixed;
-  width: 60px;
-  height: 60px;
   bottom: 40px;
   right: 40px;
-  background-color: #25d366;
-  color: #FFF;
+  z-index: 100; }
+
+.floating-button {
+  width: 60px;
+  height: 60px;
   border-radius: 50px;
   text-align: center;
   font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100; }
+  box-shadow: 2px 2px 3px #999; }
+  .floating-button img:hover {
+    height: 70%; }
 
 .whatsapp-button {
+  background-color: #25d366;
+  color: #FFF;
   display: flex;
   align-items: center;
   justify-content: center; }
-  .whatsapp-button img:hover {
-    height: 70%; }
+
+.mail-button {
+  background-color: #68CEF2;
+  color: #FFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px; }
 
 .my-float {
   margin-top: 16px; }
