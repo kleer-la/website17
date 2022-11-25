@@ -2,10 +2,10 @@ def client_list
   [
   {name: "Falabella Financiero", img: "/img/clientes/FalabellaFinanciero.webp" },
   {name: "Telefonica", img: "/img/clientes/Telefonica.webp"},
-  {name: "Roche", img: "/img/clientes/Roche.webp"},
+  {name: "Roche", img: "/img/clientes/ROCHE.webp"},
   {name: "Scotiabank", img: "/img/clientes/Scotiabank.webp"},
   {name: "Sura", img: "/img/clientes/sura.webp"},
-  {name: "Cementos Argos", img: "/img/clientes/argos.webp"},
+  {name: "Cementos Argos", img: "/img/clientes/ARGOS.webp"},
   # {name: "BBVA Continental", img:"/img/clientes/BBVA.webp" },
   # {name: 'Coca-cola', img: '/img/clientes/coca.webp'},
   # {name: 'Disney', img: '/img/clientes/disney.webp'},
@@ -14,6 +14,8 @@ def client_list
   {name: "Grupo Nutresa", img: "/img/clientes/grupoNutresa.webp"},
   {name: "Terpel", img: "/img/clientes/terpel.webp"},
   {name: "BCI", img:"/img/clientes/BCi.webp" },
+  # {name: "Ecopetrol", img:"/img/clientes/Ecopetrol.png" },
+
 
   # {name: 'LATAM', img: '/img/clientes/latam.webp'},
   # {name: "epm", img:"/img/clientes/epm.webp" },
