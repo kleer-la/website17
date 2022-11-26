@@ -125,7 +125,6 @@ get '/cursos/:event_type_id_with_name' do
 
   if from_json
     @event_type = event_type_from_json params[:event_type_id_with_name]
-    @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0]) # TODO
   else
     @event_type = event_type_from_qstring params[:event_type_id_with_name]
     @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
@@ -150,10 +149,6 @@ get '/cursos/:event_type_id_with_name' do
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
-
-    # unless @event_type.is_new_version
-    #   return erb :event_type
-    # end
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end

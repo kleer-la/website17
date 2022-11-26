@@ -8,7 +8,7 @@ class EventType
     EventType.new XmlAPI.new(file)
   end
 
-  def self.create_keventer(id) #TODO deprecate 
+  def self.create_keventer(id) #TODO deprecate
     EventType.new XmlAPI.new(KeventerConnector.new.event_type_url(id))
   end
 
@@ -28,14 +28,10 @@ class EventType
   end
 
 
-  attr_accessor :id, :duration, :lang, :cover,
-                :name, :subtitle, :description, :learnings, :takeaways,
-                :goal, :recipients, :program, :faq,
-                :external_site_url, :elevator_pitch, :include_in_catalog,
-                :deleted, :noindex,
-                :categories, :slug, :canonical_slug,
-                :is_kleer_cert, :is_sa_cert,
-                :public_editions, :side_image, :brochure, :is_new_version
+  attr_accessor :id, :duration, :lang, :cover, :name, :subtitle, :description, :learnings, :takeaways,
+                :goal, :recipients, :program, :faq, :external_site_url, :elevator_pitch, :include_in_catalog,
+                :deleted, :noindex, :categories, :slug, :canonical_slug, :is_kleer_cert, :is_sa_cert,
+                :public_editions, :side_image, :brochure, :is_new_version, :testimonies
 
   def initialize(provider = nil, hash_provider = nil)
     if provider
@@ -44,11 +40,12 @@ class EventType
     else #TODO check if hash_provider is nil
       @hash_provider = hash_provider
       @id= nil
+      @testimonies = []
       load_complete_event(hash_provider)
     end
   end
 
-  def load(xml_doc)   #TODO deprecate 
+  def load(xml_doc)   #TODO deprecate
     @id = xml_doc.find('/event-type/id').first.content.to_i
     @duration = xml_doc.find('/event-type/duration').first.content.to_i
     @include_in_catalog = to_boolean(xml_doc.find_first('include-in-catalog').content)
@@ -71,7 +68,7 @@ class EventType
     send("#{field}=", element.content) unless element.nil?
   end
 
-  def load_categories(xml_doc) #TODO deprecate 
+  def load_categories(xml_doc) #TODO deprecate
     @categories = []
     xml_doc.find('//categories/category').each do |xml_cat|
       id = xml_cat.find('id').first.content.to_i
@@ -91,6 +88,8 @@ class EventType
     @is_new_version = to_boolean(hash_event['new_version'])
     @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
 
+    load_testimonies(hash_event['testimonies'])
+
     %i[name subtitle description learnings takeaways cover
       goal recipients program faq slug canonical_slug lang
       external_site_url elevator_pitch include_in_catalog
@@ -105,6 +104,15 @@ class EventType
 
     next_events.reduce([]) do |events, ev_json|
       events << Event.new(self).load_from_json(ev_json)
+    end
+  end
+
+  def load_testimonies(plane_testimonies)
+    plane_testimonies.each do |testimony|
+      new_testimony = Testimony.new
+      new_testimony.load_from_json(testimony)
+
+      @testimonies.push(new_testimony)
     end
   end
 
