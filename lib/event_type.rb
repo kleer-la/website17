@@ -108,11 +108,13 @@ class EventType
   end
 
   def load_testimonies(plane_testimonies)
-    plane_testimonies.each do |testimony|
-      new_testimony = Testimony.new
-      new_testimony.load_from_json(testimony)
+    unless plane_testimonies.nil?
+      plane_testimonies.each do |testimony|
+        new_testimony = Testimony.new
+        new_testimony.load_from_json(testimony)
 
-      @testimonies.push(new_testimony)
+        @testimonies.push(new_testimony)
+      end
     end
   end
 
