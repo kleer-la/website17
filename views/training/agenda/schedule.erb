@@ -3,9 +3,7 @@
 %>
 
 <div class="container mt-5">
-  <% events.each do |event|
-    puts event.inspect
-  %>
+  <% events.each do |event| %>
     <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
 
   <% end %>

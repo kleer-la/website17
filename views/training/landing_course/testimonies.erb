@@ -1,8 +1,8 @@
-<% unless @testimonies == []%>
+<% unless @event_type.testimonies == []%>
   <section id="course-testimonies" class="">
     <h2 class="mb-5 text-center common-subtitle">Testimonios de nuestros participantes</h2>
     <div class="testimonies-container">
-      <% @testimonies.each do |testimony| %>
+      <% @event_type.testimonies.each do |testimony| %>
         <div class="testimony-container">
           <div class="testimony-info">
             <div class="testimony-info__photo-container">

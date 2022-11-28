@@ -6,7 +6,6 @@ require 'json'
 require 'i18n'
 require 'money'
 require 'escape_utils'
-
 require './lib/metatags'
 require './lib/keventer_reader'
 require './lib/twitter_card'
@@ -18,6 +17,7 @@ require './lib/resources'
 require './controllers/helper'
 require './controllers/blog_controller'
 require './controllers/press_controller'
+require './controllers/services_controller'
 require './controllers/training_controller'
 require './controllers/clients_controller'
 require './controllers/about_us_controller'
@@ -54,7 +54,7 @@ before do
                        'es'
                      end
 
-  if ['kleer.us', 'kleer.es'].include? request.host
+  if ['kleer.us', 'kleer.es','www.kleer.us','www.kleer.es'].include? request.host
     # redirect "https://www.#{request.host}#{request.path}"
     redirect "https://www.kleer.la#{request.path}"
   else

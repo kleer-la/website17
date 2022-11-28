@@ -5,16 +5,9 @@
       <h2 class="hero-description"><%= @event_type.subtitle %></h2>
     </div>
     <div class="col-md-3 course-hero__button">
-        <% if @event_type.public_editions.length > 0 %>
-          <a href="#course-next-editions">
-            <strong>Ver fechas</strong>
-            <img src="/app/img/view_figures/rustic_arrow2.svg"/>
-          </a>
-        <% else %>
-          <a href="#newsletter-subscription">
-            <strong>Contáctanos</strong>
-          </a>
-        <% end %>
+      <a href="#newsletter-subscription">
+        <strong>Contáctanos</strong>
+      </a>
     </div>
   </div>
   <img src="/app/img/view_figures/yellow_oval.svg" class="course-hero__yellow-oval" />
