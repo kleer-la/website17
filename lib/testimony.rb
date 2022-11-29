@@ -13,8 +13,6 @@ class Testimony
     @last_name = json["lname"]
     @email = json["email"]
     @phone = json["phone"]
-    @event_id = json["event_id"]
-    @event_id = Date.parse(json["created_at"])
     @message = json["testimony"]
     @linkedin_url = json["profile_url"]
     @photo_url = json["photo_url"]
