@@ -20,7 +20,9 @@
   </div>
   <div class="card-body course-card__body">
     <div>
-      <% if defined? (@course[:categories]) and not @course[:categories].nil? %>
+      <% if defined? (@course[:categories]) and
+            not @course[:categories].nil? and
+            session[:locale] == 'es'%>
         <p class="course-card__categories"><%= @course[:categories][0...-2] %></p>
       <%end %>
       <a href="<%= @course[:url] %>">
