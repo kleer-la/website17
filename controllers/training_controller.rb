@@ -63,13 +63,12 @@ def catalog
   @categories = KeventerReader.instance.categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
-  @events = KeventerReader.instance.catalog_events()
-
-  @coming_courses = if session[:locale] == 'es'
-                      KeventerReader.instance.coming_commercial_events(Date.today, 10)
-                    else
-                      fake_event_from_catalog(KeventerReader.instance.categories)
-                    end
+  @events = if session[:locale] == 'es'
+              KeventerReader.instance.catalog_events()
+            else
+              fake_event_from_catalog(KeventerReader.instance.categories)
+                .select {|e| e.event_type.lang == session[:locale]}
+            end
 
   erb :'training/index', layout: :'layout/layout2022'
 end

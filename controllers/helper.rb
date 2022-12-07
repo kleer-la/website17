@@ -77,13 +77,13 @@ module Helpers
   end
 
   # Translate keventer event to be shown in a course card
-  def keventer_to_card(events)
+  def keventer_to_card(events, lang = 'es')
     events.map {|course|
       is_open = (course.date.to_s != '')
       # p "|#{course.date.class}|#{course.date.to_s}|#{is_open}"
       date = is_open ? format_date_range(course.date, course.finish_date, 'es') : '' #t('home2022.home_courses.no_date')
       is_incompany = true
-      if course.event_type.lang == 'es'
+      if course.event_type.lang == lang
         {
           title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
           cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: course.event_type.uri_path,
