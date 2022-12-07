@@ -41,9 +41,23 @@
       name="message"
       rows="3"></textarea>
   </div>
-  <div class="g-recaptcha" data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ" name="captcha"></div>
+  <div class="g-recaptcha"
+       data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"
+       name="captcha"
+       data-callback="enableButton"
+  ></div>
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
   <div class="btn-center-container">
-    <button type="submit" class="btn my-primary-button">Enviar</button>
+    <button type="submit"
+            id="submit"
+            class="btn my-primary-button"
+            value="Submit"
+            disabled="true">
+      Enviar</button>
   </div>
 </form>
+<script>
+  function enableButton() {
+    document.getElementById("submit").disabled = false;
+  }
+</script>
