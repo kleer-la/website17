@@ -1,11 +1,16 @@
-<form action="/send-mail" method="post">
+<form action="/send-mail" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
       <label class="form-label">Tu nombre completo</label>
       <input
         type="text"
         class="form-control"
-        name="name">
+        name="name"
+        id="name-input"
+        required>
+      <div class="invalid-feedback">
+        Completa este campo con tu nombre
+      </div>
     </div>
   </div>
   <div class="row">
@@ -14,32 +19,39 @@
       <input
         type="email"
         class="form-control"
-        name="email">
+        name="email"
+        id="email-input"
+        required>
+      <div class="invalid-feedback">
+        Formato de correo electrónico inválido.
+      </div>
     </div>
     <div class="mb-3 col-xs-12 col-md-6">
       <label class="form-label">Número de teléfono</label>
       <input
         type="text"
         class="form-control"
-        id="exampleInputEmail1"
-        name="phone">
+        id="phone-input"
+        name="phone"
+        required>
+      <div class="invalid-feedback">
+        Completa este campo con tu telefono
+      </div>
     </div>
   </div>
-
-<!--  <div class="mb-3">-->
-<!--    <label for="exampleInputEmail1" class="form-label">Subject de tu consulta</label>-->
-<!--    <input type="text"-->
-<!--           class="form-control"-->
-<!--           id="exampleInputEmail1"-->
-<!--          name="subject">-->
-<!--  </div>-->
   <div class="mb-3">
     <label class="form-label">Mensaje</label>
     <div id="emailHelp" class="form-text">¡Cuéntanos cómo podemos ayudarte!</div>
     <textarea
       class="form-control"
       name="message"
-      rows="3"></textarea>
+      id="message-input"
+      rows="3"
+      required></textarea>
+
+    <div class="invalid-feedback">
+      Completa este campo con tu mensaje
+    </div>
   </div>
   <div class="g-recaptcha"
        data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"
@@ -51,13 +63,38 @@
     <button type="submit"
             id="submit"
             class="btn my-primary-button"
-            value="Submit"
-            disabled="true">
+            value="Submit">
+<!--            disabled="true">-->
       Enviar</button>
   </div>
 </form>
 <script>
+  let nameInput = document.getElementById('name-input');
+  let emailInput = document.getElementById('email-input');
+  let phoneInput = document.getElementById('phone-input');
+  let messageInput = document.getElementById('message-input');
+
   function enableButton() {
     document.getElementById("submit").disabled = false;
   }
+
+  (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                  if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+
+                  }
+                  form.classList.add('was-validated')
+              }, false)
+          })
+  })()
 </script>
