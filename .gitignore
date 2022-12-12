@@ -4,6 +4,7 @@
 *.gem
 *.rbc
 .bundle
+.env
 .config
 coverage
 InstalledFiles
