@@ -1695,6 +1695,7 @@ en:
         more:
           text: Know more
         questions:
+          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Please describe your context and how we could help you
           text: Questions?
     home_hero:
       - subject: Business agility
@@ -1867,3 +1868,21 @@ en:
       button:
         text: ¿Conversamos?
         link: mailto:info@kleer.la?subject=Business Agility&amp;body=Please describe your context and how could we help you
+
+  contact-us-form:
+    title: Contact us
+    name-input:
+      label: Full name
+      error-message: Please fill in your name
+    email-input:
+      label: E-mail
+      error-message: Invalid mail format
+    phone-input:
+      label: Phone number
+      error-message: Please fill in your phone number
+    message-input:
+      label: Message
+      sub-label: Please describe your context and how we could help!
+      error-message: Please fill in your message
+    button:
+      text: Submit

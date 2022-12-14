@@ -1240,3 +1240,21 @@ es:
       button:
         text: ¿Conversamos?
         link: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
+
+  contact-us-form:
+    title: Contáctanos
+    name-input:
+      label: Tu nombre completo
+      error-message: Completa este campo con tu nombre
+    email-input:
+      label: Correo electrónico
+      error-message: Formato de correo electrónico inválido
+    phone-input:
+      label: Número de teléfono.
+      error-message: Completa este campo con tu teléfono.
+    message-input:
+      label: Mensaje
+      sub-label: ¡Cuéntanos cómo podemos ayudarte!
+      error-message: Completa este campo con tu mensaje.
+    button:
+      text: Enviar
