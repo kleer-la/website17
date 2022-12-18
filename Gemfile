@@ -23,6 +23,7 @@ group :development do
   gem 'platform-api'
   gem 'rubocop'
   gem 'derailed_benchmarks'
+  gem 'stackprof'
 end
 
 group :development, :test do
