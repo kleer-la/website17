@@ -22,6 +22,7 @@ group :development do
   gem 'foreman'
   gem 'platform-api'
   gem 'rubocop'
+  gem 'derailed_benchmarks'
 end
 
 group :development, :test do
