@@ -8,6 +8,7 @@
           <ul>
             <% item[:items].each do |subitem| %>
               <li>
+
                 <a href='<%= "/#{session[:locale]}#{subitem[:url]}"%>'>
                   <%= subitem[:title] %>
                 </a>
