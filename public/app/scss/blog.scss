@@ -21,9 +21,13 @@
   font-family: "degular",sans-serif;
   font-style: normal;
   font-size: 32px;
-  line-height: 32px; }
+  line-height: 32px;
+  margin-bottom: 0;
+}
 
 .blog {
+  position: relative;
+
   > .container {
     padding-top: 3em;
   }
@@ -112,6 +116,10 @@
 
 
 @media(max-width:768px) {
+  #blog-hero{
+    height: auto;
+  }
+
   .header-blog .container {
     width: 97%;
   }
