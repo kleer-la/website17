@@ -8,9 +8,7 @@
       <%= t('business-agility.contact.title') %>
     </h6>
     <div class="btn-center-container">
-      <a class="btn my-primary-button" href="<%= t('business-agility.contact.button.link') %>">
-        <%= t('business-agility.contact.button.text')%>
-      </a>
+      <%= erb :'component/_contact_banner_button',  locals: {text_button: t('business-agility.contact.button.text'), style_class: 'btn my-primary-button'}%>
     </div>
 
   </div>
