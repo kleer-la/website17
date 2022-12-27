@@ -28,11 +28,6 @@ def event_type_from_json(event_type_id_with_name)
   EventType.create_keventer_json(event_type_id) if valid_id?(event_type_id)
 end
 
-def event_type_from_qstring(event_type_id_with_name)
-  event_type_id = event_type_id_with_name.split('-')[0]
-  KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
-end
-
 def tracking_mantain_or_default(utm_source, utm_campaign)
   if !utm_source.nil? && !utm_campaign.nil? && utm_source != '' && utm_campaign != ''
     "&utm_source=#{utm_source}&utm_campaign=#{utm_campaign}"
@@ -53,10 +48,7 @@ get '/agenda' do
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
-get('/catalogo2022') { session[:version] = 2022; catalog }
-get('/catalogo') {  catalog }
-
-def catalog
+get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: 'Capacitación empresarial en agilidad organizacional'
   @meta_tags.set! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
@@ -72,7 +64,6 @@ def catalog
 
   erb :'training/index', layout: :'layout/layout2022'
 end
-
 
 # Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
 get '/entrenamos/evento/:event_id_with_name' do
@@ -114,7 +105,6 @@ end
 #TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
-  from_json = !(params['json'].to_s.length > 0)
 
   redirect_to = REDIRECT[params[:event_type_id_with_name]]
   unless redirect_to.nil?
@@ -122,12 +112,10 @@ get '/cursos/:event_type_id_with_name' do
     return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
   end
 
-  if from_json
     @event_type = event_type_from_json params[:event_type_id_with_name]
-  else
-    @event_type = event_type_from_qstring params[:event_type_id_with_name]
-    @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
-  end
+  #   @event_type = event_type_from_qstring params[:event_type_id_with_name]
+  #   @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
+  # end
 
   redirecting = should_redirect(@event_type)
   (return redirecting) unless redirecting.nil?
@@ -151,12 +139,6 @@ get '/cursos/:event_type_id_with_name' do
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end
-end
-
-#TODO
-post '/cursos/:event_type_id/contact' do
-  @event_type = event_type_from_qstring params[:event_type_id]
-  p params unless @event_type.nil?
 end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
