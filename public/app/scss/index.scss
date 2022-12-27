@@ -77,7 +77,25 @@ $grey-card: #eaeaea;
   color: $black;
 
   a{
-    color: $black
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: $black;
+    text-decoration: none;
+  }
+
+  a:hover{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: black;
+    text-decoration: none;
+  }
+
+  a:active{
+    background-color: $secondary-blue;
   }
 
 
@@ -231,6 +249,29 @@ footer {
   background: $primary-blue;
   margin-bottom: 0 !important;
   z-index: 50;
+
+
+  a{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: $black;
+    text-decoration: none;
+  }
+
+  a:hover{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: black;
+    text-decoration: none;
+  }
+
+  a:active{
+    background-color: $secondary-blue;
+  }
 }
 
 .footer__body{
@@ -288,6 +329,29 @@ footer {
 
 //course card
 .course-card{
+
+  a{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: $black;
+    text-decoration: none;
+  }
+
+  a:hover{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    color: black;
+    text-decoration: none;
+  }
+
+  a:active{
+    background-color: $secondary-blue;
+  }
+
   width: 100% !important;
   max-width: 260px !important;
   padding: 24px 24px 32px;
@@ -309,7 +373,6 @@ footer {
 }
 
 .course-card__body{
-  height: 270px;  padding: 0;
 }
 
 .course-card__subtitle{
