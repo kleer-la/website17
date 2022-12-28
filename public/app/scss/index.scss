@@ -76,29 +76,6 @@ $grey-card: #eaeaea;
 
   color: $black;
 
-  a{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
-    color: $black;
-    text-decoration: none;
-  }
-
-  a:hover{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: black;
-    text-decoration: none;
-  }
-
-  a:active{
-    background-color: $secondary-blue;
-  }
-
-
   .dropdown-menu {
     border: none;
     padding: 20px 24px;
@@ -249,29 +226,6 @@ footer {
   background: $primary-blue;
   margin-bottom: 0 !important;
   z-index: 50;
-
-
-  a{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
-    color: $black;
-    text-decoration: none;
-  }
-
-  a:hover{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: black;
-    text-decoration: none;
-  }
-
-  a:active{
-    background-color: $secondary-blue;
-  }
 }
 
 .footer__body{
@@ -329,28 +283,6 @@ footer {
 
 //course card
 .course-card{
-
-  a{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
-    color: $black;
-    text-decoration: none;
-  }
-
-  a:hover{
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 18px;
-    color: black;
-    text-decoration: none;
-  }
-
-  a:active{
-    background-color: $secondary-blue;
-  }
 
   width: 100% !important;
   max-width: 260px !important;
