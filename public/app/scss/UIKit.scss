@@ -94,7 +94,12 @@ p{
 }
 
 a{
-  color: $secondary-blue;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: black;
+  text-decoration: none;
 }
 
 a:hover{
@@ -102,12 +107,12 @@ a:hover{
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
-  color: $primary-blue;
+  color: $black;
   text-decoration: none;
 }
 
 a:active{
-  background-color: $secondary-blue;
+  background-color: $black;
 }
 
 img {
