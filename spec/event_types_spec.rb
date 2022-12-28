@@ -38,4 +38,36 @@ describe EventType do
       expect(@event_type.subtitle).to eq 'One subtitle'
     end
   end
+  context 'Redirect' do
+    before(:each) do
+      @slug = '4-enterprise-agility'
+      @event_type = EventType.new(nil, {'id' => '4', 'slug' => @slug} )
+    # "canonical_slug": "418-enterprise-agility-practitioner",
+    end
+    it 'dont redirect' do
+      expect(@event_type.redirect_to(@slug)).to be nil
+    end
+    it 'redirect to itself' do
+      expect(@event_type.redirect_to('4-Enterprise-Agility')).to include @slug
+    end
+    it 'redirect to canonical' do
+      @event_type.canonical_slug = '4-FTW'
+      @event_type.deleted = true
+
+      expect(@event_type.redirect_to('4-Enterprise-Agility')).to include '4-FTW'
+    end
+    it 'deleted & cannonical to itself - adk' do
+      @event_type.canonical_slug = @slug
+      @event_type.deleted = true
+
+      expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq ''
+    end
+    it 'deleted & cannonical to empty - adk' do
+      @event_type.canonical_slug = ''
+      @event_type.deleted = true
+
+      expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq ''
+    end
+    
+  end
 end
