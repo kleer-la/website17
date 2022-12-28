@@ -79,22 +79,6 @@ get '/entrenamos/evento/:event_id_with_name' do
   end
 end
 
-# Redirect
-#  To /catalogo when
-#  - event type not found
-#  - event type deleted and canonical is missing (replaced for slug)
-#  To canonical when
-#  - event type deleted and canonical is present
-def should_redirect(event_type)
-  return unless event_type.nil? || event_type.deleted
-
-  if event_type.nil? || event_type.canonical_slug == event_type.slug
-    redirect_not_found_course
-  else
-    redirect uri event_type.canonical_url, 301 # permanent redirect
-  end
-end
-
 def redirect_not_found_course
   session[:error_msg] = course_not_found_error
   flash.now[:alert] = course_not_found_error
@@ -106,12 +90,9 @@ end
 get '/cursos/:event_type_id_with_name' do
 
   @event_type = event_type_from_json params[:event_type_id_with_name]
+  #TODO depracated?
   #   @event_type = event_type_from_qstring params[:event_type_id_with_name]
   #   @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
-  # end
-
-  redirecting = should_redirect(@event_type)
-  (return redirecting) unless redirecting.nil?
 
   @active_tab_entrenamos = 'active'
 
@@ -120,6 +101,12 @@ get '/cursos/:event_type_id_with_name' do
   if @event_type.nil?
     redirect_not_found_course
   else
+    redirecting = @event_type.redirect_to(params[:event_type_id_with_name])
+    unless redirecting.nil?
+      return redirect_not_found_course if redirecting == ''
+      redirect to(redirecting), 301
+    end
+
     # SEO (title, meta)
     @meta_tags.set! title: @event_type.name
     @meta_tags.set! description: @event_type.elevator_pitch
