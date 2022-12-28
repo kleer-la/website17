@@ -8,7 +8,6 @@ require './controllers/event_helper'
 
 #TODO redirect
 REDIRECT = {
-  '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo',
   'entrenamos/todos' => 'agenda',
   'entrenamos' => 'agenda'
 }.freeze
@@ -106,13 +105,7 @@ end
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
 
-  redirect_to = REDIRECT[params[:event_type_id_with_name]]
-  unless redirect_to.nil?
-    uri = "/cursos/#{redirect_to}"
-    return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
-  end
-
-    @event_type = event_type_from_json params[:event_type_id_with_name]
+  @event_type = event_type_from_json params[:event_type_id_with_name]
   #   @event_type = event_type_from_qstring params[:event_type_id_with_name]
   #   @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
   # end
