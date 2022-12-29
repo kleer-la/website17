@@ -125,4 +125,12 @@ class EventType
     "cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
+  def redirect_to(event_type_id_with_name)
+    return ''                   if @deleted && @canonical_slug == @slug     # dont know where to redirect
+    return ''                   if @deleted && @canonical_slug.to_s == ''   # dont know where to redirect
+    return self.canonical_url   if @deleted && @canonical_slug.to_s != ''   # redirect to canonical
+    return self.uri_path        if event_type_id_with_name != @slug         # redirect to itself
+    nil                                                                     # dont redirect
+  end
+
 end

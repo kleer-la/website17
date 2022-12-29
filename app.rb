@@ -81,15 +81,6 @@ before '/:locale/*' do
   I18n.locale = session[:locale]
 end
 
-get '/ebooks2022' do
-  @meta_tags.set! title: 'Libros'
-  @meta_tags.set! description: 'Descripcion libros o recursos'
-
-  @books = Books.new.load.all
-
-  erb :'resources_page/index_books', layout: :'layout/layout2022'
-end
-
 get '/en' do
   redirect '/en/', 301 # permanent redirect
 end
