@@ -813,6 +813,12 @@
   line-height: 32px;
   margin-bottom: 0; }
 
+.blog__body a {
+  color: #00BBEE !important;
+  font-weight: bold !important; }
+.blog__body a:hover {
+  color: #68CEF2; }
+
 .blog {
   position: relative; }
   .blog > .container {
