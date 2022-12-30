@@ -8,7 +8,6 @@ require './controllers/event_helper'
 
 #TODO redirect
 REDIRECT = {
-  '179-taller-del-tiempo-(online)' => '47-taller-del-tiempo',
   'entrenamos/todos' => 'agenda',
   'entrenamos' => 'agenda'
 }.freeze
@@ -26,11 +25,6 @@ end
 def event_type_from_json(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
   EventType.create_keventer_json(event_type_id) if valid_id?(event_type_id)
-end
-
-def event_type_from_qstring(event_type_id_with_name)
-  event_type_id = event_type_id_with_name.split('-')[0]
-  KeventerReader.instance.event_type(event_type_id, true) if valid_id?(event_type_id)
 end
 
 def tracking_mantain_or_default(utm_source, utm_campaign)
@@ -53,10 +47,7 @@ get '/agenda' do
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
-get('/catalogo2022') { session[:version] = 2022; catalog }
-get('/catalogo') {  catalog }
-
-def catalog
+get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: 'Capacitación empresarial en agilidad organizacional'
   @meta_tags.set! description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
@@ -73,7 +64,6 @@ def catalog
   erb :'training/index', layout: :'layout/layout2022'
 end
 
-
 # Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
 get '/entrenamos/evento/:event_id_with_name' do
   event_id_with_name = params[:event_id_with_name]
@@ -89,22 +79,6 @@ get '/entrenamos/evento/:event_id_with_name' do
   end
 end
 
-# Redirect
-#  To /catalogo when
-#  - event type not found
-#  - event type deleted and canonical is missing (replaced for slug)
-#  To canonical when
-#  - event type deleted and canonical is present
-def should_redirect(event_type)
-  return unless event_type.nil? || event_type.deleted
-
-  if event_type.nil? || event_type.canonical_slug == event_type.slug
-    redirect_not_found_course
-  else
-    redirect uri event_type.canonical_url, 301 # permanent redirect
-  end
-end
-
 def redirect_not_found_course
   session[:error_msg] = course_not_found_error
   flash.now[:alert] = course_not_found_error
@@ -114,23 +88,11 @@ end
 #TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
-  from_json = !(params['json'].to_s.length > 0)
 
-  redirect_to = REDIRECT[params[:event_type_id_with_name]]
-  unless redirect_to.nil?
-    uri = "/cursos/#{redirect_to}"
-    return redirect uri, 301 # permanent redirect = REACTIVAR CUANDO ESTE TODO LISTO!
-  end
-
-  if from_json
-    @event_type = event_type_from_json params[:event_type_id_with_name]
-  else
-    @event_type = event_type_from_qstring params[:event_type_id_with_name]
-    @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
-  end
-
-  redirecting = should_redirect(@event_type)
-  (return redirecting) unless redirecting.nil?
+  @event_type = event_type_from_json params[:event_type_id_with_name]
+  #TODO depracated?
+  #   @event_type = event_type_from_qstring params[:event_type_id_with_name]
+  #   @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
 
   @active_tab_entrenamos = 'active'
 
@@ -139,6 +101,12 @@ get '/cursos/:event_type_id_with_name' do
   if @event_type.nil?
     redirect_not_found_course
   else
+    redirecting = @event_type.redirect_to(params[:event_type_id_with_name])
+    unless redirecting.nil?
+      return redirect_not_found_course if redirecting == ''
+      redirect to(redirecting), 301
+    end
+
     # SEO (title, meta)
     @meta_tags.set! title: @event_type.name
     @meta_tags.set! description: @event_type.elevator_pitch
@@ -151,12 +119,6 @@ get '/cursos/:event_type_id_with_name' do
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end
-end
-
-#TODO
-post '/cursos/:event_type_id/contact' do
-  @event_type = event_type_from_qstring params[:event_type_id]
-  p params unless @event_type.nil?
 end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)

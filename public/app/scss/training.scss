@@ -270,7 +270,6 @@ $white: #FFFFFF;
 
   #course-description{
     padding: 0 20px;
-
   }
 
   #course-next-editions{
@@ -504,11 +503,31 @@ $white: #FFFFFF;
     font-size: 20px;
     line-height: 26px;
   }
+
+
+  a{
+    color: $secondary-blue !important;
+    font-weight: bold !important;
+  }
+
+  a:hover{
+    color: $primary-blue;
+  }
 }
 
 #course-learnings{
   margin-bottom: 100px;
   position: relative;
+
+
+  a{
+    color: $secondary-blue !important;
+    font-weight: bold !important;
+  }
+
+  a:hover{
+    color: $primary-blue;
+  }
 }
 
 .course-learnings__container{
@@ -532,6 +551,7 @@ $white: #FFFFFF;
   position: relative;
   padding: 40px;
   width: 100vw;
+
 }
 
 .course-qna__question{
@@ -545,6 +565,17 @@ $white: #FFFFFF;
 .course-qna__answer{
   padding: 40px;
   width: 100%;
+
+
+
+  a{
+    color: $secondary-blue !important;
+    font-weight: bold !important;
+  }
+
+  a:hover{
+    color: $primary-blue;
+  }
 }
 
 .schedule-titles{
@@ -552,6 +583,15 @@ $white: #FFFFFF;
 }
 
 #course-trainers{
+
+  a{
+    color: $secondary-blue !important;
+    font-weight: bold !important;
+  }
+
+  a:hover{
+    color: $primary-blue;
+  }
 }
 
 .course-trainers__container{
@@ -587,6 +627,7 @@ $white: #FFFFFF;
   margin-bottom: 50px;
   padding: 50px 150px 50px 150px;
 
+
 }
 
 .course-program__item{
@@ -600,6 +641,16 @@ $white: #FFFFFF;
 
 .course-program__specific-item{
   padding: 20px;
+
+
+  a{
+    color: $secondary-blue !important;
+    font-weight: bold !important;
+  }
+
+  a:hover{
+    color: $primary-blue;
+  }
 }
 
 .course-program__blue-oval{
@@ -615,6 +666,16 @@ $white: #FFFFFF;
 
 #course-recipients{
   margin-top: 50px;
+
+
+  a{
+    color: $secondary-blue !important;
+    font-weight: bold !important;
+  }
+
+  a:hover{
+    color: $primary-blue;
+  }
 
   img{
     max-height: 500px;

@@ -1695,6 +1695,7 @@ en:
         more:
           text: Know more
         questions:
+          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Please describe your context and how we could help you
           text: Questions?
     home_hero:
       - subject: Business agility
@@ -1806,6 +1807,10 @@ en:
     subtitle: >-
       We accompany your organization on the challenging path of agile transformation. We work on multiple dimensions to have a holistic view of organizational change, from structure, leadership challenges, cultural change, to implementation of practices, tools, framework and much more.
     howto:
+      title: "How do we do it?"
+      text: >-
+        <p>The change process is non-linear and is different for each organization. We at Kleer have more than 13 years of Business Agility experience. We usually co-design the journey strategy aligned with the expected results of the organization.</p>
+        <p>Below you will find some activities, products and services we offer for organizations on this process:</p>
       items:
         - {
           text: Diseño organizacional,
@@ -1856,14 +1861,32 @@ en:
           img: /app/img/icons/GitFork.svg,
         }
     differential:
-      title: Nuestro diferencial, la experiencia kleerer
+      title: Our differential, the Kleer experience.
       items:
-        - Cocreamos con nuestros clientes las estrategias y cursos de acción para lograr sus objetivos de negocio. Impulsamos formas de trabajo que permitan entregar mayor valor a los clientes.
-        - "Trabajamos de forma colaborativa en todas las capas de la organización: las prácticas, los procesos, el liderazgo y la cultura. Con ello, se mejora la respuesta a las altas expectativas de los clientes, lo cual va de la mano de la mejora en la rentabilidad."
-        - Capacitamos a los equipos internos que lideran el aprendizaje, remueven los impedimentos organizacionales y sostienen el cambio.
-        - Promovemos una cultura de aprendizaje y experimentación con feedback frecuente y mejora continua para mejorar la adaptación a contextos cambiantes. Cultivamos espacios donde las personas aportan su máximo potencial creativo, de innovación y colaboración.
+        - We co-create with our customers the strategy for the journey and the journey itself taking into account their business objectives. We develop ways of work that allow our clients to deliver more value to their customers.
+        - "We collaboratively work at all organizational layers: on operational practices, processes, leadership and culture. In this way, our customers achieve better results, aligned with the highest expectations and yielding better business results."
+        - We train internal teams that lead the change process, removing organizational impediments and sustain the evolution process.
+        - We use and propose a learning culture, based on experiments with frequent feedback, which improves the organizational response on complex and changing contexts. We foster collaborative environments where people can develop their potential and innovation.
     contact:
-      title: Cuéntanos más de tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
+      title: Tell us more about your context. Let’s design together your journey to and agile organization.
       button:
-        text: ¿Conversamos?
+        text: Let’s talk
         link: mailto:info@kleer.la?subject=Business Agility&amp;body=Please describe your context and how could we help you
+
+  contact-us-form:
+    title: Contact us
+    name-input:
+      label: Full name
+      error-message: Please fill in your name
+    email-input:
+      label: E-mail
+      error-message: Invalid mail format
+    phone-input:
+      label: Phone number
+      error-message: Please fill in your phone number
+    message-input:
+      label: Message
+      sub-label: Please describe your context and how we could help!
+      error-message: Please fill in your message
+    button:
+      text: Submit
