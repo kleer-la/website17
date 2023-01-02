@@ -99,16 +99,18 @@ end
 
 get '/agilidad-organizacional-old' do
   @active_tab_coaching = 'active'
-  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional'
-  @meta_tags.set! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional',
+                  description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
   @categories = KeventerReader.instance.categories session[:locale]
   erb :coaching
 end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
-  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional'
-  @meta_tags.set! description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
+  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional',
+                  description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.',
+                  canonical: "#{session[:locale]}/agilidad-organizacional"
+
   erb :'business_agility/index', layout: :'layout/layout2022'
 end
 
