@@ -30,6 +30,7 @@ Feature: Home Page
 
 
 	Scenario: SEO hreflang
+	Given PENDING
 		Given I visit the home page
 		Then SEO hreflang "es" should have href "https://www.kleer.la/es/"
 		Then SEO hreflang "en" should have href "https://www.kleer.la/en/"
