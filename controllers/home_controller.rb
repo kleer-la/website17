@@ -6,8 +6,9 @@ get('/') {  session[:version] = 2021;  home}
 
 def home
   @meta_tags.set!  title: t('meta_tag.home.title'),
-                   description: t('meta_tag.home.description'),
-                   canonical:  "#{session[:locale]}/"
+                   description: t('meta_tag.home.description')
+                   # canonical:  "#{session[:locale]}/",
+                   # hreflang: { es: "#{session[:locale]}/", en: "#{session[:locale]}/"}
 
 
   @clients =  client_list
