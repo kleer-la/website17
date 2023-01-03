@@ -1,18 +1,19 @@
 Feature: Catalogo de cursos
 
 	Scenario: Mostrar las categorías
-    Given PENDING
+		Given PENDING
 		Given I visit the "catalogo" page
-		Then I should see "High Performance"
+		Then I should see "Desarrollo Profesional"
+		And I should see "Desarrollo de Software"
 
 	Scenario: Show event type subtitle
-    Given PENDING
+		Given PENDING
 		Given I visit the "catalogo" page
 		Then I should see "Taller de TDD"
 		And I should see "Some Subtitle"
 
 	Scenario: Show event type duration
-    Given PENDING
+		Given PENDING
 		Given there is a event type with duration
 		When I visit the "catalogo" page
 		Then I expect duration to be "8 horas"

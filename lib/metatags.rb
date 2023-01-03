@@ -56,7 +56,7 @@ module MetaTags
       robot
       site
       path
-      @tags.delete :hreflang if !!@tags[:canonical]
+      # @tags.delete :hreflang if !!@tags[:canonical]
       (@tags.map { |tag| display_one tag }).join('')
     end
 

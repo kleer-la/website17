@@ -120,10 +120,10 @@ describe 'metatags' do
       expect(head).not_to include 'href="https://kleer.la/es"'
       expect(head).not_to include 'href="https://kleer.la/en"'
     end
-    it 'dont include hreflang if canonical' do
-      head = Tags.new.display 'path': '', canonical: 'pepe'
-      expect(head).not_to include 'href="https://kleer.la/es"'
-      expect(head).not_to include 'href="https://kleer.la/en"'
-    end
+    # it 'dont include hreflang if canonical' do
+    #   head = Tags.new.display 'path': '', canonical: 'pepe'
+    #   expect(head).not_to include 'href="https://kleer.la/es"'
+    #   expect(head).not_to include 'href="https://kleer.la/en"'
+    # end
   end
 end
