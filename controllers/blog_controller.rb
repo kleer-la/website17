@@ -52,10 +52,11 @@ rescue StandardError => e
 end
 
 def blog_list(articles)
-  @meta_tags.set! title: 'Blog - Artículos sobre agilidad organizacional'
-  @meta_tags.set! description: 'Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.'
-  @articles = articles
+  @meta_tags.set! title: t('meta_tag.blog.title'),
+                  description: t('meta_tag.blog.description'),
+                  canonical: "#{session[:locale]}#{t('meta_tag.blog.canonical')}"
 
+  @articles = articles
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 

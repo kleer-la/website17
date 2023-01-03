@@ -40,9 +40,9 @@ def coming_courses
 end
 
 get '/agenda' do
-  @meta_tags.set! title: 'Agenda de cursos online sobre Agilidad y Scrum',
-                  description: 'Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.',
-                  canonical: "#{session[:locale]}/agenda"
+  @meta_tags.set! title: t('meta_tag.agenda.title'),
+                  description: t('meta_tag.agenda.description'),
+                  canonical: "#{session[:locale]}#{t('meta_tag.agenda.canonical')}"
 
   @events = KeventerReader.instance.catalog_events()
   erb :'training/agenda/index', layout: :'layout/layout2022'
@@ -50,9 +50,9 @@ end
 
 get '/catalogo' do
   @active_tab_entrenamos = 'active'
-  @meta_tags.set! title: 'Capacitación empresarial en agilidad organizacional',
-                 description: 'Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.',
-                  canonical: "#{session[:locale]}/catalogo"
+  @meta_tags.set! title: t('meta_tag.catalog.title'),
+                  description: t('meta_tag.catalog.description'),
+                  canonical: "#{session[:locale]}#{t('meta_tag.catalog.canonical')}"
   @categories = KeventerReader.instance.categories session[:locale]
   @academy = AcademyCourses.new.load.all
 

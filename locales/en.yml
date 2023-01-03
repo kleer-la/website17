@@ -41,6 +41,36 @@ en:
         Resources and tools for Scrum, Product Owner, Scrum Master, Team
         development, Retrospectives, Leadership, Communication, Kanban, Agile
         Coaching
+      canonical: /recursos
+    catalog:
+      title: Capacitación empresarial en agilidad organizacional
+      description: >-
+        Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery,
+        Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.
+      canonical: /catalogo
+    agenda:
+      title: Agenda de cursos online sobre Agilidad y Scrum
+      description: >-
+        Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery,
+        Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.
+      canonical: /agenda
+    blog:
+      title: Blog - Artículos sobre agilidad organizacional.
+      description: >-
+        Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching,
+        Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.
+      canonical: /blog
+    aboutus:
+      title: '| Somos'
+      description:
+      canonical: /somos
+    business-agility:
+      title: Te acompañamos hacia la agilidad organizacional.
+      description: >-
+        Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital.
+        Diseño, metodologías e innovación para equipos colaborativos.
+      canonical: /agilidad-organizacional
+
   slider:
     title_1: Business Agility
     text_1: We accompany integral improvements

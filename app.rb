@@ -107,9 +107,9 @@ end
 
 get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
-  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional',
-                  description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.',
-                  canonical: "#{session[:locale]}/agilidad-organizacional"
+  @meta_tags.set! title: t('meta_tag.business-agility.title'),
+                  description: t('meta_tag.business-agility.description'),
+                  canonical: "#{session[:locale]}#{t('meta_tag.business-agility.canonical')}"
 
   erb :'business_agility/index', layout: :'layout/layout2022'
 end
@@ -173,7 +173,8 @@ end
 get '/recursos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set!  title: t('meta_tag.resources.title'),
-              description: t('meta_tag.resources.description')
+                   description: t('meta_tag.resources.description'),
+                   canonical: "#{session[:locale]}#{t('meta_tag.resources.canonical')}"
 
   @resources = Resources.new.load.all
 
