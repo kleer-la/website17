@@ -21,9 +21,10 @@ end
 class NullJsonAPI
   attr_accessor :doc
 
-  def initialize(uri)
+  def initialize(uri, doc= nil)
     if uri.nil? 
       @doc = nil
+      @doc = JSON.parse(doc) unless doc.nil?
     else
       @doc = JSON.parse(File.read(uri))
     end

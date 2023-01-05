@@ -36,7 +36,8 @@ def tracking_mantain_or_default(utm_source, utm_campaign)
 end
 
 def coming_courses
-  KeventerReader.instance.coming_commercial_events
+  Event.create_keventer_json
+  # KeventerReader.instance.coming_commercial_events
 end
 
 get '/agenda' do
