@@ -59,6 +59,15 @@ es:
         Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital.
         Diseño, metodologías e innovación para equipos colaborativos.
       canonical: /agilidad-organizacional
+    clients:
+      title:  "| Nuestros clientes"
+      description: >-
+        Kleer - Coaching & Training - Estas organizaciones confían en nosotros
+      canonical: /clientes
+    press:
+      title: "| Prensa"
+      description:
+      canonical: /prensa
 
 
   #   refactor

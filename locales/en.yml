@@ -43,33 +43,42 @@ en:
         Coaching
       canonical: /recursos
     catalog:
-      title: Capacitación empresarial en agilidad organizacional
+      title: Corporate training in business agility
       description: >-
-        Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery,
-        Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.
+        Agile training for teams: Scrum, Continuous Improvement, Lean, Product Discovery, Agile Coaching,
+        Leadership, Facilitation, Collaborative Communication, Kanban.
       canonical: /catalogo
     agenda:
-      title: Agenda de cursos online sobre Agilidad y Scrum
+      title: Agenda of online courses on Agility and Scrum.
       description: >-
-        Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery,
-        Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.
+        Trainings on Facilitation, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectives,
+        Leadership, Continuous Improvement, Time Management and more.
       canonical: /agenda
     blog:
-      title: Blog - Artículos sobre agilidad organizacional.
+      title: Blog - Business Agility Articles.
       description: >-
-        Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching,
-        Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.
+        Relevant content in Spanish: Scrum, Continuous improvement, Lean, Product Discovery, Agile Coaching,
+        Leadership, Facilitation, Collaborative Communication, Kanban.
       canonical: /blog
     aboutus:
       title: '| Somos'
       description:
       canonical: /somos
     business-agility:
-      title: Te acompañamos hacia la agilidad organizacional.
+      title: We accompany you towards organizational agility.
       description: >-
-        Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital.
-        Diseño, metodologías e innovación para equipos colaborativos.
+        We co-create agile strategies to achieve your business goals and digital transformation.
+        Design, methodologies and innovation for collaborative teams.
       canonical: /agilidad-organizacional
+    clients:
+      title: "| Our clients"
+      description: >-
+        Kleer - Coaching & Training - These organizations trust us.
+      canonical: /clientes
+    press:
+      title: "| Prensa"
+      description:
+      canonical: /prensa
 
   slider:
     title_1: Business Agility
