@@ -40,6 +40,11 @@ def coming_courses
   # KeventerReader.instance.coming_commercial_events
 end
 
+def load_categories(lang)
+  # KeventerReader.instance.categories lang
+  Category.create_keventer_json lang
+end
+
 get '/agenda' do
   @meta_tags.set! title: t('meta_tag.agenda.title'),
                   description: t('meta_tag.agenda.description'),
@@ -54,7 +59,7 @@ get '/catalogo' do
   @meta_tags.set! title: t('meta_tag.catalog.title'),
                   description: t('meta_tag.catalog.description'),
                   canonical: "#{session[:locale]}#{t('meta_tag.catalog.canonical')}"
-  @categories = KeventerReader.instance.categories session[:locale]
+  @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
   @events = if session[:locale] == 'es'

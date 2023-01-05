@@ -1,6 +1,7 @@
 require './lib/timezone_converter'
 require './lib/keventer_helper'
 require './lib/trainer'
+require './lib/json_api'
 
 class Event
   attr_accessor :country_iso, :country_name, :certified,
