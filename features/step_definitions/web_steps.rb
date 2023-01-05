@@ -81,6 +81,7 @@ Then(/^the page title should be "(.*?)"$/) do |title_text|
 end
 
 Then(/^the page title should includes "(.*?)"$/) do |title_text|
+  puts page.title
   expect(page).to have_title(/#{title_text}/)
 end
 

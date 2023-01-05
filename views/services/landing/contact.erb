@@ -8,11 +8,9 @@
     <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_circle.svg" class="desktop_figure newsletter__green-circle"/>
     <h6 class="mb-4">
     Contáctanos para llevar el Progama de Liderazgo Ágil a tu organización.
-    </h6>    
+    </h6>
     <div class="btn-center-container">
-      <a class="btn my-primary-button" href="<%= t('business-agility.contact.button.link') %>">
-        <%= t('business-agility.contact.button.text')%>
-      </a>
+      <%= erb :'component/_contact_banner_button', locals: {text: 'Contáctanos para cocrear un Programa de Desarrollo del Liderazgo Ágil adaptado a tu contexto organizacional.', text_button: '¿Conversamos?', style_class: 'btn my-primary-button' }%>
     </div>
 
   </div>

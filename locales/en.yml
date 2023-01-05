@@ -41,6 +41,45 @@ en:
         Resources and tools for Scrum, Product Owner, Scrum Master, Team
         development, Retrospectives, Leadership, Communication, Kanban, Agile
         Coaching
+      canonical: /recursos
+    catalog:
+      title: Corporate training in business agility
+      description: >-
+        Agile training for teams: Scrum, Continuous Improvement, Lean, Product Discovery, Agile Coaching,
+        Leadership, Facilitation, Collaborative Communication, Kanban.
+      canonical: /catalogo
+    agenda:
+      title: Agenda of online courses on Agility and Scrum.
+      description: >-
+        Trainings on Facilitation, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectives,
+        Leadership, Continuous Improvement, Time Management and more.
+      canonical: /agenda
+    blog:
+      title: Blog - Business Agility Articles.
+      description: >-
+        Relevant content in Spanish: Scrum, Continuous improvement, Lean, Product Discovery, Agile Coaching,
+        Leadership, Facilitation, Collaborative Communication, Kanban.
+      canonical: /blog
+    aboutus:
+      title: '| Somos'
+      description:
+      canonical: /somos
+    business-agility:
+      title: We accompany you towards organizational agility.
+      description: >-
+        We co-create agile strategies to achieve your business goals and digital transformation.
+        Design, methodologies and innovation for collaborative teams.
+      canonical: /agilidad-organizacional
+    clients:
+      title: "| Our clients"
+      description: >-
+        Kleer - Coaching & Training - These organizations trust us.
+      canonical: /clientes
+    press:
+      title: "| Prensa"
+      description:
+      canonical: /prensa
+
   slider:
     title_1: Business Agility
     text_1: We accompany integral improvements
