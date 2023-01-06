@@ -29,6 +29,6 @@ group :development, :test do
   gem 'coveralls_reborn'
   gem 'cucumber'
   gem 'rspec'
-  gem 'rspec-html-matchers', '~> 0.9.4'
+  gem 'rspec-html-matchers' #, '~> 0.9.4'
   gem 'simplecov'
 end
