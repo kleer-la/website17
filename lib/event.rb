@@ -1,6 +1,7 @@
 require './lib/timezone_converter'
 require './lib/keventer_helper'
 require './lib/trainer'
+require './lib/json_api'
 
 class Event
   attr_accessor :country_iso, :country_name, :certified,
@@ -126,6 +127,24 @@ class Event
       ah: hours,
       am: minutes
     ) }"
+  end
+
+  class << self
+    def create_keventer_json()
+      if defined? @@json_api
+        json_api = @@json_api
+      else
+        json_api = JsonAPI.new(KeventerConnector.new.events_xml_url(:json))
+      end
+      Event.load_events(json_api.doc ) unless json_api.doc.nil?
+    end
+
+    def null_json_api(null_api)
+      @@json_api = null_api
+    end
+    def load_events(events)
+      events.reduce([]) { |ac, ev| ac << Event.new( EventType.new(nil, ev['event_type']) ).load_from_json(ev)}
+    end
   end
 
 end

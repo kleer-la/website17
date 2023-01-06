@@ -3,7 +3,7 @@ require './lib/keventer_connection/mailer'
 
 KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
 API_ROOT = KEVENTER_URL + '/api'.freeze
-API_EVENTS_PATH = '/events.xml'.freeze
+API_EVENTS_PATH = '/events'.freeze
 API_KLEERERS_PATH = '/kleerers.xml'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
 
@@ -13,8 +13,8 @@ class KeventerConnector
     @response = response
   end
 
-  def events_xml_url
-    API_ROOT + API_EVENTS_PATH
+  def events_xml_url(format = :xml)
+    API_ROOT + API_EVENTS_PATH + ".#{format}"
   end
 
   def kleerers_xml_url
@@ -23,6 +23,9 @@ class KeventerConnector
 
   def categories_xml_url
     API_ROOT + API_CATEGORIES_PATH
+  end
+  def self.categories_json_url
+    API_ROOT + '/categories.json'.freeze
   end
 
   def event_type_url(event_type_id, format = :xml)

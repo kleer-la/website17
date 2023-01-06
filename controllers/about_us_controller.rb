@@ -1,6 +1,7 @@
 get '/somos' do
   @active_tab_somos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Somos"
+  @meta_tags.set! title: "#{@base_title} #{t('meta_tag.aboutus.title')}",
+                  canonical: "#{session[:locale]}#{t('meta_tag.aboutus.canonical')}"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
 
   erb :'about_us/index', layout: :'layout/layout2022'
