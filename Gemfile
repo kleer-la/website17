@@ -17,6 +17,7 @@ gem 'sinatra-flash'
 gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
+gem 'dotenv'
 
 group :development do
   gem 'foreman'
