@@ -27,7 +27,7 @@ module MetaTags
       @shown= false
     end
 
-    def set!(**keyw)
+    def set!(keyw= {})
       @tags.merge! keyw
     end
     ROBOT_ATTR = %i[noindex nofollow noarchive].freeze
