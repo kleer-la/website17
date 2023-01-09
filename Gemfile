@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.6'
+ruby '~> 2.7'
 
 gem 'curb'
 gem 'escape_utils'
@@ -17,6 +17,7 @@ gem 'sinatra-flash'
 gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
+gem 'dotenv'
 
 group :development do
   gem 'foreman'

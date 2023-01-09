@@ -6,6 +6,10 @@ require 'json'
 require 'i18n'
 require 'money'
 require 'escape_utils'
+require 'dotenv'
+
+Dotenv.load
+
 require './lib/metatags'
 require './lib/keventer_reader'
 require './lib/twitter_card'
@@ -25,6 +29,8 @@ require './controllers/home_controller'
 require './controllers/mailer_controller'
 
 include MetaTags
+
+
 
 if production?
   require 'rack/ssl-enforcer'

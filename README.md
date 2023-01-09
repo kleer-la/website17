@@ -89,6 +89,8 @@ git push heroku master:main
 
     for f in *.png; do cwebp $f -o $(echo $f | sed s/png$/webp/); done
 
+Para configurar variables de entorno:
+Crear .env con las variables disponibles en website.env.template
 
 Para probar con ambiente de prueba de keventer
 ```cli
