@@ -32,7 +32,7 @@ Docker
 
 Para desarrollar con docker
 ```cli
-docker-compose run --service-ports website17 bash
+docker compose run --service-ports website17 bash
 bundle install
 # ruby app.rb -o 0
 puma -p 4567
