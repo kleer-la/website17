@@ -1,9 +1,9 @@
 <% promotion_path = 'home2022.DLA.' #home_business_agility.'
   title = t(promotion_path + 'title')
   text =  t(promotion_path + 'text')
-  img_url = '/app/img/business_a'
-  img_alt = 'Agilidad organizacional imagen'
-  url =  '/servicios/desarrollo-liderazgo-agil'  # '/agilidad-organizacional'
+  img_url = t(promotion_path + 'img.url')
+  img_alt = t(promotion_path + 'img.alt')
+  url =  t(promotion_path + 'buttons.more.url')
   buttom_more_text = t(promotion_path + 'buttons.more.text') 
   buttom_questions_text = t('home2022.home_business_agility.buttons.questions.text')
 %>
@@ -25,11 +25,13 @@
     </div>
     <div class="container">
       <div class="row">
+        <%if url!='' %>
         <div class="col-6 col-lg-2 col-md-3">
           <a class="btn my-primary-button" href="<%=url%>">
             <%= buttom_more_text%>
           </a>
         </div>
+        <%end%>
         <div class="col-6 col-lg-3 col-md-3">
           <%= erb :'component/_contact_banner_button',  locals: {text_button: buttom_questions_text, style_class: 'btn my-secondary-button'}%>
         </div>
