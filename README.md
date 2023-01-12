@@ -49,7 +49,6 @@ gem install rerun
 rerun 'ruby app.rb -o 0'
 ```
 
-
 Soporte de HTTP/2?
 ```cli
 curl -sI https://www.kleer.la -o/dev/null -w '%{http_version}\n'
