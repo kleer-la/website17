@@ -4,7 +4,6 @@
     <a href="<%= @course[:url] %>">
       <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...', has_webp: @course[:has_webp]}%>
     </a>
-
       <div class="course-card__flags">
         <% if @course[:is_open] %>
           <div>Abierto</div>
@@ -16,7 +15,6 @@
           <div>E-learning</div>
         <% end %>
       </div>
-
   </div>
   <div class="card-body course-card__body">
     <div>
@@ -33,7 +31,7 @@
     <ul class="course-card__items">
       <% unless @course[:duration].nil? || @course[:duration].to_i == 0 %>
         <li class="course-card__item">
-          <img class="icon-card" src="/app/img/icons/Clock.svg" />
+          <img class="icon-card" src="/app/img/icons/Clock.svg" loading="lazy"/>
           <%= @course[:duration]%> hs
         </li>
       <% end %>
@@ -45,19 +43,21 @@
       <% end %>
   <%#TODO: country%>
       <li class="course-card__item">
-        <img class="icon-card" src="/app/img/icons/VideoCamera.svg" />
+        <img class="icon-card" src="/app/img/icons/VideoCamera.svg" loading="lazy"/>
         Online <%#= @course[:country]%>
       </li>
-      <%#if @course[:certified] > 0%>
-<!--        <li class="course-card__item">-->
-<!--          <img class="icon-card" src="/app/img/icons/Medal.svg" />-->
-<!--          # if @course[:certified] == 1-->
-<!--                t('home2022.home_courses.card.certified.kleer')-->
-<!--             # else-->
-<!--                # t('home2022.home_courses.card.certified.scrumalliance')-->
-<!--             # end -->
-<!--        </li>-->
-      <%#end%>
+<%
+#       <%#if @course[:certified] > 0% >
+# <!--        <li class="course-card__item">-->
+# <!--          <img class="icon-card" src="/app/img/icons/Medal.svg" />-->
+# <!--          # if @course[:certified] == 1-->
+# <!--                t('home2022.home_courses.card.certified.kleer')-->
+# <!--             # else-->
+# <!--                # t('home2022.home_courses.card.certified.scrumalliance')-->
+# <!--             # end -->
+# <!--        </li>-->
+#       <%#end% >
+%>
     </ul>
   </div>
   <div class="text-center mt-4">
