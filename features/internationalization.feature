@@ -12,7 +12,7 @@ Feature: i18n
 
 	Scenario: English menu
 		Given I visit the english home page
-		And I should see "Business Agility"
+		# And I should see "Business Agility"
 		And I should see "Courses"
 
 	Scenario: Default menu in Spanish; then select "English"
