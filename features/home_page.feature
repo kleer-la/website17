@@ -5,16 +5,6 @@ Feature: Home Page
 		And I should see "Agilidad Organizacional"
 		And I should see "Cursos"
 
-	Scenario: Datos de contacto
-    Given PENDING: removed from home -> to be moved to Somos?
-		Given I visit the home page
-		Then I should see "Argentina"
-		And I should see "Buenos Aires"
-		And I should see "Bolivia"
-		And I should see "Colombia"
-		And I should see "Uruguay"
-		And I should see "Global"
-
 	Scenario: Subscripcion a newsletter
 		Given I visit the home page
 		Then I should see "Suscríbete"
@@ -30,7 +20,15 @@ Feature: Home Page
 
 
 	Scenario: SEO hreflang
-#	Given PENDING
 		Given I visit the home page
 		Then SEO hreflang "es" should have href "https://www.kleer.la/es/"
 		Then SEO hreflang "en" should have href "https://www.kleer.la/en/"
+
+  Scenario: Redirect
+    Scenario Outline: Locale
+    When I visit the <initial_url> page
+    Then It should redirect to <redirect_url>
+    Examples:
+      |initial_url|redirect_url|
+      # | "" | "/es/"|
+		

@@ -1,15 +1,10 @@
 <%
   social_media = t('generals.social_media.options')
 %>
-
 <div class="social-media">
   <ul class="social-media__list">
     <% social_media.each do |item| %>
       <li class="list-inline-item"><a href="<%= item[:url] %>"><img class="icon-social" src="<%= item[:image] %>"/></a></li>
     <% end %>
-<!--    <li class="list-inline-item"><a href="<%#= t('generals.social_media.twitter') %>"><i class="fa fa-twitter"></i></a></li>-->
-<!--    <li class="list-inline-item"><a href="<%#= t('generals.social_media.youtube') %>"><i class="fa fa-youtube"></i></a></li>-->
-<!--    <li class="list-inline-item"><a href="<%#= t('generals.social_media.instagram') %>"><i class="fa fa-instagram"></i></a></li>-->
-<!--    <li class="list-inline-item"><a href="<%#= t('generals.social_media.facebook') %>"><i class="fa fa-facebook"></i></a></li>-->
   </ul>
 </div>

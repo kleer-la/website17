@@ -1094,10 +1094,26 @@ es:
         '
       buttons:
         more:
+          url: /es/agilidad-organizacional
           text: 'Conoce más'
         questions:
           mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
           text: '¿Tienes alguna pregunta?'
+    DLA:
+      title: Programa de Desarrollo del Liderazgo Ágil (DLA)
+      text: >-
+        <p>La agilidad de una organización está limitada por la mentalidad de quienes la lideran.</p>
+        <p>Construye bases sólidas para la evolución organizacional hacia una agilidad efectiva y sostenible potenciando miradas y comportamientos ágiles en sus líderes, para lograr mayor impacto en los equipos y en, por ende, en los resultados de negocio.</p>
+      img:
+        url: /app/img/business_a
+        alt: Personas colaborando en forma distendida
+      buttons:
+        more:
+          url: /es/servicios/desarrollo-liderazgo-agil
+          text: Conoce más
+        questions:
+          mailto: mailto:info@kleer.la?subject=Programa Desarrollo Liderazgo Agil&amp;body=Cuentanos tu contexto y como podemos ayudarte
+          text: ¿Tienes alguna pregunta?
     home_hero:
       - {
         subject: "Agilidad Organizacional",

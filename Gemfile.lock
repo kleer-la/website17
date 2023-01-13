@@ -57,6 +57,7 @@ GEM
     faraday-net_http (3.0.2)
     ffi (1.15.5)
     foreman (0.87.2)
+    hashie (5.0.0)
     heroics (0.1.2)
       erubis (~> 2.0)
       excon
@@ -84,7 +85,12 @@ GEM
     nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    oauth (0.5.5)
+    oauth (1.1.0)
+      oauth-tty (~> 1.0, >= 1.0.1)
+      snaky_hash (~> 2.0)
+      version_gem (~> 1.1)
+    oauth-tty (1.0.5)
+      version_gem (~> 1.1, >= 1.1.1)
     parallel (1.22.1)
     parser (3.2.0.0)
       ast (~> 2.4.1)
@@ -124,16 +130,16 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
-    rubocop (1.42.0)
+    rubocop (1.43.0)
       json (~> 2.3)
       parallel (~> 1.10)
-      parser (>= 3.1.2.1)
+      parser (>= 3.2.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
       rubocop-ast (>= 1.24.1, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 3.0)
+      unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.24.1)
       parser (>= 3.1.1.0)
     ruby-progressbar (1.11.0)
@@ -154,6 +160,9 @@ GEM
     sinatra-r18n (3.0.5)
       r18n-core (= 3.0.5)
       sinatra (>= 1.3)
+    snaky_hash (2.0.1)
+      hashie
+      version_gem (~> 1.1, >= 1.1.1)
     sync (0.5.0)
     sys-uname (1.2.2)
       ffi (~> 1.1)
@@ -168,6 +177,7 @@ GEM
     tzinfo-data (1.2022.7)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    version_gem (1.1.1)
     webrick (1.7.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
@@ -204,7 +214,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.7.7p221
+   ruby 3.0.5p211
 
 BUNDLED WITH
-   2.1.4
+   2.2.33

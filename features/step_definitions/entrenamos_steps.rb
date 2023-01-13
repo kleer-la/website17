@@ -7,6 +7,6 @@ Then(/^event list is empty$/) do
   end
 end
 
-Then('I should redirect to {string}') do |path|
+Then('It should redirect to {string}') do |path|
   expect(page).to have_current_path(path)
 end

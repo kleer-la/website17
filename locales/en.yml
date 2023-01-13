@@ -1736,6 +1736,21 @@ en:
         questions:
           mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Please describe your context and how we could help you
           text: Questions?
+    DLA:
+      title: Agile Lidership Development Program
+      text: >- 
+        <p>Business agility is limited by the collective agility of those who lead it.</p>
+        <p>Build solid foundations for organizational evolution towards effective and sustainable agility by developing the leaders' agility, who will achieve greater impact on their teams and business results.</p>
+      img:
+        url: /app/img/business_a
+        alt: People collaborating in a relaxed way
+      buttons:
+        more:
+          url: ''
+          text: ''
+        questions:
+          mailto: mailto:info@kleer.la?subject=Programa Desarrollo Liderazgo Agil&amp;body=Cuentanos tu contexto y como podemos ayudarte
+          text: 'Contact us!'
     home_hero:
       - subject: Business agility
         description: >-

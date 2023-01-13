@@ -38,9 +38,9 @@ module Helpers
     Toggle.on?(feature)
   end
 
-  def t(key, ops = {})
+  def t(key, **ops)
     ops.merge!(locale: session[:locale])
-    I18n.t key, ops
+    I18n.t(key, **ops)
   end
 
   def url_sanitize(data)

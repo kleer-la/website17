@@ -1,37 +1,41 @@
+<% promotion_path = 'home2022.DLA.' #home_business_agility.'
+  title = t(promotion_path + 'title')
+  text =  t(promotion_path + 'text')
+  img_url = t(promotion_path + 'img.url')
+  img_alt = t(promotion_path + 'img.alt')
+  url =  t(promotion_path + 'buttons.more.url')
+  buttom_more_text = t(promotion_path + 'buttons.more.text') 
+  buttom_questions_text = t('home2022.home_business_agility.buttons.questions.text')
+%>
 <section id="promotion" class="p-3">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-7 ps-3 mb-3 promotion__text">
         <h3 class="promotion__title mb-5 mt-5">
-          <%= t('home2022.home_business_agility.title') %>
+          <%= title %>
         </h3>
-        <%= t('home2022.home_business_agility.text') %>
+        <%= text %>
       </div>
       <div class="col-xs-12 col-md-5 promotion_img-container">
       <picture>
-        <source srcset="/app/img/business_a.webp" type="image/webp">
-        <img src="/app/img/business_a.png" alt="Agilidad organizacional imagen"/>
+        <source srcset="<%=img_url%>.webp" type="image/webp">
+        <img src="<%=img_url%>.png" alt="<%=img_alt%>" loading="lazy"/>
       </picture>
       </div>
     </div>
     <div class="container">
       <div class="row">
+        <%if url!='' %>
         <div class="col-6 col-lg-2 col-md-3">
-          <a class="btn my-primary-button" href="/agilidad-organizacional">
-            <%= t('home2022.home_business_agility.buttons.more.text') %>
+          <a class="btn my-primary-button" href="<%=url%>">
+            <%= buttom_more_text%>
           </a>
         </div>
-<!--        <div class="col-6 col-lg-3 col-md-3">-->
-<!--          <a class="btn my-secondary-button" href="<%#= t('home2022.home_business_agility.buttons.questions.mailto')%>">-->
-            <%#= t('home2022.home_business_agility.buttons.questions.text') %>
-<!--          </a>-->
-<!--        </div>-->
+        <%end%>
         <div class="col-6 col-lg-3 col-md-3">
-          <%= erb :'component/_contact_banner_button',  locals: {text_button: t('home2022.home_business_agility.buttons.questions.text'), style_class: 'btn my-secondary-button'}%>
+          <%= erb :'component/_contact_banner_button',  locals: {text_button: buttom_questions_text, style_class: 'btn my-secondary-button'}%>
         </div>
-
-
-        </div>
+      </div>
     </div>
   </div>
 </section>

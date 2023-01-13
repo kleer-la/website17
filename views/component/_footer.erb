@@ -1,5 +1,4 @@
 <footer>
-
   <div class="container-fluid footer__body">
     <div class="row">
       <% t('footer_menu').each do  |item| %>
@@ -7,12 +6,9 @@
           <h6><%= item[:title] %></h6>
           <ul>
             <% item[:items].each do |subitem| %>
-              <li>
-
-                <a href='<%= "/#{session[:locale]}#{subitem[:url]}"%>'>
+              <li><a href='<%= "/#{session[:locale]}#{subitem[:url]}"%>'>
                   <%= subitem[:title] %>
-                </a>
-              </li>
+              </a></li>
             <% end %>
           </ul>
         </div>

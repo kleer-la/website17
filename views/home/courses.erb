@@ -16,18 +16,15 @@
       }
     }
 %>
-
 <section id="last-courses" class="p-5 mt-4">
-  <!--    decoration figures-->
+  <%#    decoration figures %>
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_square.svg" class="desktop_figure last-courses__blue-square"/>
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle.svg" class="desktop_figure last-courses__red-circle"/>
-  <!--    -------->
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
       <%= t('home2022.home_courses.title')%>
     </h4>
     <div class='row mt-5'>
-
       <% @coming_courses.each do |course|
         @course = course
       %>
@@ -43,8 +40,7 @@
     </div>
   </div>
 </section>
-
-<!--    responsive carousel-->
+<%#  responsive carousel %>  
 <section id="mobile-carousel">
   <div class="container">
     <h4 class="text-center m-4 last-courses__tittle">
@@ -55,8 +51,6 @@
         <% @coming_courses.each do |course|
           @course = course
         %>
-
-
           <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
             <%= erb :'component/_course_card' %>
           </div>
@@ -71,13 +65,10 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
-
     <div class="btn-center-container mt-5">
       <a class="btn my-primary-button" href="<%=all_courses_url%>">
         <%= t('home2022.home_courses.button.title') %>
       </a>
     </div>
   </div>
-
 </section>

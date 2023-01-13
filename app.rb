@@ -62,7 +62,8 @@ before do
 
   if ['kleer.us', 'kleer.es','www.kleer.us','www.kleer.es'].include? request.host
     # redirect "https://www.#{request.host}#{request.path}"
-    redirect "https://www.kleer.la#{request.path}"
+    lang = "/#{sesion[:locale]}" unless %w(/en /es).include? request.path[0,3]
+    redirect "https://www.kleer.la#{lang}#{request.path}"
   else
     @base_title = 'Agile Coaching, Consulting & Training'
     @meta_tags= Tags.new
