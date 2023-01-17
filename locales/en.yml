@@ -1824,6 +1824,14 @@ en:
       title: "Professional agility training"
       more: See more
 
+  course_landing:
+    see_next_editions: Next editions
+    contact_us: Bring it to your company
+    takeaways: Takeaways
+    target: Who should attend?
+    program: Program
+    testimonies: Testimonies from participants
+
   resources:
     title: Agile Resources and Materials
     subtitle: >-
