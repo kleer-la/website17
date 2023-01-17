@@ -25,16 +25,14 @@
       <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
         <div class="course-qna__question">
           <h3 class="common-item"><%= question %></h3>
-          <img src="/app/img/icons/arrow.svg"/><%= t("course_landing.see_next_editions") %>>
-
+          <img src="/app/img/icons/arrow.svg"/>
+        </div>
       </a>
       <div class="collapse course-qna__answer" id="question<%=index %>">
         <%= answers[index] %>
       </div>
     <% end %>
-
   </div>
-
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_oval.svg" class="desktop_figure course-program__blue-oval" />
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_oval.svg" class="desktop_figure course-program__red-oval" />
 </section>
