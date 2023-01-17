@@ -1,6 +1,17 @@
 {
   "academy_courses":
-          [
+  [
+            {
+              "es": {
+                "id": "agilidad-primeros-pasos",
+                "cover": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://file-uploads.teachablecdn.com/914e9101c0814dc58315f8310d7582f1/f6ea26ca42c24ee7afd82c6a2936c24e",
+                "title": "Agilidad: Primeros pasos",
+                "subtitle": "El curso fundamental para iniciar tu camino en el apasionante mundo de la agilidad",
+                "url": "https://academia.kleer.la/p/agilidad-primeros-pasos",
+                "categories": ["Desarrollo Profesional"],
+                "duration": 3
+              }
+            },
             {
               "es": {
                 "id": "taller-del-tiempo",
@@ -10,6 +21,17 @@
                 "url": "https://academia.kleer.la/p/taller-del-tiempo",
                 "categories": ["Desarrollo Profesional"],
                 "duration": "6 a 15"
+              }
+            },
+            {
+              "es": {
+                "id": "retrospectivas-impactantes",
+                "cover": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/TflU4aH4QJW4xS51n7L5",
+                "title": "Retrospectivas Impactantes",
+                "subtitle": "Tranformá tus reuniones de equipo en sesiones participativas que impacten de verdad",
+                "url": "https://academia.kleer.la/p/retrospectivas-impactantes",
+                "categories": ["Equipos y Organizaciones"],
+                "duration": 4
               }
             },
             {
@@ -43,17 +65,6 @@
                 "url": "https://academia.kleer.la/p/estimaciones-agiles",
                 "categories": ["Equipos y Organizaciones"],
                 "duration": 2
-              }
-            },
-            {
-              "es": {
-                "id": "agilidad-primeros-pasos",
-                "cover": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://file-uploads.teachablecdn.com/914e9101c0814dc58315f8310d7582f1/f6ea26ca42c24ee7afd82c6a2936c24e",
-                "title": "Agilidad: Primeros pasos",
-                "subtitle": "El curso fundamental para iniciar tu camino en el apasionante mundo de la agilidad",
-                "url": "https://academia.kleer.la/p/agilidad-primeros-pasos",
-                "categories": ["Desarrollo Profesional"],
-                "duration": 3
               }
             }
           ]
