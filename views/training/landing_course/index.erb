@@ -2,11 +2,11 @@
   <% if @event_type.public_editions == [] %>
     <p class="m-0">
       <strong>
-        ¡No dudes contactarnos para tu curso in company!
+        <%= t("course_landing.flash.title") %>
       </strong>
     </p>
-    <a href="<%= t('generals.social_media.whatsapp') %>>">
-      <strong>Contáctanos🔥</strong>
+    <a data-bs-toggle="modal" data-bs-target="#mail-modal">
+          <strong><%= t('course_landing.flash.contact_us') %></strong>
     </a>
   <% else %>
     <p class="m-0">
@@ -15,7 +15,7 @@
       </strong>
     </p>
     <a href="#course-next-editions">
-      <strong>Inscribirme ahora🔥</strong>
+      <strong><%= t("course_landing.flash.register") %>></strong>
     </a>
   <% end %>
 </div>

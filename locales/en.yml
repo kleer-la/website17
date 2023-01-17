@@ -1825,6 +1825,10 @@ en:
       more: See more
 
   course_landing:
+    flash:
+      title: Bring this course to your company!
+      contact_us: Contact us🔥
+      register: Register now🔥
     see_next_editions: Next editions
     contact_us: Bring it to your company
     takeaways: Takeaways
