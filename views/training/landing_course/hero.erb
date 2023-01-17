@@ -17,7 +17,7 @@
             <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_arrow2.svg"/>
           </a>
         <% else %>
-          <a href="<%= t("generals.social_media.whatsapp") %>">
+          <a data-bs-toggle="modal" data-bs-target="#mail-modal">
             <strong><%= t("course_landing.contact_us") %></strong>
           </a>
         <% end %>
