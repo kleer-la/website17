@@ -11,25 +11,19 @@
       <h2 class="hero-description"><%= @event_type.subtitle %></h2>
     </div>
     <div class="col-md-3 course-hero__button">
-
         <% if @event_type.public_editions.length > 0 %>
           <a href="#course-next-editions">
-            <strong>Ver fechas</strong>
+            <strong><%= t("course_landing.see_next_editions") %></strong>
             <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_arrow2.svg"/>
           </a>
         <% else %>
-          <a href="<%= t("generals.social_media.whatsapp") %>">
-            <strong>Contáctanos</strong>
+          <a data-bs-toggle="modal" data-bs-target="#mail-modal">
+            <strong><%= t("course_landing.contact_us") %></strong>
           </a>
         <% end %>
-
-
     </div>
   </div>
-
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval.svg" class="course-hero__yellow-oval" />
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg" class="course-hero__red-bean" />
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_worm.svg" class="course-hero__rustic-worm" />
-
-
 </section>

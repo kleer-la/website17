@@ -633,7 +633,8 @@
     color: #68CEF2; }
 
 .schedule-titles {
-  color: #00BBEE; }
+  color: #00BBEE;
+  font-weight: bold; }
 
 #course-trainers a {
   color: #00BBEE !important;

@@ -16,10 +16,10 @@
   questions = questions.compact
   answers = answers.compact
 %>
-
+<%unless questions == []%>
 <section id="course-qna">
   <div class="container p-5 course-qna-container">
-    <h2 class="text-center mb-5 common-subtitle">Preguntas frecuentes</h2>
+    <h2 class="text-center mb-5 common-subtitle"><%= t("course_landing.faq") %></h2>
     <% questions.each.with_index do |question, index| %>
 
       <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
@@ -27,16 +27,13 @@
           <h3 class="common-item"><%= question %></h3>
           <img src="/app/img/icons/arrow.svg"/>
         </div>
-
       </a>
       <div class="collapse course-qna__answer" id="question<%=index %>">
         <%= answers[index] %>
       </div>
     <% end %>
-
   </div>
-
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_oval.svg" class="desktop_figure course-program__blue-oval" />
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_oval.svg" class="desktop_figure course-program__red-oval" />
 </section>
-
+<%end%>

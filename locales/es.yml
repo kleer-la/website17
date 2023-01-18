@@ -1160,8 +1160,6 @@ es:
     subtitle: >-
       Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
 
-
-
   courses_page:
     title: Capacitación profesional en Agilidad
     subtitle: Desarrolla tus habilidades y la de tus equipos. Ofrecemos programas de formación, desde niveles iniciales hasta avanzados. En Kleer ponemos foco en un aprendizaje participativo y dinámico, basado en comprender y experimentar tempranamente los conceptos y prácticas. Capacitaciones sobre Scrum, Mejora Continua, Agile Coaching, Agile Facilitator, Design Thinking, Product Discovery, desarrollo de Liderazgo Ágil y más.
@@ -1174,14 +1172,12 @@ es:
       button:
         text: "Catálogo"
         link: "#training-courses"
-
     public:
       title: Abierto
       text: Eleva tus habilidades profesionales.Únete a nuestra propuesta de cursos abiertos al público, registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar la Agilidad al siguiente nivel.
       button:
         text: "Ver Agenda"
         link: "/agenda"
-
     e-learing:
       title: E-Learning
       text: Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta y cuándo terminar.
@@ -1191,6 +1187,19 @@ es:
     catalog:
       title: "Capacitación profesional en agilidad"
       more: Ver más
+
+  course_landing:
+    flash:
+      title: ¡No dudes contactarnos para tu curso in company!
+      contact_us: Contáctanos🔥
+      register: Inscribirme ahora🔥
+    see_next_editions: Ver fechas
+    contact_us: Contáctanos
+    takeaways: ¿Qué obtendrás?
+    target: Destinado a
+    program: Programa del curso
+    testimonies: Testimonios de nuestros participantes
+    faq: Preguntas Frecuentes
 
   agenda:
     title: Agenda de cursos
@@ -1313,4 +1322,3 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
-

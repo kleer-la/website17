@@ -13,11 +13,9 @@
       <%= t('home2022.home_clients.title') %>
     </h5>
     <div id="carouselClients" class="carousel logos-container slide mt-5" data-bs-ride="carousel">
-<!--      decoration figures-->
-      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_triangle.svg" class="desktop_figure promotion_green_triangle" />
-      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_line.svg" class="desktop_figure promotion_rustic_line" />
-      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_spring.svg" class="desktop_figure promotion_rustic_spring" />
-<!--      ---->
+      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_triangle.svg" class="desktop_figure promotion_green_triangle"  loading="lazy"/>
+      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_line.svg" class="desktop_figure promotion_rustic_line"  loading="lazy"/>
+      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_spring.svg" class="desktop_figure promotion_rustic_spring"  loading="lazy"/>
       <div class="carousel-inner">
       <% @clients.each_with_index  do |client, index| %>
         <% if index % clients_per_row == 0 %>
@@ -25,7 +23,7 @@
             <div class="row">
         <% end %>
             <div class="col-<%=12 / clients_per_row %>">
-              <img src="<%= client[:img]%>" alt="<%= client[:name] %>"/>
+              <img src="<%= client[:img]%>" alt="<%= client[:name] %>"  loading="lazy"/>
             </div>
         <% if index % clients_per_row == clients_per_row-1 %>
           </div>
@@ -38,7 +36,6 @@
 
   </div>
 </section>
-
 <section id="mobile-client-carousel" class="p-3 mobile-client-carousel">
   <div class="container client-carousel__container">
 
@@ -54,7 +51,7 @@
               <div class="row">
           <% end %>
           <div class="col-<%=12 / clients_per_row_mobile %>">
-            <img src="<%= client[:img]%>" alt="<%= client[:name] %>"/>
+            <img src="<%= client[:img]%>" alt="<%= client[:name] %>"  loading="lazy"/>
           </div>
           <% if index % clients_per_row_mobile == clients_per_row_mobile-1 %>
             </div>
