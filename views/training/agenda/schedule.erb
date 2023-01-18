@@ -1,10 +1,47 @@
 <%
   events = @events.select{|e| not e.date.to_s == ''}
+  names = events.map{|e| e.event_type.name}
+
+  names = names.uniq
 %>
 
 <div class="container mt-5">
+  <div class="row schedule-titles">
+    <div class="col-3">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle invisible-title-buton" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          Curso
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <% names.each do |name| %>
+            <li>
+              <div class="m-2 form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  <%= name %>
+                </label>
+              </div>
+            </li>
+          <% end %>
+
+        </ul>
+      </div>
+    </div>
+    <div class="col-1">
+      Fecha
+    </div>
+    <div class="col-2">
+      Horario
+    </div>
+    <div class="col-2">
+      Valor
+    </div>
+    <div class="col-2">
+      Venta anticipada
+    </div>
+    <div class="col-2"></div>
+  </div>
   <% events.each do |event| %>
     <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
-
   <% end %>
 </div>
