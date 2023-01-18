@@ -424,6 +424,7 @@
     margin-top: 20px;
     padding: 20px; }
     #course-recipients img {
+      padding: 0 !important;
       margin-left: calc(50% - 100px);
       margin-bottom: 40px;
       max-height: 300px !important; }
@@ -703,7 +704,8 @@
   #course-recipients a:hover {
     color: #68CEF2; }
   #course-recipients img {
-    max-height: 500px; }
+    padding-left: 20%;
+    max-height: 450px; }
 
 #course-testimonies {
   margin: 50px auto; }
@@ -1530,6 +1532,11 @@ footer {
   .footer__body {
     margin: 10px;
     padding: 30px 20px; } }
+.invisible-title-buton {
+  color: #00BBEE;
+  font-weight: bold;
+  padding: 0; }
+
 .course-card {
   width: 100% !important;
   max-width: 260px !important;
