@@ -1,256 +1,256 @@
 {
   "news": [
     {
-      "title": I18n.t('press.release36_title'),
-      "subtitle": 'iPro UP - 10.5.22',
-      "text": I18n.t('press.release36_text'),
-      "url": 'https://www.iproup.com/innovacion/31364-mejora-continua-como-crear-el-habito-con-impacto-para-tu-negocio',
-      "img": 'https://kleer-images.s3.sa-east-1.amazonaws.com/news/leo-agudelo-en-ipro-up.png'
+      "title": "¿Cómo hacer de la mejora continua un hábito con impacto en tu negocio?",
+      "subtitle": "iPro UP - 10.5.22",
+      "text": "Leonardo Agudelo, Agile Coach en Kleer, analiza por qué un coach permite a empresas y profesionales transformar sus plataforma para estar a la vanguardia adquiriendo el hábito de la mejora continua con la Kata de Mejora inspirada en Toyota",
+      "url": "https://www.iproup.com/innovacion/31364-mejora-continua-como-crear-el-habito-con-impacto-para-tu-negocio",
+      "img": "https://kleer-images.s3.sa-east-1.amazonaws.com/news/leo-agudelo-en-ipro-up.png"
     },
     {
-      "title": I18n.t('press.release35_title'),
-      "subtitle": 'cio.com.mx - 15.4.21',
-      "text": I18n.t('press.release35_text'),
+      "title": "Nueve prácticas para potenciar la colaboración de equipos distribuidos",
+      "subtitle": "cio.com.mx - 15.4.21",
+      "text": "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales. Pues bien, ahora es necesario reivindicar la potencia y el valor de la virtualidad.",
       "url": "https://cio.com.mx/nueve-practicas-para-potenciar-la-colaboracion-de-equipos-distribuidos/",
       "img": "https://kleer-images.s3.sa-east-1.amazonaws.com/news/veronica-arganaraz-en-cio-mx.jpg"
     },
     {
-      "title": I18n.t('press.release34_title'),
+      "title":"9 prácticas clave para potenciar la colaboración distribuida",
       "subtitle": "revistaeconomia.com - 14.4.21",
-      "text": I18n.t('press.release34_text'),
+      "text": "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales, es justo reivindicar la potencia y el valor de la virtualidad.",
       "url": "https://www.revistaeconomia.com/9-practicas-clave-para-potenciar-la-colaboracion-distribuida",
       "img": "https://kleer-images.s3.sa-east-1.amazonaws.com/news/veronica-arganaraz-en-revista-economica.jpg"
     },
     {
-      "title": I18n.t('press.release33_title'),
+      "title": "9 prácticas clave para potenciar la colaboración distribuida",
       "subtitle": "acis.org.co - Abril 2021",
-      "text": I18n.t('press.release33_text'),
+      "text": "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales, es justo reivindicar la potencia y el valor de la virtualidad.",
       "url": "https://acis.org.co/portal/content/noticiasdeinteres/9-pr%C3%A1cticas-clave-para-potenciar-la-colaboraci%C3%B3n-distribuida",
       "img": "/img/prensa/prensa-33.jpg"
     },
     {
-      "title": I18n.t('press.release32_title'),
+      "title": "La fuerza de trabajo pasó a estar en un 90% en hogares: la tecnología existe pero faltan procesos y cultura",
       "subtitle": "convergencialatina.com - 6.5.20",
-      "text": I18n.t('press.release32_text'),
+      "text": "Se estima que un 20% de los empleados ya hacía teletrabajo previo al brote de coronavirus, uno o dos días por semana en promedio.",
       "url": "http://www.convergencialatina.com/Nota-Desarrollo/313104-3-9-La_fuerza_de_trabajo_paso_a_estar_en_un_90_en_hogares_la_tecnologia_existe_pero_faltan_procesos_y_cultura",
       "img": "/img/prensa/prensa-32.jpg"
     },
     {
-      "title": I18n.t('press.release31_title'),
+      "title": "Teletrabajo en pandemia: entornos distribuidos y liderazgo virtual",
       "subtitle": "searchdatacenter.techtarget.com - 29.4.20",
-      "text": I18n.t('press.release31_text'),
+      "text": "El liderazgo virtual implica confianza. Los líderes deben confiar en las capacidades de los colaboradores y delegar las tareas tal como lo harían si estuvieran sentados uno al lado del otro.",
       "url": "https://searchdatacenter.techtarget.com/es/cronica/Teletrabajo-en-pandemia-entornos-distribuidos-y-liderazgo-virtual",
       "img": "/img/prensa/prensa-31.jpg"
     },
     {
-      "title": I18n.t('press.release30_title'),
+      "title": "Recursos Humanos Cuarentena obligatoria: el teletrabajo ¿llegó para quedarse?",
       "subtitle": "clarin.com - 29.3.20",
-      "text": I18n.t('press.release30_text'),
+      "text": "El aislamiento forzó a las empresas a implementar el home office, aunque no sin dificultades. Qué pasará después de la pandemia.",
       "url": "https://www.clarin.com/economia/cuarentena-obligatoria-teletrabajo-llego-quedarse-_0_Q8MJN7pgz.html",
       "img": "/img/prensa/prensa-30.jpg"
     },
     {
-      "title": I18n.t('press.release29_title'),
+      "title": "Umbral M.A.Y.A.: ¿se puede innovar todo el tiempo? ¿hasta dónde hacerlo?",
       "subtitle": "lanacion.com - 1.10.19",
-      "text": I18n.t('press.release29_text'),
+      "text": "Como emprendedora , seguro te cuesta seguir el ritmo cambiante que llevan tus consumidores (¡y el mundo en general!). Un día les gusta una cosa, al día siguiente, prefieren otra. Las tendencias y las ...",
       "url": "https://www.lanacion.com.ar/lifestyle/umbral-maya-se-puede-innovar-todo-tiempo-nid2292651",
       "img": "/img/prensa/prensa-29.jpg"
     },
     {
-      "title": I18n.t('press.release28_title'),
+      "title": "Opinión |¿Qué es lo esencial para una transformación organizacional exitosa?",
       "subtitle": "DiarioTi.com - 05.08.19",
-      "text": I18n.t('press.release28_text'),
+      "text": "Las organizaciones necesitan contar con elementos que les permitan responder a contextos volátiles, inciertos y complejos. Al momento de enfrentar el desafío del cambio, hay metodologías ágiles...",
       "url": "'https://diarioti.com/opinion-que-es-lo-esencial-para-una-transformacion-organizacional-exitosa/110448',"
       "img": "/img/prensa/prensa-28.jpg"
     },
     {
-      "title": I18n.t('press.release27_title'),
+      "title": "¿Qué es eso de la agilidad? ¿Existe más allá del software?",
       "subtitle": "Canal Ar - 20.5.19",
-      "text": I18n.t('press.release27_text'),
+      "text": "¿Qué es eso de la agilidad? ¿Aplica solo al mundo del desarrollo de software? Inicialmente sí, el término fue pensado para construir mejor software. Nosotros mismos la conocimos en ese ámbito.",
       "url": "https://www.canal-ar.com.ar/27949-Que-es-eso-de-la-agilidad-Existe-mas-alla-del-software.html",
       "img": "/img/prensa/prensa-27.jpg"
     },
     {
-      "title": I18n.t('press.release26_title'),
+      "title": "¿Cómo saber si estamos desarrollando el producto equivocado?",
       "subtitle": "Libreta de apuntes - 10.04.2019",
-      "text": I18n.t('press.release26_text'),
+      "text": "La adopción de los valores y herramientas ágiles para el desarrollo de productos está acelerando la transformación digital en las empresas",
       "url": "https://libretadeapuntes.com/2019/04/como-saber-si-estamos-desarrollando-el-producto-equivocado/",
       "img": "/img/prensa/libreta.jpg"
     },
     {
-      "title": I18n.t('press.release25_title'),
+      "title": "La unión hace la fuerza: coaching de equipos",
       "subtitle": "BAE Negocios - 01.04.2019",
-      "text": I18n.t('press.release25_text'),
+      "text": "Trucos para potenciar esta herramienta de motivación en los grupos de trabajo. Del enfoque sistémico a la imposición de límites al propio entrenador",
       "url": "https://www.baenegocios.com/edicion-impresa/La-union-hace-la-fuerza-coaching-de-equipos-20190331-0028.html",
       "img": "/img/prensa/bae-coaching.jpg"
     },
     {
-      "title": I18n.t('press.release24_title'),
+      "title": "Kleer participa en el Scrum Day Colombia con una charla sobre agilidad",
       "subtitle": "Latinspots.com - 15.03.2019",
-      "text": I18n.t('press.release24_text'),
+      "text": "Kleer, organización de aprendizaje y coaching para aplicar los métodos ágiles en áreas de innovación, anunció hoy que participará en el Scrum Day Colombia...",
       "url": "https://www.latinspots.com/sp/empresas-y-negocios/detalle/19896/kleer-participa-en-el-scrum-day-colombia-con-una-charla-sobre-agilidad",
       "img": "/img/prensa/latincolombia.jpg"
     },
     {
-      "title": I18n.t('press.release23_title'),
+      "title":"Del error al aprendizaje en el camino hacia el éxito temprano",
       "subtitle": "Canal Ar - 6.11.2018",
-      "text": I18n.t('press.release23_text'),
+      "text": "Hay algo con la frase “Prueba y Error” que no me convence. En general la usamos para referirnos a la estrategia que usamos en un contexto complejo o de",
       "url": "https://www.canal-ar.com.ar/27488-Del-error-al-aprendizaje-en-el-camino-hacia-el-exito-temprano.html",
       "img": "/img/prensa/canala2.jpg"
     },
     {
-      "title": I18n.t('press.release22_title'),
+      "title": "8 amenazas de la transformación digital a las empresas tradicionales",
       "subtitle": "Totalmedios.com - 10.09.2018",
-      "text": I18n.t('press.release22_text'),
+      "text": "Las empresas tradicionales de muchas industrias no podrán sobrevivir si no desarrollan su capacidad de adaptarse al nuevo contexto que proponen las tecnologías de información y a los hábitos de los nativos digitales.",
       "url": "https://www.totalmedios.com/nota/36141/8-amenazas-de-la-transformacion-digital-a-las-empresas-tradicionales",
       "img": "/img/prensa/total-medios.jpg"
     },
     {
-      "title": I18n.t('press.release21_title'),
+      "title": "¿Cómo iniciar la transformación organizacional?",
       "subtitle": "infochannel.info - 16.04.2018",
-      "text": I18n.t('press.release21_text'),
+      "text": "El proceso de la transformación organizacional suele ser un gran desafío para las empresas, que en muchos casos lo llevan a cabo con escepticismo, pero con la presión de la industria",
       "url": "https://www.infochannel.info/como-iniciar-la-transformacion-organizacional",
       "img": "/img/prensa/infochannel.jpg"
     },
     {
-      "title": I18n.t('press.release20_title'),
+      "title": "Nueve decisiones clave para iniciar la transformación organizacional",
       "subtitle": "Argendustria - 13.04.2018",
-      "text": I18n.t('press.release20_text'),
+      "text": "Muchas organizaciones están en un camino de evolución, embarcándose en la agilidad como principal alternativa. En muchos casos lo hacen con escepticismo,",
       "url": "http://argendustria.com.ar/nueve-decisiones-clave-para-iniciar-la-transformacion-organizacional/",
       "img": "/img/prensa/argendustria.jpg"
     },
     {
-      "title": I18n.t('press.release19_title'),
+      "title": "Cómo aprovechar las horas para ser más productivo y descansar",
       "subtitle": "somos-pymes.com - 01.02.2018",
-      "text": I18n.t('press.release18_text'),
+      "text": "En las películas de acción hay secuencias de persecuciones interminables en las que el protagonista corre detrás del villano o viceversa.",
       "url": "http://www.somos-pymes.com/noticias/economia/como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar.html",
       "img": "/img/prensa/descanso.jpg"
     },
     {
-      "title": I18n.t('press.release18_title'),
+      "title": "Rápidas y sin furia: cómo toman las decisiones las empresas más creativas",
       "subtitle": "lanacion.com - 01.02.2018",
-      "text": I18n.t('press.release18_text'),
+      "text": "Nuevo paradigma: estructuras más horizontales, menor aversión al riesgo y fuerte dinamismo interno son algunas de las claves de estas compañías",
       "url": "https://www.lanacion.com.ar/2105093-tiempo-que-has-de-usar-como-aprovechar-las-horas-para-ser-mas-productivo-y-descansar",
       "img": "/img/prensa/tiempodescanso.jpg"
     },
     {
-      "title": I18n.t('press.release17_title'),
+      "title": "Kleer en Congreso Regional de Interacción con Clientes 2017",
       "subtitle": "CCSur - 25.01.2017",
-      "text": I18n.t('press.release17_text'),
+      "text": "El Congreso Regional de Interacción con Clientes, que se realizará el 8 de junio en la Ciudad de Buenos Aires, apunta a generar un espacio de",
       "url": "https://ccsur.com/congreso-regional-interaccion-clientes-2017/",
       "img": "/img/prensa/congreso.jpg"
     },
     {
-      "title": I18n.t('press.release16_title'),
+      "title": "RRHH podría matar la agilidad de tu empresa... o potenciarla",
       "subtitle": "Canal Ar - 05.04.2017",
-      "text": I18n.t('press.release16_text'),
+      "text": "Hace unos meses estaba conversando con uno de nuestros clientes sobre la logística de un taller que iba a impartir",
       "url": "https://www.canal-ar.com.ar/24139-RRHH-podria-matar-la-agilidad-de-tu-empresa--o-potenciarla.html",
       "img": "/img/prensa/canalar.jpg"
     },
     {
-      "title": I18n.t('press.release15_title'),
+      "title": "Cultura ágil y cultura latina ¿son compatibles?",
       "subtitle": "Latinspots.com y Totalmedios.com - 10.02.2017",
-      "text": I18n.t('press.release15_text'),
+      "text": "Cuando adoptas para tu empresa una solución creada en otro contexto ¿Tenés en cuenta la idiosincrasia de tu organización y de tu país? El contexto es un factor crítico para el éxito.",
       "url": "https://www.totalmedios.com/nota/30798/cultura-agil-y-cultura-latina-son-compatibles",
       "img": "/img/prensa/cultura2.jpg"
     },
     {
-      "title": I18n.t('press.release14_title'),
+      "title": "Facilitación Gráfica como recurso para la CI",
       "subtitle": "issuu.com - 14.09.2016",
-      "text": I18n.t('press.release14_text'),
+      "text": "En Kleer, junto a sus socios, se especializa en metodologías ágiles",
       "url": "https://issuu.com/sociosonline/docs/s24-issuu/55",
       "img": "/img/prensa/facilitacion.jpg"
     },
     {
-      "title": I18n.t('press.release13_title'),
+      "title": "De qué se trata la metodología de trabajo inspirada en el rubgy que quiere ganar terreno en las empresas",
       "subtitle": "apertura.com - 19.05.2016",
-      "text": I18n.t('press.release13_text'),
+      "text": "A través de liderazgos situacionales y deadlines de corto plazo, el scrum busca promover tanto innovación como productividad. En qué consiste.",
       "url": "https://www.apertura.com/management/De-que-se-trata-la-metodologia-de-trabajo-inspirada-en-el-rubgy-que-quiere-ganar-terreno-en-las-empresas-20160519-0005.html",
       "img": "/img/prensa/rugby.jpg"
     },
     {
-      "title": I18n.t('press.release12_title'),
+      "title": "La ropa no se negocia",
       "subtitle": "lanacion.com - 03.10.2015",
-      "text": I18n.t('press.release12_text'),
+      "text": "Las nuevas generaciones impusieron el look casual para ir a trabajar, pero hay empresas que hoy quieren volver a la formalidad: ¿cuál es el punto de equilibrio?",
       "url": "https://www.lanacion.com.ar/1833251-la-ropa-no-se-negocia",
       "img": "/img/prensa/ropa.jpg"
     },
     {
-      "title": I18n.t('press.release11_title'),
+      "title": "Kleer será anfitrión de la 1° Jornada de Metacreatividad en Argentina",
       "subtitle": "ElContact.com - 18/Ago/2015",
-      "text": I18n.t('press.release11_text'),
+      "text": "Kleer se complace en anunciar que será el anfitrión de la Primera Jornada del Movimiento de Metacreatividad en la Argentina. El encuentro, de entrada libre y gratuita, se realizará el próximo lunes 31 de agosto en sus oficinas.",
       "url": "http://www.elcontact.com/2015/08/kleer-sera-anfitrion-de-la-1-jornada-de.html",
       "img": "/img/prensa/1ra-jornada-de-metacreatividad.png"
     },
     {
-      "title": I18n.t('press.release10_title'),
+      "title": "5 beneficios de las agencias más ágiles",
       "subtitle": "LatinSpots.com - 10/Jul/2015",
-      "text": I18n.t('press.release10_text'),
+      "text": "Los métodos ágiles llegaron a las agencias digitales para quedarse. Llevan más de dos décadas dando resultados en otras industrias, más que nada en el desarrollo de software, y hace más de dos años desembarcaron en la publicidad.",
       "url": "http://www.latinspots.com/site/sp/nota/detalle/36734/5-beneficios-de-las-agencias-ms-giles",
       "img": "/img/prensa/5-beneficios-de-las-agencias-agiles.png"
     },
     {
-      "title": I18n.t('press.release09_title'),
+      "title": "7 claves del Coaching de Equipos",
       "subtitle": "Canal AR - 8/Jul/2015",
-      "text": I18n.t('press.release09_text'),
+      "text": "Martín Alaimo, coach organizacional y autor de libros sobre agilismo, Scrum y coaching, explica las diferencias entre el coaching ejecutivo y del coaching de equipos.",
       "url": "https://canal-ar.com.ar/21854-7-claves-del-Coaching-de-Equipos.html",
       "img": "/img/prensa/7-claves-del-coaching-de-equipos.png"
     },
     {
-      "title": I18n.t('press.release08_title'),
+      "title": "Entrevista a Pablo Tortorella en CustomerIn",
       "subtitle": "CustomerIn - Radio Palermo - 7/Jul/2015",
-      "text": I18n.t('press.release08_text'),
+      "text": "En esta charla Pablo nos cuenta sobre facilitación gráfica, agilidad y otros métodos para mejorar la comunicación y el trabajo de equipo.",
       "url": "https://www.youtube.com/embed/edh5xz7vyUI",
       "img": "https://kleer-images.s3.sa-east-1.amazonaws.com/news/pablo-tortorella-en-radio-palermo.png",
       "video": "https://www.youtube.com/embed/edh5xz7vyUI"
     },
     {
-      "title": I18n.t('press.release07_title'),
+      "title": "Cómo el tipo de contrato puede condicionar un proyecto complejo",
       "subtitle": "CIO Perú - 7/Jul/2015",
-      "text": I18n.t('press.release07_text'),
+      "text": "Para tener éxito en la realización de proyectos complejos necesitamos al menos tres elementos: Equipos con conocimientos y habilidades técnicas apropiadas, objetivos y alcances claros, y una comunicación frecuente y efectiva.",
       "url": "http://cioperu.pe/articulo/19181/como-el-tipo-de-contrato-puede-condicionar-un-proyecto-complejo/",
       "img": "/img/prensa/cio-peru-2015.png"
     },
     {
-      "title": I18n.t('press.release06_title'),
+      "title": "Entrevista a Carlos Peix en el programa La Burbuja, conducido por Sebastián Campanario y Bruno Massare.",
       "subtitle": "La burbuja - Radio Milenium - 5/Jul/2015",
-      "text": I18n.t('press.release06_text'),
+      "text": "Una repaso sobre las metodologías ágiles y su situación en diferentes tipos de organizaciones.",
       "url": "https://soundcloud.com/kleer_agile_coaching_and_training/entrevista-a-carlos-peix-en-radio-fm-milenium-1067?utm_source=www.kleer.la&utm_campaign=wtshare&utm_medium=widget&utm_content=https%253A%252F%252Fsoundcloud.com%252Fkleer_agile_coaching_and_training%252Fentrevista-a-carlos-peix-en-radio-fm-milenium-1067",
       "img": "https://kleer-images.s3.sa-east-1.amazonaws.com/news/carlos-peix-en-programa-la-burbuja.png",
       "audio": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/218800859&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"
     },
     {
-      "title": I18n.t('press.release05_title'),
+      "title": "Kleer participará en Agile Open Spain 2015",
       "subtitle": "CCSur - 16/Jun/2015",
-      "text": I18n.t('press.release05_text'),
+      "text": "La organización comprometida con la creación de ambientes humanos más conscientes, participará del Agile Open Spain 2015(AOS2015). Se trata de la VII edición de este evento tipo Open Space, una conferencia auto-organizada sobre metodologías ágiles. El encuentro se realizará los próximos 19 y 20 de junio en Gijón, España.",
       "url": "http://www.ccsur.com/kleer-participara-en-agile-open-spain-2015/",
       "img": "/img/prensa/kleer-en-el-aos.png"
     },
     {
-      "title": I18n.t('press.release04_title'),
+      "title": "Una tribu de coaches que hace escuela en la región",
       "subtitle": "CRONISTA.COM - 3/Abr/2014",
-      "text": I18n.t('press.release04_text'),
+      "text": "Seis socios se propusieron mejorar el mundo del trabajo al gestionar proyectos de software y ofrecen coaching & mentoring para varias empresas. Con 20 personas y sedes en Argentina, Colombia, Perú y Bolivia, operan en Latinoamérica y Europa.",
       "url": "http://www.cronista.com/pyme/Una-tribu-de-coaches-que-hace-escuela-en-la-region-20140403-0010.html",
       "img": "/img/prensa/tribu-de-coaches.jpg"
     },
     {
-      "title": I18n.t('press.release03_title'),
+      "title": "Scrum: El adiós para siempre a productos eternos que tardan meses en ver la luz",
       "subtitle": "PulsoSocial - 7/Mar/2014",
-      "text": I18n.t('press.release03_text'),
+      "text": "Scrum es una estrategia para la creación de productos, una técnica usada en empresas de la talla de Amazon, Spotify, Ericsson y Adobe y que de poco, fue incluso migrando de empresas tecnológicas a ganar terreno en otros rubros e industrias.",
       "url": "https://pulsosocial.com/2014/03/07/scrum-el-adios-para-siempre-productos-eternos-que-tardan-meses-en-ver-la-luz/",
       "img": "/img/prensa/scrum-el-adios-para-siempre.jpg"
     },
     {
-      "title": I18n.t('press.release02_title'),
+      "title": "El secreto de tus ojos: a veces, las imágenes ayudan a innovar",
       "subtitle": "lanacion.com - 15/Feb/201",
-      "text": I18n.t('press.release02_text'),
+      "text": "Los dibujos permiten ganar tiempo, porque generan un lenguaje común: los participantes de una reunión se pueden referir a la ilustración en vez de explicar opciones abstractas cada vez. Además, cuando las personas ven que su argumento quedó asentado, se sienten más relajadas y pueden escuchar a los demás.",
       "url": "https://www.lanacion.com.ar/1664230-el-secreto-de-tus-ojos-a-veces-las-imagenes-ayudan-a-innovar",
       "img": "/img/prensa/secreto-de-sus-ojos.jpg"
     },
     {
-      "title": I18n.t('press.release01_title'),
+      "title": "Scrum: Del rugby a la oficina",
       "subtitle": "GESTION.PE - 12/Feb/2014",
-      "text": I18n.t('press.release01_text'),
+      "text": "Scrum hace énfasis en maximizar las relaciones interpersonales y en fomentar la autonomía responsable como factores claves para alcanzar el éxito en los proyectos. A cambio, se obtiene un equipo altamente motivado y comprometido.",
       "url": "https://archivo.gestion.pe/empleo-management/scrum-rugby-oficina-2088899",
       "img": "/img/prensa/scrum-del-rugby-a-la-oficina.jpg"
     }
