@@ -286,6 +286,7 @@ $white: #FFFFFF;
     padding: 20px;
 
     img{
+      padding: 0 !important;
       margin-left: calc(50% - 100px);
       margin-bottom: 40px;
       max-height: 300px !important;
@@ -580,6 +581,7 @@ $white: #FFFFFF;
 
 .schedule-titles{
   color: $secondary-blue;
+  font-weight: bold;
 }
 
 #course-trainers{
@@ -678,7 +680,8 @@ $white: #FFFFFF;
   }
 
   img{
-    max-height: 500px;
+    padding-left: 20% ;
+    max-height: 450px;
   }
 }
 
