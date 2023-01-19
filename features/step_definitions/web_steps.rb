@@ -45,6 +45,11 @@ Given(/^I visit the english home page$/) do
   visit '/en/'
 end
 
+Given(/^I visit the catalog page$/) do
+  stub_connector('catalog.json')
+  visit '/catalogo'
+end
+
 When('I switch to {string}') do |lang_long|
   first(:link, lang_long).click
 end
@@ -91,6 +96,8 @@ end
 Given(/^I visit the "(.*?)" page$/) do |page_url|
   stub_connector
   visit "/#{page_url}"
+  puts "titulo de la pag #{page.title}"
+
   #  expect(page).to have_css('locator_present_only_at_second_page')
 end
 

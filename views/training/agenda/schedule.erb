@@ -1,10 +1,83 @@
 <%
   events = @events.select{|e| not e.date.to_s == ''}
+  names = events.map{|e| e.event_type.name}
+
+  names = names.uniq
 %>
 
 <div class="container mt-5">
-  <% events.each do |event| %>
-    <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
+  <div class="row schedule-titles">
+    <div class="col-3">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle invisible-title-buton" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          Curso
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2" id="courses-list">
+          <% names.each do |name| %>
+            <li id="input-<%=name%>" >
+              <div class="m-2 form-check">
+                <input
+                  class="form-check-input course-name-input"
+                  type="checkbox"  id="input-<%=name%>"
+                  name="<%=name%>"
+                  checked
+                  onclick="filter()">
+                <label class="form-check-label" for="input-<%=name%>">
+                  <%= name %>
+                </label>
+              </div>
+            </li>
+          <% end %>
 
-  <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-1">
+      Fecha
+    </div>
+    <div class="col-2">
+      Horario
+    </div>
+    <div class="col-2">
+      Valor
+    </div>
+    <div class="col-2">
+      Venta anticipada
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div id="show-courses-list">
+    <% events.each do |event| %>
+      <div id="<%=event.event_type.name%>-item">
+        <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
+      </div>
+    <% end %>
+  </div>
 </div>
+
+<script>
+  const coursesChecks =  Array.from(document.getElementsByClassName('course-name-input'))
+  let coursesItems = Array.from(document.getElementById("show-courses-list").children)
+
+  let filter = () => {
+      coursesChecks.forEach(check => {
+          if(check.checked){
+              coursesItems.forEach(item => {
+                  if(item.id.includes(`${check.name}-item`)){
+                      item.classList.remove('hidden-element')
+                  }
+              })
+          }else{
+              coursesItems.forEach(item => {
+                  if(item.id.includes(`${check.name}-item`)){
+                      item.classList.add('hidden-element')
+                  }
+              })
+          }
+      })
+  }
+
+  filter()
+
+
+</script>

@@ -1,21 +1,20 @@
+<% unless @event_type.public_editions == [] %>
+    <section id="course-next-editions" class="container mb-5">
 
-<section id="course-next-editions" class="container mb-5">
+        <h2 class="mb-5 text-center common-subtitle">Próximas ediciones</h2>
+        <div class="row mb-4 schedule-titles">
+          <h6 class="col-lg-1">Fecha</h6>
+          <h6 class="col-lg-1">Duración</h6>
+          <h6 class="col-lg-2">Modalidad</h6>
+          <h6 class="col-lg-2">Horario</h6>
+          <h6 class="col-lg-2">Valor</h6>
+          <h6 class="col-lg-2">Venta anticipada</h6>
+        </div>
 
-  <% unless @event_type.public_editions == [] %>
-    <h2 class="mb-5 text-center common-subtitle">Próximas ediciones</h2>
-    <div class="row mb-4 schedule-titles">
-      <h6 class="col-lg-1">Fecha</h6>
-      <h6 class="col-lg-1">Duración</h6>
-      <h6 class="col-lg-2">Modalidad</h6>
-      <h6 class="col-lg-2">Horario</h6>
-      <h6 class="col-lg-2">Valor</h6>
-      <h6 class="col-lg-2">Venta anticipada</h6>
-    </div>
-
-    <% @event_type.public_editions.each do |event| %>
-      <%= erb :'component/_schedule_item', locals: {event: event, with_name: false}%>
-    <% end %>
-  <% end %>
-</section>
+        <% @event_type.public_editions.each do |event| %>
+          <%= erb :'component/_schedule_item', locals: {event: event, with_name: false}%>
+        <% end %>
+    </section>
+<% end %>
 
 
