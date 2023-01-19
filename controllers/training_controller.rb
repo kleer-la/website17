@@ -62,14 +62,16 @@ get '/catalogo' do
   @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
-  @events = if session[:locale] == 'es'
-              KeventerReader.instance.catalog_events()
-            else
-              fake_event_from_catalog(KeventerReader.instance.categories)
-                .select {|e| e.event_type.lang == session[:locale]}
-            end
+  # @events = if session[:locale] == 'es'
+  #             KeventerReader.instance.catalog_events()
+  #           else
+  #             fake_event_from_catalog(KeventerReader.instance.categories)
+  #               .select {|e| e.event_type.lang == session[:locale]}
+  #           end
 
-  erb :'training/index', layout: :'layout/layout2022'
+  @events = KeventerReader.instance.catalog_events()
+
+    erb :'training/index', layout: :'layout/layout2022'
 end
 
 # Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
