@@ -103,7 +103,7 @@ GEM
       nio4r (~> 2.0)
     r18n-core (3.0.5)
     racc (1.6.2)
-    rack (2.2.5)
+    rack (2.2.6.2)
     rack-protection (3.0.5)
       rack
     rack-ssl-enforcer (0.2.9)
