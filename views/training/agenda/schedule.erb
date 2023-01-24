@@ -20,7 +20,6 @@
                   class="form-check-input course-name-input"
                   type="checkbox"  id="input-<%=name%>"
                   name="<%=name%>"
-                  checked
                   onclick="filter()">
                 <label class="form-check-label" for="input-<%=name%>">
                   <%= name %>
@@ -46,7 +45,7 @@
     </div>
     <div class="col-2"></div>
   </div>
-  <div id="show-courses-list">
+  <div id="show-courses-list" class="mb-4">
     <% events.each do |event| %>
       <div id="<%=event.event_type.name%>-item">
         <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
@@ -58,6 +57,10 @@
 <script>
   const coursesChecks =  Array.from(document.getElementsByClassName('course-name-input'))
   let coursesItems = Array.from(document.getElementById("show-courses-list").children)
+
+  let isSomethingSelected = () => {
+      return coursesChecks.some(item => item.checked)
+  }
 
   let filter = () => {
       coursesChecks.forEach(check => {
@@ -75,9 +78,14 @@
               })
           }
       })
+
+      if(!isSomethingSelected()){
+          coursesItems.forEach(item => {
+              item.classList.remove('hidden-element')
+          })
+      }
   }
 
   filter()
-
 
 </script>
