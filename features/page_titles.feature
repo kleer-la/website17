@@ -4,29 +4,29 @@ Feature: StaticPage Titles
 		Given I visit the home page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agile Coaching, Consulting & Training"
-	
+
 	Scenario: Entrenamos Title
     Given PENDING
 		Given I visit the "agenda" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agenda de cursos online sobre Agilidad y Scrum"
-		
+
 	Scenario: Entrenamos Title
 		Given I visit the "publicamos" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agile Coaching, Consulting & Training"
-	
+
 	Scenario: Coaching Title
 		Given I visit the "agilidad-organizacional" page
 		Then the page title should includes "^Kleer"
-		And the page title should includes "Te acompañamos hacia la agilidad organizacional"
-		
+		And the page title should includes "Libera el Potencial de la Agilidad Organizacional"
+
 	Scenario: Somos Title
 		Given I visit the "somos" page
 		Then the page title should includes "^Kleer"
-		And the page title should includes "Agile Coaching, Consulting & Training"
+		And the page title should includes "Quiénes Somos"
 		And the page title should includes "Somos"
-			
+
 	Scenario: Landing de Categoria
 		Given I visit the "high-performance" categoria page
 		Then the page title should includes "^Kleer"
