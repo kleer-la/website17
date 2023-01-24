@@ -221,11 +221,12 @@ def get_news
       img: '/img/prensa/scrum-del-rugby-a-la-oficina.jpg'
     }
   ]
-end 
+end
 
 get '/prensa' do
   @active_tab_prensa = 'active'
-  @meta_tags.set! title: "#{@base_title} #{t('meta_tag.press.title')}",
+  @meta_tags.set! title: "#{t('meta_tag.press.title')}",
+                  description: t('meta_tag.press.description'),
                   canonical: "#{session[:locale]}#{t('meta_tag.press.canonical')}"
   # @kleerers = KeventerReader.instance.kleerers session[:locale]
   @news = get_news

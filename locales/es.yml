@@ -24,49 +24,57 @@ es:
     content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
   meta_tag:
     home:
-      title: 'Agile Coaching, Consulting & Training'
-      description: 'Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos.'
+      title: Agile Coaching, Consulting & Training
+      description: >-
+        Descubre el poder de la Transformación Ágil.
+        Contamos con la experiencia de más de 10 años acompañando
+        a clientes hacia la agilidad organizacional
       canonical: '/'
     resources:
-      title: Materiales y Recursos sobre prácticas ágiles
-      description: 'Herramientas y contenidos de Scrum, Product Owner, Scrum Master, Desarrollo de equipos, Retrospectivas, Liderazgo, Comunicación, Kanban, Agile Coaching'
+      title: Recursos sobre Agile
+      description: >-
+        Guías, libros, cartas, infografías y otros. Contenido relevante
+        que puede ayudar e impulsar el trabajo en equipo. Visita también nuestro Blog
       canonical: '/recursos'
     catalog:
-      title: Capacitación empresarial en agilidad organizacional
+      title: Formación Empresarial en Métodos Ágiles
       description: >-
-        Formación en agilidad para equipos: Scrum, Mejora continua, Lean, Product Discovery,
-        Agile Coaching, Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.
+        Programas de capacitación In-Company. Desarrolle las habilidades de sus equipos.
+        Cursos en Scrum, Product Discovery, Agile Coaching, Liderazgo, CSM, CSD
       canonical: /catalogo
     agenda:
-      title: Agenda de cursos online sobre Agilidad y Scrum
+      title: Agenda de Cursos sobre Métodos Ágiles
       description: >-
-        Capacitaciones sobre Facilitación, Lean, Kanban, Product Discovery,
-        Agile Coaching, Retrospectivas, Liderazgo, Mejora continua, Gestión del tiempo y más.
+        Capacitaciones en Agile Coaching, Facilitación, Scrum, CSD, Lean, Kanban, Product Discovery,
+        Liderazgo, Mejora Continua, Gestión del tiempo, Comunicación
       canonical: /agenda
     blog:
-      title: Blog - Artículos sobre agilidad organizacional.
+      title: Blog - Artículos sobre Agilidad Organizacional
       description: >-
-        Contenido relevante en español: Scrum, Mejora continua, Lean, Product Discovery, Agile Coaching,
-        Liderazgo, Facilitación, Comunicación Colaborativa, Kanban.
+        Compartimos experiencias, enfoques y prácticas para ayudarte en el camino
+        del desarrollo organizacional y personal. Descubre más
       canonical: /blog
     aboutus:
-      title: '| Somos'
-      description:
+      title: Quiénes Somos
+      description: >-
+        Conoce a Kleer. Ofrecemos abordajes en múltiples dimensiones para tener una visión holística
+        del cambio organizacional. Descubre más sobre nuestro equipo
       canonical: /somos
     business-agility:
-      title: Te acompañamos hacia la agilidad organizacional.
+      title: Libera el Potencial de la Agilidad Organizacional
       description: >-
-        Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital.
-        Diseño, metodologías e innovación para equipos colaborativos.
+        Cocreamos estrategias ágiles para impulsar tus objetivos de negocio. Incorporamos nuestros aprendizajes
+        y experiencia para mejorar los flujos de valor
       canonical: /agilidad-organizacional
     clients:
-      title:  "| Nuestros clientes"
+      title:  Nuestra experiencia. Testimonios de Clientes
       description: >-
-        Kleer - Coaching & Training - Estas organizaciones confían en nosotros
+        Conoce cómo Kleer ha ayudado a diversas empresas a evolucionar su negocio hacia la agilidad organizacional. Historias de nuestros clientes
       canonical: /clientes
     press:
-      title: "| Prensa"
-      description:
+      title: Publicaciones en la Prensa
+      description: >-
+        Experiencias sobre nuestro trabajo en notas de prensa y publicaciones en diversos medios digitales de Latinoamérica
       canonical: /prensa
 
 
