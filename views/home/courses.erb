@@ -18,8 +18,16 @@
 %>
 <section id="last-courses" class="p-5 mt-4">
   <%#    decoration figures %>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_square.svg" class="desktop_figure last-courses__blue-square"/>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle.svg" class="desktop_figure last-courses__red-circle"/>
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_square.svg"
+    class="desktop_figure last-courses__blue-square"
+    loading="lazy"
+    />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle.svg"
+    class="desktop_figure last-courses__red-circle"
+    loading="lazy"
+    />
   <div class='container'>
     <h4 class="text-center m-4 last-courses__tittle">
       <%= t('home2022.home_courses.title')%>
@@ -40,7 +48,7 @@
     </div>
   </div>
 </section>
-<%#  responsive carousel %>  
+<%#  responsive carousel %>
 <section id="mobile-carousel">
   <div class="container">
     <h4 class="text-center m-4 last-courses__tittle">
