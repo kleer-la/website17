@@ -15,8 +15,8 @@ Feature: Home Page
 
 	Scenario: SEO description
 		Given I visit the home page
-		Then SEO meta name "description" should be "Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos."
-		Then SEO meta property "og:description" should be "Acompañamos hacia la agilidad organizacional. Ofrecemos capacitaciones y cocreamos estrategias de adopción de formas ágiles de trabajo orientadas a objetivos."
+		Then SEO meta name "description" should be "Descubre el poder de la Transformación Ágil. Contamos con la experiencia de más de 10 años acompañando a clientes hacia la agilidad organizacional"
+		Then SEO meta property "og:description" should be "Descubre el poder de la Transformación Ágil. Contamos con la experiencia de más de 10 años acompañando a clientes hacia la agilidad organizacional"
 
 
 	Scenario: SEO hreflang
@@ -31,4 +31,7 @@ Feature: Home Page
     Examples:
       |initial_url|redirect_url|
       # | "" | "/es/"|
-		
+
+#	Scenario: Coming courses
+#		When I visit the home page
+#
