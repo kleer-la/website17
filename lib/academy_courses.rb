@@ -12,4 +12,11 @@ class AcademyCourses
     @courses = JSON.parse(file)['academy_courses']
     self
   end
+
+  def select(lang, quantity)
+    @courses
+    .reject {|e| e[lang].nil?}
+    .map {|e| e[lang]}
+    .first(quantity)
+  end
 end
