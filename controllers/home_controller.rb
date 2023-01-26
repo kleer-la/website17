@@ -17,7 +17,7 @@ def first_x_courses(courses, quantity)
                                   (1 if course.event_type.is_kleer_cert).to_i,
         active: index == 0
       }
-    } 
+    }
 end
 
 
@@ -29,19 +29,19 @@ get '/' do
 
   @clients =  client_list
   @coming_courses = if session[:locale] == 'es'
-                      first_three = first_x_courses(coming_courses, 3)    
+                      first_three = first_x_courses(coming_courses, 3)
                       one =AcademyCourses.new.load.select(session[:locale], 1)
-                        .map { |e| e.transform_keys(&:to_sym)  } 
+                        .map { |e| e.transform_keys(&:to_sym)  }
                       if one == []
                         first_three
                       else
                         one[0][:categories] = nil
                         one[0][:date] = 'Academia'
-                    
+
                         first_three << one[0]
                       end
                     else
-                      first_x_courses(fake_event_from_catalog(KeventerReader.instance.categories),  3)
+                      first_x_courses( KeventerReader.instance.catalog_events(),  3)
                     end
   erb :'home/index', layout: :'layout/layout2022'
 end
