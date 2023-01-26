@@ -1,6 +1,10 @@
 require 'coveralls'
 Coveralls.wear!
 
+require 'simplecov'
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+
 # Sinatra
 require File.join(File.dirname(__FILE__), *%w[.. .. app])
 # Force the application name because polyglot breaks the auto-detection logic.
@@ -10,10 +14,7 @@ require 'rspec/expectations'
 require 'cucumber/rspec/doubles'
 require 'rack/test'
 require 'capybara/cucumber'
-require 'simplecov'
 require 'rspec-html-matchers'
-
-SimpleCov.start
 
 class MyWorld
   include Capybara::DSL

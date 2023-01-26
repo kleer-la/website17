@@ -27,9 +27,9 @@ end
 
 group :development, :test do
   gem 'capybara'
-  gem 'coveralls_reborn'
   gem 'cucumber'
   gem 'rspec'
   gem 'rspec-html-matchers' #, '~> 0.9.4'
   gem 'simplecov'
+  gem 'coveralls_reborn'
 end

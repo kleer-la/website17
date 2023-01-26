@@ -40,15 +40,28 @@ carousel = t("home2022.home_hero").map.with_index{|e, index| {
               <div class="col-lg-5 hero__img-container">
                 <picture>
                   <source srcset="<%= webp_ext(item[:img]) %>" type="image/webp">
-                  <img src="<%= item[:img] %>" class="hero__img" alt="<%=item[:alt]%>">
+                  <img
+                    src="<%= item[:img] %>"
+                    class="hero__img"
+                    alt="<%=item[:alt]%>"
+                    loading="lazy"
+                  >
                 </picture>
               </div>
               <a href="<%= "/#{session[:locale]}#{item[:url]}" %>" class="btn my-primary-button hero__mobile-button"><%= item[:button_text] %></a>
             </div>
 
           </div>
-          <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg" class="desktop_figure hero_yellow_bean" />
-          <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg" class="desktop_figure hero_green_bean" />
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
+            class="desktop_figure hero_yellow_bean"
+            loading="lazy"
+            />
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            class="desktop_figure hero_green_bean"
+            loading="lazy"
+            />
 
         </div>
       <%end%>

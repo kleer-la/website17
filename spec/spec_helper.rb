@@ -3,6 +3,8 @@ Coveralls.wear!
 
 require 'simplecov'
 SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

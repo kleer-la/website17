@@ -1346,6 +1346,9 @@ img {
   .social-container {
     position: absolute;
     bottom: 20px; } }
+html {
+  font-display: swap; }
+
 .hero {
   max-height: 150vh;
   height: calc(100vh - 100px);
