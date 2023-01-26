@@ -2,8 +2,12 @@ require 'coveralls'
 Coveralls.wear!
 
 require 'simplecov'
+require 'simplecov-lcov'
 SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::LcovFormatter
+])
 
 # Sinatra
 require File.join(File.dirname(__FILE__), *%w[.. .. app])
