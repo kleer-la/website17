@@ -1112,7 +1112,7 @@ es:
         <p>El nivel de agilidad que tu organización puede alcanzar está acotado por el nivel de agilidad colectiva de quienes la lideran.</p>
         <p>Construye bases sólidas para la evolución organizacional hacia una agilidad efectiva y sostenible potenciando mentalidades y comportamientos ágiles en sus líderes, para lograr mayor impacto en los equipos y sus resultados de negocio.</p>
       img:
-        url: /app/img/business_a
+        url: https://kleer-images.s3.sa-east-1.amazonaws.com/dla+presentacion+con+soporte+grafico+y+postits
         alt: Personas colaborando en forma distendida
       buttons:
         more:
@@ -1259,16 +1259,29 @@ es:
           img: /app/img/icons/Strategy.svg,
         }
         - {
-          text: Desarrollo de equipos ágiles - Agile team building,
-          img: /app/img/icons/People.svg,
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+          url: /servicios/desarrollo-liderazgo-agil
         }
         - {
-          text: Facilitación de eventos ágiles,
-          img: /app/img/icons/Microphone.svg,
+          text: Innovation Jump Start,
+          img: /app/img/icons/innovation.png,
+        }
+        - {
+          text: Kaizen Jump Start,
+          img: /app/img/icons/improvement.png,
+        }
+        - {
+          text: Agile team Jump Start,
+          img: /app/img/icons/People.svg,
         }
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Prácticas agiles de desarrollo de software,
+          img: /app/img/icons/code.png,
         }
         - {
           text: Agile Coaching,
@@ -1279,25 +1292,12 @@ es:
           img: /app/img/icons/People.svg,
         }
         - {
-          text: Desarrollo del Liderazgo Ágil,
-          img: /app/img/icons/GitFork.svg,
-          url: /servicios/desarrollo-liderazgo-agil
-        }
-        - {
-          text: Aceleración de la innovación,
-          img: /app/img/icons/innovation.png,
-        }
-        - {
-          text: Mejora Continua con Toyota Kata,
-          img: /app/img/icons/improvement.png,
-        }
-        - {
           text: Structural Agility,
           img: /app/img/icons/sprint.png,
         }
         - {
-          text: Prácticas técnicas,
-          img: /app/img/icons/code.png,
+          text: Facilitación de eventos ágiles,
+          img: /app/img/icons/Microphone.svg,
         }
     differential:
       title: Nuestro diferencial, la experiencia kleerer
