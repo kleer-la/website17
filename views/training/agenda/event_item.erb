@@ -19,15 +19,11 @@
     </p>
   </div>
   <div class="col-lg-1">
-    <p>
-      <img src="/app/img/icons/Clock.svg">
-      <%= event_type.duration %>hs
-    </p>
-
+    <p><%= info_time %></p>
   </div>
   <div class="col-lg-2">
     <strong><%= date %></strong>
-    <p><%= info_time %></p>
+    <p> <%= event_type.duration %>hs</p>
     <a class="small-label time-zone"
        href="<%= event.timezone_url%>">
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>

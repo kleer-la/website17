@@ -20,17 +20,23 @@
         <% end %>
       </p>
     </div>
+    <div class="col-4 col-lg-2 next-edition-item">
+      <p>
+        <%= date %>
+      </p>
+    </div>
   <% else %>
     <div class="col-4 col-lg-1 next-edition-item">
       <%= format_date_range(event.date, event.finish_date, session[:locale]) %>
     </div>
+    <div class="col-4 col-lg-1 next-edition-item">
+      <p>
+        <img src="/app/img/icons/Clock.svg">
+        <%= event.event_type.duration %>hs
+      </p>
+    </div>
   <% end %>
-  <div class="col-4 col-lg-1 next-edition-item">
-    <p>
-      <img src="/app/img/icons/Clock.svg">
-      <%= event.event_type.duration %>hs
-    </p>
-  </div>
+
   <% unless with_name %>
     <div class="col-4 col-lg-2 next-edition-item">
       <p>
@@ -46,7 +52,7 @@
   <% end %>
   <div class="col-4 col-lg-2 next-edition-item">
     <% if with_name %>
-      <strong><%= date %></strong>
+      <strong><%= event.event_type.duration %>hs</strong>
     <% end %>
     <%= info_time %>
     <a class="small-label time-zone" href="<%=event.timezone_url%>">
@@ -54,7 +60,7 @@
     </a>
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
-    <strong>USD $<%= event.list_price || 'precio' %></strong>
+    <strong>$<%= "#{event.list_price} USD" || 'precio' %></strong>
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
     <% if event.eb_price and event.eb_date %>
@@ -62,16 +68,16 @@
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>
-  <div class="col-12 col-lg-2 next-edition-item">
+  <div class="col-12 col-lg-1 next-edition-item">
     <div class="btn-center-container">
       <% if event.is_sold_out %>
         <button class="my-primary-button p-2"
-                href='' style="filter: grayscale(100%); max-width: 250px; width: 180px">
+                href='' style="filter: grayscale(100%); max-width: 150px; width: 130px">
           Completo
         </button>
       <% else %>
         <a class="my-primary-button p-2"
-           style="max-width: 250px; width: 180px"
+           style="max-width: 150px; width: 130px"
            href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar
         </a>
       <% end %>
