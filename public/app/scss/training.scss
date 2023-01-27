@@ -585,7 +585,6 @@ $white: #FFFFFF;
 }
 
 #course-trainers{
-
   a{
     color: $secondary-blue !important;
     font-weight: bold !important;
@@ -664,7 +663,6 @@ $white: #FFFFFF;
   bottom: 8%;
   right: -5%;
 }
-
 
 #course-recipients{
   margin-top: 50px;
@@ -791,4 +789,19 @@ $white: #FFFFFF;
     margin: 10px !important;
     padding: 30px !important;
   }
+}
+
+//AGENDA
+
+#agenda-hero{}
+
+.agenda-hero__rustic-line{
+  top: 40px;
+  left: 270px;
+}
+
+.agenda-hero__yellow-circle{
+  height: 50%;
+  left: -10%;
+  bottom: 10%;
 }
