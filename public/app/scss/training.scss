@@ -376,7 +376,9 @@ $white: #FFFFFF;
   }
 
   .schedule-titles{
-    display: none;
+    .item{
+      display: none;
+    }
   }
 
   .next-edition-item{

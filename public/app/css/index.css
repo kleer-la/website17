@@ -482,7 +482,7 @@
   .course-card-container {
     width: 100vw; }
 
-  .schedule-titles {
+  .schedule-titles .item {
     display: none; }
 
   .next-edition-item {
