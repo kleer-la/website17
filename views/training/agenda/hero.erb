@@ -3,16 +3,16 @@
     <div class="row h-100">
       <div class="col-md-6 hero__text">
         <H1 class="mb-5" style="position: relative">
-          Agenda
+          <%= t('agenda.title') %>
           <img
             src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_line2.svg"
             class="desktop_figure agenda-hero__rustic-line"
           >
         </H1>
-        <p>Nuestra programación de cursos abiertos al público.</p>
+        <p><%= t('agenda.subtitle') %></p>
       </div>
       <div class="col-md-6 hero__img-container">
-        <img src="/img/training/agendaprov.png" class="hero__img" alt="Agenda"/>
+        <img src="/img/training/agendaprov.png" class="hero__img agenda-hero__image" alt="Agenda"/>
       </div>
     </div>
   </div>
@@ -20,5 +20,17 @@
   <img
     src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle2.svg"
     class="desktop_figure agenda-hero__yellow-circle"
-  >
+  />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle3.svg"
+    class="mobile_figure agenda-hero-mobile__yellow-circle"
+    />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_bean.svg"
+    class="mobile_figure agenda-hero__blue-bean"
+  />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_sigsac.svg"
+    class="mobile_figure agenda-hero__rustic-sigsac"
+    />
 </section>

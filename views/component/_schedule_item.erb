@@ -6,7 +6,7 @@
 
 %>
 
-<div class="row event-item pb-4 mt-4">
+<div class="row event-item pb-4 mt-4 ms-2 me-2">
   <% if with_name %>
     <div class="col-lg-3">
       <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
@@ -24,6 +24,9 @@
       <p>
         <%= date %>
       </p>
+      <% if with_name %>
+        <strong class="duration-mobile"><%= event.event_type.duration %> horas</strong>
+      <% end %>
     </div>
   <% else %>
     <div class="col-4 col-lg-1 next-edition-item">
@@ -50,9 +53,9 @@
       </p>
     </div>
   <% end %>
-  <div class="col-4 col-lg-2 next-edition-item">
+  <div class="col-6 col-lg-2 next-edition-item">
     <% if with_name %>
-      <strong><%= event.event_type.duration %>hs</strong>
+      <strong class="duration-desktop"><%= event.event_type.duration %>hs</strong>
     <% end %>
     <%= info_time %>
     <a class="small-label time-zone" href="<%=event.timezone_url%>">
@@ -68,7 +71,7 @@
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>
-  <div class="col-12 col-lg-1 next-edition-item">
+  <div class="col-4 col-lg-1 next-edition-item">
     <div class="btn-center-container">
       <% if event.is_sold_out %>
         <button class="my-primary-button p-2"
