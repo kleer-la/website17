@@ -1,0 +1,20 @@
+<%
+  courses = keventer_to_card(@related_courses, session[:locale])
+%>
+
+<section id="course-related" class=" mb-4">
+  <div class="container">
+    <h2 class="mb-5 text-center common-subtitle">Cursos relacionados</h2>
+    <div class="row">
+
+        <% courses.each  do |course|
+          @course = course
+        %>
+        <div class="col-3">
+          <%= erb :'component/_course_card'  %>
+        </div>
+        <% end %>
+
+    </div>
+  </div>
+</section>

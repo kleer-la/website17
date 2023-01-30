@@ -3,6 +3,7 @@ require './lib/metatags'
 require './lib/academy_courses'
 require './lib/event_type'
 require './lib/event'
+require './lib/keventer_helper'
 
 require './controllers/event_helper'
 
@@ -119,6 +120,8 @@ get '/cursos/:event_type_id_with_name' do
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
+
+    @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id , 4)
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end
