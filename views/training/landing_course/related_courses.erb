@@ -1,4 +1,6 @@
 <%
+  if @related_courses
+
   courses = keventer_to_card(@related_courses, session[:locale])
 %>
 
@@ -18,3 +20,7 @@
     </div>
   </div>
 </section>
+
+<%
+  end
+%>
