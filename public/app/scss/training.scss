@@ -718,8 +718,6 @@ $white: #FFFFFF;
   width: 8px;
 }
 
-
-
 .testimonies-container{
   display: flex;
   overflow-y: hidden;
@@ -771,7 +769,28 @@ $white: #FFFFFF;
 
 .buttons-container{}
 
+#course-related{}
 
+#mobile-course-related{
+  display: none;
+  .carousel-item{
+    background-color: $white;
+    height: 800px;
+  }
+}
+
+//Tablet
+@media screen and (max-width:992px){
+  #course-related{
+    display: none;
+  }
+
+  #mobile-course-related{
+    display: block;
+  }
+}
+
+//Mobile
 @media screen and (max-width:576px) {
   .course-hero__yellow-oval{
     left: -130px;

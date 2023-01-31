@@ -776,6 +776,18 @@
 .testimony-message {
   max-width: 90%; }
 
+#mobile-course-related {
+  display: none; }
+  #mobile-course-related .carousel-item {
+    background-color: #FFFFFF;
+    height: 800px; }
+
+@media screen and (max-width: 992px) {
+  #course-related {
+    display: none; }
+
+  #mobile-course-related {
+    display: block; } }
 @media screen and (max-width: 576px) {
   .course-hero__yellow-oval {
     left: -130px; }
