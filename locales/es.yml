@@ -1127,7 +1127,7 @@ es:
         description: "Acompañamos a las organizaciones en la mejora sostenible de sus formas de trabajo y a adaptarse oportunamente a los cambios del entorno.",
         url: "/agilidad-organizacional",
         img: "/app/img/ag_org.png",
-        alt: "Imagen de agilidad organizacional",
+        alt: "Agilidad Organizacional",
         button_text: "¡Conoce más!"
       }
       - {
@@ -1143,7 +1143,7 @@ es:
         description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
         url: "/clientes",
         img: "/app/img/clientes.png",
-        alt: "Imagen de clientes",
+        alt: "Clientes",
         button_text: "Ver casos"
       }
     home_clients:
