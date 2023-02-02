@@ -46,15 +46,30 @@ module MetaTags
     end
     def path
       @path = @tags[:path]
+
+      if @path
+        if @path.include? '/es'
+          @path.slice!('/es')
+        elsif @path.include? '/en'
+          @path.slice!('/en')
+        end
+      end
+
       @tags.delete :path
+    end
+    def current_lang
+      @current_lang = @tags[:current_lang]
+      @tags.delete  :current_lang
     end
 
     def display(...)
       return '' if @shown
       set!(...)
+
       @shown = true
       robot
       site
+      current_lang
       path
       # @tags.delete :hreflang if !!@tags[:canonical]
       (@tags.map { |tag| display_one tag }).join('')
@@ -86,7 +101,7 @@ module MetaTags
         @base_url = tag[1]
         nil
       when :canonical
-        "<link rel=\"canonical\" href=\"#{@base_url}/#{tag[1]}\"/>"
+        "<link rel=\"canonical\" href=\"#{@base_url}/#{@current_lang}#{tag[1]}\"/>"
       when :hreflang
         tag[1].reduce('') {|ac, lang| ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"} unless @path.nil?
       else

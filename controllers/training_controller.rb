@@ -49,7 +49,7 @@ end
 get '/agenda' do
   @meta_tags.set! title: t('meta_tag.agenda.title'),
                   description: t('meta_tag.agenda.description'),
-                  canonical: "#{session[:locale]}#{t('meta_tag.agenda.canonical')}"
+                  canonical: "#{t('meta_tag.agenda.canonical')}"
 
   @events = KeventerReader.instance.catalog_events()
   erb :'training/agenda/index', layout: :'layout/layout2022'
@@ -59,7 +59,7 @@ get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: t('meta_tag.catalog.title'),
                   description: t('meta_tag.catalog.description'),
-                  canonical: "#{session[:locale]}#{t('meta_tag.catalog.canonical')}"
+                  canonical: "#{t('meta_tag.catalog.canonical')}"
   @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
