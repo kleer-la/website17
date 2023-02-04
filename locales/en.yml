@@ -1880,7 +1880,7 @@ en:
         <p>Below you will find some activities, products and services we offer for organizations on this process:</p>
       items:
         - {
-          text: Diseño organizacional,
+          text: Organizational Design,
           img: /app/img/icons/Binoculars.svg,
         }
         - {
@@ -1888,44 +1888,44 @@ en:
           img: /app/img/icons/Strategy.svg,
         }
         - {
-          text: Desarrollo de equipos ágiles - Agile team building,
+          text: Agile Leadership development program,
+          img: /app/img/icons/GitFork.svg,
+        }
+        - {
+          text: Innovation Jump Start,
+          img: /app/img/icons/innovation.png,
+        }
+        - {
+          text: Kaizen Jump Start,
+          img: /app/img/icons/improvement.png,
+        }
+        - {
+          text: Agile team Jump Start,
           img: /app/img/icons/People.svg,
         }
         - {
-          text: Facilitación de eventos ágiles,
+          text: Product discovery,
+          img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Software dev practices,
+          img: /app/img/icons/code.png,
+        }
+        - {
+          text: Agile Coaching,
+          img: /app/img/icons/Kanban.svg,
+        }
+        - {
+          text: Agile HR,
+          img: /app/img/icons/People.svg,
+        }
+        - {
+          text: Structural Agility,
+          img: /app/img/icons/sprint.png,
+        }
+        - {
+          text: Event facilitation,
           img: /app/img/icons/Microphone.svg,
-        }
-        - {
-          text: Product discovery,
-          img: /app/img/icons/Binoculars.svg,
-        }
-        - {
-          text: Agile Coaching,
-          img: /app/img/icons/Kanban.svg,
-        }
-        - {
-          text: Agile HR,
-          img: /app/img/icons/People.svg,
-        }
-        - {
-          text: Desarrollo del Liderazgo Ágil,
-          img: /app/img/icons/GitFork.svg,
-        }
-        - {
-          text: Product discovery,
-          img: /app/img/icons/Binoculars.svg,
-        }
-        - {
-          text: Agile Coaching,
-          img: /app/img/icons/Kanban.svg,
-        }
-        - {
-          text: Agile HR,
-          img: /app/img/icons/People.svg,
-        }
-        - {
-          text: Desarrollo del Liderazgo Ágil,
-          img: /app/img/icons/GitFork.svg,
         }
     differential:
       title: Our differential, the Kleer experience.

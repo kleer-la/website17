@@ -38,6 +38,20 @@ html{
   margin-top: 100px;
 }
 
+.hero-medium{
+  max-height: 150vh;
+  height: calc(70vh - 100px);
+  margin-top: 100px;
+  padding: 30px 10%;
+
+  .hero__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
 .generic-hero{
   max-height: 150vh;
   height: calc(70vh - 100px);
@@ -64,10 +78,13 @@ html{
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding-bottom: 5%;
+  //padding-bottom: 5%;
+  max-height: 100%;
 }
+
 .hero__img{
   max-width: 90%;
+  max-height: 100%;
 }
 
 //navbar
@@ -275,6 +292,11 @@ footer {
 }
 
 @media screen and (max-width:420px) {
+  .hero__text{
+    height: auto !important;
+    text-align: center;
+  }
+
   footer{
     padding-top: 10px;
   }

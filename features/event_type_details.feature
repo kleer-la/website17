@@ -16,6 +16,7 @@ Feature: Event Type Details
 		And I should see "05"
 
 	Scenario: Detalle de Evento Inexistente
+		Given PENDING
 		When I visit a non existing event type page
 		Then I should see "no fue encontrado"
 

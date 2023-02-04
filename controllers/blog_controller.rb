@@ -27,7 +27,7 @@ end
 
 get '/blog' do
   @where = 'Blog'
-  
+
   blog_list Article.create_list_keventer(true)
 end
 
@@ -54,7 +54,7 @@ end
 def blog_list(articles)
   @meta_tags.set! title: t('meta_tag.blog.title'),
                   description: t('meta_tag.blog.description'),
-                  canonical: "#{session[:locale]}#{t('meta_tag.blog.canonical')}"
+                  canonical: "#{t('meta_tag.blog.canonical')}"
 
   @articles = articles
   @show_abstract = true

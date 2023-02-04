@@ -23,3 +23,14 @@ end
 def first_content_f(xml, element_name)
   first_content(xml, element_name).to_f
 end
+
+#TODO: move to another page (arch?)
+def get_related_event_types(category, id, quantity)
+  all_events = KeventerReader.instance.catalog_events()
+
+  all_events.select{|e| e.event_type.categories.any?{|c| c == category}}
+            .select{|e| e.event_type.id != id}
+            .uniq{ |e| e.event_type.id}
+            .first(quantity)
+end
+

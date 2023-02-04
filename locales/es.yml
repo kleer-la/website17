@@ -26,9 +26,8 @@ es:
     home:
       title: Agile Coaching, Consulting & Training
       description: >-
-        Descubre el poder de la Transformación Ágil.
-        Contamos con la experiencia de más de 10 años acompañando
-        a clientes hacia la agilidad organizacional
+        Descubre el poder de la Transformación Ágil. Contamos con más de 13 años
+        de experiencia acompañando a empresas en su evolución organizacional
       canonical: '/'
     resources:
       title: Recursos sobre Agile
@@ -1113,7 +1112,7 @@ es:
         <p>El nivel de agilidad que tu organización puede alcanzar está acotado por el nivel de agilidad colectiva de quienes la lideran.</p>
         <p>Construye bases sólidas para la evolución organizacional hacia una agilidad efectiva y sostenible potenciando mentalidades y comportamientos ágiles en sus líderes, para lograr mayor impacto en los equipos y sus resultados de negocio.</p>
       img:
-        url: /app/img/business_a
+        url: https://kleer-images.s3.sa-east-1.amazonaws.com/dla+presentacion+con+soporte+grafico+y+postits
         alt: Personas colaborando en forma distendida
       buttons:
         more:
@@ -1128,7 +1127,7 @@ es:
         description: "Acompañamos a las organizaciones en la mejora sostenible de sus formas de trabajo y a adaptarse oportunamente a los cambios del entorno.",
         url: "/agilidad-organizacional",
         img: "/app/img/ag_org.png",
-        alt: "Imagen de agilidad organizacional",
+        alt: "Agilidad Organizacional",
         button_text: "¡Conoce más!"
       }
       - {
@@ -1144,7 +1143,7 @@ es:
         description: "Conoce nuestras experiencias reales de trabajo junto a organizaciones que confiaron y confían en Kleer en su camino de transformación.",
         url: "/clientes",
         img: "/app/img/clientes.png",
-        alt: "Imagen de clientes",
+        alt: "Clientes",
         button_text: "Ver casos"
       }
     home_clients:
@@ -1211,7 +1210,7 @@ es:
 
   agenda:
     title: Agenda de cursos
-    subtitle: Nuestra programación de cursos abiertos al público.
+    subtitle: Desarrolla tus habilidades profesionales y la de tus equipos. Cursos participativos y dinámicos. Selecciona las formaciones alineadas con los resultados de aprendizaje deseados.
 
   ebooks:
     title: "Libros"
@@ -1260,16 +1259,29 @@ es:
           img: /app/img/icons/Strategy.svg,
         }
         - {
-          text: Desarrollo de equipos ágiles - Agile team building,
-          img: /app/img/icons/People.svg,
+          text: Desarrollo del Liderazgo Ágil,
+          img: /app/img/icons/GitFork.svg,
+          url: /servicios/desarrollo-liderazgo-agil
         }
         - {
-          text: Facilitación de eventos ágiles,
-          img: /app/img/icons/Microphone.svg,
+          text: Innovation Jump Start,
+          img: /app/img/icons/innovation.png,
+        }
+        - {
+          text: Kaizen Jump Start,
+          img: /app/img/icons/improvement.png,
+        }
+        - {
+          text: Agile team Jump Start,
+          img: /app/img/icons/People.svg,
         }
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
+        }
+        - {
+          text: Prácticas agiles de desarrollo de software,
+          img: /app/img/icons/code.png,
         }
         - {
           text: Agile Coaching,
@@ -1280,25 +1292,12 @@ es:
           img: /app/img/icons/People.svg,
         }
         - {
-          text: Desarrollo del Liderazgo Ágil,
-          img: /app/img/icons/GitFork.svg,
-          url: /servicios/desarrollo-liderazgo-agil
-        }
-        - {
-          text: Aceleración de la innovación,
-          img: /app/img/icons/innovation.png,
-        }
-        - {
-          text: Mejora Continua con Toyota Kata,
-          img: /app/img/icons/improvement.png,
-        }
-        - {
           text: Structural Agility,
           img: /app/img/icons/sprint.png,
         }
         - {
-          text: Prácticas técnicas,
-          img: /app/img/icons/code.png,
+          text: Facilitación de eventos ágiles,
+          img: /app/img/icons/Microphone.svg,
         }
     differential:
       title: Nuestro diferencial, la experiencia kleerer

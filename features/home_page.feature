@@ -15,8 +15,8 @@ Feature: Home Page
 
 	Scenario: SEO description
 		Given I visit the home page
-		Then SEO meta name "description" should be "Descubre el poder de la Transformación Ágil. Contamos con la experiencia de más de 10 años acompañando a clientes hacia la agilidad organizacional"
-		Then SEO meta property "og:description" should be "Descubre el poder de la Transformación Ágil. Contamos con la experiencia de más de 10 años acompañando a clientes hacia la agilidad organizacional"
+		Then SEO meta name "description" should be "Descubre el poder de la Transformación Ágil. Contamos con más de 13 años de experiencia acompañando a empresas en su evolución organizacional"
+		Then SEO meta property "og:description" should be "Descubre el poder de la Transformación Ágil. Contamos con más de 13 años de experiencia acompañando a empresas en su evolución organizacional"
 
 
 	Scenario: SEO hreflang

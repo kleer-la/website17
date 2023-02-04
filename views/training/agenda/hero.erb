@@ -1,1 +1,32 @@
-<%=erb :'component/_generic_hero', locals: {title: t("agenda.title"), subtitle: t("agenda.subtitle") }%>
+<section id="agenda-hero" class="hero-medium">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-md-6 hero__text">
+        <H1 class="mb-5" style="position: relative">
+          <%= t('agenda.title') %>
+        </H1>
+        <p><%= t('agenda.subtitle') %></p>
+      </div>
+      <div class="col-md-6 hero__img-container">
+        <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/agenda.png" class="hero__img agenda-hero__image" alt="Agenda"/>
+      </div>
+    </div>
+  </div>
+
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle2.svg"
+    class="desktop_figure agenda-hero__yellow-circle"
+  />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle3.svg"
+    class="mobile_figure agenda-hero-mobile__yellow-circle"
+    />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_bean.svg"
+    class="mobile_figure agenda-hero__blue-bean"
+  />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_sigsac.svg"
+    class="mobile_figure agenda-hero__rustic-sigsac"
+    />
+</section>

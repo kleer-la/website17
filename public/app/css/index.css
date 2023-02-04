@@ -361,7 +361,7 @@
   z-index: -1; }
 
 .event-item {
-  border-bottom: solid 1px #333333; }
+  border-bottom: solid 1px #B3B3B3; }
   .event-item div {
     display: flex;
     flex-direction: column;
@@ -482,7 +482,7 @@
   .course-card-container {
     width: 100vw; }
 
-  .schedule-titles {
+  .schedule-titles .item {
     display: none; }
 
   .next-edition-item {
@@ -776,6 +776,18 @@
 .testimony-message {
   max-width: 90%; }
 
+#mobile-course-related {
+  display: none; }
+  #mobile-course-related .carousel-item {
+    background-color: #FFFFFF;
+    height: 800px; }
+
+@media screen and (max-width: 992px) {
+  #course-related {
+    display: none; }
+
+  #mobile-course-related {
+    display: block; } }
 @media screen and (max-width: 576px) {
   .course-hero__yellow-oval {
     left: -130px; }
@@ -791,6 +803,43 @@
   .course-trainers__individual-container {
     margin: 10px !important;
     padding: 30px !important; } }
+.duration-mobile {
+  display: none; }
+
+.agenda-hero__rustic-line {
+  top: 40px;
+  left: 270px; }
+
+.agenda-hero__yellow-circle {
+  height: 50%;
+  left: -10%;
+  bottom: 10%;
+  z-index: -1; }
+
+.agenda-hero-mobile__yellow-circle {
+  bottom: 260px;
+  right: -60px;
+  z-index: -1; }
+
+.agenda-hero__blue-bean {
+  top: 130px;
+  left: 20px;
+  height: 80px; }
+
+.agenda-hero__rustic-sigsac {
+  top: 45%;
+  left: 10px;
+  transform: rotate(90deg); }
+
+@media screen and (max-width: 576px) {
+  .duration-desktop {
+    display: none; }
+
+  .duration-mobile {
+    display: block; }
+
+  .agenda-hero__image {
+    display: none; } }
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,
@@ -1354,6 +1403,17 @@ html {
   height: calc(100vh - 100px);
   margin-top: 100px; }
 
+.hero-medium {
+  max-height: 150vh;
+  height: calc(70vh - 100px);
+  margin-top: 100px;
+  padding: 30px 10%; }
+  .hero-medium .hero__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; }
+
 .generic-hero {
   max-height: 150vh;
   height: calc(70vh - 100px);
@@ -1378,10 +1438,11 @@ html {
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding-bottom: 5%; }
+  max-height: 100%; }
 
 .hero__img {
-  max-width: 90%; }
+  max-width: 90%;
+  max-height: 100%; }
 
 .navbar {
   max-width: 100vw !important;
@@ -1529,6 +1590,10 @@ footer {
     margin-left: 15px; }
 
 @media screen and (max-width: 420px) {
+  .hero__text {
+    height: auto !important;
+    text-align: center; }
+
   footer {
     padding-top: 10px; }
 

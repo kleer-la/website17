@@ -81,7 +81,7 @@ class EventType
   def load_complete_event(hash_event) #json provider
     return if hash_event.nil? || ['id'].nil?
 
-    @id = hash_event['id'].to_i
+    @id =  hash_event['id'].nil? ? hash_event['event_type_id'].to_i : hash_event['id'].to_i
     @duration = hash_event['duration'].to_i
     @is_kleer_cert = to_boolean(hash_event['is_kleer_certification'])
     @is_sa_cert = to_boolean(hash_event['csd_eligible'])

@@ -32,4 +32,5 @@ group :development, :test do
   gem 'rspec-html-matchers' #, '~> 0.9.4'
   gem 'simplecov'
   gem 'coveralls_reborn'
+  gem 'simplecov-lcov'    # to generate LCOV output for coverall.io
 end

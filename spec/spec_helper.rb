@@ -2,9 +2,13 @@ require 'coveralls'
 Coveralls.wear!
 
 require 'simplecov'
-SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+require 'simplecov-lcov'
 
+SimpleCov.start
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::LcovFormatter
+])
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

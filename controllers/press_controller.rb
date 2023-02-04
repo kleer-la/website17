@@ -227,7 +227,7 @@ get '/prensa' do
   @active_tab_prensa = 'active'
   @meta_tags.set! title: "#{t('meta_tag.press.title')}",
                   description: t('meta_tag.press.description'),
-                  canonical: "#{session[:locale]}#{t('meta_tag.press.canonical')}"
+                  canonical: "#{t('meta_tag.press.canonical')}"
   # @kleerers = KeventerReader.instance.kleerers session[:locale]
   @news = get_news
   return erb :'news/index', layout: :'layout/layout2022'

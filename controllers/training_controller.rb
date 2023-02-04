@@ -3,6 +3,7 @@ require './lib/metatags'
 require './lib/academy_courses'
 require './lib/event_type'
 require './lib/event'
+require './lib/keventer_helper'
 
 require './controllers/event_helper'
 
@@ -48,7 +49,7 @@ end
 get '/agenda' do
   @meta_tags.set! title: t('meta_tag.agenda.title'),
                   description: t('meta_tag.agenda.description'),
-                  canonical: "#{session[:locale]}#{t('meta_tag.agenda.canonical')}"
+                  canonical: "#{t('meta_tag.agenda.canonical')}"
 
   @events = KeventerReader.instance.catalog_events()
   erb :'training/agenda/index', layout: :'layout/layout2022'
@@ -58,16 +59,9 @@ get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: t('meta_tag.catalog.title'),
                   description: t('meta_tag.catalog.description'),
-                  canonical: "#{session[:locale]}#{t('meta_tag.catalog.canonical')}"
+                  canonical: "#{t('meta_tag.catalog.canonical')}"
   @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
-
-  # @events = if session[:locale] == 'es'
-  #             KeventerReader.instance.catalog_events()
-  #           else
-  #             fake_event_from_catalog(KeventerReader.instance.categories)
-  #               .select {|e| e.event_type.lang == session[:locale]}
-  #           end
 
   @events = KeventerReader.instance.catalog_events()
 
@@ -126,6 +120,8 @@ get '/cursos/:event_type_id_with_name' do
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
       @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
     end
+
+    @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id , 4)
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end

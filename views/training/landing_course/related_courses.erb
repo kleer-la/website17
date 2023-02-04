@@ -1,0 +1,48 @@
+<%
+  if @related_courses and @related_courses != []
+
+  courses = keventer_to_card(@related_courses, session[:locale])
+%>
+
+<section id="course-related" class=" mb-4">
+  <div class="container">
+    <h2 class="mb-5 text-center common-subtitle">Cursos relacionados</h2>
+    <div class="row">
+
+        <% courses.each  do |course|
+          @course = course
+        %>
+        <div class="col-3">
+          <%= erb :'component/_course_card'  %>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</section>
+
+  <section id="mobile-course-related">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <%
+          courses[0][:active] = true
+          courses.each do |course|
+          @course = course
+        %>
+          <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
+            <%= erb :'component/_course_card' %>
+          </div>
+        <%end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+<%
+  end
+%>
