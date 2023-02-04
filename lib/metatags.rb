@@ -103,7 +103,7 @@ module MetaTags
       when :canonical
         "<link rel=\"canonical\" href=\"#{@base_url}/#{@current_lang}#{tag[1]}\"/>"
       when :hreflang
-        tag[1].reduce('') {|ac, lang| ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"} unless @path.nil?
+        tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{@path}\"/>" : '') {|ac, lang| ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"} unless @path.nil?
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end
