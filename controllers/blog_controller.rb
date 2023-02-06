@@ -40,12 +40,15 @@ rescue StandardError => e
 end
 
 get '/blog2022' do
-  @where = 'Blog'
-  session[:version] = 2022
-
   @meta_tags.set! title: t('meta_tag.blog.title'),
                   description: t('meta_tag.blog.description'),
                   canonical: "#{t('meta_tag.blog.canonical')}"
+  @where = 'Blog'
+  session[:version] = 2022
+
+  @category = params[:category]
+  @page_number = params[:page]
+  @match = params[:match]
 
   @articles = Article.create_list_keventer(true)
   @show_abstract = true
