@@ -39,6 +39,19 @@ rescue StandardError => e
   status 404
 end
 
+get '/blog2022' do
+  @where = 'Blog'
+  session[:version] = 2022
+
+  @meta_tags.set! title: t('meta_tag.blog.title'),
+                  description: t('meta_tag.blog.description'),
+                  canonical: "#{t('meta_tag.blog.canonical')}"
+
+  @articles = Article.create_list_keventer(true)
+  @show_abstract = true
+  erb :'blog/index', layout: :'layout/layout2022'
+end
+
 def blog_one(article)
   @article = article
   @meta_tags.set! title: @article.tabtitle,

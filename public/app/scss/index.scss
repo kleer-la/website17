@@ -38,6 +38,14 @@ html{
   margin-top: 100px;
 }
 
+.hero__subtitle{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
 .hero-medium{
   max-height: 150vh;
   height: calc(70vh - 100px);
