@@ -1,0 +1,18 @@
+<%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
+
+  <div id="blog-feed-list" class="container mt-5">
+    <div class="row">
+      <%if @articles.nil? || @articles == [] %>
+        <h2>En construcción</h2>
+      <% else
+           @articles.filter {|a| a.lang == session[:locale]}.each do |article|%>
+
+          <div class="col-md-6">
+            <%= erb :'component/cards/_blog_card', locals: {article: article} %>
+          </div>
+
+        <%end
+          end%>
+    </div>
+  </div>
+</div>

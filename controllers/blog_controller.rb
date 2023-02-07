@@ -1,6 +1,20 @@
 require './lib/json_api'
 require './lib/articles'
 
+def filter_articles(article_list ,category = nil, page_number = nil, match = nil, all = nil)
+  @filtered_list = article_list
+
+  if category
+    @filtered_list = @filtered_list.select{|e| e.category_name == category}
+  end
+  if match
+    @filtered_list = @filtered_list.select{|e| e.title.include?(match)}
+  end
+
+  q4page = all ? 6 : 4
+  @filtered_list = @filtered_list[(page_number * q4page)...(page_number * q4page)+q4page]
+end
+
 get '/blog/' do
   redirect '/blog', 301 # permanent redirect
 end
@@ -47,10 +61,11 @@ get '/blog2022' do
   session[:version] = 2022
 
   @category = params[:category]
-  @page_number = params[:page]
+  @page_number = params[:page] || 0
   @match = params[:match]
+  @all= params[:all]
 
-  @articles = Article.create_list_keventer(true)
+  @articles = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all)
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 end
