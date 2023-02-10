@@ -969,8 +969,12 @@
   border-radius: 16px; }
 
 .search-box__container {
+  height: 100%;
   max-width: 1000px;
   margin: 0 auto; }
+  .search-box__container div {
+    display: flex;
+    align-items: center; }
 
 #blog-feed-list {
   background-color: #FFFFFF; }
@@ -1414,6 +1418,10 @@ img {
 
 .hidden-element {
   display: none; }
+
+.blue-link {
+  color: #68CEF2 !important;
+  font-weight: bold !important; }
 
 @media screen and (max-width: 992px) {
   .desktop_figure {

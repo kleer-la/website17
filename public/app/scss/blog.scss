@@ -199,8 +199,14 @@ $white: #FFFFFF;
 }
 
 .search-box__container{
+  height: 100%;
   max-width: 1000px;
   margin: 0 auto;
+
+  div{
+    display: flex;
+    align-items: center;
+  }
 }
 
 #blog-feed-list{

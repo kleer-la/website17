@@ -221,6 +221,11 @@ img {
   display: none;
 }
 
+.blue-link{
+  color: $primary-blue !important;
+  font-weight: bold !important;
+}
+
 @media screen and (max-width: 992px){
   .desktop_figure{
     display: none;
