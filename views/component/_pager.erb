@@ -1,0 +1,40 @@
+<div class="pager">
+  <% if is_link %>
+    <a href="<%=left_action%>">
+  <% else %>
+    <button
+        onclick="<%= left_action %>"
+        class="button"
+    >
+  <% end %>
+      <img
+        src="/app/img/icons/arrow.svg"
+        class="left-arrow"
+        />
+  <% if is_link %>
+    </a>
+  <% else %>
+    </button>
+  <% end %>
+
+  <%= intern_text %>
+
+  <% if is_link %>
+    <a href="<%=right_action%>">
+  <% else %>
+    <button
+        onclick="<%= right_action %>"
+        class="button"
+    >
+  <% end %>
+      <img
+        src="/app/img/icons/arrow.svg"
+        class="right-arrow"
+        />
+  <% if is_link %>
+    </a>
+  <% else %>
+    </button>
+  <% end %>
+</div>
+

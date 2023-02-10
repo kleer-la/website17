@@ -11,8 +11,13 @@ def filter_articles(article_list ,category = nil, page_number = nil, match = nil
     @filtered_list = @filtered_list.select{|e| e.title.include?(match)}
   end
 
+  total = @filtered_list.length
+
+  @selected = article_list.select{|e| e.selected}
   q4page = all ? 6 : 4
   @filtered_list = @filtered_list[(page_number * q4page)...(page_number * q4page)+q4page]
+
+  return @filtered_list, total
 end
 
 get '/blog/' do
@@ -61,11 +66,11 @@ get '/blog2022' do
   session[:version] = 2022
 
   @category = params[:category]
-  @page_number = params[:page] || 0
+  @page_number = params[:page] ? params[:page].to_i : 0
   @match = params[:match]
   @all= params[:all]
 
-  @articles = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all)
+  @articles, @total = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all)
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 end

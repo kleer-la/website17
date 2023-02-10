@@ -8,32 +8,36 @@
 
         <ul class="dropdown-menu">
           <li>
-            <a
+            <button
               class="dropdown-item"
+              onclick="setParam('category','Desarrollo%20Profesional')"
               href="<%="/#{session[:locale]}/blog2022?category=Desarrollo%20Profesional" %>">
               Desarrollo Profesional
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               class="dropdown-item"
+              onclick="setParam('category','Equipos%20y%20Organizaciones')"
               href="<%="/#{session[:locale]}/blog2022?category=Equipos%20y%20Organizaciones" %>">
               Equipos y Organizaciones
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               class="dropdown-item"
+              onclick="setParam('category','Diseño%20de%20Productos')"
               href="<%="/#{session[:locale]}/blog2022?category=Diseño%20de%20Productos" %>">
               Diseño de Productos
-            </a>
+            </button>
           </li>
           <li>
-            <a
+            <button
               class="dropdown-item"
+              onclick="setParam('category','Desarrollo%20de%20Software')"
               href="<%="/#{session[:locale]}/blog2022?category=Desarrollo%20de%20Software" %>">
               Desarrollo de Software
-            </a>
+            </button>
           </li>
         </ul>
       </div>

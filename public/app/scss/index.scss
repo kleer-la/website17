@@ -486,3 +486,21 @@ footer {
   top: 50px;
   left: 30px
 }
+
+//Little components
+
+.pager{
+  .button{
+    background-color: $white;
+    border: none;
+  }
+
+  .left-arrow{
+    transform: rotate(90deg);
+    height: 7px;
+  }
+  .right-arrow{
+    transform: rotate(-90deg);
+    height: 7px;
+  }
+}
