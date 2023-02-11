@@ -71,6 +71,7 @@ get '/blog2022' do
   @all= params[:all]
 
   @articles, @total = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all)
+
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 end
