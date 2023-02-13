@@ -1,4 +1,4 @@
-<% if authors.length == 1 %>
+<% if authors.length <= 1 %>
   <div class="invidivual-author">
     <img
       src="/img/icons/blue_user.svg"
@@ -7,7 +7,7 @@
       />
     <%= authors[0] %>
   </div>
-<% else %>
+<% else%>
   <div class="more-authors">
     <img
       src="/img/icons/blue_people.svg"
