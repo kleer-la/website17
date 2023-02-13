@@ -1436,6 +1436,9 @@ img {
   .social-container {
     position: absolute;
     bottom: 20px; } }
+.little-icon {
+  height: 20px; }
+
 html {
   font-display: swap; }
 
@@ -1712,7 +1715,7 @@ footer {
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px;
   max-width: 700px !important;
-  height: 600px;
+  height: 540px;
   border: none;
   padding: 24px; }
   .blog-card .image-container {
@@ -1761,10 +1764,12 @@ footer {
 
 .more-authors__popup {
   display: none;
+  padding: 20px;
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  filter: drop-shadow(0px 18px 76px rgba(51, 51, 51, 0.1)); }
 
 .course-card {
   width: 100% !important;

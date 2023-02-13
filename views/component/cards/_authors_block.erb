@@ -1,23 +1,30 @@
 <% if authors.length == 1 %>
   <div class="invidivual-author">
     <img
-      src=""
+      src="/img/icons/blue_user.svg"
       alt=""
-      class=""
+      class="little-icon me-2"
       />
     <%= authors[0] %>
   </div>
 <% else %>
   <div class="more-authors">
     <img
-      src=""
+      src="/img/icons/blue_people.svg"
       alt=""
-      class=""
+      class="little-icon me-2"
       />
     Autores +
     <div class="more-authors__popup">
       <% authors.each do |author| %>
-        <p><%= author %></p>
+        <div class="invidivual-author">
+          <img
+            src="/img/icons/blue_user.svg"
+            alt=""
+            class="little-icon ms-4"
+            />
+          <%= author %>
+        </div>
       <% end %>
     </div>
   </div>
