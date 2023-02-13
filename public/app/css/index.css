@@ -984,52 +984,6 @@
     line-height: 40px;
     margin-bottom: 40px; }
 
-.blog-card {
-  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
-  border-radius: 8px;
-  max-width: 700px !important;
-  height: 600px;
-  border: none;
-  padding: 24px; }
-  .blog-card .image-container {
-    padding-bottom: 24px; }
-    .blog-card .image-container img {
-      height: 180px;
-      border-radius: 8px; }
-  .blog-card .category-flag {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    width: 100%;
-    border-radius: 4px;
-    background-color: #FFE600;
-    max-width: 120px;
-    height: 29px;
-    margin-left: 10px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none; }
-  .blog-card .card-title {
-    color: #333333;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
-    margin-bottom: 8px; }
-  .blog-card .card-body {
-    padding-top: 0;
-    padding-right: 0; }
-  .blog-card .card-text {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    font-feature-settings: 'pnum' on, 'lnum' on; }
-
 @media screen and (max-width: 420px) {
   .blog-feed__search-box {
     width: 90%;
@@ -1699,6 +1653,119 @@ footer {
   font-weight: bold;
   padding: 0; }
 
+.carousel-control-next-icon {
+  background-image: url("../img/view_figures/arrow.svg");
+  transform: rotate(-90deg); }
+
+.carousel-control-prev-icon {
+  background-image: url("../img/view_figures/arrow.svg");
+  transform: rotate(90deg); }
+
+.generic-card__title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #337ab7;
+  margin: 10px 0; }
+
+.generic-card__description {
+  font-size: 10pt;
+  background: #eaeaea;
+  min-height: 470px; }
+
+.generic-card__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .generic-card__list li {
+    margin-top: 10px; }
+
+.generic-card__button {
+  background-color: #7bcaea;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+  font-family: 'Mali', cursive;
+  padding: 6px 15px;
+  text-transform: uppercase; }
+
+.button-container {
+  width: 100%; }
+
+.share-buttons {
+  display: flex;
+  justify-content: center; }
+  .share-buttons .share {
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -999em;
+    padding: 0;
+    margin: 2rem 10px; }
+    .share-buttons .share.share-facebook {
+      background: url("/img/icons/share-facebook.png") no-repeat; }
+    .share-buttons .share.share-twitter {
+      background: url("/img/icons/share-twitter.png") no-repeat; }
+    .share-buttons .share.share-linkedin {
+      background: url("/img/icons/share-linkedin.png") no-repeat; }
+
+.blog-card {
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
+  border-radius: 8px;
+  max-width: 700px !important;
+  height: 600px;
+  border: none;
+  padding: 24px; }
+  .blog-card .image-container {
+    padding-bottom: 24px; }
+    .blog-card .image-container img {
+      height: 180px;
+      border-radius: 8px; }
+  .blog-card .category-flag {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #FFE600;
+    max-width: 120px;
+    height: 29px;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; }
+  .blog-card .card-title {
+    color: #333333;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 8px; }
+  .blog-card .card-body {
+    padding-top: 0;
+    padding-right: 0; }
+  .blog-card .card-text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    font-feature-settings: 'pnum' on, 'lnum' on; }
+
+.more-authors {
+  position: relative; }
+  .more-authors :hover .more-authors__popup {
+    display: block !important; }
+
+.more-authors__popup {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #FFFFFF; }
+
 .course-card {
   width: 100% !important;
   max-width: 260px !important;
@@ -1758,61 +1825,6 @@ footer {
 
 .icon-card {
   height: 18px; }
-
-.carousel-control-next-icon {
-  background-image: url("../img/view_figures/arrow.svg");
-  transform: rotate(-90deg); }
-
-.carousel-control-prev-icon {
-  background-image: url("../img/view_figures/arrow.svg");
-  transform: rotate(90deg); }
-
-.generic-card__title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  color: #337ab7;
-  margin: 10px 0; }
-
-.generic-card__description {
-  font-size: 10pt;
-  background: #eaeaea;
-  min-height: 470px; }
-
-.generic-card__list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-  .generic-card__list li {
-    margin-top: 10px; }
-
-.generic-card__button {
-  background-color: #7bcaea;
-  border: none;
-  color: #000;
-  border-radius: 50px;
-  font-family: 'Mali', cursive;
-  padding: 6px 15px;
-  text-transform: uppercase; }
-
-.button-container {
-  width: 100%; }
-
-.share-buttons {
-  display: flex;
-  justify-content: center; }
-  .share-buttons .share {
-    width: 32px;
-    height: 32px;
-    display: block;
-    text-indent: -999em;
-    padding: 0;
-    margin: 2rem 10px; }
-    .share-buttons .share.share-facebook {
-      background: url("/img/icons/share-facebook.png") no-repeat; }
-    .share-buttons .share.share-twitter {
-      background: url("/img/icons/share-twitter.png") no-repeat; }
-    .share-buttons .share.share-linkedin {
-      background: url("/img/icons/share-linkedin.png") no-repeat; }
 
 .generic-hero__red-circle {
   bottom: 0;
