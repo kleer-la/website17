@@ -14,7 +14,7 @@ def filter_articles(article_list ,category = nil, page_number = nil, match = nil
   total = @filtered_list.length
 
   @selected = article_list.select{|e| e.selected}
-  q4page = all ? 6 : 4
+  q4page = all ? 9 : 6
   @filtered_list = @filtered_list[(page_number * q4page)...(page_number * q4page)+q4page]
 
   return @filtered_list, total

@@ -6,7 +6,7 @@
       <h2 class="subtitle">Destacados del mes</h2>
       <div class="row">
         <% @selected.each do |article| %>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <%= erb :'component/cards/_blog_card', locals: {article: article} %>
           </div>
         <% end %>
@@ -36,7 +36,7 @@
       </div>
       <div class="row">
         <%@articles.filter {|a| a.lang == session[:locale]}.each do |article|%>
-          <div class="col-md-6">
+          <div class="col-md-4">
               <%= erb :'component/cards/_blog_card', locals: {article: article} %>
           </div>
         <%end%>
@@ -87,6 +87,14 @@
         }, '/blog2022?')
 
         window.location.href = link
+    }
+
+    const onChangeMatchWord = (e) => {
+        console.log(e)
+        params = {
+            ...params,
+            match: e.value
+        }
     }
 
 
