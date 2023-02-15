@@ -19,10 +19,9 @@
       <h2 class="mt-4 mb-4 subtitle">Lo más nuevo</h2>
     <% end %>
 
-
-      <%if @articles.nil? || @articles == [] %>
+    <%if @articles.nil? || @articles == [] %>
         <h2>No se encontraron resultados</h2>
-      <% else %>
+    <% else %>
       <div class="row mb-4">
         <div class="offset-lg-10 col-lg-2">
           <%= erb :'component/_pager',
@@ -38,14 +37,21 @@
               <%= erb :'component/cards/_blog_card', locals: {article: article} %>
           </div>
         <%end%>
+        <img
+          class="desktop_figure blog-feed-list__red-triangle"
+          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
+          alt="decoration figure"
+          />
       </div>
-
     <%end%>
+
     <div class="btn-center-container">
       <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
     </div>
+
   </div>
-</div>
+
+
 
 <script>
     let params = decodeURI(window.location.search)
