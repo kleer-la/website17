@@ -48,10 +48,13 @@
           class="form-control border-end-0 border"
           type="search"
           name="matchWord"
-          onchange="onChangeMatchWord()"
-          id="example-search-input">
+          onchange="onChangeMatchWord(event)"
+          id="example-search-input" />
         <span class="input-group-append">
-          <button class="btn btn-outline-secondary bg-white border-start-0 border ms-n5" type="button">
+          <button
+            class="btn btn-outline-secondary bg-white border-start-0 border ms-n5"
+            type="button"
+            onclick="goToFilterLink()">
             <i class="fa fa-search"></i>
           </button>
         </span>

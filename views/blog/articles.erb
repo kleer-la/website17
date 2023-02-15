@@ -42,7 +42,7 @@
 
     <%end%>
     <div class="btn-center-container">
-      <a class="btn my-primary-button">Ver todos</a>
+      <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
     </div>
   </div>
 </div>
@@ -88,10 +88,9 @@
     }
 
     const onChangeMatchWord = (e) => {
-        console.log(e)
         params = {
             ...params,
-            match: e.value
+            match: e.target.value
         }
     }
 

@@ -8,7 +8,7 @@ def filter_articles(article_list ,category = nil, page_number = nil, match = nil
     @filtered_list = @filtered_list.select{|e| e.category_name == category}
   end
   if match
-    @filtered_list = @filtered_list.select{|e| e.title.include?(match)}
+    @filtered_list = @filtered_list.select{|e| e.title.downcase.include?(match.downcase) }
   end
 
   total = @filtered_list.length
