@@ -958,9 +958,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column; }
+  #blog-feed-hero h1, #blog-feed-hero h2 {
+    z-index: 1; }
 
 .blog-feed__search-box {
   background-color: #FFFFFF;
+  z-index: 2;
   position: absolute;
   bottom: -50px;
   height: 120px;
@@ -981,12 +984,16 @@
   bottom: -20px; }
 
 .blog-hero__yellow_middle_circle {
+  position: absolute;
   top: 15%;
-  left: 20%; }
+  left: 20%;
+  z-index: 0; }
 
 .blog-hero__green-bean-sg {
+  position: absolute;
   top: 15%;
-  right: 10%; }
+  right: 10%;
+  z-index: 0; }
 
 #blog-feed-list {
   background-color: #FFFFFF;
@@ -1004,9 +1011,22 @@
   z-index: 0; }
 
 @media screen and (max-width: 420px) {
+  #blog-feed-list h2 {
+    text-align: center; }
+
   .blog-feed__search-box {
     width: 90%;
-    left: 5%; } }
+    left: 5%; }
+
+  .blog-hero__yellow_middle_circle {
+    top: 5px;
+    left: 10px;
+    height: 80px; }
+
+  .blog-hero__green-bean-sg {
+    bottom: -10px;
+    top: auto;
+    right: -40px; } }
 .header-prensa {
   background: url(../img/prensa.jpg);
   background-size: cover;
