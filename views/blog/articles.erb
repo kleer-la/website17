@@ -37,18 +37,23 @@
       </div>
       <div class="row">
         <%@articles.each do |article|%>
-            <div class="col-md-4">
+          <div class="col-md-4">
               <%= erb :'component/cards/_blog_card', locals: {article: article} %>
           </div>
         <%end%>
       </div>
+      <img
+        class="desktop_figure blog-feed-list__red-triangle"
+        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
+        alt="decoration figure"
+        />
 
     <%end%>
     <div class="btn-center-container">
       <a class="btn my-primary-button">Ver todos</a>
     </div>
   </div>
-    </div>
+</div>
 
 <script>
     let params = decodeURI(window.location.search)
