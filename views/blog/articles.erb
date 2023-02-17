@@ -29,12 +29,15 @@
                   locals: {intern_text: "#{(@page_number * @articles.length) + 1}-#{(@page_number * @articles.length) + @articles.length } de #{@total}",
                            left_action: "setParam('page','#{@page_number-1}')",
                            right_action:"setParam('page','#{@page_number+1}')",
-                           is_link: false} %>
+                           is_link: false,
+                           enable_left: @page_number != 0,
+                           enable_right: ((@page_number * @articles.length) + @articles.length) != @total}
+          %>
         </div>
       </div>
       <div class="row">
         <%@articles.each do |article|%>
-          <div class="col-md-4">
+            <div class="col-md-4">
               <%= erb :'component/cards/_blog_card', locals: {article: article} %>
           </div>
         <%end%>
@@ -45,7 +48,7 @@
       <a class="btn my-primary-button">Ver todos</a>
     </div>
   </div>
-</div>
+    </div>
 
 <script>
     let params = decodeURI(window.location.search)
