@@ -26,12 +26,12 @@
       <div class="row mb-4">
         <div class="offset-lg-10 col-lg-2">
           <%= erb :'component/_pager',
-                  locals: {intern_text: "#{(@page_number * @articles.length) + 1}-#{(@page_number * @articles.length) + @articles.length } de #{@total}",
+                  locals: {intern_text: "#{(@page_number * @q4page) + 1}-#{(@page_number * @q4page) + @articles.length } de #{@total}",
                            left_action: "setParam('page','#{@page_number-1}')",
                            right_action:"setParam('page','#{@page_number+1}')",
                            is_link: false,
                            enable_left: @page_number != 0,
-                           enable_right: ((@page_number * @articles.length) + @articles.length) != @total}
+                           enable_right: ((@page_number * @q4page) + @articles.length) != @total}
           %>
         </div>
       </div>
@@ -50,7 +50,7 @@
 
     <%end%>
     <div class="btn-center-container">
-      <a class="btn my-primary-button">Ver todos</a>
+      <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
     </div>
   </div>
 </div>
