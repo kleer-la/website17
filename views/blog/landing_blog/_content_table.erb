@@ -1,0 +1,40 @@
+<%
+  separator = '<h2>'
+  item_separator = '</h2>'
+
+  separated_titles= []
+
+  titles = @markdown_renderer.render(@article.body).split(separator)
+
+  titles.each do |item|
+    separated_item = item.split(item_separator)
+
+    if separated_item[0].nil?
+      next
+    end
+    separated_titles.push(separated_item[0])
+  end
+
+  separated_titles.shift
+%>
+
+<div id="landing-blog-content-table">
+  <h3 class="">Contenido del blog</h3>
+  <ul>
+    <% separated_titles.each do |title| %>
+      <li><%= title %></li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+    function runOnScroll() {
+        const table = document.getElementById('landing-blog-content-table');
+        console.log(document.body.getBoundingClientRect().top)
+
+        if (document.body.getBoundingClientRect().top <= -1200) {
+            table.classList.add('fixed-table')
+        }
+    };
+    window.addEventListener("scroll", runOnScroll);
+</script>

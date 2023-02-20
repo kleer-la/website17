@@ -1,0 +1,4 @@
+<section id="landing-blog-body">
+  <%= erb :'blog/landing_blog/_content_table' %>
+  <div class="blog__body"><%=@markdown_renderer.render( @article.body )%></div>
+</section>

@@ -1,0 +1,29 @@
+<section id="landing-blog-hero" class="mb-5">
+  <div class="container-fluid">
+    <a> <- Volver al Feed </a>
+    <div class="mt-4 mb-5">
+      <h1 ><%= @article.title %></h1>
+      <div></div>
+    </div>
+    <div class="landing-blog-hero__img-container">
+      <img
+        src="<%= @article.cover %>"
+        class=""
+        alt=""
+      >
+    </div>
+    <div class="landing-blog-hero__info">
+      <p>
+        <i class="fa fa-calendar"></i>
+        <time datetime="<%=@article.created_at[0..9]%>">
+          <%=@article.created_at[0..9]%>
+        </time>
+      </p>
+    </div>
+    <div class="landing-blog-hero__summary">
+      <p>
+        <%= @article.description %>
+      </p>
+    </div>
+  </div>
+</section>
