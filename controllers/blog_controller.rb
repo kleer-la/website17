@@ -82,7 +82,12 @@ def blog_one(article)
   @meta_tags.set! title: @article.tabtitle,
              description: @article.description
 
-  erb :'blog/article', layout: :'layout/layout2022'
+
+  if session[:version] == 2022
+    erb :'blog/landing_blog/index', layout: :'layout/layout2022'
+  else
+    erb :'blog/article', layout: :'layout/layout2022'
+  end
 
 rescue StandardError => e
   puts e

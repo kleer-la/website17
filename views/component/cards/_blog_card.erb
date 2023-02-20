@@ -1,9 +1,15 @@
+<%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
+
 <article class="card blog-card mb-5" style="width: 22rem;">
   <div class="image-container">
-    <img src="<%= article.cover %>" class="card-img-top" alt="...">
+    <a href="<%= where_uri + article.slug%>">
+      <img src="<%= article.cover %>" class="card-img-top" alt="...">
+    </a>
   </div>
   <div class="card-body">
-    <h3 class="card-title"><%= article.title %></h3>
+    <a href="<%= where_uri+article.slug%>">
+      <h3 class="card-title"><%= article.title %></h3>
+    </a>
     <p class="card-text">
       <%=@markdown_renderer.render( @show_abstract ? article.description : article.description )%>
     </p>
