@@ -38,10 +38,11 @@ class Article
   end
 
   attr_accessor :title, :description, :tabtitle, :body, :published,
-                :trainers, :slug, :abstract, :lang, :selected,
-                :created_at, :updated_at, :cover, :category_name
+                :trainers, :trainers_list, :slug, :abstract, :lang, :selected,
+                :created_at, :updated_at, :cover, :category_name, :id
 
   def initialize(doc)
+    @id = doc['id']
     @title = doc['title']
     @body = doc['body'] || ''
     @slug = doc['slug']
@@ -53,8 +54,17 @@ class Article
     @cover = doc['cover'] || ''
     @category_name = doc['category_name'] || ''
     @selected = doc['selected']
+    @trainers_list = load_trainers(doc['trainers'])
     init_trainers(doc)
     init_dates(doc)
+  end
+
+  def load_trainers(hash_trainers)
+    return [] if hash_trainers.nil?
+
+    hash_trainers.reduce([]) do |trainers, t_json|
+      trainers << Trainer.new.load_from_json(t_json)
+    end
   end
 
   def init_trainers(doc)

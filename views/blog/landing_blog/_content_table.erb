@@ -30,10 +30,14 @@
 <script>
     function runOnScroll() {
         const table = document.getElementById('landing-blog-content-table');
-        console.log(document.body.getBoundingClientRect().top)
+        const body = document.getElementById('landing-blog-body').children[2]
 
         if (document.body.getBoundingClientRect().top <= -1200) {
             table.classList.add('fixed-table')
+            body.classList.remove('up-body')
+        }else{
+            table.classList.remove('fixed-table')
+            body.classList.add('up-body')
         }
     };
     window.addEventListener("scroll", runOnScroll);
