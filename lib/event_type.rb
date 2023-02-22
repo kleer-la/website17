@@ -122,7 +122,7 @@ class EventType
     "cursos/#{@slug}"
   end
   def canonical_url
-    "cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
+    "/cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
   def redirect_to(event_type_id_with_name)

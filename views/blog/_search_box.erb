@@ -1,0 +1,69 @@
+<div class="container p-3 blog-feed__search-box">
+  <div class="row search-box__container">
+    <div class="col-12 col-lg-2">
+      <div class="dropdown mb-2">
+        <a class="btn dropdown-toggle ps-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categorías
+        </a>
+
+        <ul class="dropdown-menu">
+          <li>
+            <button
+              class="dropdown-item"
+              onclick="setParam('category','Desarrollo%20Profesional')"
+              href="<%="/#{session[:locale]}/blog2022?category=Desarrollo%20Profesional" %>">
+              Desarrollo Profesional
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              onclick="setParam('category','Equipos%20y%20Organizaciones')"
+              href="<%="/#{session[:locale]}/blog2022?category=Equipos%20y%20Organizaciones" %>">
+              Equipos y Organizaciones
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              onclick="setParam('category','Diseño%20de%20Productos')"
+              href="<%="/#{session[:locale]}/blog2022?category=Diseño%20de%20Productos" %>">
+              Diseño de Productos
+            </button>
+          </li>
+          <li>
+            <button
+              class="dropdown-item"
+              onclick="setParam('category','Desarrollo%20de%20Software')"
+              href="<%="/#{session[:locale]}/blog2022?category=Desarrollo%20de%20Software" %>">
+              Desarrollo de Software
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-lg-7">
+      <div class="input-group">
+        <input
+          class="form-control border-end-0 border"
+          type="search"
+          name="matchWord"
+          onchange="onChangeMatchWord(event)"
+          id="example-search-input" />
+        <span class="input-group-append">
+          <button
+            class="btn btn-outline-secondary bg-white border-start-0 border ms-n5"
+            type="button"
+            onclick="goToFilterLink()">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="offset-9 offset-lg-0 col-lg-3">
+      <a href="/blog2022" class="blue-link">
+        limpiar filtros
+      </a>
+    </div>
+  </div>
+</div>

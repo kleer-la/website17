@@ -38,6 +38,14 @@ html{
   margin-top: 100px;
 }
 
+.hero__subtitle{
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
 .hero-medium{
   max-height: 150vh;
   height: calc(70vh - 100px);
@@ -312,6 +320,173 @@ footer {
   padding: 0;
 }
 
+//bootstrap edited
+.carousel-control-next-icon{
+  background-image: url("../img/view_figures/arrow.svg");
+  transform: rotate(-90deg)
+}
+//bootstrap edited
+.carousel-control-prev-icon{
+  background-image: url("../img/view_figures/arrow.svg");
+  transform: rotate(90deg)
+}
+
+//Generic cards
+
+.generic-card{
+
+}
+
+.generic-card__title{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  color: #337ab7;
+  margin: 10px 0;
+}
+
+.generic-card__description{
+  font-size: 10pt;
+  background: $grey-card;
+  min-height: 470px;
+}
+
+.generic-card__list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li{
+    margin-top: 10px;
+  }
+}
+
+.generic-card__button{
+  background-color: #7bcaea;
+  border: none;
+  color: #000;
+  border-radius: 50px;
+  font-family: 'Mali', cursive;
+  padding: 6px 15px;
+  text-transform: uppercase;
+}
+
+.button-container{
+  width: 100%;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+
+  .share {
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -999em;
+    padding: 0;
+    margin: 2rem 10px;
+    &.share-facebook {
+      background: url('/img/icons/share-facebook.png') no-repeat;
+    }
+    &.share-twitter {
+      background: url('/img/icons/share-twitter.png') no-repeat;
+    }
+    &.share-linkedin {
+      background: url('/img/icons/share-linkedin.png') no-repeat;
+    }
+  }
+}
+
+//CARDS
+
+//blog card
+.blog-card{
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
+  border-radius: 8px;
+  max-width: 700px !important;
+  height: 540px;
+  border: none;
+  padding: 24px;
+  z-index: 5;
+
+  .image-container{
+    padding-bottom: 24px;
+    img{
+      height: 180px;
+      border-radius: 8px;
+    }
+
+  }
+
+  .category-flag{
+    position:absolute;
+    top:10px;
+    right: 0px;
+    width: 100%;
+
+    border-radius: 4px;
+    background-color: $primary-yellow;
+    max-width: 120px;
+    height: 29px;
+    margin-left: 10px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+
+
+  .card-title{
+    color: $black;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 8px;
+  }
+  .card-body{
+    padding-top: 0;
+    padding-right: 0;
+  }
+
+  .card-text{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+  }
+}
+
+.invidivual-author{
+
+}
+
+.more-authors{
+  position: relative;
+
+  :hover{
+    .more-authors__popup{
+      display: block !important;
+    }
+  }
+}
+
+
+
+.more-authors__popup{
+  display: none;
+  padding: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: $white;
+  filter: drop-shadow(0px 18px 76px rgba(51, 51, 51, 0.1));
+}
+
 //course card
 .course-card{
 
@@ -390,82 +565,6 @@ footer {
 .icon-card{
   height: 18px;
 }
-//bootstrap edited
-.carousel-control-next-icon{
-  background-image: url("../img/view_figures/arrow.svg");
-  transform: rotate(-90deg)
-}
-//bootstrap edited
-.carousel-control-prev-icon{
-  background-image: url("../img/view_figures/arrow.svg");
-  transform: rotate(90deg)
-}
-
-//Generic cards
-
-.generic-card{
-
-}
-
-.generic-card__title{
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  color: #337ab7;
-  margin: 10px 0;
-}
-
-.generic-card__description{
-  font-size: 10pt;
-  background: $grey-card;
-  min-height: 470px;
-}
-
-.generic-card__list{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-
-  li{
-    margin-top: 10px;
-  }
-}
-
-.generic-card__button{
-  background-color: #7bcaea;
-  border: none;
-  color: #000;
-  border-radius: 50px;
-  font-family: 'Mali', cursive;
-  padding: 6px 15px;
-  text-transform: uppercase;
-}
-
-.button-container{
-  width: 100%;
-}
-
-.share-buttons {
-  display: flex;
-  justify-content: center;
-
-  .share {
-    width: 32px;
-    height: 32px;
-    display: block;
-    text-indent: -999em;
-    padding: 0;
-    margin: 2rem 10px;
-    &.share-facebook {
-      background: url('/img/icons/share-facebook.png') no-repeat;
-    }
-    &.share-twitter {
-      background: url('/img/icons/share-twitter.png') no-repeat;
-    }
-    &.share-linkedin {
-      background: url('/img/icons/share-linkedin.png') no-repeat;
-    }
-  }
-}
 
 //generic hero
 
@@ -477,4 +576,22 @@ footer {
 .generic-hero__yellow-bean{
   top: 50px;
   left: 30px
+}
+
+//Little components
+
+.pager{
+  .button{
+    background-color: $white;
+    border: none;
+  }
+
+  .left-arrow{
+    transform: rotate(90deg);
+    height: 7px;
+  }
+  .right-arrow{
+    transform: rotate(-90deg);
+    height: 7px;
+  }
 }

@@ -1,0 +1,120 @@
+
+  <div id="blog-feed-list" class="container mt-5 mb-5">
+    <% if @selected and @category.nil? and @match.nil? and @all.nil?%>
+      <h2 class="subtitle">Destacados del mes</h2>
+      <div class="row">
+        <% @selected.each do |article| %>
+          <div class="col-md-4">
+            <%= erb :'component/cards/_blog_card', locals: {article: article} %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @category %>
+      <h2 class="subtitle">Categoría: <%= @category %></h2>
+    <% end %>
+
+    <%if @category.nil? and @match.nil? and @all.nil? %>
+      <h2 class="mt-4 mb-4 subtitle">Lo más nuevo</h2>
+    <% end %>
+
+
+      <%if @articles.nil? || @articles == [] %>
+        <h2>No se encontraron resultados</h2>
+      <% else %>
+      <div class="row mb-4">
+        <div class="offset-lg-10 col-lg-2">
+          <%= erb :'component/_pager',
+                  locals: {intern_text: "#{(@page_number * @q4page) + 1}-#{(@page_number * @q4page) + @articles.length } de #{@total}",
+                           left_action: "setParam('page','#{@page_number-1}')",
+                           right_action:"setParam('page','#{@page_number+1}')",
+                           is_link: false,
+                           enable_left: @page_number != 0,
+                           enable_right: ((@page_number * @q4page) + @articles.length) != @total}
+          %>
+        </div>
+      </div>
+      <div class="row">
+        <%@articles.each do |article|%>
+          <div class="col-md-4">
+              <%= erb :'component/cards/_blog_card', locals: {article: article} %>
+          </div>
+        <%end%>
+      </div>
+      <div class="row mb-4">
+        <div class="offset-lg-10 col-lg-2">
+          <%= erb :'component/_pager',
+                  locals: {intern_text: "#{(@page_number * @q4page) + 1}-#{(@page_number * @q4page) + @articles.length } de #{@total}",
+                           left_action: "setParam('page','#{@page_number-1}')",
+                           right_action:"setParam('page','#{@page_number+1}')",
+                           is_link: false,
+                           enable_left: @page_number != 0,
+                           enable_right: ((@page_number * @q4page) + @articles.length) != @total}
+          %>
+        </div>
+      </div>
+      <img
+        class="desktop_figure blog-feed-list__red-triangle"
+        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
+        alt="decoration figure"
+        />
+
+    <%end%>
+    <% if @all.nil? %>
+      <div class="btn-center-container">
+        <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+    let params = decodeURI(window.location.search)
+        .replace('?', '')
+        .split('&')
+        .map(param => param.split('='))
+        .reduce((values, [ key, value ]) => {
+            values[ key ] = value
+            return values
+        }, {})
+
+
+    const setParam = (param, value) => {
+        params = {
+            ...params,
+            [param]: value
+        }
+
+        if(param == 'category' || param == 'match'){
+            params = {
+                ...params,
+                all: true,
+                page: 0
+            }
+        }
+
+        goToFilterLink()
+    }
+
+    const goToFilterLink = () => {
+        const link = Object.keys(params).reduce((ac ,key) =>{
+            if(key === '' || typeof(key) === null){
+                return ac
+            }else{
+                return ac +`&${key}=${params[key]}`
+            }
+        }, '/blog2022?')
+
+        window.location.href = link
+    }
+
+    const onChangeMatchWord = (e) => {
+        params = {
+            ...params,
+            match: e.target.value
+        }
+    }
+
+
+</script>

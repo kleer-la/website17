@@ -1,0 +1,66 @@
+<%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
+
+<article class="card blog-card mb-5" style="width: 22rem;">
+  <div class="image-container">
+    <a href="<%= where_uri + article.slug%>">
+      <img src="<%= article.cover %>" class="card-img-top" alt="...">
+    </a>
+  </div>
+  <div class="card-body">
+    <a href="<%= where_uri+article.slug%>">
+      <h3 class="card-title"><%= article.title %></h3>
+    </a>
+    <p class="card-text">
+      <%=@markdown_renderer.render( @show_abstract ? article.description : article.description )%>
+    </p>
+    <p class="card-text">
+      <small class="text-muted">
+        <%= erb :'component/cards/_authors_block', locals: {authors: article.trainers} %>
+      </small>
+    </p>
+    <p class="card-text">
+      <small class="text-muted">
+        <img src="/img/icons/blue_calendar.svg"
+          alt=""
+          class="little-icon me-2">
+        <time datetime="<%=article.created_at[0..9]%>">
+          <%=article.created_at[0..9]%>
+        </time>
+      </small>
+    </p>
+  </div>
+</article>
+
+
+<!--<article class="card mb-3 blog-card p-4" style="max-width: 540px;">-->
+<!--  <div class="row g-0">-->
+<!--    <div class="col-md-5 image-container">-->
+<!--        <div class="category-flag">-->
+          <%#= article.category_name %>
+<!--        </div>-->
+<!--      <img src="<%#= article.cover %>" class="img-fluid rounded-start" alt="...">-->
+<!--    </div>-->
+<!--    <div class="col-md-7">-->
+<!--      <div class="card-body">-->
+<!--        <h3 class="card-title"><%#= article.title %></h3>-->
+<!--        <p class="card-text">-->
+          <%#=@markdown_renderer.render( @show_abstract ? article.description : article.description )%>
+<!--        </p>-->
+<!--        <p class="card-text">-->
+<!--          <small class="text-muted">-->
+<!--            <i class="fa fa-user"></i>-->
+            <%#=article.trainers.join(' & ')%>
+<!--          </small>-->
+<!--        </p>-->
+<!--        <p class="card-text">-->
+<!--          <small class="text-muted">-->
+<!--            <i class="fa fa-calendar"></i>-->
+<!--            <time datetime="<%#=article.created_at[0..9]%>">-->
+              <%#=article.created_at[0..9]%>
+<!--            </time>-->
+<!--          </small>-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</article>-->
