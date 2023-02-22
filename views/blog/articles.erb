@@ -15,7 +15,7 @@
       <h2 class="subtitle">Categoría: <%= @category %></h2>
     <% end %>
 
-    <%if @category.nil? and @match.nil? %>
+    <%if @category.nil? and @match.nil? and @all.nil? %>
       <h2 class="mt-4 mb-4 subtitle">Lo más nuevo</h2>
     <% end %>
 
@@ -42,6 +42,18 @@
           </div>
         <%end%>
       </div>
+      <div class="row mb-4">
+        <div class="offset-lg-10 col-lg-2">
+          <%= erb :'component/_pager',
+                  locals: {intern_text: "#{(@page_number * @q4page) + 1}-#{(@page_number * @q4page) + @articles.length } de #{@total}",
+                           left_action: "setParam('page','#{@page_number-1}')",
+                           right_action:"setParam('page','#{@page_number+1}')",
+                           is_link: false,
+                           enable_left: @page_number != 0,
+                           enable_right: ((@page_number * @q4page) + @articles.length) != @total}
+          %>
+        </div>
+      </div>
       <img
         class="desktop_figure blog-feed-list__red-triangle"
         src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
@@ -49,9 +61,11 @@
         />
 
     <%end%>
-    <div class="btn-center-container">
-      <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
-    </div>
+    <% if @all.nil? %>
+      <div class="btn-center-container">
+        <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
+      </div>
+    <% end %>
   </div>
 </div>
 

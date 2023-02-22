@@ -1,9 +1,11 @@
 <section id="landing-blog-hero" class="mb-5">
-  <div class="container-fluid">
-    <a> <- Volver al Feed </a>
+    <a class="go-back-button">
+      <- Volver al Feed
+    </a>
     <div class="mt-4 mb-5">
-      <h1 ><%= @article.title %></h1>
-      <div></div>
+      <div class="landing-blog-hero__title-container">
+        <h1 ><%= @article.title %></h1>
+      </div>
     </div>
     <div class="landing-blog-hero__img-container">
       <img
@@ -25,5 +27,4 @@
         <%= @article.description %>
       </p>
     </div>
-  </div>
 </section>
