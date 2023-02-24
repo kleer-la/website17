@@ -34,3 +34,11 @@ def get_related_event_types(category, id, quantity)
             .first(quantity)
 end
 
+def get_related_articles(category, id, quantity)
+  all_articles = Article.create_list_keventer(true)
+
+  all_articles.select{|e| e.category_name == category}
+            .select{|e| e.id != id}
+            .uniq{ |e| e.id}
+            .first(quantity)
+end
