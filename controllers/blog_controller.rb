@@ -83,6 +83,9 @@ def blog_one(article)
              description: @article.description
 
   @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
+  @related_articles = get_related_articles(@article.category_name, @article.id , 4)
+
+  puts @related_articles
 
   if session[:version] == 2022
     erb :'blog/landing_blog/index', layout: :'layout/layout2022'
