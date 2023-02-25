@@ -39,7 +39,8 @@ class Article
 
   attr_accessor :title, :description, :tabtitle, :body, :published,
                 :trainers, :trainers_list, :slug, :abstract, :lang, :selected,
-                :created_at, :updated_at, :cover, :category_name, :id
+                :created_at, :updated_at, :cover, :category_name, :id,
+                :active #View attributes
 
   def initialize(doc)
     @id = doc['id']
@@ -55,6 +56,7 @@ class Article
     @category_name = doc['category_name'] || ''
     @selected = doc['selected']
     @trainers_list = load_trainers(doc['trainers'])
+    @active = false
     init_trainers(doc)
     init_dates(doc)
   end

@@ -595,3 +595,25 @@ footer {
     height: 7px;
   }
 }
+
+
+//sections
+
+#mobile-related-articles{
+  display: none;
+  .carousel-item{
+    background-color: $white;
+    height: 800px;
+  }
+}
+
+
+@media screen and (max-width:992px){
+  #related-articles{
+    display: none;
+  }
+
+  #mobile-related-articles{
+    display: block;
+  }
+}

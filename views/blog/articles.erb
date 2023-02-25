@@ -5,7 +5,7 @@
       <div class="row">
         <% @selected.each do |article| %>
           <div class="col-md-4">
-            <%= erb :'component/cards/_blog_card', locals: {article: article} %>
+            <%= erb :'component/cards/_article_card', locals: {article: article} %>
           </div>
         <% end %>
       </div>
@@ -38,7 +38,7 @@
       <div class="row">
         <%@articles.each do |article|%>
           <div class="col-md-4">
-              <%= erb :'component/cards/_blog_card', locals: {article: article} %>
+              <%= erb :'component/cards/_article_card', locals: {article: article} %>
           </div>
         <%end%>
       </div>

@@ -1,36 +1,32 @@
 <%
-  if @related_courses != [] and !@related_courses.nil? and session[:locale] == 'es'
+  if @related_articles != [] and !@related_articles.nil? and session[:locale] == 'es'
 
-  courses = keventer_to_card(@related_courses, session[:locale])
+    articles = @related_articles
 
 %>
 
-<section id="course-related" class="mt-5 mb-5">
-  <div class="container">
-    <h2 class="mb-5 text-center common-subtitle">Cursos relacionados</h2>
-    <div class="row">
-
-        <% courses.each  do |course|
-          @course = course
-        %>
-        <div class="col-3">
-          <%= erb :'component/_course_card'  %>
-        </div>
+  <section id="related-articles" class="mt-5 mb-5">
+    <div class="container">
+      <h2 class="mb-5 text-center common-subtitle">Artículos relacionados</h2>
+      <div class="row">
+        <% articles.each  do |article| %>
+          <div class="col-4">
+            <%= erb :'component/cards/_article_card', locals: {article: article }  %>
+          </div>
         <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <section id="mobile-course-related">
+  <section id="mobile-related-articles">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <%
-          courses[0][:active] = true
-          courses.each do |course|
-          @course = course
+          articles[0].active = true
+          articles.each do |article|
         %>
-          <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
-            <%= erb :'component/_course_card' %>
+          <div class="carousel-item p-4 <%= article.active ? 'active' : '' %>">
+            <%= erb :'component/cards/_article_card' , locals: {article: article }  %>
           </div>
         <%end %>
       </div>
