@@ -7,9 +7,10 @@ get '/servicios/:service_id' do
   reader = LocalReader.new
   @event_type = reader.load_service(service_id)
 
-  @meta_tags.set! title: 'Programa de Desarrollo del Liderazgo Ágil'
-  @meta_tags.set! description: 'Hacia un liderazgo con impacto más consciente y humano'
-  # @meta_tags.set! canonical:
+  @meta_tags.set! title: @event_type.name,
+                  description: @event_type.elevator_pitch,
+                  canonical: "/servicios#{@event_type.canonical_url}"
+
 
   erb :'services/landing/index', layout: :'layout/layout2022'
 end

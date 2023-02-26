@@ -80,7 +80,8 @@ end
 def blog_one(article)
   @article = article
   @meta_tags.set! title: @article.tabtitle,
-             description: @article.description
+                  description: @article.description,
+                  canonical: "#{t('meta_tag.blog.canonical')}/#{@article.slug}"
 
   @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
   @related_articles = get_related_articles(@article.category_name, @article.id , 3)
@@ -91,9 +92,9 @@ def blog_one(article)
     erb :'blog/article', layout: :'layout/layout2022'
   end
 
-# rescue StandardError => e
-#   puts e
-#   status 404
+rescue StandardError => e
+  puts e
+  status 404
 end
 
 def blog_list(articles)
