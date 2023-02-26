@@ -1871,7 +1871,8 @@ footer {
     padding-bottom: 24px; }
     .blog-card .image-container img {
       height: 180px;
-      border-radius: 8px; }
+      border-radius: 8px;
+      object-fit: cover; }
   .blog-card .category-flag {
     position: absolute;
     top: 10px;
