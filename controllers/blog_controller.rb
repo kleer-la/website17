@@ -91,9 +91,9 @@ def blog_one(article)
     erb :'blog/article', layout: :'layout/layout2022'
   end
 
-rescue StandardError => e
-  puts e
-  status 404
+# rescue StandardError => e
+#   puts e
+#   status 404
 end
 
 def blog_list(articles)

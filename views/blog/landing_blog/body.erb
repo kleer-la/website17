@@ -1,7 +1,7 @@
 <section id="landing-blog-body">
-  <%= erb :'blog/landing_blog/_content_table' %>
+  <%= erb :'blog/landing_blog/_content_table', locals: {titles: titles} %>
   <div class="blog__body up-body">
-    <%=@markdown_renderer.render( @article.body )%>
+    <%=body%>
     <%= erb :'blog/landing_blog/authors' %>
   </div>
 </section>

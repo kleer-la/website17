@@ -4,7 +4,7 @@
       <h2 class="subtitle">Destacados del mes</h2>
       <div class="row">
         <% @selected.each do |article| %>
-          <div class="col-md-4">
+          <div class="col-md-6 col-lg-4">
             <%= erb :'component/cards/_article_card', locals: {article: article} %>
           </div>
         <% end %>
@@ -24,7 +24,7 @@
         <h2>No se encontraron resultados</h2>
       <% else %>
       <div class="row mb-4">
-        <div class="offset-lg-10 col-lg-2">
+        <div class="offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
           <%= erb :'component/_pager',
                   locals: {intern_text: "#{(@page_number * @q4page) + 1}-#{(@page_number * @q4page) + @articles.length } de #{@total}",
                            left_action: "setParam('page','#{@page_number-1}')",
@@ -37,13 +37,13 @@
       </div>
       <div class="row">
         <%@articles.each do |article|%>
-          <div class="col-md-4">
+          <div class="col-md-6 col-lg-4">
               <%= erb :'component/cards/_article_card', locals: {article: article} %>
           </div>
         <%end%>
       </div>
       <div class="row mb-4">
-        <div class="offset-lg-10 col-lg-2">
+        <div class="offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
           <%= erb :'component/_pager',
                   locals: {intern_text: "#{(@page_number * @q4page) + 1}-#{(@page_number * @q4page) + @articles.length } de #{@total}",
                            left_action: "setParam('page','#{@page_number-1}')",

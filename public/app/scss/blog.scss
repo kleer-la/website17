@@ -254,7 +254,11 @@ $white: #FFFFFF;
 
 
 //tablet
-@media screen and (max-width:992px){}
+@media screen and (max-width:992px){
+  .blog-feed__search-box{
+    height: 150px;
+  }
+}
 
 //mobile
 @media screen and (max-width:420px) {
@@ -387,12 +391,18 @@ $white: #FFFFFF;
   }
 
   ul {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     list-style: none;
     padding: 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+  }
 
+  li{
+    color: $black !important;
   }
 
 }

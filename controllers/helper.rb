@@ -94,4 +94,75 @@ module Helpers
       end
     }.compact
   end
+
+  def extract_titles(body)
+    separator = '<h2>'
+    item_separator = '</h2>'
+
+    sec_separator = '<h3>'
+    sec_item_separator = '</h3>'
+
+    separated_titles= []
+
+    titles = @markdown_renderer.render(body).split(separator)
+
+    titles.each do |item|
+      separated_item = item.split(item_separator)
+
+      if separated_item[0].nil?
+        next
+      end
+
+      if not separated_item[1].nil?
+        sublist = separated_item[1].split(sec_separator)
+        subtitles = []
+
+        if sublist != [] or not sublist.nil?
+          sublist.each do |subitem|
+            subitem = subitem.split(sec_item_separator)
+
+            if subitem[0].nil?
+              next
+            end
+
+            subtitles.push(subitem[0])
+          end
+        end
+
+        subtitles.shift
+      end
+      separated_titles.push({title: separated_item[0], subtitles: subtitles})
+    end
+    separated_titles.shift
+
+    separated_titles
+  end
+
+  def set_ids_in_body(body, titles)
+    plane_array = []
+
+    titles.each.with_index do |title_hash, index|
+      plane_array.push(
+        string: "<h2>#{title_hash[:title]}</h2>",
+        value: title_hash[:title],
+        new_string: "<h2 id='title-#{index}'>#{title_hash[:title]}</h2>"
+      )
+
+      if title_hash[:subtitles]
+        title_hash[:subtitles].each.with_index do |subtitle, sub_index|
+          plane_array.push(
+            string:"<h3>#{subtitle}</h3>",
+            value: subtitle,
+            new_string: "<h3 id='subtitle-#{index}-#{sub_index}'>#{subtitle}</h3>"
+          )
+        end
+      end
+    end
+
+    plane_array.each do |item|
+      body[item[:string]]= item[:new_string]
+    end
+
+    body
+  end
 end
