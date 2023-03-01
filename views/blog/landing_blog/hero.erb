@@ -1,6 +1,7 @@
 <section id="landing-blog-hero" class="mb-5">
-    <a class="go-back-button">
-      <- Volver al Feed
+    <a class="go-back-button" href="/blog2022">
+      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_arrow2.svg"/>
+       Volver al Feed
     </a>
     <div class="mt-4 mb-5">
       <div class="landing-blog-hero__title-container">
@@ -16,7 +17,7 @@
     </div>
     <div class="landing-blog-hero__info">
       <p>
-        <i class="fa fa-calendar"></i>
+        Publicado el
         <time datetime="<%=@article.created_at[0..9]%>">
           <%=@article.created_at[0..9]%>
         </time>

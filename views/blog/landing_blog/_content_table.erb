@@ -1,55 +1,54 @@
-<%
-  separator = '<h2>'
-  item_separator = '</h2>'
-
-  sec_separator = '<h3>'
-  sec_item_separator = '</h3>'
-
-  separated_titles= []
-
-  titles = @markdown_renderer.render(@article.body).split(separator)
-
-  titles.each do |item|
-    separated_item = item.split(item_separator)
-
-    if separated_item[0].nil?
-      next
-    end
-
-    if not separated_item[1].nil?
-      sublist = separated_item[1].split(sec_separator)
-      subtitles = []
-
-      if sublist != [] or not sublist.nil?
-        sublist.each do |subitem|
-          subitem = subitem.split(sec_item_separator)
-
-          if subitem[0].nil?
-            next
-          end
-
-          subtitles.push(subitem[0])
-        end
-      end
-
-      subtitles.shift
-    end
-
-    separated_titles.push({title: separated_item[0], subtitles: subtitles})
-  end
-
-  separated_titles.shift
-%>
 
 <div id="landing-blog-content-table">
   <h3 class="title mt-0">Contenido del blog</h3>
+<!--  <ul>-->
+    <%# separated_titles.each do |title| %>
+<!--      <li class="mt-3"><%#= title[:title] %></li>-->
+      <%# if title[:subtitles] != [] %>
+        <%# title[:subtitles].each do |subtitle|  %>
+<!--          <li class="ms-4 mt-1"><%#= subtitle %></li>-->
+        <%# end %>
+      <%# end %>
+    <%# end %>
+<!--  </ul>-->
   <ul>
-    <% separated_titles.each do |title| %>
-      <li class="mt-3"><%= title[:title] %></li>
-      <% if title[:subtitles] != [] %>
-        <% title[:subtitles].each do |subtitle|  %>
-          <li class="ms-4 mt-1"><%= subtitle %></li>
-        <% end %>
+    <% titles.each.with_index do |title, index| %>
+      <% subtitles = title[:subtitles].each_with_index.reduce('') do |string , (subtitle, subindex)|
+        string + "<a href='#subtitle-#{index}-#{subindex}'>
+                    <li class='ms-3 mt-1'>
+                      #{subtitle}
+                    </li>
+                  </a>"
+      end %>
+      <div class="mt-3">
+          <div class="row">
+            <div class="col-10">
+              <a
+                class=""
+                href="#title-<%=index%>"
+              >
+              <%= title[:title] %>
+              </a>
+            </div>
+            <div class="col-2">
+              <a
+                href="#item<%=index%>"
+                data-bs-toggle="collapse"
+                role="button"
+                aria-expanded="false"
+                aria-controls="item<%=index %>"
+              >
+                <%= subtitles != '' ? "<img src='/app/img/icons/arrow.svg'/>" : ''%>
+              </a>
+            </div>
+          </div>
+        </a>
+        </div>
+      </li>
+      <% if subtitles != '' %>
+      <div class="collapse course-program__specific-item" id="item<%=index %>">
+        <%= subtitles %>
+      </div>
       <% end %>
     <% end %>
   </ul>
@@ -60,7 +59,7 @@
         const table = document.getElementById('landing-blog-content-table');
         const body = document.getElementById('landing-blog-body').children[2]
 
-        if (document.body.getBoundingClientRect().top <= -1000) {
+        if (document.body.getBoundingClientRect().top <= -1200 && document.body.getBoundingClientRect().bottom > 2500) {
             table.classList.add('fixed-table')
             body.classList.remove('up-body')
         }else{
@@ -69,4 +68,11 @@
         }
     };
     window.addEventListener("scroll", runOnScroll);
+
+    window.addEventListener("hashchange", function () {
+        setTimeout(() => {
+            window.scrollTo(window.scrollX, window.scrollY - 150);
+        }, 1000)
+    });
+
 </script>
