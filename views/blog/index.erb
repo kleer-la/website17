@@ -1,4 +1,4 @@
-<% if session[:version] == 2022 %>
+<%# if session[:version] == 2022 %>
 
   <%= erb :'blog/hero' %>
 
@@ -8,18 +8,18 @@
     </div>
   </div>
 
-<% else %>
-  <%=erb :'component/_generic_hero', locals: {title: t('blog2022.title'), subtitle: t('blog2022.subtitle')} %>
+<%# else %>
+  <%#=erb :'component/_generic_hero', locals: {title: t('blog2022.title'), subtitle: t('blog2022.subtitle')} %>
 
   <!--<div class="container">-->
   <!--  <div class="row">-->
   <!--    <h1 class="blog-home"><span><%#= @where%></span></h1>-->
   <!--  </div>-->
   <!--</div>-->
-  <div class="container">
-    <div class="row">
-      <%=erb :'blog/list' %>
-    </div>
-  </div>
-<% end %>
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+      <%#=erb :'blog/list' %>
+<!--    </div>-->
+<!--  </div>-->
+<%# end %>
 

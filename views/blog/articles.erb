@@ -14,6 +14,9 @@
     <% if @category %>
       <h2 class="subtitle">Categoría: <%= @category %></h2>
     <% end %>
+    <% if @match %>
+      <h2 class="subtitle">Busqueda: "<%= @match %>"</h2>
+    <% end %>
 
     <%if @category.nil? and @match.nil? and @all.nil? %>
       <h2 class="mt-4 mb-4 subtitle">Lo más nuevo</h2>
@@ -21,7 +24,7 @@
 
 
       <%if @articles.nil? || @articles == [] %>
-        <h2>No se encontraron resultados</h2>
+        <h2 class="m-5">No se encontraron resultados</h2>
       <% else %>
       <div class="row mb-4">
         <div class="offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
@@ -81,6 +84,7 @@
 
 
     const setParam = (param, value) => {
+        console.log("param " + param)
         params = {
             ...params,
             [param]: value
@@ -104,7 +108,7 @@
             }else{
                 return ac +`&${key}=${params[key]}`
             }
-        }, '/blog2022?')
+        }, '/blog?')
 
         window.location.href = link
     }
@@ -112,6 +116,7 @@
     const onChangeMatchWord = (e) => {
         params = {
             ...params,
+            page: 0,
             match: e.target.value
         }
     }

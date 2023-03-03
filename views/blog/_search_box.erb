@@ -11,7 +11,7 @@
             <button
               class="dropdown-item"
               onclick="setParam('category','Desarrollo%20Profesional')"
-              href="<%="/#{session[:locale]}/blog2022?category=Desarrollo%20Profesional" %>">
+              href="<%="/#{session[:locale]}/blog?category=Desarrollo%20Profesional" %>">
               Desarrollo Profesional
             </button>
           </li>
@@ -19,7 +19,7 @@
             <button
               class="dropdown-item"
               onclick="setParam('category','Equipos%20y%20Organizaciones')"
-              href="<%="/#{session[:locale]}/blog2022?category=Equipos%20y%20Organizaciones" %>">
+              href="<%="/#{session[:locale]}/blog?category=Equipos%20y%20Organizaciones" %>">
               Equipos y Organizaciones
             </button>
           </li>
@@ -27,7 +27,7 @@
             <button
               class="dropdown-item"
               onclick="setParam('category','Diseño%20de%20Productos')"
-              href="<%="/#{session[:locale]}/blog2022?category=Diseño%20de%20Productos" %>">
+              href="<%="/#{session[:locale]}/blog?category=Diseño%20de%20Productos" %>">
               Diseño de Productos
             </button>
           </li>
@@ -35,7 +35,7 @@
             <button
               class="dropdown-item"
               onclick="setParam('category','Desarrollo%20de%20Software')"
-              href="<%="/#{session[:locale]}/blog2022?category=Desarrollo%20de%20Software" %>">
+              href="<%="/#{session[:locale]}/blog?category=Desarrollo%20de%20Software" %>">
               Desarrollo de Software
             </button>
           </li>
@@ -48,6 +48,7 @@
           class="form-control border-end-0 border"
           type="search"
           name="matchWord"
+          value="<%= @match || '' %>"
           onchange="onChangeMatchWord(event)"
           id="example-search-input" />
         <span class="input-group-append">
@@ -61,7 +62,7 @@
       </div>
     </div>
     <div class="offset-8 offset-md-9  offset-lg-0 col-lg-3 mt-3">
-      <a href="/blog2022" class="blue-link">
+      <a href="/blog" class="blue-link">
         limpiar filtros
       </a>
     </div>
