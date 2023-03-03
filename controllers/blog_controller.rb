@@ -44,11 +44,11 @@ get '/blog-preview' do
   blog_list Article.create_list_keventer(false)
 end
 
-get '/blog' do
-  @where = 'Blog'
-
-  blog_list Article.create_list_keventer(true)
-end
+# get '/blog' do
+#   @where = 'Blog'
+#
+#   blog_list Article.create_list_keventer(true)
+# end
 
 get '/blog/:slug' do |slug|
   @where = 'Blog'
@@ -58,12 +58,12 @@ rescue StandardError => e
   status 404
 end
 
-get '/blog2022' do
+get '/blog' do
   @meta_tags.set! title: t('meta_tag.blog.title'),
                   description: t('meta_tag.blog.description'),
                   canonical: "#{t('meta_tag.blog.canonical')}"
   @where = 'Blog'
-  session[:version] = 2022
+  # session[:version] = 2022
 
   @category = params[:category]
   @page_number = params[:page] ? params[:page].to_i : 0
@@ -86,11 +86,11 @@ def blog_one(article)
   @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
   @related_articles = get_related_articles(@article.category_name, @article.id , 3)
 
-  if session[:version] == 2022
+  # if session[:version] == 2022
     erb :'blog/landing_blog/index', layout: :'layout/layout2022'
-  else
-    erb :'blog/article', layout: :'layout/layout2022'
-  end
+  # else
+  #   erb :'blog/article', layout: :'layout/layout2022'
+  # end
 
 rescue StandardError => e
   puts e
