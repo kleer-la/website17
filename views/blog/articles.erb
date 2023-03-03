@@ -84,6 +84,7 @@
 
 
     const setParam = (param, value) => {
+        console.log("param " + param)
         params = {
             ...params,
             [param]: value
@@ -115,6 +116,7 @@
     const onChangeMatchWord = (e) => {
         params = {
             ...params,
+            page: 0,
             match: e.target.value
         }
     }
