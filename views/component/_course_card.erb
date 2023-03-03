@@ -1,7 +1,7 @@
 <div class="card course-card" style="width: 18rem;">
   <div class="course-card__image-container">
   <%#TODO: alt text%>
-    <a href="<%= @course[:url] %>">
+    <a href="<%=@course[:url] %>">
       <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...', has_webp: @course[:has_webp]}%>
     </a>
       <div class="course-card__flags">

@@ -1127,7 +1127,8 @@
     font-size: 16px;
     line-height: 26px; }
   #landing-blog-content-table li {
-    color: #333333 !important; }
+    color: #333333 !important;
+    font-weight: 400; }
 
 .fixed-table {
   position: fixed;
