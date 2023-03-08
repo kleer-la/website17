@@ -130,20 +130,27 @@ class Event
   end
 
   class << self
-    def create_keventer_json()
+    def create_keventer_json(today = Date.today)
       if defined? @@json_api
         json_api = @@json_api
       else
-        json_api = JsonAPI.new(KeventerConnector.new.events_xml_url(:json))
+        json_api = JsonAPI.new(KeventerConnector.new.events_json_url)
       end
-      Event.load_events(json_api.doc ) unless json_api.doc.nil?
+      Event.load_events(json_api.doc, today ) unless json_api.doc.nil?
     end
 
     def null_json_api(null_api)
       @@json_api = null_api
     end
-    def load_events(events)
-      events.reduce([]) { |ac, ev| ac << Event.new( EventType.new(nil, ev['event_type']) ).load_from_json(ev)}
+    def load_events(events, today)
+      events.reduce([]) do |ac, ev| 
+        e =  Event.new( EventType.new(nil, ev['event_type']) ).load_from_json(ev)
+        if e.date > today
+          ac << e
+        else
+          ac
+        end
+      end
     end
   end
 
