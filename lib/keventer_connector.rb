@@ -14,7 +14,11 @@ class KeventerConnector
   end
 
   def events_xml_url(format = :xml)
+    # raise 'deprecated'
     API_ROOT + API_EVENTS_PATH + ".#{format}"
+  end
+  def events_json_url
+    API_ROOT + API_EVENTS_PATH + '.json'
   end
 
   def kleerers_xml_url

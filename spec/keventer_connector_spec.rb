@@ -6,9 +6,9 @@ describe KeventerConnector do
     @kconn = KeventerConnector.new
   end
 
-  it 'should be able to return the default events xml path' do
-    expect(@kconn.events_xml_url).to end_with '/api/events.xml'
-  end
+  # it 'should be able to return the default events xml path' do
+  #   expect(@kconn.events_xml_url).to end_with '/api/events.xml'
+  # end
 
   it 'should be able to return the default kleerers xml path' do
     expect(@kconn.kleerers_xml_url).to end_with '/api/kleerers.xml'

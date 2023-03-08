@@ -51,7 +51,8 @@ get '/agenda' do
                   description: t('meta_tag.agenda.description'),
                   canonical: "#{t('meta_tag.agenda.canonical')}"
 
-  @events = KeventerReader.instance.catalog_events()
+  # @events = KeventerReader.instance.catalog_events()
+  @events = Event.create_keventer_json
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
