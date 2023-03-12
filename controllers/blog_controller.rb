@@ -1,8 +1,8 @@
 require './lib/json_api'
 require './lib/articles'
 
-def filter_articles(article_list ,category = nil, page_number = nil, match = nil, all = nil)
-  @filtered_list = article_list
+def filter_articles(article_list ,category = nil, page_number = nil, match = nil, all = nil, locale)
+  @filtered_list = article_list.select { |a| a.lang == locale}
 
   if category
     @filtered_list = @filtered_list.select{|e| e.category_name == category}
@@ -44,11 +44,6 @@ get '/blog-preview' do
   blog_list Article.create_list_keventer(false)
 end
 
-# get '/blog' do
-#   @where = 'Blog'
-#
-#   blog_list Article.create_list_keventer(true)
-# end
 
 get '/blog/:slug' do |slug|
   @where = 'Blog'
@@ -71,7 +66,9 @@ get '/blog' do
   @all= params[:all]
   @q4page = 0
 
-  @articles, @total = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all)
+  @categories = load_categories session[:locale]
+  
+  @articles, @total = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all, session[:locale])
 
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
