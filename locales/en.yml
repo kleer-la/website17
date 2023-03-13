@@ -16,6 +16,24 @@ en:
       close: Close
     texts:
       loading: loading...
+  blog:
+    title: Blog
+    subtitle: Discover more about the fascinating world of organizational agility
+    readit: Read more
+    back: << Back
+    home: Home
+    article: Post
+    search:
+    highlights: Destacados del mes
+    latest: The latest
+    show_more: Show more
+    search:
+      category: Categories
+      reset: Reset filters
+      result:
+        category_title: 'Category:'
+        text_title: 'Searching:'
+        empty: No result found
   mail_landing:
     title: IN-COMPANY
     alt: Take this trainig in your company
@@ -172,14 +190,6 @@ en:
         <ul> <li>With well-known professionals</li> <li>100% hands-on!</li>
         <li>Dynamic, fun and useful</li> <li>Certifications endorsed by Scrum
         Alliance</li> </ul>
-    community:
-      title: Community
-      subtitle: We actively support the Latin American communities
-      text: >-
-        We were born in the community and we always want to give back to the
-        community. We share knowledge, time, and experiences with professional,
-        educational, regional and all kind of communities.
-      agenda: Community Events
   popups:
     course:
       registration:
@@ -198,8 +208,6 @@ en:
     description: WE ORGANIZE BOTH PUBLIC AND PRIVATE COURSES
     incompany: WE CAN TEACH ALL OUR COURSES IN YOUR ORGANIZATION
     more_info: More Information
-  community:
-    title: Community Events
   coaching:
     title: Business Agility
     subtitle: >-
@@ -263,12 +271,6 @@ en:
     content: >-
       We dream of a world in which valuable information travels arround. Here,
       our five cents :)
-  blog:
-    readit: Read more
-    back: << Back
-    home: Home
-    article: Post
-
   recursos:
     title: Resources
     lista:

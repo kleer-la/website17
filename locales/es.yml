@@ -14,6 +14,23 @@ es:
       close: "Cerrar"
     texts:
       loading: "cargando..."
+  blog:
+    title: Blog
+    subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional
+    readit: "Continuar leyendo"
+    back: "<< Volver"
+    home: Inicio
+    article: Artículo
+    highlights: Destacados del mes
+    latest: Lo más nuevo
+    show_more: Ver más
+    search:
+      category: Categorías
+      reset: Limpiar filtros
+      result:
+        category_title: 'Categoría:'
+        text_title: 'Buscando:'
+        empty: No se encontraron resultados
   mail_landing:
     title: "IN-COMPANY"
     alt: "Consultanos para realizar este curso en tu empresa"
@@ -75,7 +92,6 @@ es:
       description: >-
         Experiencias sobre nuestro trabajo en notas de prensa y publicaciones en diversos medios digitales de Latinoamérica
       canonical: /prensa
-
 
   #   refactor
   slider:
@@ -191,8 +207,6 @@ es:
     description: "ORGANIZAMOS ENTRENAMIENTOS PÚBLICOS Y PRIVADOS."
     incompany: "PODEMOS REALIZAR LOS CURSOS EN TU EMPRESA"
     more_info: "Catálogo de cursos"
-  community:
-    title: "Eventos Comunitarios"
   coaching:
     title: "Agilidad Organizacional"
     subtitle: "Vayamos hacia una Agilidad Organizacional efectiva"
@@ -222,12 +236,6 @@ es:
     title: "Publicamos"
     description: "Compartimos conocimientosy experiencias. ¡Ayudanos a correr la voz!"
     content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
-  blog:
-    readit: "Continuar leyendo"
-    back: "<< Volver"
-    home: Inicio
-    article: Artículo
-
   recursos:
     title: "Recursos y materiales sobre agilidad"
     lista:

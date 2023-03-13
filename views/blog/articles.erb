@@ -1,7 +1,7 @@
 
   <div id="blog-feed-list" class="container mt-5 mb-5">
-    <% if @selected and @category.nil? and @match.nil? and @all.nil?%>
-      <h2 class="subtitle">Destacados del mes</h2>
+    <% if @selected && @category.nil? && @match.nil? && @all.nil? && session[:locale]!='en' %>
+      <h2 class="subtitle"><%=t("blog.highlights")%></h2>
       <div class="row">
         <% @selected.each do |article| %>
           <div class="col-md-6 col-lg-4">
@@ -12,19 +12,19 @@
     <% end %>
 
     <% if @category %>
-      <h2 class="subtitle">Categoría: <%= @category %></h2>
+      <h2 class="subtitle"><%=t("blog.search.result.category_title")%> <%= @category %></h2>
     <% end %>
     <% if @match %>
-      <h2 class="subtitle">Busqueda: "<%= @match %>"</h2>
+      <h2 class="subtitle"><%=t("blog.search.result.text_title")%> "<%= @match %>"</h2>
     <% end %>
 
     <%if @category.nil? and @match.nil? and @all.nil? %>
-      <h2 class="mt-4 mb-4 subtitle">Lo más nuevo</h2>
+      <h2 class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
     <% end %>
 
 
       <%if @articles.nil? || @articles == [] %>
-        <h2 class="m-5">No se encontraron resultados</h2>
+        <h2 class="m-5"><%=t("blog.search.result.empty")%></h2>
       <% else %>
       <div class="row mb-4">
         <div class="offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
@@ -66,7 +66,7 @@
     <%end%>
     <% if @all.nil? %>
       <div class="btn-center-container">
-        <a class="btn my-primary-button" onclick="setParam('all','true')">Ver todos</a>
+        <a class="btn my-primary-button" onclick="setParam('all','true')"><%=t("blog.show_more")%></a>
       </div>
     <% end %>
   </div>
@@ -119,6 +119,4 @@
             match: e.target.value
         }
     }
-
-
 </script>
