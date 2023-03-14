@@ -34,6 +34,11 @@ en:
         category_title: 'Category:'
         text_title: 'Searching:'
         empty: No result found
+    landing:
+      back: Back
+      published: Published
+      ToC: Table of contents
+      authors: 'Authors:'
   mail_landing:
     title: IN-COMPANY
     alt: Take this trainig in your company
