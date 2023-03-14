@@ -15,7 +15,6 @@ require './lib/keventer_reader'
 require './lib/twitter_card'
 require './lib/twitter_reader'
 
-require './lib/books'
 require './lib/resources'
 
 require './controllers/helper'
@@ -122,6 +121,7 @@ end
 #TODO redirect
 PERMANENT_REDIRECT = {
   'e-books' => 'es/publicamos',
+  'libros' => 'es/recursos',
   'posters/scrum' => 'es/recursos#poster-scrum',
   'posters/XP' => 'es/recursos#poster-XP',
   'posters/xp' => 'es/recursos#poster-XP',
@@ -172,14 +172,6 @@ get '/publicamos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Publicamos"
   erb :publicamos
-end
-
-get '/libros' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Libros"
-  @books = Books.new.load.all
-
-  erb :ebooks
 end
 
 get '/recursos' do
