@@ -30,8 +30,6 @@ require './controllers/mailer_controller'
 
 include MetaTags
 
-
-
 if production?
   require 'rack/ssl-enforcer'
   use Rack::SslEnforcer
@@ -96,14 +94,6 @@ get '/es' do
   redirect '/es/', 301 # permanent redirect
 end
 
-get '/acompanamos' do
-  redirect '/agilidad-organizacional', 301 # permanent redirect
-end
-
-get '/coaching' do
-  redirect '/agilidad-organizacional', 301 # permanent redirect
-end
-
 get '/agilidad-organizacional-old' do
   @active_tab_coaching = 'active'
   @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional',
@@ -129,8 +119,23 @@ get '/agilidad-organizacional/mejora-continua' do
   erb :mejora_continua
 end
 
-get '/e-books' do
-  redirect '/publicamos', 301 # permanent redirect
+#TODO redirect
+PERMANENT_REDIRECT = {
+  'e-books' => 'es/publicamos',
+  'posters/scrum' => 'es/recursos#poster-scrum',
+  'posters/XP' => 'es/recursos#poster-XP',
+  'posters/xp' => 'es/recursos#poster-XP',
+  'posters/manifesto' => 'es/recursos#poster-manifesto',
+  'preguntas-frecuentes/certified-scrum-master' => 'es/cursos/7-certified-scrum-master-csm', #  #faq / qna
+  'preguntas-frecuentes/certified-scrum-developer' => 'es/cursos/342-certified-scrum-developer-csd', #  #faq / qna
+  'acompanamos' => 'es/agilidad-organizacional',
+  'coaching' => 'es/agilidad-organizacional'
+}.freeze
+
+PERMANENT_REDIRECT.each do |uris|
+  get '/'+uris[0] do
+     redirect '/'+uris[1], 301
+  end
 end
 
 get '/facilitacion' do
@@ -210,21 +215,6 @@ get '/publicamos/mas-productivos' do
   erb :ebook_masproductivos_plain, layout: :layout_ebook_landing
 end
 
-get '/posters/:poster_code' do
-  poster_code = params[:poster_code].downcase
-
-  case poster_code
-  when 'scrum'
-    redirect '/recursos#poster-scrum', 301 # permanent redirect
-  when 'xp'
-    redirect '/recursos#poster-XP', 301 # permanent redirect
-  when 'manifesto'
-    redirect '/recursos#poster-manifesto', 301 # permanent redirect
-  else
-    not_found
-  end
-end
-
 get '/categoria/:category_codename' do
   @category = KeventerReader.instance.category(params[:category_codename])
   @active_tab_acompanamos = 'active'
@@ -250,26 +240,6 @@ end
 
 get '/aca-37yjeueh' do
   erb :aca_30dto, layout: false
-end
-
-get '/retro-cono-sur' do
-  erb :retro_cono_sur
-end
-
-['/preguntas-frecuentes/facturacion-pagos-internacionales',
- '/preguntas-frecuentes/facturacion-pagos-argentina',
- '/preguntas-frecuentes/facturacion-pagos-colombia'].each do |path|
-  get path do
-    redirect '/', 301 # permanent redirect
-  end
-end
-
-get '/preguntas-frecuentes/certified-scrum-master' do
-  redirect '/categoria/clientes/cursos/7-certified-scrum-master-(csm)', 301 # permanent redirect
-end
-
-get '/preguntas-frecuentes/certified-scrum-developer' do
-  redirect '/categoria/clientes/cursos/342-certified-scrum-developer-(csd)', 301 # permanent redirect
 end
 
 # LEGACY ====================
