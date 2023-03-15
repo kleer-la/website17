@@ -31,6 +31,11 @@ es:
         category_title: 'Categoría:'
         text_title: 'Buscando:'
         empty: No se encontraron resultados
+    landing:
+      back: Volver
+      published: Publicado el
+      ToC: Tabla de contenido
+      authors: 'Escrito por:'
   mail_landing:
     title: "IN-COMPANY"
     alt: "Consultanos para realizar este curso en tu empresa"
