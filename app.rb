@@ -15,9 +15,8 @@ require './lib/keventer_reader'
 require './lib/twitter_card'
 require './lib/twitter_reader'
 
-require './lib/resources'
-
 require './controllers/helper'
+require './controllers/resources_controller'
 require './controllers/blog_controller'
 require './controllers/press_controller'
 require './controllers/services_controller'
@@ -172,39 +171,6 @@ get '/publicamos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Publicamos"
   erb :publicamos
-end
-
-get '/recursos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set!  title: t('meta_tag.resources.title'),
-                   description: t('meta_tag.resources.description'),
-                   canonical: "#{t('meta_tag.resources.canonical')}"
-
-  @resources = Resources.new.load.all
-
-  erb :'resources_page/index', layout: :'layout/layout2022'
-end
-
-get '/recursos/primeros_pasos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Recursos"
-  erb :recursos_primeros_pasos
-end
-
-get '/publicamos/scrum' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Publicamos | Proyectos Ágiles con Scrum"
-  erb :ebook_scrum_plain, layout: :layout_ebook_landing
-end
-
-get '/mas-productivos' do
-  redirect '/publicamos/mas-productivos', 301 # permanent redirect
-end
-
-get '/publicamos/mas-productivos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Publicamos | Equipos más productivos"
-  erb :ebook_masproductivos_plain, layout: :layout_ebook_landing
 end
 
 get '/categoria/:category_codename' do

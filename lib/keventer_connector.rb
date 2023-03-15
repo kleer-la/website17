@@ -6,6 +6,7 @@ API_ROOT = KEVENTER_URL + '/api'.freeze
 API_EVENTS_PATH = '/events'.freeze
 API_KLEERERS_PATH = '/kleerers.xml'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
+API_RESOURCES_PATH = '/resources.json'.freeze
 
 API_MAILER = '/contact_us'.freeze
 class KeventerConnector
@@ -19,6 +20,9 @@ class KeventerConnector
   end
   def events_json_url
     API_ROOT + API_EVENTS_PATH + '.json'
+  end
+  def self.resources_url
+    KEVENTER_URL + API_RESOURCES_PATH
   end
 
   def kleerers_xml_url
