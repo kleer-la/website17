@@ -37,8 +37,8 @@ class Resource
     Resource.load_list(api_resp.doc)
   end
 
-  attr_accessor :id, :format, :slug, :lang,
-                :title, :description, :cover, :landing
+  attr_accessor :id, :format, :slug, :lang, :authors, :translators,
+                :title, :description, :cover, :landing, :share_link, :share_text, :tags, :comments
 
   def initialize(doc, lang)
     @id = doc['id']
@@ -50,20 +50,24 @@ class Resource
     @description = doc["description_#{lang}"]
     @cover = doc["cover_#{lang}"] || ''
     @landing = doc["landing_#{lang}"] || ''
+    @share_link = doc["share_link_#{lang}"] || ''
+    @share_text = doc["share_text_#{lang}"] || ''
+    @tags = doc["tags_#{lang}"] || ''
+    @comments = doc["comments_#{lang}"] || ''
 
+    @authors = init_trainers(doc, 'authors')
+    @translators = init_trainers(doc, 'translators')
+    init_dates(doc)
     # "categories_id": null,
     # "trainers_id": null,
-    # "share_link_es": "",
-    # "share_text_es": "",
-    # "tags_es": "",
-    # "comments_es": "",
-
-    # "share_link_en": "",
-    # "share_text_en": "",
-    # "tags_en": "",
-    # "comments_en": "",
-    # "created_at": "2023-03-15T21:44:17.244Z",
-    # "updated_at": "2023-03-15T21:44:17.244Z",    
+  end
+  def init_trainers(doc, role)
+    (doc[role]&.reduce([]) { |ac, t| ac << t['name'] }
+                )&.join(', ') || nil
+  end
+  def init_dates(doc)
+    @created_at = doc['created_at'] || ''
+    @updated_at = doc['updated_at'] || ''
   end
   def self.load_list(doc)
     doc.each_with_object([]) {|data, ac| 
