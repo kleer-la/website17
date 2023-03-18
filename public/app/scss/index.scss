@@ -368,10 +368,14 @@ footer {
   font-family: 'Mali', cursive;
   padding: 6px 15px;
   text-transform: uppercase;
+  margin: 0 10px;
 }
 
 .button-container{
-  width: 100%;
+  // width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
 }
 
 .share-buttons {
