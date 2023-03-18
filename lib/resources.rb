@@ -38,7 +38,7 @@ class Resource
   end
 
   attr_accessor :id, :format, :slug, :lang, :authors, :translators,
-                :title, :description, :cover, :landing, :share_link, :share_text, :tags, :comments
+                :title, :description, :cover, :landing, :getit, :share_link, :share_text, :tags, :comments
 
   def initialize(doc, lang)
     @id = doc['id']
@@ -50,6 +50,7 @@ class Resource
     @description = doc["description_#{lang}"]
     @cover = doc["cover_#{lang}"] || ''
     @landing = doc["landing_#{lang}"] || ''
+    @getit = doc["getit_#{lang}"] || ''
     @share_link = doc["share_link_#{lang}"] || ''
     @share_text = doc["share_text_#{lang}"] || ''
     @tags = doc["tags_#{lang}"] || ''

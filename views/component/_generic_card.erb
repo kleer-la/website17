@@ -39,7 +39,7 @@
             <%=
               external_url_anchor2("https://twitter.com/intent/tweet?#{@tw_share}",
                                   'class="share share-twitter" data-size="large" rel="me" rel="canonical"',
-                                  'SHARE TWITTER') unless @li_share.to_s == ''
+                                  'SHARE TWITTER') unless @tw_share.to_s == ''
 
             %>
             <%=
@@ -50,9 +50,15 @@
             &nbsp;
       </div>
     <%end %>
+    <% unless @landing.to_s == '' %>
     <div class="button-container text-center">
       <a href="<%= @landing %>" class="btn my-secondary-button generic-card__button">Más Info</a>
     </div>
-
+    <%end %>
+    <% unless @getit.to_s == '' %>
+    <div class="button-container text-center">
+      <a href="<%= @getit %>" class="btn my-secondary-button generic-card__button">Descargar</a>
+    </div>
+    <%end %>
   </div>
 </div>
