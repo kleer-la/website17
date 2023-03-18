@@ -61,9 +61,20 @@ class Resource
     # "categories_id": null,
     # "trainers_id": null,
   end
+  def show_one_trainer(trainer_data)
+    trainer = trainer_data['name']
+    landing = trainer_data['landing']
+    trainer = "<a href=\"#{landing}\">#{trainer}</a>" unless landing.to_s == ''
+    trainer
+  end
   def init_trainers(doc, role)
-    (doc[role]&.reduce([]) { |ac, t| ac << t['name'] }
-                )&.join(', ') || nil
+    list = (doc[role]&.reduce([]) { |ac, t| ac << show_one_trainer(t) }
+                )
+    unless list == []
+      list.join(', ')
+    else
+      nil
+    end
   end
   def init_dates(doc)
     @created_at = doc['created_at'] || ''
