@@ -39,6 +39,12 @@ en:
       published: Published
       ToC: Table of contents
       authors: 'Authors:'
+  resources:
+    title: Agile Resources and Materials
+    subtitle: >-
+      Our bit with downloadables that can help you in different moments of team collaboration: agile guides, letters, infographics, translations and more.
+    card:
+      more_info: More info
   mail_landing:
     title: IN-COMPANY
     alt: Take this trainig in your company
@@ -276,243 +282,6 @@ en:
     content: >-
       We dream of a world in which valuable information travels arround. Here,
       our five cents :)
-  recursos:
-    title: Resources
-    lista:
-      recurso1:
-        title: Guias Ágiles
-        description: >-
-          Un lugar, todas las guías: Técnicas y herramientas que potencian a
-          personas y equipos.
-        link: >-
-          <a href='http://guiasagiles.org/' class='btn btn-sm btn-info
-          btn-kleer'>Link</a>
-        info: >-
-          <a href='http://guiasagiles.org/' class='btn btn-sm btn-info
-          btn-kleer'>Más info</a>
-        tags: >-
-          <span>Guias agiles</span> <span>guias</span> <span>guide</span>
-          <span>agile</span> <span>cultura ágil</span>
-        autores: >-
-          <a href='https://twitter.com/pablitux'>Pablo Tortorella</a> - <a
-          href='https://twitter.com/hhiroshi'>Hiroshi Hiromoto</a>
-      recurso2:
-        title: DoD Kards
-        description: >-
-          Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre
-          todos los miembros de un equipo cuáles son los criterios a incluir en
-          su definición de terminado (DoD por su sigla en inglés: Definition of
-          Done).
-        link: >-
-          <a
-          href='https://drive.google.com/drive/folders/1kmJuVrZaQnYGi-PX-cbmdBsq26Li1OBi?usp=sharing'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a href='http://www.elproximopaso.net/2017/07/dod-kards.html'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        tags: >-
-          <span>DoD</span> <span>Juego</span> <span>Definition</span>
-          <span>done</span> <span>cards</span> <span>tarjetas</span>
-        autores: >-
-          <a href='https://about.me/cvelasquez'>Camilo Velásquez</a> y <a
-          href='https://about.me/thomas.wallet'>Thomas Wallet</a>
-        observaciones: >-
-          Versiones disponibles para imprimir y jugar online, en español,
-          francés e inglés.
-      recurso3:
-        title: Poster Agile Product Ownership
-        description: >-
-          Traducción al español de un poster de Mia Kolmodin sobre agilidad
-          empresarial y desarrollo ágil de productos digitales de alto valor e
-          impacto.
-        link: >-
-          <a
-          href='https://dandypeople.com/blog/translated-to-spanish-agile-product-ownership-in-a-nutshell-poster/'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a
-          href='https://pablolischinsky.wordpress.com/2017/06/05/poster-agile-product-ownership/'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        tags: >-
-          <span>agile</span> <span>product owner</span> <span>digital
-          product</span> <span>value</span> <span>product discovery</span>
-          <span>agile product development</span> <span>product management</span>
-          <span>leadership</span>
-        autores: <a href='https://www.linkedin.com/in/miakolmodin/'>Mia Kolmodin</a>
-        traductor: >-
-          <a href='https://www.linkedin.com/in/pablolischinsky'>Pablo
-          Lischinsky</a>
-      recurso4:
-        title: Coaching Canvas
-        description: >-
-          Para Coaches dispuestos a utilizar diferentes técnicas con sus
-          clientes, El Coaching Canvas es una herramienta de comunicación que te
-          ayudará a facilitar conversaciones de coaching.
-        link: >-
-          <a
-          href='http://coachingcanvas.org/es/download/the-coaching-canvas-wall-es.pdf'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a href='http://coachingcanvas.org/es/' class='btn btn-sm btn-info
-          btn-kleer'>Más info</a>
-        tags: >-
-          <span>coaching</span> <span>coachingcanvas</span>
-          <span>agilecoaching</span>
-        autores: <a href='https://twitter.com/martinalaimo?lang=es'>Martín Alaimo</a>
-      recurso5:
-        title: Canvas de Experimentos
-        description: >-
-          ¿Estás llevando adelante una iniciativa en un marco de exploración y
-          aprendizaje? Te invitamos a que tomes como base el Canvas de
-          Experimentos. Adaptalo según tu necesidad, usalo para diseñar
-          experimentos, y compartí tus experiencias!
-        link: >-
-          <a href='http://kl.la/canvas-de-experimentos' class='btn btn-sm
-          btn-info btn-kleer'>Link</a>
-        info: >-
-          <a href='http://guiasagiles.org/#Experimentos' class='btn btn-sm
-          btn-info btn-kleer'>Más info</a>
-        tags: >-
-          <span>experimentos</span> <span>exploración</span>
-          <span>aprendizaje</span> <span>canvas</span> <span>canvas de
-          experimentos</span>
-        autores: >-
-          <a href='https://twitter.com/rmonelos'>Rodrigo Monelos</a> y <a
-          href='https://twitter.com/pablitux'>Pablo Tortorella</a>
-      recurso6:
-        title: Slicing Cards
-        description: >-
-          Las cartas de Slicing te ayudarán a encontrar nuevos criterios para
-          subdividir las Historias de Usuario  grandes (o épicas) y complejas en
-          otras más pequeñas y simples.
-        link: >-
-          <a
-          href='https://docs.google.com/document/d/1UbUrXm08OlibJLJUe8KTeTWoWgxSSMlYIfcEsPMlmzg/edit?usp=sharing'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a
-          href='https://pablolischinsky.wordpress.com/2020/04/01/cartas-de-slicing/'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        tags: >-
-          <span>Slicing</span> <span>UserStories</span> <span>Scrum</span>
-          <span>Agile</span> <span>ProductOwner</span>
-        autores: >-
-          <a href='https://twitter.com/dbuo'>Damián Buonamico</a>, <a
-          href='https://twitter.com/rcolusso'>Ricardo Colusso</a> y <a
-          href='https://twitter.com/pablolis'>Pablo Lischinsky</a>
-      recurso7:
-        title: Barómetro de Equipo
-        description: ' El Barómetro de Equipo es una herramienta poderosa para ayudar a un equipo de trabajo a elevar su nivel de conciencia como tal y evaluarse frente a características de los Equipos de Alto Rendimiento.'
-        link: >-
-          <a
-          href='https://www.dropbox.com/s/qewn1qp59h9nj7k/Team-Barometer-Esp-V2.pdf?dl=0'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a
-          href='http://www.caminoagil.com/2016/11/02/barometro-de-equipo-descarga-las-tarjetas-en-espanol/'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        tags: >-
-          <span>barómetro</span> <span>equipo</span> <span>scrum</span>
-          <span>sprint</span>
-        autores: <a href='https://twitter.com/dbuo'>Damián Buonamico</a>
-      recurso8:
-        title: Poster de Scrum
-        description: >-
-          Lámina con el framework de Scrum detallando sus roles, ceremonias y
-          valores.
-        link: >-
-          <a
-          href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a
-          href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        tags: <span>Scrum</span> <span>ScrumMaster</span> <span>ProductOwner</span>
-        autores: <a href='https://twitter.com/martinalaimo'>Martín Alaimo</a>
-      recurso9:
-        title: Extreme Programming
-        description: >-
-          Lámina con la prácticas principales de eXtreme Programming, el marco
-          de trabajo para desarrollo de software que nació en paralelo con Scrum
-          y que actualmente sigue siendo el complemento ideal que promueve la
-          excelencia técnica en equipos de desarrollo de software.
-        link: >-
-          <a
-          href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf'
-          class='btn btn-sm btn-info btn-kleer'>Link</a>
-        info: >-
-          <a
-          href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/XP.pdf'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        tags: >-
-          <span>XP</span> <span>extreme programming</span> <span>pair
-          programming</span><span>scrum</span> <span>desarrollo de
-          software</span>
-        autores: <a href='https://twitter.com/MartinSalias'>Martín Salías</a>
-      recurso10:
-        title: DoR Kards
-        description: >-
-          Es un juego de cartas cuyo objetivo es reflexionar y consensuar entre
-          todos los miembros de un equipo cuáles son los criterios a incluir en
-          su definición de listo (DoR por su sigla en ingles: Definition of
-          Ready).
-        info: >-
-          <a href='http://www.elproximopaso.net/2018/12/dor-kards.html'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        autores: <a href='https://about.me/thomas.wallet'>Thomas Wallet</a>
-        observaciones: >-
-          Versiones disponibles para imprimir y jugar online, en español,
-          francés e inglés.
-      recurso11:
-        title: Retromat
-        description: >-
-          Traducción al español de Retromat, la famosa herramienta para ayudar a
-          equipos, Scrum Masters y otras personas a diseñar retrospectivas
-          inspiradoras y variadas, en entornos ágiles o no.
-        info: >-
-          <a
-          href='https://www.elproximopaso.net/2014/09/retr-o-mat-en-espanol.html'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        autores: >-
-          <a href='https://finding-marbles.com/about/' target='_blank'>Corinna
-          Baldauf</a>
-        traductor: >-
-          <a href='https://about.me/thomas.wallet' target='_blank'>Thomas
-          Wallet</a> y otros
-      recurso12:
-        title: El cambio de liderazgo
-        description: >-
-          Algunos de los temas tratados en el póster son: el cambio de liderazgo
-          y de la gerencia para apalancar las transformaciones ágiles, el
-          mindset ágil y contexto organizacional que incluye el Marco Cynefin,
-          el estilo de liderazgo ágil y organizaciones que aprenden en contextos
-          VUCA.
-        info: >-
-          <a
-          href='https://pablolischinsky.wordpress.com/2020/10/11/7-1-tips-para-el-liderazgo-agil-transformacional/'
-          class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        autores: >-
-          <a href='https://www.linkedin.com/in/miakolmodin/' target='_blank'>Mia
-          Kolmodin</a> y <a href='https://www.linkedin.com/in/btjsandberg/'
-          target='_blank'>Björn Sandberg</a>
-        traductor: >-
-          <a href='https://www.linkedin.com/in/pablolischinsky/'
-          target='_blank'>Pablo Lischinsky</a>
-      recurso13:
-        title: KanbanCakes
-        description: >-
-          #KanbanCakes es una dinámica grupal para aprender Kanban de forma
-          divertida. Tanto presencial como online. ¡Todo lo que necesitas para
-          facilitarlo está aquí!
-        observaciones: <a href='https://youtu.be/ctqJyrcfXr4' target='_blank'>Ver video</a>
-        info: >-
-          <a
-          href='https://medium.com/kleer/kanbancakes-c%C3%B3mo-para-explicar-kanban-de-forma-pr%C3%A1ctica-online-y-con-video-explicativo-50a1e2ca1a8e'
-          target='_blank' class='btn btn-sm btn-info btn-kleer'>Más info</a>
-        autores: >-
-          <a href='https://twitter.com/dbuo' target='_blank'>Damián
-          Buonamico</a>
   facilitation:
     title: Facilitation
     contact: ARE YOU READY TO LEAD CHANGE?
@@ -1843,11 +1612,6 @@ en:
     program: Program
     testimonies: Testimonies from participants
     faq: Frecuently ask questions
-
-  resources:
-    title: Agile Resources and Materials
-    subtitle: >-
-      Our bit with downloadables that can help you in different moments of team collaboration: agile guides, letters, infographics, translations and more.
   ebooks:
     title: ''
     subtitle: ''
