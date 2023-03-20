@@ -3,7 +3,7 @@
     <%
       locale = session[:locale].to_sym
       @resources.filter { |r| r.lang == locale}.each do |resource|
-        @id = resource.id
+        @id = resource.slug
         @image_cover = resource.cover
         @landing = resource.landing
         @getit = resource.getit
