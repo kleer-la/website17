@@ -1,7 +1,7 @@
 require './lib/resources'
 
 
-get '/recursos2022' do
+get '/recursos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set!  title: t('meta_tag.resources.title'),
                    description: t('meta_tag.resources.description'),
@@ -12,7 +12,7 @@ get '/recursos2022' do
   erb :'resources/index', layout: :'layout/layout2022'
 end
 
-get '/recursos' do
+get '/recursos_old' do
   @active_tab_publicamos = 'active'
   @meta_tags.set!  title: t('meta_tag.resources.title'),
                    description: t('meta_tag.resources.description'),
