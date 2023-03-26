@@ -1,6 +1,6 @@
 class BlogHomeData
   def initialize(articles, locale)
-    @_filtered = @articles = articles.select { |a| a.lang == locale}
+    @_filtered = @articles = articles.select { |a| a.lang == locale}.sort_by(&:created_at).reverse
     @locale = locale
     @_selected = nil
   end
