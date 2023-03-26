@@ -17,7 +17,7 @@ Scenario: unpublished Article dont shown at list page
 
 #  pagination behavior
 # - start as (not 'all') -> showing selected list and blog list w/o selected / item per page = 6 / show 'Show more' button
-# - next / previous page when (not 'all') ramain in (not 'all')
+# - (deleted) next / previous page when (not 'all') ramain in (not 'all')
 # - press 'Show more' button -> switch to 'all' 
 # - 'all' -> show one list including selected / item per page = 9 / don't show 'Show more' button
 # - English -> switch to 'all' 

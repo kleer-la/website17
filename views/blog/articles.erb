@@ -12,7 +12,7 @@
     if @articles.empty? %>
       <h2 class="m-5"><%=t("blog.search.result.empty")%></h2>
     <% else %>
-      <%= erb :'blog/paging'%>
+      <%= erb :'blog/paging' unless @all.nil? %>
     <div class="row">
       <% @articles.each do |article|%>
         <div class="col-md-6 col-lg-4">
@@ -20,7 +20,7 @@
         </div>
       <%end%>
     </div>
-      <%= erb :'blog/paging'%>
+      <%= erb :'blog/paging' unless @all.nil? %>
     <img
       class="desktop_figure blog-feed-list__red-triangle"
       src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
