@@ -1,0 +1,10 @@
+<% if @blog_home_data.selected? %>
+  <h2 class="subtitle"><%=t("blog.highlights")%></h2>
+  <div class="row">
+    <% @blog_home_data.selected.each do |article| %>
+      <div class="col-md-6 col-lg-4">
+        <%= erb :'component/cards/_article_card', locals: {article: article} %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
