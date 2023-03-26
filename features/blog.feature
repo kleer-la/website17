@@ -11,12 +11,12 @@ Scenario: unpublished Article dont shown at list page
   Then I should not see "Lorem ipsum"
 
 
-# filter behaviour 
+# filtering behaviour 
 # - filter text on titles
 # - if filtering, show 'all' (including selected)
 
 #  pagination behavior
-# - start as (not 'all') -> showing selected list and blog list w/o selected / item per page = 4 / show 'Show more' button
+# - start as (not 'all') -> showing selected list and blog list w/o selected / item per page = 6 / show 'Show more' button
 # - next / previous page when (not 'all') ramain in (not 'all')
 # - press 'Show more' button -> switch to 'all' 
 # - 'all' -> show one list including selected / item per page = 9 / don't show 'Show more' button
