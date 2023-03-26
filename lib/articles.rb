@@ -1,4 +1,5 @@
 require './lib/keventer_connector'
+require './lib/trainer'
 
 class Article
   @next_null = false

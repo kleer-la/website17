@@ -1,0 +1,12 @@
+<div class="row mb-4">
+  <div class="offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
+    <%= erb :'component/_pager',
+            locals: {intern_text: "#{@pager.from_item}-#{@pager.to_item} de #{@pager.total}",
+                      left_action: "setParam('page','#{@pager.page_number-1}')",
+                      right_action:"setParam('page','#{@pager.page_number+1}')",
+                      is_link: false,
+                      enable_left: !@pager.first?,
+                      enable_right: !@pager.last? }
+    %>
+  </div>
+</div>

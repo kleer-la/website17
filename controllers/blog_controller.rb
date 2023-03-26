@@ -1,24 +1,8 @@
 require './lib/json_api'
 require './lib/articles'
-
-def filter_articles(article_list ,category = nil, page_number = nil, match = nil, all = nil, locale)
-  @filtered_list = article_list.select { |a| a.lang == locale}
-
-  if category
-    @filtered_list = @filtered_list.select{|e| e.category_name == category}
-  end
-  if match
-    @filtered_list = @filtered_list.select{|e| e.title.downcase.include?(match.downcase) }
-  end
-
-  total = @filtered_list.length
-
-  @selected = article_list.select{|e| e.selected}
-  @q4page = all ? 9 : 6
-  @filtered_list = @filtered_list[(page_number * @q4page)...(page_number * @q4page)+@q4page]
-
-  return @filtered_list, total
-end
+ 
+require './controllers/blog_home_data'
+require './controllers/pager_helper'
 
 get '/blog/' do
   redirect '/blog', 301 # permanent redirect
@@ -44,7 +28,6 @@ get '/blog-preview' do
   blog_list Article.create_list_keventer(false)
 end
 
-
 get '/blog/:slug' do |slug|
   @where = 'Blog'
   blog_one Article.create_one_keventer(slug)
@@ -58,17 +41,24 @@ get '/blog' do
                   description: t('meta_tag.blog.description'),
                   canonical: "#{t('meta_tag.blog.canonical')}"
   @where = 'Blog'
-  # session[:version] = 2022
 
   @category = params[:category]
-  @page_number = params[:page] ? params[:page].to_i : 0
   @match = params[:match]
   @all= params[:all]
-  @q4page = 0
+  @all= true if session[:locale] == 'en'  # always 'all' for English
 
   @categories = load_categories session[:locale]
   
-  @articles, @total = filter_articles(Article.create_list_keventer(true), @category, @page_number, @match, @all, session[:locale])
+  articles = Article.create_list_keventer(true)
+
+  @blog_home_data = BlogHomeData.new(articles, session[:locale])
+  @blog_home_data.filter_by_category(@category).filter_by_text(@match)
+  
+  @pager = Pager.new(
+    @all ? 9 : 6,
+    @blog_home_data.filtered(@all).count
+  ).on_page(params[:page] ? params[:page].to_i : 0)
+  @articles = @pager.filter(@blog_home_data.filtered(@all) )
 
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
@@ -83,11 +73,7 @@ def blog_one(article)
   @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
   @related_articles = get_related_articles(@article.category_name, @article.id , 3)
 
-  # if session[:version] == 2022
     erb :'blog/landing_blog/index', layout: :'layout/layout2022'
-  # else
-  #   erb :'blog/article', layout: :'layout/layout2022'
-  # end
 
 rescue StandardError => e
   puts e
