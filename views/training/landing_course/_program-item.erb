@@ -1,8 +1,20 @@
 <%
-  if subitem.tr("\n", "") != '' && subitem != "" && subitem != " \n"
+    if subitem.nil? || subitem.tr("\n", "") == ''
+    # subitem.tr("\n", "") != '' && subitem != "" && subitem != " \n"
 
 %>
+  <div
+    class="course-program__item-nocolaps"
+    data-bs-toggle="collapse"
+    href="#item<%=index %>"
+    role="button"
+    aria-expanded="false"
+    aria-controls="item<%=index %>">
 
+    <%= item %>
+  </div>
+
+<%else%>
   <a
     class="course-program__item"
     data-bs-toggle="collapse"
@@ -16,17 +28,6 @@
   </a>
   <div class="collapse course-program__specific-item" id="item<%=index %>">
     <%= subitem %>
-  </div>
-<%else%>
-  <div
-    class="course-program__item-nocolaps"
-    data-bs-toggle="collapse"
-    href="#item<%=index %>"
-    role="button"
-    aria-expanded="false"
-    aria-controls="item<%=index %>">
-
-    <%= item %>
   </div>
 <%end%>
 
