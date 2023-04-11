@@ -642,6 +642,13 @@ $white: #FFFFFF;
   justify-content: space-between;
 }
 
+.course-program__item-nocolaps{
+  width: 100%;
+  border-left: $primary-yellow solid 3px;
+  margin: 14px 0 14px 0;
+  padding: 10px 10px 10px 20px;
+}
+
 .course-program__specific-item{
   padding: 20px;
 
