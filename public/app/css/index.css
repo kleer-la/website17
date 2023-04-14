@@ -645,7 +645,25 @@
 
 .course-trainers__container {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  overflow-x: auto;
+  padding: 30px;
+  width: 125%; }
+
+.course-trainers__container::-webkit-scrollbar-thumb {
+  margin: 5px;
+  border-radius: 1rem;
+  background-color: #00BBEE; }
+
+.course-trainers__container::-webkit-scrollbar-track {
+  background: #E8F8FD; }
+
+.course-trainers__container::-webkit-scrollbar {
+  padding: 10px;
+  height: 5px; }
 
 .course-trainers__individual-container {
   background-color: #E8F8FD;
@@ -655,7 +673,7 @@
   height: auto;
   max-height: 500px;
   max-width: 90vw;
-  min-width: 300px;
+  min-width: 400px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -804,11 +822,14 @@
 
   .course-trainers__container {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 30px 0;
+    width: 100%; }
 
   .course-trainers__individual-container {
     margin: 10px !important;
-    padding: 30px !important; } }
+    padding: 30px !important;
+    width: 100%; } }
 .duration-mobile {
   display: none; }
 
@@ -1064,7 +1085,7 @@
   .landing-blog-hero__img-container .principal {
     width: 100%;
     max-height: 600px;
-    max-width: 1000px;
+    max-width: 1400px;
     object-fit: cover;
     border-radius: 20px; }
 
@@ -1162,7 +1183,6 @@
 
 @media screen and (max-width: 992px) {
   .blog__body {
-    margin: 30px !important;
     width: 90% !important; }
 
   #landing-blog-content-table {
@@ -1178,7 +1198,6 @@
     margin-top: 0 !important; } }
 @media screen and (max-width: 420px) {
   .blog__body {
-    margin: 30px !important;
     width: 80% !important; } }
 .header-prensa {
   background: url(../img/prensa.jpg);
