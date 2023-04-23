@@ -1,6 +1,9 @@
 <%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
 
-<article class="card blog-card mb-5 ms-auto me-auto" style="width: 22rem;">
+<article
+  id="card--<%="#{format_categories([article.category_name])}#{article.slug}"%>"
+  class="card blog-card mb-5 ms-auto me-auto"
+  style="width: 22rem;">
   <div class="image-container">
     <a href="<%= where_uri + article.slug%>">
       <img src="<%= article.cover %>" class="card-img-top" alt="...">
