@@ -24,11 +24,12 @@
       <div class="input-group">
         <input
           class="form-control border-end-0 border"
-          type="search"
+          type="input"
           name="matchWord"
           value="<%= @match || '' %>"
-          onchange="onChangeMatchWord(event)"
+          oninput="filterByText(event)"
           id="example-search-input" />
+        <!--          onchange="onChangeMatchWord(event)"-->
         <span class="input-group-append">
           <button
             class="btn btn-outline-secondary bg-white border-start-0 border ms-n5"

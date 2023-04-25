@@ -1,14 +1,33 @@
-<a
-  class="course-program__item"
-  data-bs-toggle="collapse"
-  href="#item<%=index %>"
-  role="button"
-  aria-expanded="false"
-  aria-controls="item<%=index %>">
+<%
+    if subitem.nil? || subitem.tr("\n", "") == ''
+    # subitem.tr("\n", "") != '' && subitem != "" && subitem != " \n"
 
-  <%= item %>
-  <img src="/app/img/icons/arrow.svg"/>
-</a>
-<div class="collapse course-program__specific-item" id="item<%=index %>">
-  <%= subitem %>
-</div>
+%>
+  <div
+    class="course-program__item-nocolaps"
+    data-bs-toggle="collapse"
+    href="#item<%=index %>"
+    role="button"
+    aria-expanded="false"
+    aria-controls="item<%=index %>">
+
+    <%= item %>
+  </div>
+
+<%else%>
+  <a
+    class="course-program__item"
+    data-bs-toggle="collapse"
+    href="#item<%=index %>"
+    role="button"
+    aria-expanded="false"
+    aria-controls="item<%=index %>">
+
+    <%= item %>
+    <img src="/app/img/icons/arrow.svg"/>
+  </a>
+  <div class="collapse course-program__specific-item" id="item<%=index %>">
+    <%= subitem %>
+  </div>
+<%end%>
+
