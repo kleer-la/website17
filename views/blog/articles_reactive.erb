@@ -1,0 +1,45 @@
+<section id="selected-articles">
+  <h2 class="subtitle"><%=t("blog.highlights")%></h2>
+  <div class="row">
+    <%# @blog_home_data.selected.each do |article| %>
+<!--      <div class="col-md-6 col-lg-4">-->
+        <%#= erb :'component/cards/_article_card', locals: {article: article} %>
+<!--      </div>-->
+    <%# end %>
+  </div>
+</section>
+<section id="articles">
+  <h2 id="selected-articles__title" class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
+
+  <% @articles = @articles || []
+     if @articles.empty? %>
+
+    <h2 class="m-5"><%=t("blog.search.result.empty")%></h2>
+
+  <% else %>
+
+    <%= erb :'blog/paging' unless @all.nil? %>
+    <div id="article-list" class="row">
+      <% @articles.each do |article|%>
+        <div class="col-md-6 col-lg-4">
+          <%= erb :'component/cards/_article_card', locals: {article: article} %>
+        </div>
+      <%end%>
+    </div>
+    <%= erb :'blog/paging' unless @all.nil? %>
+    <img
+      class="desktop_figure blog-feed-list__red-triangle"
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
+      alt="decoration figure"
+      />
+  <%end%>
+    <div class="btn-center-container">
+      <button class="btn my-primary-button" onclick="showMore()"><%=t("blog.show_more")%></button>
+
+      <!--      <a class="btn my-primary-button" onclick="setParam('all','true')"><%#=t("blog.show_more")%></a>-->
+    </div>
+</section>
+
+<% if session[:locale]  == 'es'%>
+  <script src="/js/blog_filter.js"> </script>
+<% end %>
