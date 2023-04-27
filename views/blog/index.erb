@@ -6,8 +6,10 @@
   <div class="container">
     <div class="row">
       <div id="blog-feed-list" class="container mt-5 mb-5">
-        <%=erb :'blog/selected_articles' if unfiltered%>
-        <%=erb :'blog/articles' %>
+        <%#=erb :'blog/selected_articles' if unfiltered%>
+        <%#=erb :'blog/articles' %>
+
+        <%= erb :'blog/articles_reactive' %>
       </div>
     </div>
   </div>
