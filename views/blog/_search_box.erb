@@ -2,17 +2,23 @@
   <div class="row search-box__container">
     <div class="col-12 col-lg-2">
       <div class="dropdown mb-2">
-        <a class="btn dropdown-toggle ps-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a
+          class="btn dropdown-toggle ps-0"
+          href="#" role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          id="blog-feed__category-drop"
+        >
           <%=t("blog.search.category")%>
         </a>
         <ul class="dropdown-menu">
-          <%@categories&.each do |category| 
+          <%@categories&.each do |category|
+            #TODO: delete
             url = ERB::Util.url_encode(category.name)%>
             <li>
               <button
                 class="dropdown-item"
-                onclick="setParam('category','<%=url%>')"
-                href="<%="/#{session[:locale]}/blog?category=#{url}" %>">
+                onclick="filterByCategory('<%=category.name%>')">
                 <%=category.name%>
               </button>
             </li>
@@ -41,9 +47,9 @@
       </div>
     </div>
     <div class="offset-8 offset-md-9  offset-lg-0 col-lg-3 mt-3">
-      <a href="<%="/#{session[:locale]}"%>/blog" class="blue-link">
+      <button onclick="setInitialPage()" class="blue-link">
         <%=t("blog.search.reset")%>
-      </a>
+      </button>
     </div>
   </div>
 </div>

@@ -1,13 +1,8 @@
 <section id="selected-articles">
   <h2 class="subtitle"><%=t("blog.highlights")%></h2>
-  <div class="row">
-    <%# @blog_home_data.selected.each do |article| %>
-<!--      <div class="col-md-6 col-lg-4">-->
-        <%#= erb :'component/cards/_article_card', locals: {article: article} %>
-<!--      </div>-->
-    <%# end %>
-  </div>
+  <div class="row"></div>
 </section>
+
 <section id="articles">
   <h2 id="selected-articles__title" class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
 
@@ -18,7 +13,12 @@
 
   <% else %>
 
-    <%= erb :'blog/paging' unless @all.nil? %>
+    <div class="row mb-4">
+      <div class="paging-container offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
+        <%= erb :'component/_reactive_pager' %>
+      </div>
+    </div>
+
     <div id="article-list" class="row">
       <% @articles.each do |article|%>
         <div class="col-md-6 col-lg-4">
@@ -26,7 +26,13 @@
         </div>
       <%end%>
     </div>
-    <%= erb :'blog/paging' unless @all.nil? %>
+
+    <div class="row mb-4">
+      <div class="paging-container offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
+        <%= erb :'component/_reactive_pager' %>
+      </div>
+    </div>
+
     <img
       class="desktop_figure blog-feed-list__red-triangle"
       src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
@@ -35,8 +41,6 @@
   <%end%>
     <div class="btn-center-container">
       <button class="btn my-primary-button" onclick="showMore()"><%=t("blog.show_more")%></button>
-
-      <!--      <a class="btn my-primary-button" onclick="setParam('all','true')"><%#=t("blog.show_more")%></a>-->
     </div>
 </section>
 

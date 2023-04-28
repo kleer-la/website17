@@ -1,23 +1,42 @@
 const DOMarticles = Array.from(document.getElementById('article-list').children)
 const DOMarticlesSection = document.getElementById('articles')
-const selectedArticlesSection = document.getElementById('selected-articles')
+const DOMselectedArticlesSection = document.getElementById('selected-articles')
 const DOMtitle = document.getElementById('selected-articles__title')
-let articles = []
+const DOMpagingContainer = Array.from(document.getElementsByClassName('paging-container'))
+const DOMcategoryDrop = document.getElementById('blog-feed__category-drop')
 let selectedArticles = []
 
 const itemsPerPage = 9
 const itemsInInitialPage = 6
 let page = 1
+let categoryInFilter = ''
+let textInFilter = ''
 
 const setInitialPage = () => {
     setPagination(1, itemsInInitialPage + selectedArticles.length)
     showSelectedArticles(true)
+    showPagingComponent(false)
+    textInFilter = ''
+    categoryInFilter = ''
 }
 
 const showMore = () => {
     setPagination(1, itemsPerPage)
     showSelectedArticles(false)
+    showPagingComponent(true)
     DOMtitle.classList.add('hidden-element')
+}
+
+const showPagingComponent = (show) => {
+    if(show){
+        DOMpagingContainer.forEach(element => {
+            element.classList.remove('hidden-element')
+        })
+    }else{
+        DOMpagingContainer.forEach(element => {
+            element.classList.add('hidden-element')
+        })
+    }
 }
 
 const setPagination = (numberPage, items) => {
@@ -33,21 +52,40 @@ const setPagination = (numberPage, items) => {
     })
 }
 
-const showSelectedArticles = (show) => {
-    if(selectedArticles.length > 0 && show){
-        selectedArticlesSection.classList.remove('hidden-element')
-        selectedArticles.forEach(article => {
-            selectedArticlesSection.children[1].appendChild(article)
-        })
-    }else{
-        selectedArticles.forEach(article => {
-            DOMarticlesSection.children[1].prepend(article)
-        })
-        selectedArticlesSection.classList.add('hidden-element')
+const nextPage = () => {
+    const lastPage = Math.ceil(articles.length / itemsPerPage)
+    if(page === lastPage){
+        //disable next button
+    }else {
+        page++
+        setPagination(page, itemsPerPage)
     }
 }
 
-const setArticles = () => {
+const previousPage = () => {
+    if(page > 1) {
+        page--
+        setPagination(page, itemsPerPage)
+    }else {
+        //enable previous button
+    }
+}
+
+const showSelectedArticles = (show) => {
+    if(selectedArticles.length > 0 && show){
+        DOMselectedArticlesSection.classList.remove('hidden-element')
+        selectedArticles.forEach(article => {
+            DOMselectedArticlesSection.children[1].appendChild(article)
+        })
+    }else{
+        selectedArticles.forEach(article => {
+            DOMarticlesSection.children[2].prepend(article)
+        })
+        DOMselectedArticlesSection.classList.add('hidden-element')
+    }
+}
+
+const buildArticlesFromDOM = () => {
     articles = DOMarticles.map((element) => {
         const cardElement = element.children[0]
         let idSplitted = cardElement.id.split('--')
@@ -73,43 +111,75 @@ const setArticles = () => {
 }
 
 const filterByCategory = (category) => {
-    if(category){
-        articles.forEach(article => {
-            if(article.category === category){
-                article.card.classList.remove('hidden-element')
-            }else{
-                article.card.classList.add('hidden-element')
-            }
-        })
-    }else{
-        articles.forEach(article => {
-            article.card.classList.remove('hidden-element')
-        })
-    }
+    categoryInFilter = category
+    showSelectedArticles(false)
+    filter()
+    // if(category){
+    //     DOMcategoryDrop.innerText = category
+    //     articles.forEach(article => {
+    //         if(article.category === category){
+    //             article.card.classList.remove('hidden-element')
+    //         }else{
+    //             article.card.classList.add('hidden-element')
+    //         }
+    //     })
+    // }else{
+    //     DOMcategoryDrop.value = 'Categorías'
+    //     articles.forEach(article => {
+    //         article.card.classList.remove('hidden-element')
+    //     })
+    // }
 }
 
 const filterByText = (event) => {
+    showSelectedArticles(false)
     const text = event ? event.target.value : ''
-    if(text){
-        articles.forEach(article => {
-            if(article.title.toLowerCase().includes(text.toLowerCase()) || article.description.toLowerCase().includes(text.toLowerCase())){
+    textInFilter = text
+    filter()
+    // if(text){
+    //     articles.forEach(article => {
+    //         if(article.title.toLowerCase().includes(text.toLowerCase()) || article.description.toLowerCase().includes(text.toLowerCase())){
+    //             article.card.classList.remove('hidden-element')
+    //         }else{
+    //             article.card.classList.add('hidden-element')
+    //         }
+    //     })
+    // }else{
+    //     articles.forEach(article => {
+    //         article.card.classList.remove('hidden-element')
+    //     })
+    // }
+}
+
+const filter = () => {
+    articles.forEach(article => {
+        if(categoryInFilter){
+            if(article.category === categoryInFilter &&
+                (article.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
+                    article.description.toLowerCase().includes(textInFilter.toLowerCase()))){
                 article.card.classList.remove('hidden-element')
             }else{
                 article.card.classList.add('hidden-element')
             }
-        })
-    }else{
-        articles.forEach(article => {
-            article.card.classList.remove('hidden-element')
-        })
-    }
+        }else{
+            if(article.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
+                    article.description.toLowerCase().includes(textInFilter.toLowerCase())){
+
+                article.card.classList.remove('hidden-element')
+            }else{
+                article.card.classList.add('hidden-element')
+            }
+        }
+    })
 }
 
-const filter = () => {
-    filterByCategory()
-    filterByText()
-}
+//Impplementar en botones de categoria el action--/
+//Implementar paginado a los botones con su inabilitacion
+//implementar limpiar filtros
+//Cambio de titulos
+//implementar set params en la url
 
-setArticles()
+
+buildArticlesFromDOM()
 setInitialPage()
 

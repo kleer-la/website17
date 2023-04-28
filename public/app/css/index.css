@@ -1588,6 +1588,8 @@ img {
 
 .blue-link {
   color: #68CEF2 !important;
+  background-color: #FFFFFF !important;
+  border: none !important;
   font-weight: bold !important; }
 
 @media screen and (max-width: 992px) {
