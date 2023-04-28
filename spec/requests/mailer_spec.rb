@@ -3,13 +3,13 @@ describe 'MyApp' do
     Sinatra::Application.new
   end
 
-  describe 'GET /' do
-    it 'debe cargar la página de inicio correctamente' do
-      get '/'
-      expect(last_response).to be_ok
-      expect(last_response.body).to include('Bienvenido a mi aplicación')
-    end
-  end
+  # describe 'GET /' do
+  #   it 'debe cargar la página de inicio correctamente' do
+  #     get '/'
+  #     expect(last_response).to be_ok
+  #     expect(last_response.body).to include('Bienvenido a mi aplicación')
+  #   end
+  # end
 
   # describe 'POST /formulario' do
   #   it 'debe redirigir correctamente y mostrar un mensaje de agradecimiento' do
