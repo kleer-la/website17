@@ -11,6 +11,7 @@ const itemsInInitialPage = 6
 let page = 1
 let categoryInFilter = ''
 let textInFilter = ''
+let filteredArticlesCount = 0
 
 const setInitialPage = () => {
     setPagination(1, itemsInInitialPage + selectedArticles.length)
@@ -139,7 +140,9 @@ const filter = () => {
             if(article.category === categoryInFilter &&
                 (article.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
                     article.description.toLowerCase().includes(textInFilter.toLowerCase()))){
+
                 article.card.classList.remove('hidden-element')
+                filteredArticlesCount++
             }else{
                 article.card.classList.add('hidden-element')
             }
@@ -148,6 +151,8 @@ const filter = () => {
                     article.description.toLowerCase().includes(textInFilter.toLowerCase())){
 
                 article.card.classList.remove('hidden-element')
+                filteredArticlesCount++
+
             }else{
                 article.card.classList.add('hidden-element')
             }
