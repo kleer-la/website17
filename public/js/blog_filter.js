@@ -113,42 +113,24 @@ const buildArticlesFromDOM = () => {
 const filterByCategory = (category) => {
     categoryInFilter = category
     showSelectedArticles(false)
+    DOMcategoryDrop.innerText = category ? category : 'Categorías'
     filter()
-    // if(category){
-    //     DOMcategoryDrop.innerText = category
-    //     articles.forEach(article => {
-    //         if(article.category === category){
-    //             article.card.classList.remove('hidden-element')
-    //         }else{
-    //             article.card.classList.add('hidden-element')
-    //         }
-    //     })
-    // }else{
-    //     DOMcategoryDrop.value = 'Categorías'
-    //     articles.forEach(article => {
-    //         article.card.classList.remove('hidden-element')
-    //     })
-    // }
 }
 
 const filterByText = (event) => {
-    showSelectedArticles(false)
     const text = event ? event.target.value : ''
     textInFilter = text
+
+    DOMtitle.classList.remove('hidden-element')
+    showSelectedArticles(false)
     filter()
-    // if(text){
-    //     articles.forEach(article => {
-    //         if(article.title.toLowerCase().includes(text.toLowerCase()) || article.description.toLowerCase().includes(text.toLowerCase())){
-    //             article.card.classList.remove('hidden-element')
-    //         }else{
-    //             article.card.classList.add('hidden-element')
-    //         }
-    //     })
-    // }else{
-    //     articles.forEach(article => {
-    //         article.card.classList.remove('hidden-element')
-    //     })
-    // }
+
+    if(text){
+        DOMtitle.innerHTML =`Resultados de búsqueda para: <b>${text}</b>`
+    }else{
+        DOMtitle.classList.add('hidden-element')
+    }
+
 }
 
 const filter = () => {
