@@ -20,10 +20,10 @@ const pager = {
     actualPage: 1,
     numberOfPages: 0,
     filteredArticlesCount: 0,
-    filteredArticles: [],
+    activeArticles: [],
     changePage: function(numberPage, items = itemsPerPage){
         this.actualPage = numberPage
-        this.numberOfPages = Math.ceil(this.filteredArticles.length / items)
+        this.numberOfPages = Math.ceil(this.activeArticles.length / items)
         const initialItem = (numberPage - 1) * items
         const finalItem = numberPage * items
 
@@ -32,12 +32,15 @@ const pager = {
         }else if(numberPage === this.numberOfPages){
             //disable next button
         }
+        console.log(this.activeArticles)
 
-        this.filteredArticles.forEach((article, index) => {
+        this.activeArticles.forEach((article, index) => {
             console.log(article.name)
             if(index >= initialItem && index < finalItem){
+                console.log('show')
                 article.card.classList.remove('hidden-element')
             }else{
+                console.log('hide')
                 article.card.classList.add('hidden-element')
             }
         })
@@ -45,10 +48,51 @@ const pager = {
         setPagerText(this.numberOfPages, this.actualPage)
     }
 }
+const DOMobjects = {
+    articles: {
+        container: document.getElementById('articles'),
+        list: Array.from(document.getElementById('article-list').children),
+        title: null
+    },
+    selectedArticles: {
+        container: null,
+        list: document.getElementById('selected-articles'),
+        title: document.getElementById('selected-articles__title'),
+        setTitle: function(text){}
+    },
+    pager: {
+        nextButtons: Array.from(document.getElementsByClassName('next-button')),
+        previousButtons: Array.from(document.getElementsByClassName('prev-button')),
+        pagerTexts: Array.from(document.getElementsByClassName('pager-text')),
+        container: Array.from(document.getElementsByClassName('paging-container')),
+        showPager: function(show){
+            if(show){
+                this.container.forEach(element => {
+                    element.classList.remove('hidden-element')
+                })
+            }else{
+                this.container.forEach(element => {
+                    element.classList.add('hidden-element')
+                })
+            }
+        }
+    },
+    filterBox: {
+        category: {
+            drop: document.getElementById('blog-feed__category-drop'),
+        },
+        text: {}
+    },
+
+}
+
+// const filter = {}
 
 const setInitialPage = () => {
     showSelectedArticles(true)
-    showPagingComponent(false)
+    DOMobjects.pager.showPager(false)
+    pager.activeArticles = articles.filter(article => !article.card.classList.contains('hidden-element'))
+
     textInFilter = ''
     categoryInFilter = ''
     pager.changePage(1, itemsInInitialPage + selectedArticles.length)
@@ -58,10 +102,14 @@ const cleanAllFilters = () => {
     filterByCategory('')
     filterByText('')
     setInitialPage()
-    DOMtitle.classList.remove('hidden-element')
-    DOMtitle.innerHTML = `Lo mas nuevo`
+
+    DOMobjects.selectedArticles.title
+        .classList.remove('hidden-element')
+    DOMobjects.selectedArticles.title
+        .innerHTML = `Lo mas nuevo`
 }
 
+//TODO: va al objeto
 const setPagerText = (numberOfPages, actualPage) => {
     let text = ``
     for(let i = 1; i <= numberOfPages; i++){
@@ -72,29 +120,34 @@ const setPagerText = (numberOfPages, actualPage) => {
         }
     }
 
-    DOMpagerTexts.forEach(element => {
+    DOMobjects.pager.pagerTexts
+        .forEach(element => {
         element.innerHTML = text
     })
 }
 
 const showMore = () => {
-    pager.changePage(1, itemsPerPage)
+    articles.forEach(article => {
+        article.card.classList.remove('hidden-element')
+    })
+
     showSelectedArticles(false)
-    showPagingComponent(true)
+    DOMobjects.pager.showPager(true)
+    pager.changePage(1, itemsPerPage)
     DOMtitle.classList.add('hidden-element')
 }
 
-const showPagingComponent = (show) => {
-    if(show){
-        DOMpagingContainer.forEach(element => {
-            element.classList.remove('hidden-element')
-        })
-    }else{
-        DOMpagingContainer.forEach(element => {
-            element.classList.add('hidden-element')
-        })
-    }
-}
+// const showPagingComponent = (show) => {
+//     if(show){
+//         DOMpagingContainer.forEach(element => {
+//             element.classList.remove('hidden-element')
+//         })
+//     }else{
+//         DOMpagingContainer.forEach(element => {
+//             element.classList.add('hidden-element')
+//         })
+//     }
+// }
 
 // const nextPage = () => {
 //     const lastPage = Math.ceil(articles.length / itemsPerPage)
@@ -180,10 +233,10 @@ const filter = () => {
             }
         }
     })
+    pager.activeArticles = articles.filter(article => !article.card.classList.contains('hidden-element'))
 
-    pager.filteredArticles = articles.filter(article => !article.card.classList.contains('hidden-element'))
-    console.log(pager.filteredArticles)
-    showPagingComponent(true)
+    DOMobjects.pager.showPager(true)
+
     pager.numberOfPages = Math.ceil(pager.filteredArticlesCount / itemsPerPage)
     pager.changePage(1, itemsPerPage)
 
