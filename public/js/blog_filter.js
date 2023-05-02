@@ -177,6 +177,8 @@ const filterByText = (event) => {
 
     DOMtitle.classList.remove('hidden-element')
     DOMobjects.selectedArticles.show(false)
+    DOMobjects.showElements([DOMobjects.articles.title], true)
+
 
     filter()
 
