@@ -90,9 +90,9 @@ const DOMobjects = {
             let text = ``
             for(let i = 1; i <= numberOfPages; i++){
                 if(i === actualPage){
-                    text += `<button onclick="pager.changePage(${i})"><b>${i}</b></button> `
+                    text += `<button onclick="pager.changePage(${i})" class="clean-button"><b>${i}</b></button> `
                 }else{
-                    text += `<button onclick="pager.changePage(${i})">${i}</button> `
+                    text += `<button onclick="pager.changePage(${i})" class="clean-button">${i}</button> `
                 }
             }
             this.pagerTexts
@@ -108,7 +108,9 @@ const DOMobjects = {
                 this.drop.innerText = text ? text : 'Categorías'
             }
         },
-        text: {}
+        text: {
+            input: document.getElementById('blog-feed__text-input'),
+        }
     },
     showElements: function(elements, show){
         if(show){
@@ -139,7 +141,8 @@ const cleanAllFilters = () => {
     filterByCategory('')
     filterByText('')
     setInitialPage()
-
+    DOMobjects.filterBox.text.input.value = ''
+    DOMobjects.showElements([DOMobjects.articles.showMoreButton], true)
     DOMobjects.showElements([DOMobjects.selectedArticles.title], true)
     DOMobjects.showElements([DOMobjects.articles.title], true)
     DOMobjects.articles.setTitle(`Lo mas nuevo`)
