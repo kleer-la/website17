@@ -1,10 +1,10 @@
 <section id="selected-articles">
-  <h2 class="subtitle"><%=t("blog.highlights")%></h2>
+  <h2 id="selected-articles__title" class="subtitle"><%=t("blog.highlights")%></h2>
   <div class="row"></div>
 </section>
 
 <section id="articles">
-  <h2 id="selected-articles__title" class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
+  <h2 id="articles__title" class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
 
   <% @articles = @articles || []
      if @articles.empty? %>
@@ -39,7 +39,7 @@
       alt="decoration figure"
       />
   <%end%>
-    <div class="btn-center-container">
+    <div class="btn-center-container" id="blog-feed-list__show-more-button">
       <button class="btn my-primary-button" onclick="showMore()"><%=t("blog.show_more")%></button>
     </div>
 </section>
