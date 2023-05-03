@@ -40,7 +40,8 @@ end
 
 configure do
   set :static_cache_control, [:public, { max_age: 60 * 60 * 24 * 3 }] # 3 days
-
+  set :recaptcha_public_key, ENV['RECAPTCHA_PUBLIC_KEY']
+  set :recaptcha_private_key, ENV['RECAPTCHA_PRIVATE_KEY']
   set :views, "#{File.dirname(__FILE__)}/views"
 
   I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]

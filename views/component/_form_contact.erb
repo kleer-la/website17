@@ -49,11 +49,14 @@
       <%= t("contact-us-form.message-input.error-message") %>
     </div>
   </div>
+<!--  <div id="recaptcha" class="g-recaptcha" data-sitekey="<%#= settings.recaptcha_public_key %>"></div>-->
+
   <div class="g-recaptcha"
-       data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"
-       name="captcha"
-       data-callback="enableButton"
+  data-sitekey="<%= settings.recaptcha_public_key %>"
+  name="captcha"
+  data-callback="enableButton"
   ></div>
+
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
   <div class="btn-center-container">
     <button type="submit"
@@ -69,6 +72,7 @@
   function enableButton() {
     document.getElementById("submit").disabled = false;
   }
+
 
   (function () {
       'use strict'
