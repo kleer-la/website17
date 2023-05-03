@@ -1,9 +1,15 @@
-post "/send-mail" do
-  csrf_protect!
+require 'rack/csrf'
+# use Rack::Csrf
 
-  if !recaptcha_valid?
+
+post "/send-mail" do
+  csrf_token = params['csrf_token']
+  session_token = session[:csrf]
+
+  if !(csrf_token == session_token)
+    puts "Captcha inválido"
     flash[:error] = 'Captcha inválido'
-    redirect back
+    halt 403, 'Acceso denegado'
   else
     connector = KeventerConnector.new
     connector.send_mail(params)
