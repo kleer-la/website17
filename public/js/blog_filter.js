@@ -1,12 +1,5 @@
 const DOMarticles = Array.from(document.getElementById('article-list').children)
-const DOMarticlesSection = document.getElementById('articles')
-const DOMselectedArticlesSection = document.getElementById('selected-articles')
 const DOMtitle = document.getElementById('selected-articles__title')
-const DOMpagingContainer = Array.from(document.getElementsByClassName('paging-container'))
-const DOMcategoryDrop = document.getElementById('blog-feed__category-drop')
-const DOMnextButtons = document.getElementsByClassName('next-button')
-const DOMpreviousButtons = document.getElementsByClassName('prev-button')
-const DOMpagerTexts = Array.from(document.getElementsByClassName('pager-text'))
 
 let selectedArticles = []
 
@@ -171,6 +164,7 @@ const filterByCategory = (category) => {
     DOMobjects.selectedArticles.show(false)
     DOMobjects.showElements([DOMobjects.articles.title], false)
     DOMobjects.filterBox.category.setDropText(category)
+
     filter()
 }
 
@@ -224,6 +218,7 @@ const filter = () => {
 
     pager.activeArticles = articles.filter(article => !article.card.classList.contains('hidden-element'))
     DOMobjects.showElements(DOMobjects.pager.containers, true)
+    DOMobjects.showElements([DOMobjects.articles.showMoreButton], false)
     pager.numberOfPages = Math.ceil(pager.filteredArticlesCount / itemsPerPage)
     pager.changePage(1, itemsPerPage)
 
