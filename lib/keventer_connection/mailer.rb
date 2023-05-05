@@ -3,7 +3,7 @@ require 'uri'
 
 class Mailer
   def initialize(url, data)
-    data[:secret] = ENV['CONTACT_API_KEY']
+    data[:secret] = ENV['CONTACT_US_SECRET']
 
     @response = Faraday.post(url) do |req|
       req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
