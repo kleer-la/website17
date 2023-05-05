@@ -1,5 +1,5 @@
 <div class="row mb-4">
-  <div class="offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
+  <div class="paging-container offset-4 col-4 offset-md-9 col-md-3 col-lg-2">
     <%= erb :'component/_pager',
             locals: {intern_text: "#{@pager.from_item}-#{@pager.to_item} de #{@pager.total}",
                       left_action: "setParam('page','#{@pager.page_number-1}')",

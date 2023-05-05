@@ -650,8 +650,7 @@
   transition: 450ms transform;
   transition: 450ms transform, 450ms -webkit-transform;
   overflow-x: auto;
-  padding: 30px;
-  width: 125%; }
+  padding: 30px; }
 
 .course-trainers__container::-webkit-scrollbar-thumb {
   margin: 5px;
@@ -823,7 +822,6 @@
   .course-trainers__container {
     display: flex;
     flex-direction: column;
-    padding: 30px 0;
     width: 100%; }
 
   .course-trainers__individual-container {
@@ -1140,7 +1138,6 @@
     line-height: 26px; }
   #landing-blog-body .blog__body {
     margin-left: auto;
-    max-width: 1000px;
     width: calc(100% - 400px);
     text-align: justify;
     text-justify: inter-word; }
@@ -1181,9 +1178,30 @@
   margin-left: 0 !important;
   margin-top: 0 !important; }
 
+.landing-blog-authors__container {
+  display: flex;
+  justify-content: flex-start;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  overflow-x: auto; }
+
+.landing-blog-authors__container::-webkit-scrollbar-thumb {
+  margin: 5px;
+  border-radius: 1rem;
+  background-color: #00BBEE; }
+
+.landing-blog-authors__container::-webkit-scrollbar-track {
+  background: #E8F8FD; }
+
+.landing-blog-authors__container::-webkit-scrollbar {
+  padding: 10px;
+  height: 5px; }
+
 @media screen and (max-width: 992px) {
   .blog__body {
-    width: 90% !important; }
+    width: 90% !important;
+    margin: 0 auto !important; }
 
   #landing-blog-content-table {
     width: 316px;
