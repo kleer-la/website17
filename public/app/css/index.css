@@ -1205,6 +1205,10 @@
   height: 5px; }
 
 @media screen and (max-width: 992px) {
+  #landing-blog-hero {
+    width: 90% !important;
+    margin: 0 auto !important; }
+
   .blog__body {
     width: 90% !important;
     margin: 0 auto !important; }
@@ -1221,6 +1225,9 @@
   .up-body {
     margin-top: 0 !important; } }
 @media screen and (max-width: 420px) {
+  #landing-blog-hero {
+    width: 80% !important; }
+
   .blog__body {
     width: 80% !important; } }
 .header-prensa {
