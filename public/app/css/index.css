@@ -1020,6 +1020,12 @@
   right: 10%;
   z-index: 0; }
 
+.paging-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 33px; }
+
 #blog-feed-list {
   background-color: #FFFFFF;
   position: relative; }
@@ -1955,14 +1961,15 @@ footer {
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px;
   max-width: 350px !important;
-  height: 570px;
+  height: 530px;
   border: none;
   padding: 24px;
   z-index: 5; }
   .blog-card .image-container {
     padding-bottom: 24px; }
     .blog-card .image-container img {
-      height: 180px;
+      aspect-ratio: 7 / 3;
+      width: 100%;
       border-radius: 8px;
       object-fit: cover; }
   .blog-card .category-flag {
@@ -1989,8 +1996,7 @@ footer {
     line-height: 26px;
     margin-bottom: 8px; }
   .blog-card .card-body {
-    padding-top: 0;
-    padding-right: 0; }
+    padding: 0; }
   .blog-card .card-text {
     font-family: 'Raleway';
     font-style: normal;

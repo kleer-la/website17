@@ -233,6 +233,13 @@ $white: #FFFFFF;
   z-index: 0;
 }
 
+.paging-container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 33px;
+}
+
 #blog-feed-list{
   background-color: $white;
   position: relative;
