@@ -1,6 +1,6 @@
 <section id="landing-blog-authors">
   <h2><%=t("blog.landing.authors")%></h2>
-  <div class="container course-trainers__container">
+  <div class="landing-blog-authors__container">
       <% @article.trainers_list.each do |trainer| %>
       <%= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
       <% end %>

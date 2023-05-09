@@ -60,6 +60,8 @@ get '/blog' do
   ).on_page(params[:page] ? params[:page].to_i : 0)
   @articles = @pager.filter(@blog_home_data.filtered(@all) )
 
+  @articles = articles
+
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 end

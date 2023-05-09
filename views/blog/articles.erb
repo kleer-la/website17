@@ -8,12 +8,12 @@
 <%if @category.nil? and @match.nil? and @all.nil? %>
   <h2 class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
 <% end %>
-    <% @articles = @articles || []
-    if @articles.empty? %>
-      <h2 class="m-5"><%=t("blog.search.result.empty")%></h2>
+<% @articles = @articles || []
+   if @articles.empty? %>
+    <h2 class="m-5"><%=t("blog.search.result.empty")%></h2>
     <% else %>
       <%= erb :'blog/paging' unless @all.nil? %>
-    <div class="row">
+    <div id="article-list" class="row">
       <% @articles.each do |article|%>
         <div class="col-md-6 col-lg-4">
             <%= erb :'component/cards/_article_card', locals: {article: article} %>
@@ -35,6 +35,9 @@
   <% end %>
 </div>
 
+<% if session[:locale]  == 'es'%>
+  <script src="/js/blog_filter.js"> </script>
+<% end %>
 <script>
     let params = decodeURI(window.location.search)
         .replace('?', '')

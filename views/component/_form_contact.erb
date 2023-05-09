@@ -50,17 +50,19 @@
     </div>
   </div>
   <div class="g-recaptcha"
-       data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"
-       name="captcha"
-       data-callback="enableButton"
+  data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"
+  name="captcha"
+  data-callback="enableButton"
   ></div>
+
+
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
+  <input type="hidden" name="csrf_token" value="<%= session[:csrf] %>">
   <div class="btn-center-container">
     <button type="submit"
             id="submit"
             class="btn my-primary-button"
-            value="Submit"
-            disabled="true">
+            value="Submit">
       <%= t("contact-us-form.button.text") %></button>
   </div>
 </form>
@@ -69,6 +71,7 @@
   function enableButton() {
     document.getElementById("submit").disabled = false;
   }
+
 
   (function () {
       'use strict'

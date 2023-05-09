@@ -11,6 +11,8 @@ require './lib/professional'
 require './lib/category'
 require './lib/testimony'
 
+#TODO: REVISAR ARQUITECTURA - READER? - NULL INFRASCTRUCTURE?
+
 def event_from_parsed_xml(xml_keventer_event)
   event = KeventerEvent.new
   event.load xml_keventer_event

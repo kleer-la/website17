@@ -1,13 +1,15 @@
 <%# if session[:version] == 2022 %>
 
   <%= erb :'blog/hero' %>
-  <% unfiltered = @category.nil? && @match.nil? && @all.nil?  %>
+  <%# unfiltered = @category.nil? && @match.nil? && @all.nil?  %>
 
   <div class="container">
     <div class="row">
       <div id="blog-feed-list" class="container mt-5 mb-5">
-        <%=erb :'blog/selected_articles' if unfiltered%>
-        <%=erb :'blog/articles' %>
+        <%#=erb :'blog/selected_articles' if unfiltered%>
+        <%#=erb :'blog/articles' %>
+
+        <%= erb :'blog/articles_reactive' %>
       </div>
     </div>
   </div>

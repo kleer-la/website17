@@ -196,6 +196,12 @@ img {
   border-radius: 100px;
 }
 
+.clean-button{
+  background-color: $white;
+  border: none;
+  margin-top: 15px;
+}
+
 
 .switch{
   width: 45px !important;
@@ -224,6 +230,8 @@ img {
 
 .blue-link{
   color: $primary-blue !important;
+  background-color: $white !important;
+  border: none !important;
   font-weight: bold !important;
 }
 
