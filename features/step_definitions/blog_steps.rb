@@ -2,7 +2,7 @@ Given('A list of articles with') do
   @articles = []
 end
 Given('an article {string} with title {string}') do |slug, title|
-  @articles << { 'slug' => slug, 'title' => title, 'published' => false, 'lang' => @lang }
+  @articles << { 'slug' => slug, 'title' => title, 'published' => false, 'lang' => @lang || 'es' }
 end
 Given('the article has author {string}') do |author|
   @articles[-1]['trainers'] = (@articles[-1]['trainers'] || []) << { 'name' => author }

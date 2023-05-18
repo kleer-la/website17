@@ -1,6 +1,6 @@
 require './lib/json_api'
 require './lib/articles'
- 
+
 require './controllers/blog_home_data'
 require './controllers/pager_helper'
 
@@ -42,25 +42,27 @@ get '/blog' do
                   canonical: "#{t('meta_tag.blog.canonical')}"
   @where = 'Blog'
 
-  @category = params[:category]
-  @match = params[:match]
-  @all= params[:all]
-  @all= true if session[:locale] == 'en'  # always 'all' for English
+  # TODO: deprecate
 
-  @categories = load_categories session[:locale]
-  
+  # @category = params[:category]
+  # @match = params[:match]
+  # @all= params[:all]
+  # @all= true if session[:locale] == 'en'  # always 'all' for English
+  #
+  # @categories = load_categories session[:locale]
+
   articles = Article.create_list_keventer(true)
 
-  @blog_home_data = BlogHomeData.new(articles, session[:locale])
-  @blog_home_data.filter_by_category(@category).filter_by_text(@match)
-  
-  @pager = Pager.new(
-    @all ? 9 : 6,
-    @blog_home_data.filtered(@all).count
-  ).on_page(params[:page] ? params[:page].to_i : 0)
-  @articles = @pager.filter(@blog_home_data.filtered(@all) )
+  # @blog_home_data = BlogHomeData.new(articles, session[:locale])
+  # @blog_home_data.filter_by_category(@category).filter_by_text(@match)
+  #
+  # @pager = Pager.new(
+  #   @all ? 9 : 6,
+  #   @blog_home_data.filtered(@all).count
+  # ).on_page(params[:page] ? params[:page].to_i : 0)
+  # @articles = @pager.filter(@blog_home_data.filtered(@all) )
 
-  @articles = articles
+  @articles = articles.select { |a| a.lang == session[:locale]}.sort_by(&:created_at).reverse
 
   @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
@@ -75,7 +77,11 @@ def blog_one(article)
   @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
   @related_articles = get_related_articles(@article.category_name, @article.id , 3)
 
-    erb :'blog/landing_blog/index', layout: :'layout/layout2022'
+  if article.lang != session[:locale]
+    redirect "/#{session[:locale]}/blog", 301 # permanent redirect
+  end
+
+  erb :'blog/landing_blog/index', layout: :'layout/layout2022'
 
 rescue StandardError => e
   puts e

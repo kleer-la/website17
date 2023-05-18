@@ -1,6 +1,9 @@
 <section id="landing-blog-hero" class="mb-5">
     <a class="go-back-button" href="/<%=session[:locale]%>/blog">
-      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_arrow2.svg"/>
+      <img
+        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_arrow2.svg"
+        loading="lazy"
+        />
       <%=t("blog.landing.back")%>
     </a>
     <div class="mt-4 mb-5">
@@ -17,6 +20,7 @@
         src="<%= @article.cover %>"
         class="principal"
         alt=""
+        loading="lazy"
       />
 <!--      <img-->
 <!--        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_oval.svg"-->
