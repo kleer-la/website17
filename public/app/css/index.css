@@ -1131,13 +1131,22 @@
     font-size: 32px;
     line-height: 40px;
     margin-top: 30px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    text-align: left; }
   #landing-blog-body h3 {
     font-weight: 600;
     font-size: 28px;
     line-height: 36px;
     margin-top: 20px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    text-align: left; }
+  #landing-blog-body h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left; }
   #landing-blog-body p {
     font-weight: 400;
     font-size: 16px;

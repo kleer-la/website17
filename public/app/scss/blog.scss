@@ -391,7 +391,7 @@ $white: #FFFFFF;
     line-height: 40px;
     margin-top: 30px;
     margin-bottom: 30px;
-
+    text-align: left;
   }
 
   h3{
@@ -400,7 +400,35 @@ $white: #FFFFFF;
     line-height: 36px;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: left;
 
+  }
+
+  h4{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+  }
+
+  h5{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+  }
+
+  h6{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: left;
   }
 
   p{
