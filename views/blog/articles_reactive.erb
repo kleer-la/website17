@@ -1,23 +1,30 @@
-<section id="selected-articles">
-  <h2 id="selected-articles__title" class="subtitle"><%=t("blog.highlights")%></h2>
-  <div class="row"></div>
-</section>
+<% unless session[:locale] == 'en' %>
+  <section id="selected-articles">
+    <h2 id="selected-articles__title" class="subtitle"><%=t("blog.highlights")%></h2>
+    <div class="row"></div>
+  </section>
+<% end %>
 
 <section id="articles">
-  <h2 id="articles__title" class="mt-4 mb-4 subtitle"><%=t("blog.latest")%></h2>
+  <% unless session[:locale] == 'en' %>
+    <h2 id="articles__title" class="mt-4 mb-4 subtitle">
+      <%=t("blog.latest")%>
+    </h2>
+  <% end %>
 
   <% @articles = @articles || []
      if @articles.empty? %>
 
     <h2 class="m-5"><%=t("blog.search.result.empty")%></h2>
-
   <% else %>
 
-    <div class="row mb-4">
-      <div class="paging-container">
-        <%= erb :'component/_reactive_pager' %>
+    <% unless session[:locale] == 'en' %>
+      <div class="row mb-4">
+        <div class="paging-container">
+          <%= erb :'component/_reactive_pager' %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <div id="article-list" class="row">
       <% @articles.each do |article|%>
@@ -27,11 +34,13 @@
       <%end%>
     </div>
 
-    <div class="row mb-4">
-      <div class="paging-container">
-        <%= erb :'component/_reactive_pager' %>
+    <% unless session[:locale] == 'en' %>
+      <div class="row mb-4">
+        <div class="paging-container">
+          <%= erb :'component/_reactive_pager' %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <img
       class="desktop_figure blog-feed-list__red-triangle"
@@ -39,11 +48,13 @@
       alt="decoration figure"
       />
   <%end%>
+  <% unless session[:locale] == 'en' %>
     <div class="btn-center-container" id="blog-feed-list__show-more-button">
       <button class="btn my-primary-button" onclick="showMore()"><%=t("blog.show_more")%></button>
     </div>
+  <% end %>
 </section>
 
-<% if session[:locale]  == 'es'%>
+<% unless session[:locale] == 'en' %>
   <script src="/js/blog_filter.js"> </script>
 <% end %>
