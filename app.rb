@@ -14,6 +14,7 @@ require './lib/metatags'
 require './lib/keventer_reader'
 require './lib/twitter_card'
 require './lib/twitter_reader'
+require './lib/helpers/custom_markdown'
 
 require './controllers/helper'
 require './controllers/resources_controller'
@@ -66,10 +67,8 @@ before do
     @meta_tags= Tags.new
     @meta_tags.set! title: @base_title, path: request.path
     flash.sweep
-    @markdown_renderer = Redcarpet::Markdown.new(
-      Redcarpet::Render::HTML.new(hard_wrap: true),
-      autolink: true
-    )
+    @markdown_renderer = CustomMarkdown.new
+
   end
 end
 
