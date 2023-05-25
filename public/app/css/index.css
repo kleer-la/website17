@@ -1095,6 +1095,14 @@
     max-width: 1400px;
     object-fit: cover;
     border-radius: 20px; }
+  .landing-blog-hero__img-container .yellow-bean {
+    top: 40px;
+    left: -60px;
+    transform: rotate(30deg); }
+  .landing-blog-hero__img-container .bluered-group {
+    bottom: -100px;
+    right: 0;
+    transform: scale(0.8); }
 
 .landing-blog-hero__info {
   font-weight: 400;
@@ -1145,7 +1153,21 @@
     font-size: 24px;
     line-height: 30px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    text-align: left; }
+  #landing-blog-body h5 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-align: left; }
+  #landing-blog-body h6 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 25px;
     text-align: left; }
   #landing-blog-body p {
     font-weight: 400;

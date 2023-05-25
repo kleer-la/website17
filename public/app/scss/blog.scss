@@ -296,7 +296,7 @@ $white: #FFFFFF;
 //BLOG DETAIL
 
 #landing-blog{
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 100px auto 70px auto;
   position: relative;
 }
@@ -340,6 +340,18 @@ $white: #FFFFFF;
     max-width: 1400px;
     object-fit: cover;
     border-radius: 20px;
+  }
+
+  .yellow-bean{
+    top: 40px;
+    left: -60px;
+    transform: rotate(30deg);
+  }
+
+  .bluered-group{
+    bottom: -100px;
+    right: 0;
+    transform: scale(0.8);
   }
 }
 
