@@ -99,6 +99,7 @@ get '/cursos/:event_type_id_with_name' do
   #   @event_type = event_type_from_qstring params[:event_type_id_with_name]
   #   @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
 
+  puts "#{session[:locale]} #{@event_type.lang}"
   if session[:locale] != @event_type.lang
     redirect to("#{session[:locale]}/catalogo"), 301
   end
