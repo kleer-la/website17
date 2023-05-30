@@ -10,8 +10,8 @@ post "/send-mail" do
     halt 403, 'Acceso denegado'
   else
     puts "Captcha válido"
-    # connector = KeventerConnector.new
-    # connector.send_mail(params)
+    connector = KeventerConnector.new
+    connector.send_mail(params)
     redirect params[:context]
   end
 end
