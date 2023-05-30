@@ -1,5 +1,8 @@
 <%
+  require 'nokogiri'
+
   titles = extract_titles(@article.body)
+
   body = set_ids_in_body(@markdown_renderer.render( @article.body ), titles)
 %>
 

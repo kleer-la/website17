@@ -49,7 +49,7 @@ get '/blog' do
   # @all= params[:all]
   # @all= true if session[:locale] == 'en'  # always 'all' for English
   #
-  # @categories = load_categories session[:locale]
+  @categories = load_categories session[:locale]
 
   articles = Article.create_list_keventer(true)
 
