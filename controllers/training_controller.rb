@@ -9,7 +9,7 @@ require './controllers/event_helper'
 
 #TODO redirect
 REDIRECT = {
-  'entrenamos/todos' => 'agenda',
+  'entrenamos/:id' => 'agenda',
   'entrenamos' => 'agenda'
 }.freeze
 
