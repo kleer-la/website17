@@ -1,7 +1,7 @@
 Feature: Catalogo de cursos
 
 	Scenario: Mostrar las categorías
-#		Given PENDING
+		Given PENDING
 		Given I visit the "catalogo" page
 		Then I should see "Desarrollo Profesional"
 		And I should see "Desarrollo de Software"
