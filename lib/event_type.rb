@@ -119,10 +119,10 @@ class EventType
   end
 
   def uri_path
-    "#{@lang}/cursos/#{@slug}"
+    "/#{@lang}/cursos/#{@slug}"
   end
   def canonical_url
-    "#{@lang}/cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
+    "/#{@lang}/cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
   def redirect_to(event_type_id_with_name)

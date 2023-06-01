@@ -7,7 +7,7 @@
 %>
 <div class="row event-item pb-4 mt-4">
   <div class="col-lg-3">
-    <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
+    <a href="/<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
     <p>
       <% if event.country_iso == 'OL' %>
         <img src="/app/img/icons/VideoCamera.svg">
