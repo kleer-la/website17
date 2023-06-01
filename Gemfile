@@ -20,6 +20,7 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'dotenv'
 gem 'sinatra-recaptcha'
+gem 'nokogiri'
 
 group :development do
   gem 'foreman'

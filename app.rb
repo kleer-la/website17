@@ -173,12 +173,17 @@ get '/publicamos' do
   erb :publicamos
 end
 
+get '/categoria/:category_codename/' do
+  redirect "/categoria/#{params[:category_codename]}", 301
+end
+
 get '/categoria/:category_codename' do
   @category = KeventerReader.instance.category(params[:category_codename])
   @active_tab_acompanamos = 'active'
 
   if @category.nil?
-    status 404
+    puts "pasa por aca"
+    redirect "/#{session[:locale]}/catalogo", 301
   else
     @meta_tags.set! title: @category.name
     @event_types = @category.event_types.sort_by(&:name)

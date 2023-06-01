@@ -1,6 +1,8 @@
 <%
   courses = keventer_to_card(@events, session[:locale])
 
+  puts courses[0][:url]
+
   if session[:locale]  == 'es'
     @academy.each{|e|
       courses.push(
