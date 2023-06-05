@@ -1,0 +1,30 @@
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+$celeste: #E8F8FD;
+
+#resources-hero{
+  background-color: $celeste;
+  margin-top: 100px;
+  height: 60vh;
+
+  .container{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1{
+      margin-bottom: 60px;
+    }
+  }
+}

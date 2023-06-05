@@ -23,6 +23,11 @@ get '/recursos_old' do
   erb :'resources_page/index', layout: :'layout/layout2022'
 end
 
+# get '/recursos2022' do
+#
+# end
+
+
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Recursos"
