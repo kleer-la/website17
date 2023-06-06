@@ -65,7 +65,7 @@ def get_news
     { title: I18n.t('press.release26_title'),
       subtitle: 'Libreta de apuntes - 10.04.2019',
       text: I18n.t('press.release26_text'),
-      url: 'https://libretadeapuntes.com/2019/04/como-saber-si-estamos-desarrollando-el-producto-equivocado/',
+      url: 'https://libretadeapuntes.com/como-saber-si-estamos-desarrollando-el-producto-equivocado/',
       img: '/img/prensa/libreta.jpg'
     },
     { title: I18n.t('press.release25_title'),
