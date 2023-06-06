@@ -1,9 +1,9 @@
 
 post "/send-mail" do
   begin
-    puts params['csrf_token']
+    puts params['_csrf']
     puts session[:csrf]
-    csrf_token = params['csrf_token']
+    csrf_token = params['_token']
     session_token = session[:csrf]
 
     if !(csrf_token == session_token)

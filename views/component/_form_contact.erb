@@ -57,7 +57,7 @@
 
 
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
-  <input type="hidden" name="csrf_token" value="<%= session[:csrf] %>">
+  <input type="hidden" name="_csrf" value="<%= session[:csrf] %>">
   <div class="btn-center-container">
     <button type="submit"
             id="submit"
