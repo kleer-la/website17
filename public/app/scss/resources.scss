@@ -11,12 +11,13 @@ $grey: #B3B3B3;
 $white: #FFFFFF;
 $celeste: #E8F8FD;
 
-#resources-hero{
+.resources-hero{
   background-color: $celeste;
   margin-top: 100px;
   height: 60vh;
+  position: relative;
 
-  .container{
+  .resources-hero__container{
     text-align: center;
     height: 100%;
     display: flex;

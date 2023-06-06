@@ -222,17 +222,18 @@
   right: 0;
   z-index: 0; }
 
-#resources-hero {
+.resources-hero {
   background-color: #E8F8FD;
   margin-top: 100px;
-  height: 60vh; }
-  #resources-hero .container {
+  height: 60vh;
+  position: relative; }
+  .resources-hero .resources-hero__container {
     text-align: center;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center; }
-    #resources-hero .container h1 {
+    .resources-hero .resources-hero__container h1 {
       margin-bottom: 60px; }
 
 #training-hero {
