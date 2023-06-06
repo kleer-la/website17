@@ -5,7 +5,7 @@ require 'rack/csrf'
 Bundler.require
 
 use Rack::Session::Cookie, secret: ENV['CONTACT_US_SECRET']
-use Rack::Csrf, raise: true
+use Rack::Csrf
 
 require './app'
 run Sinatra::Application
