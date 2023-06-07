@@ -8,7 +8,7 @@ post "/send-mail" do
 
     if !(csrf_token == session_token)
       flash[:error] = 'Captcha inválido'
-      halt 403, 'Acceso denegado'
+      # halt 403, 'Acceso denegado'
     else
       puts 'Captcha válido'
     end
