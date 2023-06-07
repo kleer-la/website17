@@ -73,7 +73,7 @@
   </div>
   <div class="col-4 col-lg-1 next-edition-item">
     <div class="btn-center-container">
-      <% if event.is_sold_out %>
+      <% if event.is_sold_out || event.registration_ended?%>
         <button class="my-primary-button p-2"
                 href='' style="filter: grayscale(100%); max-width: 150px; width: 130px">
           Completo

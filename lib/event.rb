@@ -129,6 +129,10 @@ class Event
     ) }"
   end
 
+  def registration_ended?(current_date = Date.today)
+    self.date.nil? || self.date <= current_date
+  end
+
   class << self
     def create_keventer_json(today = Date.today)
       if defined? @@json_api
@@ -145,7 +149,7 @@ class Event
     def load_events(events, today)
       events.reduce([]) do |ac, ev| 
         e =  Event.new( EventType.new(nil, ev['event_type']) ).load_from_json(ev)
-        if e.date > today
+        unless e.registration_ended? today
           ac << e
         else
           ac

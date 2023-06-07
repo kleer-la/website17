@@ -66,7 +66,7 @@ get '/catalogo' do
 
   @events = KeventerReader.instance.catalog_events()
 
-    erb :'training/index', layout: :'layout/layout2022'
+  erb :'training/index', layout: :'layout/layout2022'
 end
 
 # Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
@@ -93,14 +93,8 @@ end
 #TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
-
   @event_type = event_type_from_json params[:event_type_id_with_name]
-  #TODO depracated?
-  #   @event_type = event_type_from_qstring params[:event_type_id_with_name]
-  #   @testimonies = KeventerReader.instance.testimonies(params[:event_type_id_with_name].split('-')[0])
-
   @active_tab_entrenamos = 'active'
-
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
 
   if @event_type.nil?
