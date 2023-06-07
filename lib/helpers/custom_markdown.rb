@@ -10,7 +10,8 @@ class CustomMarkdown# < Redcarpet::Markdown
 
   def render(text)
     html = @markdown_render.render(text)
-    document = Nokogiri::HTML(html)
+
+    document = Nokogiri::HTML.fragment(html)
     images = document.css('img')
     images.each do |image|
       image['loading'] = 'lazy'
