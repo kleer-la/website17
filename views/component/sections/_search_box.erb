@@ -1,0 +1,19 @@
+<div class="container p-3 blog-feed__search-box">
+  <div class="row search-box__container">
+    <div class="col-12 col-lg-7">
+      <div class="input-group">
+        <input
+          class="form-control border"
+          type="input"
+          name="matchWord"
+          value="<%= @match || '' %>"
+          id="blog-feed__text-input" />
+      </div>
+    </div>
+    <div class="offset-8 offset-md-9  offset-lg-0 col-lg-2">
+      <button class="blue-link" >
+        <%=t("blog.search.reset")%>
+      </button>
+    </div>
+  </div>
+</div>
