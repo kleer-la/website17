@@ -18,7 +18,7 @@ class Trainer
   def gravatar_picture_url
     hash = 'asljasld'
     hash = Digest::MD5.hexdigest(gravatar_email) unless gravatar_email.nil?
-    @gravatar_picture = "http://www.gravatar.com/avatar/#{hash}"
+    @gravatar_picture = "https://www.gravatar.com/avatar/#{hash}"
   end
 
 end
