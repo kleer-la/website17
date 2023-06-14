@@ -1,12 +1,9 @@
 <% if session[:new] %>
   <%=erb :'resources/hero' %>
-  <div class="container">
-    <div class="row">
+  <section class="container resources-list">
       <%#=erb :'resources_page/resources' %>
       <%=erb :'resources/list' %>
-
-    </div>
-  </div>
+  </section>
 <% else %>
   <%=erb :'component/_generic_hero', locals: {title: t("resources.title"), subtitle: t("resources.subtitle")} %>
   <div class="container">
