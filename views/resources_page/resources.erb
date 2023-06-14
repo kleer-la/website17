@@ -4,6 +4,7 @@
     <%
       @resources.filter { |r| r[session[:locale]]}.each do |resource_loc|
         resource= resource_loc[session[:locale]]
+        puts resource.class
 
         @id = resource['id']
         @image_cover = resource['cover']

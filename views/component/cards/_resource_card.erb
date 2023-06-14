@@ -1,0 +1,44 @@
+<div class="card course-card" style="width: 18rem;">
+  <div class="course-card__image-container">
+    <a href="<%=resource.slug %>">
+      <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top course-card__image', alt: '...', has_webp: false}%>
+    </a>
+  </div>
+  <div class="card-body course-card__body">
+    <div>
+      <a>
+        <h6 class="card-title course-card__title"><%= resource.title %></h6>
+      </a>
+    </div>
+    <p class="card-text course-card__subtitle"><%= resource.description%></p>
+    <ul class="course-card__items">
+      <%# unless resource[:duration].nil? || resource[:duration].to_i == 0 %>
+<!--        <li class="course-card__item">-->
+<!--          <img class="icon-card" src="/app/img/icons/Clock.svg" loading="lazy"/>-->
+<!--          <%#= resource[:duration]%> hs-->
+<!--        </li>-->
+      <%# end %>
+      <%# unless resource[:date].to_s == '' %>
+<!--        <li class="course-card__item">-->
+<!--          <i class="fa fa-calendar"></i>-->
+          <%#= resource[:date]%>
+<!--        </li>-->
+      <%# end %>
+      <%#TODO: country%>
+<!--      <li class="course-card__item">-->
+<!--        <img class="icon-card" src="/app/img/icons/VideoCamera.svg" loading="lazy"/>-->
+<!--        Online <%#= resource[:country]%>-->
+<!--      </li>-->
+<!--      %>-->
+    </ul>
+  </div>
+<!--  <div class="text-center">-->
+<!--    <a href="<%#= resource[:url] %>" class="btn my-secondary-button ms-4 me-4">-->
+      <%# if !resource[:is_elearning]  %>
+        <%#= t('generals.buttons.more_info') %>
+      <%# else %>
+        <%#= t('generals.buttons.go_academy') %>
+      <%# end %>
+<!--    </a>-->
+<!--  </div>-->
+</div>
