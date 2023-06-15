@@ -37,7 +37,7 @@ class Resource
     Resource.load_list(api_resp.doc)
   end
 
-  attr_accessor :id, :format, :slug, :lang, :authors, :translators,
+  attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list,
                 :title, :description, :cover, :landing, :getit, :share_link, :share_text, :tags, :comments
 
   def initialize(doc, lang)
@@ -57,7 +57,11 @@ class Resource
     @comments = doc["comments_#{lang}"] || ''
 
     @authors = init_trainers(doc, 'authors')
+    @authors_list = doc['authors'].map{|e| e['name']}
+
     @translators = init_trainers(doc, 'translators')
+    @translators_list = doc['translators'].map{|e| e['name']}
+
     init_dates(doc)
     # "categories_id": null,
     # "trainers_id": null,
@@ -82,10 +86,10 @@ class Resource
     @updated_at = doc['updated_at'] || ''
   end
   def self.load_list(doc)
-    doc.each_with_object([]) {|data, ac| 
+    doc.each_with_object([]) {|data, ac|
       (ac << Resource.new(data, :es) ) unless data['title_es'] == ''
       (ac << Resource.new(data, :en) ) unless data['title_en'] == ''
       ac
-    } 
+    }
   end
 end

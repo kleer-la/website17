@@ -6,15 +6,21 @@
     <h2 class="card-title title"><%= resource.title %></h2>
     <p class="card-text subtitle"><%= resource.description%></p>
     <ul class="items">
-      <li>
-        <b>Autores: </b> <%= resource.authors %>
-      </li>
-      <li>
-        <b>Traductores: </b> <%= resource.translators %>
-      </li>
-      <li>
-        <b>Observaciones: </b> <%= resource.comments %>
-      </li>
+      <% unless resource.authors_list == [] %>
+        <li>
+          <b>Autores: </b> <%= resource.authors_list %>
+        </li>
+      <% end %>
+      <% unless resource.translators_list == [] %>
+        <li>
+          <b>Traductores: </b> <%= resource.translators_list %>
+        </li>
+      <% end %>
+      <% unless resource.comments == '' %>
+        <li>
+          <b>Observaciones: </b> <%= resource.comments %>
+        </li>
+      <% end %>
     </ul>
 
   </div>
@@ -22,10 +28,22 @@
     <p>
       <a class="external-web">Compra en web externa</a>
     </p>
-    <p>
-      <a class="info">Mas info</a>
-    </p>
-    <a class="my-primary-button button">Obtener</a>
-    <a class="my-primary-button button">Descargar</a>
+    <% unless resource.landing == '' %>
+      <p>
+        <a class="info">Mas info</a>
+      </p>
+    <% end %>
+    <% unless resource.getit == '' %>
+      <a href="<%= resource.getit %>" class="my-primary-button button">
+        Obtener
+        <img src='/app/img/icons/ExternalLink.svg'/>
+      </a>
+    <% end %>
+    <% unless resource.landing == '' %>
+      <a href="<%= resource.landing %>" class="my-primary-button button">
+        Descargar
+        <img src='/app/img/icons/Download.svg'/>
+      </a>
+    <% end %>
   </div>
 </div>

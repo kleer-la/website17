@@ -239,6 +239,12 @@
     max-width: 1000px; }
   .resources-hero h2 {
     max-width: 1000px; }
+  .resources-hero .resources-hero__yellow-circle {
+    bottom: 0;
+    left: 5%; }
+  .resources-hero .resources-hero__blue-circle {
+    right: 0;
+    bottom: 20%; }
 
 .resources-list {
   margin-top: 100px; }
@@ -1667,8 +1673,7 @@ img {
   align-items: center; }
 
 .desktop_figure {
-  position: absolute;
-  z-index: -1; }
+  position: absolute; }
 
 .mobile_figure {
   display: none; }
@@ -2189,7 +2194,13 @@ footer {
     .resource-card .footer .button {
       width: 180px;
       height: 55px;
-      margin: 30px auto 30px auto; }
+      margin: 30px auto 30px auto;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 20px; }
+      .resource-card .footer .button img {
+        margin-left: 20px;
+        height: 10px; }
 
 .generic-hero__red-circle {
   bottom: 0;
