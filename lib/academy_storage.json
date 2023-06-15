@@ -66,6 +66,28 @@
                 "categories": ["Equipos y Organizaciones"],
                 "duration": 2
               }
+            },
+            {
+              "es": {
+                "id": "mejora-continua-con-improvement-kata",
+                "cover": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/vDB5dPa4Stas7Gsj1Guh",
+                "title": "Mejora continua con Improvement Kata",
+                "subtitle": "Alcanza grandes desafíos a través de pequeños pasos",
+                "url": "https://academia.kleer.la/p/mejora-continua-con-improvement-kata",
+                "categories": ["Equipos y Organizaciones"],
+                "duration": 3
+              }
+            },
+            {
+              "es": {
+                "id": "fundamentos-de-agile-coaching",
+                "cover": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/NDuG2EuTfGgSz5ySLJHx",
+                "title": "Fundamentos de Agile Coaching",
+                "subtitle": "Fundamentos del agile coaching basado en la Certificación Agile Coach Practitioner",
+                "url": "https://academia.kleer.la/p/fundamentos-de-agile-coaching",
+                "categories": ["Desarrollo Profesional"],
+                "duration": 4
+              }
             }
           ]
 }
