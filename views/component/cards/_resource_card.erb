@@ -1,0 +1,31 @@
+<div class="card resource-card" style="width: 18rem;">
+  <div class="image-container">
+    <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
+  </div>
+  <div class="card-body body">
+    <h2 class="card-title title"><%= resource.title %></h2>
+    <p class="card-text subtitle"><%= resource.description%></p>
+    <ul class="items">
+      <li>
+        <b>Autores: </b> <%= resource.authors %>
+      </li>
+      <li>
+        <b>Traductores: </b> <%= resource.translators %>
+      </li>
+      <li>
+        <b>Observaciones: </b> <%= resource.comments %>
+      </li>
+    </ul>
+
+  </div>
+  <div class="footer">
+    <p>
+      <a class="external-web">Compra en web externa</a>
+    </p>
+    <p>
+      <a class="info">Mas info</a>
+    </p>
+    <a class="my-primary-button button">Obtener</a>
+    <a class="my-primary-button button">Descargar</a>
+  </div>
+</div>
