@@ -577,7 +577,8 @@ footer {
 
 //resource card
 .resource-card{
-  width: 290px !important;
+  width: 270px !important;
+  margin: 30px auto;
   padding: 24px;
   gap: 32px;
   isolation: isolate;
@@ -714,7 +715,7 @@ footer {
   background-color: $white;
   z-index: 2;
   position: absolute;
-  bottom: -50px;
+  bottom: -70px;
   height: 120px;
   width: 80%;
 

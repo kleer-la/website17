@@ -225,7 +225,7 @@
 .resources-hero {
   background-color: #E8F8FD;
   margin-top: 100px;
-  padding: 60px;
+  padding: 30px 60px 70px 60px;
   height: 60vh;
   position: relative;
   display: flex;
@@ -236,12 +236,14 @@
   text-align: center; }
   .resources-hero h1 {
     margin-bottom: 40px;
-    max-width: 1000px; }
+    max-width: 1000px;
+    z-index: 3; }
   .resources-hero h2 {
+    z-index: 3;
     max-width: 1000px; }
   .resources-hero .resources-hero__yellow-circle {
     bottom: 0;
-    left: 5%; }
+    left: 0; }
   .resources-hero .resources-hero__blue-circle {
     right: 0;
     bottom: 20%; }
@@ -2151,7 +2153,8 @@ footer {
   height: 18px; }
 
 .resource-card {
-  width: 290px !important;
+  width: 270px !important;
+  margin: 30px auto;
   padding: 24px;
   gap: 32px;
   isolation: isolate;
@@ -2239,7 +2242,7 @@ footer {
   background-color: #FFFFFF;
   z-index: 2;
   position: absolute;
-  bottom: -50px;
+  bottom: -70px;
   height: 120px;
   width: 80%;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
