@@ -1,5 +1,7 @@
 <div class="container">
   <div class="row">
+    <%= erb :'resources/_share_modal_button'%>
+
     <%
       locale = session[:locale].to_sym
       @resources.filter { |r| r.lang == locale}.each do |resource|
