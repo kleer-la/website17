@@ -38,6 +38,7 @@ class Resource
   end
 
   attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list,
+                :fb_share, :tw_share, :li_share, :share_link, :kleer_share_url,
                 :title, :description, :cover, :landing, :getit, :share_link, :share_text, :tags, :comments
 
   def initialize(doc, lang)
@@ -55,6 +56,28 @@ class Resource
     @share_text = doc["share_text_#{lang}"] || ''
     @tags = doc["tags_#{lang}"] || ''
     @comments = doc["comments_#{lang}"] || ''
+
+    @kleer_share_url = "https://kleer.la/#{locale}/recursos##{resource.slug}"
+
+
+    @fb_share = URI.encode_www_form(
+      u: @share_link,
+      quote: resource.share_text,
+      hashtags: resource.tags
+    )
+
+    @tw_share = URI.encode_www_form(
+      text: "#{resource.share_text} #{@share_link}",
+      hashtags: resource.tags
+    )
+    # https://www.linkedin.com/sharing/share-offsite/?url=[your URL]&summary=[your post text]&source=[your source]&hashtags=[your hashtags separated by commas]
+
+    @li_share = URI.encode_www_form(
+      url: @share_link,
+      summary: "#{resource.share_text} #{@share_link}",
+      source: @kleer_share_url,
+      hashtags: resource.tags
+    )
 
     @authors = init_trainers(doc, 'authors')
     @authors_list = doc['authors'].map{|e| e['name']}
