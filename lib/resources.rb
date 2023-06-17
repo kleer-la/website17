@@ -57,26 +57,27 @@ class Resource
     @tags = doc["tags_#{lang}"] || ''
     @comments = doc["comments_#{lang}"] || ''
 
-    @kleer_share_url = "https://kleer.la/#{locale}/recursos##{resource.slug}"
+    #insert lang
+    @kleer_share_url = "https://kleer.la/recursos##{@slug}"
 
 
     @fb_share = URI.encode_www_form(
       u: @share_link,
-      quote: resource.share_text,
-      hashtags: resource.tags
+      quote: @share_text,
+      hashtags: @tags
     )
 
     @tw_share = URI.encode_www_form(
-      text: "#{resource.share_text} #{@share_link}",
-      hashtags: resource.tags
+      text: "#{@share_text} #{@share_link}",
+      hashtags: @tags
     )
     # https://www.linkedin.com/sharing/share-offsite/?url=[your URL]&summary=[your post text]&source=[your source]&hashtags=[your hashtags separated by commas]
 
     @li_share = URI.encode_www_form(
       url: @share_link,
-      summary: "#{resource.share_text} #{@share_link}",
+      summary: "#{@share_text} #{@share_link}",
       source: @kleer_share_url,
-      hashtags: resource.tags
+      hashtags: @tags
     )
 
     @authors = init_trainers(doc, 'authors')
