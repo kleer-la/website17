@@ -1,6 +1,7 @@
+
 <div class="card resource-card" style="width: 18rem;">
   <div class="image-container">
-    <%= erb :'resources/_share_modal_button'%>
+    <%= erb :'component/modals/_share_modal_button'%>
     <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
   </div>
   <div class="card-body body">
