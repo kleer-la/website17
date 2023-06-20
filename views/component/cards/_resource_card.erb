@@ -27,22 +27,25 @@
 
   </div>
   <div class="footer">
-    <p>
-      <a class="external-web">Compra en web externa</a>
-    </p>
-    <% unless resource.landing == '' %>
+    <% unless resource.buyit  == '' %>
       <p>
-        <a class="info">Mas info</a>
+        <a class="external-web">Compra en web externa</a>
       </p>
     <% end %>
-    <% unless resource.getit == '' %>
-      <a href="<%= resource.getit %>" class="my-primary-button button">
+
+    <% unless resource.landing == '' %>
+      <p>
+        <a href="<%= resource.landing %>" class="info my-secondary-button">Mas info</a>
+      </p>
+    <% end %>
+    <% unless resource.buyit == '' %>
+      <a href="<%= resource.buyit %>" class="my-primary-button button">
         Obtener
         <img src='/app/img/icons/ExternalLink.svg'/>
       </a>
     <% end %>
-    <% unless resource.landing == '' %>
-      <a href="<%= resource.landing %>" class="my-primary-button button">
+    <% unless resource.getit == '' %>
+      <a href="<%= resource.getit %>" class="my-primary-button button">
         Descargar
         <img src='/app/img/icons/Download.svg'/>
       </a>

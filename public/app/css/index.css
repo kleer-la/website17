@@ -2206,17 +2206,20 @@ footer {
     .resource-card .footer .info {
       font-weight: 700;
       font-size: 16px;
-      line-height: 18px; }
+      line-height: 18px;
+      margin: 30px auto 0 auto;
+      width: 180px;
+      height: 55px; }
     .resource-card .footer .button {
       width: 180px;
       height: 55px;
-      margin: 30px auto 30px auto;
+      margin: 30px auto 0 auto;
       font-weight: 600;
       font-size: 18px;
       line-height: 20px; }
       .resource-card .footer .button img {
-        margin-left: 20px;
-        height: 10px; }
+        margin-left: 10px;
+        height: 20px; }
 
 .generic-hero__red-circle {
   bottom: 0;

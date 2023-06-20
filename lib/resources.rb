@@ -39,7 +39,7 @@ class Resource
 
   attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list,
                 :fb_share, :tw_share, :li_share, :share_link, :kleer_share_url,
-                :title, :description, :cover, :landing, :getit, :share_link, :share_text, :tags, :comments
+                :title, :description, :cover, :landing, :getit, :buyit, :share_link, :share_text, :tags, :comments
 
   def initialize(doc, lang)
     @id = doc['id']
@@ -52,13 +52,14 @@ class Resource
     @cover = doc["cover_#{lang}"] || ''
     @landing = doc["landing_#{lang}"] || ''
     @getit = doc["getit_#{lang}"] || ''
+    @buyit = doc["buyit_#{lang}"] || ''
     @share_link = doc["share_link_#{lang}"] || ''
     @share_text = doc["share_text_#{lang}"] || ''
     @tags = doc["tags_#{lang}"] || ''
     @comments = doc["comments_#{lang}"] || ''
 
     #insert lang
-    @kleer_share_url = "https://kleer.la/recursos##{@slug}"
+    @kleer_share_url = "https://kleer.la/#{lang}/recursos##{@slug}"
 
 
     @fb_share = URI.encode_www_form(

@@ -651,19 +651,22 @@ footer {
       font-weight: 700;
       font-size: 16px;
       line-height: 18px;
+      margin: 30px auto 0 auto;
+      width: 180px;
+      height: 55px;
     }
 
     .button{
       width: 180px;
       height: 55px;
-      margin: 30px auto 30px auto;
+      margin: 30px auto 0 auto;
       font-weight: 600;
       font-size: 18px;
       line-height: 20px;
 
       img{
-        margin-left: 20px;
-        height: 10px;
+        margin-left: 10px;
+        height: 20px;
       }
     }
 
