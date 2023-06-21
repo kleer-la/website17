@@ -1011,8 +1011,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  z-index: -1; }
+  flex-direction: column; }
   #blog-feed-hero h1, #blog-feed-hero h2 {
     z-index: 1; }
 
@@ -2220,6 +2219,33 @@ footer {
       .resource-card .footer .button img {
         margin-left: 10px;
         height: 20px; }
+
+.modal-share .modal-content {
+  height: 300px;
+  width: 550px; }
+.modal-share .btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent; }
+.modal-share .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px; }
+.modal-share .share-modal__buttons-container img {
+  height: 30px;
+  width: 30px;
+  margin: 10px; }
+.modal-share .copy-link-container input {
+  width: 250px;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+.modal-share .copy-link-container .copy-button {
+  margin-left: 15px; }
 
 .generic-hero__red-circle {
   bottom: 0;

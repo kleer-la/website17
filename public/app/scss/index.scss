@@ -676,6 +676,48 @@ footer {
 
 //SHARE MODAL
 .modal-share{
+  .modal-content{
+    height: 300px;
+    width: 550px;
+  }
+
+
+  .btn-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+  }
+
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .share-modal__buttons-container{
+    img{
+      height: 30px;
+      width: 30px;
+      margin: 10px;
+    }
+  }
+
+  .copy-link-container{
+    input{
+      width: 250px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .copy-button{
+      margin-left: 15px;
+    }
+  }
 }
 
 

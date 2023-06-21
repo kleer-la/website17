@@ -1,7 +1,12 @@
 
 <div class="card resource-card" style="width: 18rem;">
   <div class="image-container">
-    <%= erb :'component/modals/_share_modal_button'%>
+    <%= erb :'component/modals/_share_modal_button', locals: {
+      facebook: resource.fb_share,
+      twitter: resource.tw_share,
+      linkedin: resource.li_share,
+      resource_link: resource.kleer_share_url
+    }%>
     <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
   </div>
   <div class="card-body body">

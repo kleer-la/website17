@@ -61,22 +61,25 @@ class Resource
     #insert lang
     @kleer_share_url = "https://kleer.la/#{lang}/recursos##{@slug}"
 
+    share_url = @kleer_share_url
+    share_url = @share_link unless @share_link.to_s == ''
+
 
     @fb_share = URI.encode_www_form(
-      u: @share_link,
+      u: share_url,
       quote: @share_text,
       hashtags: @tags
     )
 
     @tw_share = URI.encode_www_form(
-      text: "#{@share_text} #{@share_link}",
+      text: "#{@share_text} #{share_url}",
       hashtags: @tags
     )
     # https://www.linkedin.com/sharing/share-offsite/?url=[your URL]&summary=[your post text]&source=[your source]&hashtags=[your hashtags separated by commas]
 
     @li_share = URI.encode_www_form(
-      url: @share_link,
-      summary: "#{@share_text} #{@share_link}",
+      url: share_url,
+      summary: "#{@share_text} #{share_url}",
       source: @kleer_share_url,
       hashtags: @tags
     )
