@@ -1,0 +1,45 @@
+<!-- Button trigger modal -->
+<button type="button" class="share-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <img src="/app/img/icons/Share.svg" />
+</button>
+
+<!-- Modal -->
+<div class="modal fade modal-share" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h3>Compartir</h3>
+        <div class="share-modal__buttons-container">
+          <a href="<%= "https://www.facebook.com/sharer/sharer.php?#{facebook}" %>">
+            <img src="/app/img/icons/Facebook.svg" />
+          </a>
+          <a href="<%= "https://twitter.com/intent/tweet?#{twitter}" %>">
+            <img src="/app/img/icons/Twitter.svg" />
+          </a>
+          <a href="<%= "http://www.linkedin.com/shareArticle?#{linkedin}" %>">
+            <img src="/app/img/icons/Linkedin.svg" />
+          </a>
+        </div>
+        <div class="copy-link-container">
+          <input
+            class=""
+            value="<%= resource_link %>"
+            >
+            <a onclick="" class="copy-button">copy link</a>
+          </input>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const copyButton = document.querySelector('.copy-button');
+  const copyLink = document.querySelector('.copy-link-container input');
+
+  copyButton.addEventListener('click', () => {
+    copyLink.select();
+    document.execCommand('copy');
+  })
+</script>

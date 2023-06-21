@@ -8,6 +8,7 @@ get '/recursos' do
                    canonical: "#{t('meta_tag.resources.canonical')}"
 
   @resources = Resource.create_list_keventer
+  session[:new] = false
 
   erb :'resources/index', layout: :'layout/layout2022'
 end

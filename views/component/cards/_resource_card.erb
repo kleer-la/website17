@@ -1,31 +1,65 @@
+
 <div class="card resource-card" style="width: 18rem;">
   <div class="image-container">
+    <%= erb :'component/modals/_share_modal_button', locals: {
+      facebook: resource.fb_share,
+      twitter: resource.tw_share,
+      linkedin: resource.li_share,
+      resource_link: resource.kleer_share_url
+    }%>
     <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
   </div>
   <div class="card-body body">
     <h2 class="card-title title"><%= resource.title %></h2>
     <p class="card-text subtitle"><%= resource.description%></p>
     <ul class="items">
-      <li>
-        <b>Autores: </b> <%= resource.authors %>
-      </li>
-      <li>
-        <b>Traductores: </b> <%= resource.translators %>
-      </li>
-      <li>
-        <b>Observaciones: </b> <%= resource.comments %>
-      </li>
+      <% unless resource.authors_list == [] %>
+        <li>
+<!--          <b>Autores: </b>-->
+          <%# puts resource.authors %>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.authors_list, title: 'Autores'} %>
+
+        </li>
+      <% end %>
+      <% unless resource.translators_list == [] %>
+        <li>
+          <b>
+<!--            Traductores:-->
+            <%#= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: 'Traductores'} %>
+          </b>
+        </li>
+      <% end %>
+      <% unless resource.comments == '' %>
+        <li>
+          <b>Observaciones: </b> <%= resource.comments %>
+        </li>
+      <% end %>
     </ul>
 
   </div>
   <div class="footer">
-    <p>
-      <a class="external-web">Compra en web externa</a>
-    </p>
-    <p>
-      <a class="info">Mas info</a>
-    </p>
-    <a class="my-primary-button button">Obtener</a>
-    <a class="my-primary-button button">Descargar</a>
+    <% unless resource.buyit  == '' %>
+      <p>
+        <a class="external-web">Compra en web externa</a>
+      </p>
+    <% end %>
+
+    <% unless resource.landing == '' %>
+      <p>
+        <a href="<%= resource.landing %>" class="info my-secondary-button">Mas info</a>
+      </p>
+    <% end %>
+    <% unless resource.buyit == '' %>
+      <a href="<%= resource.buyit %>" class="my-primary-button button">
+        Obtener
+        <img src='/app/img/icons/ExternalLink.svg'/>
+      </a>
+    <% end %>
+    <% unless resource.getit == '' %>
+      <a href="<%= resource.getit %>" class="my-primary-button button">
+        Descargar
+        <img src='/app/img/icons/Download.svg'/>
+      </a>
+    <% end %>
   </div>
 </div>

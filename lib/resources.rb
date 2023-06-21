@@ -37,8 +37,9 @@ class Resource
     Resource.load_list(api_resp.doc)
   end
 
-  attr_accessor :id, :format, :slug, :lang, :authors, :translators,
-                :title, :description, :cover, :landing, :getit, :share_link, :share_text, :tags, :comments
+  attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list,
+                :fb_share, :tw_share, :li_share, :share_link, :kleer_share_url,
+                :title, :description, :cover, :landing, :getit, :buyit, :share_link, :share_text, :tags, :comments
 
   def initialize(doc, lang)
     @id = doc['id']
@@ -51,13 +52,44 @@ class Resource
     @cover = doc["cover_#{lang}"] || ''
     @landing = doc["landing_#{lang}"] || ''
     @getit = doc["getit_#{lang}"] || ''
+    @buyit = doc["buyit_#{lang}"] || ''
     @share_link = doc["share_link_#{lang}"] || ''
     @share_text = doc["share_text_#{lang}"] || ''
     @tags = doc["tags_#{lang}"] || ''
     @comments = doc["comments_#{lang}"] || ''
 
+    #insert lang
+    @kleer_share_url = "https://kleer.la/#{lang}/recursos##{@slug}"
+
+    share_url = @kleer_share_url
+    share_url = @share_link unless @share_link.to_s == ''
+
+
+    @fb_share = URI.encode_www_form(
+      u: share_url,
+      quote: @share_text,
+      hashtags: @tags
+    )
+
+    @tw_share = URI.encode_www_form(
+      text: "#{@share_text} #{share_url}",
+      hashtags: @tags
+    )
+    # https://www.linkedin.com/sharing/share-offsite/?url=[your URL]&summary=[your post text]&source=[your source]&hashtags=[your hashtags separated by commas]
+
+    @li_share = URI.encode_www_form(
+      url: share_url,
+      summary: "#{@share_text} #{share_url}",
+      source: @kleer_share_url,
+      hashtags: @tags
+    )
+
     @authors = init_trainers(doc, 'authors')
+    @authors_list = doc['authors'].map{|e| e['name']}
+
     @translators = init_trainers(doc, 'translators')
+    @translators_list = doc['translators'].map{|e| e['name']}
+
     init_dates(doc)
     # "categories_id": null,
     # "trainers_id": null,
@@ -82,10 +114,10 @@ class Resource
     @updated_at = doc['updated_at'] || ''
   end
   def self.load_list(doc)
-    doc.each_with_object([]) {|data, ac| 
+    doc.each_with_object([]) {|data, ac|
       (ac << Resource.new(data, :es) ) unless data['title_es'] == ''
       (ac << Resource.new(data, :en) ) unless data['title_en'] == ''
       ac
-    } 
+    }
   end
 end

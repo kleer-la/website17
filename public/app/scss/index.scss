@@ -474,11 +474,11 @@ footer {
   width: 150px;
   padding: 8px;
   background-color: $celeste;
+}
 
-  :hover{
-    .more-authors__popup{
-      display: block !important;
-    }
+.more-authors:hover{
+  .more-authors__popup{
+    display: block !important;
   }
 }
 
@@ -577,19 +577,37 @@ footer {
 
 //resource card
 .resource-card{
-  width: 290px !important;
+  width: 270px !important;
+  margin: 30px auto;
   padding: 24px;
   gap: 32px;
-  isolation: isolate;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px;
 
   .image-container{
     width: 100%;
+    position: relative;
 
     img{
       border-radius: 15px;
       aspect-ratio: 1 / 1;
+    }
+  }
+
+  .share-button{
+    height: 30px;
+    width: 30px;
+    right: 8px;
+    top: 8px;
+    border: none;
+    border-radius: 15px;
+    position: absolute;
+    background-color: $primary-yellow;
+
+    img{
+      height: 20px;
+      width: 20px;
+      margin: auto;
     }
   }
 
@@ -633,15 +651,74 @@ footer {
       font-weight: 700;
       font-size: 16px;
       line-height: 18px;
+      margin: 30px auto 0 auto;
+      width: 180px;
+      height: 55px;
     }
 
     .button{
       width: 180px;
       height: 55px;
-      margin: 30px auto 30px auto;
+      margin: 30px auto 0 auto;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 20px;
+
+      img{
+        margin-left: 10px;
+        height: 20px;
+      }
     }
 
     .white-button{}
+  }
+}
+
+//SHARE MODAL
+.modal-share{
+  .modal-content{
+    height: 300px;
+    width: 550px;
+  }
+
+
+  .btn-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+  }
+
+  .modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .share-modal__buttons-container{
+    img{
+      height: 30px;
+      width: 30px;
+      margin: 10px;
+    }
+  }
+
+  .copy-link-container{
+    input{
+      width: 250px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .copy-button{
+      margin-left: 15px;
+      color: $primary-blue;
+      font-weight: bold;
+    }
   }
 }
 
@@ -706,7 +783,7 @@ footer {
   background-color: $white;
   z-index: 2;
   position: absolute;
-  bottom: -50px;
+  bottom: -70px;
   height: 120px;
   width: 80%;
 

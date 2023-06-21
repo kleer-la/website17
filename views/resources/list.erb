@@ -1,17 +1,10 @@
 <div class="container">
   <div class="row">
+    <%#= erb :'component/modals/_share_modal_button'%>
+
     <%
       locale = session[:locale].to_sym
       @resources.filter { |r| r.lang == locale}.each do |resource|
-        @id = resource.slug
-        @image_cover = resource.cover
-        @landing = resource.landing
-        @getit = resource.getit
-        @title = resource.title
-        @description = resource.description
-        @comments = resource.comments
-        @authors = resource.authors
-        @translators = resource.translators
         @fb_share = @tw_share = @li_share = ''
         @kleer_share_url = "https://kleer.la/#{locale}/recursos##{resource.slug}"
         unless resource.share_text.to_s == ''
@@ -38,8 +31,10 @@
           )
         end
         @is_book = false # remove when refactor recursos2022 to recursos
+
+
     %>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
         <%=erb :'component/cards/_resource_card', locals: {resource: resource} %>
       </div>
     <%end%>
