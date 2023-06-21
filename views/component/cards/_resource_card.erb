@@ -15,12 +15,18 @@
     <ul class="items">
       <% unless resource.authors_list == [] %>
         <li>
-          <b>Autores: </b> <%= resource.authors_list %>
+<!--          <b>Autores: </b>-->
+          <%# puts resource.authors %>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.authors_list, title: 'Autores'} %>
+
         </li>
       <% end %>
       <% unless resource.translators_list == [] %>
         <li>
-          <b>Traductores: </b> <%= resource.translators_list %>
+          <b>
+<!--            Traductores:-->
+            <%#= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: 'Traductores'} %>
+          </b>
         </li>
       <% end %>
       <% unless resource.comments == '' %>

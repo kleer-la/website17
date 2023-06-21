@@ -474,11 +474,11 @@ footer {
   width: 150px;
   padding: 8px;
   background-color: $celeste;
+}
 
-  :hover{
-    .more-authors__popup{
-      display: block !important;
-    }
+.more-authors:hover{
+  .more-authors__popup{
+    display: block !important;
   }
 }
 
@@ -716,6 +716,8 @@ footer {
 
     .copy-button{
       margin-left: 15px;
+      color: $primary-blue;
+      font-weight: bold;
     }
   }
 }

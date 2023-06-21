@@ -2077,8 +2077,9 @@ footer {
   width: 150px;
   padding: 8px;
   background-color: #E8F8FD; }
-  .more-authors :hover .more-authors__popup {
-    display: block !important; }
+
+.more-authors:hover .more-authors__popup {
+  display: block !important; }
 
 .more-authors__popup {
   display: none;
@@ -2245,7 +2246,9 @@ footer {
   border-left: none;
   border-right: none; }
 .modal-share .copy-link-container .copy-button {
-  margin-left: 15px; }
+  margin-left: 15px;
+  color: #68CEF2;
+  font-weight: bold; }
 
 .generic-hero__red-circle {
   bottom: 0;

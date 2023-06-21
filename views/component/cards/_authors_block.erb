@@ -1,20 +1,40 @@
-<% if authors.length <= 1 %>
+<%
+  puts authors
+  if authors.length <= 1
+
+%>
+
   <div class="invidivual-author">
-    <img
-      src="/img/icons/blue_user.svg"
-      alt=""
-      class="little-icon me-2"
-      />
+    <% if defined?(title) %>
+      <b><%= title %>: </b>
+    <% else %>
+      <img
+        src="/img/icons/blue_user.svg"
+        alt=""
+        class="little-icon me-2"
+        />
+    <% end %>
+
     <%= authors[0] %>
   </div>
 <% else%>
   <div class="more-authors rounded ">
-    <img
-      src="/img/icons/blue_people.svg"
-      alt=""
-      class="little-icon me-2"
-      />
-    Autores +
+    <% if defined?(title) %>
+      <b><%= title %>: </b>
+      <img
+        src="/img/icons/blue_people.svg"
+        alt=""
+        class="little-icon me-2"
+        />
+    <% else %>
+      <img
+        src="/img/icons/blue_people.svg"
+        alt=""
+        class="little-icon me-2"
+        />
+      Autores +
+    <% end %>
+
     <div class="more-authors__popup">
       <% authors.each do |author| %>
         <div class="invidivual-author">
