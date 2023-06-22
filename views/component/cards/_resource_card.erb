@@ -1,5 +1,5 @@
 
-<div class="card resource-card" style="width: 18rem;">
+<div class="card resource-card" style="width: 18rem;" id="<%= resource.id %>">
   <div class="image-container">
     <%= erb :'component/modals/_share_modal_button', locals: {
       facebook: resource.fb_share,
@@ -9,7 +9,7 @@
     }%>
     <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
   </div>
-  <div class="card-body body">
+  <div class="card-body body clearfix">
     <h2 class="card-title title"><%= resource.title %></h2>
     <p class="card-text subtitle"><%= resource.description%></p>
     <ul class="items">
@@ -24,7 +24,7 @@
         </li>
       <% end %>
       <% unless resource.comments == '' %>
-        <li>
+        <li style="padding-left: 8px">
           <b>Observaciones: </b> <%= resource.comments %>
         </li>
       <% end %>
@@ -57,3 +57,28 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  {
+      let actualCard = document.getElementById('<%= resource.id %>')
+      let body = actualCard.querySelector('.body')
+      let quantityButtons = actualCard.querySelector('.footer').children.length
+      let height = body.offsetHeight
+
+      const collapseBody = (limit) => {
+          let bodyString = body.children[1].innerHTML
+          body.children[1].innerHTML = bodyString.substring(0, limit) + '...'
+      }
+
+      if (height > 350 && height < 380 && quantityButtons === 1){
+          collapseBody(150)
+      }else if (height > 280 && quantityButtons > 1) {
+          console.log(`height: ${height} quantityButtons: ${quantityButtons} name <%= resource.id %>`)
+          collapseBody(100)
+      }else if (height > 380 && height < 500){
+          collapseBody(100)
+      }
+
+  }
+
+</script>

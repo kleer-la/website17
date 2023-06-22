@@ -35,11 +35,13 @@
 </div>
 
 <script>
-  const copyButton = document.querySelector('.copy-button');
-  const copyLink = document.querySelector('.copy-link-container input');
+    {
+        const copyButton = document.querySelector('.copy-button');
+        const copyLink = document.querySelector('.copy-link-container input');
 
-  copyButton.addEventListener('click', () => {
-    copyLink.select();
-    document.execCommand('copy');
-  })
+        copyButton.addEventListener('click', () => {
+            copyLink.select();
+            document.execCommand('copy');
+        })
+    }
 </script>
