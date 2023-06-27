@@ -229,8 +229,13 @@ get '/prensa' do
                   description: t('meta_tag.press.description'),
                   canonical: "#{t('meta_tag.press.canonical')}"
   # @kleerers = KeventerReader.instance.kleerers session[:locale]
-  @news = get_news
-  return erb :'news/index', layout: :'layout/layout2022'
+#TODO: remove old news implementation and move to /novedades
+  # @news = get_news
+  # return erb :'news/index', layout: :'layout/layout2022'
+  @news = News.create_list_keventer
+  
+  erb :'news_v2/index', layout: :'layout/layout2022'
+
 end
 
 get '/clientes/equipos-scrum-en-technisys-2015' do
