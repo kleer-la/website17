@@ -123,8 +123,7 @@
   }
 
   const filterByText = (event) => {
-      const text = event ? event.target.value : ''
-      textInFilter = text
+      textInFilter = event ? event.target.value : ''
 
       // DOMtitle.classList.remove('hidden-element')
       // DOMobjects.showElements([DOMobjects.articles.title], true)
@@ -145,17 +144,17 @@
       pager.actualPage = 1
       pager.numberOfPages = 0
 
-      // articles.forEach(article => {
-      //     if (article.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
-      //         article.description.toLowerCase().includes(textInFilter.toLowerCase())) {
-      //
-      //         article.card.classList.remove('hidden-element')
-      //         pager.filteredArticlesCount++
-      //
-      //     } else {
-      //         article.card.classList.add('hidden-element')
-      //     }
-      // })
+      resources.forEach(resources => {
+
+          if (resources.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
+              resources.description.toLowerCase().includes(textInFilter.toLowerCase())) {
+
+              resources.card.classList.remove('hidden-element')
+              pager.filteredArticlesCount++
+          } else {
+              resources.card.classList.add('hidden-element')
+          }
+      })
   }
 
   const buildResourcesFromDOM = () => {
