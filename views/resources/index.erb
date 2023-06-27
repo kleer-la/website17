@@ -1,17 +1,184 @@
 <% if session[:new] %>
   <%=erb :'resources/hero' %>
   <section class="container resources-list">
-      <%#=erb :'resources_page/resources' %>
+    <%= erb :'component/_reactive_pager' %>
+    <div>
       <%=erb :'resources/list' %>
+    </div>
+    <%= erb :'component/_reactive_pager'%>
+
   </section>
 <% else %>
   <%=erb :'component/_generic_hero', locals: {title: t("resources.title"), subtitle: t("resources.subtitle")} %>
   <div class="container">
-    <div class="row">
+    <div id="resource-list" class="row">
       <%=erb :'resources/resources' %>
     </div>
   </div>
 <% end %>
+
+
+<script>
+  const itemsPerPage = 8
+
+  let page = 1
+  let textInFilter = ''
+  let resources = []
+
+  const pager = {
+      actualPage: 1,
+      numberOfPages: 0,
+      filteredArticlesCount: 0,
+      activeResources: [],
+      changePage: function (numberPage, items = itemsPerPage){
+          this.actualPage = numberPage
+          this.numberOfPages = Math.ceil(this.activeResources.length / items)
+          const initialItem = (numberPage - 1) * items
+          const finalItem = numberPage * items
+
+          if(numberPage === 1){
+              DOMobjects.showElements(DOMobjects.pager.previousButtons, false)
+          }else if(numberPage === this.numberOfPages){
+              DOMobjects.showElements(DOMobjects.pager.nextButtons, false)
+          }else{
+              DOMobjects.showElements(DOMobjects.pager.nextButtons, true)
+              DOMobjects.showElements(DOMobjects.pager.previousButtons, true)
+          }
+
+          this.activeResources.forEach((resource, index) => {
+              if(index >= initialItem && index < finalItem){
+                  resource.card.classList.remove('hidden-element')
+              }else{
+                  resource.card.classList.add('hidden-element')
+              }
+          })
+
+          DOMobjects.pager.setPagerText(this.numberOfPages, this.actualPage)
+      }
+  }
+
+  const DOMobjects = {
+      resources: {
+          list: Array.from(document.getElementById('resource-list').children),
+      },
+      pager: {
+          nextButtons: Array.from(document.getElementsByClassName('next-button')),
+          previousButtons: Array.from(document.getElementsByClassName('prev-button')),
+          pagerTexts: Array.from(document.getElementsByClassName('pager-text')),
+          // containers: Array.from(document.getElementsByClassName('paging-container')),
+          setPagerText: function(numberOfPages, actualPage){
+              console.log('set pager text'+ numberOfPages + ' ' + actualPage)
+              let text = ``
+              for(let i = 1; i <= numberOfPages; i++){
+                  if(i === actualPage){
+                      text += `<button onclick="pager.changePage(${i})" class="clean-button"><b>${i}</b></button> `
+                  }else{
+                      text += `<button onclick="pager.changePage(${i})" class="clean-button">${i}</button> `
+                  }
+              }
+              this.pagerTexts
+                  .forEach(element => {
+                      element.innerHTML = text
+                  })
+          }
+      },
+      filterBox: {
+          text: {
+              input: document.getElementById('search-box__text-input'),
+          }
+      },
+      showElements: function(elements, show){
+          if(show){
+              elements.forEach(element => {
+                  element.classList.remove('hidden-element')
+              })
+          }else{
+              elements.forEach(element => {
+                  element.classList.add('hidden-element')
+              })
+          }
+      }
+  }
+
+  const setInitialPage = () => {
+      textInFilter = ''
+      pager.activeResources = resources.filter(resource => !resource.card.classList.contains('hidden-element'))
+      pager.changePage(1, itemsPerPage)
+  }
+
+  const cleanAllFilters = () => {
+      filterByText('')
+      setInitialPage()
+      DOMobjects.filterBox.text.input.value = ''
+  }
+
+  const nextPage = () => {
+      console.log('next page')
+      pager.changePage(pager.actualPage + 1, itemsPerPage)
+  }
+
+  const previousPage = () => {
+      console.log('previous page')
+      pager.changePage(pager.actualPage - 1, itemsPerPage)
+  }
+
+  const filterByText = (event) => {
+      const text = event ? event.target.value : ''
+      textInFilter = text
+
+      // DOMtitle.classList.remove('hidden-element')
+      // DOMobjects.showElements([DOMobjects.articles.title], true)
+
+
+      filter()
+
+      // if(text){
+      //     DOMobjects.articles.setTitle(`${pager.filteredArticlesCount} resultados para: <b>${text}</b>`)
+      // }else{
+      //     DOMobjects.showElements([DOMobjects.articles.title], false)
+      // }
+
+  }
+
+  const filter = () => {
+      pager.filteredArticlesCount = 0
+      pager.actualPage = 1
+      pager.numberOfPages = 0
+
+      // articles.forEach(article => {
+      //     if (article.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
+      //         article.description.toLowerCase().includes(textInFilter.toLowerCase())) {
+      //
+      //         article.card.classList.remove('hidden-element')
+      //         pager.filteredArticlesCount++
+      //
+      //     } else {
+      //         article.card.classList.add('hidden-element')
+      //     }
+      // })
+  }
+
+  const buildResourcesFromDOM = () => {
+      resources = DOMobjects.resources.list.map((element) => {
+          const cardElement = element.children[0]
+          const title = cardElement.children[1].children[0].outerText
+          const description = cardElement.children[1].children[2].outerText
+
+          return {
+              card: element,
+              title,
+              description,
+          }
+      })
+  }
+
+  buildResourcesFromDOM()
+  setInitialPage()
+
+  // console.log(DOMobjects)
+  // console.log(pager)
+
+</script>
 
 
 
