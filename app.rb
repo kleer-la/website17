@@ -26,6 +26,7 @@ require './controllers/clients_controller'
 require './controllers/about_us_controller'
 require './controllers/home_controller'
 require './controllers/mailer_controller'
+require './controllers/news_controller'
 
 include MetaTags
 

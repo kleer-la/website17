@@ -578,9 +578,13 @@ footer {
 //resource card
 .resource-card{
   width: 270px !important;
+  height: 750px;
   margin: 30px auto;
   padding: 24px;
   gap: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px;
 
@@ -636,6 +640,8 @@ footer {
     }
   }
 
+  .complete-body{}
+
   .footer{
     text-align: center;
 
@@ -651,7 +657,7 @@ footer {
       font-weight: 700;
       font-size: 16px;
       line-height: 18px;
-      margin: 30px auto 0 auto;
+      margin: 0 auto 0 auto;
       width: 180px;
       height: 55px;
     }

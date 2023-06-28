@@ -105,7 +105,7 @@ en:
         Kleer - Coaching & Training - These organizations trust us.
       canonical: /clientes
     press:
-      title: "| Prensa"
+      title: "| News"
       description:
       canonical: /prensa
 
@@ -1637,8 +1637,8 @@ en:
     "
 
   news:
-    title: Prensa
-    subtitle: Notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
+    title: Press
+    subtitle: Press releases and publications in various media about our work.
 
   business-agility:
     title: Business Agility

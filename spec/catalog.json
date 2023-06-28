@@ -1,0 +1,230 @@
+[
+  {
+    "event_id": 2424,
+    "date": "2023-07-10",
+    "finish_date": "2023-07-14",
+    "city": "Online",
+    "specific_subtitle": "",
+    "country_name": "-- OnLine --",
+    "country_iso": "OL",
+    "list_price": "650.0",
+    "event_duration": 16,
+    "eb_price": "610.0",
+    "eb_end_date": "2023-06-30",
+    "is_sold_out": false,
+    "start_time": "2000-01-01T15:00:00.000Z",
+    "end_time": "2000-01-01T18:00:00.000Z",
+    "mode": "ol",
+    "time_zone_name": "Madrid",
+    "event_type_id": 342,
+    "name": "Certified Scrum Developer (CSD)",
+    "subtitle": "Construye productos digitales con modernas prácticas ágiles de desarrollo de software",
+    "duration": 16,
+    "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/cover_cursos/csd.webp",
+    "categories": [
+      {
+        "id": 4,
+        "name": "Desarrollo de Software"
+      }
+    ],
+    "lang": "es",
+    "slug": "342-certified-scrum-developer-csd",
+    "csd_eligible": true,
+    "is_kleer_certification": false
+  },
+  {
+    "event_id": 2474,
+    "date": "2023-07-24",
+    "finish_date": "2023-08-17",
+    "city": "Online",
+    "specific_subtitle": "",
+    "country_name": "-- OnLine --",
+    "country_iso": "OL",
+    "list_price": "890.0",
+    "event_duration": 20,
+    "eb_price": "846.0",
+    "eb_end_date": "2023-07-14",
+    "is_sold_out": false,
+    "start_time": "2000-01-01T08:00:00.000Z",
+    "end_time": "2000-01-01T10:30:00.000Z",
+    "mode": "ol",
+    "time_zone_name": "Bogota",
+    "event_type_id": 418,
+    "name": "Enterprise Agility Practitioner",
+    "subtitle": "Aprende a liderar la transformación organizacional ágil.",
+    "duration": 16,
+    "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/t/web_portada_03.webp",
+    "categories": [
+      {
+        "id": 2,
+        "name": "Equipos y Organizaciones"
+      }
+    ],
+    "lang": "es",
+    "slug": "418-enterprise-agility-practitioner",
+    "csd_eligible": false,
+    "is_kleer_certification": true
+  },
+  {
+    "event_id": 2480,
+    "date": "2023-08-07",
+    "finish_date": "2023-08-08",
+    "city": "Online",
+    "specific_subtitle": "",
+    "country_name": "-- OnLine --",
+    "country_iso": "OL",
+    "list_price": "800.0",
+    "event_duration": 16,
+    "eb_price": "760.0",
+    "eb_end_date": "2023-07-28",
+    "is_sold_out": false,
+    "start_time": "2000-01-01T08:00:00.000Z",
+    "end_time": "2000-01-01T17:00:00.000Z",
+    "mode": "ol",
+    "time_zone_name": "Bogota",
+    "event_type_id": 7,
+    "name": "Certified Scrum Master (CSM)",
+    "subtitle": "Desarrolla tus habilidades como Scrum Master practicando en forma colaborativa",
+    "duration": 16,
+    "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/training/CSM/cover.webp",
+    "categories": [
+      {
+        "id": 3,
+        "name": "Desarrollo Profesional"
+      }
+    ],
+    "lang": "es",
+    "slug": "7-certified-scrum-master-csm",
+    "csd_eligible": true,
+    "is_kleer_certification": false
+  },
+  {
+    "event_id": 2478,
+    "date": "2023-08-28",
+    "finish_date": "2023-09-01",
+    "city": "Online",
+    "specific_subtitle": "Tarifas desde USD 470",
+    "country_name": "-- OnLine --",
+    "country_iso": "OL",
+    "list_price": "590.0",
+    "event_duration": 12,
+    "eb_price": "530.0",
+    "eb_end_date": "2023-08-04",
+    "is_sold_out": false,
+    "start_time": "2000-01-01T15:00:00.000Z",
+    "end_time": "2000-01-01T18:00:00.000Z",
+    "mode": "ol",
+    "time_zone_name": "Montevideo",
+    "event_type_id": 238,
+    "name": "Taller de Product Discovery",
+    "subtitle": "Descubre mejores soluciones de producto, de valor para los clientes y de impacto al negocio.",
+    "duration": 12,
+    "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/training/TPD/cover.webp",
+    "categories": [
+      {
+        "id": 5,
+        "name": "Diseño de Productos"
+      }
+    ],
+    "lang": "es",
+    "slug": "238-taller-de-product-discovery",
+    "csd_eligible": false,
+    "is_kleer_certification": false
+  },
+  {
+    "event_id": null,
+    "date": null,
+    "finish_date": null,
+    "city": null,
+    "specific_subtitle": null,
+    "country_name": null,
+    "country_iso": null,
+    "event_duration": null,
+    "eb_price": null,
+    "eb_end_date": null,
+    "is_sold_out": null,
+    "start_time": null,
+    "end_time": null,
+    "mode": null,
+    "time_zone_name": null,
+    "event_type_id": 91,
+    "name": "Taller Online de Innovación y Creatividad",
+    "subtitle": "Desarrolla tu capacidad creativa y acelera los niveles de innovación de tus productos y servicios.",
+    "duration": 8,
+    "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/cover_cursos/taller_innovacion.webp",
+    "categories": [
+      {
+        "id": 5,
+        "name": "Diseño de Productos"
+      }
+    ],
+    "lang": "es",
+    "slug": "91-taller-online-de-innovacion-y-creatividad",
+    "csd_eligible": false,
+    "is_kleer_certification": false
+  },
+  {
+    "event_id": null,
+    "date": null,
+    "finish_date": null,
+    "city": null,
+    "specific_subtitle": null,
+    "country_name": null,
+    "country_iso": null,
+    "event_duration": null,
+    "eb_price": null,
+    "eb_end_date": null,
+    "is_sold_out": null,
+    "start_time": null,
+    "end_time": null,
+    "mode": null,
+    "time_zone_name": null,
+    "event_type_id": 375,
+    "name": "Kleer Accredited Product Owner",
+    "subtitle": "¡Certificación kleerer para Product Owners!",
+    "duration": 20,
+    "cover": "",
+    "categories": [
+      {
+        "id": 5,
+        "name": "Diseño de Productos"
+      }
+    ],
+    "lang": "es",
+    "slug": "375-kleer-accredited-product-owner",
+    "csd_eligible": false,
+    "is_kleer_certification": true
+  },
+  {
+    "event_id": null,
+    "date": null,
+    "finish_date": null,
+    "city": null,
+    "specific_subtitle": null,
+    "country_name": null,
+    "country_iso": null,
+    "event_duration": null,
+    "eb_price": null,
+    "eb_end_date": null,
+    "is_sold_out": null,
+    "start_time": null,
+    "end_time": null,
+    "mode": null,
+    "time_zone_name": null,
+    "event_type_id": 206,
+    "name": "Advanced Product Owners Workshop",
+    "subtitle": "Desarrolla tus habilidades como Product Owner / Product Manager estratégico. Impulsa productos de mayor impacto.",
+    "duration": 12,
+    "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/cover_cursos/apow.webp",
+    "categories": [
+      {
+        "id": 5,
+        "name": "Diseño de Productos"
+      }
+    ],
+    "lang": "es",
+    "slug": "206-advanced-product-owners-workshop",
+    "csd_eligible": false,
+    "is_kleer_certification": false
+  }
+]
