@@ -1,31 +1,9 @@
-<%# if session[:version] == 2022 %>
-
-  <%= erb :'blog/hero' %>
-  <%# unfiltered = @category.nil? && @match.nil? && @all.nil?  %>
+<%= erb :'blog/hero' %>
 
   <div class="container">
     <div class="row">
       <div id="blog-feed-list" class="container mt-5 mb-5">
-        <%#=erb :'blog/selected_articles' if unfiltered%>
-        <%#=erb :'blog/articles' %>
-
         <%= erb :'blog/articles_reactive' %>
       </div>
     </div>
   </div>
-
-<%# else %>
-  <%#=erb :'component/_generic_hero', locals: {title: t('blog2022.title'), subtitle: t('blog2022.subtitle')} %>
-
-  <!--<div class="container">-->
-  <!--  <div class="row">-->
-  <!--    <h1 class="blog-home"><span><%#= @where%></span></h1>-->
-  <!--  </div>-->
-  <!--</div>-->
-<!--  <div class="container">-->
-<!--    <div class="row">-->
-      <%#=erb :'blog/list' %>
-<!--    </div>-->
-<!--  </div>-->
-<%# end %>
-

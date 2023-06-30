@@ -615,16 +615,16 @@ footer {
     }
   }
 
+  .title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
   .body{
     margin: 0;
     padding: 0;
-
-    .title{
-      font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 26px;
-    }
 
     .subtitle{
       font-style: normal;
@@ -677,6 +677,37 @@ footer {
     }
 
     .white-button{}
+  }
+}
+
+@media screen and (max-width:420px) {
+  .resource-card{
+    height: 510px;
+    width: 100% !important;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+
+    .footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      .button{
+        margin: 0 0 0 5px;
+      }
+
+      .info{
+        margin: 0 5px 0 0;
+      }
+
+      button{
+        min-width: 80px;
+        width: 100%;
+      }
+    }
+
+    .back-content{}
   }
 }
 

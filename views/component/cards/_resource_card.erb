@@ -9,7 +9,9 @@
     }%>
     <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
   </div>
-  <div class="card-body body clearfix">
+  <h2 class="card-title title mobile-title hidden-element"><%= resource.title %></h2>
+
+  <div class="card-body body">
     <h2 class="card-title title"><%= resource.title %></h2>
     <p class="card-text subtitle"><%= resource.description%></p>
     <ul class="items">
@@ -33,27 +35,31 @@
   </div>
   <div class="footer">
     <% unless resource.buyit  == '' %>
-      <p>
-        <a class="external-web">Compra en web externa</a>
+      <p class="external-web">
+        <a >Compra en web externa</a>
       </p>
     <% end %>
 
     <% unless resource.landing == '' %>
-      <p>
-        <a href="<%= resource.landing %>" class="info my-secondary-button">Mas info</a>
-      </p>
+      <button class="info my-secondary-button">
+        <a href="<%= resource.landing %>">Mas info</a>
+      </button>
     <% end %>
     <% unless resource.buyit == '' %>
-      <a href="<%= resource.buyit %>" class="my-primary-button button">
-        Obtener
-        <img src='/app/img/icons/ExternalLink.svg'/>
-      </a>
+      <button  class="my-primary-button button">
+        <a href="<%= resource.buyit %>">
+          Obtener
+          <img src='/app/img/icons/ExternalLink.svg'/>
+        </a>
+      </button>
     <% end %>
     <% unless resource.getit == '' %>
-      <a href="<%= resource.getit %>" class="my-primary-button button">
-        Descargar
-        <img src='/app/img/icons/Download.svg'/>
-      </a>
+      <button class="my-primary-button button">
+        <a href="<%= resource.getit %>">
+          Descargar
+          <img src='/app/img/icons/Download.svg'/>
+        </a>
+      </button>
     <% end %>
   </div>
 </div>
@@ -62,22 +68,44 @@
   {
       let actualCard = document.getElementById('<%= resource.id %>')
       let body = actualCard.querySelector('.body')
+      let mobileTitle = actualCard.querySelector('.mobile-title')
+      let image = actualCard.querySelector('.image-container')
       let quantityButtons = actualCard.querySelector('.footer').children.length
       let height = body.offsetHeight
+      let face = 1
 
       const collapseBody = (limit) => {
           let bodyString = body.children[1].innerHTML
           body.children[1].innerHTML = bodyString.substring(0, limit) + '...'
       }
 
-      if (height > 350 && height < 380 && quantityButtons === 1){
-          collapseBody(150)
-      }else if (height > 280 && quantityButtons > 1) {
-          collapseBody(100)
-      }else if (height > 380 && height < 500){
-          collapseBody(100)
+      const turnCard = (value) => {
+          console.log('turning card')
+          if(value === 1){
+              body.classList.add('hidden-element')
+              mobileTitle.classList.remove('hidden-element')
+              image.classList.remove('hidden-element')
+          }else{
+              body.classList.remove('hidden-element')
+              image.classList.add('hidden-element')
+              mobileTitle.classList.add('hidden-element')
+          }
+
+          face *= -1
       }
 
+      if(window.innerWidth > 768){
+          if (height > 350 && height < 380 && quantityButtons === 1){
+              collapseBody(150)
+          }else if (height > 280 && quantityButtons > 1) {
+              collapseBody(100)
+          }else if (height > 380 && height < 500){
+              collapseBody(100)
+          }
+      }else{
+          actualCard.onclick = () => turnCard(face)
+          turnCard(face)
+      }
   }
 
 </script>
