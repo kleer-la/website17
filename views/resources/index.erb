@@ -67,7 +67,6 @@
           pagerTexts: Array.from(document.getElementsByClassName('pager-text')),
           // containers: Array.from(document.getElementsByClassName('paging-container')),
           setPagerText: function(numberOfPages, actualPage){
-              console.log('set pager text'+ numberOfPages + ' ' + actualPage)
               let text = ``
               for(let i = 1; i <= numberOfPages; i++){
                   if(i === actualPage){
@@ -160,8 +159,8 @@
   const buildResourcesFromDOM = () => {
       resources = DOMobjects.resources.list.map((element) => {
           const cardElement = element.children[0]
-          const title = cardElement.children[1].children[0].outerText
-          const description = cardElement.children[1].children[2].outerText
+          const title = cardElement.querySelector('.title').outerText
+          const description = cardElement.querySelector('.subtitle').outerText
 
           return {
               card: element,
@@ -174,8 +173,6 @@
   buildResourcesFromDOM()
   setInitialPage()
 
-  // console.log(DOMobjects)
-  // console.log(pager)
 
 </script>
 

@@ -251,6 +251,13 @@
 .resources-list {
   margin-top: 100px; }
 
+@media screen and (max-width: 420px) {
+  .resources-hero {
+    padding: 56px 24px; }
+    .resources-hero h1 {
+      margin-bottom: 20px; }
+    .resources-hero h2 {
+      font-size: 16px; } }
 #training-hero {
   padding-left: 8%;
   padding-right: 5%;
@@ -1129,7 +1136,7 @@
     left: -60px;
     transform: rotate(30deg); }
   .landing-blog-hero__img-container .bluered-group {
-    bottom: -100px;
+    bottom: -125px;
     right: 0;
     transform: scale(0.8); }
 
@@ -2182,14 +2189,14 @@ footer {
       height: 20px;
       width: 20px;
       margin: auto; }
+  .resource-card .title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px; }
   .resource-card .body {
     margin: 0;
     padding: 0; }
-    .resource-card .body .title {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 26px; }
     .resource-card .body .subtitle {
       font-style: normal;
       font-weight: 400;
@@ -2225,6 +2232,24 @@ footer {
         margin-left: 10px;
         height: 20px; }
 
+@media screen and (max-width: 420px) {
+  .resource-card {
+    height: 510px;
+    width: 100% !important;
+    backface-visibility: hidden;
+    transition: transform 0.5s; }
+    .resource-card .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center; }
+      .resource-card .footer .button {
+        margin: 0 0 0 5px; }
+      .resource-card .footer .info {
+        margin: 0 5px 0 0; }
+      .resource-card .footer button {
+        min-width: 80px;
+        width: 100%; } }
 .modal-share .modal-content {
   height: 300px;
   width: 550px; }
