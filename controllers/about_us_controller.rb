@@ -17,15 +17,14 @@ end
 
 get '/privacy' do
   @active_tab_privacidad = 'active'
-  @meta_tags.set! title: "#{@base_title} | Declaración de privacidad"
-  # erb :privacy
+  @meta_tags.set! title: t('privacy.title')
 
   erb :'about_us/privacy', layout: :'layout/layout2022'
 end
 
 get '/terms' do
   @active_tab_terminos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Terminos y condiciones"
-  # erb :terms
+  @meta_tags.set! title: t('terms.title')
+
   erb :'about_us/terms', layout: :'layout/layout2022'
 end
