@@ -96,8 +96,7 @@ end
 Given(/^I visit the "(.*?)" page$/) do |page_url|
   stub_connector
   visit "/#{page_url}"
-  puts "titulo de la pag #{page.title}"
-
+  # puts "titulo de la pag #{page.title}"
   #  expect(page).to have_css('locator_present_only_at_second_page')
 end
 
