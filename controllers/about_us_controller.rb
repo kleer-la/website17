@@ -26,5 +26,6 @@ end
 get '/terms' do
   @active_tab_terminos = 'active'
   @meta_tags.set! title: "#{@base_title} | Terminos y condiciones"
-  erb :terms
+  # erb :terms
+  erb :'about_us/terms', layout: :'layout/layout2022'
 end
