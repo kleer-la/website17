@@ -1,4 +1,3 @@
-require './lib/dt_helper'
 require './lib/metatags'
 require './lib/academy_courses'
 require './lib/event_type'
@@ -7,20 +6,33 @@ require './lib/keventer_helper'
 
 require './controllers/event_helper'
 
-#TODO redirect
 REDIRECT = {
+  'entrenamos/eventos/proximos' => 'agenda',
+  'entrenamos/eventos/proximos/:amount' => 'agenda',
+  'entrenamos/eventos/pais/:country_iso_code' => 'agenda',
   'entrenamos/:id' => 'agenda',
-  'entrenamos' => 'agenda'
+  'entrenamos' => 'agenda',
+  'entrenamos/evento/:event_id_with_name'=> nil,
+  'entrenamos/evento/:event_id_with_name/registration'=> nil,
+  'entrenamos/evento/:event_id_with_name/remote'=> nil,
+  'entrenamos/evento/:event_id_with_name/entrenador/remote'=> nil
 }.freeze
 
 REDIRECT.each do |uris|
   get '/'+uris[0] do
-     redirect '/'+uris[1] #, 301
+    return(redirect_not_found_course) if uris[1].nil?
+    redirect "/#{session[:locale]}/#{uris[1]}" #, 301
   end
 end
 
 def course_not_found_error
   I18n.t('event.not_found')
+end
+
+def redirect_not_found_course
+  session[:error_msg] = course_not_found_error
+  flash.now[:alert] = course_not_found_error
+  redirect(to("/#{session[:locale]}/catalogo"))
 end
 
 def event_type_from_json(event_type_id_with_name)
@@ -69,28 +81,6 @@ get '/catalogo' do
   erb :'training/index', layout: :'layout/layout2022'
 end
 
-# Nuevo dispatcher de evento/id -> busca el tipo de evento y va a esa View
-get '/entrenamos/evento/:event_id_with_name' do
-  event_id_with_name = params[:event_id_with_name]
-  event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, true) if valid_id?(event_id)
-
-  if @event.nil?
-    redirect_not_found_course
-  else
-    uri = "/cursos/#{@event.event_type.id}-#{@event.event_type.name}" # TODO: use slug
-
-    redirect uri # , 301 # permanent redirect
-  end
-end
-
-def redirect_not_found_course
-  session[:error_msg] = course_not_found_error
-  flash.now[:alert] = course_not_found_error
-  redirect(to('/catalogo'))
-end
-
-#TODO
 # Nueva (y simplificada) ruta para Tipos de Evento
 get '/cursos/:event_type_id_with_name' do
   @event_type = event_type_from_json params[:event_type_id_with_name]
@@ -111,9 +101,10 @@ get '/cursos/:event_type_id_with_name' do
     end
 
     # SEO (title, meta)
-    @meta_tags.set! title: @event_type.name
-    @meta_tags.set! description: @event_type.elevator_pitch
-    @meta_tags.set! canonical: @event_type.canonical_url
+    @meta_tags.set! title: @event_type.name,
+                    description: @event_type.elevator_pitch,
+                    canonical: @event_type.canonical_url,
+                    noindex: @event_type.noindex
 
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
@@ -130,73 +121,3 @@ end
 get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
   redirect to "/cursos/#{params[:event_type_id_with_name]}", 301
 end
-
-get '/entrenamos/evento/:event_id_with_name/entrenador/remote' do
-  event_id_with_name = params[:event_id_with_name]
-
-  event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
-
-  if @event.nil?
-    session[:error_msg] = course_not_found_error
-    erb :error_404_remote_to_calendar, layout: :layout_empty
-  else
-    erb :trainer_remote, layout: :layout_empty
-  end
-end
-
-get '/entrenamos/evento/:event_id_with_name/remote' do
-  event_id_with_name = params[:event_id_with_name]
-
-  event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
-
-  if @event.nil?
-    session[:error_msg] = course_not_found_error
-    erb :error_404_remote_to_calendar, layout: :layout_empty
-  else
-    erb :event_remote, layout: :layout_empty
-  end
-end
-
-get '/entrenamos/evento/:event_id_with_name/registration' do
-  event_id_with_name = params[:event_id_with_name]
-
-  event_id = event_id_with_name.split('-')[0]
-  @event = KeventerReader.instance.event(event_id, false) if valid_id?(event_id)
-
-  if @event.nil?
-    session[:error_msg] = course_not_found_error
-    erb :error_404_remote_to_calendar, layout: :layout_empty
-  else
-    erb :event_remote_registration, layout: :layout_empty
-  end
-end
-
-# JSON ====================
-
-get '/entrenamos/eventos/proximos' do
-  content_type :json
-  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
-                                  'cursos')
-end
-
-get '/entrenamos/eventos/proximos/:amount' do
-  content_type :json
-  amount = params[:amount]
-  amount = amount.to_i unless amount.nil?
-  DTHelper.to_dt_event_array_json(KeventerReader.instance.coming_commercial_events, true,
-                                  'cursos', I18n, session[:locale], amount, false)
-end
-
-get '/entrenamos/eventos/pais/:country_iso_code' do
-  content_type :json
-  country_iso_code = params[:country_iso_code]
-  country_iso_code = 'todos' unless valid_country_iso_code?(country_iso_code, 'cursos')
-  session[:filter_country] = country_iso_code
-  data = DTHelper.to_dt_event_array_json(
-    KeventerReader.instance.commercial_events_by_country(country_iso_code), false, 'cursos', I18n, session[:locale]
-  )
-  data
-end
-

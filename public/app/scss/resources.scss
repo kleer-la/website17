@@ -49,3 +49,19 @@ $celeste: #E8F8FD;
 .resources-list{
   margin-top: 100px;
 }
+
+@media screen and (max-width:420px) {
+  .resources-hero{
+    padding: 56px 24px;
+
+    h1{
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 16px
+    }
+  }
+
+}
+

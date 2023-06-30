@@ -42,25 +42,9 @@ get '/blog' do
                   canonical: "#{t('meta_tag.blog.canonical')}"
   @where = 'Blog'
 
-  # TODO: deprecate
-
-  # @category = params[:category]
-  # @match = params[:match]
-  # @all= params[:all]
-  # @all= true if session[:locale] == 'en'  # always 'all' for English
-  #
   @categories = load_categories session[:locale]
 
   articles = Article.create_list_keventer(true)
-
-  # @blog_home_data = BlogHomeData.new(articles, session[:locale])
-  # @blog_home_data.filter_by_category(@category).filter_by_text(@match)
-  #
-  # @pager = Pager.new(
-  #   @all ? 9 : 6,
-  #   @blog_home_data.filtered(@all).count
-  # ).on_page(params[:page] ? params[:page].to_i : 0)
-  # @articles = @pager.filter(@blog_home_data.filtered(@all) )
 
   @articles = articles.select { |a| a.lang == session[:locale]}.sort_by(&:created_at).reverse
 

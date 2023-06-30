@@ -17,7 +17,7 @@
   "is_kleer_certification": false,
   "external_site_url": null,
   "deleted": false,
-  "noindex": false,
+  "noindex": true,
   "lang": "es",
   "cover": null,
   "side_image": null,

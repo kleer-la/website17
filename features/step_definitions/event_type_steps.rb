@@ -8,7 +8,6 @@ def get_event_type(event_type_id, find_it: true)
   allow(connector).to receive(:get_catalog).and_return(catalog)
   allow(connector).to receive(:event_type_url).with(event_type_id)
   allow(connector).to receive(:event_type_url).and_return(find_it ? "./spec/event_type_#{event_type_id}.xml" : '')
-  allow(connector).to receive(:events_xml_url).and_return('./spec/events.xml')
   allow(connector).to receive(:categories_xml_url).and_return('./spec/categories.xml')
   allow(connector).to receive(:get_testimonies ).and_return(nil)
 
@@ -72,6 +71,11 @@ end
 Given(/^there is a event type with no duration$/) do
   @event_type_id = 3
 end
+
 Given('I expect duration to be {string}') do |text|
   expect(page).to have_selector("#duration-#{@event_type_id}", exact_text: text)
+end
+
+Given('theres an event type with noindex') do
+  get_event_type(4)
 end

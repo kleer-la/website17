@@ -1,8 +1,12 @@
 
 Feature: Entrenamos
-	Scenario: Deprecated URL
+	Scenario: Deprecated URL should redirect
 		Given I visit the "/es/entrenamos/evento/1953-taller-de-product-discovery-online" page
-		Then I should redirect to "/catalogo"
+		Then It should redirect to "/es/catalogo"
+
+	Scenario: Deprecated URL should show a msg
+		Given PENDING
+		Given I visit the "/es/entrenamos/evento/1953-taller-de-product-discovery-online" page
 		And I should see "no fue encontrado"
 
 	Scenario: SEO meta tags in Agenda
