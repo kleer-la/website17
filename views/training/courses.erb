@@ -1,8 +1,6 @@
 <%
   courses = keventer_to_card(@events, session[:locale])
 
-  puts courses[0][:url]
-
   if session[:locale]  == 'es'
     @academy.each{|e|
       courses.push(
@@ -24,13 +22,11 @@
   courses = courses.uniq {|e| e[:uri_path]}
 
 %>
-
 <section id="training-courses" class="p-5 mt-4">
   <div class='container training-courses__container'>
     <h4 class="text-center m-4 last-courses__tittle">
       <%= t("courses_page.catalog.title") %>
     </h4>
-
     <% if session[:locale]  == 'es'%>
       <div class="courses-filters row">
       <div class="dropdown d-flex courses-filters__drop col-12 col-lg-3">
@@ -86,12 +82,8 @@
           <% end %>
         </div>
       </div>
-
-
-
     </div>
     <% end %>
-
     <div class='row mt-5 w-100' id="courses-container">
       <% courses.each do |course|
         @course = course
@@ -100,7 +92,6 @@
           <%= erb :'component/_course_card' %>
         </div>
       <% end%>
-
     </div>
     <div class="btn-center-container mt-5">
       <button
@@ -109,7 +100,6 @@
         onclick="handleClickSeeMore()"
       ><%= t("courses_page.catalog.more") %></button>
     </div>
-
     <img
       src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle3.svg"
       class="desktop_figure training-courses_red-circle"
@@ -126,9 +116,7 @@
       alt="decorative figure"
       />
   </div>
-
 </section>
-
 <% if session[:locale]  == 'es'%>
   <script src="/js/courses_filter.js"> </script>
 <% end %>

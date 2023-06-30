@@ -183,7 +183,6 @@ get '/categoria/:category_codename' do
   @active_tab_acompanamos = 'active'
 
   if @category.nil?
-    puts "pasa por aca"
     redirect "/#{session[:locale]}/catalogo", 301
   else
     @meta_tags.set! title: @category.name
