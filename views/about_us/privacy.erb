@@ -1,11 +1,6 @@
-<div class="blackBg">
-<div class="header-small header-privacy"></div>
 
-<div class="header-description">
-	<h1 class="headerTitle"><%=t("privacy.title")%></h1>
-</div>
 
-</div>
+<%=erb :'component/_generic_hero', locals: {title: t('privacy.title'), subtitle: ''} %>
 
 <div class="vSpace"></div>
 <div class="vSpace"></div>
@@ -34,9 +29,6 @@
 			<h3><%=t("privacy.title7")%></h3>
 			<p><%=t("privacy.text7")%></p>
 
-		</div>
-		<div class="col-md-3 hidden-xs hidden-sm">
-			<%= erb :_twitter_widget, :layout => false %>
 		</div>
 	</div>
 </div>

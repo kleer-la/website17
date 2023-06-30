@@ -18,7 +18,9 @@ end
 get '/privacy' do
   @active_tab_privacidad = 'active'
   @meta_tags.set! title: "#{@base_title} | Declaración de privacidad"
-  erb :privacy
+  # erb :privacy
+
+  erb :'about_us/privacy', layout: :'layout/layout2022'
 end
 
 get '/terms' do
