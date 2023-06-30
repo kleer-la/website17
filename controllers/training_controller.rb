@@ -111,9 +111,10 @@ get '/cursos/:event_type_id_with_name' do
     end
 
     # SEO (title, meta)
-    @meta_tags.set! title: @event_type.name
-    @meta_tags.set! description: @event_type.elevator_pitch
-    @meta_tags.set! canonical: @event_type.canonical_url
+    @meta_tags.set! title: @event_type.name,
+                    description: @event_type.elevator_pitch,
+                    canonical: @event_type.canonical_url,
+                    noindex: @event_type.noindex
 
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo

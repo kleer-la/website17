@@ -86,6 +86,9 @@ class EventType
     @is_kleer_cert = to_boolean(hash_event['is_kleer_certification'])
     @is_sa_cert = to_boolean(hash_event['csd_eligible'])
     @is_new_version = to_boolean(hash_event['new_version'])
+    @deleted = to_boolean(hash_event['deleted'])
+    @noindex = to_boolean(hash_event['noindex'])
+
     @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
 
     load_testimonies(hash_event['testimonies'])

@@ -42,3 +42,9 @@ Feature: Event Type Details
 		When I visit the plain event type page
 		Then The page should have one H1 tag
 		And The page should have at least two H2 tags
+
+	Scenario: SEO H-tags structure
+		Given theres an event type with noindex
+		When I visit the plain event type page
+	  Then SEO meta name "robots" should be "noindex"
+		

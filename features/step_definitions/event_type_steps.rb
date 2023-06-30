@@ -72,6 +72,11 @@ end
 Given(/^there is a event type with no duration$/) do
   @event_type_id = 3
 end
+
 Given('I expect duration to be {string}') do |text|
   expect(page).to have_selector("#duration-#{@event_type_id}", exact_text: text)
+end
+
+Given('theres an event type with noindex') do
+  get_event_type(4)
 end
