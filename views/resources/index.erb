@@ -54,6 +54,8 @@
           })
 
           DOMobjects.pager.setPagerText(this.numberOfPages, this.actualPage)
+
+          console.log(addPageToLink())
       }
   }
 
@@ -102,7 +104,7 @@
   const setInitialPage = () => {
       textInFilter = ''
       pager.activeResources = resources.filter(resource => !resource.card.classList.contains('hidden-element'))
-      pager.changePage(1, itemsPerPage)
+      pager.changePage(getInitialPage(), itemsPerPage)
   }
 
   const cleanAllFilters = () => {
@@ -136,6 +138,19 @@
       //     DOMobjects.showElements([DOMobjects.articles.title], false)
       // }
 
+  }
+
+  const addPageToLink = () =>{
+      let url = window.location.href
+      url = url + '?' + 'page=' + pager.actualPage
+
+      return url
+  }
+
+  const getInitialPage = () => {
+      const urlParams = new URLSearchParams(window.location.search)
+      const page = urlParams.get('page')
+      return page ? parseInt(page) : 1
   }
 
   const filter = () => {
