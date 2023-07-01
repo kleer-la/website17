@@ -144,7 +144,6 @@
       pager.numberOfPages = 0
 
       resources.forEach(resources => {
-
           if (resources.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
               resources.description.toLowerCase().includes(textInFilter.toLowerCase())) {
 
@@ -154,6 +153,10 @@
               resources.card.classList.add('hidden-element')
           }
       })
+
+      pager.activeResources = resources.filter(resource => !resource.card.classList.contains('hidden-element'))
+      pager.numberOfPages = Math.ceil(pager.activeResources.length / itemsPerPage)
+      pager.changePage(1, itemsPerPage)
   }
 
   const buildResourcesFromDOM = () => {
