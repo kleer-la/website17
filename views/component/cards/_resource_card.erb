@@ -2,6 +2,7 @@
 <div class="card resource-card" style="width: 18rem;" id="<%= resource.id %>">
   <div class="image-container">
     <%= erb :'component/modals/_share_modal_button', locals: {
+      id: resource.id,
       facebook: resource.fb_share,
       twitter: resource.tw_share,
       linkedin: resource.li_share,
