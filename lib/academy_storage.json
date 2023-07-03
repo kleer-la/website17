@@ -88,6 +88,17 @@
                 "categories": ["Desarrollo Profesional"],
                 "duration": 4
               }
+            },
+            {
+              "es": {
+                "id": "comunicacion-colaborativa",
+                "cover": "https://kleer-images.s3.sa-east-1.amazonaws.com/comunicacioon-colaborativa.jpg",
+                "title": "Comunicación Colaborativa: Tu camino hacia la expresión honesta",
+                "subtitle": "Ordena lo que deseas expresar para abordar conflictos con conciencia y convertirlos en oportunidades.",
+                "url": "https://academia.kleer.la/p/comcol",
+                "categories": ["Desarrollo Profesional"],
+                "duration": "3 a 6"
+              }
             }
           ]
 }
