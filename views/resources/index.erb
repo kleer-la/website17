@@ -114,12 +114,10 @@
   }
 
   const nextPage = () => {
-      console.log('next page')
       pager.changePage(pager.actualPage + 1, itemsPerPage)
   }
 
   const previousPage = () => {
-      console.log('previous page')
       pager.changePage(pager.actualPage - 1, itemsPerPage)
   }
 
@@ -150,7 +148,7 @@
           url.searchParams.append('page', pager.actualPage)
       }
 
-      url = url.toString().split('#')[0]
+      // url = url.toString().split('#')[0]
 
       history.pushState(null, null, url.toString())
   }
