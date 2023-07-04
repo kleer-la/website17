@@ -153,10 +153,22 @@
       history.pushState(null, null, url.toString())
   }
 
+  const getPageOfResource = (resourceId) => {
+      const resource = resources.find(resource => {
+          console.log(resource.id, resourceId)
+          return resource.id === resourceId
+      })
+      const index = pager.activeResources.indexOf(resource)
+      return Math.ceil((index + 1) / itemsPerPage)
+  }
+
   const getInitialPage = () => {
       const urlParams = new URLSearchParams(window.location.search)
-      const page = urlParams.get('page')
-      return page ? parseInt(page) : 1
+      let pageInLink = parseInt(urlParams.get('page')) || 1
+      const id = window.location.href.split('#')[1]
+
+      return id ? getPageOfResource(id) : pageInLink
+
   }
 
   const filter = () => {
@@ -183,12 +195,14 @@
   const buildResourcesFromDOM = () => {
       resources = DOMobjects.resources.list.map((element) => {
           const cardElement = element.children[0]
+          const id = cardElement.id
           const title = cardElement.querySelector('.title').outerText
           const description = cardElement.querySelector('.subtitle').outerText
 
           return {
               card: element,
               title,
+              id,
               description,
           }
       })
