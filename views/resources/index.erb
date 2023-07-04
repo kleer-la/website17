@@ -53,9 +53,9 @@
               }
           })
 
+          localStorage.setItem('page', this.actualPage);
           DOMobjects.pager.setPagerText(this.numberOfPages, this.actualPage)
-
-          console.log(addPageToLink())
+          addPageToLink()
       }
   }
 
@@ -142,9 +142,15 @@
 
   const addPageToLink = () =>{
       let url = window.location.href
-      url = url + '?' + 'page=' + pager.actualPage
+      url = new URL(url)
 
-      return url
+      if(url.searchParams.get('page')){
+          url.searchParams.set('page', pager.actualPage)
+      }else{
+          url.searchParams.append('page', pager.actualPage)
+      }
+
+      history.pushState(null, null, url.toString())
   }
 
   const getInitialPage = () => {

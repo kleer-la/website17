@@ -1,5 +1,5 @@
 
-<div class="card resource-card" style="width: 18rem;" id="<%= resource.id %>">
+<div class="card resource-card" style="width: 18rem;" id="<%= resource.slug %>">
   <div class="image-container">
     <%= erb :'component/modals/_share_modal_button', locals: {
       id: resource.id,
@@ -67,7 +67,8 @@
 
 <script>
   {
-      let actualCard = document.getElementById('<%= resource.id %>')
+      const id = '<%= resource.slug %>'
+      let actualCard = document.getElementById(id)
       let body = actualCard.querySelector('.body')
       let mobileTitle = actualCard.querySelector('.mobile-title')
       let image = actualCard.querySelector('.image-container')
@@ -81,7 +82,6 @@
       }
 
       const turnCard = (value) => {
-          console.log('turning card')
           if(value === 1){
               body.classList.add('hidden-element')
               mobileTitle.classList.remove('hidden-element')
@@ -95,6 +95,33 @@
           face *= -1
       }
 
+      const updateLink = () => {
+          const url = window.location.href
+          let input = actualCard.querySelector('.share-link-input')
+          let actualPage = parseInt(localStorage.getItem('page')) || 1
+
+          let textWOid = url.split('#')[0]
+          let textWOpage = textWOid.split('?')[0]
+
+          input.value = textWOpage + '?page=' + actualPage + '#' + id
+      }
+
+
+      //out for utils
+      const observeLocalStorage = (key, callback) => {
+          let previousValue = localStorage.getItem(key);
+
+          setInterval(() => {
+              const currentValue = localStorage.getItem(key);
+              if (currentValue !== previousValue) {
+                  previousValue = currentValue;
+                  callback();
+              }
+          }, 100);
+      };
+
+      observeLocalStorage('page', updateLink);
+
       if(window.innerWidth > 768){
           if (height > 350 && height < 380 && quantityButtons === 1){
               collapseBody(150)
@@ -107,6 +134,8 @@
           actualCard.onclick = () => turnCard(face)
           turnCard(face)
       }
+
+      updateLink()
   }
 
 </script>
