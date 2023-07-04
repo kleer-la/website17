@@ -251,6 +251,12 @@
 .resources-list {
   margin-top: 100px; }
 
+#search-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 50px 0 0 25px; }
+
 @media screen and (max-width: 420px) {
   .resources-hero {
     padding: 56px 24px; }

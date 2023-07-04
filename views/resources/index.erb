@@ -1,6 +1,7 @@
 <% if session[:new] %>
   <%=erb :'resources/hero' %>
   <section class="container resources-list">
+    <h2 id="search-title" class="hidden-element"></h2>
     <%= erb :'component/_reactive_pager' %>
     <div>
       <%=erb :'resources/list' %>
@@ -28,7 +29,7 @@
   const pager = {
       actualPage: 1,
       numberOfPages: 0,
-      filteredArticlesCount: 0,
+      filteredResourcesCount: 0,
       activeResources: [],
       changePage: function (numberPage, items = itemsPerPage){
           this.actualPage = numberPage
@@ -62,6 +63,10 @@
   const DOMobjects = {
       resources: {
           list: Array.from(document.getElementById('resource-list').children),
+          title: document.getElementById('search-title'),
+          setTitle: function(text){
+              this.title.innerHTML = text
+          }
       },
       pager: {
           nextButtons: Array.from(document.getElementsByClassName('next-button')),
@@ -130,11 +135,12 @@
 
       filter()
 
-      // if(text){
-      //     DOMobjects.articles.setTitle(`${pager.filteredArticlesCount} resultados para: <b>${text}</b>`)
-      // }else{
-      //     DOMobjects.showElements([DOMobjects.articles.title], false)
-      // }
+      if(textInFilter){
+          DOMobjects.showElements([DOMobjects.resources.title], true)
+          DOMobjects.resources.setTitle(`${pager.filteredResourcesCount} resultados para: <b>${textInFilter}</b>`)
+      }else{
+          DOMobjects.showElements([DOMobjects.resources.title], false)
+      }
 
   }
 
@@ -148,7 +154,6 @@
           url.searchParams.append('page', pager.actualPage)
       }
 
-      // url = url.toString().split('#')[0]
 
       history.pushState(null, null, url.toString())
   }
@@ -168,11 +173,10 @@
       const id = window.location.href.split('#')[1]
 
       return id ? getPageOfResource(id) : pageInLink
-
   }
 
   const filter = () => {
-      pager.filteredArticlesCount = 0
+      pager.filteredResourcesCount = 0
       pager.actualPage = 1
       pager.numberOfPages = 0
 
@@ -181,7 +185,7 @@
               resources.description.toLowerCase().includes(textInFilter.toLowerCase())) {
 
               resources.card.classList.remove('hidden-element')
-              pager.filteredArticlesCount++
+              pager.filteredResourcesCount++
           } else {
               resources.card.classList.add('hidden-element')
           }
