@@ -1613,7 +1613,8 @@ img {
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 26px; }
+  line-height: 26px;
+  z-index: 5; }
 
 .common-subtitle {
   font-family: "degular-text",sans-serif;
@@ -1737,7 +1738,8 @@ img {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 26px; }
+    line-height: 26px;
+    z-index: 5; }
 
   .common-subtitle {
     font-family: "degular-text",sans-serif;
