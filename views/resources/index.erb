@@ -150,7 +150,7 @@
           url.searchParams.append('page', pager.actualPage)
       }
 
-      url = url.split('#')[0]
+      url = url.toString().split('#')[0]
 
       history.pushState(null, null, url.toString())
   }
