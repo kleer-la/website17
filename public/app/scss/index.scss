@@ -752,6 +752,8 @@ footer {
     }
 
     .copy-button{
+      border: none;
+        background-color: transparent;
       margin-left: 15px;
       color: $primary-blue;
       font-weight: bold;

@@ -2283,6 +2283,8 @@ footer {
   border-left: none;
   border-right: none; }
 .modal-share .copy-link-container .copy-button {
+  border: none;
+  background-color: transparent;
   margin-left: 15px;
   color: #68CEF2;
   font-weight: bold; }

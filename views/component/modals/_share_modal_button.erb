@@ -24,9 +24,10 @@
         <div class="copy-link-container">
           <input
             class="share-link-input"
+            id="<%="shareLink#{id}"%>"
             value="<%= resource_link %>"
             >
-            <a class="copy-button">copy link</a>
+            <button id="<%="copyButton#{id}"%>" class="copy-button">copy link</button>
           </input>
         </div>
       </div>
@@ -36,12 +37,14 @@
 
 <script>
     {
-        const copyButton = document.querySelector('.copy-button');
-        const copyLink = document.querySelector('.copy-link-container input');
+        const copyButton = document.querySelector('#<%="copyButton#{id}"%>');
+        const copyLink = document.querySelector('#<%="shareLink#{id}"%>');
 
-        copyButton.addEventListener('click', () => {
-            copyLink.select();
-            document.execCommand('copy');
-        })
+        copyButton.onclick =
+        () =>{
+            console.log('#<%="shareLink#{id}"%>')
+            navigator.clipboard.writeText(document.querySelector('#<%="shareLink#{id}"%>').value)
+            copyLink.value = 'copied!'
+        }
     }
 </script>
