@@ -36,11 +36,13 @@ $celeste: #E8F8FD;
   }
 
   .resources-hero__yellow-circle{
+    position: absolute;
     bottom: 0;
     left: 0;
   }
 
   .resources-hero__blue-circle{
+    position: absolute;
     right: 0;
     bottom: 20%;
   }
@@ -58,17 +60,26 @@ $celeste: #E8F8FD;
 }
 
 @media screen and (max-width:420px) {
-  .resources-hero{
+  .resources-hero {
     padding: 56px 24px;
 
-    h1{
+    h1 {
       margin-bottom: 20px;
     }
 
     h2 {
       font-size: 16px
     }
-  }
 
+    .resources-hero__yellow-circle {
+      left: -50px;
+      scale: 0.5;
+    }
+
+    .resources-hero__blue-circle {
+      scale: 0.5;
+      right: -50px;
+    }
+  }
 }
 

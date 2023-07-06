@@ -242,9 +242,11 @@
     z-index: 3;
     max-width: 1000px; }
   .resources-hero .resources-hero__yellow-circle {
+    position: absolute;
     bottom: 0;
     left: 0; }
   .resources-hero .resources-hero__blue-circle {
+    position: absolute;
     right: 0;
     bottom: 20%; }
 
@@ -263,7 +265,13 @@
     .resources-hero h1 {
       margin-bottom: 20px; }
     .resources-hero h2 {
-      font-size: 16px; } }
+      font-size: 16px; }
+    .resources-hero .resources-hero__yellow-circle {
+      left: -50px;
+      scale: 0.5; }
+    .resources-hero .resources-hero__blue-circle {
+      scale: 0.5;
+      right: -50px; } }
 #training-hero {
   padding-left: 8%;
   padding-right: 5%;
