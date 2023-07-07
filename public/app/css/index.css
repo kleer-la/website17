@@ -2186,25 +2186,26 @@ footer {
   justify-content: space-between;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px; }
+  .resource-card .share-button {
+    height: 30px;
+    width: 30px;
+    right: 32px;
+    top: 32px;
+    border: none;
+    border-radius: 15px;
+    position: absolute;
+    background-color: #FFE600;
+    z-index: 5; }
+    .resource-card .share-button img {
+      height: 20px;
+      width: 20px;
+      margin: auto; }
   .resource-card .image-container {
     width: 100%;
     position: relative; }
     .resource-card .image-container img {
       border-radius: 15px;
       aspect-ratio: 1 / 1; }
-  .resource-card .share-button {
-    height: 30px;
-    width: 30px;
-    right: 8px;
-    top: 8px;
-    border: none;
-    border-radius: 15px;
-    position: absolute;
-    background-color: #FFE600; }
-    .resource-card .share-button img {
-      height: 20px;
-      width: 20px;
-      margin: auto; }
   .resource-card .title {
     font-style: normal;
     font-weight: 600;
@@ -2297,6 +2298,10 @@ footer {
   color: #68CEF2;
   font-weight: bold; }
 
+@media screen and (max-width: 420px) {
+  .modal-share .modal-content {
+    margin-top: 20%;
+    width: 100% !important; } }
 .generic-hero__red-circle {
   bottom: 0;
   right: -60px; }
