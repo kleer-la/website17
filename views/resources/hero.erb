@@ -1,12 +1,15 @@
 <section id="resources-hero" class="resources-hero">
   <h1><%= t("resources.title") %></h1>
   <h2 class="hero-description"><%= t("resources.subtitle") %></h2>
-  <%= erb :'component/sections/_search_box'  %>
+  <% if session[:locale] == 'es' %>
+    <%= erb :'component/sections/_search_box'  %>
+  <% end %>
+
   <img
-    class="desktop_figure resources-hero__yellow-circle"
+    class="resources-hero__yellow-circle"
     src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle.png">
   <img
-    class="desktop_figure resources-hero__blue-circle"
+    class="resources-hero__blue-circle"
     src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_semicircle.png">
 
 </section>

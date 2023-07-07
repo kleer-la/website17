@@ -242,14 +242,22 @@
     z-index: 3;
     max-width: 1000px; }
   .resources-hero .resources-hero__yellow-circle {
+    position: absolute;
     bottom: 0;
     left: 0; }
   .resources-hero .resources-hero__blue-circle {
+    position: absolute;
     right: 0;
     bottom: 20%; }
 
 .resources-list {
   margin-top: 100px; }
+
+#search-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 50px 0 0 25px; }
 
 @media screen and (max-width: 420px) {
   .resources-hero {
@@ -257,7 +265,13 @@
     .resources-hero h1 {
       margin-bottom: 20px; }
     .resources-hero h2 {
-      font-size: 16px; } }
+      font-size: 16px; }
+    .resources-hero .resources-hero__yellow-circle {
+      left: -50px;
+      scale: 0.5; }
+    .resources-hero .resources-hero__blue-circle {
+      scale: 0.5;
+      right: -50px; } }
 #training-hero {
   padding-left: 8%;
   padding-right: 5%;
@@ -1607,7 +1621,8 @@ img {
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 26px; }
+  line-height: 26px;
+  z-index: 5; }
 
 .common-subtitle {
   font-family: "degular-text",sans-serif;
@@ -1731,7 +1746,8 @@ img {
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
-    line-height: 26px; }
+    line-height: 26px;
+    z-index: 5; }
 
   .common-subtitle {
     font-family: "degular-text",sans-serif;
@@ -2275,6 +2291,8 @@ footer {
   border-left: none;
   border-right: none; }
 .modal-share .copy-link-container .copy-button {
+  border: none;
+  background-color: transparent;
   margin-left: 15px;
   color: #68CEF2;
   font-weight: bold; }

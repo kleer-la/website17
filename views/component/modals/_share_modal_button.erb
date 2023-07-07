@@ -1,10 +1,10 @@
 <!-- Button trigger modal -->
-<button type="button" class="share-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" class="share-button" data-bs-toggle="modal" data-bs-target="#<%="shareModal#{id}"%>">
   <img src="/app/img/icons/Share.svg" />
 </button>
 
 <!-- Modal -->
-<div class="modal fade modal-share" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade modal-share" id="<%="shareModal#{id}"%>" tabindex="-1" aria-labelledby="<%="shareModal#{id}label"%>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
@@ -23,10 +23,11 @@
         </div>
         <div class="copy-link-container">
           <input
-            class=""
+            class="share-link-input"
+            id="<%="shareLink#{id}"%>"
             value="<%= resource_link %>"
             >
-            <a onclick="" class="copy-button">copy link</a>
+            <button id="<%="copyButton#{id}"%>" class="copy-button">copy link</button>
           </input>
         </div>
       </div>
@@ -36,12 +37,14 @@
 
 <script>
     {
-        const copyButton = document.querySelector('.copy-button');
-        const copyLink = document.querySelector('.copy-link-container input');
+        const copyButton = document.querySelector('#<%="copyButton#{id}"%>');
+        const copyLink = document.querySelector('#<%="shareLink#{id}"%>');
 
-        copyButton.addEventListener('click', () => {
-            copyLink.select();
-            document.execCommand('copy');
-        })
+        copyButton.onclick =
+        () =>{
+            console.log('#<%="shareLink#{id}"%>')
+            navigator.clipboard.writeText(document.querySelector('#<%="shareLink#{id}"%>').value)
+            copyLink.value = 'copied!'
+        }
     }
 </script>

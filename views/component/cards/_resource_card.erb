@@ -1,7 +1,8 @@
 
-<div class="card resource-card" style="width: 18rem;" id="<%= resource.id %>">
+<div class="card resource-card" style="width: 18rem;" id="<%= resource.slug %>">
   <div class="image-container">
     <%= erb :'component/modals/_share_modal_button', locals: {
+      id: resource.id,
       facebook: resource.fb_share,
       twitter: resource.tw_share,
       linkedin: resource.li_share,
@@ -66,7 +67,8 @@
 
 <script>
   {
-      let actualCard = document.getElementById('<%= resource.id %>')
+      const id = '<%= resource.slug %>'
+      let actualCard = document.getElementById(id)
       let body = actualCard.querySelector('.body')
       let mobileTitle = actualCard.querySelector('.mobile-title')
       let image = actualCard.querySelector('.image-container')
@@ -80,7 +82,6 @@
       }
 
       const turnCard = (value) => {
-          console.log('turning card')
           if(value === 1){
               body.classList.add('hidden-element')
               mobileTitle.classList.remove('hidden-element')
@@ -106,6 +107,7 @@
           actualCard.onclick = () => turnCard(face)
           turnCard(face)
       }
+
   }
 
 </script>

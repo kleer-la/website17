@@ -118,8 +118,6 @@ const DOMobjects = {
     }
 }
 
-// const filter = {}
-
 const setInitialPage = () => {
     DOMobjects.selectedArticles.show(true)
     DOMobjects.showElements(DOMobjects.pager.containers, false)

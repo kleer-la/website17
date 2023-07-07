@@ -9,6 +9,10 @@ module Helpers
     start_month = languaje == 'en' ? start_date.strftime("%d") : month_es(start_date.strftime("%b"))
     finish_month = languaje == 'en' ? finish_date.strftime("%d") : month_es(finish_date.strftime("%b"))
 
+    if start_date == finish_date
+      return "#{start_date.strftime("%d")} #{start_month}"
+    end
+
     if start_month == finish_month
       "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")}, #{start_month}"
     else
