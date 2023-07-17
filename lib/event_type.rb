@@ -31,7 +31,7 @@ class EventType
   attr_accessor :id, :duration, :lang, :cover, :name, :subtitle, :description, :learnings, :takeaways,
                 :goal, :recipients, :program, :faq, :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex, :categories, :slug, :canonical_slug, :is_kleer_cert, :is_sa_cert,
-                :public_editions, :side_image, :brochure, :is_new_version, :testimonies
+                :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script
 
   def initialize(provider = nil, hash_provider = nil)
     if provider
@@ -88,6 +88,7 @@ class EventType
     @is_new_version = to_boolean(hash_event['new_version'])
     @deleted = to_boolean(hash_event['deleted'])
     @noindex = to_boolean(hash_event['noindex'])
+    @extra_script = hash_event['extra_script'] || nil
 
     @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
 
