@@ -49,49 +49,51 @@
       <%= t("contact-us-form.message-input.error-message") %>
     </div>
   </div>
-  <div class="g-recaptcha"
-  data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"
-  name="captcha"
-  data-callback="enableButton"
-  ></div>
+
+  <%= recaptcha_tags %>
+
+<!--  <div class="g-recaptcha"-->
+<!--  data-sitekey="6Ld9MFkjAAAAAAVJamqOc2u72jHMzKx1FO5GX5bZ"-->
+<!--  name="captcha"-->
+<!--  data-callback="enableButton"-->
+<!--  ></div>-->
 
 
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
-  <input type="hidden" name="_csrf" value="<%= session[:csrf] %>">
+<!--  <input type="hidden" name="_csrf" value="<%#= session[:csrf] %>">-->
   <div class="btn-center-container">
     <button type="submit"
             id="submit"
             class="btn my-primary-button"
             value="Submit"
-            disabled
     >
       <%= t("contact-us-form.button.text") %></button>
   </div>
 </form>
 <script>
 
-  function enableButton() {
-    document.getElementById("submit").disabled = false;
-  }
+  // function enableButton() {
+  //   document.getElementById("submit").disabled = false;
+  // }
 
 
-  (function () {
-      'use strict'
-
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.querySelectorAll('.needs-validation')
-
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms)
-          .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                  if (!form.checkValidity()) {
-                      event.preventDefault()
-                      event.stopPropagation()
-
-                  }
-                  form.classList.add('was-validated')
-              }, false)
-          })
-  })()
+  // (function () {
+  //     'use strict'
+  //
+  //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  //     var forms = document.querySelectorAll('.needs-validation')
+  //
+  //     // Loop over them and prevent submission
+  //     Array.prototype.slice.call(forms)
+  //         .forEach(function (form) {
+  //             form.addEventListener('submit', function (event) {
+  //                 if (!form.checkValidity()) {
+  //                     event.preventDefault()
+  //                     event.stopPropagation()
+  //
+  //                 }
+  //                 form.classList.add('was-validated')
+  //             }, false)
+  //         })
+  // })()
 </script>
