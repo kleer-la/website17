@@ -18,13 +18,13 @@ gem 'sinatra-flash'
 gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
-gem 'dotenv'
 gem 'nokogiri'
 
 group :development do
   gem 'foreman'
   gem 'platform-api'
   gem 'rubocop'
+  gem 'dotenv'
 end
 
 group :development, :test do
