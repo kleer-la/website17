@@ -7,6 +7,11 @@ on:
 jobs:
   CI:
     runs-on: ubuntu-latest
+
+    env:
+      RECAPTCHA_PUBLIC_KEY: ${{ secrets.RECAPTCHA_PUBLIC_KEY }}
+      RECAPTCHA_PRIVATE_KEY: ${{ secrets.RECAPTCHA_PRIVATE_KEY }}
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
