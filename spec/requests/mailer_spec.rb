@@ -9,6 +9,8 @@ describe 'MyApp' do
 
   describe 'POST /send-mail' do
     it 'Debe retornar error' do
+      puts 'al test si entra'
+
       payload = {"name"=>"prueba",
                  "email"=>"prueba@mail.com",
                  "phone"=>"",
