@@ -3,6 +3,7 @@ Coveralls.wear!
 
 require 'simplecov'
 require 'simplecov-lcov'
+require 'rack/test'
 
 SimpleCov.start
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -11,6 +12,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 
 RSpec.configure do |config|
+  config.include Rack::Test::Methods
   config.expect_with :rspec do |expectations|
     expectations.syntax = %i[expect should]
   end
