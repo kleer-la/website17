@@ -11,16 +11,16 @@ gem 'money'
 gem 'oauth'
 gem 'puma'
 gem 'rack-ssl-enforcer'
-gem 'rack_csrf'
+gem 'recaptcha'
 gem 'redcarpet'
 gem 'sinatra'
 gem 'sinatra-flash'
 gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
-gem 'dotenv'
-gem 'sinatra-recaptcha'
 gem 'nokogiri'
+gem 'dotenv'
+
 
 group :development do
   gem 'foreman'
@@ -31,7 +31,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'cucumber'
-  # gem 'rack-test'
+  gem 'rack-test'
   gem 'rspec'
   gem 'rspec-html-matchers' #, '~> 0.9.4'
   gem 'simplecov'

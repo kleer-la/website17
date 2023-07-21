@@ -1,28 +1,18 @@
+include Recaptcha::Adapters::ControllerMethods
 
 post "/send-mail" do
-  connector = KeventerConnector.new
-  connector.send_mail(params)
+  #TODO: Validate and filter params
+
+  puts "verify_recaptcha: #{verify_recaptcha}"
+
+  if verify_recaptcha
+    connector = KeventerConnector.new
+    connector.send_mail(params)
+    flash[:success] = 'Su mensaje ha sido enviado correctamente'
+  else
+    puts "Error en el captcha"
+    flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
+  end
   redirect params[:context]
-
-  # begin
-  #   puts params['_csrf']
-  #   puts session[:csrf]
-  #   csrf_token = params['_token']
-  #   session_token = session[:csrf]
-
-  #   if !(csrf_token == session_token)
-  #     flash[:error] = 'Captcha inválido'
-  #     # halt 403, 'Acceso denegado'
-  #   else
-  #     puts 'Captcha válido'
-  #   end
-
-  #   connector = KeventerConnector.new
-  #   connector.send_mail(params)
-  #   redirect params[:context]
-  # rescue Exception => e
-  #   puts e
-  # end
-
 end
 

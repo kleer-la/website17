@@ -66,6 +66,7 @@ class KeventerConnector
   end
 
   def send_mail(data)
+    return JSON.parse(@response) unless @response.nil?
     Mailer.new("#{API_ROOT}#{API_MAILER}",data)
   end
 end

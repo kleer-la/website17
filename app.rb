@@ -7,6 +7,7 @@ require 'i18n'
 require 'money'
 require 'escape_utils'
 require 'dotenv'
+require 'recaptcha'
 
 Dotenv.load
 
@@ -29,6 +30,7 @@ require './controllers/mailer_controller'
 require './controllers/news_controller'
 
 include MetaTags
+include Recaptcha::Adapters::ViewMethods
 
 if production?
   require 'rack/ssl-enforcer'
