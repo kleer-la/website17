@@ -52,6 +52,8 @@ configure do
 
   enable :sessions
   KeventerReader.build
+
+  register Sinatra::Flash
 end
 
 before do
@@ -69,7 +71,7 @@ before do
     @base_title = 'Agile Coaching, Consulting & Training'
     @meta_tags= Tags.new
     @meta_tags.set! title: @base_title, path: request.path
-    flash.sweep
+    # flash.sweep
     @markdown_renderer = CustomMarkdown.new
 
   end

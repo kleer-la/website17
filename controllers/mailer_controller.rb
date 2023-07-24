@@ -1,13 +1,18 @@
 include Recaptcha::Adapters::ControllerMethods
 
 post "/send-mail" do
-  #TODO: Validate and filter params
+  data = {
+    name: params[:name],
+    email: params[:email],
+    phone: params[:phone],
+    message: params[:message],
+  }
 
   if verify_recaptcha
     connector = KeventerConnector.new
-    connector.send_mail(params)
+    connector.send_mail(data)
     puts "Mensaje enviado correctamente"
-    flash[:success] = 'Su mensaje ha sido enviado correctamente'
+    flash[:notice] = 'Su mensaje ha sido enviado correctamente'
   else
     puts "Error en el captcha"
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'

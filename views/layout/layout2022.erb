@@ -8,7 +8,7 @@
     <link href="/app/css/index.css" rel="stylesheet" type="text/css">
   </head>
   <body id="body" onscroll="scrolling()">
-    <%=erb :'component/_menu'%>
+  <%=erb :'component/_menu'%>
     <%= yield %>
     <%= erb :'component/_footer'%>
     <%= erb :'component/_modal_contact' %>
@@ -30,6 +30,9 @@
                 navbar.classList.remove("navbar-scrolled");
             }
         }
+
+        <%= flash[:notice] ? "alert('#{flash[:notice]}')" : "" %>
+        <%= flash[:error] ? "alert('#{flash[:error]}')" : "" %>
 
     </script>
   </body>
