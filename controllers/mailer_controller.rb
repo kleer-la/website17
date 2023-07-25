@@ -20,3 +20,7 @@ post "/send-mail" do
   redirect params[:context]
 end
 
+get "/mailer-template" do
+  erb :'component/_form_contact', layout: false
+end
+
