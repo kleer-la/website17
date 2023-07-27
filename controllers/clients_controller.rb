@@ -8,5 +8,4 @@ get '/clientes' do
   @clients =  client_list
 
   erb :'clients/index', layout: :'layout/layout2022'
-  # erb :clientes
 end
