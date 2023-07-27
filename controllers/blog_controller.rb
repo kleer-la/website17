@@ -61,6 +61,9 @@ def blog_one(article)
   @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
   @related_articles = get_related_articles(@article.category_name, @article.id , 3)
 
+  router_helper = RouterHelper.instance
+  router_helper.alternate_route = "/blog"
+
   if article.lang != session[:locale]
     redirect "/#{session[:locale]}/blog", 301 # permanent redirect
   end

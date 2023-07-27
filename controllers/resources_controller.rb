@@ -24,21 +24,6 @@ get '/recursos_old' do
   erb :'resources_page/index', layout: :'layout/layout2022'
 end
 
-get '/recursos2022' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set!  title: t('meta_tag.resources.title'),
-                   description: t('meta_tag.resources.description'),
-                   canonical: "#{t('meta_tag.resources.canonical')}"
-
-  session[:new] = true
-  @resources = Resource.create_list_keventer
-
-  # puts @resources
-
-  erb :'resources/index', layout: :'layout/layout2022'
-end
-
-
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Recursos"

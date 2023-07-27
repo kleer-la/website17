@@ -80,6 +80,7 @@ before do
   router_helper = RouterHelper.instance
   router_helper.lang = session[:locale]
   router_helper.set_current_route(request.path)
+  router_helper.alternate_route = nil
 end
 
 before '/:locale/*' do

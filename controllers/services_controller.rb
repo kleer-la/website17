@@ -12,6 +12,9 @@ get '/servicios/:service_id' do
                     description: @event_type.elevator_pitch,
                     canonical: "/servicios#{@event_type.canonical_url}"
 
+    router_helper = RouterHelper.instance
+    router_helper.alternate_route = "/agilidad-organizacional"
+
 
     erb :'services/landing/index', layout: :'layout/layout2022'
   rescue
