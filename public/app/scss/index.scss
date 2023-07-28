@@ -105,6 +105,11 @@ html{
 
   color: $black;
 
+  .nav-link{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
   .dropdown-menu {
     border: none;
     padding: 20px 24px;
@@ -182,24 +187,27 @@ html{
 }
 
 .social-media{
-  width: 150px;
+  width: 175px;
 }
 
 .social-media__list{
   margin: auto 0 auto 0 !important;
   padding: 0 !important;
 
-  li:hover{
-    height: 120%;
+  .list-inline-item{
+    text-align: center;
+    width: 24px;
+    height: 24px;
+  }
+
+  .list-inline-item:hover{
+    background-color: $secondary-blue;
+    border-radius: 4px;
   }
 }
 
 .icon-social{
   height: 18px;
-}
-
-.icon-social:hover {
-  height: 20px;
 }
 
 .floating-absolute-buttons{

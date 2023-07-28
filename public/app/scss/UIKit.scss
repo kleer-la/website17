@@ -104,15 +104,13 @@ a{
 
 a:hover{
   font-style: normal;
-  font-weight: 700;
   font-size: 16px;
   line-height: 18px;
-  color: $black;
+  color: $secondary-blue !important;
   text-decoration: none;
 }
 
 a:active{
-  background-color: $black;
 }
 
 img {
