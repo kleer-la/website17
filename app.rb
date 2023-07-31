@@ -16,6 +16,7 @@ require './lib/keventer_reader'
 require './lib/twitter_card'
 require './lib/twitter_reader'
 require './lib/helpers/custom_markdown'
+require './lib/router_helper'
 
 require './controllers/helper'
 require './controllers/resources_controller'
@@ -52,6 +53,8 @@ configure do
 
   enable :sessions
   KeventerReader.build
+
+  register Sinatra::Flash
 end
 
 before do
@@ -69,10 +72,15 @@ before do
     @base_title = 'Agile Coaching, Consulting & Training'
     @meta_tags= Tags.new
     @meta_tags.set! title: @base_title, path: request.path
-    flash.sweep
+    # flash.sweep
     @markdown_renderer = CustomMarkdown.new
-
   end
+
+
+  router_helper = RouterHelper.instance
+  router_helper.lang = session[:locale]
+  router_helper.set_current_route(request.path)
+  router_helper.alternate_route = nil
 end
 
 before '/:locale/*' do

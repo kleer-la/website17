@@ -65,6 +65,10 @@ get '/agenda' do
 
   # @events = KeventerReader.instance.catalog_events()
   @events = Event.create_keventer_json
+
+  router_helper = RouterHelper.instance
+  router_helper.alternate_route = "/catalogo"
+
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
@@ -77,6 +81,9 @@ get '/catalogo' do
   @academy = AcademyCourses.new.load.all
 
   @events = KeventerReader.instance.catalog_events()
+
+  router_helper = RouterHelper.instance
+  router_helper.alternate_route = "/catalogo"
 
   erb :'training/index', layout: :'layout/layout2022'
 end
@@ -114,6 +121,9 @@ get '/cursos/:event_type_id_with_name' do
     end
 
     @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id , 4)
+
+    router_helper = RouterHelper.instance
+    router_helper.alternate_route = "/catalogo"
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end

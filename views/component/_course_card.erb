@@ -16,7 +16,7 @@
         <% end %>
       </div>
   </div>
-  <div class="card-body course-card__body">
+  <div class="course-card__body">
     <div>
       <% if defined? (@course[:categories]) and
             not @course[:categories].nil? and
@@ -61,7 +61,7 @@
     </ul>
   </div>
   <div class="text-center">
-    <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-4 me-4">
+    <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
       <% if !@course[:is_elearning]  %>
         <%= t('generals.buttons.more_info') %>
       <% else %>

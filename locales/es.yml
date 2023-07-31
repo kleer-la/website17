@@ -911,7 +911,7 @@ es:
     - {
       text: 'Agilidad organizacional',
       url: '/agilidad-organizacional',
-      inside: true
+      inside: true,
     }
     - {
       text: 'Cursos',
