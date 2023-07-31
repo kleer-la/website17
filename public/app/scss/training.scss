@@ -844,7 +844,9 @@ $white: #FFFFFF;
 
 //AGENDA
 
-#agenda-hero{}
+#agenda-hero{
+  position: relative;
+}
 
 .duration-mobile{
   display: none;
@@ -857,13 +859,13 @@ $white: #FFFFFF;
 
 .agenda-hero__yellow-circle{
   height: 50%;
-  left: -10%;
+  left: -100px;
   bottom: 10%;
   z-index: -1;
 }
 
 .agenda-hero-mobile__yellow-circle{
-  bottom: 260px;
+  bottom: -100px;
   right: -60px;
   z-index: -1;
 }
@@ -875,12 +877,22 @@ $white: #FFFFFF;
 }
 
 .agenda-hero__rustic-sigsac{
-  top: 45%;
+  top: 70px;
   left: 10px;
   transform: rotate(90deg);
 }
 
+.course-list{
+  font-weight: normal;
+  padding: 30px;
+  width: 300px;
+}
+
 @media screen and (max-width:576px) {
+  #agenda-hero{
+    width: 100vw;
+  }
+
   .duration-desktop{
     display: none;
   }
