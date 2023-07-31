@@ -1654,13 +1654,17 @@ img {
 
 .my-primary-button:hover {
   box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.2);
-  border-radius: 100px; }
+  border-radius: 100px;
+  color: #333333 !important;
+  line-height: 20px;
+  font-size: 18px; }
 
 .my-secondary-button {
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
+  padding: 16px 32px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1673,7 +1677,10 @@ img {
 .my-secondary-button:hover {
   border: 2px solid #00BBEE;
   box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.15);
-  border-radius: 100px; }
+  border-radius: 100px;
+  color: #333333 !important;
+  line-height: 20px;
+  font-size: 18px; }
 
 .clean-button {
   background-color: #FFFFFF;
