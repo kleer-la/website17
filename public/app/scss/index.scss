@@ -323,10 +323,14 @@ footer {
   }
 }
 
-.invisible-title-buton{
+.invisible-title-button{
   color: $secondary-blue;
   font-weight: bold;
   padding: 0;
+}
+
+.invisible-title-button:focus{
+  box-shadow: none !important;
 }
 
 //bootstrap edited

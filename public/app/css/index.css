@@ -1533,7 +1533,8 @@ body {
   font-family: 'Raleway', sans-serif;
   background-color: #FFFFFF;
   overflow-x: hidden;
-  height: 100%; }
+  height: 100%;
+  font-variant-numeric: lining-nums; }
 
 h1 {
   font-family: "degular",sans-serif;
@@ -1615,6 +1616,24 @@ a:hover {
 
 img {
   max-width: 100%; }
+
+input[type="checkbox"] {
+  background-color: white;
+  background-image: url("../img/icons/CheckOff.svg") !important;
+  border: none;
+  text-align: center;
+  background-size: 100% 100%; }
+
+input[type="checkbox"]:checked {
+  background-color: white;
+  background-image: url("../img/icons/CheckOn.svg") !important;
+  border: none;
+  text-align: center;
+  color: black; }
+
+input[type="checkbox"]:focus {
+  box-shadow: none;
+  border: none; }
 
 .p {
   font-family: 'Raleway',sans-serif;
@@ -2004,10 +2023,13 @@ footer {
   .footer__body {
     margin: 10px;
     padding: 30px 20px; } }
-.invisible-title-buton {
+.invisible-title-button {
   color: #00BBEE;
   font-weight: bold;
   padding: 0; }
+
+.invisible-title-button:focus {
+  box-shadow: none !important; }
 
 .carousel-control-next-icon {
   background-image: url("../img/view_figures/arrow.svg");
