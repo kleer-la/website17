@@ -1132,6 +1132,8 @@
   font-weight: 600;
   font-size: 56px;
   line-height: 64px; }
+#landing-blog-hero .back-img {
+  transform: rotate(0); }
 
 .go-back-button {
   margin-bottom: 32px;
