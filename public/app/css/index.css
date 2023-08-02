@@ -279,7 +279,8 @@
 
 .training-hero__text {
   padding-bottom: 8%;
-  padding-top: 4%; }
+  padding-top: 4%;
+  z-index: 3; }
 
 .training-hero_green_bean {
   bottom: 50px;
@@ -549,7 +550,7 @@
   background-color: #43B045;
   padding: 0 10% 0 10%;
   color: #FFFFFF;
-  z-index: 5; }
+  z-index: 7; }
   .course-company-panel a {
     color: #FFFFFF !important; }
 
