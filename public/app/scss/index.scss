@@ -57,6 +57,7 @@ html{
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    z-index: 3;
   }
 }
 
@@ -322,10 +323,14 @@ footer {
   }
 }
 
-.invisible-title-buton{
+.invisible-title-button{
   color: $secondary-blue;
   font-weight: bold;
   padding: 0;
+}
+
+.invisible-title-button:focus{
+  box-shadow: none !important;
 }
 
 //bootstrap edited

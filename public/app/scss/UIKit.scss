@@ -20,6 +20,7 @@ body {
   background-color: $white;
   overflow-x: hidden;
   height: 100%;
+  font-variant-numeric: lining-nums;
 }
 
 h1{
@@ -112,6 +113,28 @@ a:hover{
 
 img {
   max-width: 100%;
+}
+
+input[type="checkbox"]{
+  background-color: white;
+  background-image: url("../img/icons/CheckOff.svg") !important;
+  border: none;
+  text-align: center;
+  background-size: 100% 100%;
+
+}
+
+input[type="checkbox"]:checked{
+  background-color: white;
+  background-image: url("../img/icons/CheckOn.svg") !important;
+  border: none;
+  text-align: center;
+  color: black;
+}
+
+input[type="checkbox"]:focus{
+  box-shadow: none;
+  border: none;
 }
 
 .p{
