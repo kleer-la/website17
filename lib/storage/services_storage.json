@@ -29,7 +29,7 @@
     "name": "Ruta de Agile Product Management",
     "subtitle": "Crea productos asombrosos y con impacto",
     "side_image": "",
-    "description": "Un **camino de aprendizaje** **para acelerar los resultados e impacto de tus productos ** que incluye Mentoring, Acompañamiento y Capacitaciones.",
+    "description": "###Mentoring y acompañamiento \n\nUn **camino de aprendizaje** **para acelerar los resultados e impacto de tus productos ** que incluye Mentoring, Acompañamiento y Capacitaciones.",
     "takeaways": "###Capacitaciones con práctica concreta\n\n<div style=\"display: flex; flex-wrap: wrap;>\n  <a href=\"https://www.kleer.la/es/cursos/375-kleer-accredited-product-owner\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-Accredited-product-owner.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n\n  <a href=\"https://qa2.kleer.la/es/cursos/206-advanced-product-owners-workshop\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-Advances-Product-Owner.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n\n  <a href=\"https://qa2.kleer.la/es/cursos/206-advanced-product-owners-workshop\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-product-discovery.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n\n  <a href=\"https://qa2.kleer.la/es/cursos/206-advanced-product-owners-workshop\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-Desing-thinking-workshop.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n</div>",
     "recipients": "",
     "program": "",
@@ -37,6 +37,6 @@
     "brochure": "",
     "canonical_url": "/ruta-de-agile-product-management",
     "elevator_pitch": "",
-    "titles": ["Mentoring y Acompañamiento", "Capacitaciones con práctica concreta", "Para personas y empresas", "Recursos y materiales"]
+    "titles": ["Capacitaciones con práctica concreta", "Para personas y empresas", "Recursos y materiales"]
   }
 }

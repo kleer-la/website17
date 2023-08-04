@@ -1,7 +1,7 @@
 
 class Service
   attr_accessor :name, :subtitle, :description, :side_image, :takeaways,
-                :recipients, :program, :brochure,
+                :recipients, :program, :brochure, :titles,
                 :cta, :canonical_url, :elevator_pitch
   def initialize()
     @public_editions = []
@@ -9,7 +9,7 @@ class Service
   end
 
   def load_from_json(hash_service)
-    load_str(%i[name subtitle description side_image takeaways recipients program brochure cta canonical_url elevator_pitch], hash_service)
+    load_str(%i[name subtitle description side_image takeaways recipients program brochure cta canonical_url elevator_pitch titles], hash_service)
   end
 
   def load_str(syms, hash)
