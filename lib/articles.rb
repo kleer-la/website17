@@ -41,7 +41,7 @@ class Article
   attr_accessor :title, :description, :tabtitle, :body, :published,
                 :trainers, :trainers_list, :slug, :abstract, :lang, :selected,
                 :created_at, :updated_at, :cover, :category_name, :id,
-                :active #View attributes
+                :active #View attributes,
 
   def initialize(doc)
     @id = doc['id']
