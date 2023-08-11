@@ -1,0 +1,35 @@
+$celeste: #E8F8FD;
+$primary-blue: #68CEF2;
+$secondary-blue: #00BBEE;
+$primary-yellow: #FFE600;
+$secondary-yellow: #FCDC2D;
+$primary-red: #EF5662;
+$secondary-red: #EA2A46;
+$primary-green: #43B045;
+$secondary-green: #0DAC52;
+$black: #333333;
+$grey: #B3B3B3;
+$white: #FFFFFF;
+
+//Landing service
+.subservice-container{
+  .description{}
+
+  .info-subcontainer{
+    display: flex;
+    justify-content: space-around;
+  }
+  .takeaways{
+    width: 600px;
+    border-radius: 30px;
+    background-color: $celeste;
+    padding: 60px;
+  }
+  .recipients{
+    width: 600px;
+    border-radius: 30px;
+    background-color: $primary-blue;
+    padding: 60px;
+
+  }
+}
