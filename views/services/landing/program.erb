@@ -4,7 +4,7 @@
 
   separated_program = []
 
-  program = @markdown_renderer.render(@event_type.program).split(separator)
+  program = @markdown_renderer.render(@service.program).split(separator)
 
   program.each do |item|
     separated_item = item.split(item_separator)
@@ -22,7 +22,13 @@
 
 <section id="course-program">
   <div class="container mt-5">
-    <h2 class="mb-5 text-center common-subtitle">Contenido del Programa de Desarrollo del Liderazgo Ágil</h2>
+    <h2 class="mb-5 text-center common-subtitle">
+      <% if @service.titles%>
+        <%= @service.titles[2] %>
+      <% else %>
+        Contenido del Programa de Desarrollo del Liderazgo Ágil
+      <% end %>
+    </h2>
     <p></p>
     <div class="course-program__container row mb-5">
       <div class="col-md-6">
@@ -46,9 +52,9 @@
       </div>
     </div>
   </div>
-  <% if @event_type.brochure and @event_type.brochure != "" %>
+  <% if @service.brochure and @service.brochure != "" %>
     <div class="button-container mt-5 mb-5 d-flex justify-content-center">
-      <a class="my-primary-button" href="<%=@event_type.brochure%>" target=”_blank”>
+      <a class="my-primary-button" href="<%=@service.brochure%>" target=”_blank”>
         Descargar programa
       </a>
     </div>

@@ -4,8 +4,14 @@
       <img src="/img/generics/recipients_generic.png" />
     </div>
     <div class="col-md-6">
-      <h2 class="mb-4 text-left common-subtitle">¿A quién está dirigido el <%= @event_type.name%>?</h2>
-      <%=@markdown_renderer.render( @event_type.recipients )%>
+      <h2 class="mb-4 text-left common-subtitle">
+        <% if @service.titles %>
+          <%=  @service.titles[1] %>
+        <% else %>
+          ¿A quién está dirigido el <%=  @service.name %>?
+        <% end %>
+      </h2>
+      <%=@markdown_renderer.render( @service.recipients )%>
     </div>
   </div>
 </section>

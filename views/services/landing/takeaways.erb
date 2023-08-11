@@ -1,9 +1,15 @@
 <section id="course-learnings" >
   <div class="course-learnings__container container">
-    <h2 class="text-center mb-5 common-subtitle">¿Qué obtendrás con el <%= @event_type.name%>?</h2>
+    <h2 class="text-center mb-5 common-subtitle">
+      <% if @service.titles %>
+      <%=  @service.titles[0] %>
+      <% else %>
+      ¿Qué obtendrás con el <%=  @service.name %>?
+      <% end %>
+    </h2>
     <div class="row justify-content-center">
       <div class="col-md-10">
-        <%= @markdown_renderer.render( @event_type.takeaways.to_s) %>
+        <%= @markdown_renderer.render( @service.takeaways.to_s) %>
       </div>
     </div>
     <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_circleb.svg" class="desktop_figure course-learnings__rustic-circle" />

@@ -1416,6 +1416,20 @@ h3.title-somos {
     transform: translateY(-50%);
     right: 0; }
 
+.subservice-container .info-subcontainer {
+  display: flex;
+  justify-content: space-around; }
+.subservice-container .takeaways {
+  width: 600px;
+  border-radius: 30px;
+  background-color: #E8F8FD;
+  padding: 60px; }
+.subservice-container .recipients {
+  width: 600px;
+  border-radius: 30px;
+  background-color: #68CEF2;
+  padding: 60px; }
+
 #businessa-hero {
   margin-top: 100px;
   margin-bottom: 13%; }

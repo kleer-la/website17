@@ -6,6 +6,7 @@ post "/send-mail" do
     email: params[:email],
     phone: params[:phone],
     message: params[:message],
+    context: params[:context]
   }
 
   if verify_recaptcha
