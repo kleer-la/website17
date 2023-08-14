@@ -1,3 +1,4 @@
+require 'redcarpet'
 require 'nokogiri'
 
 class CustomMarkdown# < Redcarpet::Markdown
@@ -9,6 +10,7 @@ class CustomMarkdown# < Redcarpet::Markdown
   end
 
   def render(text)
+    return '' if text.nil?
     html = @markdown_render.render(text)
 
     document = Nokogiri::HTML.fragment(html)

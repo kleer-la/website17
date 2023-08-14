@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/r18n'
 require 'sinatra/flash'
-require 'redcarpet'
 require 'json'
 require 'i18n'
 require 'money'
