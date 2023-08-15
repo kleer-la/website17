@@ -40,6 +40,7 @@ class Event
     load_date(ev_json)
     load_details(ev_json)
     load_price(ev_json)
+    load_country(ev_json['country'])
     @trainers = load_trainers(ev_json['trainers'])
     self
   end
@@ -47,17 +48,7 @@ class Event
   def load_basic(hash_event)
     @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
     load_str(%i[city place address registration_link time_zone_name is_sold_out], hash_event)
-
-    # @id = first_content(event_doc, 'id').to_i
     # @capacity = first_content(event_doc, 'capacity').to_i
-    # @city = first_content(event_doc, 'city')
-    # @place = first_content(event_doc, 'place')
-    # @address = first_content(event_doc, 'address')
-    # @registration_link = first_content(event_doc, 'registration-link')
-
-    # @enable_online_payment = to_boolean(first_content(event_doc, 'enable-online-payment'))
-    # @online_course_codename = first_content(event_doc, 'online-course-codename')
-    # @online_cohort_codename = first_content(event_doc, 'online-cohort-codename')
   end
 
   def load_date(hash_event)
@@ -105,6 +96,12 @@ class Event
     # @business_price = first_content_f(event_doc, 'business-price')
     # @enterprise_6plus_price = first_content_f(event_doc, 'enterprise-6plus-price')
     # @enterprise_11plus_price = first_content_f(event_doc, 'enterprise-11plus-price')
+  end
+
+  def load_country(hash)
+    return if hash.nil?
+    @country_name = hash['name'].to_s
+    @country_iso = hash['iso_code'].to_s
   end
 
   def load_trainers(hash_trainers)
