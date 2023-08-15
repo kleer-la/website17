@@ -14,7 +14,9 @@ $white: #FFFFFF;
 //Landing service
 .subservice-container{
   .description{
-    //padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .info-subcontainer{
@@ -50,5 +52,17 @@ $white: #FFFFFF;
         top: -40px;
         right: -70px;
     }
+
+    .recipients__yellow-bean{
+        bottom: -30px;
+        left: -40px;
+    }
   }
+}
+
+.subservice-item{
+  background-color: $primary-yellow;
+  width: 90px;
+  height: 60px;
+  border-radius: 20px;
 }
