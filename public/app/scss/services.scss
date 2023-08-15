@@ -13,23 +13,42 @@ $white: #FFFFFF;
 
 //Landing service
 .subservice-container{
-  .description{}
+  .description{
+    //padding-left: 60px;
+  }
 
   .info-subcontainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .takeaways{
+    position: relative;
     width: 600px;
     border-radius: 30px;
     background-color: $celeste;
     padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .takeaways__red-bean{
+        bottom: -30px;
+        left: -40px;
+    }
   }
   .recipients{
+    position: relative;
     width: 600px;
     border-radius: 30px;
     background-color: $primary-blue;
     padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+    .recipients__green-bean{
+        top: -40px;
+        right: -70px;
+    }
   }
 }
