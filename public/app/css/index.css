@@ -1418,17 +1418,31 @@ h3.title-somos {
 
 .subservice-container .info-subcontainer {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-between; }
 .subservice-container .takeaways {
+  position: relative;
   width: 600px;
   border-radius: 30px;
   background-color: #E8F8FD;
-  padding: 60px; }
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .subservice-container .takeaways .takeaways__red-bean {
+    bottom: -30px;
+    left: -40px; }
 .subservice-container .recipients {
+  position: relative;
   width: 600px;
   border-radius: 30px;
   background-color: #68CEF2;
-  padding: 60px; }
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .subservice-container .recipients .recipients__green-bean {
+    top: -40px;
+    right: -70px; }
 
 #businessa-hero {
   margin-top: 100px;
