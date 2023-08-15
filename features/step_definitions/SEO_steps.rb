@@ -26,3 +26,17 @@ end
 Then('SEO hreflang {string} should have href {string}') do |lang, url|
   expect(page.html).to match /<link.*hreflang=\"#{lang}\" href=\"#{url}\"/
 end
+
+Then('SEO meta {string} {string} should match {string}') do |tag, tag_name, pattern|
+  meta_tags = page.all('meta', visible: false)  # Find all meta tags
+
+  found = false
+  meta_tags.each do |meta_tag|
+    if meta_tag[tag.to_sym] == tag_name
+      found = true
+      expect(meta_tag[:content]).to match Regexp.new(pattern)
+      break
+    end
+  end
+  (expect(tag+tag_name).to eq pattern ) unless found    
+end
