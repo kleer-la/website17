@@ -77,10 +77,14 @@
                 href='' style="filter: grayscale(100%); max-width: 150px; width: 130px">
           Completo
         </button>
-      <% else %>
-        <a class="my-primary-button p-2"
+      <% else 
+        uri = "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la"
+        uri = event.registration_link unless event.registration_link.empty?
+      %>
+        <a id="buy-<%=event_type.id%>"
+           class="my-primary-button p-2"
            style="max-width: 150px; width: 130px"
-           href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar
+           href='<%= uri %>'>Comprar
         </a>
       <% end %>
     </div>

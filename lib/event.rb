@@ -13,8 +13,9 @@ class Event
                 :start_time, :end_time, :time_zone_name, :time_zone,
                 :is_sold_out,
                 :specific_conditions,
-                :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment
+                :mode, :banner_text, :banner_type, :specific_subtitle
 
+                #,:enable_online_payment
                 #:capacity, :sepyme_enabled, :human_date, :is_community_event,
                 #:couples_eb_price, :business_eb_price,
                 #:business_price, :enterprise_6plus_price, :enterprise_11plus_price,
@@ -26,7 +27,7 @@ class Event
     @country_iso = 'OL'
     @id = 0
     @capacity = 0
-    @city = @place = @country = @country_code = @address = ''
+    @city = @place = @country = @country_code = @address = @registration_link = ''
     @trainers = []
 
     # init_prices

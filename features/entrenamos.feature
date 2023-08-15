@@ -10,7 +10,8 @@ Feature: Agenda (fka Entrenamos)
 		And I should see "no fue encontrado"
 
 	Scenario: SEO meta tags in Agenda
-		Given I visit the "/es/agenda" page
+    Given A list of events
+		Given I visit the "/es/agenda" agenda page
 #		Then SEO hreflang "es" should have href "https://www.kleer.la/es/"
 #		And SEO hreflang "en" should have href "https://www.kleer.la/en/"
 		Then the page title should includes "Kleer"
@@ -27,3 +28,7 @@ Feature: Agenda (fka Entrenamos)
 		Given I visit the "/es/agenda" agenda page
 		Then event 7 should includes "CABA" as its place
 
+	Scenario: in-person event
+    Given A list of events
+		Given I visit the "/es/agenda" agenda page
+		Then event 7 should have a custom register link "https://forms.gle/YDsTLArgj2So64EY7"
