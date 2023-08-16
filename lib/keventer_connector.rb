@@ -9,50 +9,56 @@ API_CATEGORIES_PATH = '/categories.xml'.freeze
 API_RESOURCES_PATH = '/resources.json'.freeze
 
 API_MAILER = '/contact_us'.freeze
+
+def echo(value)
+  puts "----- #{caller[1][/`([^']*)'/, 1]}   #{value} -------" if ENV['RACK_ENV'] == 'test'
+  value
+end
+
 class KeventerConnector
   def initialize(response = nil)
     @response = response
   end
 
   def events_json_url
-    API_ROOT + API_EVENTS_PATH + '.json'
+    echo API_ROOT + API_EVENTS_PATH + '.json'
   end
   def self.resources_url
-    KEVENTER_URL + API_RESOURCES_PATH
+    echo KEVENTER_URL + API_RESOURCES_PATH
   end
 
   def kleerers_xml_url
-    API_ROOT + API_KLEERERS_PATH
+    echo API_ROOT + API_KLEERERS_PATH
   end
 
   def categories_xml_url
-    API_ROOT + API_CATEGORIES_PATH
+    echo API_ROOT + API_CATEGORIES_PATH
   end
   def self.categories_json_url
-    API_ROOT + '/categories.json'.freeze
+    echo API_ROOT + '/categories.json'.freeze
   end
   def self.news_url
-    API_ROOT + '/news.json'.freeze
+    echo API_ROOT + '/news.json'.freeze
   end
 
   def event_type_url(event_type_id, format = :xml)
-    API_ROOT + "/event_types/#{event_type_id}.#{format}".freeze
+    echo API_ROOT + "/event_types/#{event_type_id}.#{format}".freeze
   end
 
   def keventer_url
-    KEVENTER_URL
+    echo KEVENTER_URL
   end
 
   def self.interest_url
-    API_ROOT + '/v3/participants/interest'.freeze
+    echo API_ROOT + '/v3/participants/interest'.freeze
   end
 
   def self.articles_url
-    KEVENTER_URL + '/articles.json'.freeze
+    echo KEVENTER_URL + '/articles.json'.freeze
   end
 
   def self.article_url(slug)
-    KEVENTER_URL + "/articles/#{slug}.json"
+    echo KEVENTER_URL + "/articles/#{slug}.json"
   end
 
   def get_catalog

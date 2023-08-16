@@ -13,6 +13,10 @@
 <%= erb :'services/landing/takeaways' %>
 <%= erb :'services/landing/recipients' %>
 <%= erb :'services/landing/program' %>
-<%= erb :'services/landing/subservice' %>
+<% if @service.sub_services %>
+  <% @service.sub_services.each_with_index do |subservice, index|%>
+    <%= erb :'services/landing/subservice', locals: {sub_service: subservice, index: index} %>
+  <% end %>
+<% end %>
 <%= erb :'services/landing/contact' %>
 

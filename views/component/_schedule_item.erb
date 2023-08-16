@@ -5,12 +5,11 @@
    info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
 
 %>
-
 <div class="row event-item pb-4 mt-4 ms-2 me-2">
   <% if with_name %>
     <div class="col-lg-3">
       <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
-      <p>
+      <p id="place-<%=event_type.id%>">
         <% if event.country_iso == 'OL' %>
           <img src="/app/img/icons/VideoCamera.svg">
           Online
@@ -62,12 +61,12 @@
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
     </a>
   </div>
-  <div class="col-4 col-lg-2 next-edition-item">
-    <strong>$<%= "#{event.list_price} USD" || 'precio' %></strong>
+  <div class="col-4 col-lg-2 next-edition-item" id="currency-<%=event_type.id%>">
+    <strong><%= "#{event.currency_iso_code} #{event.list_price.to_i}" || 'precio' %></strong>
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
     <% if event.eb_price and event.eb_date and DateTime.parse(event.eb_date) >= DateTime.now %>
-      <strong class="price">USD $<%= event.eb_price%></strong>
+      <strong class="price"><%= "#{event.currency_iso_code} #{event.eb_price.to_i}"%></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>
@@ -78,10 +77,14 @@
                 href='' style="filter: grayscale(100%); max-width: 150px; width: 130px">
           Completo
         </button>
-      <% else %>
-        <a class="my-primary-button p-2"
+      <% else 
+        uri = "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la"
+        uri = event.registration_link unless event.registration_link.empty?
+      %>
+        <a id="buy-<%=event_type.id%>"
+           class="my-primary-button p-2"
            style="max-width: 150px; width: 130px"
-           href='<%= "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" %>'>Comprar
+           href='<%= uri %>'>Comprar
         </a>
       <% end %>
     </div>

@@ -1416,19 +1416,40 @@ h3.title-somos {
     transform: translateY(-50%);
     right: 0; }
 
+.subservice-container .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 .subservice-container .info-subcontainer {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-between; }
 .subservice-container .takeaways {
+  position: relative;
   width: 600px;
   border-radius: 30px;
   background-color: #E8F8FD;
-  padding: 60px; }
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .subservice-container .takeaways .takeaways__red-bean {
+    bottom: -30px;
+    left: -40px; }
 .subservice-container .recipients {
+  position: relative;
   width: 600px;
   border-radius: 30px;
   background-color: #68CEF2;
-  padding: 60px; }
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .subservice-container .recipients .recipients__green-bean {
+    top: -40px;
+    right: -70px; }
+  .subservice-container .recipients .recipients__yellow-bean {
+    bottom: -30px;
+    left: -40px; }
 
 #businessa-hero {
   margin-top: 100px;

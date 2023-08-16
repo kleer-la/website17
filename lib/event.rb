@@ -13,8 +13,9 @@ class Event
                 :start_time, :end_time, :time_zone_name, :time_zone,
                 :is_sold_out,
                 :specific_conditions,
-                :mode, :banner_text, :banner_type, :specific_subtitle, :enable_online_payment
+                :mode, :banner_text, :banner_type, :specific_subtitle
 
+                #,:enable_online_payment
                 #:capacity, :sepyme_enabled, :human_date, :is_community_event,
                 #:couples_eb_price, :business_eb_price,
                 #:business_price, :enterprise_6plus_price, :enterprise_11plus_price,
@@ -26,7 +27,7 @@ class Event
     @country_iso = 'OL'
     @id = 0
     @capacity = 0
-    @city = @place = @country = @country_code = @address = ''
+    @city = @place = @country = @country_code = @address = @registration_link = ''
     @trainers = []
 
     # init_prices
@@ -40,6 +41,7 @@ class Event
     load_date(ev_json)
     load_details(ev_json)
     load_price(ev_json)
+    load_country(ev_json['country'])
     @trainers = load_trainers(ev_json['trainers'])
     self
   end
@@ -47,17 +49,7 @@ class Event
   def load_basic(hash_event)
     @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
     load_str(%i[city place address registration_link time_zone_name is_sold_out], hash_event)
-
-    # @id = first_content(event_doc, 'id').to_i
     # @capacity = first_content(event_doc, 'capacity').to_i
-    # @city = first_content(event_doc, 'city')
-    # @place = first_content(event_doc, 'place')
-    # @address = first_content(event_doc, 'address')
-    # @registration_link = first_content(event_doc, 'registration-link')
-
-    # @enable_online_payment = to_boolean(first_content(event_doc, 'enable-online-payment'))
-    # @online_course_codename = first_content(event_doc, 'online-course-codename')
-    # @online_cohort_codename = first_content(event_doc, 'online-cohort-codename')
   end
 
   def load_date(hash_event)
@@ -90,7 +82,7 @@ class Event
 
   def load_price(hash_event)
     @show_pricing = to_boolean(hash_event['show_pricing'])
-    %i[list_price eb_price
+    %i[list_price eb_price currency_iso_code
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
 
     @eb_end_date = hash_event['eb_end_date'] ? Date.parse(hash_event['eb_end_date']) : nil
@@ -105,6 +97,12 @@ class Event
     # @business_price = first_content_f(event_doc, 'business-price')
     # @enterprise_6plus_price = first_content_f(event_doc, 'enterprise-6plus-price')
     # @enterprise_11plus_price = first_content_f(event_doc, 'enterprise-11plus-price')
+  end
+
+  def load_country(hash)
+    return if hash.nil?
+    @country_name = hash['name'].to_s
+    @country_iso = hash['iso_code'].to_s
   end
 
   def load_trainers(hash_trainers)
