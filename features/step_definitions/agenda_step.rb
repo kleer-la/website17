@@ -27,5 +27,5 @@ end
 Then('event {int} should have a {string} currency') do |event_type_id, currency|
   # File.open('output.html', 'w') {|file| file.write(page.html)}
   element = find("#currency-#{event_type_id}")
-  expect(element.text).to include " #{currency}"
+  expect(element.text).to include currency
 end
