@@ -61,12 +61,12 @@
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
     </a>
   </div>
-  <div class="col-4 col-lg-2 next-edition-item">
-    <strong>$<%= "#{event.list_price} USD" || 'precio' %></strong>
+  <div class="col-4 col-lg-2 next-edition-item" id="currency-<%=event_type.id%>">
+    <strong><%= "#{event.currency_iso_code} #{event.list_price.to_i}" || 'precio' %></strong>
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
     <% if event.eb_price and event.eb_date and DateTime.parse(event.eb_date) >= DateTime.now %>
-      <strong class="price">USD $<%= event.eb_price%></strong>
+      <strong class="price"><%= "#{event.currency_iso_code} #{event.eb_price.to_i}"%></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>

@@ -23,12 +23,17 @@ Feature: Agenda (fka Entrenamos)
 		Given I visit the "/es/agenda" agenda page
 		Then event 72 should includes "Online" as its place
 
-	Scenario: in-person event
+	Scenario: in-person event place
     Given A list of events
 		Given I visit the "/es/agenda" agenda page
 		Then event 7 should includes "CABA" as its place
 
-	Scenario: in-person event
+	Scenario: event custom registration
     Given A list of events
 		Given I visit the "/es/agenda" agenda page
 		Then event 7 should have a custom register link "https://forms.gle/YDsTLArgj2So64EY7"
+
+	Scenario: event currency
+    Given A list of events
+		Given I visit the "/es/agenda" agenda page
+		Then event 7 should have a "ARS" currency

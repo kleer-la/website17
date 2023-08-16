@@ -15,13 +15,17 @@ end
 # end
 
 Then('event {int} should includes {string} as its place') do |event_type_id, place|
-  # File.open('output.html', 'w') {|file| file.write(page.html)}
   element = find("#place-#{event_type_id}")
   expect(element).to have_text(place)
 end
 
 Then('event {int} should have a custom register link {string}') do |event_type_id, link|
-  # File.open('output.html', 'w') {|file| file.write(page.html)}
   element = find("#buy-#{event_type_id}")
   expect(element[:href]).to eq link
-end  
+end
+
+Then('event {int} should have a {string} currency') do |event_type_id, currency|
+  # File.open('output.html', 'w') {|file| file.write(page.html)}
+  element = find("#currency-#{event_type_id}")
+  expect(element.text).to include " #{currency}"
+end
