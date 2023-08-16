@@ -12,7 +12,7 @@
           <%=t("blog.search.category")%>
         </a>
         <ul class="dropdown-menu">
-          <%@categories.each do |category|
+          <%@categories&.each do |category|
             #TODO: delete
             url = ERB::Util.url_encode(category.name)%>
             <li>

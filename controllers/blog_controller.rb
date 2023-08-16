@@ -85,6 +85,6 @@ def blog_list(articles)
   erb :'blog/index', layout: :'layout/layout2022'
 
 rescue StandardError => e
-  puts e
+  puts e.message + ' - ' + e.backtrace.grep_v(%r{/gems/}).join('\n')
   status 404
 end

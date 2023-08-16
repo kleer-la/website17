@@ -9,7 +9,11 @@ Given('the article has author {string}') do |author|
 end
 
 Given('the article has abstract {string}') do |abstract|
-  @articles[-1]['abstract'] = abstract
+  @articles[-1]['description'] = abstract
+end
+
+Given('the article has language {string}') do |abstract|
+  @articles[-1]['lang'] = abstract
 end
 
 When('I go to the {string} article preview page') do |slug|
