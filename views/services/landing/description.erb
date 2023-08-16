@@ -11,13 +11,13 @@
           <% end %>
         </div>
       </div>
-  <div class="">
+  <div class="subservice-item-container">
     <% if @service.sub_services %>
       <% @service.sub_services.each do |sub_service| %>
         <%= erb :'services/landing/_subservice_item',
                 locals: {name: sub_service["name"],
                          icon: '/app/img/icons/Strategy.svg',
-                         href: sub_service["name"].gsub!(/( )/, '_').downcase!} %>
+                         href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
       <% end %>
     <% end %>
   </div>

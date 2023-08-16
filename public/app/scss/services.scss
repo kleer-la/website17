@@ -60,9 +60,32 @@ $white: #FFFFFF;
   }
 }
 
+.subservice-item-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
 .subservice-item{
   background-color: $primary-yellow;
-  width: 90px;
-  height: 60px;
+  width: 300px;
+  height: 200px;
   border-radius: 20px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+
+  h3{
+    color: black !important;
+  }
+
+  a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+  }
 }
