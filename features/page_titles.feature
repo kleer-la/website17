@@ -5,12 +5,12 @@ Feature: StaticPage Titles
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agile Coaching, Consulting & Training"
 
-	Scenario: Entrenamos Title
+	Scenario: Agenda Title
 		Given I visit the "agenda" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agenda de Cursos sobre Métodos Ágiles"
 
-	Scenario: Entrenamos Title
+	Scenario: Publicamos Title
 		Given I visit the "publicamos" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Agile Coaching, Consulting & Training"
