@@ -48,7 +48,6 @@ get '/blog' do
 
   @articles = articles.select { |a| a.lang == session[:locale]}.sort_by(&:created_at).reverse
 
-  @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 end
 
@@ -81,7 +80,6 @@ def blog_list(articles)
                   canonical: "#{t('meta_tag.blog.canonical')}"
 
   @articles = articles
-  @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 
 rescue StandardError => e
