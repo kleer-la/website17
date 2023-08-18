@@ -11,10 +11,9 @@
 <%= erb :'services/landing/hero' %>
 <%= erb :'services/landing/description' %>
 <%= erb :'services/landing/takeaways' %>
-<%= erb :'services/landing/recipients' %>
-<% if !@service.program.nil? && @service.program != "" %>
-  <%= erb :'services/landing/program' %>
-<% end %>
+<%= erb :'services/landing/recipients' if !@service.recipients.nil? && @service.recipients != "" %>
+<%= erb :'services/landing/program' if !@service.program.nil? && @service.program != "" %>
+
 <% if @service.sub_services %>
   <% @service.sub_services.each_with_index do |subservice, index|%>
     <%= erb :'services/landing/subservice', locals: {sub_service: subservice, index: index, id: subservice["name"].gsub(/( )/, '_').downcase!} %>

@@ -1416,8 +1416,6 @@ h3.title-somos {
     transform: translateY(-50%);
     right: 0; }
 
-.subservice-container h2 {
-  margin: 5%; }
 .subservice-container .description {
   display: flex;
   flex-direction: column;
@@ -1487,6 +1485,8 @@ h3.title-somos {
     flex-direction: column;
     align-items: center;
     justify-content: center; }
+    .subservice-item-container h2 {
+      margin: 5%; }
 
   .subservice-item {
     width: 80%;

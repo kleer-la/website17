@@ -13,9 +13,7 @@ $white: #FFFFFF;
 
 //Landing service
 .subservice-container{
-  h2{
-    margin: 5%;
-  }
+
   .description{
     display: flex;
     flex-direction: column;
@@ -102,6 +100,9 @@ $white: #FFFFFF;
 
 @media screen and (max-width:420px) {
   .subservice-item-container{
+    h2{
+      margin: 5%;
+    }
     flex-direction: column;
     align-items: center;
     justify-content: center;
