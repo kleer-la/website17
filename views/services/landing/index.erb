@@ -12,7 +12,7 @@
 <%= erb :'services/landing/description' %>
 <%= erb :'services/landing/takeaways' %>
 <%= erb :'services/landing/recipients' %>
-<% if @service.program.nil? && @service.program != "" %>
+<% if !@service.program.nil? && @service.program != "" %>
   <%= erb :'services/landing/program' %>
 <% end %>
 <% if @service.sub_services %>
