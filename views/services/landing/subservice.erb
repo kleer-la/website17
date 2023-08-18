@@ -1,10 +1,10 @@
 <section id="<%= id %>" class="container subservice-container mt-5 mb-5">
-  <h2>
+  <h2 class="common-subtitle">
     <%= sub_service["name"] %>
   </h2>
   <div class="row mt-5 mb-5">
     <div class="col-md-6 description">
-      <%= sub_service["description"] %>
+      <%= @markdown_renderer.render(sub_service["description"]) %>
     </div>
     <div class="col-md-6">
       <img
@@ -13,7 +13,7 @@
   </div>
   <div class="info-subcontainer">
     <div class="takeaways">
-      <%= sub_service["takeaways"] %>
+      <%= @markdown_renderer.render(sub_service["takeaways"]) %>
       <img
         class="desktop_figure takeaways__red-bean"
         src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg">
@@ -21,7 +21,7 @@
 
     </div>
     <div class="recipients">
-      <%= sub_service["recipients"] %>
+      <%= @markdown_renderer.render(sub_service["recipients"]) %>
       <img
         class="desktop_figure recipients__green-bean"
         src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean_sg.svg" />
