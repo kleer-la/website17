@@ -39,6 +39,53 @@
     "elevator_pitch": "",
     "titles": ["Capacitaciones con práctica concreta", "Para personas y empresas", "Recursos y materiales"]
   },
+  "facilitacion": {
+    "name": "Facilitación",
+    "subtitle": "Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva",
+    "side_image": "/app/img/risas-fg.jpg",
+    "description": "Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva\nEstas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.\n\n####Facilitamos eventos que ayudan a los equipos a lograr sus objetivos.\nDiseñamos ambientes propicios para crear sinergia entre las personas, espacios de encuentro con dinámicas que saquen el máximo provecho de lo que cada participante tiene para aportar. Como facilitadores asistimos al grupo a encauzar sus conversaciones. Evitamos  el protagonismo y las distracciones. ¡Nuestro foco está en dar espacio a los participantes para que la magia emerja!\n",
+    "takeaways": "",
+    "recipients": "",
+    "program": "",
+    "cta": " ",
+    "brochure": "",
+    "canonical_url": "/facilitacion",
+    "elevator_pitch": "",
+    "sub-services": [
+      {
+        "name": "Facilitación gráfica",
+        "summary": "",
+        "image": "/app/img/facilitacion01.png",
+        "description": "Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. También ofrecemos talleres de Facilitación Gráfica.",
+        "takeaways": "",
+        "recipients": ""
+      },
+      {
+        "name": "Innovación y creatividad",
+        "summary": "",
+        "image": "/app/img/facilitacion02.jpg",
+        "description": "Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.",
+        "takeaways": "",
+        "recipients": ""
+      },
+      {
+        "name": "Planificación estratégica",
+        "summary": "",
+        "image": "/app/img/facilitacion03.png",
+        "description": "Jornadas donde equipos multidisciplinarios trabajan enfocados y en forma iterativa e incremental para lograr un objetivo pre-acordado, en general llevando adelante el desarrollo de un producto o un prototipo, aunque también se puede utilizar este formato para generar o refinar ideas.",
+        "takeaways": "",
+        "recipients": ""
+      },
+      {
+        "name": "Dinámicas y eventos",
+        "summary": "",
+        "image": "/app/img/facilitacion04.jpg",
+        "description": "Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.",
+        "takeaways": "",
+        "recipients": ""
+      }
+    ]
+  },
   "jump-start-service": {
     "name": "Jump Start - Impulsando Equipos Asombrosos",
     "subtitle": "Desbloquea el potencial de tus equipos incorporando soluciones innovadoras con lean startup, design thinking, Scrum, Kanban y más. Expande la agilidad en tu organización e impulse equipos asombrosos.",
@@ -55,24 +102,28 @@
     "sub-services": [
       {
         "name": "Innovation Jump Start",
+        "summary": "Acelera el Potencial Creativo de tus Equipos",
         "description": "A través de nuestro servicio Innovation Jump Start, tus equipos podrán explorar posibilidades ilimitadas. Incorporando herramientas de descubrimiento de productos como Mapa de Empatía (Empathy Map), Etnografía rápida (Rapid Ethnography), Mapa de oportunidades y soluciones (Opportunity Solution Tree) y técnicas de experimentación y prototipado, que permitirán no solo conectarse con los clientes, sino también detectar y desarrollar oportunidades realmente valiosas con conocimiento validado.\n\nIntegramos los enfoques Scrum y Kanban para optimizar la dinámica interna y externa de los equipos. Con este servicio, tu equipo se convertirá en un motor de innovación ágil, superando barreras y elevando sus capacidades a nuevos horizontes.\n",
         "takeaways": "Acompañamiento inmersivo y acelerado que permitirá a un equipo obtener mejores productos, servicios o procesos con resultados asombrosos. \nEl servicio Innovation Jump Start abarca:\n\n1. **Selección Estratégica de Proyecto:** Seleccionamos un proyecto que desafíe los límites y prometa resultados en tan solo 3 meses.\n2. **Claridad en los Acuerdos de Equipo:** Definimos acuerdos mínimos de trabajo que establecen un camino claro hacia el éxito.\n3. **Acompañamiento Intensivo:** Profesionales con amplia experiencia guiarán al equipo con sesiones semanales (entre 2 y 4) para asegurar que se adopte con éxito el marco de trabajo y sus prácticas.\n4. **Formación Especializada:** Impulsamos a tu equipo con formación en el marco de trabajo y un conjunto integral de herramientas. A través de una capacitación inicial y una serie de cápsulas durante el acompañamiento.\n5. **Desarrollo de perfiles:** Desarrollamos los perfiles específicos que necesita tu equipo dentro del marco de trabajo.\n6. **Acompañamiento de Líderes:** Guiamos a tus líderes en el viaje cultural necesario para la adopción de estas prácticas",
         "recipients": "**Innovation Jump Start** es ideal para empresas que desean explorar y desarrollar nuevos productos o servicios o que se encuentran con retos de innovación que buscan soluciones efectivas. También, para equipos con desafíos para crear modelos de negocio innovadores."
       },
       {
         "name": "Agile team Jump Start",
+        "summary": "Expande la agilidad con confianza a más equipos.",
         "description": "Con Agile Team Jump Start y Agile Team Restart, transformarás la forma en que trabajas en equipo. Mediante una implementación ágil y precisa de Scrum, tus equipos se preparan para una adopción fluida y rápida. Realizarán entregas confiables y utilizables con un ritmo sostenido, construyendo un flujo constante de valor.\n\nNuestro enfoque también se centra en establecer acuerdos claros de colaboración tanto internamente como con terceros. Esta sinergia rápida y eficiente acelerará la maduración de tus proyectos y garantizará la entrega de resultados de alto rendimiento.\n",
         "takeaways": "Acompañamos en la adopción fluida y efectiva de Scrum o Kanban en tu equipo de proyecto.\nEl servicio Agile Team Jump Start incluye:\n1. **Incepción Inicial:** Creamos un punto de partida compartido y construimos conexiones sólidas entre los miembros del equipo.\n2. **Acuerdos Mínimos de Trabajo:** Definimos acuerdos esenciales para fomentar la colaboración efectiva y el enfoque colectivo con objetivos comunes.\n3. **Acompañamiento Integral:** Acompañamos al equipo para garantizar una adopción suave del marco de trabajo y sus prácticas, estimamos entre 2 y 4 sesiones semanales. \n4. **Formación Integral:** Equipamos a tu equipo con un profundo entendimiento del marco de trabajo y un kit de herramientas esenciales. Esto incluye una capacitación inicial y píldoras de aprendizaje durante todo el proceso.\n5. **Perfiles Adaptados:** Desarrollamos perfiles individuales que reflejen las habilidades necesarias dentro del marco de trabajo.\n6. **Soporte para Líderes:** Guiamos a tus líderes a través del salto cultural necesario para adoptar estas valiosas prácticas.",
         "recipients": "**Agile Team Jump Start** está dirigido a equipos de proyecto o de desarrollo de productos que desean adoptar prácticas ágiles."
       },
       {
         "name": "Agile team restart",
+        "summary": "Revitaliza y reenfoca equipos ágiles existentes.",
         "description": "Con Agile Team Jump Start y Agile Team Restart, transformarás la forma en que trabajas en equipo. Mediante una implementación ágil y precisa de Scrum, tus equipos se preparan para una adopción fluida y rápida. Realizarán entregas confiables y utilizables con un ritmo sostenido, construyendo un flujo constante de valor.\n\nNuestro enfoque también se centra en establecer acuerdos claros de colaboración tanto internamente como con terceros. Esta sinergia rápida y eficiente acelerará la maduración de tus proyectos y garantizará la entrega de resultados de alto rendimiento.\n",
         "takeaways": "Si tu equipo ha experimentado el marco de trabajo ágil y sigue luchando por mantenerlo, te acompañamos para realinear y revitalizar tus prácticas.\n\nAgile Team Jump Restart cubre:\n\n1. **Evaluación Inicial:** Analizamos en detalle el nivel de madurez actual de tu equipo en cuanto a prácticas ágiles, identificando oportunidades clave para la mejora.\n2. **Realineación de Acuerdos:** Reforzamos los acuerdos mínimos de trabajo, estableciendo una base sólida para un rendimiento ágil consistente.\n3. **Acompañamiento Focalizado:** Nos sumergimos contigo, entre 2 y 4 sesiones semanales, para guiar a tu equipo en la adopción continua del marco de trabajo y sus prácticas.",
         "recipients": "**Agile Team Jump Restart** para los equipos que buscan re-enfocar su agilidad y mejorar su desempeño."
       },
       {
         "name": "Kaizen jump start",
+        "summary": "Incorpora la Mejora Continua en tus Equipos.",
         "description": "Mediante la adopción de las prácticas de Lean, Kanban y Toyota Kata, no solo mejorarán sus procesos, sino que también cultivarán el hábito para la mejora continua. Los equipos tendrán más claridad sobre la carga de trabajo y la capacidad. Tendrán visibilidad del flujo de trabajo, identificando oportunidades de mejora a cada paso.\n\nEstos servicios no son solo un salto de inicio; son un trampolín hacia la evolución ágil, empoderando a los equipos.\n",
         "takeaways": "Las organizaciones están viviendo procesos de transformación y evolución continuamente. Buscan no solo optimizar sus procesos, sino también cultivar eficiencias y desarrollar capacidades relacionadas con hábitos sostenibles de mejora. Estos hábitos no solo impactan la cultura, sino que también influyen en los resultados de toda la organización.\nPara abordar esta búsqueda de excelencia, presentamos una estrategia de acompañamiento práctica y efectiva, diseñada para convertir la mejora continua en un hábito arraigado:\n1. **Formación Especializada:** Introducimos al equipo en el poderoso método Toyota Kata, inspirado en la legendaria cultura de mejora continua de Toyota.\n2. **Acompañamiento y Mentoría:** Guíamos a tu equipo a través de múltiples ciclos de mejora. Cada ciclo se enfoca en la experimentación, desafiando al equipo a alcanzar metas ambiciosas y, al mismo tiempo, incorporando el hábito de mejora continua como una habilidad intrínseca.\n3. **Resultados Tangibles:** Este enfoque no solo moldea hábitos efectivos, sino que también genera resultados concretos y duraderos.",
         "recipients": "**Kaizen Jump Start** está orientado a equipos o procesos operativos existentes que necesitan ser optimizados y para organizaciones comprometidas con la mejora continua."

@@ -1,4 +1,4 @@
-<section id="course-description" class="container">
+<section id="service-description" class="container">
       <div class="row">
         <div class="col-md-6">
           <%=@markdown_renderer.render( @service.description )%>
@@ -11,12 +11,13 @@
           <% end %>
         </div>
       </div>
-  <div class="subservice-item-container">
+  <div class="subservice-item-container mb-5">
     <% if @service.sub_services %>
         <% @service.sub_services.each do |sub_service| %>
           <%= erb :'services/landing/_subservice_item',
                   locals: {name: sub_service["name"],
                            icon: '/app/img/icons/Strategy.svg',
+                           summary: sub_service["summary"],
                            href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
 
         <% end %>

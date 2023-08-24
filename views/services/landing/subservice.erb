@@ -3,15 +3,23 @@
     <%= sub_service["name"] %>
   </h2>
   <div class="row mt-5 mb-5">
+    <% if index % 2 != 0 %>
+      <div class="col-md-6">
+        <img
+          src="<%= sub_service["image"] %>"/>
+      </div>
+    <% end %>
     <div class="col-md-6">
       <div class="description">
         <%= @markdown_renderer.render(sub_service["description"]) %>
       </div>
     </div>
-    <div class="col-md-6">
-      <img
-        src="https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png"/>
-    </div>
+    <% if index % 2 == 0 %>
+      <div class="col-md-6">
+        <img
+          src="https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png"/>
+      </div>
+    <% end %>
   </div>
   <div class="info-subcontainer row">
     <div class="col-md-6">

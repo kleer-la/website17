@@ -1416,6 +1416,9 @@ h3.title-somos {
     transform: translateY(-50%);
     right: 0; }
 
+.service-description {
+  padding: 0 20px; }
+
 .subservice-container .description {
   display: flex;
   flex-direction: column;
@@ -1472,13 +1475,17 @@ h3.title-somos {
   align-content: center;
   align-items: center; }
   .subservice-item h3 {
-    color: black !important; }
+    color: black !important;
+    font-size: 24px; }
+  .subservice-item p {
+    font-size: 14px; }
   .subservice-item a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
-    align-items: center; }
+    align-items: center;
+    color: black !important; }
 
 @media screen and (max-width: 420px) {
   .subservice-item-container {
