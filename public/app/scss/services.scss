@@ -12,6 +12,10 @@ $grey: #B3B3B3;
 $white: #FFFFFF;
 
 //Landing service
+.service-description{
+  padding: 0 20px;
+}
+
 .subservice-container{
 
   .description{
@@ -87,6 +91,11 @@ $white: #FFFFFF;
 
   h3{
     color: black !important;
+    font-size: 24px;
+  }
+
+  p{
+    font-size: 14px;
   }
 
   a{
@@ -95,6 +104,7 @@ $white: #FFFFFF;
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    color: black !important;
   }
 }
 
