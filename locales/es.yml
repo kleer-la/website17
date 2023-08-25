@@ -953,7 +953,7 @@ es:
         },
         {
           text: 'Podcast',
-          url: 'larevolucionagil.com',
+          url: 'https://larevolucionagil.com',
           inside: false
         },
         {
