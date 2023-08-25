@@ -63,7 +63,7 @@ class KeventerConnector
 
   def get_catalog
     return JSON.parse(@response) unless @response.nil?
-    JsonAPI.new(API_ROOT + '/catalog')
+    JsonAPI.new(echo API_ROOT + '/catalog')
   end
 
   def get_testimonies(id)

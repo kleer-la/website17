@@ -88,21 +88,6 @@ class KeventerReader
     all.select { |category| category.codename == code_name }.first
   end
 
-  # TODO: remove category logic from reader
-  # def categories(lang = 'es')
-  #   begin
-  #     puts @connector.categories_xml_url
-  #     categories = Category.categories(
-  #       parse(@connector.categories_xml_url, '/categories/category'),
-  #       lang
-  #     )
-  #   rescue StandardError => e
-  #     puts "Error al cargar las categorías: #{e}"
-  #     categories = []
-  #   end
-  #   categories
-  # end
-  #
   def catalog_events()
     events = []
     begin
