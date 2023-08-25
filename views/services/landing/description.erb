@@ -16,7 +16,7 @@
         <% @service.sub_services.each do |sub_service| %>
           <%= erb :'services/landing/_subservice_item',
                   locals: {name: sub_service["name"],
-                           icon: '/app/img/icons/Strategy.svg',
+                           icon: sub_service["icon"],
                            summary: sub_service["summary"],
                            href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
 
