@@ -2,6 +2,7 @@ require './lib/xml_api'
 require './lib/json_api'
 require './lib/keventer_helper'
 require './lib/keventer_connector'
+require './lib/testimony'
 
 class EventType
   def self.create_null(file)
@@ -114,6 +115,7 @@ class EventType
   def load_testimonies(plane_testimonies)
     unless plane_testimonies.nil?
       plane_testimonies.each do |testimony|
+        #TODO: test event type with testimony
         new_testimony = Testimony.new
         new_testimony.load_from_json(testimony)
 
