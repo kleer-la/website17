@@ -952,6 +952,11 @@ es:
           inside: true
         },
         {
+          text: 'Podcast',
+          url: 'larevolucionagil.com',
+          inside: false
+        },
+        {
           text: 'Prensa',
           url: '/prensa',
           inside: true

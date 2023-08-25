@@ -1417,7 +1417,9 @@ h3.title-somos {
     right: 0; }
 
 .service-description {
-  padding: 0 20px; }
+  padding: 0 20px;
+  z-index: 5;
+  position: relative; }
 
 .subservice-container .description {
   display: flex;
