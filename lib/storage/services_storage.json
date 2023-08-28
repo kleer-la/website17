@@ -40,7 +40,7 @@
     "titles": ["Capacitaciones con práctica concreta", "Para personas y empresas", "Recursos y materiales"]
   },
   "facilitacion": {
-    "name": "Facilitación",
+    "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
     "subtitle": "Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva",
     "side_image": "/app/img/risas-fg.jpg",
     "description": "Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva\nEstas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.\n\n####Facilitamos eventos que ayudan a los equipos a lograr sus objetivos.\nDiseñamos ambientes propicios para crear sinergia entre las personas, espacios de encuentro con dinámicas que saquen el máximo provecho de lo que cada participante tiene para aportar. Como facilitadores asistimos al grupo a encauzar sus conversaciones. Evitamos  el protagonismo y las distracciones. ¡Nuestro foco está en dar espacio a los participantes para que la magia emerja!\n",
@@ -50,7 +50,7 @@
     "cta": " ",
     "brochure": "",
     "canonical_url": "/facilitacion",
-    "elevator_pitch": "",
+    "elevator_pitch": "Diseñamos experiencias para potenciar la colaboración, la toma de decisiones  y acciones concretas. Promovemos espacios inspiradores y efectivos.",
     "sub-services": [
       {
         "name": "Facilitación gráfica",
@@ -97,7 +97,7 @@
     "cta": " ",
     "brochure": "",
     "canonical_url": "/jump-start",
-    "elevator_pitch": "Hacia un liderazgo con impacto más consciente y humano",
+    "elevator_pitch": "Descubre el servicio Jump Start, una propuesta integral para  acompañar a equipos en su evolución hacia la agilidad.",
     "titles": ["Libera el potencial de tus equipos y marca el rumbo de la evolución hacia la agilidad"],
     "sub-services": [
       {
