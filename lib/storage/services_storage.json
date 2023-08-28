@@ -137,5 +137,19 @@
         "recipients": "**Kaizen Jump Start** está orientado a equipos o procesos operativos existentes que necesitan ser optimizados y para organizaciones comprometidas con la mejora continua."
       }
     ]
+  },
+  "diseno-organizacional-agil": {
+    "name": "Diseño Organizacional Ágil",
+    "subtitle": "¿Cómo se relacionan la agilidad y el diseño organizacional?",
+    "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png",
+    "description": "Entendemos la agilidad organizacional como la *capacidad* de *identificar cambios* en el contexto *y reaccionar* a estos cambios *de manera oportuna y sostenible* para toda la organización. Es una capacidad necesaria para la mayoría de las organizaciones actuales dados los contextos con altos niveles de volatilidad, incertidumbre, complejidad y ambigüedad en los que se encuentran.\n\nEl *diseño organizacional* es una aproximación sistemática y holística para alinear y coordinar todas las partes de una organización para lograr su propósito estratégico. (European Organization Design Forum)\n\nSi se busca que una organización sea más ágil, es necesario evolucionar hacia un diseño organizacional más congruente con la agilidad.\n\nEl proceso de diseño, pensado desde la perspectiva ágil, busca que las decisiones de diseño sean coherentes con esta capacidad.\n",
+    "takeaways": "Nos apalancamos en la perspectiva ágil para repensar las diferentes partes de una organización, buscando coherencia entre esos componentes para lograr su propósito estratégico.\n\n*¿Cuáles son las partes de la organización que acompañamos a repensar y a intervenir?*\nEstrategia, estructura, procesos y capacidades transversales, prácticas de personas y sistemas de reconocimiento son puntos de inicio, aunque pueden surgir otras partes en medio del proceso de diseño y puesta en marcha del mismo.\n",
+    "recipients": "Nos orientamos a llevar a cabo este acompañamiento de la siguiente manera:\n* *Nuestro rol*: como parte de un equipo que lleve a cabo el proceso de diseño, conformado por personas de la organización y personas de Kleer.\n* *Participación de la organización*: colaborativa, donde se involucran diferentes actores, a diferentes niveles de la organización.\n* *Aproximación*: iterativa, empezando con diseños que vamos mejorando a partir de los aprendizajes al ponerlos en práctica.\n\nEntendemos que algunas organizaciones podrían requerir acompañamientos más lineales, top-down y con nuestra participación como consultores externos. Podemos conversarlo y llegar a una propuesta que nos haga sentido a ambas partes.\n",
+    "program": "",
+    "cta": "",
+    "brochure": "",
+    "canonical_url": "/diseno-organizacional-agil",
+    "elevator_pitch": "",
+    "titles": ["¿Qué ofrecemos?", "¿Cómo lo hacemos?"]
   }
 }
