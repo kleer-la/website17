@@ -1,0 +1,50 @@
+[
+  {
+    "id": 4,
+    "name": "Desarrollo de Software",
+    "description": "Practicas agiles de diseño y construcción de software",
+    "codename": "software",
+    "tagline": "Integración continua, Test Driven Development, Pair Programming, Refactoring y Código Límpio.",
+    "visible": true,
+    "order": 3,
+    "name_en": "Software Development",
+    "description_en": "We focus on design and engineering practices necessary to ensure quality throughout the design and construction, maintenance and use of your products.",
+    "tagline_en": "Continuous Integration, Test-Driven Development, Pair Programming, Clear Code."
+  },
+  {
+    "id": 5,
+    "name": "Diseño de Productos",
+    "description": "Creación de productos y servicios innovadores",
+    "codename": "productos",
+    "tagline": "Creación de productos y servicios innovadores",
+    "visible": true,
+    "order": 4,
+    "name_en": "Product Design",
+    "description_en": "Creación de productos y servicios innovadores",
+    "tagline_en": "Productos"
+  },
+  {
+    "id": 2,
+    "name": "Equipos y Organizaciones",
+    "description": "Categoria de equipos y organizaciones",
+    "codename": "organizaciones",
+    "tagline": "A partir del aprendizaje, la confianza y el compromiso tu organización o equipo de trabajo logrará resultados nunca antes vistos.",
+    "visible": true,
+    "order": 2,
+    "name_en": "Organizations & Teams",
+    "description_en": "We propose a new approach to management of organizations, departments and teams that focuses on people and their interactions over processes and tools used.\r\n",
+    "tagline_en": "Thru learning, trust, commitment, visibility and flexibility your organization, department or team achieve results never seen before."
+  },
+  {
+    "id": 3,
+    "name": "Desarrollo Profesional",
+    "description": "Sumá herramientas para tu desarrollo profesional",
+    "codename": "clientes",
+    "tagline": "Sumá herramientas para tu desarrollo profesional",
+    "visible": true,
+    "order": 1,
+    "name_en": "Professional Improvement",
+    "description_en": "Sumá herramientas para tu desarrollo profesional",
+    "tagline_en": ""
+  }
+]

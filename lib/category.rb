@@ -39,7 +39,7 @@ class Category
       category.event_types = load_event_types loaded_category
 
       categories << category
-    end 
+    end
 
     categories.sort! { |p, q| p.order <=> q.order }
 
@@ -57,6 +57,7 @@ class Category
     end
 
     def null_json_api(null_api)
+      puts "aca si entro socio"
       @@json_api = null_api
     end
     def load_categories(cat_json, lang)

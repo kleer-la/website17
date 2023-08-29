@@ -1,4 +1,4 @@
-<section id="hero" class="generic-hero" <%= "style='margin-top: 160px'" if !extra_promo.nil? %>>
+<section id="hero" class="generic-hero" <%= "style='margin-top: 160px'" if defined?(extra_promo) %>>
   <h1 class="mb-5"><%= title %></h1>
   <p><%= subtitle %></p>
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle3.svg" class="desktop_figure generic-hero__red-circle" />
