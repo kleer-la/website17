@@ -8,7 +8,9 @@
       <strong>Contáctanos🔥</strong>
     </a>
 </div>
-<%= erb :'services/landing/hero' %>
+<%#= erb :'services/landing/hero' %>
+<%=erb :'component/heros/_generic_hero', locals: {title: @service.name, subtitle: @service.subtitle, extra_promo: true} %>
+
 <%= erb :'services/landing/description' %>
 <%= erb :'services/landing/takeaways' %>
 <%= erb :'services/landing/recipients' if !@service.recipients.nil? && @service.recipients != "" %>
