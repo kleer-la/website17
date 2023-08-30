@@ -17,8 +17,7 @@ get '/servicios/:service_id' do
 
 
     erb :'services/landing/index', layout: :'layout/layout2022'
-  rescue StandardError => e
-    puts e
+  rescue
     status 404
   end
 
