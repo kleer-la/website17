@@ -1417,6 +1417,7 @@ h3.title-somos {
     right: 0; }
 
 .service-description {
+  margin-top: 50px;
   padding: 0 20px;
   z-index: 5;
   position: relative; }
@@ -1954,11 +1955,31 @@ html {
   height: calc(70vh - 100px);
   margin-top: 100px;
   position: relative;
-  background-color: #E8F8FD;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  align-items: center; }
+  .generic-hero-a .text {
+    max-width: 50%;
+    justify-content: center;
+    z-index: 5; }
+  .generic-hero-a .skyblue-semicircle {
+    top: -20px;
+    right: 20%; }
+  .generic-hero-a .rustic-circle {
+    top: 200px;
+    left: 8%; }
+  .generic-hero-a .yellow-oval {
+    left: 20%;
+    bottom: 15%; }
+  .generic-hero-a .green-worm {
+    top: 100px;
+    left: 5%; }
+  .generic-hero-a .red-bean {
+    right: 5%;
+    top: 40%; }
 
 .navbar {
   max-width: 100vw !important;
