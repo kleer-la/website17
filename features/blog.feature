@@ -1,6 +1,7 @@
 Feature: Kleer Blogs
 
 Scenario: Blog page
+  Given A list of categories
   Given I go to the Blog page
   Then Title should be "Blog"
 

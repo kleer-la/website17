@@ -37,6 +37,9 @@ class KeventerConnector
   def self.categories_json_url
     echo API_ROOT + '/categories.json'.freeze
   end
+  def self.catalog_url
+    echo API_ROOT + '/catalog'
+  end
   def self.news_url
     echo API_ROOT + '/news.json'.freeze
   end

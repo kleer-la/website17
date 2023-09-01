@@ -1,12 +1,14 @@
 Feature: Catalogo de cursos
 
 	Scenario: Mostrar las categorías
+		Given A catalog
 		Given A list of categories
 		And I visit the "catalogo" page
 		Then I should see "Desarrollo Profesional"
 		And I should see "Desarrollo de Software"
 
 	Scenario: Show event type subtitle
+		Given A catalog
 		Given A list of categories
 		And I visit the catalog page
 		Given PENDING
