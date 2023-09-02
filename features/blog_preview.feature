@@ -1,6 +1,7 @@
 Feature: Blog preview
 
 Scenario: One article preview page
+  Given A catalog
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   When I go to the 'lorem-ipsum' article preview page
@@ -8,6 +9,7 @@ Scenario: One article preview page
 
 #
 Scenario: One article preview page
+  Given A catalog
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   And the article has author 'Luke Skywalker'
@@ -15,6 +17,7 @@ Scenario: One article preview page
   Then I should see "Luke Skywalker"
 
 Scenario: Article list preview page
+  Given A catalog
   Given With 'es' locale
   * A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'

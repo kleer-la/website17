@@ -80,7 +80,7 @@ get '/catalogo' do
   @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
-  @events = Catalog.catalog_events()
+  @events = Catalog.create_keventer_json('es')
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = "/catalogo"

@@ -1,6 +1,7 @@
 
 Feature: Agenda (fka Entrenamos)
 	Scenario: Deprecated URL should redirect
+		Given A catalog
 		Given A list of categories
 		And I visit the "/es/entrenamos/evento/1953-taller-de-product-discovery-online" page
 		Then It should redirect to "/es/catalogo"
