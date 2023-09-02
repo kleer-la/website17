@@ -57,7 +57,6 @@ class Category
     end
 
     def null_json_api(null_api)
-      puts "aca si entro socio"
       @@json_api = null_api
     end
     def load_categories(cat_json, lang)
