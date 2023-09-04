@@ -1422,6 +1422,8 @@ h3.title-somos {
   z-index: 5;
   position: relative; }
 
+.subservice-container .image {
+  border-radius: 30px; }
 .subservice-container .description {
   display: flex;
   flex-direction: column;

@@ -21,6 +21,10 @@ $white: #FFFFFF;
 
 .subservice-container{
 
+  .image{
+    border-radius: 30px;
+  }
+
   .description{
     display: flex;
     flex-direction: column;
