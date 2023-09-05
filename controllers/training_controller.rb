@@ -51,11 +51,9 @@ end
 
 def coming_courses
   Event.create_keventer_json
-  # KeventerReader.instance.coming_commercial_events
 end
 
 def load_categories(lang)
-  # KeventerReader.instance.categories lang
   Category.create_keventer_json lang
 end
 
@@ -80,7 +78,7 @@ get '/catalogo' do
   @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
-  @events = Catalog.create_keventer_json('es')
+  @events = Catalog.create_keventer_json
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = "/catalogo"
