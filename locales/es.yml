@@ -1229,7 +1229,6 @@ es:
         - {
           text: Facilitación de eventos ágiles,
           img: /app/img/icons/Microphone.svg,
-          url: /servicios/facilitacion
         }
     differential:
       title: Nuestro diferencial, la experiencia kleerer
