@@ -952,6 +952,11 @@ es:
           inside: true
         },
         {
+          text: 'Podcast',
+          url: 'https://larevolucionagil.kleer.la',
+          inside: false
+        },
+        {
           text: 'Prensa',
           url: '/prensa',
           inside: true
@@ -1189,35 +1194,38 @@ es:
         - {
           text: Innovation Jump Start,
           img: /app/img/icons/innovation.png,
+          url: /servicios/jump-start#innovation_jump_start
         }
         - {
           text: Kaizen Jump Start,
           img: /app/img/icons/improvement.png,
+          url: /servicios/jump-start#kaizen_jump_start
         }
         - {
           text: Agile team Jump Start,
           img: /app/img/icons/People.svg,
+          url: /servicios/jump-start#agile_team_jump_start
         }
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
         }
-        - {
-          text: Prácticas agiles de desarrollo de software,
-          img: /app/img/icons/code.png,
-        }
-        - {
-          text: Agile Coaching,
-          img: /app/img/icons/Kanban.svg,
-        }
-        - {
-          text: Agile HR,
-          img: /app/img/icons/People.svg,
-        }
-        - {
-          text: Structural Agility,
-          img: /app/img/icons/sprint.png,
-        }
+#        - {
+#          text: Prácticas agiles de desarrollo de software,
+#          img: /app/img/icons/code.png,
+#        }
+#        - {
+#          text: Agile Coaching,
+#          img: /app/img/icons/Kanban.svg,
+#        }
+#        - {
+#          text: Agile HR,
+#          img: /app/img/icons/People.svg,
+#        }
+#        - {
+#          text: Structural Agility,
+#          img: /app/img/icons/sprint.png,
+#        }
         - {
           text: Facilitación de eventos ágiles,
           img: /app/img/icons/Microphone.svg,

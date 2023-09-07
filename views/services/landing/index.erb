@@ -8,14 +8,17 @@
       <strong>Contáctanos🔥</strong>
     </a>
 </div>
-<%= erb :'services/landing/hero' %>
+<%#= erb :'services/landing/hero' %>
+<%=erb :'component/heros/_generic_hero', locals: {title: @service.name, subtitle: @service.subtitle, extra_promo: true} %>
+
 <%= erb :'services/landing/description' %>
 <%= erb :'services/landing/takeaways' %>
-<%= erb :'services/landing/recipients' %>
-<%= erb :'services/landing/program' %>
+<%= erb :'services/landing/recipients' if !@service.recipients.nil? && @service.recipients != "" %>
+<%= erb :'services/landing/program' if !@service.program.nil? && @service.program != "" %>
+
 <% if @service.sub_services %>
   <% @service.sub_services.each_with_index do |subservice, index|%>
-    <%= erb :'services/landing/subservice', locals: {sub_service: subservice, index: index} %>
+    <%= erb :'services/landing/subservice', locals: {sub_service: subservice, index: index, id: subservice["name"].gsub(/( )/, '_').downcase!} %>
   <% end %>
 <% end %>
 <%= erb :'services/landing/contact' %>

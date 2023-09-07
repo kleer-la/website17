@@ -39,7 +39,7 @@ class Article
   end
 
   attr_accessor :title, :description, :tabtitle, :body, :published,
-                :trainers, :trainers_list, :slug, :abstract, :lang, :selected,
+                :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :cover, :category_name, :id,
                 :active #View attributes,
 
@@ -49,7 +49,7 @@ class Article
     @body = doc['body'] || ''
     @slug = doc['slug']
     @tabtitle = doc['tabtitle'] || @title
-    @description = doc['description']
+    @description = doc['description'] || ''
     @lang = doc['lang']
     @published = doc['published']
     @abstract = doc['abstract'] || ''

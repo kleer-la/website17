@@ -1,6 +1,7 @@
 Feature: Blog preview
 
 Scenario: One article preview page
+  Given A catalog
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   When I go to the 'lorem-ipsum' article preview page
@@ -8,16 +9,15 @@ Scenario: One article preview page
 
 #
 Scenario: One article preview page
+  Given A catalog
   Given A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
   And the article has author 'Luke Skywalker'
   When I go to the 'lorem-ipsum' article preview page
   Then I should see "Luke Skywalker"
 
-
-#TODO: revisar problema en test
 Scenario: Article list preview page
-  Given PENDING
+  Given A catalog
   Given With 'es' locale
   * A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
@@ -26,11 +26,11 @@ Scenario: Article list preview page
   Then I should see "Lorem ipsum"
   And I should see "Dolor sit amet"
 
-Scenario: Article list shows abstract
-  Given PENDING
+Scenario: Article list shows description
   Given With 'es' locale
   * A list of articles with
   * an article 'lorem-ipsum' with title 'Lorem ipsum'
-  And  the article has abstract 'abstract lorem'
+  And  the article has language 'es'
+  And  the article has description 'description lorem'
   When I go to the article list preview page
-  Then I should see "abstract lorem"
+  Then I should see "description lorem"

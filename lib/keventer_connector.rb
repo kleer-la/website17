@@ -37,6 +37,9 @@ class KeventerConnector
   def self.categories_json_url
     echo API_ROOT + '/categories.json'.freeze
   end
+  def self.catalog_url
+    echo API_ROOT + '/catalog'
+  end
   def self.news_url
     echo API_ROOT + '/news.json'.freeze
   end
@@ -63,7 +66,7 @@ class KeventerConnector
 
   def get_catalog
     return JSON.parse(@response) unless @response.nil?
-    JsonAPI.new(API_ROOT + '/catalog')
+    JsonAPI.new(echo API_ROOT + '/catalog')
   end
 
   def get_testimonies(id)

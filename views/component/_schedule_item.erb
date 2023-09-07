@@ -71,13 +71,13 @@
     <% end %>
   </div>
   <div class="col-4 col-lg-1 next-edition-item">
-    <div class="btn-center-container">
+    <div class="btn-center-container" id="pay-button-<%=format_date_range(event.date, event.finish_date, session[:locale]).to_s.downcase.gsub(' ','-')%>">
       <% if event.is_sold_out || event.registration_ended?%>
         <button class="my-primary-button p-2"
                 href='' style="filter: grayscale(100%); max-width: 150px; width: 130px">
           Completo
         </button>
-      <% else 
+      <% else
         uri = "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la"
         uri = event.registration_link unless event.registration_link.empty?
       %>

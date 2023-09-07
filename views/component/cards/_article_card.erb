@@ -17,7 +17,7 @@
       <h3 class="card-title"><%= article.title %></h3>
     </a>
     <p class="card-text">
-      <%=@markdown_renderer.render( @show_abstract ? article.description : article.description )%>
+      <%=@markdown_renderer.render( article.description )%>
     </p>
     <p class="card-text">
       <small class="text-muted">

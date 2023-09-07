@@ -14,8 +14,7 @@ get '/blog-preview/:slug' do |slug|
 
   begin
     blog_one Article.create_one_keventer(slug)
-  rescue StandardError => e
-    puts e.message + ' - ' + e.backtrace.grep_v(%r{/gems/}).join('\n')
+  rescue
     status 404
   end
 end
@@ -31,8 +30,7 @@ end
 get '/blog/:slug' do |slug|
   @where = 'Blog'
   blog_one Article.create_one_keventer(slug)
-rescue StandardError => e
-  puts e
+rescue
   status 404
 end
 
@@ -48,7 +46,6 @@ get '/blog' do
 
   @articles = articles.select { |a| a.lang == session[:locale]}.sort_by(&:created_at).reverse
 
-  @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 end
 
@@ -70,8 +67,7 @@ def blog_one(article)
 
   erb :'blog/landing_blog/index', layout: :'layout/layout2022'
 
-rescue StandardError => e
-  puts e
+rescue
   status 404
 end
 
@@ -81,10 +77,8 @@ def blog_list(articles)
                   canonical: "#{t('meta_tag.blog.canonical')}"
 
   @articles = articles
-  @show_abstract = true
   erb :'blog/index', layout: :'layout/layout2022'
 
-rescue StandardError => e
-  puts e
+rescue
   status 404
 end

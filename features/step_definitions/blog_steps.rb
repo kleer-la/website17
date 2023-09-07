@@ -8,8 +8,12 @@ Given('the article has author {string}') do |author|
   @articles[-1]['trainers'] = (@articles[-1]['trainers'] || []) << { 'name' => author }
 end
 
-Given('the article has abstract {string}') do |abstract|
-  @articles[-1]['abstract'] = abstract
+Given('the article has description {string}') do |description|
+  @articles[-1]['description'] = description
+end
+
+Given('the article has language {string}') do |lang|
+  @articles[-1]['lang'] = lang
 end
 
 When('I go to the {string} article preview page') do |slug|

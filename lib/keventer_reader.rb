@@ -9,7 +9,6 @@ require './lib/country'
 require './lib/keventer_connector'
 require './lib/professional'
 require './lib/category'
-require './lib/testimony'
 
 #TODO: REVISAR ARQUITECTURA - READER? - NULL INFRASCTRUCTURE?
 
@@ -57,7 +56,6 @@ class KeventerReader
 
   def event_type(event_type_id, force_read = false)
     event_type = load_remote_event_type(event_type_id, force_read)
-    # event_type.testimonies = testimonies(event_type_id) unless event_type.nil?
     event_type.public_editions = load_remote_event_type_editions(event_type_id, force_read) unless event_type.nil?
     event_type
   end
@@ -90,21 +88,6 @@ class KeventerReader
     all.select { |category| category.codename == code_name }.first
   end
 
-  # TODO: remove category logic from reader
-  # def categories(lang = 'es')
-  #   begin
-  #     puts @connector.categories_xml_url
-  #     categories = Category.categories(
-  #       parse(@connector.categories_xml_url, '/categories/category'),
-  #       lang
-  #     )
-  #   rescue StandardError => e
-  #     puts "Error al cargar las categorías: #{e}"
-  #     categories = []
-  #   end
-  #   categories
-  # end
-  #
   def catalog_events()
     events = []
     begin
@@ -149,22 +132,6 @@ class KeventerReader
     end
 
     categories
-  end
-
-  def testimonies(id)
-    plane_testimonies = connector.get_testimonies(id)&.get_response
-    testimonies_list = []
-
-    unless plane_testimonies.nil?
-      plane_testimonies.each do |testimony|
-        new_testimony = Testimony.new
-        new_testimony.load_from_json(testimony)
-
-        testimonies_list.push(new_testimony)
-      end
-    end
-
-    testimonies_list
   end
 
   private

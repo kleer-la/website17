@@ -96,6 +96,11 @@ export RECAPTCHA_SITE_KEY="<site key>"
 export RECAPTCHA_SECRET_KEY="<secret key>"
 ```
 
+```cli
+export RECAPTCHA_SITE_KEY=6Le7oRETAAAAAETt105rjswZ15EuVJiF7BxPROkY
+export RECAPTCHA_SECRET_KEY=6Le7oRETAAAAAL5a8yOmEdmDi3b2pH7mq5iH1bYK
+```
+
 Para probar con ambiente de prueba de keventer
 ```cli
 export KEVENTER_URL="http://keventer-test.herokuapp.com"

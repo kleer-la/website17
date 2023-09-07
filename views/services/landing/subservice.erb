@@ -1,33 +1,48 @@
-<section class="container subservice-container mt-5 mb-5">
-  <h2>
+<section id="<%= id %>" class="container subservice-container mt-5 mb-5">
+  <h2 class="">
     <%= sub_service["name"] %>
   </h2>
   <div class="row mt-5 mb-5">
-    <div class="col-md-6 description">
-      <%= sub_service["description"] %>
+    <% if index % 2 != 0 %>
+      <div class="col-md-6">
+        <img
+          class="image"
+          src="<%= sub_service["image"] %>"/>
+      </div>
+    <% end %>
+    <div class="col-md-6">
+      <div class="description">
+        <%= @markdown_renderer.render(sub_service["description"]) %>
+      </div>
+    </div>
+    <% if index % 2 == 0 %>
+      <div class="col-md-6">
+        <img
+          class="image"
+          src="<%= sub_service["image"] %>"/>
+      </div>
+    <% end %>
+  </div>
+  <div class="info-subcontainer row">
+    <div class="col-md-6">
+      <div class="takeaways">
+        <%= @markdown_renderer.render(sub_service["takeaways"]) %>
+        <img
+          class="desktop_figure takeaways__red-bean"
+          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg">
+        <img src="">
+      </div>
     </div>
     <div class="col-md-6">
-      <img
-        src="https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png"/>
-    </div>
-  </div>
-  <div class="info-subcontainer">
-    <div class="takeaways">
-      <%= sub_service["takeaways"] %>
-      <img
-        class="desktop_figure takeaways__red-bean"
-        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg">
-      <img src="">
-
-    </div>
-    <div class="recipients">
-      <%= sub_service["recipients"] %>
-      <img
-        class="desktop_figure recipients__green-bean"
-        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean_sg.svg" />
-      <img
-        class="desktop_figure recipients__yellow-bean"
-        src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"/>
+      <div class="recipients">
+        <%= @markdown_renderer.render(sub_service["recipients"]) %>
+        <img
+          class="desktop_figure recipients__green-bean"
+          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean_sg.svg" />
+        <img
+          class="desktop_figure recipients__yellow-bean"
+          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"/>
+      </div>
     </div>
   </div>
 </section>

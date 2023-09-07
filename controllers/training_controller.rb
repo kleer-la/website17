@@ -3,6 +3,7 @@ require './lib/academy_courses'
 require './lib/event_type'
 require './lib/event'
 require './lib/keventer_helper'
+require './lib/models/catalog'
 
 require './controllers/event_helper'
 
@@ -50,11 +51,9 @@ end
 
 def coming_courses
   Event.create_keventer_json
-  # KeventerReader.instance.coming_commercial_events
 end
 
 def load_categories(lang)
-  # KeventerReader.instance.categories lang
   Category.create_keventer_json lang
 end
 
@@ -63,7 +62,6 @@ get '/agenda' do
                   description: t('meta_tag.agenda.description'),
                   canonical: "#{t('meta_tag.agenda.canonical')}"
 
-  # @events = KeventerReader.instance.catalog_events()
   @events = Event.create_keventer_json
 
   router_helper = RouterHelper.instance
@@ -80,7 +78,7 @@ get '/catalogo' do
   @categories = load_categories session[:locale]
   @academy = AcademyCourses.new.load.all
 
-  @events = KeventerReader.instance.catalog_events()
+  @events = Catalog.create_keventer_json
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = "/catalogo"

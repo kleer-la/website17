@@ -1,7 +1,9 @@
 
 Feature: Agenda (fka Entrenamos)
 	Scenario: Deprecated URL should redirect
-		Given I visit the "/es/entrenamos/evento/1953-taller-de-product-discovery-online" page
+		Given A catalog
+		Given A list of categories
+		And I visit the "/es/entrenamos/evento/1953-taller-de-product-discovery-online" page
 		Then It should redirect to "/es/catalogo"
 
 	Scenario: Deprecated URL should show a msg
@@ -18,7 +20,7 @@ Feature: Agenda (fka Entrenamos)
 		And SEO meta "property" "og:description" should match "Capacitaciones"
 		And SEO meta "name" "description" should match "Capacitaciones en"
 
-	Scenario: Online Event 
+	Scenario: Online Event
     Given A list of events
 		Given I visit the "/es/agenda" agenda page
 		Then event 72 should includes "Online" as its place

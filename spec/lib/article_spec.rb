@@ -37,17 +37,17 @@ describe Article do
     expect(articles[0].title).to eq 'Dolor sit'
     expect(articles.count).to eq 1
   end
-  context 'abstract' do
+  context 'description' do
     it 'w/o ' do
       doc = { 'title' => 'Lorem Ipsum' }
       article = Article.new(doc)
-      expect(article.abstract).to eq ''
+      expect(article.description).to eq ''
     end
     it 'with' do
       doc = { 'title' => 'Lorem Ipsum',
-              'abstract' => 'some text' }
+              'description' => 'some text' }
       article = Article.new(doc)
-      expect(article.abstract).to eq 'some text'
+      expect(article.description).to eq 'some text'
     end
   end
 end
