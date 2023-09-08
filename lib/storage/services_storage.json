@@ -80,9 +80,9 @@
   },
   "facilitacion": {
     "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
-    "subtitle": "Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva",
+    "subtitle": "Transforma tus encuentros en experiencias colaborativas donde cada persona es protagonista. Promueve la productividad y la creatividad de tu equipo de trabajo.",
     "side_image": "/app/img/risas-fg.jpg",
-    "description": "Estas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.\n\n####Facilitamos eventos que ayudan a los equipos a lograr sus objetivos.\nDiseñamos ambientes propicios para crear sinergia entre las personas, espacios de encuentro con dinámicas que saquen el máximo provecho de lo que cada participante tiene para aportar. Como facilitadores asistimos al grupo a encauzar sus conversaciones. Evitamos  el protagonismo y las distracciones. ¡Nuestro foco está en dar espacio a los participantes para que la magia emerja!\n",
+    "description": "Nuestra especialidad es transformar tus encuentros en experiencias eficientes y colaborativas. Incorporando las prácticas de facilitación te ayudamos a potenciar la toma de decisiones, la resolución de problemas y el intercambio de ideas, donde cada participante es protagonista.\n\n**¿Qué es la Facilitación Ágil?**\n\nLa facilitación ágil <&lt;aquí un pequeño texto de que se trata la facilitación>>\n\nA través de la facilitación guiamos a las personas presentes en el encuentro hacia la colaboración, permitiendo que cada voz sea escuchada y que la creatividad fluya sin obstáculos.\n\nFacilitamos eventos que ayudan a los equipos a lograr sus objetivos. Nuestros servicios son adecuados para una amplia gama de industrias y equipos.\n",
     "takeaways": "",
     "recipients": "",
     "program": "",
@@ -92,36 +92,36 @@
     "elevator_pitch": "Diseñamos experiencias para potenciar la colaboración, la toma de decisiones  y acciones concretas. Promovemos espacios inspiradores y efectivos.",
     "sub-services": [
       {
-        "name": "Facilitación gráfica",
-        "summary": "",
+        "name": "Dinámicas y eventos",
+        "summary": "Cocreación de ideas y soluciones",
         "image": "/app/img/facilitacion01.png",
-        "description": "Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. También ofrecemos talleres de Facilitación Gráfica.",
-        "takeaways": "####Documentación Gráfica en vivo\nDocumentación gráfica en eventos y reuniones. Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.\n\n####Talleres de Facilitación Gráfica\nWorkshops intensivos para aprender a aplicar herramientas visuales de facilitación. Duran entre 2 horas y 16 horas, según lo que se requiera.\n",
-        "recipients": "####Láminas gráficas\nRealización de contenidos audiovisuales de temas, charlas y exposiciones.\n\n####Videos gráficos\nContenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.\n"
+        "description": "Fomenta la colaboración activa y la generación conjunta de soluciones valiosas, algunas actividades que promovemos:\n\n\n\n* **World café**: Facilitamos eventos con el formato World Café, ideales para debatir temas en grandes grupos.\n* **Hackatones**: Eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real.\n* **Eventos con formato open space**: el formato Open Space es muy útil para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.",
+        "takeaways": "",
+        "recipients": "Ideal para empresas y grupos que buscan diseñar eventos colaborativos y participativos. También para equipos que desean generar sinergia, cocrear soluciones y promover la interacción entre los participantes en eventos como conferencias, hackatones o reuniones corporativas."
+      },
+      {
+        "name": "Planificación Estratégica",
+        "summary": "Guiamos tus iniciativas hacia el éxito",
+        "image": "/app/img/facilitacion02.jpg",
+        "description": "Enfocamos equipos multidisciplinarios hacia objetivos concretos. Desde la planificación estratégica hasta el inicio de proyectos, guiamos tus iniciativas hacia el éxito.",
+        "takeaways": "",
+        "recipients": "Establece planes estratégicos claros y alcanzables para impulsar tu organización hacia el éxito. Las jornadas de planificación estratégica pueden ser:\n\n\n\n* **Plan estratégico de organizaciones y equipos**: Generar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro).\n* **Inicio de proyectos**: Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión hasta la planeación.\n* **Identidad de equipos**: Facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes."
+      },
+      {
+        "name": "Facilitación gráfica",
+        "summary": "Maximiza el entendimiento, captura ideas y resultados",
+        "image": "/app/img/facilitacion03.png",
+        "description": "Convierte tus reuniones en experiencias visuales. A través del Graphic Recording, capturamos ideas y resultados con impactantes ilustraciones que perduran en la memoria. Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo",
+        "takeaways": "Convierte las reuniones en catalizadores de resultados tangibles y decisiones sólidas. Facilita el entendimiento y la recordación con piezas de alto impacto:\n\n\n\n* **Documentación Gráfica en vivo**: Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.\n* **Láminas gráficas**: Realización de contenidos audiovisuales de temas, charlas y exposiciones.\n* **Videos gráficos**: Contenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.",
+        "recipients": "Dirigido a equipos, empresas y organizaciones que deseen hacer que sus reuniones y eventos sean más visuales, impactantes y memorables. Ideal para empresas que buscan comunicar de manera efectiva sus ideas y resultados."
       },
       {
         "name": "Innovación y creatividad",
-        "summary": "",
-        "image": "/app/img/facilitacion02.jpg",
-        "description": "Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.",
-        "takeaways": "####Powerful brainstorming\nDiseño de actividades para estimular la creación colectiva de ideas. Son jornadas en las cuales se recorren distintas etapas':' estímulos, dinámicas grupales, creación masiva de ideas, feedback, selección y priorización, cross-polinización, refinamiento y puesta en común.\n\n####Talleres de innovación y creatividad\nWorkshops orientados a cubrir todo el ciclo de vida de las ideas':' desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante. En estos encuentros se presentan y practican técnicas como':' Brainstorming efectivo, Escalera de Abstracciones, Principio de Distanciamiento, Estrategias Oblicuas y Sombrero sobre la cerca.\n",
-        "recipients": "####Eventos corporativos y comunitarios\nDiseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.\n\n####Creatividad analítica\nSe trata de un conjunto de actividades y herramientas diseñadas para potenciar los proyectos de analytics utilizando herramientas de creatividad. Así se logra que los profesionales que trabajan con datos (estadísticas, matemáticas, data mining, otros) puedan brindar mejor soporte a acciones de negocios\n"
-      },
-      {
-        "name": "Planificación estratégica",
-        "summary": "",
-        "image": "/app/img/facilitacion03.png",
-        "description": "Jornadas donde equipos multidisciplinarios trabajan enfocados y en forma iterativa e incremental para lograr un objetivo pre-acordado, en general llevando adelante el desarrollo de un producto o un prototipo, aunque también se puede utilizar este formato para generar o refinar ideas.",
-        "takeaways": "####Plan estratégico de organizaciones y equipos\nGenerar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro). Consensuar objetivos intermedios a alcanzar y determinar los obstáculos que están impidiendo que lleguemos a esos objetivos. Generar un plan alcanzable, iterativo e incremental para ir alcanzando objetivos concretos a corto, mediano y largo plazo.\n\n####Inicio de proyectos\nLos sueños de las organizaciones y las personas se suelen alcanzar a partir de proyectos exitosos. Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión, pasando por el análisis y la mitigación de riesgos hasta la planeación en diferentes niveles de detalle. En esta línea, también trabajamos en la formación de equipos para proyectos.\n",
-        "recipients": "####Identidad de equipos\nEn organizaciones que promueven la realización de sus miembros y buscan el compromiso de los mismos con la obtención de los objetivos organizacionales, la existencia de un propósito compartido y genuino es uno de pilares, junto con la auto-organización y el \"estar completos\" (wholeness). Es por eso que facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes.\n####Eventos corporativos y comunitarios\nDiseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.\n"
-      },
-      {
-        "name": "Dinámicas y eventos",
-        "summary": "",
+        "summary": "Resuelve problemas de manera innovadora",
         "image": "/app/img/facilitacion04.jpg",
-        "description": "Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.",
-        "takeaways": "####World café\nFacilitamos eventos con el formato World Café. Son muy útiles para debatir temas en grandes grupos. Mesas, sillas, papeles y marcadores son suficientes para que todas las ideas y opiniones de los participantes puedan fluir y potenciarse. Acompañados de un rico café, por supuesto ;)\n\n####Hackatones\nFacilitamos Hackathones, que son eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real. ¡Los hemos facilitado en diversos contextos y los resultados suelen ser emocionantes! En general son productos en un estadío inicial, que luego del Hackathon deberán ser evolucionados.",
-        "recipients": "####Eventos con formato open space\nFacilitamos desde hace años, eventos con formato Open Space por toda la región. Estos eventos admiten desde 5 hasta 1000 personas. Son sumamente útiles para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.\n\n####Eventos corporativos y comunitarios\nDiseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.\n"
+        "description": "Potenciamos la creación y ejecución de ideas. Nuestro poderoso brainstorming y espacio de innovación desencadenará la creatividad de tu equipo.",
+        "takeaways": "Desbloquea ideas innovadoras y soluciones únicas:\n\n\n\n* **Powerful brainstorming**: Diseño de actividades para estimular la creación colectiva de ideas.\n* **Eventos corporativos y comunitarios**: Diseñamos y facilitamos eventos en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente.\n* **Encuentros de innovación**: Cubrimos todo el ciclo de vida de las ideas, desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante.",
+        "recipients": "Diseñado para equipos y organizaciones que buscan estimular la creatividad, generar ideas innovadoras y llevarlas a la acción. Ideal para empresas que quieren fomentar un entorno de trabajo creativo y resolver problemas de manera innovadora.\n"
       }
     ]
   },
