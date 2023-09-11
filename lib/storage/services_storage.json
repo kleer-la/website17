@@ -25,18 +25,19 @@
     "canonical_url": "/jump-start",
     "elevator_pitch": "Hacia un liderazgo con impacto más consciente y humano"
   },
-  "ruta-de-agile-product-management":{
+  "agile-product-management":{
     "name": "Ruta de Agile Product Management",
     "subtitle": "Crea productos asombrosos y con impacto",
     "side_image": "",
+    "seo_title": "Consultoría y Acompañamiento en Agile Product Management",
     "description": "Un **camino de aprendizaje para acelerar los resultados e impacto de tus productos**, que incluye Mentoring, Acompañamiento y Capacitaciones.\n\n#### Programa de Desarrollo en Agile Product Management \n\nAcelera el logro de los objetivos de tu producto con el acompañamiento y mentoría de Kleer. \n\nTe acompañamos en un período de 6-12 meses para que logres tus objetivos a mediano plazo, alineados con la estrategia de tu Producto. Incluye un programa de formación desde los fundamentos hasta los temas más avanzados. Además  6 meses de acompañamiento al equipo de producto y mentoría 1:1.\n\n\n#### Capacitaciones prácticas\n\n* [Accredited Product Owner](https://www.kleer.la/es/cursos/375-kleer-accredited-product-owner) = APP +TPO (Taller de Product Owner) + Mentoring\n* [Advanced Product Owner Workshop](https://www.kleer.la/es/cursos/206-advanced-product-owners-workshop)\n* [Taller de Product Discovery](https://www.kleer.la/es/cursos/238-taller-de-product-discovery)\n* Electivo: [Design Thinking Workshop](https://www.kleer.la/es/cursos/377-design-thinking-workshop-online)\n\n#### Sólo Para Empresas\n\n[Product Strategy Bootcamp](https://www.kleer.la/es/cursos/417-product-strategy-bootcamp) \n\n**Programa de Desarrollo en Agile Product Management** \n",
     "takeaways": "###Capacitaciones con práctica concreta\n\n<div style=\"display: flex; flex-wrap: wrap;>\n  <a href=\"https://www.kleer.la/es/cursos/375-kleer-accredited-product-owner\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-Accredited-product-owner.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n\n  <a href=\"https://qa2.kleer.la/es/cursos/206-advanced-product-owners-workshop\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-Advances-Product-Owner.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n\n  <a href=\"https://qa2.kleer.la/es/cursos/206-advanced-product-owners-workshop\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-product-discovery.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n\n  <a href=\"https://qa2.kleer.la/es/cursos/206-advanced-product-owners-workshop\" style=\"display: inline-block;\">\n    <img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/logo-Desing-thinking-workshop.png\" alt=\"Image\" style=\"height: 200px;\" />\n  </a>\n</div>",
     "recipients": "",
     "program": "",
     "cta": " ",
     "brochure": "",
-    "canonical_url": "/ruta-de-agile-product-management",
-    "elevator_pitch": "",
+    "canonical_url": "/agile-product-management",
+    "elevator_pitch": "Transforma la gestión del ciclo de desarrollo de productos innovadores y logra resultados alineados con los objetivos empresariales.",
     "titles": ["Capacitaciones con práctica concreta", "Para personas y empresas", "Recursos y materiales"],
     "sub-services": [
       {
@@ -81,6 +82,8 @@
   "facilitacion": {
     "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
     "subtitle": "Transforma tus encuentros en experiencias colaborativas donde cada persona es protagonista. Promueve la productividad y la creatividad de tu equipo de trabajo.",
+    "seo_title": "Facilitación Ágil: Reuniones y Eventos más Productivos",
+    "seo_description": "",
     "side_image": "/app/img/risas-fg.jpg",
     "description": "Nuestra especialidad es transformar tus encuentros en experiencias eficientes y colaborativas. Incorporando las prácticas de facilitación te ayudamos a potenciar la toma de decisiones, la resolución de problemas y el intercambio de ideas, donde cada participante es protagonista.\n\n**¿Qué es la Facilitación Ágil?**\n\nLa facilitación ágil <&lt;aquí un pequeño texto de que se trata la facilitación>>\n\nA través de la facilitación guiamos a las personas presentes en el encuentro hacia la colaboración, permitiendo que cada voz sea escuchada y que la creatividad fluya sin obstáculos.\n\nFacilitamos eventos que ayudan a los equipos a lograr sus objetivos. Nuestros servicios son adecuados para una amplia gama de industrias y equipos.\n",
     "takeaways": "",
@@ -90,13 +93,14 @@
     "brochure": "",
     "canonical_url": "/facilitacion",
     "elevator_pitch": "Diseñamos experiencias para potenciar la colaboración, la toma de decisiones  y acciones concretas. Promovemos espacios inspiradores y efectivos.",
+    "contact_text": "¡Descubre el poder de la Facilitación Ágil y lleva tus reuniones y eventos a un nuevo horizonte de productividad y creatividad!",
     "sub-services": [
       {
         "name": "Dinámicas y eventos",
         "summary": "Cocreación de ideas y soluciones",
         "image": "/app/img/facilitacion01.png",
-        "description": "Fomenta la colaboración activa y la generación conjunta de soluciones valiosas, algunas actividades que promovemos:\n\n\n\n* **World café**: Facilitamos eventos con el formato World Café, ideales para debatir temas en grandes grupos.\n* **Hackatones**: Eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real.\n* **Eventos con formato open space**: el formato Open Space es muy útil para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.",
-        "takeaways": "",
+        "description": "Diseñamos ambientes colaborativos. Nos enfocamos en la participación activa de todas las personas y la cocreación de ideas y soluciones.",
+        "takeaways": "Fomenta la colaboración activa y la generación conjunta de soluciones valiosas, algunas actividades que promovemos:\n\n\n\n* **World café**: Facilitamos eventos con el formato World Café, ideales para debatir temas en grandes grupos.\n* **Hackatones**: Eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real.\n* **Eventos con formato open space**: el formato Open Space es muy útil para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.",
         "recipients": "Ideal para empresas y grupos que buscan diseñar eventos colaborativos y participativos. También para equipos que desean generar sinergia, cocrear soluciones y promover la interacción entre los participantes en eventos como conferencias, hackatones o reuniones corporativas."
       },
       {
@@ -104,8 +108,8 @@
         "summary": "Guiamos tus iniciativas hacia el éxito",
         "image": "/app/img/facilitacion02.jpg",
         "description": "Enfocamos equipos multidisciplinarios hacia objetivos concretos. Desde la planificación estratégica hasta el inicio de proyectos, guiamos tus iniciativas hacia el éxito.",
-        "takeaways": "",
-        "recipients": "Establece planes estratégicos claros y alcanzables para impulsar tu organización hacia el éxito. Las jornadas de planificación estratégica pueden ser:\n\n\n\n* **Plan estratégico de organizaciones y equipos**: Generar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro).\n* **Inicio de proyectos**: Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión hasta la planeación.\n* **Identidad de equipos**: Facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes."
+        "takeaways": "Establece planes estratégicos claros y alcanzables para impulsar tu organización hacia el éxito. Las jornadas de planificación estratégica pueden ser:\n\n\n\n* **Plan estratégico de organizaciones y equipos**: Generar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro).\n* **Inicio de proyectos**: Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión hasta la planeación.\n* **Identidad de equipos**: Facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes.",
+        "recipients": "Este servicio está dirigido a equipos multidisciplinarios que desean enfocarse en objetivos estratégicos, planificar proyectos o desarrollar productos. También es adecuado para organizaciones que buscan una visión compartida y un plan de acción claro."
       },
       {
         "name": "Facilitación gráfica",
@@ -180,6 +184,7 @@
   "diseno-organizacional-agil": {
     "name": "Diseño Organizacional Ágil",
     "subtitle": "¿Cómo se relacionan la agilidad y el diseño organizacional?",
+    "seo_title": "Diseño Organizacional Ágil | Transformación Empresarial",
     "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png",
     "description": "Entendemos la agilidad organizacional como la **capacidad** de **identificar cambios** en el contexto **y reaccionar** a estos cambios **de manera oportuna y sostenible** para toda la organización. Es una capacidad necesaria para la mayoría de las organizaciones actuales dados los contextos con altos niveles de volatilidad, incertidumbre, complejidad y ambigüedad en los que se encuentran.\n\nEl **diseño organizacional** es una aproximación sistemática y holística para alinear y coordinar todas las partes de una organización para lograr su propósito estratégico. (European Organization Design Forum)\n\nSi se busca que una organización sea más ágil, es necesario evolucionar hacia un diseño organizacional más congruente con la agilidad.\n\nEl proceso de diseño, pensado desde la perspectiva ágil, busca que las decisiones de diseño sean coherentes con esta capacidad.\n",
     "takeaways": "Nos apalancamos en la perspectiva ágil para repensar las diferentes partes de una organización, buscando coherencia entre esos componentes para lograr su propósito estratégico.\n\n**¿Cuáles son las partes de la organización que acompañamos a repensar y a intervenir?**\nEstrategia, estructura, procesos y capacidades transversales, prácticas de personas y sistemas de reconocimiento son puntos de inicio, aunque pueden surgir otras partes en medio del proceso de diseño y puesta en marcha del mismo.\n",
@@ -188,7 +193,8 @@
     "cta": "",
     "brochure": "",
     "canonical_url": "/diseno-organizacional-agil",
-    "elevator_pitch": "",
+    "elevator_pitch": "Conoce cómo nuestro Diseño Organizacional Ágil puede transformar tu empresa. Mejora la adaptabilidad, la resiliencia y la colaboración.",
+    "contact_text": "¿Listo para llevar la agilidad de tu organización al siguiente nivel?",
     "titles": ["¿Qué ofrecemos?", "¿Cómo lo hacemos?"]
   }
 }
