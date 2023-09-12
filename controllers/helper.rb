@@ -64,7 +64,7 @@ module Helpers
   def money_format(amount)
     parts = amount.round(0).to_s.split('.')
     parts[0].gsub!(/(\d)(?=(\d\d\d)+(?!\d))/, '\\1.')
-    "#{parts.join '.'} $"
+    parts.join '.'
   end
 
   def external_url_anchor(url, attributes = '')
