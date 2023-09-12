@@ -1,6 +1,9 @@
 es:
   not_found: "No encontrado"
   page_not_found: "Página no encontrada"
+  internal_error:
+    title: "Error interno"
+    text: "Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde."
   general:
     kleer:
       vision:

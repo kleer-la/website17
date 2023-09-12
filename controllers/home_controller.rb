@@ -52,3 +52,9 @@ not_found do
 
   erb :'home/error_404', layout: :'layout/layout2022'
 end
+
+error 500 do
+  @meta_tags.set! title: t('internal_error.title')
+
+  erb :'layout/error_500', layout: :'layout/layout2022'
+end

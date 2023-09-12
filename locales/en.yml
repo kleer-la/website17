@@ -1,6 +1,11 @@
 en:
   not_found: Not found
   page_not_found: Page not found
+  internal_error:
+    title: Internal error
+    text: >-
+      An internal error has occurred. We apologize for the inconvenience. We
+      have been notified and will work to fix it as soon as possible.
   general:
     kleer:
       vision:
