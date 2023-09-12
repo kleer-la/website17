@@ -2,13 +2,13 @@ require './lib/models/service_model'
 require './lib/readers/local_reader'
 
 get '/servicios/:service_id' do
-  begin
+  # begin
     service_id = params[:service_id]
 
     reader = LocalReader.new
     @service = reader.load_service(service_id)
 
-    @meta_tags.set! title: @service.name,
+    @meta_tags.set! title: @service.seo_title || @service.name,
                     description: @service.elevator_pitch,
                     canonical: "/servicios#{@service.canonical_url}"
 
@@ -17,9 +17,9 @@ get '/servicios/:service_id' do
 
 
     erb :'services/landing/index', layout: :'layout/layout2022'
-  rescue
-    status 404
-  end
+  # rescue
+  #   status 500
+  # end
 
 end
 
