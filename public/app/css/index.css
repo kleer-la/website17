@@ -1481,7 +1481,8 @@ h3.title-somos {
   align-items: center; }
   .subservice-item h3 {
     color: black !important;
-    font-size: 24px; }
+    font-size: 24px;
+    line-height: 30px; }
   .subservice-item p {
     font-size: 14px; }
   .subservice-item a {
