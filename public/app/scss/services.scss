@@ -21,6 +21,19 @@ $white: #FFFFFF;
 
 .subservice-container{
 
+  a{
+    font-weight: bold;
+    color: $secondary-blue
+  }
+
+  a:hover{
+    color: $black !important;
+  }
+
+  h2{
+    font-size: 46px !important;
+  }
+
   .image{
     border-radius: 30px;
   }
@@ -59,7 +72,7 @@ $white: #FFFFFF;
     width: 90%;
     margin: 5%;
     border-radius: 30px;
-    background-color: $secondary-blue;
+    background-color: $primary-blue;
     padding: 60px;
     display: flex;
     flex-direction: column;
@@ -114,6 +127,33 @@ $white: #FFFFFF;
     align-items: center;
     color: black !important;
   }
+}
+
+.takeaways{
+  h4{
+    font-size: 24px !important;
+  }
+
+  background-color: $celeste;
+  border-radius: 30px;
+  padding: 40px;
+  position: relative;
+}
+
+.recipients{
+  h4{
+    font-size: 24px !important;
+  }
+
+  img{
+    padding-left: 20% ;
+    max-height: 450px;
+  }
+
+  border-radius: 30px;
+  padding: 40px;
+  position: relative;
+
 }
 
 @media screen and (max-width:420px) {

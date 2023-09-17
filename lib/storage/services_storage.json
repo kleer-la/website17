@@ -53,7 +53,7 @@
         "name": "Product Discovery",
         "summary": "Dirige tu producto hacia el éxito",
         "icon": "",
-        "image": "",
+        "image": "/app/img/services/discovery.jpg",
         "description": "Desarrollar productos digitales que no logren el impacto esperado es costoso y arriesgado, tanto para los usuarios como para el negocio.\n\nEl proceso de Product Discovery guía a los equipos de producto en la toma de decisiones cruciales. En esencia, se trata de identificar y priorizar las funcionalidades o productos que realmente aportan valor y descubrirlo tempranamente.",
         "takeaways": "Proponemos un proceso de discovery continuo que nos permita descubrir las necesidades, problemas y oportunidades para el éxito de tu producto. Además, nos enfocamos en la gestión de riesgos, la reducción de incertidumbre y la identificación de soluciones valiosas a través de la experimentación.",
         "recipients": "El servicio de Product Discovery está diseñado para empresas y profesionales que desean maximizar el valor de sus productos. Está dirigido a:\n\n\n\n* Product Manager / Product Owner\n* Product Designers y User Experience UX\n* Gerentes y Líderes de Producto\n* Analista de Negocio, Analista Funcional\n* Scrum Masters, Agile Coaches\n* Project Managers"
@@ -81,9 +81,9 @@
         "summary": "Habilita un enfoque centrado en el producto",
         "icon": "",
         "image": "",
-        "description": "Nuestro servicio incluye mentoring y coaching tanto a personas en un rol específico, como a equipos de producto. \n\nEl mentoring y coaching se hace en sesiones 1:1 de una hora de duración, y está dirigido a líderes de producto como Product Owners, Product Managers y directores de Producto (H0P o CPO). También pueden beneficiarse Agile Coaches y Scrum Masters y otros roles que tengan como objetivo potenciar el mindset y las prácticas de Producto en la empresa.\n\nPor otro lado, la misma idea se aplica a equipos de desarrollo de producto como a equipos de líderes de producto.\n",
-        "takeaways": "La mentoría es una proceso de enseñanza-aprendizaje que intensifica y potencia la gestión del conocimiento dentro de las organizaciones, aumentando la capacidad de aprender y compartir información y las capacidades  internas . Esto activa la inteligencia colectiva y facilita el crecimiento de la organización. \n\nEl coaching consiste en ayudar a liberar el potencial de una persona para incrementar al máximo su desempeño. Consiste en ayudarle a aprender en lugar de enseñarle.\nAmbos enfoques son muy utilizados en Kleer para diversos roles y equipos, y lo llevamos adelante para roles y equipos que trabajan en Agile Product Management.",
-        "recipients": "**Construir el producto correcto**\n\nConsiga que el producto encaje en el mercado. Ofrezca funciones y productos que sus clientes utilicen y compren.\n\n**Aumente las posibilidades de éxito del producto**\n\nValide su idea de producto con el mercado y obtenga información para mejorar y reducir el riesgo de fracaso.\n\n**Alinear las necesidades del mercado**\n\nIdentifique y alinee las necesidades del mercado para obtener un mejor rendimiento de la inversión y cumplir los objetivos empresariales.\n\n**Investigue y comprenda el mercado**\n\nObtenga una ventaja comprendiendo su mercado objetivo, analizando las tendencias y realizando investigaciones."
+        "description": "Nuestro servicio de mentoring y coaching, brinda apoyo no solo a personas en roles específicos, sino también a equipos de producto. \n\nLas sesiones de mentoring y coaching se llevan a cabo en un formato personalizado, que van desde una a dos horas. Están dirigidas a Product Managers, Product Owners y otros roles en los equipos, así como a niveles directivos, entre ellos CPO y Head de Producto. También pueden beneficiarse de este servicio Agile Coaches, Analistas de Negocio, Scrum Masters y otros roles con el objetivo de fortalecer el mindset y las prácticas relacionadas con la gestión de productos en la empresa.\n",
+        "takeaways": "La mentoría es una proceso de enseñanza-aprendizaje que potencia la gestión del conocimiento dentro de las organizaciones. Aumentando la capacidad de aprender y compartir información, mientras se fomenta el desarrollo de capacidades internas. \n\nEl coaching, por otro lado, tiene como objetivo liberar el potencial de una persona, aumentando al máximo su desempeño y fomentando el desarrollo de una mentalidad de crecimiento.\n\nAmbos enfoques son ampliamente utilizados en Kleer y los aplicamos de manera efectiva para diversos roles y equipos dedicados a Agile Product Management.\n",
+        "recipients": "El Mentoring y Coaching de Kleer está dirigido a profesionales que integran Equipos de Producto y lideran la Dirección de Producto:\n\n* Chief Product Officer / Líderes de Producto / Directivos\n* Product Managers / Product Owners\n* Líderes técnicos\n* Especialistas en User Experience (UX) y CX\n* Analistas de Negocio y Funcionales\n* Scrum Master y Agile Coaches\n* Emprendedores"
       }
     ]
 
@@ -108,7 +108,7 @@
       {
         "name": "Dinámicas y eventos",
         "summary": "Cocreación de ideas y soluciones",
-        "image": "/app/img/facilitacion01.png",
+        "image": "/app/img/services/dinamicas_eventos.jpg",
         "description": "Diseñamos ambientes colaborativos. Nos enfocamos en la participación activa de todas las personas y la cocreación de ideas y soluciones.",
         "takeaways": "Fomenta la colaboración activa y la generación conjunta de soluciones valiosas, algunas actividades que promovemos:\n\n\n\n* **World café**: Facilitamos eventos con el formato World Café, ideales para debatir temas en grandes grupos.\n* **Hackatones**: Eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real.\n* **Eventos con formato open space**: el formato Open Space es muy útil para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.",
         "recipients": "Ideal para empresas y grupos que buscan diseñar eventos colaborativos y participativos. También para equipos que desean generar sinergia, cocrear soluciones y promover la interacción entre los participantes en eventos como conferencias, hackatones o reuniones corporativas."
@@ -124,7 +124,7 @@
       {
         "name": "Facilitación gráfica",
         "summary": "Maximiza el entendimiento, captura ideas y resultados",
-        "image": "/app/img/facilitacion03.png",
+        "image": "/app/img/services/facilitacion_grafica.jpg",
         "description": "Convierte tus reuniones en experiencias visuales. A través del Graphic Recording, capturamos ideas y resultados con impactantes ilustraciones que perduran en la memoria. Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo",
         "takeaways": "Convierte las reuniones en catalizadores de resultados tangibles y decisiones sólidas. Facilita el entendimiento y la recordación con piezas de alto impacto:\n\n\n\n* **Documentación Gráfica en vivo**: Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.\n* **Láminas gráficas**: Realización de contenidos audiovisuales de temas, charlas y exposiciones.\n* **Videos gráficos**: Contenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.",
         "recipients": "Dirigido a equipos, empresas y organizaciones que deseen hacer que sus reuniones y eventos sean más visuales, impactantes y memorables. Ideal para empresas que buscan comunicar de manera efectiva sus ideas y resultados."
