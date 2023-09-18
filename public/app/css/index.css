@@ -1422,6 +1422,13 @@ h3.title-somos {
   z-index: 5;
   position: relative; }
 
+.subservice-container a {
+  font-weight: bold;
+  color: #00BBEE; }
+.subservice-container a:hover {
+  color: #333333 !important; }
+.subservice-container h2 {
+  font-size: 46px !important; }
 .subservice-container .image {
   border-radius: 30px; }
 .subservice-container .description {
@@ -1449,7 +1456,7 @@ h3.title-somos {
   width: 90%;
   margin: 5%;
   border-radius: 30px;
-  background-color: #00BBEE;
+  background-color: #68CEF2;
   padding: 60px;
   display: flex;
   flex-direction: column;
@@ -1481,7 +1488,8 @@ h3.title-somos {
   align-items: center; }
   .subservice-item h3 {
     color: black !important;
-    font-size: 24px; }
+    font-size: 24px;
+    line-height: 30px; }
   .subservice-item p {
     font-size: 14px; }
   .subservice-item a {
@@ -1491,6 +1499,24 @@ h3.title-somos {
     align-content: center;
     align-items: center;
     color: black !important; }
+
+.takeaways {
+  background-color: #E8F8FD;
+  border-radius: 30px;
+  padding: 40px;
+  position: relative; }
+  .takeaways h4 {
+    font-size: 24px !important; }
+
+.recipients {
+  border-radius: 30px;
+  padding: 40px;
+  position: relative; }
+  .recipients h4 {
+    font-size: 24px !important; }
+  .recipients img {
+    padding-left: 20%;
+    max-height: 450px; }
 
 @media screen and (max-width: 420px) {
   .subservice-item-container {

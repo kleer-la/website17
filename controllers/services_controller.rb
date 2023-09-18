@@ -8,7 +8,11 @@ get '/servicios/:service_id' do
     reader = LocalReader.new
     @service = reader.load_service(service_id)
 
-    @meta_tags.set! title: @service.name,
+    if @service.nil?
+      return status 404
+    end
+
+    @meta_tags.set! title: @service.seo_title || @service.name,
                     description: @service.elevator_pitch,
                     canonical: "/servicios#{@service.canonical_url}"
 
@@ -18,7 +22,7 @@ get '/servicios/:service_id' do
 
     erb :'services/landing/index', layout: :'layout/layout2022'
   rescue
-    status 404
+    status 500
   end
 
 end

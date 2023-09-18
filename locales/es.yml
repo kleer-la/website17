@@ -1,6 +1,9 @@
 es:
   not_found: "No encontrado"
   page_not_found: "Página no encontrada"
+  internal_error:
+    title: "Error interno"
+    text: "Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde."
   general:
     kleer:
       vision:
@@ -1181,34 +1184,35 @@ es:
         - {
           text: Diseño organizacional,
           img: /app/img/icons/Binoculars.svg,
+          url: /es/servicios/diseno-organizacional-agil
         }
         - {
           text: Product Strategy,
-          img: /app/img/icons/Strategy.svg,
+          img: /es/app/img/icons/Strategy.svg,
         }
         - {
           text: Desarrollo del Liderazgo Ágil,
           img: /app/img/icons/GitFork.svg,
-          url: /servicios/desarrollo-liderazgo-agil
+          url: /es/servicios/desarrollo-liderazgo-agil
         }
         - {
           text: Innovation Jump Start,
           img: /app/img/icons/innovation.png,
-          url: /servicios/jump-start#innovation_jump_start
+          url: /es/servicios/jump-start#innovation_jump_start
         }
         - {
           text: Kaizen Jump Start,
           img: /app/img/icons/improvement.png,
-          url: /servicios/jump-start#kaizen_jump_start
+          url: /es/servicios/jump-start#kaizen_jump_start
         }
         - {
           text: Agile team Jump Start,
-          img: /app/img/icons/People.svg,
+          img: /es/app/img/icons/People.svg,
           url: /servicios/jump-start#agile_team_jump_start
         }
         - {
           text: Product discovery,
-          img: /app/img/icons/Binoculars.svg,
+          img: /es/app/img/icons/Binoculars.svg,
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
@@ -1229,6 +1233,7 @@ es:
         - {
           text: Facilitación de eventos ágiles,
           img: /app/img/icons/Microphone.svg,
+          url: /es/servicios/facilitacion
         }
     differential:
       title: Nuestro diferencial, la experiencia kleerer

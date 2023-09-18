@@ -2,10 +2,11 @@
   <h2 class="">
     <%= sub_service["name"] %>
   </h2>
-  <div class="row mt-5 mb-5">
+  <div class="row mt-4 mb-5">
     <% if index % 2 != 0 %>
-      <div class="col-md-6">
+      <div class="col-md-6 d-flex justify-content-center">
         <img
+          style="max-height: 450px;"
           class="image"
           src="<%= sub_service["image"] %>"/>
       </div>
@@ -16,8 +17,9 @@
       </div>
     </div>
     <% if index % 2 == 0 %>
-      <div class="col-md-6">
+      <div class="col-md-6 d-flex justify-content-center">
         <img
+          style="max-height: 450px;"
           class="image"
           src="<%= sub_service["image"] %>"/>
       </div>

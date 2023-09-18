@@ -10,8 +10,10 @@ class LocalReader
     file = File.read('./lib/storage/services_storage.json')
     hash_service = JSON.parse(file)[service_name]
 
+    return nil if hash_service.nil?
+
     service = Service.new
     service.load_from_json(hash_service)
-    return service
+    service
   end
 end
