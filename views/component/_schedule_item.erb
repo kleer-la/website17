@@ -15,7 +15,8 @@
           Online
         <% else %>
           <img src="/img/flags/<%= event.country_iso.downcase %>.png"/>
-          <%= "#{event.city} - #{event.country_name}" %>
+          <%= "#{event.city} - #{event.country_name}" %><br>
+          <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
         <% end %>
       </p>
     </div>
@@ -47,7 +48,9 @@
           Online
         <% else %>
           <img src="/img/flags/<%= event.country_iso.downcase %>.png"/>
-          <%= "#{event.city}, #{event.country}" %>
+          <%= "#{event.city}, #{event.country}" %><br>
+          <%= [event.place.to_s, event.address.to_s].uniq.join(' - ')
+          %>
         <% end %>
       </p>
     </div>
