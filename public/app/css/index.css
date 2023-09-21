@@ -1470,8 +1470,14 @@ h3.title-somos {
 
 .subservice-item-container {
   display: flex;
-  justify-content: space-between;
-  margin-top: 30px; }
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-flow: row wrap; }
+  .subservice-item-container .break {
+    flex-basis: 100%;
+    width: 0px;
+    height: 20px;
+    overflow: hidden; }
 
 .subservice-item {
   background-color: #FFE600;
@@ -1582,7 +1588,8 @@ h3.title-somos {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
-    perspective: 1000px; }
+    perspective: 1000px;
+    color: black !important; }
 
 .businessa-hero__white-triangle {
   top: 50px;

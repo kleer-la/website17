@@ -8,8 +8,7 @@
     <% t("business-agility.howto.items").each do |item| %>
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-3">
         <%if item[:url].to_s != '' %>
-          <a href="<%= item[:url]%>">
-            <div class="howto__item p-4 rotable-item">
+            <a href="<%= item[:url]%>" class="howto__item p-4 rotable-item">
         <% else %>
           <div class="howto__item p-4">
         <% end %>
@@ -17,7 +16,6 @@
             <p><%= item[:text] %></p>
       <%if item[:url].to_s != '' %>
             <b>Ver más</b>
-          </div>
         </a>
       <% else %>
           </div>
