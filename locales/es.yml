@@ -1188,7 +1188,7 @@ es:
         }
         - {
           text: Product Strategy,
-          img: /es/app/img/icons/Strategy.svg,
+          img: /app/img/icons/Strategy.svg,
         }
         - {
           text: Desarrollo del Liderazgo Ágil,
@@ -1207,12 +1207,12 @@ es:
         }
         - {
           text: Agile team Jump Start,
-          img: /es/app/img/icons/People.svg,
+          img: /app/img/icons/People.svg,
           url: /servicios/jump-start#agile_team_jump_start
         }
         - {
           text: Product discovery,
-          img: /es/app/img/icons/Binoculars.svg,
+          img: /app/img/icons/Binoculars.svg,
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
