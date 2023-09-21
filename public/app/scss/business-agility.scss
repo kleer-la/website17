@@ -68,6 +68,7 @@ $white: #FFFFFF;
   justify-content: center;
   align-items: center;
   padding: 56px 0px;
+
 }
 
 .rotable-item{
@@ -78,6 +79,7 @@ $white: #FFFFFF;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+    color: black !important;
   }
 }
 
