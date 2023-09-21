@@ -1470,8 +1470,14 @@ h3.title-somos {
 
 .subservice-item-container {
   display: flex;
-  justify-content: space-between;
-  margin-top: 30px; }
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-flow: row wrap; }
+  .subservice-item-container .break {
+    flex-basis: 100%;
+    width: 0px;
+    height: 20px;
+    overflow: hidden; }
 
 .subservice-item {
   background-color: #FFE600;

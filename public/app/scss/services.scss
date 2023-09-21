@@ -92,8 +92,16 @@ $white: #FFFFFF;
 
 .subservice-item-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 30px;
+  flex-flow: row wrap;
+
+  .break{
+    flex-basis: 100%;
+    width: 0px;
+    height: 20px;
+    overflow: hidden;
+  }
 }
 .subservice-item{
   background-color: $primary-yellow;
