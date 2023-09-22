@@ -1189,6 +1189,7 @@ es:
         - {
           text: Product Strategy,
           img: /app/img/icons/Strategy.svg,
+          url: /es/servicios/agile-product-management#product_strategy
         }
         - {
           text: Desarrollo del Liderazgo Ágil,
@@ -1213,6 +1214,7 @@ es:
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
+          url: /servicios/agile-product-management#product_discovery
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
