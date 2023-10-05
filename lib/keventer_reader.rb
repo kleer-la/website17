@@ -105,7 +105,8 @@ class KeventerReader
 
         events.push(event)
       end
-      rescue StandardError => e
+    #TODO review error handling
+    rescue StandardError => e
       puts "Error al cargar el catalogo: #{e}"
     end
 

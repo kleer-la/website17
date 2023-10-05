@@ -20,6 +20,7 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'nokogiri'
 gem 'dotenv'
+gem 'aws-sdk', '~> 3'
 
 
 group :development do

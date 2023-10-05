@@ -17,6 +17,7 @@ class Catalog
 
         events.push(event)
       end
+    #TODO review error handling
     rescue
       puts "Error al cargar el catalogo"
     end
