@@ -1,0 +1,70 @@
+<section id="course-hero">
+  <div class="row h-50">
+    <div class="col-md-9 course-hero__text">
+      <h1>Certificados</h1>
+      <h2 class="hero-description">Consulta sobre un certificado emitido por Kleer</h2>
+    </div>
+  </div>
+  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval.svg" class="course-hero__yellow-oval" />
+  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg" class="course-hero__red-bean" />
+  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_worm.svg" class="course-hero__rustic-worm" />
+</section>
+
+<section class="p-5 mt-4">
+<form action="/certificado" method="post" class="needs-validation" novalidate>
+  <div class="row">
+    <div class="mb-3 col-xs-12">
+      <label class="form-label"> Identificador único del certificado</label>
+      <input
+        type="text"
+        class="form-control"
+        name="q"
+        id="q-input"
+        value="<%= search_term%>"
+        required>
+      <div class="invalid-feedback">
+        <%= t("contact-us-form.name-input.error-message") %>
+      </div>
+    </div>
+  </div>
+  <%= recaptcha_tags callback: 'enableButton' %>
+
+  <div class="btn-center-container">
+    <button type="submit"
+            id="submit"
+            class="btn my-primary-button"
+            value="Submit"
+            disabled
+    >
+      <%= t("contact-us-form.button.text") %></button>
+  </div>
+</form>
+</section>
+
+<script>
+
+
+  function enableButton() {
+    document.getElementById("submit").disabled = false;
+  }
+
+  (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                  if (!form.checkValidity()) {
+                      event.preventDefault()
+                      event.stopPropagation()
+
+                  }
+                  form.classList.add('was-validated')
+              }, false)
+          })
+  })()
+</script>
