@@ -1,4 +1,10 @@
 <%= erb :'business_agility/hero' %>
 <%= erb :'business_agility/how_to' %>
-<%= erb :'business_agility/differential' %>
+
+<!--TODO: migrate to english-->
+<% if session[:locale] == 'es' %>
+  <%= erb :'business_agility/experience' %>
+<% else %>
+  <%= erb :'business_agility/differential' %>
+<% end %>
 <%= erb :'business_agility/contact' %>

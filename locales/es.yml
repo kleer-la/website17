@@ -1169,16 +1169,15 @@ es:
   business-agility:
     title: Agilidad Organizacional
     subtitle: >-
-      Acompañamos a tu organización en el desafiante camino de la transformación ágil.
-      Trabajamos sobre múltiples dimensiones para tener una visión holística del cambio organizacional. Desde la estructura, el liderazgo, el cambio cultural, hasta la implementación de prácticas, herramientas, frameworks y mucho más.
+      Transformando la forma de crear valor. Acompañamos a tu organización en el desafiante camino de la transformación ágil. Trabajamos sobre múltiples dimensiones del cambio organizacional.
     howto:
-      title: "¿Cómo lo hacemos?"
+      title: Nuestros Servicios en Agilidad Organizacional
       text: >-
         <p>
-          El proceso de cambio no es lineal y es distinto en cada organización. En Kleer contamos con más de 13 años de experiencia en Agilidad Organizacional. Juntos podemos codiseñar la estrategia de transformación coherente con los resultados que persigue tu empresa.
+          La Agilidad implica una reinvención en la forma en que trabajamos, pensamos y generamos valor como empresa. Abordamos el cambio organizacional de manera integral, centrándonos en aspectos cruciales como la estructura, el liderazgo, los flujos de valor y la gestión de productos.
         </p>
         <p>
-            Algunas de las actividades, productos o servicios que nos podemos encontrar en un proceso de cambio son:
+          Descubre algunos de los servicios y soluciones que ofrecemos como parte de tu proceso de cambio.
         </p>
       items:
         - {
@@ -1189,6 +1188,7 @@ es:
         - {
           text: Product Strategy,
           img: /app/img/icons/Strategy.svg,
+          url: /es/servicios/agile-product-management#product_strategy
         }
         - {
           text: Desarrollo del Liderazgo Ágil,
@@ -1213,6 +1213,7 @@ es:
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
+          url: /servicios/agile-product-management#product_discovery
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
@@ -1235,13 +1236,16 @@ es:
           img: /app/img/icons/Microphone.svg,
           url: /es/servicios/facilitacion
         }
-    differential:
-      title: Nuestro diferencial, la experiencia kleerer
-      items:
-        - Cocreamos con nuestros clientes las estrategias y cursos de acción para lograr sus objetivos de negocio. Impulsamos formas de trabajo que permitan entregar mayor valor a los clientes.
-        - "Trabajamos de forma colaborativa en todas las capas de la organización: las prácticas, los procesos, el liderazgo y la cultura. Con ello, se mejora la respuesta a las altas expectativas de los clientes, lo cual va de la mano de la mejora en la rentabilidad."
-        - Capacitamos a los equipos internos que lideran el aprendizaje, remueven los impedimentos organizacionales y sostienen el cambio.
-        - Promovemos una cultura de aprendizaje y experimentación con feedback frecuente y mejora continua para mejorar la adaptación a contextos cambiantes. Cultivamos espacios donde las personas aportan su máximo potencial creativo, de innovación y colaboración.
+    experience:
+      title: Nuestra Experiencia y Enfoque
+      text: |
+        Trabajamos en estrecha colaboración con nuestros clientes para cocrear estrategias y planes de acción que impulsan sus objetivos de negocio:
+
+        * **Entrega de valor**: Impulsamos métodos de trabajo que habilitan la generación de valor a los clientes.
+        * **Colaboración integral**: Trabajamos en todos los niveles de la organización, incluyendo prácticas, procesos, liderazgo y cultura, para mejorar la satisfacción de tus clientes y aumentar la rentabilidad
+        * **Capacitación y empoderamiento**: Capacitamos a los equipos internos para liderar el aprendizaje y eliminar obstáculos organizacionales.
+        * **Cultura de Aprendizaje**: Fomentamos una cultura de aprendizaje y experimentación con feedback constante y mejora continua. Esto permite adaptarse de manera efectiva a contextos cambiantes.
+        * **Espacios de Innovación**: Cultivamos espacios donde las personas pueden liberar su máximo potencial creativo, innovador y colaborativo.
     contact:
       title: Cuéntanos más de tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
       button:
