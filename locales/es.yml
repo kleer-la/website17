@@ -1213,7 +1213,7 @@ es:
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
-          url: /servicios/agile-product-management#product_discovery
+          url: /es/servicios/agile-product-management#product_discovery
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
