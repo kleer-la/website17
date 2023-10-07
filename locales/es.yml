@@ -1208,12 +1208,12 @@ es:
         - {
           text: Agile team Jump Start,
           img: /app/img/icons/People.svg,
-          url: /servicios/jump-start#agile_team_jump_start
+          url: /es/servicios/jump-start#agile_team_jump_start
         }
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
-          url: /servicios/agile-product-management#product_discovery
+          url: /es/servicios/agile-product-management#product_discovery
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
