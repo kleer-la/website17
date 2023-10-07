@@ -9,6 +9,7 @@ class FileStoreService
   end
 
   def self.create_s3
+    Aws.config[:region] = 'us-east-1'
     @@current = FileStoreService.new S3FileStore.new
   end
 
@@ -87,7 +88,7 @@ class FileStoreService
   end
 
   def tmp_path(basename)
-    temp_dir = "#{Rails.root}/tmp"
+    temp_dir = "/tmp"
     Dir.mkdir(temp_dir) unless Dir.exist?(temp_dir)
     "#{temp_dir}/#{basename}"
   end
@@ -149,8 +150,8 @@ end
 class S3FileStore
   def initialize(access_key_id: nil, secret_access_key: nil)
     @client = Aws::S3::Client.new(
-      access_key_id: access_key_id || ENV['KEVENTER_AWS_ACCESS_KEY_ID'],
-      secret_access_key: secret_access_key || ENV['KEVENTER_AWS_SECRET_ACCESS_KEY']
+      access_key_id: access_key_id || ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: secret_access_key || ENV['AWS_SECRET_ACCESS_KEY']
     )
     @resource = Aws::S3::Resource.new(client: @client)
     @bucket = @resource.bucket('Keventer')

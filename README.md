@@ -101,6 +101,15 @@ export RECAPTCHA_SITE_KEY=6Le7oRETAAAAAETt105rjswZ15EuVJiF7BxPROkY
 export RECAPTCHA_SECRET_KEY=6Le7oRETAAAAAL5a8yOmEdmDi3b2pH7mq5iH1bYK
 ```
 
+Para consultar certificados
+```cli
+export AWS_ACCESS_KEY_ID="..."
+export AWS_SECRET_ACCESS_KEY:="..."
+export AWS_REGION="us-east-1"
+```
+
+
+
 Para probar con ambiente de prueba de keventer
 ```cli
 export KEVENTER_URL="http://keventer-test.herokuapp.com"
