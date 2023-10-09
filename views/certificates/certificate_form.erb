@@ -11,7 +11,8 @@
 </section>
 
 <section class="p-5 mt-4">
-<form action="/certificado" method="post" class="needs-validation" novalidate>
+<%= erb :'component/_flash_error' %>
+<form action="/es/certificado" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
       <label class="form-label"> Identificador único del certificado</label>

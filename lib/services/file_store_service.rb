@@ -24,6 +24,7 @@ class FileStoreService
     folder = {
       'image' => nil,
       'certificate' => 'certificate-images/',
+      'certificates' => 'certificates/',
       'signature' => 'certificate-signatures/'
     }[image_type]
     [bucket, folder]    
@@ -87,16 +88,31 @@ class FileStoreService
     tmp_filename
   end
 
+  def find_certificate(validation_code)
+    objects = list('certificates', prefix: validation_code)
+    
+    return nil unless objects.count > 0
+    
+    tmp_filename = tmp_path validation_code+'.pdf'
+    @store.objects(objects[0].key).download_file tmp_filename
+    tmp_filename
+  end
+
   def tmp_path(basename)
     temp_dir = "/tmp"
     Dir.mkdir(temp_dir) unless Dir.exist?(temp_dir)
     "#{temp_dir}/#{basename}"
   end
 
-  def list(image_type = 'image')
+  def list(image_type = 'image', prefix: nil)
     bucket, folder = self.class.image_location(image_type)
-    result = @store.list_objects(bucket: bucket).contents
-    result = result.select { |img| img.key.to_s.start_with? folder} unless folder.nil?
+    # result = @store.list_objects(bucket: bucket).contents
+    # result = result.select { |img| img.key.to_s.start_with? folder} unless folder.nil?
+
+    result = @store.list_objects(
+      bucket: bucket, 
+      prefix: folder+prefix.to_s
+      ).contents
     result
   end
 end
@@ -109,7 +125,7 @@ class NullFileStore
   def objects(key, bucket_name= nil)
     NullStoreObject.new(key, exists: @exists)
   end
-  def list_objects(bucket:)
+  def list_objects(bucket:, prefix: nil)
     list = OpenStruct.new
     list.contents = [NullStoreObject.new('some file.png', exists: @exists)]
     list
@@ -162,8 +178,8 @@ class S3FileStore
     (bucket || @bucket).object(key)
   end
 
-  def list_objects(bucket:)
-    resp = @client.list_objects(bucket: bucket)
+  def list_objects(bucket:, prefix: nil)
+    resp = @client.list_objects_v2(bucket: bucket, prefix: prefix)
   end
 
 end
