@@ -14,7 +14,7 @@
 <%= erb :'component/_flash_error' %>
 <form action="/es/certificado" method="post" class="needs-validation" novalidate>
   <div class="row">
-    <div class="mb-3 col-xs-12">
+    <div class="mb-3 col-9 col-xs-12">
       <label class="form-label"><%= t("certificate-form.code-input.label") %></label>
       <input
         type="text"
@@ -27,6 +27,9 @@
       <div class="invalid-feedback">
         <%= t("certificate-form.code-input.error-message") %>
       </div>
+    </div>
+    <div class="col-3 col-xs-12">
+      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/where_is_certificate_code.jpg" class="img-fluid" alt="Validation Code">
     </div>
   </div>
   <%= recaptcha_tags callback: 'enableButton' %>
