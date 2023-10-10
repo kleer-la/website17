@@ -921,27 +921,27 @@ es:
         options: [
           {
             text: 'Diseño organizacional',
-            url: '/es/servicios/diseno-organizacional-agil',
+            url: '/servicios/diseno-organizacional-agil',
             inside: true
           },
           {
             text: 'Product management',
-            url: '/es/servicios/agile-product-management',
+            url: '/servicios/agile-product-management',
             inside: true
           },
           {
             text: 'Desarrollo del liderazgo ágil',
-            url: '/es/servicios/desarrollo-liderazgo-agil',
+            url: '/servicios/desarrollo-liderazgo-agil',
             inside: true
           },
           {
             text: 'Jump start',
-            url: '/es/servicios/jump-start',
+            url: '/servicios/jump-start',
             inside: true
           },
           {
             text: 'Facilitación',
-            url: '/es/servicios/facilitacion',
+            url: '/servicios/facilitacion',
             inside: true
           },
         ]
