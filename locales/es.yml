@@ -911,10 +911,40 @@ es:
       ]
 
   navbar:
+#    - {
+#      text: 'Agilidad organizacional',
+#      url: '/agilidad-organizacional',
+#      inside: true,
+#    }
     - {
-      text: 'Agilidad organizacional',
-      url: '/agilidad-organizacional',
-      inside: true,
+        text: 'Servicios',
+        options: [
+          {
+            text: 'Diseño organizacional',
+            url: '/es/servicios/diseno-organizacional-agil',
+            inside: true
+          },
+          {
+            text: 'Product management',
+            url: '/es/servicios/agile-product-management',
+            inside: true
+          },
+          {
+            text: 'Desarrollo del liderazgo ágil',
+            url: '/es/servicios/desarrollo-liderazgo-agil',
+            inside: true
+          },
+          {
+            text: 'Jump start',
+            url: '/es/servicios/jump-start',
+            inside: true
+          },
+          {
+            text: 'Facilitación',
+            url: '/es/servicios/facilitacion',
+            inside: true
+          },
+        ]
     }
     - {
       text: 'Cursos',
