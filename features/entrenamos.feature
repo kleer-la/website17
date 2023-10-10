@@ -11,11 +11,16 @@ Feature: Agenda (fka Entrenamos)
 		Given I visit the "/es/entrenamos/evento/1953-taller-de-product-discovery-online" page
 		Then I should see "no fue encontrado"
 
-	Scenario: Deleted course should redirect
+	Scenario: Deleted course should redirect to catalog
 		Given A deleted event type
 		Given I visit the "/es/cursos/2" page
-#		Then should redirect to catalog
 		Then I should see "Capacitación profesional en Agilidad"
+
+	Scenario: Deleted and redirected course should redirect correctly
+		Given PENDING
+		Given  A deleted and redirected event type
+		When I visit the "/es/cursos/3" page
+		Then I should not see "Curso redireccionado y borrado"
 
 	Scenario: SEO meta tags in Agenda
     	Given A list of events
