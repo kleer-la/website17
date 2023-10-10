@@ -1733,3 +1733,12 @@ en:
       error-message: Please fill in your message
     button:
       text: Submit
+
+  certificate-form:
+    title: Certificates
+    subtitle: Obtain certificate issued by Kleer
+    code-input:
+      label: Verification code 
+      error-message: Please enter exactly 20 characters.
+    submit:
+      text: Get certificate

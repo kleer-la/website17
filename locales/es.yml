@@ -1269,3 +1269,12 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
+
+  certificate-form:
+    title: Certificados
+    subtitle: Consulta sobre un certificado emitido por Kleer
+    code-input:
+      label: Código de verificación
+      error-message: Por favor ingresa 20 caracteres.
+    submit:
+      text: Obten tu certificado

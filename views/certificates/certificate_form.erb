@@ -1,8 +1,8 @@
 <section id="course-hero">
   <div class="row h-50">
     <div class="col-md-9 course-hero__text">
-      <h1>Certificados</h1>
-      <h2 class="hero-description">Consulta sobre un certificado emitido por Kleer</h2>
+      <h1><%= t("certificate-form.title") %></h1>
+      <h2 class="hero-description"><%= t("certificate-form.subtitle") %></h2>
     </div>
   </div>
   <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval.svg" class="course-hero__yellow-oval" />
@@ -15,16 +15,17 @@
 <form action="/es/certificado" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
-      <label class="form-label"> Identificador único del certificado</label>
+      <label class="form-label"><%= t("certificate-form.code-input.label") %></label>
       <input
         type="text"
         class="form-control"
         name="q"
         id="q-input"
+        pattern=".{20}" title="<%= t("certificate-form.code-input.error-message") %>"
         value="<%= search_term%>"
         required>
       <div class="invalid-feedback">
-        <%= t("contact-us-form.name-input.error-message") %>
+        <%= t("certificate-form.code-input.error-message") %>
       </div>
     </div>
   </div>
@@ -37,7 +38,7 @@
             value="Submit"
             disabled
     >
-      <%= t("contact-us-form.button.text") %></button>
+      <%= t("certificate-form.submit.text") %></button>
   </div>
 </form>
 </section>
