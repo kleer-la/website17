@@ -1,50 +1,61 @@
-<section id="course-hero">
-  <div class="row h-50">
-    <div class="col-md-9 course-hero__text">
-      <h1><%= t("certificate-form.title") %></h1>
-      <h2 class="hero-description"><%= t("certificate-form.subtitle") %></h2>
-    </div>
-  </div>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval.svg" class="course-hero__yellow-oval" />
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg" class="course-hero__red-bean" />
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_worm.svg" class="course-hero__rustic-worm" />
-</section>
+<section class="certificates-form-container">
+  <h1><%= t("certificate-form.title") %></h1>
+  <h2 class=""><%= t("certificate-form.subtitle") %></h2>
 
-<section class="p-5 mt-4">
-<%= erb :'component/_flash_error' %>
-<form action="/es/certificado" method="post" class="needs-validation" novalidate>
-  <div class="row">
-    <div class="mb-3 col-9 col-xs-12">
-      <label class="form-label"><%= t("certificate-form.code-input.label") %></label>
-      <input
-        type="text"
-        class="form-control"
-        name="q"
-        id="q-input"
-        pattern=".{20}" title="<%= t("certificate-form.code-input.error-message") %>"
-        value="<%= search_term%>"
-        required>
-      <div class="invalid-feedback">
-        <%= t("certificate-form.code-input.error-message") %>
+    <%= erb :'component/_flash_error' %>
+    <form
+      action="/es/certificado"
+      method="post"
+      class="needs-validation form"
+      novalidate>
+        <div class="control">
+          <label class="form-label"><%= t("certificate-form.code-input.label") %></label>
+          <input
+            type="text"
+            class="form-control"
+            name="q"
+            id="q-input"
+            pattern=".{20}" title="<%= t("certificate-form.code-input.error-message") %>"
+            value="<%= search_term%>"
+            required>
+          <div class="invalid-feedback">
+            <%= t("certificate-form.code-input.error-message") %>
+          </div>
+        </div>
+        <div class="image-container">
+          <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/where_is_certificate_code.jpg" class="img-fluid" alt="Validation Code">
+        </div>
+
+      <div class="mb-4">
+        <%= recaptcha_tags callback: 'enableButton' %>
       </div>
-    </div>
-    <div class="col-3 col-xs-12">
-      <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/where_is_certificate_code.jpg" class="img-fluid" alt="Validation Code">
-    </div>
-  </div>
-  <%= recaptcha_tags callback: 'enableButton' %>
 
-  <div class="btn-center-container">
-    <button type="submit"
-            id="submit"
-            class="btn my-primary-button"
-            value="Submit"
-            disabled
-    >
-      <%= t("certificate-form.submit.text") %></button>
-  </div>
-</form>
+      <div class="btn-center-container">
+        <button type="submit"
+                id="submit"
+                class="btn my-primary-button"
+                value="Submit"
+                disabled
+        >
+          <%= t("certificate-form.submit.text") %></button>
+      </div>
+    </form>
+
+  <img
+    class="desktop_figure skyblue-semicircle"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/skyblue_semicircle.svg">
+  <img
+    class="desktop_figure rustic-circle"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_circle2.svg"/>
+  <img
+    class="desktop_figure yellow-oval"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval2.svg"/>
+  <img
+    class="desktop_figure red-bean"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg"/>
 </section>
+
+
 
 <script>
 

@@ -920,28 +920,33 @@ es:
         text: 'Servicios',
         options: [
           {
-            text: 'Diseño organizacional',
+            text: 'Diseño Organizacional',
             url: '/servicios/diseno-organizacional-agil',
             inside: true
           },
           {
-            text: 'Product management',
+            text: 'Product Management',
             url: '/servicios/agile-product-management',
             inside: true
           },
           {
-            text: 'Desarrollo del liderazgo ágil',
+            text: 'Desarrollo del Liderazgo Ágil',
             url: '/servicios/desarrollo-liderazgo-agil',
             inside: true
           },
           {
-            text: 'Jump start',
+            text: 'Jump Start',
             url: '/servicios/jump-start',
             inside: true
           },
           {
             text: 'Facilitación',
             url: '/servicios/facilitacion',
+            inside: true
+          },
+          {
+            text: 'Todos Nuestros Servicios',
+            url: '/agilidad-organizacional',
             inside: true
           },
         ]
