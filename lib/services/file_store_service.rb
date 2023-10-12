@@ -9,6 +9,7 @@ class FileStoreService
   end
 
   def self.create_s3
+    Aws.config[:region] = 'us-east-1'
     @@current = FileStoreService.new S3FileStore.new
   end
 
@@ -23,6 +24,7 @@ class FileStoreService
     folder = {
       'image' => nil,
       'certificate' => 'certificate-images/',
+      'certificates' => 'certificates/',
       'signature' => 'certificate-signatures/'
     }[image_type]
     [bucket, folder]    
@@ -86,16 +88,31 @@ class FileStoreService
     tmp_filename
   end
 
+  def find_certificate(validation_code)
+    objects = list('certificates', prefix: validation_code)
+    
+    return nil unless objects.count > 0
+    
+    tmp_filename = tmp_path validation_code+'.pdf'
+    @store.objects(objects[0].key).download_file tmp_filename
+    tmp_filename
+  end
+
   def tmp_path(basename)
-    temp_dir = "#{Rails.root}/tmp"
+    temp_dir = "/tmp"
     Dir.mkdir(temp_dir) unless Dir.exist?(temp_dir)
     "#{temp_dir}/#{basename}"
   end
 
-  def list(image_type = 'image')
+  def list(image_type = 'image', prefix: nil)
     bucket, folder = self.class.image_location(image_type)
-    result = @store.list_objects(bucket: bucket).contents
-    result = result.select { |img| img.key.to_s.start_with? folder} unless folder.nil?
+    # result = @store.list_objects(bucket: bucket).contents
+    # result = result.select { |img| img.key.to_s.start_with? folder} unless folder.nil?
+
+    result = @store.list_objects(
+      bucket: bucket, 
+      prefix: folder+prefix.to_s
+      ).contents
     result
   end
 end
@@ -108,7 +125,7 @@ class NullFileStore
   def objects(key, bucket_name= nil)
     NullStoreObject.new(key, exists: @exists)
   end
-  def list_objects(bucket:)
+  def list_objects(bucket:, prefix: nil)
     list = OpenStruct.new
     list.contents = [NullStoreObject.new('some file.png', exists: @exists)]
     list
@@ -149,8 +166,8 @@ end
 class S3FileStore
   def initialize(access_key_id: nil, secret_access_key: nil)
     @client = Aws::S3::Client.new(
-      access_key_id: access_key_id || ENV['KEVENTER_AWS_ACCESS_KEY_ID'],
-      secret_access_key: secret_access_key || ENV['KEVENTER_AWS_SECRET_ACCESS_KEY']
+      access_key_id: access_key_id || ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: secret_access_key || ENV['AWS_SECRET_ACCESS_KEY']
     )
     @resource = Aws::S3::Resource.new(client: @client)
     @bucket = @resource.bucket('Keventer')
@@ -161,8 +178,8 @@ class S3FileStore
     (bucket || @bucket).object(key)
   end
 
-  def list_objects(bucket:)
-    resp = @client.list_objects(bucket: bucket)
+  def list_objects(bucket:, prefix: nil)
+    resp = @client.list_objects_v2(bucket: bucket, prefix: prefix)
   end
 
 end

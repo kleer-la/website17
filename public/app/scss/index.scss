@@ -908,4 +908,69 @@ footer {
   }
 }
 
+//certificates
+.certificates-form-container{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 150px auto 100px auto;
+
+  h2{
+    font-family: 'Raleway',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .form{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 60px auto 0 auto;
+
+    .control{
+      width: 100%;
+    }
+  }
+
+  .image-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 50px 0 50px 0;
+    img{
+      height: 200px;
+    }
+  }
+
+  .skyblue-semicircle{
+    top: 50px;
+    right: 10%;
+  }
+
+  .rustic-circle{
+    bottom: 30px;
+    left: 30%;
+  }
+
+  .yellow-oval{
+    top: 30%;
+    left: 15%;
+  }
+
+  .red-bean{
+    bottom: 15%;
+    right: 10%;
+  }
+}
 

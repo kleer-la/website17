@@ -8,6 +8,9 @@ describe 'MyApp' do
   end
 
   describe 'POST /send-mail' do
+    it 'Debe estar configurado Recaptcha' do
+      expect(ENV['RECAPTCHA_SITE_KEY']).not_to be_empty
+    end
     it 'Debe retornar error' do
       payload = {"name"=>"prueba",
                  "email"=>"prueba@mail.com",

@@ -911,10 +911,45 @@ es:
       ]
 
   navbar:
+#    - {
+#      text: 'Agilidad organizacional',
+#      url: '/agilidad-organizacional',
+#      inside: true,
+#    }
     - {
-      text: 'Agilidad organizacional',
-      url: '/agilidad-organizacional',
-      inside: true,
+        text: 'Servicios',
+        options: [
+          {
+            text: 'Diseño Organizacional',
+            url: '/servicios/diseno-organizacional-agil',
+            inside: true
+          },
+          {
+            text: 'Product Management',
+            url: '/servicios/agile-product-management',
+            inside: true
+          },
+          {
+            text: 'Desarrollo del Liderazgo Ágil',
+            url: '/servicios/desarrollo-liderazgo-agil',
+            inside: true
+          },
+          {
+            text: 'Jump Start',
+            url: '/servicios/jump-start',
+            inside: true
+          },
+          {
+            text: 'Facilitación',
+            url: '/servicios/facilitacion',
+            inside: true
+          },
+          {
+            text: 'Todos Nuestros Servicios',
+            url: '/agilidad-organizacional',
+            inside: true
+          },
+        ]
     }
     - {
       text: 'Cursos',
@@ -1213,7 +1248,7 @@ es:
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
-          url: /servicios/agile-product-management#product_discovery
+          url: /es/servicios/agile-product-management#product_discovery
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,
@@ -1269,3 +1304,12 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
+
+  certificate-form:
+    title: Certificados
+    subtitle: Consulta sobre un certificado emitido por Kleer
+    code-input:
+      label: Código de verificación
+      error-message: Por favor ingresa 20 caracteres.
+    submit:
+      text: Obten tu certificado
