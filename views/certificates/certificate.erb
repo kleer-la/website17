@@ -1,13 +1,24 @@
-<h1>Certificados</h1>
-<h2 class="hero-description">Consulta sobre un certificado emitido por Kleer</h2>
+<section class="certificates-form-container">
+  <h1><%= t("certificate-form.title") %></h1>
+  <h2 class=""><%= t("certificate-form.subtitle") %></h2>
 
-<section class="p-5 mt-4">
-  <div class="row">
-    <div class="mb-3 col-xs-12">
-      <object data="<%= image_url%>" type="application/pdf" width="100%" height="600">
+  <div class="mb-3 form">
+    <object data="<%= image_url%>" type="application/pdf" width="100%" height="600">
         <p>It appears you don't have a PDF plugin for this browser.
            You can <a href="<%= image_url%>">click here to download the PDF file.</a></p>
     </object>
-    </div>
   </div>
+
+  <img
+    class="desktop_figure skyblue-semicircle"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/skyblue_semicircle.svg">
+  <img
+    class="desktop_figure rustic-circle"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_circle2.svg"/>
+  <img
+    class="desktop_figure yellow-oval"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval2.svg"/>
+  <img
+    class="desktop_figure red-bean"
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg"/>
 </section>
