@@ -17,7 +17,7 @@
         <% if index == 3 && @service.sub_services.length > 4  %>
           <break class="break"></break>
         <% end %>
-          <%= erb :'services/landing/_subservice_item',
+          <%= erb :'services/_subservice_item',
                   locals: {name: sub_service["name"],
                            icon: sub_service["icon"],
                            summary: sub_service["summary"],
