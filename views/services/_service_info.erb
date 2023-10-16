@@ -1,17 +1,21 @@
-<section>
+<section class="service-info">
   <h2>
     <%= service.name %>
   </h2>
-  <p> lorem ipsum </p>
-  <% if service.sub_services
-    service.sub_services.each do |sub_service| %>
-
-    <%= erb :'services/_subservice_item',
-            locals: {name: sub_service["name"],
-                     icon: sub_service["icon"],
-                     summary: sub_service["summary"],
-                     href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
-  <% end
-     end
-  %>
+  <p> <%= service.subtitle %> </p>
+  <div class="row mt-5 sub-services">
+    <% if service.sub_services
+         service.sub_services.each do |sub_service| %>
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+          <%= erb :'services/_subservice_item',
+                  locals: {name: sub_service["name"],
+                           icon: "",
+                           summary: sub_service["summary"],
+                           theme: service.color_theme,
+                           href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
+        </div>
+      <% end
+         end
+      %>
+  </div>
 </section>

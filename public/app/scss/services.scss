@@ -5,10 +5,13 @@ $primary-yellow: #FFE600;
 $secondary-yellow: #FCDC2D;
 $primary-red: #EF5662;
 $secondary-red: #EA2A46;
-$primary-green: #43B045;
+$primary-green: #42af45;
 $secondary-green: #0DAC52;
+$primary-orange: #fd6827;
+$secondary-orange: #fdcda8;
+$primary-sian: #31d2be;
+$secondary-sian: #bafdf3;
 $black: #333333;
-$grey: #B3B3B3;
 $white: #FFFFFF;
 
 //Landing service
@@ -71,11 +74,28 @@ $white: #FFFFFF;
   }
 }
 
+// Service info
+.service-info{
+  margin-top: 50px;
+  z-index: 5;
+  position: relative;
+
+  h2{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .sub-services{
+    width: 100%;
+  }
+}
+
 //Landing individual service
 .service-description{
   margin-top: 50px;
   padding: 0 20px;
-  z-index: 5;
   position: relative;
 }
 
@@ -158,21 +178,21 @@ $white: #FFFFFF;
 
   .break{
     flex-basis: 100%;
-    width: 0px;
+    width: 0;
     height: 20px;
     overflow: hidden;
   }
 }
+
 .subservice-item{
-  background-color: $primary-yellow;
-  width: 23%;
+  //width: 23%;
   height: 200px;
   border-radius: 20px;
   padding: 20px;
   color: black;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   align-content: center;
   align-items: center;
@@ -187,13 +207,48 @@ $white: #FFFFFF;
     font-size: 14px;
   }
 
-  a{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    color: black !important;
+  &:hover{
+    color: $black !important;
+  }
+}
+
+.orange-theme{
+  background-color: $secondary-orange !important;
+
+  &:hover{
+    background-color: $primary-orange !important;
+  }
+}
+
+.blue-theme{
+  background-color: $primary-blue !important;
+
+  &:hover{
+    background-color: $secondary-blue !important;
+  }
+}
+
+.green-theme{
+  background-color: $primary-green !important;
+
+  &:hover{
+    background-color: $secondary-green !important;
+  }
+}
+
+.yellow-theme{
+  background-color: $secondary-yellow !important;
+
+  &:hover{
+    background-color: $secondary-yellow !important;
+  }
+}
+
+.sian-theme{
+  background-color: $primary-sian !important;
+
+  &:hover{
+    background-color: $secondary-sian !important;
   }
 }
 

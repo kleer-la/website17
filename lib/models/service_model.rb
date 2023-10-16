@@ -1,7 +1,7 @@
 
 class Service
   attr_accessor :name, :subtitle, :description, :side_image, :takeaways,
-                :recipients, :program, :brochure, :titles, :seo_title,
+                :recipients, :program, :brochure, :titles, :seo_title, :color_theme,
                 :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text
   def initialize()
     @public_editions = []
@@ -13,6 +13,7 @@ class Service
                      subtitle
                      description
                      side_image
+                     color_theme
                      takeaways
                      recipients
                      program
@@ -30,6 +31,7 @@ class Service
     load_str(%i[name
                      subtitle
                      takeaways
+                     color_theme
                      elevator_pitch
                      contact_text
                      titles], hash_service)

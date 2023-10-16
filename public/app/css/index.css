@@ -1458,10 +1458,21 @@ h3.title-somos {
     top: 60px;
     right: -20px; }
 
+.service-info {
+  margin-top: 50px;
+  z-index: 5;
+  position: relative; }
+  .service-info h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px; }
+  .service-info .sub-services {
+    width: 100%; }
+
 .service-description {
   margin-top: 50px;
   padding: 0 20px;
-  z-index: 5;
   position: relative; }
 
 .subservice-container a {
@@ -1517,20 +1528,18 @@ h3.title-somos {
   flex-flow: row wrap; }
   .subservice-item-container .break {
     flex-basis: 100%;
-    width: 0px;
+    width: 0;
     height: 20px;
     overflow: hidden; }
 
 .subservice-item {
-  background-color: #FFE600;
-  width: 23%;
   height: 200px;
   border-radius: 20px;
   padding: 20px;
   color: black;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   align-content: center;
   align-items: center; }
@@ -1540,13 +1549,33 @@ h3.title-somos {
     line-height: 30px; }
   .subservice-item p {
     font-size: 14px; }
-  .subservice-item a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    color: black !important; }
+  .subservice-item:hover {
+    color: #333333 !important; }
+
+.orange-theme {
+  background-color: #fdcda8 !important; }
+  .orange-theme:hover {
+    background-color: #fd6827 !important; }
+
+.blue-theme {
+  background-color: #68CEF2 !important; }
+  .blue-theme:hover {
+    background-color: #00BBEE !important; }
+
+.green-theme {
+  background-color: #42af45 !important; }
+  .green-theme:hover {
+    background-color: #0DAC52 !important; }
+
+.yellow-theme {
+  background-color: #FCDC2D !important; }
+  .yellow-theme:hover {
+    background-color: #FCDC2D !important; }
+
+.sian-theme {
+  background-color: #31d2be !important; }
+  .sian-theme:hover {
+    background-color: #bafdf3 !important; }
 
 .takeaways {
   background-color: #E8F8FD;
