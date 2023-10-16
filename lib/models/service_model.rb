@@ -2,7 +2,7 @@
 class Service
   attr_accessor :name, :subtitle, :description, :side_image, :takeaways,
                 :recipients, :program, :brochure, :titles, :seo_title, :color_theme,
-                :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text
+                :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo
   def initialize()
     @public_editions = []
     @side_image = ''
@@ -32,6 +32,8 @@ class Service
                      subtitle
                      takeaways
                      color_theme
+                     canonical_url
+                     logo
                      elevator_pitch
                      contact_text
                      titles], hash_service)

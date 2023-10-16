@@ -1,21 +1,30 @@
-<section class="service-info">
+<hr />
+<section class="service-info <%= service.color_theme %>">
   <h2>
+    <img
+      src="<%= service.logo %>"
+      class="logo"
+      />
     <%= service.name %>
   </h2>
-  <p> <%= service.subtitle %> </p>
-  <div class="row mt-5 sub-services">
-    <% if service.sub_services
-         service.sub_services.each do |sub_service| %>
-        <div class="col-12 col-md-4 col-lg-3 mb-3">
-          <%= erb :'services/_subservice_item',
-                  locals: {name: sub_service["name"],
-                           icon: "",
-                           summary: sub_service["summary"],
-                           theme: service.color_theme,
-                           href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
-        </div>
-      <% end
-         end
-      %>
+  <p class="ms-3"> <%= service.subtitle %> </p>
+  <% if service.sub_services %>
+    <div class="row mt-5 sub-services">
+      <% service.sub_services.each do |sub_service| %>
+          <div class="col">
+            <%= erb :'services/_subservice_item',
+                    locals: {name: sub_service["name"],
+                             icon: "",
+                             summary: sub_service["summary"],
+                             href: "/es/servicios#{service.canonical_url}##{sub_service['name'].gsub(/( )/, '_').downcase!}"} %>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+  <div class="more-info">
+    <a class="button" href="<%="/es/servicios#{service.canonical_url}" %>">
+      Conoce el servicio completo
+      <img src="/app/img/view_figures/arrow-right.svg" class=""/>
+    </a>
   </div>
 </section>

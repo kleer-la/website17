@@ -2,13 +2,15 @@ $celeste: #E8F8FD;
 $primary-blue: #68CEF2;
 $secondary-blue: #00BBEE;
 $primary-yellow: #FFE600;
+$clear-yellow: #fafa78;
 $secondary-yellow: #FCDC2D;
 $primary-red: #EF5662;
 $secondary-red: #EA2A46;
-$primary-green: #42af45;
+$primary-green: #43af45;
+$clear-green: #5cca58;
 $secondary-green: #0DAC52;
 $primary-orange: #fd6827;
-$secondary-orange: #fdcda8;
+$secondary-orange: #ff895a;
 $primary-sian: #31d2be;
 $secondary-sian: #bafdf3;
 $black: #333333;
@@ -74,21 +76,51 @@ $white: #FFFFFF;
   }
 }
 
+#all-services{
+  h3{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+}
 // Service info
 .service-info{
-  margin-top: 50px;
   z-index: 5;
   position: relative;
+  margin: 100px 0;
 
   h2{
     font-weight: 700;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 40px;
     margin-bottom: 30px;
   }
 
   .sub-services{
     width: 100%;
+  }
+
+  .logo{
+    width: 50px;
+  }
+
+  .more-info{
+    margin-top: 70px;
+
+    .button{
+      padding: 10px;
+      border-radius: 30px;
+
+      img{
+        margin: 0 10px;
+        transform: rotate(180deg);
+      }
+
+      &:hover{
+        color: $black !important;
+      }
+    }
   }
 }
 
@@ -197,8 +229,9 @@ $white: #FFFFFF;
   align-content: center;
   align-items: center;
 
-  h3{
+  .name{
     color: black !important;
+    font-weight: 600;
     font-size: 24px;
     line-height: 30px;
   }
@@ -213,42 +246,92 @@ $white: #FFFFFF;
 }
 
 .orange-theme{
-  background-color: $secondary-orange !important;
-
-  &:hover{
+  .card{
     background-color: $primary-orange !important;
+
+    &:hover{
+      background-color: $secondary-orange !important;
+    }
+  }
+
+  .button{
+    background-color: $secondary-orange !important;
+
+    &:hover{
+      background-color: $primary-orange !important;
+    }
   }
 }
 
 .blue-theme{
-  background-color: $primary-blue !important;
+  .card{
+    background-color: $primary-blue !important;
 
-  &:hover{
-    background-color: $secondary-blue !important;
+    &:hover{
+      background-color: $celeste !important;
+    }
+  }
+
+  .button{
+    background-color: $primary-blue  !important;
+
+    &:hover{
+      background-color: $celeste !important;
+    }
   }
 }
 
 .green-theme{
-  background-color: $primary-green !important;
+  .card{
+    background-color: $primary-green !important;
 
-  &:hover{
-    background-color: $secondary-green !important;
+    &:hover{
+      background-color: $clear-green !important;
+    }
+  }
+
+  .button{
+    background-color: $clear-green !important;
+
+    &:hover{
+      background-color: $primary-green !important;
+    }
   }
 }
 
 .yellow-theme{
-  background-color: $secondary-yellow !important;
-
-  &:hover{
+  .card{
     background-color: $secondary-yellow !important;
+
+    &:hover{
+      background-color: $clear-yellow !important;
+    }
+  }
+
+  .button{
+    background-color: $clear-yellow  !important;
+
+    &:hover{
+      background-color: $secondary-yellow !important;
+    }
   }
 }
 
 .sian-theme{
-  background-color: $primary-sian !important;
+  .card{
+    background-color: $primary-sian !important;
 
-  &:hover{
-    background-color: $secondary-sian !important;
+    &:hover{
+      background-color: $secondary-sian !important;
+    }
+  }
+
+  .button{
+    background-color: $primary-sian  !important;
+
+    &:hover{
+      background-color: $secondary-sian !important;
+    }
   }
 }
 

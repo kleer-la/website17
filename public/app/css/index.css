@@ -1458,17 +1458,35 @@ h3.title-somos {
     top: 60px;
     right: -20px; }
 
+#all-services h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 30px; }
+
 .service-info {
-  margin-top: 50px;
   z-index: 5;
-  position: relative; }
+  position: relative;
+  margin: 100px 0; }
   .service-info h2 {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 40px;
     margin-bottom: 30px; }
   .service-info .sub-services {
     width: 100%; }
+  .service-info .logo {
+    width: 50px; }
+  .service-info .more-info {
+    margin-top: 70px; }
+    .service-info .more-info .button {
+      padding: 10px;
+      border-radius: 30px; }
+      .service-info .more-info .button img {
+        margin: 0 10px;
+        transform: rotate(180deg); }
+      .service-info .more-info .button:hover {
+        color: #333333 !important; }
 
 .service-description {
   margin-top: 50px;
@@ -1543,8 +1561,9 @@ h3.title-somos {
   text-align: center;
   align-content: center;
   align-items: center; }
-  .subservice-item h3 {
+  .subservice-item .name {
     color: black !important;
+    font-weight: 600;
     font-size: 24px;
     line-height: 30px; }
   .subservice-item p {
@@ -1552,29 +1571,49 @@ h3.title-somos {
   .subservice-item:hover {
     color: #333333 !important; }
 
-.orange-theme {
-  background-color: #fdcda8 !important; }
-  .orange-theme:hover {
+.orange-theme .card {
+  background-color: #fd6827 !important; }
+  .orange-theme .card:hover {
+    background-color: #ff895a !important; }
+.orange-theme .button {
+  background-color: #ff895a !important; }
+  .orange-theme .button:hover {
     background-color: #fd6827 !important; }
 
-.blue-theme {
+.blue-theme .card {
   background-color: #68CEF2 !important; }
-  .blue-theme:hover {
-    background-color: #00BBEE !important; }
+  .blue-theme .card:hover {
+    background-color: #E8F8FD !important; }
+.blue-theme .button {
+  background-color: #68CEF2 !important; }
+  .blue-theme .button:hover {
+    background-color: #E8F8FD !important; }
 
-.green-theme {
-  background-color: #42af45 !important; }
-  .green-theme:hover {
-    background-color: #0DAC52 !important; }
+.green-theme .card {
+  background-color: #43af45 !important; }
+  .green-theme .card:hover {
+    background-color: #5cca58 !important; }
+.green-theme .button {
+  background-color: #5cca58 !important; }
+  .green-theme .button:hover {
+    background-color: #43af45 !important; }
 
-.yellow-theme {
+.yellow-theme .card {
   background-color: #FCDC2D !important; }
-  .yellow-theme:hover {
+  .yellow-theme .card:hover {
+    background-color: #fafa78 !important; }
+.yellow-theme .button {
+  background-color: #fafa78 !important; }
+  .yellow-theme .button:hover {
     background-color: #FCDC2D !important; }
 
-.sian-theme {
+.sian-theme .card {
   background-color: #31d2be !important; }
-  .sian-theme:hover {
+  .sian-theme .card:hover {
+    background-color: #bafdf3 !important; }
+.sian-theme .button {
+  background-color: #31d2be !important; }
+  .sian-theme .button:hover {
     background-color: #bafdf3 !important; }
 
 .takeaways {

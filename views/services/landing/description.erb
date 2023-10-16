@@ -20,8 +20,9 @@
           <%= erb :'services/_subservice_item',
                   locals: {name: sub_service["name"],
                            icon: sub_service["icon"],
+                           theme: @service.color_theme,
                            summary: sub_service["summary"],
-                           href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
+                           href: "##{sub_service['name'].gsub(/( )/, '_').downcase!}"} %>
 
         <% end %>
     <% end %>

@@ -1,8 +1,10 @@
-<section id="bussinesa-howto" class="container">
+<section id="all-services" class="container">
   <h3>
     <%= t('business-agility.howto.title') %>
   </h3>
-  <%= t("business-agility.howto.text") %>
+  <div class="mb-5">
+    <%= t("business-agility.howto.text") %>
+  </div>
 
   <% @services.each do |service| %>
     <%= erb :'services/_service_info', locals: {service: service} %>
