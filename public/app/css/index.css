@@ -1551,9 +1551,11 @@ h3.title-somos {
     overflow: hidden; }
 
 .subservice-item {
+  max-width: 23%;
   height: 200px;
   border-radius: 20px;
   padding: 20px;
+  margin-bottom: 30px;
   color: black;
   display: flex;
   flex-direction: column;

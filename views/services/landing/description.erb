@@ -11,7 +11,7 @@
           <% end %>
         </div>
       </div>
-  <div class="subservice-item-container mb-5">
+  <div class="subservice-item-container mb-5 <%=@service.color_theme %>">
     <% if @service.sub_services %>
         <% @service.sub_services.each.with_index do |sub_service, index| %>
         <% if index == 3 && @service.sub_services.length > 4  %>
