@@ -208,6 +208,10 @@ $white: #FFFFFF;
   margin-top: 30px;
   flex-flow: row wrap;
 
+  .card{
+    width: 23%;
+  }
+
   .break{
     flex-basis: 100%;
     width: 0;
@@ -217,7 +221,6 @@ $white: #FFFFFF;
 }
 
 .subservice-item{
-  max-width: 23%;
   height: 200px;
   border-radius: 20px;
   padding: 20px;
