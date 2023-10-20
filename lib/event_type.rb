@@ -1,7 +1,9 @@
 require './lib/xml_api'
 require './lib/json_api'
+
 require './lib/keventer_helper'
 require './lib/keventer_connector'
+require './lib/event'
 require './lib/testimony'
 
 class EventType
@@ -106,7 +108,6 @@ class EventType
 
   def load_public_editions(next_events)
     return [] if next_events.nil?
-
     next_events.reduce([]) do |events, ev_json|
       events << Event.new(self).load_from_json(ev_json)
     end
