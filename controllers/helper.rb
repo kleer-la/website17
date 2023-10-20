@@ -14,7 +14,7 @@ module Helpers
     end
 
     if start_month == finish_month
-      "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")}, #{start_month}"
+      "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")} #{start_month}"
     else
       "#{start_date.strftime("%d")} #{start_month} - #{finish_date.strftime("%d")} #{finish_month}"
     end
