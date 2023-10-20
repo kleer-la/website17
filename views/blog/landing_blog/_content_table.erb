@@ -66,13 +66,7 @@
             table.classList.remove('fixed-table')
             body.classList.add('up-body')
         }
-    };
+    }
     window.addEventListener("scroll", runOnScroll);
-
-    window.addEventListener("hashchange", function () {
-        setTimeout(() => {
-            window.scrollTo(window.scrollX, window.scrollY - 150);
-        }, 1000)
-    });
 
 </script>
