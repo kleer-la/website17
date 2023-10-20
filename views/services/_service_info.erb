@@ -1,0 +1,30 @@
+<hr />
+<section class="service-info <%= service.color_theme %>">
+  <h2>
+    <img
+      src="<%= service.logo %>"
+      class="logo"
+      />
+    <%= service.name %>
+  </h2>
+  <p class="ms-3"> <%= service.subtitle %> </p>
+  <% if service.sub_services %>
+    <div class="row mt-5 sub-services">
+      <% service.sub_services.each do |sub_service| %>
+          <div class="col">
+            <%= erb :'services/_subservice_item',
+                    locals: {name: sub_service["name"],
+                             icon: "",
+                             summary: sub_service["summary"],
+                             href: "/es/servicios#{service.canonical_url}##{sub_service['name'].gsub(/( )/, '_').downcase!}"} %>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+  <div class="more-info">
+    <a class="button" href="<%="/es/servicios#{service.canonical_url}" %>">
+      Conoce el servicio completo
+      <img src="/app/img/view_figures/arrow-right.svg" class=""/>
+    </a>
+  </div>
+</section>
