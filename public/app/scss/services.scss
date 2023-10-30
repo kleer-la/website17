@@ -367,6 +367,23 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:420px) {
+
+  h3{
+    font-size: 28px !important;
+    line-height: 32px !important;
+  }
+
+  h4{
+    font-size: 20px !important;
+  }
+  .subservice-container{
+    .takeaways{
+        padding: 20px;
+    }
+    .recipients{
+        padding: 20px;
+    }
+  }
   .subservice-item-container{
     h2{
       margin: 5%;
@@ -379,5 +396,12 @@ $white: #FFFFFF;
   .subservice-item{
     width: 80%;
     margin-bottom: 30px;
+  }
+
+  .subservice-item-container {
+
+    .card {
+      width: 80%;
+    }
   }
 }

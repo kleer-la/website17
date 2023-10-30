@@ -366,6 +366,14 @@ footer {
     margin: 10px;
     padding: 30px 20px;
   }
+
+  .generic-hero-a {
+    .text {
+      max-width: 90%;
+      justify-content: center;
+      z-index: 5;
+    }
+  }
 }
 
 .invisible-title-button{

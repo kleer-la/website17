@@ -1638,6 +1638,18 @@ h3.title-somos {
     max-height: 450px; }
 
 @media screen and (max-width: 420px) {
+  h3 {
+    font-size: 28px !important;
+    line-height: 32px !important; }
+
+  h4 {
+    font-size: 20px !important; }
+
+  .subservice-container .takeaways {
+    padding: 20px; }
+  .subservice-container .recipients {
+    padding: 20px; }
+
   .subservice-item-container {
     flex-direction: column;
     align-items: center;
@@ -1647,7 +1659,10 @@ h3.title-somos {
 
   .subservice-item {
     width: 80%;
-    margin-bottom: 30px; } }
+    margin-bottom: 30px; }
+
+  .subservice-item-container .card {
+    width: 80%; } }
 #businessa-hero {
   margin-top: 100px;
   margin-bottom: 13%; }
@@ -2289,7 +2304,12 @@ footer {
 
   .footer__body {
     margin: 10px;
-    padding: 30px 20px; } }
+    padding: 30px 20px; }
+
+  .generic-hero-a .text {
+    max-width: 90%;
+    justify-content: center;
+    z-index: 5; } }
 .invisible-title-button {
   color: #00BBEE;
   font-weight: bold;
