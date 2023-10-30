@@ -22,7 +22,7 @@
                            icon: sub_service["icon"],
                            theme: @service.color_theme,
                            summary: sub_service["summary"],
-                           href: "##{sub_service['name'].gsub(/( )/, '_').downcase!}"} %>
+                           href: "##{to_plane_string(sub_service['name'])}"} %>
 
         <% end %>
     <% end %>

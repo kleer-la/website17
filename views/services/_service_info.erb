@@ -16,7 +16,7 @@
                     locals: {name: sub_service["name"],
                              icon: "",
                              summary: sub_service["summary"],
-                             href: "/es/servicios#{service.canonical_url}##{sub_service['name'].gsub(/( )/, '_').downcase!}"} %>
+                             href: "/es/servicios#{service.canonical_url}##{to_plane_string(sub_service['name'])}"} %>
           </div>
         <% end %>
     </div>

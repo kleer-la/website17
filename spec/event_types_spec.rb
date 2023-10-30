@@ -31,11 +31,35 @@ describe EventType do
     end
   end
   context 'JSON' do
-    before(:each) do
-      @event_type = EventType.new(nil, {'subtitle'=> 'One subtitle' } )
-    end
     it 'has subtitle' do
+      @event_type = EventType.new(nil, {'subtitle'=> 'One subtitle' } )
       expect(@event_type.subtitle).to eq 'One subtitle'
+    end
+    it 'has next_events' do
+      @event_type = EventType.new(nil, 
+        {"next_events" => [
+          {"id": 2505,
+          "date" => "2023-11-06",
+          "place" => "Oficinas de GIRE",
+          "city" => "Buenos Aires",
+          "country_id" => 9,
+          "list_price" => "408000.0",
+          "eb_price" => "387600. =>",
+          "eb_end_date" => "2023-10-27",
+          "registration_link" => "",
+          "is_sold_out" => false,
+          "duration" => 16,
+          "start_time" => "2000-01-01T09:00:00.000Z",
+          "end_time" => "2000-01-01T18:00:00.000Z",
+          "time_zone_name" => "",
+          "currency_iso_code" => "ARS",
+          "address" => "Av. Caseros 3572",
+          "finish_date" => "2023-11-07",
+          "trainers" => []
+          } ] }
+        
+       )
+      expect(@event_type.public_editions.count).to eq 1
     end
   end
   context 'Redirect' do
