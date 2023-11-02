@@ -2,20 +2,132 @@ $celeste: #E8F8FD;
 $primary-blue: #68CEF2;
 $secondary-blue: #00BBEE;
 $primary-yellow: #FFE600;
+$clear-yellow: #fafa78;
 $secondary-yellow: #FCDC2D;
 $primary-red: #EF5662;
 $secondary-red: #EA2A46;
-$primary-green: #43B045;
+$primary-green: #43af45;
+$clear-green: #5cca58;
 $secondary-green: #0DAC52;
+$primary-orange: #fd6827;
+$secondary-orange: #ff895a;
+$primary-sian: #31d2be;
+$secondary-sian: #bafdf3;
 $black: #333333;
-$grey: #B3B3B3;
 $white: #FFFFFF;
 
 //Landing service
+#services-hero{
+  margin-top: 100px;
+  margin-bottom: 13%;
+
+  .principal-container{
+    margin: 120px 10% 5% 10%;
+    border-radius: 30px;
+    background-color: $primary-yellow;
+    min-height: 200px;
+    height: 40%;
+    position: relative;
+    text-align: center;
+    padding: 70px 15% 13% 15%;
+  }
+
+  .title{
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 64px;
+    margin-bottom: 50px;
+  }
+
+  .image-container{
+    position: absolute;
+    width: 50%;
+    bottom: -10%;
+    left: 25%;
+
+    .principal-img{
+      width: 100%;
+    }
+  }
+
+  .down-button{
+    width: 50px;
+    position: absolute;
+    left: calc(50% - 25px);
+    bottom: -25px;
+  }
+
+  .blue-bean{
+    position: absolute;
+    left: 10%;
+    top: 60px
+  }
+
+  .lines{
+    position: absolute;
+    left: -40px;
+    bottom: 30px;
+  }
+
+  .green-worm{
+    position: absolute;
+    top: 60px;
+    right: -20px;
+  }
+}
+
+#all-services{
+  h3{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+}
+// Service info
+.service-info{
+  z-index: 5;
+  position: relative;
+  margin: 100px 0;
+
+  h2{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .sub-services{
+    width: 100%;
+  }
+
+  .logo{
+    width: 50px;
+  }
+
+  .more-info{
+    margin-top: 70px;
+
+    .button{
+      padding: 10px;
+      border-radius: 30px;
+
+      img{
+        margin: 0 10px;
+        transform: rotate(180deg);
+      }
+
+      &:hover{
+        color: $black !important;
+      }
+    }
+  }
+}
+
+//Landing individual service
 .service-description{
   margin-top: 50px;
   padding: 0 20px;
-  z-index: 5;
   position: relative;
 }
 
@@ -96,29 +208,34 @@ $white: #FFFFFF;
   margin-top: 30px;
   flex-flow: row wrap;
 
+  .card{
+    width: 23%;
+  }
+
   .break{
     flex-basis: 100%;
-    width: 0px;
+    width: 0;
     height: 20px;
     overflow: hidden;
   }
 }
+
 .subservice-item{
-  background-color: $primary-yellow;
-  width: 23%;
   height: 200px;
   border-radius: 20px;
   padding: 20px;
+  margin-bottom: 30px;
   color: black;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   align-content: center;
   align-items: center;
 
-  h3{
+  .name{
     color: black !important;
+    font-weight: 600;
     font-size: 24px;
     line-height: 30px;
   }
@@ -127,13 +244,98 @@ $white: #FFFFFF;
     font-size: 14px;
   }
 
-  a{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    color: black !important;
+  &:hover{
+    color: $black !important;
+  }
+}
+
+.orange-theme{
+  .card{
+    background-color: $primary-orange !important;
+
+    &:hover{
+      background-color: $secondary-orange !important;
+    }
+  }
+
+  .button{
+    background-color: $secondary-orange !important;
+
+    &:hover{
+      background-color: $primary-orange !important;
+    }
+  }
+}
+
+.blue-theme{
+  .card{
+    background-color: $primary-blue !important;
+
+    &:hover{
+      background-color: $celeste !important;
+    }
+  }
+
+  .button{
+    background-color: $primary-blue  !important;
+
+    &:hover{
+      background-color: $celeste !important;
+    }
+  }
+}
+
+.green-theme{
+  .card{
+    background-color: $primary-green !important;
+
+    &:hover{
+      background-color: $clear-green !important;
+    }
+  }
+
+  .button{
+    background-color: $clear-green !important;
+
+    &:hover{
+      background-color: $primary-green !important;
+    }
+  }
+}
+
+.yellow-theme{
+  .card{
+    background-color: $secondary-yellow !important;
+
+    &:hover{
+      background-color: $clear-yellow !important;
+    }
+  }
+
+  .button{
+    background-color: $clear-yellow  !important;
+
+    &:hover{
+      background-color: $secondary-yellow !important;
+    }
+  }
+}
+
+.sian-theme{
+  .card{
+    background-color: $primary-sian !important;
+
+    &:hover{
+      background-color: $secondary-sian !important;
+    }
+  }
+
+  .button{
+    background-color: $primary-sian  !important;
+
+    &:hover{
+      background-color: $secondary-sian !important;
+    }
   }
 }
 
@@ -165,6 +367,23 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:420px) {
+
+  h3{
+    font-size: 28px !important;
+    line-height: 32px !important;
+  }
+
+  h4{
+    font-size: 20px !important;
+  }
+  .subservice-container{
+    .takeaways{
+        padding: 20px;
+    }
+    .recipients{
+        padding: 20px;
+    }
+  }
   .subservice-item-container{
     h2{
       margin: 5%;
@@ -177,5 +396,12 @@ $white: #FFFFFF;
   .subservice-item{
     width: 80%;
     margin-bottom: 30px;
+  }
+
+  .subservice-item-container {
+
+    .card {
+      width: 80%;
+    }
   }
 }

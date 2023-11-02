@@ -11,17 +11,18 @@
           <% end %>
         </div>
       </div>
-  <div class="subservice-item-container mb-5">
+  <div class="subservice-item-container mb-5 <%=@service.color_theme %>">
     <% if @service.sub_services %>
         <% @service.sub_services.each.with_index do |sub_service, index| %>
         <% if index == 3 && @service.sub_services.length > 4  %>
           <break class="break"></break>
         <% end %>
-          <%= erb :'services/landing/_subservice_item',
+          <%= erb :'services/_subservice_item',
                   locals: {name: sub_service["name"],
                            icon: sub_service["icon"],
+                           theme: @service.color_theme,
                            summary: sub_service["summary"],
-                           href: sub_service["name"].gsub(/( )/, '_').downcase!} %>
+                           href: "##{to_plane_string(sub_service['name'])}"} %>
 
         <% end %>
     <% end %>

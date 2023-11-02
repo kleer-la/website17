@@ -14,7 +14,7 @@ module Helpers
     end
 
     if start_month == finish_month
-      "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")}, #{start_month}"
+      "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")} #{start_month}"
     else
       "#{start_date.strftime("%d")} #{start_month} - #{finish_date.strftime("%d")} #{finish_month}"
     end
@@ -28,6 +28,33 @@ module Helpers
     end
 
     return categories_string
+  end
+
+  def to_plane_string str
+    accents = {
+      ['Ã¡','Ã ','Ã¢','Ã¤','Ã£','á'] => 'a',
+      ['Ãƒ','Ã„','Ã‚','Ã€','Ã','Á'] => 'A',
+      ['Ã©','Ã¨','Ãª','Ã«','é'] => 'e',
+      ['Ã‹','Ã‰','Ãˆ','ÃŠ','É'] => 'E',
+      ['Ã­','Ã¬','Ã®','Ã¯','í'] => 'i',
+      ['Ã','ÃŽ','ÃŒ','Ã','Í'] => 'I',
+      ['Ã³','Ã²','Ã´','Ã¶','Ãµ','ó'] => 'o',
+      ['Ã•','Ã–','Ã”','Ã’','Ã“','Ó'] => 'O',
+      ['Ãº','Ã¹','Ã»','Ã¼','ú'] => 'u',
+      ['Ãš','Ã›','Ã™','Ãœ','Ú'] => 'U',
+      ['Ã§'] => 'c', ['Ã‡'] => 'C',
+      ['Ã±'] => 'n', ['Ã‘'] => 'N'
+    }
+    accents.each do |ac,rep|
+      ac.each do |s|
+        str = str.gsub(s, rep)
+      end
+    end
+    str = str.gsub(/[^a-zA-Z0-9 ]/,"")
+
+    str = str.gsub(/[ ]+/," ")
+
+    str.gsub(/( )/, '_').downcase!
   end
 
   def webp_ext(img_path)

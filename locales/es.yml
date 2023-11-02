@@ -945,6 +945,9 @@ es:
             inside: true
           },
           {
+            text: 'dropdown-divider',
+          },
+          {
             text: 'Todos Nuestros Servicios',
             url: '/agilidad-organizacional',
             inside: true
@@ -1243,7 +1246,7 @@ es:
         - {
           text: Agile team Jump Start,
           img: /app/img/icons/People.svg,
-          url: /servicios/jump-start#agile_team_jump_start
+          url: /es/servicios/jump-start#agile_team_jump_start
         }
         - {
           text: Product discovery,

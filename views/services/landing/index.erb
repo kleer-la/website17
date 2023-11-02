@@ -18,7 +18,7 @@
 
 <% if @service.sub_services %>
   <% @service.sub_services.each_with_index do |subservice, index|%>
-    <%= erb :'services/landing/subservice', locals: {sub_service: subservice, index: index, id: subservice["name"].gsub(/( )/, '_').downcase!} %>
+    <%= erb :'services/landing/subservice', locals: {sub_service: subservice, index: index, id: to_plane_string(subservice["name"])} %>
   <% end %>
 <% end %>
 <%= erb :'services/landing/contact' %>

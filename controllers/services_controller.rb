@@ -1,8 +1,18 @@
 require './lib/models/service_model'
 require './lib/readers/local_reader'
 
+get '/servicios' do
+  # begin
+    @services = Service.load_list
+
+    erb :'services/index', layout: :'layout/layout2022'
+  # rescue
+  #   status 500
+  # end
+end
+
 get '/servicios/:service_id' do
-  begin
+  # begin
     service_id = params[:service_id]
 
     reader = LocalReader.new
@@ -21,9 +31,8 @@ get '/servicios/:service_id' do
 
 
     erb :'services/landing/index', layout: :'layout/layout2022'
-  rescue
-    status 500
-  end
-
+  # rescue
+  #   status 500
+  # end
 end
 

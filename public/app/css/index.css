@@ -1416,10 +1416,81 @@ h3.title-somos {
     transform: translateY(-50%);
     right: 0; }
 
+#services-hero {
+  margin-top: 100px;
+  margin-bottom: 13%; }
+  #services-hero .principal-container {
+    margin: 120px 10% 5% 10%;
+    border-radius: 30px;
+    background-color: #FFE600;
+    min-height: 200px;
+    height: 40%;
+    position: relative;
+    text-align: center;
+    padding: 70px 15% 13% 15%; }
+  #services-hero .title {
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 64px;
+    margin-bottom: 50px; }
+  #services-hero .image-container {
+    position: absolute;
+    width: 50%;
+    bottom: -10%;
+    left: 25%; }
+    #services-hero .image-container .principal-img {
+      width: 100%; }
+  #services-hero .down-button {
+    width: 50px;
+    position: absolute;
+    left: calc(50% - 25px);
+    bottom: -25px; }
+  #services-hero .blue-bean {
+    position: absolute;
+    left: 10%;
+    top: 60px; }
+  #services-hero .lines {
+    position: absolute;
+    left: -40px;
+    bottom: 30px; }
+  #services-hero .green-worm {
+    position: absolute;
+    top: 60px;
+    right: -20px; }
+
+#all-services h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 30px; }
+
+.service-info {
+  z-index: 5;
+  position: relative;
+  margin: 100px 0; }
+  .service-info h2 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 30px; }
+  .service-info .sub-services {
+    width: 100%; }
+  .service-info .logo {
+    width: 50px; }
+  .service-info .more-info {
+    margin-top: 70px; }
+    .service-info .more-info .button {
+      padding: 10px;
+      border-radius: 30px; }
+      .service-info .more-info .button img {
+        margin: 0 10px;
+        transform: rotate(180deg); }
+      .service-info .more-info .button:hover {
+        color: #333333 !important; }
+
 .service-description {
   margin-top: 50px;
   padding: 0 20px;
-  z-index: 5;
   position: relative; }
 
 .subservice-container a {
@@ -1473,38 +1544,80 @@ h3.title-somos {
   justify-content: space-around;
   margin-top: 30px;
   flex-flow: row wrap; }
+  .subservice-item-container .card {
+    width: 23%; }
   .subservice-item-container .break {
     flex-basis: 100%;
-    width: 0px;
+    width: 0;
     height: 20px;
     overflow: hidden; }
 
 .subservice-item {
-  background-color: #FFE600;
-  width: 23%;
   height: 200px;
   border-radius: 20px;
   padding: 20px;
+  margin-bottom: 30px;
   color: black;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   text-align: center;
   align-content: center;
   align-items: center; }
-  .subservice-item h3 {
+  .subservice-item .name {
     color: black !important;
+    font-weight: 600;
     font-size: 24px;
     line-height: 30px; }
   .subservice-item p {
     font-size: 14px; }
-  .subservice-item a {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    color: black !important; }
+  .subservice-item:hover {
+    color: #333333 !important; }
+
+.orange-theme .card {
+  background-color: #fd6827 !important; }
+  .orange-theme .card:hover {
+    background-color: #ff895a !important; }
+.orange-theme .button {
+  background-color: #ff895a !important; }
+  .orange-theme .button:hover {
+    background-color: #fd6827 !important; }
+
+.blue-theme .card {
+  background-color: #68CEF2 !important; }
+  .blue-theme .card:hover {
+    background-color: #E8F8FD !important; }
+.blue-theme .button {
+  background-color: #68CEF2 !important; }
+  .blue-theme .button:hover {
+    background-color: #E8F8FD !important; }
+
+.green-theme .card {
+  background-color: #43af45 !important; }
+  .green-theme .card:hover {
+    background-color: #5cca58 !important; }
+.green-theme .button {
+  background-color: #5cca58 !important; }
+  .green-theme .button:hover {
+    background-color: #43af45 !important; }
+
+.yellow-theme .card {
+  background-color: #FCDC2D !important; }
+  .yellow-theme .card:hover {
+    background-color: #fafa78 !important; }
+.yellow-theme .button {
+  background-color: #fafa78 !important; }
+  .yellow-theme .button:hover {
+    background-color: #FCDC2D !important; }
+
+.sian-theme .card {
+  background-color: #31d2be !important; }
+  .sian-theme .card:hover {
+    background-color: #bafdf3 !important; }
+.sian-theme .button {
+  background-color: #31d2be !important; }
+  .sian-theme .button:hover {
+    background-color: #bafdf3 !important; }
 
 .takeaways {
   background-color: #E8F8FD;
@@ -1525,6 +1638,18 @@ h3.title-somos {
     max-height: 450px; }
 
 @media screen and (max-width: 420px) {
+  h3 {
+    font-size: 28px !important;
+    line-height: 32px !important; }
+
+  h4 {
+    font-size: 20px !important; }
+
+  .subservice-container .takeaways {
+    padding: 20px; }
+  .subservice-container .recipients {
+    padding: 20px; }
+
   .subservice-item-container {
     flex-direction: column;
     align-items: center;
@@ -1534,7 +1659,10 @@ h3.title-somos {
 
   .subservice-item {
     width: 80%;
-    margin-bottom: 30px; } }
+    margin-bottom: 30px; }
+
+  .subservice-item-container .card {
+    width: 80%; } }
 #businessa-hero {
   margin-top: 100px;
   margin-bottom: 13%; }
@@ -2176,7 +2304,12 @@ footer {
 
   .footer__body {
     margin: 10px;
-    padding: 30px 20px; } }
+    padding: 30px 20px; }
+
+  .generic-hero-a .text {
+    max-width: 90%;
+    justify-content: center;
+    z-index: 5; } }
 .invisible-title-button {
   color: #00BBEE;
   font-weight: bold;

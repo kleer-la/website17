@@ -32,11 +32,15 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%item[:options].each do |option| %>
-                  <li>
-                    <a class="dropdown-item" href="<%= "#{option[:inside] ? '/'+session[:locale] : ''}#{option[:url]}" %>">
-                      <%=option[:text]%>
-                    </a>
-                  </li>
+                  <% if option[:text] == 'dropdown-divider' %>
+                    <li><hr class="dropdown-divider"></li>
+                  <% else %>
+                    <li>
+                      <a class="dropdown-item" href="<%= "#{option[:inside] ? '/'+session[:locale] : ''}#{option[:url]}" %>">
+                        <%=option[:text]%>
+                      </a>
+                    </li>
+                  <% end %>
                 <% end %>
               </ul>
             </li>
