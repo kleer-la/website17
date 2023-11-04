@@ -1,9 +1,12 @@
 <% require './lib/timezone_converter'
+   require 'date'
 
    event_type = event.event_type
    date = format_date_range(event.date, event.finish_date, session[:locale])
    info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
 
+   today = Date.today
+   eb_date = Date.parse(event.eb_date)
 %>
 <div class="row event-item pb-4 mt-4 ms-2 me-2">
   <% if with_name %>
@@ -68,7 +71,7 @@
     <strong><%= "#{event.currency_iso_code} #{money_format(event.list_price.to_i)}" || 'precio' %></strong>
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
-    <% if event.eb_price and event.eb_date and DateTime.parse(event.eb_date) >= DateTime.now %>
+    <% if event.eb_price and event.eb_date and eb_date >= today %>
       <strong class="price"><%= "#{event.currency_iso_code} #{money_format(event.eb_price.to_i)}"%></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
