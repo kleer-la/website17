@@ -30,7 +30,6 @@ const pager = {
         }
 
         this.activeArticles.forEach((article, index) => {
-            console.log(article.name)
             if(index >= initialItem && index < finalItem){
                 article.card.classList.remove('hidden-element')
             }else{
@@ -63,9 +62,9 @@ const DOMobjects = {
                 DOMobjects.showElements([this.container], true)
                 selectedArticles.forEach(article => {
                     this.container.children[1].appendChild(article)
+                    article.classList.remove('hidden-element')
                 })
             }else{
-                console.log(this.container)
                 selectedArticles.forEach(article => {
                     DOMobjects.articles.container.children[2].prepend(article)
                 })
@@ -119,13 +118,30 @@ const DOMobjects = {
 }
 
 const setInitialPage = () => {
-    DOMobjects.selectedArticles.show(true)
     DOMobjects.showElements(DOMobjects.pager.containers, false)
     pager.activeArticles = articles.filter(article => !article.card.classList.contains('hidden-element'))
 
     textInFilter = ''
     categoryInFilter = ''
-    pager.changePage(1, itemsInInitialPage + selectedArticles.length)
+
+    console.log(selectedArticles)
+    let items = itemsInInitialPage
+
+    pager.activeArticles.forEach((article, index) => {
+        console.log(article.card)
+        if(selectedArticles.includes(article.card)){
+            console.log("pasa")
+            items++;
+        }
+
+        if(index >= 0 && index < items){
+            article.card.classList.remove('hidden-element')
+        }else{
+            article.card.classList.add('hidden-element')
+        }
+    })
+
+    DOMobjects.selectedArticles.show(true)
 }
 
 const cleanAllFilters = () => {
@@ -236,7 +252,6 @@ const buildArticlesFromDOM = () => {
         if(selected){
             selectedArticles.push(element)
         }
-
         return {
             card: element,
             category,
@@ -247,7 +262,6 @@ const buildArticlesFromDOM = () => {
         }
     })
 }
-
 
 
 buildArticlesFromDOM()
