@@ -60,7 +60,6 @@ const visualFilters = () => {
             button.classList.add('courses-filters__tag--unselected')
         }
     })
-
 }
 
 const handleClickCategory = (category) => {

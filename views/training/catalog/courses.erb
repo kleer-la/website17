@@ -1,0 +1,65 @@
+<%
+  courses = keventer_to_card(@events, session[:locale])
+
+  if session[:locale]  == 'es'
+    @academy.each{|e|
+      courses.push(
+        {
+          title: e['es']['title'], duration: e['es']['duration'], subtitle: e['es']['subtitle'],
+          cover: e['es']['cover'], uri_path: e['es']['url'], is_open: false, is_incompany: false, is_elearning: true,
+          has_webp: false, url: e['es']['url'],
+          categories: format_categories(e['es']['categories']), date: 'Asincrono', certified: 1
+        }
+      )
+    }
+  end
+
+  categories = []
+  @categories.each{|e|
+    categories.push(e.name)
+  }
+
+  courses = courses.uniq {|e| e[:uri_path]}
+
+%>
+<section id="training-courses" class="p-5 mt-4">
+  <div class='container training-courses__container'>
+    <h4 class="text-center m-4 last-courses__tittle">
+      <%= t("courses_page.catalog.title") %>
+    </h4>
+    <div class='row mt-5 w-100' id="courses-container">
+      <% courses.each do |course|
+        @course = course
+      %>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2" id="<%= "#{course[:categories]}#{course[:title]}"%>">
+          <%= erb :'component/_course_card' %>
+        </div>
+      <% end%>
+    </div>
+    <div class="btn-center-container mt-5 mb-5">
+      <button
+        class="my-primary-button"
+        id="see-more"
+        onclick="handleClickSeeMore()"
+      ><%= t("courses_page.catalog.more") %></button>
+    </div>
+    <img
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle3.svg"
+      class="desktop_figure training-courses_red-circle"
+      alt="decorative figure"
+      />
+    <img
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_triangle.svg"
+      class="desktop_figure training-courses_green-triangle"
+      alt="decorative figure"
+      />
+    <img
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_sigsac.svg"
+      class="desktop_figure training-courses_rustic-sigsac"
+      alt="decorative figure"
+      />
+  </div>
+</section>
+<% if session[:locale]  == 'es'%>
+<!--  <script src="/js/courses_filter.js"> </script>-->
+<% end %>

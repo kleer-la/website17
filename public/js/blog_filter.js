@@ -51,7 +51,6 @@ const DOMobjects = {
             this.title.innerHTML = text
         },
     },
-
     selectedArticles: {
         container: document.getElementById('selected-articles'),
         list: document.getElementById('selected-articles'),
@@ -72,7 +71,6 @@ const DOMobjects = {
             }
         }
     },
-
     pager: {
         nextButtons: Array.from(document.getElementsByClassName('next-button')),
         previousButtons: Array.from(document.getElementsByClassName('prev-button')),
