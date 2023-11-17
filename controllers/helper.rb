@@ -120,7 +120,7 @@ module Helpers
           cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: "#{course.event_type.uri_path}",
           categories: format_categories(course.event_type.categories), is_open: is_open, is_incompany: is_incompany, is_elearning: false,
           country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
-          (1 if course.event_type.is_kleer_cert).to_i,
+          (1 if course.event_type.is_kleer_cert).to_i, slug: course.event_type.slug
         }
       end
     }.compact
