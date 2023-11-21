@@ -86,5 +86,10 @@ const buildCoursesFromDOM = () => {
     })
 }
 
+const cleanAllFilters = () => {
+    handleChangeCategory('')
+    handleChangeText('')
+}
+
 buildCoursesFromDOM()
 console.log(DOMobjects)
