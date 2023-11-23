@@ -1,4 +1,9 @@
 #  <meta name="description" content="Acelera el diseño, la creación y la mejora continua...">
+After('@SEO-validation') do
+  expect(all('h1').length). to eq(1)
+  # expect(all('h2').length). to be >= 2
+end
+
 Then('SEO meta name {string} should be {string}') do |tag, text|
   expect(page).to have_tag('meta',
                            with: {
@@ -16,7 +21,8 @@ Then('SEO meta property {string} should be {string}') do |tag, text|
 end
 
 Then('The page should have one H1 tag') do
-  expect(all('h1').length == 1)
+  puts all('h1').length
+  expect(all('h1').length). to eq(1)
 end
 
 Then('The page should have at least two H2 tags') do
@@ -38,5 +44,5 @@ Then('SEO meta {string} {string} should match {string}') do |tag, tag_name, patt
       break
     end
   end
-  (expect(tag+tag_name).to eq pattern ) unless found    
+  (expect(tag+tag_name).to eq pattern ) unless found
 end
