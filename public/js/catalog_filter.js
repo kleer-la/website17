@@ -92,4 +92,4 @@ const cleanAllFilters = () => {
 }
 
 buildCoursesFromDOM()
-console.log(DOMobjects)
+
