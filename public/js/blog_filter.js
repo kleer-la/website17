@@ -122,13 +122,10 @@ const setInitialPage = () => {
     textInFilter = ''
     categoryInFilter = ''
 
-    console.log(selectedArticles)
     let items = itemsInInitialPage
 
     pager.activeArticles.forEach((article, index) => {
-        console.log(article.card)
         if(selectedArticles.includes(article.card)){
-            console.log("pasa")
             items++;
         }
 

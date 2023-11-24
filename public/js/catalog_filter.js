@@ -49,6 +49,14 @@ const handleChangeCategory = (category) => {
     filter()
 }
 
+const handleShowAll = () => {
+    courses.forEach(course => {
+        course.card.classList.remove('hidden-element')
+    })
+
+    DOMobjects.showElements([DOMobjects.courses.showMoreButton], false)
+}
+
 const filter = () => {
     courses.forEach(course => {
         const hasCommonText = course.name.toLowerCase().includes(textInFilter.toLowerCase()) ||
@@ -89,7 +97,20 @@ const buildCoursesFromDOM = () => {
 const cleanAllFilters = () => {
     handleChangeCategory('')
     handleChangeText('')
+    DOMobjects.filterBox.category.setDropText()
+    DOMobjects.filterBox.text.input.value = ''
+}
+
+const setInitialPage = () => {
+    courses.forEach((course, index) => {
+        if(index < 8){
+            course.card.classList.remove('hidden-element')
+        }else{
+            course.card.classList.add('hidden-element')
+        }
+    })
 }
 
 buildCoursesFromDOM()
+setInitialPage()
 
