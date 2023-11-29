@@ -3,7 +3,7 @@
     <div class="row h-100">
       <div class="col-md-6 hero__text training-hero__text">
           <h1><%= t("catalog.title") %></h1>
-          <p><%= t("catalog.subtitle") %></p>
+          <p><%= @markdown_renderer.render(t("catalog.subtitle")) %></p>
       </div>
       <div class="col-md-6 hero__img-container">
         <img

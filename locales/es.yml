@@ -1134,7 +1134,39 @@ es:
 
   catalog:
     title: Capacitación Empresarial
-    subtitle: Potencia tu transformación empresarial. Incorpora enfoques ágiles en tu plan de formación. Explora nuestros programas de capacitación diseñados para fortalecer las habilidades en todos los niveles de tu organización. Aprendizaje participativo y dinámico, enfocado en la comprensión y experimentación inmediata de conceptos y prácticas.
+    subtitle: >-
+      **Incorpora enfoques ágiles en tu plan de formación.**
+      <br/>
+      <br/>
+      Cursos orientados a fortalecer las habilidades en todos los niveles de tu organización. Nuestros métodos de enseñanza permiten comprender y experimentar los conceptos y prácticas de forma inmediata. 
+    list:
+      title: ¡Explora nuestra propuesta de capacitación!
+    in_company:
+      title: ''
+      text: >-
+        Nos adaptamos para impulsar el talento humano de tu empresa. Elige la opción de capacitación que mejor se ajuste a tus necesidades:
+
+        - Talleres Presenciales 
+        - Encuentros Virtuales en Vivo 
+        - Academia Kleer 
+
+        O una combinación de estos, para garantizar el aprendizaje continuo.
+      button:
+        text: Contáctanos
+        link:
+    public:
+      title: Agenda
+      text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
+      button:
+        text: Ver Agenda
+        link:
+    e-learning:
+      title: Academia Kleer
+      text: Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.
+      button:
+        text: Ir a Academia
+        link:
+
 
   courses_page:
     title: Capacitación profesional en Agilidad
