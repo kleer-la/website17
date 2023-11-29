@@ -14,7 +14,7 @@ Feature: Agenda (fka Entrenamos)
 	Scenario: Deleted course should redirect to catalog
 		Given A deleted event type
 		Given I visit the "/es/cursos/2" page
-		Then I should see "Capacitación profesional en Agilidad"
+		Then I should see "Capacitación Empresarial"
 
 	Scenario: Deleted and redirected course should redirect correctly
 		Given PENDING
