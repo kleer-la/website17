@@ -21,29 +21,6 @@ en:
       close: Close
     texts:
       loading: loading...
-  blog:
-    title: Blog
-    subtitle: Discover more about the fascinating world of organizational agility
-    readit: Read more
-    back: << Back
-    home: Home
-    article: Post
-    search:
-    highlights: Destacados del mes
-    latest: The latest
-    show_more: Show more
-    search:
-      category: Categories
-      reset: Reset filters
-      result:
-        category_title: 'Category:'
-        text_title: 'Searching:'
-        empty: No result found
-    landing:
-      back: Back
-      published: Published
-      ToC: Table of contents
-      authors: 'Authors:'
   resources:
     title: Agile Resources and Materials
     subtitle: >-
