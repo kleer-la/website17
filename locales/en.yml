@@ -21,29 +21,6 @@ en:
       close: Close
     texts:
       loading: loading...
-  blog:
-    title: Blog
-    subtitle: Discover more about the fascinating world of organizational agility
-    readit: Read more
-    back: << Back
-    home: Home
-    article: Post
-    search:
-    highlights: Destacados del mes
-    latest: The latest
-    show_more: Show more
-    search:
-      category: Categories
-      reset: Reset filters
-      result:
-        category_title: 'Category:'
-        text_title: 'Searching:'
-        empty: No result found
-    landing:
-      back: Back
-      published: Published
-      ToC: Table of contents
-      authors: 'Authors:'
   resources:
     title: Agile Resources and Materials
     subtitle: >-
@@ -1293,12 +1270,6 @@ en:
         You can contact us at <a href="mailto:training@kleer.us?subject=New
         dates for: %{title}">training@kleer.us</a> to request new edition dates.
     not_found: Course not found. Check dates available or similar courses.
-  catalog:
-    title: Trainings
-    description: >-
-      We can bring our courses to your company / organization.<br/>CSM, CSPO and
-      CSD certifications by the Scrum Alliance.
-    missing_elevator_pitch: Please, fill the elevator pitch field for this event type.
   category:
     training: Trainings
   contact:
@@ -1573,6 +1544,41 @@ en:
       title: Find out about all the news of the agile world
       button:
         title: Suscribe
+
+  catalog:
+    title: Business training
+    subtitle: >-
+      **Incorporate agile approaches into your training plan.**
+      <br/>
+      <br/>
+      Courses aimed at strengthening skills at all levels of your organization. Our teaching methods allow you to understand and experience concepts and practices immediately.
+    list:
+      title: Explore our training proposal!
+    in_company:
+      title: ''
+      text: >-
+        Nos adaptamos para impulsar el talento humano de tu empresa. Elige la opción de capacitación que mejor se ajuste a tus necesidades:
+
+        - Talleres Presenciales 
+        - Encuentros Virtuales en Vivo 
+        - Academia Kleer 
+
+        O una combinación de estos, para garantizar el aprendizaje continuo.
+      button:
+        text: Contáctanos
+        link:
+    public:
+      title: Agenda
+      text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
+      button:
+        text: Ver Agenda
+        link:
+    e-learning:
+      title: Academia Kleer
+      text: Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.
+      button:
+        text: Ir a Academia
+        link:
 
 #  TODO: migrar a ingles
   courses_page:

@@ -70,6 +70,22 @@ get '/agenda' do
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
+# get '/catalogo' do
+#   @active_tab_entrenamos = 'active'
+#   @meta_tags.set! title: t('meta_tag.catalog.title'),
+#                   description: t('meta_tag.catalog.description'),
+#                   canonical: "#{t('meta_tag.catalog.canonical')}"
+#   @categories = load_categories session[:locale]
+#   @academy = AcademyCourses.new.load.all
+#
+#   @events = Catalog.create_keventer_json
+#
+#   router_helper = RouterHelper.instance
+#   router_helper.alternate_route = "/catalogo"
+#
+#   erb :'training/index', layout: :'layout/layout2022'
+# end
+
 get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: t('meta_tag.catalog.title'),
@@ -83,7 +99,7 @@ get '/catalogo' do
   router_helper = RouterHelper.instance
   router_helper.alternate_route = "/catalogo"
 
-  erb :'training/index', layout: :'layout/layout2022'
+  erb :'training/catalog/index', layout: :'layout/layout2022'
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento

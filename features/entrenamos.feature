@@ -1,5 +1,5 @@
-
 Feature: Agenda (fka Entrenamos)
+	@SEO-validation
 	Scenario: Deprecated URL should redirect
 		Given A catalog
 		Given A list of categories
@@ -14,12 +14,13 @@ Feature: Agenda (fka Entrenamos)
 	Scenario: Deleted course should redirect to catalog
 		Given A deleted event type
 		Given I visit the "/es/cursos/2" page
-		Then I should see "Capacitación profesional en Agilidad"
+		Then I should see "Capacitación Empresarial"
 
 	Scenario: Deleted and redirected course should redirect correctly
 		Given PENDING
-		Given  A deleted and redirected event type
+		Given A deleted and redirected event type
 		When I visit the "/es/cursos/3" page
+#		probar status code 301
 		Then I should not see "Curso redireccionado y borrado"
 
 	Scenario: SEO meta tags in Agenda

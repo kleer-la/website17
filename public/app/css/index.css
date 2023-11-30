@@ -275,10 +275,11 @@
 #training-hero {
   padding-left: 8%;
   padding-right: 5%;
-  margin-bottom: 50px; }
+  margin-bottom: 20px;
+  height: 60% !important; }
 
 .training-hero__text {
-  padding-bottom: 8%;
+  padding-bottom: 4%;
   padding-top: 4%;
   z-index: 3; }
 
@@ -348,6 +349,20 @@
 
 #training-courses {
   position: relative; }
+  #training-courses .courses__search-box {
+    background-color: #FFFFFF;
+    z-index: 2;
+    height: 120px;
+    width: 80%;
+    box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
+    border-radius: 16px; }
+    #training-courses .courses__search-box .container {
+      height: 100%;
+      max-width: 1000px;
+      margin: 0 auto; }
+      #training-courses .courses__search-box .container div {
+        display: flex;
+        align-items: center; }
 
 #courses-container {
   position: relative;
@@ -507,6 +522,10 @@
 
   #training-courses {
     padding: 0 !important; }
+    #training-courses .courses__search-box {
+      height: 150px; }
+    #training-courses .blue-link {
+      margin-top: 20px; }
 
   .training-courses__container {
     width: 100vw; }

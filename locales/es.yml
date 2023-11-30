@@ -618,10 +618,6 @@ es:
       title: "<strong>Ouch!</strong> El cupo para este evento se encuentra completo."
       text: "Puedes contactarnos a <a href=\"mailto:entrenamos@kleer.la?subject=Nuevas Fechas: %{title}\">entrenamos@kleer.la</a> para conocer nuevas fechas."
     not_found: "El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares."
-  catalog:
-    title: "Capacitación empresarial en Agilidad"
-    description: "PODEMOS REALIZAR LOS CURSOS EN TU EMPRESA.<br/>NUESTRAS CERTIFICACIONES ESTÁN AVALADAS POR LA SCRUM ALLIANCE."
-    missing_elevator_pitch: "Por favor, completar el elevator pitch del tipo de evento."
   category:
     training: "Cursos"
   contact:
@@ -1135,6 +1131,42 @@ es:
       title: 'Entérate de todas las novedades del mundo ágil'
       button:
         title: 'Suscríbete'
+
+  catalog:
+    title: Capacitación Empresarial
+    subtitle: >-
+      **Incorpora enfoques ágiles en tu plan de formación.**
+      <br/>
+      <br/>
+      Cursos orientados a fortalecer las habilidades en todos los niveles de tu organización. Nuestros métodos de enseñanza permiten comprender y experimentar los conceptos y prácticas de forma inmediata. 
+    list:
+      title: ¡Explora nuestra propuesta de capacitación!
+    in_company:
+      title: ''
+      text: >-
+        Nos adaptamos para impulsar el talento humano de tu empresa. Elige la opción de capacitación que mejor se ajuste a tus necesidades:
+
+        - Talleres Presenciales 
+        - Encuentros Virtuales en Vivo 
+        - Academia Kleer 
+
+        O una combinación de estos, para garantizar el aprendizaje continuo.
+      button:
+        text: Contáctanos
+        link:
+    public:
+      title: Agenda
+      text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
+      button:
+        text: Ver Agenda
+        link:
+    e-learning:
+      title: Academia Kleer
+      text: Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.
+      button:
+        text: Ir a Academia
+        link:
+
 
   courses_page:
     title: Capacitación profesional en Agilidad
