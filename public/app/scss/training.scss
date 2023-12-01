@@ -77,11 +77,12 @@ $white: #FFFFFF;
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
-  ul{
-    list-style-type:none;
-    margin-left: 0;
-    padding-left: 0;
-  };
+
+  .logo-academia{
+    height: 60px;
+    width: 140px;
+    margin: -15px;
+  }
 }
 
 .training-hero_blue-circle{

@@ -21,19 +21,6 @@ en:
       close: Close
     texts:
       loading: loading...
-  resources:
-    title: Agile Resources and Materials
-    subtitle: >-
-      Our bit with downloadables that can help you in different moments of team collaboration: agile guides, letters, infographics, translations and more.
-    card:
-      more_info: More info
-  mail_landing:
-    title: IN-COMPANY
-    alt: Take this trainig in your company
-    content: >-
-      Please give us the following information answer you better:%0AWhat city
-      are you in?%0AWhat organization do you belong to?%0AHow many people do you
-      estimate would take this training?
   mail_scholarship:
     title: SCHOLARSHIP
     alt: Scholarships available for NGOs and individuals
@@ -53,24 +40,6 @@ en:
         development, Retrospectives, Leadership, Communication, Kanban, Agile
         Coaching
       canonical: /recursos
-    catalog:
-      title: Corporate training in business agility
-      description: >-
-        Agile training for teams: Scrum, Continuous Improvement, Lean, Product Discovery, Agile Coaching,
-        Leadership, Facilitation, Collaborative Communication, Kanban.
-      canonical: /catalogo
-    agenda:
-      title: Agenda of online courses on Agility and Scrum.
-      description: >-
-        Trainings on Facilitation, Lean, Kanban, Product Discovery, Agile Coaching, Retrospectives,
-        Leadership, Continuous Improvement, Time Management and more.
-      canonical: /agenda
-    blog:
-      title: Blog - Business Agility Articles.
-      description: >-
-        Relevant content in Spanish: Scrum, Continuous improvement, Lean, Product Discovery, Agile Coaching,
-        Leadership, Facilitation, Collaborative Communication, Kanban.
-      canonical: /blog
     aboutus:
       title: '| Somos'
       description:
@@ -90,76 +59,6 @@ en:
       title: "| News"
       description:
       canonical: /prensa
-
-  slider:
-    title_1: Business Agility
-    text_1: We accompany integral improvements
-    title_2: Facilitation
-    text_2: We design environments to promote collective innovation
-    title_3: Courses
-    text_3: We train professionals and teams
-  dt_grid:
-    select_all: All
-    see_more: see more...
-    loading: loading...
-    showing: Showing from _START_ to _END_ of _TOTAL_ records
-    filter: (filtering from a total of _MAX_ records)
-    search: Search
-    no_courses_found: >-
-      No courses found. We would like you to contact us at <a
-      href=\"mailto:hello@kleer.us\">hello@kleer.us</a> with your questions.
-  side_menu:
-    we_are: We are
-    our_philosophy: Our Philosophy
-    us: Us
-    clients: Clients
-    we_do: We do
-    coaching: Business Agility
-    facilitation: Facilitation
-    graphic_facilitation: Graphic facilitation
-    creativity_innovation: Innovation & Creativity
-    strategic_panning: Strategic Planning
-    dynamics_events: Event Dynamics
-    courses: Courses
-    sync_courses: Our Courses
-    agenda: Schedule
-    catalog: Catalog
-    campus: Online Academy
-    we_publish: We publish
-    books: Books
-    blog: Blog
-    videos: Videos
-    recursos: Resources
-    lets_talk: Let´s talk!
-  menu:
-    home: Home
-    we_do_it_for: 'We do it for you to:'
-    training:
-      root: Courses
-      calendar: Calendar
-      catalog: Catalog
-      campus: Campus digital
-    coaching: Business Agility
-    facilitation: Facilitation
-    certifications: Certifications
-    achieve:
-      root: Achieve
-      products: Technical Coaching
-      organization: Organizational & Teams Coaching
-      clients: Commercial & Clients Coaching
-    community: Community
-    publishing:
-      root: Publishing
-      blog: Blog
-      book: Books
-      video: Videos
-      recursos: Resources
-    we: We
-    we_are: We are
-    our_philosophy: Our Philosophy
-    press: Press
-    tv: Watch
-    blog: Blog
   kleeros:
     vision: >-
       We enjoy co-creating awesome environments with higher levels of
@@ -167,22 +66,6 @@ en:
     live: vive-las-met-en.png
     team: equipo-kleer-en.png
     nps: nps-eventos-en.png
-  home:
-    our_services: Our services
-    facilitation: Facilitation
-    facilitation_text: We design environments to improve teamwork for meetings and events
-    coaching: Business Agility
-    coaching_text: We coach individuals, teams and areas to help in Organization Evolution
-    courses: Courses
-    courses_text: We train professionals through collaborative learning techniques
-    plus_info: + Info
-    calendar:
-      current_year_calendar: Full Calendar
-      title: Courses
-      characteristics: >-
-        <ul> <li>With well-known professionals</li> <li>100% hands-on!</li>
-        <li>Dynamic, fun and useful</li> <li>Certifications endorsed by Scrum
-        Alliance</li> </ul>
   popups:
     course:
       registration:
@@ -382,91 +265,6 @@ en:
           (estadísticas, matemáticas, data mining, otros) puedan brindar mejor
           soporte a acciones de negocios. <small>(*) trabajo colaborativo junto
           a SAS Institute</small>
-    planning:
-      title: Planificación estratégica
-      text: >-
-        Nos sentamos en la mesa para acompañar a equipos y directivos en la toma
-        de decisiones. Tomamos en cuenta tanto los desafíos con los que cuenta
-        la empresa como también su rumbo estratégico.
-      button: ¡Me interesa!
-      plan1:
-        title: Plan estratégico de organizaciones y equipos
-        text: >-
-          Generar una visión explícita y compartida sobre los pilares de la
-          estrategia de la compañía o el equipo (alineados -en este último caso-
-          con estrategias macro). Consensuar objetivos intermedios a alcanzar y
-          determinar los obstáculos que están impidiendo que lleguemos a esos
-          objetivos. Generar un plan alcanzable, iterativo e incremental para ir
-          alcanzando objetivos concretos a corto, mediano y largo plazo.
-      plan2:
-        title: Inicio de proyectos
-        text: >-
-          Los sueños de las organizaciones y las personas se suelen alcanzar a
-          partir de proyectos exitosos. Acompañamos a los equipos en los
-          primeros pasos de sus proyectos para maximizar la probabilidad de
-          éxito de los mismos. Se trata de dinámicas y actividades grupales que
-          van desde la creación o consolidación de la visión, pasando por el
-          análisis y la mitigación de riesgos hasta la planeación en diferentes
-          niveles de detalle. En esta línea, también trabajamos en la formación
-          de equipos para proyectos.
-      plan3:
-        title: Identidad de equipos
-        text: >-
-          En organizaciones que promueven la realización de sus miembros y
-          buscan el compromiso de los mismos con la obtención de los objetivos
-          organizacionales, la existencia de un propósito compartido y genuino
-          es uno de pilares, junto con la auto-organización y el "estar
-          completos" (wholeness). Es por eso que facilitamos actividades
-          diseñadas a medida, en las cuales el objetivo es la identificación
-          colectiva del propósito de un equipo u organización a partir de las
-          motivaciones intrínsecas de sus integrantes.
-      plan4:
-        title: Eventos corporativos y comunitarios
-        text: >-
-          Diseñamos eventos y los facilitamos, todo esto en conjunto con
-          nuestros clientes y con las comunidades de práctica en las cuales
-          participamos activamente. Se trata de diversos tipos de eventos,
-          orientados a resolver problemáticas específicas que las empresas y las
-          comunidades estén queriendo resolver.
-    dynamics:
-      title: Dinámicas y Eventos
-      text: >-
-        Diseñamos ambientes que generan sinergia entre las personas. Nos
-        enfocamos en la participación activa de todos y la co-creación de ideas
-        y soluciones.
-      button: ¡Me interesa!
-      dynamic1:
-        title: World café
-        text: >-
-          Facilitamos eventos con el formato World Café. Son muy útiles para
-          debatir temas en grandes grupos. Mesas, sillas, papeles y marcadores
-          son suficientes para que todas las ideas y opiniones de los
-          participantes puedan fluir y potenciarse. Acompañados de un rico café,
-          por supuesto ;)
-      dynamic2:
-        title: Hackatones
-        text: >-
-          Facilitamos Hackathones, que son eventos energéticos y masivos para
-          crear soluciones con base tecnológica a problemas del mundo real. ¡Los
-          hemos facilitado en diversos contextos y los resultados suelen ser
-          emocionantes! En general son productos en un estadío inicial, que
-          luego del Hackathon deberán ser evolucionados.
-      dynamic3:
-        title: Eventos con formato open space
-        text: >-
-          Facilitamos desde hace años, eventos con formato Open Space por toda
-          la región. Estos eventos admiten desde 5 hasta 1000 personas. Son
-          sumamente útiles para la cross-polinización, la difusión de
-          conocimientos, la resolución de problemáticas y para la sana
-          interacción entre los participantes.
-      dynamic4:
-        title: Eventos corporativos y comunitarios
-        text: >-
-          Diseñamos eventos y los facilitamos, todo esto en conjunto con
-          nuestros clientes y con las comunidades de práctica en las cuales
-          participamos activamente. Se trata de diversos tipos de eventos,
-          orientados a resolver problemáticas específicas que las empresas y las
-          comunidades estén queriendo resolver.
   books:
     title: Books
     description: WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!
@@ -1223,53 +1021,6 @@ en:
     text21: >-
       Questions about the Terms of Service should be sent to us at
       info@kleer.la.
-  event:
-    course: Course
-    time_zone: 'Time Zone:'
-    starts: Starts
-    finishes: Finishes
-    ask_for_business_prices: Ask for our business prices (groups)!
-    early_bird_until: until
-    early_bird_couples: Couples (each person)
-    early_bird_couples_until: Couples (each) until
-    public_editions: Upcoming open courses
-    other_trainings: Other trainings from this category
-    facilitator: Facilitated by
-    facilitators: Facilitators
-    save90percent: Up to 90% savings!
-    free: Free event
-    wanna_join: More information?
-    location: Venue
-    time: '%{starts} to %{ends}'
-    duration: hours
-    date: Date
-    important: Important
-    hour: Time
-    pricing: Pricing
-    rating:
-      based: based on
-      opinion: surveys to attendees to this workshop
-      outof: out of
-    tabs:
-      description: Description
-      target: Who should attend?
-      program: Program
-      faq: faq
-      linking_with_category: ' helps you achieve'
-    details:
-      sections:
-        learnings: What will I learn?
-        takeaways: What will I get?
-      early_bird: >-
-        <strong>Secure your place before %{month} %{day} for a %{currency}
-        %{amount} discount!</strong>.<br/> There are also group discounts
-        available. Ask for them!
-    is_full:
-      title: <strong>Ouch!</strong> Sorry! This course is full.
-      text: >-
-        You can contact us at <a href="mailto:training@kleer.us?subject=New
-        dates for: %{title}">training@kleer.us</a> to request new edition dates.
-    not_found: Course not found. Check dates available or similar courses.
   category:
     training: Trainings
   contact:
@@ -1435,6 +1186,7 @@ en:
         - title: LinkedIn
           image: /app/img/icons/Linkedin.svg
           url: https://www.linkedin.com/company/kleer/
+
   navbar:
     - text: Business agility
       url: /agilidad-organizacional
@@ -1557,27 +1309,27 @@ en:
     in_company:
       title: ''
       text: >-
-        Nos adaptamos para impulsar el talento humano de tu empresa. Elige la opción de capacitación que mejor se ajuste a tus necesidades:
-
-        - Talleres Presenciales 
-        - Encuentros Virtuales en Vivo 
-        - Academia Kleer 
-
-        O una combinación de estos, para garantizar el aprendizaje continuo.
+        We adapt to boost the human talent of your company. Choose the training option that best suits your needs:
+        <ul>
+        <li> In-Person Workshops </li>
+        <li> Live Virtual Meetings </li>
+        <li> Kleer Academy </li>
+        </ul>
+        Or a combination of these, to ensure continuous learning.
       button:
-        text: Contáctanos
+        text: Contact us
         link:
     public:
       title: Agenda
-      text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
+      text: Join our proposal of scheduled courses, with individual or group registration options. Share a unique learning experience with professionals looking to take their skills to the next level.
       button:
-        text: Ver Agenda
+        text: Agenda
         link:
     e-learning:
       title: Academia Kleer
-      text: Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.
+      text: Explore on-demand online courses on our e-learning platform. Ask about business packages.
       button:
-        text: Ir a Academia
+        text: Go to academy
         link:
 
 #  TODO: migrar a ingles
