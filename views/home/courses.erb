@@ -24,7 +24,7 @@
         @course = course
       %>
         <div class='col-3 p-2'>
-          <%= erb :'component/_course_card' %>
+          <%= erb :'component/cards/_course_card' %>
         </div>
       <% end%>
     </div>
@@ -47,7 +47,7 @@
           @course = course
         %>
           <div class="carousel-item p-4 <%= course[:active] ? 'active' : '' %>">
-            <%= erb :'component/_course_card' %>
+            <%= erb :'component/cards/_course_card' %>
           </div>
         <%end %>
       </div>
