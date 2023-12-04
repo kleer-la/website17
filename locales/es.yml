@@ -1153,7 +1153,7 @@ es:
         O una combinación de estos, para garantizar el aprendizaje continuo.
       button:
         text: Contáctanos
-        link: #training-courses
+        link: "#training-courses"
     public:
       title: Agenda
       text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
