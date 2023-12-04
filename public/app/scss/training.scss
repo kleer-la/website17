@@ -39,7 +39,7 @@ $white: #FFFFFF;
 
 
 #training-info{
-  max-height: 550px;
+  max-height: 650px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -70,6 +70,7 @@ $white: #FFFFFF;
 }
 
 .training-info__subcontainer{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -77,11 +78,13 @@ $white: #FFFFFF;
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
-  ul{
-    list-style-type:none;
-    margin-left: 0;
-    padding-left: 0;
-  };
+  z-index: 5;
+
+  .logo-academia{
+    height: 60px;
+    width: 140px;
+    margin: -15px;
+  }
 }
 
 .training-hero_blue-circle{

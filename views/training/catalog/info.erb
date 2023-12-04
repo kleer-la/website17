@@ -5,56 +5,38 @@
       <div class="col-md-4">
         <div class="training-info__subcontainer">
           <div>
-            <h5 ><%=t('courses_page.in_company.title')%></h5>
-            <ul>
-              <li><%= t("courses_page.in_company.text") %></li>
-              <!--            <li>lorem ipsum....</li>-->
-              <!--            <li>lorem ipsum....</li>-->
-            </ul>
+            <h5 ><%=t('catalog.in_company.title') || "" %></h5>
+            <%= @markdown_renderer.render(t("catalog.in_company.text")) %>
           </div>
           <div class="btn-center-container">
             <a
               class="my-primary-button training-info__redir-button"
-              href="<%= t("courses_page.in_company.button.link") %>"
-            ><%= t("courses_page.in_company.button.text") %></a>
+              href="<%= t("catalog.in_company.button.link") %>"
+            ><%= t("catalog.in_company.button.text") %></a>
           </div>
         </div>
       </div>
       <div class="col-md-4 border-start border-end">
         <div class="training-info__subcontainer">
-          <div>
-            <h5><%=t('courses_page.public.title')%></h5>
-            <ul>
-              <li><%= t("courses_page.public.text") %></li>
-              <!--            <li>lorem ipsum....</li>-->
-              <!--            <li>lorem ipsum....</li>-->
-            </ul>
-          </div>
-
+            <h5><%=t('catalog.public.title')  || "" %></h5>
+            <%= @markdown_renderer.render(t("catalog.public.text")) %>
           <div class="btn-center-container">
             <a class="my-primary-button training-info__redir-button"
-              href="<%= t("courses_page.public.button.link") %>">
-              <%= t("courses_page.public.button.text") %>
+              href="<%= t("catalog.public.button.link") %>">
+              <%= t("catalog.public.button.text") %>
             </a>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="training-info__subcontainer">
-          <div>
-            <h5><%= t("courses_page.e-learing.title") %></h5>
-            <ul>
-              <li><%= t("courses_page.e-learing.text") %></li>
-              <!--            <li>lorem ipsum....</li>-->
-              <!--            <li>lorem ipsum....</li>-->
-            </ul>
-          </div>
-
+            <img src="/app/img/logos/logo-academia.png" class="logo-academia"/>
+            <%= t("catalog.e-learning.text") %>
           <div class="btn-center-container">
             <a
               class="my-primary-button training-info__redir-button"
-              href="<%= t("courses_page.e-learing.button.link") %>"
-            ><%= t("courses_page.e-learing.button.text") %></a>
+              href="<%= t("catalog.e-learning.button.link") %>"
+            ><%= t("catalog.e-learning.button.text") %></a>
           </div>
         </div>
       </div>

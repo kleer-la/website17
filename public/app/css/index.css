@@ -293,7 +293,7 @@
   transform: rotate(90deg); }
 
 #training-info {
-  max-height: 550px;
+  max-height: 650px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -317,17 +317,19 @@
   width: calc(100vw - 14%); }
 
 .training-info__subcontainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   width: 100%;
   padding-left: 10%;
-  padding-right: 10%; }
-  .training-info__subcontainer ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0; }
+  padding-right: 10%;
+  z-index: 5; }
+  .training-info__subcontainer .logo-academia {
+    height: 60px;
+    width: 140px;
+    margin: -15px; }
 
 .training-hero_blue-circle {
   right: 0;
@@ -2496,17 +2498,22 @@ footer {
   .course-card__flags div {
     border-radius: 4px;
     background-color: #FFE600;
-    width: 71px;
-    height: 29px;
+    width: auto;
+    max-width: 110px;
+    height: 35px;
+    max-height: 50px;
     margin-left: 10px;
+    padding: 5px 5px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 60%;
     line-height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none; }
+    .course-card__flags div img {
+      width: 85%; }
 
 .course-card__items {
   height: 100px;

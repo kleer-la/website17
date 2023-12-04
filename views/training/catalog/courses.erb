@@ -20,13 +20,16 @@
   }
 
   courses = courses.uniq {|e| e[:uri_path]}
+  courses = courses.shuffle
 
 %>
 <section id="training-courses" class="">
   <h4 class="text-center m-4 last-courses__tittle">
     <%= t("catalog.list.title") %>
   </h4>
-  <%= erb :'training/catalog/_search_box' %>
+  <% if session[:locale]  == 'es'%>
+    <%= erb :'training/catalog/_search_box' %>
+  <% end %>
   <div class='container training-courses__container'>
 
     <div class='row mt-5 w-100' id="courses-container">
@@ -34,7 +37,7 @@
         @course = course
       %>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 p-2" id="<%= "#{course[:categories]}#{course[:slug]}"%>">
-          <%= erb :'component/_course_card' %>
+          <%= erb :'component/cards/_course_card' %>
         </div>
       <% end%>
     </div>
