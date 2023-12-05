@@ -9,20 +9,20 @@
             <%= @markdown_renderer.render(t("catalog.in_company.text")) %>
           </div>
           <div class="btn-center-container">
-            <a
-              class="my-primary-button training-info__redir-button"
-              href="<%= t("catalog.in_company.button.link") %>"
-            ><%= t("catalog.in_company.button.text") %></a>
+            <%= erb :'component/_contact_banner_button',
+                    locals:
+                      {
+                        style_class: 'my-primary-button training-info__redir-button',
+                        text_button: t("catalog.in_company.button.text")
+                      }
+            %>
           </div>
         </div>
       </div>
       <div class="col-md-4 border-start border-end">
         <div class="training-info__subcontainer">
-          <div>
             <h5><%=t('catalog.public.title')  || "" %></h5>
             <%= @markdown_renderer.render(t("catalog.public.text")) %>
-          </div>
-
           <div class="btn-center-container">
             <a class="my-primary-button training-info__redir-button"
               href="<%= t("catalog.public.button.link") %>">

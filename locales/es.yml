@@ -1142,7 +1142,7 @@ es:
     list:
       title: ¡Explora nuestra propuesta de capacitación!
     in_company:
-      title: ''
+      title: Formaciones a medida
       text: >-
         Nos adaptamos para impulsar el talento humano de tu empresa. Elige la opción de capacitación que mejor se ajuste a tus necesidades:
         <ul>
@@ -1153,7 +1153,7 @@ es:
         O una combinación de estos, para garantizar el aprendizaje continuo.
       button:
         text: Contáctanos
-        link: #training-courses
+        link: "#training-courses"
     public:
       title: Agenda
       text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
@@ -1171,7 +1171,7 @@ es:
   courses_page:
     title: Capacitación profesional en Agilidad
     subtitle: Desarrolla tus habilidades y la de tus equipos. Ofrecemos programas de formación, desde niveles iniciales hasta avanzados. En Kleer ponemos foco en un aprendizaje participativo y dinámico, basado en comprender y experimentar tempranamente los conceptos y prácticas. Capacitaciones sobre Scrum, Mejora Continua, Agile Coaching, Agile Facilitator, Design Thinking, Product Discovery, desarrollo de Liderazgo Ágil y más.
-    type: Nuestra oferta de cursos en tres modalidades
+    type: Nuestra oferta de cursos
     in_company:
       title: In Company
       text: >-
