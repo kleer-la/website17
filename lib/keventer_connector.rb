@@ -1,10 +1,10 @@
 require './lib/json_api'
 require './lib/keventer_connection/mailer'
 
-KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
+KEVENTER_URL = ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'
 API_ROOT = KEVENTER_URL + '/api'.freeze
 API_EVENTS_PATH = '/events'.freeze
-API_KLEERERS_PATH = '/kleerers.xml'.freeze
+API_KLEERERS_PATH = '/kleerers'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
 API_RESOURCES_PATH = '/resources.json'.freeze
 
@@ -28,7 +28,11 @@ class KeventerConnector
   end
 
   def kleerers_xml_url
-    echo API_ROOT + API_KLEERERS_PATH
+    echo API_ROOT + API_KLEERERS_PATH + '.xml'
+  end
+
+  def self.kleerers_json_url
+    echo API_ROOT + API_KLEERERS_PATH + '.json'
   end
 
   def categories_xml_url

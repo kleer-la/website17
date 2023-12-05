@@ -6,7 +6,8 @@ class Trainer
     @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = ''
   end
 
-  def load_from_json(t_json)
+  #TODO handle lang
+  def load_from_json(t_json, lang = 'es')
     @id = t_json['id'].to_i
     load_str(%i[name bio gravatar_email twitter_username linkedin_url], t_json)
     self
@@ -19,6 +20,24 @@ class Trainer
     hash = 'asljasld'
     hash = Digest::MD5.hexdigest(gravatar_email) unless gravatar_email.nil?
     @gravatar_picture = "https://www.gravatar.com/avatar/#{hash}"
+  end
+
+  class << self
+    def create_keventer_json(lang)
+      if defined? @@json_api
+        json_api = @@json_api
+      else
+        json_api = JsonAPI.new(KeventerConnector.kleerers_json_url)
+      end
+      Trainer.load_trainers(json_api.doc, lang) unless json_api.doc.nil?
+    end
+
+    def null_json_api(null_api)
+      @@json_api = null_api
+    end
+    def load_trainers(json, lang)
+      json.reduce([]) { |ac, obj| ac << Trainer.new().load_from_json(obj, lang) }
+    end
   end
 
 end
