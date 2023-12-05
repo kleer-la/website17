@@ -109,16 +109,18 @@ module Helpers
 
   # Translate keventer event to be shown in a course card
   def keventer_to_card(events, lang = 'es')
+    if events.nil?
+      return []
+    end
     events.map {|course|
       is_open = (course.date.to_s != '')
-      # p "|#{course.date.class}|#{course.date.to_s}|#{is_open}"
       date = is_open ? format_date_range(course.date, course.finish_date, 'es') : '' #t('home2022.home_courses.no_date')
-      is_incompany = true
+
       if course.event_type.lang == lang
         {
-          title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
+          title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, platform: course.event_type.platform,
           cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: "#{course.event_type.uri_path}",
-          categories: format_categories(course.event_type.categories), is_open: is_open, is_incompany: is_incompany, is_elearning: false,
+          categories: format_categories(course.event_type.categories), is_open: is_open, is_elearning: false,
           country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
           (1 if course.event_type.is_kleer_cert).to_i, slug: course.event_type.slug
         }

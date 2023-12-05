@@ -18,8 +18,8 @@ class Catalog
         events.push(event)
       end
     #TODO review error handling
-    rescue
-      puts "Error al cargar el catalogo"
+    rescue StandardError => e
+      puts "Error al cargar el catalogo:#{e.message} - #{e.backtrace.grep_v(%r{/gems/}).join('\n')}"
     end
 
     events

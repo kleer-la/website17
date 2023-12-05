@@ -3,6 +3,9 @@ require './lib/clients'
 
 
 def first_x_courses(courses, quantity)
+  if courses.nil?
+    return []
+  end
   courses
     .select {|e| e.event_type.lang == session[:locale]}
     .uniq { |e| e.event_type.id}

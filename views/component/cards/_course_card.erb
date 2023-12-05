@@ -7,7 +7,7 @@
         <% if @course[:is_open] %>
           <div>Próximas fechas</div>
         <%end %>
-        <% if @course[:is_elearning] %>
+        <% if @course[:platform] === "academia" %>
           <div>
             <img src="/app/img/logos/logo-academia.png" />
           </div>
@@ -43,7 +43,7 @@
   </div>
   <div class="text-center">
     <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
-      <% if !@course[:is_elearning]  %>
+      <% if !(@course[:platform] === "academia") %>
         <%= t('generals.buttons.more_info') %>
       <% else %>
         <%= t('generals.buttons.go_academy') %>
