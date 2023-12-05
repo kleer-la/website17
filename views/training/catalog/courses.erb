@@ -15,10 +15,12 @@
   end
 
   categories = []
+  @categories = [] if @categories.nil?
+
   @categories.each{|e|
     categories.push(e.name)
   }
-
+  
   courses = courses.uniq {|e| e[:uri_path]}
   courses = courses.shuffle
 

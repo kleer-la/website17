@@ -109,6 +109,9 @@ module Helpers
 
   # Translate keventer event to be shown in a course card
   def keventer_to_card(events, lang = 'es')
+    if events.nil?
+      return []
+    end
     events.map {|course|
       is_open = (course.date.to_s != '')
       # p "|#{course.date.class}|#{course.date.to_s}|#{is_open}"
