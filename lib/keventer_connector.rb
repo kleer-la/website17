@@ -1,7 +1,7 @@
 require './lib/json_api'
 require './lib/keventer_connection/mailer'
 
-KEVENTER_URL = ENV['KEVENTER_URL'] || 'http://eventos.kleer.la'
+KEVENTER_URL = ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'
 API_ROOT = KEVENTER_URL + '/api'.freeze
 API_EVENTS_PATH = '/events'.freeze
 API_KLEERERS_PATH = '/kleerers.xml'.freeze
