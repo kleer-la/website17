@@ -42,12 +42,14 @@
     </ul>
   </div>
   <div class="text-center">
-    <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
       <% if !(@course[:platform] === "academia") %>
-        <%= t('generals.buttons.more_info') %>
+        <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
+          <%= t('generals.buttons.more_info') %>
+        </a>
       <% else %>
-        <%= t('generals.buttons.go_academy') %>
+        <a href="<%= @course[:external_site_url] %>" class="btn my-secondary-button ms-3 me-3">
+          <%= t('generals.buttons.go_academy') %>
+        </a>
       <% end %>
-    </a>
   </div>
 </div>
