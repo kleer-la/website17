@@ -145,8 +145,11 @@ class Event
       @@json_api = null_api
     end
     def load_events(events, today)
-      events.reduce([]) do |ac, ev| 
-        e =  Event.new( EventType.new(nil, ev['event_type']) ).load_from_json(ev)
+      events.reduce([]) do |ac, ev|
+        event_type_json = ev['event_type']
+        event_type_json['coupons'] = ev['coupons']
+        event_type = EventType.new(nil, event_type_json)
+        e =  Event.new(event_type).load_from_json(ev)
         unless e.registration_ended? today
           ac << e
         else
