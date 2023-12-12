@@ -10,8 +10,8 @@ class Catalog
       loaded_events.each do |loaded_event|
         unless loaded_event['percent_off'].nil?
           loaded_event['coupons'] = [{
-                                       'icon': loaded_event['coupon_icon'],
-                                       'percent_off': loaded_event['percent_off']
+                                       "icon"=> loaded_event['coupon_icon'],
+                                       "percent_off"=> loaded_event['percent_off']
                                      }]
         end
 

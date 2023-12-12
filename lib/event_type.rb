@@ -100,7 +100,6 @@ class EventType
     @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
 
     load_testimonies(hash_event['testimonies'])
-    puts hash_event['coupons']
     load_coupons(hash_event['coupons'])
 
     %i[name subtitle description learnings takeaways cover
@@ -134,7 +133,7 @@ class EventType
   def load_coupons(coupons)
     unless coupons.nil?
       coupons.each do |coupon|
-        new_coupon = Coupon.new(coupon[:code], coupon[:percent_off], coupon[:icon])
+        new_coupon = Coupon.new(coupon["code"], coupon["percent_off"], coupon["icon"])
         @coupons.push(new_coupon)
       end
     end

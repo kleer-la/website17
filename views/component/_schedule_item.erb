@@ -7,7 +7,23 @@
 
    today = Date.today
    eb_date = Date.parse(event.eb_date)
+
+   coupon = event_type.coupons[0]
+
+   list_price = event.list_price.to_i
+   price_off = event.eb_price.to_i
+   using_coupon = false
+
+   if coupon
+     coupon_price = list_price - (list_price * coupon.percent_off.to_i / 100)
+
+      if coupon_price < price_off
+        price_off = coupon_price
+        using_coupon = true
+      end
+   end
 %>
+
 <div class="row event-item pb-4 mt-4 ms-2 me-2">
   <% if with_name %>
     <div class="col-lg-3">
@@ -68,10 +84,13 @@
     </a>
   </div>
   <div class="col-4 col-lg-2 next-edition-item" id="currency-<%=event_type.id%>">
-    <strong><%= "#{event.currency_iso_code} #{money_format(event.list_price.to_i)}" || 'precio' %></strong>
+    <strong><%= "#{event.currency_iso_code} #{money_format(list_price)}" || 'precio' %></strong>
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
-    <% if event.eb_price and event.eb_date and eb_date >= today %>
+    <% if using_coupon %>
+      <strong class="price"><%= "#{event.currency_iso_code} #{money_format(price_off)}"%></strong>
+      <img src="<%= coupon.icon %>" class="coupon-icon"/>
+    <% else event.eb_price and event.eb_date and eb_date >= today %>
       <strong class="price"><%= "#{event.currency_iso_code} #{money_format(event.eb_price.to_i)}"%></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
