@@ -88,7 +88,7 @@
   </div>
   <div class="col-4 col-lg-2 next-edition-item">
     <% if using_coupon %>
-      <strong class="price"><%= "#{event.currency_iso_code} #{money_format(price_off)}"%></strong>
+      <strong class="price event-price"><%= "#{event.currency_iso_code} #{money_format(price_off)}"%></strong>
       <img src="<%= coupon.icon %>" class="coupon-icon"/>
     <% else event.eb_price and event.eb_date and eb_date >= today %>
       <strong class="price"><%= "#{event.currency_iso_code} #{money_format(event.eb_price.to_i)}"%></strong>
