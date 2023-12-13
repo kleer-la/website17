@@ -5,6 +5,7 @@ require './lib/keventer_helper'
 require './lib/keventer_connector'
 require './lib/event'
 require './lib/testimony'
+require './lib/models/coupon'
 
 class EventType
   def self.create_null(file)
@@ -34,7 +35,8 @@ class EventType
   attr_accessor :id, :duration, :lang, :cover, :name, :subtitle, :description, :learnings, :takeaways,
                 :goal, :recipients, :program, :faq, :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex, :categories, :slug, :canonical_slug, :is_kleer_cert, :is_sa_cert,
-                :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script, :platform
+                :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script, :platform,
+                :coupons
 
   def initialize(provider = nil, hash_provider = nil)
     if provider
@@ -44,6 +46,7 @@ class EventType
       @hash_provider = hash_provider
       @id= nil
       @testimonies = []
+      @coupons = []
       load_complete_event(hash_provider)
     end
   end
@@ -97,6 +100,7 @@ class EventType
     @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
 
     load_testimonies(hash_event['testimonies'])
+    load_coupons(hash_event['coupons'])
 
     %i[name subtitle description learnings takeaways cover
       goal recipients program faq slug canonical_slug lang
@@ -126,6 +130,14 @@ class EventType
     end
   end
 
+  def load_coupons(coupons)
+    unless coupons.nil?
+      coupons.each do |coupon|
+        new_coupon = Coupon.new(coupon["code"], coupon["percent_off"], coupon["icon"])
+        @coupons.push(new_coupon)
+      end
+    end
+  end
   def uri_path
     "/#{@lang}/cursos/#{@slug}"
   end

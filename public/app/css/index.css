@@ -282,6 +282,8 @@
   padding-bottom: 4%;
   padding-top: 4%;
   z-index: 3; }
+  .training-hero__text img {
+    z-index: 1; }
 
 .training-hero_green_bean {
   bottom: 50px;
@@ -430,6 +432,16 @@
 
 .event-item {
   border-bottom: solid 1px #B3B3B3; }
+  .event-item .coupon-icon {
+    position: absolute;
+    top: -20px;
+    right: 60px;
+    width: 50px;
+    height: 50px; }
+  .event-item .next-edition-item {
+    position: relative; }
+    .event-item .next-edition-item .event-price {
+      color: #EF5662; }
   .event-item div {
     display: flex;
     flex-direction: column;
@@ -2473,6 +2485,11 @@ footer {
   isolation: isolate;
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px; }
+  .course-card .coupon-icon {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    height: 70px; }
 
 .course-card__categories {
   color: #B3B3B3;
