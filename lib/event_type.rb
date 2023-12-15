@@ -114,6 +114,9 @@ class EventType
   def load_public_editions(next_events)
     return [] if next_events.nil?
     next_events.reduce([]) do |events, ev_json|
+      if ev_json['coupons']
+        load_coupons(ev_json['coupons'])
+      end
       events << Event.new(self).load_from_json(ev_json)
     end
   end

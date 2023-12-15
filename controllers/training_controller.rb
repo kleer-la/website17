@@ -113,7 +113,7 @@ get '/cursos/:event_type_id_with_name' do
 
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
-      @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
+      @category = @event_type.categories[0]
     end
 
     @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id , 4)
