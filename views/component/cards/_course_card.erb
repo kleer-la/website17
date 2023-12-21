@@ -1,6 +1,9 @@
 <div class="card course-card" style="width: 18rem;">
+  <% unless @course[:coupon].nil? %>
+    <img src="<%= @course[:coupon].icon %>" class="coupon-icon" />
+  <% end %>
   <div class="course-card__image-container">
-    <a href="<%=@course[:url] %>">
+    <a href="<%= @course[:platform] === "academia" ? @course[:external_site_url] : @course[:url]%>">
       <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...', has_webp: @course[:has_webp]}%>
     </a>
       <div class="course-card__flags">
@@ -21,7 +24,7 @@
             session[:locale] == 'es'%>
         <p class="course-card__categories"><%= @course[:categories][0...-2] %></p>
       <%end %>
-      <a href="<%= @course[:url] %>">
+      <a href="<%= @course[:platform] === "academia" ? @course[:external_site_url] : @course[:url]%>">
         <h6 class="card-title course-card__title"><%= @course[:title]%></h6>
       </a>
     </div>
@@ -42,12 +45,14 @@
     </ul>
   </div>
   <div class="text-center">
-    <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
       <% if !(@course[:platform] === "academia") %>
-        <%= t('generals.buttons.more_info') %>
+        <a href="<%= @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
+          <%= t('generals.buttons.more_info') %>
+        </a>
       <% else %>
-        <%= t('generals.buttons.go_academy') %>
+        <a href="<%= @course[:external_site_url] %>" class="btn my-secondary-button ms-3 me-3">
+          <%= t('generals.buttons.go_academy') %>
+        </a>
       <% end %>
-    </a>
   </div>
 </div>

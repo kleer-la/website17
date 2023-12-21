@@ -8,6 +8,13 @@ class Catalog
     events = []
     begin
       loaded_events.each do |loaded_event|
+        unless loaded_event['percent_off'].nil?
+          loaded_event['coupons'] = [{
+                                       "icon"=> loaded_event['coupon_icon'],
+                                       "percent_off"=> loaded_event['percent_off']
+                                     }]
+        end
+
         event_type = EventType.new(nil, loaded_event)
         event = Event.new(event_type)
 

@@ -70,39 +70,14 @@ get '/agenda' do
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
-# get '/catalogo' do
-#   @active_tab_entrenamos = 'active'
-#   @meta_tags.set! title: t('meta_tag.catalog.title'),
-#                   description: t('meta_tag.catalog.description'),
-#                   canonical: "#{t('meta_tag.catalog.canonical')}"
-#   @categories = load_categories session[:locale]
-#   @academy = AcademyCourses.new.load.all
-#
-#   @events = Catalog.create_keventer_json
-#
-#   router_helper = RouterHelper.instance
-#   router_helper.alternate_route = "/catalogo"
-#
-#   erb :'training/index', layout: :'layout/layout2022'
-# end
-
 get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: t('meta_tag.catalog.title'),
                   description: t('meta_tag.catalog.description'),
                   canonical: "#{t('meta_tag.catalog.canonical')}"
   @categories = load_categories session[:locale]
-
-  if @categories.nil?
-    @events = []
-  end
-  @academy = AcademyCourses.new.load.all
-
   @events = Catalog.create_keventer_json
 
-  if @events.nil?
-    @events = []
-  end
   router_helper = RouterHelper.instance
   router_helper.alternate_route = "/catalogo"
 
@@ -138,7 +113,7 @@ get '/cursos/:event_type_id_with_name' do
 
     if @event_type.categories.count.positive?
       # Podría tener más de una categoría, pero se toma el codename de la primera como la del catálogo
-      @category = KeventerReader.instance.category @event_type.categories[0][1], session[:locale]
+      @category = @event_type.categories[0]
     end
 
     @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id , 4)
