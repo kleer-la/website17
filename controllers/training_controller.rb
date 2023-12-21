@@ -92,10 +92,17 @@ get '/catalogo' do
                   description: t('meta_tag.catalog.description'),
                   canonical: "#{t('meta_tag.catalog.canonical')}"
   @categories = load_categories session[:locale]
+
+  if @categories.nil?
+    @events = []
+  end
   @academy = AcademyCourses.new.load.all
 
   @events = Catalog.create_keventer_json
 
+  if @events.nil?
+    @events = []
+  end
   router_helper = RouterHelper.instance
   router_helper.alternate_route = "/catalogo"
 
