@@ -4,7 +4,7 @@ require 'bundler'
 
 Bundler.require
 
-use Rack::Session::Cookie, secret: ENV['CONTACT_US_SECRET']
+use Rack::Session::Cookie, :key => 'rack.session', :path => '/', secret: ENV['CONTACT_US_SECRET']
 
 require './app'
 run Sinatra::Application
