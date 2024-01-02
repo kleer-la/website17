@@ -1,3 +1,4 @@
+$celeste: #E8F8FD;
 $primary-blue: #68CEF2;
 $secondary-blue: #00BBEE;
 $primary-yellow: #FFE600;
@@ -34,7 +35,7 @@ $white: #FFFFFF;
   margin: 15px 15px 0 15px;
   padding: 5px;
   border-radius: 50%;
-  background-color: $white;
+  background-color: $celeste;
 
   :hover{
     transform: scale(1.2);

@@ -1,7 +1,4 @@
 <div class="card course-card" style="width: 18rem;">
-  <% unless @course[:coupon].nil? %>
-    <img src="<%= @course[:coupon].icon %>" class="coupon-icon" />
-  <% end %>
   <div class="course-card__image-container">
     <a href="<%= @course[:platform] === "academia" ? @course[:external_site_url] : @course[:url]%>">
       <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...', has_webp: @course[:has_webp]}%>
@@ -55,4 +52,7 @@
         </a>
       <% end %>
   </div>
+  <% unless @course[:coupon].nil? %>
+    <img src="<%= @course[:coupon].icon %>" class="coupon-icon" />
+  <% end %>
 </div>
