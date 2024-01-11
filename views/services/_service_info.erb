@@ -8,19 +8,7 @@
     <%= service.name %>
   </h2>
   <p class="ms-3"> <%= service.subtitle %> </p>
-  <% if service.sub_services %>
-    <div class="row mt-5 sub-services">
-      <% service.sub_services.each do |sub_service| %>
-          <div class="col">
-            <%= erb :'services/_subservice_item',
-                    locals: {name: sub_service["name"],
-                             icon: "",
-                             summary: sub_service["summary"],
-                             href: "/es/servicios#{service.canonical_url}##{to_plane_string(sub_service['name'])}"} %>
-          </div>
-        <% end %>
-    </div>
-  <% end %>
+
   <div class="more-info">
     <a class="button" href="<%="/es/servicios#{service.canonical_url}" %>">
       Conoce el servicio completo
