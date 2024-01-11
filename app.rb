@@ -130,8 +130,9 @@ end
 
 #TODO redirect
 PERMANENT_REDIRECT = {
-  'e-books' => 'es/publicamos',
+  'e-books' => 'es/recursos',
   'libros' => 'es/recursos',
+  'publicamos' => 'es/recursos',
   'posters/scrum' => 'es/recursos#poster-scrum',
   'posters/XP' => 'es/recursos#poster-XP',
   'posters/xp' => 'es/recursos#poster-XP',
@@ -176,12 +177,6 @@ get '/facilitacion/dinamicas-eventos' do
   @active_tab_facilitacion = 'active'
   @meta_tags.set! title: "#{@base_title} | Dinámicas y eventos"
   erb :facilitacion_dinamicas_eventos
-end
-
-get '/publicamos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Publicamos"
-  erb :publicamos
 end
 
 get '/categoria/:category_codename/' do

@@ -147,7 +147,7 @@ Then(/^I should see all countries highlited$/) do
 end
 
 Then(/^I should see a linkedin link for a Kleerer with LinkedIn$/) do
-  expect(page).to have_selector("a[href='https://www.linkedin.com/in/jgabardini']")
+  expect(page).to have_selector("a[href='http://www.linkedin.com/in/jgabardini']")
 end
 
 Then(/^I should get a (\d+) error$/) do |error_code|
