@@ -1,6 +1,6 @@
 
 class Service
-  attr_accessor :name, :subtitle, :description, :side_image, :takeaways,
+  attr_accessor :name, :subtitle, :description, :side_image, :takeaways, :summary,
                 :recipients, :program, :brochure, :titles, :seo_title, :color_theme,
                 :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo
   def initialize()
@@ -9,8 +9,10 @@ class Service
   end
 
   def load_from_json(hash_service)
+    puts hash_service
     load_str(%i[name
                      subtitle
+                     summary
                      description
                      side_image
                      color_theme
@@ -29,7 +31,7 @@ class Service
 
   def load_short_from_json(hash_service)
     load_str(%i[name
-                     subtitle
+                     summary
                      takeaways
                      color_theme
                      canonical_url
