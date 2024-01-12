@@ -9,7 +9,6 @@ class Service
   end
 
   def load_from_json(hash_service)
-    puts hash_service
     load_str(%i[name
                      subtitle
                      summary
