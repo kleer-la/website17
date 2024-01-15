@@ -13,7 +13,7 @@ get '/nuestra-filosofia' do
   @active_tab_somos = 'active'
   @meta_tags.set! title: "#{@base_title} | Nuestra filosofía"
   @kleerers = KeventerReader.instance.kleerers session[:locale]
-  erb :nuestra_filosofia
+  erb :'old_page/nuestra_filosofia', layout: :'layout/layout2022'
 end
 
 get '/privacy' do

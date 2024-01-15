@@ -130,12 +130,18 @@ end
 
 #TODO redirect
 PERMANENT_REDIRECT = {
-  'e-books' => 'es/publicamos',
+  'e-books' => 'es/recursos',
   'libros' => 'es/recursos',
+  'publicamos' => 'es/recursos',
   'posters/scrum' => 'es/recursos#poster-scrum',
   'posters/XP' => 'es/recursos#poster-XP',
   'posters/xp' => 'es/recursos#poster-XP',
   'posters/manifesto' => 'es/recursos#poster-manifesto',
+  'facilitacion' => 'es/servicios/facilitacion',
+  'facilitacion/grafica' => 'es/servicios/facilitacion',
+  'facilitacion/innovacion-creatividad' => 'es/servicios/facilitacion',
+  'facilitacion/planificacion-estrategica' => 'es/servicios/facilitacion',
+  'facilitacion/dinamicas-eventos' => 'es/servicios/facilitacion',
   'preguntas-frecuentes/certified-scrum-master' => 'es/cursos/7-certified-scrum-master-csm', #  #faq / qna
   'preguntas-frecuentes/certified-scrum-developer' => 'es/cursos/342-certified-scrum-developer-csd', #  #faq / qna
   'acompanamos' => 'es/agilidad-organizacional',
@@ -146,42 +152,6 @@ PERMANENT_REDIRECT.each do |uris|
   get '/'+uris[0] do
      redirect '/'+uris[1], 301
   end
-end
-
-get '/facilitacion' do
-  @active_tab_facilitacion = 'active'
-  @meta_tags.set! title: "#{@base_title} | Facilicación"
-  erb :facilitacion
-end
-
-get '/facilitacion/grafica' do
-  @active_tab_facilitacion = 'active'
-  @meta_tags.set! title: "#{@base_title} | Facilicación gráfica"
-  erb :facilitacion_grafica
-end
-
-get '/facilitacion/innovacion-creatividad' do
-  @active_tab_facilitacion = 'active'
-  @meta_tags.set! title: "#{@base_title} | Innovación y creatividad"
-  erb :facilitacion_innovacion_creatividad
-end
-
-get '/facilitacion/planificacion-estrategica' do
-  @active_tab_facilitacion = 'active'
-  @meta_tags.set! title: "#{@base_title} | Planificación estratégica"
-  erb :facilitacion_planificacion_estrategica
-end
-
-get '/facilitacion/dinamicas-eventos' do
-  @active_tab_facilitacion = 'active'
-  @meta_tags.set! title: "#{@base_title} | Dinámicas y eventos"
-  erb :facilitacion_dinamicas_eventos
-end
-
-get '/publicamos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Publicamos"
-  erb :publicamos
 end
 
 get '/categoria/:category_codename/' do
@@ -202,32 +172,9 @@ get '/categoria/:category_codename' do
   end
 end
 
-get '/last-tweet/:screen_name' do
-  reader = TwitterReader.new
-  return reader.last_tweet(params[:screen_name]).text
-end
-
-get '/aca-beta' do
-  erb :aca_beta, layout: false
-end
-
-get '/aca-37yjeueh' do
-  erb :aca_30dto, layout: false
-end
-
 # LEGACY ====================
 
 private
-
-def create_twitter_card(event)
-  card = TwitterCard.new
-  card.title = event.friendly_title
-  card.description = event.event_type.elevator_pitch
-  card.image_url = 'https://kleer-images.s3-sa-east-1.amazonaws.com/K_social.jpg'
-  card.site = '@kleer_la'
-  card.creator = event.trainers[0].nil? ? '' : event.trainers[0].twitter_username
-  card
-end
 
 def get_404_error_text_for_course(course_name)
   "Hemos movido la información sobre el curso '<strong>#{course_name}</strong>'. Por favor, verifica nuestro
@@ -236,15 +183,4 @@ end
 
 def valid_id?(event_id_to_test)
   !event_id_to_test.match(/^[0-9]+$/).nil?
-end
-
-def valid_country_iso_code?(country_iso_code_to_test, _event_type)
-  return true if %w[otro todos].include?(country_iso_code_to_test)
-
-  unique_countries = KeventerReader.instance.unique_countries_for_commercial_events
-  unique_countries.each do |country|
-    return true if country.iso_code == country_iso_code_to_test
-  end
-
-  false
 end
