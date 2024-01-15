@@ -17,28 +17,6 @@ es:
       close: "Cerrar"
     texts:
       loading: "cargando..."
-  blog:
-    title: Blog
-    subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional
-    readit: "Continuar leyendo"
-    back: "<< Volver"
-    home: Inicio
-    article: Artículo
-    highlights: Destacados del mes
-    latest: Lo más nuevo
-    show_more: Ver más
-    search:
-      category: Categorías
-      reset: Limpiar filtros
-      result:
-        category_title: 'Categoría:'
-        text_title: 'Buscando:'
-        empty: No se encontraron resultados
-    landing:
-      back: Volver
-      published: Publicado el
-      ToC: Tabla de contenido
-      authors: 'Escrito por:'
   resources:
     title: Recursos y materiales sobre agilidad
     subtitle: >-
@@ -123,58 +101,6 @@ es:
     filter: "(filtrado de _MAX_ registros en total)"
     search: "Buscar"
     no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
-  side_menu:
-    we_are: "Somos"
-    our_philosophy: "Nuestra Filosofía"
-    us: "Nosotros"
-    clients: "Clientes"
-    we_do: "Qué hacemos"
-    coaching: "Agilidad Organizacional"
-    facilitation: "Facilitación"
-    graphic_facilitation: "Facilitación gráfica"
-    creativity_innovation: "Innovación y creatividad"
-    strategic_panning: "Planificación estratégica"
-    dynamics_events: "Dinámicas y eventos"
-    courses: "Cursos"
-    sync_courses: "Nuestros Cursos"
-    agenda: "Agenda"
-    catalog: "Catálogo"
-    campus: "Academia Online"
-    we_publish: "Publicamos"
-    books: "Libros"
-    blog: "Blog"
-    videos: "Videos"
-    recursos: "Recursos y Materiales"
-    lets_talk: "¿Hablamos?"
-  menu:
-    home: "Inicio"
-    we_do_it_for: "Lo hacemos para que:"
-    training:
-      root: "Cursos"
-      calendar: "Agenda"
-      catalog: "Catálogo"
-      campus: "Campus digital"
-    coaching: "Agilidad Organizacional"
-    facilitation: "Facilitación"
-    certifications: "Certificaciones"
-    achieve:
-      root: "Logres"
-      products: "Coaching Técnico"
-      organization: "Agilidad Organizacional y de Equipos"
-      clients: "Coaching Comercial y Clientes"
-    community: "Comunidad"
-    publishing:
-      root: "Publicaciones"
-      blog: "Blog"
-      book: "Libros"
-      video: "Videos"
-      recursos: "Recursos y Materiales"
-    tv: "Veas"
-    we: "Nosotros"
-    we_are: "Somos"
-    our_philosophy: "Nuestra Filosofía"
-    press: "Prensa"
-    blog: "Blog"
   kleeros:
     vision: "En Kleer disfrutamos <br/>cocreando ambientes<br/> humanos más conscientes<br/> y asombrosos."
     live: "vive-las-met.png"
@@ -216,11 +142,6 @@ es:
     title: Nuestros Clientes
     description: Estas organizaciones confían en nosotros
     more: Algunos de nuestros clientes
-  training:
-    title: "Cursos de Agilidad y Scrum"
-    description: "ORGANIZAMOS ENTRENAMIENTOS PÚBLICOS Y PRIVADOS."
-    incompany: "PODEMOS REALIZAR LOS CURSOS EN TU EMPRESA"
-    more_info: "Catálogo de cursos"
   coaching:
     title: "Agilidad Organizacional"
     subtitle: "Vayamos hacia una Agilidad Organizacional efectiva"
@@ -251,182 +172,6 @@ es:
     description: "Compartimos conocimientosy experiencias. ¡Ayudanos a correr la voz!"
     content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
 
-  facilitation:
-    title: Facilitación
-    contact: ¿LISTO PARA INICIAR EL CAMBIO?
-    subtitle: Esta disciplina agrupa todas las actividades que se realizan para que un grupo de personas tenga una reunión productiva.
-    description: Estas dinámicas grupales ponen foco en facilitar la toma de decisiones, resolución de problemas, o el intercambio de ideas e información.
-    event:
-      title: Facilitamos eventos que ayudan a los equipos a lograr sus objetivos.
-      text: Diseñamos ambientes propicios para crear sinergia entre las personas, espacios de encuentro con dinámicas que saquen el máximo provecho de lo que cada participante tiene para aportar. Como facilitadores asistimos al grupo a encauzar sus conversaciones. Evitamos el protagonismo y las distracciones. ​​¡Nuestro foco está en dar ​espacio a los participantes​ para que la magia emerja!​
-    services:
-      title: Nuestros servicios
-      graphic:
-        title: Facilitación gráfica
-        text: Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. También ofrecemos talleres de Facilitación Gráfica.
-        button: <a href="/facilitacion/grafica" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
-      innovation:
-        title: Innovación y creatividad
-        text: Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.
-        button: <a href="/facilitacion/innovacion-creatividad" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
-      planning:
-        title: Planificación estratégica
-        text: Jornadas donde equipos multidisciplinarios trabajan enfocados y en forma iterativa e incremental para lograr un objetivo pre-acordado, en general llevando adelante el desarrollo de un producto o un prototipo, aunque también se puede utilizar este formato para generar o refinar ideas.
-        button: <a href="/facilitacion/planificacion-estrategica" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
-      dynamics:
-        title: Dinámicas y eventos
-        text: Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.
-        button: <a href="/facilitacion/dinamicas-eventos" class="btn btn-info">¡Conocé más sobre estos servicios!</a>
-    graphic:
-      text: Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, conferencias y resultados de las actividades de equipos de trabajo. A esta actividad también se le llama Graphic Recording, la cual facilita el entendimiento y la recordación con piezas de alto impacto. Además facilitamos visualmente reuniones de equipo en las cuales haya que trabajar sobre temáticas complejas, tomar decisiones y generar acuerdos. Allí utilizamos técnicas visuales que facilitan el entendimiento común y posibilitan la comunicación efectiva.
-      button: ¡Escríbenos!
-      documents:
-        title: Documentación Gráfica en vivo
-        text: Documentación gráfica en eventos y reuniones. Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.
-      workshops:
-        title: Talleres de Facilitación Gráfica
-        text: Workshops intensivos para aprender a aplicar herramientas visuales de facilitación. Duran entre 2 horas y 16 horas, según lo que se requiera.
-      posters:
-        title: Láminas gráficas
-        text: Realización de contenidos audiovisuales de temas, charlas y exposiciones.
-      videos:
-        title: Videos gráficos
-        text: Contenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.
-    innovation:
-      title: Innovación y creatividad
-      text: Realizamos encuentros para potenciar tanto la creación de más y mejores ideas como su ejecución y puesta en práctica.
-      button: ¡Escríbenos!
-      brainstorming:
-        title: Powerful brainstorming
-        text: Diseño de actividades para estimular la creación colectiva de ideas. Son jornadas en las cuales se recorren distintas etapas':' estímulos, dinámicas grupales, creación masiva de ideas, feedback, selección y priorización, cross-polinización, refinamiento y puesta en común.
-      workshops:
-        title: Talleres de innovación y creatividad
-        text: Workshops orientados a cubrir todo el ciclo de vida de las ideas':' desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante. En estos encuentros se presentan y practican técnicas como':' Brainstorming efectivo, Escalera de Abstracciones, Principio de Distanciamiento, Estrategias Oblicuas y Sombrero sobre la cerca.
-      events:
-        title: Eventos corporativos y comunitarios
-        text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
-      creativity:
-        title: Creatividad analítica *
-        text: Se trata de un conjunto de actividades y herramientas diseñadas para potenciar los proyectos de analytics utilizando herramientas de creatividad. Así se logra que los profesionales que trabajan con datos (estadísticas, matemáticas, data mining, otros) puedan brindar mejor soporte a acciones de negocios. <small>(*) trabajo colaborativo junto a SAS Institute</small>
-    planning:
-      title: Planificación estratégica
-      text: Nos sentamos en la mesa para acompañar a equipos y directivos en la toma de decisiones. Tomamos en cuenta tanto los desafíos con los que cuenta la empresa como también su rumbo estratégico.
-      button: ¡Escríbenos!
-      plan1:
-        title: Plan estratégico de organizaciones y equipos
-        text: Generar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro). Consensuar objetivos intermedios a alcanzar y determinar los obstáculos que están impidiendo que lleguemos a esos objetivos. Generar un plan alcanzable, iterativo e incremental para ir alcanzando objetivos concretos a corto, mediano y largo plazo.
-      plan2:
-        title: Inicio de proyectos
-        text: Los sueños de las organizaciones y las personas se suelen alcanzar a partir de proyectos exitosos. Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión, pasando por el análisis y la mitigación de riesgos hasta la planeación en diferentes niveles de detalle. En esta línea, también trabajamos en la formación de equipos para proyectos.
-      plan3:
-        title: Identidad de equipos
-        text: En organizaciones que promueven la realización de sus miembros y buscan el compromiso de los mismos con la obtención de los objetivos organizacionales, la existencia de un propósito compartido y genuino es uno de pilares, junto con la auto-organización y el "estar completos" (wholeness). Es por eso que facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes.
-      plan4:
-        title: Eventos corporativos y comunitarios
-        text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
-    dynamics:
-      title: Dinámicas y Eventos
-      text: Diseñamos ambientes que generan sinergia entre las personas. Nos enfocamos en la participación activa de todos y la co-creación de ideas y soluciones.
-      button: ¡Escríbenos!
-      dynamic1:
-        title: World café
-        text: Facilitamos eventos con el formato World Café. Son muy útiles para debatir temas en grandes grupos. Mesas, sillas, papeles y marcadores son suficientes para que todas las ideas y opiniones de los participantes puedan fluir y potenciarse. Acompañados de un rico café, por supuesto ;)
-      dynamic2:
-        title: Hackatones
-        text: Facilitamos Hackathones, que son eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real. ¡Los hemos facilitado en diversos contextos y los resultados suelen ser emocionantes! En general son productos en un estadío inicial, que luego del Hackathon deberán ser evolucionados.
-      dynamic3:
-        title: Eventos con formato open space
-        text: Facilitamos desde hace años, eventos con formato Open Space por toda la región. Estos eventos admiten desde 5 hasta 1000 personas. Son sumamente útiles para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.
-      dynamic4:
-        title: Eventos corporativos y comunitarios
-        text: Diseñamos eventos y los facilitamos, todo esto en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente. Se trata de diversos tipos de eventos, orientados a resolver problemáticas específicas que las empresas y las comunidades estén queriendo resolver.
-  books:
-    title: "Libros"
-    description: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"
-    get_it: "Obtener libro >>"
-    others:
-      title: "Otras publicaciones"
-    buy:
-      paperback: "Impreso"
-      paperback_and_kindle: "Impreso + Kindle"
-      amazon_matchbook: "Si compras la edición impresa de este libro, puedes obtener la edición de Kindle de forma gratuita. La edición impresa debe ser comprada en Amazon."
-      kindle: "Kindle"
-      pdf-epub: "PDF/ePub"
-      pdf: "PDF"
-    books:
-      agile_team:
-        title: "Agile Team Facilitator"
-        text: "Este libro es el primero de una serie que busca construir el camino de toda persona que quiera dedicarse al agile coaching. En esta edición el foco está en la facilitación de equipos, entendiendo las habilidades y responsabilidades que conlleva."
-        next: "Obtener libro >>"
-      scrum:
-        title: "Proyectos Ágiles con Scrum"
-        title1: "Proyectos Ágiles con "
-        title2: "#Scrum"
-        subtitle1: "Flexibilidad, aprendizaje, innovación"
-        subtitle2: "y colaboración en contextos complejos"
-        text: "Scrum es un marco de trabajo que nos permite encontrar prácticas
-        emergentes en dominios complejos, como la gestión de proyectos de innovación."
-        next: "Obtener libro >>"
-        subtitle: "Flexibilidad, aprendizaje, innovación y colaboración en contextos complejos"
-        learnings: "<p>Mediante este libro conocerás:</p> <ul><li>Los factores que dieron origen a las metodologías ágiles</li><li>Los valores y principios del Manifiesto Ágil</li><li>Los contextos de complejidad donde Scrum es más eficiente</li><li>Los principios y valores de Scrum</li><li>Roles del Equipo Scrum</li><li>Responsabilidades y expectativas de cada rol</li><li>Elementos y actividades del flujo de trabajo de Scrum</li><li>Técnicas de análisis ágil y desarrollo evolutivo</li><li>Técnicas de comunicación de necesidades (Historias de Usuario)</li><li>Estimaciones ágiles</li><li>Planificación del mediano y largo plazo</li> <li>Presupuestación de proyectos ágiles</li></ul>&nbsp;"
-        video:
-          title: "Mirá el video de 4 minutos y medio que describe Scrum"
-          download: "Baja el PDF con el poster desde <a href='hhttps://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'>aquí</a>"
-        download:
-          pdf: "PDF Gratuito"
-      mas_productivos:
-        title: "Equipos más productivos"
-        title1: "Equipos"
-        title2: "#MásProductivos"
-        text: "El modelo de gestión tradicional está siendo reemplazado por formas
-        más participativas, más colaborativas y más humanas de hacer empresa.</br></br>"
-        long_text: "El modelo de gestión tradicional está siendo reemplazado por
-        formas más participativas, más colaborativas y más humanas de hacer empresa.
-        Las organizaciones y los equipos de trabajo están integrados por personas,
-        y las personas tienen comportamientos, emociones, deseos, y su propia historia.
-        Si en lugar de minimizar estos factores, los abrazamos y los incluimos en
-        la gestión, pronto comenzaremos a presenciar increíbles mejoras.<br/><br/>
-        La productividad no solo se refiere a cuánto se produce, sino a qué tan
-        efectivas son las propias relaciones personales en el contexto profesional.
-        La fórmula es muy sencilla: <strong>R=R (Resultados = Relaciones)</strong>.
-        Esto quiere decir que  la manera más efectiva de mejorar los resultados es
-        mejorando las relaciones que existen entre los miembros y no solamente
-        atendiendo los procesos y las tareas que ellos realizan.<br/><br/>
-        Pero en este camino no faltan los desafíos. Para facilitarlo, me propuse
-        tomar lo mejor de dos mundos, el Coaching y Scrum, y combinarlos en una
-        novedosa forma de ver los equipos de trabajo para exponer su alma.
-        Quien se sumerja en esta lectura, encontrará experiencias, propuestas novedosas,
-        recomendaciones útiles y la descripción de un completo marco de trabajo
-        relacional.<br/><br/>Este es un momento clave en la historia del mundo
-        del trabajo. Y muchas empresas ya están dando el gran salto.<br/><br/><strong>
-        ¿Estás dispuesto a conocer esta nueva forma de trabajar y relacionarnos?</strong>"
-        subtitle: "Personas e interacciones por sobre procesos y herramientas"
-        subtitle1: "Personas e interacciones"
-        subtitle2: "por sobre procesos y herramientas"
-        next: "Obtener libro >>"
-        download:
-          pdf: "PDF/Kindle/ePub: 50% OFF!"
-      retrospectives:
-        title: "Técnicas de retrospectivas"
-        text: "Este libro aporta varias técnicas para que los equipos varíen el
-        formato de sus retrospectivas, evitando el aburimiento y manteniéndolos motivados."
-      lenguajes_web:
-        title: "Introducción a los lenguajes de la Web"
-        text: "Este libro cubre lo básico a conocer sobre desarrollo web.
-        Los temas principales del libro son el protocolo HTTP, crear contenido HTML,
-        y darle formato con CSS."
-      agil_ilustrado:
-        title: "Libro Ágil Ilustrado"
-        text: "El objetivo de este libro es difundir -de forma gráfica- métodos y
-        prácticas ágiles, con foco en las relaciones interpersonales, como forma de
-        organización del trabajo y -arriesgando más- como filosofía de vida."
-      herramientas_coach:
-        title: "Herramientas para el Coach Ágil - Ejemplos de visualización"
-        text: "Este libro está lleno de ejemplos de visualización para mejorar la colaboración y comunicación de los equipos y para modelar comportamientos. Está escrito para personas y equipos que trabajan en un contexto de desarrollo ágil de software."
-        next: "Obtener libro >>"
-      little_book:
-         title: "Agile 2015 - Little Book of Sketchnotes"
-         text: "Este libro recopila las memorias gráficas de cinco facilitadores durante las sesiones y actividades de la conferencia Agile 2015 en Washington DC, EE.UU. ​El propósito de esta iniciativa es compartir sus memorias visuales e inspirarte a tomar apuntes gráficos en cualquier momento"
   we_are:
     title: "Somos"
     subtitle: "Disfrutamos cocreando ambientes humanos más conscientes y asombrosos."
@@ -1167,7 +912,6 @@ es:
         text: Ir a Academia
         link: https://academia.kleer.la
 
-
   courses_page:
     title: Capacitación profesional en Agilidad
     subtitle: Desarrolla tus habilidades y la de tus equipos. Ofrecemos programas de formación, desde niveles iniciales hasta avanzados. En Kleer ponemos foco en un aprendizaje participativo y dinámico, basado en comprender y experimentar tempranamente los conceptos y prácticas. Capacitaciones sobre Scrum, Mejora Continua, Agile Coaching, Agile Facilitator, Design Thinking, Product Discovery, desarrollo de Liderazgo Ágil y más.
@@ -1321,6 +1065,22 @@ es:
       button:
         text: ¿Conversamos?
         link: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
+
+  services:
+    title: Transforma tu Empresa con Agilidad Organizacional
+    subtitle: >-
+      Brindamos soporte integral para acelerar el cambio organizacional. Acompañamos a nuestros clientes en cada paso del camino, innovando continuamente y enfocándonos en cada aspecto de la empresa para lograr mejores resultados.
+    howto:
+      title: Nuestros Servicios en Agilidad Organizacional
+      text: >-
+        <p>
+          Encuentra soluciones que se alineen con los objetivos estratégicos. Nuestra propuesta incluye estructura, liderazgo, flujos de valor, gestión de productos, entre otros.  
+        </p>
+        <p>
+          Explora nuestros servicios como parte de tu proceso de transformación. 
+        </p>
+  
+  
 
   contact-us-form:
     title: Contáctanos

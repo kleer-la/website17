@@ -12,7 +12,7 @@ get '/servicios' do
 end
 
 get '/servicios/:service_id' do
-  # begin
+  begin
     service_id = params[:service_id]
 
     reader = LocalReader.new
@@ -31,8 +31,8 @@ get '/servicios/:service_id' do
 
 
     erb :'services/landing/index', layout: :'layout/layout2022'
-  # rescue
-  #   status 500
-  # end
+  rescue
+    status 500
+  end
 end
 

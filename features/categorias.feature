@@ -1,10 +1,5 @@
 Feature: Categories
 
-	Scenario: Category Landing Page
-		Given I visit the "high-performance" categoria page
-		Then I should see "High Performance"
-		And I should see "Personas, Equipos y Organizaciones Eficientes"
-
 	Scenario: Category not found
 		Given PENDING
 #		Now redirects to catalog
