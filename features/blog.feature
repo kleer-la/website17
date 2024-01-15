@@ -1,5 +1,6 @@
 Feature: Kleer Blogs
 
+  @SEO-validation
 Scenario: Blog page
   Given A list of categories
   Given I go to the Blog page

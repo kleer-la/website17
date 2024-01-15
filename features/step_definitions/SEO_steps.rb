@@ -1,7 +1,10 @@
 #  <meta name="description" content="Acelera el diseño, la creación y la mejora continua...">
 After('@SEO-validation') do
   expect(all('h1').length). to eq(1)
-  # expect(all('h2').length). to be >= 2
+  assert_no_text('/es/es')
+  assert_no_text('/es/en')
+  assert_no_text('/en/es')
+  assert_no_text('/en/en')
 end
 
 Then('SEO meta name {string} should be {string}') do |tag, text|
