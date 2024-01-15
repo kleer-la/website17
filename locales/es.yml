@@ -1082,6 +1082,11 @@ es:
   
   
 
+    cta:
+      title: Cuéntanos más sobre tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
+      button:
+        text: ¿Conversamos?
+
   contact-us-form:
     title: Contáctanos
     name-input:
