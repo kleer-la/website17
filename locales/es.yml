@@ -803,6 +803,29 @@ es:
         ]
     }
 
+  blog:
+    title: Blog
+    subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional
+    readit: "Continuar leyendo"
+    back: "<< Volver"
+    home: Inicio
+    article: Artículo
+    highlights: Destacados del mes
+    latest: Lo más nuevo
+    show_more: Ver más
+    search:
+      category: Categorías
+      reset: Limpiar filtros
+      result:
+        category_title: 'Categoría:'
+        text_title: 'Buscando:'
+        empty: No se encontraron resultados
+    landing:
+      back: Volver
+      published: Publicado el
+      ToC: Tabla de contenido
+      authors: 'Escrito por:'
+
   home2022:
     home_business_agility:
       title: 'Agilidad organizacional'
