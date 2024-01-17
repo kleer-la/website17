@@ -5,16 +5,17 @@
 <%=erb :'home/newsletter_subscription' unless session[:locale] == 'en'%>
 
 <!--MODAL DE PROMOCION DESCATIVADO-->
-<!--<%#=erb :'component/modals/_on_load_modal',-->
-<!--       locals: {-->
-<!--         cta: '/agenda',-->
-<!--         img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/posters/regalaconocimiento.jpg'-->
-<!--       }-->
+<%=
+  # erb :'component/modals/_on_load_modal',
+  #      locals: {
+  #        cta: '/agenda',
+  #        img: 'https://kleer-images.s3.sa-east-1.amazonaws.com/posters/regalaconocimiento.jpg'
+  #      }
 %>
 
-<script>
-    window.onload = () => {
-        const myModal = new bootstrap.Modal('#onLoadModal');
-        myModal.show();
-    }
-</script>
+<!--<script>-->
+<!--    window.onload = () => {-->
+<!--        const myModal = new bootstrap.Modal('#onLoadModal');-->
+<!--        myModal.show();-->
+<!--    }-->
+<!--</script>-->

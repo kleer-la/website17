@@ -2,7 +2,7 @@
   "diseno-organizacional-agil": {
     "name": "Diseño Organizacional Ágil",
     "subtitle": "Habilita la capacidad de adaptación en tu organización a través del diseño organizacional.",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at varius lectus, a interdum metus. Fusce rhoncus lobortis dolor, nec lobortis arcu sollicitudin non. Suspendisse sollicitudin diam vitae faucibus facilisis. Curabitur eget sem tellus. Etiam rhoncus quis sapien sit amet tempus. Curabitur ac libero tortor. Praesent pharetra turpis sit amet nibh pharetra tincidunt. Phasellus eget libero.",
+    "summary": "Nuestro servicio de Diseño Organizacional Ágil es una solución integral para mejorar tus resultados empresariales. Trabajamos en equipo con los líderes de tu organización, nos enfocamos en armonizar los diferentes componentes para lograr los objetivos estratégicos. Las intervenciones pueden cubrir: estructura, procesos, capacidades transversales y las prácticas de gestión de personas.\n\nDescubre cómo este enfoque puede fortalecer tu negocio y hacerlo más eficiente y adaptable en un entorno empresarial en constante cambio.",
     "color_theme": "sian-theme",
     "logo": "/app/img/services/EAP.png",
     "seo_title": "Diseño Organizacional Ágil | Transformación Empresarial",
@@ -21,7 +21,7 @@
   "agile-product-management":{
     "name": "Agile Product Management (APM)",
     "subtitle": "Capacitación y Consultoría en Gestión Ágil de Productos. Ofrecemos orientación práctica que te ayudará a crear productos innovadores y de impacto.",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at varius lectus, a interdum metus. Fusce rhoncus lobortis dolor, nec lobortis arcu sollicitudin non. Suspendisse sollicitudin diam vitae faucibus facilisis. Curabitur eget sem tellus. Etiam rhoncus quis sapien sit amet tempus. Curabitur ac libero tortor. Praesent pharetra turpis sit amet nibh pharetra tincidunt. Phasellus eget libero.",
+    "summary": "Nuestros servicios de Agile Product Management están diseñados para mejorar el proceso de desarrollo de productos digitales. \nCombinamos prácticas de gestión de productos de vanguardia con métodos ágiles. Este enfoque no sólo permite desarrollar el producto correcto, sino que también aumenta sus posibilidades de éxito en el mercado.\n\nIntegra Agile Product Management en tu empresa y acelera el impacto de tus productos.",
     "color_theme": "green-theme",
     "logo": "/app/img/services/product-discovery.png",
     "side_image": "/app/img/services/apm.jpeg",
@@ -88,7 +88,7 @@
   "desarrollo-liderazgo-agil": {
     "name": "Programa de Desarrollo del Liderazgo Ágil",
     "subtitle": "Hacia un liderazgo con impacto más consciente y humano",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at varius lectus, a interdum metus. Fusce rhoncus lobortis dolor, nec lobortis arcu sollicitudin non. Suspendisse sollicitudin diam vitae faucibus facilisis. Curabitur eget sem tellus. Etiam rhoncus quis sapien sit amet tempus. Curabitur ac libero tortor. Praesent pharetra turpis sit amet nibh pharetra tincidunt. Phasellus eget libero.",
+    "summary": "El Programa de Desarrollo del Liderazgo Ágil se enfoca en expandir el nivel de consciencia de quienes lideran las organizaciones. A través de un enfoque sistémico, fomentamos un liderazgo más consciente y humano, que es esencial para lograr una agilidad organizacional efectiva y sostenible.\n\nConstruye una base sólida para el desarrollo de tu organización y fomente un liderazgo que impacte en el negocio.",
     "color_theme": "blue-theme",
     "logo": "/app/img/services/DLA-logo.png",
     "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png",
@@ -104,7 +104,7 @@
   "facilitacion": {
     "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
     "subtitle": "Transforma tus encuentros en experiencias colaborativas donde cada persona es protagonista. Promueve la productividad y la creatividad de tu equipo de trabajo.",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at varius lectus, a interdum metus. Fusce rhoncus lobortis dolor, nec lobortis arcu sollicitudin non. Suspendisse sollicitudin diam vitae faucibus facilisis. Curabitur eget sem tellus. Etiam rhoncus quis sapien sit amet tempus. Curabitur ac libero tortor. Praesent pharetra turpis sit amet nibh pharetra tincidunt. Phasellus eget libero.",
+    "summary": "Transforma tus reuniones y eventos con nuestro servicio de Facilitación Ágil. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.\n\nConvierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización.",
     "color_theme": "orange-theme",
     "logo": "/app/img/services/AFP.png",
     "seo_title": "Facilitación Ágil: Reuniones y Eventos más Productivos",
@@ -158,7 +158,7 @@
   "jump-start": {
     "name": "Jump Start: Agilidad para Equipos",
     "subtitle": "Expande la agilidad en tu organización. Descubre cómo desbloquear el potencial de tus equipos con Jump Start. ",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at varius lectus, a interdum metus. Fusce rhoncus lobortis dolor, nec lobortis arcu sollicitudin non. Suspendisse sollicitudin diam vitae faucibus facilisis. Curabitur eget sem tellus. Etiam rhoncus quis sapien sit amet tempus. Curabitur ac libero tortor. Praesent pharetra turpis sit amet nibh pharetra tincidunt. Phasellus eget libero.",
+    "summary": "Los servicios Jump Start están diseñados para equipos que necesitan evolucionar hacia la Agilidad. Nuestro enfoque práctico permite acelerar la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación.\n\nDesbloquea el potencial de tus equipos, impulsando la entrega de valor y la mejora continua. ",
     "color_theme": "yellow-theme",
     "logo": "/app/img/services/JS-logo.png",
     "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS.svg",
