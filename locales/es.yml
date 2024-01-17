@@ -690,7 +690,7 @@ es:
           },
           {
             text: 'Todos Nuestros Servicios',
-            url: '/agilidad-organizacional',
+            url: '/servicios',
             inside: true
           },
         ]
