@@ -3,6 +3,13 @@ require './lib/readers/local_reader'
 
 get '/servicios' do
   begin
+    puts 'entro a servicios '+ session[:locale]
+
+    if session[:locale] == 'en'
+      puts 'pasa'
+      redirect to("#{session[:locale]}/agilidad-organizacional"), 301
+    end
+
     @services = Service.load_list
 
     @meta_tags.set! title: t('meta_tag.business-agility.title'),
@@ -20,6 +27,10 @@ end
 
 get '/servicios/:service_id' do
   begin
+    if session[:locale] == 'en'
+      redirect to("#{session[:locale]}/agilidad-organizacional"), 301
+    end
+
     service_id = params[:service_id]
 
     reader = LocalReader.new
@@ -35,7 +46,6 @@ get '/servicios/:service_id' do
 
     router_helper = RouterHelper.instance
     router_helper.alternate_route = "/agilidad-organizacional"
-
 
     erb :'services/landing/index', layout: :'layout/layout2022'
   rescue
