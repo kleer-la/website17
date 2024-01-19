@@ -1466,11 +1466,18 @@ h3.title-somos {
     font-size: 56px;
     line-height: 64px;
     margin-bottom: 50px; }
+  #services-hero .subtitle {
+    font-family: 'Raleway',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px; }
   #services-hero .image-container {
     position: absolute;
     width: 50%;
     bottom: -10%;
-    left: 25%; }
+    left: 25%;
+    max-height: 50%; }
     #services-hero .image-container .principal-img {
       width: 100%; }
   #services-hero .down-button {
@@ -1495,6 +1502,14 @@ h3.title-somos {
   font-size: 32px;
   line-height: 40px;
   margin-bottom: 30px; }
+
+#contact-section {
+  background-color: #FFE600;
+  padding: 72px 0;
+  position: relative; }
+  #contact-section p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold; }
 
 .service-info {
   z-index: 5;
@@ -2187,7 +2202,7 @@ html {
     z-index: 5; }
   .generic-hero-a .skyblue-semicircle {
     top: -20px;
-    right: 20%; }
+    right: 15%; }
   .generic-hero-a .rustic-circle {
     top: 200px;
     left: 8%; }
