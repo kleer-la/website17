@@ -1,38 +1,16 @@
 en:
-  not_found: Not found
   page_not_found: Page not found
   internal_error:
     title: Internal error
     text: >-
       An internal error has occurred. We apologize for the inconvenience. We
       have been notified and will work to fix it as soon as possible.
-  general:
-    kleer:
-      vision:
-        text: >-
-          We believe there are other ways of human interaction to achieve
-          fantastic results that make us proud
-        reference: Our Vision
-    buttons:
-      see_more: See more
-      register: Register!
-      i_am_interested: Buy
-      complete: Complete
-      close: Close
-    texts:
-      loading: loading...
   resources:
-    title: Resouces for agility
+    title: Resources for agility
     subtitle: >-
       Our 2 cent downloads to help you with team collaboration: books, quick guides, card games, infographics, and more
     card:
       more_info: More info
-  mail_scholarship:
-    title: SCHOLARSHIP
-    alt: Scholarships available for NGOs and individuals
-    content: >-
-      We have limited scholarships, tell us how this course help you and
-      something about yourself.
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training
@@ -70,359 +48,6 @@ en:
       title: "| News"
       description:
       canonical: /prensa
-  kleeros:
-    vision: >-
-      We enjoy co-creating awesome environments with higher levels of
-      conciousness
-    live: vive-las-met-en.png
-    team: equipo-kleer-en.png
-    nps: nps-eventos-en.png
-  popups:
-    course:
-      registration:
-        title: More information
-      details:
-        title: Course detail
-    event:
-      registration:
-        title: Event Registration
-  clients:
-    title: Our Clients
-    description: Companies that trust us
-    more: Our clients
-  training:
-    title: Public Courses
-    description: WE ORGANIZE BOTH PUBLIC AND PRIVATE COURSES
-    incompany: WE CAN TEACH ALL OUR COURSES IN YOUR ORGANIZATION
-    more_info: More Information
-  coaching:
-    title: Business Agility
-    subtitle: >-
-      We help organizations, teams and practitioners achieve continuous
-      improvement
-    text:
-      top: >-
-        <p>We offer coaching services in implementing Agile Methodologies and
-        implementing agile development techniques with valuable
-        results.</p><p>This is a process carried out in situ and with the
-        assistance of an expert in Agile Methodologies, who has the task of
-        transmitting actively practices and tools necessary to transform into
-        Agile a team or organization. The implementation occurs while the people
-        involved are performing their daily duties.</p><p>One advantage of
-        adopting our Agile Coaching is that the successful implementation of
-        Agile methodologies is achieved in less time than it would take to do it
-        without the assistance of an expert. Additionally, the business is not
-        neglected as we works directly on the projects, roles and objectives of
-        the teams and other stakeholders involved in the implementation
-        (managers, development managers, etc.). This includes identifying
-        problems, understanding their causes and developing the skills necessary
-        for the team to be able to solve them successfully.</p><p>There are two
-        kinds of situations: those in which never before had and agile
-        environment been created and and others in which Agile already exists
-        and you want to experience a greater level of depth. Kleer's service
-        responds effectively to both, with the additional feature that models
-        the process of implementation according to the specific needs of the
-        team or organization.</p><p>In the case where necessary, support is
-        preceded by customised training, ensuring a level of knowledge that
-        enables greater effectiveness during deployment.</p>
-      bottom: >-
-        <p>Our coaching service in organizational transformation is aimed at you
-        achieve one or more of the following results, based on your current
-        needs!</p>
-    tabs:
-      benefits:
-        title: Coaching benefits
-        text: >-
-          <ul><li>Raise the team's level of flexibility to respond to new
-          situations </li><li> Improved product quality as a result of the
-          implementation of Agile techniques</li><li> Reducing development costs
-          saves time and avoids rework</li><li> The occurrence of preventable
-          errors reduces greatly</li></ul>
-      characteristics:
-        title: Service Features
-        text: >-
-          <ul><li>Business is not neglected. The team is not out of its tasks
-          since the transfer of knowledge occurs while the team is performing
-          its tasks.</li><li> No hypothesis. Problems or impediments are
-          detected and dealt with in concrete cases.</li><li> It is an
-          investment. The increased quality prevents rework cycles and therefore
-          generates time and cost savings</li></ul>
-      contact:
-        title: Request for quotation
-        text: >-
-          <p>Contact us<a href='mailto:hello@kleer.la'>hello@kleer.la</a> for a
-          quotation.<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</p>
-  publishing:
-    title: We publish
-    description: We share knowledge and experiences. Help us spread the word!
-    content: >-
-      We dream of a world in which valuable information travels arround. Here,
-      our five cents :)
-  facilitation:
-    title: Facilitation
-    contact: ARE YOU READY TO LEAD CHANGE?
-    subtitle: >-
-      This service helps groups of people to improve their meetings through
-      specific activities and practices.
-    description: >-
-      These group dynamics enable decision making, problem solving, and
-      exchanging ideas.
-    event:
-      title: We manage group events to ensure goals are effectively met
-      text: >-
-        We design favorable environments to create synergies, providing spaces
-        and dynamics to draw on everyone's ideas. As facilitators we help groups
-        to keep their conversation focused. We make sure every voice is heard.
-        <br />Our goal is creating a space where magic happens!
-    services:
-      title: Our services
-      graphic:
-        title: Graphic facilitation
-        text: >-
-          We use graphic displays to illustrate conversations, speeches,
-          presentations, and teamwork outcomes. This discipline is also called
-          graphic recording, which builds shared understanding and provides
-          memory hooks with powerful imagery. We also run Graphic facilitation
-          workshops.
-        button: >-
-          <a href="/en/facilitacion/grafica" class="btn btn-info">Find out more
-          about these services!</a>
-      innovation:
-        title: Creativity and Innovation
-        text: >-
-          We make events that boost new-ideas generation, as well as its
-          implementation.
-        button: >-
-          <a href="/en/facilitacion/innovacion-creatividad" class="btn
-          btn-info">Find out more about these services!</a>
-      planning:
-        title: Strategic planning
-        text: >-
-          We facilitate sessions between teams and managers in order to achieve
-          strategic goals.
-        button: >-
-          <a href="/en/facilitacion/planificacion-estrategica" class="btn
-          btn-info">Find out more about these services!</a>
-      dynamics:
-        title: Dynamics and events
-        text: >-
-          We design environments for team-building. We focus on ideas and
-          solutions co-creation.
-        button: >-
-          <a href="/en/facilitacion/dinamicas-eventos" class="btn btn-info">Find
-          out more about these services!</a>
-    graphic:
-      text: >-
-        We use graphic displays to illustrate conversations, speeches,
-        presentations, and teamwork outcomes. This discipline is also called
-        graphic recording, which builds shared understanding and provides memory
-        hooks with powerful imagery. We also visual facilitate real-time
-        conversations in which the goal is to make decisions or generate
-        agreements. We use visual tools that help common understanding and
-        improve communication.
-      button: More info
-      documents:
-        title: Live Graphic Recording
-        text: >-
-          Graphic recording in meetings and events. Design of visual
-          presentations and graphic guides.
-      workshops:
-        title: Graphic Facilitation Workshops
-        text: Intensive workshops to learn graphic tools.
-      posters:
-        title: Graphic displays
-        text: Generation of visual content for speeches and presentations.
-      videos:
-        title: Media
-        text: >-
-          Personalized graphic content and creative canvases to support ideas
-          communication.
-    innovation:
-      title: Innovación y creatividad
-      text: >-
-        Realizamos encuentros para potenciar tanto la creación de más y mejores
-        ideas como su ejecución y puesta en práctica.
-      button: ¡Me interesa!
-      brainstorming:
-        title: Powerful brainstorming
-        text: >-
-          Diseño de actividades para estimular la creación colectiva de ideas.
-          Son jornadas en las cuales se recorren distintas etapas':' estímulos,
-          dinámicas grupales, creación masiva de ideas, feedback, selección y
-          priorización, cross-polinización, refinamiento y puesta en común.
-      workshops:
-        title: Talleres de innovación y creatividad
-        text: >-
-          Workshops orientados a cubrir todo el ciclo de vida de las ideas':'
-          desde la creación y multiplicación hasta la priorización y selección
-          para llevarlas adelante. En estos encuentros se presentan y practican
-          técnicas como':' Brainstorming efectivo, Escalera de Abstracciones,
-          Principio de Distanciamiento, Estrategias Oblicuas y Sombrero sobre la
-          cerca.
-      events:
-        title: Eventos corporativos y comunitarios
-        text: >-
-          Diseñamos eventos y los facilitamos, todo esto en conjunto con
-          nuestros clientes y con las comunidades de práctica en las cuales
-          participamos activamente. Se trata de diversos tipos de eventos,
-          orientados a resolver problemáticas específicas que las empresas y las
-          comunidades estén queriendo resolver.
-      creativity:
-        title: Creatividad analítica *
-        text: >-
-          Se trata de un conjunto de actividades y herramientas diseñadas para
-          potenciar los proyectos de analytics utilizando herramientas de
-          creatividad. Así se logra que los profesionales que trabajan con datos
-          (estadísticas, matemáticas, data mining, otros) puedan brindar mejor
-          soporte a acciones de negocios. <small>(*) trabajo colaborativo junto
-          a SAS Institute</small>
-  books:
-    title: Books
-    description: WE SHARE KNOWLEDGE AND EXPERIENCES. HELP US SPREAD THE WORD!
-    get_it: Get it >>
-    others:
-      title: Other publications
-    buy:
-      paperback: Paperback
-      paperback_and_kindle: Paperback + Kindle
-      amazon_matchbook: >-
-        If you buy a new print edition of this book, you can buy the Kindle
-        edition for FREE. Print edition must be purchased at Amazon.
-      kindle: Kindle
-      pdf-epub: PDF/ePub
-      pdf: PDF
-    books:
-      agile_team:
-        title: Agile Team Facilitator
-        text: >-
-          Este libro es el primero de una serie que busca construir el camino de
-          toda persona que quiera dedicarse al agile coaching. En esta edición
-          el foco está en la facilitación de equipos, entendiendo las
-          habilidades y responsabilidades que conlleva.
-        next: Obtener libro >>
-      scrum:
-        title: Agiles Projects with Scrum
-        title1: Agiles Projects with
-        title2: '#Scrum'
-        subtitle: >-
-          Flexibility, learning, innovation and collaboration in complex
-          contexts
-        subtitle1: Flexibility, learning, innovation
-        subtitle2: and collaboration in complex contexts
-        text: >-
-          Scrum is a framework that allows us to find emerging practices in
-          complex domains such as the management of innovation projects. It is
-          not a complete process, much less a methodology. Instead of providing
-          a complete and detailed description of how the project tasks should be
-          performed, it generates a relational and iterative context, of
-          inspection and constant adaptation where those involved are to create
-          their own process.
-        next: ' You can download this e-book in PDF format with just a tweet!'
-        learnings: >-
-          <p> Through this book you will learn:</p> <ul><li>The factors that led
-          to agile methodologies</li><li> The values ​​and principles of the
-          Agile Manifesto </li><li> Complexity contexts where Scrum is more
-          efficient</li><li>Scrum values and principles</li><li>Scrum Team
-          Roles</li><li> Responsibilities and expectations of each
-          role</li><li>Scrum workflow elements and activities</li><li>Agile
-          analysis and evolutionary development techniques</li><li>How to
-          communicate needs (User Stories)</li><li>Agile
-          estimations</li><li>Medium and long term planning</li><li> Budgeting
-          agile projects</li></ul>&nbsp;
-        video:
-          title: View the 4-minute video describing Scrum
-          download: >-
-            Download the PDF poster from<a
-            href='https://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'>here</a>
-        download:
-          pdf: Free PDF
-      retrospectives:
-        title: Retrospectives techniques
-        text: >-
-          Retrospectives are meetings where teams identify areas for improvement
-          and design actions to do so. They may occur at the end of each
-          iteration (sprint), after each new version or anytime a need for
-          improvement is detected. The following is a summary of techniques that
-          can be used.<br/>&nbsp;<br/>You can download this e-book in PDF format
-          with just a tweet!
-      mas_productivos:
-        title: Higher performing teams
-        title1: Higher
-        title2: '#PerformingTeams'
-        text: >-
-          The traditional management model is being replaced by more
-          participatory, collaborative and humane ways of doing business.
-          Organizations and teams are composed of people, and people have
-          behaviours, emotions, desires, and their own history. If, instead of
-          minimising these factors, we embrace them and included them in
-          management, we’ll soon begin to witness dramatic improvements.
-        long_text: >-
-          The traditional management model is being replaced by more
-          participatory, collaborative and humane ways of doing business.
-          Organizations and teams are composed of people, and people have
-          behaviours, emotions, desires, and their own history. If, instead of
-          minimising these factors, we embrace them and included them in
-          management, we’ll soon begin to witness dramatic
-          improvements.<br/><br/> Performance is not just about how much is
-          produced, but how effective are the personal relationships in the new
-          professional context. The formula is simple: <strong>R = R (Result =
-          Relationships)</strong>. This means that the most effective way to
-          improve outcomes is to improve relations between the members of a team
-          and not just taking care of the processes and the tasks they
-          perform.<br/><br/>But in this trip there will be a lot of challenges.
-          To facilitate it, I decided to take the best of both worlds, Scrum and
-          Coaching, and combine them in a novel way to make the teams to expose
-          their spirit. by getting immersed in this reading, you will find
-          experiences, innovative proposals, recommendations and useful
-          description of a complete framework for knowledge
-          workers.<br/><br/>This is a key moment in the history of the world of
-          work. And many companies are already taking the big leap.
-          <br/><br/><strong>Are you willing to learn this new way of working and
-          relating?</strong>
-        subtitle: Individuals and interactions over processes and tools
-        subtitle1: Individuals and interactions
-        subtitle2: over processes and tools
-        next: Get the book >>
-        download:
-          pdf: 'PDF/Kindle/ePub: 50% OFF!'
-      lenguajes_web:
-        title: Introducción a los lenguajes de la Web
-        text: >-
-          In web development teams, every member must be able to understand the
-          web terminology and concepts. This book gives you the minimun
-          knowdgement needed. It gives you a quick introduction to HTTP (the
-          communication protocol of the web), to HTML (the language of the pages
-          contents), to CSS (the lenguaje of the page styles), and to some
-          additional topics. This knowledge helps the team have better
-          conversations and archive better results.
-      agil_ilustrado:
-        title: Libro Ágil Ilustrado
-        text: >-
-          El objetivo de este libro es difundir -de forma gráfica- métodos y
-          prácticas ágiles. En cuanto al contenido, considero que el paradigma
-          ágil -con foco en las relaciones interpersonales-, como forma de
-          organización del trabajo y -arriesgando más- como filosofía de vida,
-          puede generar ambientes profesionales y personales más interesantes,
-          sanos, productivos y alegres, en comparación a otros paradigmas
-          tradicionales. En cuanto a la forma, elijo comunicar a través de
-          ilustraciones porque 'una imagen vale más que mil palabras' y porque
-          -sencillamente- me gusta dibujar, lo disfruto.
-      herramientas_coach:
-        title: Herramientas para el Coach Ágil - Ejemplos de visualización
-        text: >-
-          Este libro está lleno de ejemplos de visualización para mejorar la
-          colaboración y comunicación de los equipos y para modelar
-          comportamientos. Está escrito para personas y equipos que trabajan en
-          un contexto de desarrollo ágil de software.
-        next: Obtener libro >>
-      little_book:
-        title: Agile 2015 - Little Book of Sketchnotes
-        text: >-
-          This book compiles the graphical memories from five different
-          facilitators drawn during sessions and activities at the Agile 2015
-          conference at Washington DC, USA. The purpose of this initiative is to
-          share with you their visual memory of the event and inspire you to
-          take visual notes anytime.
   we_are:
     title: We are
     subtitle: We help organizations, teams and practitioners
@@ -453,210 +78,7 @@ en:
       nuestras acciones midiendo impactos reales.</p> <p>Por lo tanto,
       concebimos a nuestros clientes como socios en la transformación
       organizacional con los cuales colaboramos para juntos co-crear procesos
-      adecuados para su contexto y propósito.</p>
-  press:
-    title: News
-    subtitle: Kleer in the media!
-    description: >-
-      We believe in the power of shared knowledge in action. That's why we share
-      this entries in the press about our job.
-    release01_title: 'Scrum: Del rugby a la oficina'
-    release01_text: >-
-      Scrum hace énfasis en maximizar las relaciones interpersonales y en
-      fomentar la autonomía responsable como factores claves para alcanzar el
-      éxito en los proyectos. A cambio, se obtiene un equipo altamente motivado
-      y comprometido.
-    release02_title: 'El secreto de tus ojos: a veces, las imágenes ayudan a innovar'
-    release02_text: >-
-      Los dibujos permiten ganar tiempo, porque generan un lenguaje común: los
-      participantes de una reunión se pueden referir a la ilustración en vez de
-      explicar opciones abstractas cada vez. Además, cuando las personas ven que
-      su argumento quedó asentado, se sienten más relajadas y pueden escuchar a
-      los demás.
-    release03_title: >-
-      Scrum: El adiós para siempre a productos eternos que tardan meses en ver
-      la luz
-    release03_text: >-
-      Scrum es una estrategia para la creación de productos, una técnica usada
-      en empresas de la talla de Amazon, Spotify, Ericsson y Adobe y que de
-      poco, fue incluso migrando de empresas tecnológicas a ganar terreno en
-      otros rubros e industrias.
-    release04_title: Una tribu de coaches que hace escuela en la región
-    release04_text: >-
-      Seis socios se propusieron mejorar el mundo del trabajo al gestionar
-      proyectos de software y ofrecen coaching & mentoring para varias empresas.
-      Con 20 personas y sedes en Argentina, Colombia, Perú y Bolivia, operan en
-      Latinoamérica y Europa.
-    release05_title: Kleer participará en Agile Open Spain 2015
-    release05_text: >-
-      La organización comprometida con la creación de ambientes humanos más
-      conscientes, participará del Agile Open Spain 2015(AOS2015). Se trata de
-      la VII edición de este evento tipo Open Space, una conferencia
-      auto-organizada sobre metodologías ágiles. El encuentro se realizará los
-      próximos 19 y 20 de junio en Gijón, España.
-    release06_title: >-
-      Entrevista a Carlos Peix en el programa La Burbuja, conducido por
-      Sebastián Campanario y Bruno Massare.
-    release06_text: >-
-      Una repaso sobre las metodologías ágiles y su situación en diferentes
-      tipos de organizaciones.
-    release07_title: Cómo el tipo de contrato puede condicionar un proyecto complejo
-    release07_text: >-
-      Para tener éxito en la realización de proyectos complejos necesitamos al
-      menos tres elementos: Equipos con conocimientos y habilidades técnicas
-      apropiadas, objetivos y alcances claros, y una comunicación frecuente y
-      efectiva.
-    release08_title: Entrevista a Pablo Tortorella en CustomerIn
-    release08_text: >-
-      En esta charla Pablo nos cuenta sobre facilitación gráfica, agilidad y
-      otros métodos para mejorar la comunicación y el trabajo de equipo.
-    release09_title: 7 claves del Coaching de Equipos
-    release09_text: >-
-      Martín Alaimo, coach organizacional y autor de libros sobre agilismo,
-      Scrum y coaching, explica las diferencias entre el coaching ejecutivo y
-      del coaching de equipos.
-    release10_title: 5 beneficios de las agencias más ágiles
-    release10_text: >-
-      Los métodos ágiles llegaron a las agencias digitales para quedarse. Llevan
-      más de dos décadas dando resultados en otras industrias, más que nada en
-      el desarrollo de software, y hace más de dos años desembarcaron en la
-      publicidad.
-    release11_title: Kleer será anfitrión de la 1° Jornada de Metacreatividad en Argentina
-    release11_text: >-
-      Kleer se complace en anunciar que será el anfitrión de la Primera Jornada
-      del Movimiento de Metacreatividad en la Argentina. El encuentro, de
-      entrada libre y gratuita, se realizará el próximo lunes 31 de agosto en
-      sus oficinas.
-    release12_title: La ropa no se negocia
-    release12_text: >-
-      Las nuevas generaciones impusieron el look casual para ir a trabajar, pero
-      hay empresas que hoy quieren volver a la formalidad: ¿cuál es el punto de
-      equilibrio?
-    release13_title: >-
-      De qué se trata la metodología de trabajo inspirada en el rubgy que quiere
-      ganar terreno en las empresas
-    release13_text: >-
-      A través de liderazgos situacionales y deadlines de corto plazo, el scrum
-      busca promover tanto innovación como productividad. En qué consiste.
-    release14_title: Facilitación Gráfica como recurso para la CI
-    release14_text: En Kleer, junto a sus socios, se especializa en metodologías ágiles
-    release15_title: Cultura ágil y cultura latina ¿son compatibles?
-    release15_text: >-
-      Cuando adoptas para tu empresa una solución creada en otro contexto ¿Tenés
-      en cuenta la idiosincrasia de tu organización y de tu país? El contexto es
-      un factor crítico para el éxito.
-    release16_title: RRHH podría matar la agilidad de tu empresa... o potenciarla
-    release16_text: >-
-      Hace unos meses estaba conversando con uno de nuestros clientes sobre la
-      logística de un taller que iba a impartir
-    release17_title: Kleer en Congreso Regional de Interacción con Clientes 2017
-    release17_text: >-
-      El Congreso Regional de Interacción con Clientes, que se realizará el 8 de
-      junio en la Ciudad de Buenos Aires, apunta a generar un espacio de
-    release18_title: 'Rápidas y sin furia: cómo toman las decisiones las empresas más creativas'
-    release18_text: >-
-      Nuevo paradigma: estructuras más horizontales, menor aversión al riesgo y
-      fuerte dinamismo interno son algunas de las claves de estas compañías
-    release19_title: Cómo aprovechar las horas para ser más productivo y descansar
-    release19_text: >-
-      En las películas de acción hay secuencias de persecuciones interminables
-      en las que el protagonista corre detrás del villano o viceversa.
-    release19b_title: >-
-      Tiempo que has de usar: cómo aprovechar las horas para ser más productivo
-      y descansar
-    release19b_text: >-
-      Cada vez más personas sienten que no llegan a hacer tantas cosas como
-      quisieran por la interrupción de las apps y no saber decir que no
-    release20_title: Nueve decisiones clave para iniciar la transformación organizacional
-    release20_text: >-
-      Muchas organizaciones están en un camino de evolución, embarcándose en la
-      agilidad como principal alternativa. En muchos casos lo hacen con
-      escepticismo,
-    release21_title: ¿Cómo iniciar la transformación organizacional?
-    release21_text: >-
-      El proceso de la transformación organizacional suele ser un gran desafío
-      para las empresas, que en muchos casos lo llevan a cabo con escepticismo,
-      pero con la presión de la industria
-    release22_title: 8 amenazas de la transformación digital a las empresas tradicionales
-    release22_text: >-
-      Las empresas tradicionales de muchas industrias no podrán sobrevivir si no
-      desarrollan su capacidad de adaptarse al nuevo contexto que proponen las
-      tecnologías de información y a los hábitos de los nativos digitales.
-    release23_title: Del error al aprendizaje en el camino hacia el éxito temprano
-    release23_text: >-
-      Hay algo con la frase “Prueba y Error” que no me convence. En general la
-      usamos para referirnos a la estrategia que usamos en un contexto complejo
-      o de
-    release24_title: Kleer participa en el Scrum Day Colombia con una charla sobre agilidad
-    release24_text: >-
-      Kleer, organización de aprendizaje y coaching para aplicar los métodos
-      ágiles en áreas de innovación, anunció hoy que participará en el Scrum Day
-      Colombia...
-    release25_title: 'La unión hace la fuerza: coaching de equipos'
-    release25_text: >-
-      Trucos para potenciar esta herramienta de motivación en los grupos de
-      trabajo. Del enfoque sistémico a la imposición de límites al propio
-      entrenador
-    release26_title: ¿Cómo saber si estamos desarrollando el producto equivocado?
-    release26_text: >-
-      La adopción de los valores y herramientas ágiles para el desarrollo de
-      productos está acelerando la transformación digital en las empresas
-    release27_title: ¿Qué es eso de la agilidad? ¿Existe más allá del software?
-    release27_text: >-
-      ¿Qué es eso de la agilidad? ¿Aplica solo al mundo del desarrollo de
-      software? Inicialmente sí, el término fue pensado para construir mejor
-      software. Nosotros mismos la conocimos en ese ámbito.
-    release28_title: >-
-      Opinión |¿Qué es lo esencial para una transformación organizacional
-      exitosa?
-    release28_text: >-
-      Las organizaciones necesitan contar con elementos que les permitan
-      responder a contextos volátiles, inciertos y complejos. Al momento de
-      enfrentar el desafío del cambio, hay metodologías ágiles...
-    release29_title: 'Umbral M.A.Y.A.: ¿se puede innovar todo el tiempo? ¿hasta dónde hacerlo?'
-    release29_text: >-
-      Como emprendedora , seguro te cuesta seguir el ritmo cambiante que llevan
-      tus consumidores (¡y el mundo en general!). Un día les gusta una cosa, al
-      día siguiente, prefieren otra. Las tendencias y las ...
-    release30_title: >-
-      Recursos Humanos Cuarentena obligatoria: el teletrabajo ¿llegó para
-      quedarse?
-    release30_text: >-
-      El aislamiento forzó a las empresas a implementar el home office, aunque
-      no sin dificultades. Qué pasará después de la pandemia.
-    release31_title: 'Teletrabajo en pandemia: entornos distribuidos y liderazgo virtual'
-    release31_text: >-
-      El liderazgo virtual implica confianza. Los líderes deben confiar en las
-      capacidades de los colaboradores y delegar las tareas tal como lo harían
-      si estuvieran sentados uno al lado del otro.
-    release32_title: >-
-      La fuerza de trabajo pasó a estar en un 90% en hogares: la tecnología
-      existe pero faltan procesos y cultura
-    release32_text: >-
-      Se estima que un 20% de los empleados ya hacía teletrabajo previo al brote
-      de coronavirus, uno o dos días por semana en promedio.
-    release33_title: 9 prácticas clave para potenciar la colaboración distribuida
-    release33_text: >-
-      Aunque cada vez extrañamos más los encuentros cara a cara (no cara a
-      pixel) y la experiencia sensorial completa de las reuniones presenciales,
-      es justo reivindicar la potencia y el valor de la virtualidad.
-    release34_title: 9 prácticas clave para potenciar la colaboración distribuida
-    release34_text: >-
-      Aunque cada vez extrañamos más los encuentros cara a cara (no cara a
-      pixel) y la experiencia sensorial completa de las reuniones presenciales,
-      es justo reivindicar la potencia y el valor de la virtualidad.
-    release35_title: Nueve prácticas para potenciar la colaboración de equipos distribuidos
-    release35_text: >-
-      Aunque cada vez extrañamos más los encuentros cara a cara (no cara a
-      pixel) y la experiencia sensorial completa de las reuniones presenciales.
-      Pues bien, ahora es necesario reivindicar la potencia y el valor de la
-      virtualidad.
-    release36_title: ¿Cómo hacer de la mejora continua un hábito con impacto en tu negocio?
-    release36_text: >-
-      Leonardo Agudelo, Agile Coach en Kleer, analiza por qué un coach permite a
-      empresas y profesionales transformar sus plataforma para estar a la
-      vanguardia adquiriendo el hábito de la mejora continua con la Kata de
-      Mejora inspirada en Toyota
+      adecuados para su contexto y propósito.</p
   privacy:
     title: Privacy Policy
     text: >-
@@ -1032,146 +454,8 @@ en:
     text21: >-
       Questions about the Terms of Service should be sent to us at
       info@kleer.la.
-  category:
-    training: Trainings
   contact:
-    title: Contact
-    contact_us: Contact us
     training_email: training@kleer.us
-    newsletter_subscription: Subscribe to our newsletter
-    helped_by: You will be helped by
-    locations:
-      argentina:
-        name: Argentina
-        address1: Buenos Aires, Cipolletti and Rosario
-        address2: ''
-        phone: ''
-        contact: ''
-        contact_email: info.ar@kleer.la
-      bolivia:
-        name: Bolivia
-        address1: Cochabamba
-        address2: ''
-        phone: +59 1.4.4321690
-        contact: Israel
-        contact_email: info.bo@kleer.la
-      colombia:
-        name: Colombia
-        address1: Bogotá and Medellín
-        address2: ''
-        phone: +57 3207666176
-        whatsapp: <a href="https://wa.me/573207666176">WhatsApp us!</a>
-        contact1: 'Courses: you will contact with Ingrith  - +57 3207666176'
-        contact2: 'Administrative: you will contact with Ginneth - +57 3202210200'
-        contact_email: info.co@kleer.la
-      uruguay:
-        name: Uruguay
-        address1: Montevideo
-        address2: ''
-        whatsapp: <a href="https://wa.me/59891959360">WhatsApp us!</a>
-        phone: +598-2628-0702
-        contact: Elysabeth y Pablo
-        contact_email: info.uy@kleer.la
-      usa:
-        name: USA
-        address1: ''
-        address2: ''
-        whatsapp: ''
-        phone: ''
-        contact: ''
-        contact_email: info.us@kleer.la
-      other:
-        title: Global
-        name: Global
-        contact_us: Contact us at
-        whatsapp: >-
-          WhatsApp us!<br><a href="https://wa.me/59891959360">+598
-          91959360</a><br><a href="https://wa.me/573207666176">+57
-          3207666176</a>
-        contact_email: info@kleer.la
-    subscription:
-      text: Be the first to get all the agile news!
-      interested: SUBSCRIBE
-      form:
-        title: SUBSCRIPTION
-        mail_hint: your@email.com
-        fname_hint: First name
-        lname_hint: Last name
-        where_are_you: You are near ...
-        cancel: Cancel
-        send: SUBSCRIBE NOW!
-        countries: >-
-          <option value="ZI-AMS-AR-BUE (Buenos Aires)">Argentina</option>
-          <option value="ZI-AUS (Australia)">Australia</option> <option
-          value="ZI-AMS-BO (Bolivia)">Bolivia </option> <option value="ZI-AMS-BR
-          (Brasil)">Brazil</option> <option value="ZI-AMN-CA
-          (Canada)">Canada</option> <option value="ZI-AMS-CL
-          (Chile)">Chile</option> <option value="ZI-AMS-CO-BOG
-          (Bogota)">Colombia </option> <option value="ZI-AMC (America Central y
-          Caribe)">Costa Rica</option> <option value="ZI-AMC (America Central y
-          Caribe)">Cuba</option> <option value="ZI-AMC (America Central y
-          Caribe)">Dominican Republic</option> <option value="ZI-AMS-EC
-          (Ecuador)">Ecuador</option> <option value="ZI-AMC (America Central y
-          Caribe)">Guatemala</option> <option value="ZI-AMC (America Central y
-          Caribe)">Honduras</option> <option value="ZI-EUR-IT
-          (Italia)">Italy</option> <option value="ZI-AMN-MX
-          (Mexico)">México</option> <option value="ZI-AMC (America Central y
-          Caribe)">Nicaragua</option> <option value="ZI-AMC (America Central y
-          Caribe)">Panamá</option> <option value="ZI-AMS-PY
-          (Paraguay)">Paraguay</option> <option value="ZI-AMS-PE
-          (Peru)">Perú</option> <option value="ZI-EUR-ES
-          (España)">Spain</option> <option value="ZI-AMC (America Central y
-          Caribe)">El Salvador</option> <option value="ZI-AMN-US
-          (EEUU)">USA</option> <option value="ZI-AMS-UY
-          (Uruguay)">Uruguay</option> <option value="ZI-AMS-VE
-          (Venezuela)">Venezuela</option>
-  kleexperience:
-    title: This is the Kleer Experience
-    professionals:
-      title: With highly recognized professionals
-      description: >-
-        <p>In Kleer you will meet with great trainers, recognized by their peers
-        from the Latin American and European Agile Methodologies
-        Communities.</p> <p>And you will find diverse profiles with vast
-        experience in the industry and in academia. Our trainers have been
-        implementing facilitation techniques as well as transformational
-        processes for many years in many different organizations.</p>
-    experiential:
-      title: 100% experiential
-      description: >-
-        <p>You are the protagonist. The facilitators are guides that go along
-        with you the learning process.</p> <p>The experience is highly
-        interactive. From the beginning you will develop capabilities such as
-        focus, self-organization, confidence and openness</p>
-    lasting_learning:
-      title: Lasting Learning
-      description: >-
-        <p>Sensorial richness, repetition, drawing, handling emotions and time
-        in a safe and comfortable environment will make you learn in a natural
-        way.</p> You will feel as part of a self-organized team thanks to these
-        collective and participative learning techniques, always with the
-        support of the facilitator guiding you from the <i>back of the
-        room</i>.</p>
-    inspiring:
-      title: Inspiring
-      description: >-
-        <p>You will end up the course full of energy! The high interactive way
-        of working and collaboration spirit that accompanied you during the
-        process will make you be motivated and willing to implement on your
-        daily environment all you have learned.</p>
-  scrumalliance:
-    title: A different Experience
-    description: >-
-      We are the first Spanish-speaking company to become a Scrum Alliance
-      Registered Education Provider (REP).
-    why: >-
-      Why would you take a course of the <h3>Scrum Alliance</h3>
-
-      <ul> <li> It was created by the creator of Scrum. </li> <li> It is the
-      Scrum certifier entity with the greatest international prestige. </li>
-      <li> The most-renowned trainers deliver courses endorsed by the this
-      institution. </li> </ul>
-    top: Top Trainings
   generals:
     texts:
       soon: Comming soon
@@ -1197,7 +481,6 @@ en:
         - title: LinkedIn
           image: /app/img/icons/Linkedin.svg
           url: https://www.linkedin.com/company/kleer/
-
   navbar:
     - text: Business agility
       url: /agilidad-organizacional
@@ -1241,7 +524,7 @@ en:
           url: /somos
         - title: News
           url: /prensa
-  home2022:
+  home:
     home_business_agility:
       title: Business agility
       text: ' <p> At Kleer our main focus is Business Agility since 2011. Our <strong>closeness</strong> and <strong>experience</strong> allow us to do it in an alternative way. </p> <p> We are an increasingly <strong>diverse</strong> team of professionals, looking for to learn and <strong>make an impact</strong> in each intervention that we design and carry out.</p> <p> And we pursue our purpose every day: We enjoy co-creating more conscious and amazing human environments! </p> '
@@ -1307,7 +590,6 @@ en:
       title: Find out about all the news of the agile world
       button:
         title: Suscribe
-
   catalog:
     title: Business training
     subtitle: >-
@@ -1342,38 +624,8 @@ en:
       button:
         text: Go to academy
         link:
-
-#  TODO: migrar a ingles
-  courses_page:
-    title: Professional agility training
-    subtitle: >-
-      Boost your professional growth, your teams and your organization, with our training programs that enable organizational agility.
-      CSM, CSPO and CSD certifications by the Scrum Alliance.
+    more: See more
     type: How do we deliver our courses?
-    in_company:
-      title: In Company
-      text: >-
-        We bring our learning experiences to your organization. We can customize the experience by
-        co-designing content that adapts to the needs and objectives of your company.
-      button:
-        text: "Catalog"
-        link: "#training-courses"
-    public:
-      title: Public
-      text: Enrol in the published courses, sign up in pairs or groups to obtain discounts and share a unique learning experience among colleagues.
-      button:
-        text: "Public courses"
-        link: "/agenda"
-    e-learing:
-      title: Self-paced
-      text: Self-paced online courses. You decide when to start, the rhythm you like, and when to finish.
-      button:
-        text: "Academia"
-        link: https://academia.kleer.la/
-    catalog:
-      title: "Professional agility training"
-      more: See more
-
   course_landing:
     flash:
       title: Bring this course to your company!
@@ -1386,19 +638,14 @@ en:
     program: Program
     testimonies: Testimonies from participants
     faq: Frecuently ask questions
-  ebooks:
-    title: ''
-    subtitle: ''
-
   blog:
     title: Blog
     subtitle: >-
       Discover more about the fascinating world of organizational agility.
 
-  clients2022:
+  clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.
-
   aboutus:
     title: About Kleer
     subtitle: "<p>
@@ -1408,11 +655,9 @@ en:
     We are a team focused on improving the way people work. We accompany professionals, teams and organizations in their evolution towards continuous improvement, enhancing and balancing productivity, quality and happiness.
     </p>
     "
-
   news:
     title: Press
     subtitle: Press releases and publications in various media about our work.
-
   business-agility:
     title: Business Agility
     subtitle: >-
@@ -1483,7 +728,6 @@ en:
       button:
         text: Let’s talk
         link: mailto:info@kleer.la?subject=Business Agility&amp;body=Please describe your context and how could we help you
-
   contact-us-form:
     title: Contact us
     name-input:
@@ -1501,7 +745,6 @@ en:
       error-message: Please fill in your message
     button:
       text: Submit
-
   certificate-form:
     title: Certificates
     subtitle: Obtain certificate issued by Kleer
