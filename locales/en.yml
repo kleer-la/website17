@@ -21,6 +21,12 @@ en:
       close: Close
     texts:
       loading: loading...
+  resources:
+    title: Resouces for agility
+    subtitle: >-
+      Our 2 cent downloads to help you with team collaboration: books, quick guides, card games, infographics, and more
+    card:
+      more_info: More info
   mail_scholarship:
     title: SCHOLARSHIP
     alt: Scholarships available for NGOs and individuals
@@ -40,6 +46,11 @@ en:
         development, Retrospectives, Leadership, Communication, Kanban, Agile
         Coaching
       canonical: /recursos
+    blog:
+      title: Blog - Articles on Organizational Agility
+      description: >-
+        We share experiences, approaches, and practices to help you on the path of organizational and personal development
+      canonical: /blog
     aboutus:
       title: '| Somos'
       description:
@@ -1379,11 +1390,10 @@ en:
     title: ''
     subtitle: ''
 
-  blog2022:
-    title: Blog - Articles on Organizational Agility
+  blog:
+    title: Blog
     subtitle: >-
-      We love to share, to capture our ideas in ink and to undertake self-discovery reflecting and writing
-      on our path in agility. Here we share some of those thoughts with you.
+      Discover more about the fascinating world of organizational agility.
 
   clients2022:
     title: Our Clients
