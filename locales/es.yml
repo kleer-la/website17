@@ -1,36 +1,14 @@
 es:
-  not_found: "No encontrado"
-  page_not_found: "Página no encontrada"
+  page_not_found: Página no encontrada
   internal_error:
-    title: "Error interno"
-    text: "Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde."
-  general:
-    kleer:
-      vision:
-        text: "Creemos que hay otras formas de relacionarnos para conseguir resultados fantásticos que nos hagan sentir orgullosos."
-        reference: "Nuestra Visión"
-    buttons:
-      see_more: "Ver más"
-      register: "¡Registrarme!"
-      i_am_interested: "Comprar"
-      complete: "Completo"
-      close: "Cerrar"
-    texts:
-      loading: "cargando..."
+    title: Error interno
+    text: Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde.
   resources:
     title: Recursos y materiales sobre agilidad
     subtitle: >-
       Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
     card:
       more_info: Más info
-  mail_landing:
-    title: "IN-COMPANY"
-    alt: "Consultanos para realizar este curso en tu empresa"
-    content: "Por favor danos los siguientes datos para poder asesorarte mejor:%0A¿En qué ciudad estás?%0A¿A qué organización perteneces?%0A¿Cuántas personas estimas que tomarían este entrenamiento?"
-  mail_scholarship:
-    title: "BECAS"
-    alt: "Becas disponibles para ONG e individuos"
-    content: "Disponemos de becas limitadas, ¿nos comentas cómo este curso te ayuda y un poco sobre vos?"
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training
@@ -84,183 +62,18 @@ es:
       description: >-
         Experiencias sobre nuestro trabajo en notas de prensa y publicaciones en diversos medios digitales de Latinoamérica
       canonical: /prensa
-
-  #   refactor
-  slider:
-    title_1: "Agilidad Organizacional"
-    text_1: "Acompañamos a organizaciones y equipos para obtener mejores resultados"
-    title_2: "Facilitación"
-    text_2: "Diseñamos ambientes para potenciar la innovación colectiva"
-    title_3: "Cursos"
-    text_3: "Capacitamos a profesionales y equipos"
-  dt_grid:
-    select_all: "Todos"
-    see_more: "ver más..."
-    loading: "cargando..."
-    showing: "Mostrando desde _START_ hasta _END_ de _TOTAL_ registros"
-    filter: "(filtrado de _MAX_ registros en total)"
-    search: "Buscar"
-    no_courses_found: "No se encontraron cursos, pero nos gustaría que nos contactes a <a href=\\\"mailto:hola@kleer.la\\\">hola@kleer.la</a> con tu inquietud."
-  kleeros:
-    vision: "En Kleer disfrutamos <br/>cocreando ambientes<br/> humanos más conscientes<br/> y asombrosos."
-    live: "vive-las-met.png"
-    team: "equipo-kleer.png"
-    nps: "nps-eventos.png"
-  home:
-    our_services: "Nuestros servicios"
-    facilitation: "Facilitación"
-    facilitation_text: "Diseñamos ambientes para potenciar el trabajo en equipo en reuniones y eventos."
-    coaching: "Agilidad Organizacional"
-    coaching_text: "Acompañamos a organizaciones y equipos para obtener mejores resultados."
-    courses: "Cursos"
-    courses_text: "Capacitamos a profesionales a través de técnicas de aprendizaje colaborativo y participativo."
-    plus_info: "+ Info"
-    calendar:
-      current_year_calendar: "Ver Calendario Completo"
-      title: "Cursos"
-      characteristics: "<ul>
-                <li>Con profesionales altamente reconocidos en Latinoamérica</li>
-                <li>100% vivenciales</li>
-                <li>Dinámicos, divertidos y útiles</li>
-                <li>Certificaciones avaladas por la Scrum Alliance</li>
-              </ul>"
-    community:
-      title: "Comunidad"
-      subtitle: "APOYAMOS ACTIVAMENTE LAS COMUNIDADES LATINOAMERICANAS"
-      text: "Nacimos de la comunidad y queremos devolver siempre a la comunidad. Compartimos conocimientos, tiempo, experiencias y estados de ánimo con comunidades profesionales, educativas, regionales y de todo tipo."
-      agenda: "Eventos Comunitarios"
-  popups:
-    course:
-      registration:
-        title: "Más información"
-      details:
-        title: "Detalles de curso"
-    event:
-      registration:
-        title: "Registro a Evento"
-  clients:
-    title: Nuestros Clientes
-    description: Estas organizaciones confían en nosotros
-    more: Algunos de nuestros clientes
-  coaching:
-    title: "Agilidad Organizacional"
-    subtitle: "Vayamos hacia una Agilidad Organizacional efectiva"
-    contact_us: "¡Escríbenos!"
-    text:
-      top: "<p><strong>Co-creamos con nuestros clientes las estrategias y cursos de acción</strong> para lograr sus objetivos de negocio. Impulsamos formas de trabajo que permitan entregar mayor valor a los clientes.</p>
-          <p><strong>Trabajamos sobre todas las capas de una organización de forma colaborativa:</strong> las prácticas, los procesos, el liderazgo y la cultura; así la empresa mejora su respuesta a las altas expectativas de sus clientes y mejora su rentabilidad.</p>
-          <p><strong>Capacitamos a equipos internos</strong> que lideran el aprendizaje, remueven los impedimentos organizacionales y sostienen el cambio. Promovemos una cultura de aprendizaje, experimentación con feedback frecuente y mejora continua.</p>
-          <p><strong>Promovemos una cultura de aprendizaje y experimentación</strong> para mejorar la adaptación a contextos cambiantes. Cultivamos espacios donde las personas aportan su máximo potencial creativo, de innovación y colaboración. </p>
-      <hr/>"
-      bottom: "<p>¡<a href='mailto:coaching@kleer.la'>Contactanos</a> para conocer más!</p>"
-    tabs:
-      benefits:
-        title: ""
-        text: ""
-      characteristics:
-        title: "Acerca de nuestros servicios de coaching"
-        text: "<p>Se trata de un proceso llevado a cabo in situ con la asistencia de coaches quienes tienen la misión de transmitir de forma activa las <b>prácticas y herramientas ágiles</p> necesarias para impactar positivamente al equipo u organización. </p>
-        <p>Se trabaja directamente sobre los proyectos y objetivos de los equipos y demás interesados en la implementación (gerentes, directores de desarrollo, etc.). Esto incluye la <b>identificación de problemas</b>, la <b>comprensión de sus causas</b> y el <b>desarrollo de las habilidades</b> necesarias para que el equipo sea capaz de resolverlos.</p>
-        <p>En general, existen dos tipos de situaciones: aquellas en las que nunca antes se trabajó en un entorno ágil y otras en que ya existe la experiencia y se desea alcanzar un mayor nivel de profundidad. El servicio de coaching responde efectivamente a ambas, modelando la implementación según las necesidades de la organización.</p>
-        <p>En el caso en que fuera necesario, el acompañamiento es complementado con <b>capacitaciones diseñadas a medida de cada equipo</b>, asegurando un nivel de conocimientos que habilita una mayor efectividad durante la implementación.</p>"
-
-        contact:
-        title: "Solicitar Cotización"
-        text: "<p>Puedes contactarnos a <a href='mailto:hola@kleer.la'>hola@kleer.la</a> para solicitarnos una  cotización.<br/>&nbsp;<br/>&nbsp;<br/>&nbsp;</p>"
-  publishing:
-    title: "Publicamos"
-    description: "Compartimos conocimientosy experiencias. ¡Ayudanos a correr la voz!"
-    content: "Soñamos con un mundo en el que la <strong>información valiosa recorre el mundo</strong>. Aquí, nuestro granito de arena :)"
-
   we_are:
-    title: "Somos"
-    subtitle: "Disfrutamos cocreando ambientes humanos más conscientes y asombrosos."
-    description: 'Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.'
+    title: Somos
+    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.
+    description: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
   nuestra_filosofia:
-    title: "Nuestra filosofía"
-    txt: "<p>El contexto organizacional predominante hoy en día es de cambio continuo, rápido e impredecible.</p>
+    title: Nuestra filosofía
+    txt: >-
+        <p>El contexto organizacional predominante hoy en día es de cambio continuo, rápido e impredecible.</p>
         <p>Entendemos a las organizaciones como sistemas adaptativos complejos en los cuales las personas interactúan, dentro de un contexto que exige innovación y efectividad.</p>
         <p>En este sentido desde la agilidad estamos llamados a repensar su capacidad de respuesta y adaptación sobre cada aspecto de las organizaciones: el liderazgo, la organización del trabajo y su estructura así como el desarrollo de productos y servicios de cara a los clientes y usuarios.</p>
         <p>Los sistemas complejos son emergentes, por lo tanto, la inteligencia contextual es una capacidad absolutamente crucial en el nuevo mundo del trabajo. No creamos ni seguimos recetas sino que consideramos cada caso como único. Nos centramos en ofrecer procesos prácticos y experimentales, y trabajamos en iteraciones, re-evaluando constantemente nuestras acciones midiendo impactos reales.</p>
-        <p>Por lo tanto, concebimos a nuestros clientes como socios en la transformación organizacional con los cuales colaboramos para juntos co-crear procesos adecuados para su contexto y propósito.</p>"
-  press:
-    title: "Prensa"
-    subtitle: "¡Kleer en los medios!"
-    description: "Creemos que el poder está en el conocimiento compartido y puesto en acción. Es por eso que compartimos una serie de noticias acerca de nuestro trabajo."
-    release01_title: "Scrum: Del rugby a la oficina"
-    release01_text: "Scrum hace énfasis en maximizar las relaciones interpersonales y en fomentar la autonomía responsable como factores claves para alcanzar el éxito en los proyectos. A cambio, se obtiene un equipo altamente motivado y comprometido."
-    release02_title: "El secreto de tus ojos: a veces, las imágenes ayudan a innovar"
-    release02_text: "Los dibujos permiten ganar tiempo, porque generan un lenguaje común: los participantes de una reunión se pueden referir a la ilustración en vez de explicar opciones abstractas cada vez. Además, cuando las personas ven que su argumento quedó asentado, se sienten más relajadas y pueden escuchar a los demás."
-    release03_title: "Scrum: El adiós para siempre a productos eternos que tardan meses en ver la luz"
-    release03_text: "Scrum es una estrategia para la creación de productos, una técnica usada en empresas de la talla de Amazon, Spotify, Ericsson y Adobe y que de poco, fue incluso migrando de empresas tecnológicas a ganar terreno en otros rubros e industrias."
-    release04_title: "Una tribu de coaches que hace escuela en la región"
-    release04_text: "Seis socios se propusieron mejorar el mundo del trabajo al gestionar proyectos de software y ofrecen coaching & mentoring para varias empresas. Con 20 personas y sedes en Argentina, Colombia, Perú y Bolivia, operan en Latinoamérica y Europa."
-    release05_title: "Kleer participará en Agile Open Spain 2015"
-    release05_text: "La organización comprometida con la creación de ambientes humanos más conscientes, participará del Agile Open Spain 2015(AOS2015). Se trata de la VII edición de este evento tipo Open Space, una conferencia auto-organizada sobre metodologías ágiles. El encuentro se realizará los próximos 19 y 20 de junio en Gijón, España."
-    release06_title: "Entrevista a Carlos Peix en el programa La Burbuja, conducido por Sebastián Campanario y Bruno Massare."
-    release06_text: "Una repaso sobre las metodologías ágiles y su situación en diferentes tipos de organizaciones."
-    release07_title: "Cómo el tipo de contrato puede condicionar un proyecto complejo"
-    release07_text: "Para tener éxito en la realización de proyectos complejos necesitamos al menos tres elementos: Equipos con conocimientos y habilidades técnicas apropiadas, objetivos y alcances claros, y una comunicación frecuente y efectiva."
-    release08_title: "Entrevista a Pablo Tortorella en CustomerIn"
-    release08_text: "En esta charla Pablo nos cuenta sobre facilitación gráfica, agilidad y otros métodos para mejorar la comunicación y el trabajo de equipo."
-    release09_title: "7 claves del Coaching de Equipos"
-    release09_text: "Martín Alaimo, coach organizacional y autor de libros sobre agilismo, Scrum y coaching, explica las diferencias entre el coaching ejecutivo y del coaching de equipos."
-    release10_title: "5 beneficios de las agencias más ágiles"
-    release10_text: "Los métodos ágiles llegaron a las agencias digitales para quedarse. Llevan más de dos décadas dando resultados en otras industrias, más que nada en el desarrollo de software, y hace más de dos años desembarcaron en la publicidad."
-    release11_title: "Kleer será anfitrión de la 1° Jornada de Metacreatividad en Argentina"
-    release11_text: "Kleer se complace en anunciar que será el anfitrión de la Primera Jornada del Movimiento de Metacreatividad en la Argentina. El encuentro, de entrada libre y gratuita, se realizará el próximo lunes 31 de agosto en sus oficinas."
-    release12_title: "La ropa no se negocia"
-    release12_text: "Las nuevas generaciones impusieron el look casual para ir a trabajar, pero hay empresas que hoy quieren volver a la formalidad: ¿cuál es el punto de equilibrio?"
-    release13_title: "De qué se trata la metodología de trabajo inspirada en el rubgy que quiere ganar terreno en las empresas"
-    release13_text: "A través de liderazgos situacionales y deadlines de corto plazo, el scrum busca promover tanto innovación como productividad. En qué consiste."
-    release14_title: "Facilitación Gráfica como recurso para la CI"
-    release14_text: "En Kleer, junto a sus socios, se especializa en metodologías ágiles"
-    release15_title: "Cultura ágil y cultura latina ¿son compatibles?"
-    release15_text: "Cuando adoptas para tu empresa una solución creada en otro contexto ¿Tenés en cuenta la idiosincrasia de tu organización y de tu país? El contexto es un factor crítico para el éxito."
-    release16_title: "RRHH podría matar la agilidad de tu empresa... o potenciarla"
-    release16_text: "Hace unos meses estaba conversando con uno de nuestros clientes sobre la logística de un taller que iba a impartir"
-    release17_title: "Kleer en Congreso Regional de Interacción con Clientes 2017"
-    release17_text: "El Congreso Regional de Interacción con Clientes, que se realizará el 8 de junio en la Ciudad de Buenos Aires, apunta a generar un espacio de"
-    release18_title: "Rápidas y sin furia: cómo toman las decisiones las empresas más creativas"
-    release18_text: "Nuevo paradigma: estructuras más horizontales, menor aversión al riesgo y fuerte dinamismo interno son algunas de las claves de estas compañías"
-    release19_title: "Cómo aprovechar las horas para ser más productivo y descansar"
-    release19_text: "En las películas de acción hay secuencias de persecuciones interminables en las que el protagonista corre detrás del villano o viceversa."
-    release19b_title: "Tiempo que has de usar: cómo aprovechar las horas para ser más productivo y descansar"
-    release19b_text: "Cada vez más personas sienten que no llegan a hacer tantas cosas como quisieran por la interrupción de las apps y no saber decir que no"
-    release20_title: "Nueve decisiones clave para iniciar la transformación organizacional"
-    release20_text: "Muchas organizaciones están en un camino de evolución, embarcándose en la agilidad como principal alternativa. En muchos casos lo hacen con escepticismo,"
-    release21_title: "¿Cómo iniciar la transformación organizacional?"
-    release21_text: "El proceso de la transformación organizacional suele ser un gran desafío para las empresas, que en muchos casos lo llevan a cabo con escepticismo, pero con la presión de la industria"
-    release22_title: "8 amenazas de la transformación digital a las empresas tradicionales"
-    release22_text: "Las empresas tradicionales de muchas industrias no podrán sobrevivir si no desarrollan su capacidad de adaptarse al nuevo contexto que proponen las tecnologías de información y a los hábitos de los nativos digitales."
-    release23_title: "Del error al aprendizaje en el camino hacia el éxito temprano"
-    release23_text: "Hay algo con la frase “Prueba y Error” que no me convence. En general la usamos para referirnos a la estrategia que usamos en un contexto complejo o de"
-    release24_title: "Kleer participa en el Scrum Day Colombia con una charla sobre agilidad"
-    release24_text: "Kleer, organización de aprendizaje y coaching para aplicar los métodos ágiles en áreas de innovación, anunció hoy que participará en el Scrum Day Colombia..."
-    release25_title: "La unión hace la fuerza: coaching de equipos"
-    release25_text: "Trucos para potenciar esta herramienta de motivación en los grupos de trabajo. Del enfoque sistémico a la imposición de límites al propio entrenador"
-    release26_title: "¿Cómo saber si estamos desarrollando el producto equivocado?"
-    release26_text: "La adopción de los valores y herramientas ágiles para el desarrollo de productos está acelerando la transformación digital en las empresas"
-    release27_title: "¿Qué es eso de la agilidad? ¿Existe más allá del software?"
-    release27_text: "¿Qué es eso de la agilidad? ¿Aplica solo al mundo del desarrollo de software? Inicialmente sí, el término fue pensado para construir mejor software. Nosotros mismos la conocimos en ese ámbito."
-    release28_title: "Opinión |¿Qué es lo esencial para una transformación organizacional exitosa?"
-    release28_text: "Las organizaciones necesitan contar con elementos que les permitan responder a contextos volátiles, inciertos y complejos. Al momento de enfrentar el desafío del cambio, hay metodologías ágiles..."
-    release29_title: "Umbral M.A.Y.A.: ¿se puede innovar todo el tiempo? ¿hasta dónde hacerlo?"
-    release29_text: "Como emprendedora , seguro te cuesta seguir el ritmo cambiante que llevan tus consumidores (¡y el mundo en general!). Un día les gusta una cosa, al día siguiente, prefieren otra. Las tendencias y las ..."
-    release30_title: "Recursos Humanos Cuarentena obligatoria: el teletrabajo ¿llegó para quedarse?"
-    release30_text: "El aislamiento forzó a las empresas a implementar el home office, aunque no sin dificultades. Qué pasará después de la pandemia."
-    release31_title: "Teletrabajo en pandemia: entornos distribuidos y liderazgo virtual"
-    release31_text: "El liderazgo virtual implica confianza. Los líderes deben confiar en las capacidades de los colaboradores y delegar las tareas tal como lo harían si estuvieran sentados uno al lado del otro."
-    release32_title: "La fuerza de trabajo pasó a estar en un 90% en hogares: la tecnología existe pero faltan procesos y cultura"
-    release32_text: "Se estima que un 20% de los empleados ya hacía teletrabajo previo al brote de coronavirus, uno o dos días por semana en promedio."
-    release33_title: "9 prácticas clave para potenciar la colaboración distribuida"
-    release33_text: "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales, es justo reivindicar la potencia y el valor de la virtualidad."
-    release34_title: "9 prácticas clave para potenciar la colaboración distribuida"
-    release34_text: "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales, es justo reivindicar la potencia y el valor de la virtualidad."
-    release35_title: "Nueve prácticas para potenciar la colaboración de equipos distribuidos"
-    release35_text: "Aunque cada vez extrañamos más los encuentros cara a cara (no cara a pixel) y la experiencia sensorial completa de las reuniones presenciales. Pues bien, ahora es necesario reivindicar la potencia y el valor de la virtualidad."
-    release36_title: "¿Cómo hacer de la mejora continua un hábito con impacto en tu negocio?"
-    release36_text: "Leonardo Agudelo, Agile Coach en Kleer, analiza por qué un coach permite a empresas y profesionales transformar sus plataforma para estar a la vanguardia adquiriendo el hábito de la mejora continua con la Kata de Mejora inspirada en Toyota"
+        <p>Por lo tanto, concebimos a nuestros clientes como socios en la transformación organizacional con los cuales colaboramos para juntos co-crear procesos adecuados para su contexto y propósito.</p>
   privacy:
     title: "Declaración de privacidad"
     title1: "SECCIÓN 1 - ¿QUÉ HACEMOS CON LA INFORMACIÓN QUE NOS DAS?"
@@ -322,300 +135,9 @@ es:
     title21: "SECCIÓN 20 - INFORMACIÓN DE CONTACTO"
     text21: "Preguntas acerca de los Términos de Servicio deben ser enviadas a info@kleer.la."
   event:
-    course: "Curso"
-    time_zone: "Zona Horaria:"
-    starts: "Inicia"
-    finishes: "Finaliza"
-    ask_for_business_prices: "¡Pregunta por nuestras tarifas Business (Grupos)!"
-    early_bird_until: "hasta el"
-    early_bird_couples: "Parejas (por persona)"
-    early_bird_couples_until: "Parejas (por persona) hasta el"
-    public_editions: "Próximas ediciones abiertas"
-    other_trainings: "Otros entrenamientos de la categoría"
-    facilitator: "Facilitado por"
-    facilitators: "Facilitadores"
-    save90percent: "Ahorrá hasta el 90%!"
-    free: "Evento Gratuito"
-    wanna_join: "¿Más información?"
-    location: "Lugar"
-    time: "%{starts} a %{ends}"
-    duration: "horas"
-    date: "Fecha"
-    important: "Importante"
-    hour: "Horario"
-    pricing: "Precio"
-    rating:
-      based: "basado en"
-      opinion: "opiniones de asistentes a este tipo de evento"
-      outof: "de"
-    tabs:
-      description: "Descripción"
-      target: "Destinado a"
-      program: "Programa"
-      faq: "Preguntas Frecuentes"
-      linking_with_category: " te ayuda a lograr"
-    details:
-      sections:
-        learnings: "¿Qué voy a aprender?"
-        takeaways: "¿Qué voy a obtener?"
-      early_bird: "<strong>Asegura tu vacante antes del %{day} de %{month} para obtener un descuento de %{currency} %{amount}!</strong> Tambi&eacute;n hay descuentos disponibles por cantidad de personas."
-    is_full:
-      title: "<strong>Ouch!</strong> El cupo para este evento se encuentra completo."
-      text: "Puedes contactarnos a <a href=\"mailto:entrenamos@kleer.la?subject=Nuevas Fechas: %{title}\">entrenamos@kleer.la</a> para conocer nuevas fechas."
     not_found: "El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares."
-  category:
-    training: "Cursos"
   contact:
-    title: "Contacto"
-    contact_us: "Contáctanos"
     training_email: "entrenamos@kleer.la"
-    newsletter_subscription: "Suscríbete a nuestra newsletter"
-    helped_by: "Te contactarás con"
-    locations:
-      argentina:
-        name: "Argentina"
-        address1: "Buenos Aires, Cipolletti y Rosario"
-        address2: ""
-        phone: "" #"+54 11.5236.0314 <br> +54 11.5236.0315"
-        contact: "" #"Macarena"
-        contact_email: "info.ar@kleer.la"
-      bolivia:
-        name: "Bolivia"
-        address1: "Cochabamba"
-        address2: ""
-        phone: "+59 1.4.4321690"
-        contact: "Israel"
-        contact_email: "info.bo@kleer.la"
-      colombia:
-        name: "Colombia"
-        address1: "Bogotá y Medellín"
-        address2: ""
-        phone: "+57 3207666176"
-        whatsapp: "<a href=\"https://wa.me/573207666176\">Contáctanos por WhatsApp</a>"
-        contact1: "Cursos: te contactarás con Ingrith  - +57 3207666176"
-        contact2: "Administrativos: te contactarás con Ginneth - +57 3202210200"
-        contact_email: "info.co@kleer.la"
-      uruguay:
-        name: "Uruguay"
-        address1: "Montevideo"
-        address2: " "
-        whatsapp: "<a href=\"https://wa.me/59891959360\">Contáctanos por WhatsApp</a>"
-        phone: "+598-2628-0702"
-        contact: "Elysabeth y Pablo"
-        contact_email: "info.uy@kleer.la"
-      usa:
-        name: "USA"
-        address1: ""
-        address2: ""
-        whatsapp: ""
-        phone: ""
-        contact: ""
-        contact_email: "info.us@kleer.la"
-      other:
-        title: "Global"
-        name: "Global"
-        contact_us: "Contáctanos"
-        whatsapp: "Contáctanos por WhatsApp <br><a href=\"https://wa.me/59891959360\">+598 91959360</a><br><a href=\"https://wa.me/573207666176\">+57 3207666176</a>"
-        contact_email: "info@kleer.la"
-    subscription:
-      text: "Entérate de todas las novedades del mundo ágil"
-      interested: "SUSCRÍBETE"
-      form:
-        title: "SUSCRIPCIÓN"
-        mail_hint: "tu@email.com"
-        fname_hint: "Nombre"
-        lname_hint: "Apellido"
-        where_are_you:  "Tu lugar más próximo ..."
-        cancel: "Cancelar"
-        send: "SUSCRÍBETE AHORA!"
-        countries: '<option value="ZI-AMS-AR-BUE (Buenos Aires)">Argentina - Buenos Aires</option>
-          <option value="ZI-AMS-AR-BUE (Buenos Aires)">Argentina - Capital Federal</option>
-          <option value="ZI-AMS-AR-NOA (Noroeste)">Argentina - Catamarca</option>
-          <option value="ZI-AMS-AR-LIT (Litoral)">Argentina - Chaco</option>
-          <option value="ZI-AMS-AR-PAT (Patagonia)">Argentina - Chubut</option>
-          <option value="ZI-AMS-AR-CTR (Centro)">Argentina - Córdoba</option>
-          <option value="ZI-AMS-AR-LIT (Litoral)">Argentina - Corrientes</option>
-          <option value="ZI-AMS-AR-LIT (Litoral)">Argentina - Entre Rios</option>
-          <option value="ZI-AMS-AR-LIT (Litoral)">Argentina - Formosa</option>
-          <option value="ZI-AMS-AR-NOA (Noroeste)">Argentina - Jujuy</option>
-          <option value="ZI-AMS-AR-CTR (Centro)">Argentina - La Pampa</option>
-          <option value="ZI-AMS-AR-NOA (Noroeste)">Argentina - La Rioja</option>
-          <option value="ZI-AMS-AR-CUY (Cuyo)">Argentina - Mendoza</option>
-          <option value="ZI-AMS-AR-LIT (Litoral)">Argentina - Misiones</option>
-          <option value="ZI-AMS-AR-PAT (Patagonia)">Argentina - Neuquen</option>
-          <option value="ZI-AMS-AR-PAT (Patagonia)">Argentina - Río Negro</option>
-          <option value="ZI-AMS-AR-NOA (Noroeste)">Argentina - Salta</option>
-          <option value="ZI-AMS-AR-CUY (Cuyo)">Argentina - San Juan</option>
-          <option value="ZI-AMS-AR-CUY (Cuyo)">Argentina - San Luis</option>
-          <option value="ZI-AMS-AR-PAT (Patagonia)">Argentina - Santa Cruz</option>
-          <option value="ZI-AMS-AR-CTR (Centro)">Argentina - Santa Fé</option>
-          <option value="ZI-AMS-AR-NOA (Noroeste)">Argentina - Santiago del Estero</option>
-          <option value="ZI-AMS-AR-PAT (Patagonia)">Argentina - Tierra del Fuego</option>
-          <option value="ZI-AMS-AR-NOA (Noroeste)">Argentina - Tucumán</option>
-          <option value="ZI-AUS (Australia)">Australia</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Beni</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Chuquisaca</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Cochabamba</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - La Paz</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Oruro</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Pando</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Potosí</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Santa Cruz</option>
-          <option value="ZI-AMS-BO (Bolivia)">Bolivia - Tarija</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Acre</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Alagoas</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Amapá</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Amazonas</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Bahia</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Ceará</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Espírito Santo</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Goiás</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Mato Grosso</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Mato Grosso do Sul</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Minas Gerais</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Pará</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Paraíba</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Paraná</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Pernambuco</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Piauí</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Rio de Janeiro</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Rio Grande do Norte</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Rio Grande do Sul</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Rondônia</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Roraima</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Santa Catarina</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - São Paulo</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Sergipe</option>
-          <option value="ZI-AMS-BR (Brasil)">Brasil - Tocantins</option>
-          <option value="ZI-AMN-CA (Canada)">Canada</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Antofagasta</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Arica y Parinacota</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Atacama</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Aysen del General Carlos Ibanez del Campo</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Bio Bio</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Coquimbo</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - La Araucania</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Libertador General Bernardo O Higgins</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Los Lagos</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Los Rios</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Magallanes y la Antartica Chilena</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Maule</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Santiago Metropolitana</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Tarapaca</option>
-          <option value="ZI-AMS-CL (Chile)">Chile - Valparaiso</option>
-          <option value="ZI-AMS-CO-EJE (Eje cafetero)">Colombia - Armenia</option>
-          <option value="ZI-AMS-CO-CAR (Caribe)">Colombia - Barranquilla</option>
-          <option value="ZI-AMS-CO-BOG (Bogota)">Colombia - Bogota</option>
-          <option value="ZI-AMS-CO-SAN (Santander)">Colombia - Bucaramanga</option>
-          <option value="ZI-AMS-CO-PAC (Pacífico)">Colombia - Cali</option>
-          <option value="ZI-AMS-CO-CAR (Caribe)">Colombia - Cartagena</option>
-          <option value="ZI-AMS-CO-SAN (Santander)">Colombia - Cúcuta</option>
-          <option value="ZI-AMS-CO-BOG (Bogota)">Colombia - Ibagué</option>
-          <option value="ZI-AMS-CO-EJE (Eje cafetero)">Colombia - Manizales</option>
-          <option value="ZI-AMS-CO-MDE (Medellín)">Colombia - Medellin</option>
-          <option value="ZI-AMS-CO-CAR (Caribe)">Colombia - Monteria</option>
-          <option value="ZI-AMS-CO-BOG (Bogota)">Colombia - N/A</option>
-          <option value="ZI-AMS-CO-BOG (Bogota)">Colombia - Neiva</option>
-          <option value="ZI-AMS-CO-PAC (Pacífico)">Colombia - Pasto</option>
-          <option value="ZI-AMS-CO-EJE (Eje cafetero)">Colombia - Pereira</option>
-          <option value="ZI-AMS-CO-PAC (Pacífico)">Colombia - Popayan</option>
-          <option value="ZI-AMS-CO-PAC (Pacífico)">Colombia - Quibdó</option>
-          <option value="ZI-AMS-CO-CAR (Caribe)">Colombia - Santa Marta</option>
-          <option value="ZI-AMS-CO-CAR (Caribe)">Colombia - Sincelejo</option>
-          <option value="ZI-AMS-CO-BOG (Bogota)">Colombia - Tunja</option>
-          <option value="ZI-AMS-CO-CAR (Caribe)">Colombia - Valledupar</option>
-          <option value="ZI-AMS-CO-BOG (Bogota)">Colombia - Villavicencio</option>
-          <option value="ZI-AMC (America Central y Caribe)">Cuba</option>
-          <option value="ZI-AMC (America Central y Caribe)">República Dominicana</option>
-          <option value="ZI-AMS-EC (Ecuador)">Ecuador</option>
-          <option value="ZI-AMC (America Central y Caribe)">Guatemala</option>
-          <option value="ZI-AMC (America Central y Caribe)">Honduras</option>
-          <option value="ZI-AMN-MX (Mexico)">Mexico</option>
-          <option value="ZI-AMC (America Central y Caribe)">Panama</option>
-          <option value="ZI-AMS-PY (Paraguay)">Paraguay</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Amazonas</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Áncash</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Apurímac</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Arequipa</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Ayacucho</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Cajamarca</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Callao</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Cusco</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Huancavelica</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Huánuco</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Ica</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Junín</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - La Libertad</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Lambayeque</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Lima</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Loreto</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Madre de Dios</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Moquegua</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Pasco</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Piura</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Puno</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - San Martín</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Tacna</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Tumbes</option>
-          <option value="ZI-AMS-PE (Peru)">Peru - Ucayali</option>
-          <option value="ZI-ASI (Asia)">España</option>
-          <option value="ZI-EUR-ES (España)">España - Andalucía</option>
-          <option value="ZI-EUR-ES (España)">España - Aragón</option>
-          <option value="ZI-EUR-ES (España)">España - Canarias</option>
-          <option value="ZI-EUR-ES (España)">España - Cantabria</option>
-          <option value="ZI-EUR-ES (España)">España - Castila-La Mancha</option>
-          <option value="ZI-EUR-ES (España)">España - Castilla y León</option>
-          <option value="ZI-EUR-ES (España)">España - Cataluña</option>
-          <option value="ZI-EUR-ES (España)">España - Ceuta</option>
-          <option value="ZI-EUR-ES (España)">España - Comunidad de Madrid</option>
-          <option value="ZI-EUR-ES (España)">España - Comunidad Foral de Navarra</option>
-          <option value="ZI-EUR-ES (España)">España - Comunidad Valenciana</option>
-          <option value="ZI-EUR-ES (España)">España - Extremadura</option>
-          <option value="ZI-EUR-ES (España)">España - Galicia</option>
-          <option value="ZI-EUR-ES (España)">España - Islas Baleares</option>
-          <option value="ZI-EUR-ES (España)">España - La Rioja</option>
-          <option value="ZI-EUR-ES (España)">España - Melilla</option>
-          <option value="ZI-EUR-ES (España)">España - País Vasco</option>
-          <option value="ZI-EUR-ES (España)">España - Principado de Asturias</option>
-          <option value="ZI-EUR-ES (España)">España - Región de Murcia</option>
-          <option value="ZI-AMN-US (EEUU)">Estados Unidos</option>
-          <option value="ZI-AMS-UY (Uruguay)">Uruguay</option>
-          <option value="ZI-AMS-VE (Venezuela)">Venezuela</option>'
-  kleexperience:
-    title: "Ésta es la Experiencia Kleer"
-    professionals:
-      title: "Con profesionales altamente reconocidos en Latinoamérica"
-      description: "<p>Encontrarás entrenadores de primer nivel, reconocidos como tal por sus pares de las Comunidades Latinoamericanas de Metodologías Ágiles.</p><p>Contarás con diversidad de perfiles con amplia experiencia en la industria y la academia, así como en técnicas de facilitación y en la obtención de resultados en procesos de transformación organizacional.</p>"
-    experiential:
-      title: "100% vivenciales"
-      description: "<p>El protagonista eres tú. Los facilitadores son guías que te acompañarán en el camino de aprendizaje.</p><p>La experiencia es altamente interactiva. Desde el inicio desarrollarás habilidades como el enfoque, la auto-organización, la confianza y la apertura.</p>"
-    lasting_learning:
-      title: "Aprendizaje que perdura"
-      description: "<p>La riqueza sensorial, la repetición, el dibujo, y el manejo de las emociones y los tiempos en un espacio seguro y confortable hacen que aprendas de manera natural.</p><p>Vivirás éstas, las técnicas de aprendizaje colectivo y participativo, donde serás parte de un equipo auto organizado y el facilitador te guiará 'desde el fondo del aula'.</p>"
-    inspiring:
-      title: "Motivantes"
-      description: "<p>¡Al final del curso te sentirás energizado! La alta colaboración e interactividad durante el proceso te dejará motivado y con ganas de implementar todo lo aprendido en tu entorno cotidiano.</p>"
-
-  scrumalliance:
-    title: "Una Experiencia Diferente"
-    description: "Somos la primera empresa de habla hispana en ser reconocida por Scrum Alliance como Representante Educativo (REP)."
-    why: "Por qué tomar cursos respaldados por
-          <h3>Scrum Alliance</h3>
-
-          <ul>
-            <li>
-              Fue creada por los creadores de Scrum
-            </li>
-            <li>
-              Es la entidad certificadora en Scrum con mayor trayectoria y prestigio internacional
-            </li>
-            <li>
-              Los entrenadores más preparados del mundo Scrum dictan cursos avalados por esta institución
-            </li>
-          </ul>"
-    top: "Principales cursos"
-
-
   generals:
     buttons:
       more_info: 'Conoce más'
@@ -650,7 +172,6 @@ es:
           url: 'https://www.linkedin.com/company/kleer/'
         }
       ]
-
   navbar:
 #    - {
 #      text: 'Agilidad organizacional',
@@ -750,7 +271,6 @@ es:
       url: '/somos',
       inside: true
     }
-
   footer_menu:
     - {
       title: 'Qué hacemos',
@@ -802,31 +322,7 @@ es:
           }
         ]
     }
-
-  blog:
-    title: Blog
-    subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional
-    readit: "Continuar leyendo"
-    back: "<< Volver"
-    home: Inicio
-    article: Artículo
-    highlights: Destacados del mes
-    latest: Lo más nuevo
-    show_more: Ver más
-    search:
-      category: Categorías
-      reset: Limpiar filtros
-      result:
-        category_title: 'Categoría:'
-        text_title: 'Buscando:'
-        empty: No se encontraron resultados
-    landing:
-      back: Volver
-      published: Publicado el
-      ToC: Tabla de contenido
-      authors: 'Escrito por:'
-
-  home2022:
+  home:
     home_business_agility:
       title: 'Agilidad organizacional'
       text: '
@@ -899,7 +395,6 @@ es:
       title: 'Entérate de todas las novedades del mundo ágil'
       button:
         title: 'Suscríbete'
-
   catalog:
     title: Capacitación Empresarial
     subtitle: >-
@@ -934,35 +429,8 @@ es:
       button:
         text: Ir a Academia
         link: https://academia.kleer.la
-
-  courses_page:
-    title: Capacitación profesional en Agilidad
-    subtitle: Desarrolla tus habilidades y la de tus equipos. Ofrecemos programas de formación, desde niveles iniciales hasta avanzados. En Kleer ponemos foco en un aprendizaje participativo y dinámico, basado en comprender y experimentar tempranamente los conceptos y prácticas. Capacitaciones sobre Scrum, Mejora Continua, Agile Coaching, Agile Facilitator, Design Thinking, Product Discovery, desarrollo de Liderazgo Ágil y más.
     type: Nuestra oferta de cursos
-    in_company:
-      title: In Company
-      text: >-
-        Potencia las habilidades de tus equipos y promueve la Agilidad en tu empresa.
-        Brindamos soluciones de aprendizaje adaptadas a tu organización. Diseñamos una experiencia personalizada con capacitaciones ajustadas a las necesidades y objetivos de tu empresa.
-      button:
-        text: "Catálogo"
-        link: "#training-courses"
-    public:
-      title: Abierto
-      text: Eleva tus habilidades profesionales.Únete a nuestra propuesta de cursos abiertos al público, registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar la Agilidad al siguiente nivel.
-      button:
-        text: "Ver Agenda"
-        link: "/agenda"
-    e-learing:
-      title: E-Learning
-      text: Cursos online completamente a demanda. Tú decides cuando empezar, el ritmo que te gusta y cuándo terminar.
-      button:
-        text: "Ir a Academia"
-        link: https://academia.kleer.la
-    catalog:
-      title: "Capacitación profesional en agilidad"
-      more: Ver más
-
+    more: Ver más
   course_landing:
     flash:
       title: ¡No dudes contactarnos para tu curso in company!
@@ -975,34 +443,41 @@ es:
     program: Programa del curso
     testimonies: Testimonios de nuestros participantes
     faq: Preguntas Frecuentes
-
   agenda:
     title: Agenda de cursos
     subtitle: Desarrolla tus habilidades profesionales y la de tus equipos. Cursos participativos y dinámicos. Selecciona las formaciones alineadas con los resultados de aprendizaje deseados.
-
-  ebooks:
-    title: "Libros"
-    subtitle: "Compartimos conocimiento y experiencias. ¡Ayúdanos a correr la voz!"
-
-  blog2022:
+  blog:
     title: Blog
-    subtitle: Artículos sobre este fascinante mundo de la Agilidad Organizacional.
-
-  clients2022:
+    subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional
+    readit: "Continuar leyendo"
+    back: "<< Volver"
+    highlights: Destacados del mes
+    latest: Lo más nuevo
+    show_more: Ver más
+    search:
+      category: Categorías
+      reset: Limpiar filtros
+      result:
+        category_title: 'Categoría:'
+        text_title: 'Buscando:'
+        empty: No se encontraron resultados
+    landing:
+      back: Volver
+      published: Publicado el
+      ToC: Tabla de contenido
+      authors: 'Escrito por:'
+  clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.
-
   aboutus:
     title: Sobre Kleer
     subtitle: "<p>Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su transformación integral para lograr mejores resultados.</p>
     <p>
      En Kleer disfrutamos cocreando ambientes humanos más conscientes y asombrosos
     </p>"
-
   news:
     title: Prensa
     subtitle: Notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
-
   business-agility:
     title: Agilidad Organizacional
     subtitle: >-
@@ -1088,7 +563,6 @@ es:
       button:
         text: ¿Conversamos?
         link: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
-
   services:
     title: Transforma tu Empresa con Agilidad Organizacional
     subtitle: >-
@@ -1109,7 +583,6 @@ es:
       title: Cuéntanos más sobre tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
       button:
         text: ¿Conversamos?
-
   contact-us-form:
     title: Contáctanos
     name-input:
@@ -1127,7 +600,6 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
-
   certificate-form:
     title: Certificados
     subtitle: Consulta sobre un certificado emitido por Kleer
