@@ -12,7 +12,7 @@ def first_x_courses(courses, quantity)
     .first(quantity)
     .map.with_index { |course, index|
       is_open = (course.date.to_s != '')
-      date = is_open ? format_date_range(course.date, course.finish_date, 'es') : t('home2022.home_courses.no_date')
+      date = is_open ? format_date_range(course.date, course.finish_date, 'es') : t('home.home_courses.no_date')
       {
         title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle,
         cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false,date: date, url: course.event_type.uri_path,
