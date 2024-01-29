@@ -396,12 +396,11 @@ es:
       button:
         title: 'Suscríbete'
   catalog:
-    title: Capacitación Empresarial
-    subtitle: >-
-      **Incorpora enfoques ágiles en tu plan de formación.**
-      <br/>
-      <br/>
-      Cursos orientados a fortalecer las habilidades en todos los niveles de tu organización. Nuestros métodos de enseñanza permiten comprender y experimentar los conceptos y prácticas de forma inmediata. 
+    hero:
+      title: Capacitación Empresarial
+      subtitle: Incorpora enfoques ágiles en tu plan de formación.
+      text: >-
+          Cursos orientados a fortalecer las habilidades en todos los niveles de tu organización. Nuestros métodos de enseñanza permiten comprender y experimentar los conceptos y prácticas de forma inmediata.
     list:
       title: ¡Explora nuestra propuesta de capacitación!
     in_company:
@@ -432,6 +431,8 @@ es:
     type: Nuestra oferta de cursos
     more: Ver más
   course_landing:
+    event:
+      time: "%{starts} a %{ends}"
     flash:
       title: ¡No dudes contactarnos para tu curso in company!
       contact_us: Contáctanos🔥
@@ -444,8 +445,10 @@ es:
     testimonies: Testimonios de nuestros participantes
     faq: Preguntas Frecuentes
   agenda:
-    title: Agenda de cursos
-    subtitle: Desarrolla tus habilidades profesionales y la de tus equipos. Cursos participativos y dinámicos. Selecciona las formaciones alineadas con los resultados de aprendizaje deseados.
+    hero:
+      title: Agenda de cursos
+      subtitle: Desarrolla tus habilidades profesionales y la de tus equipos.
+      text: Cursos participativos y dinámicos. Selecciona las formaciones alineadas con los resultados de aprendizaje deseados.
   blog:
     title: Blog
     subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional

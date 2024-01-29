@@ -2,10 +2,13 @@
   <div class="container h-100">
     <div class="row h-100">
       <div class="col-md-6 hero__text">
-        <H1 class="mb-5" style="position: relative">
-          <%= t('agenda.title') %>
-        </H1>
-        <p><%= t('agenda.subtitle') %></p>
+        <h1 class="mb-5" style="position: relative">
+          <%= t('agenda.hero.title') %>
+        </h1>
+        <% unless t('agenda.hero.subtitle').include? 'translation missing' %>
+          <h2><%= t('agenda.hero.subtitle') %></h2>
+        <% end %>
+        <p><%= t('agenda.hero.text') %></p>
 <!--        <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/posters/bannersitio.jpg" />-->
       </div>
       <div class="col-md-6 hero__img-container">
