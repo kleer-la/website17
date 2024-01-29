@@ -2,7 +2,7 @@
 
    event_type = event.event_type
    date = format_date_range(event.date, event.finish_date, session[:locale])
-   info_time =  t("event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
+   info_time =  t("course_landing.event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
 
 %>
 <div class="row event-item pb-4 mt-4">

@@ -24,6 +24,12 @@ en:
         development, Retrospectives, Leadership, Communication, Kanban, Agile
         Coaching
       canonical: /recursos
+    catalog:
+      title: Catalog of courses and workshops
+      description: >-
+        We offer training and workshops for agile teams, Scrum Masters, Product
+        Owners, Agile Leaders, Agile Coaches, and Agile HR.
+      canonical: /catalogo
     blog:
       title: Blog - Articles on Organizational Agility
       description: >-
@@ -591,12 +597,11 @@ en:
       button:
         title: Suscribe
   catalog:
-    title: Business training
-    subtitle: >-
-      **Incorporate agile approaches into your training plan.**
-      <br/>
-      <br/>
-      Courses aimed at strengthening skills at all levels of your organization. Our teaching methods allow you to understand and experience concepts and practices immediately.
+    hero:
+      title: Business training
+      subtitle: Incorporate agile approaches into your training plan.
+      text: >-
+        Courses aimed at strengthening skills at all levels of your organization. Our teaching methods allow you to understand and experience concepts and practices immediately.
     list:
       title: Explore our training proposal!
     in_company:
@@ -627,6 +632,8 @@ en:
     more: See more
     type: How do we deliver our courses?
   course_landing:
+    event:
+      time: "%{starts} to %{ends}"
     flash:
       title: Bring this course to your company!
       contact_us: Contact us🔥

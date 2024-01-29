@@ -277,6 +277,12 @@
   padding-right: 5%;
   margin-bottom: 20px;
   height: 60% !important; }
+  #training-hero h2 {
+    font-family: 'Raleway',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px; }
 
 .training-hero__text {
   padding-bottom: 4%;
@@ -2154,6 +2160,12 @@ html {
     justify-content: center;
     height: 100%;
     z-index: 3; }
+    .hero-medium .hero__text h2 {
+      font-family: 'Raleway',sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 26px; }
 
 .generic-hero {
   max-height: 150vh;

@@ -2,8 +2,11 @@
   <div class="container h-100">
     <div class="row h-100">
       <div class="col-md-6 hero__text training-hero__text">
-          <h1><%= t("catalog.title") %></h1>
-          <p><%= @markdown_renderer.render(t("catalog.subtitle")) %></p>
+          <h1><%= t("catalog.hero.title") %></h1>
+          <% unless t("catalog.hero.subtitle").include? 'translation missing'%>
+            <h2><%= t("catalog.hero.subtitle") %></h2>
+          <% end %>
+          <p><%= t("catalog.hero.text") %></p>
 <!--          <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/posters/bannercatalogo.png" />-->
       </div>
       <div class="col-md-6 hero__img-container">
