@@ -2,6 +2,7 @@
 
 Feature: Event Type Details
 
+	@generic-validations
 	Scenario: Detalle de Evento
 		Given theres an event type
 		When I visit the plain event type page

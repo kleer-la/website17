@@ -1,5 +1,6 @@
 Feature:  Páginas de servicios.
 
+  @generic-validations
   Scenario: Página DLA
     Given  I visit the "servicios/desarrollo-liderazgo-agil" page
     Then I should see "Programa de Desarrollo del Liderazgo Ágil"
