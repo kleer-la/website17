@@ -12,9 +12,9 @@ post "/send-mail" do
   if verify_recaptcha
     connector = KeventerConnector.new
     connector.send_mail(data)
-    logger.debug "Mail sent: #{data}"
+    puts "Mail sent: #{data}"
     flash[:notice] = 'Su mensaje ha sido enviado correctamente'
-    logger.debug "after notice"
+    puts "after notice"
 
   else
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
