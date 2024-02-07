@@ -48,6 +48,7 @@ configure do
   set :recaptcha_public_key, ENV['RECAPTCHA_PUBLIC_KEY']
   set :recaptcha_private_key, ENV['RECAPTCHA_PRIVATE_KEY']
   set :views, "#{File.dirname(__FILE__)}/views"
+  set :logging, Logger::DEBUG
 
   I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
 
@@ -58,6 +59,8 @@ configure do
 end
 
 before do
+  logger.debug "Sesión antes de la acción: #{session.inspect}"
+
   session[:locale] = if request.host.include?('kleer.us')
                        'en'
                      else
