@@ -14,7 +14,7 @@ post "/send-mail" do
     connector.send_mail(data)
     puts "Mail sent: #{data}"
     flash[:notice] = 'Su mensaje ha sido enviado correctamente'
-    puts "after notice"
+    puts "after notice #{session.inspect}"
 
   else
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
