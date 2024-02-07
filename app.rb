@@ -59,8 +59,6 @@ configure do
 end
 
 before do
-  logger.debug "Sesión antes de la acción: #{session.inspect}"
-
   session[:locale] = if request.host.include?('kleer.us')
                        'en'
                      else
