@@ -43,8 +43,6 @@ get '/' do
 
                         first_three << one[0]
                       end
-                    else
-                      first_x_courses( Catalog.load_catalog_events('es'),  3)
                     end
   erb :'home/index', layout: :'layout/layout2022'
 end
