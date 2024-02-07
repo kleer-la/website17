@@ -1,7 +1,7 @@
 {
   "id": 1,
   "name": "Curso actualizado",
-  "description": "Curso actualizado",
+  "description": "Curso actualizado descripcion",
   "recipients": "Personas que les sirva el nuevo curso",
   "program": "",
   "created_at": "2017-06-23T04:21:16.131Z",
