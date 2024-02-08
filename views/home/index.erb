@@ -1,7 +1,9 @@
 <%=erb :'home/hero' %>
 <%=erb :'home/promotion' %>
 <%=erb :'component/client_carousel' %>
-<%=erb :'home/courses' %>
+<% if session[:locale] == 'es' %>
+  <%=erb :'home/courses' %>
+<% end %>
 <%=erb :'home/newsletter_subscription' unless session[:locale] == 'en'%>
 
 <!--MODAL DE PROMOCION DESCATIVADO-->

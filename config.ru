@@ -1,10 +1,9 @@
 require 'rubygems'
 require 'bundler'
-# require 'rack/csrf'
 
 Bundler.require
 
-use Rack::Session::Cookie, :key => 'rack.session', :path => '/', secret: ENV['CONTACT_US_SECRET']
+set :environment, :production
 
 require './app'
 run Sinatra::Application

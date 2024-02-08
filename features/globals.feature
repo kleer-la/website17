@@ -1,5 +1,6 @@
 Feature: Globals
 
+	@generic-validations
 	Scenario: 404 Page
 		Given I visit an invalid Page
 		Then I should get a 404 error

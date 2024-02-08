@@ -1,5 +1,6 @@
 Feature: Catalogo de cursos
 
+	@generic-validations
 	Scenario: Mostrar las categorías
 		Given A catalog
 		Given A list of categories

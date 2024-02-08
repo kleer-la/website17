@@ -13,6 +13,7 @@ post "/send-mail" do
     connector = KeventerConnector.new
     connector.send_mail(data)
     flash[:notice] = 'Su mensaje ha sido enviado correctamente'
+
   else
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
   end

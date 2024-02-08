@@ -1,5 +1,6 @@
 Feature: Home Page
 
+	@generic-validations
 	Scenario: Two main services
 		Given I visit the home page
 		And I should see "Agilidad Organizacional"
@@ -9,9 +10,9 @@ Feature: Home Page
 		Given I visit the home page
 		Then I should see "Suscríbete"
 
-  Scenario: Home 2022
-    Given I visit the home page
-    Then I should see "Agilidad Organizacional"
+	Scenario: Home
+		Given I visit the home page
+		Then I should see "Agilidad Organizacional"
 
 	Scenario: SEO description
 		Given I visit the home page
@@ -24,13 +25,13 @@ Feature: Home Page
 		Then SEO hreflang "es" should have href "https://www.kleer.la/es/"
 		Then SEO hreflang "en" should have href "https://www.kleer.la/en/"
 
-  Scenario: Redirect
-    Scenario Outline: Locale
-    When I visit the <initial_url> page
-    Then It should redirect to <redirect_url>
-    Examples:
-      |initial_url|redirect_url|
-      # | "" | "/es/"|
+  	Scenario: Redirect
+    	Scenario Outline: Locale
+    	When I visit the <initial_url> page
+   		Then It should redirect to <redirect_url>
+    	Examples:
+      		|initial_url|redirect_url|
+      		# | "" | "/es/"|
 
 #	Scenario: Coming courses
 #		When I visit the home page

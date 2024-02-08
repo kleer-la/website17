@@ -48,6 +48,7 @@ configure do
   set :recaptcha_public_key, ENV['RECAPTCHA_PUBLIC_KEY']
   set :recaptcha_private_key, ENV['RECAPTCHA_PRIVATE_KEY']
   set :views, "#{File.dirname(__FILE__)}/views"
+  set :logging, Logger::DEBUG
 
   I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
 
@@ -103,21 +104,8 @@ get '/es' do
   redirect '/es/', 301 # permanent redirect
 end
 
-get '/agilidad-organizacional-old' do
-  @active_tab_coaching = 'active'
-  @meta_tags.set! title: 'Te acompañamos hacia la agilidad organizacional',
-                  description: 'Cocreamos estrategias ágiles para lograr tus objetivos de negocio y la transformación digital. Diseño, metodologías e innovación para equipos colaborativos.'
-  @categories = KeventerReader.instance.categories session[:locale]
-  erb :coaching
-end
-
 get '/agilidad-organizacional' do
-  @active_tab_coaching = 'active'
-  @meta_tags.set! title: t('meta_tag.business-agility.title'),
-                  description: t('meta_tag.business-agility.description'),
-                  canonical: "#{t('meta_tag.business-agility.canonical')}"
-
-  erb :'business_agility/index', layout: :'layout/layout2022'
+  redirect '/es/servicios', 301
 end
 
 get '/agilidad-organizacional/mejora-continua' do
