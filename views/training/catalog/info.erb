@@ -1,11 +1,11 @@
 <section id="training-info">
-  <div class="container">
+  <div class="info-container">
     <h4 class="text-center mb-5"><%=t('catalog.type')%></h4>
     <div class="row">
       <div class="col-md-4">
         <div class="subcontainer">
           <div>
-            <h5 ><%=t('catalog.in_company.title') || "" %></h5>
+            <h3 class="subtitle"><%=t('catalog.in_company.title') || "" %></h3>
             <%= @markdown_renderer.render(t("catalog.in_company.text")) %>
           </div>
           <div class="btn-center-container">
@@ -21,7 +21,7 @@
       </div>
       <div class="col-md-4 border-start border-end">
         <div class="subcontainer">
-            <h5><%=t('catalog.public.title')  || "" %></h5>
+            <h3 class="subtitle"><%=t('catalog.public.title')  || "" %></h3>
             <%= @markdown_renderer.render(t("catalog.public.text")) %>
           <div class="btn-center-container">
             <a class="my-primary-button training-info__redir-button"
@@ -33,7 +33,9 @@
       </div>
       <div class="col-md-4">
         <div class="subcontainer">
-            <img src="/app/img/logos/logo-academia.png" class="logo-academia"/>
+          <h3 class="subtitle">
+            <img src="/app/img/logos/logo-academia.png" class="logo-academia" alt="academia"/>
+          </h3>
             <%= t("catalog.e-learning.text") %>
           <div class="btn-center-container">
             <a

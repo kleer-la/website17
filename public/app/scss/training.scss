@@ -49,7 +49,6 @@ $white: #FFFFFF;
 
 //INFO PANEL
 
-
 #training-info{
   max-height: 650px;
   height: 100vh;
@@ -57,6 +56,32 @@ $white: #FFFFFF;
   display: flex;
   align-items: center;
   position: relative;
+
+  .title{
+    font-family: "degular-text",sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .subtitle{
+    font-family: "degular-text",sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .info-container{
+    border-radius: 16px;
+    background-color: $celeste;
+    padding: 80px 0;
+    margin-right: 7%;
+    margin-left: 7%;
+    position: relative;
+    width: calc(100vw - 14%);
+  }
 
   .subcontainer{
     position: relative;
@@ -84,15 +109,6 @@ $white: #FFFFFF;
     height: 50px !important;
   }
 
-  .container{
-    border-radius: 16px;
-    background-color: $celeste;
-    padding: 80px 0;
-    margin-right: 7%;
-    margin-left: 7%;
-    position: relative;
-    width: calc(100vw - 14%);
-  }
 }
 
 

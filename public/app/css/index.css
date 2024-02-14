@@ -307,6 +307,26 @@
   display: flex;
   align-items: center;
   position: relative; }
+  #training-info .title {
+    font-family: "degular-text",sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px; }
+  #training-info .subtitle {
+    font-family: "degular-text",sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px; }
+  #training-info .info-container {
+    border-radius: 16px;
+    background-color: #E8F8FD;
+    padding: 80px 0;
+    margin-right: 7%;
+    margin-left: 7%;
+    position: relative;
+    width: calc(100vw - 14%); }
   #training-info .subcontainer {
     position: relative;
     display: flex;
@@ -327,14 +347,6 @@
     font-size: 14px !important;
     width: 160px !important;
     height: 50px !important; }
-  #training-info .container {
-    border-radius: 16px;
-    background-color: #E8F8FD;
-    padding: 80px 0;
-    margin-right: 7%;
-    margin-left: 7%;
-    position: relative;
-    width: calc(100vw - 14%); }
 
 .training-hero_blue-circle {
   right: 0;
