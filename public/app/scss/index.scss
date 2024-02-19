@@ -580,6 +580,82 @@ footer {
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 8px;
 
+  .card-title{
+    font-family: "degular-text",sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .categories{
+    color: $grey;
+    font-family: 'Degular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .body{
+  }
+
+  .subtitle{
+    font-size: 14px;
+  }
+
+  .image-container{}
+
+  .image{
+    height: 140px;
+  }
+
+  .flags{
+    position:absolute;
+    top:10px;
+    right: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    div{
+      border-radius: 4px;
+      background-color: $primary-yellow;
+      width: auto;
+      max-width: 110px;
+      height: 35px;
+      max-height: 50px;
+      margin-left: 10px;
+      padding: 5px 5px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60%;
+      line-height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+
+      img{
+        width: 85%;
+      }
+    }
+  }
+
+  .items{
+    height: 100px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 32px;
+  }
+
   .coupon-icon{
     position: absolute;
     top: -20px;
@@ -588,76 +664,6 @@ footer {
   }
 }
 
-.course-card__title{}
-
-.course-card__categories{
-  color: $grey;
-  font-family: 'Degular';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
-}
-
-.course-card__body{
-}
-
-.course-card__subtitle{
-  font-size: 14px;
-}
-
-.course-card__image-container{}
-
-.course-card__image{
-  height: 140px;
-}
-
-.course-card__flags{
-  position:absolute;
-  top:10px;
-  right: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: end;
-
-  div{
-    border-radius: 4px;
-    background-color: $primary-yellow;
-    width: auto;
-    max-width: 110px;
-    height: 35px;
-    max-height: 50px;
-    margin-left: 10px;
-    padding: 5px 5px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 60%;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-
-    img{
-      width: 85%;
-    }
-  }
-}
-
-
-.course-card__items{
-  height: 100px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.course-card__item{
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 32px;
-}
 .icon-card{
   height: 18px;
 }

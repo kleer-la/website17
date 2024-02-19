@@ -45,6 +45,7 @@ en:
         We co-create agile strategies to achieve your business goals and digital transformation.
         Design, methodologies and innovation for collaborative teams.
       canonical: /agilidad-organizacional
+
     clients:
       title: "| Our clients"
       description: >-
@@ -649,6 +650,11 @@ en:
     title: Blog
     subtitle: >-
       Discover more about the fascinating world of organizational agility.
+    landing:
+      back: Go back
+      published: Published
+      ToC: Table of contents
+      authors: Written by
 
   clients:
     title: Our Clients
