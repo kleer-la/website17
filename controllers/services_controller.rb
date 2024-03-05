@@ -3,10 +3,8 @@ require './lib/readers/local_reader'
 
 get '/servicios' do
   begin
-    puts 'entro a servicios '+ session[:locale]
 
     if session[:locale] == 'en'
-      puts 'pasa'
       redirect to("#{session[:locale]}/agilidad-organizacional"), 301
     end
 
@@ -23,6 +21,10 @@ get '/servicios' do
   rescue
     status 500
   end
+end
+
+get '/servicios-v3' do
+  erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
 
 get '/servicios/:service_id' do
