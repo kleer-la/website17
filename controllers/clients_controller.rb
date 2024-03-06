@@ -9,3 +9,11 @@ get '/clientes' do
 
   erb :'clients/index', layout: :'layout/layout2022'
 end
+
+get ' /:id' do
+  @story = success_stories(params[:id])
+  @meta_tags.set! title:       "", #     "#{t('meta_tag.clients.title')}",
+                  description: "", #     "#{t('meta_tag.clients.description')}",
+                  canonical:   "" #     "#{t('meta_tag.clients.canonical')}"
+  erb :'clients/success_story', locals: { story: @story }, layout: :'layout/layout2022'
+end

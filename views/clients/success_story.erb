@@ -1,0 +1,18 @@
+<%# Assuming 'story' local variable is passed as before %>
+<%= erb :'component/heros/_generic_hero', locals: {title: story[:title], subtitle: story[:subtitle]} %>
+
+<div class="container mainContent">
+  <% story[:sections].each do |section| %>
+    <h2><%= section[:heading] %></h2>
+    <p><%= section[:content].gsub("\n", "<br>") %></p>
+  <% end %>
+
+  <% story[:videos].each do |video| %>
+    <% if video[:title] %>
+      <h3><%= video[:title] %></h3>
+    <% end %>
+    <div class="video-container">
+      <iframe width="320" height="240" src="<%= video[:url] %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  <% end %>
+</div>
