@@ -241,9 +241,32 @@ def success_stories(id = nil)
         }
       ]
     },'equipos-scrum-en-plataforma-10-2015' => {
-      title: 'Equipos Scrum en Plataforma 10',
-      image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png',
-      
+      title: 'Valor para el negocio sin escalas en Plataforma 10',
+      image_url: '/app/img/plataforma-10-clientes.jpg',
+      sections: [
+        {
+          heading: 'Necesidad',
+          content: "Plataforma 10, una empresa líder en el mercado de la venta de pasajes en diversos medios de transporte, encontró que debía maximizar la velocidad de respuesta ante los cambios y desafíos del mercado."
+        },
+        {
+          heading: 'Búsqueda de solución',
+          content: "Habiendo dado sus primeros pasos unos años atrás en metodologías ágiles (Scrum) y prácticas de ingeniería (integración continua, automatización, DevOps), vieron que necesitaban apoyo para consolidarlas y trasladarlas hasta las áreas de negocio, por lo que optaron por incorporar servicios de mentoring y coaching de Kleer."
+        },
+        {
+          heading: 'Resultado',
+          content: "Desde el comienzo del proyecto se incorporaron activamente las áreas de negocio al proceso de desarrollo, priorizando, debatiendo, detallando y, en muchos casos, descartando tempranamente ideas sobre características a incorporar a los productos. La relación entre las áreas de negocio y los equipos de desarrollo cambió para siempre en la organización y la consecución de resultados mejoró en forma sustancial, el tiempo que la compañía se siempre mucho mejor preparada para los grandes desafíos por venir."
+        }
+      ],
+      videos: [
+        {
+          url: 'https://www.youtube.com/embed/uSzDiuY3P2o',
+          title: 'Testimonio de Gustavo Markier - Perspectiva de Negocio'
+        },
+        {
+          url: 'https://www.youtube.com/embed/m4c7WrWralI',
+          title: 'Testimonio de Gastón Waisman - Perspectiva de Tecnología'
+        }
+      ]
     },
     'equipos-scrum-en-technisys-2015' => {
       title: 'Equipos de desarrollo Scrum en Technisys',
