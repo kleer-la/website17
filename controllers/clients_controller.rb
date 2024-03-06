@@ -10,7 +10,7 @@ get '/clientes' do
   erb :'clients/index', layout: :'layout/layout2022'
 end
 
-get ' /:id' do
+get '/clientes/historias/:id' do
   @story = success_stories(params[:id])
   @meta_tags.set! title:       "", #     "#{t('meta_tag.clients.title')}",
                   description: "", #     "#{t('meta_tag.clients.description')}",
