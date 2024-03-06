@@ -162,7 +162,54 @@ def success_stories(id)
           title: 'Testimonio de Claudia Toscano Vargas - Parte 2'
         }
       ]
-    }
-    
+    },
+    'falabella-financiero' => {
+      title: 'Transformación Organizacional en Falabella Financiero',
+      subtitle: '',
+      sections: [
+        {
+          heading: 'Cómo acompañamos su transformación ágil',
+          content: 'Falabella Financiero, una empresa perteneciente al grupo Falabella y operando en Chile, Perú, Argentina, México y Colombia, se vio en el desafío de escalar y extender la cultura de trabajo de su Digital Factory, donde se desarrollan las aplicaciones financieras corporativas para canales digitales, y que ha crecido exponencialmente desde su creación.'
+        },
+        {
+          heading: 'Búsqueda de solución',
+          content: 'La Digital Factory incorporó desde muy temprano una forma de trabajo ágil. Pero luego de un año y medio de crecimiento, era necesario consolidar, escalar y mejorar esta forma de trabajo ágil para acompañar nuevos desafíos de negocio. Iniciamos con auto-evaluaciones de agilidad, tanto orientados a equipos como a los líderes. A partir de lo aprendido, comenzamos un proceso de mejora continua de seis meses, con ciclos mensuales con los equipos y agentes de cambios y revisiones trimestrales con los sponsors y gerentes. Las soluciones fueron, a medida que avanzamos, creadas y realizadas cada vez en mayor medida por participantes de la Digital Factory.'
+        },
+        {
+          heading: 'Resultado',
+          content: 'Durante el acompañamiento de 6 meses con coaches de Kleer, el foco fue formar nuevos equipos que mantengan la cultura ágil, robustecer las relaciones entre equipos, adaptar la comunicación, toma de decisiones y liderazgo a la nueva escala y crear comunidades de práctica para fomentar el desarrollo profesional y el aprendizaje organizacional. Destacados resultados incluyen la reducción de tiempo para formar nuevos equipos, implementación de mecanismos de sincronización para pasajes a producción gestionado por los equipos, y delegación de gestión a comunidades de prácticas y equipos.'
+        }
+      ],
+      videos: [
+        {
+          url: 'https://www.youtube.com/embed/i1Pi3Z28v2A',
+          title: 'Testimonio sobre la transformación'
+        }
+      ]
+    },
+    'innovacion-en-marketing-digital-loreal-2016' => {
+      title: "L'Oréal Argentina",
+      subtitle: '',
+      sections: [
+        {
+          heading: 'Creación incremental y colaborativa de estrategias digitales',
+          content: "L'Oréal Argentina buscaba adoptar nuevas formas internas de comunicación y trabajo en equipo para transformarse y afrontar los desafíos que le presentan su industria y contexto, incluyendo: 4 divisiones de negocio que necesitaban trabajar coordinadamente, la necesidad de una estrategia digital innovadora, centrada en el usuario, aumentar la colaboración y la comunicación, y trabajar efectivamente en proyectos dinámicos. El outcome esperado era diseñar una estrategia digital para cada división que pueda ser implementada en los meses siguientes. El lema de la iniciativa internacional fue “Digital at the Core”."
+        },
+        {
+          heading: 'Búsqueda de la solución',
+          content: "Los facilitadores de Kleer diseñaron el formato de cada encuentro junto al equipo de L’Oréal. El proyecto tuvo como sede el campus de Digital House, una coding school ubicada en Belgrano. Aquí se llevaron adelante actividades de co-creación incrementales, con base en la experimentación. También se integraron expertos en distintas disciplinas, tales como marketing digital, user experience y campañas digitales. Sus charlas fueron documentadas en vivo por facilitadores gráficos para favorecer la recordación de los temas y causar un mayor impacto."
+        },
+        {
+          heading: 'Resultado',
+          content: "Luego de estos encuentros cada una de las divisiones de marketing de L’Oréal ideó y presentó al resto de la organización una estrategia digital validada a partir de experimentos. Los profesionales aprendieron una forma incremental e iterativa de trabajar en equipo, a partir de técnicas de design thinking y desarrollo ágil de productos."
+        }
+      ],
+      videos: [
+        {
+          url: 'https://www.youtube.com/embed/y6MmcB6TsnQ',
+          title: 'Testimonio de Martín Jones, Multibrand Digital Manager de L\'Oréal Argentina'
+        }
+      ]
+    }    
     }[id]
 end
