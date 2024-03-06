@@ -49,11 +49,12 @@ def client_list
   ]
 end
 
-def success_stories(id)
-  {
+def success_stories(id = nil)
+  stories = {
     'afp-crecer' =>{
       title: 'Coaching y transformación ágil en AFP Crecer',
       subtitle: '',
+      image_url: '/app/img/afp-crecer.jpg',
       sections: [
         {
           heading: 'Cómo acompañamos su transformación ágil',
@@ -78,6 +79,7 @@ def success_stories(id)
     'transformacion-digital-bbva-continental' => {
       title: 'Acompañamiento en la transformación digital de BBVA Continental',
       subtitle: '',
+      image_url: '/app/img/bbva-clientes.jpg',
       sections: [
         {
           heading: 'Cómo acompañamos su transformación ágil',
@@ -110,6 +112,7 @@ def success_stories(id)
     'capacitaciones-agiles-endava' => {
       title: 'Jornada de capacitaciones ágiles en Endava',
       subtitle: '',
+      image_url: '/app/img/endava-clientes.jpg',
       sections: [
         {
           heading: 'Cómo acompañamos su transformación ágil',
@@ -134,6 +137,7 @@ def success_stories(id)
     'transformacion-cultural-agil-ti-epm-2018' => {
       title: 'La Gerencia de TI EPM se transforma culturalmente',
       subtitle: '',
+      image_url: '/app/img/epm-clientes.jpg',
       sections: [
         {
           heading: 'Cómo acompañamos su transformación ágil',
@@ -163,9 +167,10 @@ def success_stories(id)
         }
       ]
     },
-    'falabella-financiero' => {
+    'falabella-financiero' => { 
       title: 'Transformación Organizacional en Falabella Financiero',
       subtitle: '',
+      image_url: '/img/prensa/casos/falabella.jpg',
       sections: [
         {
           heading: 'Cómo acompañamos su transformación ágil',
@@ -190,6 +195,7 @@ def success_stories(id)
     'innovacion-en-marketing-digital-loreal-2016' => {
       title: "L'Oréal Argentina",
       subtitle: '',
+      image_url: '/app/img/loreal-clientes.jpg',
       sections: [
         {
           heading: 'Creación incremental y colaborativa de estrategias digitales',
@@ -210,6 +216,84 @@ def success_stories(id)
           title: 'Testimonio de Martín Jones, Multibrand Digital Manager de L\'Oréal Argentina'
         }
       ]
-    }    
-    }[id]
+    },
+    'equipos-scrum-en-suramericana-2015' => {
+      title: 'Paradigma Ágil en Sura',
+      image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png',
+      sections: [
+        {
+          heading: 'El camino hacia el paradigma ágil en Suramericana',
+          content: 'Suramericana, una compañía de seguros de origen colombiano, líder en Latinoamérica, tomó contacto con el paradigma ágil en un taller de Kleer, en el año 2012. Sus directivos inmediatamente se dieron cuenta de que esta forma de trabajo podría ser el gran diferencial de cara al futuro. Suramericana y Kleer entendieron rápidamente que ambas empresas podían aprender mucho en el camino hacia la agilidad y surgió, naturalmente, un clima de trabajo mutuamente conveniente. Este grupo logró transformar la organización en las áreas de tecnología y de negocio, aplicando las ideas del paradigma ágil más allá de la tecnología.'
+        }
+      ],
+      videos: [
+        {
+          url: 'https://www.youtube.com/embed/G6yRoP-9A3s',
+          title: 'Testimonio de Carlos Hurtado'
+        },
+        {
+          url: 'https://www.youtube.com/embed/UYehhZxtyWo',
+          title: 'Testimonio de Valentina Sierra'
+        },
+        {
+          url: 'https://www.youtube.com/embed/8n20ul5Dyns',
+          title: 'Testimonio de Jubel Correa'
+        }
+      ]
+    },'equipos-scrum-en-plataforma-10-2015' => {
+      title: 'Equipos Scrum en Plataforma 10',
+      image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png',
+      
+    },
+    'equipos-scrum-en-technisys-2015' => {
+      title: 'Equipos de desarrollo Scrum en Technisys',
+      image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png',
+      sections:  [
+        {
+          heading: 'Necesidad',
+          content: "Alejandro Raiczyk, a cargo del área de producto de Technisys, nos cuenta como, cuando llegó al área, vio una oportunidad de mejorar en los marcos de trabajo orientándose a las metodologías ágiles."
+        },
+        {
+          heading: 'Búsqueda de solución',
+          content: "No disponiendo del know-how dentro de la empresa y no teniendo el tiempo para un proceso extenso de capacitación, optaron por incorporar servicios de mentoring y coaching de Kleer."
+        },
+        {
+          heading: 'Resultado',
+          content: "En poco tiempo los equipos comenzaron a trabajar en forma más organizada, con mejor comunicación interna entre los diferentes grupos. En este aspecto, las reuniones de planificación aportaron visibilidad de los objetivos, lo mismo que las reuniones de revisión (en iteraciones de tres semanas). Finalmente destaca la importancia de las reuniones de retrospectiva en el proceso de mejora continua liderado por los propios equipos."
+        }
+      ],
+      videos: [
+        {
+          url: 'https://www.youtube.com/embed/2oobhTSNQDg',
+          title: 'Testimonio de Alejandro Raiczyk - Área de Producto Technisys'
+        }
+      ]
+      },
+      'devop-en-technisys-2015' => {
+        title: 'Automatización de despliegue de software',
+        image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png',
+        sections: [
+          {
+            heading: 'Necesidad',
+            content: "Nico Páez, especialista en automatización y desarrollo ágil en Kleer, nos cuenta los desafíos del área de producto de Technisys, con un software complejo desarrollado por múltiples equipos."
+          },
+          {
+            heading: 'Búsqueda de solución',
+            content: "La necesidad de resolver el problema surgió al mismo tiempo desde los equipos de desarrollo y desde la gerencia decidiendo incorporar, también en este caso, servicios de mentoring y coaching de Kleer."
+          },
+          {
+            heading: 'Resultado',
+            content: "Los equipos de desarrollo rápidamente se sumaron a la iniciativa cuyo fin, desde el principio, fue generar el conocimiento en el seno de los equipos, de manera que continuaran con la iniciativa una vez terminado el período de trabajo de Kleer. El proceso de despliegue, que antes estaba en la cabeza de ciertos ingenieros experimentados (que aún así, era muy frágil) paso a estar completamente convertido en código automatizable. El tiempo de despliegue de la solución completa, en la liberación de cada nueva versión, paso de varios días (con una incerteza muy grande) a unas pocas horas."
+          }
+        ],
+        videos: [
+          {
+            url: 'https://www.youtube.com/embed/9OD_Xp_ZivI',
+            title: 'Testimonio de Nico Páez - Especialista en Automatización'
+          }
+        ]
+      }
+  }
+
+  id ? stories[id] : stories
 end

@@ -1,0 +1,27 @@
+<%= erb :'component/_generic_hero', locals: {title: t('clients.title'), subtitle: t('clients.subtitle')} %>
+
+<div class="container mainContent clientes mt-5">
+  <div class="container fondo-blanco contenedor-generico">
+    <% if session[:locale] == 'es' %>
+      <% @stories.each_slice(3) do |story_slice| %>
+        <div class="row">
+          <% story_slice.each do |id, story| 
+              path =  "/clientes/historias/#{id}"
+          %>
+            <div class="col-md-4 col-xs-12">
+              <p>
+                <a href='<%= path %>'><%= story[:title] %></a>
+              </p>
+              <p>
+                <a href='<%= path %>'>
+                  <img src="<%= story[:image_url] %>" alt="<%= story[:title] %>" title="<%= story[:title] %>" align="left" height="150"/>
+                </a>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<%= erb :'component/client_carousel' %>
