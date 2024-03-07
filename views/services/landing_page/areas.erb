@@ -7,6 +7,8 @@
     Explora nuestros servicios como parte de tu proceso de transformación.
   </div>
   <div class="area-list p-5">
-    <%= erb :'services/landing_page/_area_card' %>
+    <% @areas.each do |area| %>
+      <%= erb :'services/landing_page/_area_card', locals: {area: area} %>
+    <% end %>
   </div>
 </section>

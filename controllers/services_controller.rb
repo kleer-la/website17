@@ -1,4 +1,5 @@
 require './lib/models/service_model'
+require './lib/models/service_area'
 require './lib/readers/local_reader'
 
 get '/servicios' do
@@ -24,6 +25,9 @@ get '/servicios' do
 end
 
 get '/servicios-v3' do
+  @areas = ServiceArea.create_list_keventer
+
+  puts @areas.inspect
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
 
