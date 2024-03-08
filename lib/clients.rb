@@ -99,7 +99,7 @@ def success_stories(id = nil)
         },
         {
           heading: 'Resultado',
-          content: 'Luego de un año y dos meses de acompañamiento intensivo los equipos de BBVA adoptaron una cultura de trabajo más ágil y transparente. El resultado fue un mayor empoderamiento por parte de los equipos, apoyados por un equipo de Agile Coaches internos formados por Kleer. Y finalmente hubo un considerable aumento en la rapidez de entrega de valor al cliente.
+          content: 'Luego de un año y dos meses de acompañamiento intensivo los equipos de BBVA adoptaron una cultura de trabajo más ágil y transparente.</i> El resultado fue un mayor empoderamiento por parte de los equipos, apoyados por un equipo de <i>Agile Coaches</i> internos formados por Kleer. Y finalmente hubo un considerable aumento en la rapidez de entrega de valor al cliente.
 
           A continuación compartimos algunos de los testimonios:',
           videos: [
@@ -361,7 +361,61 @@ def success_stories(id = nil)
             ]
           },
       ],
-      }
+      },
+    'transformacion-agil-ypf-2020' => {
+      title: 'Así profundizó YPF su camino de transformación ágil',
+      description: 'Así profundizó <b>YPF</b> su camino de transformación ágil ',
+      image_url: '/app/img/ypf-2020.jpg',
+      sections: [
+        {
+          heading: 'Necesidad',
+          content: "YPF es la mayor empresa de Argentina y la quinta compañía de energía más grande de América Latina. Posee 92 instalaciones productivas distribuidas en el territorio de ese país, donde emplea a más de 72.000 personas.
+
+          Su área de Supply Chain se encarga de gestionar toda la cadena de suministros de YPF. Eso la convierte en uno de los compradores de insumos más grande de la Argentina. Es el sector de la compañía que debe identificar, evaluar y finalmente adquirir lo necesario para actividades muy diversas. Desde la exploración, explotación y transporte de gas y petróleo, pasando por la refinación hasta la venta de lubricantes, derivados, y combustibles a través de su red de más de 1600 estaciones de servicio.
+
+          Dada la dimensión de su operación y frente a objetivos muy agresivos de reducción de costos, Supply Chain de YPF se vio ante la necesidad de optimizar los procesos completos que dan lugar a las compras y contrataciones estratégicas. Luego de haber analizado opciones para lograrlo, definieron y lograron la validación de un modelo operativo inicial, que marcaba el comienzo del camino de transformación ágil.
+
+          Una vez identificado el rumbo, surgió la necesidad de transitar el desafiante camino de transformación ágil con el acompañamiento de especialistas con experiencia en el tema. Es entonces que eligen comenzar a trabajar con Kleer.",
+          videos: [
+            {
+              url: 'https://www.youtube.com/embed/CTvmfahxp5I',
+              title: 'AGILIDAD ORGANIZACIONAL en YPF Desafíos y Resultados'
+            },
+          ]
+        },
+        {
+          heading: 'Búsqueda de solución',
+          content: "La vicepresidencia de Supply Chain comenzó a incorporar estrategias ágiles en las iniciativas de Strategic Sourcing, que son aquellas que apuntan a la contratación de servicios y compra de materiales relacionados a la solución de problemáticas particularmente complejas. Un equipo interno identificó previamente que allí es donde el enfoque ágil podía proporcionar el mayor potencial en términos de ahorro, innovación y mejora en sus alianzas con proveedores.
+
+          Para ilustrar con un ejemplo, Strategic Sourcing cubre el caso de adquisición de una planta de tratamiento de barros oleosos. Ello implica la participación coordinada de varios proveedores (de distintos eslabones en la cadena de valor asociada), junto a quienes hay que concebir, desarrollar, instalar y operar maquinarias y procesos con altos niveles de innovación.
+
+          A lo largo de un año, capacitamos y acompañamos para incorporar el mindset y las distintas prácticas de Scrum a 48 células de trabajo que se ocuparon de las iniciativas de mayor impacto en Strategic Sourcing, involucrando múltiples áreas de negocio y de soporte además de Supply Chain. Fueron capacitaciones presenciales de las que participaron 5 coaches de Kleer en ciudades de todo el país, entre ellas Mendoza, Comodoro Rivadavia, Neuquén, Buenos Aires y La Plata.
+
+          Desde Kleer les ayudamos a profundizar la comprensión y adopción de la agilidad, y a identificar sus necesidades de negocio con mayor claridad. Nos enfocamos en acompañarlos para el logro de sus objetivos de negocio concretos, durante el lapso de 3 a 4 meses en cada iniciativa.
+
+          Además, ayudamos a algunos de los integrantes del equipo core de esta iniciativa ágil organizacional a formarse como <i>agile coaches</i>, para que YPF pueda sostener la transformación una vez que hubiéramos terminado nuestro trabajo con ellos."
+        },
+        {
+          heading: 'Resultado',
+          content: "Durante los casi 12 meses de acompañamiento con coaches de Kleer, el foco de Supply Chain fue formar nuevos equipos para desarrollar y mantener la cultura ágil, robustecer las relaciones entre sus integrantes, adaptar la comunicación, tomar decisiones efectivas y crear comunidades internas para fomentar el desarrollo y sostén del mindset ágil logrado.
+
+          Los equipos consiguieron transformar su forma de trabajo con resultados asombrosos. Además de resultados de negocio, la intervención de Kleer ayudó a desarrollar una dinámica que hoy le permite a Supply Chain continuar con el proceso iniciado y que la transformación ágil se expanda.
+          
+          <i>Algunos resultados destacados</i>
+          <ul><li>Ahorro potencial de más de 260 millones de dólares.</li><li>Mayor involucramiento de todas las partes para lograr un objetivo común.</li><li>Sensible disminución del trabajo en silos dentro de los equipos.</li><li>Fuerte impacto en otras áreas de la compañía.</li><li>Mayor involucramiento de los equipos con sus clientes internos de YPF, y mejora en la relación con proveedores externos.</li>",
+          videos: [
+            {
+              url: 'https://www.youtube.com/embed/0EspKmvROiU',
+              title: 'Los RESULTADOS de YPF con AGILIDAD ORGANIZACIONAL'
+            },
+            {
+              url: 'https://www.youtube.com/embed/jW4pesV6aSk',
+              title: 'Los DESAFÍOS de YPF en AGILIDAD ORGANIZACIONAL'
+            }
+          ]
+        }
+      ]
+    },  
   }
 
   id ? stories[id] : stories
