@@ -7,6 +7,7 @@ API_EVENTS_PATH = '/events'.freeze
 API_KLEERERS_PATH = '/kleerers'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
 API_RESOURCES_PATH = '/resources.json'.freeze
+API_AREAS_PATH = '/service_areas.json'.freeze
 
 API_MAILER = '/contact_us'.freeze
 
@@ -48,6 +49,10 @@ class KeventerConnector
     echo API_ROOT + '/news.json'.freeze
   end
 
+  def self.service_areas_url
+    echo API_ROOT + API_AREAS_PATH
+  end
+
   def event_type_url(event_type_id, format = :xml)
     echo API_ROOT + "/event_types/#{event_type_id}.#{format}".freeze
   end
@@ -73,6 +78,10 @@ class KeventerConnector
     JsonAPI.new(echo API_ROOT + '/catalog')
   end
 
+  def get_service_area_list
+    return JSON.parse(@response) unless @response.nil?
+    JsonAPI.new(echo API_ROOT + API_AREAS_PATH)
+  end
   def get_testimonies(id)
     return JSON.parse(@response) unless @response.nil?
     JsonAPI.new("#{API_ROOT}/event_types/#{id}/testimonies.json")
