@@ -1,0 +1,21 @@
+<article
+  id="card<%="#{id}"%>"
+  class="card client-card mb-5 ms-auto me-auto"
+  style="width: 22rem;">
+  <div class="image-container">
+    <a href="<%= where_uri + id%>">
+      <img src="<%= cover %>" class="card-img-top" alt="..." loading="lazy">
+    </a>
+  </div>
+  <div class="card-body">
+    <% if defined? (industry) and
+          not industry.nil?%>
+      <p class="course-card__categories"><%= industry %></p>
+    <%end %>
+    <a href="<%= where_uri+id%>">
+      <h3 class="card-title"><%= description %></h3>
+    </a>
+  </div>
+</article>
+
+

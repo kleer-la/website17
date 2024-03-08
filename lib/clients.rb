@@ -56,6 +56,7 @@ def success_stories(id = nil)
       subtitle: '',
       description: 'Coaching y transformación ágil en <b>AFP Crecer</b>',
       image_url: '/app/img/afp-crecer.jpg',
+      industry: 'Financiero',
       sections: [
         {
           heading: 'Necesidad',
@@ -82,6 +83,7 @@ def success_stories(id = nil)
       subtitle: '',
       description: 'Acompañamiento en la transformación digital de <b>BBVA Continental</b>',
       image_url: '/app/img/bbva-clientes.jpg',
+      industry: 'Financiero',
       sections: [
         {
           heading: 'Necesidad',
@@ -124,6 +126,7 @@ def success_stories(id = nil)
       subtitle: '',
       description: 'Plan de capacitaciones ágiles en <b>Endava</b>',
       image_url: '/app/img/endava-clientes.jpg',
+      industry: 'Tecnología',
       sections: [
         {
           heading: 'Necesidades',
@@ -150,6 +153,7 @@ def success_stories(id = nil)
       subtitle: '',
       description: 'Transformación ágil en <b>EPM</b>',
       image_url: '/app/img/epm-clientes.jpg',
+      industry: 'Servicios Públicos',
       sections: [
         {
           heading: 'Necesidad',
@@ -193,6 +197,7 @@ def success_stories(id = nil)
       subtitle: '',
       description: 'Transformación Organizacional en <b>Falabella Financiero</b>',
       image_url: '/img/prensa/casos/falabella.jpg',
+      industry: 'Financiero',
       sections: [
         {
           heading: 'Necesidad',
@@ -226,6 +231,7 @@ def success_stories(id = nil)
       subtitle: '',
       description: 'Innovación en marketing digital en <b>L\'Oréal</b>',
       image_url: '/app/img/loreal-clientes.jpg',
+      industry: 'Bienes de Consumo',
       sections: [
         {
           heading: 'Necesidad',
@@ -253,6 +259,7 @@ def success_stories(id = nil)
       title: 'El camino hacia el paradigma ágil en Suramericana',
       description: 'Paradigma Ágil en <b>Sura</b>',
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png',
+      industry: 'Financiero',
       sections: [
         {
           heading: 'Necesidad',
@@ -290,6 +297,7 @@ def success_stories(id = nil)
       title: 'Valor para el negocio sin escalas en Plataforma 10',
       description: 'Equipos Scrum en <b>Plataforma 10</b>',
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png',
+      industry: 'Tecnología',
       sections: [
         {
           heading: 'Necesidad',
@@ -321,6 +329,7 @@ def success_stories(id = nil)
       title: 'Equipos de desarrollo Scrum en Technisys',
       description: 'Equipos Scrum en <b>Technisys</b>',
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png',
+      industry: 'Tecnología',
       sections:  [
         {
           title: 'Caso 1: Equipos de desarrollo Scrum en Technisys',
@@ -366,6 +375,7 @@ def success_stories(id = nil)
       title: 'Así profundizó YPF su camino de transformación ágil',
       description: 'Así profundizó <b>YPF</b> su camino de transformación ágil ',
       image_url: '/app/img/ypf-2020.jpg',
+      industry: 'Energía',
       sections: [
         {
           heading: 'Necesidad',

@@ -3,24 +3,21 @@
 <div class="container mainContent clientes mt-5">
   <div class="container fondo-blanco contenedor-generico">
     <% if session[:locale] == 'es' %>
-      <% @stories.each_slice(3) do |story_slice| %>
         <div class="row">
-          <% story_slice.each do |id, story| 
-              path =  "/es/clientes/testimonios/#{id}"
-          %>
-            <div class="col-md-4 col-xs-12">
-              <p>
-                <a href='<%= path %>'><%= story[:description] %></a>
-              </p>
-              <p>
-                <a href='<%= path %>'>
-                  <img src="<%= story[:image_url] %>" alt="<%= story[:description] %>" title="<%= story[:title] %>" align="left" height="150"/>
-                </a>
-              </p>
+          <% @stories.each do |id, story| %>
+            <div class="col-md-6 col-lg-4">
+              <%= erb :'component/cards/_client_card', locals: {
+                    where_uri: '/es/clientes/testimonios/', 
+                    industry: story[:industry]&.upcase, 
+                    cover: story[:image_url],
+                    title: story[:title],
+                    description: story[:description],
+                    id: id,
+                    } 
+              %>
             </div>
           <% end %>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>
