@@ -1,7 +1,6 @@
-<% services = ["","","","",""] %>
-
 <div
   class="card clickable-card area-card"
+  id="area-card-<%=area.name.split(" ")[0] %>"
   data-toggle="collapse"
   data-target="#additionalContent"
   style="background-color: <%= area.primary_color %>"
@@ -14,8 +13,8 @@
           <%= area.name %>
         </h4>
       </div>
-      <div class="col-7">
-        <%= area.abstract %>>
+      <div class="col-7 summary">
+        <%= area.abstract %>
       </div>
     </div>
     <div class="collapse extra-content" id="additionalContent">
@@ -25,13 +24,13 @@
         </h4>
       </div>
       <div>
-        <div class="row">
-          <% services.each_with_index  do |service, index| %>
-              <% if index%3 == 0%>
-                </div>
-                <div class="row">
-              <% end %>
-              <div class="col area-card-container">
+        <div class="areas-container">
+          <% area.services.each_with_index  do |service, index| %>
+              <%# if index%3 == 0%>
+<!--                </div>-->
+<!--                <div class="row">-->
+              <%# end %>
+              <div class="area-card-container">
                 <%= erb :'services/components/_service_card', locals: {service: service} %>
               </div>
           <% end %>
@@ -48,18 +47,20 @@
 </div>
 
 <script>
-  const clickableCard = document.querySelector('.clickable-card');
-  const additionalContent = document.querySelector('#additionalContent');
+    {
+        const clickableCard = document.getElementById("area-card-<%=area.name.split(" ")[0] %>");
+        const additionalContent = document.querySelector('#additionalContent');
 
+        clickableCard.onclick = () => {
+            additionalContent.classList.toggle('collapse');
 
-  clickableCard.addEventListener('click', function () {
-      additionalContent.classList.toggle('collapse');
+            if (!additionalContent.classList.contains('collapse')) {
+                additionalContent.classList.add('show');
+            }else {
+                additionalContent.classList.remove('show');
+            }
+        };
 
-      if (!additionalContent.classList.contains('collapse')) {
-          additionalContent.classList.add('show');
-      }else {
-          additionalContent.classList.remove('show');
-      }
-  });
-
+        console.log(clickableCard)
+    }
 </script>

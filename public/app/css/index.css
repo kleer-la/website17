@@ -1474,7 +1474,8 @@ h3.title-somos {
   min-height: 330px;
   height: auto;
   border-radius: 30px;
-  border: none; }
+  border: none;
+  margin-top: 30px; }
   .area-card p {
     font-size: 16px;
     font-weight: 400;
@@ -1483,14 +1484,28 @@ h3.title-somos {
     text-align: left; }
   .area-card .show-content {
     height: 330px;
-    padding: 60px 30px; }
+    padding: 60px 60px; }
+    .area-card .show-content .summary {
+      height: 100% !important;
+      display: flex;
+      align-items: center; }
   .area-card .extra-content {
     text-align: center;
     padding: 0 10%; }
+    .area-card .extra-content .areas-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
     .area-card .extra-content .area-card-container {
       display: flex;
       justify-content: center;
-      margin-top: 30px; }
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      font-size: 30px;
+      text-align: center;
+      flex: 0 0 calc(20% - 40px);
+      padding: 20px;
+      margin: 5px; }
   .area-card .cta-container {
     display: flex;
     justify-content: center;
