@@ -16,6 +16,24 @@ $secondary-sian: #bafdf3;
 $black: #333333;
 $white: #FFFFFF;
 
+
+#areas{
+  .slogan-areas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 10%;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    h3{
+      margin-bottom: 40px;
+    }
+  }
+}
+
 //new designed landing
 .area-card{
   min-height: 330px;
@@ -47,7 +65,13 @@ $white: #FFFFFF;
     text-align: center;
     padding: 0 10%;
 
-    h4{}
+    h4{
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+      max-width: 60% !important;
+      margin: 50px auto 50px auto;
+    }
 
     .areas-container{
       display: flex;
@@ -59,13 +83,9 @@ $white: #FFFFFF;
       display: flex;
       justify-content: center;
 
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(0, 0, 0, 0.8);
-      font-size: 30px;
       text-align: center;
       flex: 0 0 calc(20% - 40px);
       padding: 20px;
-      margin: 5px;
     }
   }
 
@@ -77,11 +97,32 @@ $white: #FFFFFF;
 }
 
 //components
-.area-card-v3{//TODO: change name
+.service-card{//TODO: change name
   width: 225px;
   height: 150px;
+  border-radius: 12px;
   background-color: white;
-  margin: 10px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  padding: 15px;
+  margin: 15px;
+
+  h3{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  h4{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 10px 0;
+  }
 }
 
 

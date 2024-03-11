@@ -2,7 +2,7 @@
   class="card clickable-card area-card"
   id="area-card-<%=area.name.split(" ")[0] %>"
   data-toggle="collapse"
-  data-target="#additionalContent"
+  data-target="#additionalContent-<%=area.name.split(" ")[0] %>"
   style="background-color: <%= area.primary_color %>"
 >
   <div class="card-body">
@@ -14,25 +14,23 @@
         </h4>
       </div>
       <div class="col-7 summary">
-        <%= area.abstract %>
+        <%= area.summmary %>
       </div>
     </div>
-    <div class="collapse extra-content" id="additionalContent">
+    <div class="collapse extra-content" id="additionalContent-<%=area.name.split(" ")[0] %>">
       <div class="title">
         <h4>
-          Aprende más de nuestros servicios de cambio organizacional
+          Aprende más de nuestros servicios de <b><%= area.name %></b>
         </h4>
       </div>
       <div>
         <div class="areas-container">
           <% area.services.each_with_index  do |service, index| %>
-              <%# if index%3 == 0%>
-<!--                </div>-->
-<!--                <div class="row">-->
-              <%# end %>
-              <div class="area-card-container">
-                <%= erb :'services/components/_service_card', locals: {service: service} %>
-              </div>
+            <%= erb :'services/components/_service_card',
+                    locals: {
+                      service: service,
+                      hover_color: area.secondary_color,
+                    } %>
           <% end %>
         </div>
       </div>
@@ -49,7 +47,7 @@
 <script>
     {
         const clickableCard = document.getElementById("area-card-<%=area.name.split(" ")[0] %>");
-        const additionalContent = document.querySelector('#additionalContent');
+        const additionalContent = document.querySelector('#additionalContent-<%=area.name.split(" ")[0] %>');
 
         clickableCard.onclick = () => {
             additionalContent.classList.toggle('collapse');
@@ -60,7 +58,5 @@
                 additionalContent.classList.remove('show');
             }
         };
-
-        console.log(clickableCard)
     }
 </script>

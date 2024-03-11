@@ -73,7 +73,7 @@ class NewService
 
   def load_short_from_json(hash_service)
     load_str(%i[name
-                     subtitle abstract], hash_service)
+                     subtitle], hash_service)
   end
 
   def load_str(syms, hash)
