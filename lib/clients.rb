@@ -60,7 +60,7 @@ def success_stories(id = nil)
       sections: [
         {
           heading: 'Necesidad',
-          content: 'AFP Crecer, una administradora de fondos de pensiones en El Salvador Cómo acompañamos su transformación ágilcCómo acompañamos su transformación ágilon más de un millón de afiliados, buscaba agilizar sus procesos internos para mejorar el servicio al cliente.'
+          content: 'AFP Crecer, una administradora de fondos de pensiones en El Salvador con más de un millón de afiliados, buscaba agilizar sus procesos internos para mejorar el servicio al cliente.'
         },
         {
           heading: 'Búsqueda de la solución',
@@ -351,7 +351,7 @@ def success_stories(id = nil)
           ]
         },
         {
-            title: 'CVaso 2: Automatización de despliegue de software',
+            title: 'Caso 2: Automatización de despliegue de software',
             heading: 'Necesidad',
             content: "Nico Páez, especialista en automatización y desarrollo ágil en Kleer, nos cuenta los desafíos del área de producto de Technisys, con un software complejo desarrollado por múltiples equipos."
           },
