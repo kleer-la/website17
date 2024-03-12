@@ -1,3 +1,24 @@
-<div class="area-card-v3">
-
+<div class="service-card" id='service-card-<%=service.name.split(" ")[0] %>'>
+  <h3>
+    <%= service.name %>
+  </h3>
+  <h4>
+    <%= service.subtitle %>
+  </h4>
 </div>
+
+<script>
+    {
+        const areaCard = document.getElementById('service-card-<%=service.name.split(" ")[0] %>')
+        areaCard.addEventListener('mouseover', function() {
+            areaCard.style.backgroundColor = '<%= hover_color %>'
+        })
+
+        areaCard.addEventListener('mouseout', function() {
+            areaCard.style.backgroundColor = 'white'
+        })
+
+        console.log('areaCard', areaCard)
+
+    }
+</script>

@@ -1,9 +1,8 @@
-<% services = ["","","","",""] %>
-
 <div
   class="card clickable-card area-card"
+  id="area-card-<%=area.name.split(" ")[0] %>"
   data-toggle="collapse"
-  data-target="#additionalContent"
+  data-target="#additionalContent-<%=area.name.split(" ")[0] %>"
   style="background-color: <%= area.primary_color %>"
 >
   <div class="card-body">
@@ -14,31 +13,24 @@
           <%= area.name %>
         </h4>
       </div>
-      <div class="col-7">
-        <p>
-          Nuestro servicio de Diseño Organizacional Ágil es una solución integral para mejorar tus resultados empresariales. Trabajamos en equipo con los líderes de tu organización, nos enfocamos en armonizar los diferentes componentes para lograr los objetivos estratégicos. Las intervenciones pueden cubrir: estructura, procesos, capacidades transversales y las prácticas de gestión de personas.
-        </p>
-        <p>
-          Descubre cómo este enfoque puede fortalecer tu negocio y hacerlo más eficiente y adaptable en un entorno empresarial en constante cambio.
-        </p>
+      <div class="col-7 summary">
+        <%= area.summary %>
       </div>
     </div>
-    <div class="collapse extra-content" id="additionalContent">
+    <div class="collapse extra-content" id="additionalContent-<%=area.name.split(" ")[0] %>">
       <div class="title">
         <h4>
-          Aprende más de nuestros servicios de cambio organizacional
+          Aprende más de nuestros servicios de <b><%= area.name %></b>
         </h4>
       </div>
       <div>
-        <div class="row">
-          <% services.each_with_index  do |service, index| %>
-              <% if index%3 == 0%>
-                </div>
-                <div class="row">
-              <% end %>
-              <div class="col area-card-container">
-                <%= erb :'services/components/_service_card', locals: {service: service} %>
-              </div>
+        <div class="areas-container">
+          <% area.services.each_with_index  do |service, index| %>
+            <%= erb :'services/components/_service_card',
+                    locals: {
+                      service: service,
+                      hover_color: area.secondary_color,
+                    } %>
           <% end %>
         </div>
       </div>
@@ -53,18 +45,18 @@
 </div>
 
 <script>
-  const clickableCard = document.querySelector('.clickable-card');
-  const additionalContent = document.querySelector('#additionalContent');
+    {
+        const clickableCard = document.getElementById("area-card-<%=area.name.split(" ")[0] %>");
+        const additionalContent = document.querySelector('#additionalContent-<%=area.name.split(" ")[0] %>');
 
+        clickableCard.onclick = () => {
+            additionalContent.classList.toggle('collapse');
 
-  clickableCard.addEventListener('click', function () {
-      additionalContent.classList.toggle('collapse');
-
-      if (!additionalContent.classList.contains('collapse')) {
-          additionalContent.classList.add('show');
-      }else {
-          additionalContent.classList.remove('show');
-      }
-  });
-
+            if (!additionalContent.classList.contains('collapse')) {
+                additionalContent.classList.add('show');
+            }else {
+                additionalContent.classList.remove('show');
+            }
+        };
+    }
 </script>

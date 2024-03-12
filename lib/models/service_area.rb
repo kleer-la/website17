@@ -1,12 +1,15 @@
 class ServiceArea
-  attr_accessor :name, :summary, :primary_color, :secondary_color, :icon
+  attr_accessor :name, :summary, :primary_color, :secondary_color, :icon, :services, :abstract
 
   def load_from_json(hash_service_area)
     load_str(%i[name
                 summary
                 primary_color
                 secondary_color
+                abstract
                 icon], hash_service_area)
+
+    load_services(hash_service_area["services"])
   end
 
   def null_json_api(null_api)
@@ -32,5 +35,13 @@ class ServiceArea
     raise :NotFound unless response.ok?
 
     ServiceArea.load_list(response.doc)
+  end
+
+  def load_services(doc)
+    @services = doc.map do |service_hash|
+      service = NewService.new
+      service.load_short_from_json(service_hash)
+      service
+    end
   end
 end
