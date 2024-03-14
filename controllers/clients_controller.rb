@@ -1,15 +1,15 @@
 require './lib/clients'
 
+# get '/clientes' do
+#   @meta_tags.set! title: "#{t('meta_tag.clients.title')}",
+#                   description: "#{t('meta_tag.clients.description')}",
+#                   canonical: "#{t('meta_tag.clients.canonical')}"
+
+#   @clients =  client_list
+
+#   erb :'clients/index', layout: :'layout/layout2022'
+# end
 get '/clientes' do
-  @meta_tags.set! title: "#{t('meta_tag.clients.title')}",
-                  description: "#{t('meta_tag.clients.description')}",
-                  canonical: "#{t('meta_tag.clients.canonical')}"
-
-  @clients =  client_list
-
-  erb :'clients/index', layout: :'layout/layout2022'
-end
-get '/clientes_ng' do
   @meta_tags.set! title: "#{t('meta_tag.clients.title')}",
                   description: "#{t('meta_tag.clients.description')}",
                   canonical: "#{t('meta_tag.clients.canonical')}"
@@ -20,9 +20,17 @@ get '/clientes_ng' do
 end
 
 get '/clientes/testimonios/:id' do
-  @story = success_stories(params[:id])
-  @meta_tags.set! title:       "", #     "#{t('meta_tag.clients.title')}",
-                  description: "", #     "#{t('meta_tag.clients.description')}",
-                  canonical:   "" #     "#{t('meta_tag.clients.canonical')}"
-  erb :'clients/success_story', locals: { story: @story }, layout: :'layout/layout2022'
+  story = success_stories(params[:id])
+  return(redirect_not_found_testimony) if story.nil?
+  
+  @meta_tags.set! title:       story[:title],
+                  description: story[:meta_desdription],
+                  canonical:   request.path 
+  erb :'clients/success_story', locals: { story: story }, layout: :'layout/layout2022'
+end
+
+def redirect_not_found_testimony
+  session[:error_msg] = I18n.t('page_not_found')
+  flash.now[:alert] = I18n.t('page_not_found')
+  redirect(to("/#{session[:locale]}/clientes"))
 end

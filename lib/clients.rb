@@ -57,6 +57,7 @@ def success_stories(id = nil)
       description: 'Coaching y transformación ágil en <b>AFP Crecer</b>',
       image_url: '/app/img/afp-crecer.jpg',
       industry: 'Financiero',
+      met_description: 'Kleer - Coaching & Training - Coaching y transformación ágil en AFP Crecer',
       sections: [
         {
           heading: 'Necesidad',
@@ -127,6 +128,7 @@ def success_stories(id = nil)
       description: 'Plan de capacitaciones ágiles en <b>Endava</b>',
       image_url: '/app/img/endava-clientes.jpg',
       industry: 'Tecnología',
+      meta_description: 'Kleer - Coaching & Training -Acompañamiento en la transformación digital de BBVA Continental',
       sections: [
         {
           heading: 'Necesidades',
@@ -154,6 +156,7 @@ def success_stories(id = nil)
       description: 'Transformación ágil en <b>EPM</b>',
       image_url: '/app/img/epm-clientes.jpg',
       industry: 'Servicios Públicos',
+      meta_description: 'Kleer - Coaching & Training - Cómo acompañamos desde Kleer la transformación ágil de TI en EPM',
       sections: [
         {
           heading: 'Necesidad',
@@ -198,6 +201,7 @@ def success_stories(id = nil)
       description: 'Transformación Organizacional en <b>Falabella Financiero</b>',
       image_url: '/img/prensa/casos/falabella.jpg',
       industry: 'Financiero',
+      meta_description: 'Kleer - Coaching & Training - Transformación Organizacional en Falabella Financiero',
       sections: [
         {
           heading: 'Necesidad',
@@ -232,6 +236,7 @@ def success_stories(id = nil)
       description: 'Innovación en marketing digital en <b>L\'Oréal</b>',
       image_url: '/app/img/loreal-clientes.jpg',
       industry: 'Bienes de Consumo',
+      meta_description: 'Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer',
       sections: [
         {
           heading: 'Necesidad',
@@ -260,6 +265,7 @@ def success_stories(id = nil)
       description: 'Paradigma Ágil en <b>Sura</b>',
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-sura1.png',
       industry: 'Financiero',
+      meta_description: 'Kleer - Coaching & Training - Paradigma ágiles en tecnología y en negocio en Suramericana, apoyados por Kleer',
       sections: [
         {
           heading: 'Necesidad',
@@ -298,6 +304,7 @@ def success_stories(id = nil)
       description: 'Equipos Scrum en <b>Plataforma 10</b>',
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-p10-1.png',
       industry: 'Tecnología',
+      meta_description: 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y orientación al valor para el negocio en Plataforma 10, apoyados por Kleer',
       sections: [
         {
           heading: 'Necesidad',
@@ -330,6 +337,7 @@ def success_stories(id = nil)
       description: 'Equipos Scrum en <b>Technisys</b>',
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png',
       industry: 'Tecnología',
+      meta_description: 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y automatización de despliegue de software en Technisys apoyados por Kleer',
       sections:  [
         {
           title: 'Caso 1: Equipos de desarrollo Scrum en Technisys',
@@ -376,6 +384,7 @@ def success_stories(id = nil)
       description: 'Así profundizó <b>YPF</b> su camino de transformación ágil ',
       image_url: '/app/img/ypf-2020.jpg',
       industry: 'Energía',
+      meta_description: 'Kleer - Coaching & Training - Creación incremental y colaborativa de estrategias digitales facilitada por Kleer',
       sections: [
         {
           heading: 'Necesidad',
