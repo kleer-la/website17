@@ -7,7 +7,7 @@ API_EVENTS_PATH = '/events'.freeze
 API_KLEERERS_PATH = '/kleerers'.freeze
 API_CATEGORIES_PATH = '/categories.xml'.freeze
 API_RESOURCES_PATH = '/resources.json'.freeze
-API_AREAS_PATH = '/service_areas.json'.freeze
+API_AREAS_PATH = '/service_areas'.freeze
 
 API_MAILER = '/contact_us'.freeze
 
@@ -50,7 +50,10 @@ class KeventerConnector
   end
 
   def self.service_areas_url
-    echo API_ROOT + API_AREAS_PATH
+    echo API_ROOT + API_AREAS_PATH + '.json'.freeze
+  end
+  def self.service_area_url(slug)
+    echo API_ROOT + API_AREAS_PATH + "/#{slug}.json"
   end
 
   def event_type_url(event_type_id, format = :xml)
