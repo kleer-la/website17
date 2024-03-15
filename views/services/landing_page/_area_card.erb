@@ -1,0 +1,65 @@
+<div
+  class="card clickable-card area-card"
+  id="area-card-<%=area.name.split(" ")[0] %>"
+  data-toggle="collapse"
+  data-target="#additionalContent-<%=area.name.split(" ")[0] %>"
+  style="background-color: <%= area.primary_color %>"
+>
+  <div class="card-body">
+    <div class="show-content row">
+      <div class="col-5">
+        <img src="<%= area.icon %>" alt="icon" class="mb-3"/>
+        <h4>
+          <%= area.name %>
+        </h4>
+      </div>
+      <div class="col-7 summary">
+        <%= area.summary %>
+      </div>
+    </div>
+    <div class="collapse extra-content" id="additionalContent-<%=area.name.split(" ")[0] %>">
+      <div class="title">
+        <h4>
+          Aprende más de nuestros servicios de <b><%= area.name %></b>
+        </h4>
+      </div>
+      <div>
+        <div class="areas-container">
+          <% area.services.each_with_index  do |service, index| %>
+            <%= erb :'services/components/_service_card',
+                    locals: {
+                      service: service,
+                      hover_color: area.secondary_color,
+                    } %>
+          <% end %>
+        </div>
+      </div>
+      <div class="cta-container">
+        <a class="my-secondary-button">
+          Estas a un click
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="plus-button">
+    +
+  </div>
+</div>
+
+<script>
+    {
+        const clickableCard = document.getElementById("area-card-<%=area.name.split(" ")[0] %>");
+        const additionalContent = document.querySelector('#additionalContent-<%=area.name.split(" ")[0] %>');
+
+        clickableCard.onclick = () => {
+            additionalContent.classList.toggle('collapse');
+
+            if (!additionalContent.classList.contains('collapse')) {
+                additionalContent.classList.add('show');
+            }else {
+                additionalContent.classList.remove('show');
+            }
+        };
+    }
+</script>

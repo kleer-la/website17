@@ -1,0 +1,22 @@
+<%= erb :'component/heros/_generic_hero', locals: {title: story[:description], subtitle: story[:subtitle]} %>
+<div class="container mainContent">
+	<div class="container-fluid">
+		<div class="col-md-9 no-hpadding contenedor-main-izq">
+      <% story[:sections].each do |section| %>
+        <%if section[:title]%>
+          <h2><%= section[:title] %></h2>
+        <% end %>
+        <h3><%= section[:heading] %></h2>
+        <p><%= section[:content].gsub("\n", "<br>") %></p>
+        <% section[:videos]&.each do |video| %>
+          <% if video[:title] %>
+            <h4><%= video[:title] %></h4>
+          <% end %>
+          <div class="video-container">
+            <iframe width="560" height="315" src="<%= video[:url] %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

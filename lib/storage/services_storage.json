@@ -75,7 +75,7 @@
       },
       {
         "name": "Mentoring y Coaching en APM",
-        "summary": "Habilita un enfoque centrado en el producto",
+        "summary": "Habilita un enfoque centrado en el producto.",
         "icon": "",
         "image": "/app/img/services/mentoring-coaching.jpeg",
         "description": "Iniciar en el camino hacia la adopción del enfoque de trabajo orientado a Producto es desafiante. Nuestro servicio de **mentoring y coaching en Agile Product Management**, está diseñado para brindar apoyo a personas en roles específicos, a equipos de producto y a equipos directivos del área de producto.\n\nNuestras sesiones de mentoring y coaching se llevan a cabo en un **formato personalizado** y pueden incluir los siguientes temas: \n\n\n\n* Implementar las **prácticas de Discovery y Delivery continuo** (Dual Track) a los equipos de todos los niveles\n* Ayudar en la definición de **nuevas formas de trabajo** o modelo operativo que soporten las prácticas de producto\n* Definir los subequipos “ternas de producto” (Product Manager/UX/TL) y su trabajo de Discovery, abordando tanto **niveles estratégicos como tácticos**\n* Apoyar a los equipos directivos de Producto en la actualización y desarrollo de una **Estrategia de Producto** coherente",
@@ -123,7 +123,7 @@
     "sub-services": [
       {
         "name": "Dinámicas y eventos",
-        "summary": "Cocreación de ideas y soluciones",
+        "summary": "Cocreación de ideas y soluciones.",
         "image": "/app/img/services/dinamicas_eventos.jpg",
         "description": "Diseñamos ambientes colaborativos. Nos enfocamos en la participación activa de todas las personas y la cocreación de ideas y soluciones.",
         "takeaways": "Fomenta la colaboración activa y la generación conjunta de soluciones valiosas, algunas actividades que promovemos:\n\n\n\n* **World café**: Facilitamos eventos con el formato World Café, ideales para debatir temas en grandes grupos.\n* **Hackatones**: Eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real.\n* **Eventos con formato open space**: el formato Open Space es muy útil para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.",
@@ -139,7 +139,7 @@
       },
       {
         "name": "Facilitación gráfica",
-        "summary": "Maximiza el entendimiento, captura ideas y resultados",
+        "summary": "Maximiza el entendimiento, captura ideas y resultados.",
         "image": "/app/img/services/facilitacion_grafica.jpg",
         "description": "Convierte tus reuniones en experiencias visuales. A través del Graphic Recording, capturamos ideas y resultados con impactantes ilustraciones que perduran en la memoria. Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo",
         "takeaways": "Convierte las reuniones en catalizadores de resultados tangibles y decisiones sólidas. Facilita el entendimiento y la recordación con piezas de alto impacto:\n\n\n\n* **Documentación Gráfica en vivo**: Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.\n* **Láminas gráficas**: Realización de contenidos audiovisuales de temas, charlas y exposiciones.\n* **Videos gráficos**: Contenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.",
@@ -147,7 +147,7 @@
       },
       {
         "name": "Innovación y creatividad",
-        "summary": "Resuelve problemas de manera innovadora",
+        "summary": "Resuelve problemas de manera innovadora.",
         "image": "/app/img/facilitacion04.jpg",
         "description": "Potenciamos la creación y ejecución de ideas. Nuestro poderoso brainstorming y espacio de innovación desencadenará la creatividad de tu equipo.",
         "takeaways": "Desbloquea ideas innovadoras y soluciones únicas:\n\n\n\n* **Powerful brainstorming**: Diseño de actividades para estimular la creación colectiva de ideas.\n* **Eventos corporativos y comunitarios**: Diseñamos y facilitamos eventos en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente.\n* **Encuentros de innovación**: Cubrimos todo el ciclo de vida de las ideas, desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante.",
@@ -174,7 +174,7 @@
     "sub-services": [
       {
         "name": "Innovation Jump Start",
-        "summary": "Acelera el Potencial Creativo de tus Equipos",
+        "summary": "Acelera el Potencial Creativo de tus Equipos.",
         "icon": "/app/img/icons/innovation.png",
         "image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS-innovation.svg",
         "description": "A través de nuestro servicio Innovation Jump Start, tus equipos podrán explorar posibilidades ilimitadas. Incorporando herramientas de descubrimiento de productos como Mapa de Empatía (Empathy Map), Etnografía rápida (Rapid Ethnography), Mapa de oportunidades y soluciones (Opportunity Solution Tree) y técnicas de experimentación y prototipado, que permitirán no solo conectarse con los clientes, sino también detectar y desarrollar oportunidades realmente valiosas con conocimiento validado.\n\nIntegramos los enfoques Scrum y Kanban para optimizar la dinámica interna y externa de los equipos. Con este servicio, tu equipo se convertirá en un motor de innovación ágil, superando barreras y elevando sus capacidades a nuevos horizontes.\n",

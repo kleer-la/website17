@@ -1,0 +1,28 @@
+<div
+    class="service-card"
+    id='service-card-<%=service.name.split(" ")[0] %>'
+    style='background-color: white; border: 1px solid #e0e0e0; padding: 20px; margin: 20px; cursor: pointer; transition: 0.3s; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);'
+>
+  <h3>
+    <%= service.name %>
+  </h3>
+  <h4>
+    <%= service.subtitle %>
+  </h4>
+</div>
+
+<script>
+    {
+        const areaCard = document.getElementById('service-card-<%=service.name.split(" ")[0] %>')
+        areaCard.addEventListener('mouseover', function() {
+            areaCard.style.backgroundColor = '<%= hover_color %>'
+        })
+
+        areaCard.addEventListener('mouseout', function() {
+            areaCard.style.backgroundColor = 'white'
+        })
+
+        console.log('areaCard', areaCard)
+
+    }
+</script>
