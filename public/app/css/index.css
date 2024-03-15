@@ -1488,6 +1488,22 @@ h3.title-somos {
   border-radius: 30px;
   border: none;
   margin-top: 30px; }
+  .area-card:hover {
+    cursor: pointer; }
+  .area-card .plus-button {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 50px;
+    border: #0c0c0c 1px solid; }
   .area-card p {
     font-size: 16px;
     font-weight: 400;
@@ -1496,7 +1512,7 @@ h3.title-somos {
     text-align: left; }
   .area-card .show-content {
     height: 330px;
-    padding: 60px 60px; }
+    padding: 80px 80px; }
     .area-card .show-content .summary {
       height: 100% !important;
       display: flex;
@@ -1508,7 +1524,6 @@ h3.title-somos {
       font-size: 24px;
       font-weight: 500;
       line-height: 30px;
-      max-width: 60% !important;
       margin: 50px auto 50px auto; }
     .area-card .extra-content .areas-container {
       display: flex;
@@ -1532,7 +1547,10 @@ h3.title-somos {
   background-color: white;
   border: 1px solid white;
   padding: 15px;
-  margin: 15px; }
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
   .service-card h3 {
     font-size: 18px;
     font-weight: bold;
@@ -1541,12 +1559,14 @@ h3.title-somos {
     text-align: center;
     margin: 10px 0; }
   .service-card h4 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0em;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    letter-spacing: 0em !important;
     text-align: center;
-    margin: 10px 0; }
+    margin: 0 !important;
+    width: auto !important;
+    max-width: 100% !important; }
 
 #services-hero {
   margin-top: 100px;
