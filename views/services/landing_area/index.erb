@@ -6,6 +6,4 @@
 %>
 
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
-<% service_area.services.each do |service| %>
-  <%= erb :'services/landing_area/area', locals: {service: service} %>
-<% end %>
+<%= erb :'services/landing_area/service', locals: {services: service_area.services} %>

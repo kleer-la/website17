@@ -1,24 +1,18 @@
-<p> lista de servicios <br>
-PENDIENTE
-</p>
+<section id="area" class="container">
+    <div>
+      <div class="areas-container">
+        <% service_area.services.each_with_index  do |service, index| %>
+          <%= erb :'services/components/_service_card',
+                  locals: {
+                    service: service,
+                    hover_color: service_area.secondary_color,
+                  } %>
+        <% end %>
+      </div>
+    </div>
 
-<p> Slogan <br>
-<%= service_area.slogan%>
-</p>
-<p> Description / side_image <br>
-<%= service_area.description%> //
-<%= service_area.side_image%>
-</p>
-
-<p> Target <br>
-<%= service_area.target%> 
-</p>
-
-<p> Value proposition <br>
-<%= service_area.value_proposition%> 
-</p>
-
-<p> contenido de cada servicio <br>
-PENDIENTE 
-</p>
-
+  <%= erb :'services/landing_area/_slogan', locals: {slogan: service_area.slogan}%>
+  <%= erb :'services/landing_area/_description', locals: {description: service_area.description, side_image: service_area.side_image }%>
+  <%= erb :'services/landing_area/_target', locals: {target: service_area.target}%>
+  <%= erb :'services/landing_area/_value_proposition', locals: {value_proposition: service_area.value_proposition}%>
+</section>

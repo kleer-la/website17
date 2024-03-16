@@ -1,0 +1,14 @@
+<% services.each_with_index  do |service, index| %>
+  <% #= erb :'services/components/_service_card',locals: {service: service,hover_color: area.secondary_color,} %>
+
+  <%= service.name %> <br>
+  <%= service.subtitle %> <br>
+  <%= service.value_proposition %> <br>
+  <%= service.outcomes %> <br>
+  <%= service.definitions %> <br>
+  <%= service.program %> <br>
+  <%= service.target %> <br>
+  <%= service.pricing %> <br>
+  <%= service.brochure %> <br>
+
+<% end %>
