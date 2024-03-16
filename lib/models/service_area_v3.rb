@@ -35,7 +35,7 @@ class ServiceAreaV3
 end
 
 class ServiceV3
-  attr_accessor(*%i(name subtitle value_proposition outcomes definitions program target pricing brochure))
+  attr_accessor(*%i(name subtitle value_proposition outcomes definitions program target pricing brochure faq))
 
   def initialize(hash_service_area)
     load_from_json(hash_service_area)
@@ -44,8 +44,9 @@ class ServiceV3
   def load_from_json(hash_service_area)
     load_str(%i[name subtitle value_proposition definitions target pricing brochure], hash_service_area)
 
-    @outcomes = []
-    @program = []
+    @outcomes = hash_service_area['outcomes']
+    @program = hash_service_area['program']
+    @faq = hash_service_area['faq']
 
     self
   end
