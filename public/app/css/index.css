@@ -1490,10 +1490,12 @@ h3.title-somos {
   margin-top: 30px; }
   .area-card:hover {
     cursor: pointer; }
+  .area-card img {
+    max-height: 65px; }
   .area-card .plus-button {
     height: 50px;
     width: 50px;
-    background-color: white;
+    background-color: black;
     border-radius: 50%;
     position: absolute;
     bottom: -20px;
@@ -1501,9 +1503,10 @@ h3.title-somos {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 50px;
-    border: #0c0c0c 1px solid; }
+    font-weight: 600;
+    font-size: 60px;
+    color: white;
+    border: white 1px solid; }
   .area-card p {
     font-size: 16px;
     font-weight: 400;
@@ -1521,8 +1524,8 @@ h3.title-somos {
     text-align: center;
     padding: 0 10%; }
     .area-card .extra-content h4 {
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 26px;
+      font-weight: 600;
       line-height: 30px;
       margin: 50px auto 50px auto; }
     .area-card .extra-content .areas-container {
@@ -1568,6 +1571,35 @@ h3.title-somos {
     width: auto !important;
     max-width: 100% !important; }
 
+@media screen and (max-width: 990px) {
+  .area-card .show-content {
+    height: auto !important;
+    padding: 50px; }
+
+  .service-card {
+    width: 100%;
+    height: auto !important;
+    font-size: 22px;
+    margin: 10px !important; } }
+@media screen and (max-width: 520px) {
+  .area-list {
+    padding: 48px 0 !important; }
+
+  .area-card .show-content {
+    height: auto !important;
+    padding: 20px !important; }
+    .area-card .show-content h4 {
+      margin-bottom: 30px !important; }
+  .area-card .extra-content {
+    padding: 0 !important; }
+
+  .service-card {
+    width: 100%;
+    height: auto !important;
+    font-size: 22px;
+    margin: 10px !important; }
+    .service-card h4 {
+      display: none; } }
 #services-hero {
   margin-top: 100px;
   margin-bottom: 13%; }

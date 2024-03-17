@@ -7,13 +7,13 @@
 >
   <div class="card-body">
     <div class="show-content row">
-      <div class="col-5">
+      <div class="col-12 col-md-5">
         <img src="<%= area.icon %>" alt="icon" class="mb-3"/>
         <h4>
           <%= area.name %>
         </h4>
       </div>
-      <div class="col-7 summary">
+      <div class="col-12 col-md-7 summary">
         <%= area.summary %>
       </div>
     </div>
@@ -36,13 +36,13 @@
       </div>
       <div class="cta-container">
         <a class="my-secondary-button" href="<%= "/es/servicios-v3/#{area.slug}" %>">
-          Estas a un click
+          Estás a un click
         </a>
       </div>
     </div>
   </div>
 
-  <div class="plus-button">
+  <div class="plus-button" id="plus-button-<%=area.name.split(" ")[0] %>">
     +
   </div>
 </div>
@@ -51,14 +51,17 @@
     {
         const clickableCard = document.getElementById("area-card-<%=area.name.split(" ")[0] %>");
         const additionalContent = document.querySelector('#additionalContent-<%=area.name.split(" ")[0] %>');
+        const plusButton = document.getElementById("plus-button-<%=area.name.split(" ")[0] %>")
 
         clickableCard.onclick = () => {
             additionalContent.classList.toggle('collapse');
 
             if (!additionalContent.classList.contains('collapse')) {
                 additionalContent.classList.add('show');
+                plusButton.innerHTML = "-"
             }else {
                 additionalContent.classList.remove('show');
+                plusButton.innerHTML = "+"
             }
         };
     }
