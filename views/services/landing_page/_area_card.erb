@@ -35,15 +35,22 @@
         </div>
       </div>
       <div class="cta-container">
-        <a class="my-secondary-button" href="<%= "/es/servicios-v3/#{area.slug}" %>">
-          Estás a un click
+        <a
+          class="my-secondary-button"
+          href="<%= "/es/servicios-v3/#{area.slug}" %>"
+        >
+          <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2"/>
+          ¡Quiero saber más!
         </a>
       </div>
     </div>
   </div>
 
-  <div class="plus-button" id="plus-button-<%=area.name.split(" ")[0] %>">
-    +
+  <div
+    class="plus-button"
+    id="plus-button-<%=area.name.split(" ")[0] %>"
+  >
+    <img src="/app/img/icons/plus.png" alt="plus" />
   </div>
 </div>
 
@@ -58,10 +65,10 @@
 
             if (!additionalContent.classList.contains('collapse')) {
                 additionalContent.classList.add('show');
-                plusButton.innerHTML = "-"
+                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
             }else {
                 additionalContent.classList.remove('show');
-                plusButton.innerHTML = "+"
+                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' />"
             }
         };
     }

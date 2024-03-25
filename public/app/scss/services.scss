@@ -50,7 +50,13 @@ $white: #FFFFFF;
     max-height: 65px;
   }
 
+  .my-secondary-button{
+    border: none !important;
+  }
+
   .plus-button{
+    margin: 0;
+    padding: 0;
     height: 50px;
     width: 50px;
     background-color: black;
@@ -61,10 +67,12 @@ $white: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    font-size: 60px;
-    color: white;
-    border: white 1px solid;
+    transition: transform 2s;
+    border: white 4px solid;
+
+    img{
+      height: 27px;
+    }
   }
 
   p{
@@ -122,17 +130,17 @@ $white: #FFFFFF;
 }
 
 //components
-.service-card{//TODO: change name
+.service-card{
   width: 225px;
   height: 150px;
   border-radius: 12px;
   background-color: white;
   border: 1px solid rgba(255, 255, 255, 1);
-  padding: 15px;
+  padding: 0 15px;
   margin: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 
   h3{
     font-size: 18px;
@@ -154,6 +162,68 @@ $white: #FFFFFF;
     max-width: 100% !important;
   }
 }
+
+//new area landing
+.area-section{
+
+  .top-icon{
+    position: absolute;
+    top: -60px;
+    left: calc(50% - 60px);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .areas-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10%;
+  }
+
+  .area-info{
+    margin: 80px 40px;
+    padding: 40px;
+    border-radius: 40px;
+    position: relative;
+
+    .slogan{
+      width: 100%;
+      margin: 30px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .description{
+      margin: 40px 0;
+    }
+
+    .target{
+      margin: 30px;
+
+      h3{
+        font-size: 32px;
+        font-weight: 400;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width:990px) {
   .area-card{
