@@ -1,8 +1,8 @@
 <div
   class="card clickable-card area-card"
-  id="area-card-<%=area.name.split(" ")[0] %>"
+  id="area-card-<%=area.id %>"
   data-toggle="collapse"
-  data-target="#additionalContent-<%=area.name.split(" ")[0] %>"
+  data-target="#additionalContent-<%=area.id %>"
   style="background-color: <%= area.primary_color %>"
 >
   <div class="card-body">
@@ -17,7 +17,7 @@
         <%= area.summary %>
       </div>
     </div>
-    <div class="collapse extra-content" id="additionalContent-<%=area.name.split(" ")[0] %>">
+    <div class="collapse extra-content" id="additionalContent-<%=area.id%>">
       <div class="title">
         <h4>
           Aprende más de nuestros servicios de <b><%= area.name %></b>
@@ -37,7 +37,9 @@
       <div class="cta-container">
         <a
           class="my-secondary-button"
+          id="cta-button-<%=area.id %>"
           href="<%= "/es/servicios-v3/#{area.slug}" %>"
+          style=""
         >
           <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2"/>
           ¡Quiero saber más!
@@ -48,7 +50,7 @@
 
   <div
     class="plus-button"
-    id="plus-button-<%=area.name.split(" ")[0] %>"
+    id="plus-button-<%=area.id%>"
   >
     <img src="/app/img/icons/plus.png" alt="plus" />
   </div>
@@ -56,9 +58,10 @@
 
 <script>
     {
-        const clickableCard = document.getElementById("area-card-<%=area.name.split(" ")[0] %>");
-        const additionalContent = document.querySelector('#additionalContent-<%=area.name.split(" ")[0] %>');
-        const plusButton = document.getElementById("plus-button-<%=area.name.split(" ")[0] %>")
+        const clickableCard = document.getElementById("area-card-<%=area.id %>");
+        const additionalContent = document.querySelector('#additionalContent-<%=area.id %>');
+        const plusButton = document.getElementById("plus-button-<%=area.id %>")
+        const ctaButton = document.getElementById("cta-button-<%=area.id %>")
 
         clickableCard.onclick = () => {
             additionalContent.classList.toggle('collapse');
@@ -71,5 +74,17 @@
                 plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' />"
             }
         };
+
+        ctaButton.onclick = (event) => {
+            event.stopPropagation()
+        }
+
+        ctaButton.onmouseover = () => {
+            ctaButton.style.backgroundColor = "<%= area.secondary_color %>"
+        }
+
+        ctaButton.onmouseout = () => {
+            ctaButton.style.backgroundColor = "white"
+        }
     }
 </script>

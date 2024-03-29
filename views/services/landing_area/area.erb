@@ -17,7 +17,7 @@
     <%= erb :'services/landing_area/_slogan', locals: {slogan: service_area.slogan}%>
     <%= erb :'services/landing_area/_description', locals: {description: service_area.description, side_image: service_area.side_image }%>
     <%= erb :'services/landing_area/_target', locals: {target: service_area.target}%>
-    <%= erb :'services/landing_area/_value_proposition', locals: {value_proposition: service_area.value_proposition}%>
+    <%= erb :'services/landing_area/_value_proposition', locals: {value_proposition: service_area.value_proposition, back_color: service_area.secondary_color}%>
     <div
       class="top-icon"
       style="border: <%= service_area.primary_color %> 3px solid;"

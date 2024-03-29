@@ -1597,25 +1597,46 @@ h3.title-somos {
   padding: 0 10%; }
 .area-section .area-info {
   margin: 80px 40px;
-  padding: 40px;
+  padding: 60px;
   border-radius: 40px;
   position: relative; }
   .area-section .area-info .slogan {
     width: 100%;
-    margin: 30px;
+    margin: 50px;
     font-family: 'Raleway', sans-serif;
     font-size: 32px;
     text-align: center; }
   .area-section .area-info .description {
-    margin: 40px 0; }
+    margin: 50px 0; }
   .area-section .area-info .target {
-    margin: 30px; }
+    margin: 50px 30px; }
     .area-section .area-info .target h3 {
       font-size: 32px;
       font-weight: 400;
       font-family: 'Raleway', sans-serif;
       text-align: center;
       margin-bottom: 20px; }
+  .area-section .area-info .value_proposition {
+    margin: 50px 30px 0 30px;
+    padding: 50px;
+    border-radius: 30px; }
+    .area-section .area-info .value_proposition .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      font-size: 30px; }
+
+.services-section {
+  margin: 40px; }
+  .services-section .introduce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    font-size: 32px; }
 
 @media screen and (max-width: 990px) {
   .area-card .show-content {

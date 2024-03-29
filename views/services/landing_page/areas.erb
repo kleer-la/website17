@@ -6,6 +6,7 @@
     </h3>
     Encuentra soluciones que se alineen con los objetivos estratégicos de tu empresa. Nuestra propuesta incluye estructura organizacional, liderazgo, flujos de valor, gestión de producto y desarrollo de equipos.
   </div>
+
   <div class="area-list p-5">
     <% @areas.each do |area| %>
       <%= erb :'services/landing_page/_area_card', locals: {area: area} %>
