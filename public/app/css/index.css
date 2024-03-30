@@ -1628,7 +1628,7 @@ h3.title-somos {
       font-size: 30px; }
 
 .services-section {
-  margin: 40px; }
+  margin: 40px 0; }
   .services-section .introduce {
     display: flex;
     flex-direction: column;
@@ -1637,6 +1637,47 @@ h3.title-somos {
     width: 100%;
     margin: auto;
     font-size: 32px; }
+  .services-section .service-info-container {
+    margin: 80px 40px;
+    padding: 60px;
+    border-radius: 40px;
+    position: relative; }
+    .services-section .service-info-container .value-proposition {
+      margin: 30px;
+      height: auto; }
+      .services-section .service-info-container .value-proposition h2 {
+        font-size: 60px; }
+      .services-section .service-info-container .value-proposition .text {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+    .services-section .service-info-container .outcomes {
+      margin: 30px 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .services-section .service-info-container .outcomes h4 {
+        max-width: 50%;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center; }
+      .services-section .service-info-container .outcomes .outcome-list {
+        margin-top: 30px; }
+        .services-section .service-info-container .outcomes .outcome-list .outcome {
+          height: 85px;
+          width: 90%;
+          border-radius: 15px; }
+    .services-section .service-info-container .program {
+      margin: 30px 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .services-section .service-info-container .program h4 {
+        max-width: 50%;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center; }
 
 @media screen and (max-width: 990px) {
   .area-card .show-content {

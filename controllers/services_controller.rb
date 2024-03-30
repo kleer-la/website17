@@ -68,6 +68,8 @@ get '/servicios-v3/:service_id' do
 
     service_area = ServiceAreaV3.create_keventer params[:service_id]
     # reader.load_service(service_id)
+    @primary_color = service_area.primary_color
+    @secondary_color = service_area.secondary_color
 
     if service_area.nil?
       return status 404

@@ -3,16 +3,31 @@
     <img src="/app/img/icons/Glasses.svg"/>
     Aprende más de nuestros servicios
   </div>
+
+
+  <% services.each_with_index  do |service, index| %>
+    <div
+      class="service-info-container"
+      style="border: <%= area.primary_color %> 3px solid;"
+    >
+      <%= erb :'services/landing_area/service_section/_value_proposition',
+              locals: { name: service.name, value_proposition: service.value_proposition }%>
+      <%= erb :'services/landing_area/service_section/_outcomes',
+              locals: { outcomes: service.outcomes}%>
+      <%= erb :'services/landing_area/service_section/_program',
+              locals: { program: service.program }%>
+      <%= erb :'services/landing_area/service_section/_target',
+              locals: { target: service.target }%>
+
+
+<!--      <%#= service.value_proposition %> <br>-->
+<!--      <%#= service.outcomes %> <br>-->
+<!--      <%#= service.definitions %> <br>-->
+<!--      <%#= service.program %> <br>-->
+<!--      <%#= service.target %> <br>-->
+<!--      <%#= service.pricing %> <br>-->
+<!--      <%#= service.brochure %> <br>-->
+    </div>
+  <% end %>
 </div>
 
-<% services.each_with_index  do |service, index| %>
-  <%= service.name %> <br>
-  <%= service.subtitle %> <br>
-  <%= service.value_proposition %> <br>
-  <%= service.outcomes %> <br>
-  <%= service.definitions %> <br>
-  <%= service.program %> <br>
-  <%= service.target %> <br>
-  <%= service.pricing %> <br>
-  <%= service.brochure %> <br>
-<% end %>
