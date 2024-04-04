@@ -75,6 +75,8 @@ get '/servicios-v3/:service_id' do
       return status 404
     end
 
+    puts service_area.services[4].inspect
+
     # @meta_tags.set! title: @service.seo_title || @service.name,
     #                 description: @service.elevator_pitch,
     #                 canonical: "/servicios#{@service.canonical_url}"
