@@ -1,11 +1,14 @@
 class ServiceArea
-  attr_accessor :name, :summary, :primary_color, :secondary_color, :icon, :services, :abstract
+  attr_accessor :id, :name, :summary, :primary_color, :secondary_color, :icon, :services, :slug, :abstract
 
   def load_from_json(hash_service_area)
-    load_str(%i[name
+    load_str(%i[
+                id
+                name
                 summary
                 primary_color
                 secondary_color
+                slug
                 abstract
                 icon], hash_service_area)
 

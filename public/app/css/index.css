@@ -1490,10 +1490,16 @@ h3.title-somos {
   margin-top: 30px; }
   .area-card:hover {
     cursor: pointer; }
+  .area-card img {
+    max-height: 65px; }
+  .area-card .my-secondary-button {
+    border: none !important; }
   .area-card .plus-button {
+    margin: 0;
+    padding: 0;
     height: 50px;
     width: 50px;
-    background-color: white;
+    background-color: black;
     border-radius: 50%;
     position: absolute;
     bottom: -20px;
@@ -1501,9 +1507,10 @@ h3.title-somos {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 50px;
-    border: #0c0c0c 1px solid; }
+    transition: transform 2s;
+    border: white 4px solid; }
+    .area-card .plus-button img {
+      height: 27px; }
   .area-card p {
     font-size: 16px;
     font-weight: 400;
@@ -1521,8 +1528,8 @@ h3.title-somos {
     text-align: center;
     padding: 0 10%; }
     .area-card .extra-content h4 {
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 26px;
+      font-weight: 600;
       line-height: 30px;
       margin: 50px auto 50px auto; }
     .area-card .extra-content .areas-container {
@@ -1546,11 +1553,11 @@ h3.title-somos {
   border-radius: 12px;
   background-color: white;
   border: 1px solid white;
-  padding: 15px;
+  padding: 0 15px;
   margin: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: center; }
   .service-card h3 {
     font-size: 18px;
     font-weight: bold;
@@ -1568,6 +1575,172 @@ h3.title-somos {
     width: auto !important;
     max-width: 100% !important; }
 
+.area-section .top-icon {
+  position: absolute;
+  top: -60px;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .area-section .top-icon img {
+    width: 80px;
+    height: 80px; }
+.area-section .areas-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 10%; }
+.area-section .area-info {
+  margin: 80px auto;
+  padding: 60px;
+  border-radius: 40px;
+  position: relative;
+  max-width: 1500px;
+  width: 100%; }
+  .area-section .area-info .slogan {
+    width: 100%;
+    margin: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    text-align: center; }
+  .area-section .area-info .description {
+    margin: 50px 0; }
+  .area-section .area-info .target {
+    margin: 50px 30px; }
+    .area-section .area-info .target h3 {
+      font-size: 32px;
+      font-weight: 400;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+      margin-bottom: 20px; }
+  .area-section .area-info .value_proposition {
+    margin: 50px 30px 0 30px;
+    padding: 50px;
+    border-radius: 30px; }
+    .area-section .area-info .value_proposition .title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      font-size: 30px; }
+
+.services-section {
+  margin: 40px 0; }
+  .services-section .introduce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    font-size: 32px; }
+  .services-section .service-info-container {
+    margin: 80px auto;
+    padding: 60px;
+    border-radius: 40px;
+    position: relative;
+    max-width: 1500px;
+    width: 100%; }
+    .services-section .service-info-container .value-proposition {
+      margin: 30px;
+      height: auto; }
+      .services-section .service-info-container .value-proposition h2 {
+        font-size: 60px; }
+      .services-section .service-info-container .value-proposition .text {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+    .services-section .service-info-container .outcomes {
+      margin: 30px 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .services-section .service-info-container .outcomes h4 {
+        max-width: 50%;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center; }
+      .services-section .service-info-container .outcomes .outcome-list {
+        margin-top: 30px; }
+        .services-section .service-info-container .outcomes .outcome-list .outcome {
+          height: 85px;
+          width: 100%;
+          border-radius: 15px; }
+          .services-section .service-info-container .outcomes .outcome-list .outcome .check {
+            border-radius: 15px 0 0 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+          .services-section .service-info-container .outcomes .outcome-list .outcome .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            font-weight: 500; }
+    .services-section .service-info-container .program {
+      margin: 30px 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .services-section .service-info-container .program h4 {
+        max-width: 50%;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center; }
+    .services-section .service-info-container .target {
+      margin: 30px 0;
+      border-radius: 30px;
+      padding: 30px;
+      width: 100%;
+      height: 330px; }
+      .services-section .service-info-container .target .title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 30px;
+        font-weight: 600; }
+      .services-section .service-info-container .target .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+
+@media screen and (max-width: 990px) {
+  .area-card .show-content {
+    height: auto !important;
+    padding: 50px; }
+
+  .service-card {
+    width: 100%;
+    height: auto !important;
+    font-size: 22px;
+    margin: 10px !important; } }
+@media screen and (max-width: 520px) {
+  .area-list {
+    padding: 48px 0 !important; }
+
+  .area-card .show-content {
+    height: auto !important;
+    padding: 20px !important; }
+    .area-card .show-content h4 {
+      margin-bottom: 30px !important; }
+  .area-card .extra-content {
+    padding: 0 !important; }
+
+  .service-card {
+    width: 100%;
+    height: auto !important;
+    font-size: 22px;
+    margin: 10px !important; }
+    .service-card h4 {
+      display: none; } }
 #services-hero {
   margin-top: 100px;
   margin-bottom: 13%; }

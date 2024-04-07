@@ -1,0 +1,12 @@
+<%=erb :'component/heros/_generic_hero',
+       locals: {
+         title: "#{service_area.name}",
+         subtitle: "#{service_area.subtitle}"
+       }
+%>
+
+<%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
+<%= erb :'services/landing_area/services', locals: {
+  services: service_area.services,
+  area: service_area
+} %>
