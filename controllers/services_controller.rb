@@ -10,7 +10,8 @@ get '/servicios' do
       redirect to("#{session[:locale]}/agilidad-organizacional"), 301
     end
 
-    @services = Service.load_list
+    @areas = Service.load_list
+
 
     @meta_tags.set! title: t('meta_tag.business-agility.title'),
                     description: t('meta_tag.business-agility.description'),
@@ -19,7 +20,8 @@ get '/servicios' do
     router_helper = RouterHelper.instance
     router_helper.alternate_route = "/agilidad-organizacional"
 
-    erb :'services/index', layout: :'layout/layout2022'
+    erb :'services/landing_page/index', layout: :'layout/layout2022'
+
   rescue
     status 500
   end

@@ -1,226 +1,136 @@
 {
-  "diseno-organizacional-agil": {
-    "name": "Diseño Organizacional Ágil",
-    "subtitle": "Habilita la capacidad de adaptación en tu organización a través del diseño organizacional.",
-    "summary": "Nuestro servicio de Diseño Organizacional Ágil es una solución integral para mejorar tus resultados empresariales. Trabajamos en equipo con los líderes de tu organización, nos enfocamos en armonizar los diferentes componentes para lograr los objetivos estratégicos. Las intervenciones pueden cubrir: estructura, procesos, capacidades transversales y las prácticas de gestión de personas.\n\nDescubre cómo este enfoque puede fortalecer tu negocio y hacerlo más eficiente y adaptable en un entorno empresarial en constante cambio.",
-    "color_theme": "sian-theme",
-    "logo": "/app/img/services/EAP.png",
-    "seo_title": "Diseño Organizacional Ágil | Transformación Empresarial",
-    "side_image": "/app/img/services/diseno-org.jpg",
-    "description": "El diseño organizacional es una aproximación sistemática y holística para alinear y coordinar todas las partes de una organización para lograr su propósito estratégico. El **diseño organizacional ágil** lo logra desarrollando una adaptabilidad rápida y efectiva a los cambios del entorno empresarial.\n\nA continuación, exploraremos algunos de los beneficios clave del Diseño Organizacional:\n\n* **Clientes satisfechos**: una organización adaptable responde proactivamente a las necesidades de sus clientes.\n* **Mejora en la adaptabilidad:** prepara a tu organización para responder rápidamente a cambios del mercado y del entorno operativo.\n* **Resiliencia organizacional**: fortalece a tu empresa para enfrentar desafíos y cambios inesperados, reduciendo riesgos y mejorando la estabilidad a largo plazo.\n* **Toma de decisiones descentralizada**: habilita a los equipos de tu organización para tomar decisiones más rápidas y efectivas, mejorando la reacción ante situaciones inesperadas.\n* **Colaboración mejorada**: al alinear las estructuras y procesos con tu estrategia, mejoramos la comunicación y colaboración en el cumplimiento de objetivos.\n* **Retención del talento**: los empleados se sienten más satisfechos en ambientes donde tienen voz, autonomía y la oportunidad de contribuir de manera significativa con el propósito.\n\nUtilizamos los valores de la agilidad como marco de referencia para transformar diversas áreas de tu empresa, garantizando coherencia y alineación con tu visión estratégica.\n\nEn Kleer, estamos comprometidos a ser tu aliado en este viaje de transformación y crecimiento.\n",
-    "takeaways": "#### Puntos clave de intervención\n\nTrabajamos en armonía con los **diferentes componentes** de la organización para **lograr los objetivos estratégicos**. Nuestra intervención se centra en:\n\n* **La estructura**: determina el posicionamiento de responsabilidad e identidad en una organización.\n* **Procesos y capacidades transversales**: que resuelven la colaboración cruzando los límites creados por la estructura.\n* **Prácticas de gestión de personas**: desarrollan las capacidades organizacionales a partir de las habilidades individuales, alineadas con la estrategia.\n* **Sistemas de reconocimiento**: buscan congruencia entre el propósito de la organización y de las personas que la conforman.",
-    "recipients": "#### Nuestro rol:\n\n* **Formamos parte del equipo** de diseño, colaborando estrechamente con los miembros de su organización.\n* También ofrecemos **asesoramiento externo** si se adapta mejor a sus necesidades.\n\n\n#### Participación de la organización:\n\n\n\n* Sugerimos un **proceso colaborativo** con representantes de **todos los niveles** de la empresa.\n* También apoyamos procesos liderados por la alta dirección, cuando esta es la elección de la organización.\n\n\n#### Aproximación:\n\n\n\n* Recomendamos un proceso **iterativo**: comenzamos con **diseños iniciales** y los **perfeccionamos** basándonos en los resultados de una implementación progresiva.\n* Para quienes prefieren un enfoque más tradicional, también ofrecemos procesos lineales, desde el análisis hasta la implementación.",
-    "program": "",
-    "cta": "",
-    "brochure": "",
-    "canonical_url": "/diseno-organizacional-agil",
-    "elevator_pitch": "Conoce cómo nuestro Diseño Organizacional Ágil puede transformar tu empresa. Mejora la adaptabilidad, la resiliencia y la colaboración.",
-    "contact_text": "¿Listo para llevar la agilidad de tu organización al siguiente nivel?",
-    "titles": ["Hacia el Diseño Organizacional Ágil", "¿Cómo lo hacemos?"]
-  },
   "evolucion-organizacional": {
     "id": 1,
     "name": "Evolución Organizacional",
-    "subtitle": "Transforma tu organización en un entorno ágil y adaptable.",
-    "summary": "Nuestro servicio de Evolución Organizacional está diseñado para transformar tu organización en un entorno ágil y adaptable. Nos enfocamos en la evolución de la cultura, la estructura y los procesos de tu organización para lograr una mayor eficiencia y adaptabilidad en un entorno empresarial en constante cambio.\n\nDescubre cómo este enfoque puede fortalecer tu negocio y hacerlo más eficiente y adaptable.",
-    "color_theme": "blue-theme",
-    "logo": "/app/img/services/evolucion-organizacional.png",
-    "side_image": "/app/img/services/evolucion-organizacional.jpg",
-    "seo_title": "Evolución Organizacional | Transformación Empresarial",
-    "description": "La **Evolución Organizacional** es un proceso de transformación que busca **mejorar la eficiencia y adaptabilidad** de una organización. En un mundo empresarial en constante cambio, la capacidad de adaptarse rápidamente a nuevas circunstancias es crucial para el éxito a largo plazo.\n\nEn Kleer, ofrecemos servicios de Evolución Organizacional que se centran en la transformación de la cultura, la estructura y los procesos de tu organización. Nuestro enfoque se basa en los valores y principios de la agilidad, lo que nos permite ayudarte a **fortalecer tu negocio y hacerlo más eficiente y adaptable**.\n\nDescubre cómo la Evolución Organizacional puede ayudarte a **mejorar la eficiencia y la adaptabilidad de tu organización**."
+    "summary": "Proporcionamos un enfoque integral que prepara a tu empresa para planificar y sostener el cambio. Cultivamos un liderazgo consciente y empático e impulsamos el cambio organizacional de manera efectiva y duradera. Adoptamos los principios de agilidad como pilares fundamentales para promover cambios en tu empresa.\n\nExplora los Servicios de Cambio Organizacional y Liderazgo.\n",
+    "primary_color": "#1af0ff",
+    "secondary_color": "#a8f9ff",
+    "icon": "/app/img/icons/convertshape.svg",
+    "slug": null,
+    "services": [
+      {
+        "id": 1,
+        "name": "Diseño Organizacional Ágil",
+        "subtitle": "Diseñando organizaciones adaptativas para el logro de los objetivos estratégicos.",
+        "url": "/servicios/diseno-organizacional-agil"
+      },
+      {
+        "id": 2,
+        "name": "Programa de Desarrollo del Liderazgo Ágil",
+        "subtitle": "Fortalece las habilidades de líderes para guiar el cambio organizacional",
+        "url": "/servicios/desarrollo-liderazgo-agil"
+      }
+    ]
   },
   "agile-product-management":{
     "id": 2,
     "name": "Agile Product Management (APM)",
-    "subtitle": "Capacitación y Consultoría en Gestión Ágil de Productos. Ofrecemos orientación práctica que te ayudará a crear productos innovadores y de impacto.",
-    "summary": "Nuestros servicios de Agile Product Management están diseñados para mejorar el proceso de desarrollo de productos digitales. \nCombinamos prácticas de gestión de productos de vanguardia con métodos ágiles. Este enfoque no sólo permite desarrollar el producto correcto, sino que también aumenta sus posibilidades de éxito en el mercado.\n\nIntegra Agile Product Management en tu empresa y acelera el impacto de tus productos.",
-    "color_theme": "green-theme",
-    "logo": "/app/img/services/product-discovery.png",
-    "side_image": "/app/img/services/apm.jpeg",
-    "seo_title": "Consultoría y Acompañamiento en Agile Product Management",
-    "description": "En un mundo donde el 95% de los productos digitales enfrentan el fracaso y el 35% luchan por mantener un éxito sostenible, la necesidad de una **orientación experta en la gestión de productos** es crucial. En Kleer, te ofrecemos servicios de capacitación y consultoría en Gestión Ágil de Productos para aumentar tus posibilidades de lanzar **productos innovadores y de alto impacto**.\n\nNuestros servicios en Agile Product Management no solo transforman la gestión del ciclo de desarrollo del producto, sino que también son tu aliado estratégico para: \n\n * Alcanzar los **objetivos** empresariales e impulsar el crecimiento\n * Reducir las brechas de **comunicación** entre las áreas de tu organización\n * Alinear una **visión** común entre tus equipos de producto y toda la organización\n * Minimizar los **riesgos** asociados al desarrollo de productos\n * Priorizar la mejora de la **satisfacción** de tus clientes y usuarios\n * Empoderar a tus **equipos** para impulsar soluciones innovadoras\n\n **¿Qué tipo de empresas pueden beneficiarse de nuestros servicios en Agile Product Management?** \n\nTrabajamos con empresas que comprenden que **el crecimiento sostenible se construye sobre la base de productos digitales sólidos**.\n\nKleer apoya a **innovadores en varios sectores**, como retail, finanzas, alimentación, transporte y logística, para alcanzar el éxito con sus productos. En la actualidad, las empresas reconocen que **los productos digitales son activos esenciales** para sus operaciones y van más allá de ser simplemente un gasto del área de IT.",
-    "takeaways": "Ofrecemos una visión integral para tu proceso de desarrollo de productos digitales, asegurando que tu producto se destaque en un mercado competitivo.\n\n**Construye el producto correcto**: consigue que el producto encaje en el mercado. Ofrece características y soluciones que tus clientes no solo utilicen, sino que también compren.\n\n**Aumenta tus posibilidades de éxito**: valida tu idea de producto con el mercado, obteniendo información valiosa para mejorar y reducir el riesgo de fracaso.\n\n**Investiga y comprende el mercado**: adquiere una ventaja competitiva al comprender tu mercado objetivo. Analizando las tendencias y realizando investigaciones.\n\n **Integración de Product Management moderno con Agile Delivery**: garantice que el producto se desarrolle de manera eficiente y cumpla con las expectativas de clientes y del mercado. \n\nMaximiza tus posibilidades de éxito en el competitivo mundo de los productos digitales.",
-    "recipients": "",
-    "program": "",
-    "cta": " ",
-    "contact_text": "¡Lleva tu desarrollo de productos al siguiente nivel con nuestro servicio en Agile Product Management!",
-    "brochure": "",
-    "canonical_url": "/agile-product-management",
-    "elevator_pitch": "Transforma la gestión del ciclo de desarrollo de productos innovadores y logra resultados alineados con los objetivos empresariales.",
-    "titles": ["¿Por qué elegir nuestros servicios en Agile Product Management?", "Para personas y empresas", "Recursos y materiales"],
-    "sub-services": [
+    "summary": "Nuestros servicios especializados en Agile Product Management están diseñados para potenciar el enfoque de desarrollo de productos digitales, combinando prácticas de vanguardia de gestión de productos con métodos ágiles.\n\nAcelera el impacto de producto con Agile Product Management. Descubre más sobre los Servicios.\n",
+    "primary_color": "#5dca59",
+    "secondary_color": "#aefcb0",
+    "icon": "/app/img/icons/Hand Stars.svg",
+    "slug": "agile-product-management",
+    "services": [
       {
+        "id": 3,
         "name": "Product Strategy",
-        "summary": "Una inmersión práctica en la estrategia de producto",
-        "icon": "",
-        "image": "/app/img/services/strategy-product.jpeg",
-        "description": "La Estrategia de Producto describe lo que una empresa quiere lograr con el producto digital. Cómo hará para que se concretice la **visión de producto** y cómo priorizaremos hacerlo. Diseñar una Estrategia de Producto coherente e inspiradora es una tarea compleja. Requiere un marco conceptual claro y una implementación concreta y fluida.\n\nEl **Product Strategy Bootcamp** es un taller que pone foco en la definición de una Estrategia de Producto sólida y alineada con la visión y objetivos de tu empresa. \n\n**Beneficios** de una Estrategia de Producto bien definida \n\n* **Proveer claridad y dirección** a stakeholders y equipos, incluso en contextos de incertidumbre, manteniendo el foco.\n* **Visibilizar las oportunidades** e iniciativas a explorar y testear.\n* Aprovechar los hallazgos (insights) y convertirlos en **acciones innovadoras**.\n* **Identificar y mitigar proactivamente los riesgos** asociados al desarrollo de productos.\n* **Sincronizar y alinear la Estrategia de Producto** con los equipos de Producto.\n* **Empoderar a los Equipos de Producto** para tomar decisiones tácticas efectivas en la construcción de soluciones.\n* Impulsar el **ciclo de desarrollo completo** que incluye: Entender el contexto, poner Foco, hacer Discovery y Delivery de Producto.",
-        "takeaways": "El Product Strategy Bootcamp se desarrolla en un formato intensivo de 12 horas con especialistas de Kleer. Incluyen: entrevistas contextuales, materiales de referencia, Product Assessment y 9 horas inmersivas dedicadas a revisar y crear la visión y estrategia de productos.\n\nEl programa incluye trabajos prácticos en:\n\n* Revisar y actualizar la **Visión y Objetivos** \n* Definición de la Estrategia de Producto captando el **contexto del mercado** \n* **Comunicación efectiva de la Estrategia** a través de un Roadmap orientado a Resultados \n\nEste bootcamp es la oportunidad para alcanzar un nuevo nivel de entendimiento y práctica del Agile Product Management. Desarrolla productos más eficientemente y con mayor impacto.",
-        "recipients": "El Product Strategy Bootcamp de Kleer se realiza exclusivamente para empresas con las personas que integran Equipos de Producto y lideran la Dirección de Producto: \n\n* Chief Product Officer / Líderes de Producto / Directivos \n* Product Managers / Product Owners \n* Líderes técnicos \n* Especialistas en User Experience (UX) y CX \n* Analistas de Negocio y Funcionales \n* Scrum Master y Agile Coaches \n* Emprendedores"
+        "subtitle": "Una inmersión práctica en la estrategia de producto",
+        "url": "/servicios/agile-product-management#agile_product_strategy"
       },
       {
+        "id": 4,
         "name": "Product Discovery",
-        "summary": "Dirige tu producto hacia el éxito",
-        "icon": "",
-        "image": "/app/img/services/discovery.jpg",
-        "description": "Desarrollar productos digitales que no logren el impacto esperado es **costoso y arriesgado**, tanto para los usuarios como para el negocio.\n\nEl proceso de Product Discovery guía a los equipos de producto en la **toma de decisiones** cruciales. En esencia, se trata de **identificar y priorizar** las funcionalidades o productos que realmente aportan valor y descubrirlo tempranamente.",
-        "takeaways": "Proponemos un proceso de discovery continuo que nos permita descubrir las necesidades, problemas y oportunidades para el éxito de tu producto. Además, nos enfocamos en la **gestión de riesgos, la reducción de incertidumbre** y la identificación de **soluciones valiosas** a través de la experimentación.",
-        "recipients": "El servicio de Product Discovery está diseñado para empresas y profesionales que desean maximizar el valor de sus productos. Está dirigido a:\n\n\n\n* Product Manager / Product Owner\n* Product Designers y User Experience UX\n* Gerentes y Líderes de Producto\n* Analista de Negocio, Analista Funcional\n* Scrum Masters, Agile Coaches\n* Project Managers"
+        "subtitle": "Dirige tu producto hacia el éxito",
+        "url": "/servicios/agile-product-management#product_discovery"
       },
       {
+        "id": 5,
         "name": "Programa Integral en APM",
-        "summary": "Desarrolla tu potencial estratégico.",
-        "icon": "",
-        "image": "/app/img/services/programa.jpeg",
-        "description": "El Programa Integral en Agile Product Management (APM) te guía desde los fundamentos hasta niveles estratégicos. A lo largo de 12 semanas, este programa integral incluye capacitación y mentoring en temas cruciales:\n\n* **Potencia tus competencias y habilidades**: adquiere las habilidades necesarias para fomentar la cultura de Producto en tu empresa.  \n* **Enfócate en Productos de impacto**: mejora la experiencia de los clientes y usuarios mientras impulsas la sostenibilidad y el crecimiento del negocio. \n* **Dominio de enfoques y prácticas**: aprende a aplicar las mejores prácticas, desde la estrategia hasta la construcción y el Delivery de productos, navegando con certeza  el descubrimiento de producto (Discovery). Reconociendo los riesgos y la incertidumbre, usando las prácticas adecuadas en cada contexto. \n* **Empodera a los Equipos de Producto**: descubre cómo ejercer impacto desde tu rol, independientemente de cuál sea y logra fortalecer a tus equipos de producto.",
-        "takeaways": "Combinamos una variedad de enfoques y actividades diseñadas para tener un impacto notable en cada persona que participe en el programa:\n\n* **Autoevaluación**: Cada participante reflexiona sobre sus habilidades y destrezas en Product Management.\n* **Sesiones grupales interactivas** (de hasta 2 horas): encuentros de entrenamiento, ejercicios, puesta en práctica y resolución de dudas.\n* **Sesión intermedia esclarecedora**: evaluamos y resolvemos dudas de manera colaborativa, visualizando la hoja de ruta hasta el final del programa.\n* **Sesión de cierre reflexiva**: realizamos un balance del desarrollo del programa, explorando caminos personales y pensando en próximos pasos.\n* **Trabajo asíncrono**: actividades individuales o grupales que te ayudarán a aplicar y profundizar en los temas tratados. Dedicación estimada 1 hora por semana.",
-        "recipients": "El Programa Integral de Desarrollo Ágil en Product Management de Kleer será de valor para personas involucradas en las áreas de innovación y desarrollo de productos, incluyendo los roles de:\n\n\n\n* Product Manager / Product Owner\n* Product Designers y User Experience UX\n* Gerentes y Líderes de Producto\n* Analista de Negocio, Analista Funcional\n* Scrum Masters, Agile Coaches\n* Project Managers"
+        "subtitle": "Desarrolla tu potencial estratégico.",
+        "url": "/servicios/agile-product-management#programa_integral_en_apm"
       },
       {
+        "id": 6,
         "name": "Ruta de Formación",
-        "summary": "Capacitaciones para fortalecer las capacidades internas",
-        "icon": "",
-        "image": "/app/img/services/area-producto.png",
-        "description": "Nuestra Ruta de Formación del Área de Producto se enfoca en **potenciar las competencias** de las personas que trabajan en la gestión de productos en contextos desafiantes, buscando la entrega continua de valor al negocio y a los clientes o usuarios.",
-        "takeaways": "Nuestra Ruta de cursos modulares está diseñada para adaptarse a tus necesidades de aprendizaje. **Desde los fundamentos de producto** hasta técnicas más avanzadas en Product Management. Un camino de aprendizaje de capacitaciones prácticas:\n\n\n\n* **[Accredited Product Owner](https://www.kleer.la/es/cursos/375-kleer-accredited-product-owner)**: Un curso esencial para dominar las responsabilidades del Product Owner.\n* **[Advanced Product Owner Workshop](https://www.kleer.la/es/cursos/206-advanced-product-owners-workshop)**: Lleva tus habilidades como Product Owner al siguiente nivel, profundizando en prácticas y técnicas avanzadas.\n* **[Taller de Product Discovery](https://www.kleer.la/es/cursos/238-taller-de-product-discovery)**: Descubre cómo identificar oportunidades de producto, validar ideas y crear soluciones que resuelvan problemas reales.\n* **[Design Thinking Workshop](https://www.kleer.la/es/cursos/377-design-thinking-workshop-online)**: Domina las técnicas y métodos más empleados en Design Thinking para diseñar productos y servicios innovadores.",
-        "recipients": "Estos cursos son ideales para profesionales que quieren destacar en la innovación y desarrollo de productos digitales. Ya sea que trabajes en roles operativos o gerenciales, nuestros cursos te permitirán potenciar las habilidades y el conocimiento necesario para avanzar con éxito en el desarrollo de productos. \n\nEstá dirigido a:\n\n* Product Manager / Product Owner\n* Product Designers, User Experience UX, Customer Experience CX.\n* Gerentes y Líderes de Producto\n* Analista de Negocio, Analista Funcional\n* Scrum Masters, Agile Coaches\n* Project Managers"
+        "subtitle": "Capacitaciones para fortalecer las capacidades internas",
+        "url": "/servicios/agile-product-management#ruta_de_formacion"
       },
       {
+        "id": 7,
         "name": "Mentoring y Coaching en APM",
-        "summary": "Habilita un enfoque centrado en el producto.",
-        "icon": "",
-        "image": "/app/img/services/mentoring-coaching.jpeg",
-        "description": "Iniciar en el camino hacia la adopción del enfoque de trabajo orientado a Producto es desafiante. Nuestro servicio de **mentoring y coaching en Agile Product Management**, está diseñado para brindar apoyo a personas en roles específicos, a equipos de producto y a equipos directivos del área de producto.\n\nNuestras sesiones de mentoring y coaching se llevan a cabo en un **formato personalizado** y pueden incluir los siguientes temas: \n\n\n\n* Implementar las **prácticas de Discovery y Delivery continuo** (Dual Track) a los equipos de todos los niveles\n* Ayudar en la definición de **nuevas formas de trabajo** o modelo operativo que soporten las prácticas de producto\n* Definir los subequipos “ternas de producto” (Product Manager/UX/TL) y su trabajo de Discovery, abordando tanto **niveles estratégicos como tácticos**\n* Apoyar a los equipos directivos de Producto en la actualización y desarrollo de una **Estrategia de Producto** coherente",
-        "takeaways": "La **mentoría** es una proceso de enseñanza-aprendizaje que potencia la gestión del conocimiento dentro de las organizaciones. Aumentando la **capacidad de aprender** y compartir información, mientras se fomenta el desarrollo de capacidades internas. \n\nEl **coaching**, por otro lado, tiene como objetivo liberar el potencial de una persona, aumentando al máximo su desempeño y fomentando el desarrollo de una **mentalidad de crecimiento**.\n\nAmbos enfoques son ampliamente utilizados en Kleer y los aplicamos de manera efectiva para diversos roles y equipos dedicados a Agile Product Management.\n",
-        "recipients": "El Mentoring y Coaching de Kleer está dirigido a profesionales que integran Equipos de Producto y lideran la Dirección de Producto:\n\n* Chief Product Officer / Líderes de Producto / Directivos\n* Product Managers / Product Owners\n* Líderes técnicos\n* Especialistas en User Experience (UX) y CX\n* Analistas de Negocio y Funcionales\n* Scrum Master y Agile Coaches\n* Emprendedores"
+        "subtitle": "Habilita un enfoque centrado en el producto.",
+        "url": "/servicios/agile-product-management#mentoring_y_coaching_en_apm"
       }
     ]
 
   },
-  "desarrollo-liderazgo-agil": {
-    "name": "Programa de Desarrollo del Liderazgo Ágil",
-    "subtitle": "Hacia un liderazgo con impacto más consciente y humano",
-    "summary": "El Programa de Desarrollo del Liderazgo Ágil se enfoca en expandir el nivel de consciencia de quienes lideran las organizaciones. A través de un enfoque sistémico, fomentamos un liderazgo más consciente y humano, que es esencial para lograr una agilidad organizacional efectiva y sostenible.\n\nConstruye una base sólida para el desarrollo de tu organización y fomente un liderazgo que impacte en el negocio.",
-    "color_theme": "blue-theme",
-    "logo": "/app/img/services/DLA-logo.png",
-    "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/dla grupo lideres interactuando.png",
-    "description": "\nEl nivel de agilidad que una organización sea capaz de alcanzar está acotado por el nivel de agilidad colectiva de quienes la lideran.\n\n### ¿Por qué desarrollar el liderazgo ágil?\n\nCon la transformación digital de las organizaciones, emerge el desafío clave de la evolución de su management hacia un liderazgo ágil. Se vuelve crítico evolucionar el modelo de liderazgo colectivo, lo que en última instancia, impactará en la cultura organizacional.\n\nEn esta evolución, no es suficiente la adopción de prácticas ágiles por los equipos de trabajo, sin un desarrollo específico para incrementar el nivel de consciencia de quienes lideran la organización.\n\nEste desarrollo sistémico del liderazgo ágil es clave para lograr una agilidad organizacional efectiva y sostenible.\n\n### ¿Cómo lo hacemos?\n\nPara lograr un impacto en el liderazgo de las personas que participan del programa, combinamos distintos enfoques pedagógicos, tanto a nivel individual como a nivel grupal.\n\n- **Desarrollo Individual**: evaluación del liderazgo propio, coaching ejecutivo individual, con seteo de objetivos de mejoras y experimentos a realizar y un seguimiento individual.\n\n- **Desarrollo Grupal**: sesiones de entrenamiento, ejercicios de acercamiento y puesta en práctica, clínicas de casos reales y resolución de dudas.\n",
-    "takeaways": "\nEste programa es más que un curso de liderazgo ágil.\n\nEl Programa de Desarrollo del Liderazgo Ágil (DLA), se enfoca en expandir el nivel de conciencia de quienes lideran la organización, para ampliar su impacto en sus equipos y sus resultados de negocio.\n\nDLA está diseñado para construir unas bases sólidas para la evolución organizacional hacia una agilidad efectiva y sostenible.\n\n- **Radar de Liderazgo Ágil**:  autoevaluación y evaluación por sus colaboradores.\n- **Sesiones individuales** que incluyen:\n  - **Debrief**, para interpretar los resultados del Radar de Liderazgo Ágil e identificar los desafíos de liderazgo a trabajar.\n  - **Coaching Ejecutivo**, para acompañar a la persona en la evolución de su liderazgo, y guiarla en su experimentación de mejoras.\n  - **Cierre**, para hacer un balance del desarrollo individual y delinear los próximos pasos.\n- **Encuentros grupales** online en vivo semanales:\n  - **Encuentro de Lanzamiento** del Programa\n  - Talleres de **Entrenamiento**\n  - Encuentros de **Checkpoints** con Clínicas de Casos y Actividades Grupales de Repaso\n  - Encuentro de Cierre del Programa\n- **Plataforma online** del programa, con materiales de trabajo, videos, referencias adicionales para profundizar, actividades individuales o grupales de puesta en práctica.\n",
-    "recipients": "\nEl programa está destinado a grupos de entre 6 y 20 líderes de una misma organización. Pueden ser líderes que empezaron hace poco, o que ya tengan experiencia en liderazgo y agilidad:\n\n- Dirección y C-Level\n- Gerentes y coordinadores de área\n- Agentes de cambio en la organización\n- Líderes de equipos\n- Líderes técnicos\n- Personas con liderazgo en distintas áreas: recursos humanos, administración, compras, legales, entre otras\n\nPara personas que quieran participar individualmente, <a data-bs-toggle=\"modal\" data-bs-target=\"#mail-modal\">por favor contactarnos.</a> Organizaremos una entrevista individual con una persona de nuestro equipo de coaches.",
-    "program": "\n#### Modelos para el Liderazgo Ágil\nReinventando las Organizaciones (Laloux, Wilber, Beck & Cowan),\nCorazón de la Agilidad (Cockburn), Liderando en la Complejidad con\nCynefin (Snowden), Liderazgo Tribal (Logan), Pensamiento Sistémico (Meadows).\n\n#### Empoderar los Equipos\nToma de Decisión Colaborativa (Kaner), Delegación Progresiva (Apello),\nFacilitación de Conversaciones Grupales, Preguntas Poderosas (Bandler & Grinder).\n\n#### Desarrollar los Equipos\nMotivación Intrínseca y Extrínseca (Pink), Formación de Equipo (Tuckman), Evolución de la Confianza (Case), Feedback Efectivo (Apello, Rosenberg, Cessan).\n\n#### Cuidar e Integrar\nPriorización y Decir No, Comunicación No Violenta (Rosenberg), Escucha Empática (Rosenberg, Schamer), Actos Sutiles de Exclusión (Jana & Baran).\n\n#### Conducir el Cambio\nEtapas del Cambio con ADKAR (Prosci), Cambio Sistémico con Doble Bucle (Berkana), Modelado Sistémico (Meadows), Experimentación y Errores, Diversidad, Equidad e Inclusión.\n\n#### Y además ...\nEl contenido es tentativo se adapta en función del contexto, de las necesidades de la organización y participantes, y de la cantidad de sesiones grupales\n",
-    "cta": " \n<div class=\"container\">\n<p class=\"mb-4\">\nAlgunas opciones del programa que ofrecemos para grupos (de 10 a 16 líderes):\n</p>\n<img src=\"https://kleer-images.s3.sa-east-1.amazonaws.com/dla_program.png\"/>\n\n</div>\n",
-    "brochure": "https://kleer-materiales.s3.us-east-2.amazonaws.com/Kleer+-+Programa+Desarrollo+Liderazgo+%C3%81gil.pdf\n",
-    "canonical_url": "/desarrollo-liderazgo-agil",
-    "elevator_pitch": "Hacia un liderazgo con impacto más consciente y humano"
-  },
   "facilitacion": {
     "id": 3,
     "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
-    "subtitle": "Transforma tus encuentros en experiencias colaborativas donde cada persona es protagonista. Promueve la productividad y la creatividad de tu equipo de trabajo.",
-    "summary": "Transforma tus reuniones y eventos con nuestro servicio de Facilitación Ágil. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.\n\nConvierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización.",
-    "color_theme": "orange-theme",
-    "logo": "/app/img/services/AFP.png",
-    "seo_title": "Facilitación Ágil: Reuniones y Eventos más Productivos",
-    "seo_description": "",
-    "side_image": "/app/img/risas-fg.jpg",
-    "description": "Nuestra especialidad es transformar tus encuentros en experiencias eficientes y colaborativas. Incorporando las prácticas de facilitación te ayudamos a potenciar la toma de decisiones, la resolución de problemas y el intercambio de ideas, donde cada participante es protagonista.\n\n**¿Qué es la Facilitación Ágil?**\n\nLa facilitación ágil integra diversas prácticas para lograr reuniones y eventos altamente productivos.\n\nA través de la facilitación guiamos a las personas presentes en el encuentro hacia la colaboración, permitiendo que cada voz sea escuchada y que la creatividad fluya sin obstáculos.\n\nFacilitamos eventos que ayudan a los equipos a lograr sus objetivos. Nuestros servicios son adecuados para una amplia gama de industrias y equipos.\n",
-    "takeaways": "",
-    "recipients": "",
-    "program": "",
-    "cta": " ",
-    "brochure": "",
-    "canonical_url": "/facilitacion",
-    "elevator_pitch": "Diseñamos experiencias para potenciar la colaboración, la toma de decisiones  y acciones concretas. Promovemos espacios inspiradores y efectivos.",
-    "contact_text": "¡Descubre el poder de la Facilitación Ágil!",
-    "titles": ["¡Descubre el poder de la Facilitación Ágil y lleva tus reuniones y eventos a un nuevo horizonte de productividad y creatividad!"],
-    "sub-services": [
+    "summary": "Convierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.\n\nTransforma tus reuniones y eventos con nuestros Servicios de Facilitación Ágil\n",
+    "primary_color": "#ff8e52",
+    "secondary_color": "#ffc380",
+    "icon": "/app/img/icons/Star Fall.svg",
+    "slug": "facilitacion",
+    "services": [
       {
+        "id": 8,
         "name": "Dinámicas y eventos",
-        "summary": "Cocreación de ideas y soluciones.",
-        "image": "/app/img/services/dinamicas_eventos.jpg",
-        "description": "Diseñamos ambientes colaborativos. Nos enfocamos en la participación activa de todas las personas y la cocreación de ideas y soluciones.",
-        "takeaways": "Fomenta la colaboración activa y la generación conjunta de soluciones valiosas, algunas actividades que promovemos:\n\n\n\n* **World café**: Facilitamos eventos con el formato World Café, ideales para debatir temas en grandes grupos.\n* **Hackatones**: Eventos energéticos y masivos para crear soluciones con base tecnológica a problemas del mundo real.\n* **Eventos con formato open space**: el formato Open Space es muy útil para la cross-polinización, la difusión de conocimientos, la resolución de problemáticas y para la sana interacción entre los participantes.",
-        "recipients": "Ideal para empresas y grupos que buscan diseñar eventos colaborativos y participativos. También para equipos que desean generar sinergia, cocrear soluciones y promover la interacción entre los participantes en eventos como conferencias, hackatones o reuniones corporativas."
+        "subtitle": "Cocreación de ideas y soluciones.",
+        "url": "/servicios/facilitacion#dinamicas_y_eventos"
       },
       {
+        "id": 9,
         "name": "Planificación Estratégica",
-        "summary": "Guiamos tus iniciativas hacia el éxito",
-        "image": "/app/img/facilitacion02.jpg",
-        "description": "Enfocamos equipos multidisciplinarios hacia objetivos concretos. Desde la planificación estratégica hasta el inicio de proyectos, guiamos tus iniciativas hacia el éxito.",
-        "takeaways": "Establece planes estratégicos claros y alcanzables para impulsar tu organización hacia el éxito. Las jornadas de planificación estratégica pueden ser:\n\n\n\n* **Plan estratégico de organizaciones y equipos**: Generar una visión explícita y compartida sobre los pilares de la estrategia de la compañía o el equipo (alineados -en este último caso- con estrategias macro).\n* **Inicio de proyectos**: Acompañamos a los equipos en los primeros pasos de sus proyectos para maximizar la probabilidad de éxito de los mismos. Se trata de dinámicas y actividades grupales que van desde la creación o consolidación de la visión hasta la planeación.\n* **Identidad de equipos**: Facilitamos actividades diseñadas a medida, en las cuales el objetivo es la identificación colectiva del propósito de un equipo u organización a partir de las motivaciones intrínsecas de sus integrantes.",
-        "recipients": "Este servicio está dirigido a equipos multidisciplinarios que desean enfocarse en objetivos estratégicos, planificar proyectos o desarrollar productos. También es adecuado para organizaciones que buscan una visión compartida y un plan de acción claro."
+        "subtitle": "Guiamos tus iniciativas hacia el éxito.",
+        "url": "/servicios/facilitacion#planificacion_estrategica"
       },
       {
+        "id": 10,
         "name": "Facilitación gráfica",
-        "summary": "Maximiza el entendimiento, captura ideas y resultados.",
-        "image": "/app/img/services/facilitacion_grafica.jpg",
-        "description": "Convierte tus reuniones en experiencias visuales. A través del Graphic Recording, capturamos ideas y resultados con impactantes ilustraciones que perduran en la memoria. Utilizamos lenguaje gráfico para ilustrar charlas, ponencias, reuniones, conferencias y resultados de las actividades de equipos de trabajo",
-        "takeaways": "Convierte las reuniones en catalizadores de resultados tangibles y decisiones sólidas. Facilita el entendimiento y la recordación con piezas de alto impacto:\n\n\n\n* **Documentación Gráfica en vivo**: Diseño de piezas en vivo para potenciar la comunicación, el entendimiento mutuo y la comprensión de temas complejos.\n* **Láminas gráficas**: Realización de contenidos audiovisuales de temas, charlas y exposiciones.\n* **Videos gráficos**: Contenidos gráficos personalizados hechos a mano (infografías, ilustraciones y cómics) para dar soporte visual a la comunicación.",
-        "recipients": "Dirigido a equipos, empresas y organizaciones que deseen hacer que sus reuniones y eventos sean más visuales, impactantes y memorables. Ideal para empresas que buscan comunicar de manera efectiva sus ideas y resultados."
+        "subtitle": "Maximiza el entendimiento, captura ideas y resultados.",
+        "url": "/servicios/facilitacion#facilitacion_grafica"
       },
       {
+        "id": 11,
         "name": "Innovación y creatividad",
-        "summary": "Resuelve problemas de manera innovadora.",
-        "image": "/app/img/facilitacion04.jpg",
-        "description": "Potenciamos la creación y ejecución de ideas. Nuestro poderoso brainstorming y espacio de innovación desencadenará la creatividad de tu equipo.",
-        "takeaways": "Desbloquea ideas innovadoras y soluciones únicas:\n\n\n\n* **Powerful brainstorming**: Diseño de actividades para estimular la creación colectiva de ideas.\n* **Eventos corporativos y comunitarios**: Diseñamos y facilitamos eventos en conjunto con nuestros clientes y con las comunidades de práctica en las cuales participamos activamente.\n* **Encuentros de innovación**: Cubrimos todo el ciclo de vida de las ideas, desde la creación y multiplicación hasta la priorización y selección para llevarlas adelante.",
-        "recipients": "Diseñado para equipos y organizaciones que buscan estimular la creatividad, generar ideas innovadoras y llevarlas a la acción. Ideal para empresas que quieren fomentar un entorno de trabajo creativo y resolver problemas de manera innovadora.\n"
+        "subtitle": "Resuelve problemas de manera innovadora.",
+        "url": "/servicios/facilitacion#innovacion_y_creatividad"
       }
     ]
   },
   "jump-start": {
     "id": 4,
     "name": "Jump Start: Agilidad para Equipos",
-    "subtitle": "Expande la agilidad en tu organización. Descubre cómo desbloquear el potencial de tus equipos con Jump Start. ",
-    "summary": "Los servicios Jump Start están diseñados para equipos que necesitan evolucionar hacia la Agilidad. Nuestro enfoque práctico permite acelerar la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación.\n\nDesbloquea el potencial de tus equipos, impulsando la entrega de valor y la mejora continua. ",
-    "color_theme": "yellow-theme",
-    "logo": "/app/img/services/JS-logo.png",
-    "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS.svg",
-    "description": "Para llevar adelante la transformación hacia la Agilidad, las organizaciones se enfrentan a desafíos en el ámbito de equipos, entre los que destacan:\n\n1. Abordar desafíos organizacionales a través de la innovación.\n2. Extender la agilidad de manera orgánica a múltiples equipos.\n3. Incorporar mejora continua y agilidad en áreas operativas.\n4. Alcanzar niveles superiores en equipos que ya han abrazado la agilidad.\n\nNuestros servicios están respaldados por más de 14 años de experiencia en el acompañamiento de equipos. Además, ofrecemos la posibilidad de cocrear un Playbook de la organización. Este valioso recurso documentará el modelo operativo ágil que emerja de tus experiencias, permitiendo guiar la adopción de la agilidad en toda la organización y compartir el conocimiento adquirido con otros equipos.\n\nPotenciar la agilidad nos impulsa a continuar innovando con prácticas y herramientas actualizadas, explorando nuevas formas de impulsar la agilidad en diversos contextos y desafíos.\n\nPresentamos nuestra propuesta de servicios Jump Start para acompañar a equipos en la adopción de la agilidad. Hemos diseñado soluciones específicas según la necesidad de tu organización.",
-    "takeaways": "El servicio Jump Start está concebido para acompañar a equipos en su evolución hacia la agilidad. Concentrado en potenciar las habilidades de los equipos para lograr mejores resultados. Brindamos una perspectiva única, centrada en la atención al cliente y en la entrega de valor.\n\nAcelera la comprensión práctica con nuestro acompañamiento. Incorporando prácticas y técnicas mediante capacitaciones a medida, sincrónicas y flexibles. También, en nuestra Academia Kleer, accede a recursos de aprendizaje bajo demanda. \n\nEstamos comprometidos con el desarrollo de personas clave, aquellos perfiles esenciales para el marco de trabajo adoptado. Juntos, crearemos un sólido respaldo para difundir los nuevos conocimientos con otros equipos, desarrollando un playbook de soporte que encierra las lecciones aprendidas y permite replicar el aprendizaje, sin necesidad de un acompañamiento constante.\n",
-    "recipients": "",
-    "program": "",
-    "cta": " ",
-    "brochure": "",
-    "canonical_url": "/jump-start",
-    "elevator_pitch": "Descubre el servicio Jump Start, una propuesta integral para  acompañar a equipos en su evolución hacia la agilidad.",
-    "titles": ["Libera el potencial de tus equipos y marca el rumbo de la evolución hacia la agilidad"],
-    "sub-services": [
+    "summary": "Nuestro enfoque, ajustado al contexto de la empresa, acelera la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación de los equipos. \n\nDesbloquea el potencial de tus equipos para una entrega de valor optimizada y una cultura de mejora continua.\n\nConoce más detalles de los Servicios Jump Start: Agilidad para Equipos\n",
+    "primary_color": "#ffd748",
+    "secondary_color": "#fee99f",
+    "icon": "/app/img/services/JS-logo.png",
+    "slug": "jump-start",
+    "services": [
       {
+        "id": 12,
         "name": "Innovation Jump Start",
-        "summary": "Acelera el Potencial Creativo de tus Equipos.",
-        "icon": "/app/img/icons/innovation.png",
-        "image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS-innovation.svg",
-        "description": "A través de nuestro servicio Innovation Jump Start, tus equipos podrán explorar posibilidades ilimitadas. Incorporando herramientas de descubrimiento de productos como Mapa de Empatía (Empathy Map), Etnografía rápida (Rapid Ethnography), Mapa de oportunidades y soluciones (Opportunity Solution Tree) y técnicas de experimentación y prototipado, que permitirán no solo conectarse con los clientes, sino también detectar y desarrollar oportunidades realmente valiosas con conocimiento validado.\n\nIntegramos los enfoques Scrum y Kanban para optimizar la dinámica interna y externa de los equipos. Con este servicio, tu equipo se convertirá en un motor de innovación ágil, superando barreras y elevando sus capacidades a nuevos horizontes.\n",
-        "takeaways": "Acompañamiento inmersivo y acelerado que permitirá a un equipo obtener mejores productos, servicios o procesos con resultados asombrosos. \nEl servicio Innovation Jump Start abarca:\n\n1. **Selección Estratégica de Proyecto:** Seleccionamos un proyecto que desafíe los límites y prometa resultados en tan solo 3 meses.\n2. **Claridad en los Acuerdos de Equipo:** Definimos acuerdos mínimos de trabajo que establecen un camino claro hacia el éxito.\n3. **Acompañamiento Intensivo:** Profesionales con amplia experiencia guiarán al equipo con sesiones semanales (entre 2 y 4) para asegurar que se adopte con éxito el marco de trabajo y sus prácticas.\n4. **Formación Especializada:** Impulsamos a tu equipo con formación en el marco de trabajo y un conjunto integral de herramientas. A través de una capacitación inicial y una serie de cápsulas durante el acompañamiento.\n5. **Desarrollo de perfiles:** Desarrollamos los perfiles específicos que necesita tu equipo dentro del marco de trabajo.\n6. **Acompañamiento de Líderes:** Guiamos a tus líderes en el viaje cultural necesario para la adopción de estas prácticas",
-        "recipients": "**Innovation Jump Start** es ideal para empresas que desean explorar y desarrollar nuevos productos o servicios o que se encuentran con retos de innovación que buscan soluciones efectivas. También, para equipos con desafíos para crear modelos de negocio innovadores."
+        "subtitle": "Acelera el Potencial Creativo de tus Equipos.",
+        "url": "/servicios/jump-start#innovation_jump_start"
       },
       {
+        "id": 13,
         "name": "Agile Team Jump Start",
-        "summary": "Expande la agilidad con confianza a más equipos.",
-        "icon": "/app/img/icons/People.svg",
-        "image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS-agileteam.svg",
-        "description": "Con Agile Team Jump Start transformarás la forma en que trabajas en equipo. Mediante una implementación ágil y precisa de Scrum, tus equipos se preparan para una adopción fluida y rápida. Realizarán entregas confiables y utilizables con un ritmo sostenido, construyendo un flujo constante de valor.\n\nNuestro enfoque también se centra en establecer acuerdos claros de colaboración tanto internamente como con terceros. Esta sinergia rápida y eficiente acelerará la maduración de tus proyectos y garantizará la entrega de resultados de alto rendimiento.\n",
-        "takeaways": "Acompañamos en la adopción fluida y efectiva de Scrum o Kanban en tu equipo de proyecto.\nEl servicio Agile Team Jump Start incluye:\n1. **Incepción Inicial:** Creamos un punto de partida compartido y construimos conexiones sólidas entre los miembros del equipo.\n2. **Acuerdos Mínimos de Trabajo:** Definimos acuerdos esenciales para fomentar la colaboración efectiva y el enfoque colectivo con objetivos comunes.\n3. **Acompañamiento Integral:** Acompañamos al equipo para garantizar una adopción suave del marco de trabajo y sus prácticas, estimamos entre 2 y 4 sesiones semanales. \n4. **Formación Integral:** Equipamos a tu equipo con un profundo entendimiento del marco de trabajo y un kit de herramientas esenciales. Esto incluye una capacitación inicial y píldoras de aprendizaje durante todo el proceso.\n5. **Perfiles Adaptados:** Desarrollamos perfiles individuales que reflejen las habilidades necesarias dentro del marco de trabajo.\n6. **Soporte para Líderes:** Guiamos a tus líderes a través del salto cultural necesario para adoptar estas valiosas prácticas.",
-        "recipients": "**Agile Team Jump Start** está dirigido a equipos de proyecto o de desarrollo de productos que desean adoptar prácticas ágiles."
+        "subtitle": "Expande la agilidad con confianza a más equipos.",
+        "url": "/servicios/jump-start#agile_team_jump_start"
       },
       {
+        "id": 14,
         "name": "Agile Team Restart",
-        "summary": "Revitaliza y reenfoca equipos ágiles existentes.",
-        "icon": "/app/img/icons/People.svg",
-        "image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS-restart.svg",
-        "description": "Nuestro servicio Agile Team Restart está diseñado para equipos que anhelan llevar su agilidad a un nuevo nivel, buscando un enfoque revitalizado y un mayor rendimiento. Está especialmente dirigido a aquellos equipos que han abrazado la agilidad, pero desean desbloquear un potencial aún mayor.\n\nEn el corazón de nuestro enfoque se encuentra la habilidad de redirigir y optimizar las prácticas ágiles existentes.\n",
-        "takeaways": "Si tu equipo ha experimentado el marco de trabajo ágil y sigue luchando por mantenerlo, te acompañamos para realinear y revitalizar tus prácticas.\n\nAgile Team Jump Restart cubre:\n\n1. **Evaluación Inicial:** Analizamos en detalle el nivel de madurez actual de tu equipo en cuanto a prácticas ágiles, identificando oportunidades clave para la mejora.\n2. **Realineación de Acuerdos:** Reforzamos los acuerdos mínimos de trabajo, estableciendo una base sólida para un rendimiento ágil consistente.\n3. **Acompañamiento Focalizado:** Nos sumergimos contigo, entre 2 y 4 sesiones semanales, para guiar a tu equipo en la adopción continua del marco de trabajo y sus prácticas.",
-        "recipients": "**Agile Team Jump Restart** para los equipos que buscan re-enfocar su agilidad y mejorar su desempeño."
+        "subtitle": "Revitaliza y reenfoca equipos ágiles existentes.",
+        "url": "/servicios/jump-start#agile_team_restart"
       },
       {
+        "id": 15,
         "name": "Kaizen Jump Start",
-        "summary": "Incorpora la Mejora Continua en tus Equipos.",
-        "icon": "/app/img/icons/improvement.png",
-        "image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS-kaizen.svg",
-        "description": "Mediante la adopción de los métodos de Toyota Kata, no solo mejorarán sus procesos, sino que también **cultivarán el hábito para la mejora continua**. Los equipos tendrán más claridad sobre la carga de trabajo y la capacidad. Tendrán **visibilidad del flujo de trabajo**, **identificando oportunidades** de mejora a cada paso.\n\nEstos servicios no son solo un salto de inicio; son un trampolín hacia la evolución ágil, empoderando a los equipos.",
-        "takeaways": "Las organizaciones buscan no solo optimizar sus procesos, sino también cultivar eficiencias y desarrollar capacidades relacionadas con hábitos sostenibles de mejora. Estos hábitos impactan la cultura, así como influyen en los resultados de toda la organización.\n\nPara abordar esta búsqueda de excelencia, presentamos una estrategia de acompañamiento práctica y efectiva, diseñada para convertir la mejora continua en un hábito arraigado:\n\n\n\n1. **Formación Especializada**: Introducimos al equipo en el poderoso método Toyota Kata, inspirado en la legendaria cultura de mejora continua de Toyota.\n2. **Acompañamiento y Mentoría**: Guiamos a tu equipo a través de múltiples ciclos de mejora. Cada ciclo se enfoca en la experimentación, desafiando al equipo a alcanzar metas ambiciosas y, al mismo tiempo, incorporando el hábito de mejora continua como una habilidad intrínseca.\n3. **Dejamos la capacidad instalada**: Hacemos una delegación progresiva en personas de la organización para que puedan continuar con el acompañamiento a diferentes equipos que comienzan su camino de mejora continua.\n4. **Resultados Tangibles**: Este enfoque no solo moldea hábitos efectivos, sino que también genera resultados concretos y duraderos.",
-        "recipients": "**Kaizen Jump Start** está orientado a equipos o procesos operativos existentes que necesitan ser optimizados y para organizaciones comprometidas con la mejora continua."
+        "subtitle": "Incorpora la Mejora Continua en tus Equipos.",
+        "url": "/servicios/jump-start#kaizen_jump_start"
       }
     ]
   }

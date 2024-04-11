@@ -34,17 +34,19 @@
           <% end %>
         </div>
       </div>
-      <div class="cta-container">
-        <a
-          class="my-secondary-button"
-          id="cta-button-<%=area.id %>"
-          href="<%= "/es/servicios-v3/#{area.slug}" %>"
-          style=""
-        >
-          <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2"/>
-          ¡Quiero saber más!
-        </a>
-      </div>
+      <% if area.slug %>
+        <div class="cta-container">
+          <a
+            class="my-secondary-button"
+            id="cta-button-<%=area.id %>"
+            href="<%= "/es/servicios/#{area.slug}" %>"
+            style=""
+          >
+            <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2"/>
+            ¡Quiero saber más!
+          </a>
+        </div>
+      <% end %>
     </div>
   </div>
 
