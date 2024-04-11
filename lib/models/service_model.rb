@@ -1,5 +1,5 @@
 class Service
-  attr_accessor :name, :subtitle, :description, :side_image, :takeaways, :summary,
+  attr_accessor :id, :name, :subtitle, :description, :side_image, :takeaways, :summary,
                 :recipients, :program, :brochure, :titles, :seo_title, :color_theme,
                 :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo
   def initialize()
@@ -8,7 +8,8 @@ class Service
   end
 
   def load_from_json(hash_service)
-    load_str(%i[name
+    load_str(%i[id
+                     name
                      subtitle
                      description
                      side_image
@@ -46,7 +47,7 @@ class Service
   end
 
   def self.load_list
-    file = File.read('./lib/storage/services_storage.json')
+    file = File.read('./lib/storage/service_areas_storage.json')
     hash_service = JSON.parse(file)
 
     hash_service.each_with_object([]) do |service, ac|

@@ -3,6 +3,7 @@
     "name": "Diseño Organizacional Ágil",
     "subtitle": "Habilita la capacidad de adaptación en tu organización a través del diseño organizacional.",
     "summary": "Nuestro servicio de Diseño Organizacional Ágil es una solución integral para mejorar tus resultados empresariales. Trabajamos en equipo con los líderes de tu organización, nos enfocamos en armonizar los diferentes componentes para lograr los objetivos estratégicos. Las intervenciones pueden cubrir: estructura, procesos, capacidades transversales y las prácticas de gestión de personas.\n\nDescubre cómo este enfoque puede fortalecer tu negocio y hacerlo más eficiente y adaptable en un entorno empresarial en constante cambio.",
+    "color_theme": "sian-theme",
     "logo": "/app/img/services/EAP.png",
     "seo_title": "Diseño Organizacional Ágil | Transformación Empresarial",
     "side_image": "/app/img/services/diseno-org.jpg",
@@ -17,12 +18,23 @@
     "contact_text": "¿Listo para llevar la agilidad de tu organización al siguiente nivel?",
     "titles": ["Hacia el Diseño Organizacional Ágil", "¿Cómo lo hacemos?"]
   },
+  "evolucion-organizacional": {
+    "id": 1,
+    "name": "Evolución Organizacional",
+    "subtitle": "Transforma tu organización en un entorno ágil y adaptable.",
+    "summary": "Nuestro servicio de Evolución Organizacional está diseñado para transformar tu organización en un entorno ágil y adaptable. Nos enfocamos en la evolución de la cultura, la estructura y los procesos de tu organización para lograr una mayor eficiencia y adaptabilidad en un entorno empresarial en constante cambio.\n\nDescubre cómo este enfoque puede fortalecer tu negocio y hacerlo más eficiente y adaptable.",
+    "color_theme": "blue-theme",
+    "logo": "/app/img/services/evolucion-organizacional.png",
+    "side_image": "/app/img/services/evolucion-organizacional.jpg",
+    "seo_title": "Evolución Organizacional | Transformación Empresarial",
+    "description": "La **Evolución Organizacional** es un proceso de transformación que busca **mejorar la eficiencia y adaptabilidad** de una organización. En un mundo empresarial en constante cambio, la capacidad de adaptarse rápidamente a nuevas circunstancias es crucial para el éxito a largo plazo.\n\nEn Kleer, ofrecemos servicios de Evolución Organizacional que se centran en la transformación de la cultura, la estructura y los procesos de tu organización. Nuestro enfoque se basa en los valores y principios de la agilidad, lo que nos permite ayudarte a **fortalecer tu negocio y hacerlo más eficiente y adaptable**.\n\nDescubre cómo la Evolución Organizacional puede ayudarte a **mejorar la eficiencia y la adaptabilidad de tu organización**."
+  },
   "agile-product-management":{
+    "id": 2,
     "name": "Agile Product Management (APM)",
     "subtitle": "Capacitación y Consultoría en Gestión Ágil de Productos. Ofrecemos orientación práctica que te ayudará a crear productos innovadores y de impacto.",
     "summary": "Nuestros servicios de Agile Product Management están diseñados para mejorar el proceso de desarrollo de productos digitales. \nCombinamos prácticas de gestión de productos de vanguardia con métodos ágiles. Este enfoque no sólo permite desarrollar el producto correcto, sino que también aumenta sus posibilidades de éxito en el mercado.\n\nIntegra Agile Product Management en tu empresa y acelera el impacto de tus productos.",
-    "primary_color": "#5dca59",
-    "secondary_color": "#aefcb0",
+    "color_theme": "green-theme",
     "logo": "/app/img/services/product-discovery.png",
     "side_image": "/app/img/services/apm.jpeg",
     "seo_title": "Consultoría y Acompañamiento en Agile Product Management",
@@ -102,11 +114,11 @@
     "elevator_pitch": "Hacia un liderazgo con impacto más consciente y humano"
   },
   "facilitacion": {
+    "id": 3,
     "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
     "subtitle": "Transforma tus encuentros en experiencias colaborativas donde cada persona es protagonista. Promueve la productividad y la creatividad de tu equipo de trabajo.",
     "summary": "Transforma tus reuniones y eventos con nuestro servicio de Facilitación Ágil. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.\n\nConvierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización.",
-    "primary_color": "#ff8e52",
-    "secondary_color": "#ffc380",
+    "color_theme": "orange-theme",
     "logo": "/app/img/services/AFP.png",
     "seo_title": "Facilitación Ágil: Reuniones y Eventos más Productivos",
     "seo_description": "",
@@ -157,11 +169,11 @@
     ]
   },
   "jump-start": {
+    "id": 4,
     "name": "Jump Start: Agilidad para Equipos",
     "subtitle": "Expande la agilidad en tu organización. Descubre cómo desbloquear el potencial de tus equipos con Jump Start. ",
     "summary": "Los servicios Jump Start están diseñados para equipos que necesitan evolucionar hacia la Agilidad. Nuestro enfoque práctico permite acelerar la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación.\n\nDesbloquea el potencial de tus equipos, impulsando la entrega de valor y la mejora continua. ",
-    "primary_color": "#ffd748",
-    "secondary_color": "#fee99f",
+    "color_theme": "yellow-theme",
     "logo": "/app/img/services/JS-logo.png",
     "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/Servicios/JS.svg",
     "description": "Para llevar adelante la transformación hacia la Agilidad, las organizaciones se enfrentan a desafíos en el ámbito de equipos, entre los que destacan:\n\n1. Abordar desafíos organizacionales a través de la innovación.\n2. Extender la agilidad de manera orgánica a múltiples equipos.\n3. Incorporar mejora continua y agilidad en áreas operativas.\n4. Alcanzar niveles superiores en equipos que ya han abrazado la agilidad.\n\nNuestros servicios están respaldados por más de 14 años de experiencia en el acompañamiento de equipos. Además, ofrecemos la posibilidad de cocrear un Playbook de la organización. Este valioso recurso documentará el modelo operativo ágil que emerja de tus experiencias, permitiendo guiar la adopción de la agilidad en toda la organización y compartir el conocimiento adquirido con otros equipos.\n\nPotenciar la agilidad nos impulsa a continuar innovando con prácticas y herramientas actualizadas, explorando nuevas formas de impulsar la agilidad en diversos contextos y desafíos.\n\nPresentamos nuestra propuesta de servicios Jump Start para acompañar a equipos en la adopción de la agilidad. Hemos diseñado soluciones específicas según la necesidad de tu organización.",

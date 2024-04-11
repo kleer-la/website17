@@ -26,7 +26,9 @@ get '/servicios' do
 end
 
 get '/servicios-v3' do
-  @areas = ServiceArea.create_list_keventer
+  @areas = Service.load_list
+
+  # @areas = ServiceArea.create_list_keventer
 
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
