@@ -12,7 +12,6 @@ get '/servicios' do
 
     @areas = Service.load_list
 
-
     @meta_tags.set! title: t('meta_tag.business-agility.title'),
                     description: t('meta_tag.business-agility.description'),
                     canonical: "#{t('meta_tag.business-agility.canonical')}"

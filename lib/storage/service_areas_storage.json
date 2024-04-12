@@ -2,7 +2,8 @@
   "evolucion-organizacional": {
     "id": 1,
     "name": "Evolución Organizacional",
-    "summary": "Proporcionamos un enfoque integral que prepara a tu empresa para planificar y sostener el cambio. Cultivamos un liderazgo consciente y empático e impulsamos el cambio organizacional de manera efectiva y duradera. Adoptamos los principios de agilidad como pilares fundamentales para promover cambios en tu empresa.\n\nExplora los Servicios de Cambio Organizacional y Liderazgo.\n",
+    "summary": "Proporcionamos un enfoque integral que prepara a tu empresa para planificar y sostener el cambio. Cultivamos un liderazgo consciente y empático e impulsamos el cambio organizacional de manera efectiva y duradera. Adoptamos los principios de agilidad como pilares fundamentales para promover cambios en tu empresa.",
+    "cta_message": "Explora los Servicios de <b>Cambio Organizacional y Liderazgo.</b>",
     "primary_color": "#1af0ff",
     "secondary_color": "#a8f9ff",
     "icon": "/app/img/icons/convertshape.svg",
@@ -25,7 +26,8 @@
   "agile-product-management":{
     "id": 2,
     "name": "Agile Product Management (APM)",
-    "summary": "Nuestros servicios especializados en Agile Product Management están diseñados para potenciar el enfoque de desarrollo de productos digitales, combinando prácticas de vanguardia de gestión de productos con métodos ágiles.\n\nAcelera el impacto de producto con Agile Product Management. Descubre más sobre los Servicios.\n",
+    "summary": "Nuestros servicios especializados en Agile Product Management están diseñados para potenciar el enfoque de desarrollo de productos digitales, combinando prácticas de vanguardia de gestión de productos con métodos ágiles.",
+    "cta_message": "Acelera el impacto de producto con <b>Agile Product Management</b>. Descubre más sobre los Servicios.",
     "primary_color": "#5dca59",
     "secondary_color": "#aefcb0",
     "icon": "/app/img/icons/Hand Stars.svg",
@@ -62,12 +64,12 @@
         "url": "/servicios/agile-product-management#mentoring_y_coaching_en_apm"
       }
     ]
-
   },
   "facilitacion": {
     "id": 3,
     "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
-    "summary": "Convierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.\n\nTransforma tus reuniones y eventos con nuestros Servicios de Facilitación Ágil\n",
+    "summary": "Convierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.",
+    "cta_message": "Transforma tus reuniones y eventos con nuestros Servicios de <b>Facilitación Ágil</b>",
     "primary_color": "#ff8e52",
     "secondary_color": "#ffc380",
     "icon": "/app/img/icons/Star Fall.svg",
@@ -102,7 +104,8 @@
   "jump-start": {
     "id": 4,
     "name": "Jump Start: Agilidad para Equipos",
-    "summary": "Nuestro enfoque, ajustado al contexto de la empresa, acelera la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación de los equipos. \n\nDesbloquea el potencial de tus equipos para una entrega de valor optimizada y una cultura de mejora continua.\n\nConoce más detalles de los Servicios Jump Start: Agilidad para Equipos\n",
+    "summary": "Nuestro enfoque, ajustado al contexto de la empresa, acelera la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación de los equipos. \n\nDesbloquea el potencial de tus equipos para una entrega de valor optimizada y una cultura de mejora continua.",
+    "cta_message": "Conoce más detalles de los Servicios <b>Jump Start: Agilidad para Equipos</b>",
     "primary_color": "#ffd748",
     "secondary_color": "#fee99f",
     "icon": "/app/img/services/JS-logo.png",

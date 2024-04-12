@@ -1,7 +1,7 @@
 class Service
   attr_accessor :id, :name, :subtitle, :description, :side_image, :takeaways, :summary, :primary_color, :secondary_color, :icon, :services, :slug,
                 :recipients, :program, :brochure, :titles, :seo_title, :color_theme,
-                :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo
+                :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo, :cta_message
   def initialize()
     @public_editions = []
     @side_image = ''
@@ -32,6 +32,7 @@ class Service
     load_str(%i[id
                      name
                      summary
+                     cta_message
                      takeaways
                      primary_color
                      secondary_color
