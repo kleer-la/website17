@@ -1,0 +1,140 @@
+{
+  "evolucion-organizacional": {
+    "id": 1,
+    "name": "Evolución Organizacional",
+    "summary": "Proporcionamos un enfoque integral que prepara a tu empresa para planificar y sostener el cambio. Cultivamos un liderazgo consciente y empático e impulsamos el cambio organizacional de manera efectiva y duradera. Adoptamos los principios de agilidad como pilares fundamentales para promover cambios en tu empresa.",
+    "cta_message": "Explora los Servicios de <b>Cambio Organizacional y Liderazgo.</b>",
+    "primary_color": "#1af0ff",
+    "secondary_color": "#a8f9ff",
+    "icon": "/app/img/icons/convertshape.svg",
+    "slug": null,
+    "services": [
+      {
+        "id": 1,
+        "name": "Diseño Organizacional Ágil",
+        "subtitle": "Diseñando organizaciones adaptativas para el logro de los objetivos estratégicos.",
+        "url": "/servicios/diseno-organizacional-agil"
+      },
+      {
+        "id": 2,
+        "name": "Programa de Desarrollo del Liderazgo Ágil",
+        "subtitle": "Fortalece las habilidades de líderes para guiar el cambio organizacional",
+        "url": "/servicios/desarrollo-liderazgo-agil"
+      }
+    ]
+  },
+  "agile-product-management":{
+    "id": 2,
+    "name": "Agile Product Management (APM)",
+    "summary": "Nuestros servicios especializados en Agile Product Management están diseñados para potenciar el enfoque de desarrollo de productos digitales, combinando prácticas de vanguardia de gestión de productos con métodos ágiles.",
+    "cta_message": "Acelera el impacto de producto con <b>Agile Product Management</b>. Descubre más sobre los Servicios.",
+    "primary_color": "#5dca59",
+    "secondary_color": "#aefcb0",
+    "icon": "/app/img/icons/Hand Stars.svg",
+    "slug": "agile-product-management",
+    "services": [
+      {
+        "id": 3,
+        "name": "Product Strategy",
+        "subtitle": "Una inmersión práctica en la estrategia de producto",
+        "url": "/servicios/agile-product-management#agile_product_strategy"
+      },
+      {
+        "id": 4,
+        "name": "Product Discovery",
+        "subtitle": "Dirige tu producto hacia el éxito",
+        "url": "/servicios/agile-product-management#product_discovery"
+      },
+      {
+        "id": 5,
+        "name": "Programa Integral en APM",
+        "subtitle": "Desarrolla tu potencial estratégico.",
+        "url": "/servicios/agile-product-management#programa_integral_en_apm"
+      },
+      {
+        "id": 6,
+        "name": "Ruta de Formación",
+        "subtitle": "Capacitaciones para fortalecer las capacidades internas",
+        "url": "/servicios/agile-product-management#ruta_de_formacion"
+      },
+      {
+        "id": 7,
+        "name": "Mentoring y Coaching en APM",
+        "subtitle": "Habilita un enfoque centrado en el producto.",
+        "url": "/servicios/agile-product-management#mentoring_y_coaching_en_apm"
+      }
+    ]
+  },
+  "facilitacion": {
+    "id": 3,
+    "name": "Facilitación Ágil: Reuniones y Eventos más Productivos",
+    "summary": "Convierte las reuniones en catalizadores de resultados tangibles y constructivos para tu organización. Nos enfocamos en convertir estas interacciones en experiencias eficientes y colaborativas. La incorporación de prácticas de facilitación, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.",
+    "cta_message": "Transforma tus reuniones y eventos con nuestros Servicios de <b>Facilitación Ágil</b>",
+    "primary_color": "#ff8e52",
+    "secondary_color": "#ffc380",
+    "icon": "/app/img/icons/Star Fall.svg",
+    "slug": "facilitacion",
+    "services": [
+      {
+        "id": 8,
+        "name": "Dinámicas y eventos",
+        "subtitle": "Cocreación de ideas y soluciones.",
+        "url": "/servicios/facilitacion#dinamicas_y_eventos"
+      },
+      {
+        "id": 9,
+        "name": "Planificación Estratégica",
+        "subtitle": "Guiamos tus iniciativas hacia el éxito.",
+        "url": "/servicios/facilitacion#planificacion_estrategica"
+      },
+      {
+        "id": 10,
+        "name": "Facilitación gráfica",
+        "subtitle": "Maximiza el entendimiento, captura ideas y resultados.",
+        "url": "/servicios/facilitacion#facilitacion_grafica"
+      },
+      {
+        "id": 11,
+        "name": "Innovación y creatividad",
+        "subtitle": "Resuelve problemas de manera innovadora.",
+        "url": "/servicios/facilitacion#innovacion_y_creatividad"
+      }
+    ]
+  },
+  "jump-start": {
+    "id": 4,
+    "name": "Jump Start: Agilidad para Equipos",
+    "summary": "Nuestro enfoque, ajustado al contexto de la empresa, acelera la adopción de prácticas ágiles, mejorando la colaboración, la eficiencia y la capacidad de adaptación de los equipos. \n\nDesbloquea el potencial de tus equipos para una entrega de valor optimizada y una cultura de mejora continua.",
+    "cta_message": "Conoce más detalles de los Servicios <b>Jump Start: Agilidad para Equipos</b>",
+    "primary_color": "#ffd748",
+    "secondary_color": "#fee99f",
+    "icon": "/app/img/services/JS-logo.png",
+    "slug": "jump-start",
+    "services": [
+      {
+        "id": 12,
+        "name": "Innovation Jump Start",
+        "subtitle": "Acelera el Potencial Creativo de tus Equipos.",
+        "url": "/servicios/jump-start#innovation_jump_start"
+      },
+      {
+        "id": 13,
+        "name": "Agile Team Jump Start",
+        "subtitle": "Expande la agilidad con confianza a más equipos.",
+        "url": "/servicios/jump-start#agile_team_jump_start"
+      },
+      {
+        "id": 14,
+        "name": "Agile Team Restart",
+        "subtitle": "Revitaliza y reenfoca equipos ágiles existentes.",
+        "url": "/servicios/jump-start#agile_team_restart"
+      },
+      {
+        "id": 15,
+        "name": "Kaizen Jump Start",
+        "subtitle": "Incorpora la Mejora Continua en tus Equipos.",
+        "url": "/servicios/jump-start#kaizen_jump_start"
+      }
+    ]
+  }
+}

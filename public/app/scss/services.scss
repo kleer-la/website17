@@ -142,6 +142,10 @@ $white: #FFFFFF;
   flex-direction: column;
   justify-content: center;
 
+  &:hover{
+    color: black !important;
+  }
+
   h3{
     font-size: 18px;
     font-weight: bold;

@@ -1558,6 +1558,8 @@ h3.title-somos {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  .service-card:hover {
+    color: black !important; }
   .service-card h3 {
     font-size: 18px;
     font-weight: bold;

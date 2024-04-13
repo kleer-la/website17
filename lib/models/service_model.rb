@@ -1,14 +1,15 @@
 class Service
-  attr_accessor :name, :subtitle, :description, :side_image, :takeaways, :summary,
+  attr_accessor :id, :name, :subtitle, :description, :side_image, :takeaways, :summary, :primary_color, :secondary_color, :icon, :services, :slug,
                 :recipients, :program, :brochure, :titles, :seo_title, :color_theme,
-                :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo
+                :cta, :canonical_url, :elevator_pitch, :sub_services, :contact_text, :logo, :cta_message
   def initialize()
     @public_editions = []
     @side_image = ''
   end
 
   def load_from_json(hash_service)
-    load_str(%i[name
+    load_str(%i[id
+                     name
                      subtitle
                      description
                      side_image
@@ -23,21 +24,32 @@ class Service
                      seo_title
                      contact_text
                      titles], hash_service)
+    @services = hash_service["services"]
     @sub_services = hash_service["sub-services"]
   end
 
   def load_short_from_json(hash_service)
-    load_str(%i[name
+    load_str(%i[id
+                     name
                      summary
+                     cta_message
                      takeaways
-                     color_theme
+                     primary_color
+                     secondary_color
                      canonical_url
-                     logo
+                     icon
+                     slug
                      elevator_pitch
                      contact_text
                      titles], hash_service)
     @sub_services = hash_service["sub-services"]
     @summary = @summary.gsub("\n", '<br>')
+
+    @services = hash_service["services"].map do |service|
+      s = NewService.new
+      s.load_short_from_json(service)
+      s
+    end
 
   end
 
@@ -46,7 +58,7 @@ class Service
   end
 
   def self.load_list
-    file = File.read('./lib/storage/services_storage.json')
+    file = File.read('./lib/storage/service_areas_storage.json')
     hash_service = JSON.parse(file)
 
     hash_service.each_with_object([]) do |service, ac|
@@ -58,21 +70,24 @@ class Service
 end
 
 class NewService
-  attr_accessor :name, :subtitle, :description, :outcomes, :abstract
+  attr_accessor :name, :subtitle, :description, :outcomes, :abstract,
+                :url, :id
   def initialize
   end
 
   def load_from_json(hash_service)
-    load_str(%i[name
+    load_str(%i[id
+                      name
                      subtitle
                      description
                      abstract
                      outcomes
+                     url
                      ], hash_service)
   end
 
   def load_short_from_json(hash_service)
-    load_str(%i[name
+    load_str(%i[id name url
                      subtitle], hash_service)
   end
 
