@@ -29,7 +29,9 @@ end
 
 get '/blog/:slug' do |slug|
   @where = 'Blog'
-  blog_one Article.create_one_keventer(slug)
+  art = Article.create_one_keventer(slug)
+  redirect("#{session[:locale]}/blog/#{art.slug}", 301) if art.slug != slug
+  blog_one art
 rescue
   status 404
 end
