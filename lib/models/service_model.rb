@@ -71,7 +71,7 @@ end
 
 class NewService
   attr_accessor :name, :subtitle, :description, :outcomes, :abstract,
-                :url, :id
+                :url, :id, :slug
   def initialize
   end
 
@@ -82,12 +82,13 @@ class NewService
                      description
                      abstract
                      outcomes
+                     slug
                      url
                      ], hash_service)
   end
 
   def load_short_from_json(hash_service)
-    load_str(%i[id name url
+    load_str(%i[id name url slug
                      subtitle], hash_service)
   end
 

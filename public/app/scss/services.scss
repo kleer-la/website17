@@ -28,7 +28,7 @@ $white: #FFFFFF;
     margin-bottom: 60px;
     text-align: center;
 
-    h3{
+    h2{
       margin-bottom: 40px;
     }
   }
@@ -87,6 +87,21 @@ $white: #FFFFFF;
     height: 330px;
     padding: 80px 80px;
 
+    h2{
+      font-family: 'Raleway', sans-serif;
+      font-size: 30px !important;
+      font-weight: 700 !important;
+      line-height: 45px !important;
+    }
+
+    .title-section{
+      padding-right: 30px;
+    }
+
+    .icon{
+      height: 64px;
+    }
+
     .summary{
       height: 100% !important;
       display: flex;
@@ -98,7 +113,7 @@ $white: #FFFFFF;
     text-align: center;
     padding: 0 10%;
 
-    h4{
+    h2{
       font-size: 26px;
       font-weight: 600;
       line-height: 30px;
@@ -205,15 +220,17 @@ $white: #FFFFFF;
     width: 100%;
 
     .slogan{
-      width: 100%;
       margin: 50px;
       font-family: 'Raleway', sans-serif;
       font-size: 32px;
       text-align: center;
+      height: auto;
+      overflow-x: hidden;
     }
 
     .description{
       margin: 50px 0;
+      padding: 0 30px;
     }
 
     .target{
@@ -306,6 +323,10 @@ $white: #FFFFFF;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            img{
+              height: 15px;
+            }
           }
 
           .content{
@@ -332,6 +353,47 @@ $white: #FFFFFF;
             font-weight: 400;
             text-align: center;
         }
+
+      .program-item{
+        border-radius: 16px;
+        height: 100px;
+        padding: 25px;
+        margin: 10px;
+        display: flex;
+
+        h5{
+          margin: 10px 0;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 28px;
+          font-family: 'Raleway', sans-serif;
+        }
+
+        .button-container{
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          margin-left: auto;
+        }
+
+        .button{
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img{
+            margin: auto;
+            height: 25px;
+          }
+        }
+
+        .detail{
+          margin: 10px 0;
+        }
+      }
     }
 
     .target{
@@ -339,15 +401,22 @@ $white: #FFFFFF;
       border-radius: 30px;
       padding: 30px;
       width: 100%;
-      height: 330px;
+      height: auto;
 
       .title-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: start;
         font-family: 'Raleway', sans-serif;
         font-size: 30px;
         font-weight: 600;
+        padding-left: 30px;
+
+        img{
+          height: 64px;
+          margin-bottom: 15px;
+        }
       }
 
       .content{

@@ -15,7 +15,7 @@
       <%= erb :'services/landing_area/service_section/_outcomes',
               locals: { outcomes: service.outcomes}%>
       <%= erb :'services/landing_area/service_section/_program',
-              locals: { program: service.program }%>
+              locals: { program: service.program, id: service.id }%>
       <%= erb :'services/landing_area/service_section/_target',
               locals: { target: service.target }%>
 
