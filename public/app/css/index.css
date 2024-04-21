@@ -1480,7 +1480,11 @@ h3.title-somos {
   margin-bottom: 60px;
   text-align: center; }
   #areas .slogan-areas h2 {
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 400; }
 
 .area-card {
   min-height: 330px;

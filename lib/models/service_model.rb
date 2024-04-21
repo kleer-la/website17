@@ -24,7 +24,6 @@ class Service
                      seo_title
                      contact_text
                      titles], hash_service)
-    @services = hash_service["services"]
     @sub_services = hash_service["sub-services"]
   end
 
