@@ -1470,6 +1470,42 @@ h3.title-somos {
     transform: translateY(-50%);
     right: 0; }
 
+#landing-areas-hero {
+  margin-top: 100px;
+  height: 70vh !important;
+  background: linear-gradient(180deg, #D4FFF7 0%, #FFFFFF 100%); }
+  #landing-areas-hero .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%; }
+    #landing-areas-hero .hero-text h1 {
+      margin-bottom: 25px; }
+    #landing-areas-hero .hero-text h2 {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 38px;
+      margin-bottom: 20px; }
+  #landing-areas-hero .hero-img {
+    position: relative; }
+    #landing-areas-hero .hero-img .product-img {
+      position: absolute;
+      top: 13%;
+      left: 50px; }
+    #landing-areas-hero .hero-img .facilitation-img {
+      position: absolute;
+      top: calc(12% + 50px);
+      left: 240px; }
+    #landing-areas-hero .hero-img .org-img {
+      position: absolute;
+      top: calc(13% + 210px);
+      left: 0; }
+    #landing-areas-hero .hero-img .teams-img {
+      position: absolute;
+      top: calc(10% + 290px);
+      left: 240px; }
+
 #areas .slogan-areas {
   display: flex;
   justify-content: center;

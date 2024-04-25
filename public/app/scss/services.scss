@@ -16,6 +16,62 @@ $secondary-sian: #bafdf3;
 $black: #333333;
 $white: #FFFFFF;
 
+#landing-areas-hero{
+  margin-top: 100px;
+  height: 70vh !important;
+  background: linear-gradient(180deg, #D4FFF7 0%, #FFFFFF 100%);
+
+  .hero-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+
+    h1{
+      margin-bottom: 25px;
+    }
+
+    h2{
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 38px;
+      margin-bottom: 20px;
+    }
+
+    p{}
+  }
+
+  .hero-img{
+    position: relative;
+
+    .product-img{
+      position: absolute;
+      top: 13%;
+      left: 50px;
+    }
+
+    .facilitation-img{
+      position: absolute;
+      top: calc(12% + 50px);
+      left: 240px;
+    }
+
+    .org-img{
+      position: absolute;
+      top: calc(13% + 210px);
+      left: 0;
+    }
+
+    .teams-img{
+      position: absolute;
+      top: calc(10% + 290px);
+      left: 240px;
+    }
+  }
+
+
+}
 
 #areas{
   .slogan-areas{
