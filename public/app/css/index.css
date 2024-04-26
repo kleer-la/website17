@@ -1474,6 +1474,8 @@ h3.title-somos {
   margin-top: 100px;
   height: 70vh !important;
   background: linear-gradient(180deg, #D4FFF7 0%, #FFFFFF 100%); }
+  #landing-areas-hero .hero-container {
+    height: 100%; }
   #landing-areas-hero .hero-text {
     display: flex;
     flex-direction: column;
@@ -1505,6 +1507,15 @@ h3.title-somos {
       position: absolute;
       top: calc(10% + 290px);
       left: 240px; }
+  #landing-areas-hero .yellow-oval {
+    top: 30px;
+    right: -50px; }
+  #landing-areas-hero .blue-oval {
+    bottom: 0;
+    left: -200px; }
+  #landing-areas-hero .green-worm {
+    top: 150px;
+    left: -40px; }
 
 #areas .slogan-areas {
   display: flex;
@@ -1802,6 +1813,30 @@ h3.title-somos {
         justify-content: center; }
 
 @media screen and (max-width: 990px) {
+  #landing-areas-hero {
+    height: auto !important; }
+    #landing-areas-hero .hero-container {
+      height: auto !important; }
+    #landing-areas-hero .hero-text {
+      padding: 50px 10%;
+      text-align: center;
+      position: relative; }
+    #landing-areas-hero .hero-img {
+      padding-left: 20%;
+      height: 600px; }
+      #landing-areas-hero .hero-img .product-img {
+        top: 0;
+        left: calc(50% - 230px); }
+      #landing-areas-hero .hero-img .facilitation-img {
+        top: 50px;
+        left: calc(50% - 15px); }
+      #landing-areas-hero .hero-img .org-img {
+        top: 210px;
+        left: calc(50% - 230px); }
+      #landing-areas-hero .hero-img .teams-img {
+        top: 290px;
+        left: 50%; }
+
   .area-card .show-content {
     height: auto !important;
     padding: 50px; }
@@ -1812,6 +1847,10 @@ h3.title-somos {
     font-size: 22px;
     margin: 10px !important; } }
 @media screen and (max-width: 520px) {
+  .hero-img {
+    margin: -30% 0;
+    scale: 0.7; }
+
   .area-list {
     padding: 48px 0 !important; }
 

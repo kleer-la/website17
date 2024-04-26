@@ -21,6 +21,10 @@ $white: #FFFFFF;
   height: 70vh !important;
   background: linear-gradient(180deg, #D4FFF7 0%, #FFFFFF 100%);
 
+  .hero-container{
+    height: 100%;
+  }
+
   .hero-text{
     display: flex;
     flex-direction: column;
@@ -70,7 +74,20 @@ $white: #FFFFFF;
     }
   }
 
+  .yellow-oval{
+    top: 30px;
+    right: -50px ;
+  }
 
+  .blue-oval{
+    bottom: 0;
+    left: -200px;
+  }
+
+  .green-worm {
+    top: 150px;
+    left: -40px;
+  }
 }
 
 #areas{
@@ -491,6 +508,47 @@ $white: #FFFFFF;
 
 
 @media screen and (max-width:990px) {
+  #landing-areas-hero{
+    height: auto !important;
+
+    .hero-container{
+      height: auto !important;
+    }
+
+    .hero-text{
+      padding: 50px 10%;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-img{
+      padding-left: 20%;
+      height: 600px;
+
+      .product-img{
+        top: 0;
+        left: calc(50% - 230px);
+      }
+
+      .facilitation-img{
+        top: 50px;
+        left: calc(50% - 15px);
+      }
+
+      .org-img{
+        top: 210px;
+        left:calc(50% - 230px);
+      }
+
+      .teams-img{
+        top: 290px;
+        left: 50%;
+      }
+    }
+
+
+  }
+
   .area-card{
     .show-content{
       height: auto !important;
@@ -507,6 +565,11 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:520px) {
+
+  .hero-img{
+    margin: -30% 0;
+    scale: 0.7;
+  }
 
   .area-list{
     padding: 48px 0 !important;
