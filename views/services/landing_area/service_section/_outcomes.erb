@@ -1,6 +1,6 @@
 <div class="outcomes">
   <h4>
-    Beneficios de una Estrategia de Producto bien definida
+    Beneficios de <%= name %>
   </h4>
   <div class="outcome-list row w-100">
     <% outcomes.each do |outcome| %>
@@ -16,7 +16,9 @@
             <img src="/app/img/icons/check.svg" alt="check" />
           </div>
           <div class="content col-9">
-            <%= outcome %>
+            <p>
+              <%= outcome %>
+            </p>
           </div>
         </div>
       </div>

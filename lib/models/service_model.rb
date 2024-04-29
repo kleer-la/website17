@@ -70,7 +70,7 @@ end
 
 class NewService
   attr_accessor :name, :subtitle, :description, :outcomes, :abstract,
-                :url, :id, :slug
+                :url, :id, :slug, :cta_message
   def initialize
   end
 

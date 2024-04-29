@@ -1,0 +1,19 @@
+<section
+  class="area-hero"
+  style="background: linear-gradient(<%= @primary_color %>, <%= @secondary_color %>)"
+>
+  <div class="text-container">
+    <h1><%= service_area.name %></h1>
+    <p><%= service_area.subtitle %></p>
+  </div>
+
+  <div class="area-cards">
+    <% service_area.services.each_with_index  do |service, index| %>
+      <%= erb :'services/components/_service_card',
+              locals: {
+                service: service,
+                hover_color: service_area.secondary_color,
+              } %>
+    <% end %>
+  </div>
+</section>
