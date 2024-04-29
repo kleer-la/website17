@@ -1,6 +1,6 @@
 class ServiceAreaV3
   attr_accessor(*%i(id slug name icon summary primary_color secondary_color slogan cta_message
-                  subtitle description side_image defintions target value_proposition services))
+                  subtitle description definitions side_image defintions target value_proposition services))
 
   def load_from_json(hash_service_area)
     load_str(%i[id slug name icon summary primary_color secondary_color cta_message
