@@ -290,6 +290,7 @@ $white: #FFFFFF;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 16px;
+    z-index: 2;
 
     h1{
       margin-bottom: 40px;
@@ -302,6 +303,28 @@ $white: #FFFFFF;
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .icon{
+    filter: invert(100%);
+    opacity: 0.6;
+    position: absolute;
+  }
+
+  .big{
+    height: 50%;
+    z-index: 0;
+    top: 80px;
+    left: 0;
+    rotate: -45deg;
+  }
+
+  .small{
+    height: 20%;
+    z-index: 0;
+    bottom: 25%;
+    right: 6%;
+    rotate: 30deg;
   }
 }
 
@@ -381,6 +404,31 @@ $white: #FFFFFF;
         align-items: start;
         font-size: 30px;
       }
+    }
+  }
+
+  .plus-button{
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 2s;
+    border: white 4px solid;
+
+    img{
+      height: 27px;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }
@@ -569,6 +617,31 @@ $white: #FFFFFF;
         img{
           height: 100px;
         }
+      }
+    }
+
+    .plus-button{
+      margin: 0;
+      padding: 0;
+      height: 50px;
+      width: 50px;
+      background-color: black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 2s;
+      border: white 4px solid;
+
+      img{
+        height: 27px;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }

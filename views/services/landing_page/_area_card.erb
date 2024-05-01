@@ -30,6 +30,9 @@
                     locals: {
                       service: service,
                       hover_color: area.secondary_color,
+                      border_hover_color: "white",
+                      border_color: area.secondary_color,
+                      id: area.id
                     } %>
           <% end %>
         </div>
@@ -39,7 +42,7 @@
           <a
             class="my-secondary-button"
             id="cta-button-<%=area.id %>"
-            href="<%= "/es/servicios/#{area.slug}" %>"
+            href="<%= "/es/servicios-v3/#{area.id}" %>"
             style=""
           >
             <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2"/>

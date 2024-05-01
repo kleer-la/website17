@@ -63,23 +63,34 @@ get '/servicios/:service_id' do
   end
 end
 
+get '/servicios-v3/:area_id' do
+  load_area_service(params[:area_id])
+end
 
-get '/servicios-v3/:service_id' do
+get '/servicios-v3/:area_id/:service_id' do
+  load_area_service(params[:area_id], params[:service_id])
+end
+
+def load_area_service(area_id, service_slug = nil)
   begin
     if session[:locale] == 'en'
       redirect to("#{session[:locale]}/agilidad-organizacional"), 301
     end
 
-    service_area = ServiceAreaV3.create_keventer params[:service_id]
-    # reader.load_service(service_id)
+    if service_slug.nil?
+      service_slug = 'none'
+    end
+
+    @service_slug = service_slug
+
+    service_area = ServiceAreaV3.create_keventer area_id
+
     @primary_color = service_area.primary_color
     @secondary_color = service_area.secondary_color
 
     if service_area.nil?
       return status 404
     end
-
-    puts service_area.services[4].inspect
 
     # @meta_tags.set! title: @service.seo_title || @service.name,
     #                 description: @service.elevator_pitch,
@@ -89,8 +100,10 @@ get '/servicios-v3/:service_id' do
     # router_helper.alternate_route = "/agilidad-organizacional"
 
     erb :'services/landing_area/index', layout: :'layout/layout2022', locals: {service_area: service_area}
-  # rescue
-  #   status 500
+    # rescue
+    #   status 500
   end
 end
+
+
 

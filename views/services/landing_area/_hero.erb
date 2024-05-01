@@ -12,8 +12,23 @@
       <%= erb :'services/components/_service_card',
               locals: {
                 service: service,
-                hover_color: service_area.secondary_color,
+                hover_color: @primary_color,
+                border_color: @primary_color,
+                border_hover_color: "white",
+                id: service_area.id
               } %>
     <% end %>
   </div>
+
+  <object
+    class="icon big"
+    type="image/svg+xml"
+    data="<%= service_area.icon %>"
+    ></object>
+
+  <object
+    class="icon small"
+    type="image/svg+xml"
+    data="<%= service_area.icon %>"
+  ></object>
 </section>

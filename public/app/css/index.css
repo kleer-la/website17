@@ -1663,7 +1663,8 @@ h3.title-somos {
     max-width: 50%;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-    font-size: 16px; }
+    font-size: 16px;
+    z-index: 2; }
     .area-hero .text-container h1 {
       margin-bottom: 40px; }
   .area-hero .area-cards {
@@ -1672,6 +1673,22 @@ h3.title-somos {
     width: 100%;
     display: flex;
     justify-content: center; }
+  .area-hero .icon {
+    filter: invert(100%);
+    opacity: 0.6;
+    position: absolute; }
+  .area-hero .big {
+    height: 50%;
+    z-index: 0;
+    top: 80px;
+    left: 0;
+    rotate: -45deg; }
+  .area-hero .small {
+    height: 20%;
+    z-index: 0;
+    bottom: 25%;
+    right: 6%;
+    rotate: 30deg; }
 
 .area-section {
   margin-top: 150px; }
@@ -1730,6 +1747,25 @@ h3.title-somos {
         justify-content: center;
         align-items: start;
         font-size: 30px; }
+  .area-section .plus-button {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px;
+    left: calc(50% - 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 2s;
+    border: white 4px solid; }
+    .area-section .plus-button img {
+      height: 27px; }
+    .area-section .plus-button:hover {
+      cursor: pointer; }
 
 .services-section {
   margin: 40px 0; }
@@ -1865,6 +1901,25 @@ h3.title-somos {
         align-items: center; }
         .services-section .service-info-container .definitions .image-container img {
           height: 100px; }
+    .services-section .service-info-container .plus-button {
+      margin: 0;
+      padding: 0;
+      height: 50px;
+      width: 50px;
+      background-color: black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 20px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 2s;
+      border: white 4px solid; }
+      .services-section .service-info-container .plus-button img {
+        height: 27px; }
+      .services-section .service-info-container .plus-button:hover {
+        cursor: pointer; }
 
 @media screen and (max-width: 990px) {
   #landing-areas-hero {

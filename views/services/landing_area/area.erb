@@ -3,15 +3,49 @@
     class="area-info"
     style="border: <%= service_area.primary_color %> 3px solid;"
   >
-    <%= erb :'services/landing_area/_slogan', locals: {slogan: service_area.slogan}%>
-    <%= erb :'services/landing_area/_description', locals: {description: service_area.description, side_image: service_area.side_image }%>
-    <%= erb :'services/landing_area/_target', locals: {target: service_area.target, name: service_area.name}%>
-    <%= erb :'services/landing_area/_value_proposition', locals: {value_proposition: service_area.value_proposition, back_color: service_area.secondary_color}%>
+    <div class="show-content">
+      <%= erb :'services/landing_area/_slogan', locals: {slogan: service_area.slogan}%>
+
+    </div>
+    <div
+      id="dinamic-content-area"
+      class="dinamic-content"
+    >
+      <%= erb :'services/landing_area/_description', locals: {description: service_area.description, side_image: service_area.side_image }%>
+      <%= erb :'services/landing_area/_target', locals: {target: service_area.target, name: service_area.name}%>
+      <%= erb :'services/landing_area/_value_proposition', locals: {value_proposition: service_area.value_proposition, back_color: service_area.secondary_color}%>
+    </div>
     <div
       class="top-icon"
       style="border: <%= service_area.primary_color %> 3px solid;"
     >
       <img src="/app/img/icons/People.svg" alt="People icon"/>
     </div>
+    <div
+      class="plus-button"
+      id="plus-button-area"
+      data-toggle="collapse"
+      data-target="dinamic-content-area"
+    >
+      <img src="/app/img/icons/minus.png" alt="plus"/>
+    </div>
   </div>
 </section>
+<script>
+    {
+        const dinamicContent = document.getElementById('dinamic-content-area')
+        const plusButton = document.getElementById("plus-button-area")
+
+        plusButton.onclick = () => {
+            dinamicContent.classList.toggle('collapse')
+
+            if (!dinamicContent.classList.contains('collapse')) {
+                dinamicContent.classList.add('show');
+                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+            }else {
+                dinamicContent.classList.remove('show');
+                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' />"
+            }
+        }
+    }
+</script>

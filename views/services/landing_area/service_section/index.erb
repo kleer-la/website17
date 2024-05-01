@@ -1,14 +1,49 @@
 <div
+  id="<%= service.slug %>"
   class="service-info-container"
   style="border: <%= @primary_color %> 3px solid;"
 >
-  <%= erb :'services/landing_area/service_section/_value_proposition',
-          locals: { name: service.name, value_proposition: service.value_proposition }%>
-  <%= erb :'services/landing_area/service_section/_outcomes',
-          locals: { outcomes: service.outcomes, name: service.name}%>
-  <%= erb :'services/landing_area/service_section/_program',
-          locals: { program: service.program, id: service.id, name: service.name }%>
-  <%= erb :'services/landing_area/service_section/_target',
-          locals: { target: service.target, name: service.name }%>
-  <%= erb :'services/landing_area/service_section/_definitions_program', locals: { name: service.name, definitions: service.definitions }%>
+  <div class="show-content">
+    <%= erb :'services/landing_area/service_section/_value_proposition',
+            locals: { name: service.name, value_proposition: service.value_proposition }%>
+  </div>
+  <div
+    id="dinamic-content-<%= service.slug %>"
+    class="dinamic-content collapse"
+  >
+    <%= erb :'services/landing_area/service_section/_outcomes',
+            locals: { outcomes: service.outcomes, name: service.name}%>
+    <%= erb :'services/landing_area/service_section/_program',
+            locals: { program: service.program, id: service.slug, name: service.name }%>
+    <%= erb :'services/landing_area/service_section/_target',
+            locals: { target: service.target, name: service.name }%>
+    <%= erb :'services/landing_area/service_section/_definitions_program', locals: { name: service.name, definitions: service.definitions }%>
+  </div>
+  <div
+    class="plus-button"
+    id="plus-button-<%=service.slug %>"
+    data-toggle="collapse"
+    data-target="dinamic-content-<%= service.slug %>"
+  >
+    <img src="/app/img/icons/plus.png" alt="plus"/>
+  </div>
 </div>
+<script>
+    {
+        const dinamicContent = document.getElementById('dinamic-content-<%= service.slug %>')
+        const plusButton = document.getElementById("plus-button-<%=service.slug %>")
+
+        plusButton.onclick = () => {
+            dinamicContent.classList.toggle('collapse')
+
+            if (!dinamicContent.classList.contains('collapse')) {
+                dinamicContent.classList.add('show');
+                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+            }else {
+                dinamicContent.classList.remove('show');
+                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' />"
+            }
+        }
+
+    }
+</script>
