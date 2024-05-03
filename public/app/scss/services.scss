@@ -275,6 +275,7 @@ $white: #FFFFFF;
   margin-top: 100px;
   height: 70vh;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -299,7 +300,7 @@ $white: #FFFFFF;
 
   .area-cards{
     position: absolute;
-    bottom: 130px;
+    bottom: -70px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -491,13 +492,14 @@ $white: #FFFFFF;
           border-radius: 15px;
 
           .check{
+            height: 85px;
             border-radius: 15px 0 0 15px;
             display: flex;
             justify-content: center;
             align-items: center;
 
             img{
-              height: 15px;
+              height: 30px;
             }
           }
 

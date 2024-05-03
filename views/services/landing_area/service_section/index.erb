@@ -5,7 +5,7 @@
 >
   <div class="show-content">
     <%= erb :'services/landing_area/service_section/_value_proposition',
-            locals: { name: service.name, value_proposition: service.value_proposition }%>
+            locals: { name: service.name, value_proposition: service.value_proposition, image: service.side_image }%>
   </div>
   <div
     id="dinamic-content-<%= service.slug %>"

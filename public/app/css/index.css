@@ -1650,6 +1650,7 @@ h3.title-somos {
   margin-top: 100px;
   height: 70vh;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center; }
@@ -1669,7 +1670,7 @@ h3.title-somos {
       margin-bottom: 40px; }
   .area-hero .area-cards {
     position: absolute;
-    bottom: 130px;
+    bottom: -70px;
     width: 100%;
     display: flex;
     justify-content: center; }
@@ -1811,12 +1812,13 @@ h3.title-somos {
           width: 100%;
           border-radius: 15px; }
           .services-section .service-info-container .outcomes .outcome-list .outcome .check {
+            height: 85px;
             border-radius: 15px 0 0 15px;
             display: flex;
             justify-content: center;
             align-items: center; }
             .services-section .service-info-container .outcomes .outcome-list .outcome .check img {
-              height: 15px; }
+              height: 30px; }
           .services-section .service-info-container .outcomes .outcome-list .outcome .content {
             display: flex;
             flex-direction: column;
