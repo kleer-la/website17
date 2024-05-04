@@ -189,7 +189,6 @@ es:
           {
             text: 'Product Management',
             url: '/servicios-v3/agile-product-management',
-            http://localhost:4567/es/servicios-v3/agile-product-management
             inside: true
           },
           {
