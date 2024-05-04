@@ -1,3 +1,5 @@
+require './lib/models/service_v3'
+
 class ServiceAreaV3
   attr_accessor(*%i(id slug name icon summary primary_color secondary_color slogan cta_message
                   subtitle description definitions side_image defintions target value_proposition
@@ -16,8 +18,21 @@ class ServiceAreaV3
     @json_api = null_api
   end
 
-  def load_str(syms, hash)
-    syms.each { |field| send("#{field}=", hash[field.to_s]) }
+  def self.create_list_keventer
+    uri = KeventerConnector.service_areas_url
+    response = JsonAPI.new(uri)
+
+    raise :NotFound unless response.ok?
+
+    ServiceAreaV3.load_list(response.doc)
+  end
+
+  def self.load_list(doc)
+    doc.each_with_object([]) do |service_area, ac|
+      s = ServiceAreaV3.new
+      s.load_from_json(service_area)
+      ac << s
+    end
   end
 
   def self.create_keventer(slug)
@@ -34,57 +49,10 @@ class ServiceAreaV3
       ServiceV3.new(service_hash)
     end
   end
-end
 
-class ServiceV3
-  attr_accessor(*%i(id name subtitle value_proposition outcomes definitions program target pricing brochure faq url slug side_image))
-
-  def initialize(hash_service_area)
-    load_from_json(hash_service_area)
-  end
-
-  def load_from_json(hash_service_area)
-    load_str(%i[id name subtitle value_proposition definitions target pricing brochure slug side_image], hash_service_area)
-
-    puts @side_image
-
-    @outcomes = hash_service_area['outcomes']
-    @program = hash_service_area['program']
-    @faq = hash_service_area['faq']
-
-    self
-  end
-
-  def null_json_api(null_api)
-    @json_api = null_api
-  end
+  private
 
   def load_str(syms, hash)
     syms.each { |field| send("#{field}=", hash[field.to_s]) }
   end
 end
-
-# services": [
-# {
-# "name": "Agilidad organizacional",
-# "subtitle": "<div>Cambia tu organizacion</div>",
-# "value_proposition": "<div class=\"trix-content\">\n  <div>Cambia tu organizacion</div>\n</div>\n",
-# "outcomes": [],
-# "definitions": "<div class=\"trix-content\">\n  <div>Cambia tu organizacion</div>\n</div>\n",
-# "program": [],
-# "target": "<div class=\"trix-content\">\n  <div>Cambia tu organizacion</div>\n</div>\n",
-# "pricing": "",
-# "brochure"
-
-# "services": [
-# {
-# "name": "Agilidad organizacional",
-# "subtitle": "<div>Cambia tu organizacion</div>",
-# "value_proposition": "<div class=\"trix-content\">\n  <div>Cambia tu organizacion</div>\n</div>\n",
-# "outcomes": [],
-# "definitions": "<div class=\"trix-content\">\n  <div>Cambia tu organizacion</div>\n</div>\n",
-# "program": [],
-# "target": "<div class=\"trix-content\">\n  <div>Cambia tu organizacion</div>\n</div>\n",
-# "pricing": "",
-# "brochure": ""
-# },

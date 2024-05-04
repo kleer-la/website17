@@ -182,28 +182,24 @@ es:
         text: 'Servicios',
         options: [
           {
-            text: 'Diseño Organizacional',
-            url: '/servicios/diseno-organizacional-agil',
+            text: 'Cambio Organizacional y Liderazgo',
+            url: '/servicios-v3/cambio-organizacional-liderazgo',
             inside: true
           },
           {
             text: 'Product Management',
-            url: '/servicios/agile-product-management',
+            url: '/servicios-v3/agile-product-management',
+            http://localhost:4567/es/servicios-v3/agile-product-management
             inside: true
           },
           {
-            text: 'Desarrollo del Liderazgo Ágil',
-            url: '/servicios/desarrollo-liderazgo-agil',
+            text: 'Agilidad para Equipos',
+            url: '/servicios-v3/agilidad-equipos',
             inside: true
           },
           {
-            text: 'Jump Start',
-            url: '/servicios/jump-start',
-            inside: true
-          },
-          {
-            text: 'Facilitación',
-            url: '/servicios/facilitacion',
+            text: 'Facilitación de Reuniones y Eventos',
+            url: '/servicios-v3/facilitacion-reuniones-eventos',
             inside: true
           },
           {
