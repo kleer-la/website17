@@ -183,22 +183,22 @@ es:
         options: [
           {
             text: 'Cambio Organizacional y Liderazgo',
-            url: '/servicios-v3/cambio-organizacional-liderazgo',
+            url: '/servicios/cambio-organizacional-liderazgo',
             inside: true
           },
           {
             text: 'Product Management',
-            url: '/servicios-v3/agile-product-management',
+            url: '/servicios/agile-product-management',
             inside: true
           },
           {
             text: 'Agilidad para Equipos',
-            url: '/servicios-v3/agilidad-equipos',
+            url: '/servicios/agilidad-equipos',
             inside: true
           },
           {
             text: 'Facilitación de Reuniones y Eventos',
-            url: '/servicios-v3/facilitacion-reuniones-eventos',
+            url: '/servicios/facilitacion-reuniones-eventos',
             inside: true
           },
           {

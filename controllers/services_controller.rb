@@ -67,7 +67,7 @@ end
 #   load_area_service(params[:area_id])
 # end
 
-get '/servicios-v3/:slug' do
+get '/servicios/:slug' do
   begin
     if session[:locale] == 'en'
       redirect to("#{session[:locale]}/agilidad-organizacional"), 301
