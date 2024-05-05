@@ -1787,14 +1787,27 @@ h3.title-somos {
     width: 100%; }
     .services-section .service-info-container .value-proposition {
       margin: 30px;
-      height: auto; }
+      height: auto;
+      position: relative; }
       .services-section .service-info-container .value-proposition h2 {
-        font-size: 60px; }
+        font-size: 60px;
+        position: relative; }
+        .services-section .service-info-container .value-proposition h2 .line {
+          height: 30px;
+          width: 80%;
+          position: absolute;
+          bottom: -5px;
+          z-index: -1; }
       .services-section .service-info-container .value-proposition .text {
         padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-around; }
+      .services-section .service-info-container .value-proposition .image-container {
+        margin-top: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
     .services-section .service-info-container .outcomes {
       margin: 30px 70px;
       display: flex;
@@ -1812,8 +1825,8 @@ h3.title-somos {
           width: 100%;
           border-radius: 15px; }
           .services-section .service-info-container .outcomes .outcome-list .outcome .check {
-            height: 85px;
-            border-radius: 15px 0 0 15px;
+            height: 82px;
+            border-radius: 10px 0 0 10px;
             display: flex;
             justify-content: center;
             align-items: center; }
@@ -1979,7 +1992,62 @@ h3.title-somos {
     font-size: 22px;
     margin: 10px !important; }
     .service-card h4 {
-      display: none; } }
+      display: none; }
+
+  .area-hero .text-container {
+    max-width: 90% !important; }
+  .area-hero .area-cards {
+    display: none; }
+
+  .area-section {
+    padding: 0;
+    margin: 10px; }
+    .area-section .area-info {
+      padding: 0;
+      z-index: 1; }
+      .area-section .area-info .slogan {
+        font-size: 24px;
+        font-weight: 700; }
+      .area-section .area-info .description {
+        margin: 20px;
+        padding: 0; }
+        .area-section .area-info .description .image-container {
+          display: none; }
+      .area-section .area-info .value_proposition {
+        margin: 20px 0 0 0 !important;
+        border-radius: 0 0 35px 35px !important;
+        z-index: -1; }
+        .area-section .area-info .value_proposition h2 {
+          font-size: 40px; }
+      .area-section .area-info .target {
+        margin: 20px; }
+      .area-section .area-info .top-icon {
+        display: none; }
+
+  .services-section .service-info-container {
+    padding: 0; }
+    .services-section .service-info-container .value-proposition {
+      margin: 20px; }
+      .services-section .service-info-container .value-proposition .image-container {
+        display: none; }
+    .services-section .service-info-container .outcomes {
+      margin: 20px; }
+      .services-section .service-info-container .outcomes h4 {
+        max-width: 100%; }
+      .services-section .service-info-container .outcomes .outcome-list .outcome {
+        height: 130px; }
+        .services-section .service-info-container .outcomes .outcome-list .outcome .check {
+          height: 126px; }
+      .services-section .service-info-container .outcomes .outcome {
+        height: 100px; }
+    .services-section .service-info-container .program {
+      margin: 20px;
+      padding: 0; }
+      .services-section .service-info-container .program h4 {
+        max-width: 100%; }
+      .services-section .service-info-container .program .program-item {
+        height: 150px;
+        padding: 20px; } }
 #services-hero {
   margin-top: 100px;
   margin-bottom: 13%; }
@@ -2176,51 +2244,6 @@ h3.title-somos {
     font-size: 14px; }
   .subservice-item:hover {
     color: #333333 !important; }
-
-.orange-theme .card {
-  background-color: #fd6827 !important; }
-  .orange-theme .card:hover {
-    background-color: #ff895a !important; }
-.orange-theme .button {
-  background-color: #ff895a !important; }
-  .orange-theme .button:hover {
-    background-color: #fd6827 !important; }
-
-.blue-theme .card {
-  background-color: #68CEF2 !important; }
-  .blue-theme .card:hover {
-    background-color: #E8F8FD !important; }
-.blue-theme .button {
-  background-color: #68CEF2 !important; }
-  .blue-theme .button:hover {
-    background-color: #E8F8FD !important; }
-
-.green-theme .card {
-  background-color: #43af45 !important; }
-  .green-theme .card:hover {
-    background-color: #5cca58 !important; }
-.green-theme .button {
-  background-color: #5cca58 !important; }
-  .green-theme .button:hover {
-    background-color: #43af45 !important; }
-
-.yellow-theme .card {
-  background-color: #FCDC2D !important; }
-  .yellow-theme .card:hover {
-    background-color: #fafa78 !important; }
-.yellow-theme .button {
-  background-color: #fafa78 !important; }
-  .yellow-theme .button:hover {
-    background-color: #FCDC2D !important; }
-
-.sian-theme .card {
-  background-color: #31d2be !important; }
-  .sian-theme .card:hover {
-    background-color: #bafdf3 !important; }
-.sian-theme .button {
-  background-color: #31d2be !important; }
-  .sian-theme .button:hover {
-    background-color: #bafdf3 !important; }
 
 .takeaways {
   background-color: #E8F8FD;

@@ -1,13 +1,15 @@
-<div class="value-proposition">
-  <div class="row">
-    <div class="col-md-7 text">
-      <h2>
-        <%= name %>
-      </h2>
-      <%= value_proposition %>
-    </div>
-    <div class="col-md-5">
-      <img src="<%= image %>" alt="">
-    </div>
+<div class="value-proposition row">
+  <div class="col-12 col-md-7 text">
+    <h2 class="mb-5">
+      <%= name %>
+      <div
+        class="line"
+        style="background-color: <%= @primary_color %>"
+      ></div>
+    </h2>
+    <%= value_proposition %>
+  </div>
+  <div class="col-md-5 image-container">
+    <img src="<%= image %>" alt="">
   </div>
 </div>
