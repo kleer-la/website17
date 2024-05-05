@@ -8,4 +8,4 @@ Feature:  Páginas de servicios.
 
   Scenario: Servicio no existente
     Given I visit the "servicios/no-existe" page
-#    Then I should see "Página no encontrada"
+    Then I should see "Página no encontrada"

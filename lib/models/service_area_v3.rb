@@ -38,8 +38,7 @@ class ServiceAreaV3
   def self.create_keventer(slug)
     uri = KeventerConnector.service_area_url(slug)    
     response = JsonAPI.new(uri)
-
-    raise :NotFound unless response.ok?
+    return nil unless response.ok?
 
     ServiceAreaV3.new.load_from_json(response.doc)
   end
