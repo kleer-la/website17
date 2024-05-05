@@ -1820,25 +1820,28 @@ h3.title-somos {
         text-align: center; }
       .services-section .service-info-container .outcomes .outcome-list {
         margin-top: 30px; }
-        .services-section .service-info-container .outcomes .outcome-list .outcome {
-          height: 85px;
-          width: 100%;
-          border-radius: 15px; }
-          .services-section .service-info-container .outcomes .outcome-list .outcome .check {
-            height: 82px;
-            border-radius: 10px 0 0 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center; }
-            .services-section .service-info-container .outcomes .outcome-list .outcome .check img {
-              height: 30px; }
-          .services-section .service-info-container .outcomes .outcome-list .outcome .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-family: 'Raleway', sans-serif;
-            font-size: 16px;
-            font-weight: 500; }
+        .services-section .service-info-container .outcomes .outcome-list .outcome-container {
+          padding: 20px; }
+          .services-section .service-info-container .outcomes .outcome-list .outcome-container .outcome {
+            height: 85px;
+            width: 100%;
+            border-radius: 15px;
+            margin: 0 !important; }
+            .services-section .service-info-container .outcomes .outcome-list .outcome-container .outcome .check {
+              height: 82px;
+              border-radius: 10px 0 0 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              .services-section .service-info-container .outcomes .outcome-list .outcome-container .outcome .check img {
+                height: 30px; }
+            .services-section .service-info-container .outcomes .outcome-list .outcome-container .outcome .content {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              font-family: 'Raleway', sans-serif;
+              font-size: 16px;
+              font-weight: 500; }
     .services-section .service-info-container .program {
       margin: 30px 70px;
       display: flex;
@@ -2015,8 +2018,13 @@ h3.title-somos {
           display: none; }
       .area-section .area-info .value_proposition {
         margin: 20px 0 0 0 !important;
+        padding: 20px !important;
         border-radius: 0 0 35px 35px !important;
         z-index: -1; }
+        .area-section .area-info .value_proposition .title {
+          margin-bottom: 30px; }
+        .area-section .area-info .value_proposition img {
+          display: none; }
         .area-section .area-info .value_proposition h2 {
           font-size: 40px; }
       .area-section .area-info .target {
@@ -2024,22 +2032,38 @@ h3.title-somos {
       .area-section .area-info .top-icon {
         display: none; }
 
+  .services-section .introduce {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 24px;
+    max-width: 100%;
+    text-align: center; }
   .services-section .service-info-container {
-    padding: 0; }
+    padding: 0;
+    margin: 20px;
+    width: auto; }
     .services-section .service-info-container .value-proposition {
       margin: 20px; }
+      .services-section .service-info-container .value-proposition .text {
+        padding: 0; }
       .services-section .service-info-container .value-proposition .image-container {
         display: none; }
+      .services-section .service-info-container .value-proposition h2 {
+        font-size: 30px !important;
+        font-weight: 700;
+        margin-top: 20px; }
+        .services-section .service-info-container .value-proposition h2 .line {
+          display: none; }
     .services-section .service-info-container .outcomes {
       margin: 20px; }
       .services-section .service-info-container .outcomes h4 {
         max-width: 100%; }
-      .services-section .service-info-container .outcomes .outcome-list .outcome {
-        height: 130px; }
-        .services-section .service-info-container .outcomes .outcome-list .outcome .check {
-          height: 126px; }
-      .services-section .service-info-container .outcomes .outcome {
-        height: 100px; }
+      .services-section .service-info-container .outcomes .outcome-list .outcome-container {
+        padding: 20px 0; }
+        .services-section .service-info-container .outcomes .outcome-list .outcome-container .outcome {
+          height: 140px !important; }
+          .services-section .service-info-container .outcomes .outcome-list .outcome-container .outcome .check {
+            height: 136px; }
     .services-section .service-info-container .program {
       margin: 20px;
       padding: 0; }
@@ -2047,7 +2071,17 @@ h3.title-somos {
         max-width: 100%; }
       .services-section .service-info-container .program .program-item {
         height: 150px;
-        padding: 20px; } }
+        padding: 20px; }
+    .services-section .service-info-container .target {
+      padding: 20px;
+      border-radius: 0; }
+      .services-section .service-info-container .target .title-container {
+        padding: 0;
+        text-align: center; }
+      .services-section .service-info-container .target h3 {
+        font-size: 24px; }
+      .services-section .service-info-container .target img {
+        display: none; } }
 #services-hero {
   margin-top: 100px;
   margin-bottom: 13%; }

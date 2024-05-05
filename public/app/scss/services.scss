@@ -503,32 +503,39 @@ $white: #FFFFFF;
       .outcome-list{
         margin-top: 30px;
 
-        .outcome{
-          height: 85px;
-          width: 100%;
-          border-radius: 15px;
+        .outcome-container{
+          padding: 20px;
 
-          .check{
-            height: 82px;
-            border-radius: 10px 0 0 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+          .outcome{
+            height: 85px;
+            width: 100%;
+            border-radius: 15px;
+            margin: 0 !important;
 
-            img{
-              height: 30px;
+            .check{
+              height: 82px;
+              border-radius: 10px 0 0 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img{
+                height: 30px;
+              }
+            }
+
+            .content{
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              font-family: 'Raleway', sans-serif;
+              font-size: 16px;
+              font-weight: 500;
             }
           }
 
-          .content{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-family: 'Raleway', sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-          }
         }
+
       }
     }
 
@@ -796,12 +803,20 @@ $white: #FFFFFF;
 
       .value_proposition{
         margin: 20px 0 0 0 !important;
+        padding: 20px !important;
         border-radius: 0 0 35px 35px !important;
         z-index: -1;
 
-        h2{
-          font-size: 40px;
+        .title{
+          margin-bottom: 30px;
         }
+
+        img{
+          display: none;
+        }
+
+        h2{
+          font-size: 40px;}
       }
 
       .target{
@@ -817,14 +832,39 @@ $white: #FFFFFF;
   }
 
   .services-section{
+
+    .introduce{
+      margin: 0;
+      padding: 0 20px;
+      font-size: 24px;
+      max-width: 100%;
+      text-align: center;
+    }
+
     .service-info-container{
       padding: 0;
+      margin: 20px;
+      width: auto;
 
       .value-proposition{
         margin: 20px;
 
+        .text{
+          padding: 0;
+        }
+
         .image-container{
           display: none;
+        }
+
+        h2{
+          font-size: 30px !important;
+          font-weight: 700;
+          margin-top: 20px;
+
+          .line{
+            display: none;
+          }
         }
       }
 
@@ -836,18 +876,20 @@ $white: #FFFFFF;
         }
 
         .outcome-list{
-          .outcome{
-            height: 130px;
+          .outcome-container{
+            padding: 20px 0;
 
-            .check{
-              height: 126px;
+            .outcome{
+              height: 140px !important;
+
+              .check{
+                height: 136px;
+              }
             }
           }
         }
 
-        .outcome{
-          height: 100px;
-        }
+
       }
 
       .program{
@@ -863,6 +905,24 @@ $white: #FFFFFF;
           padding: 20px;
         }
 
+      }
+
+      .target{
+        padding: 20px;
+        border-radius: 0;
+
+        .title-container {
+          padding: 0;
+          text-align: center;
+        }
+
+        h3{
+          font-size: 24px;
+        }
+
+        img{
+          display: none;
+        }
       }
     }
   }
