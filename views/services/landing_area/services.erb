@@ -1,33 +1,14 @@
 <div class="services-section">
   <div class="introduce">
     <img src="/app/img/icons/Glasses.svg"/>
-    Aprende más de nuestros servicios
+    <p>
+      <%= area.cta_message %>
+    </p>
   </div>
 
 
-  <% services.each_with_index  do |service, index| %>
-    <div
-      class="service-info-container"
-      style="border: <%= area.primary_color %> 3px solid;"
-    >
-      <%= erb :'services/landing_area/service_section/_value_proposition',
-              locals: { name: service.name, value_proposition: service.value_proposition }%>
-      <%= erb :'services/landing_area/service_section/_outcomes',
-              locals: { outcomes: service.outcomes}%>
-      <%= erb :'services/landing_area/service_section/_program',
-              locals: { program: service.program }%>
-      <%= erb :'services/landing_area/service_section/_target',
-              locals: { target: service.target }%>
-
-
-<!--      <%#= service.value_proposition %> <br>-->
-<!--      <%#= service.outcomes %> <br>-->
-<!--      <%#= service.definitions %> <br>-->
-<!--      <%#= service.program %> <br>-->
-<!--      <%#= service.target %> <br>-->
-<!--      <%#= service.pricing %> <br>-->
-<!--      <%#= service.brochure %> <br>-->
-    </div>
+  <% services.each  do |service| %>
+    <%= erb :'services/landing_area/service_section/index', locals: {service: service}%>
   <% end %>
 </div>
 

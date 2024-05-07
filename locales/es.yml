@@ -182,8 +182,8 @@ es:
         text: 'Servicios',
         options: [
           {
-            text: 'Diseño Organizacional',
-            url: '/servicios/diseno-organizacional-agil',
+            text: 'Cambio Organizacional y Liderazgo',
+            url: '/servicios/cambio-organizacional-liderazgo',
             inside: true
           },
           {
@@ -192,18 +192,13 @@ es:
             inside: true
           },
           {
-            text: 'Desarrollo del Liderazgo Ágil',
-            url: '/servicios/desarrollo-liderazgo-agil',
+            text: 'Agilidad para Equipos',
+            url: '/servicios/agilidad-equipos',
             inside: true
           },
           {
-            text: 'Jump Start',
-            url: '/servicios/jump-start',
-            inside: true
-          },
-          {
-            text: 'Facilitación',
-            url: '/servicios/facilitacion',
+            text: 'Facilitación de Reuniones y Eventos',
+            url: '/servicios/facilitacion-reuniones-eventos',
             inside: true
           },
           {

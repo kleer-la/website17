@@ -1,8 +1,63 @@
 <div class="program">
   <h4>
-    El servicio abarca:
+    El servicio de <%= name %> abarca:
   </h4>
-  <div>
-    <%= program %>
+  <div id="program-list-<%=id%>" class="row mt-5 w-100">
+    <% program.each.with_index do |item, index| %>
+     <div class="col-12 col-lg-6">
+       <div
+         class="program-item row"
+         id="item-<%=id%>-<%=index%>"
+         style="border: <%= @primary_color %> 3px solid;"
+       >
+         <div class="col-9">
+           <h5>
+             <%= item[0] %>
+           </h5>
+           <p
+             class="detail"
+             id="detail-<%=id%>-<%=index%>"
+             style="display: none;"
+           >
+             <%= item[1] %>
+           </p>
+         </div>
+         <div class="col-3 button-container">
+           <div
+              class="button"
+              id="button-<%=id%>-<%=index%>"
+              style="background-color: <%= @primary_color %>;"
+           >
+             <img src="/app/img/icons/plus.png"/>
+           </div>
+         </div>
+       </div>
+
+     </div>
+    <% end %>
   </div>
 </div>
+
+<script>
+    {
+        const program_count = document.getElementById('program-list-<%=id%>').childElementCount
+
+        for (let i = 0; i < program_count; i++) {
+            const itemBox = document.getElementById('item-<%=id%>-'+i)
+            const detail = document.getElementById('detail-<%=id%>-'+i)
+            const button = document.getElementById('button-<%=id%>-'+i)
+
+            itemBox.addEventListener('click', () => {
+                if (detail.style.display === 'none') {
+                    detail.style.display = 'block'
+                    itemBox.style.height = 'auto'
+                    button.innerHTML = '<img src="/app/img/icons/minus.png"/>'
+                } else {
+                    detail.style.display = 'none'
+                    itemBox.style.height = '100px'
+                    button.innerHTML = '<img src="/app/img/icons/plus.png"/>'
+                }
+            })
+        }
+    }
+</script>

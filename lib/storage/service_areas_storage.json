@@ -13,13 +13,13 @@
         "id": 1,
         "name": "Diseño Organizacional Ágil",
         "subtitle": "Diseñando organizaciones adaptativas para el logro de los objetivos estratégicos.",
-        "url": "/servicios/diseno-organizacional-agil"
+        "slug": "diseno-organizacional-agil"
       },
       {
         "id": 2,
         "name": "Programa de Desarrollo del Liderazgo Ágil",
         "subtitle": "Fortalece las habilidades de líderes para guiar el cambio organizacional",
-        "url": "/servicios/desarrollo-liderazgo-agil"
+        "slug": "desarrollo-liderazgo-agil"
       }
     ]
   },
@@ -37,31 +37,31 @@
         "id": 3,
         "name": "Product Strategy",
         "subtitle": "Una inmersión práctica en la estrategia de producto",
-        "url": "/servicios/agile-product-management#agile_product_strategy"
+        "slug": "agile-product-management#agile_product_strategy"
       },
       {
         "id": 4,
         "name": "Product Discovery",
         "subtitle": "Dirige tu producto hacia el éxito",
-        "url": "/servicios/agile-product-management#product_discovery"
+        "slug": "agile-product-management#product_discovery"
       },
       {
         "id": 5,
         "name": "Programa Integral en APM",
         "subtitle": "Desarrolla tu potencial estratégico.",
-        "url": "/servicios/agile-product-management#programa_integral_en_apm"
+        "slug": "agile-product-management#programa_integral_en_apm"
       },
       {
         "id": 6,
         "name": "Ruta de Formación",
         "subtitle": "Capacitaciones para fortalecer las capacidades internas",
-        "url": "/servicios/agile-product-management#ruta_de_formacion"
+        "slug": "agile-product-management#ruta_de_formacion"
       },
       {
         "id": 7,
         "name": "Mentoring y Coaching en APM",
         "subtitle": "Habilita un enfoque centrado en el producto.",
-        "url": "/servicios/agile-product-management#mentoring_y_coaching_en_apm"
+        "slug": "agile-product-management#mentoring_y_coaching_en_apm"
       }
     ]
   },
@@ -115,25 +115,25 @@
         "id": 12,
         "name": "Innovation Jump Start",
         "subtitle": "Acelera el Potencial Creativo de tus Equipos.",
-        "url": "/servicios/jump-start#innovation_jump_start"
+        "slug": "jump-start#innovation_jump_start"
       },
       {
         "id": 13,
         "name": "Agile Team Jump Start",
         "subtitle": "Expande la agilidad con confianza a más equipos.",
-        "url": "/servicios/jump-start#agile_team_jump_start"
+        "slug": "jump-start#agile_team_jump_start"
       },
       {
         "id": 14,
         "name": "Agile Team Restart",
         "subtitle": "Revitaliza y reenfoca equipos ágiles existentes.",
-        "url": "/servicios/jump-start#agile_team_restart"
+        "slug": "jump-start#agile_team_restart"
       },
       {
         "id": 15,
         "name": "Kaizen Jump Start",
         "subtitle": "Incorpora la Mejora Continua en tus Equipos.",
-        "url": "/servicios/jump-start#kaizen_jump_start"
+        "slug": "jump-start#kaizen_jump_start"
       }
     ]
   }

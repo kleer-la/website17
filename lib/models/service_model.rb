@@ -24,7 +24,6 @@ class Service
                      seo_title
                      contact_text
                      titles], hash_service)
-    @services = hash_service["services"]
     @sub_services = hash_service["sub-services"]
   end
 
@@ -71,7 +70,7 @@ end
 
 class NewService
   attr_accessor :name, :subtitle, :description, :outcomes, :abstract,
-                :url, :id
+                :url, :id, :slug, :cta_message
   def initialize
   end
 
@@ -82,12 +81,13 @@ class NewService
                      description
                      abstract
                      outcomes
+                     slug
                      url
                      ], hash_service)
   end
 
   def load_short_from_json(hash_service)
-    load_str(%i[id name url
+    load_str(%i[id name url slug
                      subtitle], hash_service)
   end
 

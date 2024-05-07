@@ -1,12 +1,37 @@
-<%=erb :'component/heros/_generic_hero',
-       locals: {
-         title: "#{service_area.name}",
-         subtitle: "#{service_area.subtitle}"
-       }
-%>
-
+<%= erb :'services/landing_area/_hero', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/services', locals: {
   services: service_area.services,
   area: service_area
 } %>
+
+<script>
+    {
+        const service = '<%= @service_slug %>'
+
+        const dinamicContent = document.getElementById('dinamic-content-area')
+        const plusButton = document.getElementById("plus-button-area")
+
+        window.onload = () => {
+            const service_section = document.getElementById(service)
+
+            if (service_section) {
+                dinamicContent.classList.toggle('collapse')
+                dinamicContent.classList.add('collapse');
+                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+
+                const yOffset = -140
+                const y = service_section.getBoundingClientRect().top + window.pageYOffset + yOffset
+                window.scrollTo({top: y, behavior: 'smooth'})
+
+                //section open
+                const dinamicContentService = document.getElementById('dinamic-content-<%= @service_slug %>')
+                const plusButtonService = document.getElementById("plus-button-<%= @service_slug %>")
+
+                dinamicContentService.classList.toggle('collapse')
+                dinamicContentService.classList.add('show');
+                plusButtonService.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+            }
+        }
+    }
+</script>

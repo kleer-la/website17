@@ -1,8 +1,15 @@
 <a
     class="service-card"
     id='service-card-<%=service.id %>'
-    style='background-color: white; border: 1px solid #e0e0e0; margin: 20px; cursor: pointer; transition: 0.3s; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);'
-    href="<%= service.url %>"
+    style='background-color: white;
+      border: 3px solid <%= border_color %>;
+      margin: 20px; cursor: pointer;
+      transition: 0.3s;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      z-index: 5;
+    '
+    href="/es/servicios/<%= service.slug %>"
 >
     <h3>
       <%= service.name %>
@@ -17,17 +24,16 @@
         const areaCard = document.getElementById('service-card-<%=service.id %>')
         areaCard.addEventListener('mouseover', function() {
             areaCard.style.backgroundColor = '<%= hover_color %>'
+            areaCard.style.border = '3px solid <%= border_hover_color %>'
         })
 
         areaCard.addEventListener('mouseout', function() {
             areaCard.style.backgroundColor = 'white'
+            areaCard.style.border = '3px solid <%= border_color %>'
         })
 
         areaCard.onclick = function(e) {
             e.stopPropagation()
         }
-
-        console.log('areaCard', areaCard)
-
     }
 </script>
