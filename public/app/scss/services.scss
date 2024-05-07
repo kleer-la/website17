@@ -273,6 +273,7 @@ $white: #FFFFFF;
 
 .area-hero{
   margin-top: 100px;
+  min-height: 600px;
   height: 70vh;
   display: flex;
   position: relative;
@@ -308,7 +309,7 @@ $white: #FFFFFF;
 
   .icon{
     filter: invert(100%);
-    opacity: 0.6;
+    opacity: 0.7;
     position: absolute;
   }
 
@@ -730,6 +731,109 @@ $white: #FFFFFF;
     font-size: 22px;
     margin: 10px !important;
   }
+
+  .area-hero{
+    .area-cards {
+      display: none;
+    }
+  }
+
+  .services-section{
+
+    .introduce{
+      margin: 0;
+      padding: 0 20px;
+      font-size: 24px;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .service-info-container{
+      padding: 0;
+      margin: 20px;
+      width: auto;
+
+      .value-proposition{
+        margin: 20px;
+
+        .text{
+          padding: 0;
+        }
+
+        .image-container{
+          display: none;
+        }
+
+        h2{
+          font-size: 30px !important;
+          font-weight: 700;
+          margin-top: 20px;
+
+          .line{
+            display: none;
+          }
+        }
+      }
+
+      .outcomes{
+        margin: 20px;
+
+        h4{
+          max-width: 100%;
+        }
+
+        .outcome-list{
+          .outcome-container{
+            padding: 20px 0;
+
+            .outcome{
+              height: 140px !important;
+
+              .check{
+                height: 136px;
+              }
+            }
+          }
+        }
+
+
+      }
+
+      .program{
+        margin: 20px;
+        padding: 0;
+
+        h4{
+          max-width: 100%;
+        }
+
+        .program-item{
+          height: 150px;
+          padding: 20px;
+        }
+
+      }
+
+      .target{
+        padding: 20px;
+        border-radius: 0;
+
+        .title-container {
+          padding: 0;
+          text-align: center;
+        }
+
+        h3{
+          font-size: 24px;
+        }
+
+        img{
+          display: none;
+        }
+      }
+    }
+  }
+
 }
 
 @media screen and (max-width:520px) {
@@ -831,101 +935,6 @@ $white: #FFFFFF;
 
   }
 
-  .services-section{
-
-    .introduce{
-      margin: 0;
-      padding: 0 20px;
-      font-size: 24px;
-      max-width: 100%;
-      text-align: center;
-    }
-
-    .service-info-container{
-      padding: 0;
-      margin: 20px;
-      width: auto;
-
-      .value-proposition{
-        margin: 20px;
-
-        .text{
-          padding: 0;
-        }
-
-        .image-container{
-          display: none;
-        }
-
-        h2{
-          font-size: 30px !important;
-          font-weight: 700;
-          margin-top: 20px;
-
-          .line{
-            display: none;
-          }
-        }
-      }
-
-      .outcomes{
-        margin: 20px;
-
-        h4{
-          max-width: 100%;
-        }
-
-        .outcome-list{
-          .outcome-container{
-            padding: 20px 0;
-
-            .outcome{
-              height: 140px !important;
-
-              .check{
-                height: 136px;
-              }
-            }
-          }
-        }
-
-
-      }
-
-      .program{
-        margin: 20px;
-        padding: 0;
-
-        h4{
-          max-width: 100%;
-        }
-
-        .program-item{
-          height: 150px;
-          padding: 20px;
-        }
-
-      }
-
-      .target{
-        padding: 20px;
-        border-radius: 0;
-
-        .title-container {
-          padding: 0;
-          text-align: center;
-        }
-
-        h3{
-          font-size: 24px;
-        }
-
-        img{
-          display: none;
-        }
-      }
-    }
-  }
 }
 
 //Landing service
