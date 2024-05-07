@@ -18,9 +18,7 @@
             locals: { program: service.program, id: service.slug, name: service.name }%>
     <%= erb :'services/landing_area/service_section/_target',
             locals: { target: service.target, name: service.name }%>
-    <%= erb :'services/landing_area/service_section/_definitions_program',
-            locals: { name: service.name, definitions: service.definitions } unless service.definitions == ""
-    %>
+    <%#= erb :'services/landing_area/service_section/_definitions_program', locals: { name: service.name, definitions: service.definitions } unless service.definitions == "" %>
   </div>
   <div
     class="plus-button"
