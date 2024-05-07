@@ -11,7 +11,6 @@
     id="dinamic-content-<%= service.slug %>"
     class="dinamic-content collapse"
   >
-    <% puts service.definitions %>
     <%= erb :'services/landing_area/service_section/_outcomes',
             locals: { outcomes: service.outcomes, name: service.name}%>
     <%= erb :'services/landing_area/service_section/_program',
