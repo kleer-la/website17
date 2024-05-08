@@ -5,6 +5,7 @@ After('@SEO-validation') do
   assert_no_text('/es/en')
   assert_no_text('/en/es')
   assert_no_text('/en/en')
+  expect(page).to have_css('link[rel="canonical"]', visible: false), 'Canonical link is missing'
 end
 
 Then('SEO meta name {string} should be {string}') do |tag, text|

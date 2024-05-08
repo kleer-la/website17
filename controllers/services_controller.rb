@@ -92,7 +92,8 @@ get '/servicios/:slug' do
     end
 
     @meta_tags.set! title: service_area.seo_title,
-                    description: service_area.seo_description
+                    description: service_area.seo_description,
+                    canonical: "/es/servicios/#{service_area.slug}"
 
     router_helper = RouterHelper.instance
     router_helper.alternate_route = "/agilidad-organizacional"
