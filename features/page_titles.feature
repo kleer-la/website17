@@ -15,10 +15,10 @@ Feature: StaticPage Titles
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Recursos sobre Agile"
 
-	Scenario: Coaching Title
+	Scenario: Servicios Title
 		Given I visit the "agilidad-organizacional" page
 		Then the page title should includes "^Kleer"
-		And the page title should includes "Libera el Potencial de la Agilidad Organizacional"
+		And the page title should includes "Servicios de Agilidad Organizacional"
 
 	Scenario: Somos Title
 		Given I visit the "somos" page

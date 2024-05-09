@@ -25,8 +25,7 @@ Then('SEO meta property {string} should be {string}') do |tag, text|
 end
 
 Then('The page should have one H1 tag') do
-  puts all('h1').length
-  expect(all('h1').length). to eq(1)
+   expect(all('h1').length). to eq(1)
 end
 
 Then('The page should have at least two H2 tags') do
