@@ -1,3 +1,4 @@
+#TODO: remove
 class ServiceArea
   attr_accessor :id, :name, :summary, :primary_color, :secondary_color, :icon, :services, :slug, :abstract, :cta_message
 
