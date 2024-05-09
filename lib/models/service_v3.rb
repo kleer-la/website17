@@ -8,8 +8,6 @@ class ServiceV3
   def load_from_json(hash_service_area)
     load_str(%i[id name subtitle value_proposition definitions target pricing brochure slug side_image], hash_service_area)
 
-    puts @side_image
-
     @outcomes = hash_service_area['outcomes']
     @program = hash_service_area['program']
     @faq = hash_service_area['faq']
