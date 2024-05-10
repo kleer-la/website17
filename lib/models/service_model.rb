@@ -1,3 +1,4 @@
+#TODO: remove
 class Service
   attr_accessor :id, :name, :subtitle, :description, :side_image, :takeaways, :summary, :primary_color, :secondary_color, :icon, :services, :slug,
                 :recipients, :program, :brochure, :titles, :seo_title, :color_theme,

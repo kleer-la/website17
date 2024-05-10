@@ -43,13 +43,13 @@ describe EventType do
 
       expect(@event_type.redirect_to('4-Enterprise-Agility')).to include '4-FTW'
     end
-    it 'deleted & cannonical to itself - adk' do
+    it 'deleted & canonical to itself - adk' do
       @event_type.canonical_slug = @slug
       @event_type.deleted = true
 
       expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq ''
     end
-    it 'deleted & cannonical to empty - adk' do
+    it 'deleted & canonical to empty - adk' do
       @event_type.canonical_slug = ''
       @event_type.deleted = true
 
