@@ -1,10 +1,11 @@
 #  <meta name="description" content="Acelera el diseño, la creación y la mejora continua...">
-After('@SEO-validation') do
-  expect(all('h1').length). to eq(1)
-  assert_no_text('/es/es')
-  assert_no_text('/es/en')
-  assert_no_text('/en/es')
-  assert_no_text('/en/en')
+After('@SEO-validation') do |_scenario|
+  expect(all('h1').length).to eq(1)
+  expect(page.html).not_to match(/\/es\/es/)
+  expect(page.html).not_to match(/\/es\/en/)
+  expect(page.html).not_to match(/\/en\/es/)
+  expect(page.html).not_to match(/\/en\/en/)
+
   expect(page).to have_css('link[rel="canonical"]', visible: false), 'Canonical link is missing'
 end
 
