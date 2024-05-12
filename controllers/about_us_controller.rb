@@ -3,7 +3,6 @@ get '/somos' do
   @meta_tags.set! title: "#{t('meta_tag.aboutus.title')}",
                   description: t('meta_tag.aboutus.description'),
                   canonical: "#{t('meta_tag.aboutus.canonical')}"
-  # @kleerers = KeventerReader.instance.kleerers session[:locale]
   @kleerers = Trainer.create_keventer_json session[:locale]
 
   erb :'about_us/index', layout: :'layout/layout2022'
@@ -12,7 +11,7 @@ end
 get '/nuestra-filosofia' do
   @active_tab_somos = 'active'
   @meta_tags.set! title: "#{@base_title} | Nuestra filosofía"
-  @kleerers = KeventerReader.instance.kleerers session[:locale]
+  @kleerers = Trainer.create_keventer_json session[:locale]
   erb :'old_page/nuestra_filosofia', layout: :'layout/layout2022'
 end
 

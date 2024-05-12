@@ -1,5 +1,3 @@
-require './lib/keventer_reader'
-
 def get_event_type(event_type_id, find_it: true)
   connector = double('KeventerConnector')
   catalog = NullJsonAPI.new(nil, File.read('./spec/catalog.json'))
@@ -7,11 +5,7 @@ def get_event_type(event_type_id, find_it: true)
 
   allow(connector).to receive(:get_catalog).and_return(catalog)
   allow(connector).to receive(:event_type_url).with(event_type_id)
-  allow(connector).to receive(:event_type_url).and_return(find_it ? "./spec/event_type_#{event_type_id}.xml" : '')
-  allow(connector).to receive(:categories_xml_url).and_return('./spec/categories.xml')
   allow(connector).to receive(:get_testimonies ).and_return(nil)
-
-  KeventerReader.build_with(connector)
 
   # NullInfraestructure json
   EventType.null_json_api(

@@ -1,8 +1,6 @@
 require 'date'
 
 require './lib/keventer_connector'
-require './lib/keventer_event'
-require './lib/keventer_event_type'
 class Catalog
   def self.load_catalog_events(loaded_events)
     events = []

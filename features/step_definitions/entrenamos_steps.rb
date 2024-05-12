@@ -1,4 +1,4 @@
-require './lib/keventer_reader'
+require './lib/category'
 
 Given('A list of categories') do
   Category.null_json_api( NullJsonAPI.new('./spec/events.json') )

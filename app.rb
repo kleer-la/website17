@@ -11,9 +11,6 @@ require 'recaptcha'
 Dotenv.load
 
 require './lib/metatags'
-require './lib/keventer_reader'
-require './lib/twitter_card'
-require './lib/twitter_reader'
 require './lib/helpers/custom_markdown'
 require './lib/router_helper'
 
@@ -53,8 +50,6 @@ configure do
   I18n.load_path += Dir[File.join(File.dirname(__FILE__), 'locales', '*.yml').to_s]
 
   enable :sessions
-  KeventerReader.build
-
   register Sinatra::Flash
 end
 
@@ -141,24 +136,6 @@ PERMANENT_REDIRECT.each do |uris|
      redirect '/'+uris[1], 301
   end
 end
-
-# get '/categoria/:category_codename/' do
-#   redirect "/categoria/#{params[:category_codename]}", 301
-# end
-#
-# get '/categoria/:category_codename' do
-#   @category = KeventerReader.instance.category(params[:category_codename])
-#   @active_tab_acompanamos = 'active'
-#
-#   if @category.nil?
-#     redirect "/#{session[:locale]}/catalogo", 301
-#   else
-#     @meta_tags.set! title: @category.name
-#     @event_types = @category.event_types.sort_by(&:name)
-#
-#     erb :category
-#   end
-# end
 
 # LEGACY ====================
 

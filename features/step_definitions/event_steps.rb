@@ -1,5 +1,3 @@
-require './lib/keventer_reader'
-
 Given(/^theres only one event$/) do
   stub_connector
 end

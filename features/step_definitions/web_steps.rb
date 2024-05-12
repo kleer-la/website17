@@ -1,5 +1,3 @@
-require './lib/keventer_reader'
-
 Given(/^I open the web app$/) do
   visit '/'
 end

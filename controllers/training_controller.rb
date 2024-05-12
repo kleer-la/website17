@@ -1,5 +1,6 @@
 require './lib/metatags'
 require './lib/academy_courses'
+require './lib/category'
 require './lib/event_type'
 require './lib/event'
 require './lib/keventer_helper'
