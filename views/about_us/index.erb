@@ -1,12 +1,14 @@
-<div class="course-company-panel">
-	<p class="m-0">
-		<strong>
-			Conoce más de quienes formamos kleer
-		</strong>
-	</p>
-	<a target="_blank" href="https://www.youtube.com/watch?v=SvefZLWr3f8&list=PLrBvQ0ePGhkH_xPyQxn6Bc-98H1c9Ti1d">
-		<strong>Podcast: Descubriendo kleer</strong>
-	</a>
-</div>
+<%if session[:locale] == 'es' %>
+  <div class="course-company-panel">
+    <p class="m-0">
+      <strong>
+        Conoce más de quienes formamos kleer
+      </strong>
+    </p>
+    <a target="_blank" href="https://www.youtube.com/watch?v=SvefZLWr3f8&list=PLrBvQ0ePGhkH_xPyQxn6Bc-98H1c9Ti1d">
+      <strong>Podcast: Descubriendo kleer</strong>
+    </a>
+  </div>
+<%end%>
 <%= erb :'about_us/hero' %>
 <%= erb :'about_us/kleerers' %>

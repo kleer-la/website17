@@ -5,10 +5,7 @@ get '/prensa' do
   @meta_tags.set! title: "#{t('meta_tag.press.title')}",
                   description: t('meta_tag.press.description'),
                   canonical: "#{t('meta_tag.press.canonical')}"
-  # @kleerers = KeventerReader.instance.kleerers session[:locale]
 #TODO: remove old news implementation and move to /novedades
-  # @news = get_news
-  # return erb :'news/index', layout: :'layout/layout2022'
   @news = News.create_list_keventer
 
   router_helper = RouterHelper.instance

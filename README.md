@@ -1,7 +1,7 @@
-Website (update 2022)
+Website (update 2024)
 ---
 En conjunto con nuestros amigos de Innqube.com (Mauro Strione), Cambá (Pablo de los Santos)
-y actualmente la gran Alina Ryba    :)
+y la gran Alina Ryba    :)
 
 Website
 =======
@@ -107,7 +107,6 @@ export AWS_ACCESS_KEY_ID="..."
 export AWS_SECRET_ACCESS_KEY:="..."
 export AWS_REGION="us-east-1"
 ```
-
 
 
 Para probar con ambiente de prueba de keventer
