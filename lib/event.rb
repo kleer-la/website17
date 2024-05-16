@@ -160,34 +160,3 @@ class Event
   end
 
 end
-
-#TODO remove bc deprecation of XML API
-class EventFacade
-  attr_reader :name, :subtitle, :cover,
-              :certified, :slug, :categories,
-              :date,:finish_date, :country_iso, :country_name, :city
-
-  def initialize()
-    @name = @subtitle= @cover =
-    @certified= @slug= @categories =
-    @date= @country_iso = @country_name = @city = nil
-  end
-
-  def from_event_type(et)
-    @name = et.name
-    @subtitle = et.subtitle
-    @cover = et.cover
-    @certified= (2 if et.is_sa_cert).to_i +
-                (1 if et.is_kleer_cert).to_i
-    @slug = et.slug
-    @categories = et.categories
-    self
-  end
-  def from_event(e)
-    @date = e.date
-    @country_iso = e.country_iso
-    @country_name = e.country_name
-    from_event_type(e.event_type)
-  end
-
-end

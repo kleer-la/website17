@@ -65,15 +65,3 @@ describe Event do
   end
   
 end
-
-describe EventFacade do
-  it 'empty' do
-    event = EventFacade.new
-    expect(event.name).to be nil
-  end
-  it 'has event type' do
-    et = EventType.create_null('./spec/event_type_1.xml')
-    event = EventFacade.new.from_event_type(et)
-    expect(event.name).to eq 'Introducción a Scrum (Módulo 1 - CSD Track)'
-  end
-end
