@@ -161,7 +161,7 @@ class Event
 
 end
 
-
+#TODO remove bc deprecation of XML API
 class EventFacade
   attr_reader :name, :subtitle, :cover,
               :certified, :slug, :categories,
