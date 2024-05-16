@@ -359,7 +359,7 @@ es:
       - {
         subject: "Agilidad Organizacional",
         description: "Acompañamos a las organizaciones en la mejora sostenible de sus formas de trabajo y a adaptarse oportunamente a los cambios del entorno.",
-        url: "/agilidad-organizacional",
+        url: "/servicios",
         img: "/app/img/ag_org.png",
         alt: "Agilidad Organizacional",
         button_text: "¡Conoce más!"
