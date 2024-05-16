@@ -144,10 +144,6 @@ Then(/^I should see all countries highlited$/) do
           .find('a')).to have_text 'Todos'
 end
 
-Then(/^I should see a linkedin link for a Kleerer with LinkedIn$/) do
-  expect(page).to have_selector("a[href='https://www.linkedin.com/in/jgabardini']")
-end
-
 Then(/^I should get a (\d+) error$/) do |error_code|
   expect(page.status_code).to eq error_code.to_i
 end
