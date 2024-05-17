@@ -5,7 +5,7 @@ Given('I visit a not existing service page') do
   visit '/servicios/not-exist'
 end
 
-Given('a service {string} slug {string} with') do |name, slug|
+Given('a service {string} with slug {string}') do |name, slug|
   service = <<-HEREDOC
   {
     "id": 3,
@@ -24,7 +24,7 @@ Given('a service {string} slug {string} with') do |name, slug|
     "target_title": "...",
     "target": "...",
     "value_proposition": "...",
-    "seo_title": "...",
+    "seo_title": "SEO #{name}",
     "seo_description": "...",
     "services": [
     {

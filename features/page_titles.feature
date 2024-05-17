@@ -11,17 +11,20 @@ Feature: StaticPage Titles
 		And the page title should includes "Agenda de Cursos sobre Métodos Ágiles"
 
 	Scenario: Publicamos Title
-		Given I visit the "publicamos" page
+    Given there is resource "Some resource"
+		And I visit the "publicamos" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Recursos sobre Agile"
 
 	Scenario: Servicios Title
-		Given I visit the "agilidad-organizacional" page
+    Given a service "Chaos control" with slug "chaos-control"
+    And I visit the "servicios/chaos-control" page
 		Then the page title should includes "^Kleer"
-		And the page title should includes "Servicios de Agilidad Organizacional"
+		And the page title should includes "SEO Chaos control"
 
 	Scenario: Somos Title
-		Given I visit the "somos" page
+    Given a kleerer "Pepe Marrone" with LinkedIn "pepe.marrone"
+		And I visit the "somos" page
 		Then the page title should includes "^Kleer"
 		And the page title should includes "Quiénes Somos"
 		And the page title should includes "Somos"
