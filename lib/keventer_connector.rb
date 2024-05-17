@@ -28,10 +28,6 @@ class KeventerConnector
     echo KEVENTER_URL + API_RESOURCES_PATH
   end
 
-  def kleerers_xml_url
-    echo API_ROOT + API_KLEERERS_PATH + '.xml'
-  end
-
   def self.kleerers_json_url
     echo API_ROOT + API_KLEERERS_PATH + '.json'
   end
