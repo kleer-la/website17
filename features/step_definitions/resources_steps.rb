@@ -1,4 +1,4 @@
-require './lib/resources'
+require './lib/models/resources'
 
 Given('there is resource {string}') do |name|
   resources = <<-HEREDOC
