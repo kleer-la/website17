@@ -2,6 +2,7 @@
 Feature: Posters Agiles 2013
 
   Scenario Outline: Posters
+  Given there is resource "Some resource"
 	When I visit the <poster_page> page
 	Then It should redirect to <redirected>
 	Examples:

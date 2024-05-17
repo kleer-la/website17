@@ -44,7 +44,7 @@ Given(/^I visit the english home page$/) do
 end
 
 Given(/^I visit the catalog page$/) do
-  stub_connector('catalog.json')
+  stub_connector
   visit '/catalogo'
 end
 
