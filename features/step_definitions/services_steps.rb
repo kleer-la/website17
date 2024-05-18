@@ -49,4 +49,37 @@ Given('a service {string} with slug {string}') do |name, slug|
   ServiceAreaV3.null_json_api( NullJsonAPI.new(nil, service ) )
 end
 
+Given('a list that includew service area {string} with slug {string}') do |name, slug|
+  service_areas = <<-HEREDOC
+  [
+    {
+    "id": 3,
+    "slug": "#{slug}",
+    "name": "#{name}",
+    "icon": "/app/img/icons/ev-org.svg",
+    "summary": "...",
+    "cta_message": "...",
+    "primary_color": "#4dd3e8",
+    "secondary_color": "#34e3ff",
+    "services": [
+    {
+    "id": 6,
+    "slug": "evolucion-organizacional-agil",
+    "name": "Evolución Organizacional Ágil",
+    "subtitle": "<div>Diseñando organizaciones adaptativas para el logro de los objetivos estratégicos.</div>"
+    },
+    {
+    "id": 7,
+    "slug": "desarrollo-liderazgo-agil",
+    "name": "Desarrollo del Liderazgo Ágil",
+    "subtitle": "<div>Fortalece las habilidades de los líderes para guiar el cambio organizacional.</div>"
+    }
+    ],
+    "testimonies": []
+    }
+  ]
+  HEREDOC
+  ServiceAreaV3.null_json_api( NullJsonAPI.new(nil, service_areas ) )
+end
+
   
