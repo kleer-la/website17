@@ -1,5 +1,4 @@
-require './lib/resources'
-
+require './lib/models/resources'
 
 get '/recursos' do
   @active_tab_publicamos = 'active'

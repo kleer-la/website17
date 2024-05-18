@@ -1,3 +1,5 @@
+require './lib/json_api'
+
 class Trainer
   attr_accessor :id, :name, :bio,
                 :gravatar_email, :twitter_username, :linkedin_url

@@ -3,11 +3,9 @@ Feature:  Páginas de servicios.
   @SEO-validation
   @generic-validations
   Scenario: Página DLA
-#    Given a service slug "desarrollo-liderazgo-agil" with
-    And   I visit the "servicios/desarrollo-liderazgo-agil" page
-    Then I should see "Desarrollo del Liderazgo Ágil"
-#    And I should see "Contenido del Programa de Desarrollo del Liderazgo Ágil"
-
+    Given a service "Chaos control" with slug "chaos-control"
+    And   I visit the "servicios/chaos-control" page
+    Then I should see "Chaos control" 
   Scenario: Servicio no existente
-    Given I visit the "servicios/no-existe" page
+    Given I visit a not existing service page
     Then I should see "Página no encontrada"

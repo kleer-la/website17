@@ -3,19 +3,21 @@ require './lib/trainer'
 
 class Article
   @next_null = false
+  @article_null = nil
+  @articles_null = nil
 
   def self.create_one_null(art, opt = {})
     @next_null = opt[:next_null] == true
     @article_null = Article.new(art)
+    @articles_null = [Article.new(art)]
   end
 
   def self.create_one_keventer(slug)
     if @next_null
-      @next_null = false
+      # @next_null = false      # bc related articles need create_one and create_list 
       return @article_null
     end
-    uri = KeventerConnector.article_url(slug)
-    api_resp = JsonAPI.new(uri)
+    api_resp = JsonAPI.new(KeventerConnector.article_url(slug))
     raise StandardError, "[info] Blog (#{slug}) not found" unless api_resp.ok?
 
     Article.new(api_resp.doc)
@@ -31,8 +33,7 @@ class Article
       @next_null = false
       return @articles_null
     end
-    uri = KeventerConnector.articles_url
-    api_resp = JsonAPI.new(uri)
+    api_resp = JsonAPI.new(KeventerConnector.articles_url)
     raise :NotFound unless api_resp.ok?
 
     Article.load_list(api_resp.doc, only_published: only_published)

@@ -49,7 +49,6 @@ class Event
   def load_basic(hash_event)
     @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
     load_str(%i[city place address registration_link time_zone_name is_sold_out], hash_event)
-    # @capacity = first_content(event_doc, 'capacity').to_i
   end
 
   def load_date(hash_event)
@@ -60,13 +59,6 @@ class Event
   def load_details(hash_event)
     %i[mode banner_text banner_type specific_subtitle specific_conditions
     ].each { |field| send("#{field}=", hash_event[field.to_s]) }
-
-    # @specific_subtitle = first_content(event_doc, 'specific-subtitle')
-    # @specific_conditions = first_content(event_doc, 'specific-conditions')
-    # @is_community_event = first_content(event_doc, 'visibility-type') == 'co'
-    # @mode = first_content(event_doc, 'mode')
-    # @banner_text = first_content(event_doc, 'banner-text')
-    # @banner_type = first_content(event_doc, 'banner-type')
   end
 
   def online?
@@ -87,16 +79,6 @@ class Event
 
     @eb_end_date = hash_event['eb_end_date'] ? Date.parse(hash_event['eb_end_date']) : nil
     @eb_date = hash_event['eb_end_date']
-
-    # @show_pricing = to_boolean(first_content(event_doc, 'show-pricing'))
-    # @list_price = first_content_f(event_doc, 'list-price')
-    # @eb_price = first_content_f(event_doc, 'eb-price')
-    # @eb_end_date = validated_date_parse(event_doc.find_first('eb-end-date')) if @eb_price > 0.0
-    # @couples_eb_price = first_content_f(event_doc, 'couples-eb-price')
-    # @business_eb_price = first_content_f(event_doc, 'business-eb-price')
-    # @business_price = first_content_f(event_doc, 'business-price')
-    # @enterprise_6plus_price = first_content_f(event_doc, 'enterprise-6plus-price')
-    # @enterprise_11plus_price = first_content_f(event_doc, 'enterprise-11plus-price')
   end
 
   def load_country(hash)
@@ -148,7 +130,7 @@ class Event
       events.reduce([]) do |ac, ev|
         event_type_json = ev['event_type']
         event_type_json['coupons'] = ev['coupons']
-        event_type = EventType.new(nil, event_type_json)
+        event_type = EventType.new(event_type_json)
         e =  Event.new(event_type).load_from_json(ev)
         unless e.registration_ended? today
           ac << e
@@ -157,37 +139,6 @@ class Event
         end
       end
     end
-  end
-
-end
-
-
-class EventFacade
-  attr_reader :name, :subtitle, :cover,
-              :certified, :slug, :categories,
-              :date,:finish_date, :country_iso, :country_name, :city
-
-  def initialize()
-    @name = @subtitle= @cover =
-    @certified= @slug= @categories =
-    @date= @country_iso = @country_name = @city = nil
-  end
-
-  def from_event_type(et)
-    @name = et.name
-    @subtitle = et.subtitle
-    @cover = et.cover
-    @certified= (2 if et.is_sa_cert).to_i +
-                (1 if et.is_kleer_cert).to_i
-    @slug = et.slug
-    @categories = et.categories
-    self
-  end
-  def from_event(e)
-    @date = e.date
-    @country_iso = e.country_iso
-    @country_name = e.country_name
-    from_event_type(e.event_type)
   end
 
 end

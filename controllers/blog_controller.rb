@@ -21,7 +21,6 @@ end
 
 get '/blog-preview' do
   @meta_tags.set! noindex: true, nofollow: true
-
   @where = 'Blog-Preview'
 
   blog_list Article.create_list_keventer(false)

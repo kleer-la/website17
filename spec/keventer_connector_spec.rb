@@ -6,14 +6,6 @@ describe KeventerConnector do
     @kconn = KeventerConnector.new
   end
 
-  it 'should be able to return the default kleerers xml path' do
-    expect(@kconn.kleerers_xml_url).to end_with '/api/kleerers.xml'
-  end
-
-  it 'should be able to return the event type xml path' do
-    expect(@kconn.event_type_url(1)).to end_with '/api/event_types/1.xml'
-  end
-
   context 'Connector new scope' do
     it 'get Catalog read a Json array' do
       json_response = '''

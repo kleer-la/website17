@@ -6,7 +6,6 @@ gem 'escape_utils'
 gem 'faraday' # new way to connect to eventer
 gem 'i18n'
 gem 'json'
-gem 'libxml-ruby'
 gem 'money'
 gem 'oauth'
 gem 'puma'

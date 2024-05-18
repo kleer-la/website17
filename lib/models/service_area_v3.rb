@@ -14,13 +14,16 @@ class ServiceAreaV3
     self
   end
 
-  def null_json_api(null_api)
-    @json_api = null_api
+  def self.null_json_api(null_api)
+    @@json_api = null_api
   end
 
   def self.create_list_keventer
-    uri = KeventerConnector.service_areas_url
-    response = JsonAPI.new(uri)
+    if defined? @@json_api
+      response = @@json_api
+    else
+      response = JsonAPI.new(KeventerConnector.service_areas_url)
+    end
 
     raise :NotFound unless response.ok?
 
@@ -36,8 +39,12 @@ class ServiceAreaV3
   end
 
   def self.create_keventer(slug)
-    uri = KeventerConnector.service_area_url(slug)    
-    response = JsonAPI.new(uri)
+    if defined? @@json_api
+      response = @@json_api
+    else
+      response = JsonAPI.new(KeventerConnector.service_area_url(slug))
+    end
+
     return nil unless response.ok?
 
     ServiceAreaV3.new.load_from_json(response.doc)

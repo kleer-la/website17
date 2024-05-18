@@ -1,27 +1,8 @@
-class Resources
-  def initialize
-    @resources = []
-  end
-
-  def all
-    @resources
-  end
-
-  def load(file = File.read('./lib/resources_storage.json'))
-    @resources = JSON.parse(file)['resources']
-    self
-  end
-
-  def copy_lang(orig, dest)
-    @resources.each { |r| r[dest] = r[orig] if r[dest].nil? }
-  end
-end
-
 class Resource
   @next_null = false
 
   def self.create_list_null(data)
-    @next_null = opt[:next_null] == true
+    @next_null = true
     @objects_null = Resource.load_list(data)
   end
 
@@ -30,8 +11,7 @@ class Resource
       @next_null = false
       return @objects_null
     end
-    uri = KeventerConnector.resources_url
-    api_resp = JsonAPI.new(uri)
+    api_resp = JsonAPI.new(KeventerConnector.resources_url)
     raise :NotFound unless api_resp.ok?
 
     Resource.load_list(api_resp.doc)

@@ -24,11 +24,10 @@ describe EventType do
     end
   end
 
-
   context 'Redirect' do
     before(:each) do
       @slug = '4-enterprise-agility'
-      @event_type = EventType.new(nil, {'id' => '4', 'slug' => @slug} )
+      @event_type = EventType.new({'id' => '4', 'slug' => @slug} )
     # "canonical_slug": "418-enterprise-agility-practitioner",
     end
     it 'dont redirect' do

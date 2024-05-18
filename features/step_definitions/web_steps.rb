@@ -44,7 +44,7 @@ Given(/^I visit the english home page$/) do
 end
 
 Given(/^I visit the catalog page$/) do
-  stub_connector('catalog.json')
+  stub_connector
   visit '/catalogo'
 end
 
@@ -144,10 +144,6 @@ Then(/^I should see all countries highlited$/) do
           .find('a')).to have_text 'Todos'
 end
 
-Then(/^I should see a linkedin link for a Kleerer with LinkedIn$/) do
-  expect(page).to have_selector("a[href='https://www.linkedin.com/in/jgabardini']")
-end
-
 Then(/^I should get a (\d+) error$/) do |error_code|
   expect(page.status_code).to eq error_code.to_i
 end
@@ -237,10 +233,6 @@ end
 
 Given(/^I visit the Terms page$/) do
   visit '/es/terms'
-end
-
-Given(/^I go to the Blog page$/) do
-  visit '/es/blog'
 end
 
 Given(/^I navigate to "(.*?)"$/) do |ruta|
