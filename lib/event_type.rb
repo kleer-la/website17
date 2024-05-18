@@ -14,7 +14,7 @@ class EventType
       json_api = JsonAPI.new(KeventerConnector.new.event_type_url(id, :json))
     end
 
-    et = EventType.new(nil, json_api.doc ) unless json_api.doc.nil?
+    et = EventType.new(json_api.doc ) unless json_api.doc.nil?
     et unless et&.id.nil?
   end
 
@@ -28,17 +28,12 @@ class EventType
                 :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script, :platform,
                 :coupons
 
-  def initialize(provider = nil, hash_provider = nil)
-    if provider
-      @provider = provider
-      # load provider.xml_doc
-    else #TODO check if hash_provider is nil
-      @hash_provider = hash_provider
-      @id= nil
-      @testimonies = []
-      @coupons = []
-      load_complete_event(hash_provider)
-    end
+  def initialize(hash_provider = nil)
+    @hash_provider = hash_provider
+    @id= nil
+    @testimonies = []
+    @coupons = []
+    load_complete_event(hash_provider)
   end
 
   def load_complete_event(hash_event) #json provider

@@ -13,7 +13,7 @@ class Catalog
                                      }]
         end
 
-        event_type = EventType.new(nil, loaded_event)
+        event_type = EventType.new(loaded_event)
         event = Event.new(event_type)
 
         unless loaded_event['date'].nil?
