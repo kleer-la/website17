@@ -11,7 +11,7 @@ class EventType
     if defined? @@json_api
       json_api = @@json_api
     else
-      json_api = JsonAPI.new(KeventerConnector.new.event_type_url(id, :json))
+      json_api = JsonAPI.new(KeventerConnector.new.event_type_url(id))
     end
 
     et = EventType.new(json_api.doc ) unless json_api.doc.nil?
