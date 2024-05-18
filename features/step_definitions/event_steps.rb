@@ -16,10 +16,6 @@ When(/^I visit the "(.*?)" event page$/) do |loc|
   visit "/#{loc}/cursos/13-"
 end
 
-Given(/^theres one event with subtitle$/) do
-  stub_connector('one_event_w_subtitle.xml')
-end
-
 When(/^I visit the event page$/) do
   visit '/cursos/13-workshop-de-retrospectivas'
 end

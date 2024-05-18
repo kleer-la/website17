@@ -4,7 +4,6 @@ def get_event_type(event_type_id, find_it: true)
 
 
   allow(connector).to receive(:get_catalog).and_return(catalog)
-  allow(connector).to receive(:event_type_url).with(event_type_id)
   allow(connector).to receive(:get_testimonies ).and_return(nil)
 
   # NullInfraestructure json
