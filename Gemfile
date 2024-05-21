@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 3.2'
+ruby '~> 3.3'
 
 gem 'curb'
 gem 'escape_utils'
@@ -22,9 +22,10 @@ gem 'dotenv'
 gem 'aws-sdk-s3'
 
 group :development do
-  gem 'foreman'
-  gem 'platform-api'
-  gem 'rubocop'
+  gem 'foreman', require: false
+  gem 'platform-api', require: false
+  gem 'rubocop', require: false
+  gem 'rerun', require: false
 end
 
 group :development, :test do
