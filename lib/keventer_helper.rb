@@ -1,10 +1,15 @@
 
 def to_boolean(string)
-  return true if string == true || string =~ (/(true|t|yes|y|1)$/i)
-  return false if string == false || string.nil? || string == '' || string =~ (/(false|f|no|n|0)$/i)
-
-  raise ArgumentError, "invalid value for Boolean: \"#{string}\""
+  case string
+  when true, /\A(true|t|yes|y|1)\z/i
+    true
+  when false, nil, '', /\A(false|f|no|n|0)\z/i
+    false
+  else
+    raise ArgumentError, "invalid value for Boolean: \"#{string}\""
+  end
 end
+
 
 #TODO: move to another page (arch?)
 def get_related_event_types(category, id, quantity)
