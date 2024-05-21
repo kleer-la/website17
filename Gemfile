@@ -21,7 +21,6 @@ gem 'nokogiri'
 gem 'dotenv'
 gem 'aws-sdk-s3'
 
-
 group :development do
   gem 'foreman'
   gem 'platform-api'
@@ -38,3 +37,5 @@ group :development, :test do
   gem 'coveralls_reborn'
   gem 'simplecov-lcov'    # to generate LCOV output for coverall.io
 end
+
+gem "rackup", "~> 2.1"
