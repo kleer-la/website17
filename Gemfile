@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 3.1'
+ruby '~> 3.2'
 
 gem 'curb'
 gem 'escape_utils'
@@ -19,8 +19,7 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'nokogiri'
 gem 'dotenv'
-gem 'aws-sdk', '~> 3'
-
+gem 'aws-sdk-s3'
 
 group :development do
   gem 'foreman'
@@ -38,3 +37,5 @@ group :development, :test do
   gem 'coveralls_reborn'
   gem 'simplecov-lcov'    # to generate LCOV output for coverall.io
 end
+
+gem "rackup", "~> 2.1"

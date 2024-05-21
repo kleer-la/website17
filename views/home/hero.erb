@@ -8,7 +8,7 @@ carousel = t("home.home_hero").map.with_index{|e, index| {
   button_text: e[:button_text],
   active: index == 0
 }}
-
+hx = 'h1'
 %>
 <section id="hero">
   <div id="carouselExampleCaptions" class="carousel hero__carousel slide hero" data-bs-ride="false">
@@ -25,14 +25,12 @@ carousel = t("home.home_hero").map.with_index{|e, index| {
     </div>
     <div class="carousel-inner hero_carousel-inner">
       <%carousel.each do |item|%>
-
         <div class="carousel-item hero_carousel__item <%=' active' if item[:active]%>">
-
           <div class="container carousel__item h-100">
             <div class="row h-100">
               <div class="offset-lg-1 col-lg-6 carousel__text">
                 <div>
-                  <h1><%=item[:subject]%></h1>
+                  <%="<#{hx}>#{item[:subject]}</#{hx}>"%> <% hx = 'h2'%>
                   <p><%=item[:description]%></p>
                 </div>
                 <a href="<%= "/#{session[:locale]}#{item[:url]}" %>" class="btn my-primary-button hero__desktop-button"><%= item[:button_text] %></a>
