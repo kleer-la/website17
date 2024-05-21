@@ -340,21 +340,25 @@ es:
         questions:
           mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
           text: '¿Tienes alguna pregunta?'
-    DLA:
-      title: Programa de Desarrollo del Liderazgo Ágil (DLA)
+    services:
+      title: Explora Nuestros Servicios de Agilidad Organizacional
       text: >-
-        <p>El nivel de agilidad que tu organización puede alcanzar está acotado por el nivel de agilidad colectiva de quienes la lideran.</p>
-        <p>Construye bases sólidas para la evolución organizacional hacia una agilidad efectiva y sostenible potenciando mentalidades y comportamientos ágiles en sus líderes, para lograr mayor impacto en los equipos y sus resultados de negocio.</p>
+        <ul>
+          <li><b>Cambio Organizacional y Liderazgo</b>: Fomenta cambios sostenibles y desarrolla un liderazgo transformador.</li>
+          <li><b>Agilidad para Equipos</b>: Mejora la colaboración, eficiencia y adaptabilidad de los equipos.</li>
+          <li><b>Agile Product Management</b>: Alinea estrategias de producto con los objetivos de negocio.</li>
+          <li><b>Facilitación de Reuniones y Eventos</b>: Maximiza la productividad y colaboración en cada encuentro.</li>
+        </ul>
       img:
         url: https://kleer-images.s3.sa-east-1.amazonaws.com/dla+presentacion+con+soporte+grafico+y+postits
         alt: Personas colaborando en forma distendida
       buttons:
         more:
-          url: /es/servicios/desarrollo-liderazgo-agil
-          text: Conoce más
+          url: /es/servicios
+          text: ¡Me interesa saber más!
         questions:
-          mailto: mailto:info@kleer.la?subject=Programa Desarrollo Liderazgo Agil&amp;body=Cuentanos tu contexto y como podemos ayudarte
-          text: ¿Tienes alguna pregunta?
+          mailto: mailto:info@kleer.la?subject=Agendar una videollamada&amp;body=Cuentanos tu contexto y como podemos ayudarte
+          text: Agendar una videollamada
     home_hero:
       - {
         subject: "Agilidad Organizacional",

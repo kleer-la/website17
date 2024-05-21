@@ -1,11 +1,11 @@
-<% promotion_path = 'home.DLA.' #home_business_agility.'
+<% promotion_path = 'home.services.' #home_business_agility.'
   title = t(promotion_path + 'title')
   text =  t(promotion_path + 'text')
   img_url = t(promotion_path + 'img.url')
   img_alt = t(promotion_path + 'img.alt')
   url =  t(promotion_path + 'buttons.more.url')
   buttom_more_text = t(promotion_path + 'buttons.more.text')
-  buttom_questions_text = t('home.home_business_agility.buttons.questions.text')
+  buttom_questions_text = t(promotion_path + 'buttons.questions.text')
 %>
 <section id="promotion" class="p-3">
   <div class="container">
@@ -26,7 +26,7 @@
     <div class="container">
       <div class="row">
         <%if url!='' %>
-        <div class="col-12 col-lg-2 col-md-3 mb-4">
+        <div class="col-12 col-lg-3 col-md-4 mb-4">
           <a class="btn my-primary-button" href="<%=url%>">
             <%= buttom_more_text%>
           </a>
