@@ -1,2 +1,18 @@
+<div class="course-company-panel">
+  <p class="m-0">
+    <strong>
+      Solicita una videollamada para cocrear tu propuesta
+    </strong>
+  </p>
+  <a href="#newsletter-subscription">
+    <strong>¡Contáctanos!</strong>
+  </a>
+</div>
+
 <%= erb :'services/landing_page/hero' %>
 <%= erb :'services/landing_page/areas' %>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: "¡Obtén tu propuesta personalizada y descubre cómo podemos ayudarte a alcanzar tus objetivos empresariales!",
+          button_text: "¡Solicitar una Propuesta!"
+        } %>
