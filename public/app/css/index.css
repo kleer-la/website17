@@ -1669,6 +1669,11 @@ h3.title-somos {
     z-index: 2; }
     .area-hero .text-container h1 {
       margin-bottom: 40px; }
+    .area-hero .text-container h2 {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 26px;
+      font-family: 'Raleway', sans-serif; }
   .area-hero .area-cards {
     position: absolute;
     bottom: -70px;
