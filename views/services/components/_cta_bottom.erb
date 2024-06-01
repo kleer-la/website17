@@ -1,0 +1,16 @@
+<section id="cta-bottom" class="mt-4 cta-bottom">
+  <div class="container text-center center-block">
+
+    <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_circle.svg" class="desktop_figure newsletter__rustic-circle"/>
+    <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_circle.svg" class="desktop_figure newsletter__green-circle"/>
+    <h6 class="mb-4">
+      <%=
+        text || "Contáctanos para llevar este servicio a tu organización."
+      %>
+    </h6>
+    <div class="btn-center-container">
+      <%= erb :'component/_contact_banner_button', locals: {text_button: buttom_text, style_class: 'btn my-primary-button' }%>
+    </div>
+
+  </div>
+</section>

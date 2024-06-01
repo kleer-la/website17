@@ -1,9 +1,15 @@
+<%= erb :'services/components/_header_cta', locals: {text: 'Solicita una videollamada para cocrear tu propuesta'} %>
 <%= erb :'services/landing_area/_hero', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/services', locals: {
   services: service_area.services,
   area: service_area
 } %>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: "Queremos conocer tus desafíos para ofrecerte una solución personalizada.",
+          button_text: "¡Solicitar una Videollamada!"
+        } %>
 
 <script>
     {

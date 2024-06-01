@@ -1647,7 +1647,7 @@ h3.title-somos {
     max-width: 100% !important; }
 
 .area-hero {
-  margin-top: 100px;
+  margin-top: 160px;
   min-height: 600px;
   height: 70vh;
   display: flex;
@@ -1944,6 +1944,27 @@ h3.title-somos {
         height: 27px; }
       .services-section .service-info-container .plus-button:hover {
         cursor: pointer; }
+
+.cta-header-section {
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  width: 100vw;
+  height: 60px;
+  padding: 0 10% 0 10%;
+  z-index: 7;
+  transition: background-color 0.5s ease; }
+  .cta-header-section .my-primary-button {
+    background-color: transparent; }
+
+.cta-bottom {
+  background-color: #FFE600;
+  padding: 72px 0;
+  position: relative; }
 
 @media screen and (max-width: 990px) {
   #landing-areas-hero {
