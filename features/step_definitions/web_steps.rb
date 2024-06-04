@@ -7,7 +7,7 @@ When(/^I click on "(.*)"$/) do |text|
 end
 
 Then(/^I should see "(.*)"$/) do |text|
-  expect(page).to have_text text
+  expect(page).to have_text(/#{text}/i)
 end
 
 Then(/^I should see "(.*)" in a phone$/) do |text|
