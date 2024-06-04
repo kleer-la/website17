@@ -262,7 +262,7 @@ es:
       ]
     }
     - {
-      text: 'Acerca de',
+      text: 'Sobre Kleer',
       options: [
         {        
           text: 'Somos',
@@ -310,7 +310,7 @@ es:
         ]
     }
     - {
-      title: 'Acerca de',
+      title: 'Sobre Kleer',
       items:
         [
           {
