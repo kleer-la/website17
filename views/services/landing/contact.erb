@@ -12,7 +12,12 @@
     %>
     </h6>
     <div class="btn-center-container">
-      <%= erb :'component/_contact_banner_button', locals: {text: 'Contáctanos para cocrear un Programa de Desarrollo del Liderazgo Ágil adaptado a tu contexto organizacional.', text_button: '¿Conversamos?', style_class: 'btn my-primary-button' }%>
+      <%= erb :'component/_contact_banner_button',
+              locals: {
+                style: "",
+                text: 'Contáctanos para cocrear un Programa de Desarrollo del Liderazgo Ágil adaptado a tu contexto organizacional.',
+                text_button: '¿Conversamos?', style_class: 'btn my-primary-button'
+              }%>
     </div>
 
   </div>
