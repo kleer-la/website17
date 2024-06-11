@@ -3,6 +3,7 @@
 
    event_type = event.event_type
    date = format_date_range(event.date, event.finish_date, session[:locale])
+
    info_time =  t("course_landing.event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
 
    today = Date.today
@@ -22,6 +23,16 @@
         using_coupon = true
       end
    end
+  unless event.specific_conditions.to_s.empty?
+    pop_up_open = '<div class="more-info rounded">'
+    pop_up_close = """
+          <span class=\"tooltip-icon\">+</span>
+          <div class=\"more-info__popup\">
+            #{@markdown_renderer.render(event.specific_conditions)}
+          </div>
+        </div>
+    """
+  end
 %>
 
 <div class="row event-item pb-4 mt-4 ms-2 me-2">
@@ -40,16 +51,18 @@
       </p>
     </div>
     <div class="col-4 col-lg-2 next-edition-item">
-      <p>
+      <%= pop_up_open%>
         <%= date %>
-      </p>
+      <%= pop_up_close%>
       <% if with_name %>
         <strong class="duration-mobile"><%= event.event_type.duration %> horas</strong>
       <% end %>
     </div>
   <% else %>
     <div class="col-4 col-lg-1 next-edition-item">
-      <%= format_date_range(event.date, event.finish_date, session[:locale]) %>
+      <%= pop_up_open%>
+        <%= date%>
+      <%= pop_up_close%>
     </div>
     <div class="col-4 col-lg-1 next-edition-item">
       <p>
@@ -78,17 +91,7 @@
     <% if with_name %>
       <strong class="duration-desktop"><%= event.event_type.duration %>hs</strong>
     <% end %>
-    <%unless event.specific_conditions.to_s.empty? %>
-      <div class="more-info rounded">
-    <%end%>
       <%= info_time %>
-    <%unless event.specific_conditions.to_s.empty? %>  
-        <span class="tooltip-icon">+</span>
-        <div class="more-info__popup">
-          <%= event.specific_conditions%>
-        </div>
-      </div>
-    <%end%>
     <a class="small-label time-zone" href="<%=event.timezone_url%>">
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
     </a>
