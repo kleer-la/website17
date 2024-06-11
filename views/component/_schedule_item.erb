@@ -78,7 +78,17 @@
     <% if with_name %>
       <strong class="duration-desktop"><%= event.event_type.duration %>hs</strong>
     <% end %>
-    <%= info_time %>
+    <%unless event.specific_conditions.to_s.empty? %>
+      <div class="more-info rounded">
+    <%end%>
+      <%= info_time %>
+    <%unless event.specific_conditions.to_s.empty? %>  
+        <span class="tooltip-icon">+</span>
+        <div class="more-info__popup">
+          <%= event.specific_conditions%>
+        </div>
+      </div>
+    <%end%>
     <a class="small-label time-zone" href="<%=event.timezone_url%>">
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
     </a>

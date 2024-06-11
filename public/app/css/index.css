@@ -463,6 +463,34 @@
     position: relative; }
     .event-item .next-edition-item .event-price {
       color: #EF5662; }
+    .event-item .next-edition-item .more-info {
+      position: relative;
+      width: 150px;
+      padding: 4px;
+      padding-right: 10px;
+      background-color: #E8F8FD; }
+      .event-item .next-edition-item .more-info:hover .more-info__popup {
+        display: block !important; }
+    .event-item .next-edition-item .more-info__popup {
+      display: none;
+      padding: 20px;
+      position: absolute;
+      min-width: 250px;
+      width: auto;
+      top: 5px;
+      right: 5px;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 1000;
+      filter: drop-shadow(0px 18px 76px rgba(51, 51, 51, 0.1)); }
+    .event-item .next-edition-item .tooltip-icon {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      color: #000;
+      /* Adjust the color to match your design */
+      cursor: pointer; }
   .event-item div {
     display: flex;
     flex-direction: column;

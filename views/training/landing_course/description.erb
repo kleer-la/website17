@@ -9,6 +9,9 @@
           <% else %>
             <img src="<%= @event_type.side_image%>"/>
           <% end %>
+          <div style="background: #fded96; font-weight: ; padding: 15px; margin-top: 15px; border-radius:12px;"> 
+            <%= @event_type.public_editions[0]&.specific_conditions%>
+          </div>
         </div>
       </div>
 </section>
