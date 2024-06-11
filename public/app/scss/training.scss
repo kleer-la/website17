@@ -111,9 +111,7 @@ $white: #FFFFFF;
 
 }
 
-
 .courses-filters-container{
-
 }
 
 .training-hero_blue-circle{
@@ -137,8 +135,6 @@ $white: #FFFFFF;
   bottom: -5%;
   left: 10%;
 }
-
-
 
 
 #training-courses{
@@ -276,7 +272,7 @@ $white: #FFFFFF;
     }
     .more-info {
       position: relative;
-      width: 150px;
+      width: 105px;
       padding: 4px;
       padding-right: 10px;
       background-color: #E8F8FD; 
@@ -289,10 +285,10 @@ $white: #FFFFFF;
       display: none;
       padding: 20px;
       position: absolute;
-      min-width: 250px;
+      min-width: 300px;
       width: auto;
       top: 5px;
-      right: 5px;
+      left: 5 px;
       background-color: rgba(255, 255, 255, 0.9);
       z-index: 1000;
       filter: drop-shadow(0px 18px 76px rgba(51, 51, 51, 0.1));
