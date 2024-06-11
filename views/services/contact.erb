@@ -7,7 +7,12 @@
       <%= t('business-agility.contact.title') %>
     </p>
     <div class="btn-center-container">
-      <%= erb :'component/_contact_banner_button',  locals: {text_button: t('business-agility.contact.button.text'), style_class: 'btn my-primary-button'}%>
+      <%= erb :'component/_contact_banner_button',
+              locals: {
+                style: "",
+                text_button: t('business-agility.contact.button.text'),
+                style_class: 'btn my-primary-button'
+              }%>
     </div>
 
   </div>

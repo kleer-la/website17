@@ -5,7 +5,12 @@
     </strong>
   </p>
   <div class="m-3">
-    <%= erb :'component/_contact_banner_button', locals: {text_button: "¿Conversamos?", style_class: 'btn my-primary-button' }%>
+    <%= erb :'component/_contact_banner_button',
+            locals: {
+              style: "",
+              text_button: "¿Conversamos?",
+              style_class: 'btn my-primary-button'
+            }%>
   </div>
 </div>
 
