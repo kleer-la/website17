@@ -12,7 +12,7 @@
           <% @event_type.public_editions.first(2).each do |edition| %>
             <% unless edition&.banner_text.to_s == '' %>
               <div style="background: #fded96; font-weight: ; padding: 15px; margin-top: 15px; border-radius:12px;"> 
-                <%= @markdown_renderer.render(@event_type.public_editions[0]&.banner_text)%>
+                <%= @markdown_renderer.render(edition&.banner_text)%>
               </div>
             <% end %>
           <% end %>
