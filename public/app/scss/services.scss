@@ -874,6 +874,18 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:520px) {
+  .cta-header-section{
+    padding: 0 20px !important;
+
+    p{
+      font-size: 12px !important;
+      line-height: 16px !important;
+    }
+
+    button{
+      font-size: 16px !important;
+    }
+  }
 
   .hero-img{
     margin: -30% 0;

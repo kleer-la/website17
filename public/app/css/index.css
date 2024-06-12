@@ -2083,6 +2083,14 @@ h3.title-somos {
       .services-section .service-info-container .target img {
         display: none; } }
 @media screen and (max-width: 520px) {
+  .cta-header-section {
+    padding: 0 20px !important; }
+    .cta-header-section p {
+      font-size: 12px !important;
+      line-height: 16px !important; }
+    .cta-header-section button {
+      font-size: 16px !important; }
+
   .hero-img {
     margin: -30% 0;
     scale: 0.7; }
