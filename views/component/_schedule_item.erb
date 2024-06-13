@@ -26,7 +26,7 @@
   unless event.specific_conditions.to_s.empty?
     pop_up_open = '<div class="more-info rounded">'
     pop_up_close = """
-          <span class=\"tooltip-icon\">+</span>
+          <span class=\"tooltip-icon\"></span>
           <div class=\"more-info__popup\">
             #{@markdown_renderer.render(event.specific_conditions)}
           </div>
