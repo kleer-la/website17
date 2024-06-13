@@ -23,8 +23,7 @@ CSS/SASS
 Para trabajar los estilos:
 ```cli
 gem install sass
-cd public/app
-sass --watch scss/index.scss:css/index.css
+./sass.sh
 ```
 y forzar refresco Crtl+Shft+R
 
