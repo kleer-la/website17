@@ -237,11 +237,6 @@ es:
       ]
     }
     - {
-      text: 'Clientes',
-      url: '/clientes',
-      inside: true
-    }
-    - {
       text: 'Publicamos',
       options: [
         {
@@ -267,9 +262,19 @@ es:
       ]
     }
     - {
-      text: 'Somos',
-      url: '/somos',
-      inside: true
+      text: 'Sobre Kleer',
+      options: [
+        {        
+          text: 'Somos',
+          url: '/somos',
+          inside: true
+        },
+        {
+          text: 'Clientes',
+          url: '/clientes',
+          inside: true
+        }
+      ]
     }
   footer_menu:
     - {
@@ -277,16 +282,12 @@ es:
       items:
         [
           {
-            title: 'Agilidad organizacional',
-            url: '/agilidad-organizacional'
+            title: 'Servicios',
+            url: '/servicios'
           },
           {
             title: 'Cursos',
             url: '/catalogo'
-          },
-          {
-            title: 'Clientes',
-            url: '/clientes'
           }
         ]
     }
@@ -309,7 +310,7 @@ es:
         ]
     }
     - {
-      title: 'Acerca de',
+      title: 'Sobre Kleer',
       items:
         [
           {
@@ -317,8 +318,8 @@ es:
             url: '/somos'
           },
           {
-            title: 'Prensa',
-            url: '/prensa'
+            title: 'Clientes',
+            url: '/clientes'
           }
         ]
     }

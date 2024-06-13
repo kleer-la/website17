@@ -52,8 +52,12 @@ class Event
   end
 
   def load_date(hash_event)
+    if hash_event['finish_date'].to_s.empty? 
+      hash_event['finish_date'] = hash_event['date'] 
+    end
     %i[date finish_date   ].each { |field| send("#{field}=", Date.parse(    hash_event[field.to_s])) }
     %i[start_time end_time].each { |field| send("#{field}=", DateTime.parse(hash_event[field.to_s])) }
+    #unless hash_event[field].to_s.empty? 
   end
 
   def load_details(hash_event)

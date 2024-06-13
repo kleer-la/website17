@@ -111,9 +111,7 @@ $white: #FFFFFF;
 
 }
 
-
 .courses-filters-container{
-
 }
 
 .training-hero_blue-circle{
@@ -137,8 +135,6 @@ $white: #FFFFFF;
   bottom: -5%;
   left: 10%;
 }
-
-
 
 
 #training-courses{
@@ -218,7 +214,6 @@ $white: #FFFFFF;
   }
 }
 
-
 .courses-filters__tag{
   border-radius: 39px;
   font-family: 'Raleway';
@@ -273,6 +268,41 @@ $white: #FFFFFF;
 
     .event-price{
       color: $primary-red;
+    }
+    .more-info {
+      position: relative;
+      width: 105px;
+      padding: 4px;
+      padding-right: 10px;
+      background-color: #E8F8FD; 
+
+      &:hover .more-info__popup {
+        display: block !important; }
+    }
+    
+    .more-info__popup {
+      display: none;
+      padding: 20px;
+      position: absolute;
+      min-width: 300px;
+      width: auto;
+      top: 5px;
+      left: 5px;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 1000;
+      filter: drop-shadow(0px 18px 76px rgba(51, 51, 51, 0.1));
+    }
+    .tooltip-icon {
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #666666;
+      cursor: pointer;
     }
   }
 

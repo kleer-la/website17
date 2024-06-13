@@ -90,14 +90,14 @@
 
 .promotion__title {
   font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 28px;
   line-height: 32px; }
 
 .promotion__text {
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px; }
 
 .promotion_img-container {
@@ -463,6 +463,36 @@
     position: relative; }
     .event-item .next-edition-item .event-price {
       color: #EF5662; }
+    .event-item .next-edition-item .more-info {
+      position: relative;
+      width: 105px;
+      padding: 4px;
+      padding-right: 10px;
+      background-color: #E8F8FD; }
+      .event-item .next-edition-item .more-info:hover .more-info__popup {
+        display: block !important; }
+    .event-item .next-edition-item .more-info__popup {
+      display: none;
+      padding: 20px;
+      position: absolute;
+      min-width: 300px;
+      width: auto;
+      top: 5px;
+      left: 5px;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 1000;
+      filter: drop-shadow(0px 18px 76px rgba(51, 51, 51, 0.1)); }
+    .event-item .next-edition-item .tooltip-icon {
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid #666666;
+      cursor: pointer; }
   .event-item div {
     display: flex;
     flex-direction: column;
@@ -1471,7 +1501,7 @@ h3.title-somos {
     right: 0; }
 
 #landing-areas-hero {
-  margin-top: 100px;
+  margin-top: 160px;
   height: 70vh !important;
   background: linear-gradient(180deg, #D4FFF7 0%, #FFFFFF 100%); }
   #landing-areas-hero .hero-container {
@@ -1647,7 +1677,7 @@ h3.title-somos {
     max-width: 100% !important; }
 
 .area-hero {
-  margin-top: 100px;
+  margin-top: 160px;
   min-height: 600px;
   height: 70vh;
   display: flex;
@@ -1669,6 +1699,11 @@ h3.title-somos {
     z-index: 2; }
     .area-hero .text-container h1 {
       margin-bottom: 40px; }
+    .area-hero .text-container h2 {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 26px;
+      font-family: 'Raleway', sans-serif; }
   .area-hero .area-cards {
     position: absolute;
     bottom: -70px;
@@ -1940,6 +1975,27 @@ h3.title-somos {
       .services-section .service-info-container .plus-button:hover {
         cursor: pointer; }
 
+.cta-header-section {
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  width: 100vw;
+  height: 60px;
+  padding: 0 10% 0 10%;
+  z-index: 7;
+  transition: background-color 0.5s ease; }
+  .cta-header-section .my-primary-button {
+    background-color: transparent; }
+
+.cta-bottom {
+  background-color: #FFE600;
+  padding: 72px 0;
+  position: relative; }
+
 @media screen and (max-width: 990px) {
   #landing-areas-hero {
     height: auto !important; }
@@ -2029,6 +2085,14 @@ h3.title-somos {
       .services-section .service-info-container .target img {
         display: none; } }
 @media screen and (max-width: 520px) {
+  .cta-header-section {
+    padding: 0 20px !important; }
+    .cta-header-section p {
+      font-size: 12px !important;
+      line-height: 16px !important; }
+    .cta-header-section button {
+      font-size: 16px !important; }
+
   .hero-img {
     margin: -30% 0;
     scale: 0.7; }
@@ -2938,6 +3002,12 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0; }
+  .footer__body a:hover {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fafafa !important;
+    text-decoration: none; }
 
 .footer-bottom {
   background: #333333;

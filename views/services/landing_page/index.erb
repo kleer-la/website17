@@ -1,2 +1,23 @@
+<div class="course-company-panel">
+  <p class="m-0">
+    <strong>
+      Solicita una videollamada para cocrear tu propuesta
+    </strong>
+  </p>
+  <div class="m-3">
+    <%= erb :'component/_contact_banner_button',
+            locals: {
+              style: "",
+              text_button: "¿Conversamos?",
+              style_class: 'btn my-primary-button'
+            }%>
+  </div>
+</div>
+
 <%= erb :'services/landing_page/hero' %>
 <%= erb :'services/landing_page/areas' %>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: "Queremos conocer tus desafíos para ofrecerte una solución personalizada.",
+          button_text: "¡Solicitar una Videollamada!"
+        } %>

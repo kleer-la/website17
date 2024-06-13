@@ -1,0 +1,30 @@
+<div id="cta-header-section" class="cta-header-section">
+  <p class="m-0">
+    <strong>
+      <%= text %>
+    </strong>
+  </p>
+  <div class="m-3">
+    <%= erb :'component/_contact_banner_button',
+            locals: {
+              style: "background-color: #{@primary_color}; padding: 0px 10px; border-radius: 30px;",
+              text_button: "¿Conversamos?",
+              style_class: 'btn my-primary-button',
+            }%>
+  </div>
+</div>
+
+
+<script>
+  header = document.getElementById('cta-header-section')
+  window.addEventListener('scroll', () => {
+      const scrollThresholdVh = 75
+      const scrollThresholdPx = window.innerHeight * (scrollThresholdVh / 100)
+
+      if (window.scrollY > scrollThresholdPx) {
+          header.style.backgroundColor = "<%= @primary_color %>"
+      } else {
+          header.style.backgroundColor = "white"
+      }
+  })
+</script>

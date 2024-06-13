@@ -1,9 +1,15 @@
+<%= erb :'services/components/_header_cta', locals: {text: 'Solicita una videollamada para cocrear tu propuesta'} %>
 <%= erb :'services/landing_area/_hero', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/services', locals: {
   services: service_area.services,
   area: service_area
 } %>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: "Nuestro equipo de profesionales puede ayudar con los desafíos de tu empresa.",
+          button_text: "¿Agendamos una reunión?"
+        } %>
 
 <script>
     {
@@ -18,7 +24,7 @@
             if (service_section) {
                 dinamicContent.classList.toggle('collapse')
                 dinamicContent.classList.add('collapse');
-                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='minus' />"
 
                 const yOffset = -140
                 const y = service_section.getBoundingClientRect().top + window.pageYOffset + yOffset

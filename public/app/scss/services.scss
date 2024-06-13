@@ -17,7 +17,7 @@ $black: #333333;
 $white: #FFFFFF;
 
 #landing-areas-hero{
-  margin-top: 100px;
+  margin-top: 160px;
   height: 70vh !important;
   background: linear-gradient(180deg, #D4FFF7 0%, #FFFFFF 100%);
 
@@ -272,7 +272,7 @@ $white: #FFFFFF;
 }
 
 .area-hero{
-  margin-top: 100px;
+  margin-top: 160px;
   min-height: 600px;
   height: 70vh;
   display: flex;
@@ -296,6 +296,13 @@ $white: #FFFFFF;
 
     h1{
       margin-bottom: 40px;
+    }
+
+    h2{
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 26px;
+      font-family: 'Raleway', sans-serif;
     }
   }
 
@@ -674,6 +681,36 @@ $white: #FFFFFF;
   }
 }
 
+.cta-header-section{
+  position: fixed;
+  top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  width: 100vw;
+  height: 60px;
+  padding: 0 10% 0 10%;
+  //color: $white;
+  z-index: 7;
+  transition: background-color 0.5s ease;
+  a{
+    //color: $white !important;
+  }
+
+  .my-primary-button{
+    background-color: transparent;
+  }
+
+}
+
+.cta-bottom{
+  background-color: $primary-yellow;
+  padding: 72px 0;
+  position: relative;
+}
+
 
 
 @media screen and (max-width:990px) {
@@ -837,6 +874,18 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:520px) {
+  .cta-header-section{
+    padding: 0 20px !important;
+
+    p{
+      font-size: 12px !important;
+      line-height: 16px !important;
+    }
+
+    button{
+      font-size: 16px !important;
+    }
+  }
 
   .hero-img{
     margin: -30% 0;

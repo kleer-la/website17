@@ -1,22 +1,19 @@
-<div class="container text-center center-block">
-  <%= @service.cta %>
-</div>
 <section id="newsletter-subscription" class="mt-4">
   <div class="container text-center center-block">
 
     <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_circle.svg" class="desktop_figure newsletter__rustic-circle"/>
     <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_circle.svg" class="desktop_figure newsletter__green-circle"/>
     <h6 class="mb-4">
-    <%=
-      @service.contact_text || "Contáctanos para llevar este servicio a tu organización."
-    %>
+      <%=
+        contact_text || "Contáctanos para llevar este servicio a tu organización."
+      %>
     </h6>
     <div class="btn-center-container">
       <%= erb :'component/_contact_banner_button',
               locals: {
                 style: "",
                 text: 'Contáctanos para cocrear un Programa de Desarrollo del Liderazgo Ágil adaptado a tu contexto organizacional.',
-                text_button: '¿Conversamos?', style_class: 'btn my-primary-button'
+                text_button: button_text, style_class: 'btn my-primary-button'
               }%>
     </div>
 

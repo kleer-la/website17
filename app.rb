@@ -134,13 +134,16 @@ PERMANENT_REDIRECT = {
   'facilitacion/dinamicas-eventos' => 'es/servicios/facilitacion',
   'preguntas-frecuentes/certified-scrum-master' => 'es/cursos/7-certified-scrum-master-csm', #  #faq / qna
   'preguntas-frecuentes/certified-scrum-developer' => 'es/cursos/342-certified-scrum-developer-csd', #  #faq / qna
-  'acompanamos' => 'es/agilidad-organizacional',
-  'coaching' => 'es/agilidad-organizacional'
+  'acompanamos' => 'es/servicios',
+  'coaching' => 'es/servicios'
 }.freeze
 
 PERMANENT_REDIRECT.each do |uris|
   get '/'+uris[0] do
      redirect '/'+uris[1], 301
+  end
+  get '/'+uris[0]+'/' do
+    redirect '/'+uris[1], 301
   end
 end
 
