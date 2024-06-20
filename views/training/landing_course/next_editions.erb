@@ -1,14 +1,13 @@
 <% unless @event_type.public_editions == [] %>
     <section id="course-next-editions" class="container mb-5">
-
         <h2 class="mb-5 text-center common-subtitle">Próximas ediciones</h2>
         <div class="row mb-4 schedule-titles">
-          <h6 class="col-lg-1">Fecha</h6>
-          <h6 class="col-lg-1">Duración</h6>
-          <h6 class="col-lg-2">Modalidad</h6>
-          <h6 class="col-lg-2">Horario</h6>
-          <h6 class="col-lg-2">Valor</h6>
-          <h6 class="col-lg-2">Venta anticipada</h6>
+          <h6 class="col-lg-1 item">Fecha</h6>
+          <h6 class="col-lg-1 item">Duración</h6>
+          <h6 class="col-lg-2 item">Modalidad</h6>
+          <h6 class="col-lg-2 item">Horario</h6>
+          <h6 class="col-lg-2 item">Valor</h6>
+          <h6 class="col-lg-2 item">Venta anticipada</h6>
         </div>
 
         <% @event_type.public_editions.each do |event| %>
