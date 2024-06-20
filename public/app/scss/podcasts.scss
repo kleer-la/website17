@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.hero {
+  .carousel {
+    display: flex;
+    overflow: auto;
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 300px;
+      margin: 0 1rem;
+
+      img {
+        width: 100%;
+      }
+
+      .carousel-item-content {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 1rem;
+
+        h2 {
+          margin: 0;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        a {
+          color: #ff0;
+          text-decoration: none;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.recent-episodes {
+  padding: 2rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  .episodes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .episode-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 1rem;
+      padding: 1rem;
+      width: 300px;
+
+      img {
+        width: 100%;
+      }
+
+      h3 {
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

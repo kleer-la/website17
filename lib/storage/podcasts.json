@@ -1,0 +1,41 @@
+{
+  "podcasts": [
+    {
+      "title": "La revolución agile",
+      "description": "Una visión crítica de la agilidad. Junto a personas expertas de la industria y otras disciplinas, exploraremos nuevas perspectivas y enfoques disruptivos.",
+      "youtube_url": "https://www.youtube.com/playlist?list=PLrBvQ0ePGhkHZ-ZIVj40Yjf0yucBcFB7w",
+      "thumbnail_url": "https://i.ytimg.com/pl_c/PLrBvQ0ePGhkHZ-ZIVj40Yjf0yucBcFB7w/studio_square_thumbnail.jpg?sqp=CMXV0rMG-oaymwEICPABEPABSFqi85f_AwYI3KzjowY=&rs=AOn4CLB77KC2C2gUDvkahspyPTqfCWgGpw",
+      "episodes": [
+        {
+          "title": "Ep28 Agilidad en Marketing ft Franklin Chacin",
+          "description": "Exploramos el impacto transformador en la industria de la salud. Camilo Velásquez entrevista a Franklin Chacin de Roche Latinoamérica, líder visionario en marketing con más de 20 años de experiencia. Descubre cómo la agilidad está remodelando la forma en que se crean y entregan soluciones en este sector crucial para la humanidad.",
+          "youtube_url": "https://youtu.be/J-9LGOi1Tdw",
+          "thumbnail_url": "https://i9.ytimg.com/vi_webp/J-9LGOi1Tdw/mqdefault.webp?v=666b6705&sqp=CJzr0rMG&rs=AOn4CLCh4qoC-8KRWlyYN3gITnK1TBd5AQ",
+          "published_at": "2024-06-18"
+        },
+        {
+          "title": "Ep27 Reinventando una industria tradicional ft Luisa Restrepo",
+          "description": " sumérgete en una fascinante historia de transformación organizacional junto a nuestro anfitrión, Camilo Velásquez, y nuestra invitada especial, Luisa Restrepo, directora de Innovación y líder de Business Agility en ARGOS, la empresa líder en cementos en Colombia.",
+          "youtube_url": "https://youtu.be/yJVC_hGTrd4",
+          "thumbnail_url": "https://i9.ytimg.com/vi_webp/yJVC_hGTrd4/mqdefault.webp?v=6658f0a2&sqp=CMjt0rMG&rs=AOn4CLCS3asg5i-o_RhiMzW8jj5N6KH0Bw",
+          "published_at": "2024-06-04"
+        }
+      ]
+    },
+    {
+      "title": "Descubriendo Kleer",
+      "description": "...",
+      "youtube_url": "https://www.youtube.com/playlist?list=PLrBvQ0ePGhkEFdBXuQllMwvgFMLsyxkj-",
+      "thumbnail_url": "https://i.ytimg.com/pl_c/PLrBvQ0ePGhkEFdBXuQllMwvgFMLsyxkj-/studio_square_thumbnail.jpg?sqp=COy00rMG-oaymwEICPABEPABSFqi85f_AwYIm7e-sgY=&rs=AOn4CLB38y_X1Pi-CDZmujPvGUAKPtPovg",
+      "episodes": [
+        {
+          "title": "Episode 2",
+          "description": "Scrum Basics.",
+          "youtube_url": "https://www.youtube.com/watch?v=def456",
+          "thumbnail_url": "https://example.com/episode2.jpg",
+          "published_at": "2024-01-15T00:00:00Z"
+        }
+      ]
+    }
+  ]
+}

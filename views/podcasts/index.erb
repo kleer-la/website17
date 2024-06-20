@@ -1,0 +1,16 @@
+<%=erb :'podcasts/hero' %>
+<section class="recent-episodes">
+  <h2>Episodios Recientes</h2>
+  <div class="episodes-grid">
+    <% @recent_episodes.each do |episode| %>
+        <div class="episode-card">
+          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>">
+          <h3><%= episode['title'] %></h3>
+          <p><strong>Podcast:</strong> <%= episode['podcast_title'] %></p>
+          <p><%= episode['description'] %></p>
+          <a href="<%= episode['youtube_url'] %>" target="_blank">Watch on YouTube</a>
+          <a href="<%= episode['spotify_url'] %>" target="_blank">Listen on Spotify</a>
+        </div>
+    <% end %>
+  </div>
+</section>
