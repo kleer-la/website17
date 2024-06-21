@@ -10,9 +10,9 @@ carousel = @carousel.map.with_index{|e, index| {
   active: index == 0
 }}
 %>
-<section id="hero">
-  <h1>Podcasts</h1>
-  <div id="carouselPodcasts" class="carousel hero__carousel slide hero" data-bs-ride="false">
+<section id="hero" class=>
+  <div id="carouselPodcasts" class="podcasts-hero carousel" data-bs-ride="false">
+  <div class="row"><h1>Podcasts</h1></div>
     <div class="carousel-indicators">
       <% carousel.each_with_index do |item, index| %>
         <button
@@ -24,16 +24,14 @@ carousel = @carousel.map.with_index{|e, index| {
         </button>
       <% end %>
     </div>
-    <div class="carousel-inner hero_carousel-inner">
+    <div class="carousel-inner">
       <%carousel.each do |item|%>
-        <div class="carousel-item hero_carousel__item <%=' active' if item[:active]%>">
-          <div class="container carousel__item h-100">
-            <div class="row h-100">
+        <div class="carousel-item <%=' active' if item[:active]%>">
+          <div class="container">
+            <div class="row">
               <div class="offset-lg-1 col-lg-6 carousel__text">
-                <div>
-                  <h2><%=item[:subject]%></h2>
-                  <p><%=item[:description]%></p>
-                </div>
+                <h2><%=item[:subject]%></h2>
+                <p><%=item[:description]%></p>
                 <a href="<%= item[:url] %>" class="btn my-primary-button hero__desktop-button"><%= item[:button_text] %></a>
               </div>
               <div class="col-lg-5 hero__img-container">

@@ -1,4 +1,6 @@
 <%=erb :'podcasts/hero' %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <section class="recent-episodes">
   <h2>Episodios Recientes</h2>
   <div class="episodes-grid">
@@ -8,8 +10,8 @@
           <h3><%= episode['title'] %></h3>
           <p><strong>Podcast:</strong> <%= episode['podcast_title'] %></p>
           <p><%= episode['description'] %></p>
-          <a href="<%= episode['youtube_url'] %>" target="_blank">Watch on YouTube</a>
-          <a href="<%= episode['spotify_url'] %>" target="_blank">Listen on Spotify</a>
+          <a href="<%= episode['youtube_url'] %>" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="<%= episode['spotify_url'] %>" target="_blank"><i class="fab fa-spotify"></i></a>
         </div>
     <% end %>
   </div>

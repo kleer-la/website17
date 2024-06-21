@@ -2784,36 +2784,24 @@ input[type="checkbox"]:focus {
 .little-icon {
   height: 20px; }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9; }
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center; }
-
-.hero .carousel {
+.podcasts-hero .carousel {
   display: flex;
   overflow: auto; }
-  .hero .carousel .carousel-item {
+  .podcasts-hero .carousel .carousel-item {
     flex: 0 0 auto;
     width: 300px;
     margin: 0 1rem; }
-    .hero .carousel .carousel-item img {
+    .podcasts-hero .carousel .carousel-item img {
       width: 100%; }
-    .hero .carousel .carousel-item .carousel-item-content {
+    .podcasts-hero .carousel .carousel-item .carousel-item-content {
       background-color: rgba(0, 0, 0, 0.5);
       color: #fff;
       padding: 1rem; }
-      .hero .carousel .carousel-item .carousel-item-content h2 {
+      .podcasts-hero .carousel .carousel-item .carousel-item-content h2 {
         margin: 0; }
-      .hero .carousel .carousel-item .carousel-item-content p {
+      .podcasts-hero .carousel .carousel-item .carousel-item-content p {
         font-size: 0.9rem; }
-      .hero .carousel .carousel-item .carousel-item-content a {
+      .podcasts-hero .carousel .carousel-item .carousel-item-content a {
         color: #ff0;
         text-decoration: none;
         margin-right: 0.5rem; }
@@ -2821,7 +2809,10 @@ header {
 .recent-episodes {
   padding: 2rem; }
   .recent-episodes h2 {
-    text-align: center; }
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px; }
   .recent-episodes .episodes-grid {
     display: flex;
     flex-wrap: wrap;
@@ -2836,13 +2827,20 @@ header {
       .recent-episodes .episodes-grid .episode-card img {
         width: 100%; }
       .recent-episodes .episodes-grid .episode-card h3 {
-        margin-top: 0; }
+        color: #333333;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 8px; }
       .recent-episodes .episodes-grid .episode-card p {
         font-size: 0.9rem; }
       .recent-episodes .episodes-grid .episode-card a {
         color: #007bff;
         text-decoration: none;
         margin-right: 0.5rem; }
+      .recent-episodes .episodes-grid .episode-card i {
+        font-size: 1.5em;
+        margin-left: 0.5rem; }
 
 html {
   font-display: swap; }

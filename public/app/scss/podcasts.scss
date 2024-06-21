@@ -1,18 +1,18 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
+// body {
+//   font-family: Arial, sans-serif;
+//   margin: 0;
+//   padding: 0;
+//   background-color: #f9f9f9;
+// }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
+// header {
+//   background-color: #333;
+//   color: #fff;
+//   padding: 1rem;
+//   text-align: center;
+// }
 
-.hero {
+.podcasts-hero {
   .carousel {
     display: flex;
     overflow: auto;
@@ -53,9 +53,11 @@ header {
   padding: 2rem;
 
   h2 {
-    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px;
   }
-
   .episodes-grid {
     display: flex;
     flex-wrap: wrap;
@@ -74,7 +76,11 @@ header {
       }
 
       h3 {
-        margin-top: 0;
+        color: #333333;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 8px;
       }
 
       p {
@@ -85,6 +91,10 @@ header {
         color: #007bff;
         text-decoration: none;
         margin-right: 0.5rem;
+      }
+      i {
+        font-size: 1.5em;
+        margin-left: 0.5rem;
       }
     }
   }
