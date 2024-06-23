@@ -4,6 +4,7 @@
       "title": "La revolución agil",
       "description": "Una visión crítica de la agilidad. Junto a personas expertas de la industria y otras disciplinas, exploraremos nuevas perspectivas y enfoques disruptivos.",
       "youtube_url": "https://www.youtube.com/playlist?list=PLrBvQ0ePGhkHZ-ZIVj40Yjf0yucBcFB7w",
+      "spotify_url": "https://open.spotify.com/show/0rsSg695eaxbsgYfeCDMks?si=dce6c5326b034400",
       "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/ra.jpg",
       "episodes": [
         {
@@ -15,23 +16,41 @@
         },
         {
           "title": "Ep27 Reinventando una industria tradicional ft Luisa Restrepo",
-          "description": " sumérgete en una fascinante historia de transformación organizacional junto a nuestro anfitrión, Camilo Velásquez, y nuestra invitada especial, Luisa Restrepo, directora de Innovación y líder de Business Agility en ARGOS, la empresa líder en cementos en Colombia.",
+          "description": "Sumérgete en una fascinante historia de transformación organizacional junto a nuestro anfitrión, Camilo Velásquez, y nuestra invitada especial, Luisa Restrepo, directora de Innovación y líder de Business Agility en ARGOS, la empresa líder en cementos en Colombia.",
           "youtube_url": "https://youtu.be/yJVC_hGTrd4",
+          "spotify_url": "https://open.spotify.com/episode/4mMQEhhTQkf4Fd0nHlfx1o?si=c6bcb0b0fc214fd3",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/ra_27.webp",
           "published_at": "2024-06-04"
         }
       ]
     },
     {
+      "title": "Kleer en vivo",
+      "description": "Una experiencia interactiva, repleta de aprendizajes y oportunidades de conexión, donde compartimos EN VIVO conocimientos, tendencias y experiencias.",
+      "youtube_url": "https://youtube.com/playlist?list=PLrBvQ0ePGhkGAAskwfE3IUZdB6mOFgmoe&si=0M3BldlCLYRarLav",
+      "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv.png",
+      "episodes": [
+        {
+          "title": "Desarrollar el liderazgo para prosperar en entornos cambiantes con Diego Sanchez",
+          "description": "Leonardo Agudelo y Diego Sanchez Rivera conversan sobre la importancia de desarrollar el liderazgo en las organizaciones que están buscando ser más adaptativas y prosperar en entornos cambiantes.",
+          "youtube_url": "https://youtu.be/20_61cOi1UE",
+          "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv_dsr.jpg",
+          "published_at": "2024-06-05"
+        }
+      ]
+    },
+    {
       "title": "Descubriendo Kleer",
-      "description": "...",
+      "description": "Soy Maro Sola, acompañame en mis conversaciones para llegar al corazón de Kleer descubriendo con cada kleerer sus recorridos, experiencia, éxitos y fracasos.",
       "youtube_url": "https://www.youtube.com/playlist?list=PLrBvQ0ePGhkEFdBXuQllMwvgFMLsyxkj-",
+      "spotify_url": "https://open.spotify.com/show/1t8JvTZ0PiCyzoT4jRtGKC?si=bc64094483f84e00",
       "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/dk.jpg",
       "episodes": [
         {
           "title": "Ep 13 Damián Buonamico",
           "description": "Maro Sola tiene el placer de entrevistar a Damián Buonamico. Juntos, explorarán el rol del Agile Coach, la consultoría ágil y su camino hacia Kleer. Prepárense para sumergirse en un emocionante y nostálgico recorrido por el pasado, destacando los cambios y experiencias que dan forma a nuestras vidas.",
           "youtube_url": "https://youtu.be/20_61cOi1UE",
+          "spotify_url": "https://open.spotify.com/episode/5WEMXbwQgx0iO9uxnWIOtx?si=dedae5786f0e4a2e",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/dk_13.jpg",
           "published_at": "2023-12-07"
         }

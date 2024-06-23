@@ -2,7 +2,8 @@
 carousel = @carousel.map.with_index{|e, index| {
   subject: e.title,
   description: e.description,
-  url: e.youtube_url,
+  youtube_url: e.youtube_url,
+  spotify_url: e.spotify_url,
   img: e.thumbnail_url,
   alt: e.title,
   button_text: "Ver en YouTube",
@@ -12,7 +13,6 @@ carousel = @carousel.map.with_index{|e, index| {
 %>
 <section id="hero" class=>
   <div id="carouselPodcasts" class="podcasts-hero carousel" data-bs-ride="false">
-  <div class="row"><h1>Podcasts</h1></div>
     <div class="carousel-indicators">
       <% carousel.each_with_index do |item, index| %>
         <button
@@ -25,14 +25,20 @@ carousel = @carousel.map.with_index{|e, index| {
       <% end %>
     </div>
     <div class="carousel-inner">
+    <div class="title">
+        <h1>Podcast</h1>
+    </div>
       <%carousel.each do |item|%>
-        <div class="carousel-item <%=' active' if item[:active]%>">
+        <div class="carousel-item <%='active' if item[:active]%>">
           <div class="container">
             <div class="row">
               <div class="offset-lg-1 col-lg-6 carousel__text">
                 <h2><%=item[:subject]%></h2>
                 <p><%=item[:description]%></p>
-                <a href="<%= item[:url] %>" class="btn my-primary-button hero__desktop-button"><%= item[:button_text] %></a>
+                <div class="button-container">
+                <a href="<%= item[:youtube_url] %>" class="primary-button"><%= item[:button_text] %></a>
+                <a href="<%= item[:spotify_url] %>" class="primary-button"><%= item[:button2_text] %></a>
+                </div>
               </div>
               <div class="col-lg-5 hero__img-container">
                 <picture>
@@ -44,9 +50,7 @@ carousel = @carousel.map.with_index{|e, index| {
                   >
                 </picture>
               </div>
-              <a href="<%= item[:url] %>" class="btn my-primary-button hero__mobile-button"><%= item[:button_text] %></a>
             </div>
-
           </div>
           <img
             src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"

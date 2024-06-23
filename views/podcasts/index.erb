@@ -6,12 +6,20 @@
   <div class="episodes-grid">
     <% @recent_episodes.each do |episode| %>
         <div class="episode-card">
-          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>">
+          <div class="image-container">
+          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>" loading="lazy">
+          <div class="podcast-label me-3">
+            <%= episode['podcast_title']%>
+          </div>
+          </div>
           <h3><%= episode['title'] %></h3>
-          <p><strong>Podcast:</strong> <%= episode['podcast_title'] %></p>
           <p><%= episode['description'] %></p>
-          <a href="<%= episode['youtube_url'] %>" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="<%= episode['spotify_url'] %>" target="_blank"><i class="fab fa-spotify"></i></a>
+          <div class="button-container">
+            <a href="<%= episode['youtube_url'] %>" target="_blank"><i class="fab fa-youtube"></i></a>
+            <%if episode['spotify_url'].to_s != '' %>
+              <a href="<%= episode['spotify_url'] %>" target="_blank"><i class="fab fa-spotify"></i></a>
+            <%end%>
+          </div>
         </div>
     <% end %>
   </div>

@@ -11,7 +11,7 @@ get '/podcasts' do
     podcast.episodes.map do |episode|
       episode.merge('podcast_title' => podcast.title)
     end
-  end.sort_by { |episode| episode['published_at'] }.last(3)
+  end.sort_by { |episode| episode['published_at'] }.last(4).reverse
     
   erb :'podcasts/index', layout: :'layout/layout2022'
 end
