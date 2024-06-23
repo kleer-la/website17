@@ -249,11 +249,11 @@ es:
           url: '/blog',
           inside: true
         },
-        {
-          text: 'Podcast',
-          url: 'https://larevolucionagil.kleer.la',
-          inside: false
-        },
+        # {
+        #   text: 'Podcast',
+        #   url: 'https://larevolucionagil.kleer.la',
+        #   inside: false
+        # },
         {
           text: 'Prensa',
           url: '/prensa',

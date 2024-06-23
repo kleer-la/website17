@@ -1,0 +1,80 @@
+<%
+carousel = @carousel.map.with_index{|e, index| {
+  subject: e.title,
+  description: e.description,
+  youtube_url: e.youtube_url,
+  spotify_url: e.spotify_url,
+  img: e.thumbnail_url,
+  alt: e.title,
+  button_text: "Ver en YouTube",
+  button2_text: "Escuchar en Spotify", # podcast.spotify_url 
+  active: index == 0
+}}
+%>
+<section id="hero" class=>
+  <div id="carouselPodcasts" class="podcasts-hero carousel" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <% carousel.each_with_index do |item, index| %>
+        <button
+          type="button"
+          data-bs-target="#carouselPodcasts"
+          data-bs-slide-to="<%=index%>" aria-label="Slide <%=index+1%>"
+          <%= item[:active] ? "class='active' aria-current='true'" : '' %>
+        >
+        </button>
+      <% end %>
+    </div>
+    <div class="carousel-inner">
+    <div class="title">
+        <h1>Podcast</h1>
+    </div>
+      <%carousel.each do |item|%>
+        <div class="carousel-item <%='active' if item[:active]%>">
+          <div class="container">
+            <div class="row">
+              <div class="offset-lg-1 col-lg-6 carousel__text">
+                <h2><%=item[:subject]%></h2>
+                <p><%=item[:description]%></p>
+                <div class="button-container">
+                <a href="<%= item[:youtube_url] %>" class="primary-button"><%= item[:button_text] %></a>
+                <a href="<%= item[:spotify_url] %>" class="primary-button"><%= item[:button2_text] %></a>
+                </div>
+              </div>
+              <div class="col-lg-5 hero__img-container">
+                <picture>
+                  <img
+                    src="<%= item[:img] %>"
+                    class="hero__img"
+                    alt="<%=item[:alt]%>"
+                    loading="lazy"
+                  >
+                </picture>
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
+            class="desktop_figure hero_yellow_bean"
+            loading="lazy"
+            alt="decorative figure"
+            />
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            class="desktop_figure hero_green_bean"
+            loading="lazy"
+            alt="decorative figure"
+            />
+
+        </div>
+      <%end%>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPodcasts" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPodcasts" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>

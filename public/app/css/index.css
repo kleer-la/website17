@@ -2784,6 +2784,115 @@ input[type="checkbox"]:focus {
 .little-icon {
   height: 20px; }
 
+.podcasts-hero {
+  position: relative; }
+  .podcasts-hero .carousel-inner {
+    padding-top: 80px; }
+    .podcasts-hero .carousel-inner .title {
+      position: absolute;
+      top: 80px;
+      left: 140px;
+      width: 100%;
+      padding-left: 15%;
+      transform: none;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 5px 5px;
+      border-radius: 10px; }
+  .podcasts-hero h1 {
+    font-size: 48px; }
+  .podcasts-hero h2 {
+    font-size: 48px;
+    font-weight: bold; }
+  .podcasts-hero .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px; }
+  .podcasts-hero a.primary-button {
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    height: 52px;
+    width: auto;
+    max-width: 250px;
+    background: #68CEF2;
+    border-radius: 100px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    border: none; }
+    .podcasts-hero a.primary-button:hover {
+      box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.2);
+      border-radius: 100px;
+      color: #333333 !important;
+      line-height: 20px;
+      font-size: 18px; }
+
+.recent-episodes {
+  padding: 2rem; }
+  .recent-episodes h2 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 40px;
+    margin-left: 80px; }
+  .recent-episodes .episodes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .recent-episodes .episodes-grid .episode-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 1rem;
+      padding: 1rem;
+      width: 300px; }
+      .recent-episodes .episodes-grid .episode-card .image-container {
+        position: relative;
+        padding-bottom: 24px; }
+        .recent-episodes .episodes-grid .episode-card .image-container img {
+          aspect-ratio: 7 / 4;
+          width: 100%;
+          border-radius: 8px;
+          object-fit: cover; }
+        .recent-episodes .episodes-grid .episode-card .image-container .podcast-label {
+          position: absolute;
+          top: -10px;
+          right: -20px;
+          width: 100%;
+          border-radius: 4px;
+          background-color: #FFE600;
+          max-width: 120px;
+          height: 29px;
+          margin-left: 10px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 60%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); }
+      .recent-episodes .episodes-grid .episode-card h3 {
+        color: #333333;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 8px; }
+      .recent-episodes .episodes-grid .episode-card p {
+        font-size: 0.9rem; }
+      .recent-episodes .episodes-grid .episode-card a {
+        color: #007bff;
+        text-decoration: none;
+        margin-right: 0.5rem; }
+      .recent-episodes .episodes-grid .episode-card i {
+        font-size: 2em;
+        margin-left: 0.5rem; }
+
 html {
   font-display: swap; }
 

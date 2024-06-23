@@ -1,0 +1,26 @@
+<%=erb :'podcasts/hero' %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<section class="recent-episodes">
+  <h2>Episodios Recientes</h2>
+  <div class="episodes-grid">
+    <% @recent_episodes.each do |episode| %>
+        <div class="episode-card">
+          <div class="image-container">
+          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>" loading="lazy">
+          <div class="podcast-label me-3">
+            <%= episode['podcast_title']%>
+          </div>
+          </div>
+          <h3><%= episode['title'] %></h3>
+          <p><%= episode['description'] %></p>
+          <div class="button-container">
+            <a href="<%= episode['youtube_url'] %>" target="_blank"><i class="fab fa-youtube"></i></a>
+            <%if episode['spotify_url'].to_s != '' %>
+              <a href="<%= episode['spotify_url'] %>" target="_blank"><i class="fab fa-spotify"></i></a>
+            <%end%>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</section>

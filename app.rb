@@ -26,6 +26,7 @@ require './controllers/home_controller'
 require './controllers/mailer_controller'
 require './controllers/news_controller'
 require './controllers/certificates_controller'
+require './controllers/podcasts_controller'
 
 include MetaTags
 include Recaptcha::Adapters::ViewMethods

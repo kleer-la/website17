@@ -8,8 +8,9 @@
     <%= erb :'component/_contact_banner_button',
             locals: {
               style: "background-color: #{@primary_color}; padding: 0px 10px; border-radius: 30px;",
-              text_button: "¿Conversamos?",
+              text_button: text_button,
               style_class: 'btn my-primary-button',
+              specific_id: "cta-header-button",
             }%>
   </div>
 </div>
@@ -17,14 +18,17 @@
 
 <script>
   header = document.getElementById('cta-header-section')
+  button = document.getElementById('cta-header-button')
   window.addEventListener('scroll', () => {
       const scrollThresholdVh = 75
       const scrollThresholdPx = window.innerHeight * (scrollThresholdVh / 100)
 
       if (window.scrollY > scrollThresholdPx) {
           header.style.backgroundColor = "<%= @primary_color %>"
+          button.style.backgroundColor = "<%= @secondary_color %>"
       } else {
           header.style.backgroundColor = "white"
+          button.style.backgroundColor = "<%= @primary_color %>"
       }
   })
 </script>
