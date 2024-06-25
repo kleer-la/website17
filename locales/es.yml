@@ -304,7 +304,7 @@ es:
             url: '/blog'
           },
           {
-            text: 'Podcast y Streaming',
+            title: 'Podcast y Streaming',
             url: '/podcasts'
           },
           {

@@ -3,6 +3,10 @@ require './lib/models/podcast'
 set :podcasts, Podcast.load_from_json('./lib/storage/podcasts.json')
 
 get '/podcasts' do
+  @meta_tags.set! title: 'Podcast y streaming',
+                  # description: t('meta_tag.agenda.description'),
+                  canonical: '/podcasts'
+
   @podcasts = settings.podcasts
   @carousel = @podcasts.first(3)
   # @recent_episodes = @podcasts.flat_map(&:episodes).sort_by { |episode| episode['published_at'] }.last(3)
