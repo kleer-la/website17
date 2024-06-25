@@ -2,7 +2,7 @@
   "podcasts": [
     {
       "title": "La revolución agil",
-      "description": "Una visión crítica de la agilidad. Junto a personas expertas de la industria y otras disciplinas, exploraremos nuevas perspectivas y enfoques disruptivos.",
+      "description": "Una visión crítica de la agilidad. Junto a personas con experiencia en la industria y diversas disciplinas, exploraremos nuevas perspectivas y enfoques disruptivos que están redefiniendo el panorama empresarial.",
       "youtube_url": "https://www.youtube.com/playlist?list=PLrBvQ0ePGhkHZ-ZIVj40Yjf0yucBcFB7w",
       "spotify_url": "https://open.spotify.com/show/0rsSg695eaxbsgYfeCDMks?si=dce6c5326b034400",
       "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/ra.jpg",
@@ -26,7 +26,7 @@
     },
     {
       "title": "Kleer en vivo",
-      "description": "Una experiencia interactiva, repleta de aprendizajes y oportunidades de conexión, donde compartimos EN VIVO conocimientos, tendencias y experiencias.",
+      "description": "Experiementa una interacción única y enriquecedora. Únete a nuestras sesiones en vivo para aprender, conectar y descubrir tendencias y experiencias del sector.",
       "youtube_url": "https://youtube.com/playlist?list=PLrBvQ0ePGhkGAAskwfE3IUZdB6mOFgmoe&si=0M3BldlCLYRarLav",
       "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv.png",
       "episodes": [
@@ -36,12 +36,19 @@
           "youtube_url": "https://youtube.com/live/E_FgN41j-N8?feature=share",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv_dsr.jpg",
           "published_at": "2024-06-05"
+        },
+        {
+          "title": "Desafíos culturales de un diseño organizacional \"ágil\" con Agustina Leudesdorf",
+          "description": "Leonardo Agudelo y Agus Leudesdorf conversan sobre experiencias reales interactuando en el día a día con diseños organizacionales que tienden a llevar a una cultura más ágil.",
+          "youtube_url": "https://youtube.com/live/1DlaeIIgL4o",
+          "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv_al.jpg",
+          "published_at": "2024-05-15"
         }
       ]
     },
     {
       "title": "Descubriendo Kleer",
-      "description": "Soy Maro Sola, acompañame en mis conversaciones para llegar al corazón de Kleer descubriendo con cada kleerer sus recorridos, experiencia, éxitos y fracasos.",
+      "description": "Descubre los recorridos, experiencias, éxitos y fracasos de las personas que integran el equipo Kleer. Conversaciones para explorar el corazón de Kleer.",
       "youtube_url": "https://www.youtube.com/playlist?list=PLrBvQ0ePGhkEFdBXuQllMwvgFMLsyxkj-",
       "spotify_url": "https://open.spotify.com/show/1t8JvTZ0PiCyzoT4jRtGKC?si=bc64094483f84e00",
       "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/dk.jpg",
