@@ -2796,11 +2796,11 @@ input[type="checkbox"]:focus {
       padding-left: 15%;
       transform: none;
       z-index: 10;
-      background: rgba(255, 255, 255, 0.8);
       padding: 5px 5px;
       border-radius: 10px; }
   .podcasts-hero h1 {
-    font-size: 48px; }
+    font-size: 48px;
+    text-align: left; }
   .podcasts-hero h2 {
     font-size: 48px;
     font-weight: bold; }
@@ -2808,7 +2808,8 @@ input[type="checkbox"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px; }
+    gap: 16px;
+    padding-bottom: 10px; }
   .podcasts-hero a.primary-button {
     z-index: 5;
     display: flex;
@@ -2833,6 +2834,11 @@ input[type="checkbox"]:focus {
       line-height: 20px;
       font-size: 18px; }
 
+@media (max-width: 990px) {
+  .podcasts-hero .carousel-inner {
+    padding-top: 140px; }
+    .podcasts-hero .carousel-inner .title {
+      left: 40px; } }
 .recent-episodes {
   padding: 2rem; }
   .recent-episodes h2 {

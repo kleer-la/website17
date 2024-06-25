@@ -11,7 +11,7 @@
       padding-left: 15%; // Align with carousel__text
       transform: none;
       z-index: 10; // Ensure it's above other elements
-      background: rgba(255, 255, 255, 0.8); // Optional: Add background to improve readability
+      // background: rgba(255, 255, 255, 0.8); // Optional: Add background to improve readability
       padding: 5px 5px;
       border-radius: 10px;
       // border: 2px solid red; // Debugging border    
@@ -19,6 +19,7 @@
   }
   h1 {
     font-size: 48px;
+    text-align: left;
   }
   h2 {
     font-size: 48px;
@@ -29,6 +30,7 @@
     justify-content: center;
     align-items: center;
     gap: 16px; // Adjust the gap as needed
+    padding-bottom: 10px;
   }
 
   a.primary-button {
@@ -58,6 +60,16 @@
   }
 }
 
+@media (max-width: 990px) {
+  .podcasts-hero {
+    .carousel-inner {
+      padding-top: 140px;
+      .title {
+        left: 40px;
+      }
+    }
+  }
+}
 .recent-episodes {
   padding: 2rem;
 
