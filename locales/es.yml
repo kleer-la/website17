@@ -4,7 +4,7 @@ es:
     title: Error interno
     text: Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde.
   resources:
-    title: Recursos y materiales sobre agilidad
+    title: Recursos y Materiales sobre Agilidad
     subtitle: >-
       Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
     card:
@@ -40,6 +40,11 @@ es:
         Compartimos experiencias, enfoques y prácticas para ayudarte en el camino
         del desarrollo organizacional y personal. Descubre más
       canonical: /blog
+    podcasts:
+      title: Videos sobre Tendencias y Experiencias
+      description: >-
+        Aprende, conecta y descubre tendencias y enfoques disruptivos sobre el mundo del trabajo y las empresas. Conversaciones auténticas y constructivas.
+      canonical: /podcasts
     aboutus:
       title: Quiénes Somos
       description: >-
@@ -240,7 +245,7 @@ es:
       text: 'Publicamos',
       options: [
         {
-          text: 'Recursos y materiales',
+          text: 'Recursos y Materiales',
           url: '/recursos',
           inside: true
         },
@@ -249,11 +254,11 @@ es:
           url: '/blog',
           inside: true
         },
-        # {
-        #   text: 'Podcast',
-        #   url: 'https://larevolucionagil.kleer.la',
-        #   inside: false
-        # },
+        {
+          text: 'Podcast y Streaming',
+          url: '/podcasts',
+          inside: true
+        },
         {
           text: 'Prensa',
           url: '/prensa',
@@ -296,12 +301,16 @@ es:
       items:
         [
           {
-            title: 'Recursos y materiales',
+            title: 'Recursos y Materiales',
             url: '/recursos'
           },
           {
             title: 'Blog',
             url: '/blog'
+          },
+          {
+            title: 'Podcast y Streaming',
+            url: '/podcasts'
           },
           {
             title: 'Prensa',

@@ -35,6 +35,11 @@ en:
       description: >-
         We share experiences, approaches, and practices to help you on the path of organizational and personal development
       canonical: /blog
+    podcasts:
+      title: Podcast & Streaming
+      description: >-
+        Explore our collection of podcasts on Agile at Kleer. Learn from experts in Agile methodology, Scrum, and Kanban. Discover episodes organized by seasons and available on YouTube and Spotify. Enhance your knowledge and skills in Agile with our talks and interviews.
+      canonical: /podcasts
     aboutus:
       title: '| Somos'
       description:

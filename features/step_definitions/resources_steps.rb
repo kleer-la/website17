@@ -39,7 +39,8 @@ Given('there is resource {string}') do |name|
     "landing": "https://twitter.com/pablitux"
     }
     ],
-    "translators": []
+    "translators": [],
+    "illustrators": []
     }
   ]
   HEREDOC

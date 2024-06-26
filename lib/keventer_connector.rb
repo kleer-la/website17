@@ -5,7 +5,7 @@ KEVENTER_URL = ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'
 API_ROOT = KEVENTER_URL + '/api'.freeze
 API_EVENTS_PATH = '/events'.freeze
 API_KLEERERS_PATH = '/kleerers'.freeze
-API_RESOURCES_PATH = '/resources.json'.freeze
+API_RESOURCES_PATH = API_ROOT + '/resources.json'.freeze
 API_AREAS_PATH = '/service_areas'.freeze
 
 API_MAILER = '/contact_us'.freeze
@@ -30,7 +30,7 @@ class KeventerConnector
     echo API_ROOT + API_EVENTS_PATH + '.json'
   end
   def self.resources_url
-    echo KEVENTER_URL + API_RESOURCES_PATH
+    echo API_RESOURCES_PATH
   end
 
   def self.kleerers_json_url

@@ -17,7 +17,7 @@ class Resource
     Resource.load_list(api_resp.doc)
   end
 
-  attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list,
+  attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list, :illustrators_list,
                 :fb_share, :tw_share, :li_share, :share_link, :kleer_share_url,
                 :title, :description, :cover, :landing, :getit, :buyit, :share_link, :share_text, :tags, :comments
 
@@ -69,6 +69,7 @@ class Resource
 
     @translators = init_trainers(doc, 'translators')
     @translators_list = doc['translators'].map{|e| e['name']}
+    @illustrators_list = doc['illustrators'].map{|e| e['name']}
 
     init_dates(doc)
     # "categories_id": null,

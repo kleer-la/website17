@@ -26,7 +26,7 @@ carousel = @carousel.map.with_index{|e, index| {
     </div>
     <div class="carousel-inner">
     <div class="title">
-        <h1>Podcast</h1>
+        <h1>Podcast y Streaming</h1>
     </div>
       <%carousel.each do |item|%>
         <div class="carousel-item <%='active' if item[:active]%>">
@@ -36,8 +36,10 @@ carousel = @carousel.map.with_index{|e, index| {
                 <h2><%=item[:subject]%></h2>
                 <p><%=item[:description]%></p>
                 <div class="button-container">
-                <a href="<%= item[:youtube_url] %>" class="primary-button"><%= item[:button_text] %></a>
-                <a href="<%= item[:spotify_url] %>" class="primary-button"><%= item[:button2_text] %></a>
+                  <a href="<%= item[:youtube_url] %>" class="primary-button"><%= item[:button_text] %></a>
+                  <%if item[:spotify_url].to_s != '' %>
+                    <a href="<%= item[:spotify_url] %>" class="primary-button"><%= item[:button2_text] %></a>
+                  <%end%>
                 </div>
               </div>
               <div class="col-lg-5 hero__img-container">
@@ -64,7 +66,6 @@ carousel = @carousel.map.with_index{|e, index| {
             loading="lazy"
             alt="decorative figure"
             />
-
         </div>
       <%end%>
     </div>
