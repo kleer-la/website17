@@ -40,6 +40,11 @@ es:
         Compartimos experiencias, enfoques y prácticas para ayudarte en el camino
         del desarrollo organizacional y personal. Descubre más
       canonical: /blog
+    podcasts:
+      title: Podcast y Streaming
+      description: >-
+        Explora nuestra colección de podcasts sobre Agile en Kleer. Aprende de expertos en la metodología Agile, Scrum y Kanban. Descubre episodios organizados por temporadas y disponibles en YouTube y Spotify. Mejora tu conocimiento y habilidades en Agile con nuestras charlas y entrevistas.
+      canonical: /podcasts
     aboutus:
       title: Quiénes Somos
       description: >-

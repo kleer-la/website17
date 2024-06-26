@@ -23,11 +23,16 @@
       <% end %>
       <% unless resource.translators_list == [] %>
         <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: 'Traductores'} %>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: 'Tradujo'} %>
+        </li>
+      <% end %>
+      <% unless resource.illustrators_list == [] %>
+        <li>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.illustrators_list, title: 'Ilustró'} %>
         </li>
       <% end %>
       <% unless resource.comments == '' %>
-        <li style="padding-left: 8px">
+        <li style="font-size: 12px; margin-top:5px">
           <b>Observaciones: </b> <%= resource.comments %>
         </li>
       <% end %>
