@@ -653,14 +653,24 @@ en:
     faq: Frecuently ask questions
   blog:
     title: Blog
-    subtitle: >-
-      Discover more about the fascinating world of organizational agility.
+    subtitle: Discover more about the fascinating world of organizational agility.
+    readit: Keep reading
+    back: "<< Back"
+    highlights: Highligts
+    latest: Latest
+    show_more: Show more
+    search:
+      category: Categories
+      reset: Remove filters
+      result:
+        category_title: 'Category:'
+        text_title: 'Searching:'
+        empty: No result found
     landing:
       back: Go back
       published: Published
       ToC: Table of contents
       authors: Written by
-
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.
