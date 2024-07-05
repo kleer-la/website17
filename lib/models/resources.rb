@@ -82,6 +82,7 @@ class Resource
     trainer
   end
   def init_trainers(doc, role)
+    return nil if doc[role].nil?
     list = (doc[role]&.reduce([]) { |ac, t| ac << show_one_trainer(t) }
                 )
     unless list == []

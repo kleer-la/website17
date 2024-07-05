@@ -101,6 +101,7 @@ class EventType
   end
 
   def redirect_to(event_type_id_with_name)
+    return @external_site_url   if @external_site_url.to_s != ''            # explicit redirect
     return ''                   if @deleted && @canonical_slug == @slug     # dont know where to redirect
     return ''                   if @deleted && @canonical_slug.to_s == ''   # dont know where to redirect
     return self.canonical_url   if @deleted && @canonical_slug.to_s != ''   # redirect to canonical
