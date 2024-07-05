@@ -566,6 +566,9 @@ es:
           img: /app/img/icons/Microphone.svg,
           url: /es/servicios/facilitacion
         }
+    differential:
+      title: ''
+      items: ''
     experience:
       title: Nuestra Experiencia y Enfoque
       text: |
@@ -594,9 +597,6 @@ es:
         <p>
           Explora nuestros servicios como parte de tu proceso de transformación. 
         </p>
-  
-  
-
     cta:
       title: Cuéntanos más sobre tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
       button:

@@ -469,8 +469,6 @@ en:
   contact:
     training_email: training@kleer.us
   generals:
-    texts:
-      soon: Comming soon
     buttons:
       more_info: More info
       go_academy: Go to the academy
@@ -546,21 +544,6 @@ en:
         questions:
           mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Please describe your context and how we could help you
           text: Questions?
-    DLA:
-      title: Agile Leadership Development Program
-      text: >- 
-        <p>Business agility is limited by the collective agility of those who lead it.</p>
-        <p>Build solid foundations for organizational evolution towards effective and sustainable agility by developing the leaders' agility, who will achieve greater impact on their teams and business results.</p>
-      img:
-        url: /app/img/business_a
-        alt: People collaborating in a relaxed way
-      buttons:
-        more:
-          url: ''
-          text: ''
-        questions:
-          mailto: mailto:info@kleer.la?subject=Programa Desarrollo Liderazgo Agil&amp;body=Cuentanos tu contexto y como podemos ayudarte
-          text: 'Contact us!'
     home_hero:
       - subject: Business agility
         description: >-
@@ -751,6 +734,9 @@ en:
         - "We collaboratively work at all organizational layers: on operational practices, processes, leadership and culture. In this way, our customers achieve better results, aligned with the highest expectations and yielding better business results."
         - We train internal teams that lead the change process, removing organizational impediments and sustain the evolution process.
         - We use and propose a learning culture, based on experiments with frequent feedback, which improves the organizational response on complex and changing contexts. We foster collaborative environments where people can develop their potential and innovation.
+    experience:
+      title: ''
+      text: ''
     contact:
       title: Tell us more about your context. Let’s design together your journey to and agile organization.
       button:
