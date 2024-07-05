@@ -54,6 +54,12 @@ describe EventType do
 
       expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq ''
     end
-    
+    it 'redirect to external link' do
+      @event_type.external_site_url = '/services'
+      @event_type.canonical_slug = '4-FTW'
+      @event_type.deleted = true
+
+      expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq '/services'
+    end    
   end
 end
