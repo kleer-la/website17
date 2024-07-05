@@ -8,6 +8,8 @@
       "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/ra.jpg",
       "episodes": [
         {
+          "season": "3",
+          "episode": "28",
           "title": "Ep28 Agilidad en Marketing ft Franklin Chacin",
           "description": "Exploramos el impacto transformador en la industria de la salud. Camilo Velásquez entrevista a Franklin Chacin de Roche Latinoamérica, líder visionario en marketing con más de 20 años de experiencia. Descubre cómo la agilidad está remodelando la forma en que se crean y entregan soluciones en este sector crucial para la humanidad.",
           "youtube_url": "https://youtu.be/J-9LGOi1Tdw",
@@ -15,6 +17,8 @@
           "published_at": "2024-06-18"
         },
         {
+          "season": "3",
+          "episode": "27",
           "title": "Ep27 Reinventando una industria tradicional ft Luisa Restrepo",
           "description": "Sumérgete en una fascinante historia de transformación organizacional junto a nuestro anfitrión, Camilo Velásquez, y nuestra invitada especial, Luisa Restrepo, directora de Innovación y líder de Business Agility en ARGOS, la empresa líder en cementos en Colombia.",
           "youtube_url": "https://youtu.be/yJVC_hGTrd4",
