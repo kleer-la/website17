@@ -146,7 +146,7 @@ es:
     title21: "SECCIÓN 20 - INFORMACIÓN DE CONTACTO"
     text21: "Preguntas acerca de los Términos de Servicio deben ser enviadas a info@kleer.la."
   event:
-    not_found: "El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares."
+    not_found: El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares.
   contact:
     training_email: "entrenamos@kleer.la"
   generals:
@@ -334,23 +334,6 @@ es:
         ]
     }
   home:
-    home_business_agility:
-      title: 'Agilidad organizacional'
-      text: '
-        <p>
-          Nuestro foco es la Agilidad Organizacional. Somos un equipo de profesionales cada vez más <strong>diverso</strong>, que busca aprender e impactar en cada intervención que diseñamos y llevamos adelante. Nuestra <strong>cercanía</strong> y <strong>experiencia</strong> nos permiten hacerlo de una manera diferencial.
-        </p>
-        <p>
-          Perseguimos cada día nuestro propósito: ¡Disfrutamos cocreando ambientes humanos más conscientes y asombrosos!
-        </p>
-        '
-      buttons:
-        more:
-          url: /es/agilidad-organizacional
-          text: 'Conoce más'
-        questions:
-          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
-          text: '¿Tienes alguna pregunta?'
     services:
       title: Explora Nuestros Servicios de Agilidad Organizacional
       text: >-

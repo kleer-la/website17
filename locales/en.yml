@@ -57,7 +57,11 @@ en:
         We co-create agile strategies to achieve your business goals and digital transformation.
         Design, methodologies and innovation for collaborative teams.
       canonical: /agilidad-organizacional
-
+    services:
+      title: Organizational Agility Services
+      description: >-
+        Accelerate Organizational Change. Our Services include Organizational Design, Leadership, Product Management, Team Development and Facilitation
+      canonical: /servicios
     clients:
       title: "| Our clients"
       description: >-
@@ -473,6 +477,8 @@ en:
     text21: >-
       Questions about the Terms of Service should be sent to us at
       info@kleer.la.
+  event:
+    not_found: The course you are looking for was not found. Check other available dates or similar courses.
   contact:
     training_email: training@kleer.us
   generals:
@@ -542,15 +548,6 @@ en:
         - title: News
           url: /prensa
   home:
-    home_business_agility:
-      title: Business agility
-      text: ' <p> At Kleer our main focus is Business Agility since 2011. Our <strong>closeness</strong> and <strong>experience</strong> allow us to do it in an alternative way. </p> <p> We are an increasingly <strong>diverse</strong> team of professionals, looking for to learn and <strong>make an impact</strong> in each intervention that we design and carry out.</p> <p> And we pursue our purpose every day: We enjoy co-creating more conscious and amazing human environments! </p> '
-      buttons:
-        more:
-          text: Know more
-        questions:
-          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Please describe your context and how we could help you
-          text: Questions?
     services:
       title: Explore our Organizational Agility Services
       text: >-
@@ -565,7 +562,7 @@ en:
         alt: People collaborating in a relaxed way
       buttons:
         more:
-          url: /es/servicios
+          url: /en/agilidad-organizacional
           text: ¡Tell me more!
         questions:
           mailto: mailto:info@kleer.la?subject=Agendar una videollamada&amp;body=Cuentanos tu contexto y como podemos ayudarte
@@ -660,6 +657,11 @@ en:
     program: Program
     testimonies: Testimonies from participants
     faq: Frecuently ask questions
+  agenda:
+    hero:
+      title: Course agenda
+      subtitle: Develop your professional skills and those of your teams.
+      text: Dynamic and participatory courses. Select the training courses aligned with the desired learning outcomes.
   blog:
     title: Blog
     subtitle: Discover more about the fascinating world of organizational agility.
@@ -768,6 +770,23 @@ en:
       button:
         text: Let’s talk
         link: mailto:info@kleer.la?subject=Business Agility&amp;body=Please describe your context and how could we help you
+  services:
+    title: Transform your company with organizational agility
+    subtitle: >-
+      We provide comprehensive support to accelerate organizational change. We accompany our clients every step of the way, continuously innovating and focusing on every aspect of the company to achieve better results.
+    howto:
+      title: Our Services in Organizational Agility
+      text: >-
+        <p>
+          Find solutions that align with strategic objectives. Our approach includes structure, leadership, value streams, product management, among others.
+        </p>
+        <p>
+          Explore our services as part of your transformation process.
+        </p>
+    cta:
+      title: Tell us more about your needs so we can design together the path towards a more agile organization.
+      button:
+        text: Let's talk
   contact-us-form:
     title: Contact us
     name-input:
