@@ -17,6 +17,7 @@ en:
       description: >-
         We help you go towards Business Agility. We offer training and co-create
         strategies for adopting goal-oriented agile ways of working.
+      canonical: '/'
     resources:
       title: Resources and tools for agility
       description: >-
@@ -30,6 +31,12 @@ en:
         We offer training and workshops for agile teams, Scrum Masters, Product
         Owners, Agile Leaders, Agile Coaches, and Agile HR.
       canonical: /catalogo
+    agenda:
+      title: Agile Methods Course Agenda
+      description: >-
+              Training in Agile Coaching, Facilitation, Scrum, CSD, Lean, Kanban, Product Discovery, 
+              Leadership, Continuous Improvement, Time Management, Communication 
+      canonical: /agenda
     blog:
       title: Blog - Articles on Organizational Agility
       description: >-
@@ -544,6 +551,25 @@ en:
         questions:
           mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Please describe your context and how we could help you
           text: Questions?
+    services:
+      title: Explore our Organizational Agility Services
+      text: >-
+        <ul>
+          <li><b>Organizational Change and Leadership</b>: Foster sustainable change and develop transformational leadership.</li>
+          <li><b>Agility for Teams</b>: Improve team collaboration, efficiency, and adaptability.</li>
+          <li><b>Agile Product Management</b>: Align product strategies with business objectives.</li>
+          <li><b>Meeting and Event Facilitation</b>: Maximize productivity and collaboration at every meeting.</li>
+        </ul>
+      img:
+        url: https://kleer-images.s3.sa-east-1.amazonaws.com/consultoria-agilidad-organizacional
+        alt: People collaborating in a relaxed way
+      buttons:
+        more:
+          url: /es/servicios
+          text: ¡Tell me more!
+        questions:
+          mailto: mailto:info@kleer.la?subject=Agendar una videollamada&amp;body=Cuentanos tu contexto y como podemos ayudarte
+          text: Schedule a video call
     home_hero:
       - subject: Business agility
         description: >-

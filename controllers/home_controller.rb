@@ -27,7 +27,7 @@ end
 get '/' do
   @meta_tags.set!  title: t('meta_tag.home.title'),
                    description: t('meta_tag.home.description'),
-                   canonical:  "/"
+                   canonical:  t('meta_tag.home.canonical')
 
 
   @clients =  client_list
