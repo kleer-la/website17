@@ -23,6 +23,7 @@ gem 'aws-sdk-s3'
 
 group :development do
   gem 'foreman', require: false
+  gem 'i18n-tasks', require: false
   gem 'platform-api', require: false
   gem 'rubocop', require: false
   gem 'rerun', require: false

@@ -73,8 +73,6 @@ es:
         Experiencias sobre nuestro trabajo en notas de prensa y publicaciones en diversos medios digitales de Latinoamérica
       canonical: /prensa
   we_are:
-    title: Somos
-    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.
     description: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
   nuestra_filosofia:
     title: Nuestra filosofía
@@ -155,7 +153,6 @@ es:
       go_academy: 'Ir a academia'
     social_media:
       title: 'Nuestras redes'
-      whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
       options: [
         {
           title: 'Twitter',
@@ -384,10 +381,6 @@ es:
       title: 'Nuestros próximos cursos'
       button:
         title: 'Todos nuestros cursos'
-      card:
-        certified:
-          kleer: 'Por Kleer'
-          scrumalliance: 'Por Scrum Alliance'
       no_date: TBD
     home_newsletter:
       title: 'Entérate de todas las novedades del mundo ágil'
@@ -580,10 +573,6 @@ es:
         <p>
           Explora nuestros servicios como parte de tu proceso de transformación. 
         </p>
-    cta:
-      title: Cuéntanos más sobre tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
-      button:
-        text: ¿Conversamos?
   contact-us-form:
     title: Contáctanos
     name-input:

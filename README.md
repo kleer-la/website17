@@ -112,3 +112,10 @@ Para probar con ambiente de prueba de keventer
 ```cli
 export KEVENTER_URL="https://keventer-test.herokuapp.com"
 ```
+
+Manejar I18m
+```cli
+i18n-tasks missing
+i18n-tasks unused
+i18n-tasks find meta_tag.press
+```

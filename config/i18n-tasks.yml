@@ -1,0 +1,20 @@
+base_locale: en
+locales: [en, es]
+
+data:
+  read:
+    - config/locales/%{locale}/**/*.yml
+    - config/locales/%{locale}.yml
+    - locales/%{locale}/**/*.yml
+    - locales/%{locale}.yml
+search:
+  paths:
+    - app/views
+    - app/controllers
+    - app/helpers
+    - app/mailers
+    - app/models
+    - lib
+    - views
+    - controllers
+ 

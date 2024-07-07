@@ -72,8 +72,6 @@ en:
       description:
       canonical: /prensa
   we_are:
-    title: We are
-    subtitle: We help organizations, teams and practitioners
     description: >-
       We believe in other ways to relate to each other to achieve fantastic
       results that will make us proud.<br/>We help people to create <a
@@ -487,7 +485,6 @@ en:
       go_academy: Go to the academy
     social_media:
       title: Social media
-      whatsapp: https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0
       options:
         - title: Twitter
           image: /app/img/icons/Twitter.svg
@@ -599,10 +596,6 @@ en:
       title: Coming soon
       button:
         title: All courses
-      card:
-        certified:
-          kleer: By Kleer
-          scrumalliance: By Scrum Alliance
       no_date: TBD
     home_newsletter:
       title: Find out about all the news of the agile world
@@ -783,10 +776,6 @@ en:
         <p>
           Explore our services as part of your transformation process.
         </p>
-    cta:
-      title: Tell us more about your needs so we can design together the path towards a more agile organization.
-      button:
-        text: Let's talk
   contact-us-form:
     title: Contact us
     name-input:
