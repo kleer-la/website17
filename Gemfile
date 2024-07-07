@@ -3,7 +3,8 @@ ruby '~> 3.3'
 
 gem 'curb'
 gem 'escape_utils'
-gem 'faraday' # new way to connect to eventer
+gem 'faraday' 
+gem 'httparty' # new way to connect to keventer (replace faraday / json)
 gem 'i18n'
 gem 'json'
 gem 'money'
