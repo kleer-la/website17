@@ -324,10 +324,10 @@ DEPENDENCIES
   oauth
   platform-api
   puma
-  rack
   rack-ssl-enforcer
   rack-test
   rackup (~> 2.1)
+  rake
   recaptcha
   redcarpet
   rerun
