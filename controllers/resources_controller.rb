@@ -15,7 +15,7 @@ end
 get '/recursos/primeros_pasos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Recursos"
-  erb :'old_page/recursos/recursos_primeros_pasos'
+  erb :'old_page/recursos/recursos_primeros_pasos', layout: :'layout/layout2022'
 end
 
 get '/publicamos/scrum' do

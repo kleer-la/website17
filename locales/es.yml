@@ -72,9 +72,62 @@ es:
       description: >-
         Experiencias sobre nuestro trabajo en notas de prensa y publicaciones en diversos medios digitales de Latinoamérica
       canonical: /prensa
+
+  books:
+    others:
+        title: "Otras publicaciones"
+    buy:
+        paperback_and_kindle: "Impreso + Kindle"
+        amazon_matchbook: "Si compras la edición impresa de este libro, puedes obtener la edición de Kindle de forma gratuita. La edición impresa debe ser comprada en Amazon."
+        kindle: "Kindle"
+    books:
+        scrum:
+            title: "Proyectos Ágiles con Scrum"
+            title1: "Proyectos Ágiles con "
+            title2: "#Scrum"
+            subtitle1: "Flexibilidad, aprendizaje, innovación"
+            subtitle2: "y colaboración en contextos complejos"
+            text: "Scrum es un marco de trabajo que nos permite encontrar prácticas
+            emergentes en dominios complejos, como la gestión de proyectos de innovación."
+            next: "Obtener libro >>"
+            learnings: "<p>Mediante este libro conocerás:</p> <ul><li>Los factores que dieron origen a las metodologías ágiles</li><li>Los valores y principios del Manifiesto Ágil</li><li>Los contextos de complejidad donde Scrum es más eficiente</li><li>Los principios y valores de Scrum</li><li>Roles del Equipo Scrum</li><li>Responsabilidades y expectativas de cada rol</li><li>Elementos y actividades del flujo de trabajo de Scrum</li><li>Técnicas de análisis ágil y desarrollo evolutivo</li><li>Técnicas de comunicación de necesidades (Historias de Usuario)</li><li>Estimaciones ágiles</li><li>Planificación del mediano y largo plazo</li> <li>Presupuestación de proyectos ágiles</li></ul>&nbsp;"
+            video:
+                title: "Mirá el video de 4 minutos y medio que describe Scrum"
+                download: "Baja el PDF con el poster desde <a href='hhttps://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'>aquí</a>"
+        mas_productivos:
+            title: "Equipos más productivos"
+            title1: "Equipos"
+            title2: "#MásProductivos"
+            text: "El modelo de gestión tradicional está siendo reemplazado por formas
+            más participativas, más colaborativas y más humanas de hacer empresa.</br></br>"
+            long_text: "El modelo de gestión tradicional está siendo reemplazado por
+            formas más participativas, más colaborativas y más humanas de hacer empresa.
+            Las organizaciones y los equipos de trabajo están integrados por personas,
+            y las personas tienen comportamientos, emociones, deseos, y su propia historia.
+            Si en lugar de minimizar estos factores, los abrazamos y los incluimos en
+            la gestión, pronto comenzaremos a presenciar increíbles mejoras.<br/><br/>
+            La productividad no solo se refiere a cuánto se produce, sino a qué tan
+            efectivas son las propias relaciones personales en el contexto profesional.
+            La fórmula es muy sencilla: <strong>R=R (Resultados = Relaciones)</strong>.
+            Esto quiere decir que  la manera más efectiva de mejorar los resultados es
+            mejorando las relaciones que existen entre los miembros y no solamente
+            atendiendo los procesos y las tareas que ellos realizan.<br/><br/>
+            Pero en este camino no faltan los desafíos. Para facilitarlo, me propuse
+            tomar lo mejor de dos mundos, el Coaching y Scrum, y combinarlos en una
+            novedosa forma de ver los equipos de trabajo para exponer su alma.
+            Quien se sumerja en esta lectura, encontrará experiencias, propuestas novedosas,
+            recomendaciones útiles y la descripción de un completo marco de trabajo
+            relacional.<br/><br/>Este es un momento clave en la historia del mundo
+            del trabajo. Y muchas empresas ya están dando el gran salto.<br/><br/><strong>
+            ¿Estás dispuesto a conocer esta nueva forma de trabajar y relacionarnos?</strong>"
+            subtitle1: "Personas e interacciones"
+            subtitle2: "por sobre procesos y herramientas"
+            next: "Obtener libro >>"
+        retrospectives:
+            title: "Técnicas de retrospectivas"
+            text: "Este libro aporta varias técnicas para que los equipos varíen el
+            formato de sus retrospectivas, evitando el aburimiento y manteniéndolos motivados."
   we_are:
-    title: Somos
-    subtitle: Disfrutamos cocreando ambientes humanos más conscientes y asombrosos.
     description: Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su evolución hacia la mejora continua, potenciando y balanceando la productividad, la calidad y la felicidad.
   nuestra_filosofia:
     title: Nuestra filosofía
@@ -85,6 +138,7 @@ es:
         <p>Los sistemas complejos son emergentes, por lo tanto, la inteligencia contextual es una capacidad absolutamente crucial en el nuevo mundo del trabajo. No creamos ni seguimos recetas sino que consideramos cada caso como único. Nos centramos en ofrecer procesos prácticos y experimentales, y trabajamos en iteraciones, re-evaluando constantemente nuestras acciones midiendo impactos reales.</p>
         <p>Por lo tanto, concebimos a nuestros clientes como socios en la transformación organizacional con los cuales colaboramos para juntos co-crear procesos adecuados para su contexto y propósito.</p>
   privacy:
+    text: ''
     title: "Declaración de privacidad"
     title1: "SECCIÓN 1 - ¿QUÉ HACEMOS CON LA INFORMACIÓN QUE NOS DAS?"
     text1: "Cuando te registras en un curso que te interesa, como parte del proceso de compra venta, nosotros recolectamos la información personal que nos das tales como nombre, dirección y correo electrónico. Esta información la utilizamos para poder contactarte y enviarte la información del curso. Tu teléfono únicamente lo utilizaremos para poder comunicarnos rápidamente contigo a la hora de informarte sobre un cambio en el curso que te hayas registrado. Cuando navegas en nuestro sitio también recibimos de manera automática la dirección de protocolo de internet de tu computadora (IP) con el fin de proporcionarnos información que nos ayuda a conocer acerca de su navegador, sistema operativo y país de residencia. Sumado a esto, si nos das tu permiso, podremos enviarte correos electrónicos con nuestro newsletter y novedades de cursos."
@@ -145,7 +199,7 @@ es:
     title21: "SECCIÓN 20 - INFORMACIÓN DE CONTACTO"
     text21: "Preguntas acerca de los Términos de Servicio deben ser enviadas a info@kleer.la."
   event:
-    not_found: "El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares."
+    not_found: El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares.
   contact:
     training_email: "entrenamos@kleer.la"
   generals:
@@ -154,7 +208,6 @@ es:
       go_academy: 'Ir a academia'
     social_media:
       title: 'Nuestras redes'
-      whatsapp: "https://api.whatsapp.com/send/?phone=573207666176&text&app_absent=0"
       options: [
         {
           title: 'Twitter',
@@ -333,23 +386,6 @@ es:
         ]
     }
   home:
-    home_business_agility:
-      title: 'Agilidad organizacional'
-      text: '
-        <p>
-          Nuestro foco es la Agilidad Organizacional. Somos un equipo de profesionales cada vez más <strong>diverso</strong>, que busca aprender e impactar en cada intervención que diseñamos y llevamos adelante. Nuestra <strong>cercanía</strong> y <strong>experiencia</strong> nos permiten hacerlo de una manera diferencial.
-        </p>
-        <p>
-          Perseguimos cada día nuestro propósito: ¡Disfrutamos cocreando ambientes humanos más conscientes y asombrosos!
-        </p>
-        '
-      buttons:
-        more:
-          url: /es/agilidad-organizacional
-          text: 'Conoce más'
-        questions:
-          mailto: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
-          text: '¿Tienes alguna pregunta?'
     services:
       title: Explora Nuestros Servicios de Agilidad Organizacional
       text: >-
@@ -400,10 +436,6 @@ es:
       title: 'Nuestros próximos cursos'
       button:
         title: 'Todos nuestros cursos'
-      card:
-        certified:
-          kleer: 'Por Kleer'
-          scrumalliance: 'Por Scrum Alliance'
       no_date: TBD
     home_newsletter:
       title: 'Entérate de todas las novedades del mundo ágil'
@@ -565,6 +597,9 @@ es:
           img: /app/img/icons/Microphone.svg,
           url: /es/servicios/facilitacion
         }
+    differential:
+      title: ''
+      items: ''
     experience:
       title: Nuestra Experiencia y Enfoque
       text: |
@@ -593,13 +628,6 @@ es:
         <p>
           Explora nuestros servicios como parte de tu proceso de transformación. 
         </p>
-  
-  
-
-    cta:
-      title: Cuéntanos más sobre tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
-      button:
-        text: ¿Conversamos?
   contact-us-form:
     title: Contáctanos
     name-input:

@@ -4,7 +4,7 @@
       locale = session[:locale].to_sym
       @resources.filter { |r| r.lang == locale}.each do |resource|
         @fb_share = @tw_share = @li_share = ''
-        @kleer_share_url = "https://kleer.la/#{locale}/recursos##{resource.slug}"
+        @kleer_share_url = "https://www.kleer.la/#{locale}/recursos##{resource.slug}"
         unless resource.share_text.to_s == ''
           share_url = @kleer_share_url
           share_url = resource.share_link unless resource.share_link.to_s == ''

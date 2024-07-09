@@ -107,23 +107,18 @@ describe 'metatags' do
     end
     it 'href is base/lang/path' do
       head = Tags.new.display 'path': '/sambayon'
-      expect(head).to include 'href="https://kleer.la/es/sambayon"'
-      expect(head).to include 'href="https://kleer.la/en/sambayon"'
+      expect(head).to include 'href="https://www.kleer.la/es/sambayon"'
+      expect(head).to include 'href="https://www.kleer.la/en/sambayon"'
     end
     it 'dont include hreflang if no lang' do
       head = Tags.new.display 'path': '/sambayon', hreflang: []
-      expect(head).not_to include 'href="https://kleer.la/es/sambayon"'
-      expect(head).not_to include 'href="https://kleer.la/en/sambayon"'
+      expect(head).not_to include 'href='
+      expect(head).not_to include 'href='
     end
     it 'dont include hreflang if no path' do
       head = Tags.new.display 'path': nil
-      expect(head).not_to include 'href="https://kleer.la/es"'
-      expect(head).not_to include 'href="https://kleer.la/en"'
+      expect(head).not_to include 'href='
+      expect(head).not_to include 'href='
     end
-    # it 'dont include hreflang if canonical' do
-    #   head = Tags.new.display 'path': '', canonical: 'pepe'
-    #   expect(head).not_to include 'href="https://kleer.la/es"'
-    #   expect(head).not_to include 'href="https://kleer.la/en"'
-    # end
   end
 end

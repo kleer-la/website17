@@ -39,7 +39,7 @@ class Resource
     @comments = doc["comments_#{lang}"] || ''
 
     #insert lang
-    @kleer_share_url = "https://kleer.la/#{lang}/recursos##{@slug}"
+    @kleer_share_url = "https://www.kleer.la/#{lang}/recursos##{@slug}"
 
     share_url = @kleer_share_url
     share_url = @share_link unless @share_link.to_s == ''

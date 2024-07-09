@@ -3,7 +3,8 @@ ruby '~> 3.3'
 
 gem 'curb'
 gem 'escape_utils'
-gem 'faraday' # new way to connect to eventer
+gem 'faraday' 
+gem 'httparty' # new way to connect to keventer (replace faraday / json)
 gem 'i18n'
 gem 'json'
 gem 'money'
@@ -15,6 +16,7 @@ gem 'redcarpet'
 gem 'sinatra'
 gem 'sinatra-flash'
 gem 'sinatra-r18n'
+gem 'rake'
 gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'nokogiri'
@@ -23,6 +25,7 @@ gem 'aws-sdk-s3'
 
 group :development do
   gem 'foreman', require: false
+  gem 'i18n-tasks', require: false
   gem 'platform-api', require: false
   gem 'rubocop', require: false
   gem 'rerun', require: false
