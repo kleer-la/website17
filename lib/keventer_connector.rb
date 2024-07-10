@@ -66,14 +66,6 @@ class KeventerConnector
     echo API_ROOT + '/v3/participants/interest'.freeze
   end
 
-  def self.articles_url
-    echo KEVENTER_URL + '/articles.json'.freeze
-  end
-
-  def self.article_url(slug)
-    echo KEVENTER_URL + "/articles/#{slug}.json"
-  end
-
   def get_catalog
     return JSON.parse(@response) unless @response.nil?
     JsonAPI.new(echo API_ROOT + '/catalog')
