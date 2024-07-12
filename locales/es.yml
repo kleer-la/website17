@@ -461,7 +461,6 @@ es:
         O una combinación de estos, para garantizar el aprendizaje continuo.
       button:
         text: Contáctanos
-        link: "#training-courses"
     public:
       title: Agenda
       text: Únete a nuestra propuesta de cursos programados, con opciones de registro individual o grupal. Comparte una experiencia de aprendizaje única con profesionales que buscan llevar sus habilidades al siguiente nivel.
@@ -469,7 +468,6 @@ es:
         text: Ver Agenda
         link: /agenda
     e-learning:
-      title: Academia Kleer
       text: Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.
       button:
         text: Ir a Academia
@@ -614,7 +612,6 @@ es:
       title: Cuéntanos más de tu necesidad para que diseñemos juntos el camino hacia una organización más ágil.
       button:
         text: ¿Conversamos?
-        link: mailto:info@kleer.la?subject=Agilidad Organizacional&amp;body=Cuentanos tu contexto y como podemos ayudarte
   services:
     title: Transforma tu Empresa con Agilidad Organizacional
     subtitle: >-
