@@ -111,14 +111,6 @@ get '/agilidad-organizacional' do
   erb :'business_agility/index', layout: :'layout/layout2022'  
 end
 
-get '/agilidad-organizacional/mejora-continua' do
-  @active_tab_coaching = 'active'
-  @meta_tags.set! title: 'Generamos el hábito de mejora continua - Kaizen'
-  @meta_tags.set! description: 'Entrenamos, hacemos mentoría y generamos un proceso sostenible de mejora continua o kaizen'
-
-  erb :mejora_continua
-end
-
 #TODO redirect
 PERMANENT_REDIRECT = {
   'e-books' => 'es/recursos',
@@ -136,7 +128,8 @@ PERMANENT_REDIRECT = {
   'preguntas-frecuentes/certified-scrum-master' => 'es/cursos/7-certified-scrum-master-csm', #  #faq / qna
   'preguntas-frecuentes/certified-scrum-developer' => 'es/cursos/342-certified-scrum-developer-csd', #  #faq / qna
   'acompanamos' => 'es/servicios',
-  'coaching' => 'es/servicios'
+  'coaching' => 'es/servicios',
+  'agilidad-organizacional/mejora-continua' => 'es/servicios/kaizen-team'
 }.freeze
 
 PERMANENT_REDIRECT.each do |uris|
