@@ -8,6 +8,7 @@ gem 'httparty' # new way to connect to keventer (replace faraday / json)
 gem 'i18n'
 gem 'json'
 gem 'money'
+gem 'nokogiri'  #for RedCarpet
 gem 'oauth'
 gem 'puma'
 gem 'rack-ssl-enforcer'
