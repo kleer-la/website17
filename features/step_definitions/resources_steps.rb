@@ -9,7 +9,7 @@ Given('there is resource {string}') do |name|
     "categories_id": null,
     "trainers_id": null,
     "slug": "okrs-template",
-    "landing_es": "https://kleer.la/blog/okrs-para-mejorar-colaboracion-y-foco-en-objetivos-organizacionales",
+    "landing_es": "https://www.kleer.la/blog/okrs-para-mejorar-colaboracion-y-foco-en-objetivos-organizacionales",
     "cover_es": " https://kleer-images.s3.sa-east-1.amazonaws.com/template-okrs-kleer.png ",
     "title_es": "#{name}",
     "description_es": "...",
