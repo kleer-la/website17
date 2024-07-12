@@ -8,8 +8,6 @@ require 'escape_utils'
 require 'dotenv'
 require 'recaptcha'
 
-Dotenv.load
-
 require './lib/metatags'
 require './lib/helpers/custom_markdown'
 require './lib/router_helper'

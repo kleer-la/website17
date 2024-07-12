@@ -95,7 +95,6 @@ GEM
     curb (1.0.5)
     diff-lcs (1.5.1)
     docile (1.4.0)
-    dotenv (2.8.1)
     drb (2.2.1)
     erubi (1.13.0)
     erubis (2.7.0)
@@ -319,7 +318,6 @@ DEPENDENCIES
   coveralls_reborn
   cucumber
   curb
-  dotenv
   escape_utils
   faraday
   foreman
