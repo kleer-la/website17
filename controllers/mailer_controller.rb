@@ -21,6 +21,8 @@ post "/send-mail" do
 end
 
 get "/mailer-template" do
+  @meta_tags.set! noindex: true, nofollow: true
+
   erb :'component/_form_contact', layout: false
 end
 

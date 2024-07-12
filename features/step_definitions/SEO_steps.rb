@@ -50,3 +50,7 @@ Then('SEO meta {string} {string} should match {string}') do |tag, tag_name, patt
   end
   (expect(tag+tag_name).to eq pattern ) unless found
 end
+Then(/^the page should not have a noindex meta tag$/) do
+  expect(page.body).not_to include('<meta name="robots" content="noindex">')
+  expect(page.body).not_to include('<meta name="robots" content="noindex,')
+end
