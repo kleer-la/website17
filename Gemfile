@@ -19,7 +19,6 @@ gem 'sinatra-r18n'
 gem 'rake'
 gem 'tzinfo'
 gem 'tzinfo-data'
-gem 'nokogiri'
 gem 'aws-sdk-s3'
 
 group :development do

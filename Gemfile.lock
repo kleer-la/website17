@@ -326,7 +326,6 @@ DEPENDENCIES
   i18n-tasks
   json
   money
-  nokogiri
   oauth
   platform-api
   puma
