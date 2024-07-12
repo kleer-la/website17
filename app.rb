@@ -5,7 +5,6 @@ require 'json'
 require 'i18n'
 require 'money'
 require 'escape_utils'
-require 'dotenv'
 require 'recaptcha'
 
 require './lib/metatags'
