@@ -24,7 +24,7 @@ class Category
       if defined? @@json_api
         json_api = @@json_api
       else
-        json_api = JsonAPI.new(KeventerConnector.categories_json_url)
+        json_api = JsonAPI.new(KeventerAPI.categories_url)
       end
       Category.load_categories(json_api.doc, lang) unless json_api.doc.nil?
     end

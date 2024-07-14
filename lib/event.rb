@@ -122,7 +122,7 @@ class Event
       if defined? @@json_api
         json_api = @@json_api
       else
-        json_api = JsonAPI.new(KeventerConnector.new.events_json_url)
+        json_api = JsonAPI.new(KeventerAPI.events_url)
       end
       Event.load_events(json_api.doc, today ) unless json_api.doc.nil?
     end

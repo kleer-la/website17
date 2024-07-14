@@ -1,7 +1,6 @@
 require './lib/json_api'
 
 require './lib/keventer_helper'
-require './lib/keventer_connector'
 require './lib/event'
 require './lib/testimony'
 require './lib/models/coupon'
@@ -11,7 +10,7 @@ class EventType
     if defined? @@json_api
       json_api = @@json_api
     else
-      json_api = JsonAPI.new(KeventerConnector.new.event_type_url(id))
+      json_api = JsonAPI.new(KeventerAPI.event_type_url(id))
     end
 
     et = EventType.new(json_api.doc ) unless json_api.doc.nil?

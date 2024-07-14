@@ -38,7 +38,6 @@ module KeventerAPI
     news: 'news.json',
     podcasts: 'v3/podcasts',
     service_areas: 'service_areas.json',
-    interest: 'v3/participants/interest',
     articles: 'articles.json',
     mailer: 'contact_us'
   }.each do |name, path|
@@ -49,8 +48,7 @@ module KeventerAPI
   {
     service_area: ['service_areas/:slug.json', :slug],
     event_type: ['event_types/:id.json', :id],
-    article: ['articles/:slug.json', :slug],
-    testimonies: ['event_types/:id/testimonies.json', :id]
+    article: ['articles/:slug.json', :slug]
   }.each do |name, (path, param)|
     define_method("#{name}_url") do |value|
       echo(url_for(path.gsub(":#{param}", value.to_s)))

@@ -24,7 +24,6 @@ RSpec.describe KeventerAPI do
       catalog: 'catalog',
       news: 'news.json',
       service_areas: 'service_areas.json',
-      interest: 'v3/participants/interest',
       articles: 'articles.json',
       mailer: 'contact_us'
     }.each do |method, path|
@@ -38,8 +37,7 @@ RSpec.describe KeventerAPI do
     {
       service_area: ['test-slug', 'service_areas/test-slug.json'],
       event_type: [123, 'event_types/123.json'],
-      article: ['test-article', 'articles/test-article.json'],
-      testimonies: [456, 'event_types/456/testimonies.json']
+      article: ['test-article', 'articles/test-article.json']
     }.each do |method, (param, expected_path)|
       it "generates correct URL for ##{method}_url" do
         expect(KeventerAPI.send("#{method}_url", param)).to eq("https://test.example.com/api/#{expected_path}")

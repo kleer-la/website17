@@ -1,4 +1,4 @@
-require './lib/keventer_connector'
+require './lib/services/keventer_api'
 require './lib/trainer'
 
 module NullInfra
@@ -37,8 +37,7 @@ class News
       @next_null = false
       return @result
     end
-    uri = KeventerConnector.news_url
-    api_resp = JsonAPI.new(uri)
+    api_resp = JsonAPI.new(KeventerAPI.news_url)
     raise :NotFound unless api_resp.ok?
     News.load_list(api_resp.doc)
   end
