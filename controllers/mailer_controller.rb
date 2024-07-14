@@ -4,7 +4,7 @@ require './lib/services/mailer'
 include Recaptcha::Adapters::ControllerMethods
 
 def send_mail(data)
-  url = KeventerAPI.contact_us_url
+  url = KeventerAPI.mailer_url
   # return JSON.parse(@response) unless @response.nil? # NullInfra -esque
   Mailer.new(url, data)
 end

@@ -2,8 +2,9 @@ require 'spec_helper'
 require './lib/services/keventer_api'
 
 RSpec.describe KeventerAPI do
+  subject { KeventerAPI }
   before do
-    KeventerAPI.config[:base_url] = 'https://test.example.com'
+    subject.config[:base_url] = 'https://test.example.com'
   end
 
   describe '.url_for' do
@@ -28,9 +29,10 @@ RSpec.describe KeventerAPI do
       mailer: 'contact_us'
     }.each do |method, path|
       it "generates correct URL for ##{method}_url" do
-        expect(KeventerAPI.send("#{method}_url")).to eq("https://test.example.com/api/#{path}")
+        expect(subject.send("#{method}_url")).to eq("https://test.example.com/api/#{path}")
       end
     end
+    # it { expect(subject.mailer_url).to eq('https://test.example.com/api/contact_us') }
   end
 
   describe 'Parameterized URL methods' do
