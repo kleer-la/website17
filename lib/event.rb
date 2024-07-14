@@ -12,7 +12,7 @@ class Event
                 :place, :address,
                 :start_time, :end_time, :time_zone_name, :time_zone,
                 :is_sold_out,
-                :specific_conditions,
+                :specific_conditions, :duration,
                 :mode, :banner_text, :banner_type, :specific_subtitle
 
                 #,:enable_online_payment
@@ -57,12 +57,11 @@ class Event
     end
     %i[date finish_date   ].each { |field| send("#{field}=", Date.parse(    hash_event[field.to_s])) }
     %i[start_time end_time].each { |field| send("#{field}=", DateTime.parse(hash_event[field.to_s])) }
-    #unless hash_event[field].to_s.empty? 
+    @duration = hash_event['duration'].to_i
   end
 
   def load_details(hash_event)
-    %i[mode banner_text banner_type specific_subtitle specific_conditions
-    ].each { |field| send("#{field}=", hash_event[field.to_s]) }
+    load_str(%i[mode banner_text banner_type specific_subtitle specific_conditions], hash_event)
   end
 
   def online?
@@ -100,9 +99,9 @@ class Event
   end
 
   def timezone_url
-    duration = @end_time.to_time - @start_time.to_time
-    hours = (duration / 3600).to_i
-    minutes = ((duration % 3600) / 60).to_i
+    hour_dif = @end_time.to_time - @start_time.to_time
+    hours = (hour_dif / 3600).to_i
+    minutes = ((hour_dif % 3600) / 60).to_i
 
     "https://www.timeanddate.com/worldclock/fixedtime.html?#{URI.encode_www_form(
       msg: @event_type.name,
