@@ -22,7 +22,7 @@ class ServiceAreaV3
     if defined? @@json_api
       response = @@json_api
     else
-      response = JsonAPI.new(KeventerConnector.service_areas_url)
+      response = JsonAPI.new(KeventerAPI.service_areas_url)
     end
 
     raise :NotFound unless response.ok?
@@ -42,7 +42,7 @@ class ServiceAreaV3
     if defined? @@json_api
       response = @@json_api
     else
-      response = JsonAPI.new(KeventerConnector.service_area_url(slug))
+      response = JsonAPI.new(KeventerAPI.service_area_url(slug))
     end
 
     return nil unless response.ok?

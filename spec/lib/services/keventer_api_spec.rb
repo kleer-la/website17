@@ -2,8 +2,9 @@ require 'spec_helper'
 require './lib/services/keventer_api'
 
 RSpec.describe KeventerAPI do
+  subject { KeventerAPI }
   before do
-    KeventerAPI.config[:base_url] = 'https://test.example.com'
+    subject.config[:base_url] = 'https://test.example.com'
   end
 
   describe '.url_for' do
@@ -24,22 +25,21 @@ RSpec.describe KeventerAPI do
       catalog: 'catalog',
       news: 'news.json',
       service_areas: 'service_areas.json',
-      interest: 'v3/participants/interest',
       articles: 'articles.json',
       mailer: 'contact_us'
     }.each do |method, path|
       it "generates correct URL for ##{method}_url" do
-        expect(KeventerAPI.send("#{method}_url")).to eq("https://test.example.com/api/#{path}")
+        expect(subject.send("#{method}_url")).to eq("https://test.example.com/api/#{path}")
       end
     end
+    # it { expect(subject.mailer_url).to eq('https://test.example.com/api/contact_us') }
   end
 
   describe 'Parameterized URL methods' do
     {
       service_area: ['test-slug', 'service_areas/test-slug.json'],
       event_type: [123, 'event_types/123.json'],
-      article: ['test-article', 'articles/test-article.json'],
-      testimonies: [456, 'event_types/456/testimonies.json']
+      article: ['test-article', 'articles/test-article.json']
     }.each do |method, (param, expected_path)|
       it "generates correct URL for ##{method}_url" do
         expect(KeventerAPI.send("#{method}_url", param)).to eq("https://test.example.com/api/#{expected_path}")

@@ -1,4 +1,3 @@
-# require './lib/keventer_connector'
 require './lib/services/keventer_api'
 require './lib/trainer'
 
@@ -18,7 +17,6 @@ class Article
       # @next_null = false      # bc related articles need create_one and create_list 
       return @article_null
     end
-    # api_resp = JsonAPI.new(KeventerConnector.article_url(slug))
     api_resp = JsonAPI.new(KeventerAPI.article_url(slug))
     raise StandardError, "[info] Blog (#{slug}) not found" unless api_resp.ok?
 
@@ -35,7 +33,6 @@ class Article
       @next_null = false
       return @articles_null
     end
-    # api_resp = JsonAPI.new(KeventerConnector.articles_url)
     api_resp = JsonAPI.new(KeventerAPI.articles_url )
     raise :NotFound unless api_resp.ok?
 

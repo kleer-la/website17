@@ -19,6 +19,9 @@ Feature: Home Page
 		Then SEO meta name "description" should be "Descubre el poder de la Transformación Ágil. Contamos con más de 13 años de experiencia acompañando a empresas en su evolución organizacional"
 		Then SEO meta property "og:description" should be "Descubre el poder de la Transformación Ágil. Contamos con más de 13 años de experiencia acompañando a empresas en su evolución organizacional"
 
+	Scenario: No noindex
+		Given I visit the home page
+    Then the page should not have a noindex meta tag
 
 	Scenario: SEO hreflang
 		Given I visit the home page

@@ -1,7 +1,5 @@
 require './lib/clients'
 
-
-
 def first_x_courses(courses, quantity)
   if courses.nil?
     return []
@@ -28,7 +26,6 @@ get '/' do
   @meta_tags.set!  title: t('meta_tag.home.title'),
                    description: t('meta_tag.home.description'),
                    canonical:  t('meta_tag.home.canonical')
-
 
   @clients =  client_list
   @coming_courses = if session[:locale] == 'es'

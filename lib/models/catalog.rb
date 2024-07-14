@@ -1,6 +1,5 @@
 require 'date'
 
-require './lib/keventer_connector'
 class Catalog
   def self.load_catalog_events(loaded_events)
     events = []
@@ -35,7 +34,7 @@ class Catalog
       if defined? @@json_api
         json_api = @@json_api
       else
-        json_api = JsonAPI.new(KeventerConnector.catalog_url)
+        json_api = JsonAPI.new(KeventerAPI.catalog_url)
       end
       Catalog.load_catalog_events(json_api.doc) unless json_api.doc.nil?
     end

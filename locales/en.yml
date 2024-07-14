@@ -708,7 +708,6 @@ en:
         Or a combination of these, to ensure continuous learning.
       button:
         text: Contact us
-        link:
     public:
       title: Agenda
       text: Join our proposal of scheduled courses, with individual or group registration options. Share a unique learning experience with professionals looking to take their skills to the next level.
@@ -716,7 +715,6 @@ en:
         text: Agenda
         link:
     e-learning:
-      title: Academia Kleer
       text: Explore on-demand online courses on our e-learning platform. Ask about business packages.
       button:
         text: Go to academy
@@ -849,7 +847,6 @@ en:
       title: Tell us more about your context. Let’s design together your journey to and agile organization.
       button:
         text: Let’s talk
-        link: mailto:info@kleer.la?subject=Business Agility&amp;body=Please describe your context and how could we help you
   services:
     title: Transform your company with organizational agility
     subtitle: >-

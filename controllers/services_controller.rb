@@ -1,6 +1,6 @@
 require './lib/models/service_area_v3'
 
-get '/servicios' do
+get %r{/servicios/?} do
     if session[:locale] == 'en'
       redirect to("#{session[:locale]}/agilidad-organizacional"), 301
     end

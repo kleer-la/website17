@@ -29,7 +29,7 @@ class Trainer
       if defined? @@json_api
         json_api = @@json_api
       else
-        json_api = JsonAPI.new(KeventerConnector.kleerers_json_url)
+        json_api = JsonAPI.new(KeventerAPI.kleerers_url)
       end
       Trainer.load_trainers(json_api.doc, lang) unless json_api.doc.nil?
     end

@@ -1,10 +1,5 @@
 def get_event_type(event_type_id, find_it: true)
-  connector = double('KeventerConnector')
   catalog = NullJsonAPI.new(nil, File.read('./spec/catalog.json'))
-
-
-  allow(connector).to receive(:get_catalog).and_return(catalog)
-  allow(connector).to receive(:get_testimonies ).and_return(nil)
 
   # NullInfraestructure json
   EventType.null_json_api(

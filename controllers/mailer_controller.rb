@@ -1,4 +1,13 @@
+require './lib/json_api'
+require './lib/services/mailer'
+
 include Recaptcha::Adapters::ControllerMethods
+
+def send_mail(data)
+  url = KeventerAPI.mailer_url
+  # return JSON.parse(@response) unless @response.nil? # NullInfra -esque
+  Mailer.new(url, data)
+end
 
 post "/send-mail" do
   data = {
@@ -10,10 +19,9 @@ post "/send-mail" do
   }
 
   if verify_recaptcha
-    connector = KeventerConnector.new
-    connector.send_mail(data)
-    flash[:notice] = 'Su mensaje ha sido enviado correctamente'
+    send_mail(data)
 
+    flash[:notice] = 'Su mensaje ha sido enviado correctamente'
   else
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
   end
@@ -21,6 +29,8 @@ post "/send-mail" do
 end
 
 get "/mailer-template" do
+  @meta_tags.set! noindex: true, nofollow: true
+
   erb :'component/_form_contact', layout: false
 end
 

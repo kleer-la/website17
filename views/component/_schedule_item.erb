@@ -14,6 +14,7 @@
    list_price = event.list_price.to_i
    price_off = event.eb_price.to_i
    using_coupon = false
+   duration = event.duration
 
    if coupon
      coupon_price = list_price - (list_price * coupon.percent_off.to_i / 100)
@@ -55,7 +56,7 @@
         <%= date %>
       <%= pop_up_close%>
       <% if with_name %>
-        <strong class="duration-mobile"><%= event.event_type.duration %> horas</strong>
+        <strong class="duration-mobile"><%= duration %> horas</strong>
       <% end %>
     </div>
   <% else %>
@@ -67,7 +68,7 @@
     <div class="col-4 col-lg-1 next-edition-item">
       <p>
         <img src="/app/img/icons/Clock.svg">
-        <%= event.event_type.duration %>hs
+        <%= duration %>hs
       </p>
     </div>
   <% end %>
@@ -89,7 +90,7 @@
   <% end %>
   <div class="col-6 col-lg-2 next-edition-item">
     <% if with_name %>
-      <strong class="duration-desktop"><%= event.event_type.duration %>hs</strong>
+      <strong class="duration-desktop"><%= duration %>hs</strong>
     <% end %>
       <%= info_time %>
     <a class="small-label time-zone" href="<%=event.timezone_url%>">
