@@ -1,0 +1,32 @@
+<div class="card course-card" style="width: 18rem;">
+  <div class="image-container">
+    <a href="<%# item.subtype == "academia" ? @course[:external_site_url] : @course[:url]%>">
+      <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top course-card__image', alt: '...', has_webp: false}%>
+    </a>
+      <%if false%>
+      <div class="flags">
+        <% if false #@course[:is_open] %>
+          <div>Próximas fechas</div>
+        <%end %>
+        <% if @course[:platform] === "academia" %>
+          <div>
+            <img src="/app/img/logos/logo-academia.png" />
+          </div>
+        <% end %>
+      </div>
+        <% end %>
+  </div>
+  <div class="body">
+    <div>
+      <a href="<%# @course[:platform] === "academia" ? @course[:external_site_url] : @course[:url]%>">
+        <h3 class="card-title"><%= item.title%></h3>
+      </a>
+    </div>
+    <p class="card-text subtitle"><%= item.subtitle%></p>
+  </div>
+  <div class="text-center">
+    <a href="<%# @course[:url] %>" class="btn my-secondary-button ms-3 me-3">
+      <%= t('generals.buttons.more_info') %>
+    </a>
+  </div>
+</div>

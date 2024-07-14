@@ -1,8 +1,11 @@
 <section id="landing-blog-authors">
-  <h2><%=t("blog.landing.authors")%></h2>
-  <div class="landing-blog-authors__container">
-      <% @article.trainers_list.each do |trainer| %>
-      <%= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
-      <% end %>
-  </div>
+  <% p @article.trainers_list %>
+  <% unless @article.trainers_list&.empty? %>
+    <h2><%=t("blog.landing.authors")%></h2>
+    <div class="landing-blog-authors__container">
+        <% @article.trainers_list.each do |trainer| %>
+        <%= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
+        <% end %>
+    </div>
+  <% end %>
 </section>

@@ -1,5 +1,7 @@
+require './lib/json_api'
 require './lib/services/keventer_api'
 require './lib/trainer'
+require './lib/models/recommended'
 
 class Article
   @next_null = false
@@ -42,6 +44,7 @@ class Article
   attr_accessor :title, :description, :tabtitle, :body, :published,
                 :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :cover, :category_name, :id,
+                :recommended,
                 :active #View attributes,
 
   def initialize(doc)
@@ -61,6 +64,7 @@ class Article
     @active = false
     init_trainers(doc)
     init_dates(doc)
+    init_recommended(doc)
   end
 
   def load_trainers(hash_trainers)
@@ -78,6 +82,10 @@ class Article
   def init_dates(doc)
     @created_at = doc['created_at'] || ''
     @updated_at = doc['updated_at'] || ''
+  end
+
+  def init_recommended(doc)
+    @recommended = doc['recommended']&.reduce([]) { |ac, r| ac << Recommended.new(r) } || []
   end
 
   def self.load_list(doc, only_published: false)
