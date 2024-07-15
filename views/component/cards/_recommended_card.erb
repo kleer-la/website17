@@ -1,7 +1,7 @@
-<div class="card course-card" style="width: 18rem;">
+<div class="recommended-card">
   <div class="image-container">
     <a href="<%= item.url%>">
-      <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top course-card__image', alt: '...', has_webp: false}%>
+      <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: '...', has_webp: false}%>
     </a>
       <%if false%>
       <div class="flags">
@@ -16,17 +16,17 @@
       </div>
         <% end %>
   </div>
-  <div class="body">
+  <div class="card-body">
     <div>
       <a href="<%= item.url%><%= item.url%>">
         <h3 class="card-title"><%= item.title%></h3>
       </a>
     </div>
     <p class="card-text subtitle"><%= item.subtitle%></p>
-  </div>
-  <div class="text-center">
-    <a href="<%= item.url%>" class="btn my-secondary-button ms-3 me-3">
-      <%= t('generals.buttons.more_info') %>
-    </a>
+    <div class="button-container">
+      <a href="<%= item.url%>" class="btn my-secondary-button ms-3 me-3">
+        <%= t('generals.buttons.more_info') %>
+      </a>
+    </div>
   </div>
 </div>
