@@ -85,7 +85,7 @@ class Article
   end
 
   def init_recommended(doc)
-    @recommended = doc['recommended']&.reduce([]) { |ac, r| ac << Recommended.new(r) } || []
+    @recommended = doc['recommended']&.reduce([]) { |ac, r| ac << Recommended.create(r) } || []
   end
 
   def self.load_list(doc, only_published: false)
