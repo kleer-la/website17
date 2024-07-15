@@ -3,6 +3,9 @@
     <a href="<%= item.url%>">
       <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: '...', has_webp: false}%>
     </a>
+    <div class="type-flag">
+      <%= t("recommended.type.#{item.type}") %>
+    </div>
       <%if false%>
       <div class="flags">
         <% if false #@course[:is_open] %>

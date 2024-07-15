@@ -775,6 +775,12 @@ en:
   news:
     title: Press
     subtitle: Press releases and publications in various media about our work.
+  recommended:
+    title: We suggest
+    type:
+      service: Service
+      article: Blog
+      event_type: Course
   business-agility:
     title: Business Agility
     subtitle: >-

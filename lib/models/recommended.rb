@@ -17,7 +17,7 @@ class Recommended
     case doc['type']
     when 'article'
       RecommendedArticle.new(doc)
-    when 'eventtype'
+    when 'event_type'
       RecommendedEventType.new(doc)
     when 'service'
       RecommendedService.new(doc)
@@ -34,8 +34,13 @@ class RecommendedArticle < Recommended
 end
 
 class RecommendedEventType < Recommended
+  def initialize(doc)
+    super(doc)
+    @external_url = doc['external_url']
+  end
+
   def url
-    "/es/cursos/#{slug}"
+    @external_url || "/es/cursos/#{slug}"
   end
 end
 
