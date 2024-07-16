@@ -5,14 +5,13 @@ get '/prensa' do
   @meta_tags.set! title: "#{t('meta_tag.press.title')}",
                   description: t('meta_tag.press.description'),
                   canonical: "#{t('meta_tag.press.canonical')}"
-#TODO: remove old news implementation and move to /novedades
+  # TODO: remove old news implementation and move to /novedades
   @news = News.create_list_keventer
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = "/"
+  router_helper.alternate_route = '/'
 
   erb :'news_v2/index', layout: :'layout/layout2022'
-
 end
 
 get '/clientes/equipos-scrum-en-technisys-2015' do

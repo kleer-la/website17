@@ -16,9 +16,10 @@ class Article
 
   def self.create_one_keventer(slug)
     if @next_null
-      # @next_null = false      # bc related articles need create_one and create_list 
+      # @next_null = false      # bc related articles need create_one and create_list
       return @article_null
     end
+
     api_resp = JsonAPI.new(KeventerAPI.article_url(slug))
     raise StandardError, "[info] Blog (#{slug}) not found" unless api_resp.ok?
 
@@ -35,7 +36,7 @@ class Article
       @next_null = false
       return @articles_null
     end
-    api_resp = JsonAPI.new(KeventerAPI.articles_url )
+    api_resp = JsonAPI.new(KeventerAPI.articles_url)
     raise :NotFound unless api_resp.ok?
 
     Article.load_list(api_resp.doc, only_published: only_published)
@@ -45,7 +46,7 @@ class Article
                 :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :cover, :category_name, :id,
                 :recommended,
-                :active #View attributes,
+                :active # View attributes,
 
   def initialize(doc)
     @id = doc['id']

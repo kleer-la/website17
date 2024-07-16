@@ -2,9 +2,7 @@ class RouterHelper
   attr_accessor :routes, :current_route, :alternate_route, :lang
 
   def set_current_route(current_route)
-    if current_route[0,3] == '/en' || current_route[0,3] == '/es'
-      current_route = current_route[3..-1]
-    end
+    current_route = current_route[3..-1] if current_route[0, 3] == '/en' || current_route[0, 3] == '/es'
     @current_route = current_route
   end
 

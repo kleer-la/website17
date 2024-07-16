@@ -1,7 +1,7 @@
 require './lib/models/service_area_v3'
 
 Given('I visit a not existing service page') do
-  ServiceAreaV3.null_json_api( NullJsonAPI.new(nil, nil) )
+  ServiceAreaV3.null_json_api(NullJsonAPI.new(nil, nil))
   visit '/servicios/not-exist'
 end
 
@@ -46,7 +46,7 @@ Given('a service {string} with slug {string}') do |name, slug|
   ]
   }
   HEREDOC
-  ServiceAreaV3.null_json_api( NullJsonAPI.new(nil, service ) )
+  ServiceAreaV3.null_json_api(NullJsonAPI.new(nil, service))
 end
 
 Given('a list that includew service area {string} with slug {string}') do |name, slug|
@@ -79,7 +79,5 @@ Given('a list that includew service area {string} with slug {string}') do |name,
     }
   ]
   HEREDOC
-  ServiceAreaV3.null_json_api( NullJsonAPI.new(nil, service_areas ) )
+  ServiceAreaV3.null_json_api(NullJsonAPI.new(nil, service_areas))
 end
-
-  

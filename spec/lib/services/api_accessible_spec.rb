@@ -5,7 +5,7 @@ RSpec.describe APIAccessible do
   let(:dummy_class) do
     Class.new do
       include APIAccessible
-      api_connector Class.new { def url_for(id); "https://api.example.com/resource/#{id}"; end }
+      api_connector(Class.new { def url_for(id) = "https://api.example.com/resource/#{id}" })
 
       attr_reader :data
 
@@ -18,7 +18,8 @@ RSpec.describe APIAccessible do
   describe '.create_from_api' do
     context 'when API call is successful' do
       before do
-        successful_response = instance_double(HTTParty::Response, success?: true, parsed_response: { 'id' => 1, 'name' => 'Test' })
+        successful_response = instance_double(HTTParty::Response, success?: true,
+                                                                  parsed_response: { 'id' => 1, 'name' => 'Test' })
         allow(APIAccessible::JsonAPI).to receive(:get).and_return(successful_response)
       end
 

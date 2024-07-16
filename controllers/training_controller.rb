@@ -14,18 +14,19 @@ REDIRECT = {
   'entrenamos/eventos/pais/:country_iso_code' => 'agenda',
   'entrenamos/:id' => 'agenda',
   'entrenamos' => 'agenda',
-  'entrenamos/evento/:event_id_with_name'=> nil,
-  'entrenamos/evento/:event_id_with_name/registration'=> nil,
-  'entrenamos/evento/:event_id_with_name/remote'=> nil,
-  'entrenamos/evento/:event_id_with_name/entrenador/remote'=> nil,
+  'entrenamos/evento/:event_id_with_name' => nil,
+  'entrenamos/evento/:event_id_with_name/registration' => nil,
+  'entrenamos/evento/:event_id_with_name/remote' => nil,
+  'entrenamos/evento/:event_id_with_name/entrenador/remote' => nil,
   'categoria/:category_codename' => 'catalogo',
-  'categoria/:category_codename/' => 'catalogo',
+  'categoria/:category_codename/' => 'catalogo'
 }.freeze
 
 REDIRECT.each do |uris|
-  get '/'+uris[0] do
+  get '/' + uris[0] do
     return(redirect_not_found_course) if uris[1].nil?
-    redirect "/#{session[:locale]}/#{uris[1]}" #, 301
+
+    redirect "/#{session[:locale]}/#{uris[1]}" # , 301
   end
 end
 
@@ -68,7 +69,7 @@ get '/agenda' do
   @events = Event.create_keventer_json
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = "/catalogo"
+  router_helper.alternate_route = '/catalogo'
 
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
@@ -82,7 +83,7 @@ get '/catalogo' do
   @events = Catalog.create_keventer_json
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = "/catalogo"
+  router_helper.alternate_route = '/catalogo'
 
   erb :'training/catalog/index', layout: :'layout/layout2022'
 end
@@ -96,13 +97,12 @@ get '/cursos/:event_type_id_with_name' do
   if @event_type.nil?
     redirect_not_found_course
   else
-    if session[:locale] != @event_type.lang
-      redirect to("#{session[:locale]}/catalogo"), 301
-    end
+    redirect to("#{session[:locale]}/catalogo"), 301 if session[:locale] != @event_type.lang
 
     redirecting = @event_type.redirect_to(params[:event_type_id_with_name])
     unless redirecting.nil?
       return redirect_not_found_course if redirecting == ''
+
       redirect to(redirecting), 301
     end
 
@@ -119,10 +119,10 @@ get '/cursos/:event_type_id_with_name' do
       @category = @event_type.categories[0]
     end
 
-    @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id , 4)
+    @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id, 4)
 
     router_helper = RouterHelper.instance
-    router_helper.alternate_route = "/catalogo"
+    router_helper.alternate_route = '/catalogo'
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end

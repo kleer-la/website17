@@ -9,7 +9,7 @@ def send_mail(data)
   Mailer.new(url, data)
 end
 
-post "/send-mail" do
+post '/send-mail' do
   data = {
     name: params[:name],
     email: params[:email],
@@ -28,9 +28,8 @@ post "/send-mail" do
   redirect params[:context]
 end
 
-get "/mailer-template" do
+get '/mailer-template' do
   @meta_tags.set! noindex: true, nofollow: true
 
   erb :'component/_form_contact', layout: false
 end
-

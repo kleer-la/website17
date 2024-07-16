@@ -15,8 +15,8 @@ class AcademyCourses
 
   def select(lang, quantity)
     @courses
-    .reject {|e| e[lang].nil?}
-    .map {|e| e[lang]}
-    .first(quantity)
+      .reject { |e| e[lang].nil? }
+      .map { |e| e[lang] }
+      .first(quantity)
   end
 end

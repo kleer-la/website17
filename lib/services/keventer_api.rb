@@ -12,7 +12,7 @@ module KeventerAPI
 
   def url_for(path, params = {})
     config
-    uri = URI.join(@config[:base_url], @config[:api_path], path.sub(/^\//, ''))
+    uri = URI.join(@config[:base_url], @config[:api_path], path.sub(%r{^/}, ''))
     uri.query = URI.encode_www_form(params) unless params.empty?
     uri.to_s
   end

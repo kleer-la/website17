@@ -22,10 +22,10 @@ end
 get '/clientes/testimonios/:id' do
   story = success_stories(params[:id])
   return(redirect_not_found_testimony) if story.nil?
-  
-  @meta_tags.set! title:       story[:title],
+
+  @meta_tags.set! title: story[:title],
                   description: story[:meta_desdription],
-                  canonical:   request.path 
+                  canonical: request.path
   erb :'clients/success_story', locals: { story: story }, layout: :'layout/layout2022'
 end
 

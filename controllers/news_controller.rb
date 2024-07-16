@@ -1,6 +1,5 @@
 require './lib/news'
 
-
 get '/novedades' do
   @active_tab_publicamos = 'active'
   # @meta_tags.set!  title: t('meta_tag.resources.title'),
@@ -10,7 +9,7 @@ get '/novedades' do
   @news = News.create_list_keventer
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = "/"
+  router_helper.alternate_route = '/'
 
   erb :'news_v2/index', layout: :'layout/layout2022'
 end

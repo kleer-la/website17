@@ -21,13 +21,13 @@ module MetaTags
         base_url: 'https://www.kleer.la',
         'http-equiv': ['X-UA-Compatible', 'IE=edge'],
         viewport: 'width=device-width, initial-scale=1.0"',
-        hreflang: [:es, :en]
+        hreflang: %i[es en]
       }
       @path = ''
-      @shown= false
+      @shown = false
     end
 
-    def set!(keyw= {})
+    def set!(keyw = {})
       @tags.merge! keyw
     end
     ROBOT_ATTR = %i[noindex nofollow noarchive].freeze
@@ -44,6 +44,7 @@ module MetaTags
       @site = @tags[:site]
       @tags.delete :site
     end
+
     def path
       @path = @tags[:path]
 
@@ -57,6 +58,7 @@ module MetaTags
 
       @tags.delete :path
     end
+
     def current_lang
       @current_lang = @tags[:current_lang]
       @tags.delete  :current_lang
@@ -64,6 +66,7 @@ module MetaTags
 
     def display(...)
       return '' if @shown
+
       set!(...)
 
       @shown = true
@@ -103,7 +106,11 @@ module MetaTags
       when :canonical
         "<link rel=\"canonical\" href=\"#{@base_url}/#{@current_lang}#{tag[1]}\"/>"
       when :hreflang
-        tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{@path}\"/>" : '') {|ac, lang| ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"} unless @path.nil?
+        unless @path.nil?
+          tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{@path}\"/>" : '') do |ac, lang|
+            ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"
+          end
+        end
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end

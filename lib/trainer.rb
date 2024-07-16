@@ -4,16 +4,17 @@ class Trainer
   attr_accessor :id, :name, :bio,
                 :gravatar_email, :twitter_username, :linkedin_url
 
-  def initialize()
+  def initialize
     @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = ''
   end
 
-  #TODO handle lang
-  def load_from_json(t_json, lang = 'es')
+  # TODO: handle lang
+  def load_from_json(t_json, _lang = 'es')
     @id = t_json['id'].to_i
     load_str(%i[name bio gravatar_email twitter_username linkedin_url], t_json)
     self
   end
+
   def load_str(syms, hash)
     syms.each { |field| send("#{field}=", hash[field.to_s]) }
   end
@@ -26,22 +27,22 @@ class Trainer
 
   class << self
     def create_keventer_json(lang)
-      if defined? @@json_api
-        json_api = @@json_api
-      else
-        json_api = JsonAPI.new(KeventerAPI.kleerers_url)
-      end
+      json_api = if defined? @@json_api
+                   @@json_api
+                 else
+                   JsonAPI.new(KeventerAPI.kleerers_url)
+                 end
       Trainer.load_trainers(json_api.doc, lang) unless json_api.doc.nil?
     end
 
     def null_json_api(null_api)
       @@json_api = null_api
     end
+
     def load_trainers(json, lang)
-      json.reduce([]) { |ac, obj| ac << Trainer.new().load_from_json(obj, lang) }
+      json.reduce([]) { |ac, obj| ac << Trainer.new.load_from_json(obj, lang) }
     end
   end
-
 end
 
 # "id": 57,

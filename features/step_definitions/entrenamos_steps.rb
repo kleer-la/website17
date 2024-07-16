@@ -1,23 +1,23 @@
 require './lib/category'
 
 Given('A list of categories') do
-  Category.null_json_api( NullJsonAPI.new('./spec/events.json') )
+  Category.null_json_api(NullJsonAPI.new('./spec/events.json'))
 end
 
 Given('A catalog') do
-  Catalog.null_json_api( NullJsonAPI.new('./spec/catalog.json') )
+  Catalog.null_json_api(NullJsonAPI.new('./spec/catalog.json'))
 end
 
 Given('A deleted event type') do
-  EventType.null_json_api( NullJsonAPI.new('./spec/mocks/deleted_event_type.json') )
+  EventType.null_json_api(NullJsonAPI.new('./spec/mocks/deleted_event_type.json'))
 end
 
 Given('A deleted and redirected event type') do
-  EventType.null_json_api( NullJsonAPI.new('./spec/mocks/redirected_event_type.json') )
+  EventType.null_json_api(NullJsonAPI.new('./spec/mocks/redirected_event_type.json'))
 end
 
 Given('A updated event type') do
-  EventType.null_json_api( NullJsonAPI.new('./spec/mocks/updated_event_type.json') )
+  EventType.null_json_api(NullJsonAPI.new('./spec/mocks/updated_event_type.json'))
 end
 
 Then(/^event list is empty$/) do

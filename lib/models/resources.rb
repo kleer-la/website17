@@ -6,7 +6,7 @@ class Resource
     @objects_null = Resource.load_list(data)
   end
 
-  def self.create_list_keventer()
+  def self.create_list_keventer
     if @next_null
       @next_null = false
       return @objects_null
@@ -38,12 +38,11 @@ class Resource
     @tags = doc["tags_#{lang}"] || ''
     @comments = doc["comments_#{lang}"] || ''
 
-    #insert lang
+    # insert lang
     @kleer_share_url = "https://www.kleer.la/#{lang}/recursos##{@slug}"
 
     share_url = @kleer_share_url
     share_url = @share_link unless @share_link.to_s == ''
-
 
     @fb_share = URI.encode_www_form(
       u: share_url,
@@ -65,41 +64,44 @@ class Resource
     )
 
     @authors = init_trainers(doc, 'authors')
-    @authors_list = doc['authors'].map{|e| e['name']}
+    @authors_list = doc['authors'].map { |e| e['name'] }
 
     @translators = init_trainers(doc, 'translators')
-    @translators_list = doc['translators'].map{|e| e['name']}
-    @illustrators_list = doc['illustrators'].map{|e| e['name']}
+    @translators_list = doc['translators'].map { |e| e['name'] }
+    @illustrators_list = doc['illustrators'].map { |e| e['name'] }
 
     init_dates(doc)
     # "categories_id": null,
     # "trainers_id": null,
   end
+
   def show_one_trainer(trainer_data)
     trainer = trainer_data['name']
     landing = trainer_data['landing']
     trainer = "<a href=\"#{landing}\">#{trainer}</a>" unless landing.to_s == ''
     trainer
   end
+
   def init_trainers(doc, role)
     return nil if doc[role].nil?
+
     list = (doc[role]&.reduce([]) { |ac, t| ac << show_one_trainer(t) }
-                )
-    unless list == []
-      list.join(', ')
-    else
-      nil
-    end
+           )
+    return if list == []
+
+    list.join(', ')
   end
+
   def init_dates(doc)
     @created_at = doc['created_at'] || ''
     @updated_at = doc['updated_at'] || ''
   end
+
   def self.load_list(doc)
-    doc.each_with_object([]) {|data, ac|
-      (ac << Resource.new(data, :es) ) unless data['title_es'] == ''
-      (ac << Resource.new(data, :en) ) unless data['title_en'] == ''
+    doc.each_with_object([]) do |data, ac|
+      (ac << Resource.new(data, :es)) unless data['title_es'] == ''
+      (ac << Resource.new(data, :en)) unless data['title_en'] == ''
       ac
-    }
+    end
   end
 end

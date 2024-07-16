@@ -25,12 +25,10 @@ Given('a kleerer {string} with LinkedIn {string}') do |name, linked_in|
         "landing": null
         }
       ]
-      HEREDOC
-    Trainer.null_json_api( NullJsonAPI.new(nil, trainers) )
-  end
+  HEREDOC
+  Trainer.null_json_api(NullJsonAPI.new(nil, trainers))
+end
 
-  Then('I should see a LinkedIn for {string}') do |linked_in|
-    expect(page).to have_selector("a[href='https://www.linkedin.com/in/#{linked_in}']")
-  end
-  
-  
+Then('I should see a LinkedIn for {string}') do |linked_in|
+  expect(page).to have_selector("a[href='https://www.linkedin.com/in/#{linked_in}']")
+end

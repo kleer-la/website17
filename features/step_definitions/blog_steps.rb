@@ -38,7 +38,6 @@ Given('With {string} locale') do |lang|
   @lang = lang
 end
 
-
 Given(/^I go to the Blog page$/) do
   Article.create_list_null([], { next_null: true, only_published: false })
   visit '/es/blog'

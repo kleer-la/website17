@@ -1,57 +1,56 @@
 def client_list
   [
-  {name: "Falabella Financiero", img: "/img/clientes/FalabellaFinanciero.webp" },
-  {name: "Telefonica", img: "/img/clientes/Telefonica.webp"},
-  {name: "Roche", img: "/img/clientes/Roche.webp"},
-  {name: "Scotiabank", img: "/img/clientes/Scotiabank.webp"},
-  {name: "Sura", img: "/img/clientes/sura.webp"},
-  {name: "Cementos Argos", img: "/img/clientes/argos.webp"},
-  # {name: "BBVA Continental", img:"/img/clientes/BBVA.webp" },
-  # {name: 'Coca-cola', img: '/img/clientes/coca.webp'},
-  # {name: 'Disney', img: '/img/clientes/disney.webp'},
-  # {name: 'Loreal París', img: '/img/clientes/loreal.webp'},
-  {name: "Ecopetrol", img: "/img/clientes/EcoPetrol.webp" },
-  {name: "Grupo Nutresa", img: "/img/clientes/grupoNutresa.webp"},
-  {name: "Terpel", img: "/img/clientes/terpel.webp"},
-  {name: "BCI", img:"/img/clientes/BCi.webp" },
-  # {name: "Ecopetrol", img:"/img/clientes/Ecopetrol.png" },
+    { name: 'Falabella Financiero', img: '/img/clientes/FalabellaFinanciero.webp' },
+    { name: 'Telefonica', img: '/img/clientes/Telefonica.webp' },
+    { name: 'Roche', img: '/img/clientes/Roche.webp' },
+    { name: 'Scotiabank', img: '/img/clientes/Scotiabank.webp' },
+    { name: 'Sura', img: '/img/clientes/sura.webp' },
+    { name: 'Cementos Argos', img: '/img/clientes/argos.webp' },
+    # {name: "BBVA Continental", img:"/img/clientes/BBVA.webp" },
+    # {name: 'Coca-cola', img: '/img/clientes/coca.webp'},
+    # {name: 'Disney', img: '/img/clientes/disney.webp'},
+    # {name: 'Loreal París', img: '/img/clientes/loreal.webp'},
+    { name: 'Ecopetrol', img: '/img/clientes/EcoPetrol.webp' },
+    { name: 'Grupo Nutresa', img: '/img/clientes/grupoNutresa.webp' },
+    { name: 'Terpel', img: '/img/clientes/terpel.webp' },
+    { name: 'BCI', img: '/img/clientes/BCi.webp' }
+    # {name: "Ecopetrol", img:"/img/clientes/Ecopetrol.png" },
 
-
-  # {name: 'LATAM', img: '/img/clientes/latam.webp'},
-  # {name: "epm", img:"/img/clientes/epm.webp" },
-  # {name: "Protección", img:"/img/clientes/proteccion.webp" },
-  # {name: "Banco de Occidente", img:"/img/clientes/ban_occidente.webp" },
-  # {name: "Banco de Chile", img:"/img/clientes/BancoDeChileB.webp" },
-  # # {name: "Banchile", img:"/img/clientes2/" },
-  # {name: "Interbank", img:"/img/clientes/interbank.webp" },
-  # {name: "BCP", img:"/img/clientes/BCP.webp" },
-  # {name: "Interbanking", img:"/img/clientes/interbanking.webp" },
-  # {name: "Grupo Galicia", img:"/img/clientes/galicia.webp" },
-  # {name: "OSDE", img:"/img/clientes/osde.webp" },
-  # # {name: "Cablevisión", img:"/img/clientes/logo-cablevision.png" },
-  # {name: "Fibertel", img:"/img/clientes/fibertel.webp" },
-  # {name: "YPF" , img:"/img/clientes/YPF.webp" },
-  # {name: "Oracle", img:"/img/clientes/oracle.webp" },
-  # {name: "Artear", img:"/img/clientes/artear.webp" },
-  # # {name: "Telecom", img:"/img/clientes/logo-telecom.jpg" },
-  # {name: "Farmacity", img:"/img/clientes/farmacity.webp" },
-  # {name: "Cencosud", img:"/img/clientes/cencosud.webp" },
-  # {name: "Plataforma 10", img: "/img/clientes/plataforma10.webp" },
-  # {name: "Intraway", img: "/img/clientes/intraway.webp" },
-  # {name: "Exxon Mobil", img: "/img/clientes/exxo_mobil.webp" },
-  # {name: "Technisys", img: "/img/clientes/technisys.webp" },
-  # {name: "GlobalLogic", img: "/img/clientes/global_logic.webp" },
-  # # {name: "Neoris", img: "/img/clientes/logo-neoris.png" },
-  # {name: "Asesuisa", img: "/img/clientes/asesuisa.webp" },
-  # {name: "Bancolombia", img: "/img/clientes/bancolombia.webp" },
-  # {name: "Colpatria", img: "/img/clientes/colpatria.webp" },
-  # {name: "Edenor", img: "/img/clientes/edenor.webp" },
+    # {name: 'LATAM', img: '/img/clientes/latam.webp'},
+    # {name: "epm", img:"/img/clientes/epm.webp" },
+    # {name: "Protección", img:"/img/clientes/proteccion.webp" },
+    # {name: "Banco de Occidente", img:"/img/clientes/ban_occidente.webp" },
+    # {name: "Banco de Chile", img:"/img/clientes/BancoDeChileB.webp" },
+    # # {name: "Banchile", img:"/img/clientes2/" },
+    # {name: "Interbank", img:"/img/clientes/interbank.webp" },
+    # {name: "BCP", img:"/img/clientes/BCP.webp" },
+    # {name: "Interbanking", img:"/img/clientes/interbanking.webp" },
+    # {name: "Grupo Galicia", img:"/img/clientes/galicia.webp" },
+    # {name: "OSDE", img:"/img/clientes/osde.webp" },
+    # # {name: "Cablevisión", img:"/img/clientes/logo-cablevision.png" },
+    # {name: "Fibertel", img:"/img/clientes/fibertel.webp" },
+    # {name: "YPF" , img:"/img/clientes/YPF.webp" },
+    # {name: "Oracle", img:"/img/clientes/oracle.webp" },
+    # {name: "Artear", img:"/img/clientes/artear.webp" },
+    # # {name: "Telecom", img:"/img/clientes/logo-telecom.jpg" },
+    # {name: "Farmacity", img:"/img/clientes/farmacity.webp" },
+    # {name: "Cencosud", img:"/img/clientes/cencosud.webp" },
+    # {name: "Plataforma 10", img: "/img/clientes/plataforma10.webp" },
+    # {name: "Intraway", img: "/img/clientes/intraway.webp" },
+    # {name: "Exxon Mobil", img: "/img/clientes/exxo_mobil.webp" },
+    # {name: "Technisys", img: "/img/clientes/technisys.webp" },
+    # {name: "GlobalLogic", img: "/img/clientes/global_logic.webp" },
+    # # {name: "Neoris", img: "/img/clientes/logo-neoris.png" },
+    # {name: "Asesuisa", img: "/img/clientes/asesuisa.webp" },
+    # {name: "Bancolombia", img: "/img/clientes/bancolombia.webp" },
+    # {name: "Colpatria", img: "/img/clientes/colpatria.webp" },
+    # {name: "Edenor", img: "/img/clientes/edenor.webp" },
   ]
 end
 
 def success_stories(id = nil)
   stories = {
-    'afp-crecer' =>{
+    'afp-crecer' => {
       title: 'Cómo acompañamos su transformación ágil',
       subtitle: '',
       description: 'Coaching y transformación ágil en <b>AFP Crecer</b>',
@@ -77,7 +76,7 @@ def success_stories(id = nil)
             }
           ]
         }
-      ],
+      ]
     },
     'transformacion-digital-bbva-continental' => {
       title: 'Cómo acompañamos su transformación ágil',
@@ -95,9 +94,9 @@ def success_stories(id = nil)
           content: 'BBVA contactó a Kleer para facilitar el logro de esos objetivos a través de consultoría, mentoring y coaching. El acompañamiento abarcó a equipos y managers para ayudar a incorporar las prácticas ágiles de trabajo y escalarlas.
 
           Los coaches de Kleer se dedicaron, por un lado, a apoyar a los Scrum Masters, Product Owners y stakeholders en las prácticas ágiles de trabajo y en su escalamiento. El foco estuvo en el desarrollo iterativo e incremental de productos, gestión ágil de proyectos, visual management y técnicas de desarrollo de software de calidad.
-          
+
           Por otro, se realizaron actividades de sensibilización de valores y principios ágiles para potenciar el cambio cultural en otras áreas del banco. Se crearon comunidades de práctica para compartir conocimientos y construir nuevos equipos.
-          
+
           El equipo de coaches se ocupó además de desarrollar agentes de cambio internos, a modo de que la transformación digital continúe con ellos de modo sostenible.'
         },
         {
@@ -120,7 +119,7 @@ def success_stories(id = nil)
             }
           ]
         }
-      ],
+      ]
     },
     'capacitaciones-agiles-endava' => {
       title: 'Cómo acompañamos su transformación ágil',
@@ -195,7 +194,7 @@ def success_stories(id = nil)
         }
       ]
     },
-    'falabella-financiero' => { 
+    'falabella-financiero' => {
       title: 'Cómo acompañamos su transformación ágil',
       subtitle: '',
       description: 'Transformación Organizacional en <b>Falabella Financiero</b>',
@@ -218,7 +217,7 @@ def success_stories(id = nil)
           content: 'Durante el acompañamiento de 6 meses con coaches de Kleer el foco fue formar nuevos equipos que mantengan la cultura ágil, robustecer las relaciones entre equipos, adaptar la comunicación, toma de decisiones y liderazgo a la nueva escala y crear comunidades de práctica para fomentar el desarrollo profesional y el aprendizaje organizacional.
 
           Algunos resultados destacados:
-          
+
           <ul><li>El tiempo para formar un nuevo equipo pasó de tres a dos meses.</li><li>Se puso en práctica un mecanismo de sincronización para pasajes a producción gestionado por los equipos.</li><li>Cada comunidad de práctica tomó responsabilidad del mantenimiento y evolución de su plataforma y productos.</li><li>Los gerentes delegaron gradualmente varios aspectos de su gestión a las comunidades de prácticas, a los equipos y a un grupo de agentes de cambio.</li></ul>
           Estos son algunos de los testimonios:',
           videos: [
@@ -231,7 +230,7 @@ def success_stories(id = nil)
       ]
     },
     'innovacion-en-marketing-digital-loreal-2016' => {
-      title: "Creación incremental y colaborativa de estrategias digitales",
+      title: 'Creación incremental y colaborativa de estrategias digitales',
       subtitle: '',
       description: 'Innovación en marketing digital en <b>L\'Oréal</b>',
       image_url: '/app/img/loreal-clientes.jpg',
@@ -250,7 +249,7 @@ def success_stories(id = nil)
         },
         {
           heading: 'Resultado',
-          content: "Luego de estos encuentros cada una de las divisiones de marketing de L’Oréal ideó y presentó al resto de la organización una estrategia digital validada a partir de experimentos. Los profesionales aprendieron una forma <b>incremental e iterativa</b> de trabajar en equipo, a partir de técnicas de <i>design thinking</i> y desarrollo ágil de productos.",
+          content: 'Luego de estos encuentros cada una de las divisiones de marketing de L’Oréal ideó y presentó al resto de la organización una estrategia digital validada a partir de experimentos. Los profesionales aprendieron una forma <b>incremental e iterativa</b> de trabajar en equipo, a partir de técnicas de <i>design thinking</i> y desarrollo ágil de productos.',
           videos: [
             {
               url: 'https://www.youtube.com/embed/y6MmcB6TsnQ',
@@ -280,7 +279,7 @@ def success_stories(id = nil)
           content: 'En el caso de Suramericana, como se ve en los testimonios que encontrarán más abajo, se consitituyó un grupo interno con apoyo continuo del equipo Kleer. Esto es algo que solemos recomendar en las organizaciones a las que acompañamos.
 
           Este grupo logró transformar la organización en las áreas de tecnología, con resultados asombrosos. Este impacto hizo que las áreas de negocio y corporativas vieran la oportunidad de aplicar las mismas ideas más allá de la tecnología.
-          
+
           Un comentario aparte merecen los rápidos e importantes avances en áreas de negocio y cómo las ideas del paradigma ágil resultan atractivas en cuanto se las ve en funcionamiento. En Suramericana, en varios casos, el cambio hacia el paradigma ágil fluyó desde el área de negocio hacia el área de tecnología, lo que podría considerarse "el camino inverso" hace unos años.',
           videos: [
             {
@@ -296,7 +295,7 @@ def success_stories(id = nil)
               title: 'Testimonio de Jubel Correa'
             }
           ]
-        },
+        }
       ]
     },
     'equipos-scrum-en-plataforma-10-2015' => {
@@ -308,11 +307,11 @@ def success_stories(id = nil)
       sections: [
         {
           heading: 'Necesidad',
-          content: "Plataforma 10, una empresa líder en el mercado de la venta de pasajes en diversos medios de transporte, encontró que debía maximizar la velocidad de respuesta ante los cambios y desafíos del mercado."
+          content: 'Plataforma 10, una empresa líder en el mercado de la venta de pasajes en diversos medios de transporte, encontró que debía maximizar la velocidad de respuesta ante los cambios y desafíos del mercado.'
         },
         {
           heading: 'Búsqueda de solución',
-          content: "Habiendo dado sus primeros pasos unos años atrás en metodologías ágiles (Scrum) y prácticas de ingeniería (integración continua, automatización, DevOps), vieron que necesitaban apoyo para consolidarlas y trasladarlas hasta las áreas de negocio, por lo que optaron por incorporar servicios de mentoring y coaching de Kleer."
+          content: 'Habiendo dado sus primeros pasos unos años atrás en metodologías ágiles (Scrum) y prácticas de ingeniería (integración continua, automatización, DevOps), vieron que necesitaban apoyo para consolidarlas y trasladarlas hasta las áreas de negocio, por lo que optaron por incorporar servicios de mentoring y coaching de Kleer.'
         },
         {
           heading: 'Resultado',
@@ -338,19 +337,19 @@ def success_stories(id = nil)
       image_url: 'https://s3-sa-east-1.amazonaws.com/kleer-images/Kleer-casos-technisys1.png',
       industry: 'Tecnología',
       meta_description: 'Kleer - Coaching & Training - Equipos de desarrollo Scrum y automatización de despliegue de software en Technisys apoyados por Kleer',
-      sections:  [
+      sections: [
         {
           title: 'Caso 1: Equipos de desarrollo Scrum en Technisys',
           heading: 'Necesidad',
-          content: "Alejandro Raiczyk, a cargo del área de producto de Technisys, nos cuenta como, cuando llegó al área, vio una oportunidad de mejorar en los marcos de trabajo orientándose a las metodologías ágiles."
+          content: 'Alejandro Raiczyk, a cargo del área de producto de Technisys, nos cuenta como, cuando llegó al área, vio una oportunidad de mejorar en los marcos de trabajo orientándose a las metodologías ágiles.'
         },
         {
           heading: 'Búsqueda de solución',
-          content: "No disponiendo del know-how dentro de la empresa y no teniendo el tiempo para un proceso extenso de capacitación, optaron por incorporar servicios de mentoring y coaching de Kleer."
+          content: 'No disponiendo del know-how dentro de la empresa y no teniendo el tiempo para un proceso extenso de capacitación, optaron por incorporar servicios de mentoring y coaching de Kleer.'
         },
         {
           heading: 'Resultado',
-          content: "En poco tiempo los equipos comenzaron a trabajar en forma más organizada, con mejor comunicación interna entre los diferentes grupos. En este aspecto, las reuniones de planificación aportaron visibilidad de los objetivos, lo mismo que las reuniones de revisión (en iteraciones de tres semanas). Finalmente destaca la importancia de las reuniones de retrospectiva en el proceso de mejora continua liderado por los propios equipos.",
+          content: 'En poco tiempo los equipos comenzaron a trabajar en forma más organizada, con mejor comunicación interna entre los diferentes grupos. En este aspecto, las reuniones de planificación aportaron visibilidad de los objetivos, lo mismo que las reuniones de revisión (en iteraciones de tres semanas). Finalmente destaca la importancia de las reuniones de retrospectiva en el proceso de mejora continua liderado por los propios equipos.',
           videos: [
             {
               url: 'https://www.youtube.com/embed/2oobhTSNQDg',
@@ -359,26 +358,26 @@ def success_stories(id = nil)
           ]
         },
         {
-            title: 'Caso 2: Automatización de despliegue de software',
-            heading: 'Necesidad',
-            content: "Nico Páez, especialista en automatización y desarrollo ágil en Kleer, nos cuenta los desafíos del área de producto de Technisys, con un software complejo desarrollado por múltiples equipos."
-          },
-          {
-            heading: 'Búsqueda de solución',
-            content: "La necesidad de resolver el problema surgió al mismo tiempo desde los equipos de desarrollo y desde la gerencia decidiendo incorporar, también en este caso, servicios de mentoring y coaching de Kleer."
-          },
-          {
-            heading: 'Resultado',
-            content: "Los equipos de desarrollo rápidamente se sumaron a la iniciativa cuyo fin, desde el principio, fue generar el conocimiento en el seno de los equipos, de manera que continuaran con la iniciativa una vez terminado el período de trabajo de Kleer. El proceso de despliegue, que antes estaba en la cabeza de ciertos ingenieros experimentados (que aún así, era muy frágil) paso a estar completamente convertido en código automatizable. El tiempo de despliegue de la solución completa, en la liberación de cada nueva versión, paso de varios días (con una incerteza muy grande) a unas pocas horas.",
-            videos: [
-              {
-                url: 'https://www.youtube.com/embed/9OD_Xp_ZivI',
-                title: 'Testimonio de Nico Páez - Especialista en Automatización'
-              }
-            ]
-          },
-      ],
-      },
+          title: 'Caso 2: Automatización de despliegue de software',
+          heading: 'Necesidad',
+          content: 'Nico Páez, especialista en automatización y desarrollo ágil en Kleer, nos cuenta los desafíos del área de producto de Technisys, con un software complejo desarrollado por múltiples equipos.'
+        },
+        {
+          heading: 'Búsqueda de solución',
+          content: 'La necesidad de resolver el problema surgió al mismo tiempo desde los equipos de desarrollo y desde la gerencia decidiendo incorporar, también en este caso, servicios de mentoring y coaching de Kleer.'
+        },
+        {
+          heading: 'Resultado',
+          content: 'Los equipos de desarrollo rápidamente se sumaron a la iniciativa cuyo fin, desde el principio, fue generar el conocimiento en el seno de los equipos, de manera que continuaran con la iniciativa una vez terminado el período de trabajo de Kleer. El proceso de despliegue, que antes estaba en la cabeza de ciertos ingenieros experimentados (que aún así, era muy frágil) paso a estar completamente convertido en código automatizable. El tiempo de despliegue de la solución completa, en la liberación de cada nueva versión, paso de varios días (con una incerteza muy grande) a unas pocas horas.',
+          videos: [
+            {
+              url: 'https://www.youtube.com/embed/9OD_Xp_ZivI',
+              title: 'Testimonio de Nico Páez - Especialista en Automatización'
+            }
+          ]
+        }
+      ]
+    },
     'transformacion-agil-ypf-2020' => {
       title: 'Así profundizó YPF su camino de transformación ágil',
       description: 'Así profundizó <b>YPF</b> su camino de transformación ágil ',
@@ -399,7 +398,7 @@ def success_stories(id = nil)
             {
               url: 'https://www.youtube.com/embed/CTvmfahxp5I',
               title: 'AGILIDAD ORGANIZACIONAL en YPF Desafíos y Resultados'
-            },
+            }
           ]
         },
         {
@@ -419,7 +418,7 @@ def success_stories(id = nil)
           content: "Durante los casi 12 meses de acompañamiento con coaches de Kleer, el foco de Supply Chain fue formar nuevos equipos para desarrollar y mantener la cultura ágil, robustecer las relaciones entre sus integrantes, adaptar la comunicación, tomar decisiones efectivas y crear comunidades internas para fomentar el desarrollo y sostén del mindset ágil logrado.
 
           Los equipos consiguieron transformar su forma de trabajo con resultados asombrosos. Además de resultados de negocio, la intervención de Kleer ayudó a desarrollar una dinámica que hoy le permite a Supply Chain continuar con el proceso iniciado y que la transformación ágil se expanda.
-          
+
           <i>Algunos resultados destacados</i>
           <ul><li>Ahorro potencial de más de 260 millones de dólares.</li><li>Mayor involucramiento de todas las partes para lograr un objetivo común.</li><li>Sensible disminución del trabajo en silos dentro de los equipos.</li><li>Fuerte impacto en otras áreas de la compañía.</li><li>Mayor involucramiento de los equipos con sus clientes internos de YPF, y mejora en la relación con proveedores externos.</li>",
           videos: [
@@ -434,7 +433,7 @@ def success_stories(id = nil)
           ]
         }
       ]
-    },  
+    }
   }
 
   id ? stories[id] : stories

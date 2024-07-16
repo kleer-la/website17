@@ -2,7 +2,6 @@ require 'spec_helper'
 require './lib/event_type'
 
 describe EventType do
-
   context 'Load event from JSON' do
     before(:each) do
       EventType.null_json_api(NullJsonAPI.new('./spec/mocks/updated_event_type.json'))
@@ -27,8 +26,8 @@ describe EventType do
   context 'Redirect' do
     before(:each) do
       @slug = '4-enterprise-agility'
-      @event_type = EventType.new({'id' => '4', 'slug' => @slug} )
-    # "canonical_slug": "418-enterprise-agility-practitioner",
+      @event_type = EventType.new({ 'id' => '4', 'slug' => @slug })
+      # "canonical_slug": "418-enterprise-agility-practitioner",
     end
     it 'dont redirect' do
       expect(@event_type.redirect_to(@slug)).to be nil
@@ -60,6 +59,6 @@ describe EventType do
       @event_type.deleted = true
 
       expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq '/services'
-    end    
+    end
   end
 end

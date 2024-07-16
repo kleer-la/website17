@@ -2913,7 +2913,7 @@ input[type="checkbox"]:focus {
     padding-bottom: 20px;
     position: relative; }
     .recommended-card .image-container img {
-      aspect-ratio: 7 / 3;
+      aspect-ratio: 7 / 4;
       width: 100%;
       border-radius: 8px;
       object-fit: cover; }

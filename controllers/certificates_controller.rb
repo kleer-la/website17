@@ -30,7 +30,7 @@ end
 
 def get_certificate(certification_id)
   return nil if certification_id.to_s == ''
-  
+
   store = FileStoreService.create_s3
 
   # certification_id += '.pdf'

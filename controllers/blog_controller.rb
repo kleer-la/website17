@@ -21,9 +21,9 @@ get '/blog/:slug' do |slug|
   @where = 'Blog'
   art = Article.create_one_keventer(slug)
   redirect("#{session[:locale]}/blog/#{art.slug}", 301) if art.slug != slug
-  art.recommended =  [] # TODO remove - force empty during internal beta
+  art.recommended = [] # TODO: remove - force empty during internal beta
   blog_one art
-rescue
+rescue StandardError
   status 404
 end
 
@@ -37,7 +37,7 @@ get %r{/blog/?} do
 
   articles = Article.create_list_keventer(true)
 
-  @articles = articles.select { |a| a.lang == session[:locale]}.sort_by(&:created_at).reverse
+  @articles = articles.select { |a| a.lang == session[:locale] }.sort_by(&:created_at).reverse
 
   erb :'blog/index', layout: :'layout/layout2022'
 end
@@ -48,11 +48,11 @@ def blog_one(article)
                   description: @article.description,
                   canonical: "#{t('meta_tag.blog.canonical')}/#{@article.slug}"
 
-  @related_courses = get_related_event_types(@article.category_name, @article.id , 4)
-  @related_articles = get_related_articles(@article.category_name, @article.id , 3)
+  @related_courses = get_related_event_types(@article.category_name, @article.id, 4)
+  @related_articles = get_related_articles(@article.category_name, @article.id, 3)
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = "/blog"
+  router_helper.alternate_route = '/blog'
 
   if article.lang != session[:locale]
     redirect "/#{session[:locale]}/blog", 301 # permanent redirect
@@ -68,7 +68,6 @@ def blog_list(articles)
 
   @articles = articles
   erb :'blog/index', layout: :'layout/layout2022'
-
-rescue
+rescue StandardError
   status 404
 end

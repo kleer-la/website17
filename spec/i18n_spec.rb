@@ -6,7 +6,7 @@ describe 'I18n translations' do
     I18n.load_path = Dir['locales/*.yml']
     I18n.backend.load_translations
 
-    languages = [:en, :es]  # Add more languages as needed
+    languages = %i[en es] # Add more languages as needed
     translations = {}
 
     languages.each do |lang|
@@ -21,8 +21,8 @@ describe 'I18n translations' do
       missing = reference_keys - lang_keys
       extra = lang_keys - reference_keys
       expect(lang_keys).to match_array(reference_keys),
-        "#{missing.count} Missing keys in #{lang}: #{missing}\n" \
-        "#{extra.count} Extra keys in #{lang}: #{extra}"
+                           "#{missing.count} Missing keys in #{lang}: #{missing}\n" \
+                           "#{extra.count} Extra keys in #{lang}: #{extra}"
     end
   end
 end

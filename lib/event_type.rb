@@ -7,13 +7,13 @@ require './lib/models/coupon'
 
 class EventType
   def self.create_keventer_json(id)
-    if defined? @@json_api
-      json_api = @@json_api
-    else
-      json_api = JsonAPI.new(KeventerAPI.event_type_url(id))
-    end
+    json_api = if defined? @@json_api
+                 @@json_api
+               else
+                 JsonAPI.new(KeventerAPI.event_type_url(id))
+               end
 
-    et = EventType.new(json_api.doc ) unless json_api.doc.nil?
+    et = EventType.new(json_api.doc) unless json_api.doc.nil?
     et unless et&.id.nil?
   end
 
@@ -29,13 +29,13 @@ class EventType
 
   def initialize(hash_provider = nil)
     @hash_provider = hash_provider
-    @id= nil
+    @id = nil
     @testimonies = []
     @coupons = []
     load_complete_event(hash_provider)
   end
 
-  def load_complete_event(hash_event) #json provider
+  def load_complete_event(hash_event) # json provider
     return if hash_event.nil? || ['id'].nil?
 
     @id =  hash_event['id'].nil? ? hash_event['event_type_id'].to_i : hash_event['id'].to_i
@@ -48,53 +48,53 @@ class EventType
     @extra_script = hash_event['extra_script'] || nil
     @platform = hash_event['platform'] || nil
 
-    @categories = hash_event['categories'].map{|e| e['name']} unless hash_event['categories'].nil?
+    @categories = hash_event['categories'].map { |e| e['name'] } unless hash_event['categories'].nil?
 
     load_testimonies(hash_event['testimonies'])
     load_coupons(hash_event['coupons'])
 
     %i[name subtitle description learnings takeaways cover
-      goal recipients program faq slug canonical_slug lang
-      external_site_url elevator_pitch include_in_catalog
-      side_image brochure deleted
-    ].each { |field| send("#{field}=", hash_event[field.to_s]) }
+       goal recipients program faq slug canonical_slug lang
+       external_site_url elevator_pitch include_in_catalog
+       side_image brochure deleted].each { |field| send("#{field}=", hash_event[field.to_s]) }
 
     @public_editions = load_public_editions(hash_event['next_events'])
   end
 
   def load_public_editions(next_events)
     return [] if next_events.nil?
+
     next_events.reduce([]) do |events, ev_json|
-      if ev_json['coupons']
-        load_coupons(ev_json['coupons'])
-      end
+      load_coupons(ev_json['coupons']) if ev_json['coupons']
       events << Event.new(self).load_from_json(ev_json)
     end
   end
 
   def load_testimonies(plane_testimonies)
-    unless plane_testimonies.nil?
-      plane_testimonies.each do |testimony|
-        #TODO: test event type with testimony
-        new_testimony = Testimony.new
-        new_testimony.load_from_json(testimony)
+    return if plane_testimonies.nil?
 
-        @testimonies.push(new_testimony)
-      end
+    plane_testimonies.each do |testimony|
+      # TODO: test event type with testimony
+      new_testimony = Testimony.new
+      new_testimony.load_from_json(testimony)
+
+      @testimonies.push(new_testimony)
     end
   end
 
   def load_coupons(coupons)
-    unless coupons.nil?
-      coupons.each do |coupon|
-        new_coupon = Coupon.new(coupon["code"], coupon["percent_off"], coupon["icon"])
-        @coupons.push(new_coupon)
-      end
+    return if coupons.nil?
+
+    coupons.each do |coupon|
+      new_coupon = Coupon.new(coupon['code'], coupon['percent_off'], coupon['icon'])
+      @coupons.push(new_coupon)
     end
   end
+
   def uri_path
     "/#{@lang}/cursos/#{@slug}"
   end
+
   def canonical_url
     "/cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
@@ -103,9 +103,9 @@ class EventType
     return @external_site_url   if @external_site_url.to_s != ''            # explicit redirect
     return ''                   if @deleted && @canonical_slug == @slug     # dont know where to redirect
     return ''                   if @deleted && @canonical_slug.to_s == ''   # dont know where to redirect
-    return self.canonical_url   if @deleted && @canonical_slug.to_s != ''   # redirect to canonical
-    return self.uri_path        if event_type_id_with_name != @slug         # redirect to itself
-    nil                                                                     # dont redirect
-  end
+    return canonical_url   if @deleted && @canonical_slug.to_s != ''   # redirect to canonical
+    return uri_path        if event_type_id_with_name != @slug         # redirect to itself
 
+    nil # dont redirect
+  end
 end

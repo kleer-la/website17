@@ -27,6 +27,7 @@ class TimezoneConverter
       TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }
     )&.[](0)
   end
+
   def self.gmt(name)
     g = (
       TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }

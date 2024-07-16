@@ -6,7 +6,7 @@ require './lib/json_api'
 class Event
   attr_accessor :country_iso, :country_name, :certified,
                 :city, :country, :country_code, :event_type, :date,
-                :finish_date, :registration_link, :is_sold_out, :id, :eb_date,                                             #TODO remove duplicate fields
+                :finish_date, :registration_link, :is_sold_out, :id, :eb_date, # TODO: remove duplicate fields
                 :list_price, :eb_price, :eb_end_date, :currency_iso_code,
                 :show_pricing,
                 :place, :address,
@@ -15,11 +15,11 @@ class Event
                 :specific_conditions, :duration,
                 :mode, :banner_text, :banner_type, :specific_subtitle
 
-                #,:enable_online_payment
-                #:capacity, :sepyme_enabled, :human_date, :is_community_event,
-                #:couples_eb_price, :business_eb_price,
-                #:business_price, :enterprise_6plus_price, :enterprise_11plus_price,
-                #:online_course_codename, :online_cohort_codename
+  # ,:enable_online_payment
+  # :capacity, :sepyme_enabled, :human_date, :is_community_event,
+  # :couples_eb_price, :business_eb_price,
+  # :business_price, :enterprise_6plus_price, :enterprise_11plus_price,
+  # :online_course_codename, :online_cohort_codename
   attr_reader :trainers
 
   def initialize(event_type)
@@ -52,10 +52,8 @@ class Event
   end
 
   def load_date(hash_event)
-    if hash_event['finish_date'].to_s.empty? 
-      hash_event['finish_date'] = hash_event['date'] 
-    end
-    %i[date finish_date   ].each { |field| send("#{field}=", Date.parse(    hash_event[field.to_s])) }
+    hash_event['finish_date'] = hash_event['date'] if hash_event['finish_date'].to_s.empty?
+    %i[date finish_date].each { |field| send("#{field}=", Date.parse(hash_event[field.to_s])) }
     %i[start_time end_time].each { |field| send("#{field}=", DateTime.parse(hash_event[field.to_s])) }
     @duration = hash_event['duration'].to_i
   end
@@ -67,6 +65,7 @@ class Event
   def online?
     @mode == 'ol'
   end
+
   def blended_learning?
     mode == 'bl'
   end
@@ -77,8 +76,7 @@ class Event
 
   def load_price(hash_event)
     @show_pricing = to_boolean(hash_event['show_pricing'])
-    %i[list_price eb_price currency_iso_code
-    ].each { |field| send("#{field}=", hash_event[field.to_s]) }
+    %i[list_price eb_price currency_iso_code].each { |field| send("#{field}=", hash_event[field.to_s]) }
 
     @eb_end_date = hash_event['eb_end_date'] ? Date.parse(hash_event['eb_end_date']) : nil
     @eb_date = hash_event['eb_end_date']
@@ -86,6 +84,7 @@ class Event
 
   def load_country(hash)
     return if hash.nil?
+
     @country_name = hash['name'].to_s
     @country_iso = hash['iso_code'].to_s
   end
@@ -113,35 +112,35 @@ class Event
   end
 
   def registration_ended?(current_date = Date.today)
-    self.date.nil? || self.date <= current_date
+    date.nil? || date <= current_date
   end
 
   class << self
     def create_keventer_json(today = Date.today)
-      if defined? @@json_api
-        json_api = @@json_api
-      else
-        json_api = JsonAPI.new(KeventerAPI.events_url)
-      end
-      Event.load_events(json_api.doc, today ) unless json_api.doc.nil?
+      json_api = if defined? @@json_api
+                   @@json_api
+                 else
+                   JsonAPI.new(KeventerAPI.events_url)
+                 end
+      Event.load_events(json_api.doc, today) unless json_api.doc.nil?
     end
 
     def null_json_api(null_api)
       @@json_api = null_api
     end
+
     def load_events(events, today)
       events.reduce([]) do |ac, ev|
         event_type_json = ev['event_type']
         event_type_json['coupons'] = ev['coupons']
         event_type = EventType.new(event_type_json)
-        e =  Event.new(event_type).load_from_json(ev)
-        unless e.registration_ended? today
-          ac << e
-        else
+        e = Event.new(event_type).load_from_json(ev)
+        if e.registration_ended? today
           ac
+        else
+          ac << e
         end
       end
     end
   end
-
 end
