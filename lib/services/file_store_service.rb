@@ -38,7 +38,7 @@ class FileStoreService
       'certificate' => 'certificate-images/',
       'signature' => 'certificate-signatures/'
     }[image_type]
-    file_name = image_name&.gsub(' ', '+')&.gsub("#{folder}", '')
+    file_name = image_name&.gsub(' ', '+')&.gsub(folder.to_s, '')
     "https://s3.amazonaws.com/#{bucket}/#{folder}#{file_name}"
   end
 
@@ -87,9 +87,9 @@ class FileStoreService
   def find_certificate(validation_code)
     objects = list('certificates', prefix: validation_code)
 
-    return nil unless objects.count > 0
+    return nil unless objects.count.positive?
 
-    tmp_filename = tmp_path validation_code + '.pdf'
+    tmp_filename = tmp_path "#{validation_code}.pdf"
     @store.objects(objects[0].key).download_file tmp_filename
     tmp_filename
   end
@@ -174,6 +174,6 @@ class S3FileStore
   end
 
   def list_objects(bucket:, prefix: nil)
-    resp = @client.list_objects_v2(bucket: bucket, prefix: prefix)
+    @client.list_objects_v2(bucket: bucket, prefix: prefix)
   end
 end

@@ -102,7 +102,7 @@ get '/agilidad-organizacional' do
   @active_tab_coaching = 'active'
   @meta_tags.set! title: t('meta_tag.business-agility.title'),
                   description: t('meta_tag.business-agility.description'),
-                  canonical: "#{t('meta_tag.business-agility.canonical')}"
+                  canonical: t('meta_tag.business-agility.canonical').to_s
 
   erb :'business_agility/index', layout: :'layout/layout2022'
 end
@@ -129,11 +129,11 @@ PERMANENT_REDIRECT = {
 }.freeze
 
 PERMANENT_REDIRECT.each do |uris|
-  get '/' + uris[0] do
-    redirect '/' + uris[1], 301
+  get "/#{uris[0]}" do
+    redirect "/#{uris[1]}", 301
   end
-  get '/' + uris[0] + '/' do
-    redirect '/' + uris[1], 301
+  get "/#{uris[0]}/" do
+    redirect "/#{uris[1]}", 301
   end
 end
 

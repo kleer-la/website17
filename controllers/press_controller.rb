@@ -2,9 +2,9 @@ require 'i18n'
 
 get '/prensa' do
   @active_tab_prensa = 'active'
-  @meta_tags.set! title: "#{t('meta_tag.press.title')}",
+  @meta_tags.set! title: t('meta_tag.press.title').to_s,
                   description: t('meta_tag.press.description'),
-                  canonical: "#{t('meta_tag.press.canonical')}"
+                  canonical: t('meta_tag.press.canonical').to_s
   # TODO: remove old news implementation and move to /novedades
   @news = News.create_list_keventer
 

@@ -15,7 +15,7 @@ def first_x_courses(courses, quantity)
         cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: course.event_type.uri_path,
         country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
           (1 if course.event_type.is_kleer_cert).to_i,
-        active: index == 0
+        active: index.zero?
       }
     end
 end

@@ -1,7 +1,8 @@
 require 'redcarpet'
 require 'nokogiri'
 
-class CustomMarkdown # < Redcarpet::Markdown
+# < Redcarpet::Markdown
+class CustomMarkdown
   def initialize
     @markdown_render = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new(hard_wrap: true),

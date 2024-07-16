@@ -23,7 +23,7 @@ REDIRECT = {
 }.freeze
 
 REDIRECT.each do |uris|
-  get '/' + uris[0] do
+  get "/#{uris[0]}" do
     return(redirect_not_found_course) if uris[1].nil?
 
     redirect "/#{session[:locale]}/#{uris[1]}" # , 301
@@ -64,7 +64,7 @@ end
 get '/agenda' do
   @meta_tags.set! title: t('meta_tag.agenda.title'),
                   description: t('meta_tag.agenda.description'),
-                  canonical: "#{t('meta_tag.agenda.canonical')}"
+                  canonical: t('meta_tag.agenda.canonical').to_s
 
   @events = Event.create_keventer_json
 
@@ -78,7 +78,7 @@ get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: t('meta_tag.catalog.title'),
                   description: t('meta_tag.catalog.description'),
-                  canonical: "#{t('meta_tag.catalog.canonical')}"
+                  canonical: t('meta_tag.catalog.canonical').to_s
   @categories = load_categories session[:locale]
   @events = Catalog.create_keventer_json
 

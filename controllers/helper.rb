@@ -56,7 +56,7 @@ module Helpers
   end
 
   def webp_ext(img_path)
-    img_path[0..img_path.rindex('.')] + 'webp'
+    "#{img_path[0..img_path.rindex('.')]}webp"
   end
 
   def month_es(month_en)
@@ -117,7 +117,7 @@ module Helpers
 
       {
         title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, platform: course.event_type.platform,
-        cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: "#{course.event_type.uri_path}",
+        cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: course.event_type.uri_path.to_s,
         coupon: course.event_type.coupons[0] || nil, external_site_url: course.event_type.external_site_url, categories: format_categories(course.event_type.categories), is_open: is_open, is_elearning: false,
         country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
           (1 if course.event_type.is_kleer_cert).to_i, slug: course.event_type.slug
@@ -145,7 +145,7 @@ module Helpers
         sublist = separated_item[1].split(sec_separator)
         subtitles = []
 
-        if sublist != [] or !sublist.nil?
+        if (sublist != []) || !sublist.nil?
           sublist.each do |subitem|
             subitem = subitem.split(sec_item_separator)
 
@@ -174,14 +174,12 @@ module Helpers
         new_string: "<h2 id='title-#{index}'>#{title_hash[:title]}</h2>"
       )
 
-      if title_hash[:subtitles]
-        title_hash[:subtitles].each.with_index do |subtitle, sub_index|
-          plane_array.push(
-            string: "<h3>#{subtitle}</h3>",
-            value: subtitle,
-            new_string: "<h3 id='subtitle-#{index}-#{sub_index}'>#{subtitle}</h3>"
-          )
-        end
+      title_hash[:subtitles]&.each&.with_index do |subtitle, sub_index|
+        plane_array.push(
+          string: "<h3>#{subtitle}</h3>",
+          value: subtitle,
+          new_string: "<h3 id='subtitle-#{index}-#{sub_index}'>#{subtitle}</h3>"
+        )
       end
     end
 

@@ -17,7 +17,7 @@ class Pager
   end
 
   def first?
-    @page_number == 0
+    @page_number.zero?
   end
 
   def last?

@@ -30,7 +30,7 @@ end
 get %r{/blog/?} do
   @meta_tags.set! title: t('meta_tag.blog.title'),
                   description: t('meta_tag.blog.description'),
-                  canonical: "#{t('meta_tag.blog.canonical')}"
+                  canonical: t('meta_tag.blog.canonical').to_s
   @where = 'Blog'
 
   @categories = load_categories session[:locale]
@@ -64,7 +64,7 @@ end
 def blog_list(articles)
   @meta_tags.set! title: t('meta_tag.blog.title'),
                   description: t('meta_tag.blog.description'),
-                  canonical: "#{t('meta_tag.blog.canonical')}"
+                  canonical: t('meta_tag.blog.canonical').to_s
 
   @articles = articles
   erb :'blog/index', layout: :'layout/layout2022'

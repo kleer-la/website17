@@ -7,7 +7,7 @@ get %r{/servicios/?} do
 
   @meta_tags.set! title: t('meta_tag.services.title'),
                   description: t('meta_tag.services.description'),
-                  canonical: "#{t('meta_tag.services.canonical')}"
+                  canonical: t('meta_tag.services.canonical').to_s
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/agilidad-organizacional'

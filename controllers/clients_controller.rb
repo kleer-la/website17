@@ -10,9 +10,9 @@ require './lib/clients'
 #   erb :'clients/index', layout: :'layout/layout2022'
 # end
 get '/clientes' do
-  @meta_tags.set! title: "#{t('meta_tag.clients.title')}",
-                  description: "#{t('meta_tag.clients.description')}",
-                  canonical: "#{t('meta_tag.clients.canonical')}"
+  @meta_tags.set! title: t('meta_tag.clients.title').to_s,
+                  description: t('meta_tag.clients.description').to_s,
+                  canonical: t('meta_tag.clients.canonical').to_s
 
   @clients = client_list
   @stories = success_stories

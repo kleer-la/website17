@@ -6,11 +6,11 @@ class BlogHomeData
   end
 
   def selected
-    @_selected ||= @articles.select { |e| e.selected }
+    @selected ||= @articles.select(&:selected)
   end
 
   def selected?
-    selected.count > 0
+    selected.count.positive?
   end
 
   def filter_by_text(text)

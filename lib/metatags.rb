@@ -108,7 +108,7 @@ module MetaTags
       when :hreflang
         unless @path.nil?
           tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{@path}\"/>" : '') do |ac, lang|
-            ac += "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"
+            ac + "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"
           end
         end
       else
