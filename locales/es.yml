@@ -526,7 +526,7 @@ es:
     title: Prensa
     subtitle: Notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
   recommended:
-    title: Recomendamos
+    title: Contenido recomendado
     type:
       service: Servicio
       article: Blog
