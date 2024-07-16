@@ -1,0 +1,35 @@
+<div class="recommended-card">
+  <div class="image-container">
+    <a href="<%= item.url%>">
+      <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: '...', has_webp: false}%>
+    </a>
+    <div class="type-flag">
+      <%= t("recommended.type.#{item.type}") %>
+    </div>
+      <%if false%>
+      <div class="flags">
+        <% if false #@course[:is_open] %>
+          <div>Próximas fechas</div>
+        <%end %>
+        <% if @course[:platform] === "academia" %>
+          <div>
+            <img src="/app/img/logos/logo-academia.png" />
+          </div>
+        <% end %>
+      </div>
+        <% end %>
+  </div>
+  <div class="card-body">
+    <div>
+      <a href="<%= item.url%><%= item.url%>">
+        <h3 class="card-title"><%= item.title%></h3>
+      </a>
+    </div>
+    <p class="card-text subtitle"><%= item.subtitle%></p>
+    <div class="button-container">
+      <a href="<%= item.url%>" class="btn my-secondary-button ms-3 me-3">
+        <%= t('generals.buttons.more_info') %>
+      </a>
+    </div>
+  </div>
+</div>

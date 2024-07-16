@@ -72,7 +72,8 @@ describe 'metatags' do
   end
   context 'canonical' do
     it 'has not canonical' do
-      head = Tags.new.display base_url: 'https://www.kleer.la', charset: '', 'http-equiv': nil, viewport: nil, hreflang: []
+      head = Tags.new.display base_url: 'https://www.kleer.la', charset: '', 'http-equiv': nil, viewport: nil,
+                              hreflang: []
       expect(head).to eq ''
     end
     it 'has canonical' do

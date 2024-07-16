@@ -4,7 +4,7 @@ get '/recursos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set!  title: t('meta_tag.resources.title'),
                    description: t('meta_tag.resources.description'),
-                   canonical: "#{t('meta_tag.resources.canonical')}"
+                   canonical: t('meta_tag.resources.canonical').to_s
 
   @resources = Resource.create_list_keventer
   session[:new] = false

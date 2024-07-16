@@ -46,10 +46,10 @@ module APIAccessible
 
     def initialize(file_path_or_json)
       @doc = if File.exist?(file_path_or_json)
-              JSON.parse(File.read(file_path_or_json))
-            else
-              JSON.parse(file_path_or_json)
-            end
+               JSON.parse(File.read(file_path_or_json))
+             else
+               JSON.parse(file_path_or_json)
+             end
     rescue JSON::ParserError
       nil
     end

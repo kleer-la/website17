@@ -3,7 +3,7 @@ require './lib/json_api'
 class Category
   attr_accessor :name, :description, :tagline, :codename, :order, :event_types
 
-  def initialize(lang = 'es')
+  def initialize(_lang = 'es')
     @name = @description = @tagline = @codename = ''
     @order = 0
     @event_types = []
@@ -21,17 +21,18 @@ class Category
 
   class << self
     def create_keventer_json(lang)
-      if defined? @@json_api
-        json_api = @@json_api
-      else
-        json_api = JsonAPI.new(KeventerAPI.categories_url)
-      end
+      json_api = if defined? @@json_api
+                   @@json_api
+                 else
+                   JsonAPI.new(KeventerAPI.categories_url)
+                 end
       Category.load_categories(json_api.doc, lang) unless json_api.doc.nil?
     end
 
     def null_json_api(null_api)
       @@json_api = null_api
     end
+
     def load_categories(cat_json, lang)
       cat_json.reduce([]) { |ac, cat| ac << Category.new(lang).load_from_json(cat, lang) }
     end

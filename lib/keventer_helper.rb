@@ -1,4 +1,3 @@
-
 def to_boolean(string)
   case string
   when true, /\A(true|t|yes|y|1)\z/i
@@ -10,22 +9,21 @@ def to_boolean(string)
   end
 end
 
-
-#TODO: move to another page (arch?)
+# TODO: move to another page (arch?)
 def get_related_event_types(category, id, quantity)
   all_events = Catalog.create_keventer_json
 
-  all_events.select{|e| e.event_type.categories.any?{|c| c == category}}
-            .select{|e| e.event_type.id != id}
-            .uniq{ |e| e.event_type.id}
+  all_events.select { |e| e.event_type.categories.any? { |c| c == category } }
+            .reject { |e| e.event_type.id == id }
+            .uniq { |e| e.event_type.id }
             .first(quantity)
 end
 
 def get_related_articles(category, id, quantity)
   all_articles = Article.create_list_keventer(true)
 
-  all_articles.select{|e| e.category_name == category}
-            .select{|e| e.id != id}
-            .uniq{ |e| e.id}
-            .first(quantity)
+  all_articles.select { |e| e.category_name == category }
+              .reject { |e| e.id == id }
+              .uniq(&:id)
+              .first(quantity)
 end

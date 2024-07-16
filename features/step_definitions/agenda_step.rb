@@ -3,7 +3,7 @@ When(/^I visit the "(.*?)" agenda page$/) do |page_url|
 end
 
 Given('A list of events') do
-  Event.null_json_api( NullJsonAPI.new('./spec/events.json') )
+  Event.null_json_api(NullJsonAPI.new('./spec/events.json'))
 end
 
 # Given('A list of events with') do

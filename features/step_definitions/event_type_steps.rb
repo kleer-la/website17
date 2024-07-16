@@ -1,11 +1,10 @@
 def get_event_type(event_type_id, find_it: true)
-  catalog = NullJsonAPI.new(nil, File.read('./spec/catalog.json'))
+  NullJsonAPI.new(nil, File.read('./spec/catalog.json'))
 
   # NullInfraestructure json
   EventType.null_json_api(
     NullJsonAPI.new(
-      find_it ? "./spec/event_type_#{event_type_id}.json"
-      : nil
+      find_it ? "./spec/event_type_#{event_type_id}.json" : nil
     )
   )
 end

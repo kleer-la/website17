@@ -21,7 +21,8 @@ class Podcast
 
   def self.load_from_json(file_path)
     data = JSON.parse(File.read(file_path))
-    data['podcasts'].map do |podcast_data| new(podcast_data)
+    data['podcasts'].map do |podcast_data|
+      new(podcast_data)
     end
   end
 
@@ -33,5 +34,5 @@ class Podcast
 
   def self.load(json_api)
     json_api.doc.map { |podcast_data| new(podcast_data) } if json_api.ok?
-  end  
+  end
 end

@@ -525,6 +525,12 @@ es:
   news:
     title: Prensa
     subtitle: Notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
+  recommended:
+    title: Contenido recomendado
+    type:
+      service: Servicio
+      article: Blog
+      event_type: Curso
   business-agility:
     title: Agilidad Organizacional
     subtitle: >-

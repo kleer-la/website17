@@ -44,5 +44,5 @@ Given('there is resource {string}') do |name|
     }
   ]
   HEREDOC
-  Resource.create_list_null( NullJsonAPI.new(nil, resources).doc )
+  Resource.create_list_null(NullJsonAPI.new(nil, resources).doc)
 end

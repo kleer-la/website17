@@ -5,7 +5,6 @@ module NullInfra
 end
 
 module LoadTrainers
-
   def load_trainers(hash_trainers)
     return [] if hash_trainers.nil?
 
@@ -20,7 +19,6 @@ module LoadTrainers
   end
 end
 
-
 class News
   extend NullInfra
   include LoadTrainers
@@ -32,13 +30,14 @@ class News
     @result = News.load_list(doc)
   end
 
-  def self.create_list_keventer()
+  def self.create_list_keventer
     if @next_null
       @next_null = false
       return @result
     end
     api_resp = JsonAPI.new(KeventerAPI.news_url)
     raise :NotFound unless api_resp.ok?
+
     News.load_list(api_resp.doc)
   end
 
@@ -67,7 +66,6 @@ class News
 
   def self.load_list(doc)
     doc.each_with_object([]) do |elem, ac|
-
       ac << News.new(elem)
     end
   end

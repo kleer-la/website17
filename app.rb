@@ -58,18 +58,17 @@ before do
                        'es'
                      end
 
-  if ['kleer.us', 'kleer.es','www.kleer.us','www.kleer.es'].include? request.host
+  if ['kleer.us', 'kleer.es', 'www.kleer.us', 'www.kleer.es'].include? request.host
     # redirect "https://www.#{request.host}#{request.path}"
-    lang = "/#{session[:locale]}" unless %w(/en /es).include? request.path[0,3]
+    lang = "/#{session[:locale]}" unless %w[/en /es].include? request.path[0, 3]
     redirect "https://www.kleer.la#{lang}#{request.path}"
   else
     @base_title = 'Agile Coaching, Consulting & Training'
-    @meta_tags= Tags.new
+    @meta_tags = Tags.new
     @meta_tags.set! title: @base_title, path: request.path
     # flash.sweep
     @markdown_renderer = CustomMarkdown.new
   end
-
 
   router_helper = RouterHelper.instance
   router_helper.lang = session[:locale]
@@ -98,17 +97,17 @@ get '/es' do
 end
 
 get '/agilidad-organizacional' do
-  return redirect('/es/servicios', 301)   if session[:locale] == 'es'
+  return redirect('/es/servicios', 301) if session[:locale] == 'es'
 
   @active_tab_coaching = 'active'
   @meta_tags.set! title: t('meta_tag.business-agility.title'),
                   description: t('meta_tag.business-agility.description'),
-                  canonical: "#{t('meta_tag.business-agility.canonical')}"
+                  canonical: t('meta_tag.business-agility.canonical').to_s
 
-  erb :'business_agility/index', layout: :'layout/layout2022'  
+  erb :'business_agility/index', layout: :'layout/layout2022'
 end
 
-#TODO redirect
+# TODO: redirect
 PERMANENT_REDIRECT = {
   'e-books' => 'es/recursos',
   'libros' => 'es/recursos',
@@ -130,11 +129,11 @@ PERMANENT_REDIRECT = {
 }.freeze
 
 PERMANENT_REDIRECT.each do |uris|
-  get '/'+uris[0] do
-     redirect '/'+uris[1], 301
+  get "/#{uris[0]}" do
+    redirect "/#{uris[1]}", 301
   end
-  get '/'+uris[0]+'/' do
-    redirect '/'+uris[1], 301
+  get "/#{uris[0]}/" do
+    redirect "/#{uris[1]}", 301
   end
 end
 

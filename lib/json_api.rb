@@ -13,7 +13,7 @@ class JsonAPI
     @response.status == 200
   end
 
-  def get_response()
+  def get_response
     @doc
   end
 end
@@ -21,8 +21,8 @@ end
 class NullJsonAPI
   attr_accessor :doc
 
-  def initialize(uri, doc= nil)
-    if uri.nil? 
+  def initialize(uri, doc = nil)
+    if uri.nil?
       @doc = nil
       @doc = JSON.parse(doc) unless doc.nil?
     else
@@ -34,7 +34,7 @@ class NullJsonAPI
     !@doc.nil?
   end
 
-  def get_response()
+  def get_response
     @doc
   end
 end

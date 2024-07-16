@@ -6,59 +6,57 @@ MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'M
 
 module Helpers
   def format_date_range(start_date, finish_date, languaje)
-    start_month = languaje == 'en' ? start_date.strftime("%d") : month_es(start_date.strftime("%b"))
-    finish_month = languaje == 'en' ? finish_date.strftime("%d") : month_es(finish_date.strftime("%b"))
+    start_month = languaje == 'en' ? start_date.strftime('%d') : month_es(start_date.strftime('%b'))
+    finish_month = languaje == 'en' ? finish_date.strftime('%d') : month_es(finish_date.strftime('%b'))
 
-    if start_date == finish_date
-      return "#{start_date.strftime("%d")} #{start_month}"
-    end
+    return "#{start_date.strftime('%d')} #{start_month}" if start_date == finish_date
 
     if start_month == finish_month
-      "#{start_date.strftime("%d")} - #{finish_date.strftime("%d")} #{start_month}"
+      "#{start_date.strftime('%d')} - #{finish_date.strftime('%d')} #{start_month}"
     else
-      "#{start_date.strftime("%d")} #{start_month} - #{finish_date.strftime("%d")} #{finish_month}"
+      "#{start_date.strftime('%d')} #{start_month} - #{finish_date.strftime('%d')} #{finish_month}"
     end
   end
 
   def format_categories(categories)
-    categories_string = ""
+    categories_string = ''
 
     categories.each do |category|
       categories_string += "#{category}--"
     end
 
-    return categories_string
+    categories_string
   end
 
-  def to_plane_string str
+  def to_plane_string(str)
     accents = {
-      ['Ã¡','Ã ','Ã¢','Ã¤','Ã£','á'] => 'a',
-      ['Ãƒ','Ã„','Ã‚','Ã€','Ã','Á'] => 'A',
-      ['Ã©','Ã¨','Ãª','Ã«','é'] => 'e',
-      ['Ã‹','Ã‰','Ãˆ','ÃŠ','É'] => 'E',
-      ['Ã­','Ã¬','Ã®','Ã¯','í'] => 'i',
-      ['Ã','ÃŽ','ÃŒ','Ã','Í'] => 'I',
-      ['Ã³','Ã²','Ã´','Ã¶','Ãµ','ó'] => 'o',
-      ['Ã•','Ã–','Ã”','Ã’','Ã“','Ó'] => 'O',
-      ['Ãº','Ã¹','Ã»','Ã¼','ú'] => 'u',
-      ['Ãš','Ã›','Ã™','Ãœ','Ú'] => 'U',
+      ['Ã¡', 'Ã ', 'Ã¢', 'Ã¤', 'Ã£', 'á'] => 'a',
+      ['Ãƒ', 'Ã„', 'Ã‚', 'Ã€', 'Ã', 'Á'] => 'A',
+      ['Ã©', 'Ã¨', 'Ãª', 'Ã«', 'é'] => 'e',
+      ['Ã‹', 'Ã‰', 'Ãˆ', 'ÃŠ', 'É'] => 'E',
+      ['Ã­', 'Ã¬', 'Ã®', 'Ã¯', 'í'] => 'i',
+      ['Ã', 'ÃŽ', 'ÃŒ', 'Ã', 'Í'] => 'I',
+      ['Ã³', 'Ã²', 'Ã´', 'Ã¶', 'Ãµ', 'ó'] => 'o',
+      ['Ã•', 'Ã–', 'Ã”', 'Ã’', 'Ã“', 'Ó'] => 'O',
+      ['Ãº', 'Ã¹', 'Ã»', 'Ã¼', 'ú'] => 'u',
+      ['Ãš', 'Ã›', 'Ã™', 'Ãœ', 'Ú'] => 'U',
       ['Ã§'] => 'c', ['Ã‡'] => 'C',
       ['Ã±'] => 'n', ['Ã‘'] => 'N'
     }
-    accents.each do |ac,rep|
+    accents.each do |ac, rep|
       ac.each do |s|
         str = str.gsub(s, rep)
       end
     end
-    str = str.gsub(/[^a-zA-Z0-9 ]/,"")
+    str = str.gsub(/[^a-zA-Z0-9 ]/, '')
 
-    str = str.gsub(/[ ]+/," ")
+    str = str.gsub(/ +/, ' ')
 
     str.gsub(/( )/, '_').downcase!
   end
 
   def webp_ext(img_path)
-    img_path[0..img_path.rindex('.')] + 'webp'
+    "#{img_path[0..img_path.rindex('.')]}webp"
   end
 
   def month_es(month_en)
@@ -109,23 +107,22 @@ module Helpers
 
   # Translate keventer event to be shown in a course card
   def keventer_to_card(events, lang = 'es')
-    if events.nil?
-      return []
-    end
-    events.map {|course|
-      is_open = (course.date.to_s != '')
-      date = is_open ? format_date_range(course.date, course.finish_date, 'es') : '' #t('home2022.home_courses.no_date')
+    return [] if events.nil?
 
-      if course.event_type.lang == lang
-        {
-          title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, platform: course.event_type.platform,
-          cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: "#{course.event_type.uri_path}",
-          coupon: course.event_type.coupons[0] || nil, external_site_url: course.event_type.external_site_url, categories: format_categories(course.event_type.categories), is_open: is_open, is_elearning: false,
-          country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
+    events.map do |course|
+      is_open = (course.date.to_s != '')
+      date = is_open ? format_date_range(course.date, course.finish_date, 'es') : '' # t('home2022.home_courses.no_date')
+
+      next unless course.event_type.lang == lang
+
+      {
+        title: course.event_type.name, duration: course.event_type.duration, subtitle: course.event_type.subtitle, platform: course.event_type.platform,
+        cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: course.event_type.uri_path.to_s,
+        coupon: course.event_type.coupons[0] || nil, external_site_url: course.event_type.external_site_url, categories: format_categories(course.event_type.categories), is_open: is_open, is_elearning: false,
+        country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
           (1 if course.event_type.is_kleer_cert).to_i, slug: course.event_type.slug
-        }
-      end
-    }.compact
+      }
+    end.compact
   end
 
   def extract_titles(body)
@@ -135,28 +132,24 @@ module Helpers
     sec_separator = '<h3>'
     sec_item_separator = '</h3>'
 
-    separated_titles= []
+    separated_titles = []
 
     titles = @markdown_renderer.render(body).split(separator)
 
     titles.each do |item|
       separated_item = item.split(item_separator)
 
-      if separated_item[0].nil?
-        next
-      end
+      next if separated_item[0].nil?
 
-      if not separated_item[1].nil?
+      unless separated_item[1].nil?
         sublist = separated_item[1].split(sec_separator)
         subtitles = []
 
-        if sublist != [] or not sublist.nil?
+        if (sublist != []) || !sublist.nil?
           sublist.each do |subitem|
             subitem = subitem.split(sec_item_separator)
 
-            if subitem[0].nil?
-              next
-            end
+            next if subitem[0].nil?
 
             subtitles.push(subitem[0])
           end
@@ -164,7 +157,7 @@ module Helpers
 
         subtitles.shift
       end
-      separated_titles.push({title: separated_item[0], subtitles: subtitles})
+      separated_titles.push({ title: separated_item[0], subtitles: subtitles })
     end
     separated_titles.shift
 
@@ -181,19 +174,17 @@ module Helpers
         new_string: "<h2 id='title-#{index}'>#{title_hash[:title]}</h2>"
       )
 
-      if title_hash[:subtitles]
-        title_hash[:subtitles].each.with_index do |subtitle, sub_index|
-          plane_array.push(
-            string:"<h3>#{subtitle}</h3>",
-            value: subtitle,
-            new_string: "<h3 id='subtitle-#{index}-#{sub_index}'>#{subtitle}</h3>"
-          )
-        end
+      title_hash[:subtitles]&.each&.with_index do |subtitle, sub_index|
+        plane_array.push(
+          string: "<h3>#{subtitle}</h3>",
+          value: subtitle,
+          new_string: "<h3 id='subtitle-#{index}-#{sub_index}'>#{subtitle}</h3>"
+        )
       end
     end
 
     plane_array.each do |item|
-      body[item[:string]]= item[:new_string]
+      body[item[:string]] = item[:new_string]
     end
 
     body
