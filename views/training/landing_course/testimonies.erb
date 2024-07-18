@@ -9,6 +9,7 @@
               <img
                 src="<%= testimony.photo_url ? testimony.photo_url : "/app/img/icons/People.svg"%>"
                 class="rounded-circle testimony-info__photo"
+                loading="lazy"
               >
             </div>
             <div>
@@ -18,7 +19,7 @@
               <br/>
               <% if testimony.linkedin_url %>
                 <a href="<%= testimony.linkedin_url %>">
-                  <img class="testimony-linkedin" src="/app/img/icons/Linkedin.svg">
+                  <img class="testimony-linkedin" src="/app/img/icons/Linkedin.svg" loading="lazy">
                 </a>
               <% end %>
             </div>
