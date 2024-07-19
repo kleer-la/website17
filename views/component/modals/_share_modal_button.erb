@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="share-button" data-bs-toggle="modal" data-bs-target="#<%="shareModal#{id}"%>">
-  <img src="/app/img/icons/Share.svg" />
+  <img src="/app/img/icons/Share.svg" loading="lazy"/>
 </button>
 
 <!-- Modal -->
@@ -12,13 +12,13 @@
         <h3>Compartir</h3>
         <div class="share-modal__buttons-container">
           <a href="<%= "https://www.facebook.com/sharer/sharer.php?#{facebook}" %>">
-            <img src="/app/img/icons/Facebook.svg" />
+            <img src="/app/img/icons/Facebook.svg" loading="lazy"/>
           </a>
           <a href="<%= "https://twitter.com/intent/tweet?#{twitter}" %>">
-            <img src="/app/img/icons/Twitter.svg" />
+            <img src="/app/img/icons/Twitter.svg" loading="lazy"/>
           </a>
           <a href="<%= "http://www.linkedin.com/shareArticle?#{linkedin}" %>">
-            <img src="/app/img/icons/Linkedin.svg" />
+            <img src="/app/img/icons/Linkedin.svg" loading="lazy"/>
           </a>
         </div>
         <div class="copy-link-container">

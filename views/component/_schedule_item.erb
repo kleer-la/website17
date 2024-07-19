@@ -42,10 +42,10 @@
       <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
       <p id="place-<%=event_type.id%>">
         <% if event.country_iso == 'OL' %>
-          <img src="/app/img/icons/VideoCamera.svg">
+          <img src="/app/img/icons/VideoCamera.svg" loading="lazy">
           Online
         <% else %>
-          <img src="/img/flags/<%= event.country_iso.downcase %>.png"/>
+          <img src="/img/flags/<%= event.country_iso.downcase %>.png" loading="lazy"/>
           <%= "#{event.city} - #{event.country_name}" %><br>
           <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
         <% end %>
@@ -67,7 +67,7 @@
     </div>
     <div class="col-4 col-lg-1 next-edition-item">
       <p>
-        <img src="/app/img/icons/Clock.svg">
+        <img src="/app/img/icons/Clock.svg" loading="lazy">
         <%= duration %>hs
       </p>
     </div>
@@ -77,10 +77,10 @@
     <div class="col-4 col-lg-2 next-edition-item">
       <p>
         <% if event.online? || event.blended_learning? %>
-          <img src="/app/img/icons/VideoCamera.svg">
+          <img src="/app/img/icons/VideoCamera.svg" loading="lazy">
           Online
         <% else %>
-          <img src="/img/flags/<%= event.country_iso.downcase %>.png"/>
+          <img src="/img/flags/<%= event.country_iso.downcase %>.png" loading="lazy"/>
           <%= "#{event.city}, #{event.country}" %><br>
           <%= [event.place.to_s, event.address.to_s].uniq.join(' - ')
           %>
@@ -103,7 +103,7 @@
   <div class="col-4 col-lg-2 next-edition-item">
     <% if using_coupon %>
       <strong class="price event-price"><%= "#{event.currency_iso_code} #{money_format(price_off)}"%></strong>
-      <img src="<%= coupon.icon %>" class="coupon-icon"/>
+      <img src="<%= coupon.icon %>" class="coupon-icon" loading="lazy"/>
     <% elsif event.eb_price and eb_date and eb_date >= today %>
       <strong class="price"><%= "#{event.currency_iso_code} #{money_format(event.eb_price.to_i)}"%></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>

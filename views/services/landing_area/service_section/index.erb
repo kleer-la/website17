@@ -25,7 +25,7 @@
     data-toggle="collapse"
     data-target="dinamic-content-<%= service.slug %>"
   >
-    <img src="/app/img/icons/plus.png" alt="plus"/>
+    <img src="/app/img/icons/plus.png" alt="plus" loading='lazy'/>
   </div>
 </div>
 <script>
@@ -38,10 +38,10 @@
 
             if (!dinamicContent.classList.contains('collapse')) {
                 dinamicContent.classList.add('show');
-                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' loading='lazy'/>"
             }else {
                 dinamicContent.classList.remove('show');
-                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' />"
+                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' loading='lazy'/>"
             }
         }
 

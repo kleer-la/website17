@@ -4,7 +4,7 @@
 <div class="social-media">
   <ul class="social-media__list">
     <% social_media.each do |item| %>
-      <li class="list-inline-item"><a href="<%= item[:url] %>"><img class="icon-social" src="<%= item[:image] %>"/></a></li>
+      <li class="list-inline-item"><a href="<%= item[:url] %>"><img class="icon-social" src="<%= item[:image] %>" loading="lazy"/></a></li>
     <% end %>
   </ul>
 </div>
