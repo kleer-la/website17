@@ -6,7 +6,7 @@
   <%@event.trainers.each {|t|%>
     <div class="row img-trainer">
       <div class="col-xs-4 col-sm-2 d-sm-block">
-        <img src="<%=t.gravatar_picture_url%>?size=125" class="img-circle img-responsive">
+        <img src="<%=t.gravatar_picture_url%>?size=125" class="img-circle img-responsive"  loading="lazy">
       </div>
       <div class="col-xs-8 col-sm-10 img-name">
         <strong><%=t.name%></strong>
