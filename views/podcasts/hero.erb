@@ -48,7 +48,6 @@ carousel = @carousel.map.with_index{|e, index| {
                     src="<%= item[:img] %>"
                     class="hero__img"
                     alt="<%=item[:alt]%>"
-                    loading="lazy"
                   >
                 </picture>
               </div>
@@ -57,13 +56,11 @@ carousel = @carousel.map.with_index{|e, index| {
           <img
             src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
             class="desktop_figure hero_yellow_bean"
-            loading="lazy"
             alt="decorative figure"
             />
           <img
             src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
             class="desktop_figure hero_green_bean"
-            loading="lazy"
             alt="decorative figure"
             />
         </div>
