@@ -94,7 +94,7 @@ class EventType
   end
 
   def init_recommended(doc)
-    @recommended = doc['recommended']&.reduce([]) { |ac, r| ac << Recommended.create(r) } || []
+    @recommended = Recommended.create_list(doc['recommended'])
   end
 
   def uri_path

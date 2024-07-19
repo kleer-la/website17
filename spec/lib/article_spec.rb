@@ -50,4 +50,75 @@ describe Article do
       expect(article.description).to eq 'some text'
     end
   end
+
+  describe '#init_recommended' do
+    let(:article) { Article.new({}) }
+
+    context 'with valid recommendation types' do
+      let(:valid_doc) do
+        {
+          'recommended' => [
+            { 'type' => 'article', 'id' => 1 },
+            { 'type' => 'event_type', 'id' => 2 },
+            { 'type' => 'service', 'id' => 3 }
+          ]
+        }
+      end
+
+      it 'initializes recommended items correctly' do
+        article.init_recommended(valid_doc)
+        expect(article.recommended.size).to eq(3)
+        expect(article.recommended[0]).to be_a(RecommendedArticle)
+        expect(article.recommended[1]).to be_a(RecommendedEventType)
+        expect(article.recommended[2]).to be_a(RecommendedService)
+      end
+    end
+
+    context 'with unknown recommendation types' do
+      let(:doc_with_unknown) do
+        {
+          'recommended' => [
+            { 'type' => 'article', 'id' => 1 },
+            { 'type' => 'unknown', 'id' => 2 },
+            { 'type' => 'service', 'id' => 3 }
+          ]
+        }
+      end
+
+      it 'ignores unknown types and initializes valid ones' do
+        expect { article.init_recommended(doc_with_unknown) }.to output(/Unknown recommendation type: unknown/).to_stdout
+        expect(article.recommended.size).to eq(2)
+        expect(article.recommended[0]).to be_a(RecommendedArticle)
+        expect(article.recommended[1]).to be_a(RecommendedService)
+      end
+    end
+
+    context 'with empty recommendations' do
+      let(:empty_doc) { { 'recommended' => [] } }
+
+      it 'initializes an empty array' do
+        article.init_recommended(empty_doc)
+        expect(article.recommended).to be_empty
+      end
+    end
+
+    context 'with nil recommendations' do
+      let(:nil_doc) { { 'recommended' => nil } }
+
+      it 'initializes an empty array' do
+        article.init_recommended(nil_doc)
+        expect(article.recommended).to be_empty
+      end
+    end
+
+    context 'with missing recommendations key' do
+      let(:missing_key_doc) { {} }
+
+      it 'initializes an empty array' do
+        article.init_recommended(missing_key_doc)
+        expect(article.recommended).to be_empty
+      end
+    end
+  end
+  
 end
