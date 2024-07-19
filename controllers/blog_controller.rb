@@ -21,7 +21,6 @@ get '/blog/:slug' do |slug|
   @where = 'Blog'
   art = Article.create_one_keventer(slug)
   redirect("#{session[:locale]}/blog/#{art.slug}", 301) if art.slug != slug
-  art.recommended = [] # TODO: remove - force empty during internal beta
   blog_one art
 rescue StandardError
   status 404

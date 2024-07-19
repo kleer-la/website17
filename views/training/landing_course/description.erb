@@ -5,9 +5,9 @@
         </div>
         <div class="col-md-6 ps-5 pe-5">
           <%if @event_type.side_image.to_s == ''%>
-            <img src="/img/generics/description_generic.png"/>
+            <img src="/img/generics/description_generic.webp" loading="lazy"/>
           <% else %>
-            <img src="<%= @event_type.side_image%>"/>
+            <img src="<%= @event_type.side_image%>" loading="lazy"/>
           <% end %>
           <% @event_type.public_editions.first(2).each do |edition| %>
             <% unless edition&.banner_text.to_s == '' %>

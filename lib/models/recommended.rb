@@ -22,8 +22,16 @@ class Recommended
     when 'service'
       RecommendedService.new(doc)
     else
-      raise ArgumentError, "Unknown recommendation type: #{doc['type']}"
+      puts "Unknown recommendation type: #{doc['type']}"
+      # raise ArgumentError, "Unknown recommendation type: #{doc['type']}"
     end
+  end
+  def self.create_list(doc)
+    doc&.reduce([]) do |ac, r|
+      recommendation = Recommended.create(r)
+      ac << recommendation if recommendation
+      ac
+    end || []
   end
 end
 

@@ -9,6 +9,7 @@ require 'recaptcha'
 
 require './lib/metatags'
 require './lib/helpers/custom_markdown'
+require './lib/helpers/timestamp'
 require './lib/router_helper'
 
 require './controllers/helper'
@@ -36,6 +37,7 @@ use Rack::Deflater
 
 helpers do
   include Helpers
+  include TimestampHelpers
 end
 
 configure do

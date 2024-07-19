@@ -26,7 +26,7 @@
       <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
         <div class="course-qna__question">
           <h3 class="common-item"><%= question %></h3>
-          <img src="/app/img/icons/arrow.svg"/>
+          <img src="/app/img/icons/arrow.svg" loading="lazy"/>
         </div>
       </a>
       <div class="collapse course-qna__answer" id="question<%=index %>">
@@ -34,7 +34,7 @@
       </div>
     <% end %>
   </div>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_oval.svg" class="desktop_figure course-program__blue-oval" />
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_oval.svg" class="desktop_figure course-program__red-oval" />
+  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_oval.svg" class="desktop_figure course-program__blue-oval" loading="lazy"/>
+  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_oval.svg" class="desktop_figure course-program__red-oval" loading="lazy"/>
 </section>
 <%end%>

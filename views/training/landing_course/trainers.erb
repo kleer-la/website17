@@ -12,7 +12,7 @@
       <% trainers.each do |trainer| %>
 
         <div class="course-trainers__individual-container">
-          <img src="<%= "#{trainer.gravatar_picture_url}?s=400" %>" class="rounded-circle mb-3" />
+          <img src="<%= "#{trainer.gravatar_picture_url}?s=400" %>" class="rounded-circle mb-3" loading="lazy"/>
           <h6><%= trainer.name %> </h6>
           <p><%=@markdown_renderer.render(trainer.bio)%></p>
           <div>
