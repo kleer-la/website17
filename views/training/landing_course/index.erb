@@ -29,4 +29,5 @@
 <%= erb :'training/landing_course/testimonies' %>
 <%= erb :'training/landing_course/qna' %>
 <% #= erb :'component/sections/related_courses' %>
+<%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended }%>
 

@@ -25,7 +25,7 @@ class EventType
                 :goal, :recipients, :program, :faq, :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex, :categories, :slug, :canonical_slug, :is_kleer_cert, :is_sa_cert,
                 :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script, :platform,
-                :coupons
+                :coupons, :recommended
 
   def initialize(hash_provider = nil)
     @hash_provider = hash_provider
@@ -33,6 +33,7 @@ class EventType
     @testimonies = []
     @coupons = []
     load_complete_event(hash_provider)
+    init_recommended(hash_provider)
   end
 
   # json provider
@@ -90,6 +91,10 @@ class EventType
       new_coupon = Coupon.new(coupon['code'], coupon['percent_off'], coupon['icon'])
       @coupons.push(new_coupon)
     end
+  end
+
+  def init_recommended(doc)
+    @recommended = doc['recommended']&.reduce([]) { |ac, r| ac << Recommended.create(r) } || []
   end
 
   def uri_path
