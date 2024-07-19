@@ -12,7 +12,7 @@
         <% else %>
           <div class="howto__item p-4">
         <% end %>
-            <img src="<%= item[:img] %>" class="mb-3"/>
+            <img src="<%= item[:img] %>" class="mb-3" loading="lazy"/>
             <p><%= item[:text] %></p>
       <%if item[:url].to_s != '' %>
             <b>Ver más</b>

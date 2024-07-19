@@ -19,7 +19,7 @@
       class="top-icon"
       style="border: <%= service_area.primary_color %> 3px solid;"
     >
-      <img src="/app/img/icons/People.svg" alt="People icon"/>
+      <img src="/app/img/icons/People.svg" alt="People icon" loading="lazy"/>
     </div>
     <div
       class="plus-button"
@@ -27,7 +27,7 @@
       data-toggle="collapse"
       data-target="dinamic-content-area"
     >
-      <img src="/app/img/icons/minus.png" alt="plus"/>
+      <img src="/app/img/icons/minus.png" alt="plus" loading="lazy"/>
     </div>
   </div>
 </section>
@@ -41,10 +41,10 @@
 
             if (!dinamicContent.classList.contains('collapse')) {
                 dinamicContent.classList.add('show');
-                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' />"
+                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' loading='lazy'/>"
             }else {
                 dinamicContent.classList.remove('show');
-                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' />"
+                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' loading='lazy'/>"
             }
         }
     }
