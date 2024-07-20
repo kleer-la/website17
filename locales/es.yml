@@ -237,11 +237,6 @@ es:
         }
       ]
   navbar:
-#    - {
-#      text: 'Agilidad organizacional',
-#      url: '/agilidad-organizacional',
-#      inside: true,
-#    }
     - {
         text: 'Servicios',
         options: [
@@ -386,6 +381,11 @@ es:
           }
         ]
     }
+  popup_forms:
+    email:
+      button: Contact us by email
+    whatsapp:
+      button: Contact us via WhatsApp
   home:
     services:
       title: Explora Nuestros Servicios de Agilidad Organizacional

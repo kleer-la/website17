@@ -632,6 +632,11 @@ en:
           url: /somos
         - title: News
           url: /prensa
+  popup_forms:
+    email:
+      button: Contact us by email
+    whatsapp:
+      button: Contact us via WhatsApp
   home:
     services:
       title: Explore our Organizational Agility Services
