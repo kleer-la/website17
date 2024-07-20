@@ -29,5 +29,5 @@ public/.DS_Store
 public/*.pdf
 public/img/.DS_Store
 public/app/.sass-cache
-public/app/css/kleer.css.map
+public/app/css/*.css.map
 website.env

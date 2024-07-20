@@ -63,13 +63,13 @@
 		&nbsp;
 	</div>
 	<div class="col-md-2 col-md-offset-9">
-		<a href="/<%=session[:locale]%>/"><img src="/img/logos/logo-kleer-blanco.png"/></a>
+		<a href="/<%=session[:locale]%>/"><img src="/img/logos/logo-kleer-blanco.png" loading="lazy"/></a>
 	</div>
 </div>
 
 <div class="container-fluid" style="height: 400px;">
 	<div class="col-md-2 col-md-offset-1">
-		<img src="/img/ebooks/mas-productivos.jpg" class="img-rounded img-responsive">
+		<img src="/img/ebooks/mas-productivos.jpg" class="img-rounded img-responsive" loading="lazy">
 	</div>
 	<div class="col-md-8" style="text-align:center;color:#FFFFFF;text-shadow: 1px 1px 5px #000;">
  			<h2 class="headh2"><%=t("books.books.mas_productivos.title1")%></h2>
@@ -92,14 +92,14 @@
 	<div class="col-md-3 col-md-offset-3" style="text-align:center;">
     <% anchor = external_url_anchor "https://www.amazon.com/Equipos-M%C3%A1s-Productivos-interacciones-herramientas/dp/9874515872"%>
 		<%=anchor + t("books.buy.paperback_and_kindle")%></a> <em>(*)</em><br/>
-			<%=anchor%><img class="img-square" src="/img/ebooks/amazon.png"></a><br/><br/>
-			<img src="/img/ebooks/matchbook.png"><br/>
+			<%=anchor%><img class="img-square" src="/img/ebooks/amazon.png" loading="lazy"></a><br/><br/>
+			<img src="/img/ebooks/matchbook.png" loading="lazy"><br/>
 			<em>(*) <%=t("books.buy.amazon_matchbook")%></em>
 	</div>
 	<div class="col-md-3" style="text-align:center;">
       <% anchor = external_url_anchor "https://www.amazon.com/Equipos-M%C3%A1s-Productivos-interacciones-herramientas-ebook/dp/B00IKUCZDC"%>
 		  <%=anchor + t("books.buy.kindle")%></a><br/>
-			<%=anchor%><img class="img-square" src="/img/ebooks/amazonkindle.png"></a>
+			<%=anchor%><img class="img-square" src="/img/ebooks/amazonkindle.png" loading="lazy"></a>
 	</div>
 </div>
 
@@ -120,15 +120,15 @@
 	  <% anchor = external_url_anchor "https://www.amazon.com/Equipos-M%C3%A1s-Productivos-interacciones-herramientas/dp/9874515872" %>
     <%=anchor + t("books.buy.paperback_and_kindle")%></a> <em>(*)</em>
 		<br/>
-    <%=anchor%><img class="img-square" src="/img/ebooks/amazon.png"></a><br/><br/>
-    <img src="/img/ebooks/matchbook.png"><br/>
+    <%=anchor%><img class="img-square" src="/img/ebooks/amazon.png" loading="lazy"></a><br/><br/>
+    <img src="/img/ebooks/matchbook.png" loading="lazy"><br/>
     <em>(*) <%=t("books.buy.amazon_matchbook")%></em>
 	</div>
 	<div class="col-md-3" style="text-align:center;">
 		<% anchor = external_url_anchor "https://www.amazon.com/Equipos-M%C3%A1s-Productivos-interacciones-herramientas-ebook/dp/B00IKUCZDC"%>
     <%=anchor + t("books.buy.kindle")%></a>
 		<br/>
-		<%=anchor%><img class="img-square" src="/img/ebooks/amazonkindle.png"></a>
+		<%=anchor%><img class="img-square" src="/img/ebooks/amazonkindle.png" loading="lazy"></a>
 	</div>
 </div>
 
@@ -140,7 +140,7 @@
 		&nbsp;
 		<div class="row-fluid">
 			<div class="col-md-6">
-				<a href="/<%=session[:locale]%>/publicamos/scrum"><p align="center"><img src="/img/ebooks/scrum.jpg" class="img-rounded"></a></p>
+				<a href="/<%=session[:locale]%>/publicamos/scrum"><p align="center"><img src="/img/ebooks/scrum.jpg" class="img-rounded" loading="lazy"></a></p>
 
 				<div class="well well-small">
 					<h4><%=t("books.books.scrum.title")%></h4>
@@ -149,7 +149,7 @@
 				</div>
 			</div>
 			<div class="col-md-6">
-				<p align="center"><img src="/img/ebooks/retrospectivas.jpg" class="img-rounded"></p>
+				<p align="center"><img src="/img/ebooks/retrospectivas.jpg" class="img-rounded" loading="lazy"></p>
 				<div class="well well-small">
 					<h4><%=t("books.books.retrospectives.title")%></h4>
 					<p><%=t("books.books.retrospectives.text")%></p>

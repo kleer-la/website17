@@ -16,7 +16,7 @@
     <a id="logo" class="navbar-brand a" href="/<%=session[:locale]%>/">
       <picture>
         <source srcset="/app/img/black_logo.webp" type="image/webp">
-        <img src="/app/img/black_logo.png" alt="Kleer" />
+        <img src="/app/img/black_logo.png" alt="Kleer" loading="lazy"/>
       </picture>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@
 <div class="floating-absolute-buttons">
   <%= erb :'component/_little_modal_button' %>
   <a href="https://api.whatsapp.com/send/?phone=59891959360&text&app_absent=0" class="floating-button whatsapp-button" target="_blank">
-    <img class="" src="/app/img/icons/Whatsapp.svg" />
+    <img class="" src="/app/img/icons/Whatsapp.svg" loading="lazy"/>
   </a>
 </div>
 

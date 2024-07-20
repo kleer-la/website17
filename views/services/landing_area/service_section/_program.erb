@@ -28,7 +28,7 @@
               id="button-<%=id%>-<%=index%>"
               style="background-color: <%= @primary_color %>;"
            >
-             <img src="/app/img/icons/plus.png"/>
+             <img src="/app/img/icons/plus.png" loading="lazy"/>
            </div>
          </div>
        </div>
@@ -51,11 +51,11 @@
                 if (detail.style.display === 'none') {
                     detail.style.display = 'block'
                     itemBox.style.height = 'auto'
-                    button.innerHTML = '<img src="/app/img/icons/minus.png"/>'
+                    button.innerHTML = '<img src="/app/img/icons/minus.png" loading="lazy"/>'
                 } else {
                     detail.style.display = 'none'
                     itemBox.style.height = '100px'
-                    button.innerHTML = '<img src="/app/img/icons/plus.png"/>'
+                    button.innerHTML = '<img src="/app/img/icons/plus.png" loading="lazy"/>'
                 }
             })
         }
