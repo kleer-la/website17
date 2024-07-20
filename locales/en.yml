@@ -562,6 +562,9 @@ en:
     text21: >-
       Questions about the Terms of Service should be sent to us at
       info@kleer.la.
+  category:
+    see_more: See more
+    training: Related trainings
   event:
     not_found: The course you are looking for was not found. Check other available dates or similar courses.
   generals:
