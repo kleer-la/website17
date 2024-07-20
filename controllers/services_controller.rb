@@ -1,5 +1,16 @@
 require './lib/models/service_area_v3'
 
+get '/agilidad-organizacional' do
+  return redirect('/es/servicios', 301) if session[:locale] == 'es'
+
+  @active_tab_coaching = 'active'
+  @meta_tags.set! title: t('meta_tag.business-agility.title'),
+                  description: t('meta_tag.business-agility.description'),
+                  canonical: t('meta_tag.business-agility.canonical').to_s
+
+  erb :'business_agility/index', layout: :'layout/layout2022'
+end
+
 get %r{/servicios/?} do
   redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
 

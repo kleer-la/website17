@@ -98,17 +98,6 @@ get '/es' do
   redirect '/es/', 301 # permanent redirect
 end
 
-get '/agilidad-organizacional' do
-  return redirect('/es/servicios', 301) if session[:locale] == 'es'
-
-  @active_tab_coaching = 'active'
-  @meta_tags.set! title: t('meta_tag.business-agility.title'),
-                  description: t('meta_tag.business-agility.description'),
-                  canonical: t('meta_tag.business-agility.canonical').to_s
-
-  erb :'business_agility/index', layout: :'layout/layout2022'
-end
-
 # TODO: redirect
 PERMANENT_REDIRECT = {
   'e-books' => 'es/recursos',

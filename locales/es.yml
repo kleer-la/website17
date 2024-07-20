@@ -200,8 +200,6 @@ es:
     text21: "Preguntas acerca de los Términos de Servicio deben ser enviadas a info@kleer.la."
   event:
     not_found: El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares.
-  contact:
-    training_email: "entrenamos@kleer.la"
   generals:
     buttons:
       more_info: 'Conoce más'
@@ -403,7 +401,6 @@ es:
           url: /es/servicios
           text: ¡Me interesa saber más!
         questions:
-          mailto: mailto:info@kleer.la?subject=Agendar una videollamada&amp;body=Cuentanos tu contexto y como podemos ayudarte
           text: Agendar una videollamada
     home_hero:
       - {
@@ -641,7 +638,6 @@ es:
       error-message: Formato de correo electrónico inválido
     phone-input:
       label: Número de teléfono.
-      error-message: Completa este campo con tu teléfono.
     message-input:
       label: Mensaje
       sub-label: ¡Cuéntanos cómo podemos ayudarte!
