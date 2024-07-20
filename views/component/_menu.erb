@@ -64,8 +64,13 @@
 </nav>
 <div class="floating-absolute-buttons">
   <%= erb :'component/_little_modal_button' %>
-  <a href="https://api.whatsapp.com/send/?phone=59891959360&text&app_absent=0" class="floating-button whatsapp-button" target="_blank">
-    <img class="" src="/app/img/icons/Whatsapp.svg" loading="lazy"/>
+  <a href="https://api.whatsapp.com/send/?phone=59891959360&text&app_absent=0" 
+     class="floating-button whatsapp-button" 
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="<%=t('popup_forms.whatsapp.button')%>">
+    <img src="/app/img/icons/Whatsapp.svg" alt="" loading="lazy"/>
+    <span class="visually-hidden"><%=t('popup_forms.whatsapp.button')%></span>
   </a>
 </div>
 

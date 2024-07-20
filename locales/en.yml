@@ -562,10 +562,11 @@ en:
     text21: >-
       Questions about the Terms of Service should be sent to us at
       info@kleer.la.
+  category:
+    see_more: See more
+    training: Related trainings
   event:
     not_found: The course you are looking for was not found. Check other available dates or similar courses.
-  contact:
-    training_email: training@kleer.us
   generals:
     buttons:
       more_info: More info
@@ -631,6 +632,11 @@ en:
           url: /somos
         - title: News
           url: /prensa
+  popup_forms:
+    email:
+      button: Contact us by email
+    whatsapp:
+      button: Contact us via WhatsApp
   home:
     services:
       title: Explore our Organizational Agility Services
@@ -649,7 +655,6 @@ en:
           url: /en/agilidad-organizacional
           text: ¡Tell me more!
         questions:
-          mailto: mailto:info@kleer.la?subject=Agendar una videollamada&amp;body=Cuentanos tu contexto y como podemos ayudarte
           text: Schedule a video call
     home_hero:
       - subject: Business agility
@@ -876,7 +881,6 @@ en:
       error-message: Invalid mail format
     phone-input:
       label: Phone number
-      error-message: Please fill in your phone number
     message-input:
       label: Message
       sub-label: Please describe your context and how we could help!
