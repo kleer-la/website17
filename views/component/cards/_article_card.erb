@@ -1,27 +1,27 @@
-<%where_uri= "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
+<% where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
 
 <article
   id="card<%= article.selected ? '-selected' : '' %>--<%="#{format_categories([article.category_name])}#{article.slug}"%>"
   class="card blog-card mb-5 ms-auto me-auto"
   style="width: 22rem;">
   <div class="image-container">
-    <a href="<%= where_uri + article.slug%>">
-      <img src="<%= article.cover %>" class="card-img-top" alt="Cover image" loading="lazy">
+    <a href="<%= where_uri + article.slug %>">
+      <img src="<%= article.cover %>" class="card-img-top" alt="Cover image" <%= 'loading="lazy"' if (lazy_load and not article.selected) %>>
     </a>
     <div class="category-flag me-3">
       <%= article.category_name %>
     </div>
   </div>
   <div class="card-body">
-    <a href="<%= where_uri+article.slug%>">
+    <a href="<%= where_uri + article.slug %>">
       <h3 class="card-title"><%= article.title %></h3>
     </a>
     <p class="card-text">
-      <%=@markdown_renderer.render( article.description )%>
+      <%= @markdown_renderer.render(article.description) %>
     </p>
     <p class="card-text">
       <small class="text-muted">
-        <%= erb :'component/cards/_authors_block', locals: {authors: article.trainers} %>
+        <%= erb :'component/cards/_authors_block', locals: { authors: article.trainers } %>
       </small>
     </p>
     <p class="card-text">
@@ -29,14 +29,12 @@
         <img src="/img/icons/blue_calendar.svg"
           alt=""
           class="little-icon me-2"
-             loading="lazy"
+          loading="lazy"
         />
-        <time datetime="<%=article.created_at[0..9]%>">
-          <%=article.created_at[0..9]%>
+        <time datetime="<%= article.created_at[0..9] %>">
+          <%= article.created_at[0..9] %>
         </time>
       </small>
     </p>
   </div>
 </article>
-
-
