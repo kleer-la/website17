@@ -1,5 +1,7 @@
-<% where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" %>
-
+<% 
+lazy_load = defined?(lazy_load) ? lazy_load : true
+where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/" 
+%>
 <article
   id="card<%= article.selected ? '-selected' : '' %>--<%="#{format_categories([article.category_name])}#{article.slug}"%>"
   class="card blog-card mb-5 ms-auto me-auto"

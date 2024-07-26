@@ -26,3 +26,17 @@ Feature: Kleer Blogs
 # - press 'Show more' button -> switch to 'all'
 # - 'all' -> show one list including selected / item per page = 9 / don't show 'Show more' button
 # - English -> switch to 'all'
+
+  Scenario: landing Article not found
+    Given A list of categories
+    And A list of articles with
+    * an article 'lorem-ipsum' with title 'Lorem ipsum'
+    When I go to the 'lorem' article page
+    Then I should see "ArticleNotFoundError"
+
+  Scenario: landing Article found
+    Given A list of categories
+    And A list of articles with
+    * an article 'lorem-ipsum' with title 'Lorem ipsum'
+    When I go to the 'lorem-ipsum' article page
+    Then Title should be "Lorem ipsum"

@@ -22,8 +22,6 @@ get '/blog/:slug' do |slug|
   art = Article.create_one_keventer(slug)
   redirect("#{session[:locale]}/blog/#{art.slug}", 301) if art.slug != slug
   blog_one art
-rescue StandardError
-  status 404
 end
 
 get %r{/blog/?} do
@@ -35,7 +33,6 @@ get %r{/blog/?} do
   @categories = load_categories session[:locale]
 
   articles = Article.create_list_keventer(true)
-
   @articles = articles.select { |a| a.lang == session[:locale] }.sort_by(&:created_at).reverse
 
   erb :'blog/index', layout: :'layout/layout2022'
@@ -67,6 +64,4 @@ def blog_list(articles)
 
   @articles = articles
   erb :'blog/index', layout: :'layout/layout2022'
-rescue StandardError
-  status 404
 end
