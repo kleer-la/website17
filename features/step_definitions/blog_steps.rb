@@ -20,6 +20,10 @@ When('I go to the {string} article preview page') do |slug|
   Article.create_one_null(@articles[0], { next_null: true, only_published: false })
   visit "/blog-preview/#{slug}"
 end
+When('I go to the {string} article page') do |slug|
+  Article.create_one_null(@articles[0], { next_null: true  })
+  visit "/blog/#{slug}"
+end
 
 When('I go to the article list page') do
   Article.create_list_null(@articles, { next_null: true, only_published: true })

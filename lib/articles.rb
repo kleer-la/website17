@@ -3,6 +3,12 @@ require './lib/services/keventer_api'
 require './lib/trainer'
 require './lib/models/recommended'
 
+class ArticleNotFoundError < StandardError
+  def initialize(slug)
+    super("Blog with slug '#{slug}' not found")
+  end
+end
+
 class Article
   @next_null = false
   @article_null = nil
@@ -17,11 +23,12 @@ class Article
   def self.create_one_keventer(slug)
     if @next_null
       # @next_null = false      # bc related articles need create_one and create_list
+      raise ArticleNotFoundError.new(slug) unless @article_null.slug == slug
       return @article_null
     end
 
     api_resp = JsonAPI.new(KeventerAPI.article_url(slug))
-    raise StandardError, "[info] Blog (#{slug}) not found" unless api_resp.ok?
+    raise ArticleNotFoundError.new(slug) unless api_resp.ok?
 
     Article.new(api_resp.doc)
   end

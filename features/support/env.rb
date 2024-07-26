@@ -25,9 +25,15 @@ class MyWorld
   include RSpec::Expectations
   include RSpec::Matchers
   include RSpecHtmlMatchers
+  include Rack::Test::Methods  # Add this line
+
+  def app
+    Sinatra::Application
+  end
 end
 
 Capybara.app = Sinatra::Application
+Capybara.default_driver = :rack_test
 
 World { MyWorld.new }
 
