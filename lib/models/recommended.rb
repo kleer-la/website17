@@ -48,7 +48,7 @@ class RecommendedEventType < Recommended
   end
 
   def url
-    @external_url || "/es/cursos/#{slug}"
+    @external_url.empty? ? "/es/cursos/#{slug}" : @external_url
   end
 end
 

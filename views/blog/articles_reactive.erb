@@ -27,11 +27,11 @@
     <% end %>
 
     <div id="article-list" class="row">
-      <% @articles.each do |article|%>
+      <% @articles.each_with_index do |article, index| %>
         <div class="col-md-6 col-lg-4">
-          <%= erb :'component/cards/_article_card', locals: {article: article} %>
+          <%= erb :'component/cards/_article_card', locals: {article: article, lazy_load: index >= 3} %>
         </div>
-      <%end%>
+      <% end %>
     </div>
 
     <% unless session[:locale] == 'en' %>
@@ -47,7 +47,7 @@
       src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
       alt="decoration figure"
       />
-  <%end%>
+  <% end %>
   <% unless session[:locale] == 'en' %>
     <div class="btn-center-container" id="blog-feed-list__show-more-button">
       <button class="btn my-primary-button" onclick="showMore()"><%=t("blog.show_more")%></button>
