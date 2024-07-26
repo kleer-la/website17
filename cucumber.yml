@@ -1,1 +1,2 @@
 default: --publish-quiet --tags 'not @system'
+system: --publish-quiet --tags @system
