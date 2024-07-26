@@ -8,26 +8,26 @@ describe Category do
 
   it 'should have a name' do
     @category.name = 'pepepe'
-    @category.name.should == 'pepepe'
+    expect(@category.name).to eq 'pepepe'
   end
 
   it 'should have a codename' do
     @category.codename = 'pepepe'
-    @category.codename.should == 'pepepe'
+    expect(@category.codename).to eq 'pepepe'
   end
 
   it 'should have a tagline' do
     @category.tagline = 'pepepe'
-    @category.tagline.should == 'pepepe'
+    expect(@category.tagline).to eq 'pepepe'
   end
 
   it 'should have a description' do
     @category.description = 'pepepe'
-    @category.description.should == 'pepepe'
+    expect(@category.description).to eq 'pepepe'
   end
 
   it 'should have a order' do
     @category.order = 12
-    @category.order.should == 12
+    expect(@category.order).to eq 12
   end
 end

@@ -12,11 +12,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
                                                                ])
 
 RSpec.configure do |config|
-  config.include Rack::Test::Methods
-  config.expect_with :rspec do |expectations|
-    expectations.syntax = %i[expect should]
-  end
-  config.mock_with :rspec do |c|
-    c.syntax = %i[should expect]
-  end
+  config.include Rack::Test::Methods  # post
 end
+
