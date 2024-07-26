@@ -5,7 +5,6 @@
 
   body = set_ids_in_body(@markdown_renderer.render( @article.body ), titles)
 %>
-
 <article id="landing-blog">
   <%= erb :'blog/landing_blog/hero' %>
   <%= erb :'blog/landing_blog/body', locals: {titles: titles, body: body} %>

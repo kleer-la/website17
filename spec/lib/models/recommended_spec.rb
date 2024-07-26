@@ -91,7 +91,8 @@ RSpec.describe RecommendedEventType do
       'subtitle' => 'Event Type Subtitle',
       'slug' => 'event-type-slug',
       'cover' => 'event-type-cover.jpg',
-      'type' => 'event_type'
+      'type' => 'event_type',
+      'external_url' => ''
     }
   end
 
