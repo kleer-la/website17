@@ -27,7 +27,7 @@
             <%= @markdown_renderer.render(t("catalog.public.text")) %>
           <div class="btn-center-container">
             <a class="my-primary-button training-info__redir-button"
-              href="<%= t("catalog.public.button.link") %>">
+              href="<%= "/#{session[:locale]}#{t("catalog.public.button.link")}" %>">
               <%= t("catalog.public.button.text") %>
             </a>
           </div>
@@ -42,7 +42,7 @@
           <div class="btn-center-container">
             <a
               class="my-primary-button training-info__redir-button"
-              href="<%= t("catalog.e-learning.button.link") %>"
+              href="<%= t('catalog.e-learning.button.link') %>"
             ><%= t("catalog.e-learning.button.text") %></a>
           </div>
         </div>
