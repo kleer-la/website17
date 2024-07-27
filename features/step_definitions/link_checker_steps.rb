@@ -2,11 +2,9 @@ require 'nokogiri'
 require './lib/services/crawler'
 
 Given('the site is crawled') do
-  puts "Defined? #{defined?($crawler)} inicio"
   next unless defined?($crawler).nil?
 
   $crawler = Crawler.new('https://www.kleer.la', 5)
-  puts "Defined? #{defined?($crawler)}"
   class << $crawler
     include Rack::Test::Methods
     def app

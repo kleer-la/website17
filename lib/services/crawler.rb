@@ -2,20 +2,19 @@ require 'nokogiri'
 require 'uri'
 
 class Crawler
-  attr_reader :errors, :checked_urls
+  attr_reader :errors, :checked_urls, :external_urls
 
   def initialize(base_url, max_depth = 3)
     @base_url = base_url
     @max_depth = max_depth
-    @checked_urls = Set.new
-    @external_urls = Set.new
+    @checked_urls = {}
+    @external_urls = {}
     @errors = []
     @counter = 0
   end
 
   def execute(start_path = '/')
     crawl(start_path)
-
     save_results_to_file
     @errors
   end
@@ -25,18 +24,30 @@ class Crawler
     filename = "crawler_results_#{timestamp}.txt"
     File.open(filename, 'w') do |file|
       file.puts 'URLs crawled:'
-      @checked_urls.each { |url| file.puts url }
+      @checked_urls.each { |url, parent| file.puts "#{url}\t#{parent}" }
       file.puts "\nExternal URLs:"
-      @external_urls.each { |url| file.puts url }
+      @external_urls.each { |url, parent| file.puts "#{url}\t#{parent}" }
     end
     puts "Results saved to #{filename}"
   end
 
   def filter_checked_urls(&condition)
-    @checked_urls.select(&condition)
+    @checked_urls.select { |url, _| condition.call(url) }
   end
 
-  # private
+  def internal_url?(url)
+    uri = URI(url)
+    base_uri = URI(@base_url)
+
+    return true if uri.host.nil?
+
+    uri.host.sub(/^www\./, '') == base_uri.host.sub(/^www\./, '')
+  rescue URI::InvalidURIError => e
+    puts "Invalid URI: #{e.message}"
+    false
+  end
+
+  private
 
   def complete_url(path)
     if path.start_with?('http://', 'https://')
@@ -51,9 +62,9 @@ class Crawler
 
     full_url = complete_url(path)
 
-    return if @checked_urls.include?(full_url) || depth > @max_depth
+    return if @checked_urls.key?(full_url) || depth > @max_depth
 
-    @checked_urls.add(full_url)
+    @checked_urls[full_url] = parent_url
     @counter += 1
     puts "#{@counter}. Checking: #{full_url} (depth: #{depth})"
 
@@ -71,20 +82,17 @@ class Crawler
 
     doc.css('a').each do |link|
       href = link['href']&.strip
-      next if href.nil? || href.start_with?('#')
+      next if href.nil? || href.empty? || href.start_with?('#')
 
       begin
         target_url = complete_url(href)
         is_internal = internal_url?(target_url)
-        is_unchecked = !@checked_urls.include?(target_url)
+        is_unchecked = !@checked_urls.key?(target_url)
 
         if is_internal && is_unchecked
-          # puts "Crawling internal link: #{target_url}"
           crawl(URI(target_url).path, depth + 1, current_url)
         else
-          @external_urls.add(target_url) unless is_internal || @external_urls.include?(target_url)
-          # reason = !is_internal ? 'external' : 'already checked'
-          # puts "Skipping link: #{target_url} (#{reason})"
+          @external_urls[target_url] = current_url unless is_internal || @external_urls.key?(target_url)
         end
       rescue URI::InvalidURIError => e
         puts "Invalid URI: #{e.message}"
@@ -99,26 +107,7 @@ class Crawler
     @errors << { url: url, error: "HTTP #{response.status}", parent_url: parent_url }
   end
 
-  def internal_url?(url)
-    uri = URI(url)
-    base_uri = URI(@base_url)
-
-    # Check if the URL is relative (no host)
-    if uri.host.nil?
-      puts 'Relative URL, considering internal'
-      return true
-    end
-
-    # Compare hosts, ignoring 'www' subdomain
-    uri.host.sub(/^www\./, '') == base_uri.host.sub(/^www\./, '')
-  rescue URI::InvalidURIError => e
-    puts "Invalid URI: #{e.message}"
-    false # If we can't parse the URL, assume it's not internal
-  end
-
   def get(path)
-    # This method should be implemented to make the actual HTTP request
-    # For now, we'll leave it as a placeholder
     raise NotImplementedError, "The 'get' method must be implemented"
   end
 end
