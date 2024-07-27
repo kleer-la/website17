@@ -1,5 +1,5 @@
 require 'spec_helper'
-require './lib/services/crawler'  # adjust the path as necessary
+require './lib/services/crawler' # adjust the path as necessary
 
 RSpec.describe Crawler do
   let(:base_url) { 'https://www.kleer.la' }
@@ -46,7 +46,8 @@ RSpec.describe Crawler do
 
     context 'when encountering errors' do
       before do
-        allow(crawler).to receive(:get).with('/').and_return(double('response', status: 200, body: '<a href="/error">Error</a>'))
+        allow(crawler).to receive(:get).with('/').and_return(double('response', status: 200,
+                                                                                body: '<a href="/error">Error</a>'))
         allow(crawler).to receive(:get).with('/error').and_return(double('response', status: 404, body: ''))
       end
 
@@ -65,14 +66,14 @@ RSpec.describe Crawler do
         double('response', status: 200, body: '<a href="/">Home</a>')
       )
     end
-  
+
     it 'does not crawl the same URL twice' do
       expect(crawler).to receive(:get).with('/').once
       expect(crawler).to receive(:get).with('/page1').once
       crawler.execute
     end
   end
-  
+
   context 'when encountering errors' do
     before do
       allow(crawler).to receive(:get).with('/').and_return(
@@ -101,7 +102,7 @@ RSpec.describe Crawler do
       allow(crawler).to receive(:get).with('/').and_return(
         double('response', status: 200, body: '<a href="/error">Error</a>')
       )
-      allow(crawler).to receive(:get).with('/error').and_raise(StandardError.new("Network error"))
+      allow(crawler).to receive(:get).with('/error').and_raise(StandardError.new('Network error'))
     end
 
     it 'records the exception with the URL of the containing page' do
@@ -120,23 +121,23 @@ RSpec.describe Crawler do
         '/',
         'https://www.kleer.la'
       ]
-  
+
       internal_urls.each do |url|
-        internal =  crawler.internal_url?(url)
+        internal = crawler.internal_url?(url)
         expect(internal).to be(true), "Expected #{url} to be internal"
       end
     end
-  
+
     it 'correctly identifies external links' do
       external_urls = [
         'http://external.com',
         'https://www.google.com',
         'ftp://files.example.com'
       ]
-  
+
       external_urls.each do |url|
         expect(crawler.internal_url?(url)).to be(false), "Expected #{url} to be external"
       end
     end
   end
-end 
+end

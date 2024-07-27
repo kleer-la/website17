@@ -4,7 +4,11 @@ Feature: Link Checker
   As a website maintainer
   I want to check for any broken links
 
-Scenario: Check all links on the website
-  # Given the website is running
-  When I check all the links
+Scenario: Check website for broken
+  Given the site is crawled
   Then I should see no broken links
+
+  Scenario: Check website for double lang prefix
+  Given the site is crawled
+  Then No URL with double '/es' prefix
+  And No URL with double '/en' prefix
