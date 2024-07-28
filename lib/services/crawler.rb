@@ -80,24 +80,54 @@ class Crawler
   def parse_links(current_url, body, depth)
     doc = Nokogiri::HTML(body)
 
-    doc.css('a').each do |link|
-      href = link['href']&.strip
-      next if href.nil? || href.empty? || href.start_with?('#')
+    # Parse various HTML elements that may contain URLs
+    parse_element(doc, 'a', 'href', current_url, depth)
+    parse_element(doc, 'img', 'src', current_url, depth)
+    parse_element(doc, 'link', 'href', current_url, depth)
+    parse_element(doc, 'script', 'src', current_url, depth)
+    parse_element(doc, 'iframe', 'src', current_url, depth)
+    parse_element(doc, 'form', 'action', current_url, depth)
+    parse_meta_refresh(doc, current_url, depth)
+  end
 
-      begin
-        target_url = complete_url(href)
-        is_internal = internal_url?(target_url)
-        is_unchecked = !@checked_urls.key?(target_url)
+  def parse_element(doc, tag, attribute, current_url, depth)
+    doc.css(tag).each do |element|
+      url = element[attribute]&.strip
+      process_url(url, current_url, depth, element) if url
+    end
+  end
 
-        if is_internal && is_unchecked
-          crawl(URI(target_url).path, depth + 1, current_url)
-        else
-          @external_urls[target_url] = current_url unless is_internal || @external_urls.key?(target_url)
-        end
-      rescue URI::InvalidURIError => e
-        puts "Invalid URI: #{e.message}"
-        @errors << { url: href, error: e.message, parent_url: current_url }
+  def parse_meta_refresh(doc, current_url, depth)
+    doc.css('meta[http-equiv="refresh"]').each do |meta|
+      content = meta['content']
+      if content
+        url = content.split(';').last.strip.sub(/^url=/i, '')
+        process_url(url, current_url, depth)
       end
+    end
+  end
+
+  def process_url(url, current_url, depth, element = nil)
+    return if url.nil? || url.empty? || url.start_with?('#', 'javascript:', 'mailto:', 'tel:')
+
+    begin
+      target_url = complete_url(url)
+      is_internal = internal_url?(target_url)
+      is_unchecked = !@checked_urls.key?(target_url)
+
+      if is_internal && is_unchecked
+        if element&.name == 'form' && element['method']&.downcase == 'post'
+          # For POST forms, just log them without crawling
+          @external_urls[target_url] = "#{current_url} (POST form)"
+        else
+          crawl(URI(target_url).path, depth + 1, current_url)
+        end
+      else
+        @external_urls[target_url] = current_url unless is_internal || @external_urls.key?(target_url)
+      end
+    rescue URI::InvalidURIError => e
+      puts "Invalid URI: #{e.message}"
+      @errors << { url: url, error: e.message, parent_url: current_url }
     end
   end
 
