@@ -28,6 +28,7 @@ group :development do
   gem 'platform-api', require: false
   gem 'rerun', require: false
   gem 'rubocop', require: false
+  gem 'ruby-lsp', require: false
 end
 
 group :development, :test do
