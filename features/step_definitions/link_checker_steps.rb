@@ -15,7 +15,7 @@ Given('the site is crawled') do
     #   super(path)
     # end
   end
-  $crawler.execute
+  $crawler.execute('/es/blog')
 end
 
 Then('I should see no broken links') do
@@ -35,4 +35,29 @@ Then('No URL with double {string} prefix') do |lang|
   end
 
   raise " Duplcated /#{lang}: \n #{errors.join('\n')}" if errors.any?
+end
+
+Then('all external URLs should be valid') do
+  invalid_urls = []
+  skipped_urls = []
+
+  $crawler.external_urls.each do |url, parent_url|
+    if parent_url.end_with?('(POST form)')
+      skipped_urls << "#{url} (Skipped: POST form, Parent: #{parent_url})"
+      next
+    end
+
+    uri = URI(url)
+    uri.path = '/' if uri.path.empty?
+
+    response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+      http.request_head(uri.path)
+    end
+
+    invalid_urls << "#{url} (Status: #{response.code}, Parent: #{parent_url})" if response.code.to_i >= 400
+  rescue StandardError => e
+    invalid_urls << "#{url} (Error: #{e.message}, Parent: #{parent_url})"
+  end
+
+  raise "The following external URLs are invalid:\n#{invalid_urls.join("\n")}" if invalid_urls.any?
 end
