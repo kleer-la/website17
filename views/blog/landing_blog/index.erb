@@ -8,10 +8,5 @@
 <article id="landing-blog">
   <%= erb :'blog/landing_blog/hero' %>
   <%= erb :'blog/landing_blog/body', locals: {titles: titles, body: body} %>
-  <%if @article.recommended == []%>
-    <%= erb :'component/sections/related_courses' %>
-    <%= erb :'component/sections/related_articles' %>
-  <%else%>
-    <%= erb :'component/sections/recommended', locals: { recommended: @article.recommended }%>
-  <%end%>
+  <%= erb :'component/sections/recommended', locals: { recommended: @article.recommended }%>
 </article>

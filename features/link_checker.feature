@@ -12,3 +12,7 @@ Scenario: Check website for broken
   Given the site is crawled
   Then No URL with double '/es' prefix
   And No URL with double '/en' prefix
+
+  Scenario: Validate external URLs
+  Given the site is crawled
+  Then all external URLs should be valid
