@@ -44,9 +44,6 @@ def blog_one(article)
                   description: @article.description,
                   canonical: "#{t('meta_tag.blog.canonical')}/#{@article.slug}"
 
-  @related_courses = get_related_event_types(@article.category_name, @article.id, 4)
-  @related_articles = get_related_articles(@article.category_name, @article.id, 3)
-
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'
 

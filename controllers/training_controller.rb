@@ -119,8 +119,6 @@ get '/cursos/:event_type_id_with_name' do
       @category = @event_type.categories[0]
     end
 
-    # @related_courses = get_related_event_types(@event_type.categories[0], @event_type.id, 4)
-
     router_helper = RouterHelper.instance
     router_helper.alternate_route = '/catalogo'
 

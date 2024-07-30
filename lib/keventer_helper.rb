@@ -8,22 +8,3 @@ def to_boolean(string)
     raise ArgumentError, "invalid value for Boolean: \"#{string}\""
   end
 end
-
-# TODO: move to another page (arch?)
-def get_related_event_types(category, id, quantity)
-  all_events = Catalog.create_keventer_json
-
-  all_events.select { |e| e.event_type.categories.any? { |c| c == category } }
-            .reject { |e| e.event_type.id == id }
-            .uniq { |e| e.event_type.id }
-            .first(quantity)
-end
-
-def get_related_articles(category, id, quantity)
-  all_articles = Article.create_list_keventer(true)
-
-  all_articles.select { |e| e.category_name == category }
-              .reject { |e| e.id == id }
-              .uniq(&:id)
-              .first(quantity)
-end
