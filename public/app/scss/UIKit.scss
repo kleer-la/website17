@@ -11,6 +11,12 @@ $grey: #B3B3B3;
 $white: #FFFFFF;
 
 
+@font-face {
+  font-family:"degular";
+  src:url("https://use.typekit.net/af/2fce28/00000000000000007735c872/30/l?subset_id=2&fvd=n6&v=3") format("woff2");
+  font-display:auto;font-style:normal;font-weight:600;font-stretch:normal;
+  }
+  
 /* Global */
 html{
   overflow-x: hidden;
