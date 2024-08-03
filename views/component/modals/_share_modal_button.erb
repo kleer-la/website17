@@ -42,7 +42,6 @@
 
         copyButton.onclick =
         () =>{
-            console.log('#<%="shareLink#{id}"%>')
             navigator.clipboard.writeText(document.querySelector('#<%="shareLink#{id}"%>').value)
             copyLink.value = 'copied!'
         }
