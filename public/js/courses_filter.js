@@ -29,7 +29,6 @@ const courses = Array.from(container.children).map((element) => {
 const compareCourse = (course) => {
 
     const deliveryCheck = deliveryFilters.some(item => {
-        // console.log(`${item} - ${course.deliveryOption}`)
         return course.deliveryOptions.includes(item)
     })
     const categoryCheck = categoryFilters.some(item => course.categories.includes(item))

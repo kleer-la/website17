@@ -1,6 +1,9 @@
 <a
     class="service-card"
     id='service-card-<%=service.id %>'
+    data-hover-color="<%= hover_color %>"
+    data-border-hover-color="<%= border_hover_color %>"
+    data-border-color="<%= border_color %>"
     style='background-color: white;
       border: 3px solid <%= border_color %>;
       margin: 20px; cursor: pointer;
@@ -18,22 +21,3 @@
       <%= service.subtitle %>
     </h4>
 </a>
-
-<script>
-    {
-        const areaCard = document.getElementById('service-card-<%=service.id %>')
-        areaCard.addEventListener('mouseover', function() {
-            areaCard.style.backgroundColor = '<%= hover_color %>'
-            areaCard.style.border = '3px solid <%= border_hover_color %>'
-        })
-
-        areaCard.addEventListener('mouseout', function() {
-            areaCard.style.backgroundColor = 'white'
-            areaCard.style.border = '3px solid <%= border_color %>'
-        })
-
-        areaCard.onclick = function(e) {
-            e.stopPropagation()
-        }
-    }
-</script>

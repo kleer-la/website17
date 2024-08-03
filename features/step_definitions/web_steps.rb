@@ -164,32 +164,12 @@ Given(/^I visit the former Desarrollo Agil spanish Page$/) do
   visit '/es/entrenamos/desarrollo-agil-de-software'
 end
 
-Given(/^I visit the former Estimación y Planificación con Scrum Page$/) do
-  visit '/entrenamos/estimacion-y-planificacion-con-scrum'
-end
-
-Given(/^I visit the former Estimación y Planificación con Scrum spanish Page$/) do
-  visit '/es/entrenamos/estimacion-y-planificacion-con-scrum'
-end
-
-Given(/^I visit the international payment page$/) do
-  visit '/preguntas-frecuentes/facturacion-pagos-internacionales'
-end
-
-Given(/^I visit the argentinian payment page$/) do
-  visit '/preguntas-frecuentes/facturacion-pagos-argentina'
-end
-
 Given(/^I visit the colombian payment page$/) do
   visit '/preguntas-frecuentes/facturacion-pagos-colombia'
 end
 
 Given(/^I visit the CSM QnA page$/) do
   visit '/preguntas-frecuentes/certified-scrum-master'
-end
-
-Given(/^I visit the CSD QnA page$/) do
-  visit '/preguntas-frecuentes/certified-scrum-developer'
 end
 
 Given(/^I visit an invalid Page$/) do

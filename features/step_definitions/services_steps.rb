@@ -41,7 +41,7 @@ Given('a service {string} with slug {string}') do |name, slug|
     "pricing": "",
     "faq": [ ["Primera pregunta", "Respuesta 1ra pregunta"] ],
     "brochure": "",
-    "side_image": "https://www.kleer.la/app/img/services/diseno-org.jpg"
+    "side_image": "https://www.kleer.la/app/img/services/diseno-org.webp"
     }
   ]
   }
