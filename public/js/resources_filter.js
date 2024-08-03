@@ -137,7 +137,6 @@ const addPageToLink = () =>{
 
 const getPageOfResource = (resourceId) => {
     const resource = resources.find(resource => {
-        console.log(resource.id, resourceId)
         return resource.id === resourceId
     })
     const index = pager.activeResources.indexOf(resource)

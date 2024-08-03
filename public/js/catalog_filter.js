@@ -43,9 +43,7 @@ const handleChangeText = (event) => {
 const handleChangeCategory = (category) => {
     categoryInFilter = category
     // DOMobjects.showElements([DOMobjects.articles.title], false)
-    console.log(category)
     DOMobjects.filterBox.category.setDropText(category)
-
     filter()
 }
 
@@ -53,7 +51,6 @@ const handleShowAll = () => {
     courses.forEach(course => {
         course.card.classList.remove('hidden-element')
     })
-
     DOMobjects.showElements([DOMobjects.courses.showMoreButton], false)
 }
 
