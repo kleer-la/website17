@@ -50,7 +50,8 @@
     </div>
   </div>
 
-  <%= recaptcha_tags callback: 'enableButton' %>
+  <%#= recaptcha_tags callback: 'enableButton' %>
+  <div id="recaptcha-placeholder"></div>
 
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
   <div class="btn-center-container">
@@ -64,26 +65,62 @@
   </div>
 </form>
 <script>
+  let recaptchaLoaded = false;
+
+  function loadReCaptcha() {
+    if (recaptchaLoaded) return;
+
+    var script = document.createElement('script');
+    script.src = 'https://www.recaptcha.net/recaptcha/api.js?render=explicit';
+    script.async = true;
+    script.defer = true;
+    script.onload = function() {
+      var placeholder = document.getElementById('recaptcha-placeholder');
+      placeholder.innerHTML = '<div id="recaptcha-widget"></div>';
+      grecaptcha.ready(function() {
+        grecaptcha.render('recaptcha-widget', {
+          'sitekey': '6Ld_iSIUAAAAAC2VRB5HPMSoEvQb4UGREvqbxGbQ',
+          'callback': 'enableButton'
+        });
+      });
+      recaptchaLoaded = true;
+    };
+    document.body.appendChild(script);
+  }
+
   function enableButton() {
     document.getElementById("submit").disabled = false;
   }
+
+  // Wait for the DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    var mailModalButton = document.getElementById('mail-modal-button');
+    if (mailModalButton) {
+      mailModalButton.addEventListener('click', loadReCaptcha);
+    } else {
+      console.warn('mail-modal-button not found');
+    }
+
+    // If the modal is already open when the page loads, load reCAPTCHA
+    if (document.querySelector('.modal.show')) {
+      loadReCaptcha();
+    }
+  });
+
   (function () {
-      'use strict'
+    'use strict'
 
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.querySelectorAll('.needs-validation')
+    var forms = document.querySelectorAll('.needs-validation')
 
-      // Loop over them and prevent submission
-      Array.prototype.slice.call(forms)
-          .forEach(function (form) {
-              form.addEventListener('submit', function (event) {
-                  if (!form.checkValidity()) {
-                      event.preventDefault()
-                      event.stopPropagation()
-
-                  }
-                  form.classList.add('was-validated')
-              }, false)
-          })
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
   })()
 </script>
