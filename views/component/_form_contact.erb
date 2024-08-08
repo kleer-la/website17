@@ -66,6 +66,7 @@
 </form>
 <script>
   let recaptchaLoaded = false;
+  var RECAPTCHA_SITE_KEY = '<%= ENV['RECAPTCHA_SITE_KEY'] %>';
 
   function loadReCaptcha() {
     if (recaptchaLoaded) return;
@@ -79,7 +80,7 @@
       placeholder.innerHTML = '<div id="recaptcha-widget"></div>';
       grecaptcha.ready(function() {
         grecaptcha.render('recaptcha-widget', {
-          'sitekey': '6Ld_iSIUAAAAAC2VRB5HPMSoEvQb4UGREvqbxGbQ',
+          'sitekey': RECAPTCHA_SITE_KEY,
           'callback': 'enableButton'
         });
       });
