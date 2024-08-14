@@ -57,14 +57,14 @@
 <script>
     function runOnScroll() {
         const table = document.getElementById('landing-blog-content-table');
-        const body = document.getElementById('landing-blog-body').children[2]
+        const threshold  = 120;
+        const current = document.getElementById('landing-blog-hero').getBoundingClientRect().bottom;
+        const shouldBeFixed = current <= threshold + 4 && document.body.getBoundingClientRect().bottom > 2500;
 
-        if (document.body.getBoundingClientRect().top <= -830 && document.body.getBoundingClientRect().bottom > 2500) {
-            table.classList.add('fixed-table')
-            body.classList.remove('up-body')
-        }else{
-            table.classList.remove('fixed-table')
-            body.classList.add('up-body')
+        if (shouldBeFixed && !table.classList.contains('fixed-table')) {
+          table.classList.add('fixed-table')
+        }else if (!shouldBeFixed && table.classList.contains('fixed-table')) {
+          table.classList.remove('fixed-table')
         }
     }
     window.addEventListener("scroll", runOnScroll);
