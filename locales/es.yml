@@ -211,9 +211,9 @@ es:
       title: 'Nuestras redes'
       options: [
         {
-          title: 'Twitter',
-          image: '/app/img/icons/Twitter.svg',
-          url: 'https://twitter.com/kleer_la'
+          title: 'X',
+          image: '/app/img/icons/x.svg',
+          url: 'https://x.com/kleer_la'
         },
         {
           title: 'Facebook',

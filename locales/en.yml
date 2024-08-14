@@ -574,9 +574,9 @@ en:
     social_media:
       title: Social media
       options:
-        - title: Twitter
-          image: /app/img/icons/Twitter.svg
-          url: https://twitter.com/kleer_la
+        - title: X
+          image: /app/img/icons/x.svg
+          url: https://x.com/kleer_la
         - title: Facebook
           image: /app/img/icons/Facebook.svg
           url: https://www.facebook.com/kleer.la
