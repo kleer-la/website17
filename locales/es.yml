@@ -208,7 +208,7 @@ es:
       more_info: 'Conoce más'
       go_academy: 'Ir a academia'
     social_media:
-      title: 'Nuestras redes'
+      title: '¡Únete a la Comunidad Kleer!'
       options: [
         {
           title: 'X',
@@ -438,9 +438,12 @@ es:
         title: 'Todos nuestros cursos'
       no_date: TBD
     home_newsletter:
-      title: 'Entérate de todas las novedades del mundo ágil'
+      title: '¡Únete a la Comunidad Kleer!'
       button:
         title: 'Suscríbete'
+      # title: 'Entérate de todas las novedades del mundo ágil'
+      # button:
+      #   title: 'Suscríbete'
   catalog:
     hero:
       title: Capacitación Empresarial

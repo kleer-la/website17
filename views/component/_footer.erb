@@ -2,7 +2,7 @@
   <div class="container-fluid footer__body">
     <div class="row">
       <% t('footer_menu').each do  |item| %>
-        <div class="col-6 col-md-3">
+        <div class="col-6 col-md-2">
           <h6><%= item[:title] %></h6>
           <ul>
             <% item[:items].each do |subitem| %>
@@ -15,6 +15,12 @@
       <% end %>
       <div class="col-6 col-md-3">
         <h6><%= t("generals.social_media.title") %></h6>
+        <% if session[:locale] == 'es'%>
+        <div class="button-container mt-2 mb-3">
+          <button class="btn my-secondary-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Suscríbete a nuestro Newsletter</button>
+        </div>
+        <%end%>
         <%= erb :'component/_social_media' %>
       </div>
     </div>
@@ -34,4 +40,5 @@
         <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
       </ul>
   </div>
+  <%= erb :'component/forms/_newsletter'
 </footer>
