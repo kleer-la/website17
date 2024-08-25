@@ -60,12 +60,12 @@
       </button>
     <% end %>
     <% unless resource.getit == '' %>
-      <button class="my-primary-button button">
-        <a href="<%= resource.getit %>">
+      <a href="<%= resource.getit %>">
+        <button class="my-primary-button button">
           Descargar
           <img src='/app/img/icons/Download.svg' loading="lazy"/>
-        </a>
-      </button>
+        </button>
+      </a>
     <% end %>
   </div>
 </div>
