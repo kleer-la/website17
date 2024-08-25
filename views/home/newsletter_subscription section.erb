@@ -1,6 +1,5 @@
-<section id="newsletter-subscription" class="mt-4">
+<%#TODO: remove%>
   <div class="container text-center center-block">
-
     <img
       src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_circle.svg"
       class="desktop_figure newsletter__rustic-circle"
@@ -13,7 +12,6 @@
       loading="lazy"
       alt="decorative figure"
       />
-
     <h4 class="mb-4">
       <%= t('home.home_newsletter.title') %>
     </h4>
@@ -24,18 +22,3 @@
     </div>
 
   </div>
-
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <%= erb :'component/forms/_newsletter' %>
-<!--          <iframe class="embed-responsive-item" src="https://kleer.us1.list-manage.com/subscribe?u=98726a706d87424c18b69e332&id=de82c19d8f" allowfullscreen></iframe>-->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>

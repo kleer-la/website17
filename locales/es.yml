@@ -208,34 +208,25 @@ es:
       more_info: 'Conoce más'
       go_academy: 'Ir a academia'
     social_media:
-      title: 'Nuestras redes'
-      options: [
-        {
-          title: 'X',
-          image: '/app/img/icons/x.svg',
-          url: 'https://x.com/kleer_la'
-        },
-        {
-          title: 'Facebook',
-          image: '/app/img/icons/Facebook.svg',
-          url: 'https://www.facebook.com/kleer.la'
-        },
-        {
-          title: 'Instagram',
-          image: '/app/img/icons/Instagram.svg',
-          url: 'https://www.instagram.com/kleer.la/'
-        },
-        {
-          title: 'Youtube',
-          image: '/app/img/icons/Youtube.svg',
-          url: 'https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw'
-        },
-        {
-          title: 'LinkedIn',
-          image: '/app/img/icons/Linkedin.svg',
-          url: 'https://www.linkedin.com/company/kleer/'
-        }
-      ]
+      title: Comunidad Kleer
+      subscribe: Suscríbete
+      options: 
+        - title: LinkedIn
+          image: /app/img/icons/Linkedin.svg
+          url: https://www.linkedin.com/company/kleer/
+        - title: Instagram
+          image: /app/img/icons/Instagram.svg
+          url: https://www.instagram.com/kleer.la/
+        - title: Youtube
+          image: /app/img/icons/Youtube.svg
+          url: https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw
+        - title: Facebook
+          image: /app/img/icons/Facebook.svg
+          url: https://www.facebook.com/kleer.la
+        - title: X
+          image: /app/img/icons/x.svg
+          url: https://x.com/kleer_la
+          class: icon-x
   navbar:
     - {
         text: 'Servicios',
@@ -438,9 +429,12 @@ es:
         title: 'Todos nuestros cursos'
       no_date: TBD
     home_newsletter:
-      title: 'Entérate de todas las novedades del mundo ágil'
+      title: '¡Únete a la Comunidad Kleer!'
       button:
         title: 'Suscríbete'
+      # title: 'Entérate de todas las novedades del mundo ágil'
+      # button:
+      #   title: 'Suscríbete'
   catalog:
     hero:
       title: Capacitación Empresarial
