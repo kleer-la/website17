@@ -33,13 +33,13 @@ entérate de todas las novedades!
         <% if (session[:locale] == "es") %>
           <li><a href="/<%=session[:locale]%>/privacy"> Declaración de privacidad </a> <span>|</span></li>
           <li><a href="/<%=session[:locale]%>/terms"> Términos y condiciones</a> <span>|</span></li>
+          <li><a href="/en/"><strong>ENGLISH</strong></a></li>
         <% end %>
         <% if (session[:locale] == "en") %>
           <li><a href="/<%=session[:locale]%>/privacy"> Privacy Policy </a> <span>|</span></li>
           <li><a href="/<%=session[:locale]%>/terms"> Terms of service</a> <span>|</span></li>
+          <li><a href="/es/"><strong>ESPAÑOL</strong></a></li>
         <% end %>
-        <% if (session[:locale] == "en") %><li><a href="/es/"><strong>ESPAÑOL</strong></a></li><% end %>
-        <% if (session[:locale] == "es") %><li><a href="/en/"><strong>ENGLISH</strong></a></li><% end %>
       </ul>
   </div>
   <%= erb :'component/_modal_newsletter'%>
