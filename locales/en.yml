@@ -67,10 +67,10 @@ en:
       description: >-
         Kleer - Coaching & Training - These organizations trust us.
       canonical: /clientes
-    press:
+    news:
       title: "| News"
       description: Experiences about our work in press releases and publications in various digital media
-      canonical: /prensa
+      canonical: /news
   books:
     others:
       title: Other publications
@@ -633,7 +633,7 @@ en:
         - title: We are
           url: /somos
         - title: News
-          url: /prensa
+          url: /news
   popup_forms:
     email:
       button: Contact us by email

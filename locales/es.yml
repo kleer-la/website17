@@ -67,12 +67,11 @@ es:
       description: >-
         Conoce cómo Kleer ha ayudado a diversas empresas a evolucionar su negocio hacia la agilidad organizacional. Historias de nuestros clientes
       canonical: /clientes
-    press:
-      title: Publicaciones en la Prensa
+    news:
+      title: Novedades y publicaciones en la Prensa
       description: >-
         Experiencias sobre nuestro trabajo en notas de prensa y publicaciones en diversos medios digitales de Latinoamérica
-      canonical: /prensa
-
+      canonical: /novedades
   books:
     others:
         title: "Otras publicaciones"
@@ -228,150 +227,80 @@ es:
           url: https://x.com/kleer_la
           class: icon-x
   navbar:
-    - {
-        text: 'Servicios',
-        options: [
-          {
-            text: 'Cambio Organizacional y Liderazgo',
-            url: '/servicios/cambio-organizacional-liderazgo',
-            inside: true
-          },
-          {
-            text: 'Product Management',
-            url: '/servicios/agile-product-management',
-            inside: true
-          },
-          {
-            text: 'Agilidad para Equipos',
-            url: '/servicios/agilidad-equipos',
-            inside: true
-          },
-          {
-            text: 'Facilitación de Reuniones y Eventos',
-            url: '/servicios/facilitacion-reuniones-eventos',
-            inside: true
-          },
-          {
-            text: 'dropdown-divider',
-          },
-          {
-            text: 'Todos Nuestros Servicios',
-            url: '/servicios',
-            inside: true
-          },
-        ]
-    }
-    - {
-      text: 'Cursos',
-      options: [
-        {
-          text: 'Agenda',
-          url: '/agenda',
+    - text: Servicios
+      options:
+        - text: Cambio Organizacional y Liderazgo
+          url: /servicios/cambio-organizacional-liderazgo
           inside: true
-        },
-        {
-          text: 'Catálogo de cursos',
-          url: '/catalogo',
+        - text: Product Management
+          url: /servicios/agile-product-management
           inside: true
-        },
-        {
-          text: 'Academia online',
-          url: 'https://academia.kleer.la/',
+        - text: Agilidad para Equipos
+          url: /servicios/agilidad-equipos
+          inside: true
+        - text: Facilitación de Reuniones y Eventos
+          url: /servicios/facilitacion-reuniones-eventos
+          inside: true
+        - text: dropdown-divider
+        - text: Todos Nuestros Servicios
+          url: /servicios
+          inside: true
+    - text: Cursos
+      options:
+        - text: Agenda
+          url: /agenda
+          inside: true
+        - text: Catálogo de cursos
+          url: /catalogo
+          inside: true
+        - text: Academia online
+          url: https://academia.kleer.la/
           inside: false
-        }
-      ]
-    }
-    - {
-      text: 'Publicamos',
-      options: [
-        {
-          text: 'Recursos y Materiales',
-          url: '/recursos',
+    - text: Publicamos
+      options:
+        - text: Recursos y Materiales
+          url: /recursos
           inside: true
-        },
-        {
-          text: 'Blog',
-          url: '/blog',
+        - text: Blog
+          url: /blog
           inside: true
-        },
-        {
-          text: 'Podcast y Streaming',
-          url: '/podcasts',
+        - text: Podcast y Streaming
+          url: /podcasts
           inside: true
-        },
-        {
-          text: 'Prensa',
-          url: '/prensa',
+    - text: Sobre Kleer
+      options:
+        - text: Somos
+          url: /somos
           inside: true
-        }
-      ]
-    }
-    - {
-      text: 'Sobre Kleer',
-      options: [
-        {        
-          text: 'Somos',
-          url: '/somos',
+        - text: Clientes
+          url: /clientes
           inside: true
-        },
-        {
-          text: 'Clientes',
-          url: '/clientes',
+        - text: Novedades
+          url: /novedades
           inside: true
-        }
-      ]
-    }
   footer_menu:
-    - {
-      title: 'Qué hacemos',
+    - title: Qué hacemos
       items:
-        [
-          {
-            title: 'Servicios',
-            url: '/servicios'
-          },
-          {
-            title: 'Cursos',
-            url: '/catalogo'
-          }
-        ]
-    }
-    - {
-      title: 'Publicamos',
+        - title: Servicios
+          url: /servicios
+        - title: Cursos
+          url: /catalogo
+    - title: Publicamos
       items:
-        [
-          {
-            title: 'Recursos y Materiales',
-            url: '/recursos'
-          },
-          {
-            title: 'Blog',
-            url: '/blog'
-          },
-          {
-            title: 'Podcast y Streaming',
-            url: '/podcasts'
-          },
-          {
-            title: 'Prensa',
-            url: '/prensa'
-          }
-        ]
-    }
-    - {
-      title: 'Sobre Kleer',
+        - title: Recursos y Materiales
+          url: /recursos
+        - title: Blog
+          url: /blog
+        - title: Podcast y Streaming
+          url: /podcasts
+    - title: Sobre Kleer
       items:
-        [
-          {
-            title: 'Somos',
-            url: '/somos'
-          },
-          {
-            title: 'Clientes',
-            url: '/clientes'
-          }
-        ]
-    }
+        - title: Somos
+          url: /somos
+        - title: Clientes
+          url: /clientes
+        - title: Novedades
+          url: /novedades
   popup_forms:
     email:
       button: Contact us by email
@@ -517,8 +446,8 @@ es:
      En Kleer disfrutamos cocreando ambientes humanos más conscientes y asombrosos
     </p>"
   news:
-    title: Prensa
-    subtitle: Notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
+    title: Novedades
+    subtitle: Avisos, notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
   recommended:
     title: Contenido recomendado
     type:
