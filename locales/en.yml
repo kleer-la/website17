@@ -573,22 +573,24 @@ en:
       go_academy: Go to the academy
     social_media:
       title: Social media
+      subscribe: Subscribe
       options:
-        - title: X
-          image: /app/img/icons/x.svg
-          url: https://x.com/kleer_la
-        - title: Facebook
-          image: /app/img/icons/Facebook.svg
-          url: https://www.facebook.com/kleer.la
+        - title: LinkedIn
+          image: /app/img/icons/Linkedin.svg
+          url: https://www.linkedin.com/company/kleer/
         - title: Instagram
           image: /app/img/icons/Instagram.svg
           url: https://www.instagram.com/kleer.la/
         - title: Youtube
           image: /app/img/icons/Youtube.svg
           url: https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw
-        - title: LinkedIn
-          image: /app/img/icons/Linkedin.svg
-          url: https://www.linkedin.com/company/kleer/
+        - title: Facebook
+          image: /app/img/icons/Facebook.svg
+          url: https://www.facebook.com/kleer.la
+        - title: X
+          image: /app/img/icons/x.svg
+          url: https://x.com/kleer_la
+          class: icon-x
   navbar:
     - text: Business agility
       url: /agilidad-organizacional
