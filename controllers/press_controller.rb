@@ -1,11 +1,11 @@
 require 'i18n'
 
-get '/prensa' do
+get %r{/prensa|/novedades|/news} do
   @active_tab_prensa = 'active'
-  @meta_tags.set! title: t('meta_tag.press.title').to_s,
-                  description: t('meta_tag.press.description'),
-                  canonical: t('meta_tag.press.canonical').to_s
-  # TODO: remove old news implementation and move to /novedades
+  @meta_tags.set! title: t('meta_tag.news.title').to_s,
+                  description: t('meta_tag.news.description'),
+                  canonical: t('meta_tag.news.canonical').to_s
+
   @news = News.create_list_keventer
 
   router_helper = RouterHelper.instance
