@@ -54,4 +54,8 @@ module KeventerAPI
       echo(url_for(path.gsub(":#{param}", value.to_s)))
     end
   end
+  def page_url(lang, slug)
+    s = "-#{slug}" unless slug.nil?
+    url_for("pages/#{lang}#{s}")
+  end
 end
