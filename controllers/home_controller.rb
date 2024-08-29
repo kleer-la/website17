@@ -1,4 +1,5 @@
 require './lib/clients'
+require './lib/models/page'
 
 def first_x_courses(courses, quantity)
   return [] if courses.nil?
@@ -25,6 +26,7 @@ get '/' do
                    description: t('meta_tag.home.description'),
                    canonical: t('meta_tag.home.canonical')
 
+  @page = Page.load_from_keventer(session[:locale], nil)
   @clients = client_list
   @coming_courses = if session[:locale] == 'es'
                       first_three = first_x_courses(coming_courses, 3)
@@ -39,6 +41,7 @@ get '/' do
                         first_three << one[0]
                       end
                     end
+
   erb :'home/index', layout: :'layout/layout2022'
 end
 

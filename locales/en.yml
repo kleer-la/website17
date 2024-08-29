@@ -788,6 +788,7 @@ en:
       service: Service
       article: Blog
       event_type: Course
+      resource: Resource
   business-agility:
     title: Business Agility
     subtitle: >-

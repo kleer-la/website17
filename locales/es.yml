@@ -454,6 +454,7 @@ es:
       service: Servicio
       article: Blog
       event_type: Curso
+      resource: Recurso
   business-agility:
     title: Agilidad Organizacional
     subtitle: >-

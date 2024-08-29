@@ -21,16 +21,18 @@ class Recommended
       RecommendedEventType.new(doc)
     when 'service'
       RecommendedService.new(doc)
+    when 'resource'
+      RecommendedResource.new(doc)
     else
       puts "Unknown recommendation type: #{doc['type']}"
       # raise ArgumentError, "Unknown recommendation type: #{doc['type']}"
     end
   end
+
   def self.create_list(doc)
-    doc&.reduce([]) do |ac, r|
+    doc&.each_with_object([]) do |r, ac|
       recommendation = Recommended.create(r)
       ac << recommendation if recommendation
-      ac
     end || []
   end
 end
@@ -55,5 +57,11 @@ end
 class RecommendedService < Recommended
   def url
     "/es/servicios/#{slug}"
+  end
+end
+
+class RecommendedResource < Recommended
+  def url
+    "/es/recursos##{slug}"
   end
 end

@@ -72,6 +72,8 @@ before do
     @markdown_renderer = CustomMarkdown.new
   end
 
+  headers['X-Robots-Tag'] = 'noindex, nofollow' if request.host.include? 'qa2'
+
   router_helper = RouterHelper.instance
   router_helper.lang = session[:locale]
   router_helper.set_current_route(request.path)
