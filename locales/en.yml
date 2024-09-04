@@ -632,8 +632,6 @@ en:
       items:
         - title: We are
           url: /somos
-        - title: News
-          url: /news
   popup_forms:
     email:
       button: Contact us by email
