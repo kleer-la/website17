@@ -560,4 +560,12 @@ $white: #FFFFFF;
   }
 }
 
-
+blockquote {
+  background: #f4f4f4; 
+  padding: 15px; 
+  border-left:8px solid #7588a7; 
+  border-radius:12px;
+  p {
+    margin-bottom: 0;
+  }
+}
