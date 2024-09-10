@@ -73,12 +73,22 @@ describe 'metatags' do
   context 'canonical' do
     it 'has not canonical' do
       head = Tags.new.display base_url: 'https://www.kleer.la', charset: '', 'http-equiv': nil, viewport: nil,
-                              hreflang: []
+                              hreflang: [], image: ''
       expect(head).to eq ''
     end
     it 'has canonical' do
       head = Tags.new.display base_url: 'https://www.kleer.la', canonical: 'randanganga'
       expect(head).to include '<link rel="canonical" href="https://www.kleer.la/randanganga"/>'
+    end
+  end
+  context 'image' do
+    it 'has not image' do
+      head = Tags.new.display base_url: 'https://www.kleer.la'
+      expect(head).to include '<meta property="og:image" content="https://www.kleer.la/img/logos/kleer.png"/>'
+    end
+    it 'has image' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', image: 'some.png'
+      expect(head).to include '<meta property="og:image" content="some.png"/>'
     end
   end
   context 'http-equiv' do

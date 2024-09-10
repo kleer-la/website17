@@ -42,7 +42,8 @@ def blog_one(article)
   @article = article
   @meta_tags.set! title: @article.tabtitle,
                   description: @article.description,
-                  canonical: "#{t('meta_tag.blog.canonical')}/#{@article.slug}"
+                  canonical: "#{t('meta_tag.blog.canonical')}/#{@article.slug}",
+                  image: @article.cover
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'
