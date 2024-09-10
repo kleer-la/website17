@@ -64,7 +64,8 @@ end
 get '/agenda' do
   @meta_tags.set! title: t('meta_tag.agenda.title'),
                   description: t('meta_tag.agenda.description'),
-                  canonical: t('meta_tag.agenda.canonical').to_s
+                  canonical: t('meta_tag.agenda.canonical').to_s,
+                  image: 'https://kleer-images.s3.sa-east-1.amazonaws.com/agenda.png'
 
   @events = Event.create_keventer_json
 
@@ -78,7 +79,8 @@ get '/catalogo' do
   @active_tab_entrenamos = 'active'
   @meta_tags.set! title: t('meta_tag.catalog.title'),
                   description: t('meta_tag.catalog.description'),
-                  canonical: t('meta_tag.catalog.canonical').to_s
+                  canonical: t('meta_tag.catalog.canonical').to_s,
+                  image: 'https://www.kleer.la/img/training/juli.png'
   @categories = load_categories session[:locale]
   @events = Catalog.create_keventer_json
 
@@ -110,7 +112,8 @@ get '/cursos/:event_type_id_with_name' do
     @meta_tags.set! title: @event_type.name,
                     description: @event_type.elevator_pitch,
                     canonical: @event_type.canonical_url,
-                    noindex: @event_type.noindex
+                    noindex: @event_type.noindex,
+                    image: @event_type.cover
 
     @extra_script = @event_type.extra_script
 

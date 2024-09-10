@@ -18,7 +18,8 @@ get %r{/servicios/?} do
 
   @meta_tags.set! title: t('meta_tag.services.title'),
                   description: t('meta_tag.services.description'),
-                  canonical: t('meta_tag.services.canonical').to_s
+                  canonical: t('meta_tag.services.canonical').to_s,
+                  image: 'https://kleer-images.s3.sa-east-1.amazonaws.com/servicios_cover.webp'
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/agilidad-organizacional'
