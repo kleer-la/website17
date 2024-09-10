@@ -1,6 +1,5 @@
 require './lib/articles'
 
-require './controllers/blog_home_data'
 require './controllers/pager_helper'
 
 get '/blog-preview/:slug' do |slug|
