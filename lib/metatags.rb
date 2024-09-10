@@ -21,6 +21,7 @@ module MetaTags
         base_url: 'https://www.kleer.la',
         'http-equiv': ['X-UA-Compatible', 'IE=edge'],
         viewport: 'width=device-width, initial-scale=1.0"',
+        image: 'https://www.kleer.la/img/logos/kleer.png',
         hreflang: %i[es en]
       }
       @path = ''
@@ -110,6 +111,14 @@ module MetaTags
           tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{@path}\"/>" : '') do |ac, lang|
             ac + "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"
           end
+        end
+      when :image
+        unless tag[1] == ''
+          ''"
+          <meta property=\"og:image\" content=\"#{tag[1]}\"/>
+          <meta property=\"og:image:url\" content=\"#{tag[1]}\"/>
+          <meta property=\"og:image:secure_url\" content=\"#{tag[1]}\"/>
+          "''
         end
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
