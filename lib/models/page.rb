@@ -7,13 +7,14 @@ class Page
 
   api_connector KeventerAPI
 
-  attr_accessor :lang, :seo_title, :seo_description, :canonical, :recommended
+  attr_accessor :lang, :seo_title, :seo_description, :canonical, :cover, :recommended
 
   def initialize(data)
     @lang = data['lang']
     @seo_title = data['seo_title']
     @seo_description = data['seo_description']
     @canonical = data['canonical']
+    @cover = data['cover']
     init_recommended(data)
   end
 
