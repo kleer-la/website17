@@ -27,6 +27,8 @@ get '/' do
                    canonical: t('meta_tag.home.canonical')
 
   @page = Page.load_from_keventer(session[:locale], nil)
+  @meta_tags.set! image: @page.cover unless @page.cover.blank?
+
   @clients = client_list
   @coming_courses = if session[:locale] == 'es'
                       first_three = first_x_courses(coming_courses, 3)
