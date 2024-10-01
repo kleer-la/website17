@@ -95,12 +95,10 @@
 
   // Wait for the DOM to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
-    var mailModalButton = document.getElementById('mail-modal-button');
-    if (mailModalButton) {
-      mailModalButton.addEventListener('click', loadReCaptcha);
-    } else {
-      console.warn('mail-modal-button not found');
-    }
+    var modalOpeners = document.querySelectorAll('.modal-opener');
+    modalOpeners.forEach(function(button) {
+      button.addEventListener('click', loadReCaptcha);
+    });
 
     // If the modal is already open when the page loads, load reCAPTCHA
     if (document.querySelector('.modal.show')) {
