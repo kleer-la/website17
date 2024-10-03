@@ -1,7 +1,7 @@
 require 'spec_helper'
 require './lib/models/recommended'
 
-RSpec.describe Recommended do
+describe Recommended do
   let(:doc) do
     {
       'title' => 'Test Title',
