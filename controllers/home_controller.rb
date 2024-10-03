@@ -22,12 +22,12 @@ def first_x_courses(courses, quantity)
 end
 
 get '/' do
-  @meta_tags.set!  title: t('meta_tag.home.title'),
-                   description: t('meta_tag.home.description'),
-                   canonical: t('meta_tag.home.canonical')
+  page = Page.load_from_keventer(session[:locale], nil)
+  @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
+                   description: page.seo_description || t('meta_tag.home.description'),
+                   canonical: page.canonical || t('meta_tag.home.canonical')
 
-  @page = Page.load_from_keventer(session[:locale], nil)
-  @meta_tags.set! image: @page.cover unless @page.cover.nil? || @page.cover.empty?
+  @meta_tags.set! image: page.cover unless page.cover.nil? || page.cover.empty?
 
   @clients = client_list
   @coming_courses = if session[:locale] == 'es'
