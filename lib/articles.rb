@@ -24,6 +24,7 @@ class Article
     if @next_null
       # @next_null = false      # bc related articles need create_one and create_list
       raise ArticleNotFoundError.new(slug) unless @article_null.slug == slug
+
       return @article_null
     end
 

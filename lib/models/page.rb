@@ -1,3 +1,4 @@
+require './lib/json_api'
 require './lib/services/api_accessible'
 require './lib/services/keventer_api'
 require './lib/models/recommended'
@@ -7,29 +8,37 @@ class Page
 
   api_connector KeventerAPI
 
-  attr_accessor :lang, :seo_title, :seo_description, :canonical, :cover, :recommended
+  attr_reader :lang, :seo_title, :seo_description, :canonical, :cover, :recommended
 
-  def initialize(data)
+  def initialize(data = {})
     @lang = data['lang']
-    @seo_title = data['seo_title']
-    @seo_description = data['seo_description']
-    @canonical = data['canonical']
-    @cover = data['cover']
-    init_recommended(data)
+    @seo_title = empty_to_nil(data['seo_title'])
+    @seo_description = empty_to_nil(data['seo_description'])
+    @canonical = empty_to_nil(data['canonical'])
+    @cover = empty_to_nil(data['cover'])
+    init_recommended(data['recommended'] || [])
+  end
+
+  def self.create(json_api)
+    json_api.ok? ? new(json_api.doc) : new
   end
 
   def self.load_from_json(file_path)
-    data = JSON.parse(File.read(file_path))
-    new(data)
+    create(NullJsonAPI.new(file_path))
   end
 
   def self.load_from_keventer(lang, slug)
     url = KeventerAPI.page_url(lang, slug)
-    json_api = JsonAPI.new(url)
-    new(json_api.doc) if json_api.ok?
+    create(JsonAPI.new(url))
   end
 
-  def init_recommended(doc)
-    @recommended = Recommended.create_list(doc['recommended'])
+  private
+
+  def init_recommended(recommended_data)
+    @recommended = Recommended.create_list(recommended_data)
+  end
+
+  def empty_to_nil(value)
+    value.nil? || value.empty? ? nil : value
   end
 end

@@ -1,6 +1,7 @@
 require 'faraday'
 require 'json'
 
+# TODO: move to lib/services
 class JsonAPI
   attr_accessor :doc
 
