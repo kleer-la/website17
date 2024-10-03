@@ -32,7 +32,7 @@ Feature: Kleer Blogs
     And A list of articles with
     * an article 'lorem-ipsum' with title 'Lorem ipsum'
     When I go to the 'lorem' article page
-    Then I should see "ArticleNotFoundError"
+    Then I should see "Página no encontrada"
 
   Scenario: landing Article found
     Given A list of categories
