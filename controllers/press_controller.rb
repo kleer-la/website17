@@ -1,19 +1,5 @@
 require 'i18n'
 
-get %r{/prensa|/novedades|/news} do
-  @active_tab_prensa = 'active'
-  @meta_tags.set! title: t('meta_tag.news.title').to_s,
-                  description: t('meta_tag.news.description'),
-                  canonical: t('meta_tag.news.canonical').to_s
-
-  @news = News.create_list_keventer
-
-  router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/'
-
-  erb :'news_v2/index', layout: :'layout/layout2022'
-end
-
 get '/clientes/equipos-scrum-en-technisys-2015' do
   redirect '/prensa/casos/equipos-scrum-en-technisys-2015', 301 # permanent redirect
 end

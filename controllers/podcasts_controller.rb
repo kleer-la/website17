@@ -4,11 +4,13 @@ require './lib/models/podcast'
 # set :podcasts, Podcast.load_from_keventer
 
 get '/podcasts' do
-  @meta_tags.set! title: t('meta_tag.podcasts.title'),
-                  description: t('meta_tag.podcasts.description'),
-                  canonical: t('meta_tag.podcasts.canonical')
+  page = Page.load_from_keventer(session[:locale], 'podcasts')
+  @meta_tags.set! title: page.seo_title || t('meta_tag.podcasts.title'),
+                  description: page.seo_description || t('meta_tag.podcasts.description'),
+                  canonical: page.canonical || t('meta_tag.podcasts.canonical')
 
-  # @podcasts = settings.podcasts
+  @meta_tags.set! image: page.cover unless page.cover.nil?
+
   @podcasts = Podcast.load_from_keventer
   @carousel = @podcasts.first(3)
   # @recent_episodes = @podcasts.flat_map(&:episodes).sort_by { |episode| episode['published_at'] }.last(3)
@@ -17,7 +19,8 @@ get '/podcasts' do
     podcast.episodes.map do |episode|
       episode.merge('podcast_title' => podcast.title)
     end
-  end.sort_by { |episode| episode['published_at'] }.last(4).reverse
+  end
+  @recent_episodes.sort_by! { |episode| episode['published_at'] }.last(4).reverse
 
   erb :'podcasts/index', layout: :'layout/layout2022'
 end
