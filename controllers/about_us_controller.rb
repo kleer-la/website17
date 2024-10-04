@@ -1,8 +1,11 @@
 get '/somos' do
+  page = Page.load_from_keventer(session[:locale], 'somos')
+  @meta_tags.set! title: page.seo_title || t('meta_tag.aboutus.title'),
+                  description: page.seo_description || t('meta_tag.aboutus.description'),
+                  canonical: page.canonical || t('meta_tag.aboutus.canonical')
+  @meta_tags.set! image: page.cover unless page.cover.nil?
+
   @active_tab_somos = 'active'
-  @meta_tags.set! title: t('meta_tag.aboutus.title').to_s,
-                  description: t('meta_tag.aboutus.description'),
-                  canonical: t('meta_tag.aboutus.canonical').to_s
   @kleerers = Trainer.create_keventer_json session[:locale]
 
   erb :'about_us/index', layout: :'layout/layout2022'
