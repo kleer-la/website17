@@ -62,10 +62,11 @@ def load_categories(lang)
 end
 
 get '/agenda' do
-  @meta_tags.set! title: t('meta_tag.agenda.title'),
-                  description: t('meta_tag.agenda.description'),
-                  canonical: t('meta_tag.agenda.canonical').to_s,
-                  image: 'https://kleer-images.s3.sa-east-1.amazonaws.com/agenda.png'
+  page = Page.load_from_keventer(session[:locale], 'agenda')
+  @meta_tags.set! title: page.seo_title || t('meta_tag.agenda.title'),
+                  description: page.seo_description || t('meta_tag.agenda.description'),
+                  canonical: page.canonical || t('meta_tag.agenda.canonical')
+  @meta_tags.set! image: page.cover unless page.cover.nil?
 
   @events = Event.create_keventer_json
 
@@ -76,11 +77,12 @@ get '/agenda' do
 end
 
 get '/catalogo' do
+  page = Page.load_from_keventer(session[:locale], 'catalogo')
+  @meta_tags.set! title: page.seo_title || t('meta_tag.catalog.title'),
+                  description: page.seo_description || t('meta_tag.catalog.description'),
+                  canonical: page.canonical || t('meta_tag.catalog.canonical')
+  @meta_tags.set! image: page.cover unless page.cover.nil?
   @active_tab_entrenamos = 'active'
-  @meta_tags.set! title: t('meta_tag.catalog.title'),
-                  description: t('meta_tag.catalog.description'),
-                  canonical: t('meta_tag.catalog.canonical').to_s,
-                  image: 'https://www.kleer.la/img/training/juli.png'
   @categories = load_categories session[:locale]
   @events = Catalog.create_keventer_json
 
