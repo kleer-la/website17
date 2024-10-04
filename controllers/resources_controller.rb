@@ -1,11 +1,14 @@
 require './lib/models/resources'
 
 get '/recursos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set!  title: t('meta_tag.resources.title'),
-                   description: t('meta_tag.resources.description'),
-                   canonical: t('meta_tag.resources.canonical').to_s
+  page = Page.load_from_keventer(session[:locale], 'recursos')
+  @meta_tags.set! title: page.seo_title || t('meta_tag.resources.title'),
+                  description: page.seo_description || t('meta_tag.resources.description'),
+                  canonical: page.canonical || t('meta_tag.resources.canonical')
 
+  @meta_tags.set! image: page.cover unless page.cover.nil?
+
+  @active_tab_publicamos = 'active'
   @resources = Resource.create_list_keventer
   session[:new] = false
 

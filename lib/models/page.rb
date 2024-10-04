@@ -1,13 +1,8 @@
 require './lib/json_api'
-require './lib/services/api_accessible'
 require './lib/services/keventer_api'
 require './lib/models/recommended'
 
 class Page
-  include APIAccessible
-
-  api_connector KeventerAPI
-
   attr_reader :lang, :seo_title, :seo_description, :canonical, :cover, :recommended
 
   def initialize(data = {})
@@ -17,6 +12,10 @@ class Page
     @canonical = empty_to_nil(data['canonical'])
     @cover = empty_to_nil(data['cover'])
     init_recommended(data['recommended'] || [])
+  end
+
+  class << self
+    attr_accessor :api_client
   end
 
   def self.create(json_api)
@@ -29,7 +28,8 @@ class Page
 
   def self.load_from_keventer(lang, slug)
     url = KeventerAPI.page_url(lang, slug)
-    create(JsonAPI.new(url))
+    api = @api_client || JsonAPI.new(url)
+    create(api)
   end
 
   private
