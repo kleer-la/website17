@@ -14,7 +14,7 @@ class JsonAPI
     @response.status == 200
   end
 
-  def get_response
+  def response
     @doc
   end
 end
@@ -35,7 +35,7 @@ class NullJsonAPI
     !@doc.nil?
   end
 
-  def get_response
+  def response
     @doc
   end
 end
