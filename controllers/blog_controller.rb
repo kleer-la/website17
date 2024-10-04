@@ -28,9 +28,13 @@ get '/blog/:slug' do |slug|
 end
 
 get %r{/blog/?} do
-  @meta_tags.set! title: t('meta_tag.blog.title'),
-                  description: t('meta_tag.blog.description'),
-                  canonical: t('meta_tag.blog.canonical').to_s
+  page = Page.load_from_keventer(session[:locale], 'blog')
+  @meta_tags.set! title: page.seo_title || t('meta_tag.blog.title'),
+                  description: page.seo_description || t('meta_tag.blog.description'),
+                  canonical: page.canonical || t('meta_tag.blog.canonical')
+
+  @meta_tags.set! image: page.cover unless page.cover.nil?
+
   @where = 'Blog'
 
   @categories = load_categories session[:locale]
