@@ -7,6 +7,6 @@
 %>
 <article id="landing-blog">
   <%= erb :'blog/landing_blog/hero' %>
-  <%= erb :'blog/landing_blog/body', locals: {titles: titles, body: body} %>
+  <%= erb :'blog/landing_blog/body', locals: {titles: titles, body: body, recommended: @article.recommended} %>
   <%= erb :'component/sections/recommended', locals: { recommended: @article.recommended, title: t('recommended.title') }%>
 </article>

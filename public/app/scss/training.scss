@@ -912,9 +912,9 @@ $white: #FFFFFF;
 
 .buttons-container{}
 
-#course-related{}
+.desktop-only{}
 
-#mobile-course-related{
+.mobile-only{
   display: none;
   .carousel-item{
     background-color: $white;
@@ -924,11 +924,11 @@ $white: #FFFFFF;
 
 //Tablet
 @media screen and (max-width:992px){
-  #course-related{
+  .desktop-only{
     display: none;
   }
 
-  #mobile-course-related{
+  .mobile-only{
     display: block;
   }
 }

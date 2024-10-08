@@ -1,5 +1,5 @@
 <section id="landing-blog-body">
-  <%= erb :'blog/landing_blog/_content_table', locals: {titles: titles} %>
+  <%= erb :'blog/landing_blog/_content_table', locals: {titles: titles, recommended: @article.recommended} %>
   <div class="blog__body">
     <%=body%>
     <%= erb :'blog/landing_blog/authors' %>
