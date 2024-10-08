@@ -1,8 +1,8 @@
 <%=erb :'home/hero' %>
-<%=erb :'home/promotion' %>
 <% unless @page.nil? || @page.recommended.count == 0%>
   <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: 'Novedades del mes' }%>
 <%end%>
+<%=erb :'home/promotion' %>
 <%=erb :'component/client_carousel' %>
 <% if session[:locale] == 'es' %>
   <%=erb :'home/courses' %>
