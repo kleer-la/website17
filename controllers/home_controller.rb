@@ -29,6 +29,7 @@ get '/' do
 
   @meta_tags.set! image: page.cover unless page.cover.nil? || page.cover.empty?
 
+  @page = page
   @clients = client_list
   @coming_courses = if session[:locale] == 'es'
                       first_three = first_x_courses(coming_courses, 3)

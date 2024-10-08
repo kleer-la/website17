@@ -51,6 +51,13 @@
       </div>
       <% end %>
     <% end %>
+
+  <%= erb :'blog/landing_blog/_toc_item', locals: {
+        title: 'Contenido Recomendado',
+        title_id: 'recommendedContent',
+        subtitles: recommended.map { |item| item.title },
+        index: 30
+      } if recommended.any?%>
   </ul>
 </div>
 

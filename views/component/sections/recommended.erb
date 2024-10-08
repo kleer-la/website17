@@ -1,19 +1,19 @@
 <%unless recommended.empty?%>
-<section id="course-related" class="mt-5 mb-5">
-  <div class="container">
-    <h2 class="mb-5 text-center common-subtitle"><%= title || t('recommended.title')%></h2>
-    <div class="row">
-        <% recommended.each  do |item|%>
-        <div class="col-3">
-          <%= erb :'component/cards/_recommended_card', locals: {item: item}  %>
-        </div>
-        <% end %>
+<div id="recommendedContent">
+  <section class="mt-5 mb-5 desktop-only">
+    <div class="container desktop-only">
+      <h2 class="mb-5 text-center common-subtitle"><%= title || t('recommended.title')%></h2>
+      <div class="row">
+          <% recommended.each  do |item|%>
+          <div class="col-3">
+            <%= erb :'component/cards/_recommended_card', locals: {item: item}  %>
+          </div>
+          <% end %>
+      </div>
     </div>
-  </div>
-</section>
-
-  <section id="mobile-course-related">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  </section>
+  <section class="mobile-only">
+    <div id="carouselRecommended" class="carousel slide mobile-only" data-bs-ride="carousel">
       <div class="carousel-inner">
         <%
           active = [false] * recommended.count
@@ -35,4 +35,5 @@
       </button>
     </div>
   </section>
+</div>
 <%end%>
