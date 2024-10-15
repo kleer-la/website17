@@ -14,6 +14,13 @@ get '/clientes' do
 end
 
 get '/clientes/testimonios/:id' do
+  slug = params[:id]
+  # TODO: temporary code
+  @where = 'Blog'
+  art = Article.create_one_keventer(slug)
+  redirect("#{session[:locale]}/blog/#{art.slug}", 301) if art.slug != slug
+  blog_one art
+rescue ArticleNotFoundError => _e
   story = success_stories(params[:id])
   return(redirect_not_found_testimony) if story.nil?
 
