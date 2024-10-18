@@ -9,7 +9,7 @@ Feature: Testimonial and Blog Routing
     Then <action>
 
     Examples:
-      | slug           | action                                                    |
-      | existing-blog  | Title should be "Lorem ipsum"              |
-      | afp-crecer  | Title should be "Coaching y transformación ágil en AFP Crecer"  |
-      | non-existent   | It should redirect to "/es/clientes"                        |
+      | slug           | action                                        |
+      | existing-blog  | Title should be "Lorem ipsum"                 |
+      | afp-crecer  | It should redirect to "/es/blog/afp-crecer"      |
+      | non-existent   | It should redirect to "/es/blog/non-existent" |
