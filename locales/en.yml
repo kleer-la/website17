@@ -768,6 +768,13 @@ en:
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.
+    case_study:
+      industry:
+        finantial: Finantial
+        technology: Technology
+        public_services: Public Services
+        consumer_goods: Consumer Goods
+        energy: Energy
   aboutus:
     title: About Kleer
     subtitle: "<p>

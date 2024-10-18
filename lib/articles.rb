@@ -53,7 +53,7 @@ class Article
   attr_accessor :title, :description, :tabtitle, :body, :published,
                 :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :cover, :category_name, :id,
-                :recommended,
+                :industry, :recommended,
                 :active # View attributes,
 
   def initialize(doc)
@@ -64,6 +64,7 @@ class Article
     @tabtitle = doc['tabtitle'] || @title
     @description = doc['description'] || ''
     @lang = doc['lang']
+    @industry = doc['industry'] || ''
     @published = doc['published']
     @abstract = doc['abstract'] || ''
     @cover = doc['cover'] || ''
