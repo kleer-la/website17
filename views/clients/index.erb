@@ -1,0 +1,23 @@
+<%= erb :'component/_generic_hero', locals: {title: t('clients.title'), subtitle: t('clients.subtitle')} %>
+
+<div class="container mainContent clientes mt-5">
+  <div class="container fondo-blanco contenedor-generico">
+    <div class="row">
+      <% @articles.each do |case_study| %>
+        <div class="col-md-6 col-lg-4">
+          <%= erb :'component/cards/_client_card', locals: {
+                where_uri: "/#{session[:locale]}/blog/", 
+                industry: I18n.t('clients.case_study.industry')[case_study.industry.to_sym]&.upcase, 
+                cover: case_study.cover,
+                title: case_study.title,
+                description: case_study.title,
+                # description: case_study.description,
+                id: case_study.slug
+                } 
+          %>
+        </div>
+      <% end %>
+    </div>
+</div>
+</div>
+<%= erb :'component/client_carousel' %>

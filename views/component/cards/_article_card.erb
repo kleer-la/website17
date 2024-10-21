@@ -23,7 +23,7 @@ where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/"
     </p>
     <p class="card-text">
       <small class="text-muted">
-        <%= erb :'component/cards/_authors_block', locals: { authors: article.trainers } %>
+        <%= erb :'component/cards/_authors_block', locals: { authors: article.trainers } if article.trainers.count>0%>
       </small>
     </p>
     <p class="card-text">

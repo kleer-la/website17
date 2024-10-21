@@ -16,12 +16,17 @@ Given('the article has language {string}') do |lang|
   @articles[-1]['lang'] = lang
 end
 
+When('I go to {string} client page') do |slug|
+  Article.create_one_null(@articles[0], { next_null: true })
+  visit "/clientes/testimonios/#{slug}"
+end
+
 When('I go to the {string} article preview page') do |slug|
   Article.create_one_null(@articles[0], { next_null: true, only_published: false })
   visit "/blog-preview/#{slug}"
 end
 When('I go to the {string} article page') do |slug|
-  Article.create_one_null(@articles[0], { next_null: true  })
+  Article.create_one_null(@articles[0], { next_null: true })
   visit "/blog/#{slug}"
 end
 

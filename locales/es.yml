@@ -439,6 +439,13 @@ es:
   clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.
+    case_study:
+      industry:
+        finantial: Financiero
+        technology: Tecnología
+        public_services: Servicios Públicos
+        consumer_goods: Bienes de Consumo
+        energy: Energía
   aboutus:
     title: Sobre Kleer
     subtitle: "<p>Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su transformación integral para lograr mejores resultados.</p>
