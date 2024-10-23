@@ -11,7 +11,7 @@ class Page
     @seo_description = empty_to_nil(data['seo_description'])
     @canonical = empty_to_nil(data['canonical'])
     @cover = empty_to_nil(data['cover'])
-    init_recommended(data['recommended'] || [])
+    @recommended = Recommended.create_list(data['recommended'] || [])
   end
 
   class << self
@@ -33,10 +33,6 @@ class Page
   end
 
   private
-
-  def init_recommended(recommended_data)
-    @recommended = Recommended.create_list(recommended_data)
-  end
 
   def empty_to_nil(value)
     value.nil? || value.empty? ? nil : value
