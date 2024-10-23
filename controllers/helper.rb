@@ -125,7 +125,7 @@ module Helpers
     end.compact
   end
 
-  def extract_titles(body)
+  def extract_titles(rendered_body)
     separator = '<h2>'
     item_separator = '</h2>'
 
@@ -134,32 +134,31 @@ module Helpers
 
     separated_titles = []
 
-    titles = @markdown_renderer.render(body).split(separator)
+    titles = rendered_body.split(separator)
+
+    titles.shift if !titles.empty? && !titles[0].include?('</h2>')
 
     titles.each do |item|
       separated_item = item.split(item_separator)
-
       next if separated_item[0].nil?
 
+      subtitles = []
       unless separated_item[1].nil?
         sublist = separated_item[1].split(sec_separator)
-        subtitles = []
+        sublist.shift
 
         if (sublist != []) || !sublist.nil?
           sublist.each do |subitem|
             subitem = subitem.split(sec_item_separator)
-
             next if subitem[0].nil?
 
             subtitles.push(subitem[0])
           end
         end
-
-        subtitles.shift
       end
+
       separated_titles.push({ title: separated_item[0], subtitles: subtitles })
     end
-    separated_titles.shift
 
     separated_titles
   end

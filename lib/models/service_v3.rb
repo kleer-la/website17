@@ -1,18 +1,19 @@
 class ServiceV3
   attr_accessor(*%i[id name subtitle value_proposition outcomes definitions program target pricing brochure faq url
-                    slug side_image])
+                    slug side_image recommended])
 
-  def initialize(hash_service_area)
-    load_from_json(hash_service_area)
+  def initialize(hash_service)
+    load_from_json(hash_service)
   end
 
-  def load_from_json(hash_service_area)
+  def load_from_json(hash_service)
     load_str(%i[id name subtitle value_proposition definitions target pricing brochure slug side_image],
-             hash_service_area)
+             hash_service)
 
-    @outcomes = hash_service_area['outcomes']
-    @program = hash_service_area['program']
-    @faq = hash_service_area['faq']
+    @outcomes = hash_service['outcomes']
+    @program = hash_service['program']
+    @faq = hash_service['faq']
+    @recommended = Recommended.create_list(hash_service['recommended'] || [])
 
     self
   end

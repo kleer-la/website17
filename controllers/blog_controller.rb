@@ -1,6 +1,7 @@
 require './lib/articles'
 
 require './controllers/pager_helper'
+require 'nokogiri'
 
 get '/blog-preview/:slug' do |slug|
   @meta_tags.set! noindex: true, nofollow: true
@@ -46,11 +47,10 @@ get %r{/blog/?} do
 end
 
 def blog_one(article)
-  @article = article
-  @meta_tags.set! title: @article.tabtitle,
-                  description: @article.description,
-                  canonical: "#{t('meta_tag.blog.canonical')}/#{@article.slug}",
-                  image: @article.cover
+  @meta_tags.set! title: article.tabtitle,
+                  description: article.description,
+                  canonical: "#{t('meta_tag.blog.canonical')}/#{article.slug}",
+                  image: article.cover
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'
@@ -59,7 +59,13 @@ def blog_one(article)
     redirect "/#{session[:locale]}/blog", 301 # permanent redirect
   end
 
-  erb :'blog/landing_blog/index', layout: :'layout/layout2022'
+  rendered_body = @markdown_renderer.render(article.body)
+  titles = extract_titles(rendered_body)
+  body = set_ids_in_body(rendered_body, titles)
+
+  @article = article
+  erb :'blog/landing_blog/index', layout: :'layout/layout2022',
+                                  locals: { titles: titles, body: body }
 end
 
 def blog_list(articles)
