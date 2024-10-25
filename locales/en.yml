@@ -879,6 +879,22 @@ en:
         <p>
           Explore our services as part of your transformation process.
         </p>
+    benefits:
+      # true: is_training_program
+      true: "With <b>%{name}</b> you develop the capabilities:"
+      false: "Benefits of <b>%{name}</b>"
+    program:  
+      true: "The training program <b>%{name}</b> includes:"
+      false: "The service <b>%{name}</b> covers:"
+    target:
+      true: Who is the training program <b>%{name}</b> intended for?
+      false: Who is the service <b>%{name}</b> intended for? 
+    recommended:
+      true: Included Training
+      false: Recommended Content
+      initial: Initial Training
+      intermediate: Intermediate Training 
+      advanced: Advanced Training 
   contact-us-form:
     title: Contact us
     name-input:

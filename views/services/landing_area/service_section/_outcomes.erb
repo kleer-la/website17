@@ -1,6 +1,6 @@
 <div class="outcomes">
   <h4>
-    Beneficios de <%= name %>
+    <%= t("services.benefits.#{@is_training_program}", name: name) %>
   </h4>
   <div class="outcome-list row w-100">
     <% outcomes.each do |outcome| %>

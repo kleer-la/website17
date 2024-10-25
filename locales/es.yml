@@ -562,6 +562,22 @@ es:
         <p>
           Explora nuestros servicios como parte de tu proceso de transformación. 
         </p>
+    benefits:
+      # true: is_training_program
+      true: "Con <b>%{name}</b> desarrollas las capacidades:"
+      false: "Beneficios de <b>%{name}</b>"
+    program:
+      true: "El plan de capacitación <b>%{name}</b> comprende:"
+      false: "El servicio de <b>%{name}</b> abarca:"
+    target:
+      true: ¿A quién está dirigido el plan de capacitación de <b>%{name}</b>?
+      false: ¿A quién está dirigido el servicio de <b>%{name}</b>?
+    recommended:
+      true: Capacitaciones incluidas
+      false: Contenido recomendado
+      initial: Capacitaciones iniciales
+      intermediate: Capacitaciones intermedias
+      advanced: Capacitaciones avanzadas
   contact-us-form:
     title: Contáctanos
     name-input:

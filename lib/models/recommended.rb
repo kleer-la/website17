@@ -1,5 +1,5 @@
 class Recommended
-  attr_reader :title, :subtitle, :slug, :cover, :type
+  attr_reader :title, :subtitle, :slug, :cover, :type, :level
 
   def initialize(doc)
     @title = doc['title']
@@ -7,6 +7,7 @@ class Recommended
     @slug = doc['slug']
     @cover = doc['cover']
     @type = doc['type']
+    @level = doc['level']
   end
 
   def url

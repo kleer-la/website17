@@ -154,6 +154,7 @@ get '/formacion/:slug' do
   @meta_tags.set! title: service_area.seo_title,
                   description: service_area.seo_description,
                   canonical: "/formacion/#{service_area.slug}"
-
-  erb :'services/landing_area/index', layout: :'layout/layout2022', locals: { service_area: service_area }
+  @is_training_program = true
+  erb :'services/landing_area/index', layout: :'layout/layout2022',
+                                      locals: { service_area: service_area }
 end
