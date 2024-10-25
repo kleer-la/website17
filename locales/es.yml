@@ -562,8 +562,12 @@ es:
         <p>
           Explora nuestros servicios como parte de tu proceso de transformación. 
         </p>
+    # true: is_training_program
+    # false: service
+    value_proposition:
+      true: ¿Por qué elegir nuestros planes de capacitación?
+      false: ¿Por qué elegir nuestros servicios?
     benefits:
-      # true: is_training_program
       true: "Con <b>%{name}</b> desarrollas las capacidades:"
       false: "Beneficios de <b>%{name}</b>"
     program:
