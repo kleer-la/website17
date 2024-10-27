@@ -1,5 +1,4 @@
 <%unless recommended.empty?
-  p recommended
   levels = recommended.group_by { |rec| rec.level }
 
   levels.each do |level, content|

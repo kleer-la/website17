@@ -1,6 +1,7 @@
 <div class="outcomes">
   <h4>
-    <%= t("services.benefits.#{@is_training_program}", name: name) %>
+    <%= t("services.benefits.#{@is_training_program == true}", name: name) 
+    %>
   </h4>
   <div class="outcome-list row w-100">
     <% outcomes.each do |outcome| %>

@@ -1,6 +1,6 @@
 <div class="program">
   <h4>
-    <%= t("services.program.#{@is_training_program}", name: name) %>
+    <%= t("services.program.#{@is_training_program==true}", name: name) %>
   </h4>
   <div id="program-list-<%=id%>" class="row mt-5 w-100">
     <% program.each.with_index do |item, index| %>

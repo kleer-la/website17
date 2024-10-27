@@ -18,8 +18,8 @@
     <%= erb :'services/landing_area/service_section/_target',
             locals: { target: service.target, name: service.name }%>
     <%#= erb :'services/landing_area/service_section/_definitions_program', locals: { name: service.name, definitions: service.definitions } unless service.definitions == "" %>
-    <%= erb :'component/sections/recommended', locals: { recommended: service.recommended, title: t("services.recommended.#{@is_training_program}")} unless @is_training_program %>
-    <%= erb :'services/landing_area/service_section/levels', locals: { recommended: service.recommended, title: t("services.recommended.#{@is_training_program}")} if @is_training_program%>
+    <%= erb :'component/sections/recommended', locals: { recommended: service.recommended, title: t("services.recommended.#{@is_training_program==true}")} unless @is_training_program==true %>
+    <%= erb :'services/landing_area/service_section/levels', locals: { recommended: service.recommended, title: t("services.recommended.#{@is_training_program==true}")} if @is_training_program==true%>
   </div>
   <div
     class="plus-button"
