@@ -24,10 +24,14 @@
       const scrollThresholdPx = window.innerHeight * (scrollThresholdVh / 100)
 
       if (window.scrollY > scrollThresholdPx) {
+          header.style.color = "<%= @primary_font_color %>"
           header.style.backgroundColor = "<%= @primary_color %>"
+          button.style.color = "<%= @secondary_font_color %>"
           button.style.backgroundColor = "<%= @secondary_color %>"
       } else {
+          header.style.color = "black"
           header.style.backgroundColor = "white"
+          button.style.color = "<%= @primary_font_color %>"
           button.style.backgroundColor = "<%= @primary_color %>"
       }
   })

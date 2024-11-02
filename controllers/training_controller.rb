@@ -148,32 +148,8 @@ get '/formacion/:slug' do
                   end
   return status 404 if service_area.nil?
 
-  @primary_color = service_area.primary_color
-  @primary_font_color = service_area.primary_font_color
-  @secondary_color = service_area.secondary_color
-  @secondary_font_color = service_area.secondary_font_color
-
-  brightness = calculate_brightness(@primary_color)
-  @hover_color = brightness > 128 ? '#000000' : '#FFFFFF'
-
-  @meta_tags.set! title: service_area.seo_title,
-                  description: service_area.seo_description,
-                  canonical: "/formacion/#{service_area.slug}"
   @is_training_program = true
-  erb :'services/landing_area/index', layout: :'layout/layout2022',
-                                      locals: { service_area: service_area }
-end
+  @meta_tags.set! canonical: "/formacion/#{service_area.slug}"
 
-def calculate_brightness(hex_color)
-  # Remove '#' if present
-  hex_color = hex_color.gsub('#', '')
-
-  # Convert hex to RGB
-  r = hex_color[0..1].to_i(16)
-  g = hex_color[2..3].to_i(16)
-  b = hex_color[4..5].to_i(16)
-
-  # Calculate perceived brightness
-  # Using the formula: (R * 299 + G * 587 + B * 114) / 1000
-  (r * 299 + g * 587 + b * 114) / 1000
+  show_service_area(service_area)
 end
