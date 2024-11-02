@@ -1,12 +1,12 @@
 require './lib/models/service_v3'
 
 class ServiceAreaV3
-  attr_accessor(*%i[id slug name icon summary primary_color secondary_color slogan cta_message
+  attr_accessor(*%i[id slug name icon summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions side_image defintions target value_proposition
                     services seo_title seo_description target_title])
 
   def load_from_json(hash_service_area)
-    load_str(%i[id slug name icon summary primary_color secondary_color cta_message
+    load_str(%i[id slug name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
                 slogan subtitle description definitions side_image target value_proposition
                 seo_title seo_description target_title], hash_service_area)
 

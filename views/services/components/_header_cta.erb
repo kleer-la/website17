@@ -7,7 +7,7 @@
   <div class="m-3">
     <%= erb :'component/_contact_banner_button',
             locals: {
-              style: "background-color: #{@primary_color}; padding: 0px 10px; border-radius: 30px;",
+              style: "background-color: #{@primary_color};color: #{@primary_font_color};--hover_color:#{@hover_color};padding: 0px 10px; border-radius: 30px;",
               text_button: text_button,
               style_class: 'btn my-primary-button',
               specific_id: "cta-header-button",
