@@ -250,6 +250,9 @@ es:
         - text: Agenda
           url: /agenda
           inside: true
+        - text: Programas de Capacitación Empresarial
+          url: /formacion/programas-capacitacion-empresarial
+          inside: true
         - text: Catálogo de cursos
           url: /catalogo
           inside: true

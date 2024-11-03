@@ -38,11 +38,16 @@ class ServiceAreaV3
     end
   end
 
-  def self.create_keventer(slug)
+  def self.create_keventer(slug, is_preview_mode = false)
+    url = if is_preview_mode
+            KeventerAPI.service_area_preview_url(slug)
+          else
+            KeventerAPI.service_area_url(slug)
+          end
     response = if defined? @@json_api
                  @@json_api
                else
-                 JsonAPI.new(KeventerAPI.service_area_url(slug))
+                 JsonAPI.new(url)
                end
 
     return nil unless response.ok?

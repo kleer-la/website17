@@ -137,8 +137,9 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
 end
 
 # <%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended, title: t('recommended.title')  }%>
-get '/formacion/:slug' do
-  service_area = ServiceAreaV3.create_keventer params[:slug]
+get '/formacion/:slug*?' do
+  is_preview_mode = request.path_info.end_with?('/preview')
+  service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
   return status 404 if service_area.nil?
 
   @service_slug = if service_area.slug != params[:slug]
