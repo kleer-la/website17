@@ -4,7 +4,6 @@ recommended = service.recommended
 unless recommended.empty?
   recommended.sort_by(&:level)
 %>
-<div id="recommendedContent">
   <section class="mt-5 mb-5 desktop-only">
       <%#  <h2 class="mb-5 text-center common-subtitle"><%= title || t('recommended.title')% ></h2> %>
     <div id="carouselDskLevels<%=service.id%>" class="carousel slide desktop-only" data-bs-ride="carousel">
@@ -58,5 +57,4 @@ unless recommended.empty?
       </button>
     </div>
   </section>
-</div>
 <%end%>
