@@ -571,7 +571,7 @@ es:
       true: ¿Por qué elegir nuestros planes de capacitación?
       false: ¿Por qué elegir nuestros servicios?
     benefits:
-      true: "Con <b>%{name}</b> desarrollas las capacidades:"
+      true: "¿Qué capacidades se desarrollan con el programa <b>%{name}</b>?"
       false: "Beneficios de <b>%{name}</b>"
     program:
       true: "El plan de capacitación <b>%{name}</b> comprende:"

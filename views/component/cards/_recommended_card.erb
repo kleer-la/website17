@@ -1,5 +1,17 @@
 <div class="recommended-card">
   <div class="image-container">
+    <% if item.level %>
+      <div class="level-icon">
+        <% case item.level 
+           when 'initial' %>
+          <i class="fas fa-walking"></i>
+        <% when 'intermediate' %>
+          <i class="fas fa-bicycle"></i>
+        <% when 'advanced' %>
+          <i class="fas fa-plane"></i>
+        <% end %>
+      </div>
+    <% end %>
     <a href="<%= item.url%>">
       <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: '...', has_webp: false}%>
     </a>

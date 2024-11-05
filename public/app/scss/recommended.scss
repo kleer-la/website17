@@ -39,6 +39,30 @@
     z-index: 1;
   }
 
+  .level-icon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .level-icon i {
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .image-container {
+    overflow: hidden;
+  }
+
+
   .card-title {
     color: $black;
     font-weight: 700;

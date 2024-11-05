@@ -1,9 +1,14 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <%unless recommended.empty?
-  levels = recommended.group_by { |rec| rec.level }
 
-  levels.each do |level, content|
+  # levels = recommended.group_by { |rec| rec.level }
+
+  # levels.each do |level, content|
+  recommended.sort_by(&:level)
+
 %>
-    <%= erb :'component/sections/recommended', locals: { recommended: content, title: t("services.recommended.#{level}")} %>
+
+    <%= erb :'component/sections/recommended', locals: { recommended:, title: nil} %>
 <%
-  end
+  # end
 end%>
