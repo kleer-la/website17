@@ -44,15 +44,15 @@ get '/servicios/:slug' do
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/agilidad-organizacional'
 
-  @meta_tags.set! canonical: "/servicios/#{service_area.slug}"
-
-  show_service_area(service_area)
+  show_service_area(service_area, 'servicios')
 end
 
-def show_service_area(service_area)
+def show_service_area(service_area, path)
   @meta_tags.set! title: service_area.seo_title,
-                  description: service_area.seo_description
+                  description: service_area.seo_description,
+                  canonical: "/#{path}/#{service_area.slug}"
 
+  @path = path
   @primary_color = service_area.primary_color
   @primary_font_color = service_area.primary_font_color
   @secondary_color = service_area.secondary_color

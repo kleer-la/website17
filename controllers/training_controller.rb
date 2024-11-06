@@ -150,7 +150,6 @@ get '/formacion/:slug*?' do
   return status 404 if service_area.nil?
 
   @is_training_program = true
-  @meta_tags.set! canonical: "/formacion/#{service_area.slug}"
 
-  show_service_area(service_area)
+  show_service_area(service_area, 'formacion')
 end
