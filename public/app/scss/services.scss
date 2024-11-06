@@ -388,18 +388,6 @@ $white: #FFFFFF;
       padding: 0 30px;
     }
 
-    .target{
-      margin: 50px 30px;
-
-      h3{
-        font-size: 32px;
-        font-weight: 400;
-        font-family: 'Raleway', sans-serif;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-    }
-
     .value_proposition{
       margin: 50px 30px 0 30px;
       padding: 50px;
@@ -460,7 +448,7 @@ $white: #FFFFFF;
     position: relative;
     max-width: 1500px;
     width: 100%;
-
+    
     .value-proposition{
       margin: 30px;
       height: auto;
@@ -607,11 +595,6 @@ $white: #FFFFFF;
       padding: 30px;
       width: 100%;
       height: auto;
-      .h3{
-        font-weight: 400;
-        font-size: 30px;
-        line-height: 36px;
-      }
 
       .title-container{
         display: flex;
@@ -619,10 +602,14 @@ $white: #FFFFFF;
         justify-content: center;
         align-items: start;
         font-family: 'Raleway', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-        padding-left: 30px;
-
+        
+        h3{
+          font-size: 30px;
+          font-weight: 400;
+          padding-left: 30px;
+          line-height: 36px;
+        }
+  
         img{
           height: 64px;
           margin-bottom: 15px;
