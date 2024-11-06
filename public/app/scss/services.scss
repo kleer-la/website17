@@ -528,12 +528,21 @@ $white: #FFFFFF;
               font-weight: 500;
             }
           }
-
         }
-
+      }
+  
+      .outcome-skills .check-icon {
+        min-width: 24px;
+      }
+      
+      .outcome-skills p {
+        font-family: 'Raleway', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
       }
     }
-
+    
     .program{
         margin: 30px 70px;
         display: flex;

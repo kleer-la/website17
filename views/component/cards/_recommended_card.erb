@@ -1,35 +1,20 @@
 <div class="recommended-card">
   <div class="image-container">
-    <% if item.level %>
-      <div class="level-icon">
-        <% case item.level 
-           when 'initial' %>
-          <i class="fas fa-walking"></i>
-        <% when 'intermediate' %>
-          <i class="fas fa-bicycle"></i>
-        <% when 'advanced' %>
-          <i class="fas fa-plane"></i>
-        <% end %>
-      </div>
-    <% end %>
     <a href="<%= item.url%>">
       <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: '...', has_webp: false}%>
     </a>
+    <% if @is_training_program == true %>
+      <div class="level-flag">
+        <%= {'initial'=> 'Fundamentos',  
+          'intermediate'=> 'Intermedio',
+          'advanced'=> 'Avanzado'
+        }[item.level] %>
+      </div>
+    <% else %>
     <div class="type-flag">
       <%= t("recommended.type.#{item.type}") %>
     </div>
-      <%if false%>
-      <div class="flags">
-        <% if false #@course[:is_open] %>
-          <div>Próximas fechas</div>
-        <%end %>
-        <% if @course[:platform] === "academia" %>
-          <div>
-            <img src="/app/img/logos/logo-academia.png" loading="lazy"/>
-          </div>
-        <% end %>
-      </div>
-        <% end %>
+    <% end %>
   </div>
   <div class="card-body">
     <div>
