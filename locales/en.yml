@@ -879,6 +879,26 @@ en:
         <p>
           Explore our services as part of your transformation process.
         </p>
+    # true: is_training_program
+    # false: service
+    value_proposition:
+      true: ¿Por qué elegir nuestros planes de capacitación?
+      false: ¿Por qué elegir nuestros servicios?
+    benefits:
+      true: "With <b>%{name}</b> you develop the capabilities:"
+      false: "Benefits of <b>%{name}</b>"
+    program:  
+      true: "The training program <b>%{name}</b> includes:"
+      false: "The service <b>%{name}</b> covers:"
+    target:
+      true: Who is the training program <b>%{name}</b> intended for?
+      false: Who is the service <b>%{name}</b> intended for? 
+    recommended:
+      true: Included Training
+      false: Recommended Content
+      initial: Initial Training
+      intermediate: Intermediate Training 
+      advanced: Advanced Training 
   contact-us-form:
     title: Contact us
     name-input:

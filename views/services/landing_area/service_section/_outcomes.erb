@@ -1,9 +1,24 @@
 <div class="outcomes">
   <h4>
-    Beneficios de <%= name %>
+    <%= t("services.benefits.#{@is_training_program == true}", name: name) 
+    %>
   </h4>
   <div class="outcome-list row w-100">
     <% outcomes.each do |outcome| %>
+      <% if @is_training_program == true%>
+        <div class="outcome-skills my-4 mx-auto" style="max-width: 960px;">
+          <div class="d-flex rounded overflow-hidden" style="border: 3px solid #2289ad;">
+            <div class="check-column d-flex align-items-center justify-content-center bg-primary" style="width: 64px; background-color: <%=@primary_color%> !important;">
+              <svg class="check-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div class="content-column flex-grow-1 p-3">
+              <p class="mb-0"> <%= outcome %></p>
+            </div>
+          </div>
+        </div>
+      <%else%>
       <div class="col-12 col-xl-6 outcome-container">
         <div
           class="outcome row"
@@ -22,6 +37,7 @@
           </div>
         </div>
       </div>
+      <%end%>
     <% end %>
   </div>
 </div>

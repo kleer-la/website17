@@ -7,7 +7,7 @@
   <div class="m-3">
     <%= erb :'component/_contact_banner_button',
             locals: {
-              style: "background-color: #{@primary_color}; padding: 0px 10px; border-radius: 30px;",
+              style: "background-color: #{@primary_color};color: #{@primary_font_color};--hover_color:#{@hover_color};padding: 0px 10px; border-radius: 30px;",
               text_button: text_button,
               style_class: 'btn my-primary-button',
               specific_id: "cta-header-button",
@@ -24,10 +24,14 @@
       const scrollThresholdPx = window.innerHeight * (scrollThresholdVh / 100)
 
       if (window.scrollY > scrollThresholdPx) {
+          header.style.color = "<%= @primary_font_color %>"
           header.style.backgroundColor = "<%= @primary_color %>"
+          button.style.color = "<%= @secondary_font_color %>"
           button.style.backgroundColor = "<%= @secondary_color %>"
       } else {
+          header.style.color = "black"
           header.style.backgroundColor = "white"
+          button.style.color = "<%= @primary_font_color %>"
           button.style.backgroundColor = "<%= @primary_color %>"
       }
   })

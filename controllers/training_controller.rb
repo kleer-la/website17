@@ -137,8 +137,9 @@ get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
 end
 
 # <%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended, title: t('recommended.title')  }%>
-get '/formacion/:slug' do
-  service_area = ServiceAreaV3.create_keventer params[:slug]
+get '/formacion/:slug*?' do
+  is_preview_mode = request.path_info.end_with?('/preview')
+  service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
   return status 404 if service_area.nil?
 
   @service_slug = if service_area.slug != params[:slug]
@@ -148,12 +149,7 @@ get '/formacion/:slug' do
                   end
   return status 404 if service_area.nil?
 
-  @primary_color = service_area.primary_color
-  @secondary_color = service_area.secondary_color
+  @is_training_program = true
 
-  @meta_tags.set! title: service_area.seo_title,
-                  description: service_area.seo_description,
-                  canonical: "/formacion/#{service_area.slug}"
-
-  erb :'services/landing_area/index', layout: :'layout/layout2022', locals: { service_area: service_area }
+  show_service_area(service_area, 'formacion')
 end

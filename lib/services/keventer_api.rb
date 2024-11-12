@@ -47,6 +47,7 @@ module KeventerAPI
   # Define parameterized URL methods
   {
     service_area: ['service_areas/:slug.json', :slug],
+    service_area_preview: ['service_areas/:slug/preview.json', :slug],
     event_type: ['event_types/:id.json', :id],
     article: ['articles/:slug.json', :slug]
   }.each do |name, (path, param)|

@@ -1,0 +1,59 @@
+<%
+recommended = service.recommended
+unless recommended.empty?
+  recommended.sort_by(&:level)
+%>
+  <section class="mt-5 mb-5 desktop-only">
+      <%#  <h2 class="mb-5 text-center common-subtitle"><%= title || t('recommended.title')% ></h2> %>
+    <div id="carouselDskLevels<%=service.id%>" class="carousel slide desktop-only" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <%
+          active = [false] * recommended.count
+          active[0] = true
+          recommended.each_slice(4).each_with_index do |group, group_index| 
+          %>
+           <div class="carousel-item <%= group_index == 0 ? 'active' : '' %>">
+            <div class="row">
+            <% group.each do |item| %>
+              <div class="col-md-3">
+                <%= erb :'component/cards/_recommended_card', locals: {item:}  %>
+              </div>
+            <% end %>
+          </div>
+          </div>
+          <% end %>
+      </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselDskLevels<%=service.id%>" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselDskLevels<%=service.id%>" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  <section class="mobile-only">
+    <div id="carouselMobLevels<%=service.id%>" class="carousel slide mobile-only" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <%
+          active = [false] * recommended.count
+          active[0] = true
+          recommended.each_with_index do |item, idx|
+        %>
+          <div class="carousel-item ps-5 <%= active[idx] ? 'active' : '' %>" style="padding-left: 50px">
+              <%= erb :'component/cards/_recommended_card', locals: {item:}  %>
+          </div>
+        <%end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselMobLevels<%=service.id%>" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselMobLevels<%=service.id%>" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+<%end%>
