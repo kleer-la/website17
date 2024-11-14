@@ -461,6 +461,7 @@ $white: #FFFFFF;
     float: right;
     text-align: justify;
     text-justify: inter-word;
+    padding-right: 10px;
   }
 }
 
@@ -534,8 +535,8 @@ $white: #FFFFFF;
     margin: 0 auto !important;
   }
   .blog__body{
-    width: 90% !important;
-    margin: 0 auto !important;
+    width: 90%;
+    margin: 0 auto;
   }
 
   #landing-blog-content-table {
@@ -553,10 +554,10 @@ $white: #FFFFFF;
 //mobile
 @media screen and (max-width:420px) {
   #landing-blog-hero{
-    width: 80% !important;
+    width: 80%;
   }
   .blog__body{
-    width: 80% !important;
+    width: 80%;
   }
 }
 
