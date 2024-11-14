@@ -503,6 +503,8 @@ $white: #FFFFFF;
 .fixed-table{
   position: fixed;
   top: 120px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
 }
 
 .landing-blog-authors__container{

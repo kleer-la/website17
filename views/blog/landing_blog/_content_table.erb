@@ -1,16 +1,35 @@
+<script>
 
-<div id="landing-blog-content-table">
+document.addEventListener('DOMContentLoaded', function() {
+    runOnScroll();
+    window.addEventListener("scroll", runOnScroll);
+});
+
+if (document.readyState === 'complete') {
+    runOnScroll();
+}
+
+function runOnScroll() {
+    const table = document.getElementById('landing-blog-content-table');
+    const blogBody = document.getElementById('landing-blog-body');
+    const threshold = 120;
+    const current = document.getElementById('landing-blog-hero').getBoundingClientRect().bottom;
+    const blogBottom = blogBody.getBoundingClientRect().bottom;
+    
+    // Only fix the ToC if we're scrolling through the content
+    // and not yet near the bottom
+    const shouldBeFixed = current <= threshold + 4 && blogBottom > window.innerHeight + 200;
+
+    if (shouldBeFixed && !table.classList.contains('fixed-table')) {
+        table.classList.add('fixed-table')
+    } else if (!shouldBeFixed && table.classList.contains('fixed-table')) {
+        table.classList.remove('fixed-table')
+    }
+}
+</script>
+
+  <div id="landing-blog-content-table">
   <h3 class="title mt-0"><%=t("blog.landing.ToC")%></h3>
-<!--  <ul>-->
-    <%# separated_titles.each do |title| %>
-<!--      <li class="mt-3"><%#= title[:title] %></li>-->
-      <%# if title[:subtitles] != [] %>
-        <%# title[:subtitles].each do |subtitle|  %>
-<!--          <li class="ms-4 mt-1"><%#= subtitle %></li>-->
-        <%# end %>
-      <%# end %>
-    <%# end %>
-<!--  </ul>-->
   <ul>
     <% titles.each.with_index do |title, index| %>
       <% subtitles = title[:subtitles].each_with_index.reduce('') do |string , (subtitle, subindex)|
@@ -44,7 +63,6 @@
           </div>
         </a>
         </div>
-      </li>
       <% if subtitles != '' %>
       <div class="collapse course-program__specific-item" id="item<%=index %>">
         <%= subtitles %>
@@ -60,19 +78,3 @@
       } if recommended.any?%>
   </ul>
 </div>
-
-<script>
-    function runOnScroll() {
-        const table = document.getElementById('landing-blog-content-table');
-        const threshold  = 120;
-        const current = document.getElementById('landing-blog-hero').getBoundingClientRect().bottom;
-        const shouldBeFixed = current <= threshold + 4 && document.body.getBoundingClientRect().bottom > 2500;
-
-        if (shouldBeFixed && !table.classList.contains('fixed-table')) {
-          table.classList.add('fixed-table')
-        }else if (!shouldBeFixed && table.classList.contains('fixed-table')) {
-          table.classList.remove('fixed-table')
-        }
-    }
-    window.addEventListener("scroll", runOnScroll);
-</script>
