@@ -457,7 +457,7 @@ $white: #FFFFFF;
 
   .blog__body{
     margin-left: auto;
-    width: 65%;
+    width: 90%;
     float: right;
     text-align: justify;
     text-justify: inter-word;
@@ -543,7 +543,8 @@ $white: #FFFFFF;
     width: 316px;
     height: 430px;
     overflow-y: auto;
-    margin: 30px auto !important;
+    margin: 30px auto;
+    margin-left: 30px;
   }
 
   .fixed-table{
