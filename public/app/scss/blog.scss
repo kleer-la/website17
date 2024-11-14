@@ -457,7 +457,7 @@ $white: #FFFFFF;
 
   .blog__body{
     margin-left: auto;
-    width: 90%;
+    width: 65%;
     float: right;
     text-align: justify;
     text-justify: inter-word;
@@ -534,7 +534,7 @@ $white: #FFFFFF;
     width: 90% !important;
     margin: 0 auto !important;
   }
-  .blog__body{
+  #landing-blog-body .blog__body{
     width: 90%;
     margin: 0 auto;
   }
