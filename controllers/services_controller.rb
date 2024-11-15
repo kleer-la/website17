@@ -21,6 +21,7 @@ get %r{/servicios/?} do
                   canonical: t('meta_tag.services.canonical').to_s,
                   image: 'https://kleer-images.s3.sa-east-1.amazonaws.com/servicios_cover.webp'
 
+  @path = 'servicios'
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/agilidad-organizacional'
 
