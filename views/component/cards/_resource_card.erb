@@ -18,7 +18,6 @@
     <ul class="items">
       <% unless resource.authors_list == [] %>
         <li>
-          <%p t('resources.card')%>
           <%= erb :'component/cards/_authors_block', locals: {authors: resource.authors_list, title: t('resources.card.authors')} %>
         </li>
       <% end %>
