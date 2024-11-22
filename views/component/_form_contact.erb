@@ -1,4 +1,4 @@
-<form action="/send-mail" method="post" class="needs-validation" novalidate>
+<form action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
       <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>

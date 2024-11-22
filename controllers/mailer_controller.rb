@@ -27,7 +27,7 @@ post '/send-mail' do
   else
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
   end
-  redirect params[:context]
+  redirect "/#{session[:locale]}#{params[:context]}"
 end
 
 get '/mailer-template' do
