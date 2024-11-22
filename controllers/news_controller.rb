@@ -1,4 +1,4 @@
-require './lib/news'
+require './lib/models/news'
 
 get %r{/prensa|/novedades|/news} do
   page = Page.load_from_keventer(session[:locale], 'novedades')
