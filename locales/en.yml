@@ -908,6 +908,7 @@ en:
       advanced: Advanced Training 
   contact-us-form:
     title: Contact us
+    download: Resource download
     name-input:
       label: Full name
       error-message: Please fill in your name

@@ -594,6 +594,7 @@ es:
       advanced: Capacitaciones avanzadas
   contact-us-form:
     title: Contáctanos
+    download: Descargar recurso
     name-input:
       label: Tu nombre completo
       error-message: Completa este campo con tu nombre
