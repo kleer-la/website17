@@ -50,6 +50,7 @@ def blog_one(article)
   @meta_tags.set! title: article.tabtitle,
                   description: article.description,
                   canonical: "#{t('meta_tag.blog.canonical')}/#{article.slug}",
+                  noindex: article.noindex,
                   image: article.cover
 
   router_helper = RouterHelper.instance

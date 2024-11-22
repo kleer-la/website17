@@ -51,6 +51,7 @@ class Article
   end
 
   attr_accessor :title, :description, :tabtitle, :body, :published,
+                :noindex,
                 :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :cover, :category_name, :id,
                 :industry, :recommended,
@@ -66,6 +67,7 @@ class Article
     @lang = doc['lang']
     @industry = doc['industry'] || ''
     @published = doc['published']
+    @noindex = doc['noindex']
     @abstract = doc['abstract'] || ''
     @cover = doc['cover'] || ''
     @category_name = doc['category_name'] || ''
