@@ -1,4 +1,4 @@
-<form action="/send-mail" method="post" class="needs-validation" novalidate>
+<form action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
       <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
@@ -26,7 +26,7 @@
         <%= t("contact-us-form.email-input.error-message") %>
       </div>
     </div>
-    <div class="mb-3 col-xs-12 col-md-6">
+    <div class="mb-3 col-xs-12 col-md-6 contact-only-field">
       <label class="form-label"><%= t("contact-us-form.phone-input.label") %></label>
       <input
         type="text"
@@ -35,7 +35,7 @@
         name="phone">
     </div>
   </div>
-  <div class="mb-3">
+  <div class="mb-3 contact-only-field">
     <label class="form-label"><%= t("contact-us-form.message-input.label") %></label>
     <div id="emailHelp" class="form-text"><%= t("contact-us-form.message-input.sub-label") %></div>
     <textarea
@@ -54,6 +54,7 @@
   <div id="recaptcha-placeholder"></div>
 
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
+  <input type="hidden" id="resource-slug" name="resource_slug">
   <div class="btn-center-container">
     <button type="submit"
             id="submit"
@@ -91,6 +92,38 @@
 
   function enableButton() {
     document.getElementById("submit").disabled = false;
+  }
+
+function setupDownloadForm(resourceSlug) {
+    console.log('setupDownloadForm called with:', resourceSlug);
+    
+    const modalTitle = document.getElementById('modal-title');
+    const resourceSlugInput = document.getElementById('resource-slug');
+    const contactOnlyFields = document.querySelectorAll('.contact-only-field');
+    const messageInput = document.getElementById('message-input');
+    
+    console.log('Elements found:', {
+        modalTitle,
+        resourceSlugInput,
+        contactOnlyFields: contactOnlyFields.length,
+        messageInput
+    });
+
+    if (resourceSlug) {
+      // Download mode
+      modalTitle.textContent = 'Descargar recurso';
+      resourceSlugInput.value = resourceSlug;
+      contactOnlyFields.forEach(field => field.style.display = 'none');
+      messageInput.removeAttribute('required');
+    } else {
+      // Contact mode
+      modalTitle.textContent = 'Contáctanos';
+      resourceSlugInput.value = '';
+      contactOnlyFields.forEach(field => field.style.display = '');
+      messageInput.setAttribute('required', '');
+    }
+
+    loadReCaptcha();
   }
 
   // Wait for the DOM to be fully loaded

@@ -18,22 +18,22 @@
     <ul class="items">
       <% unless resource.authors_list == [] %>
         <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.authors_list, title: 'Autores'} %>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.authors_list, title: t('resources.card.authors')} %>
         </li>
       <% end %>
       <% unless resource.translators_list == [] %>
         <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: 'Tradujo'} %>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: t('resources.card.translator')} %>
         </li>
       <% end %>
       <% unless resource.illustrators_list == [] %>
         <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.illustrators_list, title: 'Ilustró'} %>
+          <%= erb :'component/cards/_authors_block', locals: {authors: resource.illustrators_list, title: t('resources.card.ilustrator')} %>
         </li>
       <% end %>
       <% unless resource.comments == '' %>
         <li style="font-size: 12px; margin-top:5px">
-          <b>Observaciones: </b> <%= resource.comments %>
+          <b><%= t('resources.card.comments')%>: </b> <%= resource.comments %>
         </li>
       <% end %>
     </ul>
@@ -42,30 +42,40 @@
   <div class="footer">
     <% unless resource.buyit  == '' %>
       <p class="external-web">
-        <a >Obtener en web externa</a>
+        <a ><%= t('resources.card.external')%></a>
       </p>
     <% end %>
 
     <% unless resource.landing == '' %>
       <button class="info my-secondary-button">
-        <a href="<%= resource.landing %>">Mas info</a>
+        <a href="<%= resource.landing %>"><%= t('resources.card.more_info')%></a>
       </button>
     <% end %>
     <% unless resource.buyit == '' %>
       <button  class="my-primary-button button">
-        <a href="<%= resource.buyit %>">
-          Obtener
+        <a href="<%= resource.buyit %>"><%= t('resources.card.buy_it')%>
           <img src='/app/img/icons/ExternalLink.svg' loading="lazy"/>
         </a>
       </button>
     <% end %>
-    <% unless resource.getit == '' %>
+    <% unless resource.getit == '' %> 
+      <% if session[:locale] == 'es' %> 
       <a href="<%= resource.getit %>">
         <button class="my-primary-button button">
           Descargar
           <img src='/app/img/icons/Download.svg' loading="lazy"/>
         </button>
       </a>
+      <%else%>
+      <button class="my-primary-button button modal-opener" 
+              onclick="setupDownloadForm('<%= resource.slug %>')" 
+              data-bs-toggle="modal" 
+              data-bs-target="#mail-modal"
+              data-resource-title="<%= resource.title %>">
+              <%= t('resources.card.get_it')%>
+        <img src='/app/img/icons/Download.svg' loading="lazy"/>
+      </button>
+      <% end %>
     <% end %>
   </div>
 </div>

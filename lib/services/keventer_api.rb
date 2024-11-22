@@ -39,6 +39,7 @@ module KeventerAPI
     podcasts: 'v3/podcasts',
     service_areas: 'service_areas.json',
     articles: 'articles.json',
+    contacts: 'contacts',
     mailer: 'contact_us'
   }.each do |name, path|
     define_method("#{name}_url") { echo(url_for(path)) }

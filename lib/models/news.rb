@@ -53,7 +53,7 @@ class News
     @lang = doc['lang']
     @img = doc['img'] || ''
     @url = doc['url'] || ''
-    @event_date = Date.parse(doc['event_date']).strftime('%d-%m-%Y') || ''
+    @event_date = parse_date(doc['event_date'])
     @trainers_list = load_trainers(doc['trainers'])
     @trainers = trainer_names(doc)
     init_dates(doc)
@@ -67,6 +67,17 @@ class News
   def self.load_list(doc)
     doc.each_with_object([]) do |elem, ac|
       ac << News.new(elem)
+    end
+  end
+
+  private
+
+  def parse_date(date_str)
+    begin
+      return '' if date_str.nil? || date_str.empty?
+      Date.parse(date_str).strftime('%d-%m-%Y')
+    rescue Date::Error
+      ''
     end
   end
 end

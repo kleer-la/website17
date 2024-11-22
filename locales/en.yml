@@ -8,9 +8,16 @@ en:
   resources:
     title: Resources for agility
     subtitle: >-
-      Our 2 cent downloads to help you with team collaboration: books, quick guides, card games, infographics, and more
+      Our 2 cents to help you with team collaboration: books, quick guides, card games, infographics, and more
     card:
       more_info: More info
+      comments: Notes
+      external: Get it on another website
+      buy_it: Buy it
+      get_it: Download
+      authors: Authors
+      translator: Translator
+      ilustrator: Illustrator
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training
