@@ -111,13 +111,13 @@ function setupDownloadForm(resourceSlug) {
 
     if (resourceSlug) {
       // Download mode
-      modalTitle.textContent = 'Descargar recurso';
+      modalTitle.textContent = '<%= t("contact-us-form.download") %>';
       resourceSlugInput.value = resourceSlug;
       contactOnlyFields.forEach(field => field.style.display = 'none');
       messageInput.removeAttribute('required');
     } else {
       // Contact mode
-      modalTitle.textContent = 'Contáctanos';
+      modalTitle.textContent = '<%= t("contact-us-form.title") %>';
       resourceSlugInput.value = '';
       contactOnlyFields.forEach(field => field.style.display = '');
       messageInput.setAttribute('required', '');
