@@ -13,7 +13,7 @@ post '/send-mail' do
   data = {
     name: params[:name],
     email: params[:email],
-    phone: params[:phone],
+    company: params[:company],
     message: params[:message],
     context: params[:context],
     resource_slug: params[:resource_slug],

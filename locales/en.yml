@@ -917,6 +917,8 @@ en:
       error-message: Invalid mail format
     phone-input:
       label: Phone number
+    company-input:
+      label: Company
     message-input:
       label: Message
       sub-label: Please describe your context and how we could help!

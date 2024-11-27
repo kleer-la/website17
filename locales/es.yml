@@ -603,6 +603,8 @@ es:
       error-message: Formato de correo electrónico inválido
     phone-input:
       label: Número de teléfono.
+    company-input:
+      label: Empresa
     message-input:
       label: Mensaje
       sub-label: ¡Cuéntanos cómo podemos ayudarte!
