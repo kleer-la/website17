@@ -4,7 +4,7 @@ Feature: Testimonial and Blog Routing
 
   Scenario Outline: Accessing testimonial or blog content
     And A list of articles with
-    * an article 'existing-blog' with title 'Lorem ipsum'
+    * a published article 'existing-blog' with title 'Lorem ipsum'
     When I go to "<slug>" client page
     Then <action>
 

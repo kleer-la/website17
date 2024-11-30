@@ -21,8 +21,13 @@ get '/blog/:slug' do |slug|
   @where = 'Blog'
   begin
     art = Article.create_one_keventer(slug)
-    redirect("#{session[:locale]}/blog/#{art.slug}", 301) if art.slug != slug
-    blog_one art
+    raise ArticleNotFoundError.new(slug) unless art.published
+
+    if art.slug != slug
+      redirect("#{session[:locale]}/blog/#{art.slug}", 301)
+    else
+      blog_one art
+    end
   rescue ArticleNotFoundError => _e
     return status 404
   end
@@ -47,6 +52,8 @@ get %r{/blog/?} do
 end
 
 def blog_one(article)
+  redirect "/#{session[:locale]}/blog", 301 if article.lang != session[:locale]
+
   @meta_tags.set! title: article.tabtitle,
                   description: article.description,
                   canonical: "#{t('meta_tag.blog.canonical')}/#{article.slug}",
@@ -55,10 +62,6 @@ def blog_one(article)
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'
-
-  if article.lang != session[:locale]
-    redirect "/#{session[:locale]}/blog", 301 # permanent redirect
-  end
 
   rendered_body = @markdown_renderer.render(article.body)
   titles = extract_titles(rendered_body)
