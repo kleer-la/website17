@@ -4,6 +4,9 @@ end
 Given('an article {string} with title {string}') do |slug, title|
   @articles << { 'slug' => slug, 'title' => title, 'published' => false, 'lang' => @lang || 'es' }
 end
+Given('a published article {string} with title {string}') do |slug, title|
+  @articles << { 'slug' => slug, 'title' => title, 'published' => true, 'lang' => @lang || 'es' }
+end
 Given('the article has author {string}') do |author|
   @articles[-1]['trainers'] = (@articles[-1]['trainers'] || []) << { 'name' => author }
 end

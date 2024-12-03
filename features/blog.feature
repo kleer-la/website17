@@ -30,13 +30,13 @@ Feature: Kleer Blogs
   Scenario: landing Article not found
     Given A list of categories
     And A list of articles with
-    * an article 'lorem-ipsum' with title 'Lorem ipsum'
+    * a published article 'lorem-ipsum' with title 'Lorem ipsum'
     When I go to the 'lorem' article page
     Then I should see "Página no encontrada"
 
   Scenario: landing Article found
     Given A list of categories
     And A list of articles with
-    * an article 'lorem-ipsum' with title 'Lorem ipsum'
+    * a published article 'lorem-ipsum' with title 'Lorem ipsum'
     When I go to the 'lorem-ipsum' article page
     Then Title should be "Lorem ipsum"
