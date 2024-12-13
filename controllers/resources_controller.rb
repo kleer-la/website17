@@ -36,3 +36,15 @@ get '/publicamos/mas-productivos' do
   @meta_tags.set! title: "#{@base_title} | Publicamos | Equipos más productivos"
   erb :'old_page/recursos/ebook_masproductivos_plain', layout: :layout_ebook_landing
 end
+
+get '/recursos/:slug' do
+  @active_tab_publicamos = 'active'
+  @resource = Resource.create_list_keventer.find { |r| r.lang == session[:locale].to_sym && r.slug == params[:slug] }
+
+  halt 404 if @resource.nil?
+
+  @meta_tags.set! title: "#{@base_title} | #{@resource.title}",
+                  description: @resource.description
+
+  erb :'resources/show/show', layout: :'layout/layout2022'
+end

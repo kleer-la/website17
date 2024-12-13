@@ -1,0 +1,132 @@
+<section id="resource-detail-hero">
+  <div class="resource-detail-hero">
+    <div class="container">
+      <div class="row">
+        <div class="offset-lg-1 col-lg-6 resource-detail-hero__content">
+          <h1><%=@resource.title%></h1>
+          <p><%=@resource.description%></p>
+        </div>
+        <div class="offset-lg-1 col-lg-4 resource-detail-hero__image">
+          <picture>
+            <img
+              src="<%= @resource.cover %>"
+              alt="<%= @resource.title %>"
+            >
+          </picture>
+        </div>
+      </div>
+    </div>
+    <img
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+      class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
+      alt="decorative figure"
+    />
+  </div>
+</section>
+
+<div class="container resource-detail-body">
+  <div class="row">
+      <% if @resource.getit %>
+        <div class="col-lg-6 mb-4">
+          <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
+            <div class="row">
+              <h2><%= t("contact-us-form.download") %></h2>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xs-12">
+                <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name-input"
+                  required>
+                <div class="invalid-feedback">
+                  <%= t("contact-us-form.name-input.error-message") %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xs-12">
+                <label class="form-label"><%= t("contact-us-form.company-input.label") %></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="company-input"
+                  name="company">
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xs-12">
+                <label class="form-label"><%= t("contact-us-form.email-input.label") %></label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email-input"
+                  required>
+                <div class="invalid-feedback">
+                  <%= t("contact-us-form.email-input.error-message") %>
+                </div>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              <%= t("contact-us-form.message-input.error-message") %>
+            </div>
+
+            <%#= recaptcha_tags callback: 'enableDownload' %>
+            <div id="recaptcha-placeholder" class="mb-3"></div>
+
+            <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
+            <input type="hidden" id="resource-slug" name="resource_slug" value="<%= @resource.slug %>">
+            <div class="btn-center-container">
+              <button type="submit"
+                      id="download"
+                      class="btn my-primary-button"
+                      value="Submit"
+                      disabled
+              >
+                <%= t("contact-us-form.button.text") %></button>
+            </div>
+          </form>
+        </div>
+      <% end %>
+    <div class="col-lg-6 mb-4">
+        <h2>Description</h2>
+        <p><%= @resource.description * 5 %></p>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 mb-4">
+    <% if @resource.cover %>
+      <img src="<%= @resource.cover %>" alt="<%= @resource.title %>" class="img-fluid">
+    <% end %>
+    </div>
+ </div>
+
+      <% if @resource.authors %>
+    <div class="row">
+      <div class="mb-4">
+        <h3>Authors</h3>
+        <%= @resource.authors %>
+      </div>
+    </div>
+      <% end %>
+
+  </div>
+</div>
+<section id="resource-detail__authors">
+  <% unless @resource.authors&.empty? %>
+    <h2><% t("blog.landing.authors")%></h2>
+    <div class="landing-blog-authors__container">
+        <% #@resource.authors.each do |trainer| %>
+        <% #= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
+        <% #end %>
+    </div>
+  <% end %>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    loadReCaptcha('download-form');
+  });
+</script>
