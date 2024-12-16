@@ -376,10 +376,10 @@ es:
       #   title: 'Suscríbete'
   catalog:
     hero:
-      title: Capacitación Empresarial
-      subtitle: Incorpora enfoques ágiles en tu plan de formación.
+      title: Catálogo de Cursos
+      subtitle: Capacitaciones para impulsar el crecimiento, la colaboración y el aprendizaje en todos los niveles de tu empresa
       text: >-
-          Cursos orientados a fortalecer las habilidades en todos los niveles de tu organización. Nuestros métodos de enseñanza permiten comprender y experimentar los conceptos y prácticas de forma inmediata.
+          Nuestros cursos combinan teoría y práctica, brindando a los participantes las herramientas necesarias para aplicar los conceptos aprendidos de forma inmediata. Desde metodologías ágiles como Scrum y Kanban, hasta temáticas clave como Liderazgo, Diseño Organizacional y Product Management.
     list:
       title: ¡Explora nuestra propuesta de capacitación!
     in_company:
