@@ -1,5 +1,25 @@
 class Resource
   @next_null = false
+  @resource_null = nil
+
+  def self.create_one_null(res, opt = {})
+    @next_null = opt[:next_null] == true
+    @resource_null = Resource.new(res, res['lang'] || :es)
+  end
+
+  def self.create_one_keventer(slug)
+    if @next_null
+      @next_null = false
+      raise ResourceNotFoundError.new(slug) unless @resource_null.slug == slug
+
+      return @resource_null
+    end
+
+    api_resp = JsonAPI.new(KeventerAPI.resource_url(slug))
+    raise ResourceNotFoundError.new(slug) unless api_resp.ok?
+
+    Resource.new(api_resp.doc, api_resp.doc['lang'] || :es)
+  end
 
   def self.create_list_null(data)
     @next_null = true
@@ -17,7 +37,10 @@ class Resource
     Resource.load_list(api_resp.doc)
   end
 
-  attr_accessor :id, :format, :slug, :lang, :authors, :translators, :authors_list, :translators_list, :illustrators_list,
+  attr_accessor :id, :format, :slug, :lang,
+                :authors, :translators, :illustrators, # String representations for backward compatibility
+                :authors_list, :translators_list, :illustrators_list, # Original name lists
+                :author_trainers, :translator_trainers, :illustrator_trainers, # New Trainer objects
                 :fb_share, :tw_share, :li_share, :share_link, :kleer_share_url,
                 :title, :description, :cover, :landing, :getit, :buyit, :share_link, :share_text, :tags, :comments
 
@@ -63,12 +86,27 @@ class Resource
       hashtags: @tags
     )
 
-    @authors = init_trainers(doc, 'authors')
-    @authors_list = doc['authors'].map { |e| e['name'] }
+    # @authors = init_trainers(doc, 'authors')
+    # @authors_list = doc['authors'].map { |e| e['name'] }
 
-    @translators = init_trainers(doc, 'translators')
-    @translators_list = doc['translators'].map { |e| e['name'] }
-    @illustrators_list = doc['illustrators'].map { |e| e['name'] }
+    # @translators = init_trainers(doc, 'translators')
+    # @translators_list = doc['translators'].map { |e| e['name'] }
+    # @illustrators_list = doc['illustrators'].map { |e| e['name'] }
+  
+    # Convert contributors to Trainer objects
+    @author_trainers = load_contributors_as_trainers(doc['authors'])
+    @translator_trainers = load_contributors_as_trainers(doc['translators'])
+    @illustrator_trainers = load_contributors_as_trainers(doc['illustrators'])
+
+    # Keep original string representations for backward compatibility
+    @authors = format_contributors_as_string(@author_trainers)
+    @translators = format_contributors_as_string(@translator_trainers)
+    
+    # Keep original name lists
+    @authors_list = doc['authors']&.map { |e| e['name'] } || []
+    @translators_list = doc['translators']&.map { |e| e['name'] } || []
+    @illustrators_list = doc['illustrators']&.map { |e| e['name'] } || []
+
 
     init_dates(doc)
     # "categories_id": null,
@@ -103,5 +141,34 @@ class Resource
       (ac << Resource.new(data, :en)) unless data['title_en'] == ''
       ac
     end
+  end
+
+    private
+  
+    def load_contributors_as_trainers(contributors)
+      return [] if contributors.nil? || contributors.empty?
+  
+      contributors.map do |contributor|
+        trainer = Trainer.new
+        trainer.load_from_json(contributor)
+        trainer
+      end
+    end
+  
+    def format_contributors_as_string(contributors)
+      return nil if contributors.nil? || contributors.empty?
+  
+      contributors.map do |contributor|
+        landing = contributor.landing
+        name = contributor.name
+        landing.to_s.empty? ? name : "<a href=\"#{landing}\">#{name}</a>"
+      end.join(', ')
+    end
+
+end
+
+class ResourceNotFoundError < StandardError
+  def initialize(slug)
+    super("Resource with slug '#{slug}' not found")
   end
 end

@@ -37,9 +37,9 @@ get '/publicamos/mas-productivos' do
   erb :'old_page/recursos/ebook_masproductivos_plain', layout: :layout_ebook_landing
 end
 
-get '/recursos/:slug' do
+get '/recursos/:slug' do |slug|
   @active_tab_publicamos = 'active'
-  @resource = Resource.create_list_keventer.find { |r| r.lang == session[:locale].to_sym && r.slug == params[:slug] }
+  @resource = Resource.create_one_keventer(slug)
 
   halt 404 if @resource.nil?
 

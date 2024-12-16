@@ -4,7 +4,7 @@
       <div class="row">
         <div class="offset-lg-1 col-lg-6 resource-detail-hero__content">
           <h1><%=@resource.title%></h1>
-          <p><%=@resource.description%></p>
+          <p><%=@resource.description%><span style="font-size:14px"><br><br><%=@resource.comments%></span></p>
         </div>
         <div class="offset-lg-1 col-lg-4 resource-detail-hero__image">
           <picture>
@@ -22,12 +22,11 @@
       alt="decorative figure"
     />
   </div>
-</section>
 
-<div class="container resource-detail-body">
+<div class="container resource-detail-body mb-4 offset-lg-1">
   <div class="row">
       <% if @resource.getit %>
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6">
           <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
             <div class="row">
               <h2><%= t("contact-us-form.download") %></h2>
@@ -91,10 +90,12 @@
           </form>
         </div>
       <% end %>
-    <div class="col-lg-6 mb-4">
-        <h2>Description</h2>
-        <p><%= @resource.description * 5 %></p>
-      </div>
+  </div>
+  <div class="row">
+    <div >
+      <h2>Description</h2>
+      <p><%= @resource.description * 5 %></p>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-8 mb-4">
@@ -102,28 +103,17 @@
       <img src="<%= @resource.cover %>" alt="<%= @resource.title %>" class="img-fluid">
     <% end %>
     </div>
- </div>
-
-      <% if @resource.authors %>
-    <div class="row">
-      <div class="mb-4">
-        <h3>Authors</h3>
-        <%= @resource.authors %>
-      </div>
-    </div>
-      <% end %>
-
   </div>
-</div>
-<section id="resource-detail__authors">
+<div class="row">
   <% unless @resource.authors&.empty? %>
-    <h2><% t("blog.landing.authors")%></h2>
+    <h2><%= t("blog.landing.authors")%></h2>
     <div class="landing-blog-authors__container">
-        <% #@resource.authors.each do |trainer| %>
-        <% #= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
-        <% #end %>
+        <%@resource.author_trainers.each do |trainer| %>
+        <%= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
+        <%end %>
     </div>
   <% end %>
+</div>
 </section>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
