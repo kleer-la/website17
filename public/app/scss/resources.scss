@@ -157,9 +157,15 @@ $celeste: #E8F8FD;
   margin-bottom: 1rem;
 }
 
-.pdf-container {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.badge-role {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f8f9fa;  /* Light gray background */
+  color: #212529;            /* Dark text */
+  border: 1px solid #dee2e6; /* Light border */
+  font-size: 1rem;
+  padding: 0.35em 0.65em;
+  transform: translate(-10%, -10%); /* Slight offset for visual interest */
+  z-index: 1;
 }

@@ -1,4 +1,8 @@
-<div class="course-trainers__individual-container">
+<div class="course-trainers__individual-container position-relative">
+  <%unless trainer.role.empty?%>
+    <span class="badge badge-role"><%= t('resources.show.roles')[trainer.role.to_sym] || trainer.role%></span>
+  <%end%>
+
   <img src="<%= "#{trainer.gravatar_picture_url.to_s || ""}?s=400" %>" class="rounded-circle mb-3" loading="lazy"/>
   <h6><%= trainer.name %> </h6>
   <p><%=@markdown_renderer.render(trainer.bio  || "")%></p>

@@ -69,9 +69,9 @@ class Resource
     init_urls
 
     # Convert contributors to Trainer objects
-    @author_trainers = load_contributors_as_trainers(doc['authors'])
-    @translator_trainers = load_contributors_as_trainers(doc['translators'])
-    @illustrator_trainers = load_contributors_as_trainers(doc['illustrators'])
+    @author_trainers = load_contributors_as_trainers(doc, 'authors')
+    @translator_trainers = load_contributors_as_trainers(doc, 'translators')
+    @illustrator_trainers = load_contributors_as_trainers(doc, 'illustrators')
 
     # Keep original string representations for backward compatibility
     @authors = format_contributors_as_string(@author_trainers)
@@ -91,6 +91,10 @@ class Resource
     landing = trainer_data['landing']
     trainer = "<a href=\"#{landing}\">#{trainer}</a>" unless landing.to_s == ''
     trainer
+  end
+
+  def trainers_with_role
+    author_trainers + translator_trainers + illustrator_trainers
   end
 
   def self.load_list(doc)
@@ -124,12 +128,14 @@ class Resource
     end
   end
 
-  def load_contributors_as_trainers(contributors)
+  def load_contributors_as_trainers(doc, role)
+    contributors = doc[role]
     return [] if contributors.nil? || contributors.empty?
 
     contributors.map do |contributor|
       trainer = Trainer.new
       trainer.load_from_json(contributor)
+      trainer.role = role
       trainer
     end
   end

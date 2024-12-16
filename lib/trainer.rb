@@ -2,10 +2,11 @@ require './lib/json_api'
 
 class Trainer
   attr_accessor :id, :name, :bio,
-                :gravatar_email, :twitter_username, :linkedin_url, :landing
+                :gravatar_email, :twitter_username, :linkedin_url, :landing,
+                :role
 
   def initialize
-    @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = ''
+    @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = @role = ''
   end
 
   # TODO: handle lang

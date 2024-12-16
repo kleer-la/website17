@@ -16,6 +16,11 @@ es:
       authors: Autores
       translator: Tradujo
       ilustrator: Ilustró
+    show:
+      roles:
+          authors: Autor
+          translators: Tradujo
+          illustrators: Ilustró
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training
@@ -445,7 +450,7 @@ es:
       back: Volver
       published: Publicado el
       ToC: Tabla de contenido
-      authors: 'Escrito por:'
+      authors: 'Creado por:'
   clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.

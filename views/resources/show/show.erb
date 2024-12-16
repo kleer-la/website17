@@ -24,8 +24,8 @@
   </div>
 
 <div class="container resource-detail-body mb-4 offset-lg-1">
-  <div class="row">
-      <% if @resource.getit %>
+  <div class="row mb-4">
+      <% unless @resource.getit.empty? %>
         <div class="col-lg-6">
           <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
             <div class="row">
@@ -92,22 +92,57 @@
       <% end %>
   </div>
   <% unless @resource.long_description.empty? %>
-  <div class="row">
+  <div class="row mb-4">
     <div >
-      <h2>Description</h2>
+      <h2>Descripción</h2>
       <p><%= @resource.long_description %></p>
     </div>
   </div>
   <% end %>
   <% unless @resource.preview.empty? %>
-  <div class="row">
-    <div class="col-md-8 mb-4">
+  <div class="row mb-4">
+    <div class="col-md-8">
       <img src="<%= @resource.preview %>" alt="" class="img-fluid">
     </div>
   </div>
   <% end %>
-<div class="row">
-  <% trainers = @resource.author_trainers + @resource.translator_trainers + @resource.illustrator_trainers
+  <% unless @resource.landing.empty? %>
+   <div class="row">
+        <% if @resource.landing&.include?('youtu.be') %>
+      <div class="text-center mb-4">
+          <!-- Extract video ID and embed YouTube video -->
+          <% video_id = @resource.landing.split('/').last %>
+          <div class="col-lg-9 col-md-10 mx-auto">
+          <div class="ratio ratio-16x9 mb-4">
+            <iframe 
+              src="https://www.youtube.com/embed/<%= video_id %>"
+              title="YouTube video"
+              allowfullscreen>
+            </iframe>
+          </div>
+          </div>
+      </div>
+        <% elsif @resource.getit.empty? %>
+          <h2>Obtén más información y descarga</h2>
+          <p>Puedes obtener información de uso y descargar el recurso en esta página:</p>
+          <div class="btn-center-container">
+            <button class="info my-secondary-button">
+              <a href="<%= @resource.landing %>"><%= t('resources.card.more_info')%></a>
+            </button>
+          </div>
+        <% else %>
+          <h2>Obtén más información</h2>
+          <p>Puedes obtener información de uso del recurso en esta página:</p>
+          <div class="btn-center-container">
+            <button class="info my-secondary-button">
+              <a href="<%= @resource.landing %>"><%= t('resources.card.more_info')%></a>
+            </button>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+ <div class="row">
+  <% trainers = @resource.trainers_with_role
      unless trainers&.empty? %>
     <h2><%= t("blog.landing.authors")%></h2>
     <div class="landing-blog-authors__container">
