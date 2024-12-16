@@ -91,24 +91,27 @@
         </div>
       <% end %>
   </div>
+  <% unless @resource.long_description.empty? %>
   <div class="row">
     <div >
       <h2>Description</h2>
-      <p><%= @resource.description * 5 %></p>
+      <p><%= @resource.long_description %></p>
     </div>
   </div>
+  <% end %>
+  <% unless @resource.preview.empty? %>
   <div class="row">
     <div class="col-md-8 mb-4">
-    <% if @resource.cover %>
-      <img src="<%= @resource.cover %>" alt="<%= @resource.title %>" class="img-fluid">
-    <% end %>
+      <img src="<%= @resource.preview %>" alt="" class="img-fluid">
     </div>
   </div>
+  <% end %>
 <div class="row">
-  <% unless @resource.authors&.empty? %>
+  <% trainers = @resource.author_trainers + @resource.translator_trainers + @resource.illustrator_trainers
+     unless trainers&.empty? %>
     <h2><%= t("blog.landing.authors")%></h2>
     <div class="landing-blog-authors__container">
-        <%@resource.author_trainers.each do |trainer| %>
+        <%trainers.each do |trainer| %>
         <%= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
         <%end %>
     </div>
