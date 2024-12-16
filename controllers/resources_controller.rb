@@ -41,10 +41,10 @@ get '/recursos/:slug' do |slug|
   @active_tab_publicamos = 'active'
   @resource = Resource.create_one_keventer(slug)
 
-  halt 404 if @resource.nil?
-
   @meta_tags.set! title: "#{@base_title} | #{@resource.title}",
                   description: @resource.description
 
   erb :'resources/show/show', layout: :'layout/layout2022'
+rescue ResourceNotFoundError
+  return status 404
 end

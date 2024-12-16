@@ -1,3 +1,6 @@
+require './lib/json_api'
+require './lib/services/keventer_api'
+
 class Resource
   @next_null = false
   @resource_null = nil
@@ -15,7 +18,8 @@ class Resource
       return @resource_null
     end
 
-    api_resp = JsonAPI.new(KeventerAPI.resource_url(slug))
+    sanitized_slug = slug.unicode_normalize(:nfd).gsub(/\p{M}/, '')
+    api_resp = JsonAPI.new(KeventerAPI.resource_url(sanitized_slug))
     raise ResourceNotFoundError.new(slug) unless api_resp.ok?
 
     Resource.new(api_resp.doc, api_resp.doc['lang'] || :es)
