@@ -10,9 +10,7 @@ get '/recursos' do
 
   @active_tab_publicamos = 'active'
   @resources = Resource.create_list_keventer
-  session[:new] = false
 
-  @new_landing = !(params[:landing].nil? || params[:landing].empty?)
   erb :'resources/index', layout: :'layout/layout2022'
 end
 

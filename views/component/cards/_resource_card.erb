@@ -2,100 +2,18 @@
 landing_uri = "/#{session[:locale]}/recursos/#{resource.slug}" 
 %>
 <div class="card resource-card" style="width: 18rem;" id="<%= resource.slug %>">
-  <%= erb :'component/modals/_share_modal_button', locals: {
-    id: resource.id,
-    facebook: resource.fb_share,
-    twitter: resource.tw_share,
-    linkedin: resource.li_share,
-    resource_link: resource.kleer_share_url
-  }%>
-    <%if @new_landing%>
-        <a href="<%= landing_uri %>">
-        <div class="image-container">
-          <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
-        </div>
-        </a>
-    <%else%>
-      <div class="image-container">
-        <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
-      </div>
-    <%end%>
+  <a href="<%= landing_uri %>">
+  <div class="image-container">
+    <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
+  </div>
+  </a>
   <h2 class="card-title title mobile-title hidden-element"><%= resource.title %></h2>
-
   <div class="card-body body">
-    <%if @new_landing%>
-        <a href="<%= landing_uri %>">
-          <h2 class="card-title title"><%= resource.title %></h2>
-        </a>
-    <%else%>
+    <a href="<%= landing_uri %>">
       <h2 class="card-title title"><%= resource.title %></h2>
-    <%end%>
-    <p class="card-text subtitle"><%= resource.description%></p>
-    <ul class="items">
-      <% unless resource.authors_list == [] %>
-        <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.authors_list, title: t('resources.card.authors')} %>
-        </li>
-      <% end %>
-      <% unless resource.translators_list == [] %>
-        <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.translators_list, title: t('resources.card.translator')} %>
-        </li>
-      <% end %>
-      <% unless resource.illustrators_list == [] %>
-        <li>
-          <%= erb :'component/cards/_authors_block', locals: {authors: resource.illustrators_list, title: t('resources.card.ilustrator')} %>
-        </li>
-      <% end %>
-      <% unless resource.comments == '' %>
-        <li style="font-size: 12px; margin-top:5px">
-          <b><%= t('resources.card.comments')%>: </b> <%= resource.comments %>
-        </li>
-      <% end %>
-    </ul>
-
+    </a>
+    <p class="card-text subtitle"><%= truncate_words(resource.description, 25)%></p>
   </div>
-  <%unless @new_landing%>
-  <div class="footer">
-    <% unless resource.buyit  == '' %>
-      <p class="external-web">
-        <a ><%= t('resources.card.external')%></a>
-      </p>
-    <% end %>
-
-    <% unless resource.landing == '' %>
-      <button class="info my-secondary-button">
-        <a href="<%= resource.landing %>"><%= t('resources.card.more_info')%></a>
-      </button>
-    <% end %>
-    <% unless resource.buyit == '' %>
-      <button  class="my-primary-button button">
-        <a href="<%= resource.buyit %>"><%= t('resources.card.buy_it')%>
-          <img src='/app/img/icons/ExternalLink.svg' loading="lazy"/>
-        </a>
-      </button>
-    <% end %>
-    <% unless resource.getit == '' %> 
-      <% if false #session[:locale] == 'es' %> 
-      <a href="<%= resource.getit %>">
-        <button class="my-primary-button button">
-          Descargar
-          <img src='/app/img/icons/Download.svg' loading="lazy"/>
-        </button>
-      </a>
-      <%else%>
-      <button class="my-primary-button button modal-opener" 
-              onclick="setupDownloadForm('<%= resource.slug %>')" 
-              data-bs-toggle="modal" 
-              data-bs-target="#mail-modal"
-              data-resource-title="<%= resource.title %>">
-              <%= t('resources.card.get_it')%>
-        <img src='/app/img/icons/Download.svg' loading="lazy"/>
-      </button>
-      <% end %>
-    <% end %>
-  </div>
-  <%end%>
 </div>
 
 <script>
