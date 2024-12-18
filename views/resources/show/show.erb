@@ -93,9 +93,8 @@
   </div>
   <% unless @resource.long_description.empty? %>
   <div class="row mb-4">
-    <div >
-      <h2>Descripción</h2>
-      <p><%= @resource.long_description %></p>
+    <div class="col-lg-11">
+      <%= @resource.long_description %>
     </div>
   </div>
   <% end %>
@@ -153,6 +152,10 @@
   <% end %>
 </div>
 </section>
+
+<%= erb :'component/sections/recommended', locals: { recommended: @resource.recommended, title: t('recommended.title')  }%>
+
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     loadReCaptcha('download-form');

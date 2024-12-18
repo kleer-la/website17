@@ -45,6 +45,8 @@ get '/recursos/:slug' do |slug|
   @meta_tags.set! title: "#{@base_title} | #{@resource.title}",
                   description: @resource.description
 
+  @resource.long_description = @markdown_renderer.render(@resource.long_description)
+
   erb :'resources/show/show', layout: :'layout/layout2022'
 rescue ResourceNotFoundError
   return status 404

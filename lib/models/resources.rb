@@ -60,7 +60,7 @@ class Resource
                 :author_trainers, :translator_trainers, :illustrator_trainers, # New Trainer objects
                 :fb_share, :tw_share, :li_share, :kleer_share_url,
                 :title, :description, :cover, :landing, :getit, :buyit, :share_link, :share_text, :tags, :comments,
-                :preview, :long_description
+                :preview, :long_description, :recommended
 
   def initialize(doc, lang)
     @id = doc['id']
@@ -87,6 +87,7 @@ class Resource
     @illustrators_list = doc['illustrators']&.map { |e| e['name'] } || []
 
     init_dates(doc)
+    init_recommended(doc)
     # "categories_id": null,
   end
 
@@ -178,6 +179,10 @@ class Resource
       source: @kleer_share_url,
       hashtags: @tags
     )
+  end
+
+  def init_recommended(doc)
+    @recommended = Recommended.create_list(doc['recommended'])
   end
 end
 
