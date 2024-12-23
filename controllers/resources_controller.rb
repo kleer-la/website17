@@ -10,7 +10,6 @@ get '/recursos' do
 
   @active_tab_publicamos = 'active'
   @resources = Resource.create_list_keventer
-  session[:new] = false
 
   erb :'resources/index', layout: :'layout/layout2022'
 end
@@ -35,4 +34,18 @@ get '/publicamos/mas-productivos' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Publicamos | Equipos más productivos"
   erb :'old_page/recursos/ebook_masproductivos_plain', layout: :layout_ebook_landing
+end
+
+get '/recursos/:slug' do |slug|
+  @active_tab_publicamos = 'active'
+  @resource = Resource.create_one_keventer(slug)
+
+  @meta_tags.set! title: "#{@base_title} | #{@resource.title}",
+                  description: @resource.description
+
+  @resource.long_description = @markdown_renderer.render(@resource.long_description)
+
+  erb :'resources/show/show', layout: :'layout/layout2022'
+rescue ResourceNotFoundError
+  return status 404
 end

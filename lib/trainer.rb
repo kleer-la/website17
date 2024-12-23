@@ -2,16 +2,17 @@ require './lib/json_api'
 
 class Trainer
   attr_accessor :id, :name, :bio,
-                :gravatar_email, :twitter_username, :linkedin_url
+                :gravatar_email, :twitter_username, :linkedin_url, :landing,
+                :role
 
   def initialize
-    @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = ''
+    @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = @role = ''
   end
 
   # TODO: handle lang
   def load_from_json(t_json, _lang = 'es')
     @id = t_json['id'].to_i
-    load_str(%i[name bio gravatar_email twitter_username linkedin_url], t_json)
+    load_str(%i[name bio gravatar_email twitter_username linkedin_url landing], t_json)
     self
   end
 

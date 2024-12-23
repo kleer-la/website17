@@ -1,0 +1,163 @@
+<section id="resource-detail-hero">
+  <div class="resource-detail-hero">
+    <div class="container">
+      <div class="row">
+        <div class="offset-lg-1 col-lg-6 resource-detail-hero__content">
+          <h1><%=@resource.title%></h1>
+          <p><%=@resource.description%><span style="font-size:14px"><br><br><%=@resource.comments%></span></p>
+        </div>
+        <div class="offset-lg-1 col-lg-4 resource-detail-hero__image">
+          <picture>
+            <img
+              src="<%= @resource.cover %>"
+              alt="<%= @resource.title %>"
+            >
+          </picture>
+        </div>
+      </div>
+    </div>
+    <img
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+      class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
+      alt="decorative figure"
+    />
+  </div>
+
+<div class="container resource-detail-body mb-4 offset-lg-1">
+  <div class="row mb-4">
+      <% unless @resource.getit.empty? %>
+        <div class="col-lg-6">
+          <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
+            <div class="row">
+              <h2><%= t("contact-us-form.download") %></h2>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xs-12">
+                <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name-input"
+                  required>
+                <div class="invalid-feedback">
+                  <%= t("contact-us-form.name-input.error-message") %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xs-12">
+                <label class="form-label"><%= t("contact-us-form.company-input.label") %></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="company-input"
+                  name="company">
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-xs-12">
+                <label class="form-label"><%= t("contact-us-form.email-input.label") %></label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email-input"
+                  required>
+                <div class="invalid-feedback">
+                  <%= t("contact-us-form.email-input.error-message") %>
+                </div>
+              </div>
+            </div>
+            <div class="invalid-feedback">
+              <%= t("contact-us-form.message-input.error-message") %>
+            </div>
+
+            <%#= recaptcha_tags callback: 'enableDownload' %>
+            <div id="recaptcha-placeholder" class="mb-3"></div>
+
+            <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
+            <input type="hidden" id="resource-slug" name="resource_slug" value="<%= @resource.slug %>">
+            <div class="btn-center-container">
+              <button type="submit"
+                      id="download"
+                      class="btn my-primary-button"
+                      value="Submit"
+                      disabled
+              >
+                <%= t("contact-us-form.button.text") %></button>
+            </div>
+          </form>
+        </div>
+      <% end %>
+  </div>
+  <% unless @resource.long_description.empty? %>
+  <div class="row mb-4">
+    <div class="col-lg-11">
+      <%= @resource.long_description %>
+    </div>
+  </div>
+  <% end %>
+  <% unless @resource.preview.empty? %>
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <img src="<%= @resource.preview %>" alt="" class="img-fluid">
+    </div>
+  </div>
+  <% end %>
+  <% unless @resource.landing.empty? %>
+   <div class="row">
+        <% if @resource.landing&.include?('youtu.be') %>
+      <div class="text-center mb-4">
+          <!-- Extract video ID and embed YouTube video -->
+          <% video_id = @resource.landing.split('/').last %>
+          <div class="col-lg-9 col-md-10 mx-auto">
+          <div class="ratio ratio-16x9 mb-4">
+            <iframe 
+              src="https://www.youtube.com/embed/<%= video_id %>"
+              title="YouTube video"
+              allowfullscreen>
+            </iframe>
+          </div>
+          </div>
+      </div>
+        <% elsif @resource.getit.empty? %>
+          <h2>Obtén más información y descarga</h2>
+          <p>Puedes obtener información de uso y descargar el recurso en esta página:</p>
+          <div class="btn-center-container">
+            <button class="info my-secondary-button">
+              <a href="<%= @resource.landing %>"><%= t('resources.card.more_info')%></a>
+            </button>
+          </div>
+        <% else %>
+          <h2>Obtén más información</h2>
+          <p>Puedes obtener información de uso del recurso en esta página:</p>
+          <div class="btn-center-container">
+            <button class="info my-secondary-button">
+              <a href="<%= @resource.landing %>"><%= t('resources.card.more_info')%></a>
+            </button>
+          </div>
+        <% end %>
+    </div>
+  <% end %>
+ <div class="row">
+  <% trainers = @resource.trainers_with_role
+     unless trainers&.empty? %>
+    <h2><%= t("blog.landing.authors")%></h2>
+    <div class="landing-blog-authors__container">
+        <%trainers.each do |trainer| %>
+        <%= erb :'component/cards/_trainer_card', locals: {trainer: trainer} %>
+        <%end %>
+    </div>
+  <% end %>
+</div>
+</section>
+
+<%= erb :'component/sections/recommended', locals: { recommended: @resource.recommended, title: t('recommended.title')  }%>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    loadReCaptcha('download-form');
+  });
+</script>

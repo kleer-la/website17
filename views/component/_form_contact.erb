@@ -1,4 +1,4 @@
-<form action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
+<form id="contact-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
       <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
@@ -51,7 +51,7 @@
   </div>
 
   <%#= recaptcha_tags callback: 'enableButton' %>
-  <div id="recaptcha-placeholder"></div>
+  <div id="recaptcha-placeholder" class="mb-3"></div>
 
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
   <input type="hidden" id="resource-slug" name="resource_slug">
@@ -68,31 +68,46 @@
 <script>
   let recaptchaLoaded = false;
   var RECAPTCHA_SITE_KEY = '<%= ENV['RECAPTCHA_SITE_KEY'] %>';
+const recaptchaWidgets = new Map();
 
-  function loadReCaptcha() {
-    if (recaptchaLoaded) return;
-
+function loadReCaptcha(formId) {
+  if (!recaptchaLoaded) {
     var script = document.createElement('script');
     script.src = 'https://www.recaptcha.net/recaptcha/api.js?render=explicit';
     script.async = true;
     script.defer = true;
     script.onload = function() {
-      var placeholder = document.getElementById('recaptcha-placeholder');
-      placeholder.innerHTML = '<div id="recaptcha-widget"></div>';
-      grecaptcha.ready(function() {
-        grecaptcha.render('recaptcha-widget', {
-          'sitekey': RECAPTCHA_SITE_KEY,
-          'callback': 'enableButton'
-        });
-      });
       recaptchaLoaded = true;
+      initializeRecaptcha(formId);
     };
     document.body.appendChild(script);
+  } else {
+    initializeRecaptcha(formId);
   }
+}
 
-  function enableButton() {
-    document.getElementById("submit").disabled = false;
+function initializeRecaptcha(formId) {
+  const placeholder = document.querySelector(`#${formId} #recaptcha-placeholder`);
+  if (!placeholder) return;
+
+  const widgetId = `recaptcha-widget-${formId}`;
+  placeholder.innerHTML = `<div id="${widgetId}"></div>`;
+
+  grecaptcha.ready(function() {
+    const widget = grecaptcha.render(widgetId, {
+      'sitekey': RECAPTCHA_SITE_KEY,
+      'callback': () => enableSubmitButton(formId)
+    });
+    recaptchaWidgets.set(formId, widget);
+  });
+}
+
+function enableSubmitButton(formId) {
+  const submitButton = document.querySelector(`#${formId} [type="submit"]`);
+  if (submitButton) {
+    submitButton.disabled = false;
   }
+}
 
 function setupDownloadForm(resourceSlug) {
     console.log('setupDownloadForm called with:', resourceSlug);
@@ -123,7 +138,7 @@ function setupDownloadForm(resourceSlug) {
       messageInput.setAttribute('required', '');
     }
 
-    loadReCaptcha();
+  loadReCaptcha('contact-form');
   }
 
   // Wait for the DOM to be fully loaded

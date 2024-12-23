@@ -14,10 +14,12 @@ REDIRECT = {
   'entrenamos/eventos/pais/:country_iso_code' => 'agenda',
   'entrenamos/:id' => 'agenda',
   'entrenamos' => 'agenda',
+  'entrenamos/' => 'agenda',
   'entrenamos/evento/:event_id_with_name' => nil,
   'entrenamos/evento/:event_id_with_name/registration' => nil,
   'entrenamos/evento/:event_id_with_name/remote' => nil,
   'entrenamos/evento/:event_id_with_name/entrenador/remote' => nil,
+  # 'comunidad/evento/:event_id_with_name' => '???',   #TODO: convert event ID to event Type
   'categoria/:category_codename' => 'catalogo',
   'categoria/:category_codename/' => 'catalogo'
 }.freeze

@@ -1,4 +1,4 @@
-const itemsPerPage = 8
+const itemsPerPage = 16
 
 let page = 1
 let textInFilter = ''
@@ -10,31 +10,6 @@ const pager = {
     filteredResourcesCount: 0,
     activeResources: [],
     changePage: function (numberPage, items = itemsPerPage){
-        this.actualPage = numberPage
-        this.numberOfPages = Math.ceil(this.activeResources.length / items)
-        const initialItem = (numberPage - 1) * items
-        const finalItem = numberPage * items
-
-        if(numberPage === 1){
-            DOMobjects.showElements(DOMobjects.pager.previousButtons, false)
-        }else if(numberPage === this.numberOfPages){
-            DOMobjects.showElements(DOMobjects.pager.nextButtons, false)
-        }else{
-            DOMobjects.showElements(DOMobjects.pager.nextButtons, true)
-            DOMobjects.showElements(DOMobjects.pager.previousButtons, true)
-        }
-
-        this.activeResources.forEach((resource, index) => {
-            if(index >= initialItem && index < finalItem){
-                resource.card.classList.remove('hidden-element')
-            }else{
-                resource.card.classList.add('hidden-element')
-            }
-        })
-
-        localStorage.setItem('page', this.actualPage);
-        DOMobjects.pager.setPagerText(this.numberOfPages, this.actualPage)
-        addPageToLink()
     }
 }
 
@@ -87,7 +62,7 @@ const DOMobjects = {
 const setInitialPage = () => {
     textInFilter = ''
     pager.activeResources = resources.filter(resource => !resource.card.classList.contains('hidden-element'))
-    pager.changePage(getInitialPage(), itemsPerPage)
+
 }
 
 const cleanAllFilters = () => {
@@ -152,24 +127,27 @@ const getInitialPage = () => {
 }
 
 const filter = () => {
-    pager.filteredResourcesCount = 0
-    pager.actualPage = 1
-    pager.numberOfPages = 0
+  pager.filteredResourcesCount = 0
 
-    resources.forEach(resources => {
-        if (resources.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
-            resources.description.toLowerCase().includes(textInFilter.toLowerCase())) {
+  // Just show/hide based on filter, no paging involved
+  resources.forEach(resource => {
+      if (textInFilter === '' || // Show all if no filter text
+          resource.title.toLowerCase().includes(textInFilter.toLowerCase()) ||
+          resource.description.toLowerCase().includes(textInFilter.toLowerCase())) {
 
-            resources.card.classList.remove('hidden-element')
-            pager.filteredResourcesCount++
-        } else {
-            resources.card.classList.add('hidden-element')
-        }
-    })
+          resource.card.classList.remove('hidden-element')
+          pager.filteredResourcesCount++
+      } else {
+          resource.card.classList.add('hidden-element')
+      }
+  })
 
-    pager.activeResources = resources.filter(resource => !resource.card.classList.contains('hidden-element'))
-    pager.numberOfPages = Math.ceil(pager.activeResources.length / itemsPerPage)
-    pager.changePage(1, itemsPerPage)
+  if(textInFilter) {
+      DOMobjects.showElements([DOMobjects.resources.title], true)
+      DOMobjects.resources.setTitle(`${pager.filteredResourcesCount} resultados para: <b>${textInFilter}</b>`)
+  } else {
+      DOMobjects.showElements([DOMobjects.resources.title], false)
+  }
 }
 
 const buildResourcesFromDOM = () => {
@@ -189,5 +167,7 @@ const buildResourcesFromDOM = () => {
 }
 
 buildResourcesFromDOM()
+resources.forEach(resource => {
+  resource.card.classList.remove('hidden-element') // Show all initially
+})
 setInitialPage()
-

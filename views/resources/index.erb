@@ -1,32 +1,13 @@
-<%# if session[:new] %>
-  <%=erb :'resources/hero' %>
-  <section class="container resources-list">
-    <h2 id="search-title" class="hidden-element"></h2>
-    <% if session[:locale] == 'es' %>
-      <%= erb :'component/_reactive_pager' %>
-    <% end %>
-
-    <div>
-      <%=erb :'resources/list' %>
-    </div>
-
-    <% if session[:locale] == 'es' %>
-      <%= erb :'component/_reactive_pager'%>
-    <% end %>
-
-
-  </section>
-<%# else %>
-  <%#=erb :'component/_generic_hero', locals: {title: t("resources.title"), subtitle: t("resources.subtitle")} %>
-<!--  <div class="container">-->
-<!--    <div id="resource-list" class="row">-->
-      <%#=erb :'resources/resources' %>
-<!--    </div>-->
-<!--  </div>-->
-<%# end %>
+<%=erb :'resources/hero' %>
+<section class="container resources-list">
+  <h2 id="search-title" class="hidden-element"></h2>
+  <div>
+    <%=erb :'resources/list' %>
+  </div>
+</section>
 
 <% if session[:locale] == 'es' %>
-  <script src="/js/resources_filter.js"></script>
+  <script src="/js/resources_filter.js?v=1""></script>
 <% end %>
 
 

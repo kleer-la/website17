@@ -18,6 +18,11 @@ en:
       authors: Authors
       translator: Translator
       ilustrator: Illustrator
+    show:
+      roles:
+          authors: Author
+          translators: Translator
+          illustrators: Illustrator
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training

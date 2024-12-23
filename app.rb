@@ -10,7 +10,14 @@ require 'recaptcha'
 require './lib/metatags'
 require './lib/helpers/custom_markdown'
 require './lib/helpers/timestamp'
-require './lib/router_helper'
+
+# Load all helper files from lib/helpers
+Dir[File.join(File.dirname(__FILE__), 'lib', 'helpers', '*.rb')].each { |file| require file }
+
+# Register all modules that end with "Helper"
+ObjectSpace.each_object(Module) do |m|
+  helpers m if m.is_a?(Module) && !m.is_a?(Class) && m.name && m.name.end_with?('Helper')
+end
 
 require './controllers/helper'
 require './controllers/resources_controller'
