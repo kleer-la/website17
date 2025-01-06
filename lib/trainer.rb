@@ -3,7 +3,7 @@ require './lib/json_api'
 class Trainer
   attr_accessor :id, :name, :bio,
                 :gravatar_email, :twitter_username, :linkedin_url, :landing,
-                :role
+                :role, :signature_credentials
 
   def initialize
     @name = @bio = @gravatar_email = @twitter_username = @linkedin_ur = @role = ''
@@ -12,7 +12,7 @@ class Trainer
   # TODO: handle lang
   def load_from_json(t_json, _lang = 'es')
     @id = t_json['id'].to_i
-    load_str(%i[name bio gravatar_email twitter_username linkedin_url landing], t_json)
+    load_str(%i[name bio gravatar_email twitter_username linkedin_url landing signature_credentials], t_json)
     self
   end
 

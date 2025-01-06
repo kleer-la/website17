@@ -5,7 +5,9 @@
   end
 %>
 
-<% if @event_type.public_editions.length > 0%>
+<% if @event_type.public_editions.length > 0
+      unless @event_type.is_new_version
+%>
   <section id="course-trainers" class="container mt-5 mb-5">
     <h2  class="text-center common-subtitle">El próximo curso será facilitado por</h2>
     <div class="course-trainers__container">
@@ -31,5 +33,87 @@
       <% end %>
     </div>
   </section>
-<% end %>
+<% else %>
+<section id="course-trainers" class="mt-5 mb-5">
+  <h2 class="text-center common-subtitle">El próximo curso será facilitado por</h2>
+  
+  <div class="">
+          <% trainers.each do |trainer| %>
+    <div class="trainer-card mb-4">
+      <div class="row course-trainers__container align-items-start ">
+          <div class="col-md-2"></div>
+          <div class="col-md-5">
+          <h5 class="mb-3 text-white text-uppercase"><%= trainer.signature_credentials %></h5>
+          <h4 class="mb-3 text-white">Hola, soy <%= trainer.name.split(' ').first %></h4>
+          <div class="trainer-bio text-white">
+            <%=@markdown_renderer.render(trainer.bio || "")%>
+          </div>
+        </div>
+        <div class="col-md-5 text-center">         
+          <img src="<%= "#{trainer.gravatar_picture_url.to_s || ""}?s=400" %>" 
+               class="mb-4" 
+               style="width: 300px; height: 300px; object-fit: cover;"
+               loading="lazy"
+               alt="<%= trainer.name %>"/>
+          
+          <div class="social-links mb-4">
+            <% if trainer.linkedin_url != '' and not trainer.linkedin_url.nil? %>
+              <a href="<%= trainer.linkedin_url %>" class="me-3 text-decoration-none" target="_blank">
+                <i class="fa fa-linkedin fa-lg"></i>
+              </a>
+            <% end %>
+            <% if trainer.twitter_username != '' and not trainer.twitter_username.nil? %>
+              <a href="https://twitter.com/<%= trainer.twitter_username %>" class="text-decoration-none" target="_blank">
+                <i class="fa fa-twitter fa-lg"></i>
+              </a>
+            <% end %>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+      <% end %>
+  </div>
+</section>
+<% end 
+ end %>
+
+<style>
+.trainer-card {
+  background: linear-gradient(155deg, #008686 0%, #00d3d3 100%);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  margin-left: -2rem;  /* Extend card to full width */
+  margin-right: -2rem;
+  width: calc(100% + 4rem);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); /* This creates the diagonal cut */
+
+}
+
+.trainer-bio {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.trainer-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+</style>
 
