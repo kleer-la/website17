@@ -1,3 +1,47 @@
+<% if @event_type.is_new_version%>
+<style>
+  .two-column-text {
+    column-count: 2;
+    column-gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Prevent paragraphs and lists from breaking across columns */
+  .two-column-text p,
+  .two-column-text ul,
+  .two-column-text h2 {
+    break-inside: avoid;
+  }
+  
+  /* Add some spacing between elements */
+  .two-column-text p,
+  .two-column-text ul {
+    margin-bottom: 1rem;
+  }
+  
+  /* Make sure lists align properly */
+  .two-column-text ul {
+    padding-left: 1.5rem;
+  }
+
+  /* Make it single column on mobile */
+  @media (max-width: 768px) {
+    .two-column-text {
+      column-count: 1;
+    }
+  }
+</style>
+
+<section id="course-recipients" class="container mt-5">
+  <div class="row">
+    <h2 class="mb-4 text-center common-subtitle"><%= t("course_landing.target") %></h2>
+    <div class="two-column-text">
+      <%=@markdown_renderer.render( @event_type.recipients )%>
+    </div>
+  </div>
+</section>
+<% else %>
 <section id="course-recipients" class="container mt-5">
   <div class="row">
     <div class="col-md-6">
@@ -9,3 +53,4 @@
     </div>
   </div>
 </section>
+<% end %>
