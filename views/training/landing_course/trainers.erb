@@ -7,6 +7,7 @@
 
 <% if @event_type.public_editions.length > 0
       unless @event_type.is_new_version
+      # Old version - still used in resources!!
 %>
   <section id="course-trainers" class="container mt-5 mb-5">
     <h2  class="text-center common-subtitle">El próximo curso será facilitado por</h2>
@@ -16,7 +17,7 @@
         <div class="course-trainers__individual-container">
           <img src="<%= "#{trainer.gravatar_picture_url}?s=400" %>" class="rounded-circle mb-3" loading="lazy"/>
           <h6><%= trainer.name %></h6>
-          <p><%=@markdown_renderer.render(trainer.bio)%></p>
+          <p><%=@markdown_renderer.render(smart_truncate(trainer.bio, 200))%></p>
           <div>
             <% if trainer.linkedin_url != '' %>
               <a href="<%= trainer.linkedin_url %>" class="me-2">
@@ -46,17 +47,23 @@
           <h5 class="mb-3 text-white text-uppercase"><%= trainer.signature_credentials %></h5>
           <h4 class="mb-3 text-white">Hola, soy <%= trainer.name.split(' ').first %>.</h4>
           <div class="trainer-bio text-white">
+              <% trainer.bio = '''Durante más de 12 años he ayudado a personas y organizaciones a convertir ideas en logros concretos. Como Agile Coach y consultor, he diseñado experiencias de aprendizaje que transforman propósitos en resultados reales.
+
+> "No necesitas más tiempo, necesitas un plan que funcione."
+
+Estoy aquí para ayudarte a diseñar un año que sume a tu vida, con herramientas que yo mismo he probado y perfeccionado.''' %>
+
             <%=@markdown_renderer.render(trainer.bio || "")%>
           </div>
         </div>
-        <div class="col-md-5 text-center">         
-          <img src="<%= "#{trainer.gravatar_picture_url.to_s || ""}?s=400" %>" 
-               class="mb-4" 
-               style="width: 300px; height: 300px; object-fit: cover;"
-               loading="lazy"
-               alt="<%= trainer.name %>"/>
-          
-          <div class="social-links mb-4">
+        <div class="col-md-5 text-center">
+          <div class="trainer-image-container">
+            <img src="<%= "#{trainer.gravatar_picture_url.to_s || ""}?s=400" %>" 
+                class="mb-4" 
+                loading="lazy"
+                alt="<%= trainer.name %>"/>
+          </div>          
+          <div class="social-links mb-3 mt-3">
             <% if trainer.linkedin_url != '' and not trainer.linkedin_url.nil? %>
               <a href="<%= trainer.linkedin_url %>" class="me-3 text-decoration-none" target="_blank">
                 <i class="fa fa-linkedin fa-lg"></i>
@@ -69,8 +76,6 @@
             <% end %>
           </div>
         </div>
-        
-
       </div>
     </div>
       <% end %>
@@ -81,7 +86,7 @@
 
 <style>
 .trainer-card {
-  background: linear-gradient(155deg, #008686 0%, #00d3d3 100%);
+  background: linear-gradient(155deg, #43B045 0%, #00d3d3 100%);
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -90,9 +95,19 @@
   margin-right: -2rem;
   width: calc(100% + 4rem);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); /* This creates the diagonal cut */
-
 }
 
+.trainer-image-container {
+  width: 300px;  /* Base width */
+  height: 400px; /* 4:3 ratio of the width */
+  margin: 0 auto;
+}
+
+.trainer-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .trainer-bio {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -115,5 +130,19 @@
   background: rgba(255, 255, 255, 0.2) !important;
   color: white !important;
 }
-</style>
 
+.trainer-bio blockquote {
+  border: none;
+  background: transparent;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.trainer-bio blockquote p {
+  color: #ffd700; /* Golden yellow */
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+}
+</style>
