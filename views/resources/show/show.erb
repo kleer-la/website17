@@ -1,12 +1,12 @@
 <section id="resource-detail-hero">
   <div class="resource-detail-hero">
-    <div class="container">
+    <div class="container offset-lg-1">
       <div class="row">
-        <div class="offset-lg-1 col-lg-6 resource-detail-hero__content">
+        <div class="col-12 col-lg-6 resource-detail-hero__content">
           <h1><%=@resource.title%></h1>
           <p><%=@resource.description%><span style="font-size:14px"><br><br><%=@resource.comments%></span></p>
         </div>
-        <div class="offset-lg-1 col-lg-4 resource-detail-hero__image">
+        <div class="colo-12 col-lg-4 resource-detail-hero__image">
           <picture>
             <img
               src="<%= @resource.cover %>"
