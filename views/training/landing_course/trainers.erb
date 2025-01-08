@@ -36,14 +36,13 @@
   </section>
 <% else %>
 <section id="course-trainers" class="container mt-5 mb-5">
-  <h2 class="text-center common-subtitle">El próximo curso será facilitado por</h2>
-  
-  <div class="">
+  <h2 class="text-center common-subtitle mb-4">El próximo curso será facilitado por</h2>
+  <div class="course-trainers__container">
           <% trainers.each do |trainer| %>
     <div class="trainer-card mb-4">
-      <div class="row course-trainers__container align-items-start ">
-          <div class="col-md-2"></div>
-          <div class="col-md-5">
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
           <h5 class="mb-3 text-white text-uppercase"><%= trainer.signature_credentials %></h5>
           <h4 class="mb-3 text-white">Hola, soy <%= trainer.name.split(' ').first %>.</h4>
           <div class="trainer-bio text-white">
@@ -82,11 +81,12 @@
 .trainer-card {
   background: linear-gradient(155deg, #43B045 0%, #00d3d3 100%);
   padding: 2rem;
+  padding-bottom: 5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   width: calc(100% + 4rem);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); /* This creates the diagonal cut */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); /* This creates the diagonal cut */
 }
 
 .trainer-image-container {
@@ -101,8 +101,8 @@
   object-fit: cover;
 }
 .trainer-bio {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .trainer-bio p:last-child {
