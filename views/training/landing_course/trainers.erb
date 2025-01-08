@@ -5,7 +5,10 @@
   end
 %>
 
-<% if @event_type.public_editions.length > 0%>
+<% if @event_type.public_editions.length > 0
+      unless @event_type.is_new_version
+      # Old version - still used in resources!!
+%>
   <section id="course-trainers" class="container mt-5 mb-5">
     <h2  class="text-center common-subtitle">El próximo curso será facilitado por</h2>
     <div class="course-trainers__container">
@@ -13,8 +16,8 @@
 
         <div class="course-trainers__individual-container">
           <img src="<%= "#{trainer.gravatar_picture_url}?s=400" %>" class="rounded-circle mb-3" loading="lazy"/>
-          <h6><%= trainer.name %> </h6>
-          <p><%=@markdown_renderer.render(trainer.bio)%></p>
+          <h6><%= trainer.name %></h6>
+          <p><%=@markdown_renderer.render(smart_truncate(trainer.bio, 200))%></p>
           <div>
             <% if trainer.linkedin_url != '' %>
               <a href="<%= trainer.linkedin_url %>" class="me-2">
@@ -31,5 +34,107 @@
       <% end %>
     </div>
   </section>
-<% end %>
+<% else %>
+<section id="course-trainers" class="container mt-5 mb-5">
+  <h2 class="text-center common-subtitle mb-4">El próximo curso será facilitado por</h2>
+  <div class="course-trainers__container">
+          <% trainers.each do |trainer| %>
+    <div class="trainer-card mb-4">
+      <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-6">
+          <h5 class="mb-3 text-white text-uppercase"><%= trainer.signature_credentials %></h5>
+          <h4 class="mb-3 text-white">Hola, soy <%= trainer.name.split(' ').first %>.</h4>
+          <div class="trainer-bio text-white">
+            <%=@markdown_renderer.render(trainer.long_bio || "")%>
+          </div>
+        </div>
+        <div class="col-md-5 text-center">
+          <div class="trainer-image-container">
+            <img src="<%= "#{trainer.gravatar_picture_url.to_s || ""}?s=400" %>" 
+                class="mb-4" 
+                loading="lazy"
+                alt="<%= trainer.name %>"/>
+          </div>          
+          <div class="social-links mb-3 mt-3">
+            <% if trainer.linkedin_url != '' and not trainer.linkedin_url.nil? %>
+              <a href="<%= trainer.linkedin_url %>" class="me-3 text-decoration-none" target="_blank">
+                <i class="fa fa-linkedin fa-lg"></i>
+              </a>
+            <% end %>
+            <% if trainer.twitter_username != '' and not trainer.twitter_username.nil? %>
+              <a href="https://twitter.com/<%= trainer.twitter_username %>" class="text-decoration-none" target="_blank">
+                <i class="fa fa-twitter fa-lg"></i>
+              </a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</section>
+<% end 
+ end %>
 
+<style>
+.trainer-card {
+  background: linear-gradient(155deg, #43B045 0%, #00d3d3 100%);
+  padding: 2rem;
+  padding-bottom: 5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  width: calc(100% + 4rem);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); /* This creates the diagonal cut */
+}
+
+.trainer-image-container {
+  width: 300px;  /* Base width */
+  height: 400px; /* 4:3 ratio of the width */
+  margin: 0 auto;
+}
+
+.trainer-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.trainer-bio {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.trainer-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: white;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+}
+
+.trainer-bio blockquote {
+  border: none;
+  background: transparent;
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.trainer-bio blockquote p {
+  color: #ffd700; /* Golden yellow */
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+}
+</style>

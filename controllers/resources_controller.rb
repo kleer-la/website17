@@ -40,7 +40,7 @@ get '/recursos/:slug' do |slug|
   @active_tab_publicamos = 'active'
   @resource = Resource.create_one_keventer(slug)
 
-  @meta_tags.set! title: "#{@base_title} | #{@resource.title}",
+  @meta_tags.set! title: @resource.title,
                   description: @resource.description
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)

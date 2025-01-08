@@ -151,12 +151,18 @@ $celeste: #E8F8FD;
   }
 }
 
-.resource-detail-body h2 {
-  color: var(--text-primary);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.resource-detail-body{
+   h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  a{
+    color: $secondary-blue;
+    font-weight: bold;
+  }
+  
 }
-
 .badge-role {
   position: absolute;
   top: 0;

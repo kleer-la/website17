@@ -5,7 +5,7 @@
 
   <img src="<%= "#{trainer.gravatar_picture_url.to_s || ""}?s=400" %>" class="rounded-circle mb-3" loading="lazy"/>
   <h6><%= trainer.name %> </h6>
-  <p><%=@markdown_renderer.render(trainer.bio  || "")%></p>
+  <p><%=@markdown_renderer.render(smart_truncate(trainer.bio, 210) || "")%></p>
   <div>
     <% if trainer.linkedin_url != '' and not trainer.linkedin_url.nil? %>
       <a href="<%= trainer.linkedin_url %>" class="me-2">

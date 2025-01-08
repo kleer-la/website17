@@ -1,3 +1,13 @@
+<% if @event_type.is_new_version%>
+<section id="course-recipients" class="container mt-5">
+  <div class="row">
+    <h2 class="mb-4 text-center common-subtitle"><%= t("course_landing.target") %></h2>
+    <div >
+      <%=@markdown_renderer.render( @event_type.recipients )%>
+    </div>
+  </div>
+</section>
+<% else %>
 <section id="course-recipients" class="container mt-5">
   <div class="row">
     <div class="col-md-6">
@@ -9,3 +19,4 @@
     </div>
   </div>
 </section>
+<% end %>
