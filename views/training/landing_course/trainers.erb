@@ -35,7 +35,7 @@
     </div>
   </section>
 <% else %>
-<section id="course-trainers" class="mt-5 mb-5">
+<section id="course-trainers" class="container mt-5 mb-5">
   <h2 class="text-center common-subtitle">El próximo curso será facilitado por</h2>
   
   <div class="">
@@ -47,13 +47,7 @@
           <h5 class="mb-3 text-white text-uppercase"><%= trainer.signature_credentials %></h5>
           <h4 class="mb-3 text-white">Hola, soy <%= trainer.name.split(' ').first %>.</h4>
           <div class="trainer-bio text-white">
-              <% trainer.bio = '''Durante más de 12 años he ayudado a personas y organizaciones a convertir ideas en logros concretos. Como Agile Coach y consultor, he diseñado experiencias de aprendizaje que transforman propósitos en resultados reales.
-
-> "No necesitas más tiempo, necesitas un plan que funcione."
-
-Estoy aquí para ayudarte a diseñar un año que sume a tu vida, con herramientas que yo mismo he probado y perfeccionado.''' %>
-
-            <%=@markdown_renderer.render(trainer.bio || "")%>
+            <%=@markdown_renderer.render(trainer.long_bio || "")%>
           </div>
         </div>
         <div class="col-md-5 text-center">
@@ -91,8 +85,6 @@ Estoy aquí para ayudarte a diseñar un año que sume a tu vida, con herramienta
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  margin-left: -2rem;  /* Extend card to full width */
-  margin-right: -2rem;
   width: calc(100% + 4rem);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); /* This creates the diagonal cut */
 }
