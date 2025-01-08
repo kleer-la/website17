@@ -157,11 +157,11 @@ $celeste: #E8F8FD;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
-  a {
-    color: #007bff;
-    text-decoration: none;
-    margin-right: 0.5rem;
+  a{
+    color: $secondary-blue;
+    font-weight: bold;
   }
+  
 }
 .badge-role {
   position: absolute;
