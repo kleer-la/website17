@@ -36,7 +36,7 @@ en:
         Resources and tools for Scrum, Product Owner, Scrum Master, Team
         development, Retrospectives, Leadership, Communication, Kanban, Agile
         Coaching
-      canonical: /recursos
+      canonical: /resources
     catalog:
       title: Catalog of courses and workshops
       description: >-
@@ -777,6 +777,12 @@ en:
       published: Published
       ToC: Table of contents
       authors: Written by
+  resource:
+    show:
+      more_info:
+        title: Get more info
+        text: Go to a page with more information about this resource.
+        button: More info
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.

@@ -14,12 +14,6 @@ get '/recursos' do
   erb :'resources/index', layout: :'layout/layout2022'
 end
 
-get '/recursos/primeros_pasos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Recursos"
-  erb :'old_page/recursos/recursos_primeros_pasos', layout: :'layout/layout2022'
-end
-
 get '/publicamos/scrum' do
   @active_tab_publicamos = 'active'
   @meta_tags.set! title: "#{@base_title} | Publicamos | Proyectos Ágiles con Scrum"
@@ -36,12 +30,14 @@ get '/publicamos/mas-productivos' do
   erb :'old_page/recursos/ebook_masproductivos_plain', layout: :layout_ebook_landing
 end
 
-get '/recursos/:slug' do |slug|
+# get '/recursos/:slug' do |slug|
+get %r{/(resources|recursos)/([^/]+)} do |_, slug|
   @active_tab_publicamos = 'active'
-  @resource = Resource.create_one_keventer(slug)
-
-  @meta_tags.set! title: @resource.title,
-                  description: @resource.description
+  @resource = Resource.create_one_keventer(slug, session[:locale])
+  @meta_tags.set! title: @resource.tabtitle,
+                  description: @resource.seo_description,
+                  canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}",
+                  image: @resource.cover
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 

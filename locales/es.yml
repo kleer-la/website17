@@ -451,6 +451,12 @@ es:
       published: Publicado el
       ToC: Tabla de contenido
       authors: 'Creado por:'
+  resource:
+    show:
+      more_info:
+        title: Obtén más información
+        text: Puedes obtener información de uso del recurso en esta página
+        button: Más info
   clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.

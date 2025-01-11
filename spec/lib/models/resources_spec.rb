@@ -163,7 +163,7 @@ describe Resource do
         'illustrators' => []
       }
 
-      Resource.create_one_null(test_resource, next_null: true)
+      Resource.create_one_null(test_resource, 'es', next_null: true)
       resource = Resource.create_one_keventer('test')
 
       expect(resource.id).to eq 1
