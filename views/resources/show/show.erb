@@ -122,19 +122,19 @@
           </div>
       </div>
         <% elsif @resource.getit.empty? %>
-          <h2>Obtén más información y descarga</h2>
-          <p>Puedes obtener información de uso y descargar el recurso en esta página:</p>
+          <h2><%=t('resource.show.more_info.title')%></h2>
+          <p><%=t('resource.show.more_info.text')%></p>
           <div class="btn-center-container">
             <button class="info my-secondary-button">
-              <a href="<%= @resource.landing %>"><%= t('resources.card.more_info')%></a>
+              <a href="<%= @resource.landing %>"><%=t('resource.show.more_info.button')%></a>
             </button>
           </div>
         <% else %>
-          <h2>Obtén más información</h2>
-          <p>Puedes obtener información de uso del recurso en esta página:</p>
+          <h2><%=t('resource.show.more_info.title')%></h2>
+          <p><%=t('resource.show.more_info.text')%></p>
           <div class="btn-center-container">
             <button class="info my-secondary-button">
-              <a href="<%= @resource.landing %>"><%= t('resources.card.more_info')%></a>
+              <a href="<%= @resource.landing %>"><%=t('resource.show.more_info.button')%></a>
             </button>
           </div>
         <% end %>
@@ -154,7 +154,6 @@
 </section>
 
 <%= erb :'component/sections/recommended', locals: { recommended: @resource.recommended, title: t('recommended.title')  }%>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {

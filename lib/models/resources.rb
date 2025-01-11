@@ -5,12 +5,12 @@ class Resource
   @next_null = false
   @resource_null = nil
 
-  def self.create_one_null(res, opt = {})
+  def self.create_one_null(res, locale, opt = {})
     @next_null = opt[:next_null] == true
-    @resource_null = Resource.new(res, res['lang'] || :es)
+    @resource_null = Resource.new(res, locale || 'es')
   end
 
-  def self.create_one_keventer(slug)
+  def self.create_one_keventer(slug, locale = 'es')
     if @next_null
       @next_null = false
       raise ResourceNotFoundError.new(slug) unless @resource_null.slug == slug
@@ -22,7 +22,7 @@ class Resource
     api_resp = JsonAPI.new(KeventerAPI.resource_url(sanitized_slug))
     raise ResourceNotFoundError.new(slug) unless api_resp.ok?
 
-    Resource.new(api_resp.doc, api_resp.doc['lang'] || :es)
+    Resource.new(api_resp.doc, locale)
   end
 
   def self.create_list_null(data)
@@ -42,6 +42,8 @@ class Resource
   end
   LOCALIZED_FIELDS = %w[
     title
+    tabtitle
+    seo_description
     description
     cover
     landing
@@ -55,12 +57,11 @@ class Resource
     long_description
   ].freeze
   attr_accessor :id, :format, :slug, :lang,
-                :authors, :translators, :illustrators, # String representations for backward compatibility
-                :authors_list, :translators_list, :illustrators_list, # Original name lists
-                :author_trainers, :translator_trainers, :illustrator_trainers, # New Trainer objects
-                :fb_share, :tw_share, :li_share, :kleer_share_url,
-                :title, :description, :cover, :landing, :getit, :buyit, :share_link, :share_text, :tags, :comments,
-                :preview, :long_description, :recommended
+                :authors, :translators, :illustrators,
+                :authors_list, :translators_list, :illustrators_list,
+                :author_trainers, :translator_trainers, :illustrator_trainers,
+                :fb_share, :tw_share, :li_share, :kleer_share_url, :recommended,
+                *LOCALIZED_FIELDS
 
   def initialize(doc, lang)
     @id = doc['id']
@@ -69,26 +70,10 @@ class Resource
     @lang = lang
 
     init_localized_fields(doc)
-
     init_urls
-
-    # Convert contributors to Trainer objects
-    @author_trainers = load_contributors_as_trainers(doc, 'authors')
-    @translator_trainers = load_contributors_as_trainers(doc, 'translators')
-    @illustrator_trainers = load_contributors_as_trainers(doc, 'illustrators')
-
-    # Keep original string representations for backward compatibility
-    @authors = format_contributors_as_string(@author_trainers)
-    @translators = format_contributors_as_string(@translator_trainers)
-
-    # Keep original name lists
-    @authors_list = doc['authors']&.map { |e| e['name'] } || []
-    @translators_list = doc['translators']&.map { |e| e['name'] } || []
-    @illustrators_list = doc['illustrators']&.map { |e| e['name'] } || []
-
+    init_contributors(doc)
     init_dates(doc)
     init_recommended(doc)
-    # "categories_id": null,
   end
 
   def show_one_trainer(trainer_data)
@@ -129,8 +114,13 @@ class Resource
 
   def init_localized_fields(doc)
     LOCALIZED_FIELDS.each do |field|
-      instance_variable_set("@#{field}", doc["#{field}_#{@lang}"] || '')
+      value = doc["#{field}_#{@lang}"] || ''
+      instance_variable_set("@#{field}", value)
     end
+    @tabtitle = @title if @tabtitle.to_s == ''
+    @seo_description = @description if @seo_description.to_s == ''
+
+    @seo_description = @seo_description[0..156] + '...' if @seo_description.length > 160
   end
 
   def load_contributors_as_trainers(doc, role)
@@ -183,6 +173,22 @@ class Resource
 
   def init_recommended(doc)
     @recommended = Recommended.create_list(doc['recommended'])
+  end
+
+  def init_contributors(doc)
+    # Convert contributors to Trainer objects
+    @author_trainers = load_contributors_as_trainers(doc, 'authors')
+    @translator_trainers = load_contributors_as_trainers(doc, 'translators')
+    @illustrator_trainers = load_contributors_as_trainers(doc, 'illustrators')
+
+    # Keep original string representations for backward compatibility
+    @authors = format_contributors_as_string(@author_trainers)
+    @translators = format_contributors_as_string(@translator_trainers)
+
+    # Keep original name lists
+    @authors_list = doc['authors']&.map { |e| e['name'] } || []
+    @translators_list = doc['translators']&.map { |e| e['name'] } || []
+    @illustrators_list = doc['illustrators']&.map { |e| e['name'] } || []
   end
 end
 
