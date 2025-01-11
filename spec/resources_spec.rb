@@ -38,7 +38,7 @@ describe Resource do
     it "should handle null resource when next_null is true" do
       # Setup
       slug = "test-resource"
-      Resource.create_one_null({ 'slug' => slug }, next_null: true)
+      Resource.create_one_null({ 'slug' => slug }, 'es', next_null: true)
 
       # Test
       resource = Resource.create_one_keventer(slug)
