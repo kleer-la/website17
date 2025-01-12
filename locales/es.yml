@@ -457,6 +457,9 @@ es:
         title: Obtén más información
         text: Puedes obtener información de uso del recurso en esta página
         button: Más info
+      download:
+        notify_me: ¿Te avisamos cuando haya novedades relacionadas?
+        suscribe: Suscríbete a nuestro newsletter
   clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.

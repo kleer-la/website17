@@ -41,6 +41,7 @@ get %r{/(resources|recursos)/([^/]+)} do |_, slug|
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 
+  @also_download = @resource.also_download(4)
   erb :'resources/show/show', layout: :'layout/layout2022'
 rescue ResourceNotFoundError
   return status 404

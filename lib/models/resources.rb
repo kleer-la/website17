@@ -95,6 +95,10 @@ class Resource
     end
   end
 
+  def also_download(max)
+    @recommended.select { |rec| rec.type == 'resource' }.first(max)
+  end
+
   private
 
   def init_trainers(doc, role)

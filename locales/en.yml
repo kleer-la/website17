@@ -783,6 +783,9 @@ en:
         title: Get more info
         text: Go to a page with more information about this resource.
         button: More info
+      download:
+        notify_me: Notify me when there are updates      
+        suscribe: Subscribe to our newsletter
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.
