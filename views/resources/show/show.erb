@@ -25,109 +25,108 @@
 </section>
 <section id="resource-detail-body" class="container resource-detail-body">
 <div class="mb-4 offset-lg-1 ">
-  <div class="row mb-4">
-      <% unless @resource.getit.empty? %>
-        <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
+  <% unless @resource.getit.empty? %>
+    <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
+    <div class="row mb-4">
+      <div class="row">
+        <div class="col-md-6">
           <div class="row">
-            <div class="col-md-6">
-              <div class="row">
-                <h2><%= t("contact-us-form.download") %></h2>
-              </div>
-              <div class="row">
-                <div class="mb-3 col-xs-12">
-                  <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="name"
-                    id="name-input"
-                    required>
-                  <div class="invalid-feedback">
-                    <%= t("contact-us-form.name-input.error-message") %>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="mb-3 col-xs-12">
-                  <label class="form-label"><%= t("contact-us-form.company-input.label") %></label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="company-input"
-                    name="company">
-                </div>
-              </div>
-              <div class="row">
-                <div class="mb-3 col-xs-12">
-                  <label class="form-label"><%= t("contact-us-form.email-input.label") %></label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    id="email-input"
-                    required>
-                  <div class="invalid-feedback">
-                    <%= t("contact-us-form.email-input.error-message") %>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="mb-3 col-xs-12">
-                  <div class="form-group">
-                    <input type="checkbox" id="can_we_contact" name="can_we_contact">
-                    <label for="can_we_contact"><%= t('resource.show.download.notify_me') %></label>
-                  </div>
-
-                  <div class="form-group">
-                    <input type="checkbox" id="suscribe" name="suscribe">
-                    <label for="suscribe"><%= t('resource.show.download.suscribe') %></label>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="invalid-feedback">
-                  <%= t("contact-us-form.message-input.error-message") %>
-                </div>
-
-                <%#= recaptcha_tags callback: 'enableDownload' %>
-                <div id="recaptcha-placeholder" class="mb-3"></div>
+            <h2><%= t("contact-us-form.download") %></h2>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-xs-12">
+              <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="name-input"
+                required>
+              <div class="invalid-feedback">
+                <%= t("contact-us-form.name-input.error-message") %>
               </div>
             </div>
-            <div class="col-12 col-md-5">
-              <%if @also_download.count > 0 %>
-                <div class="bg-light rounded-3 p-3 mt-4">
-                  <div class="row">
-                    <h3>También descargar...</h3>
-                    <%@also_download.each do |resource| %>
-                        <div class="form-group d-flex align-items-center">
-                          <input type="checkbox" id="ad-<%=resource.slug%>" name="ad-<%=resource.slug%>" class="me-2">
-                          <label for="ad-<%=resource.slug%>"><strong><%=resource.title%>:</strong> <%=resource.subtitle%></label>
-                        </div>
-                    <%end%>
-                  </div>
-                </div>
-              <%end%>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-xs-12">
+              <label class="form-label"><%= t("contact-us-form.company-input.label") %></label>
+              <input
+                type="text"
+                class="form-control"
+                id="company-input"
+                name="company">
             </div>
           </div>
+          <div class="row">
+            <div class="mb-3 col-xs-12">
+              <label class="form-label"><%= t("contact-us-form.email-input.label") %></label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email-input"
+                required>
+              <div class="invalid-feedback">
+                <%= t("contact-us-form.email-input.error-message") %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-xs-12">
+              <div class="form-group">
+                <input type="checkbox" id="can_we_contact" name="can_we_contact">
+                <label for="can_we_contact"><%= t('resource.show.download.notify_me') %></label>
+              </div>
 
-          </div>
-          <div class="row col-md-6">
-            <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
-            <input type="hidden" id="resource-slug" name="resource_slug" value="<%= @resource.slug %>">
-            <div class="btn-center-container">
-              <button type="submit"
-                      id="download"
-                      class="btn my-primary-button"
-                      value="Submit"
-                      disabled
-              >
-                <%= t("contact-us-form.button.text") %></button>
+              <div class="form-group">
+                <input type="checkbox" id="suscribe" name="suscribe">
+                <label for="suscribe"><%= t('resource.show.download.suscribe') %></label>
+              </div>
             </div>
           </div>
-          
-        </form>
-      <% end %>
-  </div>
+          <div class="row">
+            <div class="invalid-feedback">
+              <%= t("contact-us-form.message-input.error-message") %>
+            </div>
+
+            <%#= recaptcha_tags callback: 'enableDownload' %>
+            <div id="recaptcha-placeholder" class="mb-3"></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-5">
+          <%if @also_download.count > 0 %>
+            <div class="bg-light rounded-3 p-3 mt-4">
+              <div class="row">
+                <h3>También descargar...</h3>
+                <%@also_download.each do |resource| %>
+                    <div class="form-group d-flex align-items-center">
+                      <input type="checkbox" id="ad-<%=resource.slug%>" name="ad-<%=resource.slug%>" class="me-2">
+                      <label for="ad-<%=resource.slug%>"><strong><%=resource.title%>:</strong> <%=resource.subtitle%></label>
+                    </div>
+                <%end%>
+              </div>
+            </div>
+          <%end%>
+        </div>
+      </div>
+
+      </div>
+      <div class="row col-md-6">
+        <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
+        <input type="hidden" id="resource-slug" name="resource_slug" value="<%= @resource.slug %>">
+        <div class="btn-center-container">
+          <button type="submit"
+                  id="download"
+                  class="btn my-primary-button"
+                  value="Submit"
+                  disabled
+          >
+            <%= t("contact-us-form.button.text") %></button>
+        </div>
+      </div>          
+    </div>
+    </form>
+  <% end %>
   <% unless @resource.long_description.empty? %>
   <div class="row mb-4">
     <div class="col-lg-11">

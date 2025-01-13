@@ -10,7 +10,7 @@ describe 'MyApp' do
 
   describe 'POST /send-mail' do
     let(:mailer_instance) { instance_double(Mailer) }
-    let(:api_url) { 'https://eventos.kleer.la/api/contact_us' }
+      let(:api_url) { 'https://test.example.com/api/contact_us' }
 
     before do
       allow_any_instance_of(Sinatra::Application).to receive(:verify_recaptcha).and_return(true)
