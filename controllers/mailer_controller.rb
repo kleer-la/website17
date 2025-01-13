@@ -25,6 +25,7 @@ post '/send-mail' do
     context: params[:context],
     language: session[:locale],
     resource_slug: params[:resource_slug],
+    initial_slug: params[:resource_slug],
     can_we_contact: params[:can_we_contact] == 'on',
     suscribe: params[:suscribe] == 'on'
   }
