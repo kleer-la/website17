@@ -17,7 +17,9 @@ post '/send-mail' do
     message: params[:message],
     context: params[:context],
     resource_slug: params[:resource_slug],
-    language: session[:locale]
+    language: session[:locale],
+    can_we_contact: params[:can_we_contact] == 'on',
+    suscribe: params[:suscribe] == 'on'
   }
 
   if verify_recaptcha
