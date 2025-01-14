@@ -58,6 +58,7 @@ class Resource
   ].freeze
   attr_accessor :id, :format, :slug, :lang,
                 :authors, :translators, :illustrators,
+                :downloadable,
                 :authors_list, :translators_list, :illustrators_list,
                 :author_trainers, :translator_trainers, :illustrator_trainers,
                 :fb_share, :tw_share, :li_share, :kleer_share_url, :recommended,
@@ -68,6 +69,7 @@ class Resource
     @format = doc['format']
     @slug = doc['slug']
     @lang = lang
+    @downloadable = AppHelper::boolean_value(doc['downloadable'])
 
     init_localized_fields(doc)
     init_urls
@@ -96,7 +98,13 @@ class Resource
   end
 
   def also_download(max)
-    @recommended.select { |rec| rec.type == 'resource' }.first(max)
+    return [] if !@downloadable
+    @recommended.select { |rec| rec.type == 'resource' && rec.downloadable}.first(max)
+  end
+
+  def recommended_not_downloads
+    downloadable_slugs = also_download(3).map(&:slug)
+    @recommended.reject { |rec| downloadable_slugs.include?(rec.slug) }
   end
 
   private

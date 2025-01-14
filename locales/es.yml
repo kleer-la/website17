@@ -3,24 +3,6 @@ es:
   internal_error:
     title: Error interno
     text: Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde.
-  resources:
-    title: Recursos y Materiales sobre Agilidad
-    subtitle: >-
-      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
-    card:
-      more_info: Más info
-      comments: Notas
-      external: Obtener en web externa
-      buy_it: Obtener
-      get_it: Descargar
-      authors: Autores
-      translator: Tradujo
-      ilustrator: Ilustró
-    show:
-      roles:
-          authors: Autor
-          translators: Tradujo
-          illustrators: Ilustró
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training
@@ -451,14 +433,32 @@ es:
       published: Publicado el
       ToC: Tabla de contenido
       authors: 'Creado por:'
-  resource:
+  resources:
+    title: Recursos y Materiales sobre Agilidad
+    subtitle: >-
+      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
+    card:
+      more_info: Más info
+      comments: Notas
+      external: Obtener en web externa
+      buy_it: Obtener
+      get_it: Descargar
+      authors: Autores
+      translator: Tradujo
+      ilustrator: Ilustró
     show:
+      form:
+        quiero recibir actualizaciones del recurso
+      roles:
+          authors: Autor
+          translators: Tradujo
+          illustrators: Ilustró
       more_info:
         title: Obtén más información
         text: Puedes obtener información de uso del recurso en esta página
         button: Más info
       download:
-        notify_me: ¿Te avisamos cuando haya novedades relacionadas?
+        notify_me: ¿Quiero recibir actualizaciones del recurso?
         suscribe: Suscríbete a nuestro newsletter
   clients:
     title: Nuestros Clientes

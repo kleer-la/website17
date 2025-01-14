@@ -1,5 +1,5 @@
 class Recommended
-  attr_reader :title, :subtitle, :slug, :cover, :type, :level
+  attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable
 
   def initialize(doc)
     @title = doc['title']
@@ -8,6 +8,7 @@ class Recommended
     @cover = doc['cover']
     @type = doc['type']
     @level = doc['level']
+    @downloadable = AppHelper::boolean_value(doc['downloadable'])
   end
 
   def url

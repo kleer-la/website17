@@ -166,6 +166,9 @@ $celeste: #E8F8FD;
     color: $secondary-blue;
     font-weight: bold;
   }
+  .rounded-container {
+    border-radius: 1rem;
+  }
 }
 .badge-role {
   position: absolute;

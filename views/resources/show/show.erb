@@ -24,7 +24,7 @@
   </div>
 </section>
 <section id="resource-detail-body" class="container resource-detail-body">
-<div class="mb-4 offset-lg-1 ">
+<div class="mb-4 offset-lg-1">
   <% unless @resource.getit.empty? %>
     <form id="download-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
     <div class="row mb-4">
@@ -75,12 +75,11 @@
             <div class="mb-3 col-xs-12">
               <div class="form-group">
                 <input type="checkbox" id="can_we_contact" name="can_we_contact">
-                <label for="can_we_contact"><%= t('resource.show.download.notify_me') %></label>
+                <label for="can_we_contact"><%= t('resources.show.download.notify_me') %></label>
               </div>
-
               <div class="form-group">
                 <input type="checkbox" id="suscribe" name="suscribe">
-                <label for="suscribe"><%= t('resource.show.download.suscribe') %></label>
+                <label for="suscribe"><%= t('resources.show.download.suscribe') %></label>
               </div>
             </div>
           </div>
@@ -95,13 +94,14 @@
         </div>
         <div class="col-12 col-md-5">
           <%if @also_download.count > 0 %>
-            <div class="bg-light rounded-3 p-3 mt-4">
+            <div class="bg-light rounded-container p-3 mt-4">
               <div class="row">
                 <h3>También descargar...</h3>
-                <%@also_download.each do |resource| %>
-                    <div class="form-group d-flex align-items-center">
-                      <input type="checkbox" id="ad-<%=resource.slug%>" name="ad-<%=resource.slug%>" class="me-2">
-                      <label for="ad-<%=resource.slug%>"><strong><%=resource.title%>:</strong> <%=resource.subtitle%></label>
+                <%@also_download.each do |resource| 
+                    landing_uri = "/#{session[:locale]}/recursos/#{resource.slug}" %>
+                    <div class="form-group d-flex align-items-start mb-2">
+                      <input type="checkbox" id="ad-<%=resource.slug%>" name="ad-<%=resource.slug%>" class="me-2 mt-1">
+                      <label for="ad-<%=resource.slug%>"><a href="<%= landing_uri %>"><strong><%=resource.title%>:</strong></a> <%=resource.subtitle%></label>
                     </div>
                 <%end%>
               </div>
@@ -158,19 +158,19 @@
           </div>
       </div>
         <% elsif @resource.getit.empty? %>
-          <h2><%=t('resource.show.more_info.title')%></h2>
-          <p><%=t('resource.show.more_info.text')%></p>
+          <h2><%=t('resources.show.more_info.title')%></h2>
+          <p><%=t('resources.show.more_info.text')%></p>
           <div class="btn-center-container">
             <button class="info my-secondary-button">
-              <a href="<%= @resource.landing %>"><%=t('resource.show.more_info.button')%></a>
+              <a href="<%= @resource.landing %>"><%=t('resources.show.more_info.button')%></a>
             </button>
           </div>
         <% else %>
-          <h2><%=t('resource.show.more_info.title')%></h2>
-          <p><%=t('resource.show.more_info.text')%></p>
+          <h2><%=t('resources.show.more_info.title')%></h2>
+          <p><%=t('resources.show.more_info.text')%></p>
           <div class="btn-center-container">
             <button class="info my-secondary-button">
-              <a href="<%= @resource.landing %>"><%=t('resource.show.more_info.button')%></a>
+              <a href="<%= @resource.landing %>"><%=t('resources.show.more_info.button')%></a>
             </button>
           </div>
         <% end %>
@@ -189,7 +189,7 @@
 </div>
 </section>
 
-<%= erb :'component/sections/recommended', locals: { recommended: @resource.recommended, title: t('recommended.title')  }%>
+<%= erb :'component/sections/recommended', locals: { recommended: @resource.recommended_not_downloads, title: t('recommended.title')  }%>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
