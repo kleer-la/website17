@@ -23,4 +23,11 @@ module AppHelper
 
     truncated + '...'
   end
+
+  module_function
+
+  def boolean_value(value)
+    return false if value.nil? || value.to_s.empty?
+    ['true', '1', 'yes'].include?(value.to_s.downcase)
+  end  
 end

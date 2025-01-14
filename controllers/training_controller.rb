@@ -6,8 +6,6 @@ require './lib/event'
 require './lib/keventer_helper'
 require './lib/models/catalog'
 
-require './controllers/event_helper'
-
 REDIRECT = {
   'entrenamos/eventos/proximos' => 'agenda',
   'entrenamos/eventos/proximos/:amount' => 'agenda',

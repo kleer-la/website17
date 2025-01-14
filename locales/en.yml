@@ -5,24 +5,6 @@ en:
     text: >-
       An internal error has occurred. We apologize for the inconvenience. We
       have been notified and will work to fix it as soon as possible.
-  resources:
-    title: Resources for agility
-    subtitle: >-
-      Our 2 cents to help you with team collaboration: books, quick guides, card games, infographics, and more
-    card:
-      more_info: More info
-      comments: Notes
-      external: Get it on another website
-      buy_it: Buy it
-      get_it: Download
-      authors: Authors
-      translator: Translator
-      ilustrator: Illustrator
-    show:
-      roles:
-          authors: Author
-          translators: Translator
-          illustrators: Illustrator
   meta_tag:
     home:
       title: Agile Coaching, Consulting & Training
@@ -777,12 +759,31 @@ en:
       published: Published
       ToC: Table of contents
       authors: Written by
-  resource:
+  resources:
+    title: Resources for agility
+    subtitle: >-
+      Our 2 cents to help you with team collaboration: books, quick guides, card games, infographics, and more
+    card:
+      more_info: More info
+      comments: Notes
+      external: Get it on another website
+      buy_it: Buy it
+      get_it: Download
+      authors: Authors
+      translator: Translator
+      ilustrator: Illustrator
     show:
+      roles:
+          authors: Author
+          translators: Translator
+          illustrators: Illustrator
       more_info:
         title: Get more info
         text: Go to a page with more information about this resource.
         button: More info
+      download:
+        notify_me: Notify me when there are updates
+        suscribe: Subscribe to our newsletter
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.
