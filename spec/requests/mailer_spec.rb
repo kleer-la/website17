@@ -92,6 +92,7 @@ describe 'MyApp' do
         context: '/',
         message: nil,
         resource_slug: 'main-resource',
+        initial_slug: 'main-resource',
         language: 'es',
         can_we_contact: true,
         suscribe: true

@@ -447,8 +447,6 @@ es:
       translator: Tradujo
       ilustrator: Ilustró
     show:
-      form:
-        quiero recibir actualizaciones del recurso
       roles:
           authors: Autor
           translators: Tradujo
