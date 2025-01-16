@@ -34,6 +34,11 @@ end
 get %r{/(resources|recursos)/([^/]+)} do |_, slug|
   @active_tab_publicamos = 'active'
   @resource = Resource.create_one_keventer(slug, session[:locale])
+
+  if slug != @resource.slug
+    redirect to("/recursos/#{@resource.slug}"), 301
+  end
+
   @meta_tags.set! title: @resource.tabtitle,
                   description: @resource.seo_description,
                   canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}",
