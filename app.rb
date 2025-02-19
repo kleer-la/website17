@@ -22,7 +22,6 @@ end
 require './controllers/helper'
 require './controllers/resources_controller'
 require './controllers/blog_controller'
-require './controllers/press_controller'
 require './controllers/services_controller'
 require './controllers/training_controller'
 require './controllers/clients_controller'
@@ -125,15 +124,36 @@ PERMANENT_REDIRECT = {
   'preguntas-frecuentes/certified-scrum-developer' => 'es/cursos/342-certified-scrum-developer-csd', #  #faq / qna
   'acompanamos' => 'es/servicios',
   'coaching' => 'es/servicios',
-  'agilidad-organizacional/mejora-continua' => 'es/servicios/kaizen-team'
+  'agilidad-organizacional/mejora-continua' => 'es/servicios/kaizen-team',
+
+  'prensa/casos/afp-crecer' => 'es/blog/afp-crecer',
+  'clientes/afp-crecer' => 'es/blog/afp-crecer',
+  'prensa/casos/transformacion-digital-bbva-continental' => 'es/blog/transformacion-digital-bbva-continental',
+  'clientes/transformacion-digital-bbva-continental' => 'es/blog/transformacion-digital-bbva-continental',
+  'prensa/casos/capacitaciones-agiles-endava' => 'es/blog/capacitaciones-agiles-endava',
+  'clientes/capacitaciones-agiles-endava' => 'es/blog/capacitaciones-agiles-endava',
+  'prensa/casos/transformacion-cultural-agil-ti-epm-2018' => 'es/blog/transformacion-cultural-agil-ti-epm-2018',
+  'clientes/transformacion-cultural-agil-ti-epm-2018' => 'es/blog/transformacion-cultural-agil-ti-epm-2018',
+  'prensa/casos/falabella-financiero' => 'es/blog/falabella-financiero',
+  'clientes/falabella-financiero' => 'es/blog/falabella-financiero',
+  'prensa/casos/innovacion-en-marketing-digital-loreal-2016' => 'es/blog/innovacion-en-marketing-digital-loreal-2016',
+  'clientes/innovacion-en-marketing-digital-loreal-2016' => 'es/blog/innovacion-en-marketing-digital-loreal-2016',
+  'prensa/casos/equipos-scrum-en-suramericana-2015' => 'es/blog/equipos-scrum-en-suramericana-2015',
+  'clientes/equipos-scrum-en-suramericana-2015' => 'es/blog/equipos-scrum-en-suramericana-2015',
+  'prensa/casos/equipos-scrum-en-plataforma-10-2015' => 'es/blog/equipos-scrum-en-plataforma-10-2015',
+  'clientes/equipos-scrum-en-plataforma-10-2015' => 'es/blog/equipos-scrum-en-plataforma-10-2015',
+  'prensa/casos/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
+  'clientes/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
+  'prensa/casos/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
+  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020'
 }.freeze
 
-PERMANENT_REDIRECT.each do |uris|
-  get "/#{uris[0]}" do
-    redirect "/#{uris[1]}", 301
+PERMANENT_REDIRECT.each do |original, redirect|
+  get "/#{original}" do
+    redirect "/#{redirect}", 301
   end
-  get "/#{uris[0]}/" do
-    redirect "/#{uris[1]}", 301
+  get "/#{original}/" do
+    redirect "/#{redirect}", 301
   end
 end
 
