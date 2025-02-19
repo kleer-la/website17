@@ -113,6 +113,11 @@ Para probar con ambiente de prueba de keventer
 export KEVENTER_URL="https://keventer-test.herokuapp.com"
 ```
 
+Para probar con ambiente LOCAL de keventer
+```cli
+KEVENTER_URL="http://eventer_devcontainer-app-1:3000" ./runserver.sh
+```
+
 Manejar I18m
 ```cli
 i18n-tasks missing
