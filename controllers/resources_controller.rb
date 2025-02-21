@@ -33,10 +33,15 @@ end
 # get '/recursos/:slug' do |slug|
 get %r{/(resources|recursos)/([^/]+)} do |_, slug|
   @active_tab_publicamos = 'active'
+
+  if slug == 'retromat'
+    redirect to("/#{session[:locale]}/recursos/retromat-planes-retrospectivas"), 301
+  end
+  
   @resource = Resource.create_one_keventer(slug, session[:locale])
 
   if slug != @resource.slug
-    redirect to("/recursos/#{@resource.slug}"), 301
+    redirect to("/#{session[:locale]}/recursos/#{@resource.slug}"), 301
   end
 
   @meta_tags.set! title: @resource.tabtitle,
