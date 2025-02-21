@@ -11,7 +11,7 @@ $grey: #B3B3B3;
 $white: #FFFFFF;
 
 //hero
-#hero{
+#hero {
   max-width: 100vw;
 }
 
@@ -19,17 +19,19 @@ $white: #FFFFFF;
 .active {
   height: 100%;
 }
+
 //bootstrap edit
 .hero__carousel {}
 
 .hero_carousel-inner {
   height: calc(100vh - 100px)
 }
-.hero_carousel__item{
+
+.hero_carousel__item {
   height: calc(100vh - 100px)
 }
 
-.carousel__text{
+.carousel__text {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -37,11 +39,12 @@ $white: #FFFFFF;
   padding-top: 8%;
   padding-right: 10%;
 
-  h1{
+  h1 {
     margin-bottom: 7%;
   }
 }
-.carousel__img-container{
+
+.carousel__img-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,131 +52,153 @@ $white: #FFFFFF;
   align-items: center;
   padding-bottom: 5%;
 }
-.carousel__img{
+
+.carousel__img {
   max-width: 90%;
 }
 
-.hero__mobile-button{
+.hero__mobile-button {
   display: none !important;
 }
 
 //bootstrap edited
-.carousel-indicators [data-bs-target]{
+.carousel-indicators [data-bs-target] {
   background-color: $grey;
   width: 8px;
   height: 8px;
   border-radius: 50%;
 }
+
 //bootstrap edited
 .carousel-indicators .active {
   background-color: $primary-red;
 }
+
 //bootstrap edited
-.carousel-control-next{
-  width: 10% !important;
-}
-//bootstrap edited
-.carousel-control-prev{
+.carousel-control-next {
   width: 10% !important;
 }
 
-.hero_green_bean{
+//bootstrap edited
+.carousel-control-prev {
+  width: 10% !important;
+}
+
+.hero_green_bean {
   left: 70px;
   bottom: 70px
 }
 
-.hero_yellow_bean{
+.hero_yellow_bean {
   top: 30px;
   right: 80px;
   z-index: 30;
 }
-@media screen and (max-width:992px){ //lg size
-  #hero{
+
+.hero_yellow_bean2 {
+  top: 100px;
+  right: 80px;
+  z-index: 30;
+}
+
+.hero2 {
+  max-height: 85vh;
+  height: calc(85vh - 50px);
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+@media screen and (max-width:992px) {
+
+  //lg size
+  #hero {
     text-align: center;
   }
-  .carousel__text{
+
+  .carousel__text {
     height: auto;
     padding: 0 5%;
   }
 
-  .carousel__img{
+  .carousel__img {
     max-width: 90%;
   }
 
-  .carousel-control-prev-icon{
-    height: 10px;
-  }
-  .carousel-control-next-icon{
+  .carousel-control-prev-icon {
     height: 10px;
   }
 
-   .hero__desktop-button{
-     display: none !important;
-   }
+  .carousel-control-next-icon {
+    height: 10px;
+  }
 
-  .hero__mobile-button{
+  .hero__desktop-button {
+    display: none !important;
+  }
+
+  .hero__mobile-button {
     display: flex !important;
     margin: auto;
     margin-bottom: 50px;
   }
 }
+
 //promotion----------------
-#promotion{
+#promotion {
   margin-top: 70px;
 }
 
-.promotion__title{
+.promotion__title {
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 32px;
 }
 
-.promotion__text{
+.promotion__text {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 32px;
 }
 
-.promotion__image{
+.promotion__image {}
 
-}
-
-.promotion_img-container{
+.promotion_img-container {
   height: 100%;
   margin-top: auto;
 }
 
 
 //client-carousel
-#client-carousel{
+#client-carousel {
   margin: 250px 10px 150px 10px;
   z-index: 0;
   position: relative;
 }
 
-.mobile-client-carousel{
+.mobile-client-carousel {
   padding: 16px 0 !important;
   margin: 120px 0;
   display: none;
 }
 
-@media screen and (max-width:420px){
-   .mobile-client-carousel{
-     display: block;
-   }
-  .client-carousel{
+@media screen and (max-width:420px) {
+  .mobile-client-carousel {
+    display: block;
+  }
+
+  .client-carousel {
     display: none !important;
   }
 }
 
-.client-carousel__title{
+.client-carousel__title {
   line-height: 32px;
   text-align: center;
 }
 
-.client-carousel__container{
+.client-carousel__container {
   background-color: $primary-blue;
   border-radius: 16px;
   padding: 50px 80px;
@@ -186,94 +211,93 @@ $white: #FFFFFF;
   }
 }
 
-.logos-container{
-}
+.logos-container {}
 
-.promotion_green_triangle{
+.promotion_green_triangle {
   height: 140px;
   top: -150px;
   left: -150px;
   z-index: 20;
 }
 
-.promotion_yellow_circle{
+.promotion_yellow_circle {
   bottom: -10%;
   right: 7%;
   z-index: -1;
 }
 
-.promotion_rustic_line{
+.promotion_rustic_line {
   bottom: -70px;
 }
 
-.promotion_rustic_spring{
+.promotion_rustic_spring {
   top: -160px;
   right: 50px
 }
 
 //last courses
-#last-courses{
+#last-courses {
   visibility: visible;
   margin-bottom: 50px;
   position: relative;
 }
 
-.last-courses__title{
+.last-courses__title {
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 32px;
 }
 
-#mobile-carousel{
+#mobile-carousel {
   display: none;
   height: 0;
 }
 
-.last-courses__blue-square{
+.last-courses__blue-square {
   top: 120px;
   left: 50px;
   //position: static !important;
 }
 
-.last-courses__red-circle{
+.last-courses__red-circle {
   bottom: 60px;
   right: 30px;
 }
 
 @media screen and (max-width:1100px) {
-  #last-courses{
+  #last-courses {
     display: none;
     height: 0;
   }
-  #mobile-carousel{
+
+  #mobile-carousel {
     display: block;
     height: auto;
   }
 
-  .course-card{
+  .course-card {
     margin: auto;
     max-width: 285px;
   }
 }
 
 //news letter
-#newsletter-subscription{
+#newsletter-subscription {
   background-color: $primary-yellow;
   padding: 72px 0;
   position: relative;
 }
 
-.newsletter__rustic-circle{
+.newsletter__rustic-circle {
   //position: absolute;
   bottom: -30px;
   left: -20px;
   z-index: 0;
 }
 
-.newsletter__green-circle{
+.newsletter__green-circle {
   bottom: -120px;
   right: 0;
   z-index: 0;
 }
-
