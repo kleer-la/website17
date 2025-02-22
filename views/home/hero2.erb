@@ -1,6 +1,13 @@
 <%
 # Get just the first item from the translation data
 hero_item = t("home.home_hero").first
+
+title = hero_item[:subject]
+description = hero_item[:description]
+if !@page.sections.nil? && !@page.sections['hero'].nil?
+  title = @page.sections['hero']['title']
+  description = @page.sections['hero']['content']
+end
 %>
 
 <section id="hero" class="hero2">
@@ -8,8 +15,8 @@ hero_item = t("home.home_hero").first
     <div class="row h-100">
       <div class="offset-lg-1 col-lg-6 carousel__text">
         <div>
-          <h1><%= hero_item[:subject] %></h1>
-          <p><%= hero_item[:description] %></p>
+          <h1><%= title %></h1>
+          <p><%= description %></p>
         </div>
         <a href="<%= "/#{session[:locale]}#{hero_item[:url]}" %>" class="btn my-primary-button hero__desktop-button">
           <%= hero_item[:button_text] %>

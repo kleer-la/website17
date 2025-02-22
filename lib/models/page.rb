@@ -3,7 +3,7 @@ require './lib/services/keventer_api'
 require './lib/models/recommended'
 
 class Page
-  attr_reader :lang, :seo_title, :seo_description, :canonical, :cover, :recommended
+  attr_reader :lang, :seo_title, :seo_description, :canonical, :cover, :recommended, :sections
 
   def initialize(data = {})
     @lang = data['lang']
@@ -12,6 +12,9 @@ class Page
     @canonical = empty_to_nil(data['canonical'])
     @cover = empty_to_nil(data['cover'])
     @recommended = Recommended.create_list(data['recommended'] || [])
+    @sections = (data['sections'] || []).each_with_object({}) do |section, hash|
+      hash[section['slug']] = section.slice('title', 'content', 'position')
+    end
   end
 
   class << self
