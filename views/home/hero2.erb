@@ -1,0 +1,50 @@
+<%
+# Get just the first item from the translation data
+hero_item = t("home.home_hero").first
+
+title = hero_item[:subject]
+description = hero_item[:description]
+if !@page.sections.nil? && !@page.sections['hero'].nil?
+  title = @page.sections['hero']['title']
+  description = @page.sections['hero']['content']
+end
+%>
+
+<section id="hero" class="hero2">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="offset-lg-1 col-lg-6 carousel__text">
+        <div>
+          <h1><%= title %></h1>
+          <p><%= description %></p>
+        </div>
+        <a href="<%= "/#{session[:locale]}#{hero_item[:url]}" %>" class="btn my-primary-button hero__desktop-button">
+          <%= hero_item[:button_text] %>
+        </a>
+      </div>
+      <div class="col-lg-5 hero__img-container">
+        <picture>
+          <source srcset="<%= webp_ext(hero_item[:img]) %>" type="image/webp">
+          <img
+            src="<%= hero_item[:img] %>"
+            class="hero__img"
+            alt="<%= hero_item[:alt] %>"
+          >
+        </picture>
+      </div>
+      <a href="<%= "/#{session[:locale]}#{hero_item[:url]}" %>" class="btn my-primary-button hero__mobile-button">
+        <%= hero_item[:button_text] %>
+      </a>
+    </div>
+  </div>
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
+    class="desktop_figure hero_yellow_bean2"
+    alt="decorative figure"
+  />
+  <img
+    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+    class="desktop_figure hero_green_bean"
+    alt="decorative figure"
+  />
+</section>
