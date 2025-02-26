@@ -1,0 +1,65 @@
+  <style>
+    .my-primary-button { background-color: #43B045; color: #FFFFFF; border: none; }
+    .my-primary-button:hover { background-color: #0DAC52; color: #FFFFFF; }
+    .my-secondary-button { background-color: #68CEF2; color: #333333; border: none; }
+    .my-secondary-button:hover { background-color: #00BBEE; color: #333333; }
+    .btn-outline-primary { border-color: #43B045; color: #43B045; }
+    .btn-outline-primary:hover { background-color: #43B045; color: #FFFFFF; }
+  </style>
+
+<section id="assessment-hero">
+  <div class="resource-detail-hero">
+    <div class="container offset-lg-1">
+      <div class="row">
+        <div class="col-12 col-lg-6 resource-detail-hero__content">
+          <h1><%=@assessment.title%></h1>
+          <p><%= @markdown_renderer.render(@assessment.description) %></p>
+        </div>
+      </div>
+    </div>
+    <img
+      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+      class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
+      alt="decorative figure"
+    />
+  </div>
+</section>
+
+  <div class="container mt-5">
+    <form id="assessmentForm" action="/<%= session[:locale] || 'es' %>/submit_assessment" method="post" class="needs-validation" novalidate>
+      <input type="hidden" name="assessment_id" value="<%= @assessment.id %>">
+
+      <!-- Standalone Questions -->
+      <% @assessment.questions.each do |question| %>
+        <div class="mb-3">
+          <label class="form-label" style="color: #333333;"><%= question.name %></label>
+          <div class="mb-5 description">
+          <%= question.description %></div>
+          <div class="btn-group" role="group">
+            <% question.answers.each do |answer| %>
+              <input type="radio" class="btn-check" name="responses[<%= question.id %>]" id="answer_<%= answer.id %>"
+                     value="<%= answer.id %>" required>
+              <label class="btn btn-outline-primary" for="answer_<%= answer.id %>"><%= answer.text %></label>
+            <% end %>
+          </div>
+          <div class="invalid-feedback"><%= t("assessment.required_answer") %></div>
+        </div>
+      <% end %>
+
+      <button type="submit" class="btn my-primary-button">Enviar</button>
+    </form>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      const form = document.getElementById('assessmentForm');
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    })();
+  </script>

@@ -458,6 +458,8 @@ es:
       download:
         notify_me: ¿Quiero recibir actualizaciones del recurso?
         suscribe: Suscríbete a nuestro newsletter
+      assessment_title: Auto evaluación
+      start_assessment: Comenzar evaluación
   clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.
