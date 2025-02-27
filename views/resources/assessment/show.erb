@@ -1,59 +1,150 @@
-  <style>
-    .my-primary-button { background-color: #43B045; color: #FFFFFF; border: none; }
-    .my-primary-button:hover { background-color: #0DAC52; color: #FFFFFF; }
-    .my-secondary-button { background-color: #68CEF2; color: #333333; border: none; }
-    .my-secondary-button:hover { background-color: #00BBEE; color: #333333; }
-    .btn-outline-primary { border-color: #43B045; color: #43B045; }
-    .btn-outline-primary:hover { background-color: #43B045; color: #FFFFFF; }
-  </style>
+<style>
+  .my-primary-button {
+    background-color: #43B045;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .my-primary-button:hover {
+    background-color: #0DAC52;
+    color: #FFFFFF;
+  }
+  .my-secondary-button {
+    background-color: #68CEF2;
+    color: #333333;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .my-secondary-button:hover {
+    background-color: #00BBEE;
+    color: #333333;
+  }
+  .btn-outline-primary {
+    border-color: #43B045;
+    color: #43B045;
+    padding: 0.5rem 1rem;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .btn-outline-primary:hover {
+    background-color: #43B045;
+    color: #FFFFFF;
+  }
 
-<section id="assessment-hero">
+  /* Custom styles for assessment */
+  .assessment-hero {
+    background-color: #F8F9FA;
+    padding: 2rem 0;
+  }
+  .resource-detail-hero__content {
+    padding: 1rem;
+  }
+  .question-container {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .question-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
+  }
+  .question-description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .btn-outline-primary {
+      min-width: 80px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+    .question-label {
+      font-size: 1rem;
+    }
+    .question-description {
+      font-size: 0.9rem;
+    }
+    .my-primary-button, .my-secondary-button {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<section id="assessment-hero" class="assessment-hero">
   <div class="resource-detail-hero">
     <div class="container offset-lg-1">
       <div class="row">
         <div class="col-12 col-lg-6 resource-detail-hero__content">
-          <h1><%=@assessment.title%></h1>
+          <h1><%= @assessment.title %></h1>
           <p><%= @markdown_renderer.render(@assessment.description) %></p>
+        </div>
+        <div class="col-12 col-lg-5 resource-detail-hero__image d-none d-lg-block">
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
+            alt="decorative figure"
+          />
         </div>
       </div>
     </div>
-    <img
-      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
-      class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
-      alt="decorative figure"
-    />
   </div>
 </section>
 
+<section id="assessment-details" class="container resource-detail-body">
   <div class="container mt-5">
     <form id="assessmentForm" action="/<%= session[:locale] || 'es' %>/submit_assessment" method="post" class="needs-validation" novalidate>
       <input type="hidden" name="assessment_id" value="<%= @assessment.id %>">
 
       <!-- Standalone Questions -->
       <% @assessment.questions.each do |question| %>
-        <div class="mb-3">
-          <label class="form-label" style="color: #333333;"><%= question.name %></label>
-          <div class="mb-5 description">
-          <%= question.description %></div>
-          <div class="btn-group" role="group">
+        <div class="question-container">
+          <label class="question-label"><%= question.name %></label>
+          <% if !question.description.nil? && !question.description.to_s.empty? %>
+            <div class="question-description"><%= question.description %></div>
+          <% end %>
+          <div class="btn-group" role="group" data-toggle="buttons">
             <% question.answers.each do |answer| %>
+              <% next if answer.text.nil? || answer.text.to_s.empty? %> <!-- Skip empty or nil answers -->
               <input type="radio" class="btn-check" name="responses[<%= question.id %>]" id="answer_<%= answer.id %>"
                      value="<%= answer.id %>" required>
               <label class="btn btn-outline-primary" for="answer_<%= answer.id %>"><%= answer.text %></label>
             <% end %>
           </div>
-          <div class="invalid-feedback"><%= t("assessment.required_answer") %></div>
+          <div class="invalid-feedback"><%= t("assessment.required_answer", default: "Por favor, selecciona una respuesta.") %></div>
         </div>
       <% end %>
 
-      <button type="submit" class="btn my-primary-button">Enviar</button>
+      <div class="text-center mt-4">
+        <button type="submit" class="btn my-primary-button">
+          <%= t("assessment.submit", default: "Enviar") %>
+        </button>
+      </div>
     </form>
   </div>
+</section>
 
-  <script>
-    (function () {
-      'use strict';
-      const form = document.getElementById('assessmentForm');
+<script>
+  (function () {
+    'use strict';
+    const form = document.getElementById('assessmentForm');
+    if (form) {
       form.addEventListener('submit', function (event) {
         if (!form.checkValidity()) {
           event.preventDefault();
@@ -61,5 +152,6 @@
         }
         form.classList.add('was-validated');
       }, false);
-    })();
-  </script>
+    }
+  })();
+</script>

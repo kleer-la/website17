@@ -15,7 +15,7 @@ describe Assessment do
           'questions'=>[
             {
               'id'=>1,
-              'text'=>'Grouped Q1',
+              'name'=>'Grouped Q1',
               'position'=>1,
               'question_type'=>'linear_scale',
               'answers'=>[
@@ -32,7 +32,7 @@ describe Assessment do
       'questions'=>[
         {
           'id'=>2,
-          'text'=>'Standalone Q1',
+          'name'=>'Standalone Q1',
           'position'=>2,
           'question_type'=>'linear_scale',
           'answers'=>[
@@ -62,11 +62,11 @@ describe Assessment do
       expect(assessment.question_groups.size).to eq 1
       expect(assessment.question_groups.first.name).to eq 'Domain'
       expect(assessment.question_groups.first.questions.size).to eq 1
-      expect(assessment.question_groups.first.questions.first.text).to eq 'Grouped Q1'
+      expect(assessment.question_groups.first.questions.first.name).to eq 'Grouped Q1'
       expect(assessment.question_groups.first.questions.first.answers.first.text).to eq 'Low'
 
       expect(assessment.questions.size).to eq 1
-      expect(assessment.questions.first.text).to eq 'Standalone Q1'
+      expect(assessment.questions.first.name).to eq 'Standalone Q1'
       expect(assessment.questions.first.answers.first.text).to eq 'Small'
     end
   end
@@ -94,7 +94,7 @@ describe Assessment do
             'questions'=>[
               {
                 'id'=>1,
-                'text'=>'Mock Q1',
+                'name'=>'Mock Q1',
                 'position'=>1,
                 'question_type'=>'linear_scale',
                 'answers'=>[
@@ -111,7 +111,7 @@ describe Assessment do
         'questions'=>[
           {
             'id'=>2,
-            'text'=>'Mock Standalone',
+            'name'=>'Mock Standalone',
             'position'=>2,
             'question_type'=>'linear_scale',
             'answers'=>[
@@ -131,7 +131,7 @@ describe Assessment do
       expect(assessment.id).to eq 1
       expect(assessment.title).to eq 'Mock Assessment'
       expect(assessment.question_groups.first.name).to eq 'Mock Domain'
-      expect(assessment.questions.first.text).to eq 'Mock Standalone'
+      expect(assessment.questions.first.name).to eq 'Mock Standalone'
     end
   end
 

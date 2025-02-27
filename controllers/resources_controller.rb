@@ -59,7 +59,7 @@ rescue ResourceNotFoundError
   return status 404
 end
 
- get '/recursos2/:slug' do |slug|
+get '/recursos2/:slug' do |slug|
   @active_tab_publicamos = 'active'
 
   if slug == 'retromat'
@@ -80,19 +80,12 @@ end
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 
-  @also_download = @resource.also_download(3)
+  @also_download = unless @is_assessment 
+                    @resource.also_download(3)
+                  else
+                    []
+                  end
   erb :'resources/show/show2', layout: :'layout/layout2022'
 rescue ResourceNotFoundError
   return status 404
-end
-
-post '/assessment/:id' do |id|
-  @assessment = Assessment.create_one_keventer(id, session[:locale])
-  
-  # Set meta tags or title (matching Kleer’s style)
-  @meta_tags.set! title: @assessment.title,
-                  description: @assessment.description,
-                  image: "https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/kleer-logo.png"
-
-  erb :'resources/assessment/show', layout: :'layout/layout2022'
 end
