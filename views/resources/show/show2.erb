@@ -27,7 +27,7 @@
 <div class="mb-4 offset-lg-1">
   <% if !@resource.getit.empty? || @is_assessment%>
     <% action_url = @is_assessment ? "/assessment/#{@resource.assessment_id}" : '/send-mail' %>
-    <form id="download-form" action="/<%= session[:locale] || 'es' %>/<%= action_url%>" method="post" class="needs-validation" novalidate>
+    <form id="download-form" action="/<%= session[:locale] || 'es' %><%= action_url%>" method="post" class="needs-validation" novalidate>
     <div class="row mb-4">
       <div class="row">
         <div class="col-md-6">
