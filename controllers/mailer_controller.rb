@@ -29,7 +29,6 @@ post '/send-mail' do
     can_we_contact: params[:can_we_contact] == 'on',
     suscribe: params[:suscribe] == 'on'
   }
-
   send_mail(base_data)
 
   # Send additional resource emails
@@ -52,14 +51,15 @@ end
 post '/assessment/:id' do |id|
   unless verify_recaptcha
     flash[:error] = 'Ha ocurrido un error, por favor intenta de nuevo'
-    redirect "/#{session[:locale] || 'es'}/resources/#{params[:resource_slug]}"
-    halt 400
+    redirect "/#{session[:locale] || 'es'}/recursos/#{params[:resource_slug]}"
+    return
   end
 
   contact_data = {
     name: params[:name],
     email: params[:email],
     company: params[:company],
+    context: params[:context],
     language: session[:locale] || 'es',
     resource_slug: params[:resource_slug],
     can_we_contact: params[:can_we_contact] == 'on',
@@ -78,27 +78,28 @@ post '/assessment/:id' do |id|
 end
 
 post '/submit_assessment' do
-  content_type :json
   responses = params[:responses]
   assessment_id = params[:assessment_id]
+  @assessment = Assessment.create_one_keventer(assessment_id, session[:locale])
 
   # Retrieve contact data from session
   contact_data = session[:contact_data]
-
+  
   unless contact_data
     status 400
-    return { success: false, error: 'No se encontraron datos de contacto' }.to_json
+    @error_message = 'No se encontraron datos de contacto'
+    return erb :'resources/assessment/results', layout: :'layout/layout2022'
   end
 
-  begin
+  # begin
     email_data = contact_data.merge(
       assessment_id: assessment_id,
-      assessment_results: responses # Include assessment results
+      assessment_results: responses
     )
 
     Thread.new do
       begin
-        Mailer.new(KeventerAPI.mailer_url, email_data)
+        Mailer.new(KeventerAPI.contacts_url, email_data)
       rescue StandardError => e
         puts "Failed to send assessment results email: #{e.message}"
       end
@@ -107,9 +108,11 @@ post '/submit_assessment' do
     # Clear session data after successful submission
     session[:contact_data] = nil
 
-    { success: true, message: 'Respuestas enviadas correctamente, revisa tu correo para los resultados.' }.to_json
-  rescue StandardError => e
-    status 500
-    { success: false, error: e.message }.to_json
-  end
+    @success_message = 'Respuestas enviadas correctamente, revisa tu correo para los resultados.'
+    erb :'resources/assessment/results', layout: :'layout/layout2022'
+  # rescue StandardError => e
+  #   status 500
+  #   @error_message = e.message
+  #   erb :'resources/assessment/results', layout: :'layout/layout2022'
+  # end
 end
