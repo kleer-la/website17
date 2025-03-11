@@ -29,6 +29,8 @@ get %r{/servicios/?} do
 end
 
 get '/servicios/:slug' do
+  @is_training_program = false
+
   redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
 
   service_area = ServiceAreaV3.create_keventer params[:slug]
