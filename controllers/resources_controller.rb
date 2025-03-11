@@ -1,4 +1,5 @@
 require './lib/models/resources'
+require './lib/models/assessment'
 
 get '/recursos' do
   page = Page.load_from_keventer(session[:locale], 'recursos')
@@ -39,10 +40,11 @@ get %r{/(resources|recursos)/([^/]+)} do |_, slug|
   end
   
   @resource = Resource.create_one_keventer(slug, session[:locale])
-
+  
   if slug != @resource.slug
     redirect to("/#{session[:locale]}/recursos/#{@resource.slug}"), 301
   end
+  @is_assessment = @resource.format == 'assessment'
 
   @meta_tags.set! title: @resource.tabtitle,
                   description: @resource.seo_description,
@@ -53,6 +55,37 @@ get %r{/(resources|recursos)/([^/]+)} do |_, slug|
 
   @also_download = @resource.also_download(3)
   erb :'resources/show/show', layout: :'layout/layout2022'
+rescue ResourceNotFoundError
+  return status 404
+end
+
+get '/recursos2/:slug' do |slug|
+  @active_tab_publicamos = 'active'
+
+  if slug == 'retromat'
+    redirect to("/#{session[:locale]}/recursos/retromat-planes-retrospectivas"), 301
+  end
+  
+  @resource = Resource.create_one_keventer(slug, session[:locale])
+  
+  if slug != @resource.slug
+    redirect to("/#{session[:locale]}/recursos/#{@resource.slug}"), 301
+  end
+  @is_assessment = @resource.format == 'assessment'
+
+  @meta_tags.set! title: @resource.tabtitle,
+                  description: @resource.seo_description,
+                  canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}",
+                  image: @resource.cover
+
+  @resource.long_description = @markdown_renderer.render(@resource.long_description)
+
+  @also_download = unless @is_assessment 
+                    @resource.also_download(3)
+                  else
+                    []
+                  end
+  erb :'resources/show/show2', layout: :'layout/layout2022'
 rescue ResourceNotFoundError
   return status 404
 end

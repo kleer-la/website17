@@ -58,7 +58,7 @@ class Resource
   ].freeze
   attr_accessor :id, :format, :slug, :lang,
                 :authors, :translators, :illustrators,
-                :downloadable,
+                :downloadable, :assessment_id,
                 :authors_list, :translators_list, :illustrators_list,
                 :author_trainers, :translator_trainers, :illustrator_trainers,
                 :fb_share, :tw_share, :li_share, :kleer_share_url, :recommended,
@@ -70,6 +70,7 @@ class Resource
     @slug = doc['slug']
     @lang = lang
     @downloadable = AppHelper::boolean_value(doc['downloadable'])
+    @assessment_id = doc['assessment']['id'] if doc['assessment']
 
     init_localized_fields(doc)
     init_urls

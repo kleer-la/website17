@@ -1,0 +1,28 @@
+<section id="assessment-hero" class="assessment-hero">
+  <div class="resource-detail-hero">
+    <div class="container offset-lg-1">
+      <div class="row">
+        <div class="col-12 col-lg-6 resource-detail-hero__content">
+          <h1>Assessment Results</h1>
+          <h2><%= @assessment.title %></h2>
+          <p><%= @markdown_renderer.render(@assessment.description) %></p>
+        </div>
+        <div class="col-12 col-lg-5 resource-detail-hero__image d-none d-lg-block">
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
+            alt="decorative figure"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+    <% if @error_message.nil? || @error_message.empty? %>
+      <p>Respuestas enviadas correctamente, revisa tu correo para los resultados.</p>
+  <% else %>
+    <p><%= @error_message%></p>
+  <% end %>
+</section>

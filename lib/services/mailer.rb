@@ -6,8 +6,8 @@ class Mailer
     data[:secret] = ENV['CONTACT_US_SECRET']
 
     @response = Faraday.post(url) do |req|
-      req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-      req.body = URI.encode_www_form(data)
+      req.headers['Content-Type'] = 'application/json'
+      req.body = data.to_json
     end
   end
 end

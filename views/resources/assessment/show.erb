@@ -1,0 +1,198 @@
+<style>
+  /* Keep your existing styles for buttons and assessment layout */
+  .my-primary-button {
+    background-color: #43B045;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .my-primary-button:hover {
+    background-color: #0DAC52;
+    color: #FFFFFF;
+  }
+  .my-secondary-button {
+    background-color: #68CEF2;
+    color: #333333;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .my-secondary-button:hover {
+    background-color: #00BBEE;
+    color: #333333;
+  }
+  .btn-outline-primary {
+    border-color: #43B045;
+    color: #43B045;
+    padding: 0.5rem 1rem;
+    min-width: 100px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .btn-outline-primary:hover {
+    background-color: #43B045;
+    color: #FFFFFF;
+  }
+
+  /* Custom styles for assessment */
+  .assessment-hero {
+    background-color: #F8F9FA;
+    padding: 2rem 0;
+  }
+  .resource-detail-hero__content {
+    padding: 1rem;
+  }
+  .question-container {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .question-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
+  }
+  .question-description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+</style>
+
+<!-- Include noUiSlider CSS and JS via CDN with corrected integrity values -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA==" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js" integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ==" crossorigin="anonymous"></script>
+
+<section id="assessment-hero" class="assessment-hero">
+  <div class="resource-detail-hero">
+    <div class="container offset-lg-1">
+      <div class="row">
+        <div class="col-12 col-lg-6 resource-detail-hero__content">
+          <h1><%= @assessment.title %></h1>
+          <p><%= @markdown_renderer.render(@assessment.description) %></p>
+        </div>
+        <div class="col-12 col-lg-5 resource-detail-hero__image d-none d-lg-block">
+          <img
+            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            class="resource-detail-hero__decoration resource-detail-hero__decoration--green"
+            alt="decorative figure"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="assessment-details" class="container resource-detail-body">
+  <div class="container mt-5">
+    <form id="assessmentForm" action="/<%= session[:locale] || 'es' %>/submit_assessment" method="post" class="needs-validation" novalidate>
+      <input type="hidden" name="assessment_id" value="<%= @assessment.id %>">
+
+       <!-- Standalone Questions with Sliders -->
+      <% @assessment.questions.each do |question| %>
+        <div class="question-container">
+          <label class="question-label"><%= question.name %></label>
+          <% if !question.description.nil? && !question.description.to_s.empty? %>
+            <div class="question-description"><%= question.description %></div>
+          <% end %>
+          <div class="slider-container">
+            <div class="slider-wrapper">
+              <div id="slider-<%= question.id %>"></div>
+            </div>
+            <div class="slider-labels">
+              <% question.answers.each do |answer| %>
+                <div class="slider-label" data-value="<%= answer.id %>"><%= answer.text %></div>
+              <% end %>
+            </div>
+          </div>
+          <input type="hidden" id="slider-value-<%= question.id %>" name="responses[<%= question.id %>]" required>
+          <div class="invalid-feedback"><%= t("assessment.required_answer", default: "Por favor, selecciona una respuesta.") %></div>
+        </div>
+      <% end %>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn my-primary-button">
+          <%= t("assessment.submit", default: "Enviar") %>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  (function () {
+    'use strict';
+    const form = document.getElementById('assessmentForm');
+    if (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    }
+  })();
+
+<%  @assessment.questions.each do |question| %>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.getElementById('slider-<%= question.id %>');
+      const hiddenInput = document.getElementById('slider-value-<%= question.id %>');
+      const labels = document.querySelectorAll('.slider-label');
+      const answers_count = <%= question.answers.count %>;
+
+      if (slider) {
+        noUiSlider.create(slider, {
+          start: answers_count/2, 
+          orientation: 'vertical',
+          direction: 'ltr',
+          range: {
+            'min': [1],
+            'max': [answers_count]
+          },
+          // Make sure values are inverted so 1=Low at bottom, 3=High at top
+          transform: {
+            to: function (value) {
+              return answers_count - value + 1; // Transform: 1→3, 2→2, 3→1
+            },
+            from: function (value) {
+              return answers_count - value + 1; // Transform back: 3→1, 2→2, 1→3
+            }
+          },
+          step: 1,
+          connect: 'upper' // Changed from 'lower' to 'upper' to fill from bottom up
+        });
+
+       slider.noUiSlider.on('update', function (values, handle) {
+          const rawValue = Math.round(values[handle]);
+          // Transform the raw value to match our labels
+          const value = answers_count - rawValue + 1;
+
+          hiddenInput.value = value;
+
+          // Highlight active label
+          highlightLabel(value);
+        });
+
+        labels.forEach(label => {
+          label.addEventListener('click', function () {
+            const value = parseInt(this.getAttribute('data-value'));
+            // Transform the value before setting
+            slider.noUiSlider.set(answers_count - value + 1);
+          });
+        });
+
+        // Initial highlight
+        highlightLabel(2); // Medium
+      }
+    });
+<% end %>
+
+  </script>

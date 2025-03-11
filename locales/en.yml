@@ -784,6 +784,8 @@ en:
       download:
         notify_me: Notify me when there are updates
         suscribe: Subscribe to our newsletter
+      assessment_title: Self-assessment
+      start_assessment: Start assessment
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.
