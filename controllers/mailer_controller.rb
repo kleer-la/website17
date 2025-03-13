@@ -91,23 +91,22 @@ post '/submit_assessment' do
     return erb :'resources/assessment/results', layout: :'layout/layout2022'
   end
 
-  # begin
-    email_data = contact_data.merge(
-      assessment_id: assessment_id,
-      assessment_results: responses
-    )
+  email_data = contact_data.merge(
+    assessment_id: assessment_id,
+    assessment_results: responses
+  )
 
-    Thread.new do
-      begin
-        Mailer.new(KeventerAPI.contacts_url, email_data)
-      rescue StandardError => e
-        puts "Failed to send assessment results email: #{e.message}"
-      end
+    begin
+      mailer = Mailer.new(KeventerAPI.contacts_url, email_data)
+      @id = mailer.id
+      @status = mailer.status
+      @assessment_report_url = mailer.assessment_report_url
+    rescue StandardError => e
+      puts "Failed to send assessment results email: #{e.message}"
     end
 
     # Clear session data after successful submission
     session[:contact_data] = nil
-
     @success_message = 'Respuestas enviadas correctamente, revisa tu correo para los resultados.'
     erb :'resources/assessment/results', layout: :'layout/layout2022'
   # rescue StandardError => e
@@ -115,4 +114,11 @@ post '/submit_assessment' do
   #   @error_message = e.message
   #   erb :'resources/assessment/results', layout: :'layout/layout2022'
   # end
+end
+
+get '/assessment/:contact_id/result_status' do
+  response = JsonAPI.new(KeventerAPI.contact_status_url(params[:contact_id]))
+  content_type :json
+  puts response.doc
+  response.instance_variable_get(:@doc).to_json
 end

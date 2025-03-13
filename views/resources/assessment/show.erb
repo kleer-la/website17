@@ -91,7 +91,7 @@
 </section>
 
 <section id="assessment-details" class="container resource-detail-body">
-  <div class="container mt-5">
+  <div class="container mt-5 mb-5">
     <form id="assessmentForm" action="/<%= session[:locale] || 'es' %>/submit_assessment" method="post" class="needs-validation" novalidate>
       <input type="hidden" name="assessment_id" value="<%= @assessment.id %>">
 
