@@ -18,6 +18,13 @@ Given('the site is crawled') do
   $crawler.execute('/es/blog')
 end
 
+Then 'Save the crawling results to {string}' do |filename|
+  $crawler.save_results_to_file(filename)
+end
+Then 'Save the crawling results' do
+  $crawler.save_results_to_file
+end
+
 Then('I should see no broken links') do
   if $crawler.errors.any?
     error_messages = $crawler.errors.map do |e|
