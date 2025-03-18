@@ -24,6 +24,19 @@ module AppHelper
     truncated + '...'
   end
 
+  def to_lines(text)
+    words = text.split(/\s+/) # Split into words
+    total_words = words.length
+    words_per_line = (total_words.to_f / 3).ceil # Roughly equal parts
+  
+    [
+      words.slice(0, words_per_line).join(' '),
+      words.slice(words_per_line, words_per_line).join(' '),
+      words.slice(words_per_line * 2, total_words).join(' ')
+    ]
+  end
+  
+
   module_function
 
   def boolean_value(value)
