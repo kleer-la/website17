@@ -374,3 +374,35 @@ $white: #FFFFFF;
     color: #333; // Dark gray for text
   }
 }
+
+.clients-grid {
+  padding: 2rem 0;
+  background-color: $white; // Light gray background for contrast
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .client-logo {
+    max-width: 150px; // Adjust based on your logo sizes
+    max-height: 80px; // Ensures logos don’t get too tall
+    width: auto;
+    height: auto;
+    object-fit: contain; // Prevents distortion of logos
+    transition: transform 0.3s ease; // Smooth hover effect
+
+    &:hover {
+      transform: scale(1.1); // Slight zoom on hover for interactivity
+    }
+  }
+}
+
+// Ensure logos stack nicely on smaller screens
+@media (max-width: 576px) {
+  .clients-grid {
+    .client-logo {
+      max-width: 120px; // Slightly smaller logos on mobile
+      max-height: 60px;
+    }
+  }
+}
