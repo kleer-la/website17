@@ -9,6 +9,7 @@
 %>
   <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: , subtitle:}%>
 <%end%>
+<%=erb :'home/institutional' %>
 <%=erb :'home/promotion' %>
 <%=erb :'component/client_carousel' %>
 <% if session[:locale] == 'es' %>
