@@ -1,49 +1,19 @@
-<% require './lib/timezone_converter'
-   require 'date'
+<% 
+require './lib/timezone_converter'
+require 'date'
 
-   show_two_prices = true if defined?(show_two_prices).nil? || show_two_prices.nil?
-
-   event_type = event.event_type
-   date = format_date_range(event.date, event.finish_date, session[:locale])
-
-   info_time =  t("course_landing.event.time", :starts => event.start_time.strftime("%k:%M"), :ends => event.end_time.strftime("%k:%M") )
-
-   today = Date.today
-   eb_date = Date.parse(event.eb_date)
-
-   coupon = event_type.coupons[0]
-   list_price = event.list_price.to_i
-   price_off = event.eb_price.to_i
-   using_coupon = false
-   duration = event.duration
-   show_eb_price = event.eb_price and eb_date and eb_date >= today
-   last_column_width = show_two_prices ? 1 : 3
-
-   if coupon
-    coupon_price = list_price - (list_price * coupon.percent_off.to_i / 100)
-
-    if coupon_price < price_off
-      price_off = coupon_price
-      using_coupon = true
-    end
-   end
-  unless event.specific_conditions.to_s.empty?
-    pop_up_open = '<div class="more-info rounded">'
-    pop_up_close = """
-          <span class=\"tooltip-icon\"></span>
-          <div class=\"more-info__popup\">
-            #{@markdown_renderer.render(event.specific_conditions)}
-          </div>
-        </div>
-    """
-  end
+ pricing = calculate_event_pricing(event)
+puts pricing.inspect
+ show_two_prices = true if defined?(show_two_prices).nil? || show_two_prices.nil?
+ last_column_width = show_two_prices ? 1 : 3
+ popup = specific_conditions_popup(event, @markdown_renderer)
 %>
 
 <div class="row event-item pb-4 mt-4 ms-2 me-2">
   <% if with_name %>
     <div class="col-lg-3">
-      <a href="<%= event_type.uri_path %>"><h6><%= event_type.name %></h6></a>
-      <p id="place-<%=event_type.id%>">
+      <a href="<%= event.event_type.uri_path %>"><h6><%= event.event_type.name %></h6></a>
+      <p id="place-<%= event.event_type.id %>">
         <% if event.country_iso == 'OL' %>
           <img src="/app/img/icons/VideoCamera.svg" loading="lazy">
           Online
@@ -55,23 +25,23 @@
       </p>
     </div>
     <div class="col-4 col-lg-2 next-edition-item">
-      <%= pop_up_open%>
-        <%= date %>
-      <%= pop_up_close%>
+      <%= popup[:open] if popup %>
+        <%= format_date_range(event.date, event.finish_date, session[:locale]) %>
+      <%= popup[:close] if popup %>
       <% if with_name %>
-        <strong class="duration-mobile"><%= duration %> horas</strong>
+        <strong class="duration-mobile"><%= event.duration %> horas</strong>
       <% end %>
     </div>
   <% else %>
     <div class="col-4 col-lg-1 next-edition-item">
-      <%= pop_up_open%>
-        <%= date%>
-      <%= pop_up_close%>
+      <%= popup[:open] if popup %>
+        <%= format_date_range(event.date, event.finish_date, session[:locale]) %>
+      <%= popup[:close] if popup %>
     </div>
     <div class="col-4 col-lg-1 next-edition-item">
       <p>
         <img src="/app/img/icons/Clock.svg" loading="lazy">
-        <%= duration %>hs
+        <%= event.duration %>hs
       </p>
     </div>
   <% end %>
@@ -85,56 +55,54 @@
         <% else %>
           <img src="/img/flags/<%= event.country_iso.downcase %>.png" loading="lazy"/>
           <%= "#{event.city}, #{event.country}" %><br>
-          <%= [event.place.to_s, event.address.to_s].uniq.join(' - ')
-          %>
+          <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
         <% end %>
       </p>
     </div>
   <% end %>
+
   <div class="col-6 col-lg-2 next-edition-item">
     <% if with_name %>
-      <strong class="duration-desktop"><%= duration %>hs</strong>
+      <strong class="duration-desktop"><%= event.duration %>hs</strong>
     <% end %>
-      <%= info_time %>
-    <a class="small-label time-zone" href="<%=event.timezone_url%>">
+    <%= event_time_info(event) %>
+    <a class="small-label time-zone" href="<%= event.timezone_url %>">
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
     </a>
   </div>
-  <%if !show_eb_price || show_two_prices%>
-  <div class="col-4 col-lg-2 next-edition-item" id="currency-<%=event_type.id%>">
-    <strong><%= "#{event.currency_iso_code} #{money_format(list_price)}" || 'precio' %></strong>
-  </div>
-  <%end%>
+
+  <% if !pricing[:show_eb_price] || show_two_prices %>
+    <div class="col-4 col-lg-2 next-edition-item" id="currency-<%= event.event_type.id %>">
+      <strong><%= format_price(event, pricing[:list_price]) || 'precio' %></strong>
+    </div>
+  <% end %>
+
+  <% if pricing[:show_eb_price] || show_two_prices %>
   <div class="col-4 col-lg-2 next-edition-item">
-    <% if using_coupon %>
-      <strong class="price event-price"><%= "#{event.currency_iso_code} #{money_format(price_off)}"%></strong>
-      <%unless coupon.icon.to_s == ''%>
-        <img src="<%= coupon.icon %>" class="coupon-icon" loading="lazy"/>
+    <% if pricing[:using_coupon] %>
+      <strong class="price event-price"><%= format_price(event, pricing[:final_price]) %></strong>
+      <% unless pricing[:coupon].icon.to_s.empty? %>
+        <img src="<%= pricing[:coupon].icon %>" class="coupon-icon" loading="lazy"/>
       <% end %>
-    <% elsif show_eb_price %>
-      <strong class="price"><%= "#{event.currency_iso_code} #{money_format(event.eb_price.to_i)}"%></strong>
+    <% elsif pricing[:show_eb_price] %>
+      <strong class="price"><%= format_price(event, pricing[:final_price]) %></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>
-  <div class="col-4 col-lg-<%=last_column_width%> next-edition-item">
-    <div class="btn-center-container" id="pay-button-<%=format_date_range(event.date, event.finish_date, session[:locale]).to_s.downcase.gsub(' ','-')%>">
-      <% if event.is_sold_out || event.registration_ended?%>
-        <button class="my-primary-button p-2"
-                href='' style="filter: grayscale(100%); max-width: 150px; width: 130px">
+  <% end %>
+
+  <div class="col-4 col-lg-<%= last_column_width %> next-edition-item">
+    <div class="btn-center-container" id="pay-button-<%= format_date_range(event.date, event.finish_date, session[:locale]).to_s.downcase.gsub(' ', '-') %>">
+      <% if event.is_sold_out || event.registration_ended? %>
+        <button class="my-primary-button p-2" style="filter: grayscale(100%); max-width: 150px; width: 130px">
           Completo
         </button>
-      <% else
-        uri = "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la"
-        uri = event.registration_link unless event.registration_link.empty?
-      %>
-        <a id="buy-<%=event_type.id%>"
-           class="my-primary-button p-2"
-           style="max-width: 150px; width: 130px"
-           href='<%= uri %>'>Comprar
+      <% else %>
+        <% uri = event.registration_link.empty? ? "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" : event.registration_link %>
+        <a id="buy-<%= event.event_type.id %>" class="my-primary-button p-2" style="max-width: 150px; width: 130px" href="<%= uri %>">
+          Comprar
         </a>
       <% end %>
     </div>
-
   </div>
-
 </div>
