@@ -46,39 +46,40 @@ $white: #FFFFFF;
     margin: 0;
     margin-bottom: 1rem;
 
-    .highlight {
-      display: inline-block;
-      padding: 0.3rem 0.5rem;
-      text-transform: uppercase;
-      font-weight: 900;
-      position: relative;
-      // margin-bottom: -0.8rem; // Overlap effect
+  }
 
-      // Default style for lines 2 and 3: black background, white text
-      background-color: black;
-      color: white;
-      line-height: 1; // Reduce extra space around the text
-      padding-top: 0.05rem; // Slightly less padding on top
-      // padding-bottom: 0.25rem; // Slightly more padding on bottom to balance
+  .highlight {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    // margin-bottom: -0.8rem; // Overlap effect
 
-      // First line: white background, black text
-      &--first {
-        background-color: white;
-        color: black;
-      }
+    // Default style for lines 2 and 3: black background, white text
+    background-color: black;
+    color: white;
+    line-height: 1; // Reduce extra space around the text
+    padding-top: 0.05rem; // Slightly less padding on top
+    // padding-bottom: 0.25rem; // Slightly more padding on bottom to balance
 
-      // Rotations for each line
-      &:nth-child(1) {
-        transform: rotate(-2deg); // First line slight left tilt
-      }
+    // First line: white background, black text
+    &--first {
+      background-color: white;
+      color: black;
+    }
 
-      &:nth-child(2) {
-        transform: rotate(0deg); // Middle line straight
-      }
+    // Rotations for each line
+    &:nth-child(1) {
+      transform: rotate(-2deg); // First line slight left tilt
+    }
 
-      &:nth-child(3) {
-        transform: rotate(2deg); // Last line slight right tilt
-      }
+    &:nth-child(2) {
+      transform: rotate(0deg); // Middle line straight
+    }
+
+    &:nth-child(3) {
+      transform: rotate(2deg); // Last line slight right tilt
     }
   }
 }
