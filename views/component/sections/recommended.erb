@@ -2,8 +2,12 @@
 <div id="recommendedContent">
   <section class="mt-5 mb-5 desktop-only">
     <div class="container desktop-only">
+      <% subtitle = nil if defined?(subtitle).nil? %>
       <%unless title.nil?%>
-        <h2 class="mb-5 text-center common-subtitle"><%= title || t('recommended.title')%></h2>
+        <h2 class="<%= 'mb-5 text-center' if subtitle.nil? %> common-subtitle"><%= title || t('recommended.title')%></h2>
+      <%end%>
+      <%unless subtitle.nil?%>
+        <p class=""><%= subtitle%></p>
       <%end%>
       <div class="row">
           <% recommended.each  do |item|%>
