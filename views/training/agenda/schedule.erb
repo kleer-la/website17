@@ -3,9 +3,25 @@
   names = events.map{|e| e.event_type.name}
 
   names = names.uniq
+
+  show_two_prices = true if defined?(show_two_prices).nil? || show_two_prices.nil?
+
+  title = t('home.home_courses.title')
+
+  if !@page&.sections.nil? && !@page&.sections['agenda'].nil?
+    title = @page.sections['agenda']['title']
+    #description = @page.sections['agenda']['content']
+  end
 %>
 
 <div class="container mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center m-4 last-courses__title">
+        <%= title%>
+      </h2>
+    </div>
+  </div>
   <div class="row ms-2 me-2 schedule-titles ">
     <div class="col-3">
       <div class="dropdown">
@@ -39,15 +55,17 @@
     <div class="col-2 item">
       Valor
     </div>
+    <%if show_two_prices%>
     <div class="col-2 item">
       Precio de descuento
     </div>
+    <%end%>
     <div class="col-1 item"></div>
   </div>
   <div id="show-courses-list" class="mb-4">
     <% events.each do |event| %>
       <div id="<%=event.event_type.name%>-item">
-        <%= erb :'component/_schedule_item', locals: {event: event, with_name: true}%>
+        <%= erb :'component/_schedule_item', locals: {event: event, with_name: true, show_two_prices: }%>
       </div>
     <% end %>
   </div>

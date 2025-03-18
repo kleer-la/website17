@@ -58,19 +58,20 @@ get '/home' do
 
   @page = page
   @clients = client_list
-  @coming_courses = if session[:locale] == 'es'
-                      first_three = first_x_courses(coming_courses, 3)
-                      one = AcademyCourses.new.load.select(session[:locale], 1)
-                                          .map { |e| e.transform_keys(&:to_sym) }
-                      if one == []
-                        first_three
-                      else
-                        one[0][:categories] = nil
-                        one[0][:date] = 'Academia'
+  # @coming_courses = if session[:locale] == 'es'
+  #                     first_three = first_x_courses(coming_courses, 3)
+  #                     one = AcademyCourses.new.load.select(session[:locale], 1)
+  #                                         .map { |e| e.transform_keys(&:to_sym) }
+  #                     if one == []
+  #                       first_three
+  #                     else
+  #                       one[0][:categories] = nil
+  #                       one[0][:date] = 'Academia'
 
-                        first_three << one[0]
-                      end
-                    end
+  #                       first_three << one[0]
+  #                     end
+  #                   end
+  @events = Event.create_keventer_json.first(4)
 
   erb :'home/index2', layout: :'layout/layout2022'
 end

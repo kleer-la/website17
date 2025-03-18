@@ -1,6 +1,8 @@
 <% require './lib/timezone_converter'
    require 'date'
 
+   show_two_prices = true if defined?(show_two_prices).nil? || show_two_prices.nil?
+
    event_type = event.event_type
    date = format_date_range(event.date, event.finish_date, session[:locale])
 
@@ -14,6 +16,8 @@
    price_off = event.eb_price.to_i
    using_coupon = false
    duration = event.duration
+   show_eb_price = event.eb_price and eb_date and eb_date >= today
+   last_column_width = show_two_prices ? 1 : 3
 
    if coupon
     coupon_price = list_price - (list_price * coupon.percent_off.to_i / 100)
@@ -96,21 +100,23 @@
       <%= "#{TimezoneConverter.gmt(event.time_zone_name)} #{event.time_zone_name}" %>
     </a>
   </div>
+  <%if !show_eb_price || show_two_prices%>
   <div class="col-4 col-lg-2 next-edition-item" id="currency-<%=event_type.id%>">
     <strong><%= "#{event.currency_iso_code} #{money_format(list_price)}" || 'precio' %></strong>
   </div>
+  <%end%>
   <div class="col-4 col-lg-2 next-edition-item">
     <% if using_coupon %>
       <strong class="price event-price"><%= "#{event.currency_iso_code} #{money_format(price_off)}"%></strong>
       <%unless coupon.icon.to_s == ''%>
         <img src="<%= coupon.icon %>" class="coupon-icon" loading="lazy"/>
       <% end %>
-    <% elsif event.eb_price and eb_date and eb_date >= today %>
+    <% elsif show_eb_price %>
       <strong class="price"><%= "#{event.currency_iso_code} #{money_format(event.eb_price.to_i)}"%></strong>
       <p class="small-label">hasta <%= event.eb_date %></p>
     <% end %>
   </div>
-  <div class="col-4 col-lg-1 next-edition-item">
+  <div class="col-4 col-lg-<%=last_column_width%> next-edition-item">
     <div class="btn-center-container" id="pay-button-<%=format_date_range(event.date, event.finish_date, session[:locale]).to_s.downcase.gsub(' ','-')%>">
       <% if event.is_sold_out || event.registration_ended?%>
         <button class="my-primary-button p-2"
