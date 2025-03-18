@@ -25,17 +25,31 @@ module AppHelper
   end
 
   def to_lines(text)
-    words = text.split(/\s+/) # Split into words
+    words = text.split(/\s+/).reject(&:empty?)
     total_words = words.length
-    words_per_line = (total_words.to_f / 3).ceil # Roughly equal parts
-  
-    [
-      words.slice(0, words_per_line).join(' '),
-      words.slice(words_per_line, words_per_line).join(' '),
-      words.slice(words_per_line * 2, total_words).join(' ')
-    ]
+    result = ['', '', '']
+    if total_words == 0
+      return result
+    elsif total_words <= 3
+      # Put one word per line up to 3 words
+      words.each_with_index do |word, index|
+        result[index] = word
+      end
+      return result
+    end
+
+    words_per_line = (total_words / 3.0)
+    first_cut = words_per_line.round
+    second_cut = (2 * words_per_line).round
+
+    result[0] = words[0...first_cut].join(' ')
+    second_slice = words[first_cut...second_cut]
+    result[1] = second_slice.empty? ? '' : second_slice.join(' ')
+    third_slice = words[second_cut..-1]
+    result[2] = third_slice.empty? ? '' : third_slice.join(' ')
+
+    result
   end
-  
 
   module_function
 
