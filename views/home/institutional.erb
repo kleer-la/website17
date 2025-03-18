@@ -2,7 +2,7 @@
 hero_item = t("home.home_hero").first
 title = 'Acelera la transformación organizacional'
 description = 'Construye una cultura de innovación y aprendizaje continuo con Kleer.'
-if !@page.sections.nil? && !@page.sections['hero'].nil?
+if !@page.sections.nil? && !@page.sections['institutional'].nil?
   title = @page.sections['institutional']['title']
   description = @page.sections['institutional']['content']
 end

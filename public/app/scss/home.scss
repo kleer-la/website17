@@ -341,3 +341,36 @@ $white: #FFFFFF;
   right: 0;
   z-index: 0;
 }
+
+// General styles for the banner
+.academia-banner {
+  background-color: #DFE0FF; // Light purple background similar to the image
+}
+
+// Logo container and image
+.academia__img-container {
+  text-align: center; // Center the logo
+
+  .academia__img {
+    max-width: 70%; // Ensure the image scales properly
+    height: auto; // Maintain aspect ratio
+  }
+}
+
+// Text content
+.academia__text {
+  color: #333; // Dark text color similar to the image
+
+  .academia__title {
+    font-size: 24px; // Adjust font size to match the bold title
+    font-weight: bold; // Bold title
+    margin-bottom: 10px; // Space between title and paragraph
+    color: #000; // Black color for title
+  }
+
+  p {
+    font-size: 16px; // Adjust font size for paragraph
+    line-height: 1.5; // Improve readability
+    color: #333; // Dark gray for text
+  }
+}

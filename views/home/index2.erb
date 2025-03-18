@@ -15,4 +15,5 @@
 <% if session[:locale] == 'es' %>
   <% #=erb :'home/courses' %>
   <%= erb :'training/agenda/schedule', locals: {show_two_prices: false} %>
+  <%=erb :'home/academia' %>
 <% end %>

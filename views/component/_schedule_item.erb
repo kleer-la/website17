@@ -3,7 +3,7 @@ require './lib/timezone_converter'
 require 'date'
 
  pricing = calculate_event_pricing(event)
-puts pricing.inspect
+
  show_two_prices = true if defined?(show_two_prices).nil? || show_two_prices.nil?
  last_column_width = show_two_prices ? 1 : 3
  popup = specific_conditions_popup(event, @markdown_renderer)
