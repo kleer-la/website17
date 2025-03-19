@@ -406,3 +406,27 @@ $white: #FFFFFF;
     }
   }
 }
+
+.service-area-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.service-area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-area-card .card-body {
+  padding: 1.5rem;
+}
+
+.service-area-card .icon-container {
+  transition: background-color 0.3s ease;
+}
+
+.service-area-card:hover .icon-container {
+  filter: brightness(1.1);
+}

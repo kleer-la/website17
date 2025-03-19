@@ -1,0 +1,12 @@
+<section id="homepage-service-areas" class="container my-5">
+  <div class="text-center mb-4">
+    <h2>Explora Nuestros Servicios</h2>
+    <p>Queremos conocer tus desafíos para ofrecerte una solución personalizada.</p>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch">
+    <% @areas.each do |area| %>
+      <%= erb :'home/_service_area_card', locals: { area: area } %>
+    <% end %>
+  </div>
+</section>
