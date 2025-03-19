@@ -141,13 +141,6 @@ $white: #FFFFFF;
   z-index: 30;
 }
 
-.hero2 {
-  max-height: 85vh;
-  height: calc(85vh - 50px);
-  margin-top: 50px;
-  overflow: hidden;
-}
-
 @media screen and (max-width:992px) {
 
   //lg size
@@ -180,6 +173,20 @@ $white: #FFFFFF;
     display: flex !important;
     margin: auto;
     margin-bottom: 50px;
+  }
+}
+
+
+.hero2 {
+  max-height: 85vh;
+  height: calc(85vh - 50px);
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .hero2 {
+    margin-top: 9rem; // Adjust this value based on your navbar's height on mobile
   }
 }
 
