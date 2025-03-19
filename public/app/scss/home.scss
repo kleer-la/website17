@@ -71,7 +71,7 @@ $white: #FFFFFF;
 
     // Rotations for each line
     &:nth-child(1) {
-      transform: rotate(-2deg); // First line slight left tilt
+      transform: rotate(1deg); // First line slight left tilt
     }
 
     &:nth-child(2) {
@@ -79,7 +79,7 @@ $white: #FFFFFF;
     }
 
     &:nth-child(3) {
-      transform: rotate(2deg); // Last line slight right tilt
+      transform: rotate(-1deg); // Last line slight right tilt
     }
   }
 }
@@ -435,4 +435,119 @@ $white: #FFFFFF;
 
 .service-area-card:hover .icon-container {
   filter: brightness(1.1);
+}
+
+.institutional {
+  max-height: 85vh;
+  height: calc(85vh - 50px);
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.institutional__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0;
+  /* From the h1 styles */
+  margin-bottom: 1rem;
+  /* From the h1 styles */
+}
+
+.institutional__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 15%;
+  padding-top: 8%;
+  padding-right: 10%;
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 7%;
+  }
+
+  .highlight {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    text-transform: uppercase;
+    // font-weight: 800;
+    position: relative;
+    background-color: black;
+    color: white;
+    line-height: 1;
+    padding-top: 0.05rem;
+
+    &--first {
+      background-color: white;
+      color: black;
+    }
+
+    &:nth-child(1) {
+      transform: rotate(1deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(0deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-1deg);
+    }
+  }
+}
+
+.institutional__img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  max-height: 100%;
+}
+
+.institutional__video {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  #institutional {
+    text-align: center;
+  }
+
+  .institutional__text {
+    height: auto;
+    padding: 0 5%;
+  }
+
+  .institutional__img {
+    max-width: 90%;
+  }
+
+  .institutional__desktop-button {
+    display: none !important;
+  }
+
+  .institutional__mobile-button {
+    display: flex !important;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+
+  .institutional__video {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .institutional__video {
+    height: 250px;
+  }
 }
