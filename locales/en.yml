@@ -598,7 +598,7 @@ en:
     - text: We publish
       options:
         - text: Resources
-          url: /recursos
+          url: /resources
           inside: true
         - text: Blog
           url: /blog
@@ -618,7 +618,7 @@ en:
     - title: We publish
       items:
         - title: Resources
-          url: /recursos
+          url: /resources
         - title: Blog
           url: /blog
         - {}

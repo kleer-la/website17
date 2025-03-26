@@ -1,0 +1,25 @@
+<%
+title = 'Estas organizaciones confían en nosotros'
+description = '.'
+if !@page.sections.nil? && !@page.sections['clients'].nil?
+  title = @page.sections['clients']['title']
+  description = @page.sections['clients']['content']
+end
+%>
+<section id="client-carousel" class="p-3">
+  <div class="clients-grid container">
+    <h2 class="text-center mb-4"><%= title%></h2>
+    <div class="row">
+      <% @clients.each do |client| %>
+        <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center align-items-center mb-4">
+          <img src="<%= client[:img] %>" alt="<%= client[:name] %>" class="client-logo" loading="lazy" />
+        </div>
+      <% end %>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-12 col-lg-6 text-center">
+        <a class="btn my-secondary-button" href="/clientes"><%= description %></a>
+      </div>
+    </div>
+</div>
+</section>

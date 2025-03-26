@@ -19,10 +19,36 @@
   </div>
 </section>
 
-<section>
-    <% if @error_message.nil? || @error_message.empty? %>
+<section class="container mt-5 mb-5">
+   <div class="row">
+     <% if @error_message.nil? || @error_message.empty? %>
       <p>Respuestas enviadas correctamente, revisa tu correo para los resultados.</p>
   <% else %>
     <p><%= @error_message%></p>
   <% end %>
+  </div>
+<div id="result-container">
+  <div class="spinner-border" role="status" id="loading"></div>
+  <div id="result" style="display: none;">
+    <p>PDF: <a href="#" id="pdf-link"></a></p>
+  </div>
+</div>
+<script>
+  function checkStatus() {
+    fetch('/assessment/<%= @id %>/result_status')
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'processed') {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('result').style.display = 'block';
+          document.getElementById('pdf-link').href = data.assessment_report_url;
+          document.getElementById('pdf-link').textContent = 'Download PDF';
+        } else {
+          setTimeout(checkStatus, 2000); // Poll every 5 seconds
+        }
+      });
+  }
+  checkStatus();
+</script>
+
 </section>

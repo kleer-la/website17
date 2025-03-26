@@ -1,0 +1,38 @@
+<%
+title = 'Acelera la transformación organizacional'
+description = 'Construye una cultura de innovación y aprendizaje continuo con Kleer.'
+if !@page.sections.nil? && !@page.sections['institutional'].nil?
+  title = @page.sections['institutional']['title']
+  description = @page.sections['institutional']['content']
+end
+titles = to_lines(title)
+%>
+
+<section id="institutional" class="institutional">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-5 institutional__text">
+        <div>
+          <h2 class="institutional__title">
+            <span class="highlight highlight--first"><%= titles[0] %></span>
+            <span class="highlight"><%= titles[1] %></span>
+            <span class="highlight"><%= titles[2] %></span>          
+          </h2>
+          <p><%= description %></p>
+        </div>
+      </div>
+      <div class="col-lg-7 institutional__img-container">
+        <iframe 
+          class="institutional__video"
+          width="100%" 
+          height="480" 
+          src="https://www.youtube.com/embed/RdgV8iWW2DM" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

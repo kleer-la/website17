@@ -15,20 +15,19 @@ class Crawler
 
   def execute(start_path = '/')
     crawl(start_path)
-    save_results_to_file
     @errors
   end
 
-  def save_results_to_file
+  def save_results_to_file(filename = nil)
     timestamp = Time.now.strftime('%Y%m%d_%H%M%S')
-    filename = "crawler_results_#{timestamp}.txt"
+    filename ||= "crawler_results_#{timestamp}.txt"
     File.open(filename, 'w') do |file|
       file.puts 'URLs crawled:'
       @checked_urls.each { |url, parent| file.puts "#{url}\t#{parent}" }
       file.puts "\nExternal URLs:"
       @external_urls.each { |url, parent| file.puts "#{url}\t#{parent}" }
     end
-    puts "Results saved to #{filename}"
+    # puts "Results saved to #{filename}"
   end
 
   def filter_checked_urls(&condition)
@@ -66,10 +65,12 @@ class Crawler
 
     @checked_urls[full_url] = parent_url
     @counter += 1
-    puts "#{@counter}. Checking: #{full_url} (depth: #{depth})"
+    # puts "#{@counter}. Checking: #{full_url} (depth: #{depth})"
 
     begin
       response = get path
+      # puts "Response for #{path}: Status #{response.status}, Body: #{response.body[0..100]}..."
+    
       check_response(full_url, response, parent_url)
       parse_links(full_url, response.body, depth) if response.status == 200
     rescue StandardError => e
@@ -111,6 +112,7 @@ class Crawler
     return if url.nil? || url.empty? || url.start_with?('#', 'javascript:', 'mailto:', 'tel:')
 
     begin
+      target_url = URI.encode_www_form_component(url).gsub('%2F', '/')
       target_url = complete_url(url)
       is_internal = internal_url?(target_url)
       is_unchecked = !@checked_urls.key?(target_url)

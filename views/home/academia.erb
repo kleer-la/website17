@@ -1,0 +1,31 @@
+<%
+title = 'Cursos asíncronos en la Academia Kleer'
+description = 'Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.'
+if !@page.sections.nil? && !@page.sections['academia'].nil?
+  title = @page.sections['academia']['title']
+  description = @page.sections['academia']['content']
+end
+%>
+<section id="academia" class="mb-4">
+  <div class="container academia-banner">
+    <div class="row align-items-center">
+      <div class="col-lg-4 academia__img-container">
+        <a href="https://academia.kleer.la" rel="noopener noreferrer">
+        <picture>
+          <source srcset="/app/img/logos/logo-academia.webp" type="image/webp"/>
+          <img
+            src="/app/img/logos/logo-academia.png"
+            class="academia__img"
+            alt="Academia Kleer"
+          />
+        </picture></a>
+      </div>
+      <div class="col-lg-8 academia__text">
+        <div>
+          <h2 class="academia__title"><%= title%></h2>
+          <p><%= description%></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

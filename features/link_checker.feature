@@ -7,6 +7,7 @@ Feature: Link Checker
 Scenario: Check website for broken
   Given the site is crawled
   Then I should see no broken links
+  And Save the crawling results
 
   Scenario: Check website for double lang prefix
   Given the site is crawled

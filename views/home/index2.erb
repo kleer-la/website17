@@ -1,9 +1,33 @@
 <%=erb :'home/hero2' %>
-<% unless @page.nil? || @page.recommended.count == 0%>
-  <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: 'Novedades del mes' }%>
+<% unless @page.nil? || @page.recommended.count == 0
+  title = 'Novedades del mes'
+  subtitle = nil
+  if !@page.sections.nil? && !@page.sections['recommended'].nil?
+    title = @page.sections['recommended']['title']
+    subtitle = @page.sections['recommended']['content']
+  end
+  %>
+  <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: , subtitle:}%>
 <%end%>
-<%=erb :'home/promotion' %>
-<%=erb :'component/client_carousel' %>
+<%=erb :'home/institutional' %>
+<%=erb :'home/service_areas' %>
+<% #=erb :'home/promotion' %>
 <% if session[:locale] == 'es' %>
-  <%=erb :'home/courses' %>
+  <% #=erb :'home/courses' %>
+  <%= erb :'home/schedule' %>
+  <%= erb :'home/academia' %>
 <% end %>
+<%=erb :'home/clients' %>
+<%
+  title = 'Programar Reunión'
+  subtitle = 'Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.'
+  if !@page.sections.nil? && !@page.sections['contact'].nil? 
+    title = @page.sections['contact']['title']
+    subtitle = @page.sections['contact']['content']
+  end
+%>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: subtitle,
+          button_text: title
+        } %>

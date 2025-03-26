@@ -1,0 +1,20 @@
+<%
+title = 'Explora Nuestros Servicios'
+description = 'Queremos conocer tus desafíos para ofrecerte una solución personalizada.'
+if !@page.sections.nil? && !@page.sections['services'].nil?
+  title = @page.sections['services']['title']
+  description = @page.sections['services']['content']
+end
+%>
+<section id="homepage-service-areas" class="container my-5 service-areas">
+  <div class="text-center mb-4">
+    <h2><%= title%></h2>
+    <p><%= description%></p>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch">
+    <% @areas.each do |area| %>
+      <%= erb :'home/_service_area_card', locals: { area: area } %>
+    <% end %>
+  </div>
+</section>

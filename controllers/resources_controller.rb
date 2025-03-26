@@ -1,7 +1,7 @@
 require './lib/models/resources'
 require './lib/models/assessment'
 
-get '/recursos' do
+get %r{/(resources|recursos)/?} do
   page = Page.load_from_keventer(session[:locale], 'recursos')
   @meta_tags.set! title: page.seo_title || t('meta_tag.resources.title'),
                   description: page.seo_description || t('meta_tag.resources.description'),

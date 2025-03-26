@@ -44,4 +44,55 @@ describe AppHelper do
       end
     end
   end
+
+  describe '#to_lines' do
+  test_cases = [
+    [
+      'Impulsamos el crecimiento de tu empresa', 
+      ['Impulsamos el', 'crecimiento de', 'tu empresa'],
+      'splits text into 3 parts with exact matches'
+    ],
+    [
+      'One two three four five six', 
+      ['One two', 'three four', 'five six'],
+      'divides 6 words evenly into 3 lines'
+    ],
+    [
+      'Short text example', 
+      ['Short', 'text', 'example'],
+      'handles text with exactly 3 words'
+    ],
+    [
+      'This is a very long sentence that should be divided into three parts evenly', 
+      ['This is a very long', 'sentence that should be', 'divided into three parts evenly'],
+      'handles longer text with uneven distribution'
+    ],
+    [
+      '', 
+      ['', '', ''],
+      'handles empty string'
+    ],
+    [
+      'Single', 
+      ['Single', '', ''],
+      'handles single word'
+    ],
+    [
+      'Two words', 
+      ['Two', 'words', ''],
+      'handles two words'
+    ],
+    [
+      'Multiple    spaces    between words', 
+      ['Multiple', 'spaces between', 'words'],
+      'handles multiple spaces between words'
+    ]
+  ]
+  
+  test_cases.each do |input, expected_output, description|
+    it description do
+      expect(to_lines(input)).to eq expected_output
+    end
+  end
+end
 end

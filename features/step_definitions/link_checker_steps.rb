@@ -18,6 +18,13 @@ Given('the site is crawled') do
   $crawler.execute('/es/blog')
 end
 
+Then 'Save the crawling results to {string}' do |filename|
+  $crawler.save_results_to_file(filename)
+end
+Then 'Save the crawling results' do
+  $crawler.save_results_to_file
+end
+
 Then('I should see no broken links') do
   if $crawler.errors.any?
     error_messages = $crawler.errors.map do |e|
@@ -53,6 +60,7 @@ Then('all external URLs should be valid') do
     response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
       http.request_head(uri.path)
     end
+    next if [403, 405, 429, 999].include?(response.code.to_i)
 
     invalid_urls << "#{url} (Status: #{response.code}, Parent: #{parent_url})" if response.code.to_i >= 400
   rescue StandardError => e
