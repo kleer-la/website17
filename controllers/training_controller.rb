@@ -17,9 +17,10 @@ REDIRECT = {
   'entrenamos/evento/:event_id_with_name/registration' => nil,
   'entrenamos/evento/:event_id_with_name/remote' => nil,
   'entrenamos/evento/:event_id_with_name/entrenador/remote' => nil,
-  # 'comunidad/evento/:event_id_with_name' => '???',   #TODO: convert event ID to event Type
   'categoria/:category_codename' => 'catalogo',
-  'categoria/:category_codename/' => 'catalogo'
+  'categoria/:category_codename/' => 'catalogo',
+  'comunidad/evento/337-equipos-mas-productivos-buenos-aires' => 'cursos/339-taller-de-comunicacion-colaborativa'
+  # 'comunidad/evento/:event_id_with_name' => '???',   #TODO: convert event ID to event Type
 }.freeze
 
 REDIRECT.each do |uris|
