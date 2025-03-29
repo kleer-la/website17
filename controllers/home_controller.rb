@@ -22,6 +22,8 @@ def first_x_courses(courses, quantity)
 end
 
 get '/' do
+  return new_home unless session[:locale] == 'en'
+
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
                    description: page.seo_description || t('meta_tag.home.description'),
@@ -48,7 +50,7 @@ get '/' do
   erb :'home/index', layout: :'layout/layout2022'
 end
 
-get '/home' do
+def new_home
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
                    description: page.seo_description || t('meta_tag.home.description'),
@@ -58,10 +60,12 @@ get '/home' do
 
   @page = page
   @clients = client_list
-  @areas = ServiceAreaV3.create_list_keventer << 
-            ServiceAreaV3.create_keventer('programas-capacitacion-empresarial', false)
 
-   @events = Event.create_keventer_json.first(4)
+  extra_area = ServiceAreaV3.create_keventer('programas-capacitacion-empresarial', false)
+  @areas = ServiceAreaV3.create_list_keventer 
+  @areas << extra_area unless extra_area.nil?
+
+  @events = Event.create_keventer_json.first(4)
 
   erb :'home/index2', layout: :'layout/layout2022'
 end
