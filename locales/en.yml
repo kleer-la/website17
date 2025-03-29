@@ -618,7 +618,7 @@ en:
     - title: We publish
       items:
         - title: Resources
-          url: /resources
+          url: /resources 
         - title: Blog
           url: /blog
         - {}
