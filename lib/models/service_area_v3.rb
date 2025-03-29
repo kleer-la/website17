@@ -14,13 +14,13 @@ class ServiceAreaV3
     self
   end
 
-  def self.null_json_api(null_api)
-    @@json_api = null_api
+  def self.null_json_api(list_null_api, instance_null_api)
+    @@json_api = [list_null_api, instance_null_api]
   end
 
   def self.create_list_keventer
     response = if defined? @@json_api
-                 @@json_api
+                 @@json_api[0]
                else
                  JsonAPI.new(KeventerAPI.service_areas_url)
                end
@@ -45,7 +45,7 @@ class ServiceAreaV3
             KeventerAPI.service_area_url(slug)
           end
     response = if defined? @@json_api
-                 @@json_api
+                 @@json_api[1]
                else
                  JsonAPI.new(url)
                end
