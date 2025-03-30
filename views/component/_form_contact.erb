@@ -145,7 +145,7 @@ function setupDownloadForm(resourceSlug) {
   document.addEventListener('DOMContentLoaded', function() {
     var modalOpeners = document.querySelectorAll('.modal-opener');
     modalOpeners.forEach(function(button) {
-      button.addEventListener('click', loadReCaptcha);
+      button.addEventListener('click', loadReCaptcha('contact-form'));
     });
 
     // If the modal is already open when the page loads, load reCAPTCHA
