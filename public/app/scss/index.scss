@@ -294,6 +294,9 @@ html {
   font-size: 30px;
   box-shadow: 2px 2px 3px #999;
 
+  img {
+    max-width: none;
+  }
 
   img:hover {
     height: 70%;
@@ -317,7 +320,6 @@ html {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  max-width: none;
   /* Let the image use its intrinsic width (48px), solve the iOS problem */
 }
 
