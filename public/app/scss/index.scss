@@ -317,6 +317,8 @@ html {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  max-width: none;
+  /* Let the image use its intrinsic width (48px), solve the iOS problem */
 }
 
 .my-float {
