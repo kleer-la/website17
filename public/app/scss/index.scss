@@ -295,7 +295,7 @@ html {
   box-shadow: 2px 2px 3px #999;
 
   img {
-    max-width: none;
+    max-width: none; // Let the image use its intrinsic width (48px), solve the iOS problem
   }
 
   img:hover {
@@ -320,7 +320,6 @@ html {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  /* Let the image use its intrinsic width (48px), solve the iOS problem */
 }
 
 .my-float {
