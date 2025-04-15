@@ -11,4 +11,3 @@ Feature: Header & domains
     Given the host is "www.kleer.la"
     When I open the web app
     Then the response should not include the header "X-Robots-Tag"
-    
