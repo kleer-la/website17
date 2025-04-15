@@ -6,7 +6,7 @@ def client_list(sample_size = 12)
     { name: 'Scotiabank', img: '/img/clientes/Scotiabank.webp' },
     { name: 'Sura', img: '/img/clientes/sura.webp' },
     { name: 'Cementos Argos', img: '/img/clientes/argos.webp' },
-    { name: 'Ecopetrol', img: '/img/clientes/Ecopetrol.webp' },
+    { name: 'Ecopetrol', img: '/img/clientes/EcoPetrol.webp' },
     { name: 'Grupo Nutresa', img: '/img/clientes/grupoNutresa.webp' },
     { name: 'Terpel', img: '/img/clientes/terpel.webp' },
     { name: 'BCI', img: '/img/clientes/BCi.webp' },

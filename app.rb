@@ -60,16 +60,10 @@ configure do
 end
 
 before do
-  session[:locale] = if request.host.include?('kleer.us')
-                       'en'
-                     else
-                       'es'
-                     end
-
-  if ['kleer.us', 'kleer.es', 'www.kleer.us', 'www.kleer.es'].include? request.host
-    # redirect "https://www.#{request.host}#{request.path}"
-    lang = "/#{session[:locale]}" unless %w[/en /es].include? request.path[0, 3]
-    redirect "https://www.kleer.la#{lang}#{request.path}"
+  target_url, locale = unify_domains(request.host, request.path)
+  session[:locale] = locale if locale # Set only if locale is non-nil
+  if target_url
+    redirect target_url, 301
   else
     @base_title = 'Agile Coaching, Consulting & Training'
     @meta_tags = Tags.new
