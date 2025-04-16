@@ -452,10 +452,10 @@ $white: #FFFFFF;
 }
 
 .institutional {
-  max-height: 85vh;
-  height: calc(85vh - 50px);
+  max-height: none;
+  height: auto;
   margin-top: 50px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .institutional__title {
@@ -525,7 +525,8 @@ $white: #FFFFFF;
 .institutional__video {
   width: 100%;
   max-width: 800px;
-  height: 450px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -556,12 +557,16 @@ $white: #FFFFFF;
   }
 
   .institutional__video {
-    height: 350px;
+    height: auto;
+    /* Override fixed height */
+    aspect-ratio: 16 / 9;
   }
 }
 
 @media screen and (max-width: 576px) {
   .institutional__video {
-    height: 250px;
+    height: auto;
+    /* Override fixed height */
+    aspect-ratio: 16 / 9;
   }
 }
