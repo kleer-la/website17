@@ -177,8 +177,8 @@ $white: #FFFFFF;
 }
 
 .hero2 {
-  max-height: 85vh;
-  height: calc(85vh - 50px);
+  max-height: auto;
+  // height: calc(85vh - 50px);
   margin-top: 50px;
   overflow: hidden;
 }
