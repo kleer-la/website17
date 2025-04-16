@@ -176,7 +176,6 @@ $white: #FFFFFF;
   }
 }
 
-
 .hero2 {
   max-height: 85vh;
   height: calc(85vh - 50px);
@@ -216,8 +215,12 @@ $white: #FFFFFF;
   margin-top: auto;
 }
 
+.client-logos {
+  margin: 250px 10px 150px 10px;
+  z-index: 0;
+  position: relative;
+}
 
-//client-carousel
 #client-carousel {
   margin: 250px 10px 150px 10px;
   z-index: 0;
@@ -231,6 +234,10 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:420px) {
+  .client-logos {
+    margin: 120px 10px 120px 10px;
+  }
+
   .mobile-client-carousel {
     display: block;
   }
