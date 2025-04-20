@@ -20,6 +20,7 @@ ObjectSpace.each_object(Module) do |m|
 end
 
 require './controllers/helper'
+require './controllers/assessments_controller'
 require './controllers/resources_controller'
 require './controllers/blog_controller'
 require './controllers/services_controller'

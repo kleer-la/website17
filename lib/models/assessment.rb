@@ -26,7 +26,7 @@ class Assessment
 
   attr_accessor :id, :title, :description, :question_groups, :questions
 
-  def initialize(doc, _lang)  # Remove lang parameter since we’re not localizing
+  def initialize(doc, _lang= '')  # Remove lang parameter since we’re not localizing
     @id = doc.is_a?(Hash) && doc['id'] ? doc['id'] : nil
     @title = doc.is_a?(Hash) && doc['title'] ? doc['title'] : ''
     @description = doc.is_a?(Hash) && doc['description'] ? doc['description'] : ''
