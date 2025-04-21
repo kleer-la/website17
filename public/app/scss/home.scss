@@ -176,10 +176,9 @@ $white: #FFFFFF;
   }
 }
 
-
 .hero2 {
-  max-height: 85vh;
-  height: calc(85vh - 50px);
+  max-height: auto;
+  // height: calc(85vh - 50px);
   margin-top: 50px;
   overflow: hidden;
 }
@@ -216,8 +215,12 @@ $white: #FFFFFF;
   margin-top: auto;
 }
 
+.client-logos {
+  margin: 250px 10px 150px 10px;
+  z-index: 0;
+  position: relative;
+}
 
-//client-carousel
 #client-carousel {
   margin: 250px 10px 150px 10px;
   z-index: 0;
@@ -231,6 +234,10 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:420px) {
+  .client-logos {
+    margin: 120px 10px 120px 10px;
+  }
+
   .mobile-client-carousel {
     display: block;
   }
@@ -445,10 +452,10 @@ $white: #FFFFFF;
 }
 
 .institutional {
-  max-height: 85vh;
-  height: calc(85vh - 50px);
+  max-height: none;
+  height: auto;
   margin-top: 50px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .institutional__title {
@@ -518,7 +525,8 @@ $white: #FFFFFF;
 .institutional__video {
   width: 100%;
   max-width: 800px;
-  height: 450px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -549,12 +557,16 @@ $white: #FFFFFF;
   }
 
   .institutional__video {
-    height: 350px;
+    height: auto;
+    /* Override fixed height */
+    aspect-ratio: 16 / 9;
   }
 }
 
 @media screen and (max-width: 576px) {
   .institutional__video {
-    height: 250px;
+    height: auto;
+    /* Override fixed height */
+    aspect-ratio: 16 / 9;
   }
 }

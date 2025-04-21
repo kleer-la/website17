@@ -1,45 +1,22 @@
-<%unless recommended.empty?%>
+<% unless recommended.empty? %>
 <div id="recommendedContent">
-  <section class="mt-5 mb-5 desktop-only">
-    <div class="container desktop-only">
-      <% subtitle = nil if defined?(subtitle).nil? %>
-      <%unless title.nil?%>
-        <h2 class="<%= 'mb-5 text-center' if subtitle.nil? %> common-subtitle"><%= title || t('recommended.title')%></h2>
-      <%end%>
-      <%unless subtitle.nil?%>
-        <p class=""><%= subtitle%></p>
-      <%end%>
+  <section class="mt-5 mb-5">
+    <div class="container">
+      <% subtitle = nil unless defined?(subtitle) %>
+      <% unless title.nil? %>
+        <h2 class="<%= 'mb-5 text-center' if subtitle.nil? %> common-subtitle"><%= title || t('recommended.title') %></h2>
+      <% end %>
+      <% unless subtitle.nil? %>
+        <p><%= subtitle %></p>
+      <% end %>
       <div class="row">
-          <% recommended.each  do |item|%>
-          <div class="col-3">
-            <%= erb :'component/cards/_recommended_card', locals: {item:}  %>
+        <% recommended.each do |item| %>
+          <div class="col-12 col-md-6 col-lg-3 mb-4">
+            <%= erb :'component/cards/_recommended_card', locals: { item: item } %>
           </div>
-          <% end %>
+        <% end %>
       </div>
-    </div>
-  </section>
-  <section class="mobile-only">
-    <div id="carouselRecommended" class="carousel slide mobile-only" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <%
-          active = [false] * recommended.count
-          active[0] = true
-          recommended.each_with_index do |item, idx|
-        %>
-          <div class="carousel-item ps-5 <%= active[idx] ? 'active' : '' %>" style="padding-left: 50px">
-              <%= erb :'component/cards/_recommended_card', locals: {item:}  %>
-          </div>
-        <%end %>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
   </section>
 </div>
-<%end%>
+<% end %>

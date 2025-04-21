@@ -53,7 +53,8 @@ module KeventerAPI
     article: ['articles/:slug.json', :slug],
     resource: ['resources/:slug.json', :slug],
     assessment: ['assessments/:slug.json', :slug],
-    contact_status: ['contacts/:id/status.json', :id]
+    contact_status: ['contacts/:id/status.json', :id],
+    contact: ['contacts/:id.json', :id]
   }.each do |name, (path, param)|
     define_method("#{name}_url") do |value|
       echo(url_for(path.gsub(":#{param}", value.to_s)))

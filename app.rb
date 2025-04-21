@@ -20,6 +20,7 @@ ObjectSpace.each_object(Module) do |m|
 end
 
 require './controllers/helper'
+require './controllers/assessments_controller'
 require './controllers/resources_controller'
 require './controllers/blog_controller'
 require './controllers/services_controller'
@@ -100,6 +101,15 @@ get '/es' do
   redirect '/es/', 301 # permanent redirect
 end
 
+get '/robots.txt' do
+  content_type :text
+  <<-ROBOTS
+  User-agent: *
+  Disallow: /.well-known/apple-app-site-association
+  Disallow: /apple-app-site-association
+  ROBOTS
+end
+
 # TODO: redirect
 PERMANENT_REDIRECT = {
   'e-books' => 'es/recursos',
@@ -150,8 +160,6 @@ PERMANENT_REDIRECT.each do |original, redirect|
     redirect "/#{redirect}", 301
   end
 end
-
-# LEGACY ====================
 
 private
 
