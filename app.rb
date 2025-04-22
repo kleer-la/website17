@@ -92,15 +92,6 @@ before '/:locale/*' do
   end
   I18n.locale = session[:locale]
 end
-
-get '/en' do
-  redirect '/en/', 301 # permanent redirect
-end
-
-get '/es' do
-  redirect '/es/', 301 # permanent redirect
-end
-
 get '/robots.txt' do
   content_type :text
   <<-ROBOTS
@@ -108,6 +99,13 @@ get '/robots.txt' do
   Disallow: /.well-known/apple-app-site-association
   Disallow: /apple-app-site-association
   ROBOTS
+end
+get '/en' do
+  redirect '/en/', 301 # permanent redirect
+end
+
+get '/es' do
+  redirect '/es/', 301 # permanent redirect
 end
 
 # TODO: redirect
