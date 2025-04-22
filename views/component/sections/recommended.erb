@@ -9,13 +9,16 @@
       <% unless subtitle.nil? %>
         <p><%= subtitle %></p>
       <% end %>
-      <div class="d-none d-md-block row">
-        <% recommended.each do |item| %>
-          <div class="col-12 col-md-6 col-lg-3 mb-4">
-            <%= erb :'component/cards/_recommended_card', locals: { item: item } %>
+      <div class="d-none d-md-block">
+        <div class="row g-4">
+          <% recommended.each do |item| %>
+            <div class="col-12 col-md-6 col-lg-3">
+              <%= erb :'component/cards/_recommended_card', locals: { item: item } %>
           </div>
         <% end %>
+        </div>
       </div>
+      <!-- Mobile Carousel -->
       <div class="d-block d-md-none">
         <div id="recommendedCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -26,7 +29,7 @@
             <% end %>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#recommendedCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control \n            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#recommendedCarousel" data-bs-slide="next">
