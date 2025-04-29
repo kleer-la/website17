@@ -13,7 +13,7 @@ class Page
     @cover = empty_to_nil(data['cover'])
     @recommended = Recommended.create_list(data['recommended'] || [])
     @sections = (data['sections'] || []).each_with_object({}) do |section, hash|
-      hash[section['slug']] = section.slice('title', 'content', 'position')
+      hash[section['slug']] = section.slice('title', 'content', 'cta_text', 'position')
     end
   end
 

@@ -450,23 +450,32 @@ $white: #FFFFFF;
     max-width: 1500px;
     width: 100%;
 
+    h2 {
+      font-size: 60px;
+      position: relative;
+
+      .line {
+        height: 30px;
+        width: 80%;
+        position: absolute;
+        bottom: -5px;
+        z-index: -1;
+      }
+    }
+
+    h4 {
+      max-width: 50%;
+      font-size: 1.5rem;
+      line-height: 1.6rem;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 1.6rem;
+    }
+
     .value-proposition {
       margin: 30px;
       height: auto;
       position: relative;
-
-      h2 {
-        font-size: 60px;
-        position: relative;
-
-        .line {
-          height: 30px;
-          width: 80%;
-          position: absolute;
-          bottom: -5px;
-          z-index: -1;
-        }
-      }
 
       .text {
         padding: 20px;
@@ -483,18 +492,12 @@ $white: #FFFFFF;
       }
     }
 
+
     .outcomes {
       margin: 30px 70px;
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      h4 {
-        max-width: 50%;
-        font-size: 32px;
-        font-weight: 400;
-        text-align: center;
-      }
 
       .outcome-list {
         margin-top: 30px;
@@ -549,13 +552,6 @@ $white: #FFFFFF;
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      h4 {
-        max-width: 50%;
-        font-size: 32px;
-        font-weight: 400;
-        text-align: center;
-      }
 
       .program-item {
         border-radius: 16px;
@@ -1034,13 +1030,11 @@ $white: #FFFFFF;
         display: none;
       }
     }
-
-
   }
 
   #landing-areas-hero .hero-text h1 {
     strong {
-      font-size: 57px; // Adjusted font size for mobile
+      font-size: 3.2rem; // Adjusted font size for mobile
       line-height: 40px; // Adjusted line height for mobile
     }
   }
@@ -1115,11 +1109,13 @@ $white: #FFFFFF;
 }
 
 #all-services {
-  h3 {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 40px;
-    margin-bottom: 30px;
+  .service-info-container {
+    h3 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -1343,10 +1339,6 @@ $white: #FFFFFF;
 }
 
 .takeaways {
-  h4 {
-    font-size: 24px !important;
-  }
-
   background-color: $celeste;
   border-radius: 30px;
   padding: 40px;
@@ -1354,10 +1346,6 @@ $white: #FFFFFF;
 }
 
 .recipients {
-  h4 {
-    font-size: 24px !important;
-  }
-
   img {
     padding-left: 20%;
     max-height: 450px;
@@ -1370,14 +1358,41 @@ $white: #FFFFFF;
 }
 
 @media screen and (max-width:420px) {
-
-  h3 {
-    font-size: 28px !important;
-    line-height: 32px !important;
+  #all-services {
+    .service-info-container {
+      h3 {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
   }
 
-  h4 {
-    font-size: 20px !important;
+  .area-section {
+    h3 {
+      font-size: 1.3rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .service-card {
+    h3 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .services-section {
+    .service-info-container {
+      h3 {
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.4em;
+        line-height: 1.4em;
+      }
+    }
   }
 
   .subservice-container {
@@ -1406,7 +1421,6 @@ $white: #FFFFFF;
   }
 
   .subservice-item-container {
-
     .card {
       width: 80%;
     }

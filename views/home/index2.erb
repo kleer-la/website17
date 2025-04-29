@@ -17,7 +17,16 @@
   <%= erb :'home/schedule' %>
   <%= erb :'home/academia' %>
 <% end %>
-<%=erb :'home/clients' %>
+<%
+  clients_title = nil
+  clients_description = nil
+  if !@page.sections.nil? && !@page.sections['clients'].nil?
+    clients_title = @page.sections['clients']['title']
+    clients_description = @page.sections['clients']['content']
+    clients_cta = @page.sections['clients']['cta_text']
+  end
+%>
+<%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
 <%
   title = 'Programar Reunión'
   subtitle = 'Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.'

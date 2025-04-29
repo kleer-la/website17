@@ -1,10 +1,6 @@
 <%
-title = 'Estas organizaciones confían en nosotros'
-description = '.'
-if !@page.sections.nil? && !@page.sections['clients'].nil?
-  title = @page.sections['clients']['title']
-  description = @page.sections['clients']['content']
-end
+title ||= 'Estas organizaciones confían en nosotros'
+description ||= '.'.freeze
 %>
 <section id="client-logos" class="p-3 client-logos">
   <div class="clients-grid container">
@@ -16,10 +12,12 @@ end
         </div>
       <% end %>
     </div>
+    <% if defined?(cta) && cta.to_s != ''%>
     <div class="row justify-content-center mt-3">
         <div class="col-12 col-lg-6 text-center">
-        <a class="btn my-secondary-button" href="/clientes"><%= description %></a>
+        <a class="btn my-secondary-button" href="/clientes"><%= cta %></a>
       </div>
     </div>
+    <% end %>
 </div>
 </section>
