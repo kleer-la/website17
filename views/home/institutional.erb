@@ -1,11 +1,9 @@
 <%
-title = 'Acelera la transformación organizacional'
-description = 'Construye una cultura de innovación y aprendizaje continuo con Kleer.'
-if !@page.sections.nil? && !@page.sections['institutional'].nil?
-  title = @page.sections['institutional']['title']
-  description = @page.sections['institutional']['content']
-end
-titles = to_lines(title)
+institutional_data = section_data(@page, 'institutional', { 
+  title: 'Acelera la transformación organizacional', content: 'Construye una cultura de innovación y aprendizaje continuo con Kleer.', cta_text: 'https://www.youtube.com/embed/RdgV8iWW2DM' })
+titles = to_lines(institutional_data[:title])
+description = institutional_data[:content]
+cta_url = institutional_data[:cta_text]
 %>
 
 <section id="institutional" class="institutional">
@@ -25,7 +23,7 @@ titles = to_lines(title)
         <iframe 
           class="institutional__video"
           width="100%" 
-          src="https://www.youtube.com/embed/RdgV8iWW2DM" 
+          src="<%= cta_url %>" 
           title="YouTube video player" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
