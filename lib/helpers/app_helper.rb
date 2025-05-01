@@ -51,6 +51,12 @@ module AppHelper
     result
   end
 
+  def section_data(page, section_key, defaults = {})
+    return defaults if page.nil? || page.sections.nil? || page.sections[section_key].nil?
+    symbolized_section = page.sections[section_key].transform_keys(&:to_sym).reject { |_, value| value == "" }
+    defaults.merge(symbolized_section || {})
+  end
+
   module_function
 
   def boolean_value(value)

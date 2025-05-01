@@ -1,13 +1,8 @@
 <%=erb :'home/hero2' %>
-<% unless @page.nil? || @page.recommended.count == 0
-  title = 'Novedades del mes'
-  subtitle = nil
-  if !@page.sections.nil? && !@page.sections['recommended'].nil?
-    title = @page.sections['recommended']['title']
-    subtitle = @page.sections['recommended']['content']
-  end
+<% unless @page.recommended.count == 0
+  recommended_data = section_data(@page, 'recommended', { title: 'Novedades del mes', content: nil, cta_text: nil })
   %>
-  <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: , subtitle:}%>
+  <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: recommended_data[:title], subtitle: recommended_data[:content]}%>
 <%end%>
 <%=erb :'home/institutional' %>
 <%=erb :'home/service_areas' %>

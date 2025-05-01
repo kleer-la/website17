@@ -1,14 +1,10 @@
 <%
-# Get just the first item from the translation data
 hero_item = t("home.home_hero").first
-
-title = hero_item[:subject]
-description = hero_item[:description]
-if !@page.sections.nil? && !@page.sections['hero'].nil?
-  title = @page.sections['hero']['title']
-  description = @page.sections['hero']['content']
-end
-titles = to_lines(title)
+hero_data = section_data(@page, 'hero', { title: hero_item[:subject], content: hero_item[:description], cta_text: hero_item[:button_text] })
+titles = to_lines(hero_data[:title])
+description = hero_data[:content]
+cta_url = hero_item[:url]
+cta_text = hero_data[:cta_text]
 %>
 <section id="hero2" class="hero2">
   <div class="container h-100">
@@ -22,8 +18,8 @@ titles = to_lines(title)
           </h1>
           <p><%= description %></p>
         </div>
-        <a href="<%= "/#{session[:locale]}#{hero_item[:url]}" %>" class="btn my-primary-button hero__desktop-button">
-          <%= hero_item[:button_text] %>
+        <a href="<%= "/#{session[:locale]}#{cta_url}" %>" class="btn my-primary-button hero__desktop-button">
+          <%= cta_text %>
         </a>
       </div>
       <div class="col-lg-6 hero__img-container">
@@ -36,8 +32,8 @@ titles = to_lines(title)
           >
         </picture>
       </div>
-      <a href="<%= "/#{session[:locale]}#{hero_item[:url]}" %>" class="btn my-primary-button hero__mobile-button">
-        <%= hero_item[:button_text] %>
+      <a href="<%= "/#{session[:locale]}#{cta_url}" %>" class="btn my-primary-button hero__mobile-button">
+        <%= cta_text %>
       </a>
     </div>
   </div>

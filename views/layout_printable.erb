@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%= erb :'layout/_ganalytics' %>
+	<head>
+    <%= erb :'layout/_google_tracker_head' %>
 		<link href='https://fonts.googleapis.com/css?family=Dosis:600' rel='stylesheet' type='text/css'>
 		<style>
 			h1, h2, h3, h4, h5, h6 {font-family: 'Dosis'; font-weight: 600;}
@@ -50,6 +51,7 @@
 		</style>
 	</head>
 	<body>
+      <%= erb :'layout/_google_tracker_body' %>
 		<%= yield %>
 		<script>
 			window.print();
