@@ -13,13 +13,10 @@
   <%= erb :'home/academia' %>
 <% end %>
 <%
-  clients_title = nil
-  clients_description = nil
-  if !@page.sections.nil? && !@page.sections['clients'].nil?
-    clients_title = @page.sections['clients']['title']
-    clients_description = @page.sections['clients']['content']
-    clients_cta = @page.sections['clients']['cta_text']
-  end
+  client_data = section_data(@page, 'clients', { title: nil, content: nil, cta_text: nil })
+  clients_title = client_data[:title]
+  clients_description = client_data[:content]
+  clients_cta = client_data[:cta_text]
 %>
 <%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
 <%
