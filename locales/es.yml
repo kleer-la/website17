@@ -360,13 +360,15 @@ es:
       button:
         title: 'Todos nuestros cursos'
       no_date: TBD
+    contact:
+      title: Agenda una reunión con nuestro equipo de consultores.
+      description: Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.
+      button:
+        title: Programar Reunión
     home_newsletter:
       title: '¡Únete a la Comunidad Kleer!'
       button:
         title: 'Suscríbete'
-      # title: 'Entérate de todas las novedades del mundo ágil'
-      # button:
-      #   title: 'Suscríbete'
   catalog:
     hero:
       title: Catálogo de Cursos

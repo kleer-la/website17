@@ -20,15 +20,13 @@
 %>
 <%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
 <%
-  title = 'Programar Reunión'
-  subtitle = 'Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.'
-  if !@page.sections.nil? && !@page.sections['contact'].nil? 
-    title = @page.sections['contact']['title']
-    subtitle = @page.sections['contact']['content']
-  end
+  contact_data = section_data(@page, 'contact', { title: t('home.contact.title'), content: t('home.contact.description'), cta_text: t('home.contact.button.title')})
+  contact_title = contact_data[:title]
+  contact_description = contact_data[:content]
+  contact_cta = contact_data[:cta_text]
 %>
 <%= erb :'component/sections/_contact_bottom_section',
         locals: {
-          contact_text: subtitle,
-          button_text: title
+          contact_text: contact_description,
+          button_text: contact_cta
         } %>
