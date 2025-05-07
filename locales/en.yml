@@ -676,6 +676,12 @@ en:
         img: /app/img/clientes.png
         alt: Clients image
         button_text: See cases
+    academia:
+      title: 
+      description: 
+      button:
+        title: 
+        link: 
     home_clients:
       title: These organizations already trust us
     home_courses:

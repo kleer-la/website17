@@ -347,6 +347,12 @@ es:
         alt: Clientes,
         button_text: Ver testimonios
       }
+    academia:
+      title: Cursos asíncronos en la Academia Kleer
+      description: Explora los cursos online a demanda en nuestra plataforma de e-learning. Consulta por los paquetes empresariales.
+      button:
+        title: Explora cursos
+        url: https://academia.kleer.la
     home_clients:
       title: 'Estas organizaciones confían en nosotros'
     home_courses:
