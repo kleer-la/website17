@@ -676,6 +676,12 @@ en:
         img: /app/img/clientes.png
         alt: Clients image
         button_text: See cases
+    academia:
+      title: 
+      description: 
+      button:
+        title: 
+        url: 
     home_clients:
       title: These organizations already trust us
     home_courses:
@@ -683,6 +689,13 @@ en:
       button:
         title: All courses
       no_date: TBD
+    contact:
+      title: Schedule a meeting with us
+      description: >-
+        We are here to help you! Schedule a meeting with us to discuss your
+        needs and how we can support you in your journey towards agility.
+      button:
+        title: Schedule a meeting
     home_newsletter:
       title: Find out about all the news of the agile world
       button:

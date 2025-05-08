@@ -1,23 +1,22 @@
 <%
   events = @events.select{|e| not e.date.to_s == ''}
   names = events.map{|e| e.event_type.name}
-
   names = names.uniq
 
-  title = t('home.home_courses.title')
-
-  if !@page&.sections.nil? && !@page&.sections['agenda'].nil?
-    title = @page.sections['agenda']['title']
-    #description = @page.sections['agenda']['content']
-  end
+  agenda_data = section_data(@page, 'agenda', { title: t('home.home_courses.title') })
+  title = agenda_data[:title]
+  description = agenda_data[:content]
 %>
 <section id="homepage-agenda" class="container pt-5">
 <div class="container my-5">
   <div class="row">
-    <div class="col-12">
-      <h2 class="text-center m-4 last-courses__title">
+    <div class="col-12 text-center">
+      <h2 class="m-4 last-courses__title">
         <%= title%>
       </h2>
+      <%if description.to_s != '' %>
+        <p><%= description %></p>
+      <%end%>
     </div>
   </div>
   <div id="show-courses-list" class="mb-4">
