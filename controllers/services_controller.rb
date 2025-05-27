@@ -28,16 +28,15 @@ get %r{/servicios/?} do
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
 
-get '/servicios/:slug' do
-  @is_training_program = false
+get %r{/(?:servicios|services)/([^/]+)} do |slug|
+    @is_training_program = false
+  # redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
 
-  redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
-
-  service_area = ServiceAreaV3.create_keventer params[:slug]
+  service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
 
-  @service_slug = if service_area.slug != params[:slug]
-                    params[:slug]
+  @service_slug = if service_area.slug != slug
+                    slug
                   else
                     'none'
                   end
