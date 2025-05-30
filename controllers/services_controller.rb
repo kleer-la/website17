@@ -14,8 +14,9 @@ end
 get %r{/servicios/?} do
   redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
 
-  @areas = ServiceAreaV3.create_list_keventer 
-            
+  @areas = ServiceAreaV3.try_create_list_keventer.
+          filter { |a| a.lang == session[:locale] }
+  
   @meta_tags.set! title: t('meta_tag.services.title'),
                   description: t('meta_tag.services.description'),
                   canonical: t('meta_tag.services.canonical').to_s,
