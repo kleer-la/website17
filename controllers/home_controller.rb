@@ -21,6 +21,10 @@ def first_x_courses(courses, quantity)
     end
 end
 
+get '/home' do
+  new_home
+end
+
 get '/' do
   return new_home unless session[:locale] == 'en'
 
@@ -61,9 +65,8 @@ def new_home
   @page = page
   @clients = client_list
 
-  extra_area = ServiceAreaV3.create_keventer('programas-capacitacion-empresarial', false)
-  @areas = ServiceAreaV3.create_list_keventer 
-  @areas << extra_area unless extra_area.nil?
+  @areas = (ServiceAreaV3.try_create_list_keventer + ServiceAreaV3.try_create_list_keventer(programs: true)).
+          filter { |a| a.lang == session[:locale] }
 
   @events = Event.create_keventer_json.first(4)
 
