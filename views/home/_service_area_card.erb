@@ -1,6 +1,7 @@
 <div class="col-12 col-md-6 col-lg-2 mb-4">
+<% path = {'es'=> 'es/servicios', 'en'=> 'en/services'}[session[:locale]] %>
   <a 
-    href="<%= area.slug ? "/es/servicios/#{area.slug}" : "#" %>"
+    href="<%= area.slug ? "/#{path}/#{area.slug}" : "#" %>"
     class="card service-area-card text-center text-decoration-none h-100"
     style="background-color: <%= area.primary_color %>; color: white;"
   >
