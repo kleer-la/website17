@@ -901,6 +901,17 @@ en:
       button:
         text: Let’s talk
   services:
+    area:
+      hero:
+        title: Schedule a video call with our team
+        description: 
+        button:
+          title: Request a meeting
+      contact:
+        title: Schedule a meeting with our team of consultants to analyze your challenges and explore how we can help.
+        description:
+        button:
+          title: Schedule Meeting
     title: Transform your company with organizational agility
     subtitle: >-
       We provide comprehensive support to accelerate organizational change. We accompany our clients every step of the way, continuously innovating and focusing on every aspect of the company to achieve better results.

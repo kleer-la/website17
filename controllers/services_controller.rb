@@ -30,8 +30,8 @@ get %r{/servicios/?} do
 end
 
 get %r{/(?:servicios|services)/([^/]+)} do |slug|
-    @is_training_program = false
-  # redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
+  @is_training_program = false
+  @page = Page.load_from_keventer(session[:locale], 'service-area')
 
   service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
