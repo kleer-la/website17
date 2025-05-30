@@ -582,6 +582,17 @@ es:
       button:
         text: ¿Conversamos?
   services:
+    area:
+      hero:
+        title: ¡Reserva una videollamada con nuestro equipo!'
+        description: 
+        button:
+          title: Solicitar Reunión
+      contact:
+        title: Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.
+        description: 
+        button:
+          title: Programar Reunión
     title: Transforma tu Empresa con Agilidad Organizacional
     subtitle: >-
       Brindamos soporte integral para acelerar el cambio organizacional. Acompañamos a nuestros clientes en cada paso del camino, innovando continuamente y enfocándonos en cada aspecto de la empresa para lograr mejores resultados.

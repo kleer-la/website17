@@ -1,14 +1,26 @@
-<%= erb :'services/components/_header_cta', locals: {text: '¡Reserva una videollamada con nuestro equipo!', text_button: "Solicitar Reunión"} %>
+<%
+  hero_data = section_data(@page, 'hero', { title: t('services.area.hero.title'), content: t('services.area.hero.description'), cta_text: t('services.area.hero.button.title')})
+  hero_title = hero_data[:title]
+  hero_description = hero_data[:content]
+  hero_cta = hero_data[:cta_text]
+%>
+<%= erb :'services/components/_header_cta', locals: {text: hero_title, text_button: hero_cta} %>
 <%= erb :'services/landing_area/_hero', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
 <%= erb :'services/landing_area/services', locals: {
   services: service_area.services,
   area: service_area
 } %>
+<%
+  contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
+  contact_title = contact_data[:title]
+  contact_description = contact_data[:content]
+  contact_cta = contact_data[:cta_text]
+%>
 <%= erb :'component/sections/_contact_bottom_section',
         locals: {
-          contact_text: "Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.",
-          button_text: "Programar Reunión"
+          contact_text: contact_title ,
+          button_text: contact_cta
         } %>
 <script src="/js/service-cards.js" defer></script>
 <script>
