@@ -37,6 +37,7 @@ module KeventerAPI
     catalog: 'catalog',
     news: 'news.json',
     podcasts: 'v3/podcasts',
+    programs: 'service_areas/programs',
     service_areas: 'service_areas.json',
     articles: 'articles.json',
     contacts: 'contacts',
