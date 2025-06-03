@@ -4,6 +4,7 @@ institutional_data = section_data(@page, 'institutional', {
 titles = to_lines(institutional_data[:title])
 description = institutional_data[:content]
 cta_url = institutional_data[:cta_text]
+is_image = cta_url =~ /\.(jpg|webp|png)$/i
 %>
 
 <section id="institutional" class="institutional">
@@ -20,15 +21,19 @@ cta_url = institutional_data[:cta_text]
         </div>
       </div>
       <div class="col-lg-7 institutional__img-container">
-        <iframe 
-          class="institutional__video"
-          width="100%" 
-          src="<%= cta_url %>" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+        <% if is_image %>
+          <img class="institutional__image" src="<%= cta_url %>" alt="Institutional image" style="width:100%;" />
+        <% else %>
+          <iframe 
+            class="institutional__video"
+            width="100%" 
+            src="<%= cta_url %>" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        <% end %>
       </div>
     </div>
   </div>
