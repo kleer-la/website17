@@ -26,7 +26,9 @@ get '/home' do
 end
 
 get '/' do
-  return new_home unless session[:locale] == 'en'
+  return new_home 
+  
+  # unless session[:locale] == 'en'
 
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
