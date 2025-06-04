@@ -11,8 +11,8 @@ get '/agilidad-organizacional' do
   erb :'business_agility/index', layout: :'layout/layout2022'
 end
 
-get %r{/servicios/?} do
-  redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
+get %r{/(servicios|services)/?} do
+  # redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
 
   @areas = ServiceAreaV3.try_create_list_keventer.
           filter { |a| a.lang == session[:locale] }
@@ -24,7 +24,7 @@ get %r{/servicios/?} do
 
   @path = 'servicios'
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/agilidad-organizacional'
+  router_helper.alternate_route = '/services'
 
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
@@ -45,7 +45,7 @@ get %r{/(?:servicios|services)/([^/]+)} do |slug|
   return status 404 if service_area.nil?
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/agilidad-organizacional'
+  router_helper.alternate_route = '/services'
 
   show_service_area(service_area, 'servicios')
 end

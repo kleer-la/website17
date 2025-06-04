@@ -582,6 +582,11 @@ es:
       button:
         text: ¿Conversamos?
   services:
+    landing_page:
+      hero:
+        title_html: Transforma tu Empresa con<br/><strong>Agilidad Organizacional</strong>
+        subtitle: Soluciones Integrales para Acelerar el Cambio Organizacional.
+        description: Acompañamos a nuestros clientes en cada etapa, con innovación y estrategia para alcanzar los objetivos empresariales.
     area:
       hero:
         title: ¡Reserva una videollamada con nuestro equipo!'
