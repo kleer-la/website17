@@ -924,6 +924,13 @@ en:
         button:
           title: Let's talk!
       contact:
+      intro:
+        title: <h2>Explore our <b>Business Agility</b> Services</h2>
+        description: |
+          Find solutions that align with your company's strategic objectives. Our offering includes organizational structure, leadership, value stream efficiency, product management, and team development.
+        button:
+          title:
+      contact:
         title: Let's us know your challenges so we can offer you a personalized solution.
         description: 
         button:

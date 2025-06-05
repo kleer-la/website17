@@ -1,12 +1,15 @@
+<%
+  intro_data = section_data(@page, 'intro', { title: t('services.landing_page.intro.title'), content: t('services.landing_page.intro.description'), cta_text: t('services.landing_page.intro.button.title') })
+  intro_title = intro_data[:title]
+  intro_description = intro_data[:content]
+  intro_cta = intro_data[:cta_text]
+%>
 <section id="areas" class="container">
   <div class="slogan-areas">
     <img src="/app/img/icons/magicpen.svg" alt="Áreas de trabajo" loading="lazy">
-    <h2>
-      Explora Nuestros Servicios de <b>Agilidad Organizacional</b>
-    </h2>
-    Encuentra soluciones que se alineen con los objetivos estratégicos de tu empresa. Nuestra propuesta incluye estructura organizacional, liderazgo, flujos de valor, gestión de producto y desarrollo de equipos.
+    <%= intro_title %>
+    <%= intro_description %>
   </div>
-
   <div class="area-list p-5">
     <% @areas.each do |area| %>
       <%= erb :'services/landing_page/_area_card', locals: {area: area} %>

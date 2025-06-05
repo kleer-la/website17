@@ -592,6 +592,11 @@ es:
         description: 
         button:
           title: ¿Conversamos?
+      intro:
+        title: <h2>Explora Nuestros Servicios de <b>Agilidad Organizacional</b></h2>
+        description: Encuentra soluciones que se alineen con los objetivos estratégicos de tu empresa. Nuestra propuesta incluye estructura organizacional, liderazgo, flujos de valor, gestión de producto y desarrollo de equipos.
+        button:
+          title:
       contact:
         title: Queremos conocer tus desafíos para ofrecerte una solución personalizada.
         description: 
