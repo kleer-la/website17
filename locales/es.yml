@@ -587,6 +587,16 @@ es:
         title_html: Transforma tu Empresa con<br/><strong>Agilidad Organizacional</strong>
         subtitle: Soluciones Integrales para Acelerar el Cambio Organizacional.
         description: Acompañamos a nuestros clientes en cada etapa, con innovación y estrategia para alcanzar los objetivos empresariales.
+      banner:
+        title: Solicita una videollamada para cocrear tu propuesta
+        description: 
+        button:
+          title: ¿Conversamos?
+      contact:
+        title: Queremos conocer tus desafíos para ofrecerte una solución personalizada.
+        description: 
+        button:
+          title: ¡Solicitar Videollamada!
     area:
       hero:
         title: ¡Reserva una videollamada con nuestro equipo!'

@@ -918,6 +918,16 @@ en:
         title_html: Transform your Company with<br/><strong>Organizational Agility</strong>
         subtitle: Comprehensive Solutions to Accelerate Organizational Change.
         description: We support our clients at every stage, with innovation and strategy to achieve business objectives.
+      banner:
+        title: Request a video call to co-create your proposal
+        description: 
+        button:
+          title: Let's talk!
+      contact:
+        title: Let's us know your challenges so we can offer you a personalized solution.
+        description: 
+        button:
+          title: Book a video call!
     area:
       hero:
         title: Schedule a video call with our team

@@ -13,13 +13,14 @@ end
 
 get %r{/(servicios|services)/?} do
   # redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
+  @page = Page.load_from_keventer(session[:locale], 'services-landing')
 
   @areas = ServiceAreaV3.try_create_list_keventer.
           filter { |a| a.lang == session[:locale] }
   
-  @meta_tags.set! title: t('meta_tag.services.title'),
-                  description: t('meta_tag.services.description'),
-                  canonical: t('meta_tag.services.canonical').to_s,
+  @meta_tags.set! title: @page.seo_title || t('meta_tag.services.title'),
+                  description: @page.seo_description || t('meta_tag.services.description'),
+                  canonical: @page.canonical || t('meta_tag.services.canonical').to_s,
                   image: 'https://kleer-images.s3.sa-east-1.amazonaws.com/servicios_cover.webp'
 
   @path = 'servicios'
