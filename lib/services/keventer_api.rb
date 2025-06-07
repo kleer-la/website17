@@ -54,6 +54,7 @@ module KeventerAPI
     article: ['articles/:slug.json', :slug],
     resource: ['resources/:slug.json', :slug],
     assessment: ['assessments/:slug.json', :slug],
+    short_url: ['short_urls/:code', :code],
     contact_status: ['contacts/:id/status.json', :id],
     contact: ['contacts/:id.json', :id]
   }.each do |name, (path, param)|
