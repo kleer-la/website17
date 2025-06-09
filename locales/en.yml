@@ -963,8 +963,8 @@ en:
     # true: is_training_program
     # false: service
     value_proposition:
-      true: ¿Por qué elegir nuestros planes de capacitación?
-      false: ¿Por qué elegir nuestros servicios?
+      true: Why choose our training programs?
+      false: Why choose our services?
     benefits:
       true: "With <b>%{name}</b> you develop the capabilities:"
       false: "Benefits of <b>%{name}</b>"
