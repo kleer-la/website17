@@ -586,9 +586,21 @@ en:
           url: https://x.com/kleer_la
           class: icon-x
   navbar:
-    - text: Business agility
-      url: /agilidad-organizacional
-      inside: true
+    - text: Services
+      options:
+        - text: Organizational Change and Leadership
+          url: /services/organizational-change-and-leadership
+          inside: true
+        - text: Product Management
+          url: /services/product-management
+          inside: true
+        - text: Team Agility
+          url: /services/team-agility
+          inside: true
+        - text: dropdown-divider
+        - text: All our services
+          url: /services
+          inside: true
     - text: Courses
       url: /catalogo
       inside: true
@@ -609,8 +621,8 @@ en:
   footer_menu:
     - title: We do
       items:
-        - title: Business agility
-          url: /agilidad-organizacional
+        - title: Services
+          url: /services
         - title: Courses
           url: /catalogo
         - title: Clients
@@ -646,7 +658,7 @@ en:
         alt: People collaborating in a relaxed way
       buttons:
         more:
-          url: /en/agilidad-organizacional
+          url: /en/services
           text: ¡Tell me more!
         questions:
           text: Schedule a video call
@@ -656,7 +668,7 @@ en:
           We accompany organizations in the sustainable improvement of their
           ways of working and to adapt in a timely manner to changes in the
           environment.
-        url: /agilidad-organizacional
+        url: /services
         img: /app/img/Kleer_DuplaHome.png
         alt: Business agility image
         button_text: More info!
@@ -901,6 +913,30 @@ en:
       button:
         text: Let’s talk
   services:
+    landing_page:
+      hero:
+        title_html: Transform your Company with<br/><strong>Organizational Agility</strong>
+        subtitle: Comprehensive Solutions to Accelerate Organizational Change.
+        description: We support our clients at every stage, with innovation and strategy to achieve business objectives.
+      banner:
+        title: Request a video call to co-create your proposal
+        description: 
+        button:
+          title: Let's talk!
+      contact:
+      intro:
+        title: <h2>Explore our <b>Business Agility</b> Services</h2>
+        description: |
+          Find solutions that align with your company's strategic objectives. Our offering includes organizational structure, leadership, value stream efficiency, product management, and team development.
+        button:
+          title:
+      areas:
+        cta_button: Tell me more!
+      contact:
+        title: Let's us know your challenges so we can offer you a personalized solution.
+        description: 
+        button:
+          title: Book a video call!
     area:
       hero:
         title: Schedule a video call with our team

@@ -19,6 +19,8 @@ ObjectSpace.each_object(Module) do |m|
   helpers m if m.is_a?(Module) && !m.is_a?(Class) && m.name && m.name.end_with?('Helper')
 end
 
+require './lib/models/shorter_url'
+
 require './controllers/helper'
 require './controllers/assessments_controller'
 require './controllers/resources_controller'
@@ -79,6 +81,10 @@ before do
   router_helper.lang = session[:locale]
   router_helper.set_current_route(request.path)
   router_helper.alternate_route = nil
+end
+
+before '/s/:short_code' do
+  pass  # Bypass locale handling for /s/ routes
 end
 
 before '/:locale/*' do
@@ -156,6 +162,16 @@ PERMANENT_REDIRECT.each do |original, redirect|
   end
   get "/#{original}/" do
     redirect "/#{redirect}", 301
+  end
+end
+
+get '/s/:short_code' do |short_code|
+  dest = ShorterUrl.create_keventer(short_code)
+
+  unless dest.nil?
+    redirect dest.original_url, 301
+  else
+    halt 404
   end
 end
 

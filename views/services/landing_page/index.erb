@@ -1,14 +1,18 @@
+<%
+  banner_data = section_data(@page, 'banner', { title: t('services.landing_page.banner.title'), content: t('services.landing_page.banner.description'), cta_text: t('services.landing_page.banner.button.title') })
+  banner_title = banner_data[:title]
+  banner_description = banner_data[:content]
+  banner_cta = banner_data[:cta_text]
+%>
 <div class="course-company-panel">
   <p class="m-0">
-    <strong>
-      Solicita una videollamada para cocrear tu propuesta
-    </strong>
+    <strong><%= banner_title %></strong>
   </p>
   <div class="m-3">
     <%= erb :'component/_contact_banner_button',
             locals: {
               style: "",
-              text_button: "¿Conversamos?",
+              text_button: banner_cta,
               style_class: 'btn my-primary-button',
               specific_id: ""
             }%>
@@ -17,9 +21,15 @@
 
 <%= erb :'services/landing_page/hero' %>
 <%= erb :'services/landing_page/areas' %>
+<%
+  contact_data = section_data(@page, 'contact', { title: t('services.landing_page.contact.title'), content: t('services.landing_page.contact.description'), cta_text: t('services.landing_page.contact.button.title') })
+  contact_title = contact_data[:title]
+  contact_description = contact_data[:content]
+  contact_cta = contact_data[:cta_text]
+%>
 <%= erb :'component/sections/_contact_bottom_section',
         locals: {
-          contact_text: "Queremos conocer tus desafíos para ofrecerte una solución personalizada.",
-          button_text: "¡Solicitar Videollamada!"
+          contact_text: contact_title,
+          button_text: contact_cta
         } %>
 <script src="/js/service-cards.js" defer></script>
