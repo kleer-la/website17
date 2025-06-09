@@ -930,6 +930,8 @@ en:
           Find solutions that align with your company's strategic objectives. Our offering includes organizational structure, leadership, value stream efficiency, product management, and team development.
         button:
           title:
+      areas:
+        cta_button: Tell me more!
       contact:
         title: Let's us know your challenges so we can offer you a personalized solution.
         description: 
