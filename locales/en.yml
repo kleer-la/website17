@@ -983,6 +983,7 @@ en:
   contact-us-form:
     title: Contact us
     download: Resource download
+    also_download: Download also...
     name-input:
       label: Full name
       error-message: Please fill in your name
