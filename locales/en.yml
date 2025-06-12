@@ -42,9 +42,9 @@ en:
         Explore our collection of podcasts on Agile at Kleer. Learn from experts in Agile methodology, Scrum, and Kanban. Discover episodes organized by seasons and available on YouTube and Spotify. Enhance your knowledge and skills in Agile with our talks and interviews.
       canonical: /podcasts
     aboutus:
-      title: '| Somos'
+      title: '| About Us'
       description: Meet Kleer. We offer multi-dimensional approaches to gain a holistic view of organizational change. Learn more about our team
-      canonical: /somos
+      canonical: /about_us
     business-agility:
       title: We accompany you towards organizational agility.
       description: >-
@@ -55,12 +55,12 @@ en:
       title: Organizational Agility Services
       description: >-
         Accelerate Organizational Change. Our Services include Organizational Design, Leadership, Product Management, Team Development and Facilitation
-      canonical: /servicios
+      canonical: /services
     clients:
       title: "| Our clients"
       description: >-
         Kleer - Coaching & Training - These organizations trust us.
-      canonical: /clientes
+      canonical: /clients
     news:
       title: "| News"
       description: Experiences about our work in press releases and publications in various digital media
@@ -602,10 +602,10 @@ en:
           url: /services
           inside: true
     - text: Courses
-      url: /catalogo
+      url: /catalog
       inside: true
     - text: Clients
-      url: /clientes
+      url: /clients
       inside: true
     - text: We publish
       options:
@@ -616,7 +616,7 @@ en:
           url: /blog
           inside: true
     - text: We are
-      url: /somos
+      url: /about_us
       inside: true
   footer_menu:
     - title: We do
@@ -624,9 +624,9 @@ en:
         - title: Services
           url: /services
         - title: Courses
-          url: /catalogo
+          url: /catalog
         - title: Clients
-          url: /clientes
+          url: /clients
     - title: We publish
       items:
         - title: Resources
@@ -637,7 +637,7 @@ en:
     - title: About us
       items:
         - title: We are
-          url: /somos
+          url: /about_us
   popup_forms:
     email:
       button: Contact us by email
@@ -684,7 +684,7 @@ en:
         description: >-
           Conoce nuestras experiencias reales de trabajo junto a organizaciones
           que confiaron y confían en Kleer en su camino de transformación.
-        url: /clientes
+        url: /clients
         img: /app/img/clientes.png
         alt: Clients image
         button_text: See cases

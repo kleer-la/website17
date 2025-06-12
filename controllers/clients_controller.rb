@@ -1,6 +1,6 @@
 require './lib/clients'
 
-get '/clientes' do
+get %r{/(clientes|clients)/?} do
   page = Page.load_from_keventer(session[:locale], 'clientes')
   @meta_tags.set! title: page.seo_title || t('meta_tag.clients.title'),
                   description: page.seo_description || t('meta_tag.clients.description'),
