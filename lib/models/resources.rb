@@ -1,5 +1,8 @@
 require './lib/json_api'
 require './lib/services/keventer_api'
+require './lib/helpers/app_helper'
+require './lib/models/recommended'
+require './lib/trainer'
 
 class Resource
   @next_null = false
@@ -141,7 +144,7 @@ class Resource
     return [] if contributors.nil? || contributors.empty?
 
     contributors.map do |contributor|
-      trainer = Trainer.new
+      trainer = Trainer.new(@lang)
       trainer.load_from_json(contributor)
       trainer.role = role
       trainer
@@ -185,7 +188,7 @@ class Resource
   end
 
   def init_recommended(doc)
-    @recommended = Recommended.create_list(doc['recommended'])
+    @recommended = Recommended.create_list(doc['recommended'], @lang)
   end
 
   def init_contributors(doc)

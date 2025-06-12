@@ -1,7 +1,8 @@
 class Recommended
   attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable
 
-  def initialize(doc)
+  def initialize(doc, lang = 'es')
+    @lang = lang
     @title = doc['title']
     @subtitle = doc['subtitle']
     @slug = doc['slug']
@@ -15,25 +16,25 @@ class Recommended
     raise NotImplementedError, "#{self.class} must implement the 'url' method"
   end
 
-  def self.create(doc)
+  def self.create(doc, lang= 'es')
     case doc['type']
     when 'article'
-      RecommendedArticle.new(doc)
+      RecommendedArticle.new(doc, lang)
     when 'event_type'
-      RecommendedEventType.new(doc)
+      RecommendedEventType.new(doc, lang)
     when 'service'
-      RecommendedService.new(doc)
+      RecommendedService.new(doc, lang)
     when 'resource'
-      RecommendedResource.new(doc)
+      RecommendedResource.new(doc, lang)
     else
       puts "Unknown recommendation type: #{doc['type']}"
       # raise ArgumentError, "Unknown recommendation type: #{doc['type']}"
     end
   end
 
-  def self.create_list(doc)
+  def self.create_list(doc, lang= 'es')
     doc&.each_with_object([]) do |r, ac|
-      recommendation = Recommended.create(r)
+      recommendation = Recommended.create(r, lang)
       ac << recommendation if recommendation
     end || []
   end
@@ -46,8 +47,8 @@ class RecommendedArticle < Recommended
 end
 
 class RecommendedEventType < Recommended
-  def initialize(doc)
-    super(doc)
+  def initialize(doc, lang = 'es')
+    super(doc, lang)
     @external_url = doc['external_url']
   end
 
@@ -58,12 +59,20 @@ end
 
 class RecommendedService < Recommended
   def url
-    "/es/servicios/#{slug}"
+    if @lang == 'en'
+      "/en/services/#{slug}"
+    else
+      "/es/servicios/#{slug}"
+    end
   end
 end
 
 class RecommendedResource < Recommended
   def url
-    "/es/recursos##{slug}"
+    if @lang == 'en'
+      "/en/resources##{slug}"
+    else
+      "/es/recursos##{slug}"
+    end
   end
 end
