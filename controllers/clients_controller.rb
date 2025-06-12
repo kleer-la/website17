@@ -8,6 +8,7 @@ get %r{/(clientes|clients)/?} do
 
   @meta_tags.set! image: page.cover unless page.cover.nil?
 
+  @page = page
   @clients = client_list
   @articles = Article.create_list_keventer(true)
                      .select { |a| a.lang == session[:locale] && a.industry != '' }
