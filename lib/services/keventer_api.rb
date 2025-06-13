@@ -64,6 +64,6 @@ module KeventerAPI
   end
   def page_url(lang, slug)
     s = "-#{slug}" unless slug.nil?
-    url_for("pages/#{lang}#{s}")
+    echo(url_for("pages/#{lang}#{s}"))
   end
 end

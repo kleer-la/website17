@@ -77,7 +77,7 @@ get '/agenda' do
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
 
-get '/catalogo' do
+get %r{/(catalogo|catalog)/?} do
   page = Page.load_from_keventer(session[:locale], 'catalogo')
   @meta_tags.set! title: page.seo_title || t('meta_tag.catalog.title'),
                   description: page.seo_description || t('meta_tag.catalog.description'),

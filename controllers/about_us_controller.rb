@@ -1,4 +1,4 @@
-get '/somos' do
+get %r{/(somos|about_us)/?} do
   page = Page.load_from_keventer(session[:locale], 'somos')
   @meta_tags.set! title: page.seo_title || t('meta_tag.aboutus.title'),
                   description: page.seo_description || t('meta_tag.aboutus.description'),

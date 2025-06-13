@@ -650,6 +650,7 @@ es:
   contact-us-form:
     title: Contáctanos
     download: Descargar recurso
+    also_download: También descargar...
     name-input:
       label: Tu nombre completo
       error-message: Completa este campo con tu nombre

@@ -35,14 +35,17 @@ end
 get %r{/(resources|recursos)/([^/]+)} do |_, slug|
   @active_tab_publicamos = 'active'
 
+  lang = session[:locale] || 'es'
+  partial_url = lang == 'es' ? 'recursos' : 'resources'
+
   if slug == 'retromat'
-    redirect to("/#{session[:locale]}/recursos/retromat-planes-retrospectivas"), 301
+    redirect to("/#{lang}/#{partial_url}/retromat-planes-retrospectivas"), 301
   end
   
-  @resource = Resource.create_one_keventer(slug, session[:locale])
+  @resource = Resource.create_one_keventer(slug, lang)
   
   if slug != @resource.slug
-    redirect to("/#{session[:locale]}/recursos/#{@resource.slug}"), 301
+    redirect to("/#{lang}/#{partial_url}/#{@resource.slug}"), 301
   end
   @is_assessment = @resource.format == 'assessment'
 

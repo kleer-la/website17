@@ -1,6 +1,6 @@
 require './lib/clients'
 
-get '/clientes' do
+get %r{/(clientes|clients)/?} do
   page = Page.load_from_keventer(session[:locale], 'clientes')
   @meta_tags.set! title: page.seo_title || t('meta_tag.clients.title'),
                   description: page.seo_description || t('meta_tag.clients.description'),
@@ -8,6 +8,7 @@ get '/clientes' do
 
   @meta_tags.set! image: page.cover unless page.cover.nil?
 
+  @page = page
   @clients = client_list
   @articles = Article.create_list_keventer(true)
                      .select { |a| a.lang == session[:locale] && a.industry != '' }

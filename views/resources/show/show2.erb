@@ -97,7 +97,7 @@
           <%if @also_download.count > 0 %>
             <div class="bg-light rounded-container p-3 mt-4">
               <div class="row">
-                <h3>También descargar...</h3>
+                <h3><%= t("contact-us-form.also_download") %></h3>
                 <%@also_download.each do |resource| 
                     landing_uri = "/#{session[:locale]}/recursos/#{resource.slug}" %>
                     <div class="form-group d-flex align-items-start mb-2">

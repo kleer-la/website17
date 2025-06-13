@@ -53,7 +53,7 @@ describe Resource do
         'translators' => [],
         'illustrators' => []
       }
-      resource = Resource.new(doc, :es)
+      resource = Resource.new(doc, 'es')
 
       expect(resource.authors).to include('<a href="http://example.com/john">John Doe</a>')
       expect(resource.authors).to include('<a href="http://example.com/jane">Jane Smith</a>')
@@ -69,7 +69,7 @@ describe Resource do
         'translators' => [],
         'illustrators' => []
       }
-      resource = Resource.new(doc, :es)
+      resource = Resource.new(doc, 'es')
 
       expect(resource.authors).to eq('John Doe, Jane Smith')
       expect(resource.authors_list).to eq(['John Doe', 'Jane Smith'])

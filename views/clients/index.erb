@@ -20,4 +20,10 @@
     </div>
 </div>
 </div>
-<%=erb :'component/sections/_clients' %>
+<%
+  client_data = section_data(@page, 'clients', { title: nil, content: nil, cta_text: nil })
+  clients_title = client_data[:title]
+  clients_description = client_data[:content]
+  clients_cta = client_data[:cta_text]
+%>
+<%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
