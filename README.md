@@ -129,3 +129,8 @@ System test
 ```cli
 cucumber -p system
 ```
+
+To see the API called
+```cli
+  RACK_ENV=test ./runserver.sh
+```

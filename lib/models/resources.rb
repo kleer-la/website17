@@ -22,7 +22,7 @@ class Resource
     end
 
     sanitized_slug = slug.unicode_normalize(:nfd).gsub(/\p{M}/, '')
-    api_resp = JsonAPI.new(KeventerAPI.resource_url(sanitized_slug))
+    api_resp = JsonAPI.new("#{KeventerAPI.resource_url(sanitized_slug)}?lang=#{locale}")
     raise ResourceNotFoundError.new(slug) unless api_resp.ok?
 
     Resource.new(api_resp.doc, locale)
@@ -102,8 +102,10 @@ class Resource
   end
 
   def also_download(max)
+    # puts "Resource#also_download:downloadable=#{@downloadable}, #{@recommended.inspect}"
     return [] if !@downloadable
     @recommended.select { |rec| rec.type == 'resource' && rec.downloadable}.first(max)
+    @recommended.select { |rec| rec.type == 'resource' && rec.downloadable}
   end
 
   def recommended_not_downloads
@@ -188,7 +190,7 @@ class Resource
   end
 
   def init_recommended(doc)
-    @recommended = Recommended.create_list(doc['recommended'], @lang)
+    @recommended = Recommended.create_list(doc['recommended'], @lang).select { |rec| rec.title.to_s.strip != '' }
   end
 
   def init_contributors(doc)
