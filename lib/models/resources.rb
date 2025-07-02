@@ -79,7 +79,7 @@ class Resource
     init_urls
     init_contributors(doc)
     init_dates(doc)
-    init_recommended(doc)
+    init_recommended(doc).filter! { |rec| rec.lang == lang }
   end
 
   def show_one_trainer(trainer_data)
