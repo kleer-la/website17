@@ -1,11 +1,12 @@
 class Recommended
-  attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable
+  attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable, :lang
 
   def initialize(doc, lang = 'es')
     @lang = lang
     @title = doc['title']
     @subtitle = doc['subtitle']
     @slug = doc['slug']
+    @lang = doc['lang']
     @cover = doc['cover']
     @type = doc['type']
     @level = doc['level']

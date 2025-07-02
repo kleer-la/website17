@@ -183,6 +183,7 @@ describe Resource do
         "subtitle"=> "A card game where the goal is to brainstorm and reach consensus as a team on the criteria to be included in its Definition of Ready (DoR).",
         "cover"=> "/img/recursos/DoR-Kards-en.png",
         "downloadable"=> true,
+        "lang"=> 'en',
         "relevance_order"=> 250,
         "level"=> "advanced"
         },
@@ -194,6 +195,7 @@ describe Resource do
         "subtitle"=> "",
         "cover"=> "",
         "downloadable"=> true,
+        "lang"=> 'en',
         "relevance_order"=> 250,
         "level"=> "advanced"
         }
