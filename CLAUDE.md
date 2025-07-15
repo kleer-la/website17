@@ -133,16 +133,40 @@ Essential environment variables for development:
 - `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY`: For S3 integration
 
 ### Testing Strategy
-- Unit tests (RSpec) for models and services
-- Integration tests (Cucumber) for user workflows
-- System tests for end-to-end functionality
-- Test coverage tracked via SimpleCov and Coveralls
+- **TDD (Test-Driven Development)** - Write tests first, then implement functionality
+- **Unit tests (RSpec)** for models and services
+- **Integration tests (Cucumber)** for user workflows and view testing
+- **System tests** for end-to-end functionality
+- **Test coverage** tracked via SimpleCov and Coveralls
+
+### NullInfrastructure Pattern
+- Uses `NullJsonAPI` and `@api_client` for dependency injection in tests
+- API calls are mocked using the Null Object pattern to avoid external dependencies
+- Models provide `null_json_api` class methods for test setup
+- Example:
+  ```ruby
+  # In tests
+  Page.api_client = NullJsonAPI.new(nil, mock_data.to_json)
+  
+  # In models
+  def self.load_from_keventer(lang, slug)
+    return create(@api_client) if @api_client  # Test path
+    # ... normal implementation
+  end
+  ```
 
 ### Caching Strategy
 - Custom CacheService provides thread-safe caching with TTL
+- Default TTL is controlled by `CACHE_TTL` environment variable (defaults to 1800 seconds/30 minutes)
 - Cache keys typically include content type and language
 - API responses are cached to reduce external API calls
 - Cache can be cleared during development using `CacheService.clear`
+
+### Environment Variables for Caching
+- `CACHE_TTL`: Sets the default cache TTL in seconds (default: 1800)
+  - Production: 1800 (30 minutes)
+  - QA/Staging: 300 (5 minutes) for faster content updates
+  - Development: 60 (1 minute) for rapid development
 
 ### URL Structure
 - Multilingual routing: `/es/` for Spanish, `/en/` for English
