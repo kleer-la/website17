@@ -22,7 +22,7 @@ describe CacheService do
       cache.set('expiring_key', 'value', 0.1) # 0.1 second TTL
       expect(cache.get('expiring_key')).to eq('value')
       
-      sleep(0.2)
+      sleep(0.15)
       expect(cache.get('expiring_key')).to be_nil
     end
     

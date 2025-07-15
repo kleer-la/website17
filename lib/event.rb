@@ -127,14 +127,15 @@ class Event
         json_api = if defined? @@json_api
                      @@json_api
                    else
-                     create_from_api("events_#{I18n.locale || 'es'}") || JsonAPI.new(KeventerAPI.events_url)
+                     JsonAPI.new(KeventerAPI.events_url)
                    end
         load_events(json_api.doc, today) unless json_api.doc.nil?
       end || [] # Ensure array is returned even if cache returns nil
     rescue StandardError => e
       if ENV['RACK_ENV'] == 'test'
-        raise StandardError, 'API Error' # Raise for test validation
+        raise e # Re-raise the original error with full context
       else
+        puts "Event API Error: #{e.message}" # Log error for debugging
         [] # Return empty array in production
       end
     end

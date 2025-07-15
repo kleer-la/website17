@@ -1,6 +1,7 @@
 require 'spec_helper'
 require './lib/models/page'
 require './lib/services/keventer_api'
+require './lib/services/cache_service'
 
 RSpec.describe Page do
   let(:valid_data) do
@@ -79,6 +80,102 @@ RSpec.describe Page do
         expect(page.cover).to be_nil
         expect(page.recommended).to eq([])
       end
+    end
+  end
+
+  describe '.load_from_keventer with caching' do
+    before do
+      CacheService.clear
+      Page.api_client = nil
+    end
+
+    let(:page_data) do
+      {
+        'lang' => 'es',
+        'seo_title' => 'Test Page',
+        'seo_description' => 'Test Description',
+        'recommended' => []
+      }
+    end
+
+    it 'caches API responses to avoid repeated calls' do
+      call_count = 0
+      
+      # Mock JsonAPI to track calls
+      allow(JsonAPI).to receive(:new) do |url|
+        call_count += 1
+        NullJsonAPI.new(nil, page_data.to_json)
+      end
+      
+      allow(KeventerAPI).to receive(:page_url).and_return('https://api.example.com/pages/test')
+
+      # First call
+      page1 = Page.load_from_keventer('es', 'test-slug')
+      
+      # Second call should use cache
+      page2 = Page.load_from_keventer('es', 'test-slug')
+      
+      expect(call_count).to eq(1)
+      expect(page1.seo_title).to eq('Test Page')
+      expect(page2.seo_title).to eq('Test Page')
+    end
+
+    it 'uses different cache keys for different lang/slug combinations' do
+      call_count = 0
+      
+      allow(JsonAPI).to receive(:new) do |url|
+        call_count += 1
+        NullJsonAPI.new(nil, page_data.to_json)
+      end
+      
+      allow(KeventerAPI).to receive(:page_url).and_return('https://api.example.com/pages/test')
+
+      Page.load_from_keventer('es', 'test-slug')
+      Page.load_from_keventer('en', 'test-slug')
+      Page.load_from_keventer('es', 'other-slug')
+      
+      expect(call_count).to eq(3)
+    end
+
+    it 'handles cache expiration correctly' do
+      call_count = 0
+      
+      allow(JsonAPI).to receive(:new) do |url|
+        call_count += 1
+        NullJsonAPI.new(nil, page_data.to_json)
+      end
+      
+      allow(KeventerAPI).to receive(:page_url).and_return('https://api.example.com/pages/test')
+
+      # First call
+      Page.load_from_keventer('es', 'test-slug')
+      
+      # Manually clear cache using the correct cache key format
+      url = 'https://api.example.com/pages/test'
+      cache_key = "page_es_test-slug_#{url}"
+      CacheService.delete(cache_key)
+      
+      # Second call should hit API again
+      Page.load_from_keventer('es', 'test-slug')
+      
+      expect(call_count).to eq(2)
+    end
+
+    it 'handles nil slug in cache key' do
+      call_count = 0
+      
+      allow(JsonAPI).to receive(:new) do |url|
+        call_count += 1
+        NullJsonAPI.new(nil, page_data.to_json)
+      end
+      
+      allow(KeventerAPI).to receive(:page_url).and_return('https://api.example.com/pages/home')
+
+      page = Page.load_from_keventer('es', nil)
+      
+      expect(page).to be_a(Page)
+      expect(page.seo_title).to eq('Test Page')
+      expect(call_count).to eq(1)
     end
   end
 end
