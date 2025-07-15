@@ -1,0 +1,42 @@
+<%
+# Generic banner component for home page
+# Usage: <%= erb :'home/_banner', locals: { section_key: 'banner', default_title: 'Default Title', default_content: 'Default content', default_cta: 'Learn More' }
+
+section_key = locals[:section_key] || 'banner'
+default_title = locals[:default_title] || ''
+default_content = locals[:default_content] || ''
+default_cta = locals[:default_cta] || ''
+
+banner_data = section_data(@page, section_key, { 
+  title: default_title, 
+  content: default_content, 
+  cta_text: default_cta 
+})
+
+title = banner_data[:title]
+content = banner_data[:content]
+cta_text = banner_data[:cta_text]
+
+# Only show banner if title exists
+if title.to_s != ''
+%>
+<section id="<%= section_key %>" class="mb-4">
+  <div class="container banner-section">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="banner-content text-center">
+          <h2 class="banner-title"><%= title %></h2>
+          <% if content.to_s != '' %>
+            <p class="banner-description"><%= content %></p>
+          <% end %>
+          <% if cta_text.to_s != '' %>
+            <a class="my-primary-button text-center p-2" href="#contact">
+              <%= cta_text %>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>

@@ -39,3 +39,18 @@ Feature: Home Page
 #	Scenario: Coming courses
 #		When I visit the home page
 #
+
+	Scenario: Banner section displays when page has banner data
+		Given I visit the home page with banner data
+		Then I should see the banner section
+		And I should see "Special Announcement" in the banner
+		And I should see "Join our upcoming webinar series" in the banner
+		And I should see "Register Now" in the banner
+
+	Scenario: Banner section does not display when page has no banner data
+		Given I visit the home page without banner data
+		Then I should not see the banner section
+
+	Scenario: Banner section does not display when banner title is empty
+		Given I visit the home page with empty banner title
+		Then I should not see the banner section

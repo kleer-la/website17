@@ -1,4 +1,10 @@
 <%=erb :'home/hero2' %>
+<%= erb :'home/_banner', locals: { 
+  section_key: 'banner', 
+  default_title: '', 
+  default_content: '', 
+  default_cta: '' 
+} %>
 <% unless @page.recommended.count == 0
   recommended_data = section_data(@page, 'recommended', { title: 'Novedades del mes', content: nil, cta_text: nil })
   %>
