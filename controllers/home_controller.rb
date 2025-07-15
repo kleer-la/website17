@@ -26,37 +26,6 @@ get '/home' do
 end
 
 get '/' do
-  return new_home 
-  
-  # unless session[:locale] == 'en'
-
-  page = Page.load_from_keventer(session[:locale], nil)
-  @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
-                   description: page.seo_description || t('meta_tag.home.description'),
-                   canonical: page.canonical || t('meta_tag.home.canonical')
-
-  @meta_tags.set! image: page.cover unless page.cover.nil? || page.cover.empty?
-
-  @page = page
-  @clients = client_list
-  @coming_courses = if session[:locale] == 'es'
-                      first_three = first_x_courses(coming_courses, 3)
-                      one = AcademyCourses.new.load.select(session[:locale], 1)
-                                          .map { |e| e.transform_keys(&:to_sym) }
-                      if one == []
-                        first_three
-                      else
-                        one[0][:categories] = nil
-                        one[0][:date] = 'Academia'
-
-                        first_three << one[0]
-                      end
-                    end
-
-  erb :'home/index', layout: :'layout/layout2022'
-end
-
-def new_home
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
                    description: page.seo_description || t('meta_tag.home.description'),
