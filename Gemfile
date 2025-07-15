@@ -21,6 +21,7 @@ gem 'sinatra-flash'
 gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
+gem 'concurrent-ruby'
 
 group :development do
   gem 'foreman', require: false

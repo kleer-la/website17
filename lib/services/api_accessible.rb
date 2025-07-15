@@ -1,4 +1,5 @@
 require 'httparty'
+require './lib/services/cache_service'
 
 module APIAccessible
   def self.included(base)
@@ -15,7 +16,11 @@ module APIAccessible
         json_api = @json_api
       else
         url = @api_connector.new.url_for(id)
-        json_api = JsonAPI.new(url)
+        cache_key = "#{self.name&.downcase || 'unknown'}_#{id}_#{url}"
+        
+        json_api = CacheService.get_or_set(cache_key, 1800) do
+          JsonAPI.new(url)
+        end
       end
 
       new(json_api.doc) if json_api.ok?
@@ -32,6 +37,7 @@ module APIAccessible
     attr_reader :doc
 
     def initialize(url)
+      @url = url
       @response = self.class.get(url)
       @doc = @response.parsed_response if ok?
     end

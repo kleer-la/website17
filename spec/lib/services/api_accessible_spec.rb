@@ -14,6 +14,9 @@ RSpec.describe APIAccessible do
       end
     end
   end
+  after(:each) do
+    CacheService.clear
+  end
 
   describe '.create_from_api' do
     context 'when API call is successful' do
@@ -30,12 +33,11 @@ RSpec.describe APIAccessible do
     end
 
     context 'when API call fails' do
-      before do
+      # Move the double creation into the example to ensure isolation
+      it 'returns nil' do
         failed_response = instance_double(HTTParty::Response, success?: false)
         allow(APIAccessible::JsonAPI).to receive(:get).and_return(failed_response)
-      end
-
-      it 'returns nil' do
+        
         object = dummy_class.create_from_api(1)
         expect(object).to be_nil
       end

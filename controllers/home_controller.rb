@@ -70,7 +70,9 @@ def new_home
   @areas = (ServiceAreaV3.try_create_list_keventer + ServiceAreaV3.try_create_list_keventer(programs: true)).
           filter { |a| a.lang == session[:locale] }
 
-  @events = Event.create_keventer_json.first(4)
+  @events = Event.create_keventer_json(
+    cache_key: "home_events_#{session[:locale]}"
+  ).first(4)
 
   erb :'home/index2', layout: :'layout/layout2022'
 end
