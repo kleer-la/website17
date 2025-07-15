@@ -19,22 +19,32 @@ cta_text = banner_data[:cta_text]
 
 # Only show banner if title exists
 if title.to_s != ''
+content = "<span style='color: #fff; padding: 5px;'>Webinar Aniversario<br><b><span style='font-size: 1.2em;'>Lo que aprendimos en 16 años de práctica:</span></b><br>Casos, errores y aciertos<br>Co|Pe: 14hs - Uy/Ar: 16hs</span>"
+cta_text = "¡Súmate!"
+cta_url = "https://www.youtube.com/watch?v=4hXX1UQ7LHc&ab_channel=Kleer%7CAgileCoaching%2CConsulting%26Training"
+img_src = 'https://kleer-images.s3.sa-east-1.amazonaws.com/webinaraniversario.png'
 %>
 <section id="<%= section_key %>" class="mb-4">
   <div class="container banner-section">
-    <div class="row align-items-center">
-      <div class="col-lg-12">
-        <div class="banner-content text-center">
-          <h2 class="banner-title"><%= title %></h2>
-          <% if content.to_s != '' %>
-            <p class="banner-description"><%= content %></p>
-          <% end %>
+    <div class="row" style="background-color: #d17e1f; border-radius: 10px;">
+      <div class="col-4 d-flex align-items-end p-0">
+        <a href="https://academia.kleer.la" rel="noopener noreferrer" class="academia__link">
+            <img
+              src="<%= img_src %>"
+              class="academia__img"
+              alt="Academia Kleer"
+            />
+        </a>
+      </div>
+      <div class="col-5 d-flex justify-content-center align-items-center">
+        <div class="banner text-center"><%= content %></div>
+      </div>
+      <div class="col-3 d-flex justify-content-center align-items-center">
           <% if cta_text.to_s != '' %>
-            <a class="my-primary-button text-center p-2" href="#contact">
+            <a class="my-secondary-button text-center p-2" style="background-color: #d17e1f;color: white;border-color:white" href="<%= cta_url %>">
               <%= cta_text %>
             </a>
           <% end %>
-        </div>
       </div>
     </div>
   </div>
