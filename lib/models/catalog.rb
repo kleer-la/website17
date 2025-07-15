@@ -34,7 +34,7 @@ class Catalog
                    @@json_api
                  else
                    cache_key = "catalog_events_#{KeventerAPI.catalog_url}"
-                   CacheService.get_or_set(cache_key, 1800) do
+                   CacheService.get_or_set(cache_key) do
                      JsonAPI.new(KeventerAPI.catalog_url)
                    end
                  end

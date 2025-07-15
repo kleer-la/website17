@@ -121,9 +121,9 @@ class Event
   end
 
   class << self
-    def create_keventer_json(today = Date.today, cache_key: nil, ttl: 1800)
+    def create_keventer_json(today = Date.today, cache_key: nil)
       cache_key ||= "home_events_#{I18n.locale || 'es'}" # Match new_home cache key
-      CacheService.get_or_set(cache_key, ttl) do
+      CacheService.get_or_set(cache_key) do
         json_api = if defined? @@json_api
                      @@json_api
                    else

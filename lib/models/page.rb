@@ -36,7 +36,7 @@ class Page
     url = KeventerAPI.page_url(lang, slug)
     cache_key = "page_#{lang}_#{slug}_#{url}"
     
-    json_api = CacheService.get_or_set(cache_key, 1800) do
+    json_api = CacheService.get_or_set(cache_key) do
       JsonAPI.new(url)
     end
     

@@ -18,7 +18,7 @@ module APIAccessible
         url = @api_connector.new.url_for(id)
         cache_key = "#{self.name&.downcase || 'unknown'}_#{id}_#{url}"
         
-        json_api = CacheService.get_or_set(cache_key, 1800) do
+        json_api = CacheService.get_or_set(cache_key) do
           JsonAPI.new(url)
         end
       end

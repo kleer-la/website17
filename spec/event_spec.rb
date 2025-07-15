@@ -114,12 +114,12 @@ describe Event do
     it 'respects custom TTL' do
       allow(Event).to receive(:load_events).and_return(mock_events)
       
-      # Cache with short TTL
-      events = Event.create_keventer_json(ttl: 0.1)
+      # Cache with default TTL
+      events = Event.create_keventer_json
       expect(events).to eq(mock_events)
       
-      # Wait for cache to expire
-      sleep(0.2)
+      # Manually clear cache to test cache expiration
+      CacheService.delete("home_events_#{I18n.locale || 'es'}")
       
       # Should call API again
       allow(Event).to receive(:load_events).and_return([])

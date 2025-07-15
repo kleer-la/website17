@@ -26,9 +26,10 @@ class CacheService
     entry[:value]
   end
 
-  def set(key, value, ttl = 3600)
+  def set(key, value, ttl = nil)
     return unless value
 
+    ttl ||= default_ttl
     expires_at = ttl > 0 ? Time.now + ttl : nil
     @cache[key] = {
       value: value,
@@ -74,7 +75,7 @@ class CacheService
     expired_keys.size
   end
 
-  def self.get_or_set(key, ttl = 3600, &block)
+  def self.get_or_set(key, ttl = nil, &block)
     instance.get(key) || instance.set(key, block.call, ttl)
   end
 
@@ -82,7 +83,7 @@ class CacheService
     instance.get(key)
   end
 
-  def self.set(key, value, ttl = 3600)
+  def self.set(key, value, ttl = nil)
     instance.set(key, value, ttl)
   end
 
@@ -100,5 +101,11 @@ class CacheService
 
   def self.cleanup_expired
     instance.cleanup_expired
+  end
+
+  private
+
+  def default_ttl
+    ENV['CACHE_TTL']&.to_i || 1800 # Default 30 minutes
   end
 end
