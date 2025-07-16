@@ -1,4 +1,5 @@
 require 'date'
+require './lib/services/cache_service'
 
 class Catalog
   def self.load_catalog_events(loaded_events)
@@ -32,7 +33,10 @@ class Catalog
       json_api = if defined? @@json_api
                    @@json_api
                  else
-                   JsonAPI.new(KeventerAPI.catalog_url)
+                   cache_key = "catalog_events_#{KeventerAPI.catalog_url}"
+                   CacheService.get_or_set(cache_key) do
+                     JsonAPI.new(KeventerAPI.catalog_url)
+                   end
                  end
       Catalog.load_catalog_events(json_api.doc) unless json_api.doc.nil?
     end

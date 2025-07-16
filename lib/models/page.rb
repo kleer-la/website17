@@ -1,6 +1,7 @@
 require './lib/json_api'
 require './lib/services/keventer_api'
 require './lib/models/recommended'
+require './lib/services/cache_service'
 
 class Page
   attr_reader :lang, :seo_title, :seo_description, :canonical, :cover, :recommended, :sections
@@ -30,9 +31,16 @@ class Page
   end
 
   def self.load_from_keventer(lang, slug)
+    return create(@api_client) if @api_client
+    
     url = KeventerAPI.page_url(lang, slug)
-    api = @api_client || JsonAPI.new(url)
-    create(api)
+    cache_key = "page_#{lang}_#{slug}_#{url}"
+    
+    json_api = CacheService.get_or_set(cache_key) do
+      JsonAPI.new(url)
+    end
+    
+    create(json_api)
   end
 
   private

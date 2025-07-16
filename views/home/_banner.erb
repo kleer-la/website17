@@ -1,0 +1,53 @@
+<%
+# Generic banner component for home page
+# Usage: <%= erb :'home/_banner', locals: { section_key: 'banner', default_title: 'Default Title', default_content: 'Default content', default_cta: 'Learn More' }
+
+section_key = locals[:section_key] || 'banner'
+default_title = locals[:default_title] || ''
+default_content = locals[:default_content] || ''
+default_cta = locals[:default_cta] || ''
+
+banner_data = section_data(@page, section_key, { 
+  title: default_title, 
+  content: default_content, 
+  cta_text: default_cta 
+})
+
+title = banner_data[:title]
+content = banner_data[:content]
+cta_text = banner_data[:cta_text]
+
+# Only show banner if title exists
+if title.to_s != ''
+#content = "<span style='color: #fff; padding: 5px;'>Webinar Aniversario<br><b><span style='font-size: 1.2em;'>Lo que aprendimos en 16 años de práctica:</span></b><br>Casos, errores y aciertos<br>Co|Pe: 14hs - Uy/Ar: 16hs</span>"
+#cta_text = "¡Súmate!"
+#cta_url = "https://www.youtube.com/watch?v=4hXX1UQ7LHc&ab_channel=Kleer%7CAgileCoaching%2CConsulting%26Training"
+cta_url = title
+img_src = 'https://kleer-images.s3.sa-east-1.amazonaws.com/webinaraniversario.png'
+%>
+<section id="<%= section_key %>" class="mb-4">
+  <div class="container banner-section">
+    <div class="row" style="background-color: #d17e1f; border-radius: 10px;">
+      <div class="col-12 col-sm-4 d-flex align-items-end p-0">
+        <a href="<%= cta_url %>" rel="noopener noreferrer" class="academia__link">
+            <img
+              src="<%= img_src %>"
+              class="academia__img"
+              alt="Academia Kleer"
+            />
+        </a>
+      </div>
+      <div class="col-8 col-sm-5 d-flex justify-content-center align-items-center">
+        <div class="banner text-center"><%= content %></div>
+      </div>
+      <div class="col-3 d-flex justify-content-center align-items-center">
+          <% if cta_text.to_s != '' %>
+            <a class="my-secondary-button text-center p-2" style="background-color: #d17e1f;color: white;border-color:white" href="<%= cta_url %>">
+              <%= cta_text %>
+            </a>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>

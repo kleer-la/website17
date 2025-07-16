@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "date": "2025-07-15",
+    "city": "Online",
+    "country_id": "245",
+    "list_price": "100.0",
+    "currency_iso_code": "USD",
+    "country": {"id": 245, "name": "-- OnLine --", "iso_code": "OL"},
+    "event_type": {"id": 7, "name": "Test Event 1"}
+  },
+  {
+    "id": "2",
+    "date": "2025-07-16", 
+    "city": "Online",
+    "country_id": "245",
+    "list_price": "200.0",
+    "currency_iso_code": "USD",
+    "country": {"id": 245, "name": "-- OnLine --", "iso_code": "OL"},
+    "event_type": {"id": 8, "name": "Test Event 2"}
+  }
+]

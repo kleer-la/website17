@@ -6,6 +6,7 @@
 .bundle
 .env
 .config
+.claude
 coverage
 InstalledFiles
 lib/bundler/man

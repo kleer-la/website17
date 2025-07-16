@@ -324,6 +324,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3
   capybara
+  concurrent-ruby
   coveralls_reborn
   cucumber
   curb
