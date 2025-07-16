@@ -23,15 +23,17 @@ if title.to_s != ''
 #cta_text = "¡Súmate!"
 #cta_url = "https://www.youtube.com/watch?v=4hXX1UQ7LHc&ab_channel=Kleer%7CAgileCoaching%2CConsulting%26Training"
 cta_url = title
-img_src = 'https://kleer-images.s3.sa-east-1.amazonaws.com/webinaraniversario.png'
+img_src1 = 'https://kleer-images.s3.sa-east-1.amazonaws.com/webinaraniversario.webp'
+img_src2 = 'https://kleer-images.s3.sa-east-1.amazonaws.com/webinaraniversario.png'
 %>
 <section id="<%= section_key %>" class="mb-4">
   <div class="container banner-section">
     <div class="row" style="background-color: #d17e1f; border-radius: 10px;">
       <div class="col-12 col-sm-4 d-flex align-items-end p-0">
         <a href="<%= cta_url %>" rel="noopener noreferrer" class="academia__link">
+            <source srcset="<%= img_src1 %>" type="image/webp"/>
             <img
-              src="<%= img_src %>"
+              src="<%= img_src2 %>"
               class="academia__img"
               alt="Academia Kleer"
             />
