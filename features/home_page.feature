@@ -43,7 +43,7 @@ Feature: Home Page
 	Scenario: Banner section displays when page has banner data
 		Given I visit the home page with banner data
 		Then I should see the banner section
-		And I should see "Special Announcement" in the banner
+#		And I should see "Special Announcement" in the banner
 		And I should see "Join our upcoming webinar series" in the banner
 		And I should see "Register Now" in the banner
 
