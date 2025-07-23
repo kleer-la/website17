@@ -7,7 +7,24 @@ class JsonAPI
 
   def initialize(uri)
     @response = Faraday.get(uri)
-    @doc = JSON.parse(@response.body) if ok?
+    if ok?
+      begin
+        @doc = JSON.parse(@response.body)
+      rescue JSON::ParserError => e
+        unless ENV['RACK_ENV'] == 'test'
+          puts "JSON Parse Error for URL: #{uri}"
+          puts "Response Body: #{@response.body}"
+          puts "Error: #{e.message}"
+        end
+        raise e
+      end
+    else
+      unless ENV['RACK_ENV'] == 'test'
+        puts "HTTP Error for URL: #{uri}"
+        puts "Status: #{@response.status}"
+        puts "Response Body: #{@response.body}"
+      end
+    end
   end
 
   def ok?

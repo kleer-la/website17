@@ -132,7 +132,7 @@ class Event
         load_events(json_api.doc, today) unless json_api.doc.nil?
       end || [] # Ensure array is returned even if cache returns nil
     rescue StandardError => e
-      if ENV['RACK_ENV'] == 'test'
+      if ENV['RACK_ENV'] == 'development'
         raise e # Re-raise the original error with full context
       else
         puts "Event API Error: #{e.message}" # Log error for debugging

@@ -9,7 +9,7 @@ class CacheService
     @cache = Concurrent::Map.new
     @logger = Logger.new(STDOUT)
     @logger.level = Logger::WARN
-    @logger.level = Logger::INFO if ENV['RACK_ENV'] == 'test'
+    @logger.level = Logger::INFO if ENV['RACK_ENV'] == 'development'
   end
 
   def get(key)
