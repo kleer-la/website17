@@ -42,8 +42,8 @@
                 <div class="question-description"><%= question.description %></div>
               <% end %>
               
-              <% case question.question_type %>
-              <% when 'linear_scale' %>
+              <% case question.question_type 
+                  when 'linear_scale' %>
                 <div class="slider-container">
                   <div class="slider-wrapper">
                     <div id="slider-<%= question.id %>"></div>
@@ -94,8 +94,8 @@
             <div class="question-description"><%= question.description %></div>
           <% end %>
           
-          <% case question.question_type %>
-          <% when 'linear_scale' %>
+          <% case question.question_type 
+               when 'linear_scale' %>
             <div class="slider-container">
               <div class="slider-wrapper">
                 <div id="slider-<%= question.id %>"></div>
