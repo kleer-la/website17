@@ -40,6 +40,7 @@ post '/submit_assessment' do
   unless contact_data
     status 400
     @error_message = 'No se encontraron datos de contacto'
+    @contact = Contact.new(contact_data || {})
     return erb :'resources/assessment/results', layout: :'layout/layout2022'
   end
 
@@ -50,11 +51,43 @@ post '/submit_assessment' do
 
     begin
       mailer = Mailer.new(KeventerAPI.contacts_url, email_data)
+      
+      # Check for API errors
+      if mailer.parsed_body&.key?('error')
+        error_message = mailer.parsed_body['error']
+        puts "API Error: #{error_message}"
+        @error_message = case error_message
+                        when 'bad secret'
+                          'Configuration error. Please contact support.'
+                        when /validation/i
+                          'Invalid submission data. Please check your responses and try again.'
+                        else
+                          'Assessment submission failed. Please try again later.'
+                        end
+        @contact = Contact.new(contact_data)
+        return erb :'resources/assessment/results', layout: :'layout/layout2022'
+      end
+
       @id = mailer.id
       @status = mailer.status
       @assessment_report_url = mailer.assessment_report_url
+      
+      # Validate required fields
+      unless @id
+        puts "Missing contact ID in API response: #{mailer.parsed_body}"
+        @error_message = 'Assessment submission failed. Please try again later.'
+        @contact = Contact.new(contact_data)
+        return erb :'resources/assessment/results', layout: :'layout/layout2022'
+      end
+      
+      puts "Assessment submitted successfully - Contact ID: #{@id}, Status: #{@status}"
+      
     rescue StandardError => e
-      puts "Failed to send assessment results email: #{e.message}"
+      puts "Assessment submission error: #{e.message}"
+      puts "Error backtrace: #{e.backtrace&.first(5)}"
+      @error_message = 'Assessment submission failed due to a technical error. Please try again later.'
+      @contact = Contact.new(contact_data)
+      return erb :'resources/assessment/results', layout: :'layout/layout2022'
     end
 
     # Clear session data after successful submission
