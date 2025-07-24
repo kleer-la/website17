@@ -1,7 +1,7 @@
 require './lib/services/keventer_api'
 
 class Contact
-  attr_accessor :name, :company, :email, :status, :assessment_report_url, :assessment, :id
+  attr_accessor :name, :company, :email, :status, :assessment_report_url, :assessment_report_html, :assessment, :id
 
   def initialize(data)
     @id = data['id']
@@ -9,6 +9,7 @@ class Contact
     @email = data['email']
     @status = data['status']
     @assessment_report_url = data['assessment_report_url']
+    @assessment_report_html = data['assessment_report_html']
     @assessment = Assessment.new(data['assessment']) if data['assessment']
   end
 

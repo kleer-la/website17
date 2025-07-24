@@ -71,6 +71,7 @@ post '/submit_assessment' do
       @id = mailer.id
       @status = mailer.status
       @assessment_report_url = mailer.assessment_report_url
+      @assessment_report_html = mailer.assessment_report_html
       
       # Validate required fields
       unless @id
@@ -101,6 +102,7 @@ post '/submit_assessment' do
     contact_data[:id] = @id
     contact_data[:status] = @status
     contact_data[:assessment_report_url] = @assessment_report_url
+    contact_data[:assessment_report_html] = @assessment_report_html
     contact_data = contact_data.transform_keys(&:to_s)
     
     @contact = Contact.new(contact_data)

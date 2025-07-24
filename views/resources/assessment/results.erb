@@ -22,7 +22,15 @@
   <div id="result-container">
     <% if @contact.status == 'completed' %>
       <div id="result">
-        <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%;">
+        <% if @assessment.rule_based && @contact.assessment_report_html %>
+          <!-- Display HTML content for rule-based assessments -->
+          <div class="assessment-html-content" style="max-width: 100%; overflow-x: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+            <%= @contact.assessment_report_html.html_safe %>
+          </div>
+        <% else %>
+          <!-- Display PNG image for competency-based assessments -->
+          <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%;">
+        <% end %>
         <button class="info my-secondary-button">
            <a href="<%= @contact.assessment_report_url%>" id="pdf-link">Download PDF</a>
         </button>
@@ -88,12 +96,23 @@
             document.getElementById('pdf-link').href = data.assessment_report_url;
             document.getElementById('pdf-link').textContent = 'Download PDF';
 
-            const imageUrl = data.assessment_report_url.replace('.pdf', '.png');
-            const imageElement = document.createElement('img');
-            imageElement.src = imageUrl;
-            imageElement.alt = 'Assessment Report Preview';
-            imageElement.style.maxWidth = '100%';
-            document.getElementById('result').appendChild(imageElement);
+            // Check if this is a rule-based assessment with HTML content
+            if (data.assessment && data.assessment.rule_based && data.assessment_report_html) {
+              // Display HTML content
+              const htmlContentDiv = document.createElement('div');
+              htmlContentDiv.className = 'assessment-html-content';
+              htmlContentDiv.style.cssText = 'max-width: 100%; overflow-x: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;';
+              htmlContentDiv.innerHTML = data.assessment_report_html;
+              document.getElementById('result').appendChild(htmlContentDiv);
+            } else {
+              // Display PNG image for competency-based assessments
+              const imageUrl = data.assessment_report_url.replace('.pdf', '.png');
+              const imageElement = document.createElement('img');
+              imageElement.src = imageUrl;
+              imageElement.alt = 'Assessment Report Preview';
+              imageElement.style.maxWidth = '100%';
+              document.getElementById('result').appendChild(imageElement);
+            }
             break;
           case 'failed':
             document.getElementById('loading').style.display = 'none';
