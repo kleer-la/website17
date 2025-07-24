@@ -29,13 +29,14 @@
 </section>
 <section id="resource-detail-body" class="container resource-detail-body">
 <div class="mb-4 offset-lg-1">
-  <% unless @resource.getit.empty? %>
-    <form id="download-form" action="/<%=lang%>/send-mail" method="post" class="needs-validation" novalidate>
+  <% if !@resource.getit.empty? || @is_assessment%>
+    <% action_url = @is_assessment ? "/assessment/#{@resource.assessment_id}" : '/send-mail' %>
+    <form id="download-form" action="/<%= session[:locale] || 'es' %><%= action_url%>" method="post" class="needs-validation" novalidate>
     <div class="row mb-4">
       <div class="row">
         <div class="col-md-6">
           <div class="row">
-            <h2><%= t("contact-us-form.download") %></h2>
+            <h2><%= @is_assessment ? t("resources.show.assessment_title") : t("contact-us-form.download") %></h2>
           </div>
           <div class="row">
             <div class="mb-3 col-xs-12">
@@ -113,7 +114,6 @@
           <%end%>
         </div>
       </div>
-
       </div>
       <div class="row col-md-6">
         <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
@@ -125,12 +125,20 @@
                   value="Submit"
                   disabled
           >
-            <%= t("contact-us-form.button.text") %></button>
+            <%= @is_assessment ? t("resources.show.start_assessment") : t("contact-us-form.button.text") %>
+          </button>
         </div>
+                  <% if @is_assessment %>
+            <div id="start-assessment" class="btn-center-container" style="display: none;">
+              <a href="/#{lang}/assessment/<%= @resource.assessment_id %>" class="btn my-primary-button">
+                <%= t("resources.show.start_assessment") %>
+              </a>
+            </div>
+          <% end %>
       </div>          
     </div>
     </form>
-  <% end %>
+  <% end %>  
   <% unless @resource.long_description.empty? %>
   <div class="row mb-4">
     <div class="col-lg-11">
@@ -198,5 +206,15 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     loadReCaptcha('download-form');
+    const form = document.getElementById('download-form');
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+        }
+      });
+    }
   });
 </script>

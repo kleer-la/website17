@@ -1,71 +1,3 @@
-<style>
-  /* Keep your existing styles for buttons and assessment layout */
-  .my-primary-button {
-    background-color: #43B045;
-    color: #FFFFFF;
-    border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-  }
-  .my-primary-button:hover {
-    background-color: #0DAC52;
-    color: #FFFFFF;
-  }
-  .my-secondary-button {
-    background-color: #68CEF2;
-    color: #333333;
-    border: none;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-  }
-  .my-secondary-button:hover {
-    background-color: #00BBEE;
-    color: #333333;
-  }
-  .btn-outline-primary {
-    border-color: #43B045;
-    color: #43B045;
-    padding: 0.5rem 1rem;
-    min-width: 100px;
-    text-align: center;
-    border-radius: 5px;
-  }
-  .btn-outline-primary:hover {
-    background-color: #43B045;
-    color: #FFFFFF;
-  }
-
-  /* Custom styles for assessment */
-  .assessment-hero {
-    background-color: #F8F9FA;
-    padding: 2rem 0;
-  }
-  .resource-detail-hero__content {
-    padding: 1rem;
-  }
-  .question-container {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .question-label {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #333333;
-    margin-bottom: 0.5rem;
-  }
-  .question-description {
-    font-size: 1rem;
-    color: #666666;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-  }
-</style>
-
 <!-- Include noUiSlider CSS and JS via CDN with corrected integrity values -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA==" crossorigin="anonymous" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js" integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ==" crossorigin="anonymous"></script>
@@ -95,24 +27,111 @@
     <form id="assessmentForm" action="/<%= session[:locale] || 'es' %>/submit_assessment" method="post" class="needs-validation" novalidate>
       <input type="hidden" name="assessment_id" value="<%= @assessment.id %>">
 
-       <!-- Standalone Questions with Sliders -->
+       <!-- Question Groups -->
+      <% @assessment.question_groups.each do |group| %>
+        <div class="question-group-container">
+          <h3 class="question-group-title"><%= group.name %></h3>
+          <% if !group.description.nil? && !group.description.to_s.empty? %>
+            <div class="question-group-description"><%= group.description %></div>
+          <% end %>
+          
+          <% group.questions.each do |question| %>
+            <div class="question-container">
+              <label class="question-label"><%= question.name %></label>
+              <% if !question.description.nil? && !question.description.to_s.empty? %>
+                <div class="question-description"><%= question.description %></div>
+              <% end %>
+              
+              <% case question.question_type 
+                  when 'linear_scale' %>
+                <div class="slider-container">
+                  <div class="slider-wrapper">
+                    <div id="slider-<%= question.id %>"></div>
+                  </div>
+                  <div class="slider-labels">
+                    <% question.answers.each do |answer| %>
+                      <div class="slider-label" data-value="<%= answer.id %>"><%= answer.text %></div>
+                    <% end %>
+                  </div>
+                </div>
+                <input type="hidden" id="slider-value-<%= question.id %>" name="responses[<%= question.id %>]" required>
+                
+              <% when 'radio_button' %>
+                <div class="radio-group">
+                  <% question.answers.each do |answer| %>
+                    <label class="radio-option">
+                      <input type="radio" name="responses[<%= question.id %>]" value="<%= answer.id %>" required>
+                      <span><%= answer.text %></span>
+                    </label>
+                  <% end %>
+                </div>
+                
+              <% when 'short_text' %>
+                <input type="text" 
+                       class="text-input" 
+                       name="responses[<%= question.id %>]" 
+                       placeholder="<%= t('assessment.short_text_placeholder', default: 'Escribe tu respuesta aquí...') %>"
+                       required>
+                       
+              <% when 'long_text' %>
+                <textarea class="textarea-input" 
+                          name="responses[<%= question.id %>]" 
+                          placeholder="<%= t('assessment.long_text_placeholder', default: 'Escribe tu respuesta detallada aquí...') %>"
+                          required></textarea>
+              <% end %>
+              
+              <div class="invalid-feedback"><%= t("assessment.required_answer", default: "Por favor, selecciona una respuesta.") %></div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+       <!-- Standalone Questions with Different Types -->
       <% @assessment.questions.each do |question| %>
         <div class="question-container">
           <label class="question-label"><%= question.name %></label>
           <% if !question.description.nil? && !question.description.to_s.empty? %>
             <div class="question-description"><%= question.description %></div>
           <% end %>
-          <div class="slider-container">
-            <div class="slider-wrapper">
-              <div id="slider-<%= question.id %>"></div>
+          
+          <% case question.question_type 
+               when 'linear_scale' %>
+            <div class="slider-container">
+              <div class="slider-wrapper">
+                <div id="slider-<%= question.id %>"></div>
+              </div>
+              <div class="slider-labels">
+                <% question.answers.each do |answer| %>
+                  <div class="slider-label" data-value="<%= answer.id %>"><%= answer.text %></div>
+                <% end %>
+              </div>
             </div>
-            <div class="slider-labels">
+            <input type="hidden" id="slider-value-<%= question.id %>" name="responses[<%= question.id %>]" required>
+            
+          <% when 'radio_button' %>
+            <div class="radio-group">
               <% question.answers.each do |answer| %>
-                <div class="slider-label" data-value="<%= answer.id %>"><%= answer.text %></div>
+                <label class="radio-option">
+                  <input type="radio" name="responses[<%= question.id %>]" value="<%= answer.id %>" required>
+                  <span><%= answer.text %></span>
+                </label>
               <% end %>
             </div>
-          </div>
-          <input type="hidden" id="slider-value-<%= question.id %>" name="responses[<%= question.id %>]" required>
+            
+          <% when 'short_text' %>
+            <input type="text" 
+                   class="text-input" 
+                   name="responses[<%= question.id %>]" 
+                   placeholder="<%= t('assessment.short_text_placeholder', default: 'Escribe tu respuesta aquí...') %>"
+                   required>
+                   
+          <% when 'long_text' %>
+            <textarea class="textarea-input" 
+                      name="responses[<%= question.id %>]" 
+                      placeholder="<%= t('assessment.long_text_placeholder', default: 'Escribe tu respuesta detallada aquí...') %>"
+                      required></textarea>
+          <% end %>
+          
           <div class="invalid-feedback"><%= t("assessment.required_answer", default: "Por favor, selecciona una respuesta.") %></div>
         </div>
       <% end %>
@@ -141,11 +160,18 @@
     }
   })();
 
-<%  @assessment.questions.each do |question| %>
+<%  
+   # Collect all linear_scale questions from both groups and standalone
+   all_linear_questions = []
+   all_linear_questions += @assessment.question_groups.flat_map { |group| group.questions.select { |q| q.question_type == 'linear_scale' } }
+   all_linear_questions += @assessment.questions.select { |q| q.question_type == 'linear_scale' }
+   
+   all_linear_questions.each do |question| 
+%>
     document.addEventListener('DOMContentLoaded', function () {
       const slider = document.getElementById('slider-<%= question.id %>');
       const hiddenInput = document.getElementById('slider-value-<%= question.id %>');
-      const labels = document.querySelectorAll('.slider-label');
+      const labels = document.querySelectorAll('.slider-label[data-value]');
       const answers_count = <%= question.answers.count %>;
 
       if (slider) {
@@ -181,7 +207,11 @@
           highlightLabel(value);
         });
 
-        labels.forEach(label => {
+        // Get labels specific to this question's container
+        const questionContainer = slider.closest('.question-container');
+        const questionLabels = questionContainer.querySelectorAll('.slider-label[data-value]');
+        
+        questionLabels.forEach(label => {
           label.addEventListener('click', function () {
             const value = parseInt(this.getAttribute('data-value'));
             // Transform the value before setting
@@ -189,8 +219,19 @@
           });
         });
 
+        // Initial highlight function specific to this question
+        function highlightLabel(value) {
+          questionLabels.forEach(label => {
+            label.classList.remove('active');
+          });
+          const activeLabel = questionContainer.querySelector(`.slider-label[data-value="${value}"]`);
+          if (activeLabel) {
+            activeLabel.classList.add('active');
+          }
+        }
+
         // Initial highlight
-        highlightLabel(2); // Medium
+        highlightLabel(Math.ceil(answers_count/2)); // Medium
       }
     });
 <% end %>

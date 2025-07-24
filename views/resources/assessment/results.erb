@@ -5,7 +5,7 @@
         <div class="col-12 col-lg-6 resource-detail-hero__content">
           <h1>Assessment Results</h1>
           <h2><%= @assessment.title %></h2>
-          <h2>De <%= @contact.name %></h2>
+          <h2>De <%= @contact&.name || 'Participante' %></h2>
         </div>
         <div class="col-12 col-lg-5 resource-detail-hero__image d-none d-lg-block">
           <img
@@ -22,7 +22,15 @@
   <div id="result-container">
     <% if @contact.status == 'completed' %>
       <div id="result">
-        <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%;">
+        <% if @assessment.rule_based && @contact.assessment_report_html %>
+          <!-- Display HTML content for rule-based assessments -->
+          <div class="assessment-html-container" style="max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+            <%= @contact.assessment_report_html.html_safe %>
+          </div>
+        <% else %>
+          <!-- Display PNG image for competency-based assessments -->
+          <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%;">
+        <% end %>
         <button class="info my-secondary-button">
            <a href="<%= @contact.assessment_report_url%>" id="pdf-link">Download PDF</a>
         </button>
@@ -39,9 +47,15 @@
   <% unless @contact.status == 'completed' %>
     <div class="row">
       <% if @error_message.nil? || @error_message.empty? %>
-        <p>Respuestas enviadas correctamente, revisa tu correo para los resultados.</p>
+        <div class="alert alert-success">
+          <p><strong>¡Éxito!</strong> Respuestas enviadas correctamente. Estamos generando tu reporte personalizado.</p>
+          <p><small>También recibirás una copia por correo electrónico.</small></p>
+        </div>
       <% else %>
-        <p><%= @error_message %></p>
+        <div class="alert alert-danger">
+          <p><strong>Error:</strong> <%= @error_message %></p>
+          <p><small>Si el problema persiste, por favor contacta a soporte.</small></p>
+        </div>
       <% end %>
     </div>
    <% end %>
@@ -49,10 +63,32 @@
 
 <% unless @contact.status == 'completed' %>
 <script>
+  let checkStatusAttempts = 0;
+  const maxAttempts = 60; // 2 minutes max (60 * 2 seconds)
+  
   function checkStatus() {
+    <% if @id && @id.to_s != '' %>
+    checkStatusAttempts++;
+    
+    if (checkStatusAttempts > maxAttempts) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('result-container').innerHTML = 
+        '<div class="alert alert-warning"><p>Report generation is taking longer than expected. Please check your email or refresh the page in a few minutes.</p></div>';
+      return;
+    }
+    
     fetch('/assessment/<%= @id %>/result_status')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then(data => {
+        if (data.error) {
+          throw new Error(data.error);
+        }
+        
         switch (data.status) {
           case 'completed':
             document.getElementById('loading').style.display = 'none';
@@ -60,16 +96,28 @@
             document.getElementById('pdf-link').href = data.assessment_report_url;
             document.getElementById('pdf-link').textContent = 'Download PDF';
 
-            const imageUrl = data.assessment_report_url.replace('.pdf', '.png');
-            const imageElement = document.createElement('img');
-            imageElement.src = imageUrl;
-            imageElement.alt = 'Assessment Report Preview';
-            imageElement.style.maxWidth = '100%';
-            document.getElementById('result').appendChild(imageElement);
+            // Check if this is a rule-based assessment with HTML content
+            if (data.assessment && data.assessment.rule_based && data.assessment_report_html) {
+              // Display HTML content
+              const htmlContentDiv = document.createElement('div');
+              htmlContentDiv.className = 'assessment-html-container';
+              htmlContentDiv.style.cssText = 'max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;';
+              htmlContentDiv.innerHTML = data.assessment_report_html;
+              document.getElementById('result').appendChild(htmlContentDiv);
+            } else {
+              // Display PNG image for competency-based assessments
+              const imageUrl = data.assessment_report_url.replace('.pdf', '.png');
+              const imageElement = document.createElement('img');
+              imageElement.src = imageUrl;
+              imageElement.alt = 'Assessment Report Preview';
+              imageElement.style.maxWidth = '100%';
+              document.getElementById('result').appendChild(imageElement);
+            }
             break;
           case 'failed':
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('result-container').innerHTML = '<p>Failed to generate the report. Please try again later.</p>';
+            document.getElementById('result-container').innerHTML = 
+              '<div class="alert alert-danger"><p>Failed to generate the report. Please try submitting the assessment again or contact support if the problem persists.</p></div>';
             break;
           case 'pending':
           case 'in_progress':
@@ -77,7 +125,19 @@
             setTimeout(checkStatus, 2000);
             break;
         }
+      })
+      .catch(error => {
+        console.error('Status check error:', error);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('result-container').innerHTML = 
+          '<div class="alert alert-warning"><p>Unable to check report status. Please refresh the page or check your email for the results. If the problem persists, contact support.</p></div>';
       });
+    <% else %>
+    console.error('No contact ID available for status check');
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('result-container').innerHTML = 
+      '<div class="alert alert-danger"><p>Assessment submission failed. Please try again.</p></div>';
+    <% end %>
   }
   checkStatus();
 </script>

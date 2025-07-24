@@ -21,11 +21,42 @@ class Resource
       return @resource_null
     end
 
+    if ENV['RACK_ENV'] == 'development'
+      puts "DEBUG: Resource.create_one_keventer called with slug: '#{slug}'"
+    end
+    
     sanitized_slug = slug.unicode_normalize(:nfd).gsub(/\p{M}/, '')
-    api_resp = JsonAPI.new("#{KeventerAPI.resource_url(sanitized_slug)}?lang=#{locale}")
-    raise ResourceNotFoundError.new(slug) unless api_resp.ok?
+    api_url = "#{KeventerAPI.resource_url(sanitized_slug)}?lang=#{locale}"
+    
+    if ENV['RACK_ENV'] == 'development'
+      puts "DEBUG: Sanitized slug: '#{sanitized_slug}'"
+      puts "DEBUG: API URL: #{api_url}"
+    end
+    
+    begin
+      api_resp = JsonAPI.new(api_url)
+      raise ResourceNotFoundError.new(slug) unless api_resp.ok?
 
-    Resource.new(api_resp.doc, locale)
+      if ENV['RACK_ENV'] == 'development'
+        puts "DEBUG: API Response slug: '#{api_resp.doc['slug']}'"
+        puts "DEBUG: API Response title: '#{api_resp.doc['title_es']}'"
+      end
+      
+      resource = Resource.new(api_resp.doc, locale)
+      
+      if ENV['RACK_ENV'] == 'development'
+        puts "DEBUG: Resource object slug: '#{resource.slug}'"
+      end
+      
+      resource
+    rescue StandardError => e
+      unless ENV['RACK_ENV'] == 'test'
+        puts "Error creating resource for slug '#{slug}': #{e.message}"
+        puts "URL: #{api_url}"
+        puts "Backtrace: #{e.backtrace.first(5).join("\n")}"
+      end
+      raise e
+    end
   end
 
   def self.create_list_null(data)
@@ -73,7 +104,7 @@ class Resource
     @slug = doc['slug']
     @lang = lang
     @downloadable = AppHelper::boolean_value(doc['downloadable'])
-    @assessment_id = doc['assessment']['id'] if doc['assessment']
+    @assessment_id = doc.dig('assessment', 'id')
 
     init_localized_fields(doc)
     init_urls

@@ -20,7 +20,7 @@ class Mailer
     end
   end
 
-  # Specific getters for id, status, and assessment_report_url
+  # Specific getters for id, status, assessment_report_url, and assessment_report_html
   def id
     parsed_body['id']
   end
@@ -31,5 +31,9 @@ class Mailer
 
   def assessment_report_url
     parsed_body['assessment_report_url']
+  end
+
+  def assessment_report_html
+    parsed_body['assessment_report_html']
   end
 end

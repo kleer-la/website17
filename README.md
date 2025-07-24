@@ -130,7 +130,9 @@ System test
 cucumber -p system
 ```
 
-To see the API called
+To see the API calls and verbose logging (for development/debugging)
 ```cli
-  RACK_ENV=test ./runserver.sh
+  RACK_ENV=development ./runserver.sh
 ```
+
+Note: `RACK_ENV=test` is used for clean test output (suppresses logs), while `RACK_ENV=development` shows verbose API logging.

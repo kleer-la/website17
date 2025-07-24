@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 3.3'
+ruby '~> 3.3.1'
 
 gem 'aws-sdk-s3'
 gem 'curb'
@@ -24,6 +24,7 @@ gem 'tzinfo-data'
 gem 'concurrent-ruby'
 
 group :development do
+  gem 'sass'
   gem 'foreman', require: false
   gem 'i18n-tasks', require: false
   gem 'platform-api', require: false

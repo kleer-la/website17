@@ -13,5 +13,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods  # post
+  
+  # Set RACK_ENV to test for clean test output
+  ENV['RACK_ENV'] = 'test'
 end
 
