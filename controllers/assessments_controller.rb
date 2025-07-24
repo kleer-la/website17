@@ -55,7 +55,7 @@ post '/submit_assessment' do
       # Check for API errors
       if mailer.parsed_body&.key?('error')
         error_message = mailer.parsed_body['error']
-        puts "API Error: #{error_message}"
+        puts "API Error: #{error_message}" if ENV['RACK_ENV'] == 'development'
         @error_message = case error_message
                         when 'bad secret'
                           'Configuration error. Please contact support.'
@@ -74,17 +74,23 @@ post '/submit_assessment' do
       
       # Validate required fields
       unless @id
-        puts "Missing contact ID in API response: #{mailer.parsed_body}"
+        if ENV['RACK_ENV'] == 'development'
+          puts "Missing contact ID in API response: #{mailer.parsed_body}"
+        end
         @error_message = 'Assessment submission failed. Please try again later.'
         @contact = Contact.new(contact_data)
         return erb :'resources/assessment/results', layout: :'layout/layout2022'
       end
       
-      puts "Assessment submitted successfully - Contact ID: #{@id}, Status: #{@status}"
+      if ENV['RACK_ENV'] == 'development'
+        puts "Assessment submitted successfully - Contact ID: #{@id}, Status: #{@status}"
+      end
       
     rescue StandardError => e
-      puts "Assessment submission error: #{e.message}"
-      puts "Error backtrace: #{e.backtrace&.first(5)}"
+      if ENV['RACK_ENV'] == 'development'
+        puts "Assessment submission error: #{e.message}"
+        puts "Error backtrace: #{e.backtrace&.first(5)}"
+      end
       @error_message = 'Assessment submission failed due to a technical error. Please try again later.'
       @contact = Contact.new(contact_data)
       return erb :'resources/assessment/results', layout: :'layout/layout2022'
