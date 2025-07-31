@@ -24,16 +24,25 @@
       <div id="result">
         <% if @assessment.rule_based && @contact.assessment_report_html %>
           <!-- Display HTML content for rule-based assessments -->
-          <div class="assessment-html-container" style="max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+          <div class="assessment-html-container" style="max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px;">
             <%= @contact.assessment_report_html.html_safe %>
+          </div>
+          <!-- PDF Download Button after HTML content -->
+          <div class="pdf-download-section" style="text-align: center; margin-top: 30px;">
+            <button class="info my-secondary-button">
+              <a href="<%= @contact.assessment_report_url%>" id="pdf-link">📄 Descargar Reporte Completo en PDF</a>
+            </button>
           </div>
         <% else %>
           <!-- Display PNG image for competency-based assessments -->
-          <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%;">
+          <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%; margin-bottom: 30px;">
+          <!-- PDF Download Button after image -->
+          <div class="pdf-download-section" style="text-align: center; margin-top: 30px;">
+            <button class="info my-secondary-button">
+              <a href="<%= @contact.assessment_report_url%>" id="pdf-link">📄 Download PDF Report</a>
+            </button>
+          </div>
         <% end %>
-        <button class="info my-secondary-button">
-           <a href="<%= @contact.assessment_report_url%>" id="pdf-link">Download PDF</a>
-        </button>
       </div>
     <% else %>
       <div class="spinner-border" role="status" id="loading"></div>
@@ -92,27 +101,48 @@
         switch (data.status) {
           case 'completed':
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('pdf-link').href = data.assessment_report_url;
-            document.getElementById('pdf-link').textContent = 'Download PDF';
-
+            
             // Check if this is a rule-based assessment with HTML content
             if (data.assessment && data.assessment.rule_based && data.assessment_report_html) {
-              // Display HTML content
+              // Display HTML content first
               const htmlContentDiv = document.createElement('div');
               htmlContentDiv.className = 'assessment-html-container';
-              htmlContentDiv.style.cssText = 'max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;';
+              htmlContentDiv.style.cssText = 'max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px;';
               htmlContentDiv.innerHTML = data.assessment_report_html;
               document.getElementById('result').appendChild(htmlContentDiv);
+              
+              // Then add PDF download button after HTML content
+              const pdfSectionDiv = document.createElement('div');
+              pdfSectionDiv.className = 'pdf-download-section';
+              pdfSectionDiv.style.cssText = 'text-align: center; margin-top: 30px;';
+              pdfSectionDiv.innerHTML = `
+                <button class="info my-secondary-button">
+                  <a href="${data.assessment_report_url}" id="pdf-link">📄 Descargar Reporte Completo en PDF</a>
+                </button>
+              `;
+              document.getElementById('result').appendChild(pdfSectionDiv);
             } else {
               // Display PNG image for competency-based assessments
               const imageUrl = data.assessment_report_url.replace('.pdf', '.png');
               const imageElement = document.createElement('img');
               imageElement.src = imageUrl;
               imageElement.alt = 'Assessment Report Preview';
-              imageElement.style.maxWidth = '100%';
+              imageElement.style.cssText = 'max-width: 100%; margin-bottom: 30px;';
               document.getElementById('result').appendChild(imageElement);
+              
+              // Then add PDF download button after image
+              const pdfSectionDiv = document.createElement('div');
+              pdfSectionDiv.className = 'pdf-download-section';
+              pdfSectionDiv.style.cssText = 'text-align: center; margin-top: 30px;';
+              pdfSectionDiv.innerHTML = `
+                <button class="info my-secondary-button">
+                  <a href="${data.assessment_report_url}" id="pdf-link">📄 Download PDF Report</a>
+                </button>
+              `;
+              document.getElementById('result').appendChild(pdfSectionDiv);
             }
+            
+            document.getElementById('result').style.display = 'block';
             break;
           case 'failed':
             document.getElementById('loading').style.display = 'none';
