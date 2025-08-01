@@ -1008,3 +1008,18 @@ en:
       error-message: Please enter exactly 20 characters.
     submit:
       text: Get certificate
+  assessment:
+    submit: Submit
+    short_text_placeholder: Write your answer here...
+    long_text_placeholder: Write your detailed answer here...
+    required_answer: Please select an answer.
+    results:
+      success_message: Success! Responses submitted successfully. We are generating your personalized report.
+      email_notice: You will also receive a copy by email.
+      generating_message: Report generation is taking longer than expected. Please check your email or refresh the page in a few minutes.
+      download_pdf: Download Complete Report in PDF
+      download_pdf_short: Download PDF Report
+      creating_pdf: Creating PDF
+      failed_generation: Failed to generate the report. Please try submitting the assessment again or contact support if the problem persists.
+      status_check_error: Unable to check report status. Please refresh the page or check your email for the results. If the problem persists, contact support.
+      submission_failed: Assessment submission failed. Please try again.

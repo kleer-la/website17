@@ -675,3 +675,18 @@ es:
       error-message: Por favor ingresa 20 caracteres.
     submit:
       text: Obten tu certificado
+  assessment:
+    submit: Enviar
+    short_text_placeholder: Escribe tu respuesta aquí...
+    long_text_placeholder: Escribe tu respuesta detallada aquí...
+    required_answer: Por favor, selecciona una respuesta.
+    results:
+      success_message: ¡Éxito! Respuestas enviadas correctamente. Estamos generando tu reporte personalizado.
+      email_notice: También recibirás una copia por correo electrónico.
+      generating_message: La generación del reporte está tomando más tiempo del esperado. Por favor revisa tu correo o actualiza la página en unos minutos.
+      download_pdf: Descargar Reporte Completo en PDF
+      download_pdf_short: Descargar PDF
+      creating_pdf: Creando PDF
+      failed_generation: Error al generar el reporte. Por favor intenta enviar la evaluación nuevamente o contacta a soporte si el problema persiste.
+      status_check_error: No se puede verificar el estado del reporte. Por favor actualiza la página o revisa tu correo para los resultados. Si el problema persiste, contacta a soporte.
+      submission_failed: Error al enviar la evaluación. Por favor intenta de nuevo.

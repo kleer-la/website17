@@ -11,7 +11,6 @@ class Assessment
     @assessment_null = Assessment.new(data, locale || 'en')  # Default to English
   end
 
-  # Fetch from the API (for real use, but we’ll mock for now)
   def self.create_one_keventer(id, locale = 'en')
     if @next_null
       @next_null = false
