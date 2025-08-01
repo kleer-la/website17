@@ -1,16 +1,18 @@
+require './lib/helpers/app_helper'
+
 class Recommended
-  attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable, :lang
+  attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable, :lang, :is_training_program
 
   def initialize(doc, lang = 'es')
-    @lang = lang
+    @lang = doc['lang'] || lang
     @title = doc['title']
     @subtitle = doc['subtitle']
     @slug = doc['slug']
-    @lang = doc['lang']
     @cover = doc['cover']
     @type = doc['type']
     @level = doc['level']
     @downloadable = AppHelper::boolean_value(doc['downloadable'])
+    @is_training_program = AppHelper::boolean_value(doc['is_training_program'])
   end
 
   def url
@@ -61,9 +63,17 @@ end
 class RecommendedService < Recommended
   def url
     if @lang == 'en'
-      "/en/services/#{slug}"
+      if @is_training_program
+        "/en/training/#{slug}"
+      else
+        "/en/services/#{slug}"
+      end
     else
-      "/es/servicios/#{slug}"
+      if @is_training_program
+        "/es/formacion/#{slug}"
+      else
+        "/es/servicios/#{slug}"
+      end
     end
   end
 end
