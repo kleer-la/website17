@@ -42,7 +42,13 @@
           <a
             class="my-secondary-button"
             id="cta-button-<%=area.id %>"
-            href="<%= "/es/servicios/#{area.slug}" %>"
+            href="<%= 
+              if area.is_training_program
+                session[:locale] == 'en' ? "/en/training/#{area.slug}" : "/es/formacion/#{area.slug}"
+              else
+                session[:locale] == 'en' ? "/en/services/#{area.slug}" : "/es/servicios/#{area.slug}"
+              end 
+            %>"
             style=""
           >
             <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2" loading="lazy"/>

@@ -491,6 +491,7 @@ es:
     title: Contenido recomendado
     type:
       service: Servicio
+      training_program: Formación
       article: Blog
       event_type: Curso
       resource: Recurso

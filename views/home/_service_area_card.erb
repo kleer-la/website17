@@ -1,5 +1,11 @@
 <div class="col-12 col-md-6 col-lg-2 mb-4">
-<% path = {'es'=> 'es/servicios', 'en'=> 'en/services'}[session[:locale]] %>
+<% 
+  if area.is_training_program
+    path = {'es'=> 'es/formacion', 'en'=> 'en/training'}[session[:locale]]
+  else
+    path = {'es'=> 'es/servicios', 'en'=> 'en/services'}[session[:locale]]
+  end
+%>
   <a 
     href="<%= area.slug ? "/#{path}/#{area.slug}" : "#" %>"
     class="card service-area-card text-center text-decoration-none h-100"

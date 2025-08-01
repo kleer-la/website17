@@ -837,6 +837,7 @@ en:
     title: We suggest
     type:
       service: Service
+      training_program: Training
       article: Blog
       event_type: Course
       resource: Resource
