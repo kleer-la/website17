@@ -1014,7 +1014,7 @@ en:
     long_text_placeholder: Write your detailed answer here...
     required_answer: Please select an answer.
     results:
-      success_message: Success! Responses submitted successfully. We are generating your personalized report.
+      success_message: Success! Responses submitted successfully. Please wait, we are generating your personalized report.
       email_notice: You will also receive a copy by email.
       generating_message: Report generation is taking longer than expected. Please check your email or refresh the page in a few minutes.
       download_pdf: Download Complete Report in PDF

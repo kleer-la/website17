@@ -47,17 +47,14 @@
     <% else %>
       <div class="spinner-border" role="status" id="loading"></div>
       <div id="result" style="display: none;">
-        <button class="info my-secondary-button">
-          <a href="#" id="pdf-link"><%= t('assessment.results.creating_pdf', default: 'Creating PDF') %></a>
-        </button>
       </div>
     <% end %>
   </div>
   <% unless @contact.status == 'completed' %>
     <div class="row">
       <% if @error_message.nil? || @error_message.empty? %>
-        <div class="alert alert-success">
-          <p><strong><%= t('assessment.results.success_message', default: '¡Éxito! Respuestas enviadas correctamente. Estamos generando tu reporte personalizado.') %></strong></p>
+        <div class="alert alert-success" id="success-message">
+          <p><strong><%= t('assessment.results.success_message', default: '¡Éxito! Respuestas enviadas correctamente. Por favor espera, estamos generando tu reporte personalizado.') %></strong></p>
           <p><small><%= t('assessment.results.email_notice', default: 'También recibirás una copia por correo electrónico.') %></small></p>
         </div>
       <% else %>
@@ -111,6 +108,11 @@
         switch (data.status) {
           case 'completed':
             document.getElementById('loading').style.display = 'none';
+            // Hide the success message once the report is ready
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+              successMessage.style.display = 'none';
+            }
             
             // Check if this is a rule-based assessment with HTML content
             if (data.assessment && data.assessment.rule_based && data.assessment_report_html) {
