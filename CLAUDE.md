@@ -51,6 +51,11 @@ cucumber -p system
 
 # Run specific test file
 rspec spec/lib/services/cache_service_spec.rb
+
+# Run tests inside Docker container (when using devcontainer)
+docker exec website17 rspec
+docker exec website17 rspec spec/requests/participants_registration_spec.rb
+docker exec website17 cucumber
 ```
 
 ### Deployment
