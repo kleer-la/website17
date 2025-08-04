@@ -14,7 +14,7 @@ es:
       referer_code: Código de Descuento
       phone: (opcional) Teléfono de contacto
       notes: (opcional) Datos adicionales
-      accept_terms: He leído y aceptado la política de privacidad
+      accept_terms: He leído y aceptado la <a href="/es/privacy" target="_blank">política de privacidad</a>
     button:
       register: ¡Registrarme!
       buy: Comprar

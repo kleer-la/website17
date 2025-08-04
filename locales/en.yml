@@ -14,7 +14,7 @@ en:
       referer_code: Discount code
       phone: (optional) Phone
       notes: (optional) additional data or question
-      accept_terms: I have read and accepted the privacy policy
+      accept_terms: I have read and accepted the <a href="/en/privacy" target="_blank">privacy policy</a>
     button:
       register: Register Now!
       buy: Buy now!
