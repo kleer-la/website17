@@ -62,6 +62,10 @@ configure do
   register Sinatra::Flash
 end
 
+configure :test, :development do
+  set :protection, except: [:host_authorization]
+end
+
 before do
   target_url, locale = unify_domains(request.host, request.path)
   session[:locale] = locale if locale # Set only if locale is non-nil
