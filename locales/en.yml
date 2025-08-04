@@ -1,5 +1,45 @@
 en:
   page_not_found: Page not found
+  participant:
+    register:
+      title: Participant Registration
+    labels:
+      fname: First Name
+      lname: Last Name
+      email: E-Mail
+      email_hint: (to send invoice and info)
+      company_name: Company Name
+      address: Address (for invoice)
+      quantity: How many learners?
+      referer_code: Discount code
+      phone: (optional) Phone
+      notes: (optional) additional data or question
+      accept_terms: I have read and accepted the privacy policy
+    button:
+      register: Register Now!
+      buy: Buy now!
+      submitting: Submitting
+    seat: seat
+    seats: seats
+    saving: You are saving $${saving} off the full price
+    referer_code_message: Price will be adjusted after reviewing your discount code
+    alert:
+      sold_out: This event is sold out. You will be added to its waitlist.
+      registration_ended: Registrations date is over. Please look for the next event.
+    error:
+      recaptcha_required: Please complete the reCAPTCHA
+      registration_failed: Registration failed. Please try again.
+    confirmed:
+      title: Registration Successful!
+      free:
+        title: You're all set!
+        message: You've been registered for the event. A few days before the start you will receive additional information.
+      paid:
+        title: Thank you!
+        message: We have sent you an e-mail with the payment link. Your seat will be confirmed with the payment.
+      email_sent: Check your email for more details.
+      contact_info: Please don't hesitate to contact us if you have any questions.
+      back_to_agenda: Back to Agenda
   internal_error:
     title: Internal error
     text: >-

@@ -1,5 +1,45 @@
 es:
   page_not_found: Página no encontrada
+  participant:
+    register:
+      title: Registro de Participante
+    labels:
+      fname: Nombre
+      lname: Apellido
+      email: E-Mail
+      email_hint: (confirmaremos tu registro en este email)
+      company_name: Razón Social
+      address: Dirección de facturación
+      quantity: Cantidad de cupos a comprar
+      referer_code: Código de Descuento
+      phone: (opcional) Teléfono de contacto
+      notes: (opcional) Datos adicionales
+      accept_terms: He leído y aceptado la política de privacidad
+    button:
+      register: ¡Registrarme!
+      buy: Comprar
+      submitting: Enviando
+    seat: persona
+    seats: personas
+    saving: ¡Ahorras $${saving} sobre el precio de lista!
+    referer_code_message: Los precios serán ajustados cuando validemos tu código de descuento
+    alert:
+      sold_out: Este evento está completo. Tu registro quedará en lista de espera.
+      registration_ended: La fecha de registración ha pasado, no registramos más en este evento.
+    error:
+      recaptcha_required: Por favor completa el reCAPTCHA
+      registration_failed: Error al procesar el registro. Por favor intenta nuevamente.
+    confirmed:
+      title: ¡Registro Exitoso!
+      free:
+        title: ¡Listo!
+        message: Has sido registrado para el evento. Unos días antes del inicio recibirás información adicional.
+      paid:
+        title: ¡Gracias!
+        message: Te hemos enviado un e-mail con la información para el pago. Tu vacante se reservará al realizar el pago.
+      email_sent: Revisa tu correo electrónico para más detalles.
+      contact_info: No dudes en contactarnos si tienes alguna consulta.
+      back_to_agenda: Volver a la Agenda
   internal_error:
     title: Error interno
     text: Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde.
