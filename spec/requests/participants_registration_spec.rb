@@ -6,9 +6,8 @@ describe 'Participant Registration' do
     Sinatra::Application.new
   end
 
-  describe 'GET /events/:event_id/participants/register' do
+  describe 'GET /:lang/events/:event_id/participants/register' do
     let(:event_id) { '123' }
-    let(:backend_api_url) { 'http://localhost:3000' }
     
     let(:mock_event_data) do
       {
@@ -30,7 +29,7 @@ describe 'Participant Registration' do
 
     before do
       allow(ENV).to receive(:[]).and_call_original
-      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return(backend_api_url)
+      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return('http://mocked-backend')
       allow(ENV).to receive(:[]).with('RECAPTCHA_SITE_KEY').and_return('test_site_key')
     end
 
@@ -40,7 +39,7 @@ describe 'Participant Registration' do
         event_response = double('HTTParty::Response')
         allow(event_response).to receive(:success?).and_return(true)
         allow(event_response).to receive(:parsed_response).and_return(mock_event_data)
-        allow(HTTParty).to receive(:get).with("#{backend_api_url}/api/events/#{event_id}", headers: { 'Accept' => 'application/json' }).and_return(event_response)
+        allow(HTTParty).to receive(:get).with("http://mocked-backend/api/events/#{event_id}", headers: { 'Accept' => 'application/json' }).and_return(event_response)
         
         # Mock HTTParty response for pricing data (1-6 quantities)
         pricing_response = double('HTTParty::Response')
@@ -53,7 +52,7 @@ describe 'Participant Registration' do
         })
         
         (1..6).each do |qty|
-          allow(HTTParty).to receive(:get).with("#{backend_api_url}/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}", headers: { 'Accept' => 'application/json' }).and_return(pricing_response)
+          allow(HTTParty).to receive(:get).with("http://mocked-backend/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}", headers: { 'Accept' => 'application/json' }).and_return(pricing_response)
         end
         
         # Setup session
@@ -61,7 +60,7 @@ describe 'Participant Registration' do
       end
 
       it 'renders the registration form' do
-        get "/events/#{event_id}/participants/register"
+        get "/es/events/#{event_id}/participants/register"
         
         expect(last_response.status).to eq(200)
         expect(last_response.body).to include('Test Course')
@@ -76,7 +75,7 @@ describe 'Participant Registration' do
       end
 
       it 'shows coupon code field when enabled' do
-        get "/events/#{event_id}/participants/register"
+        get "/es/events/#{event_id}/participants/register"
         
         expect(last_response.body).to include('name="referer_code"')
       end
@@ -84,7 +83,7 @@ describe 'Participant Registration' do
       it 'shows sold out warning when event is sold out' do
         mock_event_data['is_sold_out'] = true
         
-        get "/events/#{event_id}/participants/register"
+        get "/es/events/#{event_id}/participants/register"
         
         expect(last_response.body).to include('Este evento está completo')
       end
@@ -92,13 +91,13 @@ describe 'Participant Registration' do
       it 'shows registration ended warning when registration has ended' do
         mock_event_data['registration_ended'] = true
         
-        get "/events/#{event_id}/participants/register"
+        get "/es/events/#{event_id}/participants/register"
         
         expect(last_response.body).to include('La fecha de registración ha pasado')
       end
 
       it 'responds successfully with form content' do
-        get "/events/#{event_id}/participants/register"
+        get "/es/events/#{event_id}/participants/register"
         
         expect(last_response.status).to eq(200)
         expect(last_response.body).to include('Test Course')
@@ -111,11 +110,11 @@ describe 'Participant Registration' do
         # Mock HTTParty response for non-existent event
         response_double = double('HTTParty::Response')
         allow(response_double).to receive(:success?).and_return(false)
-        allow(HTTParty).to receive(:get).with("#{backend_api_url}/api/events/999", headers: { 'Accept' => 'application/json' }).and_return(response_double)
+        allow(HTTParty).to receive(:get).with("http://mocked-backend/api/events/999", headers: { 'Accept' => 'application/json' }).and_return(response_double)
       end
 
       it 'returns 404 error' do
-        get "/events/999/participants/register"
+        get "/es/events/999/participants/register"
         
         expect(last_response.status).to eq(404)
       end
@@ -127,7 +126,7 @@ describe 'Participant Registration' do
       end
 
       it 'returns 503 service unavailable' do
-        get "/events/#{event_id}/participants/register"
+        get "/es/events/#{event_id}/participants/register"
         
         expect(last_response.status).to eq(503)
         expect(last_response.body).to include('Service temporarily unavailable')
@@ -135,7 +134,7 @@ describe 'Participant Registration' do
     end
   end
 
-  describe 'GET /events/:event_id/participant_confirmed' do
+  describe 'GET /:lang/events/:event_id/participant_confirmed' do
     let(:event_id) { '123' }
 
     before do
@@ -143,7 +142,7 @@ describe 'Participant Registration' do
     end
 
     it 'renders confirmation page for free event' do
-      get "/events/#{event_id}/participant_confirmed?free=true&api=1"
+      get "/es/events/#{event_id}/participant_confirmed?free=true&api=1"
       
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('¡Registro Exitoso!')
@@ -152,7 +151,7 @@ describe 'Participant Registration' do
     end
 
     it 'renders confirmation page for paid event' do
-      get "/events/#{event_id}/participant_confirmed?free=false&api=1"
+      get "/es/events/#{event_id}/participant_confirmed?free=false&api=1"
       
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('¡Registro Exitoso!')
@@ -161,23 +160,44 @@ describe 'Participant Registration' do
     end
 
     it 'responds successfully' do
-      get "/events/#{event_id}/participant_confirmed?free=true&api=1"
+      get "/es/events/#{event_id}/participant_confirmed?free=true&api=1"
       
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('Registro Exitoso')
     end
 
     it 'includes back to agenda link' do
-      get "/events/#{event_id}/participant_confirmed?free=true&api=1"
+      get "/es/events/#{event_id}/participant_confirmed?free=true&api=1"
       
       expect(last_response.body).to include('href="/es/agenda"')
       expect(last_response.body).to include('Volver a la Agenda')
     end
+
+    context 'with English locale' do
+      before do
+        env 'rack.session', { locale: 'en' }
+      end
+
+      it 'renders confirmation page for free event in English' do
+        get "/en/events/#{event_id}/participant_confirmed?free=true&api=1"
+        
+        expect(last_response.status).to eq(200)
+        expect(last_response.body).to include('Registration Successful!')
+        expect(last_response.body).to include('You\'re all set!')
+        expect(last_response.body).to include('You\'ve been registered for the event')
+      end
+
+      it 'includes back to agenda link in English' do
+        get "/en/events/#{event_id}/participant_confirmed?free=true&api=1"
+        
+        expect(last_response.body).to include('href="/en/agenda"')
+        expect(last_response.body).to include('Back to Agenda')
+      end
+    end
   end
 
-  describe 'POST /events/:event_id/participants/register' do
+  describe 'POST /:lang/events/:event_id/participants/register' do
     let(:event_id) { '123' }
-    let(:backend_api_url) { 'http://localhost:3000' }
     
     let(:registration_params) do
       {
@@ -196,7 +216,7 @@ describe 'Participant Registration' do
 
     before do
       allow(ENV).to receive(:[]).and_call_original
-      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return(backend_api_url)
+      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return('http://mocked-backend')
     end
 
     context 'when registration is successful' do
@@ -209,7 +229,7 @@ describe 'Participant Registration' do
       end
 
       it 'forwards the registration to Rails API and returns JSON response' do
-        post "/events/#{event_id}/participants/register", registration_params
+        post "/es/events/#{event_id}/participants/register", registration_params
         
         expect(last_response.status).to eq(200)
         expect(last_response.content_type).to include('application/json')
@@ -228,7 +248,7 @@ describe 'Participant Registration' do
       end
 
       it 'returns error response from Rails API' do
-        post "/events/#{event_id}/participants/register", registration_params
+        post "/es/events/#{event_id}/participants/register", registration_params
         
         expect(last_response.status).to eq(422)
         expect(last_response.body).to include('Validation failed')
@@ -241,7 +261,7 @@ describe 'Participant Registration' do
       end
 
       it 'returns 503 service unavailable' do
-        post "/events/#{event_id}/participants/register", registration_params
+        post "/es/events/#{event_id}/participants/register", registration_params
         
         expect(last_response.status).to eq(503)
         expect(last_response.body).to include('Registration service temporarily unavailable')
