@@ -27,7 +27,7 @@
                 </p>
                 <p class="mb-0">
                     <i class="fas fa-map-marker-alt"></i>
-                    <%= [@event['place'], @event['address'], @event['city']].compact.join(', ') %>
+                    <%= [@event['place'], @event['address'], @event['city']].compact.uniq.join(', ') %>
                 </p>
             </div>
 
