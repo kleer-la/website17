@@ -58,8 +58,8 @@ module KeventerAPI
     contact_status: ['contacts/:id/status.json', :id],
     contact: ['contacts/:id.json', :id]
   }.each do |name, (path, param)|
-    define_method("#{name}_url") do |value|
-      echo(url_for(path.gsub(":#{param}", value.to_s)))
+    define_method("#{name}_url") do |value, params = {}|
+      echo(url_for(path.gsub(":#{param}", value.to_s), params))
     end
   end
   def page_url(lang, slug)

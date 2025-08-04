@@ -24,32 +24,38 @@
       <div id="result">
         <% if @assessment.rule_based && @contact.assessment_report_html %>
           <!-- Display HTML content for rule-based assessments -->
-          <div class="assessment-html-container" style="max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;">
+          <div class="assessment-html-container" style="max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px;">
             <%= @contact.assessment_report_html.html_safe %>
+          </div>
+          <!-- PDF Download Button after HTML content -->
+          <div class="pdf-download-section" style="text-align: center; margin-top: 30px;">
+            <button class="info my-secondary-button">
+              <a href="<%= @contact.assessment_report_url%>" id="pdf-link">📄 <%= t('assessment.results.download_pdf', default: 'Descargar Reporte Completo en PDF') %></a>
+            </button>
           </div>
         <% else %>
           <!-- Display PNG image for competency-based assessments -->
-          <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%;">
+          <img src="<%= @contact.assessment_report_url.sub('.pdf', '.png') %>" alt="Assessment Report Preview" style="max-width: 100%; margin-bottom: 30px;">
+          <!-- PDF Download Button after image -->
+          <div class="pdf-download-section" style="text-align: center; margin-top: 30px;">
+            <button class="info my-secondary-button">
+              <a href="<%= @contact.assessment_report_url%>" id="pdf-link">📄 <%= t('assessment.results.download_pdf_short', default: 'Download PDF Report') %></a>
+            </button>
+          </div>
         <% end %>
-        <button class="info my-secondary-button">
-           <a href="<%= @contact.assessment_report_url%>" id="pdf-link">Download PDF</a>
-        </button>
       </div>
     <% else %>
       <div class="spinner-border" role="status" id="loading"></div>
       <div id="result" style="display: none;">
-        <button class="info my-secondary-button">
-          <a href="#" id="pdf-link">Creating PDF</a>
-        </button>
       </div>
     <% end %>
   </div>
   <% unless @contact.status == 'completed' %>
     <div class="row">
       <% if @error_message.nil? || @error_message.empty? %>
-        <div class="alert alert-success">
-          <p><strong>¡Éxito!</strong> Respuestas enviadas correctamente. Estamos generando tu reporte personalizado.</p>
-          <p><small>También recibirás una copia por correo electrónico.</small></p>
+        <div class="alert alert-success" id="success-message">
+          <p><strong><%= t('assessment.results.success_message', default: '¡Éxito! Respuestas enviadas correctamente. Por favor espera, estamos generando tu reporte personalizado.') %></strong></p>
+          <p><small><%= t('assessment.results.email_notice', default: 'También recibirás una copia por correo electrónico.') %></small></p>
         </div>
       <% else %>
         <div class="alert alert-danger">
@@ -63,6 +69,16 @@
 
 <% unless @contact.status == 'completed' %>
 <script>
+  // i18n translations for JavaScript
+  const translations = {
+    download_pdf: '<%= t('assessment.results.download_pdf', default: 'Descargar Reporte Completo en PDF') %>',
+    download_pdf_short: '<%= t('assessment.results.download_pdf_short', default: 'Download PDF Report') %>',
+    generating_message: '<%= t('assessment.results.generating_message', default: 'Report generation is taking longer than expected. Please check your email or refresh the page in a few minutes.') %>',
+    failed_generation: '<%= t('assessment.results.failed_generation', default: 'Failed to generate the report. Please try submitting the assessment again or contact support if the problem persists.') %>',
+    status_check_error: '<%= t('assessment.results.status_check_error', default: 'Unable to check report status. Please refresh the page or check your email for the results. If the problem persists, contact support.') %>',
+    submission_failed: '<%= t('assessment.results.submission_failed', default: 'Assessment submission failed. Please try again.') %>'
+  };
+  
   let checkStatusAttempts = 0;
   const maxAttempts = 60; // 2 minutes max (60 * 2 seconds)
   
@@ -73,7 +89,7 @@
     if (checkStatusAttempts > maxAttempts) {
       document.getElementById('loading').style.display = 'none';
       document.getElementById('result-container').innerHTML = 
-        '<div class="alert alert-warning"><p>Report generation is taking longer than expected. Please check your email or refresh the page in a few minutes.</p></div>';
+        `<div class="alert alert-warning"><p>${translations.generating_message}</p></div>`;
       return;
     }
     
@@ -92,32 +108,58 @@
         switch (data.status) {
           case 'completed':
             document.getElementById('loading').style.display = 'none';
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('pdf-link').href = data.assessment_report_url;
-            document.getElementById('pdf-link').textContent = 'Download PDF';
-
+            // Hide the success message once the report is ready
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+              successMessage.style.display = 'none';
+            }
+            
             // Check if this is a rule-based assessment with HTML content
             if (data.assessment && data.assessment.rule_based && data.assessment_report_html) {
-              // Display HTML content
+              // Display HTML content first
               const htmlContentDiv = document.createElement('div');
               htmlContentDiv.className = 'assessment-html-container';
-              htmlContentDiv.style.cssText = 'max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px;';
+              htmlContentDiv.style.cssText = 'max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px;';
               htmlContentDiv.innerHTML = data.assessment_report_html;
               document.getElementById('result').appendChild(htmlContentDiv);
+              
+              // Then add PDF download button after HTML content
+              const pdfSectionDiv = document.createElement('div');
+              pdfSectionDiv.className = 'pdf-download-section';
+              pdfSectionDiv.style.cssText = 'text-align: center; margin-top: 30px;';
+              pdfSectionDiv.innerHTML = `
+                <button class="info my-secondary-button">
+                  <a href="${data.assessment_report_url}" id="pdf-link">📄 ${translations.download_pdf}</a>
+                </button>
+              `;
+              document.getElementById('result').appendChild(pdfSectionDiv);
             } else {
               // Display PNG image for competency-based assessments
               const imageUrl = data.assessment_report_url.replace('.pdf', '.png');
               const imageElement = document.createElement('img');
               imageElement.src = imageUrl;
               imageElement.alt = 'Assessment Report Preview';
-              imageElement.style.maxWidth = '100%';
+              imageElement.style.cssText = 'max-width: 100%; margin-bottom: 30px;';
               document.getElementById('result').appendChild(imageElement);
+              
+              // Then add PDF download button after image
+              const pdfSectionDiv = document.createElement('div');
+              pdfSectionDiv.className = 'pdf-download-section';
+              pdfSectionDiv.style.cssText = 'text-align: center; margin-top: 30px;';
+              pdfSectionDiv.innerHTML = `
+                <button class="info my-secondary-button">
+                  <a href="${data.assessment_report_url}" id="pdf-link">📄 ${translations.download_pdf_short}</a>
+                </button>
+              `;
+              document.getElementById('result').appendChild(pdfSectionDiv);
             }
+            
+            document.getElementById('result').style.display = 'block';
             break;
           case 'failed':
             document.getElementById('loading').style.display = 'none';
             document.getElementById('result-container').innerHTML = 
-              '<div class="alert alert-danger"><p>Failed to generate the report. Please try submitting the assessment again or contact support if the problem persists.</p></div>';
+              `<div class="alert alert-danger"><p>${translations.failed_generation}</p></div>`;
             break;
           case 'pending':
           case 'in_progress':
@@ -130,13 +172,13 @@
         console.error('Status check error:', error);
         document.getElementById('loading').style.display = 'none';
         document.getElementById('result-container').innerHTML = 
-          '<div class="alert alert-warning"><p>Unable to check report status. Please refresh the page or check your email for the results. If the problem persists, contact support.</p></div>';
+          `<div class="alert alert-warning"><p>${translations.status_check_error}</p></div>`;
       });
     <% else %>
     console.error('No contact ID available for status check');
     document.getElementById('loading').style.display = 'none';
     document.getElementById('result-container').innerHTML = 
-      '<div class="alert alert-danger"><p>Assessment submission failed. Please try again.</p></div>';
+      `<div class="alert alert-danger"><p>${translations.submission_failed}</p></div>`;
     <% end %>
   }
   checkStatus();

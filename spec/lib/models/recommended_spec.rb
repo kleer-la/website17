@@ -122,7 +122,28 @@ RSpec.describe RecommendedService do
 
   subject { RecommendedService.new(doc) }
 
-  it 'returns the correct URL for a service' do
-    expect(subject.url).to eq('/es/servicios/service-slug')
+  context 'regular service' do
+    it 'returns the correct URL for a service in Spanish' do
+      expect(subject.url).to eq('/es/servicios/service-slug')
+    end
+
+    it 'returns the correct URL for a service in English' do
+      service = RecommendedService.new(doc, 'en')
+      expect(service.url).to eq('/en/services/service-slug')
+    end
+  end
+
+  context 'training program service' do
+    let(:training_doc) { doc.merge('is_training_program' => true) }
+
+    it 'returns the correct URL for a training program in Spanish' do
+      service = RecommendedService.new(training_doc, 'es')
+      expect(service.url).to eq('/es/formacion/service-slug')
+    end
+
+    it 'returns the correct URL for a training program in English' do
+      service = RecommendedService.new(training_doc, 'en')
+      expect(service.url).to eq('/en/training/service-slug')
+    end
   end
 end
