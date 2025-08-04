@@ -29,7 +29,7 @@ describe 'Participant Registration' do
 
     before do
       allow(ENV).to receive(:[]).and_call_original
-      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return('http://mocked-backend')
+      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return('https://mocked-backend')
       allow(ENV).to receive(:[]).with('RECAPTCHA_SITE_KEY').and_return('test_site_key')
     end
 
@@ -39,7 +39,7 @@ describe 'Participant Registration' do
         event_response = double('HTTParty::Response')
         allow(event_response).to receive(:success?).and_return(true)
         allow(event_response).to receive(:parsed_response).and_return(mock_event_data)
-        allow(HTTParty).to receive(:get).with("http://mocked-backend/api/events/#{event_id}", headers: { 'Accept' => 'application/json' }).and_return(event_response)
+        allow(HTTParty).to receive(:get).with("https://mocked-backend/api/events/#{event_id}?lang=es", headers: { 'Accept' => 'application/json' }).and_return(event_response)
         
         # Mock HTTParty response for pricing data (1-6 quantities)
         pricing_response = double('HTTParty::Response')
@@ -52,7 +52,7 @@ describe 'Participant Registration' do
         })
         
         (1..6).each do |qty|
-          allow(HTTParty).to receive(:get).with("http://mocked-backend/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}", headers: { 'Accept' => 'application/json' }).and_return(pricing_response)
+          allow(HTTParty).to receive(:get).with("https://mocked-backend/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}", headers: { 'Accept' => 'application/json' }).and_return(pricing_response)
         end
         
         # Setup session
@@ -110,7 +110,7 @@ describe 'Participant Registration' do
         # Mock HTTParty response for non-existent event
         response_double = double('HTTParty::Response')
         allow(response_double).to receive(:success?).and_return(false)
-        allow(HTTParty).to receive(:get).with("http://mocked-backend/api/events/999", headers: { 'Accept' => 'application/json' }).and_return(response_double)
+        allow(HTTParty).to receive(:get).with("https://mocked-backend/api/events/999?lang=es", headers: { 'Accept' => 'application/json' }).and_return(response_double)
       end
 
       it 'returns 404 error' do
@@ -216,7 +216,7 @@ describe 'Participant Registration' do
 
     before do
       allow(ENV).to receive(:[]).and_call_original
-      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return('http://mocked-backend')
+      allow(ENV).to receive(:[]).with('KEVENTER_URL').and_return('https://mocked-backend')
     end
 
     context 'when registration is successful' do

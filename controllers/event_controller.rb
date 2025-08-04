@@ -2,20 +2,20 @@
 
 # Participant registration route (new API-based version)
 get '/events/:event_id/participants/register' do |event_id|
-  # Fetch event data from API
-  api_url = "#{ENV['KEVENTER_URL'] || 'http://localhost:3000'}/api/events/#{event_id}"
+  # Fetch event data from API with language parameter for proper date formatting
+  @lang = session[:locale] || 'es'
+  api_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/events/#{event_id}?lang=#{@lang}"
   response = HTTParty.get(api_url, headers: { 'Accept' => 'application/json' })
   
   if response.success?
     @event = response.parsed_response
-    @lang = session[:locale] || 'es'
     
     # Use scoped locale instead of global
     I18n.with_locale(@lang.to_sym) do
       # Calculate pricing for different quantities (1-6 people)
       @pricing_data = {}
       (1..6).each do |qty|
-        pricing_url = "#{ENV['KEVENTER_URL'] || 'http://localhost:3000'}/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}"
+        pricing_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}"
         pricing_response = HTTParty.get(pricing_url, headers: { 'Accept' => 'application/json' })
         if pricing_response.success?
           @pricing_data[qty] = pricing_response.parsed_response
@@ -39,7 +39,7 @@ post '/events/:event_id/participants/register' do |event_id|
   
   begin
     # Forward the registration to the Rails API
-    api_url = "#{ENV['KEVENTER_URL'] || 'http://localhost:3000'}/api/v3/events/#{event_id}/participants/register"
+    api_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/v3/events/#{event_id}/participants/register"
     
     response = HTTParty.post(api_url, {
       body: params.to_h,
