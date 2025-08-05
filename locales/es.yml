@@ -7,13 +7,14 @@ es:
       fname: Nombre
       lname: Apellido
       email: E-Mail
-      email_hint: (confirmaremos tu registro en este email)
+      email_hint: Confirmaremos tu registro en este email
       company_name: Razón Social
       address: Dirección de facturación
       quantity: Cantidad de cupos a comprar
       referer_code: Código de Descuento
-      phone: (opcional) Teléfono de contacto
-      notes: (opcional) Datos adicionales
+      phone: Teléfono de contacto
+      notes: Datos adicionales
+      notes_multiple_hint: "* Por favor incluya: nombre <email> para cada participante"
       accept_terms: He leído y aceptado la <a href="/es/privacy" target="_blank">política de privacidad</a>
     button:
       register: ¡Registrarme!

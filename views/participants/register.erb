@@ -13,11 +13,26 @@
         .savings { background: #d4edda; color: #155724; padding: 0.5rem; border-radius: 4px; }
         .error { color: #dc3545; font-size: 0.875rem; }
         .loading { opacity: 0.6; pointer-events: none; }
+        .select-with-arrow {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 2.5rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="form-container">
+            <!-- Logo -->
+            <div class="text-center mb-4">
+                <img src="/img/logos/logo-kleer.png" alt="Kleer Logo" style="max-height: 60px;">
+            </div>
+            
             <!-- Event Information -->
             <div class="event-info text-center">
                 <h1><%= @event['event_type']['name'] %></h1>
@@ -64,13 +79,12 @@
 
                 <div class="mb-3">
                     <label class="form-label"><%= t('participant.labels.email') %> *</label>
-                    <input type="email" class="form-control" name="email" required>
-                    <div class="form-text"><%= t('participant.labels.email_hint') %></div>
+                    <input type="email" class="form-control" name="email" required placeholder="<%= t('participant.labels.email_hint') %>">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label"><%= t('participant.labels.company_name') %></label>
-                    <input type="text" class="form-control" name="company_name">
+                    <input type="text" class="form-control" name="company_name" placeholder="Dejar vacío para factura personal">
                 </div>
 
                 <div class="mb-3">
@@ -81,7 +95,7 @@
                 <!-- Quantity Selection -->
                 <div class="mb-3">
                     <label class="form-label"><%= t('participant.labels.quantity') %></label>
-                    <select class="form-control" name="quantity" id="quantitySelect">
+                    <select class="form-control select-with-arrow" name="quantity" id="quantitySelect">
                         <% (1..6).each do |qty| %>
                         <option value="<%= qty %>"><%= qty %> <%= qty == 1 ? t('participant.seat') : t('participant.seats') %></option>
                         <% end %>
@@ -106,8 +120,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label"><%= t('participant.labels.notes') %></label>
-                    <textarea class="form-control" name="notes" rows="3"></textarea>
+                    <label class="form-label" id="notesLabel"><%= t('participant.labels.notes') %></label>
+                    <textarea class="form-control" name="notes" rows="3" id="notesField"></textarea>
                 </div>
 
                 <!-- Terms and Conditions -->
@@ -157,6 +171,8 @@
         const refererMessage = document.getElementById('refererMessage');
         const submitBtn = document.getElementById('submitBtn');
         const alertContainer = document.getElementById('alertContainer');
+        const notesField = document.getElementById('notesField');
+        const notesLabel = document.getElementById('notesLabel');
 
         // Load pricing info from server-provided data
         function loadPricingInfo(quantity = 1) {
@@ -180,9 +196,24 @@
             }
         }
 
+        // Update notes field requirement based on quantity
+        function updateNotesRequirement(quantity) {
+            const qty = parseInt(quantity);
+            if (qty > 1) {
+                notesField.setAttribute('required', 'true');
+                notesLabel.innerHTML = '<%= t('participant.labels.notes') %> *';
+                notesField.placeholder = '<%= t('participant.labels.notes_multiple_hint') %>';
+            } else {
+                notesField.removeAttribute('required');
+                notesLabel.innerHTML = '<%= t('participant.labels.notes') %>';
+                notesField.placeholder = '';
+            }
+        }
+
         // Event listeners
         quantitySelect.addEventListener('change', function() {
             loadPricingInfo(this.value);
+            updateNotesRequirement(this.value);
         });
 
         if (refererCode) {
@@ -253,8 +284,9 @@
             });
         }
 
-        // Load initial pricing
+        // Load initial pricing and notes requirement
         loadPricingInfo(1);
+        updateNotesRequirement(1);
     </script>
 </body>
 </html>

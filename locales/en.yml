@@ -7,13 +7,14 @@ en:
       fname: First Name
       lname: Last Name
       email: E-Mail
-      email_hint: (to send invoice and info)
+      email_hint: To send invoice and info
       company_name: Company Name
       address: Address (for invoice)
       quantity: How many learners?
       referer_code: Discount code
-      phone: (optional) Phone
-      notes: (optional) additional data or question
+      phone: Phone
+      notes: Additional data or question
+      notes_multiple_hint: "* Please include: name <email> for each participant"
       accept_terms: I have read and accepted the <a href="/en/privacy" target="_blank">privacy policy</a>
     button:
       register: Register Now!
