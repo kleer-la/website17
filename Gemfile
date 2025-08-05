@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 3.3.1'
+ruby '~> 3.3.9'
 
 gem 'aws-sdk-s3'
 gem 'curb'
@@ -10,7 +10,6 @@ gem 'i18n'
 gem 'json'
 gem 'money'
 gem 'nokogiri' # for RedCarpet
-gem 'oauth'
 gem 'puma'
 gem 'rack-ssl-enforcer'
 gem 'rake'

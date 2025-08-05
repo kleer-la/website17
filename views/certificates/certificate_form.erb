@@ -4,7 +4,7 @@
 
     <%= erb :'component/_flash_error' %>
     <form
-      action="/es/certificado"
+      action="/<%= session[:locale] %>/<%= session[:locale] == 'en' ? 'certificate' : 'certificado' %>"
       method="post"
       class="needs-validation form"
       novalidate>

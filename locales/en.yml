@@ -1,5 +1,47 @@
 en:
   page_not_found: Page not found
+  participant:
+    register:
+      title: Participant Registration
+    labels:
+      fname: First Name
+      lname: Last Name
+      email: E-Mail
+      email_hint: To send invoice and info
+      company_name: Company Name
+      company_name_hint: Leave empty for personal invoice
+      address: Address (for invoice)
+      quantity: How many learners?
+      referer_code: Discount code
+      phone: Phone
+      notes: Additional data or question
+      notes_multiple_hint: "* Please include: name <email> for each participant"
+      accept_terms: I have read and accepted the <a href="/en/privacy" target="_blank">privacy policy</a>
+    button:
+      register: Register Now!
+      buy: Buy now!
+      submitting: Submitting
+    seat: seat
+    seats: seats
+    saving: You are saving $${saving} off the full price
+    referer_code_message: Price will be adjusted after reviewing your discount code
+    alert:
+      sold_out: This event is sold out. You will be added to its waitlist.
+      registration_ended: Registrations date is over. Please look for the next event.
+    error:
+      recaptcha_required: Please complete the reCAPTCHA
+      registration_failed: Registration failed. Please try again.
+    confirmed:
+      title: Registration Successful!
+      free:
+        title: You're all set!
+        message: You've been registered for the event. A few days before the start you will receive additional information.
+      paid:
+        title: Thank you!
+        message: We have sent you an e-mail with the payment link. Your seat will be confirmed with the payment.
+      email_sent: Check your email for more details.
+      contact_info: Please don't hesitate to contact us if you have any questions.
+      back_to_agenda: Back to Agenda
   internal_error:
     title: Internal error
     text: >-
@@ -602,8 +644,13 @@ en:
           url: /services
           inside: true
     - text: Courses
-      url: /catalog
-      inside: true
+      options:
+        - text: Course Catalog
+          url: /catalog
+          inside: true
+        - text: Validate Certificate
+          url: /certificate
+          inside: true
     - text: Clients
       url: /clients
       inside: true
@@ -1001,6 +1048,8 @@ en:
       error-message: Please fill in your message
     button:
       text: Submit
+  certificates:
+    not_found: We couldn't find a certificate with that code
   certificate-form:
     title: Certificates
     subtitle: Obtain certificate issued by Kleer
