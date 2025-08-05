@@ -9,6 +9,7 @@ es:
       email: E-Mail
       email_hint: Confirmaremos tu registro en este email
       company_name: Razón Social
+      company_name_hint: Dejar vacío para factura personal
       address: Dirección de facturación
       quantity: Cantidad de cupos a comprar
       referer_code: Código de Descuento

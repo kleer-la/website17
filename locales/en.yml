@@ -9,6 +9,7 @@ en:
       email: E-Mail
       email_hint: To send invoice and info
       company_name: Company Name
+      company_name_hint: Leave empty for personal invoice
       address: Address (for invoice)
       quantity: How many learners?
       referer_code: Discount code
