@@ -293,6 +293,7 @@ es:
         - text: Academia online
           url: https://academia.kleer.la/
           inside: false
+        - text: dropdown-divider
         - text: Validar certificado
           url: /certificado
           inside: true
