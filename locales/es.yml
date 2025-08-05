@@ -293,6 +293,9 @@ es:
         - text: Academia online
           url: https://academia.kleer.la/
           inside: false
+        - text: Validar certificado
+          url: /certificado
+          inside: true
     - text: Publicamos
       options:
         - text: Recursos y Materiales
@@ -708,6 +711,8 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
+  certificates:
+    not_found: No encontramos un certificado con ese código
   certificate-form:
     title: Certificados
     subtitle: Consulta sobre un certificado emitido por Kleer

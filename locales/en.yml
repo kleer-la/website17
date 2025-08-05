@@ -642,8 +642,13 @@ en:
           url: /services
           inside: true
     - text: Courses
-      url: /catalog
-      inside: true
+      options:
+        - text: Course Catalog
+          url: /catalog
+          inside: true
+        - text: Validate Certificate
+          url: /certificate
+          inside: true
     - text: Clients
       url: /clients
       inside: true
@@ -1041,6 +1046,8 @@ en:
       error-message: Please fill in your message
     button:
       text: Submit
+  certificates:
+    not_found: We couldn't find a certificate with that code
   certificate-form:
     title: Certificates
     subtitle: Obtain certificate issued by Kleer
