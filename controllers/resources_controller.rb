@@ -15,21 +15,7 @@ get %r{/(resources|recursos)/?} do
   erb :'resources/index', layout: :'layout/layout2022'
 end
 
-get '/publicamos/scrum' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Publicamos | Proyectos Ágiles con Scrum"
-  erb :'old_page/recursos/ebook_scrum_plain', layout: :layout_ebook_landing
-end
 
-get '/mas-productivos' do
-  redirect '/publicamos/mas-productivos', 301 # permanent redirect
-end
-
-get '/publicamos/mas-productivos' do
-  @active_tab_publicamos = 'active'
-  @meta_tags.set! title: "#{@base_title} | Publicamos | Equipos más productivos"
-  erb :'old_page/recursos/ebook_masproductivos_plain', layout: :layout_ebook_landing
-end
 
 # get '/recursos/:slug' do |slug|
 get %r{/(resources|recursos)/([^/]+)} do |_, slug|
