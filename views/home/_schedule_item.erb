@@ -54,7 +54,7 @@ require 'date'
           Completo
         </button>
       <% else %>
-        <% uri = event.registration_link.empty? ? "https://eventos.kleer.la/events/#{event.id}/participants/new?lang=#{session[:locale]}&utm_source=kleer.la&utm_campaign=kleer.la" : event.registration_link %>
+        <% uri = event.registration_link.empty? ? "/#{session[:locale]}/events/#{event.id}/participants/register" : event.registration_link %>
         <a id="buy-<%= event.event_type.id %>" class="my-primary-button p-2" style="max-width: 150px; width: 130px" href="<%= uri %>">
           Comprar
         </a>

@@ -21,10 +21,6 @@ def first_x_courses(courses, quantity)
     end
 end
 
-get '/home' do
-  new_home
-end
-
 get '/' do
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
