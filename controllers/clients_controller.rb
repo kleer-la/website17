@@ -24,5 +24,7 @@ end
 def redirect_not_found_testimony
   session[:error_msg] = I18n.t('page_not_found')
   flash.now[:alert] = I18n.t('page_not_found')
-  redirect(to("/#{session[:locale]}/clientes"))
+  lang = session[:locale]
+  clients_path = lang == 'en' ? 'clients' : 'clientes'
+  redirect(to("/#{lang}/#{clients_path}"))
 end

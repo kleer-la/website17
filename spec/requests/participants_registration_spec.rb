@@ -190,7 +190,7 @@ describe 'Participant Registration' do
       it 'includes back to agenda link in English' do
         get "/en/events/#{event_id}/participant_confirmed?free=true&api=1"
         
-        expect(last_response.body).to include('href="/en/agenda"')
+        expect(last_response.body).to include('href="/en/schedule"')
         expect(last_response.body).to include('Back to Agenda')
       end
     end

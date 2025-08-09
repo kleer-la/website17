@@ -27,7 +27,7 @@ Feature: Agenda (fka Entrenamos)
     	Given A list of events
 		Given I visit the "/es/agenda" agenda page
 		Then SEO hreflang "es" should have href "https://www.kleer.la/es/agenda"
-		And SEO hreflang "en" should have href "https://www.kleer.la/en/agenda"
+		And SEO hreflang "en" should have href "https://www.kleer.la/en/schedule"
 		Then the page title should includes "Kleer"
 		And SEO meta "property" "og:description" should match "Capacitaciones"
 		And SEO meta "name" "description" should match "Capacitaciones en"

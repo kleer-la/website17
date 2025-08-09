@@ -72,7 +72,7 @@ en:
       description: >-
               Training in Agile Coaching, Facilitation, Scrum, CSD, Lean, Kanban, Product Discovery, 
               Leadership, Continuous Improvement, Time Management, Communication 
-      canonical: /agenda
+      canonical: /schedule
     blog:
       title: Blog - Articles on Organizational Agility
       description: >-
@@ -648,6 +648,9 @@ en:
         - text: Course Catalog
           url: /catalog
           inside: true
+        - text: Schedule
+          url: /schedule
+          inside: true
         - text: Validate Certificate
           url: /certificate
           inside: true
@@ -780,11 +783,11 @@ en:
       button:
         text: Contact us
     public:
-      title: Agenda
+      title: Schedule
       text: Join our proposal of scheduled courses, with individual or group registration options. Share a unique learning experience with professionals looking to take their skills to the next level.
       button:
-        text: Agenda
-        link: /agenda
+        text: Schedule
+        link: /schedule
     e-learning:
       text: Explore on-demand online courses on our e-learning platform. Ask about business packages.
       button:

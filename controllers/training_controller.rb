@@ -38,7 +38,9 @@ end
 def redirect_not_found_course
   session[:error_msg] = course_not_found_error
   flash.now[:alert] = course_not_found_error
-  redirect(to("/#{session[:locale]}/catalogo"))
+  lang = session[:locale]
+  catalog_path = lang == 'en' ? 'catalog' : 'catalogo'
+  redirect(to("/#{lang}/#{catalog_path}"))
 end
 
 def event_type_from_json(event_type_id_with_name)
@@ -62,11 +64,12 @@ def load_categories(lang)
   Category.create_keventer_json lang
 end
 
-get '/agenda' do
+get %r{/(agenda|schedule)/?} do
   page = Page.load_from_keventer(session[:locale], 'agenda')
   @meta_tags.set! title: page.seo_title || t('meta_tag.agenda.title'),
                   description: page.seo_description || t('meta_tag.agenda.description'),
-                  canonical: page.canonical || t('meta_tag.agenda.canonical')
+                  canonical: page.canonical || t('meta_tag.agenda.canonical'),
+                  alternate_paths: { es: '/agenda', en: '/schedule' }
   @meta_tags.set! image: page.cover unless page.cover.nil?
 
   @events = Event.create_keventer_json
@@ -102,7 +105,11 @@ get '/cursos/:event_type_id_with_name' do
   if @event_type.nil?
     redirect_not_found_course
   else
-    redirect to("#{session[:locale]}/catalogo"), 301 if session[:locale] != @event_type.lang
+    if session[:locale] != @event_type.lang
+      lang = session[:locale]
+      catalog_path = lang == 'en' ? 'catalog' : 'catalogo'
+      redirect to("/#{lang}/#{catalog_path}"), 301
+    end
 
     redirecting = @event_type.redirect_to(params[:event_type_id_with_name])
     unless redirecting.nil?
