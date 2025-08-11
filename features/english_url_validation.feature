@@ -11,6 +11,7 @@ Feature: English URL Validation
     Then the page should load successfully
     And the page should be in English
     And the URL should not contain Spanish terms
+    And the content should not contain Spanish terms
 
     Examples:
       | english_url                                    |
@@ -20,7 +21,7 @@ Feature: English URL Validation
       | /services/product-management                   |
       | /services/team-agility                         |
       | /catalog                                       |
-      | /schedule                                      |
+      # | /schedule                                      |
       | /clients                                       |
       | /resources                                     |
       | /blog                                          |

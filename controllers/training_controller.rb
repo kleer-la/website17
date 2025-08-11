@@ -92,12 +92,12 @@ get %r{/(catalogo|catalog)/?} do
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/catalogo'
-
   erb :'training/catalog/index', layout: :'layout/layout2022'
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
-get '/cursos/:event_type_id_with_name' do
+get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
+  params[:event_type_id_with_name] = event_type_id_with_name
   @event_type = event_type_from_json params[:event_type_id_with_name]
   @active_tab_entrenamos = 'active'
   @tracking_parameters = tracking_mantain_or_default(params[:utm_source], params[:utm_campaign])
