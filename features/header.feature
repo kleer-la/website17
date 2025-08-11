@@ -9,5 +9,6 @@ Feature: Header & domains
 
   Scenario: Accessing production environment
     Given the host is "www.kleer.la"
+    And I have data from Keventer API
     When I open the web app
     Then the response should not include the header "X-Robots-Tag"

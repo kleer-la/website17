@@ -1,0 +1,43 @@
+[
+  {
+    "id": 6,
+    "slug": "programas-capacitacion-empresarial",
+    "lang": null,
+    "name": "Programas de Capacitación Empresarial",
+    "icon": "https://www.kleer.la/app/img/icons/People.svg",
+    "summary": "<div class=\"trix-content\">\n  <div>RESUMEN</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>¡Explora los planes de capacitación!</div>\n</div>\n",
+    "primary_color": "#3893b5",
+    "primary_font_color": "#c1edfd",
+    "secondary_color": "#a6cfde",
+    "secondary_font_color": "#17191a",
+    "is_training_program": true,
+    "services": [
+      {
+        "id": 82,
+        "slug": "agilidad",
+        "name": "Agilidad",
+        "subtitle": "<div>Promueve la colaboración y autogestión en equipos multidisciplinarios.</div>"
+      },
+      {
+        "id": 16,
+        "slug": "agile-coaching",
+        "name": "Agile Coaching",
+        "subtitle": "<div>Desarrolla las capacidades y habilidades para impulsar una cultura de agilidad organizacional.</div>"
+      },
+      {
+        "id": 49,
+        "slug": "gestion-producto",
+        "name": "Gestión de Producto",
+        "subtitle": "<div>Mejora la gestión del ciclo de vida de productos, desde la estrategia hasta la entrega de valor.</div>"
+      },
+      {
+        "id": 115,
+        "slug": "mejora-continua",
+        "name": "Mejora Continua",
+        "subtitle": "<div>Transforma la manera en que los equipos trabajan, enfocándose en eficiencia y productividad.</div>"
+      }
+    ],
+    "testimonies": []
+  }
+]

@@ -24,12 +24,12 @@ Feature: Resource Page SEO
       | tabtitle       | Agile Basics - Complete Guide |
       | seo_description| A complete guide to agile methodologies |
       | cover          | /img/agile-cover.jpg |
-    When I visit "/en/recursos/agile-basics"
+    When I visit "/en/resources/agile-basics"
     Then SEO meta name "description" should be "A complete guide to agile methodologies"
     And SEO meta property "og:title" should be "Agile Basics - Complete Guide"
     And SEO meta property "og:description" should be "A complete guide to agile methodologies"
     And SEO meta property "og:image" should be "/img/agile-cover.jpg"
-    # And SEO hreflang "en" should have href "/en/recursos/agile-basics"
+    # And SEO hreflang "en" should have href "/en/resources/agile-basics"
     And The page should have one H1 tag
     And the page should not have a noindex meta tag
 
