@@ -135,7 +135,7 @@ end
 
 Then('the URL should not contain Spanish terms') do
   current_path = URI.parse(current_url).path
-  spanish_terms = %w[recursos servicios catalogo agenda clientes somos certificado]
+  spanish_terms = %w[recursos servicios catalogo agenda clientes somos certificado cursos]
   
   # Check for Spanish terms as separate path segments (with slashes)
   spanish_terms.each do |term|
@@ -144,9 +144,20 @@ Then('the URL should not contain Spanish terms') do
   end
 end
 
+Then('the content should not contain Spanish terms') do
+spanish_terms = %w[recursos servicios catalogo agenda clientes somos certificado cursos]
+  spanish_terms.each do |term|
+    # Check that the page content does not contain Spanish terms
+    expect(page).not_to have_content(term)
+    
+    # Check that links do not contain Spanish terms, excluding the language switcher
+    expect(page).not_to have_css("a[href*='#{term}']:not(.language-switcher)", visible: true)
+  end
+end
+
 Then('the URL should not contain English terms') do
   current_path = URI.parse(current_url).path
-  english_terms = %w[resources services schedule clients about_us certificate]
+  english_terms = %w[resources services schedule clients about_us certificate courses]
   
   # Check for English terms as separate path segments (with slashes)
   english_terms.each do |term|
