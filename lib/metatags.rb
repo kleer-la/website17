@@ -60,6 +60,11 @@ module MetaTags
       @tags.delete :path
     end
 
+    def alternate_paths
+      @alternate_paths = @tags[:alternate_paths]
+      @tags.delete :alternate_paths
+    end
+
     def current_lang
       @current_lang = @tags[:current_lang]
       @tags.delete  :current_lang
@@ -75,6 +80,7 @@ module MetaTags
       site
       current_lang
       path
+      alternate_paths
       # @tags.delete :hreflang if !!@tags[:canonical]
       (@tags.map { |tag| display_one tag }).join('')
     end
@@ -108,8 +114,20 @@ module MetaTags
         "<link rel=\"canonical\" href=\"#{@base_url}/#{@current_lang}#{tag[1]}\"/>"
       when :hreflang
         unless @path.nil?
-          tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{@path}\"/>" : '') do |ac, lang|
-            ac + "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{@base_url}/#{lang}#{@path}\"/>"
+          # Use alternate paths if provided, otherwise use same path for both languages
+          es_path = @alternate_paths&.dig(:es) || @path
+          en_path = @alternate_paths&.dig(:en) || @path
+          
+          tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{es_path}\"/>" : '') do |ac, current_lang|
+            path_for_lang = case current_lang
+            when :es
+              es_path
+            when :en
+              en_path
+            else
+              @path
+            end
+            ac + "<link rel=\"alternate\" hreflang=\"#{current_lang}\" href=\"#{@base_url}/#{current_lang}#{path_for_lang}\"/>"
           end
         end
       when :image

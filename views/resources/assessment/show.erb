@@ -32,14 +32,14 @@
         <div class="question-group-container">
           <h3 class="question-group-title"><%= group.name %></h3>
           <% if !group.description.nil? && !group.description.to_s.empty? %>
-            <div class="question-group-description"><%= group.description %></div>
+            <div class="question-group-description"><%= @markdown_renderer.render(group.description) %></div>
           <% end %>
           
           <% group.questions.each do |question| %>
             <div class="question-container">
               <label class="question-label"><%= question.name %></label>
               <% if !question.description.nil? && !question.description.to_s.empty? %>
-                <div class="question-description"><%= question.description %></div>
+                <div class="question-description"><%= @markdown_renderer.render(question.description) %></div>
               <% end %>
               
               <% case question.question_type 
@@ -50,7 +50,7 @@
                   </div>
                   <div class="slider-labels">
                     <% question.answers.each do |answer| %>
-                      <div class="slider-label" data-value="<%= answer.id %>"><%= answer.text %></div>
+                      <div class="slider-label" data-value="<%= answer.id %>"><%= @markdown_renderer.render(answer.text) %></div>
                     <% end %>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                   <% question.answers.each do |answer| %>
                     <label class="radio-option">
                       <input type="radio" name="responses[<%= question.id %>]" value="<%= answer.id %>" required>
-                      <span><%= answer.text %></span>
+                      <span><%= @markdown_renderer.render(answer.text) %></span>
                     </label>
                   <% end %>
                 </div>
@@ -91,7 +91,7 @@
         <div class="question-container">
           <label class="question-label"><%= question.name %></label>
           <% if !question.description.nil? && !question.description.to_s.empty? %>
-            <div class="question-description"><%= question.description %></div>
+            <div class="question-description"><%= @markdown_renderer.render(question.description) %></div>
           <% end %>
           
           <% case question.question_type 
@@ -102,7 +102,7 @@
               </div>
               <div class="slider-labels">
                 <% question.answers.each do |answer| %>
-                  <div class="slider-label" data-value="<%= answer.id %>"><%= answer.text %></div>
+                  <div class="slider-label" data-value="<%= answer.id %>"><%= @markdown_renderer.render(answer.text) %></div>
                 <% end %>
               </div>
             </div>
@@ -113,7 +113,7 @@
               <% question.answers.each do |answer| %>
                 <label class="radio-option">
                   <input type="radio" name="responses[<%= question.id %>]" value="<%= answer.id %>" required>
-                  <span><%= answer.text %></span>
+                  <span><%= @markdown_renderer.render(answer.text) %></span>
                 </label>
               <% end %>
             </div>

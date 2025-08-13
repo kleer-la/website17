@@ -30,12 +30,12 @@ class News
     @result = News.load_list(doc)
   end
 
-  def self.create_list_keventer
+  def self.create_list_keventer(url = :news_url)
     if @next_null
       @next_null = false
       return @result
     end
-    api_resp = JsonAPI.new(KeventerAPI.news_url)
+    api_resp = JsonAPI.new(KeventerAPI.send(url))
     raise :NotFound unless api_resp.ok?
 
     News.load_list(api_resp.doc)

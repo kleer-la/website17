@@ -18,16 +18,16 @@ Given(/^theres an event type with several editions$/) do
 end
 
 When(/^I visit the plain event type page$/) do
-  visit '/categoria/productos-robustos/cursos/4-xxx'
+  visit '/cursos/1-curso-actualizado'
 end
 
 When('I visit the event type full page') do
-  visit '/categoria/productos-robustos/cursos/2-yyy'
+  visit '/cursos/2-yyy'
 end
 
 When(/^I visit a non existing event type page$/) do
   get_event_type(1, find_it: false)
-  visit '/categoria/productos-robustos/cursos/1-xxx'
+  visit '/cursos/1-xxx'
 end
 
 Given(/^I visit an event type detail page$/) do

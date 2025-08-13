@@ -12,7 +12,6 @@ class EventType
                else
                  JsonAPI.new(KeventerAPI.event_type_url(id))
                end
-
     et = EventType.new(json_api.doc) unless json_api.doc.nil?
     et unless et&.id.nil?
   end
@@ -98,11 +97,13 @@ class EventType
   end
 
   def uri_path
-    "/#{@lang}/cursos/#{@slug}"
+    partial = @lang == 'en' ? 'courses' : 'cursos'
+    "/#{@lang}/#{partial}/#{@slug}"
   end
 
   def canonical_url
-    "/cursos/#{@canonical_slug}" if @canonical_slug.to_s != ''
+    partial = @lang == 'en' ? 'courses' : 'cursos'
+    "/#{partial}/#{@canonical_slug}" if @canonical_slug.to_s != ''
   end
 
   def redirect_to(event_type_id_with_name)

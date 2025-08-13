@@ -1,5 +1,7 @@
 <% 
-landing_uri = "/#{session[:locale]}/recursos/#{resource.slug}" 
+lang = session[:locale]
+resources_path = lang == 'en' ? 'resources' : 'recursos'
+landing_uri = "/#{lang}/#{resources_path}/#{resource.slug}" 
 %>
 <div class="card resource-card" style="width: 18rem;" id="<%= resource.slug %>">
   <a href="<%= landing_uri %>">

@@ -1,0 +1,190 @@
+[
+  {
+    "id": 3,
+    "slug": "cambio-organizacional-liderazgo",
+    "lang": "es",
+    "name": "Cambio Organizacional y Liderazgo",
+    "icon": "/app/img/icons/ev-org.svg",
+    "summary": "<div class=\"trix-content\">\n  <div>Ofrecemos un <strong>enfoque integral </strong>que prepara a tu empresa para <strong>planificar</strong> y <strong>sostener el cambio</strong>. <br>Cultivamos un liderazgo consciente y empático e impulsamos el cambio organizacional de manera efectiva y duradera. Adoptamos los principios de <strong>agilidad como pilares fundamentales</strong> para promover <strong>cambios en tu empresa</strong>.</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>Explora los <strong>Servicios de Cambio Organizacional y Liderazgo.</strong></div>\n</div>\n",
+    "primary_color": "#4dd3e8",
+    "primary_font_color": "#000000",
+    "secondary_color": "#85eeff",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [
+      {
+        "id": 6,
+        "slug": "evolucion-organizacional-agil",
+        "name": "Evolución Organizacional Ágil",
+        "subtitle": "<div>Diseñando organizaciones adaptativas para el logro de los objetivos estratégicos.</div>"
+      },
+      {
+        "id": 7,
+        "slug": "desarrollo-liderazgo-agil",
+        "name": "Desarrollo del Liderazgo Ágil",
+        "subtitle": "<div>Fortalece las habilidades de los líderes para guiar el cambio organizacional.</div>"
+      }
+    ],
+    "testimonies": []
+  },
+  {
+    "id": 72,
+    "slug": "organizational-change-and-leadership",
+    "lang": "en",
+    "name": "Organizational Change and Leadership",
+    "icon": "/app/img/icons/user-octagon.svg",
+    "summary": "<div class=\"trix-content\">\n  <div><strong>We offer a comprehensive approach that prepares your company to plan for and sustain change.</strong><br> Embracing the principles of agility as fundamental pillars to promote transformation within your company.</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>Explore Organizational Change and Leadership Services.</div>\n</div>\n",
+    "primary_color": "#4dd3e8",
+    "primary_font_color": "#000000",
+    "secondary_color": "#85eeff",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [],
+    "testimonies": []
+  },
+  {
+    "id": 39,
+    "slug": "team-agility",
+    "lang": "en",
+    "name": "Teams Agility",
+    "icon": "/app/img/icons/user-octagon.svg",
+    "summary": "<div class=\"trix-content\">\n  <div>&nbsp;Our approach, tailored to the company's context, <strong>accelerates the adoption of agile practices</strong>, improving team <strong>collaboration</strong>, efficiency, and <strong>adaptability</strong>. Unlock your teams' potential for optimized value delivery and a culture of continuous improvement.&nbsp;</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>&nbsp;Learn more details about <strong>Team Agility </strong>Services</div>\n</div>\n",
+    "primary_color": "#fcd94e",
+    "primary_font_color": "#000000",
+    "secondary_color": "#fadb6b",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [],
+    "testimonies": []
+  },
+  {
+    "id": 2,
+    "slug": "agilidad-equipos",
+    "lang": "es",
+    "name": "Agilidad para Equipos",
+    "icon": "/app/img/icons/user-octagon.svg",
+    "summary": "<div class=\"trix-content\">\n  <div>Nuestro enfoque, ajustado al contexto de la empresa, <strong>acelera la adopción de prácticas ágiles</strong>, mejorando la <strong>colaboración</strong>, la eficiencia y la <strong>capacidad de adaptación</strong> de los equipos.&nbsp;</div><div>Desbloquea el potencial de tus equipos para una entrega de valor optimizada y una cultura de mejora continua.</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>Conoce más detalles de los Servicios de<strong> Agilidad para Equipos</strong></div>\n</div>\n",
+    "primary_color": "#fcd94e",
+    "primary_font_color": "#000000",
+    "secondary_color": "#fadb6b",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [
+      {
+        "id": 9,
+        "slug": "agile-team-accelerator",
+        "name": "Agile Team Accelerator",
+        "subtitle": "<div>Prepara a tus equipos para entregar valor de manera constante y eficiente.</div>"
+      },
+      {
+        "id": 8,
+        "slug": "innovation-team",
+        "name": "Innovation Team",
+        "subtitle": "<div>Crea equipos disruptivos que validan oportunidades y desarrollan productos innovadores.</div>"
+      },
+      {
+        "id": 15,
+        "slug": "agile-team-restart",
+        "name": "Agile Team Restart",
+        "subtitle": "<div>Reinicia, fortalece y desbloquea el potencial de tus equipos ágiles.</div>"
+      },
+      {
+        "id": 10,
+        "slug": "kaizen-team",
+        "name": "Kaizen Team",
+        "subtitle": "<div>Optimiza procesos, maximiza la eficiencia y fortalece la cultura de aprendizaje dentro de la organización.</div>"
+      }
+    ],
+    "testimonies": []
+  },
+  {
+    "id": 1,
+    "slug": "agile-product-management",
+    "lang": "es",
+    "name": "Agile Product Management",
+    "icon": "/app/img/icons/HandStars.svg",
+    "summary": "<div class=\"trix-content\">\n  <div>Nuestros servicios especializados en Agile Product Management están diseñados para <strong>potenciar</strong> el enfoque de <strong>desarrollo de productos</strong> digitales. Combinamos las <strong>prácticas de vanguardia</strong> de gestión de productos con métodos ágiles.</div><div>Definimos la <strong>estrategia</strong> y el <strong>roadmap</strong> de sus productos, alineados con los <strong>objetivos de negocio</strong>.</div><div><br></div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>Acelera el impacto de producto con <strong>Agile Product Management</strong></div>\n</div>\n",
+    "primary_color": "#43af45",
+    "primary_font_color": "#000000",
+    "secondary_color": "#aefcb0",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [
+      {
+        "id": 5,
+        "slug": "consultoria-coaching-producto",
+        "name": "Consultoría y Coaching de Producto",
+        "subtitle": "<div>Acelera la innovación y el crecimiento impulsado por los productos.</div>"
+      },
+      {
+        "id": 3,
+        "slug": "programa-agile-product-management",
+        "name": "Programa en Agile Product Management",
+        "subtitle": "<div>Aprende sobre Product Thinking. Alinea la estrategia, descubre oportunidades y potencia a tus equipos.</div>"
+      }
+    ],
+    "testimonies": []
+  },
+  {
+    "id": 73,
+    "slug": "product-management",
+    "lang": "en",
+    "name": "Agile Product Management",
+    "icon": "/app/img/icons/user-octagon.svg",
+    "summary": "<div class=\"trix-content\">\n  <div><strong>We combine cutting-edge product management practices with agile methods.</strong><br> Get your strategy and product roadmaps fully aligned with your business goals.&nbsp;</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>Successful products, faster!</div>\n</div>\n",
+    "primary_color": "#43af45",
+    "primary_font_color": "#000000",
+    "secondary_color": "#aefcb0",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [],
+    "testimonies": []
+  },
+  {
+    "id": 4,
+    "slug": "facilitacion-reuniones-eventos",
+    "lang": "es",
+    "name": "Facilitación de Reuniones y Eventos",
+    "icon": "/app/img/icons/StarFall.svg",
+    "summary": "<div class=\"trix-content\">\n  <div>Convierte las reuniones en catalizadores de <strong>resultados tangibles y constructivos</strong> para tu organización. Nos enfocamos en convertir estas interacciones en <strong>experiencias eficientes y colaborativas</strong>. La incorporación de <strong>prácticas de facilitación</strong>, pone a cada participante como protagonista y mejora la toma de decisiones, la resolución de problemas y el intercambio de ideas.</div>\n</div>\n",
+    "cta_message": "<div class=\"trix-content\">\n  <div>Transforma tus encuentros con nuestros Servicios de <strong>Facilitaciones de Reuniones y Eventos</strong></div>\n</div>\n",
+    "primary_color": "#f47240",
+    "primary_font_color": "#000000",
+    "secondary_color": "#ff895c",
+    "secondary_font_color": "#000000",
+    "is_training_program": false,
+    "services": [
+      {
+        "id": 13,
+        "slug": "documentacion-grafica",
+        "name": "Documentación Gráfica",
+        "subtitle": "<div>Experiencias visuales memorables para reuniones. Maximiza el entendimiento, captura ideas y resultados.</div>"
+      },
+      {
+        "id": 14,
+        "slug": "innovacion-creatividad",
+        "name": "Innovación y Creatividad",
+        "subtitle": "<div>Resuelve problemas de manera innovadora. Desbloquea el Potencial Creativo de tu Equipo.</div>"
+      },
+      {
+        "id": 11,
+        "slug": "facilitacion-dinamicas-eventos",
+        "name": "Facilitación de Dinámicas y Eventos",
+        "subtitle": "<div>Impulsa la colaboración. Cocreación de ideas y soluciones.</div>"
+      },
+      {
+        "id": 12,
+        "slug": "planificacion-estrategica",
+        "name": "Planificación Estratégica",
+        "subtitle": "<div>Alcanza metas con claridad y precisión. Guiamos tus iniciativas hacia el éxito.</div>"
+      }
+    ],
+    "testimonies": []
+  }
+]

@@ -33,9 +33,10 @@ class Catalog
       json_api = if defined? @@json_api
                    @@json_api
                  else
-                   cache_key = "catalog_events_#{KeventerAPI.catalog_url}"
+                    url = KeventerAPI.catalog_url
+                   cache_key = "catalog_events_#{url}"
                    CacheService.get_or_set(cache_key) do
-                     JsonAPI.new(KeventerAPI.catalog_url)
+                     JsonAPI.new(url)
                    end
                  end
       Catalog.load_catalog_events(json_api.doc) unless json_api.doc.nil?

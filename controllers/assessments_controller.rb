@@ -3,7 +3,9 @@ require './lib/models/contact'
 post '/assessment/:id' do |id|
   unless verify_recaptcha
     flash[:error] = 'Ha ocurrido un error, por favor intenta de nuevo'
-    redirect "/#{session[:locale] || 'es'}/recursos/#{params[:resource_slug]}"
+    lang = session[:locale] || 'es'
+    resources_path = lang == 'en' ? 'resources' : 'recursos'
+    redirect "/#{lang}/#{resources_path}/#{params[:resource_slug]}"
     return
   end
 

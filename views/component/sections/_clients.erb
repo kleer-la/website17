@@ -24,7 +24,11 @@ description ||= '.'.freeze
     <% if defined?(cta) && cta.to_s != ''%>
     <div class="row justify-content-center mt-3">
         <div class="col-12 col-lg-6 text-center">
-        <a class="btn my-secondary-button" href="/clientes"><%= cta %></a>
+        <% 
+          lang = session[:locale]
+          clients_path = lang == 'en' ? 'clients' : 'clientes'
+        %>
+        <a class="btn my-secondary-button" href="/#{lang}/#{clients_path}"><%= cta %></a>
       </div>
     </div>
     <% end %>

@@ -1,0 +1,16 @@
+{
+  "id": 72,
+  "slug": "organizational-change-and-leadership",
+  "lang": "en",
+  "name": "Organizational Change and Leadership",
+  "icon": "/app/img/icons/user-octagon.svg",
+  "summary": "<div class=\"trix-content\">\n  <div><strong>We offer a comprehensive approach that prepares your company to plan for and sustain change.</strong><br> Embracing the principles of agility as fundamental pillars to promote transformation within your company.</div>\n</div>\n",
+  "cta_message": "<div class=\"trix-content\">\n  <div>Explore Organizational Change and Leadership Services.</div>\n</div>\n",
+  "primary_color": "#4dd3e8",
+  "primary_font_color": "#000000",
+  "secondary_color": "#85eeff",
+  "secondary_font_color": "#000000",
+  "is_training_program": false,
+  "services": [],
+  "testimonies": []
+}
