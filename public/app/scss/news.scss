@@ -46,13 +46,12 @@ body {
     z-index: 1;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 3rem;
     }
   }
 
   @media (max-width: 768px) {
-    min-height: 250px;
-    padding-top: 60px;
+    min-height: 180px;
   }
 }
 
@@ -107,7 +106,7 @@ body {
     font-size: 1.8rem;
     margin: 0 0 0.5rem;
     color: #005b99;
-    line-height: 1.5rem;
+    line-height: 1.9rem;
 
     @media (max-width: 768px) {
       font-size: 1.4rem;
