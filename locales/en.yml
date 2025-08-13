@@ -883,6 +883,10 @@ en:
   news:
     title: Press
     subtitle: Press releases and publications in various media about our work.
+    buttons:
+      video: Watch video
+      audio: Listen to audio
+      external: Read more
   recommended:
     title: We suggest
     type:

@@ -533,6 +533,10 @@ es:
   news:
     title: Novedades
     subtitle: Avisos, notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
+    buttons:
+      video: Ver video
+      audio: Escuchar audio
+      external: Leer más
   recommended:
     title: Contenido recomendado
     type:
