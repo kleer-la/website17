@@ -533,6 +533,8 @@ es:
   news:
     title: Novedades
     subtitle: Avisos, notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.
+    published_on: Publicado el
+    authors: Autores
     buttons:
       video: Ver video
       audio: Escuchar audio

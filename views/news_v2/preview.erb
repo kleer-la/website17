@@ -1,5 +1,5 @@
   <header class="header">
-    <h1>Novedades</h1>
+    <h1><%= t('news.title') %></h1>
   </header>
   <div class="container">
     <% @news.each do |news| %>
@@ -7,7 +7,12 @@
         <img src="<%= news.img || 'https://kleer-images.s3.sa-east-1.amazonaws.com/placeholder.png' %>" alt="<%= news.title %>" class="news-image">
         <div class="news-content">
           <h2><%= news.title %></h2>
-          <div class="news-meta">Publicado el <%= news.event_date %><%= news.trainers.count > 0 ? " | Autores: #{news.trainers.join(', ')}" : nil %></div>
+          <div class="news-meta">
+            <%= t('news.published_on') %> <%= news.event_date %>
+            <% if news.trainers.count > 0 %>
+              | <%= t('news.authors') %>: <%= news.trainers.join(', ') %>
+            <% end %>
+          </div>
           <p class="news-excerpt"><%= news.description %></p>
           <div class="button-container">
             <% unless news.video.to_s == '' %>

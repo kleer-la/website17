@@ -881,8 +881,10 @@ en:
     </p>
     "
   news:
-    title: Press
-    subtitle: Press releases and publications in various media about our work.
+    title: News
+    subtitle: News and publications in various media about our work.
+    published_on: Published on
+    authors: Authors
     buttons:
       video: Watch video
       audio: Listen to audio
