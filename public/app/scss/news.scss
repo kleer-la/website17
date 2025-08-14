@@ -5,7 +5,6 @@
   background-position: center center;
 }
 
-
 body {
   font-family: 'Raleway', sans-serif;
   background-color: #f8f8f8;
@@ -24,9 +23,7 @@ body {
   position: relative;
   overflow: hidden;
   padding-top: 80px;
-  /* Account for fixed menu bar */
 
-  /* Add subtle pattern overlay */
   &::before {
     content: '';
     position: absolute;
@@ -41,7 +38,6 @@ body {
 
   h1 {
     margin: 0;
-    // font-size: 2.5rem;
     color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     font-weight: 300;
@@ -50,14 +46,12 @@ body {
     z-index: 1;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 3rem;
     }
   }
 
   @media (max-width: 768px) {
-    min-height: 250px;
-    padding-top: 60px;
-    /* Smaller menu bar on mobile */
+    min-height: 180px;
   }
 }
 
@@ -87,7 +81,6 @@ body {
 
 .news-image {
   width: 40%;
-  // height: 200px;
   object-fit: contain;
   background-color: #f8f8f8;
 
@@ -100,6 +93,9 @@ body {
 .news-content {
   padding: 1.5rem;
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -110,6 +106,7 @@ body {
     font-size: 1.8rem;
     margin: 0 0 0.5rem;
     color: #005b99;
+    line-height: 1.9rem;
 
     @media (max-width: 768px) {
       font-size: 1.4rem;
@@ -147,6 +144,36 @@ body {
     @media (max-width: 768px) {
       padding: 0.4rem 0.8rem;
       font-size: 0.9rem;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 1rem;
+
+    a.icon-button {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      box-sizing: border-box;
+      width: 90px;
+      height: 50px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #007bff;
+      margin-right: 0.5rem;
+      padding: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: hsl(211, 95%, 64%);
+        color: #fff;
+        text-decoration: none;
+      }
     }
   }
 }

@@ -41,7 +41,7 @@ class News
     News.load_list(api_resp.doc)
   end
 
-  attr_accessor :title, :where, :description, :img, :url,
+  attr_accessor :title, :where, :description, :img, :url, :video, :audio,
                 :trainers, :trainers_list, :lang, :event_date,
                 :created_at, :updated_at
 
@@ -53,6 +53,8 @@ class News
     @lang = doc['lang']
     @img = doc['img'] || ''
     @url = doc['url'] || ''
+    @video = doc['video'] || ''
+    @audio = doc['audio'] || ''
     @event_date = parse_date(doc['event_date'])
     @trainers_list = load_trainers(doc['trainers'])
     @trainers = trainer_names(doc)

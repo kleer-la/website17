@@ -11,7 +11,7 @@ $grey: #B3B3B3;
 $white: #FFFFFF;
 $celeste: #E8F8FD;
 
-.resources-hero{
+.resources-hero {
   background-color: $celeste;
   margin-top: 100px;
   padding: 30px 60px 70px 60px;
@@ -24,35 +24,36 @@ $celeste: #E8F8FD;
   align-content: center;
   text-align: center;
 
-  h1{
+  h1 {
     margin-bottom: 40px;
     max-width: 1000px;
     z-index: 3;
 
   }
-  h2{
+
+  h2 {
     z-index: 3;
     max-width: 1000px;
   }
 
-  .resources-hero__yellow-circle{
+  .resources-hero__yellow-circle {
     position: absolute;
     bottom: 0;
     left: 0;
   }
 
-  .resources-hero__blue-circle{
+  .resources-hero__blue-circle {
     position: absolute;
     right: 0;
     bottom: 20%;
   }
 }
 
-.resources-list{
+.resources-list {
   margin-top: 100px;
 }
 
-#search-title{
+#search-title {
   font-size: 24px;
   font-weight: 600;
   line-height: 28px;
@@ -82,6 +83,7 @@ $celeste: #E8F8FD;
     }
   }
 }
+
 .resource-card .footer a.my-primary-button:hover {
   color: $grey !important;
 }
@@ -157,38 +159,75 @@ $celeste: #E8F8FD;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+
   h3 {
     color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+
   a {
     color: $secondary-blue;
     font-weight: bold;
   }
+
   .rounded-container {
     border-radius: 1rem;
   }
 }
+
 .badge-role {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #f8f9fa;  /* Light gray background */
-  color: #212529;            /* Dark text */
-  border: 1px solid #dee2e6; /* Light border */
+  background-color: #f8f9fa;
+  /* Light gray background */
+  color: #212529;
+  /* Dark text */
+  border: 1px solid #dee2e6;
+  /* Light border */
   font-size: 1rem;
   padding: 0.35em 0.65em;
-  transform: translate(-10%, -10%); /* Slight offset for visual interest */
+  transform: translate(-10%, -10%);
+  /* Slight offset for visual interest */
   z-index: 1;
 }
 
 // Assessment Styles - Scoped to assessment pages only
-#assessment-hero,
-#assessment-details {
+.assessment {
   .assessment-hero {
-    background-color: #F8F9FA;
-    padding: 2rem 0;
+    background-color: var(--background-primary);
+    padding: 4rem 0;
+    overflow: hidden;
+    text-align: left;
+    position: relative; // Ensure positioning context if needed
+    overflow: hidden;
+    padding-left: 3rem;
+
+    .assessment-hero__content {
+      padding: 2rem 0;
+      text-align: left;
+    }
+
+    .assessment-hero__image {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 12rem 0;
+    }
+  }
+
+  h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: normal;
+  }
+
+  h3 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .question-container {

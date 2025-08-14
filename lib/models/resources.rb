@@ -64,12 +64,12 @@ class Resource
     @objects_null = Resource.load_list(data)
   end
 
-  def self.create_list_keventer
+  def self.create_list_keventer(url = :resources_url)
     if @next_null
       @next_null = false
       return @objects_null
     end
-    api_resp = JsonAPI.new(KeventerAPI.resources_url)
+    api_resp = JsonAPI.new(KeventerAPI.send(url))
     raise :NotFound unless api_resp.ok?
 
     Resource.load_list(api_resp.doc)

@@ -49,11 +49,12 @@ class Assessment
 
   # Nested class for QuestionGroup
   class QuestionGroup
-    attr_accessor :id, :name, :position, :questions
+    attr_accessor :id, :name, :description, :position, :questions
 
     def initialize(doc)
       @id = doc.is_a?(Hash) && doc['id'] ? doc['id'] : nil
       @name = doc.is_a?(Hash) && doc['name'] ? doc['name'] : ''
+      @description = doc.is_a?(Hash) && doc['description'] ? doc['description'] : ''
       @position = doc.is_a?(Hash) && doc['position'] ? doc['position'] : 1  # Default to 1
       @questions = (doc.is_a?(Hash) && doc['questions'] || []).map { |q| Question.new(q) }
     end

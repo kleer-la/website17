@@ -31,6 +31,31 @@ post '/assessment/:id' do |id|
   erb :'resources/assessment/show', layout: :'layout/layout2022'
 end
 
+get '/assessment/:id' do |id|
+
+  contact_data = {
+    name: params[:name],
+    email: params[:email],
+    company: params[:company],
+    context: params[:context],
+    language: session[:locale] || 'es',
+    resource_slug: params[:resource_slug],
+    can_we_contact: params[:can_we_contact] == 'on',
+    suscribe: params[:suscribe] == 'on'
+  }
+
+  session[:contact_data] = contact_data
+
+  @assessment = Assessment.create_one_keventer(id, session[:locale])
+  
+  @meta_tags.set! title: @assessment.title,
+                  description: @assessment.description,
+                  image: "https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/kleer-logo.png"
+
+  erb :'resources/assessment/show', layout: :'layout/layout2022'
+end
+
+
 post '/submit_assessment' do
   responses = params[:responses]
   assessment_id = params[:assessment_id]
