@@ -32,6 +32,7 @@ module KeventerAPI
   {
     events: 'events.json',
     resources: 'resources.json',
+    resources_preview: 'resources/preview.json',
     kleerers: 'kleerers.json',
     categories: 'categories.json',
     catalog: 'catalog',

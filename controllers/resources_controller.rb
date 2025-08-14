@@ -2,6 +2,13 @@ require './lib/models/resources'
 require './lib/models/assessment'
 
 get %r{/(resources|recursos)/?} do
+  resources_index
+end
+get %r{/(resources|recursos)/preview/?} do
+  resources_index(preview:true)
+end
+
+def resources_index(preview=false)
   page = Page.load_from_keventer(session[:locale], 'recursos')
   @meta_tags.set! title: page.seo_title || t('meta_tag.resources.title'),
                   description: page.seo_description || t('meta_tag.resources.description'),
@@ -10,12 +17,14 @@ get %r{/(resources|recursos)/?} do
   @meta_tags.set! image: page.cover unless page.cover.nil?
 
   @active_tab_publicamos = 'active'
+  if preview
+    @resources = Resource.create_list_keventer(:resources_preview_url)
+  else
   @resources = Resource.create_list_keventer
+  end
 
   erb :'resources/index', layout: :'layout/layout2022'
 end
-
-
 
 # get '/recursos/:slug' do |slug|
 get %r{/(resources|recursos)/([^/]+)} do |_, slug|
