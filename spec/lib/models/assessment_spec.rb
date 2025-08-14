@@ -11,6 +11,7 @@ describe Assessment do
         {
           'id'=>1,
           'name'=>'Domain',
+          'description'=>'This is the domain question group description',
           'position'=>1,
           'questions'=>[
             {
@@ -61,6 +62,7 @@ describe Assessment do
 
       expect(assessment.question_groups.size).to eq 1
       expect(assessment.question_groups.first.name).to eq 'Domain'
+      expect(assessment.question_groups.first.description).to eq 'This is the domain question group description'
       expect(assessment.question_groups.first.questions.size).to eq 1
       expect(assessment.question_groups.first.questions.first.name).to eq 'Grouped Q1'
       expect(assessment.question_groups.first.questions.first.answers.first.text).to eq 'Low'

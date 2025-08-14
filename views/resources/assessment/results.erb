@@ -22,8 +22,7 @@
   <div id="result-container">
     <% if @contact.status == 'completed' %>
       <div id="result">
-        <% if @assessment.rule_based && @contact.assessment_report_html %>
-          <!-- Display HTML content for rule-based assessments -->
+        <% if @contact.assessment_report_html %>
           <div class="assessment-html-container" style="max-width: 100%; overflow-x: auto; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px;">
             <%= @contact.assessment_report_html.html_safe %>
           </div>
@@ -115,7 +114,7 @@
             }
             
             // Check if this is a rule-based assessment with HTML content
-            if (data.assessment && data.assessment.rule_based && data.assessment_report_html) {
+            if (data.assessment && data.assessment_report_html) {
               // Display HTML content first
               const htmlContentDiv = document.createElement('div');
               htmlContentDiv.className = 'assessment-html-container';
