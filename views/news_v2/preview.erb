@@ -16,7 +16,12 @@
   <div class="container">
     <% @news.each_with_index do |news, index| %>
       <div class="news-card <%= 'hidden-news' if index >= 8 %>" data-index="<%= index %>">
-        <img src="<%= news.img || 'https://kleer-images.s3.sa-east-1.amazonaws.com/placeholder.png' %>" alt="<%= news.title %>" class="news-image">
+        <img src="<%= news.img || 'https://kleer-images.s3.sa-east-1.amazonaws.com/placeholder.png' %>" 
+             alt="<%= news.title %>" 
+             class="news-image"
+             loading="<%= index < 6 ? 'eager' : 'lazy' %>"
+             decoding="async"
+             sizes="(max-width: 768px) 100vw, 40vw">
         <div class="news-content">
           <h2><%= news.title %></h2>
           <div class="news-meta">
@@ -43,7 +48,7 @@
     
     <% if @news.length > 8 %>
       <div class="see-more-container">
-        <button id="seeMoreBtn" class="see-more-btn" onclick="toggleNews()">
+        <button id="seeMoreBtn" class="see-more-btn">
           <span id="seeMoreText"><%= t('news.see_more', default: 'Ver más') %></span>
         </button>
       </div>
@@ -51,33 +56,44 @@
   </div>
 
   <script>
-    let showingAll = false;
-    
-    function toggleNews() {
+    document.addEventListener('DOMContentLoaded', function() {
+      let showingAll = false;
       const hiddenNews = document.querySelectorAll('.hidden-news');
-      const seeMoreText = document.getElementById('seeMoreText');
       const seeMoreBtn = document.getElementById('seeMoreBtn');
+      const seeMoreText = document.getElementById('seeMoreText');
       
-      if (!showingAll) {
-        // Show all news
-        hiddenNews.forEach(newsCard => {
-          newsCard.style.display = 'flex';
-        });
-        seeMoreText.textContent = '<%= t('news.see_less', default: 'Ver menos') %>';
-        showingAll = true;
-      } else {
-        // Hide news beyond first 8
-        hiddenNews.forEach(newsCard => {
-          newsCard.style.display = 'none';
-        });
-        seeMoreText.textContent = '<%= t('news.see_more', default: 'Ver más') %>';
-        showingAll = false;
+      // Add event listener instead of inline onclick
+      if (seeMoreBtn) {
+        seeMoreBtn.removeAttribute('onclick');
+        seeMoreBtn.addEventListener('click', toggleNews);
+      }
+      
+      function toggleNews(event) {
+        event.preventDefault();
         
-        // Scroll back to top of news section
-        document.querySelector('.container').scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+        const isHidden = !showingAll;
+        
+        // Use requestAnimationFrame for smooth performance
+        requestAnimationFrame(() => {
+          hiddenNews.forEach(newsCard => {
+            newsCard.style.display = isHidden ? 'flex' : 'none';
+          });
+          
+          seeMoreText.textContent = isHidden ? 
+            '<%= t('news.see_less', default: 'Ver menos') %>' : 
+            '<%= t('news.see_more', default: 'Ver más') %>';
+          
+          showingAll = isHidden;
+          
+          // Smooth scroll with reduced motion check
+          if (!isHidden) {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelector('.container').scrollIntoView({ 
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          }
         });
       }
-    }
+    });
   </script>

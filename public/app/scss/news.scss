@@ -110,6 +110,8 @@ body {
   width: 40%;
   object-fit: contain;
   background-color: #f8f8f8;
+  will-change: auto;
+  transform: translateZ(0); // Hardware acceleration for better performance
 
   @media (max-width: 768px) {
     width: 100%;
@@ -224,24 +226,35 @@ body {
   font-weight: 500;
   border-radius: 25px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 123, 191, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
     box-shadow: 0 6px 16px rgba(0, 123, 191, 0.4);
     background: linear-gradient(135deg, #004a80 0%, #0096b3 100%);
   }
 
   &:active {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
     box-shadow: 0 2px 8px rgba(0, 123, 191, 0.3);
   }
 
   @media (max-width: 768px) {
     padding: 10px 24px;
     font-size: 0.9rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    transform: none;
+    
+    &:hover {
+      transform: none;
+    }
   }
 }
