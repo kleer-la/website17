@@ -1,9 +1,21 @@
-  <header class="header">
-    <h1><%= t('news.title') %></h1>
-  </header>
+  <% if @page&.sections&.dig('hero') %>
+    <% hero_section = @page.sections['hero'] %>
+    <header class="header">
+      <div class="hero-content">
+        <h1><%= hero_section['title'] %></h1>
+        <% if hero_section['content'] %>
+          <p class="hero-subtitle"><%= hero_section['content'] %></p>
+        <% end %>
+      </div>
+    </header>
+  <% else %>
+    <header class="header">
+      <h1><%= t('news.title') %></h1>
+    </header>
+  <% end %>
   <div class="container">
-    <% @news.each do |news| %>
-      <div class="news-card">
+    <% @news.each_with_index do |news, index| %>
+      <div class="news-card <%= 'hidden-news' if index >= 8 %>" data-index="<%= index %>">
         <img src="<%= news.img || 'https://kleer-images.s3.sa-east-1.amazonaws.com/placeholder.png' %>" alt="<%= news.title %>" class="news-image">
         <div class="news-content">
           <h2><%= news.title %></h2>
@@ -28,4 +40,44 @@
         </div>
       </div>
     <% end %>
+    
+    <% if @news.length > 8 %>
+      <div class="see-more-container">
+        <button id="seeMoreBtn" class="see-more-btn" onclick="toggleNews()">
+          <span id="seeMoreText"><%= t('news.see_more', default: 'Ver más') %></span>
+        </button>
+      </div>
+    <% end %>
   </div>
+
+  <script>
+    let showingAll = false;
+    
+    function toggleNews() {
+      const hiddenNews = document.querySelectorAll('.hidden-news');
+      const seeMoreText = document.getElementById('seeMoreText');
+      const seeMoreBtn = document.getElementById('seeMoreBtn');
+      
+      if (!showingAll) {
+        // Show all news
+        hiddenNews.forEach(newsCard => {
+          newsCard.style.display = 'flex';
+        });
+        seeMoreText.textContent = '<%= t('news.see_less', default: 'Ver menos') %>';
+        showingAll = true;
+      } else {
+        // Hide news beyond first 8
+        hiddenNews.forEach(newsCard => {
+          newsCard.style.display = 'none';
+        });
+        seeMoreText.textContent = '<%= t('news.see_more', default: 'Ver más') %>';
+        showingAll = false;
+        
+        // Scroll back to top of news section
+        document.querySelector('.container').scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  </script>
