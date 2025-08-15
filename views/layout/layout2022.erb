@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="<%=session[:locale] %>">
   <head>
+    <!-- Resource preconnection hints for performance -->
     <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://kleer-images.s3.sa-east-1.amazonaws.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://academia.kleer.la">
     <%= erb :'layout/_google_tracker_head' %>
     <%= erb :'layout/_metatags'%>
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></noscript>
-    <link href="<%= css_url('index.css')%>" rel="stylesheet" type="text/css">
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+      /* Critical hero section styles */
+      #hero{max-width:100vw;position:relative;overflow:hidden}
+      .hero_carousel-inner{height:calc(100vh - 100px);min-height:600px}
+      .carousel__text{display:flex;flex-direction:column;justify-content:space-around;padding:8% 10% 15%}
+      .carousel__text h1{font-size:3rem;line-height:1.2;margin-bottom:1rem;font-weight:700}
+      .carousel__text h2{font-size:2.5rem;line-height:1.2;margin-bottom:1rem;font-weight:700}
+      .carousel__text p{font-size:1.2rem;line-height:1.6;margin-bottom:2rem}
+      .hero__img-container{display:flex;align-items:center;justify-content:center}
+      .hero__img{max-width:100%;height:auto;object-fit:contain}
+      .my-primary-button{background:#007bff;color:#fff;padding:12px 30px;border-radius:25px;text-decoration:none;display:inline-block;transition:background-color 0.3s ease}
+      .my-primary-button:hover{background:#0056b3;color:#fff;text-decoration:none}
+      /* Mobile button layout shift prevention */
+      .hero__mobile-button{display:none!important;height:50px;margin-bottom:50px;visibility:hidden}
+      .hero__desktop-button{display:inline-block}
+      /* Critical navigation styles */
+      .navbar{transition:all 0.3s ease}
+      .navbar-scrolled{background-color:rgba(255,255,255,0.95)!important;backdrop-filter:blur(10px)}
+      /* Mobile responsive */
+      @media (max-width:768px){
+        .hero_carousel-inner{height:calc(100vh - 80px);min-height:500px}
+        .carousel__text{padding:5% 5% 10%}
+        .carousel__text h1{font-size:2.5rem}
+        .carousel__text h2{font-size:2rem}
+        .hero__desktop-button{display:none!important}
+        .hero__mobile-button{display:flex!important;visibility:visible!important;margin:auto;margin-bottom:50px;min-height:50px;width:auto;align-items:center;justify-content:center}
+      }
+    </style>
+    
+    <!-- Load non-critical CSS with preload -->
+    <link rel="preload" href="<%= css_url('index.css')%>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="<%= css_url('index.css')%>" rel="stylesheet" type="text/css"></noscript>
   </head>
-  <body id="body" onscroll="scrolling()">
+  <body id="body">
     <%= erb :'layout/_google_tracker_body' %>
     <%=erb :'component/_menu'%>
     <%= yield %>
@@ -20,16 +58,24 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-i8+QythOYyQke6XbStjt9T4yQHhhM+9Y9yTY1fOxoDQwsQpKMEpIoSQZ8mVomtnVCf9PBvoQDnKl06gGOOD19Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" integrity="sha512-i8+QythOYyQke6XbStjt9T4yQHhhM+9Y9yTY1fOxoDQwsQpKMEpIoSQZ8mVomtnVCf9PBvoQDnKl06gGOOD19Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
     <script>
-        const navbar = document.getElementById('navbar');
-        const body = document.getElementById('body')
-        function scrolling() {
-            if (body.getBoundingClientRect().top < 0 ) {
-                navbar.classList.add("navbar-scrolled");
+        // Critical navbar scroll functionality - inline for immediate execution
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const body = document.getElementById('body');
+            
+            function scrolling() {
+                if (body.getBoundingClientRect().top < 0) {
+                    navbar.classList.add("navbar-scrolled");
+                } else {
+                    navbar.classList.remove("navbar-scrolled");
+                }
             }
-            else {
-                navbar.classList.remove("navbar-scrolled");
-            }
-        }
+            
+            // Add scroll event listener with passive for better performance
+            window.addEventListener('scroll', scrolling, { passive: true });
+        });
+        
+        // Flash messages
         <%= flash[:notice] ? "alert('#{flash[:notice]}')" : "" %>
         <%= flash[:error] ? "alert('#{flash[:error]}')" : "" %>
     </script>
