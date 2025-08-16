@@ -28,10 +28,127 @@
       /* Mobile button layout shift prevention */
       .hero__mobile-button{display:none!important;height:50px;margin-bottom:50px;visibility:hidden}
       .hero__desktop-button{display:inline-block}
-      /* Critical navigation styles */
-      .navbar{transition:all 0.3s ease}
-      .navbar-scrolled{background-color:rgba(255,255,255,0.95)!important;backdrop-filter:blur(10px)}
+      /* Critical navigation styles - prevent layout shift */
+      .navbar{
+        position:fixed!important;
+        top:0;
+        left:0;
+        right:0;
+        z-index:1030;
+        height:76px;
+        transition:all 0.3s ease;
+        background-color:rgba(255,255,255,0.95)!important;
+        backdrop-filter:blur(10px);
+        box-shadow:0 2px 4px rgba(0,0,0,0.1);
+      }
+      .navbar-content{
+        max-width:1140px;
+        margin:0 auto;
+        padding:0 15px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        height:100%;
+      }
+      .navbar-brand img{
+        height:40px;
+        width:auto;
+        object-fit:contain;
+      }
+      .navbar-collapse{
+        flex-grow:1;
+        justify-content:space-between;
+        transition:none;
+      }
+      .navbar-collapse.collapsing,
+      .navbar-collapse.show{
+        background-color:rgba(255,255,255,0.98)!important;
+        border-radius:8px;
+        margin-top:8px;
+        padding:0.5rem;
+        box-shadow:0 4px 6px rgba(0,0,0,0.1);
+      }
+      .navbar-nav{
+        margin:0;
+        padding:0;
+      }
+      .nav-item{
+        margin:0;
+        padding:0;
+      }
+      .nav-link{
+        padding:0.5rem 1rem;
+        white-space:nowrap;
+      }
+      .navbar-scrolled{background-color:rgba(255,255,255,0.98)!important}
+      .navbar-toggler{
+        background-color:rgba(255,255,255,0.9);
+        border:1px solid rgba(0,0,0,0.1);
+        padding:4px 8px;
+        border-radius:4px;
+      }
+      .navbar-toggler:focus{
+        box-shadow:0 0 0 0.25rem rgba(0,123,255,0.25);
+      }
+      /* Reserve space for fixed navbar and prevent layout shifts */
+      body{
+        margin-top:76px!important;
+        padding-top:0!important;
+        font-display:swap;
+        line-height:1.5;
+        min-height:100vh;
+        overflow-x:hidden;
+      }
       /* Mobile responsive */
+      /* Blog critical styles */
+      #blog-feed-hero{background-color:#68CEF2;min-height:300px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative}
+      .hero-medium{padding:2rem 1rem}
+      .blog-card{
+        width:22rem;
+        margin-bottom:2rem;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 4px 6px rgba(0,0,0,0.1);
+        min-height:400px;
+        display:flex;
+        flex-direction:column;
+      }
+      .image-container{
+        aspect-ratio:16/9;
+        overflow:hidden;
+        position:relative;
+        background-color:#f8f9fa;
+      }
+      .card-img-top{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        transition:transform 0.3s ease;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+      .card-img-top:hover{transform:scale(1.05)}
+      .card-body{
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        padding:1rem;
+      }
+      .card-title{
+        min-height:3em;
+        line-height:1.5;
+        margin-bottom:0.75rem;
+      }
+      /* Mobile responsive */
+      @media (max-width:992px){
+        .navbar-collapse{
+          height:auto!important;
+        }
+        .social-container{
+          display:none!important;
+        }
+      }
       @media (max-width:768px){
         .hero_carousel-inner{height:calc(100vh - 80px);min-height:500px}
         .carousel__text{padding:5% 5% 10%}
@@ -39,6 +156,8 @@
         .carousel__text h2{font-size:2rem}
         .hero__desktop-button{display:none!important}
         .hero__mobile-button{display:flex!important;visibility:visible!important;margin:auto;margin-bottom:50px;min-height:50px;width:auto;align-items:center;justify-content:center}
+        #blog-feed-hero{min-height:250px;padding:1rem}
+        .blog-card{width:100%;max-width:22rem}
       }
     </style>
     

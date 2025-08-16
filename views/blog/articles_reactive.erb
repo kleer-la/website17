@@ -45,16 +45,31 @@
     <img
       class="desktop_figure blog-feed-list__red-triangle"
       src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
-      alt="decoration figure"
+      alt=""
+      role="presentation"
+      loading="lazy"
+      width="50"
+      height="50"
       />
   <% end %>
   <% unless session[:locale] == 'en' %>
     <div class="btn-center-container" id="blog-feed-list__show-more-button">
-      <button class="btn my-primary-button" onclick="showMore()"><%=t("blog.show_more")%></button>
+      <button class="btn my-primary-button" id="show-more-btn"><%=t("blog.show_more")%></button>
     </div>
   <% end %>
 </section>
 
 <% unless session[:locale] == 'en' %>
-  <script src="/js/blog_filter.js"> </script>
+  <script src="/js/blog_filter.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const showMoreBtn = document.getElementById('show-more-btn');
+      if (showMoreBtn && typeof showMore === 'function') {
+        showMoreBtn.addEventListener('click', function(event) {
+          event.preventDefault();
+          showMore();
+        });
+      }
+    });
+  </script>
 <% end %>
