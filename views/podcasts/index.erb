@@ -1,5 +1,4 @@
 <%=erb :'podcasts/hero' %>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <section class="recent-episodes">
   <h2>Episodios Recientes</h2>
@@ -7,7 +6,37 @@
     <% @recent_episodes.each do |episode| %>
         <div class="episode-card">
           <div class="image-container">
-          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>" loading="lazy">
+          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>" loading="lazy" width="300" height="171" decoding="async">
+          <div class="podcast-label me-3">
+            <%= episode['podcast_title']%>
+          </div>
+          </div>
+          <h3><%= episode['title'] %></h3>
+          <p><%= episode['description_body'] %></p>
+          <div class="button-container">
+            <a href="<%= episode['youtube_url'] %>" target="_blank"><i class="fab fa-youtube"></i></a>
+            <%if episode['spotify_url'].to_s != '' %>
+              <a href="<%= episode['spotify_url'] %>" target="_blank"><i class="fab fa-spotify"></i></a>
+            <%end%>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  
+  <% if @episodes.length > 0 %>
+    <div class="btn-center-container mt-4">
+      <button id="ver-mas-btn" class="btn my-primary-button">Ver más</button>
+    </div>
+  <% end %>
+</section>
+
+<section id="all-episodes" class="recent-episodes" style="display: none;">
+  <h2>Todos los Episodios</h2>
+  <div class="episodes-grid">
+    <% @episodes.each do |episode| %>
+        <div class="episode-card">
+          <div class="image-container">
+          <img src="<%= episode['thumbnail_url'] %>" alt="<%= episode['title'] %>" loading="lazy" width="300" height="171" decoding="async">
           <div class="podcast-label me-3">
             <%= episode['podcast_title']%>
           </div>
@@ -24,3 +53,28 @@
     <% end %>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const verMasBtn = document.getElementById('ver-mas-btn');
+  const allEpisodesSection = document.getElementById('all-episodes');
+  
+  if (verMasBtn && allEpisodesSection) {
+    verMasBtn.addEventListener('click', function() {
+      // Show the additional episodes section
+      allEpisodesSection.style.display = 'block';
+      
+      // Hide the "Ver más" button
+      verMasBtn.parentElement.style.display = 'none';
+      
+      // Smooth scroll to the new section
+      setTimeout(function() {
+        allEpisodesSection.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }, 100);
+    });
+  }
+});
+</script>
