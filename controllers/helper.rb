@@ -188,4 +188,38 @@ module Helpers
 
     body
   end
+
+  # Content for helper for Sinatra (similar to Rails)
+  def content_for(key, &block)
+    @content_for ||= {}
+    if block_given?
+      @content_for[key] = capture(&block)
+    else
+      @content_for[key]
+    end
+  end
+
+  def yield(key = nil)
+    if key.nil?
+      super()
+    else
+      @content_for ||= {}
+      @content_for[key] || ''
+    end
+  end
+
+  private
+
+  def capture(&block)
+    erb_capture(&block)
+  end
+
+  def erb_capture(&block)
+    original_buf = @_out_buf
+    @_out_buf = ''
+    block.call
+    captured = @_out_buf
+    @_out_buf = original_buf
+    captured
+  end
 end
