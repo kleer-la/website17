@@ -28,7 +28,7 @@ description ||= '.'.freeze
           lang = session[:locale]
           clients_path = lang == 'en' ? 'clients' : 'clientes'
         %>
-        <a class="btn my-secondary-button" href="/#{lang}/#{clients_path}"><%= cta %></a>
+        <a class="btn my-secondary-button" href="<%= "/#{lang}/#{clients_path}" %>"><%= cta %></a>
       </div>
     </div>
     <% end %>
