@@ -71,7 +71,15 @@
 const recaptchaWidgets = new Map();
 
 function loadReCaptcha(formId) {
-  if (!recaptchaLoaded) {
+  // Check if reCAPTCHA is already globally loaded
+  if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+    recaptchaLoaded = true;
+    initializeRecaptcha(formId);
+    return;
+  }
+  
+  // Check if we already started loading it
+  if (!recaptchaLoaded && !document.querySelector('script[src*="recaptcha/api.js"]')) {
     var script = document.createElement('script');
     script.src = 'https://www.recaptcha.net/recaptcha/api.js?render=explicit';
     script.async = true;
@@ -81,7 +89,7 @@ function loadReCaptcha(formId) {
       initializeRecaptcha(formId);
     };
     document.body.appendChild(script);
-  } else {
+  } else if (recaptchaLoaded || typeof grecaptcha !== 'undefined') {
     initializeRecaptcha(formId);
   }
 }
@@ -110,19 +118,10 @@ function enableSubmitButton(formId) {
 }
 
 function setupDownloadForm(resourceSlug) {
-    console.log('setupDownloadForm called with:', resourceSlug);
-    
     const modalTitle = document.getElementById('modal-title');
     const resourceSlugInput = document.getElementById('resource-slug');
     const contactOnlyFields = document.querySelectorAll('.contact-only-field');
     const messageInput = document.getElementById('message-input');
-    
-    console.log('Elements found:', {
-        modalTitle,
-        resourceSlugInput,
-        contactOnlyFields: contactOnlyFields.length,
-        messageInput
-    });
 
     if (resourceSlug) {
       // Download mode
