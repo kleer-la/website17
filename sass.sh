@@ -6,4 +6,5 @@
 
 cd public/app
 sass --watch scss/index.scss:css/index.css --style compressed
+sass --watch scss/podcasts.scss:css/podcasts.css --style compressed
 cd ../..

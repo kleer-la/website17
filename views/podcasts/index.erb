@@ -1,12 +1,6 @@
-<% content_for :critical_css do %>
-      /* Podcast critical styles - only above-the-fold */
-      .podcasts-hero{position:relative;min-height:600px}
-      .podcasts-hero .carousel-inner{padding-top:80px;min-height:520px}
-      .podcasts-hero .hero__img-container{min-height:300px;display:flex;align-items:center;justify-content:center}
-      .podcasts-hero .hero__img{max-width:500px;max-height:300px;width:100%;height:auto;object-fit:contain}
-      .podcasts-hero h1{font-size:48px;text-align:left}
-      .podcasts-hero h2{font-size:48px;font-weight:bold}
-      .podcasts-hero .title{position:absolute;top:80px;left:140px;width:100%;padding-left:15%;z-index:10;padding:5px;border-radius:10px}
+<% 
+@css_files = ['podcasts.css']
+content_for :header do %>
 <% end %>
 
 <%=erb :'podcasts/hero' %>
