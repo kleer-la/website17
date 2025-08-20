@@ -1,87 +1,45 @@
 <%
-carousel = t("home.home_hero").map.with_index{|e, index| {
-  subject: e[:subject],
-  description: e[:description],
-  url: e[:url],
-  img: e[:img],
-  alt: e[:alt],
-  button_text: e[:button_text],
-  active: index == 0
-}}
-hx = 'h1'
+hero_item = t("home.home_hero").first
+hero_data = section_data(@page, 'hero', { title: hero_item[:subject], content: hero_item[:description], cta_text: hero_item[:button_text] })
+titles = to_lines(hero_data[:title])
+description = hero_data[:content]
+cta_url = hero_item[:url]
+cta_text = hero_data[:cta_text]
 %>
-<section id="hero">
-  <div id="carouselExampleCaptions" class="carousel hero__carousel slide hero" data-bs-ride="false">
-    <div class="carousel-indicators">
-      <% carousel.each_with_index do |item, index| %>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="<%=index%>" aria-label="Slide <%=index+1%>"
-          <%= item[:active] ? "class='active' aria-current='true'" : '' %>
-        >
-        </button>
-      <% end %>
-    </div>
-    <div class="carousel-inner hero_carousel-inner">
-      <%carousel.each do |item|%>
-        <div class="carousel-item hero_carousel__item <%=' active' if item[:active]%>">
-          <div class="container carousel__item h-100">
-            <div class="row h-100">
-              <div class="offset-lg-1 col-lg-6 carousel__text">
-                <div>
-                  <%="<#{hx}>#{item[:subject]}</#{hx}>"%> <% hx = 'h2'%>
-                  <p><%=item[:description]%></p>
-                </div>
-                <a href="<%= "/#{session[:locale]}#{item[:url]}" %>" class="btn my-primary-button hero__desktop-button"><%= item[:button_text] %></a>
-              </div>
-              <div class="col-lg-5 hero__img-container">
-                <picture>
-                  <source srcset="<%= webp_ext(item[:img]) %>" type="image/webp">
-                  <img
-                    src="<%= item[:img] %>"
-                    class="hero__img"
-                    alt="<%=item[:alt]%>"
-                    loading="<%= item[:active] ? 'eager' : 'lazy' %>"
-                    decoding="async"
-                    width="500"
-                    height="400"
-                  >
-                </picture>
-              </div>
-              <a href="<%= "/#{session[:locale]}#{item[:url]}" %>" class="btn my-primary-button hero__mobile-button"><%= item[:button_text] %></a>
-            </div>
-
-          </div>
-          <img
-            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
-            class="desktop_figure hero_yellow_bean"
-            alt=""
-            role="presentation"
-            loading="lazy"
-            width="40"
-            height="40"
-            />
-          <img
-            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
-            class="desktop_figure hero_green_bean"
-            alt=""
-            role="presentation"
-            loading="lazy"
-            width="40"
-            height="40"
-            />
-
+<section id="hero2" class="hero2">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-6 carousel__text">
+        <div>
+          <h1>
+            <span class="highlight highlight--first"><%= titles[0] %></span>
+            <span class="highlight"><%= titles[1] %></span>
+            <span class="highlight"><%= titles[2] %></span>          
+          </h1>
+          <p><%= description %></p>
         </div>
-      <%end%>
+        <a href="<%= "/#{session[:locale]}#{cta_url}" %>" class="btn my-primary-button hero__desktop-button">
+          <%= cta_text %>
+        </a>
+      </div>
+      <div class="col-lg-6 hero__img-container">
+        <picture>
+          <source srcset="<%= webp_ext(hero_item[:img]) %>" type="image/webp">
+          <img
+            src="<%= hero_item[:img] %>"
+            class="hero__img"
+            alt="<%= hero_item[:alt] %>"
+          >
+        </picture>
+      </div>
+      <a href="<%= "/#{session[:locale]}#{cta_url}" %>" class="btn my-primary-button hero__mobile-button">
+        <%= cta_text %>
+      </a>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
+  <img
+h    src="<%= cdn('website-assets/yellow_bean.svg') %>"
+    class="desktop_figure hero_yellow_bean2"
+    alt="decorative figure"
+  />
 </section>

@@ -39,7 +39,7 @@ get '/' do
     cache_key: "home_events_#{session[:locale]}"
   ).first(4)
 
-  erb :'home/index2', layout: :'layout/layout2022'
+  erb :'home/index', layout: :'layout/layout2022'
 end
 
 not_found do
