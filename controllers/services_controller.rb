@@ -21,7 +21,7 @@ get %r{/(servicios|services)/?} do
   @meta_tags.set! title: @page.seo_title || t('meta_tag.services.title'),
                   description: @page.seo_description || t('meta_tag.services.description'),
                   canonical: @page.canonical || t('meta_tag.services.canonical').to_s,
-                  image: 'https://kleer-images.s3.sa-east-1.amazonaws.com/servicios_cover.webp'
+                  image: cdn('servicios_cover.webp')
 
   @path = 'servicios'
   router_helper = RouterHelper.instance

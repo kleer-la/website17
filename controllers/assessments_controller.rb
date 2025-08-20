@@ -26,7 +26,7 @@ post '/assessment/:id' do |id|
   
   @meta_tags.set! title: @assessment.title,
                   description: @assessment.description,
-                  image: "https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/kleer-logo.png"
+                  image: cdn('website-assets/kleer-logo.png')
 
   erb :'resources/assessment/show', layout: :'layout/layout2022'
 end
@@ -50,7 +50,7 @@ get '/assessment/:id' do |id|
   
   @meta_tags.set! title: @assessment.title,
                   description: @assessment.description,
-                  image: "https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/kleer-logo.png"
+                  image: cdn('website-assets/kleer-logo.png')
 
   erb :'resources/assessment/show', layout: :'layout/layout2022'
 end
