@@ -16,7 +16,7 @@
   <div class="container">
     <% @news.each_with_index do |news, index| %>
       <div class="news-card <%= 'hidden-news' if index >= 8 %>" data-index="<%= index %>">
-        <img src="<%= news.img || 'https://kleer-images.s3.sa-east-1.amazonaws.com/placeholder.png' %>" 
+        <img src="<%= news.img || cdn('placeholder.png') %>" 
              alt="<%= news.title %>" 
              class="news-image"
              loading="<%= index < 6 ? 'eager' : 'lazy' %>"

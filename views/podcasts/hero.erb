@@ -58,7 +58,7 @@ carousel = @carousel.map.with_index{|e, index| {
             </div>
           </div>
           <img
-            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
+            src="<%= cdn('website-assets/yellow_bean.svg') %>"
             class="desktop_figure hero_yellow_bean"
             alt=""
             loading="lazy"
@@ -66,7 +66,7 @@ carousel = @carousel.map.with_index{|e, index| {
             height="60"
             />
           <img
-            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            src="<%= cdn('website-assets/green_bean.svg') %>"
             class="desktop_figure hero_green_bean"
             alt=""
             loading="lazy"

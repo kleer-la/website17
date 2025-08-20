@@ -208,7 +208,7 @@ module Helpers
     end
   end
 
-  def cdn(path)
+  def cdn(path='')
     # https://kleer-images.s3.sa-east-1.amazonaws.com
     sep = path.empty? || path.start_with?('/') ? '' : '/'
     "https://d3vnsn21cv5bcd.cloudfront.net#{sep}#{path}"

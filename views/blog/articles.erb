@@ -23,7 +23,7 @@
       <%= erb :'blog/paging' unless @all.nil? %>
     <img
       class="desktop_figure blog-feed-list__red-triangle"
-      src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_triangle.svg"
+      src="<%= cdn('website-assets/red_triangle.svg') %>"
       alt="decoration figure"
       />
 

@@ -11,25 +11,25 @@
         <p><%= t('agenda.hero.text') %></p>
       </div>
       <div class="col-md-6 hero__img-container">
-        <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/agenda.png" class="hero__img agenda-hero__image" alt="Agenda" loading="lazy"/>
+        <img src="<%= cdn('agenda.png') %>" class="hero__img agenda-hero__image" alt="Agenda" loading="lazy"/>
       </div>
     </div>
   </div>
 
   <img
-    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle2.svg"
+    src="<%= cdn('website-assets/yellow_circle2.svg') %>"
     class="desktop_figure agenda-hero__yellow-circle"
   />
   <img
-    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_circle3.svg"
+    src="<%= cdn('website-assets/yellow_circle3.svg') %>"
     class="mobile_figure agenda-hero-mobile__yellow-circle"
     />
   <img
-    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/blue_bean.svg"
+    src="<%= cdn('website-assets/blue_bean.svg') %>"
     class="mobile_figure agenda-hero__blue-bean"
   />
   <img
-    src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_sigsac.svg"
+    src="<%= cdn('website-assets/rustic_sigsac.svg') %>"
     class="mobile_figure agenda-hero__rustic-sigsac"
     />
 </section>

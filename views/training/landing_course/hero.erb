@@ -14,7 +14,7 @@
         <% if @event_type.public_editions.length > 0 %>
           <a href="#course-next-editions">
             <strong><%= t("course_landing.see_next_editions") %></strong>
-            <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_arrow2.svg" alt="" width="20" height="20"/>
+            <img src="<%= cdn('website-assets/rustic_arrow2.svg') %>" alt="" width="20" height="20"/>
           </a>
         <% else %>
           <a data-bs-toggle="modal" data-bs-target="#mail-modal">
@@ -23,7 +23,7 @@
         <% end %>
     </div>
   </div>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_oval.svg" alt="" class="course-hero__yellow-oval" width="222" height="244">
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg" alt="" class="course-hero__red-bean" width="117" height="75"/>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/rustic_worm.svg" alt="" class="course-hero__rustic-worm" width="117" height="75"/>
+  <img src="<%= cdn('website-assets/yellow_oval.svg') %>" alt="" class="course-hero__yellow-oval" width="222" height="244">
+  <img src="<%= cdn('website-assets/red_bean.svg') %>" alt="" class="course-hero__red-bean" width="117" height="75"/>
+  <img src="<%= cdn('website-assets/rustic_worm.svg') %>" alt="" class="course-hero__rustic-worm" width="117" height="75"/>
 </section>
