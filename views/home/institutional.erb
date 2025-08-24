@@ -5,6 +5,14 @@ titles = to_lines(institutional_data[:title])
 description = institutional_data[:content]
 cta_url = institutional_data[:cta_text]
 is_image = cta_url =~ /\.(jpg|webp|png)$/i
+
+# Add YouTube preconnects only if video is used
+unless is_image
+%>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+<%
+end
 %>
 
 <section id="institutional" class="institutional">
@@ -27,9 +35,10 @@ is_image = cta_url =~ /\.(jpg|webp|png)$/i
           <iframe 
             class="institutional__video"
             width="100%" 
-            src="<%= cta_url %>" 
+            src="<%= cta_url.gsub('www.youtube.com', 'www.youtube-nocookie.com') %>" 
             title="YouTube video player" 
             frameborder="0" 
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
