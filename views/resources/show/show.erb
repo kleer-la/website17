@@ -1,6 +1,14 @@
 <% 
   lang = session[:locale] || 'es'
   partial_url = lang == 'es' ? 'recursos' : 'resources'
+  
+  # Add YouTube preconnects if resource has video
+  if @resource.landing && @resource.landing.include?('youtube')
+%>
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+<%
+  end
 %>
 <section id="resource-detail-hero">
   <div class="resource-detail-hero">
@@ -162,8 +170,9 @@
           <div class="col-lg-9 col-md-10 mx-auto">
           <div class="ratio ratio-16x9 mb-4">
             <iframe 
-              src="https://www.youtube.com/embed/<%= video_id %>"
+              src="https://www.youtube-nocookie.com/embed/<%= video_id %>"
               title="YouTube video"
+              loading="lazy"
               allowfullscreen>
             </iframe>
           </div>
