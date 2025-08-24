@@ -1,31 +1,34 @@
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
-    runOnScroll();
-    window.addEventListener("scroll", runOnScroll);
-});
-
-if (document.readyState === 'complete') {
-    runOnScroll();
-}
-
-function runOnScroll() {
-    const table = document.getElementById('landing-blog-content-table');
-    const blogBody = document.getElementById('landing-blog-body');
-    const threshold = 120;
-    const current = document.getElementById('landing-blog-hero').getBoundingClientRect().bottom;
-    const blogBottom = blogBody.getBoundingClientRect().bottom;
+    let ticking = false;
     
-    // Only fix the ToC if we're scrolling through the content
-    // and not yet near the bottom
-    const shouldBeFixed = current <= threshold + 4 && blogBottom > window.innerHeight + 200;
+    function runOnScroll() {
+        const table = document.getElementById('landing-blog-content-table');
+        const blogBody = document.getElementById('landing-blog-body');
+        const threshold = 120;
+        const current = document.getElementById('landing-blog-hero').getBoundingClientRect().bottom;
+        const blogBottom = blogBody.getBoundingClientRect().bottom;
+        
+        const shouldBeFixed = current <= threshold + 4 && blogBottom > window.innerHeight + 200;
 
-    if (shouldBeFixed && !table.classList.contains('fixed-table')) {
-        table.classList.add('fixed-table')
-    } else if (!shouldBeFixed && table.classList.contains('fixed-table')) {
-        table.classList.remove('fixed-table')
+        if (shouldBeFixed && !table.classList.contains('fixed-table')) {
+            table.classList.add('fixed-table')
+        } else if (!shouldBeFixed && table.classList.contains('fixed-table')) {
+            table.classList.remove('fixed-table')
+        }
+        ticking = false;
     }
-}
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(runOnScroll);
+            ticking = true;
+        }
+    }
+    
+    runOnScroll();
+    window.addEventListener("scroll", requestTick, { passive: true });
+});
 </script>
 
   <div id="landing-blog-content-table">
@@ -57,7 +60,7 @@ function runOnScroll() {
                 aria-expanded="false"
                 aria-controls="item<%=index %>"
               >
-                <%= subtitles != '' ? "<img src='/app/img/icons/arrow.svg' loading='lazy'  width='22px' height='12px'/>" : ''%>
+                <%= subtitles != '' ? "<img src='/app/img/icons/arrow.svg' loading='lazy' width='22' height='12' alt=''/>" : ''%>
               </a>
             </div>
           </div>

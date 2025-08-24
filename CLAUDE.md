@@ -38,24 +38,27 @@ bundle install
 puma -p 4567
 ```
 
-### Testing
+### Testing Backend - Rails (./s)
 ```bash
 # Run all RSpec tests
-rspec
+docker exec eventer_devcontainer-app-1 rspec
 
 # Run all Cucumber tests (excluding system tests)
-cucumber
-
+docker exec eventer_devcontainer-app-1 cucumber
+ 
 # Run system tests only
-cucumber -p system
+docker exec eventer_devcontainer-app-1 cucumber -p system
 
 # Run specific test file
-rspec spec/lib/services/cache_service_spec.rb
+docker exec eventer_devcontainer-app-1 rspec spec/lib/services/cache_service_spec.rb
+```
 
+### Testing frontend - Sinatra (./website17)
+```bash
 # Run tests inside Docker container (when using devcontainer)
-docker exec website17 rspec
-docker exec website17 rspec spec/requests/participants_registration_spec.rb
-docker exec website17 cucumber
+docker exec website17 bundle exec rspec
+docker exec website17 bundle exec rspec spec/requests/participants_registration_spec.rb
+docker exec website17 bundle exec cucumber
 ```
 
 ### Deployment

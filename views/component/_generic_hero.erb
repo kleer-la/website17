@@ -1,6 +1,6 @@
 <section id="hero" class="generic-hero" <%= "style='margin-top: 160px'" if defined?(extra_promo) %>>
   <h1 class="mb-5"><%= title %></h1>
   <p><%= subtitle %></p>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_circle3.svg" class="desktop_figure generic-hero__red-circle"/>
-  <img src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg" class="desktop_figure generic-hero__yellow-bean"/>
+  <img src="<%= cdn('website-assets/red_circle3.svg') %>" class="desktop_figure generic-hero__red-circle"/>
+  <img src="<%= cdn('website-assets/yellow_bean.svg') %>" class="desktop_figure generic-hero__yellow-bean"/>
 </section>

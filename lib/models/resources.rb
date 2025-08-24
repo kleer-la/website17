@@ -3,6 +3,7 @@ require './lib/services/keventer_api'
 require './lib/helpers/app_helper'
 require './lib/models/recommended'
 require './lib/trainer'
+require './lib/image_url_helper'
 
 class Resource
   @next_null = false
@@ -142,6 +143,10 @@ class Resource
   def recommended_not_downloads
     downloadable_slugs = also_download(3).map(&:slug)
     @recommended.reject { |rec| downloadable_slugs.include?(rec.slug) }
+  end
+
+  def cover
+    ImageUrlHelper.replace_s3_with_cdn(@cover)
   end
 
   private

@@ -11,7 +11,7 @@ carousel = @carousel.map.with_index{|e, index| {
   active: index == 0
 }}
 %>
-<section id="hero" class=>
+<section id="hero">
   <div id="carouselPodcasts" class="podcasts-hero carousel" data-bs-ride="false">
     <div class="carousel-indicators">
       <% carousel.each_with_index do |item, index| %>
@@ -48,20 +48,30 @@ carousel = @carousel.map.with_index{|e, index| {
                     src="<%= item[:img] %>"
                     class="hero__img"
                     alt="<%=item[:alt]%>"
+                    <%= item[:active] ? 'fetchpriority="high"' : 'loading="lazy"' %>
+                    width="500"
+                    height="300"
+                    decoding="async"
                   >
                 </picture>
               </div>
             </div>
           </div>
           <img
-            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"
+            src="<%= cdn('website-assets/yellow_bean.svg') %>"
             class="desktop_figure hero_yellow_bean"
-            alt="decorative figure"
+            alt=""
+            loading="lazy"
+            width="60"
+            height="60"
             />
           <img
-            src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean.svg"
+            src="<%= cdn('website-assets/green_bean.svg') %>"
             class="desktop_figure hero_green_bean"
-            alt="decorative figure"
+            alt=""
+            loading="lazy"
+            width="60"
+            height="60"
             />
         </div>
       <%end%>

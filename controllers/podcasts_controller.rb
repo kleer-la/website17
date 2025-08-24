@@ -15,12 +15,13 @@ get '/podcasts' do
   @carousel = @podcasts.first(3)
   # @recent_episodes = @podcasts.flat_map(&:episodes).sort_by { |episode| episode['published_at'] }.last(3)
 
-  @recent_episodes = @podcasts.flat_map do |podcast|
+  @episodes = @podcasts.flat_map do |podcast|
     podcast.episodes.map do |episode|
       episode.merge('podcast_title' => podcast.title)
     end
   end
-  @recent_episodes.sort_by! { |episode| episode['published_at'] }.last(4).reverse
+  @episodes.sort_by! { |episode| Date.parse(episode['published_at']) }.reverse!
+  @recent_episodes = @episodes.shift(4)
 
   erb :'podcasts/index', layout: :'layout/layout2022'
 end

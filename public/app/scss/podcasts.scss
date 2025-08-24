@@ -1,11 +1,14 @@
+@import '_base';
+
 .podcasts-hero {
   position: relative;
 
   .carousel-inner {
     padding-top: 80px;
+
     .title {
       position: absolute;
-      top: 80px; // Adjust as needed
+      top: 80px;
       left: 140px; // Align with left edge of parent container
       width: 100%; // Full width to center text
       padding-left: 15%; // Align with carousel__text
@@ -17,14 +20,17 @@
       // border: 2px solid red; // Debugging border    
     }
   }
+
   h1 {
     font-size: 48px;
     text-align: left;
   }
+
   h2 {
     font-size: 48px;
     font-weight: bold;
   }
+
   .button-container {
     display: flex;
     justify-content: center;
@@ -49,14 +55,15 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 20px;
-    border: none; 
+    border: none;
 
     &:hover {
       box-shadow: 0px 8px 26px rgba(51, 51, 51, 0.2);
       border-radius: 100px;
       color: #333333 !important;
       line-height: 20px;
-      font-size: 18px; }
+      font-size: 18px;
+    }
   }
 }
 
@@ -64,12 +71,14 @@
   .podcasts-hero {
     .carousel-inner {
       padding-top: 140px;
+
       .title {
         left: 40px;
       }
     }
   }
 }
+
 .recent-episodes {
   padding: 2rem;
 
@@ -80,6 +89,7 @@
     margin-bottom: 40px;
     margin-left: 80px;
   }
+
   .episodes-grid {
     display: flex;
     flex-wrap: wrap;
@@ -93,36 +103,38 @@
       padding: 1rem;
       width: 300px;
 
-      .image-container{
+      .image-container {
         position: relative;
         padding-bottom: 24px;
-        img{
+
+        img {
           aspect-ratio: 7 / 4;
           width: 100%;
           border-radius: 8px;
           object-fit: cover
         }
-          .podcast-label {
-            position:absolute;
-            top:-10px;
-            right: -20px;
-            width: 100%;
-        
-            border-radius: 4px;
-            background-color: $primary-yellow;
-            max-width: 120px;
-            height: 29px;
-            margin-left: 10px;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 60%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); // Add shadow to the left and bottom
-          }
+
+        .podcast-label {
+          position: absolute;
+          top: -10px;
+          right: -20px;
+          width: 100%;
+
+          border-radius: 4px;
+          background-color: $primary-yellow;
+          max-width: 120px;
+          height: 29px;
+          margin-left: 10px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 60%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); // Add shadow to the left and bottom
         }
-    
+      }
+
       h3 {
         color: #333333;
         font-weight: 700;
@@ -140,10 +152,71 @@
         text-decoration: none;
         margin-right: 0.5rem;
       }
+
       i {
         font-size: 2em;
         margin-left: 0.5rem;
       }
     }
   }
+}
+
+// Enhanced episode card styles
+.episode-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .button-container {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .image-container {
+    position: relative;
+    padding-bottom: 24px;
+    aspect-ratio: 7 / 4;
+    overflow: hidden;
+    background-color: #f8f9fa;
+
+    img {
+      aspect-ratio: 7 / 4;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.hidden-episode {
+  display: none;
+}
+
+.btn-center-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
 }

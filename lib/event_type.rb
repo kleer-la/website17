@@ -4,6 +4,7 @@ require './lib/keventer_helper'
 require './lib/event'
 require './lib/testimony'
 require './lib/models/coupon'
+require './lib/image_url_helper'
 
 class EventType
   def self.create_keventer_json(id)
@@ -114,5 +115,17 @@ class EventType
     return uri_path        if event_type_id_with_name != @slug         # redirect to itself
 
     nil # dont redirect
+  end
+
+  def cover
+    ImageUrlHelper.replace_s3_with_cdn(@cover)
+  end
+
+  def side_image
+    ImageUrlHelper.replace_s3_with_cdn(@side_image)
+  end
+
+  def brochure
+    ImageUrlHelper.replace_s3_with_cdn(@brochure)
   end
 end

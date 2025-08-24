@@ -2,6 +2,7 @@ require './lib/json_api'
 require './lib/services/keventer_api'
 require './lib/trainer'
 require './lib/models/recommended'
+require './lib/image_url_helper'
 
 class ArticleNotFoundError < StandardError
   def initialize(slug)
@@ -98,6 +99,10 @@ class Article
 
   def init_recommended(doc)
     @recommended = Recommended.create_list(doc['recommended'])
+  end
+
+  def cover
+    ImageUrlHelper.replace_s3_with_cdn(@cover)
   end
 
   def self.load_list(doc, only_published: false)

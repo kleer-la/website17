@@ -1,7 +1,8 @@
 require './lib/helpers/app_helper'
+require './lib/image_url_helper'
 
 class Recommended
-  attr_reader :title, :subtitle, :slug, :cover, :type, :level, :downloadable, :lang, :is_training_program
+  attr_reader :title, :subtitle, :slug, :type, :level, :downloadable, :lang, :is_training_program
 
   def initialize(doc, lang = 'es')
     @lang = doc['lang'] || lang
@@ -13,6 +14,10 @@ class Recommended
     @level = doc['level']
     @downloadable = AppHelper::boolean_value(doc['downloadable'])
     @is_training_program = AppHelper::boolean_value(doc['is_training_program'])
+  end
+
+  def cover
+    ImageUrlHelper.replace_s3_with_cdn(@cover)
   end
 
   def url

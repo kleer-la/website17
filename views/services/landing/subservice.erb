@@ -31,7 +31,7 @@
         <%= @markdown_renderer.render(sub_service["takeaways"]) %>
         <img
           class="desktop_figure takeaways__red-bean"
-          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/red_bean.svg" >
+          src="<%= cdn('website-assets/red_bean.svg') %>" >
       </div>
     </div>
     <div class="col-md-6">
@@ -39,10 +39,10 @@
         <%= @markdown_renderer.render(sub_service["recipients"]) %>
         <img
           class="desktop_figure recipients__green-bean"
-          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/green_bean_sg.svg" />
+          src="<%= cdn('website-assets/green_bean_sg.svg') %>" />
         <img
           class="desktop_figure recipients__yellow-bean"
-          src="https://kleer-images.s3.sa-east-1.amazonaws.com/website-assets/yellow_bean.svg"/>
+          src="<%= cdn('website-assets/yellow_bean.svg') %>"/>
       </div>
     </div>
   </div>

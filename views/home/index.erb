@@ -1,9 +1,38 @@
 <%=erb :'home/hero' %>
-<% unless @page.nil? || @page.recommended.count == 0%>
-  <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: 'Novedades del mes' }%>
+<%= erb :'home/_banner', locals: { 
+  section_key: 'banner', 
+  default_title: '', 
+  default_content: '', 
+  default_cta: '' 
+} %>
+<% unless @page.recommended.count == 0
+  recommended_data = section_data(@page, 'recommended', { title: 'Novedades del mes', content: nil, cta_text: nil })
+  %>
+  <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: recommended_data[:title], subtitle: recommended_data[:content]}%>
 <%end%>
-<%=erb :'home/promotion' %>
-<%=erb :'component/client_carousel' %>
+<%=erb :'home/institutional' %>
+<%=erb :'home/service_areas' %>
+<% #=erb :'home/promotion' %>
 <% if session[:locale] == 'es' %>
-  <%=erb :'home/courses' %>
+  <% #=erb :'home/courses' %>
+  <%= erb :'home/schedule' %>
+  <%= erb :'home/academia' %>
 <% end %>
+<%
+  client_data = section_data(@page, 'clients', { title: nil, content: nil, cta_text: nil })
+  clients_title = client_data[:title]
+  clients_description = client_data[:content]
+  clients_cta = client_data[:cta_text]
+%>
+<%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
+<%
+  contact_data = section_data(@page, 'contact', { title: t('home.contact.title'), content: t('home.contact.description'), cta_text: t('home.contact.button.title')})
+  contact_title = contact_data[:title]
+  contact_description = contact_data[:content]
+  contact_cta = contact_data[:cta_text]
+%>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: contact_description,
+          button_text: contact_cta
+        } %>

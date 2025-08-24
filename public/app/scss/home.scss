@@ -99,6 +99,10 @@ $white: #FFFFFF;
 
 .hero__mobile-button {
   display: none !important;
+  // Reserve space to prevent layout shift
+  height: 50px;
+  margin-bottom: 50px;
+  visibility: hidden;
 }
 
 //bootstrap edited
@@ -171,8 +175,14 @@ $white: #FFFFFF;
 
   .hero__mobile-button {
     display: flex !important;
+    visibility: visible !important;
     margin: auto;
     margin-bottom: 50px;
+    // Prevent layout shift with fixed dimensions
+    min-height: 50px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
   }
 }
 

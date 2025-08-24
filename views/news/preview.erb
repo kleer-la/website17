@@ -1,0 +1,99 @@
+  <% if @page&.sections&.dig('hero') %>
+    <% hero_section = @page.sections['hero'] %>
+    <header class="header">
+      <div class="hero-content">
+        <h1><%= hero_section['title'] %></h1>
+        <% if hero_section['content'] %>
+          <p class="hero-subtitle"><%= hero_section['content'] %></p>
+        <% end %>
+      </div>
+    </header>
+  <% else %>
+    <header class="header">
+      <h1><%= t('news.title') %></h1>
+    </header>
+  <% end %>
+  <div class="container">
+    <% @news.each_with_index do |news, index| %>
+      <div class="news-card <%= 'hidden-news' if index >= 8 %>" data-index="<%= index %>">
+        <img src="<%= news.img || cdn('placeholder.png') %>" 
+             alt="<%= news.title %>" 
+             class="news-image"
+             loading="<%= index < 6 ? 'eager' : 'lazy' %>"
+             decoding="async"
+             sizes="(max-width: 768px) 100vw, 40vw">
+        <div class="news-content">
+          <h2><%= news.title %></h2>
+          <div class="news-meta">
+            <%= t('news.published_on') %> <%= news.event_date %>
+            <% if news.trainers.count > 0 %>
+              | <%= t('news.authors') %>: <%= news.trainers.join(', ') %>
+            <% end %>
+          </div>
+          <p class="news-excerpt"><%= news.description %></p>
+          <div class="button-container">
+            <% unless news.video.to_s == '' %>
+              <a href="<%= news.video %>" target="_blank" class="icon-button" title="<%= t('news.buttons.video') %>" aria-label="<%= t('news.buttons.video') %>"><i class="fas fa-play-circle"></i></a>
+            <% end %>
+            <% unless news.audio.to_s == '' %>
+              <a href="<%= news.audio %>" target="_blank" class="icon-button" title="<%= t('news.buttons.audio') %>" aria-label="<%= t('news.buttons.audio') %>"><i class="fas fa-music"></i></a>
+            <% end %>
+            <% unless news.url.to_s == '' %>
+              <a href="<%= news.url %>" target="_blank" class="icon-button" title="<%= t('news.buttons.external') %>" aria-label="<%= t('news.buttons.external') %>"><i class="fas fa-globe"></i></a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
+    <% if @news.length > 8 %>
+      <div class="see-more-container">
+        <button id="seeMoreBtn" class="see-more-btn">
+          <span id="seeMoreText"><%= t('news.see_more', default: 'Ver más') %></span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let showingAll = false;
+      const hiddenNews = document.querySelectorAll('.hidden-news');
+      const seeMoreBtn = document.getElementById('seeMoreBtn');
+      const seeMoreText = document.getElementById('seeMoreText');
+      
+      // Add event listener instead of inline onclick
+      if (seeMoreBtn) {
+        seeMoreBtn.removeAttribute('onclick');
+        seeMoreBtn.addEventListener('click', toggleNews);
+      }
+      
+      function toggleNews(event) {
+        event.preventDefault();
+        
+        const isHidden = !showingAll;
+        
+        // Use requestAnimationFrame for smooth performance
+        requestAnimationFrame(() => {
+          hiddenNews.forEach(newsCard => {
+            newsCard.style.display = isHidden ? 'flex' : 'none';
+          });
+          
+          seeMoreText.textContent = isHidden ? 
+            '<%= t('news.see_less', default: 'Ver menos') %>' : 
+            '<%= t('news.see_more', default: 'Ver más') %>';
+          
+          showingAll = isHidden;
+          
+          // Smooth scroll with reduced motion check
+          if (!isHidden) {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelector('.container').scrollIntoView({ 
+              behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      }
+    });
+  </script>
