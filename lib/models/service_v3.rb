@@ -1,6 +1,10 @@
+require './lib/image_url_helper'
+require './lib/models/recommended'
+
 class ServiceV3
-  attr_accessor(*%i[id name subtitle value_proposition outcomes definitions program target pricing brochure faq url
-                    slug side_image recommended])
+  attr_accessor(*%i[id name subtitle value_proposition outcomes definitions program target pricing faq url
+                    slug recommended])
+  attr_writer :brochure, :side_image
 
   def initialize(hash_service)
     load_from_json(hash_service)
@@ -20,6 +24,14 @@ class ServiceV3
 
   def null_json_api(null_api)
     @json_api = null_api
+  end
+
+  def brochure
+    ImageUrlHelper.replace_s3_with_cdn(@brochure)
+  end
+
+  def side_image
+    ImageUrlHelper.replace_s3_with_cdn(@side_image)
   end
 
   def load_str(syms, hash)

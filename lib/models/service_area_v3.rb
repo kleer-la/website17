@@ -1,9 +1,11 @@
 require './lib/models/service_v3'
+require './lib/image_url_helper'
 
 class ServiceAreaV3
-  attr_accessor(*%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
-                    subtitle description definitions side_image defintions target value_proposition
+  attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
+                    subtitle description definitions defintions target value_proposition
                     services seo_title seo_description target_title is_training_program])
+  attr_writer :icon, :side_image
 
   def load_from_json(hash_service_area)
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
@@ -76,6 +78,14 @@ class ServiceAreaV3
     @services = doc.map do |service_hash|
       ServiceV3.new(service_hash)
     end
+  end
+
+  def icon
+    ImageUrlHelper.replace_s3_with_cdn(@icon)
+  end
+
+  def side_image
+    ImageUrlHelper.replace_s3_with_cdn(@side_image)
   end
 
   private

@@ -1,12 +1,13 @@
 require './lib/services/api_accessible'
 require './lib/services/keventer_api'
+require './lib/image_url_helper'
 
 class Podcast
   include APIAccessible
 
   api_connector KeventerAPI
 
-  attr_accessor :title, :description, :seasons, :youtube_url, :spotify_url, :thumbnail_url, :episodes
+  attr_accessor :title, :description, :seasons, :youtube_url, :spotify_url, :episodes
 
   def initialize(data)
     @id = data['id']
@@ -16,7 +17,11 @@ class Podcast
     @youtube_url = data['youtube_url']
     @spotify_url = data['spotify_url']
     @thumbnail_url = data['thumbnail_url']
-    @episodes = data['episodes'] || []
+    @episodes = process_episodes(data['episodes'] || [])
+  end
+
+  def thumbnail_url
+    ImageUrlHelper.replace_s3_with_cdn(@thumbnail_url)
   end
 
   def self.load_from_json(file_path)
@@ -34,5 +39,17 @@ class Podcast
 
   def self.load(json_api)
     json_api.doc.map { |podcast_data| new(podcast_data) } if json_api.ok?
+  end
+
+  private
+
+  def process_episodes(episodes)
+    episodes.map do |episode|
+      if episode['thumbnail_url']
+        episode = episode.dup
+        episode['thumbnail_url'] = ImageUrlHelper.replace_s3_with_cdn(episode['thumbnail_url'])
+      end
+      episode
+    end
   end
 end

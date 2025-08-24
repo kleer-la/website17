@@ -2,9 +2,10 @@ require './lib/json_api'
 require './lib/services/keventer_api'
 require './lib/models/recommended'
 require './lib/services/cache_service'
+require './lib/image_url_helper'
 
 class Page
-  attr_reader :lang, :seo_title, :seo_description, :canonical, :cover, :recommended, :sections
+  attr_reader :lang, :seo_title, :seo_description, :canonical, :recommended, :sections
 
   def initialize(data = {})
     @lang = data['lang']
@@ -41,6 +42,10 @@ class Page
     end
     
     create(json_api)
+  end
+
+  def cover
+    ImageUrlHelper.replace_s3_with_cdn(@cover)
   end
 
   private
