@@ -33,13 +33,13 @@
           <p class="news-excerpt"><%= news.description %></p>
           <div class="button-container">
             <% unless news.video.to_s == '' %>
-              <a href="<%= news.video %>" target="_blank" class="icon-button" title="<%= t('news.buttons.video') %>" aria-label="<%= t('news.buttons.video') %>"><i class="fa fa-play-circle"></i></a>
+              <a href="<%= news.video %>" target="_blank" class="icon-button" title="<%= t('news.buttons.video') %>" aria-label="<%= t('news.buttons.video') %>"><i class="fas fa-play-circle"></i></a>
             <% end %>
             <% unless news.audio.to_s == '' %>
-              <a href="<%= news.audio %>" target="_blank" class="icon-button" title="<%= t('news.buttons.audio') %>" aria-label="<%= t('news.buttons.audio') %>"><i class="fa fa-music"></i></a>
+              <a href="<%= news.audio %>" target="_blank" class="icon-button" title="<%= t('news.buttons.audio') %>" aria-label="<%= t('news.buttons.audio') %>"><i class="fas fa-music"></i></a>
             <% end %>
             <% unless news.url.to_s == '' %>
-              <a href="<%= news.url %>" target="_blank" class="icon-button" title="<%= t('news.buttons.external') %>" aria-label="<%= t('news.buttons.external') %>"><i class="fa fa-globe"></i></a>
+              <a href="<%= news.url %>" target="_blank" class="icon-button" title="<%= t('news.buttons.external') %>" aria-label="<%= t('news.buttons.external') %>"><i class="fas fa-globe"></i></a>
             <% end %>
           </div>
         </div>
