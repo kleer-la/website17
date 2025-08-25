@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-  background: linear-gradient(135deg, #005b99 0%, #00a8cc 50%, #e0f7fa 100%);
+  background: linear-gradient(135deg, #005b99 0%, #00a8cc 50%, #9beaf5 100%);
   min-height: 220px;
   display: flex;
   align-items: center;
@@ -252,7 +252,7 @@ body {
   @media (prefers-reduced-motion: reduce) {
     transition: none;
     transform: none;
-    
+
     &:hover {
       transform: none;
     }
