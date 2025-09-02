@@ -43,8 +43,8 @@ where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/"
           width="16"
           height="16"
         />
-        <time datetime="<%= article.created_at[0..9] %>">
-          <%= article.created_at[0..9] %>
+        <time datetime="<%= article.substantive_change_at[0..9] %>">
+          <%= article.substantive_change_at[0..9] %>
         </time>
       </small>
     </p>

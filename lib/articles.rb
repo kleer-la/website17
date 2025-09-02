@@ -54,7 +54,7 @@ class Article
   attr_accessor :title, :description, :tabtitle, :body, :published,
                 :noindex,
                 :trainers, :trainers_list, :slug, :lang, :selected,
-                :created_at, :updated_at, :cover, :category_name, :id,
+                :created_at, :updated_at, :substantive_change_at, :cover, :category_name, :id,
                 :industry, :recommended,
                 :active # View attributes,
 
@@ -95,6 +95,7 @@ class Article
   def init_dates(doc)
     @created_at = doc['created_at'] || ''
     @updated_at = doc['updated_at'] || ''
+    @substantive_change_at = doc['substantive_change_at'] || ''
   end
 
   def init_recommended(doc)
