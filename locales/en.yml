@@ -832,6 +832,7 @@ en:
     landing:
       back: Go back
       published: Published
+      last_modified: Last modified on
       ToC: Table of contents
       authors: Written by
   resources:

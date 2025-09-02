@@ -485,6 +485,7 @@ es:
     landing:
       back: Volver
       published: Publicado el
+      last_modified: Última modificación el
       ToC: Tabla de contenido
       authors: 'Creado por:'
   resources:

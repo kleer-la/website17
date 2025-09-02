@@ -138,6 +138,10 @@ module MetaTags
           <meta property=\"og:image:secure_url\" content=\"#{tag[1]}\"/>
           "''
         end
+      when :'last-modified'
+        if tag[1].to_s.length.positive?
+          "<meta name=\"last-modified\" content=\"#{tag[1]}\"/>"
+        end
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end

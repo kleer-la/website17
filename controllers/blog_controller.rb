@@ -46,7 +46,7 @@ get %r{/blog/?} do
   @categories = load_categories session[:locale]
 
   articles = Article.create_list_keventer(true)
-  @articles = articles.select { |a| a.lang == session[:locale] }.sort_by(&:created_at).reverse
+  @articles = articles.select { |a| a.lang == session[:locale] }
 
   erb :'blog/index', layout: :'layout/layout2022'
 end
@@ -58,7 +58,8 @@ def blog_one(article)
                   description: article.description,
                   canonical: "#{t('meta_tag.blog.canonical')}/#{article.slug}",
                   noindex: article.noindex,
-                  image: article.cover
+                  image: article.cover,
+                  'last-modified': article.substantive_change_at
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'

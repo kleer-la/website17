@@ -23,9 +23,10 @@
     </div>
     <div class="landing-blog-hero__info">
       <p>
-        <%=t("blog.landing.published")%>
-        <time datetime="<%=@article.created_at[0..9]%>">
-          <%=@article.created_at[0..9]%>
+        <% #=t("blog.landing.published")%>
+        <%=t("blog.landing.last_modified")%>
+        <time datetime="<%=@article.substantive_change_at[0..9]%>">
+          <%=@article.substantive_change_at[0..9]%>
         </time>
       </p>
     </div>

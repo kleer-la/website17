@@ -132,4 +132,20 @@ describe 'metatags' do
       expect(head).not_to include 'href='
     end
   end
+  context 'last-modified' do
+    it 'no last-modified, no meta' do
+      head = Tags.new.display
+      expect(head).not_to include '<meta name="last-modified"'
+    end
+
+    it 'last-modified -> meta tag' do
+      head = Tags.new.display 'last-modified': '2025-09-02'
+      expect(head).to include '<meta name="last-modified" content="2025-09-02"/>'
+    end
+
+    it 'empty last-modified, no meta' do
+      head = Tags.new.display 'last-modified': ''
+      expect(head).not_to include '<meta name="last-modified"'
+    end
+  end
 end
