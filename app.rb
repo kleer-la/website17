@@ -68,12 +68,15 @@ configure :test, :development do
 end
 
 before do
+  # Handle subdomain routing
+  @is_atelier = request.host.start_with?('latelier.')
+  
   target_url, locale = unify_domains(request.host, request.path)
   session[:locale] = locale if locale # Set only if locale is non-nil
   if target_url
     redirect target_url, 301
   else
-    @base_title = 'Agile Coaching, Consulting & Training'
+    @base_title = @is_atelier ? 'L\'Atelier - Kleer' : 'Agile Coaching, Consulting & Training'
     @meta_tags = Tags.new
     @meta_tags.set! title: @base_title, path: request.path
     # flash.sweep
