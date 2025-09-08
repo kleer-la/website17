@@ -415,6 +415,22 @@
             gap: 2rem;
         }
 
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #F4A261;
+        }
+
         .social-links {
             display: flex;
             gap: 1rem;
@@ -432,6 +448,75 @@
         .social-links a:hover {
             background: #F4A261;
             transform: translateY(-2px);
+        }
+
+        /* Modal/Overlay for Privacy and Terms */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close:hover {
+            color: #2C7873;
+        }
+
+        .modal h2 {
+            color: #2C7873;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .modal h3 {
+            color: #2C7873;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .modal p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .modal ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .modal li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
 
         /* Responsive */
@@ -465,6 +550,17 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -477,7 +573,6 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#install" class="cta-button">Get Started</a>
@@ -491,8 +586,8 @@
                     <h1>Your Virtual Studio</h1>
                     <p>Transform Google Meet into a creative workspace. Launch instant video meetings, create virtual desks, and foster spontaneous teamwork—all without scheduling.</p>
                     <div class="hero-buttons">
-                        <a href="#install" class="cta-button">Install Now</a>
-                        <a href="#demo" class="btn-secondary">Watch Demo</a>
+                        <a href="https://latelier.kleer.la" class="cta-button" target="_blank">Install Now</a>
+                        <a href="#features" class="btn-secondary">Learn More</a>
                     </div>
                 </div>
                 <div class="studio-visual">
@@ -579,7 +674,7 @@
             <div class="cta-content">
                 <h2>Ready to Transform Your Remote Work?</h2>
                 <p>Join thousands of teams already creating together with L'Atelier</p>
-                <a href="https://latelier.cloud" class="cta-button" style="font-size: 1.1rem; padding: 16px 32px;">Install L'Atelier Now</a>
+                <a href="https://latelier.kleer.la" class="cta-button" style="font-size: 1.1rem; padding: 16px 32px;">Install L'Atelier Now</a>
             </div>
         </div>
     </section>
@@ -590,19 +685,219 @@
                 <div class="logo">
                     <img src="/latelier/latelier-logo.png" alt="L'Atelier" style="height: 80px;">
                 </div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
                 <div class="social-links">
-                    <a href="https://twitter.com/lateliercloud">🐦</a>
-                    <a href="https://linkedin.com/company/lateliercloud">💼</a>
-                    <a href="mailto:hello@latelier.cloud">📧</a>
+                    <%# <a href="https://twitter.com/lateliercloud">🐦</a> %>
+                    <%# <a href="https://linkedin.com/company/lateliercloud">💼</a> %>
+                    <a href="mailto:latelier@kleer.la">📧</a>
                 </div>
                 <p>&copy; 2025 L'Atelier. Your Virtual Studio.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="privacyModal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p><em>Effective Date: September 8, 2025, 5:43 PM -03</em></p>
+            
+            <h3>1. Introduction</h3>
+            <p>L'Atelier ("we," "our," or "us") is a lightweight Google Meet add-on designed to enhance remote collaboration for small businesses through features like instant video meetings, virtual desks, and virtual rooms. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you use L'Atelier via the Google Workspace Marketplace or latelier.kleer.la. By using L'Atelier, you agree to this policy.</p>
+
+            <h3>2. Information We Collect</h3>
+            <p>We collect the following information to provide and improve L'Atelier's functionality:</p>
+            <ul>
+                <li><strong>Google Account Information</strong>: Name and email address to authenticate and integrate with Google Meet and Google Workspace.</li>
+                <li><strong>Profile Data</strong>: Display name or avatar to represent you in the virtual workspace or during video meetings.</li>
+                <li><strong>Availability Status</strong>: Data indicating your availability (e.g., "at desk" or "busy") to enable spontaneous collaboration.</li>
+                <li><strong>Usage Data</strong>: Interactions with the add-on (e.g., initiating meetings, joining virtual rooms), browser type, IP address, and device details for compatibility and troubleshooting.</li>
+                <li><strong>Meeting Metadata</strong>: Temporary processing of meeting IDs or participant lists to enable instant meetings or virtual rooms. We do not store or access the content of your video meetings, chats, or emails, as these are managed by Google Meet and Google Workspace.</li>
+                <li><strong>Cookies</strong>: Essential cookies to maintain session state and improve user experience.</li>
+            </ul>
+
+            <h3>3. How We Use Information</h3>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Authenticate users and provide access to L'Atelier's features, such as instant video meetings, virtual desks, and virtual rooms.</li>
+                <li>Display avatars and availability in the virtual workspace.</li>
+                <li>Facilitate seamless integration with Google Meet and Google Workspace.</li>
+                <li>Analyze usage patterns to improve performance and user experience.</li>
+                <li>Communicate updates or respond to support requests.</li>
+                <li>Ensure security and comply with legal obligations.</li>
+            </ul>
+
+            <h3>4. Information Sharing</h3>
+            <p>We do not sell or trade your personal information. We may share data only in the following cases:</p>
+            <ul>
+                <li>With your consent.</li>
+                <li>With Google Workspace for integration, subject to their privacy policies.</li>
+                <li>With trusted service providers (e.g., cloud hosting) under strict confidentiality agreements.</li>
+                <li>To comply with legal obligations or protect our rights, safety, or property.</li>
+            </ul>
+
+            <h3>5. Data Storage and Security</h3>
+            <ul>
+                <li><strong>Storage</strong>: Data is stored on secure, cloud-based servers with minimal infrastructure to maintain L'Atelier's lightweight design. Data is retained only as long as necessary to provide the service or as required by law.</li>
+                <li><strong>Security</strong>: We implement industry-standard measures (e.g., encryption, access controls) to protect your data. However, no system is completely secure, and we cannot guarantee absolute security.</li>
+            </ul>
+
+            <h3>6. Your Rights</h3>
+            <p>Depending on your location (e.g., GDPR, CCPA), you may have the right to:</p>
+            <ul>
+                <li>Access your personal information.</li>
+                <li>Correct inaccurate information.</li>
+                <li>Request deletion of your data, subject to legal obligations.</li>
+                <li>Opt-out of non-essential data processing or communications.</li>
+            </ul>
+            <p>To exercise these rights, contact us at <a href="mailto:latelier+privacy@kleer.la">latelier+privacy@kleer.la</a></p>
+
+            <h3>7. International Data Transfers</h3>
+            <p>Your data may be transferred to servers outside your country. We ensure compliance with data protection laws (e.g., GDPR Standard Contractual Clauses).</p>
+
+            <h3>8. Children's Privacy</h3>
+            <p>L'Atelier is not intended for users under 13 years old. We do not knowingly collect personal information from children under 13. If you believe we have collected such data, please contact us at <a href="mailto:latelier+privacy@kleer.la">latelier+privacy@kleer.la</a></p>
+
+            <h3>9. Third-Party Links</h3>
+            <p>L'Atelier integrates with Google Meet and Google Workspace. We are not responsible for their privacy practices. Please review Google's Privacy Policy for details.</p>
+
+            <h3>10. Changes to This Privacy Policy</h3>
+            <p>We may update this policy to reflect changes in our practices or legal requirements. We will notify you via email or through the add-on interface. Continued use of L'Atelier constitutes acceptance of the updated policy.</p>
+
+            <h3>11. Contact Us</h3>
+            <p>For questions about this Privacy Policy, contact:</p>
+            <ul>
+                <li><strong>Email</strong>: <a href="mailto:privacy@latelier.kleer.la">privacy@latelier.kleer.la</a></li>
+                <li><strong>Website</strong>: <a href="https://latelier.kleer.la/">latelier.kleer.la</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="termsModal">&times;</span>
+            <h2>Terms of Service</h2>
+            <p><em>Effective Date: September 8, 2025, 5:43 PM -03</em></p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing or using L'Atelier, you agree to be bound by these Terms of Service and our Privacy Policy.</p>
+
+            <h3>2. Description of Service</h3>
+            <p>L'Atelier is a Google Meet add-on that facilitates remote collaboration through instant video meetings, virtual desks, and virtual rooms, integrated with Google Workspace.</p>
+
+            <h3>3. User Responsibilities</h3>
+            <p>You agree to:</p>
+            <ul>
+                <li>Use L'Atelier lawfully and respectfully.</li>
+                <li>Not interfere with or disrupt the service or its servers.</li>
+                <li>Respect the privacy and rights of other users.</li>
+                <li>Comply with Google Workspace and Google Meet terms of service.</li>
+                <li>Keep your account credentials secure.</li>
+            </ul>
+
+            <h3>4. Intellectual Property</h3>
+            <p>L'Atelier, including its content, features, and design (e.g., logo, virtual workspace), is owned by L'Atelier and protected by international copyright, trademark, and other intellectual property laws.</p>
+
+            <h3>5. Privacy</h3>
+            <p>Your privacy is important to us. Please review our Privacy Policy above for details on how we collect and use your information.</p>
+
+            <h3>6. Limitation of Liability</h3>
+            <p>L'Atelier is provided "as is." We are not liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the service.</p>
+
+            <h3>7. Modifications</h3>
+            <p>We reserve the right to modify these terms at any time. Changes are effective upon posting. Continued use constitutes acceptance.</p>
+
+            <h3>8. Termination</h3>
+            <p>We may suspend or terminate your account for violations of these terms or applicable laws, with or without notice.</p>
+
+            <h3>9. Governing Law</h3>
+            <p>These terms are governed by the laws of CABA, Argentina. Disputes will be resolved in the courts of CABA.</p>
+
+            <h3>10. Contact Information</h3>
+            <p>For questions about these Terms of Service, contact:</p>
+            <ul>
+                <li><strong>Email</strong>: <a href="mailto:latelier+privacy@kleer.la">latelier+privacy@kleer.la</a></li>
+                <li><strong>Website</strong>: <a href="http://latelier.kleer.la">latelier.kleer.la</a></li>
+            </ul>
+        </div>
+    </div>
+
     <script>
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+            // Clear hash when closing modal
+            if (window.location.hash === '#privacy' || window.location.hash === '#terms') {
+                history.pushState('', document.title, window.location.pathname);
+            }
+        }
+
+        // Check URL hash on page load
+        function checkHashOnLoad() {
+            const hash = window.location.hash;
+            if (hash === '#privacy') {
+                openModal('privacyModal');
+            } else if (hash === '#terms') {
+                openModal('termsModal');
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', checkHashOnLoad);
+
+        // Handle browser back/forward navigation
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash === '#privacy') {
+                openModal('privacyModal');
+            } else if (window.location.hash === '#terms') {
+                openModal('termsModal');
+            } else {
+                // Close any open modals if hash changes to something else
+                closeModal('privacyModal');
+                closeModal('termsModal');
+            }
+        });
+
+        // Handle privacy and terms links
+        document.querySelector('a[href="#privacy"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal('privacyModal');
+        });
+
+        document.querySelector('a[href="#terms"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal('termsModal');
+        });
+
+        // Close modal buttons
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                closeModal(modalId);
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]:not([href="#privacy"]):not([href="#terms"])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
