@@ -1,6 +1,14 @@
 require './lib/clients'
 require './lib/models/page'
 
+def handle_atelier_page
+  @meta_tags.set! title: "L'Atelier",
+                  description: "L'Atelier by Kleer",
+                  canonical: "https://latelier.kleer.la/#{session[:locale]}/"
+  
+  erb :'atelier/spa', layout: false
+end
+
 def first_x_courses(courses, quantity)
   return [] if courses.nil?
 
@@ -22,6 +30,8 @@ def first_x_courses(courses, quantity)
 end
 
 get '/' do
+  return handle_atelier_page if @is_atelier
+  
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
                    description: page.seo_description || t('meta_tag.home.description'),

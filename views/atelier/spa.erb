@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="<%= session[:locale] %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= erb :'layout/_metatags'%>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2C7873 0%, #3a9490 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .workbench {
+            width: 32px;
+            height: 24px;
+            border: 3px solid #F4A261;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .workbench::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 2px;
+            right: 2px;
+            height: 3px;
+            background: #F4A261;
+            border-radius: 2px;
+        }
+
+        .spark {
+            color: #F4A261;
+            font-size: 1.2em;
+            margin-left: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #F4A261;
+        }
+
+        .cta-button {
+            background: #F4A261;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e89249;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(244, 162, 97, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2C7873 0%, #3a9490 50%, #4ba5a1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2C7873;
+        }
+
+        /* Virtual Studio Visualization */
+        .studio-visual {
+            position: relative;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .desk {
+            position: absolute;
+            width: 80px;
+            height: 60px;
+            background: #F4A261;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .desk:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(244, 162, 97, 0.4);
+        }
+
+        .desk1 { top: 50px; left: 50px; }
+        .desk2 { top: 50px; right: 50px; }
+        .desk3 { bottom: 50px; left: 50px; }
+        .desk4 { bottom: 50px; right: 50px; }
+        .desk5 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #2C7873, #4ba5a1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .meeting-window {
+            position: absolute;
+            width: 120px;
+            height: 80px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2C7873;
+            font-size: 12px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #2C7873;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(44, 120, 115, 0.15);
+            border-color: #F4A261;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2C7873, #4ba5a1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: #2C7873;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #F4A261;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            color: #2C7873;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #2C7873 0%, #1a5a56 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(244,162,97,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #F4A261;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #F4A261;
+            transform: translateY(-2px);
+        }
+
+        /* Modal/Overlay for Privacy and Terms */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 80%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close:hover {
+            color: #2C7873;
+        }
+
+        .modal h2 {
+            color: #2C7873;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .modal h3 {
+            color: #2C7873;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .modal p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .modal ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .modal li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .studio-visual {
+                height: 300px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="/latelier/latelier-logo.png" alt="L'Atelier" style="height: 80px;">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#install" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Virtual Studio</h1>
+                    <p>Transform Google Meet into a creative workspace. Launch instant video meetings, create virtual desks, and foster spontaneous teamwork—all without scheduling.</p>
+                    <div class="hero-buttons">
+                        <a href="https://latelier.kleer.la" class="cta-button" target="_blank">Install Now</a>
+                        <a href="#features" class="btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="studio-visual">
+                    <div class="meeting-window">📹 Live Meeting</div>
+                    <div class="desk desk1"><div class="avatar">A</div></div>
+                    <div class="desk desk2"><div class="avatar">B</div></div>
+                    <div class="desk desk3"><div class="avatar">C</div></div>
+                    <div class="desk desk4"><div class="avatar">D</div></div>
+                    <div class="desk desk5"><div class="avatar">+</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Create Together, Anywhere</h2>
+                <p>L'Atelier seamlessly integrates with Google Meet to provide the spontaneous collaboration your team needs.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Video Meetings</h3>
+                    <p>Launch Google Meet sessions instantly from your virtual workspace. No scheduling, no friction—just click and connect with your team.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>2D Company Layout</h3>
+                    <p>Navigate your virtual office with an intuitive 2D map. See who's available, where they're working, and join them with a single click.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Virtual Desks</h3>
+                    <p>Create dedicated workspaces for different projects and teams. Switch between contexts while maintaining the flow of collaboration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Seamless Integration</h3>
+                    <p>Works perfectly with your existing Google Meet workflow. No learning curve, no complex setup—just enhanced collaboration.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Spontaneous Teamwork</h3>
+                    <p>Enable organic conversations and impromptu brainstorming sessions. Foster the creativity that happens when teams work together naturally.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Cloud-Based</h3>
+                    <p>Access your virtual studio from anywhere. Your team's workspace follows you, ensuring consistent collaboration across locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started with L'Atelier in three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Install the Plugin</h3>
+                    <p>Add L'Atelier to your browser with one click. Compatible with Chrome and other Chromium-based browsers.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Set Up Your Studio</h3>
+                    <p>Create your virtual office layout and invite your team. Customize desks and define work areas that match your team structure.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Collaborating</h3>
+                    <p>Click on any desk to join a Google Meet session instantly. Move between spaces and connect with colleagues naturally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="install">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Remote Work?</h2>
+                <p>Join thousands of teams already creating together with L'Atelier</p>
+                <a href="https://latelier.kleer.la" class="cta-button" style="font-size: 1.1rem; padding: 16px 32px;">Install L'Atelier Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="/latelier/latelier-logo.png" alt="L'Atelier" style="height: 80px;">
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="social-links">
+                    <%# <a href="https://twitter.com/lateliercloud">🐦</a> %>
+                    <%# <a href="https://linkedin.com/company/lateliercloud">💼</a> %>
+                    <a href="mailto:latelier@kleer.la">📧</a>
+                </div>
+                <p>&copy; 2025 L'Atelier. Your Virtual Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="privacyModal">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p><em>Effective Date: September 8, 2025, 5:43 PM -03</em></p>
+            
+            <h3>1. Introduction</h3>
+            <p>L'Atelier ("we," "our," or "us") is a lightweight Google Meet add-on designed to enhance remote collaboration for small businesses through features like instant video meetings, virtual desks, and virtual rooms. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you use L'Atelier via the Google Workspace Marketplace or latelier.kleer.la. By using L'Atelier, you agree to this policy.</p>
+
+            <h3>2. Information We Collect</h3>
+            <p>We collect the following information to provide and improve L'Atelier's functionality:</p>
+            <ul>
+                <li><strong>Google Account Information</strong>: Name and email address to authenticate and integrate with Google Meet and Google Workspace.</li>
+                <li><strong>Profile Data</strong>: Display name or avatar to represent you in the virtual workspace or during video meetings.</li>
+                <li><strong>Availability Status</strong>: Data indicating your availability (e.g., "at desk" or "busy") to enable spontaneous collaboration.</li>
+                <li><strong>Usage Data</strong>: Interactions with the add-on (e.g., initiating meetings, joining virtual rooms), browser type, IP address, and device details for compatibility and troubleshooting.</li>
+                <li><strong>Meeting Metadata</strong>: Temporary processing of meeting IDs or participant lists to enable instant meetings or virtual rooms. We do not store or access the content of your video meetings, chats, or emails, as these are managed by Google Meet and Google Workspace.</li>
+                <li><strong>Cookies</strong>: Essential cookies to maintain session state and improve user experience.</li>
+            </ul>
+
+            <h3>3. How We Use Information</h3>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Authenticate users and provide access to L'Atelier's features, such as instant video meetings, virtual desks, and virtual rooms.</li>
+                <li>Display avatars and availability in the virtual workspace.</li>
+                <li>Facilitate seamless integration with Google Meet and Google Workspace.</li>
+                <li>Analyze usage patterns to improve performance and user experience.</li>
+                <li>Communicate updates or respond to support requests.</li>
+                <li>Ensure security and comply with legal obligations.</li>
+            </ul>
+
+            <h3>4. Information Sharing</h3>
+            <p>We do not sell or trade your personal information. We may share data only in the following cases:</p>
+            <ul>
+                <li>With your consent.</li>
+                <li>With Google Workspace for integration, subject to their privacy policies.</li>
+                <li>With trusted service providers (e.g., cloud hosting) under strict confidentiality agreements.</li>
+                <li>To comply with legal obligations or protect our rights, safety, or property.</li>
+            </ul>
+
+            <h3>5. Data Storage and Security</h3>
+            <ul>
+                <li><strong>Storage</strong>: Data is stored on secure, cloud-based servers with minimal infrastructure to maintain L'Atelier's lightweight design. Data is retained only as long as necessary to provide the service or as required by law.</li>
+                <li><strong>Security</strong>: We implement industry-standard measures (e.g., encryption, access controls) to protect your data. However, no system is completely secure, and we cannot guarantee absolute security.</li>
+            </ul>
+
+            <h3>6. Your Rights</h3>
+            <p>Depending on your location (e.g., GDPR, CCPA), you may have the right to:</p>
+            <ul>
+                <li>Access your personal information.</li>
+                <li>Correct inaccurate information.</li>
+                <li>Request deletion of your data, subject to legal obligations.</li>
+                <li>Opt-out of non-essential data processing or communications.</li>
+            </ul>
+            <p>To exercise these rights, contact us at <a href="mailto:latelier+privacy@kleer.la">latelier+privacy@kleer.la</a></p>
+
+            <h3>7. International Data Transfers</h3>
+            <p>Your data may be transferred to servers outside your country. We ensure compliance with data protection laws (e.g., GDPR Standard Contractual Clauses).</p>
+
+            <h3>8. Children's Privacy</h3>
+            <p>L'Atelier is not intended for users under 13 years old. We do not knowingly collect personal information from children under 13. If you believe we have collected such data, please contact us at <a href="mailto:latelier+privacy@kleer.la">latelier+privacy@kleer.la</a></p>
+
+            <h3>9. Third-Party Links</h3>
+            <p>L'Atelier integrates with Google Meet and Google Workspace. We are not responsible for their privacy practices. Please review Google's Privacy Policy for details.</p>
+
+            <h3>10. Changes to This Privacy Policy</h3>
+            <p>We may update this policy to reflect changes in our practices or legal requirements. We will notify you via email or through the add-on interface. Continued use of L'Atelier constitutes acceptance of the updated policy.</p>
+
+            <h3>11. Contact Us</h3>
+            <p>For questions about this Privacy Policy, contact:</p>
+            <ul>
+                <li><strong>Email</strong>: <a href="mailto:privacy@latelier.kleer.la">privacy@latelier.kleer.la</a></li>
+                <li><strong>Website</strong>: <a href="https://latelier.kleer.la/">latelier.kleer.la</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-modal="termsModal">&times;</span>
+            <h2>Terms of Service</h2>
+            <p><em>Effective Date: September 8, 2025, 8:19 PM -03</em></p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing or using L'Atelier ("the Service"), a Google Meet add-on for remote collaboration through instant video meetings, virtual desks, and virtual rooms, you agree to be bound by these Terms of Service ("Terms") and our Privacy Policy, available at latelier.cloud/privacy. If you do not agree, do not use the Service.</p>
+
+            <h3>2. Description of Service</h3>
+            <p>L'Atelier is a lightweight add-on integrated with Google Meet and Google Workspace, enabling small businesses to collaborate via instant video meetings, virtual desks for signaling availability, and virtual rooms for group interactions. The Service is provided "as is" and may be updated or modified to enhance functionality.</p>
+
+            <h3>3. Eligibility</h3>
+            <p>You must be at least 13 years old to use L'Atelier. By using the Service, you represent that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
+
+            <h3>4. User Responsibilities</h3>
+            <p>You agree to:</p>
+            <ul>
+                <li>Use the Service lawfully, respectfully, and in compliance with these Terms.</li>
+                <li>Comply with Google Meet and Google Workspace terms of service.</li>
+                <li>Not interfere with, disrupt, or attempt to gain unauthorized access to the Service or its servers.</li>
+                <li>Not share your account credentials or allow others to access your account.</li>
+                <li>Respect the privacy and rights of other users.</li>
+                <li>Not use the Service for illegal activities, harassment, or any purpose that violates applicable laws.</li>
+            </ul>
+
+            <h3>5. Account and Subscription</h3>
+            <p>L'Atelier offers a free tier with basic features and optional paid tiers for advanced functionalities. You are responsible for:</p>
+            <ul>
+                <li>Providing accurate billing information for paid subscriptions.</li>
+                <li>Paying all applicable fees as described in the Service's pricing terms.</li>
+                <li>Notifying us of any unauthorized use of your account.</li>
+            </ul>
+            <p>Refunds, if applicable, are handled at our discretion. Contact <a href="mailto:support@latelier.cloud">support@latelier.cloud</a> for billing inquiries.</p>
+
+            <h3>6. Intellectual Property</h3>
+            <p>L'Atelier, including its logo, virtual workspace design, and features, is owned by L'Atelier and protected by international copyright, trademark, and other intellectual property laws. You may not reproduce, modify, or distribute any part of the Service's content or design without our prior written consent. User-generated content (e.g., avatars, display names) remains your property, but you grant us a non-exclusive, worldwide, royalty-free license to use it solely to provide the Service.</p>
+
+            <h3>7. Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, L'Atelier and its affiliates, officers, or agents are not liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or goodwill, arising from your use of the Service. Our total liability for any claim shall not exceed the amount you paid for the Service in the preceding 12 months.</p>
+
+            <h3>8. Termination</h3>
+            <p>We may suspend or terminate your account or access to the Service at our discretion, without prior notice, for reasons including but not limited to:</p>
+            <ul>
+                <li>Violation of these Terms or applicable laws.</li>
+                <li>Non-payment of subscription fees.</li>
+                <li>Misuse of the Service or violation of Google Meet or Google Workspace terms.</li>
+                <li>Interference with the Service's operation.</li>
+            </ul>
+            <p>Upon termination, your right to use the Service ceases, and we may delete your account data, subject to our Privacy Policy.</p>
+
+            <h3>9. Modifications to Terms</h3>
+            <p>We may update these Terms at any time to reflect changes in our practices or legal requirements. We will notify you of material changes via email or through the Service interface. Continued use of L'Atelier after such changes constitutes acceptance of the updated Terms.</p>
+
+            <h3>10. Governing Law</h3>
+            <p>These Terms are governed by the laws of the Ciudad Autónoma de Buenos Aires (CABA), Argentina, without regard to conflict of law principles. Any disputes arising from these Terms will be resolved in the courts of CABA, Argentina, and you consent to their jurisdiction.</p>
+
+            <h3>11. Dispute Resolution</h3>
+            <p>Any disputes arising from your use of the Service will be resolved through litigation in the courts of CABA, Argentina, unless we mutually agree to alternative methods, such as arbitration.</p>
+
+            <h3>12. Contact Information</h3>
+            <p>For questions about these Terms, contact:</p>
+            <ul>
+                <li><strong>Email</strong>: <a href="mailto:latelier+legal@kleer.la">latelier+legal@kleer.la</a></li>
+                <li><strong>Website</strong>: <a href="https://latelier.kleer.la">latelier.kleer.la</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+            // Clear hash when closing modal
+            if (window.location.hash === '#privacy' || window.location.hash === '#terms') {
+                history.pushState('', document.title, window.location.pathname);
+            }
+        }
+
+        // Check URL hash on page load
+        function checkHashOnLoad() {
+            const hash = window.location.hash;
+            if (hash === '#privacy') {
+                openModal('privacyModal');
+            } else if (hash === '#terms') {
+                openModal('termsModal');
+            }
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', checkHashOnLoad);
+
+        // Handle browser back/forward navigation
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash === '#privacy') {
+                openModal('privacyModal');
+            } else if (window.location.hash === '#terms') {
+                openModal('termsModal');
+            } else {
+                // Close any open modals if hash changes to something else
+                closeModal('privacyModal');
+                closeModal('termsModal');
+            }
+        });
+
+        // Handle privacy and terms links
+        document.querySelector('a[href="#privacy"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal('privacyModal');
+        });
+
+        document.querySelector('a[href="#terms"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal('termsModal');
+        });
+
+        // Close modal buttons
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                closeModal(modalId);
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]:not([href="#privacy"]):not([href="#terms"])').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Interactive desk hover effects
+        document.querySelectorAll('.desk').forEach(desk => {
+            desk.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.15)';
+                this.style.zIndex = '10';
+            });
+            
+            desk.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.zIndex = '1';
+            });
+
+            desk.addEventListener('click', function() {
+                // Simulate meeting launch
+                const meetingWindow = document.querySelector('.meeting-window');
+                meetingWindow.style.animation = 'none';
+                meetingWindow.style.background = '#F4A261';
+                meetingWindow.style.color = 'white';
+                meetingWindow.innerHTML = '🎥 Joining...';
+                
+                setTimeout(() => {
+                    meetingWindow.innerHTML = '📹 Live Meeting';
+                    meetingWindow.style.background = 'rgba(255,255,255,0.9)';
+                    meetingWindow.style.color = '#2C7873';
+                    meetingWindow.style.animation = 'pulse 2s infinite';
+                }, 2000);
+            });
+        });
+
+        // Header background opacity on scroll
+        let header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(44, 120, 115, 0.95) 0%, rgba(58, 148, 144, 0.95) 100%)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2C7873 0%, #3a9490 100%)';
+            }
+        });
+
+        // Feature card animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .step').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
