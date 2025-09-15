@@ -6,6 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Ruby Sinatra web application for Kleer's corporate website. It's a bilingual (Spanish/English) website that handles course catalogs, blog content, resources, and client information. The application integrates with external APIs for event management and supports various content types including training courses, blog articles, and downloadable resources.
 
+### L'Atelier Integration
+
+The application also serves **L'Atelier**, a Google Meet add-on for remote collaboration, when accessed via `latelier.*` subdomains:
+
+- **Product**: L'Atelier is a lightweight Google Meet add-on that transforms video meetings into virtual studios for small businesses
+- **Features**: Instant video meetings, virtual desks for availability signaling, virtual rooms for group collaboration
+- **Target**: Small businesses using Google Workspace who need spontaneous collaboration tools
+- **Access**: Served as a single-page application (SPA) at `latelier.kleer.la` and `latelier.localhost:4567` during development
+- **Legal**: Includes comprehensive Privacy Policy and Terms of Service accessible via hash routing (`#privacy`, `#terms`)
+- **Contact**: `latelier@kleer.la` for general inquiries, `latelier+privacy@kleer.la` for privacy concerns, `latelier+legal@kleer.la` for legal matters
+
 ## Technology Stack
 
 - **Framework**: Sinatra (Ruby web framework)
