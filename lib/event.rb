@@ -4,13 +4,15 @@ require './lib/trainer'
 require './lib/json_api'
 require './lib/services/cache_service'
 require './lib/services/api_accessible'
+require './lib/event_type'
+require './lib/services/keventer_api'
 
 class Event
   include APIAccessible
   api_connector(Class.new { def url_for(id) = KeventerAPI.events_url })
 
   attr_accessor :country_iso, :country_name, :certified,
-                :city, :country, :country_code, :event_type, :date,
+                :city, :country, :country_code, :event_type, :event_type_id, :date,
                 :finish_date, :registration_link, :is_sold_out, :id, :eb_date, # TODO: remove duplicate fields
                 :list_price, :eb_price, :eb_end_date, :currency_iso_code,
                 :show_pricing,
@@ -53,13 +55,19 @@ class Event
 
   def load_basic(hash_event)
     @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
-    load_str(%i[city place address registration_link time_zone_name is_sold_out], hash_event)
+    load_str(%i[city place address registration_link time_zone_name is_sold_out event_type_id], hash_event)
   end
 
   def load_date(hash_event)
     hash_event['finish_date'] = hash_event['date'] if hash_event['finish_date'].to_s.empty?
-    %i[date finish_date].each { |field| send("#{field}=", Date.parse(hash_event[field.to_s])) }
-    %i[start_time end_time].each { |field| send("#{field}=", DateTime.parse(hash_event[field.to_s])) }
+    %i[date finish_date].each do |field|
+      date_str = hash_event[field.to_s]
+      send("#{field}=", date_str.nil? ? nil : Date.parse(date_str))
+    end
+    %i[start_time end_time].each do |field|
+      datetime_str = hash_event[field.to_s]
+      send("#{field}=", datetime_str.nil? ? nil : DateTime.parse(datetime_str))
+    end
     @duration = hash_event['duration'].to_i
   end
 
@@ -142,6 +150,36 @@ class Event
 
     def null_json_api(null_api)
       @@json_api = null_api
+    end
+
+    def create_from_api(event_id)
+      if defined? @@json_api
+        json_api = @@json_api
+      else
+        url = KeventerAPI.event_url(event_id)
+        cache_key = "event_#{event_id}_#{url}"
+
+        json_api = CacheService.get_or_set(cache_key) do
+          JsonAPI.new(url)
+        end
+      end
+
+      return nil unless json_api&.ok?
+
+      event_data = json_api.doc
+
+      # Handle case where event_type is not included in the response
+      event_type_json = event_data['event_type'] || {}
+      event_type_json['coupons'] = event_data['coupons'] if event_data['coupons']
+      event_type = EventType.new(event_type_json)
+      Event.new(event_type).load_from_json(event_data)
+    rescue StandardError => e
+      if ENV['RACK_ENV'] == 'development'
+        raise e
+      else
+        puts "Event API Error: #{e.message}"
+        nil
+      end
     end
 
     def load_events(events, today)

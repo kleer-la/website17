@@ -68,7 +68,13 @@ get '/events/:event_id/participant_confirmed' do |event_id|
   @free = params[:free] == 'true'
   @api = params[:api] == '1'
   @lang = session[:locale] || 'es'
-  @event_type_id = event_id
+  begin
+    event = Event.create_from_api(event_id)
+    @event_type_id = event&.event_type_id
+  rescue StandardError => e
+    # Fallback if Event.create_from_api fails
+    @event_type_id = nil
+  end
   
   I18n.with_locale(@lang.to_sym) do
     erb :'participants/confirmed', layout: false
