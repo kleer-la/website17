@@ -68,6 +68,7 @@ get '/events/:event_id/participant_confirmed' do |event_id|
   @free = params[:free] == 'true'
   @api = params[:api] == '1'
   @lang = session[:locale] || 'es'
+  @event_type_id = event_id
   
   I18n.with_locale(@lang.to_sym) do
     erb :'participants/confirmed', layout: false
