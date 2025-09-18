@@ -9,6 +9,51 @@ def send_mail(data)
   Mailer.new(url, data)
 end
 
+def send_error_notification(error_details)
+  error_data = {
+    name: 'Error Notification System',
+    email: 'system@kleer.la',
+    company: 'Kleer',
+    message: format_error_message(error_details),
+    context: '/participant-registration-error',
+    language: 'es',
+    resource_slug: '',
+    initial_slug: '',
+    can_we_contact: false,
+    suscribe: false
+  }
+
+  begin
+    send_mail(error_data)
+  rescue StandardError => e
+    # Log the error but don't let it crash the main error handling
+    puts "Failed to send error notification email: #{e.message}"
+  end
+end
+
+def format_error_message(details)
+  <<~MESSAGE
+    ERROR EN REGISTRO DE PARTICIPANTES
+
+    Tipo de error: #{details[:error_type]}
+    URL: #{details[:url]}
+    Evento ID: #{details[:event_id]}
+    Idioma: #{details[:language]}
+    Timestamp: #{details[:timestamp]}
+
+    Mensaje de error:
+    #{details[:error_message]}
+
+    Detalles adicionales:
+    #{details[:additional_details]}
+
+    User Agent: #{details[:user_agent]}
+    IP: #{details[:ip]}
+
+    Este es un error automático del sistema de registro de participantes.
+  MESSAGE
+end
+
 post '/send-mail' do
   unless verify_recaptcha
     flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
