@@ -6,10 +6,17 @@ get '/events/:event_id/participants/register' do |event_id|
   @lang = session[:locale] || 'es'
   api_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/events/#{event_id}?lang=#{@lang}"
   response = HTTParty.get(api_url, headers: { 'Accept' => 'application/json' })
-  
+
   if response.success?
     @event = response.parsed_response
-    
+
+    # Validate that @event has required structure to prevent nil access errors
+    if @event.nil? || !@event.is_a?(Hash) || @event['event_type'].nil? || !@event['event_type'].is_a?(Hash)
+      @meta_tags.set! title: t('internal_error.title')
+      status 503
+      return erb :'layout/error_500', layout: :'layout/layout2022'
+    end
+
     # Use scoped locale instead of global
     I18n.with_locale(@lang.to_sym) do
       # Calculate pricing for different quantities (1-6 people)
@@ -21,16 +28,18 @@ get '/events/:event_id/participants/register' do |event_id|
           @pricing_data[qty] = pricing_response.parsed_response
         end
       end
-      
+
       erb :'participants/register', layout: false
     end
   else
+    @meta_tags.set! title: t('page_not_found')
     status 404
-    "Event not found"
+    erb :'home/error_404', layout: :'layout/layout2022'
   end
 rescue StandardError => e
+  @meta_tags.set! title: t('internal_error.title')
   status 503
-  "Service temporarily unavailable: #{e.message}"
+  erb :'layout/error_500', layout: :'layout/layout2022'
 end
 
 # Handle registration form submission
