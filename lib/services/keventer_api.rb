@@ -59,11 +59,17 @@ module KeventerAPI
     short_url: ['short_urls/:code', :code],
     contact_status: ['contacts/:id/status.json', :id],
     contact: ['contacts/:id.json', :id],
-    event: ['events/:id.json', :id]
+    event: ['events/:id.json', :id],
+    participant_register: ['v3/events/:id/participants/register', :id]
   }.each do |name, (path, param)|
     define_method("#{name}_url") do |value, params = {}|
       echo(url_for(path.gsub(":#{param}", value.to_s), params))
     end
+  end
+
+  # Special method for participant pricing with quantity parameter
+  def participant_pricing_url(event_id, quantity)
+    echo(url_for("v3/events/#{event_id}/participants/pricing_info", { quantity: quantity }))
   end
   def page_url(lang, slug)
     s = "-#{slug}" unless slug.nil?

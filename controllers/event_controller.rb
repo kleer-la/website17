@@ -2,16 +2,44 @@
 
 require './controllers/mailer_controller'
 require './lib/services/keventer_api'
+require './lib/models/participant_registration'
 
 # Participant registration route (new API-based version)
 get '/events/:event_id/participants/register' do |event_id|
   # Fetch event data from API with language parameter for proper date formatting
   @lang = session[:locale] || 'es'
-  api_url = KeventerAPI.event_url(event_id, { lang: @lang })
-  response = HTTParty.get(api_url, headers: { 'Accept' => 'application/json' })
 
-  if response.success?
-    @event = response.parsed_response
+  begin
+    # Try new ParticipantRegistration model first
+    participant_registration = ParticipantRegistration.new(event_id)
+    @event = participant_registration.load_event_data(@lang)
+
+    # If new model fails, fallback to existing HTTParty implementation
+    if @event.nil?
+      api_url = KeventerAPI.event_url(event_id, { lang: @lang })
+      response = HTTParty.get(api_url, headers: { 'Accept' => 'application/json' })
+
+      if response.success?
+        @event = response.parsed_response
+      else
+        # Send error notification email for event not found
+        send_error_notification({
+          error_type: 'Event Not Found',
+          url: request.url,
+          event_id: event_id,
+          language: @lang,
+          timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
+          error_message: 'Event API returned unsuccessful response',
+          additional_details: "API URL: #{api_url}, Response status: #{response.code}, Response body: #{response.body}",
+          user_agent: request.user_agent,
+          ip: request.ip
+        })
+
+        @meta_tags.set! title: t('page_not_found')
+        status 404
+        return erb :'home/error_404', layout: :'layout/layout2022'
+      end
+    end
 
     # Validate that @event has required structure to prevent nil access errors
     if @event.nil? || !@event.is_a?(Hash) || @event['event_type'].nil? || !@event['event_type'].is_a?(Hash)
@@ -36,52 +64,41 @@ get '/events/:event_id/participants/register' do |event_id|
     # Use scoped locale instead of global
     I18n.with_locale(@lang.to_sym) do
       # Calculate pricing for different quantities (1-6 people)
+      # Try new model first, fallback to HTTParty
       @pricing_data = {}
       (1..6).each do |qty|
-        pricing_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}"
-        pricing_response = HTTParty.get(pricing_url, headers: { 'Accept' => 'application/json' })
-        if pricing_response.success?
-          @pricing_data[qty] = pricing_response.parsed_response
+        pricing_data = participant_registration.load_pricing_data(qty)
+
+        if pricing_data.nil?
+          # Fallback to HTTParty
+          pricing_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}"
+          pricing_response = HTTParty.get(pricing_url, headers: { 'Accept' => 'application/json' })
+          pricing_data = pricing_response.parsed_response if pricing_response.success?
         end
+
+        @pricing_data[qty] = pricing_data if pricing_data
       end
 
       erb :'participants/register', layout: false
     end
-  else
-    # Send error notification email for event not found
+  rescue StandardError => e
+    # Send error notification email for unexpected errors
     send_error_notification({
-      error_type: 'Event Not Found',
+      error_type: 'Unexpected Exception',
       url: request.url,
       event_id: event_id,
       language: @lang,
       timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
-      error_message: 'Event API returned unsuccessful response',
-      additional_details: "API URL: #{api_url}, Response status: #{response.code}, Response body: #{response.body}",
+      error_message: e.message,
+      additional_details: "Exception class: #{e.class}, Backtrace: #{e.backtrace.first(5).join('\n')}",
       user_agent: request.user_agent,
       ip: request.ip
     })
 
-    @meta_tags.set! title: t('page_not_found')
-    status 404
-    erb :'home/error_404', layout: :'layout/layout2022'
+    @meta_tags.set! title: t('internal_error.title')
+    status 503
+    erb :'layout/error_500', layout: :'layout/layout2022'
   end
-rescue StandardError => e
-  # Send error notification email for unexpected errors
-  send_error_notification({
-    error_type: 'Unexpected Exception',
-    url: request.url,
-    event_id: event_id,
-    language: @lang,
-    timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
-    error_message: e.message,
-    additional_details: "Exception class: #{e.class}, Backtrace: #{e.backtrace.first(5).join('\n')}",
-    user_agent: request.user_agent,
-    ip: request.ip
-  })
-
-  @meta_tags.set! title: t('internal_error.title')
-  status 503
-  erb :'layout/error_500', layout: :'layout/layout2022'
 end
 
 # Handle registration form submission
