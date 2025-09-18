@@ -1,12 +1,13 @@
 # API routes for participant registration - separate from main app to avoid global error handlers
 
 require './controllers/mailer_controller'
+require './lib/services/keventer_api'
 
 # Participant registration route (new API-based version)
 get '/events/:event_id/participants/register' do |event_id|
   # Fetch event data from API with language parameter for proper date formatting
   @lang = session[:locale] || 'es'
-  api_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/events/#{event_id}?lang=#{@lang}"
+  api_url = KeventerAPI.event_url(event_id, { lang: @lang })
   response = HTTParty.get(api_url, headers: { 'Accept' => 'application/json' })
 
   if response.success?
