@@ -56,56 +56,62 @@ RSpec.describe ParticipantRegistration do
 
   describe '.load_event_data' do
     context 'when API call is successful' do
-      it 'returns event data' do
+      it 'returns success result with event data' do
         ParticipantRegistration.api_client = APIAccessible::NullJsonAPI.new(valid_event_data.to_json)
 
         registration = ParticipantRegistration.new('123')
-        event_data = registration.load_event_data('es')
+        result = registration.load_event_data('es')
 
-        expect(event_data).to be_a(Hash)
-        expect(event_data['id']).to eq('123')
-        expect(event_data['event_type']['name']).to eq('Test Course')
+        expect(result[:success]).to be true
+        expect(result[:data]).to be_a(Hash)
+        expect(result[:data]['id']).to eq('123')
+        expect(result[:data]['event_type']['name']).to eq('Test Course')
       end
     end
 
     context 'when API call fails' do
-      it 'returns nil' do
+      it 'returns error result' do
         null_api = APIAccessible::NullJsonAPI.new("{}")
         allow(null_api).to receive(:ok?).and_return(false)
         ParticipantRegistration.api_client = null_api
 
         registration = ParticipantRegistration.new('123')
-        event_data = registration.load_event_data('es')
+        result = registration.load_event_data('es')
 
-        expect(event_data).to be_nil
+        expect(result[:success]).to be false
+        expect(result[:error]).to eq(:not_found)
+        expect(result[:status]).to eq(404)
       end
     end
   end
 
   describe '.load_pricing_data' do
     context 'when API call is successful' do
-      it 'returns pricing data for specified quantity' do
+      it 'returns success result with pricing data for specified quantity' do
         ParticipantRegistration.api_client = APIAccessible::NullJsonAPI.new(valid_pricing_data.to_json)
 
         registration = ParticipantRegistration.new('123')
-        pricing_data = registration.load_pricing_data(2)
+        result = registration.load_pricing_data(2)
 
-        expect(pricing_data).to be_a(Hash)
-        expect(pricing_data['unit_price']).to eq(100)
-        expect(pricing_data['total_price']).to eq(100)
+        expect(result[:success]).to be true
+        expect(result[:data]).to be_a(Hash)
+        expect(result[:data]['unit_price']).to eq(100)
+        expect(result[:data]['total_price']).to eq(100)
       end
     end
 
     context 'when API call fails' do
-      it 'returns nil' do
+      it 'returns error result' do
         null_api = APIAccessible::NullJsonAPI.new("{}")
         allow(null_api).to receive(:ok?).and_return(false)
         ParticipantRegistration.api_client = null_api
 
         registration = ParticipantRegistration.new('123')
-        pricing_data = registration.load_pricing_data(2)
+        result = registration.load_pricing_data(2)
 
-        expect(pricing_data).to be_nil
+        expect(result[:success]).to be false
+        expect(result[:error]).to eq(:pricing_unavailable)
+        expect(result[:status]).to eq(503)
       end
     end
   end

@@ -10,18 +10,16 @@ get '/events/:event_id/participants/register' do |event_id|
   @lang = session[:locale] || 'es'
 
   begin
-    # Try new ParticipantRegistration model first
+    # Use new ParticipantRegistration model
     participant_registration = ParticipantRegistration.new(event_id)
-    @event = participant_registration.load_event_data(@lang)
+    event_result = participant_registration.load_event_data(@lang)
 
-    # If new model fails, fallback to existing HTTParty implementation
-    if @event.nil?
-      api_url = KeventerAPI.event_url(event_id, { lang: @lang })
-      response = HTTParty.get(api_url, headers: { 'Accept' => 'application/json' })
-
-      if response.success?
-        @event = response.parsed_response
-      else
+    # Handle different response types from the model
+    if event_result[:success]
+      @event = event_result[:data]
+    else
+      case event_result[:error]
+      when :not_found
         # Send error notification email for event not found
         send_error_notification({
           error_type: 'Event Not Found',
@@ -29,15 +27,18 @@ get '/events/:event_id/participants/register' do |event_id|
           event_id: event_id,
           language: @lang,
           timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
-          error_message: 'Event API returned unsuccessful response',
-          additional_details: "API URL: #{api_url}, Response status: #{response.code}, Response body: #{response.body}",
+          error_message: 'Event not found via ParticipantRegistration model',
+          additional_details: "Event ID: #{event_id}",
           user_agent: request.user_agent,
           ip: request.ip
         })
 
         @meta_tags.set! title: t('page_not_found')
-        status 404
+        status event_result[:status]
         return erb :'home/error_404', layout: :'layout/layout2022'
+      when :service_unavailable
+        # API service is unavailable - trigger 503 error handling below
+        raise StandardError.new('Service unavailable')
       end
     end
 
@@ -64,19 +65,15 @@ get '/events/:event_id/participants/register' do |event_id|
     # Use scoped locale instead of global
     I18n.with_locale(@lang.to_sym) do
       # Calculate pricing for different quantities (1-6 people)
-      # Try new model first, fallback to HTTParty
       @pricing_data = {}
       (1..6).each do |qty|
-        pricing_data = participant_registration.load_pricing_data(qty)
+        pricing_result = participant_registration.load_pricing_data(qty)
 
-        if pricing_data.nil?
-          # Fallback to HTTParty
-          pricing_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/v3/events/#{event_id}/participants/pricing_info?quantity=#{qty}"
-          pricing_response = HTTParty.get(pricing_url, headers: { 'Accept' => 'application/json' })
-          pricing_data = pricing_response.parsed_response if pricing_response.success?
+        if pricing_result[:success]
+          @pricing_data[qty] = pricing_result[:data]
         end
-
-        @pricing_data[qty] = pricing_data if pricing_data
+        # If pricing fails, we just don't include it in @pricing_data
+        # The view should handle missing pricing gracefully
       end
 
       erb :'participants/register', layout: false

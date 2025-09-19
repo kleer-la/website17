@@ -36,32 +36,20 @@ describe 'Participant Registration' do
 
     context 'when event exists' do
       before do
-        # Mock the new ParticipantRegistration model
-        allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return(mock_event_data)
+        # Mock the new ParticipantRegistration model - this should be the ONLY path used
+        allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return({
+          success: true,
+          data: mock_event_data
+        })
         allow_any_instance_of(ParticipantRegistration).to receive(:load_pricing_data).and_return({
-          'unit_price' => 100,
-          'total_price' => 100,
-          'currency' => 'USD',
-          'savings' => 0
+          success: true,
+          data: {
+            'unit_price' => 100,
+            'total_price' => 100,
+            'currency' => 'USD',
+            'savings' => 0
+          }
         })
-
-        # Keep HTTParty mocks as fallback (but they shouldn't be used now)
-        event_response = double('HTTParty::Response')
-        allow(event_response).to receive(:success?).and_return(true)
-        allow(event_response).to receive(:parsed_response).and_return(mock_event_data)
-
-        # Mock HTTParty response for pricing data (1-6 quantities)
-        pricing_response = double('HTTParty::Response')
-        allow(pricing_response).to receive(:success?).and_return(true)
-        allow(pricing_response).to receive(:parsed_response).and_return({
-          'unit_price' => 100,
-          'total_price' => 100,
-          'currency' => 'USD',
-          'savings' => 0
-        })
-
-        # Allow HTTParty to be called with any URL since KeventerAPI base URL may vary between tests
-        allow(HTTParty).to receive(:get).and_return(event_response, pricing_response)
 
         # Setup session
         env 'rack.session', { locale: 'es' }
@@ -124,16 +112,12 @@ describe 'Participant Registration' do
 
     context 'when event does not exist' do
       before do
-        # Mock the new ParticipantRegistration model to return nil (event not found)
-        allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return(nil)
-
-        # Mock HTTParty response for non-existent event (fallback)
-        response_double = double('HTTParty::Response')
-        allow(response_double).to receive(:success?).and_return(false)
-        allow(response_double).to receive(:code).and_return(404)
-        allow(response_double).to receive(:body).and_return('Not Found')
-        # Allow HTTParty to be called with any URL since KeventerAPI base URL may vary between tests
-        allow(HTTParty).to receive(:get).and_return(response_double)
+        # Mock the new ParticipantRegistration model to return error (event not found)
+        allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return({
+          success: false,
+          error: :not_found,
+          status: 404
+        })
       end
 
       it 'returns 404 error' do
@@ -145,10 +129,12 @@ describe 'Participant Registration' do
 
     context 'when API is unreachable' do
       before do
-        # Mock both the new model and HTTParty fallback to simulate complete API failure
-        allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return(nil)
-        allow_any_instance_of(ParticipantRegistration).to receive(:load_pricing_data).and_return(nil)
-        allow(HTTParty).to receive(:get).and_raise(StandardError.new('Connection failed'))
+        # Mock the new model to return service unavailable error
+        allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return({
+          success: false,
+          error: :service_unavailable,
+          status: 503
+        })
       end
 
       it 'returns 503 service unavailable' do

@@ -23,14 +23,17 @@ class ParticipantRegistration
       end
     end
 
-    return json_api.doc if json_api&.ok?
-    nil
+    if json_api&.ok?
+      { success: true, data: json_api.doc }
+    else
+      { success: false, error: :not_found, status: 404 }
+    end
   rescue StandardError => e
     if ENV['RACK_ENV'] == 'development'
       raise e
     else
       puts "Event API Error: #{e.message}"
-      nil
+      { success: false, error: :service_unavailable, status: 503 }
     end
   end
 
@@ -46,14 +49,17 @@ class ParticipantRegistration
       end
     end
 
-    return json_api.doc if json_api&.ok?
-    nil
+    if json_api&.ok?
+      { success: true, data: json_api.doc }
+    else
+      { success: false, error: :pricing_unavailable, status: 503 }
+    end
   rescue StandardError => e
     if ENV['RACK_ENV'] == 'development'
       raise e
     else
       puts "Pricing API Error: #{e.message}"
-      nil
+      { success: false, error: :service_unavailable, status: 503 }
     end
   end
 
