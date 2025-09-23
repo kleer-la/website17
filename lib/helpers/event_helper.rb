@@ -16,7 +16,7 @@ module EventHelper
       coupon_price = list_price - (list_price * coupon.percent_off.to_i / 100)
       if coupon_price < price_off
         price_off = coupon_price
-        using_coupon = true
+        using_coupon = coupon.display
       end
     end
 

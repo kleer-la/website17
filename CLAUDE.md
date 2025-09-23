@@ -197,3 +197,4 @@ Essential environment variables for development:
 - Course catalog is dynamically loaded from Keventer API
 - Static content is managed through ERB templates
 - Images support WebP format with fallbacks
+- TODO:  Phase 4: Refactor POST route with fallback ParticipantRegistration

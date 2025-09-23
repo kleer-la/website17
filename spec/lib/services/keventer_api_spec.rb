@@ -46,4 +46,14 @@ RSpec.describe KeventerAPI do
       end
     end
   end
+
+  describe 'Participant registration URL methods' do
+    it 'generates correct URL for participant_register_url' do
+      expect(KeventerAPI.participant_register_url(123)).to eq('https://test.example.com/api/v3/events/123/participants/register')
+    end
+
+    it 'generates correct URL for participant_pricing_url' do
+      expect(KeventerAPI.participant_pricing_url(123, 2)).to eq('https://test.example.com/api/v3/events/123/participants/pricing_info?quantity=2')
+    end
+  end
 end

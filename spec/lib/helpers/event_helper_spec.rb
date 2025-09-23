@@ -32,12 +32,23 @@ describe EventHelper do
     end
 
     context 'when coupon offers a better price' do
-      let(:coupon) { double('Coupon', percent_off: 50, icon: 'icon.png') }
+      let(:coupon) { double('Coupon', percent_off: 50, icon: 'icon.png', display: true) }
       before { allow(event_type).to receive(:coupons).and_return([coupon]) }
 
       it 'uses coupon price' do
         pricing = calculate_event_pricing(event, Date.parse('2025-03-18'))
         expect(pricing[:using_coupon]).to be true
+        expect(pricing[:final_price]).to eq(50)
+      end
+    end
+
+    context 'when coupon has display set to false' do
+      let(:coupon) { double('Coupon', percent_off: 50, icon: 'icon.png', display: false) }
+      before { allow(event_type).to receive(:coupons).and_return([coupon]) }
+
+      it 'uses coupon price but does not show as using coupon' do
+        pricing = calculate_event_pricing(event, Date.parse('2025-03-18'))
+        expect(pricing[:using_coupon]).to be false
         expect(pricing[:final_price]).to eq(50)
       end
     end
