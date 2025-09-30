@@ -1,50 +1,86 @@
 <%
 # Generic banner component for home page
-# Usage: <%= erb :'home/_banner', locals: { section_key: 'banner', default_title: 'Default Title', default_content: 'Default content', default_cta: 'Learn More' }
+# Usage: <%= erb :'home/_banner', locals: { section_key: 'banner' }
+#
+# Content field should contain JSON with the following structure:
+# {
+#   "text": "Banner HTML content",
+#   "image": "banner-image.webp",
+#   "image_alt": "Banner image",
+#   "background_color": "#d17e1f",
+#   "text_color": "#ffffff",
+#   "button_bg_color": "#d17e1f",
+#   "button_text_color": "#ffffff",
+#   "button_border_color": "#ffffff"
+# }
+
+require 'json'
 
 section_key = locals[:section_key] || 'banner'
-default_title = locals[:default_title] || ''
-default_content = locals[:default_content] || ''
-default_cta = locals[:default_cta] || ''
 
-banner_data = section_data(@page, section_key, { 
-  title: default_title, 
-  content: default_content, 
-  cta_text: default_cta 
+banner_data = section_data(@page, section_key, {
+  title: '',
+  content: '{}',
+  cta_text: ''
 })
 
-title = banner_data[:title]
-content = banner_data[:content]
+cta_url = banner_data[:title]
 cta_text = banner_data[:cta_text]
+cta_url = "https://www.youtube.com/watch?v=PCAtqCNUqG8" if ENV['RACK_ENV'] != 'test' && cta_url.to_s != '' #Debug - remove
 
-# Only show banner if title exists
-if title.to_s != ''
-#content = "<span style='color: #fff; padding: 5px;'>Webinar Aniversario<br><b><span style='font-size: 1.2em;'>Lo que aprendimos en 16 años de práctica:</span></b><br>Casos, errores y aciertos<br>Co|Pe: 14hs - Uy/Ar: 16hs</span>"
-#cta_text = "¡Súmate!"
-#cta_url = "https://www.youtube.com/watch?v=4hXX1UQ7LHc&ab_channel=Kleer%7CAgileCoaching%2CConsulting%26Training"
-cta_url = title
-img_src1 = cdn("webinaraniversario.webp")
-img_src2 = cdn("webinaraniversario.png")
+# Parse JSON from content field
+begin
+  config = JSON.parse(banner_data[:content] || '{}')
+rescue JSON::ParserError
+  # Fallback if content is not valid JSON - treat as plain text
+  config = { 'text' => banner_data[:content] }
+end
+
+content = config['text'] || ''
+image_url = config['image'] || 'webinaraniversario.webp'
+image_alt = config['image_alt'] || 'Banner'
+background_color = config['background_color'] || '#d17e1f'
+text_color = config['text_color'] || '#ffffff'
+button_bg_color = config['button_bg_color'] || background_color
+button_text_color = config['button_text_color'] || '#ffffff'
+button_border_color = config['button_border_color'] || '#ffffff'
+
+# Handle both full S3 URLs and simple filenames
+if image_url.start_with?('http')
+  # Full URL - convert S3 to CDN
+  img_src2 = replace_s3_with_cdn(image_url)
+  # Try to get webp version by replacing extension
+  img_src1 = img_src2.sub(/\.(png|jpg|jpeg)$/i, '.webp')
+else
+  # Simple filename - use cdn() helper
+  image_base = image_url.sub(/\.(webp|png|jpg|jpeg)$/i, '')
+  image_ext = image_url[/\.(webp|png|jpg|jpeg)$/i, 1] || 'webp'
+  img_src1 = cdn("#{image_base}.webp")
+  img_src2 = cdn("#{image_base}.#{image_ext == 'webp' ? 'png' : image_ext}")
+end
+
+# Only show banner if we have a CTA URL
+if cta_url.to_s != ''
 %>
 <section id="<%= section_key %>" class="mb-4">
   <div class="container banner-section">
-    <div class="row" style="background-color: #d17e1f; border-radius: 10px;">
+    <div class="row" style="background-color: <%= background_color %>;">
       <div class="col-12 col-sm-4 d-flex align-items-end p-0">
         <a href="<%= cta_url %>" rel="noopener noreferrer" class="academia__link">
             <source srcset="<%= img_src1 %>" type="image/webp"/>
             <img
               src="<%= img_src2 %>"
               class="academia__img"
-              alt="Academia Kleer"
+              alt="<%= image_alt %>"
             />
         </a>
       </div>
       <div class="col-8 col-sm-5 d-flex justify-content-center align-items-center">
-        <div class="banner text-center"><%= content %></div>
+        <div class="banner text-center" style="color: <%= text_color %>;"><%= content %></div>
       </div>
       <div class="col-3 d-flex justify-content-center align-items-center">
           <% if cta_text.to_s != '' %>
-            <a class="my-secondary-button text-center p-2" style="background-color: #d17e1f;color: white;border-color:white" href="<%= cta_url %>">
+            <a class="my-secondary-button text-center p-2" style="background-color: <%= button_bg_color %>;color: <%= button_text_color %>;border-color: <%= button_border_color %>;" href="<%= cta_url %>">
               <%= cta_text %>
             </a>
           <% end %>
