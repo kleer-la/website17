@@ -7,12 +7,14 @@
 #   "text": "Banner HTML content",
 #   "image": "banner-image.webp",
 #   "image_alt": "Banner image",
+#   "cta_url": "https://example.com",
 #   "background_color": "#d17e1f",
 #   "text_color": "#ffffff",
 #   "button_bg_color": "#d17e1f",
 #   "button_text_color": "#ffffff",
 #   "button_border_color": "#ffffff"
 # }
+# Title field is used only to show/hide the banner (if empty, banner won't display)
 
 require 'json'
 
@@ -24,10 +26,9 @@ banner_data = section_data(@page, section_key, {
   cta_text: ''
 })
 
-cta_url = banner_data[:title]
+title = banner_data[:title]
 cta_text = banner_data[:cta_text]
-cta_url = "https://www.youtube.com/watch?v=PCAtqCNUqG8" if ENV['RACK_ENV'] != 'test' && cta_url.to_s != '' #Debug - remove
-
+ 
 # Parse JSON from content field
 begin
   config = JSON.parse(banner_data[:content] || '{}')
@@ -39,6 +40,7 @@ end
 content = config['text'] || ''
 image_url = config['image'] || 'webinaraniversario.webp'
 image_alt = config['image_alt'] || 'Banner'
+cta_url = config['cta_url'] || '#'
 background_color = config['background_color'] || '#d17e1f'
 text_color = config['text_color'] || '#ffffff'
 button_bg_color = config['button_bg_color'] || background_color
@@ -59,11 +61,11 @@ else
   img_src2 = cdn("#{image_base}.#{image_ext == 'webp' ? 'png' : image_ext}")
 end
 
-# Only show banner if we have a CTA URL
-if cta_url.to_s != ''
+# Only show banner if we have a title
+if title.to_s != ''
 %>
 <section id="<%= section_key %>" class="mb-4">
-  <div class="container banner-section">
+  <div class="container-fluid banner-section">
     <div class="row" style="background-color: <%= background_color %>;">
       <div class="col-12 col-sm-4 d-flex align-items-end p-0">
         <a href="<%= cta_url %>" rel="noopener noreferrer" class="academia__link">
@@ -80,7 +82,7 @@ if cta_url.to_s != ''
       </div>
       <div class="col-3 d-flex justify-content-center align-items-center">
           <% if cta_text.to_s != '' %>
-            <a class="my-secondary-button text-center p-2" style="background-color: <%= button_bg_color %>;color: <%= button_text_color %>;border-color: <%= button_border_color %>;" href="<%= cta_url %>">
+            <a class="my-secondary-button banner-cta-button text-center p-2" style="background-color: <%= button_bg_color %>;color: <%= button_text_color %>;border-color: <%= button_border_color %>;" href="<%= cta_url %>">
               <%= cta_text %>
             </a>
           <% end %>

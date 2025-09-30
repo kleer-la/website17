@@ -9,8 +9,8 @@ Given('I visit the home page with banner data') do
     'sections' => [
       {
         'slug' => 'banner',
-        'title' => 'https://example.com/webinar',
-        'content' => '{"text":"Join our upcoming webinar series","image":"banner-image.webp","background_color":"#d17e1f"}',
+        'title' => 'show',
+        'content' => '{"text":"Join our upcoming webinar series","image":"banner-image.webp","cta_url":"https://example.com/webinar","background_color":"#d17e1f"}',
         'cta_text' => 'Register Now'
       }
     ],
@@ -39,7 +39,7 @@ Given('I visit the home page with empty banner title') do
       {
         'slug' => 'banner',
         'title' => '',
-        'content' => '{"text":"Some content","image":"banner.webp","background_color":"#d17e1f"}',
+        'content' => '{"text":"Some content","image":"banner.webp","cta_url":"https://example.com","background_color":"#d17e1f"}',
         'cta_text' => 'Register Now'
       }
     ],
