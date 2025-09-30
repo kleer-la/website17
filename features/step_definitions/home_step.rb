@@ -9,14 +9,14 @@ Given('I visit the home page with banner data') do
     'sections' => [
       {
         'slug' => 'banner',
-        'title' => 'Special Announcement',
-        'content' => 'Join our upcoming webinar series',
+        'title' => 'show',
+        'content' => '{"text":"Join our upcoming webinar series","image":"banner-image.webp","cta_url":"https://example.com/webinar","background_color":"#d17e1f"}',
         'cta_text' => 'Register Now'
       }
     ],
     'recommended' => []
   }
-  
+
   Page.api_client = NullJsonAPI.new(nil, page_data.to_json)
   visit '/'
 end
@@ -39,13 +39,13 @@ Given('I visit the home page with empty banner title') do
       {
         'slug' => 'banner',
         'title' => '',
-        'content' => 'Some content',
+        'content' => '{"text":"Some content","image":"banner.webp","cta_url":"https://example.com","background_color":"#d17e1f"}',
         'cta_text' => 'Register Now'
       }
     ],
     'recommended' => []
   }
-  
+
   Page.api_client = NullJsonAPI.new(nil, page_data.to_json)
   visit '/'
 end
