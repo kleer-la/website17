@@ -185,6 +185,25 @@ get '/s/:short_code' do |short_code|
   end
 end
 
+get '/cache-reset' do
+  token = params[:token]
+  expected_token = ENV['CACHE_RESET_TOKEN']
+
+  if expected_token.nil? || expected_token.empty?
+    halt 503, 'Cache reset not configured'
+  end
+
+  if token.nil? || token != expected_token
+    halt 403, 'Invalid token'
+  end
+
+  CacheService.clear
+  stats = CacheService.stats
+
+  content_type :json
+  { status: 'ok', message: 'Cache cleared successfully', stats: stats }.to_json
+end
+
 private
 
 def get_404_error_text_for_course(course_name)
