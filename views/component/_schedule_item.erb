@@ -19,8 +19,20 @@ require 'date'
           Online
         <% else %>
           <img src="/img/flags/<%= event.country_iso.downcase %>.png" loading="lazy"/>
-          <%= "#{event.city} - #{event.country_name}" %><br>
-          <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
+          <%= "#{event.city} - #{event.country_name}" %>
+          <button class="btn btn-link btn-sm p-0 ms-1 address-toggle-btn"
+                  type="button"
+                  data-event-id="<%= event.id %>"
+                  onclick="toggleAddress('<%= event.id %>')"
+                  style="text-decoration: none;">
+            <svg class="address-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+          <br>
+          <span class="event-address" id="event-address-<%= event.id %>" style="display: none;">
+            <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
+          </span>
         <% end %>
       </p>
     </div>
@@ -54,8 +66,20 @@ require 'date'
           Online
         <% else %>
           <img src="/img/flags/<%= event.country_iso.downcase %>.png" loading="lazy"/>
-          <%= "#{event.city}, #{event.country}" %><br>
-          <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
+          <%= "#{event.city}, #{event.country}" %>
+          <button class="btn btn-link btn-sm p-0 ms-1 address-toggle-btn"
+                  type="button"
+                  data-event-id="<%= event.id %>"
+                  onclick="toggleAddress('<%= event.id %>')"
+                  style="text-decoration: none;">
+            <svg class="address-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+          <br>
+          <span class="event-address" id="event-address-<%= event.id %>" style="display: none;">
+            <%= [event.place.to_s, event.address.to_s].uniq.join(' - ') %>
+          </span>
         <% end %>
       </p>
     </div>
@@ -106,3 +130,25 @@ require 'date'
     </div>
   </div>
 </div>
+
+<script>
+  function toggleAddress(eventId) {
+    const addressElement = document.getElementById(`event-address-${eventId}`);
+    const button = event.target.closest('.address-toggle-btn');
+    const icon = button.querySelector('.address-icon');
+
+    if (addressElement.style.display === 'none') {
+      addressElement.style.display = 'inline';
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      addressElement.style.display = 'none';
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+</script>
+
+<style>
+  .address-icon {
+    transition: transform 0.3s ease;
+  }
+</style>
