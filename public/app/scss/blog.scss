@@ -565,11 +565,87 @@ $white: #FFFFFF;
 }
 
 blockquote {
-  background: #f4f4f4; 
-  padding: 15px; 
-  border-left:8px solid #7588a7; 
+  background: #f4f4f4;
+  padding: 15px;
+  border-left:8px solid #7588a7;
   border-radius:12px;
   p {
     margin-bottom: 0;
+  }
+}
+
+// ========== ESTILOS PARA CITAS Y NOTAS - Blog Kleer ==========
+
+// CITA / CASO: Para citas de autores y frases destacadas
+.quote-case {
+  background: #f4f4f4;
+  padding: 15px;
+  border-left: 8px solid #5a6b82;
+  border-radius: 12px;
+  margin: 20px 0;
+  font-style: italic;
+}
+
+// CITA / CASO Variante 2: Con comillas decorativas
+.quote-case-v2 {
+  background: #f4f4f4;
+  padding: 15px 15px 15px 45px;
+  border-left: 8px solid #5a6b82;
+  border-radius: 12px;
+  margin: 20px 0;
+  font-style: italic;
+  position: relative;
+
+  &::before {
+    content: '"';
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    font-size: 40px;
+    color: #5a6b82;
+    opacity: 0.4;
+    font-family: Georgia, serif;
+  }
+}
+
+// NOTA IMPORTANTE: Azul con ícono de pin
+.note-important-blue {
+  background: #e8f4f8;
+  padding: 15px;
+  border-left: 8px solid #2196f3;
+  border-radius: 12px;
+  margin: 20px 0;
+
+  &::before {
+    content: '📌 ';
+    margin-right: 6px;
+  }
+}
+
+// NOTA IMPORTANTE: Verde con ícono de pin (alternativa)
+.note-important-green {
+  background: #e8f5e9;
+  padding: 15px;
+  border-left: 8px solid #4caf50;
+  border-radius: 12px;
+  margin: 20px 0;
+
+  &::before {
+    content: '📌 ';
+    margin-right: 6px;
+  }
+}
+
+// ADVERTENCIA / CUIDADO: Amarillo con ícono de advertencia
+.note-warning {
+  background: #fff8e1;
+  padding: 15px;
+  border-left: 8px solid #ffc107;
+  border-radius: 12px;
+  margin: 20px 0;
+
+  &::before {
+    content: '⚠️ ';
+    margin-right: 6px;
   }
 }
