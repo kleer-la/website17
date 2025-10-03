@@ -27,7 +27,7 @@ def resources_index(preview=false)
 end
 
 # get '/recursos/:slug' do |slug|
-get %r{/(resources|recursos)/([^/]+)} do |_, slug|
+get %r{/(resources|recursos)/([^/]+)} do |base_path, slug|
   @active_tab_publicamos = 'active'
 
   lang = session[:locale] || 'es'
@@ -36,9 +36,9 @@ get %r{/(resources|recursos)/([^/]+)} do |_, slug|
   if slug == 'retromat'
     redirect to("/#{lang}/#{partial_url}/retromat-planes-retrospectivas"), 301
   end
-  
+
   @resource = Resource.create_one_keventer(slug, lang)
-  
+
   if slug != @resource.slug
     redirect to("/#{lang}/#{partial_url}/#{@resource.slug}"), 301
   end
@@ -51,11 +51,16 @@ get %r{/(resources|recursos)/([^/]+)} do |_, slug|
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 
-  @also_download = unless @is_assessment 
+  @also_download = unless @is_assessment
                     @resource.also_download(3)
                   else
                     []
                   end
+
+  # Set alternate route with fallback
+  router_helper = RouterHelper.instance
+  router_helper.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
+
   erb :'resources/show/show', layout: :'layout/layout2022'
 rescue ResourceNotFoundError
   return status 404
