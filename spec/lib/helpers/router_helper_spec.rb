@@ -185,6 +185,10 @@ describe RouterHelper do
         expect(RouterHelper.alternate_path('formacion', 'es')).to eq('/training')
       end
 
+      it 'returns English path for somos' do
+        expect(RouterHelper.alternate_path('somos', 'es')).to eq('/about_us')
+      end
+
       it 'keeps blog as blog' do
         expect(RouterHelper.alternate_path('blog', 'es')).to eq('/blog')
       end
@@ -209,6 +213,10 @@ describe RouterHelper do
 
       it 'returns Spanish path for training' do
         expect(RouterHelper.alternate_path('training', 'en')).to eq('/formacion')
+      end
+
+      it 'returns Spanish path for about_us' do
+        expect(RouterHelper.alternate_path('about_us', 'en')).to eq('/somos')
       end
 
       it 'keeps blog as blog' do
@@ -249,6 +257,10 @@ describe RouterHelper do
         expect(RouterHelper.translate_path('agenda', 'en')).to eq('schedule')
       end
 
+      it 'translates somos to about_us' do
+        expect(RouterHelper.translate_path('somos', 'en')).to eq('about_us')
+      end
+
       it 'keeps blog as blog' do
         expect(RouterHelper.translate_path('blog', 'en')).to eq('blog')
       end
@@ -273,6 +285,10 @@ describe RouterHelper do
 
       it 'translates schedule to agenda' do
         expect(RouterHelper.translate_path('schedule', 'es')).to eq('agenda')
+      end
+
+      it 'translates about_us to somos' do
+        expect(RouterHelper.translate_path('about_us', 'es')).to eq('somos')
       end
 
       it 'keeps blog as blog' do
@@ -325,6 +341,11 @@ describe RouterHelper do
         result = RouterHelper.detect_mixed_language('en', '/agenda')
         expect(result).to eq('/schedule')
       end
+
+      it 'returns corrected path for /somos' do
+        result = RouterHelper.detect_mixed_language('en', '/somos')
+        expect(result).to eq('/about_us')
+      end
     end
 
     context 'when Spanish locale with English path segments' do
@@ -351,6 +372,11 @@ describe RouterHelper do
       it 'returns corrected path for /schedule' do
         result = RouterHelper.detect_mixed_language('es', '/schedule')
         expect(result).to eq('/agenda')
+      end
+
+      it 'returns corrected path for /about_us' do
+        result = RouterHelper.detect_mixed_language('es', '/about_us')
+        expect(result).to eq('/somos')
       end
     end
 
@@ -382,6 +408,16 @@ describe RouterHelper do
 
       it 'returns nil for /es/agenda' do
         result = RouterHelper.detect_mixed_language('es', '/agenda')
+        expect(result).to be_nil
+      end
+
+      it 'returns nil for /en/about_us' do
+        result = RouterHelper.detect_mixed_language('en', '/about_us')
+        expect(result).to be_nil
+      end
+
+      it 'returns nil for /es/somos' do
+        result = RouterHelper.detect_mixed_language('es', '/somos')
         expect(result).to be_nil
       end
     end

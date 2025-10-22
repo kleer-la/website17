@@ -12,7 +12,9 @@ class RouterHelper
     'formacion' => { es: 'formacion', en: 'training' },
     'training' => { es: 'formacion', en: 'training' },
     'agenda' => { es: 'agenda', en: 'schedule' },
-    'schedule' => { es: 'agenda', en: 'schedule' }
+    'schedule' => { es: 'agenda', en: 'schedule' },
+    'somos' => { es: 'somos', en: 'about_us' },
+    'about_us' => { es: 'somos', en: 'about_us' }
   }.freeze
 
   def set_current_route(current_route)
