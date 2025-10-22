@@ -42,6 +42,12 @@ get %r{/(resources|recursos)/([^/]+)} do |base_path, slug|
   if slug != @resource.slug
     redirect to("/#{lang}/#{partial_url}/#{@resource.slug}"), 301
   end
+
+  # Check if resource has content in the requested language
+  if @resource.title.to_s.strip.empty?
+    flash[:error] = 'Resource not found'
+    redirect to("/#{lang}/#{partial_url}")
+  end
   @is_assessment = @resource.format == 'assessment'
 
   @meta_tags.set! title: @resource.tabtitle,

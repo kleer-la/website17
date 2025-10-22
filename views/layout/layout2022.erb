@@ -22,6 +22,7 @@
   <body id="body">
     <%= erb :'layout/_google_tracker_body' %>
     <%=erb :'component/_menu'%>
+    <%= erb :'component/_flash_messages' %>
     <%= yield %>
     <%= erb :'component/_footer'%>
     <%= erb :'component/_modal_contact'%>
@@ -47,10 +48,6 @@
             // Add scroll event listener with passive for better performance
             window.addEventListener('scroll', scrolling, { passive: true });
         });
-        
-        // Flash messages
-        <%= flash[:notice] ? "alert('#{flash[:notice]}')" : "" %>
-        <%= flash[:error] ? "alert('#{flash[:error]}')" : "" %>
     </script>
   <script src="/js/utils.js" defer></script>
   </body>

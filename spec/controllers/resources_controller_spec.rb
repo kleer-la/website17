@@ -149,5 +149,50 @@ describe 'Resources routes' do
         expect(router_helper.alternate_route).to eq('/recursos')
       end
     end
+
+    context 'when English resource has no content' do
+      let(:resource_without_content) do
+        double('Resource',
+          slug: 'test-slug',
+          title: '',
+          tabtitle: '',
+          seo_description: '',
+          cover: '',
+          long_description: '',
+          also_download: [],
+          format: 'pdf',
+          landing: '',
+          description: '',
+          comments: '',
+          getit: '',
+          assessment_id: nil,
+          preview: '',
+          trainers_with_role: [],
+          recommended_not_downloads: []
+        ).tap do |resource|
+          allow(resource).to receive(:long_description=)
+        end
+      end
+
+      before do
+        allow(Resource).to receive(:create_one_keventer)
+          .with('test-slug', 'en')
+          .and_return(resource_without_content)
+
+        # Mock the Spanish version (for alternate route checking)
+        spanish_resource = double('Resource', slug: 'test-slug', title: 'Spanish Title')
+        allow(Resource).to receive(:create_one_keventer)
+          .with('test-slug', 'es')
+          .and_return(spanish_resource)
+      end
+
+      it 'redirects to /en/resources with flash message' do
+        get '/en/resources/test-slug'
+
+        expect(last_response).to be_redirect
+        expect(last_response.location).to end_with('/en/resources')
+        expect(last_request.env['rack.session'][:flash][:error]).to eq('Resource not found')
+      end
+    end
   end
 end
