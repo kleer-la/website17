@@ -100,7 +100,15 @@ before '/:locale/*' do
 
   if %w[es en].include?(locale)
     session[:locale] = locale
-    request.path_info = "/#{params[:splat][0]}"
+    path = "/#{params[:splat][0]}"
+
+    # Check for mixed language URLs and redirect if needed
+    corrected_path = RouterHelper.detect_mixed_language(locale, path)
+    if corrected_path
+      redirect "/#{locale}#{corrected_path}", 301
+    end
+
+    request.path_info = path
   else
     session[:locale] = 'es'
   end

@@ -39,7 +39,7 @@ def redirect_not_found_course
   session[:error_msg] = course_not_found_error
   flash.now[:alert] = course_not_found_error
   lang = session[:locale]
-  catalog_path = lang == 'en' ? 'catalog' : 'catalogo'
+  catalog_path = RouterHelper.translate_path('catalogo', lang)
   redirect(to("/#{lang}/#{catalog_path}"))
 end
 
@@ -98,7 +98,7 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
   else
     if session[:locale] != @event_type.lang
       lang = session[:locale]
-      catalog_path = lang == 'en' ? 'catalog' : 'catalogo'
+      catalog_path = RouterHelper.translate_path('catalogo', lang)
       redirect to("/#{lang}/#{catalog_path}"), 301
     end
 
