@@ -8,7 +8,9 @@ class RouterHelper
     'catalogo' => { es: 'catalogo', en: 'catalog' },
     'catalog' => { es: 'catalogo', en: 'catalog' },
     'servicios' => { es: 'servicios', en: 'services' },
-    'services' => { es: 'servicios', en: 'services' }
+    'services' => { es: 'servicios', en: 'services' },
+    'formacion' => { es: 'formacion', en: 'training' },
+    'training' => { es: 'formacion', en: 'training' }
   }.freeze
 
   def set_current_route(current_route)

@@ -29,6 +29,13 @@ describe 'Mixed Language URL Redirects' do
         expect(last_response.location).to end_with('/en/catalog')
       end
 
+      it 'redirects /en/formacion to /en/training' do
+        get '/en/formacion'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/en/training')
+      end
+
       it 'redirects /en/servicios/some-slug to /en/services/some-slug' do
         get '/en/servicios/coaching-agile'
 
@@ -41,6 +48,13 @@ describe 'Mixed Language URL Redirects' do
 
         expect(last_response.status).to eq(301)
         expect(last_response.location).to end_with('/en/resources/scrum-guide')
+      end
+
+      it 'redirects /en/formacion/programas-capacitacion-empresarial to /en/training/programas-capacitacion-empresarial' do
+        get '/en/formacion/programas-capacitacion-empresarial'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/en/training/programas-capacitacion-empresarial')
       end
     end
 
@@ -78,6 +92,20 @@ describe 'Mixed Language URL Redirects' do
 
         expect(last_response.status).to eq(301)
         expect(last_response.location).to end_with('/es/recursos/scrum-guide')
+      end
+
+      it 'redirects /es/training to /es/formacion' do
+        get '/es/training'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/formacion')
+      end
+
+      it 'redirects /es/training/programas-capacitacion-empresarial to /es/formacion/programas-capacitacion-empresarial' do
+        get '/es/training/programas-capacitacion-empresarial'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/formacion/programas-capacitacion-empresarial')
       end
     end
 

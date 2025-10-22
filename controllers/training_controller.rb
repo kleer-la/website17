@@ -141,6 +141,13 @@ get '/formacion/:slug*?' do
   service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
   return status 404 if service_area.nil?
 
+  lang = session[:locale] || 'es'
+
+  # Check if service area language matches the requested language
+  if service_area.lang != lang
+    redirect to("/#{lang}/catalogo"), 301
+  end
+
   @service_slug = if service_area.slug != params[:slug]
                     params[:slug]
                   else
@@ -151,4 +158,28 @@ get '/formacion/:slug*?' do
   @is_training_program = true
 
   show_service_area(service_area, 'formacion')
+end
+
+get '/training/:slug*?' do
+  is_preview_mode = request.path_info.end_with?('/preview')
+  service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
+  return status 404 if service_area.nil?
+
+  lang = session[:locale] || 'en'
+
+  # Check if service area language matches the requested language
+  if service_area.lang != lang
+    redirect to("/#{lang}/catalog"), 301
+  end
+
+  @service_slug = if service_area.slug != params[:slug]
+                    params[:slug]
+                  else
+                    'none'
+                  end
+  return status 404 if service_area.nil?
+
+  @is_training_program = true
+
+  show_service_area(service_area, 'training')
 end
