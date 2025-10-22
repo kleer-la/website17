@@ -45,7 +45,7 @@ get %r{/(resources|recursos)/([^/]+)} do |base_path, slug|
 
   # Check if resource has content in the requested language
   if @resource.title.to_s.strip.empty?
-    flash[:error] = 'Resource not found'
+    flash[:error] = t('resources.not_found')
     redirect to("/#{lang}/#{partial_url}")
   end
   @is_assessment = @resource.format == 'assessment'

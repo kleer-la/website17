@@ -56,7 +56,7 @@ end
 
 post '/send-mail' do
   unless verify_recaptcha
-    flash[:error] = 'Ha ocurrido un error, su mensaje no fué enviado'
+    flash[:error] = t('mailer.error')
     redirect "/#{session[:locale]}#{params[:context]}"
     return
   end
@@ -83,7 +83,7 @@ post '/send-mail' do
     send_mail(base_data.merge(resource_slug: resource_slug))
   end
 
-  flash[:notice] = 'Su mensaje ha sido enviado correctamente'
+  flash[:notice] = t('mailer.success')
   redirect "/#{session[:locale]}#{params[:context]}"
 end
 

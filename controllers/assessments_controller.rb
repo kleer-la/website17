@@ -2,7 +2,7 @@ require './lib/models/contact'
 
 post '/assessment/:id' do |id|
   unless verify_recaptcha
-    flash[:error] = 'Ha ocurrido un error, por favor intenta de nuevo'
+    flash[:error] = t('assessment.error')
     lang = session[:locale] || 'es'
     resources_path = RouterHelper.translate_path('recursos', lang)
     redirect "/#{lang}/#{resources_path}/#{params[:resource_slug]}"

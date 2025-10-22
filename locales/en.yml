@@ -836,6 +836,7 @@ en:
       ToC: Table of contents
       authors: Written by
   resources:
+    not_found: Resource not found
     title: Resources for agility
     subtitle: >-
       Our 2 cents to help you with team collaboration: books, quick guides, card games, infographics, and more
@@ -1058,6 +1059,9 @@ en:
       error-message: Please fill in your message
     button:
       text: Submit
+  mailer:
+    error: An error occurred, your message was not sent
+    success: Your message has been sent successfully
   certificates:
     not_found: We couldn't find a certificate with that code
   certificate-form:
@@ -1069,6 +1073,7 @@ en:
     submit:
       text: Get certificate
   assessment:
+    error: An error occurred, please try again
     submit: Submit
     short_text_placeholder: Write your answer here...
     long_text_placeholder: Write your detailed answer here...
