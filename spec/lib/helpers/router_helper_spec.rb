@@ -163,6 +163,74 @@ describe RouterHelper do
     end
   end
 
+  describe '.alternate_path' do
+    context 'when current language is Spanish' do
+      it 'returns English path for recursos' do
+        expect(RouterHelper.alternate_path('recursos', 'es')).to eq('/resources')
+      end
+
+      it 'returns English path for servicios' do
+        expect(RouterHelper.alternate_path('servicios', 'es')).to eq('/services')
+      end
+
+      it 'returns English path for catalogo' do
+        expect(RouterHelper.alternate_path('catalogo', 'es')).to eq('/catalog')
+      end
+
+      it 'returns English path for agenda' do
+        expect(RouterHelper.alternate_path('agenda', 'es')).to eq('/schedule')
+      end
+
+      it 'returns English path for formacion' do
+        expect(RouterHelper.alternate_path('formacion', 'es')).to eq('/training')
+      end
+
+      it 'keeps blog as blog' do
+        expect(RouterHelper.alternate_path('blog', 'es')).to eq('/blog')
+      end
+    end
+
+    context 'when current language is English' do
+      it 'returns Spanish path for resources' do
+        expect(RouterHelper.alternate_path('resources', 'en')).to eq('/recursos')
+      end
+
+      it 'returns Spanish path for services' do
+        expect(RouterHelper.alternate_path('services', 'en')).to eq('/servicios')
+      end
+
+      it 'returns Spanish path for catalog' do
+        expect(RouterHelper.alternate_path('catalog', 'en')).to eq('/catalogo')
+      end
+
+      it 'returns Spanish path for schedule' do
+        expect(RouterHelper.alternate_path('schedule', 'en')).to eq('/agenda')
+      end
+
+      it 'returns Spanish path for training' do
+        expect(RouterHelper.alternate_path('training', 'en')).to eq('/formacion')
+      end
+
+      it 'keeps blog as blog' do
+        expect(RouterHelper.alternate_path('blog', 'en')).to eq('/blog')
+      end
+    end
+
+    context 'when locale is a symbol' do
+      it 'works with symbol locale' do
+        expect(RouterHelper.alternate_path('recursos', :es)).to eq('/resources')
+        expect(RouterHelper.alternate_path('resources', :en)).to eq('/recursos')
+      end
+    end
+
+    context 'when path has no translation' do
+      it 'returns the path with alternate language attempt' do
+        expect(RouterHelper.alternate_path('unknown', 'es')).to eq('/unknown')
+        expect(RouterHelper.alternate_path('unknown', 'en')).to eq('/unknown')
+      end
+    end
+  end
+
   describe '.translate_path' do
     context 'when translating to English' do
       it 'translates recursos to resources' do
@@ -175,6 +243,10 @@ describe RouterHelper do
 
       it 'translates catalogo to catalog' do
         expect(RouterHelper.translate_path('catalogo', 'en')).to eq('catalog')
+      end
+
+      it 'translates agenda to schedule' do
+        expect(RouterHelper.translate_path('agenda', 'en')).to eq('schedule')
       end
 
       it 'keeps blog as blog' do
@@ -197,6 +269,10 @@ describe RouterHelper do
 
       it 'translates catalog to catalogo' do
         expect(RouterHelper.translate_path('catalog', 'es')).to eq('catalogo')
+      end
+
+      it 'translates schedule to agenda' do
+        expect(RouterHelper.translate_path('schedule', 'es')).to eq('agenda')
       end
 
       it 'keeps blog as blog' do
@@ -244,6 +320,11 @@ describe RouterHelper do
         result = RouterHelper.detect_mixed_language('en', '/catalogo')
         expect(result).to eq('/catalog')
       end
+
+      it 'returns corrected path for /agenda' do
+        result = RouterHelper.detect_mixed_language('en', '/agenda')
+        expect(result).to eq('/schedule')
+      end
     end
 
     context 'when Spanish locale with English path segments' do
@@ -266,6 +347,11 @@ describe RouterHelper do
         result = RouterHelper.detect_mixed_language('es', '/catalog')
         expect(result).to eq('/catalogo')
       end
+
+      it 'returns corrected path for /schedule' do
+        result = RouterHelper.detect_mixed_language('es', '/schedule')
+        expect(result).to eq('/agenda')
+      end
     end
 
     context 'when locale and path segments match' do
@@ -286,6 +372,16 @@ describe RouterHelper do
 
       it 'returns nil for /es/recursos' do
         result = RouterHelper.detect_mixed_language('es', '/recursos')
+        expect(result).to be_nil
+      end
+
+      it 'returns nil for /en/schedule' do
+        result = RouterHelper.detect_mixed_language('en', '/schedule')
+        expect(result).to be_nil
+      end
+
+      it 'returns nil for /es/agenda' do
+        result = RouterHelper.detect_mixed_language('es', '/agenda')
         expect(result).to be_nil
       end
     end

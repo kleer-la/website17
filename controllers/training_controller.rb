@@ -68,7 +68,7 @@ get %r{/(agenda|schedule)/?} do
   @events = Event.create_keventer_json
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/catalogo'
+  router_helper.alternate_route = RouterHelper.alternate_path('agenda', session[:locale])
 
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
@@ -84,7 +84,7 @@ get %r{/(catalogo|catalog)/?} do
   @events = Catalog.create_keventer_json
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/catalogo'
+  router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
   erb :'training/catalog/index', layout: :'layout/layout2022'
 end
 
@@ -124,7 +124,7 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
     end
 
     router_helper = RouterHelper.instance
-    router_helper.alternate_route = '/catalogo'
+    router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end

@@ -10,7 +10,9 @@ class RouterHelper
     'servicios' => { es: 'servicios', en: 'services' },
     'services' => { es: 'servicios', en: 'services' },
     'formacion' => { es: 'formacion', en: 'training' },
-    'training' => { es: 'formacion', en: 'training' }
+    'training' => { es: 'formacion', en: 'training' },
+    'agenda' => { es: 'agenda', en: 'schedule' },
+    'schedule' => { es: 'agenda', en: 'schedule' }
   }.freeze
 
   def set_current_route(current_route)
@@ -75,6 +77,19 @@ class RouterHelper
     return base_path unless route_config
 
     route_config[locale.to_sym] || base_path
+  end
+
+  # Returns the alternate path for a given path and current language
+  # @param base_path [String] the path segment (e.g., 'recursos', 'catalogo', 'agenda')
+  # @param current_lang [String, Symbol] the current language ('es' or 'en')
+  # @return [String] the path in the alternate language with leading slash
+  # @example
+  #   RouterHelper.alternate_path('recursos', 'es') # => '/resources'
+  #   RouterHelper.alternate_path('catalog', 'en') # => '/catalogo'
+  #   RouterHelper.alternate_path('agenda', 'es') # => '/schedule'
+  def self.alternate_path(base_path, current_lang)
+    alternate_lang = current_lang.to_s == 'es' ? 'en' : 'es'
+    '/' + translate_path(base_path, alternate_lang)
   end
 
   # Detects if a path has mixed language (locale prefix doesn't match path segments)
