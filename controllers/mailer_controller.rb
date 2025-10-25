@@ -61,30 +61,72 @@ post '/send-mail' do
     return
   end
 
-  # Create base data structure first
-  base_data = {
-    name: params[:name],
-    email: params[:email],
-    company: params[:company],
-    message: params[:message],
-    context: params[:context],
-    language: session[:locale],
-    resource_slug: params[:resource_slug],
-    initial_slug: params[:resource_slug],
-    can_we_contact: params[:can_we_contact] == 'on',
-    suscribe: params[:suscribe] == 'on'
-  }
-  send_mail(base_data)
+  # Check if this is an incompany quote form
+  if params[:form_type] == 'incompany_quote'
+    # Build incompany quote message
+    message = build_incompany_quote_message(params)
 
-  # Send additional resource emails
-  additional_resources = params.select { |k, v| k.start_with?('ad-') && v == 'on' }
-  additional_resources.each do |key, _|
-    resource_slug = key.sub('ad-', '')
-    send_mail(base_data.merge(resource_slug: resource_slug))
+    base_data = {
+      name: params[:name],
+      email: params[:email],
+      company: params[:company],
+      message: message,
+      context: params[:context],
+      language: session[:locale],
+      resource_slug: '',
+      initial_slug: '',
+      can_we_contact: false,
+      suscribe: false
+    }
+    send_mail(base_data)
+  else
+    # Original contact form logic
+    base_data = {
+      name: params[:name],
+      email: params[:email],
+      company: params[:company],
+      message: params[:message],
+      context: params[:context],
+      language: session[:locale],
+      resource_slug: params[:resource_slug],
+      initial_slug: params[:resource_slug],
+      can_we_contact: params[:can_we_contact] == 'on',
+      suscribe: params[:suscribe] == 'on'
+    }
+    send_mail(base_data)
+
+    # Send additional resource emails
+    additional_resources = params.select { |k, v| k.start_with?('ad-') && v == 'on' }
+    additional_resources.each_key do |key|
+      resource_slug = key.sub('ad-', '')
+      send_mail(base_data.merge(resource_slug: resource_slug))
+    end
   end
 
   flash[:notice] = t('mailer.success')
   redirect "/#{session[:locale]}#{params[:context]}"
+end
+
+def build_incompany_quote_message(params)
+  location = if params[:location] == 'presencial'
+               "#{t('incompany_quote_form.location_onsite')} - #{params[:where]}"
+             else
+               t('incompany_quote_form.location_online')
+             end
+
+  when_date = begin
+    Date.strptime(params[:when], '%Y-%m').strftime('%B %Y')
+  rescue StandardError
+    params[:when]
+  end
+
+  <<~MESSAGE
+    #{t('incompany_quote_form.title')}
+
+    #{t('incompany_quote_form.location_label')}: #{location}
+    #{t('incompany_quote_form.when_label')}: #{when_date}
+    #{t('incompany_quote_form.attendees_label')}: #{params[:attendees]}
+  MESSAGE
 end
 
 get '/mailer-template' do

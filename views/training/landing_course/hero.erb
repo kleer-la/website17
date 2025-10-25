@@ -11,16 +11,9 @@
       <h2 class="hero-description"><%= @event_type.subtitle %></h2>
     </div>
     <div class="col-md-3 course-hero__button">
-        <% if @event_type.public_editions.length > 0 %>
-          <a href="#course-next-editions">
-            <strong><%= t("course_landing.see_next_editions") %></strong>
-            <img src="<%= cdn('website-assets/rustic_arrow2.svg') %>" alt="" width="20" height="20"/>
-          </a>
-        <% else %>
-          <a data-bs-toggle="modal" data-bs-target="#mail-modal">
-            <strong><%= t("course_landing.contact_us") %></strong>
-          </a>
-        <% end %>
+        <a data-bs-toggle="modal" data-bs-target="#incompany-quote-modal">
+          <strong><%= t("course_landing.quote_incompany") %></strong>
+        </a>
     </div>
   </div>
   <img src="<%= cdn('website-assets/yellow_oval.svg') %>" alt="" class="course-hero__yellow-oval" width="222" height="244">

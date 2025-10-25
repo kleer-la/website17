@@ -804,6 +804,7 @@ en:
       register: Register now🔥
     see_next_editions: Next editions
     contact_us: Bring it to your company
+    quote_incompany: Get In-Company Quote
     takeaways: Takeaways
     target: Who should attend?
     program: Program
@@ -1059,6 +1060,20 @@ en:
       error-message: Please fill in your message
     button:
       text: Submit
+  incompany_quote_form:
+    title: Request a quote
+    location_label: Location
+    location_online: Online
+    location_onsite: On-site
+    where_label: Where?
+    where_placeholder: City or country
+    where_error: Please specify the location
+    when_label: When?
+    when_error: Please specify when you'd like to have the training
+    attendees_label: Number of attendees
+    attendees_help: Minimum 8 people
+    attendees_error: There must be at least 8 attendees
+    button_text: Request quote
   mailer:
     error: An error occurred, your message was not sent
     success: Your message has been sent successfully
