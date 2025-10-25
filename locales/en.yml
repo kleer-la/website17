@@ -802,6 +802,8 @@ en:
       title: Bring this course to your company!
       contact_us: Contact us🔥
       register: Register now🔥
+      next_course: "Don't miss the next course starting on %{date}!"
+    date_format: "%m/%d/%Y"
     see_next_editions: Next editions
     contact_us: Bring it to your company
     quote_incompany: Get In-Company Quote

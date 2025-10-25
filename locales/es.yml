@@ -452,9 +452,11 @@ es:
     event:
       time: "%{starts} a %{ends}"
     flash:
-      title: ¡No dudes contactarnos para tu curso in company!
+      title: ¡Lleva este curso a tu equipo!
       contact_us: Contáctanos🔥
       register: Inscribirme ahora🔥
+      next_course: "¡No te pierdas el próximo curso a comenzar el %{date}!"
+    date_format: "%d/%m/%Y"
     see_next_editions: Ver fechas
     contact_us: Contáctanos
     quote_incompany: Cotiza In-Company
