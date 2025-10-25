@@ -7,7 +7,14 @@ class RouterHelper
     'blog' => { es: 'blog', en: 'blog' },
     'catalogo' => { es: 'catalogo', en: 'catalog' },
     'catalog' => { es: 'catalogo', en: 'catalog' },
-    'services' => { es: 'services', en: 'services' }
+    'servicios' => { es: 'servicios', en: 'services' },
+    'services' => { es: 'servicios', en: 'services' },
+    'formacion' => { es: 'formacion', en: 'training' },
+    'training' => { es: 'formacion', en: 'training' },
+    'agenda' => { es: 'agenda', en: 'schedule' },
+    'schedule' => { es: 'agenda', en: 'schedule' },
+    'somos' => { es: 'somos', en: 'about_us' },
+    'about_us' => { es: 'somos', en: 'about_us' }
   }.freeze
 
   def set_current_route(current_route)
@@ -56,6 +63,63 @@ class RouterHelper
     rescue StandardError
       # If there's an error loading the resource, fallback to index
       @alternate_route = "/#{alternate_base_path}"
+    end
+  end
+
+  # Translates a path segment to the appropriate language
+  # @param base_path [String] the path segment to translate (e.g., 'recursos', 'resources', 'servicios')
+  # @param locale [String, Symbol] the target locale ('es' or 'en')
+  # @return [String] the translated path segment, or the original if no translation exists
+  # @example
+  #   RouterHelper.translate_path('recursos', 'en') # => 'resources'
+  #   RouterHelper.translate_path('resources', 'es') # => 'recursos'
+  #   RouterHelper.translate_path('blog', 'en') # => 'blog' (same in both languages)
+  def self.translate_path(base_path, locale)
+    route_config = ROUTE_TRANSLATIONS[base_path]
+    return base_path unless route_config
+
+    route_config[locale.to_sym] || base_path
+  end
+
+  # Returns the alternate path for a given path and current language
+  # @param base_path [String] the path segment (e.g., 'recursos', 'catalogo', 'agenda')
+  # @param current_lang [String, Symbol] the current language ('es' or 'en')
+  # @return [String] the path in the alternate language with leading slash
+  # @example
+  #   RouterHelper.alternate_path('recursos', 'es') # => '/resources'
+  #   RouterHelper.alternate_path('catalog', 'en') # => '/catalogo'
+  #   RouterHelper.alternate_path('agenda', 'es') # => '/schedule'
+  def self.alternate_path(base_path, current_lang)
+    alternate_lang = current_lang.to_s == 'es' ? 'en' : 'es'
+    '/' + translate_path(base_path, alternate_lang)
+  end
+
+  # Detects if a path has mixed language (locale prefix doesn't match path segments)
+  # and returns the corrected path if needed
+  # @param locale [String] the locale from the URL prefix ('es' or 'en')
+  # @param path [String] the path after the locale prefix
+  # @return [String, nil] the corrected path if mixed language detected, nil otherwise
+  def self.detect_mixed_language(locale, path)
+    return nil unless %w[es en].include?(locale)
+
+    # Extract the first path segment (e.g., 'servicios' from '/servicios/coaching')
+    path_parts = path.split('/').reject(&:empty?)
+    return nil if path_parts.empty?
+
+    first_segment = path_parts.first
+    route_config = ROUTE_TRANSLATIONS[first_segment]
+    return nil unless route_config
+
+    # Get the expected segment for this locale
+    expected_segment = route_config[locale.to_sym]
+
+    # If the first segment doesn't match the expected one for this locale, correct it
+    if first_segment != expected_segment
+      # Replace the first segment with the correct one
+      path_parts[0] = expected_segment
+      "/#{path_parts.join('/')}"
+    else
+      nil # No correction needed
     end
   end
 

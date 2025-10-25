@@ -39,7 +39,7 @@ def redirect_not_found_course
   session[:error_msg] = course_not_found_error
   flash.now[:alert] = course_not_found_error
   lang = session[:locale]
-  catalog_path = lang == 'en' ? 'catalog' : 'catalogo'
+  catalog_path = RouterHelper.translate_path('catalogo', lang)
   redirect(to("/#{lang}/#{catalog_path}"))
 end
 
@@ -68,7 +68,7 @@ get %r{/(agenda|schedule)/?} do
   @events = Event.create_keventer_json
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/catalogo'
+  router_helper.alternate_route = RouterHelper.alternate_path('agenda', session[:locale])
 
   erb :'training/agenda/index', layout: :'layout/layout2022'
 end
@@ -84,7 +84,7 @@ get %r{/(catalogo|catalog)/?} do
   @events = Catalog.create_keventer_json
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/catalogo'
+  router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
   erb :'training/catalog/index', layout: :'layout/layout2022'
 end
 
@@ -98,7 +98,7 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
   else
     if session[:locale] != @event_type.lang
       lang = session[:locale]
-      catalog_path = lang == 'en' ? 'catalog' : 'catalogo'
+      catalog_path = RouterHelper.translate_path('catalogo', lang)
       redirect to("/#{lang}/#{catalog_path}"), 301
     end
 
@@ -124,7 +124,7 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
     end
 
     router_helper = RouterHelper.instance
-    router_helper.alternate_route = '/catalogo'
+    router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
 
     erb :'training/landing_course/index', layout: :'layout/layout2022'
   end
@@ -141,6 +141,13 @@ get '/formacion/:slug*?' do
   service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
   return status 404 if service_area.nil?
 
+  lang = session[:locale] || 'es'
+
+  # Check if service area language matches the requested language
+  if service_area.lang != lang
+    redirect to("/#{lang}/catalogo"), 301
+  end
+
   @service_slug = if service_area.slug != params[:slug]
                     params[:slug]
                   else
@@ -151,4 +158,28 @@ get '/formacion/:slug*?' do
   @is_training_program = true
 
   show_service_area(service_area, 'formacion')
+end
+
+get '/training/:slug*?' do
+  is_preview_mode = request.path_info.end_with?('/preview')
+  service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
+  return status 404 if service_area.nil?
+
+  lang = session[:locale] || 'en'
+
+  # Check if service area language matches the requested language
+  if service_area.lang != lang
+    redirect to("/#{lang}/catalog"), 301
+  end
+
+  @service_slug = if service_area.slug != params[:slug]
+                    params[:slug]
+                  else
+                    'none'
+                  end
+  return status 404 if service_area.nil?
+
+  @is_training_program = true
+
+  show_service_area(service_area, 'training')
 end

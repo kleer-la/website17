@@ -49,3 +49,12 @@ Feature: Resource Page SEO
       | title          | Agile Básico     |
     When I visit "/es/recursos/non-existent-resource"
     Then I should see "Página no encontrada"
+
+  Scenario: English resource page should redirect to index when resource has no English content
+    Given a resource exists with Spanish content only:
+      | slug           | agile-basico     |
+      | title_es       | Agile Básico     |
+      | title_en       |                  |
+    When I visit "/en/resources/agile-basico"
+    Then I should be redirected to "/en/resources"
+    And I should see an error flash message "Resource not found"

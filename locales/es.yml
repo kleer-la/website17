@@ -489,6 +489,7 @@ es:
       ToC: Tabla de contenido
       authors: 'Creado por:'
   resources:
+    not_found: Recurso no encontrado
     title: Recursos y Materiales sobre Agilidad
     subtitle: >-
       Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
@@ -721,6 +722,9 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
+  mailer:
+    error: Ha ocurrido un error, su mensaje no fué enviado
+    success: Su mensaje ha sido enviado correctamente
   certificates:
     not_found: No encontramos un certificado con ese código
   certificate-form:
@@ -732,6 +736,7 @@ es:
     submit:
       text: Obten tu certificado
   assessment:
+    error: Ha ocurrido un error, por favor intenta de nuevo
     submit: Enviar
     short_text_placeholder: Escribe tu respuesta aquí...
     long_text_placeholder: Escribe tu respuesta detallada aquí...

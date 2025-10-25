@@ -8,6 +8,9 @@ get %r{/(somos|about_us)/?} do
   @active_tab_somos = 'active'
   @kleerers = Trainer.create_keventer_json session[:locale]
 
+  router_helper = RouterHelper.instance
+  router_helper.alternate_route = RouterHelper.alternate_path('somos', session[:locale])
+
   erb :'about_us/index', layout: :'layout/layout2022'
 end
 

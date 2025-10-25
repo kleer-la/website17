@@ -25,7 +25,7 @@ get %r{/(servicios|services)/?} do
 
   @path = 'servicios'
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/services'
+  router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
@@ -46,7 +46,7 @@ get %r{/(?:servicios|services)/([^/]+)} do |slug|
   return status 404 if service_area.nil?
 
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = '/services'
+  router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
   show_service_area(service_area, 'servicios')
 end

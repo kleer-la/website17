@@ -19,11 +19,13 @@ module KeventerAPI
 
   def echo(value)
     if ENV['RACK_ENV'] == 'test' #'development'
-      caller_info = caller[1].match(/(.*):(\d+):in `([^']*)'/)
-      file = caller_info[1]
-      line = caller_info[2]
-      method = caller_info[3]
-      puts "----- #{method} (#{file}:#{line}) -->  #{value} -------"
+      caller_info = caller[1]&.match(/(.*):(\d+):in `([^']*)'/)
+      if caller_info
+        file = caller_info[1]
+        line = caller_info[2]
+        method = caller_info[3]
+        puts "----- #{method} (#{file}:#{line}) -->  #{value} -------"
+      end
     end
     value
   end

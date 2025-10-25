@@ -85,3 +85,63 @@ end
 Then('I should get a {int} status code') do |code|
   expect(page.status_code).to eq code
 end
+
+Given('a resource exists with Spanish content only:') do |table|
+  resource_data = table.rows_hash
+
+  # Create a resource with Spanish content but empty English content
+  doc = {
+    'id' => 1,
+    'format' => 'article',
+    'slug' => resource_data['slug'],
+    'title_es' => resource_data['title_es'],
+    'tabtitle_es' => resource_data['title_es'],
+    'seo_description_es' => 'Descripción en español',
+    'cover_es' => '/img/cover.jpg',
+    'description_es' => 'Descripción completa en español',
+    'long_description_es' => 'Descripción larga en español',
+    'landing_es' => '',
+    'getit_es' => '',
+    'buyit_es' => '',
+    'share_link_es' => '',
+    'share_text_es' => '',
+    'tags_es' => '',
+    'comments_es' => '',
+    'preview_es' => '',
+    # Empty English content
+    'title_en' => resource_data['title_en'] || '',
+    'tabtitle_en' => '',
+    'seo_description_en' => '',
+    'cover_en' => '',
+    'description_en' => '',
+    'long_description_en' => '',
+    'landing_en' => '',
+    'getit_en' => '',
+    'buyit_en' => '',
+    'share_link_en' => '',
+    'share_text_en' => '',
+    'tags_en' => '',
+    'comments_en' => '',
+    'preview_en' => '',
+    'authors' => [],
+    'translators' => [],
+    'illustrators' => [],
+    'recommended' => [],
+    'downloadable' => false,
+    'created_at' => '2024-01-01',
+    'updated_at' => '2024-01-01'
+  }
+
+  Resource.create_one_null(doc, 'en', next_null: true)
+  Resource.create_list_null([doc])
+end
+
+Then('I should be redirected to {string}') do |expected_path|
+  # Capybara's current_path gives us the path after redirect
+  expect(current_path).to eq(expected_path)
+end
+
+Then('I should see an error flash message {string}') do |message|
+  # Check for Bootstrap alert with the error message
+  expect(page).to have_css('.alert.alert-danger', text: message)
+end
