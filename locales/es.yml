@@ -452,11 +452,14 @@ es:
     event:
       time: "%{starts} a %{ends}"
     flash:
-      title: ¡No dudes contactarnos para tu curso in company!
+      title: ¡Lleva este curso a tu equipo!
       contact_us: Contáctanos🔥
       register: Inscribirme ahora🔥
+      next_course: "¡No te pierdas el próximo curso a comenzar el %{date}!"
+    date_format: "%d/%m/%Y"
     see_next_editions: Ver fechas
     contact_us: Contáctanos
+    quote_incompany: Cotiza In-Company
     takeaways: ¿Qué obtendrás?
     target: Destinado a
     program: Programa del curso
@@ -722,6 +725,20 @@ es:
       error-message: Completa este campo con tu mensaje.
     button:
       text: Enviar
+  incompany_quote_form:
+    title: Pide un presupuesto
+    location_label: Lugar
+    location_online: Online
+    location_onsite: Presencial
+    where_label: ¿Dónde?
+    where_placeholder: Ciudad o país
+    where_error: Por favor indica la ubicación
+    when_label: ¿Cuándo?
+    when_error: Por favor indica cuándo te gustaría realizar el curso
+    attendees_label: Cantidad de asistentes
+    attendees_help: Mínimo 8 personas
+    attendees_error: Debe haber al menos 8 asistentes
+    button_text: Solicitar presupuesto
   mailer:
     error: Ha ocurrido un error, su mensaje no fué enviado
     success: Su mensaje ha sido enviado correctamente
