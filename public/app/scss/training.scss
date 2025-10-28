@@ -762,7 +762,10 @@ $white: #FFFFFF;
 
 .schedule-titles {
   color: $secondary-blue;
-  font-weight: bold;
+
+  .item {
+    font-weight: bold;
+  }
 }
 
 #course-trainers {
