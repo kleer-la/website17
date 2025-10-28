@@ -143,7 +143,7 @@ class Event
       if ENV['RACK_ENV'] == 'development'
         raise e # Re-raise the original error with full context
       else
-        puts "Event API Error: #{e.message}" # Log error for debugging
+        puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test' # Log error for debugging
         [] # Return empty array in production
       end
     end
@@ -177,7 +177,7 @@ class Event
       if ENV['RACK_ENV'] == 'development'
         raise e
       else
-        puts "Event API Error: #{e.message}"
+        puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test'
         nil
       end
     end

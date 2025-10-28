@@ -812,6 +812,13 @@ en:
     program: Program
     testimonies: Testimonies from participants
     faq: Frecuently ask questions
+    schedule:
+      date: Date
+      duration: Duration
+      modality: Format
+      schedule: Time
+      price: Price
+      discounts: Early Bird
   agenda:
     hero:
       title: Course agenda
