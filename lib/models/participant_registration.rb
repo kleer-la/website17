@@ -32,7 +32,7 @@ class ParticipantRegistration
     if ENV['RACK_ENV'] == 'development'
       raise e
     else
-      puts "Event API Error: #{e.message}"
+      puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test'
       { success: false, error: :service_unavailable, status: 503 }
     end
   end

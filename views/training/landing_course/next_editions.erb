@@ -1,17 +1,26 @@
 <% unless @event_type.public_editions == [] %>
+    <%
+      # Calculate if any event has early bird pricing
+      any_event_has_eb = @event_type.public_editions.any? do |event|
+        pricing = calculate_event_pricing(event)
+        pricing[:show_eb_price]
+      end
+    %>
     <section id="course-next-editions" class="container mb-5">
         <!--h2 class="mb-5 text-center common-subtitle">Próximas ediciones</h2-->
         <div class="row schedule-titles">
-          <p class="col-lg-1 item">Fecha</p>
-          <p class="col-lg-1 item">Duración</p>
-          <p class="col-lg-2 item">Modalidad</p>
-          <p class="col-lg-2 item">Horario</p>
-          <p class="col-lg-2 item">Valor</p>
-          <p class="col-lg-2 item">Venta anticipada</p>
+          <p class="col-lg-1 item"><%= t('course_landing.schedule.date') %></p>
+          <p class="col-lg-1 item"><%= t('course_landing.schedule.duration') %></p>
+          <p class="col-lg-2 item"><%= t('course_landing.schedule.modality') %></p>
+          <p class="col-lg-2 item"><%= t('course_landing.schedule.schedule') %></p>
+          <p class="col-lg-2 item"><%= t('course_landing.schedule.price') %></p>
+          <% if any_event_has_eb %>
+            <p class="col-lg-2 item"><%= t('course_landing.schedule.discounts') %></p>
+          <% end %>
         </div>
 
         <% @event_type.public_editions.each do |event| %>
-          <%= erb :'component/_schedule_item', locals: {event: event, with_name: false}%>
+          <%= erb :'component/_schedule_item', locals: {event: event, with_name: false, show_two_prices: any_event_has_eb}%>
         <% end %>
     </section>
 <% end %>

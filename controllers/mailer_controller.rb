@@ -27,7 +27,7 @@ def send_error_notification(error_details)
     send_mail(error_data)
   rescue StandardError => e
     # Log the error but don't let it crash the main error handling
-    puts "Failed to send error notification email: #{e.message}"
+    puts "Failed to send error notification email: #{e.message}" unless ENV['RACK_ENV'] == 'test'
   end
 end
 

@@ -465,6 +465,13 @@ es:
     program: Programa del curso
     testimonies: Testimonios de nuestros participantes
     faq: Preguntas Frecuentes
+    schedule:
+      date: Fecha
+      duration: Duración
+      modality: Modalidad
+      schedule: Horario
+      price: Valor
+      discounts: Con descuentos
   agenda:
     hero:
       title: Agenda de cursos
