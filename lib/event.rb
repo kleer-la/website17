@@ -18,7 +18,7 @@ class Event
                 :show_pricing,
                 :place, :address,
                 :start_time, :end_time, :time_zone_name, :time_zone,
-                :is_sold_out,
+                :is_sold_out, :registration_ended,
                 :specific_conditions, :duration,
                 :mode, :banner_text, :banner_type, :specific_subtitle
 
@@ -55,7 +55,7 @@ class Event
 
   def load_basic(hash_event)
     @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
-    load_str(%i[city place address registration_link time_zone_name is_sold_out event_type_id], hash_event)
+    load_str(%i[city place address registration_link time_zone_name is_sold_out registration_ended event_type_id], hash_event)
   end
 
   def load_date(hash_event)
@@ -125,6 +125,8 @@ class Event
   end
 
   def registration_ended?(current_date = Date.today)
+    # Prefer the API field if available, otherwise compute based on date
+    return @registration_ended unless @registration_ended.nil?
     date.nil? || date <= current_date
   end
 
