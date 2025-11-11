@@ -22,10 +22,8 @@ jobs:
         with:
           ruby-version: 3.4.7
           bundler-cache: true
-      - name: Install curb lib
-        run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev
-      - name: Install curb gem
-        run: gem install curb
+      - name: Install system dependencies
+          run: sudo apt-get update -qq; sudo apt-get install -y build-essential pkg-config libcurl4-openssl-dev
       - name: Install dependencies
         run: bundle install
       - name: Run tests
