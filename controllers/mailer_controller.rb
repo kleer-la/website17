@@ -79,6 +79,7 @@ post '/send-mail' do
       suscribe: false
     }
     send_mail(base_data)
+    flash[:notice] = t('mailer.quote_message')
   else
     # Original contact form logic
     base_data = {
@@ -101,9 +102,9 @@ post '/send-mail' do
       resource_slug = key.sub('ad-', '')
       send_mail(base_data.merge(resource_slug: resource_slug))
     end
+    flash[:notice] = t('mailer.success')
   end
 
-  flash[:notice] = t('mailer.success')
   redirect "/#{session[:locale]}#{params[:context]}"
 end
 
@@ -120,13 +121,18 @@ def build_incompany_quote_message(params)
     params[:when]
   end
 
-  <<~MESSAGE
-    #{t('incompany_quote_form.title')}
-
-    #{t('incompany_quote_form.location_label')}: #{location}
-    #{t('incompany_quote_form.when_label')}: #{when_date}
-    #{t('incompany_quote_form.attendees_label')}: #{params[:attendees]}
+  message = <<~MESSAGE
+    #{t('incompany_quote_form.title')}\n
+    #{t('incompany_quote_form.location_label')}: #{location}\n
+    #{t('incompany_quote_form.when_label')}: #{when_date}\n
+    #{t('incompany_quote_form.attendees_label')}: #{params[:attendees]}\n
   MESSAGE
+
+  if params[:message] && !params[:message].to_s.strip.empty?
+    message += "#{t('incompany_quote_form.extra_info_label')}: #{params[:message]}\n"
+  end
+
+  message
 end
 
 get '/mailer-template' do

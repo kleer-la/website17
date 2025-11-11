@@ -1090,6 +1090,7 @@ en:
   mailer:
     error: An error occurred, your message was not sent
     success: Your message has been sent successfully
+    quote_message: <b>Thank you for your interest!</b><br>Within the next 48 business hours, we will send you a proposal tailored to your request.
   certificates:
     not_found: We couldn't find a certificate with that code
   certificate-form:

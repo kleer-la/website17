@@ -54,7 +54,7 @@ describe 'In-Company Quote Submission' do
         post '/send-mail', payload
 
         expect(last_response.status).to eq(302)
-        expect(last_request.env['rack.session'][:flash][:notice]).to eq('Su mensaje ha sido enviado correctamente')
+        expect(last_request.env['rack.session'][:flash][:notice]).to eq('<b>¡Gracias por tu interés!</b><br>En las próximas 48hs hábiles te enviaremos una propuesta adaptada a tu pedido.')
       end
     end
 
@@ -93,7 +93,7 @@ describe 'In-Company Quote Submission' do
         post '/send-mail', payload
 
         expect(last_response.status).to eq(302)
-        expect(last_request.env['rack.session'][:flash][:notice]).to eq('Su mensaje ha sido enviado correctamente')
+        expect(last_request.env['rack.session'][:flash][:notice]).to eq('<b>¡Gracias por tu interés!</b><br>En las próximas 48hs hábiles te enviaremos una propuesta adaptada a tu pedido.')
       end
     end
 
@@ -129,7 +129,7 @@ describe 'In-Company Quote Submission' do
         post '/en/send-mail', payload
 
         expect(last_response.status).to eq(302)
-        expect(last_request.env['rack.session'][:flash][:notice]).to eq('Your message has been sent successfully')
+        expect(last_request.env['rack.session'][:flash][:notice]).to eq('<b>Thank you for your interest!</b><br>Within the next 48 business hours, we will send you a proposal tailored to your request.')
       end
     end
 
@@ -154,6 +154,39 @@ describe 'In-Company Quote Submission' do
           hash_including(name: 'Test User')
         ) do |url, data|
           expect(data[:message]).to include('8')
+          mailer_instance
+        end
+
+        post '/send-mail', payload
+
+        expect(last_response.status).to eq(302)
+      end
+    end
+
+    context 'with extra info message' do
+      it 'includes extra info in the email message' do
+        env 'rack.session', { locale: 'es', flash: {} }
+
+        payload = {
+          'form_type' => 'incompany_quote',
+          'name' => 'Test User',
+          'email' => 'test@example.com',
+          'company' => 'Test Co',
+          'location' => 'online',
+          'when' => '2025-05',
+          'attendees' => '10',
+          'message' => 'Por favor envien CV de los capacitadores',
+          'context' => '/es/cursos/123-test',
+          'g-recaptcha-response' => 'valid-response'
+        }
+
+        expect(Mailer).to receive(:new).with(
+          mailer_url,
+          hash_including(name: 'Test User')
+        ) do |url, data|
+          expect(data[:message]).to include('10')
+          expect(data[:message]).to include('Información adicional')
+          expect(data[:message]).to include('Por favor envien CV de los capacitadores')
           mailer_instance
         end
 

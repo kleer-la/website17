@@ -1,5 +1,5 @@
 <% if flash[:notice] || flash[:error] || flash[:success] || flash[:warning] %>
-  <div class="container" style="margin-top: 100px; margin-bottom: 20px;">
+  <div class="container" style="margin-top: 165px; margin-bottom: 20px; position: relative; z-index: 1050;">
     <% flash.each do |type, message| %>
       <%
         # Map flash types to Bootstrap alert classes
@@ -15,6 +15,6 @@
         <%= message %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
+        <% end %>
+      </div>
     <% end %>
-  </div>
-<% end %>
