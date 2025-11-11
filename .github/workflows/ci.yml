@@ -13,24 +13,23 @@ jobs:
       RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Test env
         run: echo $RECAPTCHA_SITE_KEY
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y build-essential pkg-config libcurl4-openssl-dev
       - name: Set up Ruby
         # automatic versioning https://github.com/ruby/setup-ruby#versioning):
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.4.7
-      - name: Install curb lib
-        run: sudo apt-get update;sudo apt-get install libcurl4 libcurl3-gnutls libcurl4-openssl-dev
-      - name: Install curb gem
-        run: gem install curb
-      - name: Install dependencies
-        run: bundle install
+          bundler-cache: true
       - name: Run tests
-        run: rspec
+        run: bundle exec rspec
       - name: Run acceptance tests
-        run: cucumber
+        run: bundle exec cucumber
       # - name: Coveralls
       #   uses: coverallsapp/github-action@master
       #   with:
@@ -62,3 +61,4 @@ jobs:
 #       uses: Ilshidur/action-discord@759f6ea4dc493b8bd1bb35ae7fbd7ae10fcea129
 #       with:
 #         args: 'UPS something fails in {{ EVENT_PAYLOAD.repository.full_name }}, please check the IC flow!.'
+

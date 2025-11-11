@@ -733,7 +733,9 @@ es:
     button:
       text: Enviar
   incompany_quote_form:
-    title: Pide un presupuesto
+    title: Solicita un presupuesto
+    contact_section_title: Datos de contacto
+    quote_section_title: Información para cotizar
     location_label: Lugar
     location_online: Online
     location_onsite: Presencial
@@ -745,10 +747,13 @@ es:
     attendees_label: Cantidad de asistentes
     attendees_help: Mínimo 8 personas
     attendees_error: Debe haber al menos 8 asistentes
+    extra_info_label: Información adicional
+    extra_info_placeholder: Cuéntanos más detalles sobre tu necesidad
     button_text: Solicitar presupuesto
   mailer:
     error: Ha ocurrido un error, su mensaje no fué enviado
     success: Su mensaje ha sido enviado correctamente
+    quote_message: <b>¡Gracias por tu interés!</b><br>En las próximas 48hs hábiles te enviaremos una propuesta adaptada a tu pedido.
   certificates:
     not_found: No encontramos un certificado con ese código
   certificate-form:

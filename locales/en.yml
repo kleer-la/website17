@@ -1071,6 +1071,8 @@ en:
       text: Submit
   incompany_quote_form:
     title: Request a quote
+    contact_section_title: Contact Information
+    quote_section_title: Quote Information
     location_label: Location
     location_online: Online
     location_onsite: On-site
@@ -1082,10 +1084,13 @@ en:
     attendees_label: Number of attendees
     attendees_help: Minimum 8 people
     attendees_error: There must be at least 8 attendees
+    extra_info_label: Additional information
+    extra_info_placeholder: Tell us more details about your needs
     button_text: Request quote
   mailer:
     error: An error occurred, your message was not sent
     success: Your message has been sent successfully
+    quote_message: <b>Thank you for your interest!</b><br>Within the next 48 business hours, we will send you a proposal tailored to your request.
   certificates:
     not_found: We couldn't find a certificate with that code
   certificate-form:
