@@ -10,7 +10,8 @@ RSpec.describe ServiceAreaV3 do
         'name' => 'Test Service Area',
         'icon' => 'https://kleer-images.s3.sa-east-1.amazonaws.com/service-icon.png',
         'side_image' => 'https://kleer-images.s3.sa-east-1.amazonaws.com/dla%20grupo%20lideres%20interactuando.png',
-        'services' => []
+        'services' => [],
+        'testimonies' => []
       }
     end
 
@@ -42,6 +43,62 @@ RSpec.describe ServiceAreaV3 do
         service_area = ServiceAreaV3.new.load_from_json(service_area_data)
         expect(service_area.side_image).to eq('https://d3vnsn21cv5bcd.cloudfront.net/already-cdn.png')
       end
+    end
+  end
+
+  describe '#load_testimonies' do
+    let(:service_area_data) do
+      {
+        'id' => 1,
+        'slug' => 'test-service',
+        'name' => 'Test Service Area',
+        'services' => [],
+        'testimonies' => []
+      }
+    end
+
+    it 'initializes testimonies as empty array when nil' do
+      service_area_data['testimonies'] = nil
+      service_area = ServiceAreaV3.new.load_from_json(service_area_data)
+      expect(service_area.testimonies).to eq([])
+    end
+
+    it 'initializes testimonies as empty array when empty' do
+      service_area = ServiceAreaV3.new.load_from_json(service_area_data)
+      expect(service_area.testimonies).to eq([])
+    end
+
+    it 'loads testimonies from JSON data' do
+      service_area_data['testimonies'] = [
+        {
+          'fname' => 'John',
+          'lname' => 'Doe',
+          'email' => 'john@example.com',
+          'phone' => '123456789',
+          'testimony' => 'Great service!',
+          'profile_url' => 'https://linkedin.com/in/johndoe',
+          'photo_url' => 'https://example.com/photo.jpg'
+        },
+        {
+          'fname' => 'Jane',
+          'lname' => 'Smith',
+          'email' => 'jane@example.com',
+          'phone' => '987654321',
+          'testimony' => 'Excellent experience!',
+          'profile_url' => 'https://linkedin.com/in/janesmith',
+          'photo_url' => 'https://example.com/photo2.jpg'
+        }
+      ]
+
+      service_area = ServiceAreaV3.new.load_from_json(service_area_data)
+
+      expect(service_area.testimonies.length).to eq(2)
+      expect(service_area.testimonies.first).to be_a(Testimony)
+      expect(service_area.testimonies.first.name).to eq('John')
+      expect(service_area.testimonies.first.last_name).to eq('Doe')
+      expect(service_area.testimonies.first.message).to eq('Great service!')
+      expect(service_area.testimonies.last.name).to eq('Jane')
+      expect(service_area.testimonies.last.message).to eq('Excellent experience!')
     end
   end
 end

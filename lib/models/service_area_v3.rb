@@ -1,18 +1,23 @@
 require './lib/models/service_v3'
 require './lib/image_url_helper'
+require './lib/testimony'
 
 class ServiceAreaV3
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions defintions target value_proposition
-                    services seo_title seo_description target_title is_training_program])
+                    services seo_title seo_description target_title is_training_program testimonies])
   attr_writer :icon, :side_image
 
   def load_from_json(hash_service_area)
+    @testimonies = []
+
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
                 slogan subtitle description definitions side_image target value_proposition
                 seo_title seo_description target_title is_training_program], hash_service_area)
 
     @services = load_services(hash_service_area['services'])
+    load_testimonies(hash_service_area['testimonies'])
+
     self
   end
 
@@ -77,6 +82,17 @@ class ServiceAreaV3
   def load_services(doc)
     @services = doc.map do |service_hash|
       ServiceV3.new(service_hash)
+    end
+  end
+
+  def load_testimonies(plane_testimonies)
+    return if plane_testimonies.nil?
+
+    plane_testimonies.each do |testimony|
+      new_testimony = Testimony.new
+      new_testimony.load_from_json(testimony)
+
+      @testimonies.push(new_testimony)
     end
   end
 
