@@ -13,7 +13,7 @@ jobs:
       RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Test env
         run: echo $RECAPTCHA_SITE_KEY
       - name: Set up Ruby
@@ -21,9 +21,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.4.7
-          bundler-cache: false
-      - name: Update Bundler
-        run: gem update --system && gem install bundler
+          bundler-cache: true
       - name: Install curb lib
         run: sudo apt-get update;sudo apt-get install libcurl4 libcurl3-gnutls libcurl4-openssl-dev
       - name: Install curb gem
