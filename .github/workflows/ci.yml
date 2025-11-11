@@ -27,9 +27,9 @@ jobs:
           ruby-version: 3.4.7
           bundler-cache: true
       - name: Run tests
-        run: rspec
+        run: bundle exec rspec
       - name: Run acceptance tests
-        run: cucumber
+        run: bundle exec cucumber
       # - name: Coveralls
       #   uses: coverallsapp/github-action@master
       #   with:
