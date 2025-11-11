@@ -1,66 +1,87 @@
 <form id="incompany-quote-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
-  <div class="row">
-    <div class="mb-3 col-xs-12">
-      <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
-      <input
-        type="text"
-        class="form-control"
-        name="name"
-        id="incompany-name-input"
-        required>
-      <div class="invalid-feedback">
-        <%= t("contact-us-form.name-input.error-message") %>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="mb-3 col-xs-12 col-md-6">
-      <label class="form-label"><%= t("contact-us-form.email-input.label") %></label>
-      <input
-        type="email"
-        class="form-control"
-        name="email"
-        id="incompany-email-input"
-        required>
-      <div class="invalid-feedback">
-        <%= t("contact-us-form.email-input.error-message") %>
-      </div>
-    </div>
-    <div class="mb-3 col-xs-12 col-md-6">
-      <label class="form-label"><%= t("contact-us-form.company-input.label") %></label>
-      <input
-        type="text"
-        class="form-control"
-        id="incompany-company-input"
-        name="company">
+  <!-- Contact Information Section -->
+  <h6 class="mb-3"><%= t("incompany_quote_form.contact_section_title") %></h6>
+
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      id="incompany-name-input"
+      placeholder="<%= t('contact-us-form.name-input.label') %>"
+      required>
+    <div class="invalid-feedback">
+      <%= t("contact-us-form.name-input.error-message") %>
     </div>
   </div>
 
-  <!-- In-Company Specific Fields -->
   <div class="mb-3">
-    <label class="form-label"><%= t("incompany_quote_form.location_label") %></label>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="location"
-        id="location-online"
-        value="online"
-        checked>
-      <label class="form-check-label" for="location-online">
-        <%= t("incompany_quote_form.location_online") %>
-      </label>
+    <input
+      type="email"
+      class="form-control"
+      name="email"
+      id="incompany-email-input"
+      placeholder="<%= t('contact-us-form.email-input.label') %>"
+      required>
+    <div class="invalid-feedback">
+      <%= t("contact-us-form.email-input.error-message") %>
     </div>
-    <div class="form-check">
+  </div>
+
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="incompany-company-input"
+      name="company"
+      placeholder="<%= t('contact-us-form.company-input.label') %>">
+  </div>
+
+  <!-- Quote Information Section -->
+  <h6 class="mb-3 mt-4"><%= t("incompany_quote_form.quote_section_title") %></h6>
+
+  <div class="row">
+    <div class="mb-3 col-xs-12 col-md-6">
+      <label class="form-label"><%= t("incompany_quote_form.location_label") %></label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="location"
+          id="location-online"
+          value="online"
+          checked>
+        <label class="form-check-label" for="location-online">
+          <%= t("incompany_quote_form.location_online") %>
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="location"
+          id="location-onsite"
+          value="presencial">
+        <label class="form-check-label" for="location-onsite">
+          <%= t("incompany_quote_form.location_onsite") %>
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-3 col-xs-12 col-md-6">
+      <label class="form-label"><%= t("incompany_quote_form.attendees_label") %></label>
       <input
-        class="form-check-input"
-        type="radio"
-        name="location"
-        id="location-onsite"
-        value="presencial">
-      <label class="form-check-label" for="location-onsite">
-        <%= t("incompany_quote_form.location_onsite") %>
-      </label>
+        type="number"
+        class="form-control"
+        name="attendees"
+        id="incompany-attendees-input"
+        min="8"
+        value="10"
+        required>
+      <div id="attendeesHelp" class="form-text"><%= t("incompany_quote_form.attendees_help") %></div>
+      <div class="invalid-feedback">
+        <%= t("incompany_quote_form.attendees_error") %>
+      </div>
     </div>
   </div>
 
@@ -77,33 +98,27 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="mb-3 col-xs-12 col-md-6">
-      <label class="form-label"><%= t("incompany_quote_form.when_label") %></label>
-      <input
-        type="month"
-        class="form-control"
-        name="when"
-        id="incompany-when-input"
-        required>
-      <div class="invalid-feedback">
-        <%= t("incompany_quote_form.when_error") %>
-      </div>
+  <div class="mb-3">
+    <label class="form-label"><%= t("incompany_quote_form.when_label") %></label>
+    <input
+      type="month"
+      class="form-control"
+      name="when"
+      id="incompany-when-input"
+      min="<%= Date.today.strftime('%Y-%m') %>"
+      required>
+    <div class="invalid-feedback">
+      <%= t("incompany_quote_form.when_error") %>
     </div>
-    <div class="mb-3 col-xs-12 col-md-6">
-      <label class="form-label"><%= t("incompany_quote_form.attendees_label") %></label>
-      <input
-        type="number"
-        class="form-control"
-        name="attendees"
-        id="incompany-attendees-input"
-        min="8"
-        required>
-      <div id="attendeesHelp" class="form-text"><%= t("incompany_quote_form.attendees_help") %></div>
-      <div class="invalid-feedback">
-        <%= t("incompany_quote_form.attendees_error") %>
-      </div>
-    </div>
+  </div>
+
+  <div class="mb-3">
+    <textarea
+      class="form-control"
+      name="message"
+      id="incompany-message-input"
+      rows="3"
+      placeholder="<%= t('incompany_quote_form.extra_info_placeholder') %>"></textarea>
   </div>
 
   <div id="recaptcha-placeholder" class="mb-3"></div>
