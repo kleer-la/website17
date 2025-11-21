@@ -25,7 +25,7 @@ class EventType
                 :goal, :recipients, :program, :faq, :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex, :categories, :slug, :canonical_slug, :is_kleer_cert, :is_sa_cert,
                 :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script, :platform,
-                :coupons, :recommended
+                :coupons, :recommended, :seo_title
 
   def initialize(hash_provider = nil)
     @hash_provider = hash_provider
@@ -58,7 +58,7 @@ class EventType
     %i[name subtitle description learnings takeaways cover
        goal recipients program faq slug canonical_slug lang
        external_site_url elevator_pitch include_in_catalog
-       side_image brochure deleted].each { |field| send("#{field}=", hash_event[field.to_s]) }
+       side_image brochure deleted seo_title].each { |field| send("#{field}=", hash_event[field.to_s]) }
 
     @public_editions = load_public_editions(hash_event['next_events'])
   end

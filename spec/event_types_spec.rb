@@ -13,6 +13,10 @@ describe EventType do
       expect(@event_type.name).to eq 'Curso actualizado'
     end
 
+    it 'has seo_title' do
+      expect(@event_type.seo_title).to eq 'Curso Actualizado - El mejor curso SEO optimizado'
+    end
+
     it 'has category' do
       expect(@event_type.categories.count).to eq 1
       expect(@event_type.categories[0]).to eq 'Desarrollo Profesional'
@@ -20,6 +24,19 @@ describe EventType do
 
     it 'has next events' do
       expect(@event_type.public_editions.count).to eq 1
+    end
+  end
+
+  context 'SEO title handling' do
+    it 'returns nil when seo_title is not present' do
+      event_type = EventType.new({ 'id' => '2', 'name' => 'Test Course', 'slug' => '2-test-course' })
+      expect(event_type.seo_title).to be_nil
+    end
+
+    it 'loads seo_title from JSON when present' do
+      EventType.null_json_api(NullJsonAPI.new('./spec/mocks/updated_event_type.json'))
+      event_type = EventType.create_keventer_json('1')
+      expect(event_type.seo_title).to eq 'Curso Actualizado - El mejor curso SEO optimizado'
     end
   end
 

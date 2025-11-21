@@ -110,7 +110,7 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
     end
 
     # SEO (title, meta)
-    @meta_tags.set! title: @event_type.name,
+    @meta_tags.set! title: @event_type.seo_title || @event_type.name,
                     description: @event_type.elevator_pitch,
                     canonical: @event_type.canonical_url,
                     noindex: @event_type.noindex,
