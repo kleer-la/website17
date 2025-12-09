@@ -1,4 +1,21 @@
 <%
+  # Get section data with fallback to translations
+  banner_data = section_data(@page, 'empty_banner', {
+    title: t('agenda.empty_state.title')
+  })
+
+  academia_data = section_data(@page, 'empty_academia', {
+    title: t('agenda.empty_state.academia.title'),
+    subtitle: t('agenda.empty_state.academia.subtitle'),
+    cta_text: t('agenda.empty_state.academia.cta')
+  })
+
+  catalog_data = section_data(@page, 'empty_catalog', {
+    title: t('agenda.empty_state.catalog.title'),
+    subtitle: t('agenda.empty_state.catalog.subtitle'),
+    cta_text: t('agenda.empty_state.catalog.cta')
+  })
+
   # Transform academy courses to card format
   academy_cards = (@academy_courses || []).map do |course|
     {
@@ -23,7 +40,7 @@
     <div class="row align-items-center justify-content-center">
       <div class="col-lg-10 text-center py-4">
         <i class="fas fa-calendar-alt empty-agenda-banner__icon mb-3"></i>
-        <h2 class="empty-agenda-banner__title"><%= t('agenda.empty_state.title') %></h2>
+        <h2 class="empty-agenda-banner__title"><%= banner_data[:title] %></h2>
       </div>
     </div>
   </div>
@@ -33,8 +50,8 @@
 <% unless academy_cards.empty? %>
 <section id="academia-courses" class="mt-4 mb-5">
   <div class="container">
-    <p class="text-center mb-2 empty-agenda__section-title"><%= t('agenda.empty_state.academia.title') %></p>
-    <p class="text-center text-muted mb-4"><%= t('agenda.empty_state.academia.subtitle') %></p>
+    <p class="text-center mb-2 empty-agenda__section-title"><%= academia_data[:title] %></p>
+    <p class="text-center text-muted mb-4"><%= academia_data[:subtitle] %></p>
 
     <!-- Desktop: 4 cards in a row -->
     <div class="d-none d-md-block">
@@ -74,7 +91,7 @@
 
     <div class="btn-center-container mt-4">
       <a class="btn my-primary-button" href="https://academia.kleer.la" rel="noopener noreferrer">
-        <%= t('agenda.empty_state.academia.cta') %>
+        <%= academia_data[:cta_text] %>
       </a>
     </div>
   </div>
@@ -85,7 +102,10 @@
 <% unless catalog_cards.empty? %>
 <section id="catalog-courses" class="mt-5 mb-5">
   <div class="container">
-    <p class="text-center mb-4 empty-agenda__section-title"><%= t('agenda.empty_state.catalog.title') %></p>
+    <p class="text-center mb-2 empty-agenda__section-title"><%= catalog_data[:title] %></p>
+    <% unless catalog_data[:subtitle].to_s.empty? %>
+      <p class="text-center text-muted mb-4"><%= catalog_data[:subtitle] %></p>
+    <% end %>
 
     <!-- Desktop: Grid -->
     <div class="d-none d-md-block">
@@ -125,7 +145,7 @@
 
     <div class="btn-center-container mt-4">
       <a class="btn my-primary-button" href="/<%= session[:locale] %>/catalogo">
-        <%= t('agenda.empty_state.catalog.cta') %>
+        <%= catalog_data[:cta_text] %>
       </a>
     </div>
   </div>

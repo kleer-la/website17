@@ -832,6 +832,7 @@ en:
         cta: Explore Academia Kleer
       catalog:
         title: Or organize In-Company courses
+        subtitle: ""
         cta: View full catalog
   blog:
     title: Blog

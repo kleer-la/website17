@@ -485,6 +485,7 @@ es:
         cta: Explorar Academia Kleer
       catalog:
         title: U organizar cursos In-Company
+        subtitle: ""
         cta: Ver catálogo completo
   blog:
     title: Blog
