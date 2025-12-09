@@ -58,12 +58,12 @@ def load_categories(lang)
 end
 
 get %r{/(agenda|schedule)/?} do
-  page = Page.load_from_keventer(session[:locale], 'agenda')
-  @meta_tags.set! title: page.seo_title || t('meta_tag.agenda.title'),
-                  description: page.seo_description || t('meta_tag.agenda.description'),
-                  canonical: page.canonical || t('meta_tag.agenda.canonical'),
+  @page = Page.load_from_keventer(session[:locale], 'agenda')
+  @meta_tags.set! title: @page.seo_title || t('meta_tag.agenda.title'),
+                  description: @page.seo_description || t('meta_tag.agenda.description'),
+                  canonical: @page.canonical || t('meta_tag.agenda.canonical'),
                   alternate_paths: { es: '/agenda', en: '/schedule' }
-  @meta_tags.set! image: page.cover unless page.cover.nil?
+  @meta_tags.set! image: @page.cover unless @page.cover.nil?
 
   @events = Event.create_keventer_json
 
