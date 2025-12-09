@@ -824,6 +824,16 @@ en:
       title: Course agenda
       subtitle: Develop your professional skills and those of your teams.
       text: Dynamic and participatory courses. Select the training courses aligned with the desired learning outcomes.
+    empty_state:
+      title: We are defining the dates for our upcoming synchronous courses
+      academia:
+        title: Meanwhile, you might be interested in Academia Kleer courses
+        subtitle: You can start them at any time
+        cta: Explore Academia Kleer
+      catalog:
+        title: Or organize In-Company courses
+        subtitle: ""
+        cta: View full catalog
   blog:
     title: Blog
     subtitle: Discover more about the fascinating world of organizational agility.

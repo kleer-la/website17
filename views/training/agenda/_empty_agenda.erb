@@ -1,0 +1,153 @@
+<%
+  # Get section data with fallback to translations
+  banner_data = section_data(@page, 'empty_banner', {
+    title: t('agenda.empty_state.title')
+  })
+
+  academia_data = section_data(@page, 'empty_academia', {
+    title: t('agenda.empty_state.academia.title'),
+    subtitle: t('agenda.empty_state.academia.subtitle'),
+    cta_text: t('agenda.empty_state.academia.cta')
+  })
+
+  catalog_data = section_data(@page, 'empty_catalog', {
+    title: t('agenda.empty_state.catalog.title'),
+    subtitle: t('agenda.empty_state.catalog.subtitle'),
+    cta_text: t('agenda.empty_state.catalog.cta')
+  })
+
+  # Transform academy courses to card format
+  academy_cards = (@academy_courses || []).map do |course|
+    {
+      title: course['title'],
+      subtitle: course['subtitle'],
+      cover: course['cover'],
+      duration: course['duration'],
+      platform: 'academia',
+      external_site_url: course['url'],
+      categories: course['categories']&.join(', ') + ', '
+    }
+  end
+
+  # Transform catalog courses to card format
+  catalog_cards = keventer_to_card(@catalog_courses || [], session[:locale])
+  catalog_cards = catalog_cards.uniq { |e| e[:uri_path] }.shuffle.first(8)
+%>
+
+<!-- Empty State Banner Message -->
+<section id="empty-agenda-banner" class="mt-5 mb-4">
+  <div class="container empty-agenda-banner">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-10 text-center py-4">
+        <i class="fas fa-calendar-alt empty-agenda-banner__icon mb-3"></i>
+        <h2 class="empty-agenda-banner__title"><%= banner_data[:title] %></h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Academia Kleer Section -->
+<% unless academy_cards.empty? %>
+<section id="academia-courses" class="mt-4 mb-5">
+  <div class="container">
+    <p class="text-center mb-2 empty-agenda__section-title"><%= academia_data[:title] %></p>
+    <p class="text-center text-muted mb-4"><%= academia_data[:subtitle] %></p>
+
+    <!-- Desktop: 4 cards in a row -->
+    <div class="d-none d-md-block">
+      <div class="row g-4">
+        <% academy_cards.each do |course|
+          @course = course
+        %>
+          <div class="col-12 col-md-6 col-lg-3">
+            <%= erb :'component/cards/_course_card' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Mobile: Carousel -->
+    <div class="d-block d-md-none">
+      <div id="academyCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% academy_cards.each_with_index do |course, index|
+            @course = course
+          %>
+            <div class="carousel-item p-2 <%= 'active' if index == 0 %>">
+              <%= erb :'component/cards/_course_card' %>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#academyCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#academyCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="btn-center-container mt-4">
+      <a class="btn my-primary-button" href="https://academia.kleer.la" rel="noopener noreferrer">
+        <%= academia_data[:cta_text] %>
+      </a>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<!-- Catalog / In-Company Section -->
+<% unless catalog_cards.empty? %>
+<section id="catalog-courses" class="mt-5 mb-5">
+  <div class="container">
+    <p class="text-center mb-2 empty-agenda__section-title"><%= catalog_data[:title] %></p>
+    <% unless catalog_data[:subtitle].to_s.empty? %>
+      <p class="text-center text-muted mb-4"><%= catalog_data[:subtitle] %></p>
+    <% end %>
+
+    <!-- Desktop: Grid -->
+    <div class="d-none d-md-block">
+      <div class="row g-4">
+        <% catalog_cards.each do |course|
+          @course = course
+        %>
+          <div class="col-12 col-md-6 col-lg-3">
+            <%= erb :'component/cards/_course_card' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Mobile: Carousel -->
+    <div class="d-block d-md-none">
+      <div id="catalogCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% catalog_cards.each_with_index do |course, index|
+            @course = course
+          %>
+            <div class="carousel-item p-2 <%= 'active' if index == 0 %>">
+              <%= erb :'component/cards/_course_card' %>
+            </div>
+          <% end %>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#catalogCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#catalogCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="btn-center-container mt-4">
+      <a class="btn my-primary-button" href="/<%= session[:locale] %>/catalogo">
+        <%= catalog_data[:cta_text] %>
+      </a>
+    </div>
+  </div>
+</section>
+<% end %>

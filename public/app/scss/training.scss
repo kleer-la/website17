@@ -1096,3 +1096,30 @@ $white: #FFFFFF;
     display: none;
   }
 }
+
+// Empty Agenda Banner - shown when no courses are scheduled
+.empty-agenda-banner {
+  background-color: #FFF9E6; // Light yellow/cream background
+  border-radius: 12px;
+  border-left: 4px solid $primary-yellow;
+
+  &__icon {
+    font-size: 48px;
+    color: $primary-yellow;
+    display: block;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    color: $black;
+    margin: 0;
+  }
+}
+
+// Empty agenda section titles
+.empty-agenda__section-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: $black;
+}

@@ -58,14 +58,20 @@ def load_categories(lang)
 end
 
 get %r{/(agenda|schedule)/?} do
-  page = Page.load_from_keventer(session[:locale], 'agenda')
-  @meta_tags.set! title: page.seo_title || t('meta_tag.agenda.title'),
-                  description: page.seo_description || t('meta_tag.agenda.description'),
-                  canonical: page.canonical || t('meta_tag.agenda.canonical'),
+  @page = Page.load_from_keventer(session[:locale], 'agenda')
+  @meta_tags.set! title: @page.seo_title || t('meta_tag.agenda.title'),
+                  description: @page.seo_description || t('meta_tag.agenda.description'),
+                  canonical: @page.canonical || t('meta_tag.agenda.canonical'),
                   alternate_paths: { es: '/agenda', en: '/schedule' }
-  @meta_tags.set! image: page.cover unless page.cover.nil?
+  @meta_tags.set! image: @page.cover unless @page.cover.nil?
 
   @events = Event.create_keventer_json
+
+  # Load alternative content when no events scheduled
+  if @events.empty? || @events.all? { |e| e.date.to_s == '' }
+    @academy_courses = AcademyCourses.new.load.select(session[:locale], 4)
+    @catalog_courses = Catalog.create_keventer_json.first(8)
+  end
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('agenda', session[:locale])

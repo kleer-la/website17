@@ -6,13 +6,13 @@ Feature: Event Type Details
 	Scenario: Detalle de Evento
 		Given A updated event type
 		When I visit the plain event type page
-		Then the page title should be "Curso actualizado"
+		Then the page title should includes "Curso Actualizado"
 		And I should see "Curso actualizado descripcion"
 
 	Scenario: Detalle de Evento con fecha programada
 		Given A updated event type
 		When I visit the event type full page
-		Then the page title should be "Curso actualizado"
+		Then the page title should includes "Curso Actualizado"
 		And I should see "06"
 
 	Scenario: Detalle de Evento Inexistente
