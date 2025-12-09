@@ -67,6 +67,12 @@ get %r{/(agenda|schedule)/?} do
 
   @events = Event.create_keventer_json
 
+  # Load alternative content when no events scheduled
+  if @events.empty? || @events.all? { |e| e.date.to_s == '' }
+    @academy_courses = AcademyCourses.new.load.select(session[:locale], 4)
+    @catalog_courses = Catalog.create_keventer_json.first(8)
+  end
+
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('agenda', session[:locale])
 

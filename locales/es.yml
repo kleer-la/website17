@@ -477,6 +477,15 @@ es:
       title: Agenda de cursos
       subtitle: Desarrolla tus habilidades profesionales y la de tus equipos.
       text: Cursos participativos y dinámicos. Selecciona las formaciones alineadas con los resultados de aprendizaje deseados.
+    empty_state:
+      title: Estamos definiendo las fechas de nuestros próximos cursos síncronos
+      academia:
+        title: Mientras, quizás te interese mirar los cursos en Academia Kleer
+        subtitle: Puedes iniciarlos en cualquier momento
+        cta: Explorar Academia Kleer
+      catalog:
+        title: U organizar cursos In-Company
+        cta: Ver catálogo completo
   blog:
     title: Blog
     subtitle: Descubre más sobre el fascinante mundo de la agilidad organizacional
