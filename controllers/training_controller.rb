@@ -1,5 +1,4 @@
 require './lib/metatags'
-require './lib/academy_courses'
 require './lib/category'
 require './lib/event_type'
 require './lib/event'
@@ -69,8 +68,9 @@ get %r{/(agenda|schedule)/?} do
 
   # Load alternative content when no events scheduled
   if @events.empty? || @events.all? { |e| e.date.to_s == '' }
-    @academy_courses = AcademyCourses.new.load.select(session[:locale], 4)
-    @catalog_courses = Catalog.create_keventer_json.first(8)
+    all_catalog = Catalog.create_keventer_json
+    @academy_courses = all_catalog.select { |e| e.event_type.platform == 'academia' }.first(4)
+    @catalog_courses = all_catalog.select { |e| e.event_type.platform != 'academia' }.first(8)
   end
 
   router_helper = RouterHelper.instance

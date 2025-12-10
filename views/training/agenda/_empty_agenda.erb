@@ -17,22 +17,11 @@
     cta_text: t('agenda.empty_state.catalog.cta')
   })
 
-  # Transform academy courses to card format
-  academy_cards = (@academy_courses || []).map do |course|
-    {
-      title: course['title'],
-      subtitle: course['subtitle'],
-      cover: course['cover'],
-      duration: course['duration'],
-      platform: 'academia',
-      external_site_url: course['url'],
-      categories: course['categories']&.join(', ') + ', '
-    }
-  end
+  # Transform academy courses to card format (same format as catalog)
+  academy_cards = keventer_to_card(@academy_courses || [], session[:locale])
 
   # Transform catalog courses to card format
   catalog_cards = keventer_to_card(@catalog_courses || [], session[:locale])
-  catalog_cards = catalog_cards.uniq { |e| e[:uri_path] }.shuffle.first(8)
 %>
 
 <!-- Empty State Banner Message -->
