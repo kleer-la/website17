@@ -1,18 +1,19 @@
 <%
   # Get section data with fallback to translations
   banner_data = section_data(@page, 'empty_banner', {
-    title: t('agenda.empty_state.title')
+    title: t('agenda.empty_state.title'),
+    content: ''
   })
 
   academia_data = section_data(@page, 'empty_academia', {
     title: t('agenda.empty_state.academia.title'),
-    subtitle: t('agenda.empty_state.academia.subtitle'),
+    content: t('agenda.empty_state.academia.subtitle'),
     cta_text: t('agenda.empty_state.academia.cta')
   })
 
   catalog_data = section_data(@page, 'empty_catalog', {
     title: t('agenda.empty_state.catalog.title'),
-    subtitle: t('agenda.empty_state.catalog.subtitle'),
+    content: t('agenda.empty_state.catalog.subtitle'),
     cta_text: t('agenda.empty_state.catalog.cta')
   })
 
@@ -41,6 +42,9 @@
       <div class="col-lg-10 text-center py-4">
         <i class="fas fa-calendar-alt empty-agenda-banner__icon mb-3"></i>
         <h2 class="empty-agenda-banner__title"><%= banner_data[:title] %></h2>
+        <% unless banner_data[:content].to_s.empty? %>
+          <p class="text-muted"><%= banner_data[:content] %></p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -51,7 +55,9 @@
 <section id="academia-courses" class="mt-4 mb-5">
   <div class="container">
     <p class="text-center mb-2 empty-agenda__section-title"><%= academia_data[:title] %></p>
-    <p class="text-center text-muted mb-4"><%= academia_data[:subtitle] %></p>
+    <% unless academia_data[:content].to_s.empty? %>
+      <p class="text-center text-muted mb-4"><%= academia_data[:content] %></p>
+    <% end %>
 
     <!-- Desktop: 4 cards in a row -->
     <div class="d-none d-md-block">
@@ -103,8 +109,8 @@
 <section id="catalog-courses" class="mt-5 mb-5">
   <div class="container">
     <p class="text-center mb-2 empty-agenda__section-title"><%= catalog_data[:title] %></p>
-    <% unless catalog_data[:subtitle].to_s.empty? %>
-      <p class="text-center text-muted mb-4"><%= catalog_data[:subtitle] %></p>
+    <% unless catalog_data[:content].to_s.empty? %>
+      <p class="text-center text-muted mb-4"><%= catalog_data[:content] %></p>
     <% end %>
 
     <!-- Desktop: Grid -->
