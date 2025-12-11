@@ -9,7 +9,7 @@
   }
   
   courses = courses.uniq {|e| e[:uri_path]}
-  courses = courses.shuffle
+  courses = courses.sort_by { |e| e[:ordering] || 100 }
 
 %>
 <section id="training-courses" class="">

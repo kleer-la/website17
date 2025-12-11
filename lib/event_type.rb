@@ -25,7 +25,7 @@ class EventType
                 :goal, :recipients, :program, :faq, :external_site_url, :elevator_pitch, :include_in_catalog,
                 :deleted, :noindex, :categories, :slug, :canonical_slug, :is_kleer_cert, :is_sa_cert,
                 :public_editions, :side_image, :brochure, :is_new_version, :testimonies, :extra_script, :platform,
-                :coupons, :recommended, :seo_title
+                :coupons, :recommended, :seo_title, :ordering
 
   def initialize(hash_provider = nil)
     @hash_provider = hash_provider
@@ -49,6 +49,7 @@ class EventType
     @noindex = to_boolean(hash_event['noindex'])
     @extra_script = hash_event['extra_script'] || nil
     @platform = hash_event['platform'] || nil
+    @ordering = hash_event['ordering'] || 100
 
     @categories = hash_event['categories'].map { |e| e['name'] } unless hash_event['categories'].nil?
 
