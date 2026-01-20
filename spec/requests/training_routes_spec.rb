@@ -14,6 +14,7 @@ describe 'Training Routes' do
           'slug' => 'programas-capacitacion-empresarial',
           'name' => 'Programas de Capacitación Empresarial',
           'lang' => 'es',  # Content is only available in Spanish
+          'is_training_program' => true,
           'services' => []
         }
       end
@@ -43,6 +44,7 @@ describe 'Training Routes' do
           'slug' => 'corporate-training-programs',
           'name' => 'Corporate Training Programs',
           'lang' => 'en',  # Content is only available in English
+          'is_training_program' => true,
           'services' => []
         }
       end
@@ -72,6 +74,7 @@ describe 'Training Routes' do
           'slug' => 'programas-capacitacion-empresarial',
           'name' => 'Corporate Training Programs',
           'lang' => 'en',  # Content is available in English
+          'is_training_program' => true,
           'primary_color' => '#FF5733',
           'primary_font_color' => '#FFFFFF',
           'secondary_color' => '#33FF57',
