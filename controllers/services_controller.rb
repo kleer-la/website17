@@ -36,6 +36,7 @@ get %r{/(?:servicios|services)/([^/]+)} do |slug|
 
   service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
+  return status 404 if service_area.is_training_program
 
   @service_slug = if service_area.slug != slug
                     slug

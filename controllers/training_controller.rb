@@ -146,6 +146,7 @@ get '/formacion/:slug*?' do
   is_preview_mode = request.path_info.end_with?('/preview')
   service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
   return status 404 if service_area.nil?
+  return status 404 unless service_area.is_training_program
 
   lang = session[:locale] || 'es'
 
@@ -170,6 +171,7 @@ get '/training/:slug*?' do
   is_preview_mode = request.path_info.end_with?('/preview')
   service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
   return status 404 if service_area.nil?
+  return status 404 unless service_area.is_training_program
 
   lang = session[:locale] || 'en'
 
