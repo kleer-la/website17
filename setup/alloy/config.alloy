@@ -1,0 +1,175 @@
+// Grafana Alloy configuration for Kleer Hetzner server (website17 + eventer)
+// Deploy to: /etc/alloy/config.alloy
+// Restart with: sudo systemctl restart alloy
+
+// =============================================================================
+// Remote Configuration (Grafana Cloud Fleet Management)
+// =============================================================================
+remotecfg {
+	url            = "https://fleet-management-prod-015.grafana.net"
+	id             = "hetzner-kleer"
+	poll_frequency = "60s"
+
+	basic_auth {
+		username = "1460651"
+		password = sys.env("GCLOUD_RW_API_KEY")
+	}
+}
+
+// =============================================================================
+// Prometheus Remote Write (Grafana Cloud)
+// =============================================================================
+prometheus.remote_write "metrics_service" {
+	endpoint {
+		url = "https://prometheus-prod-40-prod-sa-east-1.grafana.net/api/prom/push"
+
+		basic_auth {
+			username = "2845535"
+			password = sys.env("GCLOUD_RW_API_KEY")
+		}
+	}
+}
+
+// =============================================================================
+// Loki (Grafana Cloud Logs)
+// =============================================================================
+loki.write "grafana_cloud_loki" {
+	endpoint {
+		url = "https://logs-prod-024.grafana.net/loki/api/v1/push"
+
+		basic_auth {
+			username = "1418444"
+			password = sys.env("GCLOUD_RW_API_KEY")
+		}
+	}
+}
+
+// =============================================================================
+// Node Exporter Integration (System Metrics)
+// =============================================================================
+discovery.relabel "integrations_node_exporter" {
+	targets = prometheus.exporter.unix.integrations_node_exporter.targets
+
+	rule {
+		target_label = "instance"
+		replacement  = constants.hostname
+	}
+
+	rule {
+		target_label = "job"
+		replacement  = "integrations/node_exporter"
+	}
+}
+
+prometheus.exporter.unix "integrations_node_exporter" {
+	disable_collectors = ["ipvs", "btrfs", "infiniband", "xfs", "zfs"]
+
+	filesystem {
+		fs_types_exclude     = "^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|tmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$"
+		mount_points_exclude = "^/(dev|proc|run/credentials/.+|sys|var/lib/docker/.+)($|/)"
+		mount_timeout        = "5s"
+	}
+
+	netclass {
+		ignored_devices = "^(veth.*|cali.*|[a-f0-9]{15})$"
+	}
+
+	netdev {
+		device_exclude = "^(veth.*|cali.*|[a-f0-9]{15})$"
+	}
+}
+
+prometheus.scrape "integrations_node_exporter" {
+	targets    = discovery.relabel.integrations_node_exporter.output
+	forward_to = [prometheus.relabel.integrations_node_exporter.receiver]
+}
+
+prometheus.relabel "integrations_node_exporter" {
+	forward_to = [prometheus.remote_write.metrics_service.receiver]
+
+	rule {
+		source_labels = ["__name__"]
+		regex         = "up|node_arp_entries|node_boot_time_seconds|node_context_switches_total|node_cpu_seconds_total|node_disk_io_time_seconds_total|node_disk_io_time_weighted_seconds_total|node_disk_read_bytes_total|node_disk_read_time_seconds_total|node_disk_reads_completed_total|node_disk_write_time_seconds_total|node_disk_writes_completed_total|node_disk_written_bytes_total|node_filefd_allocated|node_filefd_maximum|node_filesystem_avail_bytes|node_filesystem_device_error|node_filesystem_files|node_filesystem_files_free|node_filesystem_readonly|node_filesystem_size_bytes|node_intr_total|node_load1|node_load15|node_load5|node_memory_MemAvailable_bytes|node_memory_MemFree_bytes|node_memory_MemTotal_bytes|node_memory_SwapTotal_bytes|node_memory_Buffers_bytes|node_memory_Cached_bytes|node_network_receive_bytes_total|node_network_transmit_bytes_total|node_uname_info|node_vmstat_pgpgin|node_vmstat_pgpgout|node_vmstat_pswpin|node_vmstat_pswpout"
+		action        = "keep"
+	}
+}
+
+// =============================================================================
+// Application Health Checks
+// =============================================================================
+prometheus.exporter.blackbox "kleer" {
+	config = "modules:\n  http_2xx:\n    prober: http\n    timeout: 10s\n    http:\n      valid_http_versions: [\"HTTP/1.1\", \"HTTP/2.0\"]\n      valid_status_codes: [200]\n      follow_redirects: true\n      tls_config:\n        insecure_skip_verify: false\n"
+
+	target {
+		name    = "website17_prod"
+		address = "https://www.kleer.la/"
+	}
+
+	target {
+		name    = "website17_qa"
+		address = "https://qa.kleer.la/"
+	}
+
+	target {
+		name    = "eventer_prod"
+		address = "https://eventos.kleer.la/up"
+	}
+
+	target {
+		name    = "eventer_qa"
+		address = "https://qa.eventos.kleer.la/up"
+	}
+}
+
+discovery.relabel "kleer_health" {
+	targets = prometheus.exporter.blackbox.kleer.targets
+
+	rule {
+		target_label = "instance"
+		replacement  = "hetzner-kleer"
+	}
+
+	rule {
+		target_label = "job"
+		replacement  = "kleer/health"
+	}
+}
+
+prometheus.scrape "kleer_health" {
+	targets         = discovery.relabel.kleer_health.output
+	forward_to      = [prometheus.remote_write.metrics_service.receiver]
+	scrape_interval = "60s"
+}
+
+// =============================================================================
+// Docker Container Logs
+// =============================================================================
+discovery.docker "containers" {
+	host = "unix:///var/run/docker.sock"
+}
+
+discovery.relabel "docker_logs" {
+	targets = discovery.docker.containers.targets
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/(.*)"
+		target_label  = "container"
+	}
+
+	rule {
+		target_label = "job"
+		replacement  = "kleer/app"
+	}
+
+	rule {
+		target_label = "instance"
+		replacement  = constants.hostname
+	}
+}
+
+loki.source.docker "containers" {
+	host       = "unix:///var/run/docker.sock"
+	targets    = discovery.relabel.docker_logs.output
+	forward_to = [loki.write.grafana_cloud_loki.receiver]
+}
