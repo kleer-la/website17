@@ -12,6 +12,11 @@
   <div class="row">
     <h1 class="blog-title"><%= @article.title%></h1>
   </div>
+  <% unless @article.header.nil? || @article.header.empty? %>
+  <div class="row">
+    <img src="<%= @article.header %>" alt="<%= @article.title %>" class="blog-header-image" style="width: 100%; max-height: 400px; object-fit: cover;">
+  </div>
+  <% end %>
 </div>
 </section>
 
