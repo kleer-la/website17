@@ -1,0 +1,15 @@
+.git
+.github
+.devcontainer
+.docker
+.vscode
+certs
+features
+spec
+tmp
+log
+*.md
+*.env
+*.env.*
+.dockerignore
+docker-compose.yml

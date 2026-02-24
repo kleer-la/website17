@@ -35,3 +35,4 @@ website.env
 
 crawler_results_*.txt
 certs/*
+.kamal/secrets

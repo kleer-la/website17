@@ -1,0 +1,47 @@
+service: website17
+
+image: jgabardini/website17
+
+servers:
+  web:
+    hosts:
+      - <%= ENV['SERVER_IP'] %>
+
+proxy:
+  hosts:
+    - www.kleer.la
+    - kleer.la
+    - kleer.us
+    - kleer.es
+  ssl: true
+  app_port: 4567
+  healthcheck:
+    path: /robots.txt
+    interval: 3
+
+registry:
+  server: docker.io
+  username: jgabardini
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64
+  remote: ssh://appuser@5.78.92.152
+
+env:
+  clear:
+    RACK_ENV: production
+    PORT: 4567
+    WEB_CONCURRENCY: 2
+    KEVENTER_URL: https://eventos.kleer.la
+  secret:
+    - RECAPTCHA_SITE_KEY
+    - RECAPTCHA_SECRET_KEY
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - CONTACT_US_SECRET
+    - CACHE_RESET_TOKEN
+
+ssh:
+  user: appuser
