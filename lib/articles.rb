@@ -54,7 +54,7 @@ class Article
   attr_accessor :title, :description, :tabtitle, :body, :published,
                 :noindex,
                 :trainers, :trainers_list, :slug, :lang, :selected,
-                :created_at, :updated_at, :substantive_change_at, :cover, :category_name, :id,
+                :created_at, :updated_at, :substantive_change_at, :cover, :header, :category_name, :id,
                 :industry, :recommended,
                 :active # View attributes,
 
@@ -71,6 +71,8 @@ class Article
     @noindex = doc['noindex']
     @abstract = doc['abstract'] || ''
     @cover = doc['cover'] || ''
+    @header = doc['header']
+    @header = @cover if @header.nil? || @header.empty?
     @category_name = doc['category_name'] || ''
     @selected = doc['selected']
     @trainers_list = load_trainers(doc['trainers'])
@@ -104,6 +106,10 @@ class Article
 
   def cover
     ImageUrlHelper.replace_s3_with_cdn(@cover)
+  end
+
+  def header
+    ImageUrlHelper.replace_s3_with_cdn(@header)
   end
 
   def self.load_list(doc, only_published: false)
