@@ -12,8 +12,8 @@ env:
     RACK_ENV: production
     PORT: 4567
     WEB_CONCURRENCY: 1
-    KEVENTER_URL: https://keventer-test.herokuapp.com
   secret:
+    - KEVENTER_URL
     - RECAPTCHA_SITE_KEY
     - RECAPTCHA_SECRET_KEY
     - AWS_ACCESS_KEY_ID

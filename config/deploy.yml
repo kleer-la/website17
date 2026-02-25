@@ -13,6 +13,7 @@ proxy:
     - kleer.la
     - kleer.us
     - kleer.es
+    - www.kleer.es
   ssl: true
   app_port: 4567
   healthcheck:
@@ -34,8 +35,8 @@ env:
     RACK_ENV: production
     PORT: 4567
     WEB_CONCURRENCY: 2
-    KEVENTER_URL: https://eventos.kleer.la
   secret:
+    - KEVENTER_URL
     - RECAPTCHA_SITE_KEY
     - RECAPTCHA_SECRET_KEY
     - AWS_ACCESS_KEY_ID
