@@ -41,15 +41,13 @@ class ServiceAreaV3
                  JsonAPI.new(url)
                end
 
-    raise :NotFound unless response.ok?
+    return nil unless response.ok?
 
     ServiceAreaV3.load_list(response.doc)
   end
 
   def self.try_create_list_keventer(programs = false)
-    create_list_keventer(programs)
-  rescue :NotFound
-    []
+    create_list_keventer(programs) || []
   end
 
   def self.load_list(doc)
