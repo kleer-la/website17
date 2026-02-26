@@ -7,5 +7,7 @@ services:
       - '4567:4567'
     volumes:
       - .:/app
+      - ~/.ssh:/root/.ssh:ro
+      - /var/run/docker.sock:/var/run/docker.sock
     tty: true
     working_dir: /app

@@ -23,6 +23,7 @@ gem 'tzinfo-data'
 gem 'concurrent-ruby'
 
 group :development do
+  gem 'kamal', require: false
   gem 'sass'
   gem 'foreman', require: false
   gem 'i18n-tasks', require: false

@@ -41,7 +41,7 @@ include Recaptcha::Adapters::ViewMethods
 
 if production?
   require 'rack/ssl-enforcer'
-  use Rack::SslEnforcer
+  use Rack::SslEnforcer, only_hosts: /\.kleer\./, x_forwarded_proto: true
 end
 use Rack::Deflater
 

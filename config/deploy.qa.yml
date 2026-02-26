@@ -1,0 +1,22 @@
+proxy:
+  hosts:
+    - qa.kleer.la
+  ssl: true
+  app_port: 4567
+  healthcheck:
+    path: /robots.txt
+    interval: 3
+
+env:
+  clear:
+    RACK_ENV: production
+    PORT: 4567
+    WEB_CONCURRENCY: 1
+  secret:
+    - KEVENTER_URL
+    - RECAPTCHA_SITE_KEY
+    - RECAPTCHA_SECRET_KEY
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - CONTACT_US_SECRET
+    - CACHE_RESET_TOKEN
