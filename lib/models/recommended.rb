@@ -50,7 +50,11 @@ end
 
 class RecommendedArticle < Recommended
   def url
-    "/es/blog/#{slug}"
+    if @lang == 'en'
+      "/en/blog/#{slug}"
+    else
+      "/es/blog/#{slug}"
+    end
   end
 end
 
@@ -61,7 +65,13 @@ class RecommendedEventType < Recommended
   end
 
   def url
-    @external_url.empty? ? "/es/cursos/#{slug}" : @external_url
+    return @external_url unless @external_url.empty?
+
+    if @lang == 'en'
+      "/en/courses/#{slug}"
+    else
+      "/es/cursos/#{slug}"
+    end
   end
 end
 
@@ -86,9 +96,9 @@ end
 class RecommendedResource < Recommended
   def url
     if @lang == 'en'
-      "/en/resources##{slug}"
+      "/en/resources/#{slug}"
     else
-      "/es/recursos##{slug}"
+      "/es/recursos/#{slug}"
     end
   end
 end

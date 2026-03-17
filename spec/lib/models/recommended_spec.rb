@@ -77,10 +77,14 @@ RSpec.describe RecommendedArticle do
     }
   end
 
-  subject { RecommendedArticle.new(doc) }
+  it 'returns the correct URL for an article in Spanish' do
+    article = RecommendedArticle.new(doc, 'es')
+    expect(article.url).to eq('/es/blog/article-slug')
+  end
 
-  it 'returns the correct URL for an article' do
-    expect(subject.url).to eq('/es/blog/article-slug')
+  it 'returns the correct URL for an article in English' do
+    article = RecommendedArticle.new(doc, 'en')
+    expect(article.url).to eq('/en/blog/article-slug')
   end
 end
 
@@ -98,8 +102,13 @@ RSpec.describe RecommendedEventType do
 
   subject { RecommendedEventType.new(doc) }
 
-  it 'url returns a URL from the slug' do
+  it 'url returns a URL from the slug in Spanish' do
     expect(subject.url).to eq('/es/cursos/event-type-slug')
+  end
+
+  it 'url returns a URL from the slug in English' do
+    event_type = RecommendedEventType.new(doc, 'en')
+    expect(event_type.url).to eq('/en/courses/event-type-slug')
   end
   it 'url returns a external URL when provided ' do
     event_type = RecommendedEventType.new(
@@ -145,5 +154,27 @@ RSpec.describe RecommendedService do
       service = RecommendedService.new(training_doc, 'en')
       expect(service.url).to eq('/en/training/service-slug')
     end
+  end
+end
+
+RSpec.describe RecommendedResource do
+  let(:doc) do
+    {
+      'title' => 'Resource Title',
+      'subtitle' => 'Resource Subtitle',
+      'slug' => 'resource-slug',
+      'cover' => 'resource-cover.jpg',
+      'type' => 'resource'
+    }
+  end
+
+  it 'returns the correct URL for a resource in Spanish' do
+    resource = RecommendedResource.new(doc, 'es')
+    expect(resource.url).to eq('/es/recursos/resource-slug')
+  end
+
+  it 'returns the correct URL for a resource in English' do
+    resource = RecommendedResource.new(doc, 'en')
+    expect(resource.url).to eq('/en/resources/resource-slug')
   end
 end
