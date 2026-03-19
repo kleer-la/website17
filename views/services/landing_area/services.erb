@@ -6,8 +6,17 @@
     </p>
   </div>
 
-  <% services.each  do |service| %>
-    <%= erb :'services/landing_area/service_section/index', locals: {service: service}%>
-  <% end %>
+  <div class="areas-container">
+    <% services.each do |service| %>
+      <%= erb :'services/components/_service_card',
+              locals: {
+                service: service,
+                hover_color: area.primary_color,
+                border_color: area.primary_color,
+                border_hover_color: "white",
+                id: area.id,
+                area_slug: area.slug
+              } %>
+    <% end %>
+  </div>
 </div>
-

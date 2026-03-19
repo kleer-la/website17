@@ -1019,11 +1019,22 @@ en:
     area:
       hero:
         title: Schedule a video call with our team
-        description: 
+        description:
         button:
           title: Request a meeting
       contact:
         title: Schedule a meeting with our team of consultants to analyze your challenges and explore how we can help.
+        description:
+        button:
+          title: Schedule Meeting
+    service:
+      hero:
+        title: Schedule a video call with our team
+        description:
+        button:
+          title: Request a meeting
+      contact:
+        title: Schedule a meeting with our team to learn more about this service.
         description:
         button:
           title: Schedule Meeting

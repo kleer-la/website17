@@ -1,9 +1,14 @@
-<div
+<a
   class="card clickable-card area-card"
   id="area-card-<%=area.id %>"
-  data-toggle="collapse"
-  data-target="#additionalContent-<%=area.id %>"
-  style="background-color: <%= area.primary_color %>"
+  style="background-color: <%= area.primary_color %>; text-decoration: none;"
+  href="<%=
+    if area.is_training_program
+      session[:locale] == 'en' ? "/en/training/#{area.slug}" : "/es/formacion/#{area.slug}"
+    else
+      session[:locale] == 'en' ? "/en/services/#{area.slug}" : "/es/servicios/#{area.slug}"
+    end
+  %>"
 >
   <div class="card-body">
     <div class="show-content row">
@@ -17,85 +22,14 @@
         <%= area.summary %>
       </div>
     </div>
-    <div class="collapse extra-content" id="additionalContent-<%=area.id%>">
-      <div class="title">
-        <h4>
-          <%= area.cta_message %>
-        </h4>
-      </div>
-      <div>
-        <div class="areas-container">
-          <% area.services.each_with_index  do |service, index| %>
-            <%= erb :'services/components/_service_card',
-                    locals: {
-                      service: service,
-                      hover_color: area.secondary_color,
-                      border_hover_color: "white",
-                      border_color: area.secondary_color,
-                      id: area.id
-                    } %>
-          <% end %>
-        </div>
-      </div>
-      <% if area.slug %>
-        <div class="cta-container">
-          <a
-            class="my-secondary-button"
-            id="cta-button-<%=area.id %>"
-            href="<%= 
-              if area.is_training_program
-                session[:locale] == 'en' ? "/en/training/#{area.slug}" : "/es/formacion/#{area.slug}"
-              else
-                session[:locale] == 'en' ? "/en/services/#{area.slug}" : "/es/servicios/#{area.slug}"
-              end 
-            %>"
-            style=""
-          >
-            <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2" loading="lazy"/>
-            <%= t('services.landing_page.areas.cta_button') %>
-          </a>
-        </div>
-      <% end %>
+    <div class="cta-container mt-3">
+      <span
+        class="my-secondary-button"
+        style=""
+      >
+        <img src="/app/img/icons/rocket.svg" alt="arrow-right" class="me-2" loading="lazy"/>
+        <%= t('services.landing_page.areas.cta_button') %>
+      </span>
     </div>
   </div>
-
-  <div
-    class="plus-button"
-    id="plus-button-<%=area.id%>"
-  >
-    <img src="/app/img/icons/plus.png" alt="plus" loading="lazy"/>
-  </div>
-</div>
-
-<script>
-    {
-        const clickableCard = document.getElementById("area-card-<%=area.id %>");
-        const additionalContent = document.querySelector('#additionalContent-<%=area.id %>');
-        const plusButton = document.getElementById("plus-button-<%=area.id %>")
-        const ctaButton = document.getElementById("cta-button-<%=area.id %>")
-
-        clickableCard.onclick = () => {
-            additionalContent.classList.toggle('collapse');
-
-            if (!additionalContent.classList.contains('collapse')) {
-                additionalContent.classList.add('show');
-                plusButton.innerHTML = "<img src='/app/img/icons/minus.png' alt='minus' loading='lazy'/>"
-            }else {
-                additionalContent.classList.remove('show');
-                plusButton.innerHTML = "<img src='/app/img/icons/plus.png' alt='plus' loading='lazy'/>"
-            }
-        };
-
-        ctaButton.onclick = (event) => {
-            event.stopPropagation()
-        }
-
-        ctaButton.onmouseover = () => {
-            ctaButton.style.backgroundColor = "<%= area.secondary_color %>"
-        }
-
-        ctaButton.onmouseout = () => {
-            ctaButton.style.backgroundColor = "white"
-        }
-    }
-</script>
+</a>

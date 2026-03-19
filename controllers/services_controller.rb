@@ -30,6 +30,23 @@ get %r{/(servicios|services)/?} do
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
 
+get %r{/(?:servicios|services)/([^/]+)/([^/]+)} do |area_slug, service_slug|
+  @is_training_program = false
+  @page = Page.load_from_keventer(session[:locale], 'service-area')
+
+  service_area = ServiceAreaV3.create_keventer area_slug
+  return status 404 if service_area.nil?
+  return status 404 if service_area.is_training_program
+
+  service = service_area.services.find { |s| s.slug == service_slug }
+  return status 404 if service.nil?
+
+  router_helper = RouterHelper.instance
+  router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
+
+  show_service(service_area, service, 'servicios')
+end
+
 get %r{/(?:servicios|services)/([^/]+)} do |slug|
   @is_training_program = false
   @page = Page.load_from_keventer(session[:locale], 'service-area')
@@ -37,14 +54,6 @@ get %r{/(?:servicios|services)/([^/]+)} do |slug|
   service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
   return status 404 if service_area.is_training_program
-
-  @service_slug = if service_area.slug != slug
-                    slug
-                  else
-                    'none'
-                  end
-
-  return status 404 if service_area.nil?
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
@@ -58,6 +67,24 @@ def show_service_area(service_area, path)
                   canonical: "/#{path}/#{service_area.slug}"
 
   @path = path
+  set_area_colors(service_area)
+
+  erb :'services/landing_area/index', layout: :'layout/layout2022', locals: { service_area: service_area }
+end
+
+def show_service(service_area, service, path)
+  @meta_tags.set! title: "#{service.name} - #{service_area.name}",
+                  description: service.subtitle,
+                  canonical: "/#{path}/#{service_area.slug}/#{service.slug}"
+
+  @path = path
+  set_area_colors(service_area)
+
+  erb :'services/landing_service/index', layout: :'layout/layout2022',
+      locals: { service_area: service_area, service: service }
+end
+
+def set_area_colors(service_area)
   @primary_color = service_area.primary_color
   @primary_font_color = service_area.primary_font_color
   @secondary_color = service_area.secondary_color
@@ -65,8 +92,6 @@ def show_service_area(service_area, path)
 
   brightness = calculate_brightness(@primary_color)
   @hover_color = brightness > 128 ? '#000000' : '#FFFFFF'
-
-  erb :'services/landing_area/index', layout: :'layout/layout2022', locals: { service_area: service_area }
 end
 
 def calculate_brightness(hex_color)

@@ -1,0 +1,60 @@
+<%
+  hero_data = section_data(@page, 'hero', { title: t('services.service.hero.title'), content: t('services.service.hero.description'), cta_text: t('services.service.hero.button.title')})
+  hero_title = hero_data[:title]
+  hero_cta = hero_data[:cta_text]
+%>
+<%= erb :'services/components/_header_cta', locals: {text: hero_title, text_button: hero_cta} %>
+
+<section
+  class="area-hero"
+  style="background: linear-gradient(<%= @primary_color %>, <%= @secondary_color %>, white)"
+>
+  <div class="text-container">
+    <h1><%= service.name %></h1>
+    <p><%= service.subtitle %></p>
+  </div>
+
+  <object
+    class="icon big"
+    type="image/svg+xml"
+    data="<%= service_area.icon %>"
+  ></object>
+
+  <object
+    class="icon small"
+    type="image/svg+xml"
+    data="<%= service_area.icon %>"
+  ></object>
+</section>
+
+<div class="services-section">
+  <div
+    class="service-info-container"
+    style="border: <%= @primary_color %> 3px solid;"
+  >
+    <div class="show-content">
+      <%= erb :'services/landing_area/service_section/_value_proposition',
+              locals: { name: service.name, value_proposition: service.value_proposition, image: service.side_image } %>
+    </div>
+    <div class="dinamic-content">
+      <%= erb :'services/landing_area/service_section/_outcomes',
+              locals: { outcomes: service.outcomes, name: service.name } %>
+      <%= erb :'services/landing_area/service_section/_program',
+              locals: { program: service.program, id: service.slug, name: service.name } if !service.program.nil? && service.program != "" %>
+      <%= erb :'services/landing_area/service_section/_target',
+              locals: { target: service.target, name: service.name } %>
+      <%= erb :'component/sections/recommended', locals: { recommended: service.recommended, title: t("services.recommended.false") } unless service.recommended.nil? || service.recommended.empty? %>
+    </div>
+  </div>
+</div>
+
+<%
+  contact_data = section_data(@page, 'contact', { title: t('services.service.contact.title'), content: t('services.service.contact.description'), cta_text: t('services.service.contact.button.title')})
+  contact_title = contact_data[:title]
+  contact_cta = contact_data[:cta_text]
+%>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: contact_title,
+          button_text: contact_cta
+        } %>

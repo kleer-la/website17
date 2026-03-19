@@ -682,12 +682,23 @@ es:
     area:
       hero:
         title: ¡Reserva una videollamada con nuestro equipo!'
-        description: 
+        description:
         button:
           title: Solicitar Reunión
       contact:
         title: Agenda una reunión con nuestro equipo de consultores para analizar los desafíos que tienen y explorar cómo podemos ayudar.
-        description: 
+        description:
+        button:
+          title: Programar Reunión
+    service:
+      hero:
+        title: ¡Reserva una videollamada con nuestro equipo!
+        description:
+        button:
+          title: Solicitar Reunión
+      contact:
+        title: Agenda una reunión con nuestro equipo para conocer más sobre este servicio.
+        description:
         button:
           title: Programar Reunión
     title: Transforma tu Empresa con Agilidad Organizacional
