@@ -445,12 +445,14 @@ $white: #FFFFFF;
   }
 
   .service-info-container {
-    margin: 80px auto;
+    margin: 80px 20px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 60px;
     border-radius: 40px;
     position: relative;
     max-width: 1500px;
-    width: 100%;
+    width: calc(100% - 40px);
 
     h2 {
       font-size: 60px;
