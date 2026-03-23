@@ -110,7 +110,7 @@ export AWS_REGION="us-east-1"
 
 Para probar con ambiente de prueba de keventer
 ```cli
-export KEVENTER_URL="https://keventer-test.herokuapp.com"
+export KEVENTER_URL="https://qa.eventos.kleer.la"
 ```
 
 Para probar con ambiente LOCAL de keventer
