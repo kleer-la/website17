@@ -11,6 +11,7 @@
   <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: recommended_data[:title], subtitle: recommended_data[:content]}%>
 <%end%>
 <%=erb :'home/service_areas' %>
+<%=erb :'home/_featured_program' %>
 <%=erb :'home/institutional' %>
 <% #=erb :'home/promotion' %>
 <% if session[:locale] == 'es' %>

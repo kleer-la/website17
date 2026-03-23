@@ -45,6 +45,10 @@ get '/' do
   @areas = ServiceAreaV3.try_create_list_keventer.
           filter { |a| a.lang == session[:locale] }
 
+  training_list = ServiceAreaV3.try_create_list_keventer(programs: true).
+          filter { |a| a.lang == session[:locale] }
+  @featured_program = training_list.first ? ServiceAreaV3.create_keventer(training_list.first.slug) : nil
+
   @events = Event.create_keventer_json(
     cache_key: "home_events_#{session[:locale]}"
   ).first(4)

@@ -1,0 +1,34 @@
+<% program = @featured_program %>
+<% if program %>
+<%
+  strip_html = ->(text) { text ? text.gsub(/<[^>]*>/, '').strip : nil }
+  path_prefix = {'es'=> 'es/formacion', 'en'=> 'en/training'}[session[:locale]]
+  program_url = "/#{path_prefix}/#{program.slug}"
+  cta_text = strip_html.(program.cta_message)
+  cta_text = cta_text && !cta_text.empty? ? cta_text : t('home.home_courses.button.title')
+  slogan = strip_html.(program.slogan)
+%>
+<section class="container mb-5">
+  <div class="featured-program" style="background-color: <%= program.primary_color %>;">
+    <div class="row align-items-center">
+      <div class="col-lg-6 featured-program__text">
+        <h2><%= program.name %></h2>
+        <% if slogan && !slogan.empty? %>
+          <p><%= slogan %></p>
+        <% end %>
+        <a href="<%= program_url %>" class="btn my-primary-button">
+          <%= cta_text %>
+        </a>
+      </div>
+      <div class="col-lg-6 featured-program__img-container">
+        <img
+          src="<%= program.side_image %>"
+          alt="<%= program.name %>"
+          class="featured-program__img"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<% end %>

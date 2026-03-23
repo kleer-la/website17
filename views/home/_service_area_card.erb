@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 col-lg-2 mb-4">
+<div class="col-12 col-md-6 col-lg-4 mb-4">
 <%
   path = {'es'=> 'es/servicios', 'en'=> 'en/services'}[session[:locale]]
 %>
@@ -11,7 +11,7 @@
       <h3 class="card-title"><%= area.name %></h3>
       <% card_subtitle = [area.subtitle, area.slogan, area.summary, area.description].find { |t| t && !t.strip.empty? } %>
       <% if card_subtitle %>
-        <p class="card-subtitle"><%= smart_truncate(card_subtitle.gsub(/<[^>]*>/, ''), 80) %></p>
+        <p class="card-subtitle"><%= smart_truncate(card_subtitle.gsub(/<[^>]*>/, ''), 200) %></p>
       <% end %>
     </div>
   </a>

@@ -463,7 +463,7 @@ $white: #FFFFFF;
 
   .card-title {
     color: black;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.1;
     text-transform: uppercase;
@@ -476,6 +476,47 @@ $white: #FFFFFF;
     font-size: 0.85rem;
     text-align: left;
     margin: 0;
+  }
+}
+
+.featured-program {
+  padding: 3rem;
+  color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &__text {
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__img-container {
+    text-align: center;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .featured-program {
+    text-align: center;
+
+    &__img-container {
+      margin-top: 2rem;
+    }
   }
 }
 
