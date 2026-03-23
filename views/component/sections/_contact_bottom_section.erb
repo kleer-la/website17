@@ -1,27 +1,36 @@
+<%
+  contact_title = defined?(contact_title) ? contact_title : nil
+  button_url = defined?(button_url) ? button_url : nil
+%>
 <section id="newsletter-subscription" class="mt-4">
   <div class="container contact__container">
     <div class="row align-items-center">
       <div class="col-lg-6 contact__img-container">
         <img
-          src="/app/img/contact_section.png"
+          src="<%= ImageUrlHelper.replace_s3_with_cdn('https://kleer-images.s3.sa-east-1.amazonaws.com/footer.png') %>"
           alt="Contact"
           class="contact__img"
           loading="lazy"
         >
       </div>
       <div class="col-lg-6 contact__text">
-        <h2 class="mb-3">
-          <%=
-            contact_text || "Contáctanos para llevar este servicio a tu organización."
-          %>
-        </h2>
+        <% if contact_title %>
+          <h2 class="mb-2"><%= contact_title %></h2>
+        <% end %>
+        <p class="mb-3">
+          <%= contact_text || "Contáctanos para llevar este servicio a tu organización." %>
+        </p>
         <div>
-          <%= erb :'component/_contact_banner_button',
-                  locals: {
-                    style: "",
-                    text_button: button_text, style_class: 'btn my-primary-button',
-                    specific_id: ""
-                  }%>
+          <% if button_url %>
+            <a href="<%= button_url %>" class="btn my-primary-button"><%= button_text %></a>
+          <% else %>
+            <%= erb :'component/_contact_banner_button',
+                    locals: {
+                      style: "",
+                      text_button: button_text, style_class: 'btn my-primary-button',
+                      specific_id: ""
+                    }%>
+          <% end %>
         </div>
       </div>
     </div>

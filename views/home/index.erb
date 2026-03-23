@@ -27,13 +27,12 @@
 %>
 <%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
 <%
-  contact_data = section_data(@page, 'contact', { title: t('home.contact.title'), content: t('home.contact.description'), cta_text: t('home.contact.button.title')})
-  contact_title = contact_data[:title]
-  contact_description = contact_data[:content]
-  contact_cta = contact_data[:cta_text]
+  contact_data = section_data(@page, 'contact', { title: t('home.contact.title'), content: t('home.contact.description'), cta_text: t('home.contact.button.title'), cta_url: nil})
 %>
 <%= erb :'component/sections/_contact_bottom_section',
         locals: {
-          contact_text: contact_description,
-          button_text: contact_cta
+          contact_title: contact_data[:title],
+          contact_text: contact_data[:content],
+          button_text: contact_data[:cta_text],
+          button_url: contact_data[:cta_url]
         } %>
