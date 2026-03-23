@@ -23,7 +23,7 @@ The application also serves **L'Atelier**, a Google Meet add-on for remote colla
 - **Ruby Version**: ~3.3
 - **Template Engine**: ERB
 - **Testing**: RSpec for unit tests, Cucumber for integration/system tests
-- **Deployment**: Heroku
+- **Deployment**: Kamal to Hetzner Ubuntu server
 - **External APIs**: Keventer API for event management
 - **Caching**: Custom CacheService using concurrent-ruby
 - **Internationalization**: R18n with Spanish and English support
@@ -74,11 +74,11 @@ docker exec website17 bundle exec cucumber
 
 ### Deployment
 ```bash
-# Deploy to test environment (qa2.kleer.la)
-git push heroku-test develop:main
+# Deploy to QA (qa.kleer.la)
+kamal deploy -d qa
 
 # Deploy to production (www.kleer.la)
-git push heroku master:main
+kamal deploy
 ```
 
 ### Utilities
