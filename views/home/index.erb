@@ -12,12 +12,12 @@
 <%end%>
 <%=erb :'home/service_areas' %>
 <%=erb :'home/_featured_program' %>
-<%=erb :'home/institutional' %>
+<% #=erb :'home/institutional' %>
 <% #=erb :'home/promotion' %>
 <% if session[:locale] == 'es' %>
   <% #=erb :'home/courses' %>
-  <%= erb :'home/schedule' %>
-  <%#= erb :'home/academia' %>
+  <% #= erb :'home/schedule' %>
+  <% #= erb :'home/academia' %>
 <% end %>
 <%
   client_data = section_data(@page, 'clients', { title: nil, content: nil, cta_text: nil })
