@@ -97,12 +97,20 @@ $white: #FFFFFF;
   max-width: 90%;
 }
 
-.hero__mobile-button {
-  display: none !important;
-  // Reserve space to prevent layout shift
-  height: 50px;
-  margin-bottom: 50px;
-  visibility: hidden;
+.hero2 .hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
 }
 
 //bootstrap edited
@@ -139,11 +147,6 @@ $white: #FFFFFF;
   z-index: 30;
 }
 
-.hero_yellow_bean2 {
-  top: 100px;
-  right: 80px;
-  z-index: 30;
-}
 
 @media screen and (max-width:992px) {
 
@@ -169,26 +172,10 @@ $white: #FFFFFF;
     height: 10px;
   }
 
-  .hero__desktop-button {
-    display: none !important;
-  }
-
-  .hero__mobile-button {
-    display: flex !important;
-    visibility: visible !important;
-    margin: auto;
-    margin-bottom: 50px;
-    // Prevent layout shift with fixed dimensions
-    min-height: 50px;
-    width: auto;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 .hero2 {
-  max-height: auto;
-  // height: calc(85vh - 50px);
+  position: relative;
   margin-top: 50px;
   overflow: hidden;
 }
@@ -318,17 +305,6 @@ $white: #FFFFFF;
   height: 0;
 }
 
-.last-courses__blue-square {
-  top: 120px;
-  left: 50px;
-  //position: static !important;
-}
-
-.last-courses__red-circle {
-  bottom: 60px;
-  right: 30px;
-}
-
 @media screen and (max-width:1100px) {
   #last-courses {
     display: none;
@@ -441,31 +417,66 @@ $white: #FFFFFF;
 .service-areas {
   h2 {
     font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .highlight {
+    display: table;
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    background-color: black;
+    color: white;
+    line-height: 1;
+
+    &--first {
+      background-color: white;
+      color: black;
+    }
+
+    &:nth-child(1) {
+      transform: rotate(1deg);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(0deg);
+    }
+
+    &:nth-child(3) {
+      transform: rotate(-1deg);
+    }
   }
 }
 
 .service-area-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
+  border: 1px solid;
   border-radius: 10px;
   overflow: hidden;
-}
 
-.service-area-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
 
-.service-area-card .card-body {
-  padding: 1.5rem;
-}
+  .card-title {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
 
-.service-area-card .icon-container {
-  transition: background-color 0.3s ease;
-}
-
-.service-area-card:hover .icon-container {
-  filter: brightness(1.1);
+  .card-subtitle {
+    color: black;
+    font-size: 0.85rem;
+    text-align: left;
+    margin: 0;
+  }
 }
 
 .institutional {

@@ -1,31 +1,18 @@
 <div class="col-12 col-md-6 col-lg-2 mb-4">
-<% 
-  if area.is_training_program
-    path = {'es'=> 'es/formacion', 'en'=> 'en/training'}[session[:locale]]
-  else
-    path = {'es'=> 'es/servicios', 'en'=> 'en/services'}[session[:locale]]
-  end
+<%
+  path = {'es'=> 'es/servicios', 'en'=> 'en/services'}[session[:locale]]
 %>
-  <a 
+  <a
     href="<%= area.slug ? "/#{path}/#{area.slug}" : "#" %>"
-    class="card service-area-card text-center text-decoration-none h-100"
-    style="background-color: <%= area.primary_color %>; color: white;"
+    class="card service-area-card text-decoration-none h-100"
+    style="background: linear-gradient(<%= area.primary_color %>, <%= area.primary_color %>22); border-color: <%= area.primary_color %>;"
   >
     <div class="card-body p-3">
-      <!-- Icon with secondary color background -->
-      <div 
-        class="icon-container mb-3 mx-auto" 
-        style="background-color: <%= area.secondary_color %>; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"
-      >
-        <img 
-          src="<%= area.icon %>" 
-          alt="<%= area.name %> icon" 
-          class="icon" 
-          style="width: 30px; height: 30px;" 
-          loading="lazy"
-        />
-      </div>
-      <h3 class="card-title" style="font-size: 1.1rem;"><%= area.name %></h3>
+      <h3 class="card-title"><%= area.name %></h3>
+      <% card_subtitle = [area.subtitle, area.slogan, area.summary, area.description].find { |t| t && !t.strip.empty? } %>
+      <% if card_subtitle %>
+        <p class="card-subtitle"><%= smart_truncate(card_subtitle.gsub(/<[^>]*>/, ''), 80) %></p>
+      <% end %>
     </div>
   </a>
 </div>

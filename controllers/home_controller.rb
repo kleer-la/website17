@@ -42,7 +42,7 @@ get '/' do
   @page = page
   @clients = client_list
 
-  @areas = (ServiceAreaV3.try_create_list_keventer + ServiceAreaV3.try_create_list_keventer(programs: true)).
+  @areas = ServiceAreaV3.try_create_list_keventer.
           filter { |a| a.lang == session[:locale] }
 
   @events = Event.create_keventer_json(

@@ -5,13 +5,13 @@
   default_content: '', 
   default_cta: '' 
 } %>
-<% unless @page.recommended.count == 0
+<% unless true || @page.recommended.count == 0
   recommended_data = section_data(@page, 'recommended', { title: 'Novedades del mes', content: nil, cta_text: nil })
   %>
   <%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: recommended_data[:title], subtitle: recommended_data[:content]}%>
 <%end%>
-<%=erb :'home/institutional' %>
 <%=erb :'home/service_areas' %>
+<%=erb :'home/institutional' %>
 <% #=erb :'home/promotion' %>
 <% if session[:locale] == 'es' %>
   <% #=erb :'home/courses' %>

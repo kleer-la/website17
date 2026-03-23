@@ -165,13 +165,6 @@
   display: none;
   height: 0; }
 
-.last-courses__blue-square {
-  top: 120px;
-  left: 50px; }
-
-.last-courses__red-circle {
-  bottom: 60px;
-  right: 30px; }
 
 @media screen and (max-width: 820px) {
   #last-courses {

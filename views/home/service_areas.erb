@@ -6,9 +6,14 @@ if !@page.sections.nil? && !@page.sections['services'].nil?
   description = @page.sections['services']['content']
 end
 %>
+<% titles = to_lines(title) %>
 <section id="homepage-service-areas" class="container mb-5 service-areas">
-  <div class="text-center mb-4">
-    <h2><%= title%></h2>
+  <div class="mb-4">
+    <h2>
+      <span class="highlight highlight--first"><%= titles[0] %></span>
+      <span class="highlight"><%= titles[1] %></span>
+      <span class="highlight"><%= titles[2] %></span>
+    </h2>
     <p><%= description%></p>
   </div>
 
