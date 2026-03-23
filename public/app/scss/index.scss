@@ -316,7 +316,8 @@ footer {
   //max-height: 350px;
   padding-top: 78px;
   overflow: visible;
-  background: $primary-blue;
+  background: #275d74;
+  color: white;
   margin-bottom: 0 !important;
   z-index: 50;
 }
@@ -329,6 +330,10 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+
+  a {
+    color: white;
   }
 
   a:hover {
@@ -386,9 +391,10 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: $secondary-blue;
+  background: #FFA901;
   border-radius: 100px;
-  border: $primary-blue 2px solid;
+  border: #FFA901 2px solid;
+  color: white;
 
   &:hover {
     border: 2px solid $secondary-blue;
