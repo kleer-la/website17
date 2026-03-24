@@ -1,5 +1,6 @@
 <div class="value-proposition row">
   <div class="col-12 col-lg-7 text">
+    <% if name %>
     <h2 class="mb-5">
       <%= name %>
       <div
@@ -7,6 +8,7 @@
         style="background-color: <%= @primary_color %>"
       ></div>
     </h2>
+    <% end %>
     <%= value_proposition %>
   </div>
   <div class="col-lg-5 image-container">
