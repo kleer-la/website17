@@ -321,6 +321,8 @@ es:
           url: /servicios
         - title: Cursos
           url: /catalogo
+        - title: Membresía IA
+          url: /membresia-ia
     - title: Publicamos
       items:
         - title: Recursos y Materiales

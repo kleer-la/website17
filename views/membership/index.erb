@@ -1,0 +1,458 @@
+<!-- Hero Section -->
+<section class="membership-hero d-flex align-items-center justify-content-center position-relative overflow-hidden"
+  style="min-height: 80vh; margin-top: 0; background: linear-gradient(to bottom, #1a3a4a 0%, #1a3a4a 70%, #1a3a4a44 100%);">
+  <div class="position-relative text-white px-3" style="z-index: 2; max-width: 1000px; width: 100%; padding-top: 6rem;">
+    <p class="text-uppercase mb-3" style="font-weight: 700; font-size: clamp(0.9rem, 1.5vw, 1.1rem); letter-spacing: 0.15em; opacity: 0.7;">
+      Membresía de Adopción de IA
+    </p>
+    <h1 class="membership-hero-title mb-4">
+      La mayoría de las estrategias de IA no falla por falta de ideas
+    </h1>
+    <p class="membership-hero-subtitle">
+      Falla porque no logra instalarse en el día a día.
+    </p>
+    <div class="text-center mt-5">
+      <%= erb :'component/_contact_banner_button',
+              locals: {
+                style: "background-color: #FFE600; color: #333; font-weight: 800; font-size: 1.1rem; padding: 16px 48px; border-radius: 50px; border: none; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transition: transform 0.2s;",
+                text_button: 'Agendar una conversación',
+                style_class: 'btn membership-cta-btn',
+                specific_id: 'membership-hero-cta'
+              } %>
+    </div>
+  </div>
+</section>
+
+<!-- Pain Points -->
+<section class="py-5" style="background: #f8f9fa;">
+  <div class="container" style="max-width: 800px;">
+    <div class="row">
+      <div class="col-12">
+        <ul class="membership-pain-list">
+          <li>Equipos que experimentan, pero no escalan</li>
+          <li>Uso disperso de herramientas sin estándares claros</li>
+          <li>Iniciativas que dependen de pocas personas</li>
+          <li>Falta de capacidad operativa para sostener el avance</li>
+          <li>Mucha formación… pero poco cambio real en la forma de trabajar</li>
+        </ul>
+        <p class="text-center mt-4" style="font-size: 1.25rem; font-weight: 700; color: #1a3a4a;">
+          La brecha no está en la estrategia. Está en la ejecución sostenida.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Do -->
+<section class="py-5">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="membership-section-title mb-3">No enseñamos IA. La hacemos funcionar en tu organización.</h2>
+    <p class="membership-section-lead mb-5">
+      Nos integramos a tu equipo para operativizar la adopción de IA mientras tu organización sigue funcionando.
+      No somos un proveedor externo que entrega recomendaciones. Trabajamos en la trinchera, con vos.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="membership-feature-card">
+          <div class="membership-feature-icon" style="background-color: #68CEF2;">
+            <i class="fas fa-bolt" style="color: white; font-size: 1.5rem;"></i>
+          </div>
+          <h3>Capacidad operativa inmediata</h3>
+          <p>Sumamos perfiles dedicados que ejecutan junto a tu equipo</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="membership-feature-card">
+          <div class="membership-feature-icon" style="background-color: #43af45;">
+            <i class="fas fa-brain" style="color: white; font-size: 1.5rem;"></i>
+          </div>
+          <h3>Construcción de cultura y AI Mindset</h3>
+          <p>Instalamos hábitos, criterios y confianza en el uso diario</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="membership-feature-card">
+          <div class="membership-feature-icon" style="background-color: #fd6827;">
+            <i class="fas fa-sitemap" style="color: white; font-size: 1.5rem;"></i>
+          </div>
+          <h3>Alineación técnica y organizacional</h3>
+          <p>Definimos prácticas comunes sin perder autonomía de los equipos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact Areas -->
+<section class="py-5" style="background: #1a3a4a; color: white;">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="membership-section-title mb-3" style="color: white;">Impactamos donde realmente ocurre el cambio</h2>
+    <p class="mb-5" style="font-size: 1.1rem; opacity: 0.9;">
+      La adopción de IA no es solo técnica ni solo cultural. Trabajamos en tres frentes en paralelo:
+    </p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="membership-impact-card">
+          <div class="membership-impact-badge" style="background-color: #FFE600; color: #333;">Áreas de soporte</div>
+          <p>IA aplicada al trabajo diario: talento humano, comercial, marketing, finanzas</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="membership-impact-card">
+          <div class="membership-impact-badge" style="background-color: #68CEF2; color: #333;">Ciclo de desarrollo</div>
+          <p>Uso efectivo y seguro de IA en desarrollo de software</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="membership-impact-card">
+          <div class="membership-impact-badge" style="background-color: #43af45; color: white;">Hub de producto</div>
+          <p>Integración de IA en productos y propuestas de valor al cliente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Continuous Model -->
+<section class="py-5">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="membership-section-title mb-3">Un modelo continuo, no un proyecto con fecha de fin</h2>
+    <p class="membership-section-lead mb-5">
+      La adopción real de IA no ocurre en workshops aislados.
+      Ocurre cuando combinás ejecución, aprendizaje y ajuste constante.
+    </p>
+
+    <div class="membership-includes-card">
+      <h3 class="mb-4" style="font-weight: 700; font-size: 1.3rem;">Incluye:</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="membership-include-item">
+            <i class="fas fa-user-friends" style="color: #68CEF2;"></i>
+            <span>Integración de 1–2 perfiles dedicados (part-time o full-time)</span>
+          </div>
+          <div class="membership-include-item">
+            <i class="fas fa-compass" style="color: #fd6827;"></i>
+            <span>Acompañamiento estratégico continuo de Kleer</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="membership-include-item">
+            <i class="fas fa-chalkboard-teacher" style="color: #43af45;"></i>
+            <span>Diseño y facilitación de iniciativas (comunidades, talleres, pilotos, hackathons)</span>
+          </div>
+          <div class="membership-include-item">
+            <i class="fas fa-handshake" style="color: #EF5662;"></i>
+            <span>Soporte en decisiones clave de adopción</span>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 mb-0" style="font-weight: 600; font-size: 1.05rem; color: #1a3a4a;">
+        Trabajamos con vos mes a mes, adaptando el foco según lo que va ocurriendo en la organización.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="py-5" style="background: #f8f9fa;">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="membership-section-title mb-5">Resultados que se ven en la operación, no en slides</h2>
+    <div class="row g-3">
+      <% [
+        'Comunidades de práctica activas y escalables',
+        'Equipos alineados en el uso de herramientas de IA',
+        'Mayor autonomía en áreas no técnicas',
+        'Reducción del riesgo en el uso de IA',
+        'Casos concretos de mejora en procesos y productos',
+        'Visibilidad real del impacto en productividad'
+      ].each do |result| %>
+        <div class="col-md-6">
+          <div class="membership-result-item">
+            <i class="fas fa-check-circle" style="color: #43af45; font-size: 1.2rem; flex-shrink: 0;"></i>
+            <span><%= result %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="py-5">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="membership-section-title mb-3">Esto no empieza con la IA. Empieza con cómo cambian las organizaciones.</h2>
+    <p class="membership-section-lead mb-4">
+      Llevamos más de 16 años acompañando transformaciones en tecnología, cultura y formas de trabajo.
+    </p>
+    <p class="mb-4" style="font-size: 1.05rem; line-height: 1.7;">
+      Antes de la IA, ya ayudábamos a organizaciones a adoptar nuevas formas de desarrollo,
+      escalar prácticas entre equipos, construir comunidades de aprendizaje y gestionar cambios complejos.
+    </p>
+    <p style="font-size: 1.05rem; line-height: 1.7;">
+      Hoy aplicamos esa experiencia a uno de los mayores desafíos actuales:
+      <strong>hacer que la IA funcione en el día a día.</strong>
+    </p>
+    <p class="mt-4" style="font-weight: 700; font-size: 1.15rem; color: #1a3a4a;">
+      La tecnología cambia rápido. Las organizaciones, no tanto. Ahí es donde trabajamos.
+    </p>
+  </div>
+</section>
+
+<!-- Kleer Way -->
+<section class="py-5" style="background: linear-gradient(135deg, #1a3a4a 0%, #275d74 100%); color: white;">
+  <div class="container" style="max-width: 900px;">
+    <h2 class="membership-section-title mb-5" style="color: white;">The Kleer Way</h2>
+    <div class="row g-4">
+      <% [
+        { icon: 'fa-sync-alt', color: '#FFE600', title: 'Adaptación constante', text: 'Ajustamos el enfoque mes a mes según resultados y feedback' },
+        { icon: 'fa-users', color: '#68CEF2', title: 'Trabajo en equipo', text: 'Nos integramos a tu organización, no trabajamos desde afuera' },
+        { icon: 'fa-chart-line', color: '#43af45', title: 'Medición de impacto', text: 'Seguimos métricas de adopción, uso y productividad' },
+        { icon: 'fa-laptop-house', color: '#fd6827', title: 'Formato flexible', text: 'Combinamos trabajo remoto y presencial según necesidad' }
+      ].each do |item| %>
+        <div class="col-md-6">
+          <div class="membership-way-card">
+            <i class="fas <%= item[:icon] %>" style="color: <%= item[:color] %>; font-size: 1.5rem; margin-bottom: 0.75rem;"></i>
+            <h3><%= item[:title] %></h3>
+            <p><%= item[:text] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="py-5">
+  <div class="container" style="max-width: 700px;">
+    <div class="membership-pricing-card text-center">
+      <h2 class="membership-section-title mb-3">Una inversión mensual para sostener el cambio</h2>
+      <div class="membership-price">
+        USD 4.600 <span class="membership-price-period">/ mes</span>
+      </div>
+      <p style="color: #666; font-size: 0.95rem;">+ impuestos aplicables</p>
+
+      <div class="membership-pricing-details text-start">
+        <div class="membership-include-item">
+          <i class="fas fa-clock" style="color: #68CEF2;"></i>
+          <span>Hasta 80 horas mensuales de dedicación</span>
+        </div>
+        <div class="membership-include-item">
+          <i class="fas fa-users-cog" style="color: #fd6827;"></i>
+          <span>Perfiles operativos + acompañamiento estratégico</span>
+        </div>
+        <div class="membership-include-item">
+          <i class="fas fa-user-tie" style="color: #43af45;"></i>
+          <span>4 sesiones mensuales de mentoring 1:1 para líderes</span>
+        </div>
+      </div>
+
+      <p class="mt-4" style="font-size: 1rem; color: #666;">
+        Modelo de membresía mensual, sin necesidad de contratos rígidos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_title: 'Si ya estás trabajando en IA, este es el siguiente paso',
+          contact_text: 'Pasar de iniciativas aisladas a una adopción real, sostenida y escalable.',
+          button_text: 'Agendar una conversación'
+        } %>
+
+<style>
+  .membership-hero {
+    margin-top: 0 !important;
+  }
+  .membership-hero-title {
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: white;
+  }
+  .membership-hero-subtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    color: white;
+  }
+  .membership-cta-btn:hover {
+    transform: scale(1.05);
+  }
+  .membership-cta-btn:active {
+    transform: scale(0.95);
+  }
+  .membership-section-title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.2;
+    color: #1a3a4a;
+  }
+  .membership-section-lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+  }
+  .membership-pain-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .membership-pain-list li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: #555;
+  }
+  .membership-pain-list li::before {
+    content: '\f00d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #EF5662;
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+  }
+  .membership-feature-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    height: 100%;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+  .membership-feature-card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a3a4a;
+  }
+  .membership-feature-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  .membership-feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+  }
+  .membership-impact-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .membership-impact-card p {
+    margin-bottom: 0;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  .membership-impact-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  .membership-includes-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border-left: 4px solid #68CEF2;
+  }
+  .membership-include-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .membership-include-item i {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+  .membership-result-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    font-size: 1rem;
+  }
+  .membership-way-card {
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .membership-way-card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+  .membership-way-card p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+  .membership-pricing-card {
+    background: white;
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  }
+  .membership-price {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: #1a3a4a;
+    margin: 1rem 0 0.25rem;
+  }
+  .membership-price-period {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #888;
+  }
+  .membership-pricing-details {
+    max-width: 480px;
+    margin: 1.5rem auto 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .membership-hero {
+      text-align: center;
+    }
+    .membership-includes-card {
+      padding: 1.5rem;
+    }
+    .membership-pricing-card {
+      padding: 2rem 1rem;
+    }
+  }
+</style>

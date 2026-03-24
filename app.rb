@@ -35,6 +35,7 @@ require './controllers/news_controller'
 require './controllers/certificates_controller'
 require './controllers/podcasts_controller'
 require './controllers/event_controller'
+require './controllers/membership_controller'
 
 include MetaTags
 include Recaptcha::Adapters::ViewMethods
