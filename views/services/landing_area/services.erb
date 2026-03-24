@@ -2,7 +2,7 @@
   <div class="introduce">
     <img src="/app/img/icons/Glasses.svg" loading="lazy"/>
     <h3>
-      <%= area.cta_message.gsub(/<[^>]*>/, '').strip %>
+      <%= area.cta_message ? area.cta_message.gsub(/<[^>]*>/, '').strip : '' %>
     </h3>
   </div>
 
