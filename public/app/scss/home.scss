@@ -180,7 +180,11 @@ $white: #FFFFFF;
 
 @media screen and (max-width: 992px) {
   .hero2 {
-    margin-top: 9rem; // Adjust this value based on your navbar's height on mobile
+    margin-top: 9rem;
+  }
+
+  .hero2 .hero__img {
+    display: none;
   }
 }
 
