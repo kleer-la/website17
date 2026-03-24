@@ -337,8 +337,23 @@ $white: #FFFFFF;
 }
 
 //new area landing
+.area-slogan {
+}
+
+.area-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.area-side-image {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 1rem;
+}
+
 .area-section {
-  margin-top: 150px;
+  margin-top: 60px;
 
   .top-icon {
     position: absolute;

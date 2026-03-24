@@ -1,4 +1,20 @@
 <section id="area" class="area-section" style="margin-top: 60px;">
+  <div class="container mb-5">
+    <% slogan_text = service_area.slogan ? service_area.slogan.gsub(/<[^>]*>/, '').strip : nil %>
+    <% if slogan_text && !slogan_text.empty? %>
+      <h3 class="area-slogan mb-4"><%= slogan_text %></h3>
+    <% end %>
+    <% if service_area.description && service_area.description.strip != '' %>
+      <div class="area-description">
+        <%= service_area.description %>
+      </div>
+    <% end %>
+    <% if service_area.side_image && !service_area.side_image.to_s.empty? %>
+      <div class="text-center mt-4">
+        <img src="<%= service_area.side_image %>" alt="<%= service_area.name %>" class="area-side-image" loading="lazy" />
+      </div>
+    <% end %>
+  </div>
   <div
     class="area-info"
     style="border: <%= service_area.primary_color %> 3px solid;"

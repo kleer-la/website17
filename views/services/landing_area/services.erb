@@ -1,9 +1,9 @@
 <div class="services-section">
   <div class="introduce">
     <img src="/app/img/icons/Glasses.svg" loading="lazy"/>
-    <p>
-      <%= area.cta_message %>
-    </p>
+    <h3>
+      <%= area.cta_message.gsub(/<[^>]*>/, '').strip %>
+    </h3>
   </div>
 
   <div class="container">
