@@ -211,7 +211,7 @@ $white: #FFFFFF;
 }
 
 .client-logos {
-  margin: 250px 10px 150px 10px;
+  margin: 2rem 10px;
   z-index: 0;
   position: relative;
 }
@@ -224,13 +224,13 @@ $white: #FFFFFF;
 
 .mobile-client-carousel {
   padding: 16px 0 !important;
-  margin: 120px 0;
+  margin: 1.5rem 0;
   display: none;
 }
 
 @media screen and (max-width:420px) {
   .client-logos {
-    margin: 120px 10px 120px 10px;
+    margin: 1.5rem 10px;
   }
 
   .mobile-client-carousel {
@@ -323,7 +323,7 @@ $white: #FFFFFF;
 //contact section
 #newsletter-subscription {
   background-color: white;
-  padding: 72px 0;
+  padding: 2rem 0;
   position: relative;
 }
 
@@ -501,25 +501,45 @@ $white: #FFFFFF;
     text-align: left;
     margin: 0;
   }
+
+  .card-cta {
+    align-self: flex-start;
+    font-size: 0.85rem;
+    pointer-events: none;
+  }
 }
 
 .featured-program {
-  padding: 3rem;
+  padding: 2rem;
   color: white;
   border-radius: 1rem;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+
+  &:visited, &:active {
+    color: white;
+  }
 
   &__text {
     h2 {
       font-size: 1.4rem;
       font-weight: 700;
       line-height: 1.1;
+      text-transform: uppercase;
       margin-bottom: 1rem;
+      color: white;
     }
 
     p {
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
+      color: white;
     }
   }
 
@@ -528,8 +548,8 @@ $white: #FFFFFF;
   }
 
   &__img {
-    max-width: 100%;
-    max-height: 400px;
+    max-width: 70%;
+    max-height: 350px;
     object-fit: contain;
     border-radius: 1rem;
   }
