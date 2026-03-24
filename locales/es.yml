@@ -274,13 +274,6 @@ es:
         - text: Agilidad para Equipos
           url: /servicios/agilidad-equipos
           inside: true
-        - text: Facilitación de Reuniones y Eventos
-          url: /servicios/facilitacion-reuniones-eventos
-          inside: true
-        - text: dropdown-divider
-        - text: Todos Nuestros Servicios
-          url: /servicios
-          inside: true
     - text: Cursos
       options:
         - text: Agenda

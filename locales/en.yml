@@ -639,10 +639,6 @@ en:
         - text: Team Agility
           url: /services/team-agility
           inside: true
-        - text: dropdown-divider
-        - text: All our services
-          url: /services
-          inside: true
     - text: Courses
       options:
         - text: Course Catalog
