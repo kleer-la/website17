@@ -1,13 +1,14 @@
 <%
   subtitle_text = service.subtitle.to_s.gsub(/<[^>]*>/, '').strip
 %>
-<a class="service-preview-card" href="/<%= session[:locale] %>/<%= @path %>/<%= area_slug %>/<%= service.slug %>"
-   style="border-bottom: 4px solid <%= primary_color %>; --card-primary-color: <%= primary_color %>;">
-  <h3 style="color: <%= primary_color %>;"><%= service.name %></h3>
+<a class="service-preview-card text-decoration-none d-flex flex-column h-100"
+   href="/<%= session[:locale] %>/<%= @path %>/<%= area_slug %>/<%= service.slug %>"
+   style="background: linear-gradient(<%= primary_color %>, <%= primary_color %>22); border: 1px solid <%= primary_color %>;">
+  <h3><%= service.name %></h3>
   <% unless subtitle_text.empty? %>
-    <p class="service-preview-subtitle"><%= subtitle_text %></p>
+    <p class="service-preview-subtitle flex-grow-1"><%= subtitle_text %></p>
   <% end %>
-  <span class="service-preview-cta" style="color: <%= primary_color %>;">
-    Ver más →
+  <span class="btn service-preview-cta" style="background-color: <%= primary_color %>; color: <%= @primary_font_color || 'white' %>;">
+    Ver más
   </span>
 </a>
