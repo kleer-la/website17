@@ -1,24 +1,11 @@
 <%
-  plain_text = service.value_proposition.to_s.gsub(/<[^>]*>/, ' ').gsub(/\s+/, ' ').strip
-  excerpt = plain_text.length > 200 ? plain_text[0..196] + '...' : plain_text
   subtitle_text = service.subtitle.to_s.gsub(/<[^>]*>/, '').strip
-  outcomes = Array(service.outcomes).first(3)
 %>
-<a class="service-preview-card" href="/es/<%= @path %>/<%= area_slug %>/<%= service.slug %>"
+<a class="service-preview-card" href="/<%= session[:locale] %>/<%= @path %>/<%= area_slug %>/<%= service.slug %>"
    style="border-bottom: 4px solid <%= primary_color %>; --card-primary-color: <%= primary_color %>;">
   <h3 style="color: <%= primary_color %>;"><%= service.name %></h3>
   <% unless subtitle_text.empty? %>
     <p class="service-preview-subtitle"><%= subtitle_text %></p>
-  <% end %>
-  <% unless excerpt.empty? %>
-    <p class="service-preview-excerpt"><%= excerpt %></p>
-  <% end %>
-  <% if outcomes.any? %>
-    <ul class="service-preview-outcomes">
-      <% outcomes.each do |outcome| %>
-        <li><%= outcome.to_s.gsub(/<[^>]*>/, '').strip %></li>
-      <% end %>
-    </ul>
   <% end %>
   <span class="service-preview-cta" style="color: <%= primary_color %>;">
     Ver más →

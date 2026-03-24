@@ -1,25 +1,22 @@
 <section id="area" class="area-section" style="margin-top: 60px;">
   <div class="container mb-5">
-    <% slogan_text = service_area.slogan ? service_area.slogan.gsub(/<[^>]*>/, '').strip : nil %>
-    <% if slogan_text && !slogan_text.empty? %>
-      <h3 class="area-slogan mb-4"><%= slogan_text %></h3>
-    <% end %>
-    <% if service_area.description && service_area.description.strip != '' %>
-      <div class="area-description">
-        <%= service_area.description %>
+    <div class="row align-items-center">
+      <div class="<%= service_area.side_image && !service_area.side_image.to_s.empty? ? 'col-lg-7' : 'col-12' %>">
+        <% slogan_text = service_area.slogan ? service_area.slogan.gsub(/<[^>]*>/, '').strip : nil %>
+        <% if slogan_text && !slogan_text.empty? %>
+          <h3 class="area-slogan mb-4"><%= slogan_text %></h3>
+        <% end %>
+        <% if service_area.description && service_area.description.strip != '' %>
+          <div class="area-description">
+            <%= service_area.description %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-    <% if service_area.side_image && !service_area.side_image.to_s.empty? %>
-      <div class="text-center mt-4">
-        <img src="<%= service_area.side_image %>" alt="<%= service_area.name %>" class="area-side-image" loading="lazy" />
-      </div>
-    <% end %>
-  </div>
-  <div
-    class="area-info"
-    style="border: <%= service_area.primary_color %> 3px solid;"
-  >
-    <%= erb :'services/landing_area/_target', locals: {target: service_area.target, title: service_area.target_title}%>
-    <%= erb :'services/landing_area/_value_proposition', locals: {value_proposition: service_area.value_proposition, back_color: service_area.secondary_color}%>
+      <% if service_area.side_image && !service_area.side_image.to_s.empty? %>
+        <div class="col-lg-5 text-center mt-4 mt-lg-0">
+          <img src="<%= service_area.side_image %>" alt="<%= service_area.name %>" class="area-side-image" loading="lazy" />
+        </div>
+      <% end %>
+    </div>
   </div>
 </section>
