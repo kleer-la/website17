@@ -317,10 +317,14 @@ es:
   footer_menu:
     - title: Qué hacemos
       items:
-        - title: Servicios
-          url: /servicios
-        - title: Cursos
-          url: /catalogo
+        - title: Cambio Org. y Liderazgo
+          url: /servicios/cambio-organizacional-liderazgo
+        - title: Product Management
+          url: /servicios/agile-product-management
+        - title: Agilidad para Equipos
+          url: /servicios/agilidad-equipos
+        - title: Programas de Capacitación
+          url: /formacion/programas-capacitacion-empresarial
         - title: Membresía IA
           url: /membresia-ia
     - title: Publicamos
