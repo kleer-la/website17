@@ -73,8 +73,8 @@ def show_service_area(service_area, path)
 end
 
 def show_service(service_area, service, path)
-  @meta_tags.set! title: "#{service.name} - #{service_area.name}",
-                  description: service.subtitle,
+  @meta_tags.set! title: service.seo_title || "#{service.name} - #{service_area.name}",
+                  description: service.seo_description || service.subtitle,
                   canonical: "/#{path}/#{service_area.slug}/#{service.slug}"
 
   @path = path

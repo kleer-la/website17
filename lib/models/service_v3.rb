@@ -3,7 +3,7 @@ require './lib/models/recommended'
 
 class ServiceV3
   attr_accessor(*%i[id name subtitle value_proposition outcomes definitions program target pricing faq url
-                    slug recommended])
+                    slug recommended seo_title seo_description])
   attr_writer :brochure, :side_image
 
   def initialize(hash_service)
@@ -11,7 +11,8 @@ class ServiceV3
   end
 
   def load_from_json(hash_service)
-    load_str(%i[id name subtitle value_proposition definitions target pricing brochure slug side_image],
+    load_str(%i[id name subtitle value_proposition definitions target pricing brochure slug side_image
+                seo_title seo_description],
              hash_service)
 
     @outcomes = hash_service['outcomes']
