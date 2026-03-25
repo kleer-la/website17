@@ -23,9 +23,10 @@ cta_text = hero_data[:cta_text]
           </h1>
           <p><%= description %></p>
         </div>
-        <a href="<%= "/#{session[:locale]}#{cta_url}" %>" class="btn my-primary-button">
+        <button type="button" class="btn my-primary-button modal-opener"
+          data-bs-toggle="modal" data-bs-target="#mail-modal">
           <%= cta_text %>
-        </a>
+        </button>
       </div>
     </div>
   </div>

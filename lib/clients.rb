@@ -13,7 +13,11 @@ def client_list(sample_size = 12)
     {name: 'YPF' , img:'/img/clientes/YPF.webp' },
     {name: 'Unilever' , img:'/img/clientes/Unilever.webp' },
     {name: 'Lacnic' , img:'/img/clientes/Lacnic.webp' },
-    
+    {name: 'Nequi' , img:'/img/clientes/nequi.webp' },
+    {name: 'Puntos Colombia' , img:'/img/clientes/puntos_colombia.webp' },
+    {name: 'Sura AFAP' , img:'/img/clientes/sura_afap.webp' },
+    {name: 'ICBC' , img:'/img/clientes/ICBC.webp' },
+
     # {name: 'BBVA Continental', img:'/img/clientes/BBVA.webp' },
     # {name: 'Coca-cola', img: '/img/clientes/coca.webp'},
     # {name: 'Disney', img: '/img/clientes/disney.webp'},
