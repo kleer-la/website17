@@ -480,13 +480,18 @@ $white: #FFFFFF;
 
 .service-area-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid;
+  border: 3px solid;
   border-radius: 10px;
   overflow: hidden;
+  min-height: 320px;
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    padding: 1.5rem !important;
   }
 
   .card-title {
@@ -507,9 +512,10 @@ $white: #FFFFFF;
   }
 
   .card-cta {
-    align-self: flex-start;
+    align-self: center;
     font-size: 0.85rem;
     pointer-events: none;
+    margin-top: 1.5rem !important;
   }
 }
 
@@ -548,11 +554,12 @@ $white: #FFFFFF;
   }
 
   &__img-container {
-    text-align: center;
+    text-align: right;
+    padding-right: 0;
   }
 
   &__img {
-    max-width: 70%;
+    max-width: 100%;
     max-height: 350px;
     object-fit: contain;
     border-radius: 1rem;
@@ -593,7 +600,7 @@ $white: #FFFFFF;
   justify-content: space-around;
   padding-bottom: 15%;
   padding-top: 8%;
-  padding-right: 10%;
+  padding-right: 2%;
 
   h2 {
     font-size: 1.8rem;

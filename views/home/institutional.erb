@@ -32,16 +32,30 @@ end
         <% if is_image %>
           <img class="institutional__image" src="<%= cta_url %>" alt="Institutional image" style="width:100%;" />
         <% else %>
-          <iframe 
+          <iframe
             class="institutional__video"
-            width="100%" 
-            src="<%= cta_url.gsub('www.youtube.com', 'www.youtube-nocookie.com') %>" 
-            title="YouTube video player" 
-            frameborder="0" 
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            id="institutional-video"
+            width="100%"
+            data-src="<%= cta_url.gsub('www.youtube.com', 'www.youtube-nocookie.com') %>"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
+          <script>
+            (function() {
+              var video = document.getElementById('institutional-video');
+              var observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                  var src = video.getAttribute('data-src');
+                  var sep = src.indexOf('?') === -1 ? '?' : '&';
+                  video.src = src + sep + 'autoplay=1&mute=1';
+                  observer.disconnect();
+                }
+              }, { threshold: 0.5 });
+              observer.observe(video);
+            })();
+          </script>
         <% end %>
       </div>
     </div>

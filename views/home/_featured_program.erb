@@ -11,14 +11,14 @@
 <section class="container mb-5">
   <a href="<%= program_url %>" class="featured-program text-decoration-none" style="background-color: <%= program.primary_color %>; display: block;">
     <div class="row align-items-center">
-      <div class="col-lg-6 featured-program__text">
+      <div class="col-lg-9 featured-program__text">
         <h2><%= program.name %></h2>
         <% if details && !details.empty? %>
           <p><%= details %></p>
         <% end %>
         <span class="btn card-cta" style="background-color: <%= program.secondary_color %>; color: <%= program.secondary_font_color || 'white' %>;"><%= cta_text %></span>
       </div>
-      <div class="col-lg-6 featured-program__img-container">
+      <div class="col-lg-3 featured-program__img-container">
         <img
           src="<%= program.side_image %>"
           alt="<%= program.name %>"
