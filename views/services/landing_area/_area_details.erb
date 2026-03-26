@@ -1,23 +1,27 @@
 <section class="area-section">
-  <div
-    class="area-info"
-    style="border: <%= service_area.primary_color %> 3px solid;"
-  >
-    <div class="target">
-      <h3><%= t("services.value_proposition.#{@is_training_program==true}") %></h3>
-      <%= service_area.value_proposition %>
+  <div class="container">
+    <div
+      class="area-info"
+      style="border: <%= service_area.primary_color %> 3px solid;"
+    >
+      <div class="target">
+        <h3><%= t("services.value_proposition.#{@is_training_program==true}") %></h3>
+        <%= service_area.value_proposition %>
+      </div>
     </div>
   </div>
 </section>
 <section class="area-section mt-4">
-  <div class="value_proposition" style="background-color: <%= service_area.secondary_color %>;">
-    <div class="row">
-      <div class="col-md-5 title">
-        <img src="/app/img/icons/Ranking.svg" loading="lazy"/>
-        <%= service_area.target_title %>
-      </div>
-      <div class="col-md-7">
-        <%= service_area.target %>
+  <div class="container">
+    <div class="value_proposition" style="background-color: <%= service_area.secondary_color %>;">
+      <div class="row">
+        <div class="col-md-5 title">
+          <img src="/app/img/icons/Ranking.svg" loading="lazy"/>
+          <%= service_area.target_title %>
+        </div>
+        <div class="col-md-7">
+          <%= service_area.target %>
+        </div>
       </div>
     </div>
   </div>

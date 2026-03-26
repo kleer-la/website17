@@ -3,7 +3,7 @@
 %>
 <a class="service-preview-card text-decoration-none d-flex flex-column h-100"
    href="/<%= session[:locale] %>/<%= @path %>/<%= area_slug %>/<%= service.slug %>"
-   style="background: linear-gradient(<%= primary_color %>, <%= primary_color %>22); border: 1px solid <%= primary_color %>;">
+   style="background: white; border: 3px solid <%= primary_color %>;">
   <h3><%= service.name %></h3>
   <% unless subtitle_text.empty? %>
     <p class="service-preview-subtitle flex-grow-1"><%= subtitle_text %></p>

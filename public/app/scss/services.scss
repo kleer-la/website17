@@ -382,14 +382,10 @@ $white: #FFFFFF;
   }
 
   .area-info {
-    margin: 80px 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 60px 0;
     padding: 60px;
     border-radius: 40px;
     position: relative;
-    max-width: 1500px;
-    width: calc(100% - 40px);
 
     .slogan {
       margin: 50px;
@@ -421,13 +417,9 @@ $white: #FFFFFF;
   }
 
   .value_proposition {
-    margin: 80px 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 60px 0;
     padding: 60px;
     border-radius: 40px;
-    max-width: 1500px;
-    width: calc(100% - 40px);
 
     .title {
       display: flex;
@@ -1491,16 +1483,16 @@ $white: #FFFFFF;
   }
 
   .service-preview-subtitle {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: black;
     margin: 0;
   }
 
   .service-preview-cta {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     pointer-events: none;
     margin-top: 1rem;
-    align-self: flex-start;
+    align-self: center;
   }
 }
