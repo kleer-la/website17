@@ -4,7 +4,7 @@
       <div class="<%= service_area.side_image && !service_area.side_image.to_s.empty? ? 'col-lg-7' : 'col-12' %>">
         <% slogan_text = service_area.slogan ? service_area.slogan.gsub(/<[^>]*>/, '').strip : nil %>
         <% if slogan_text && !slogan_text.empty? %>
-          <h3 class="area-slogan mb-4"><%= slogan_text %></h3>
+          <h2 class="area-slogan mb-4"><%= slogan_text %></h2>
         <% end %>
         <% if service_area.description && service_area.description.strip != '' %>
           <div class="area-description">
