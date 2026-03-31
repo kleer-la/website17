@@ -23,6 +23,13 @@
   </div>
 </section>
 
+<!-- Pricing (top) -->
+<section class="py-5">
+  <div class="container" style="max-width: 1100px;">
+    <%= erb :'membership/_pricing_cards' %>
+  </div>
+</section>
+
 <!-- Pain Points -->
 <section class="py-5" style="background: #f8f9fa;">
   <div class="container" style="max-width: 800px;">
@@ -225,33 +232,9 @@
 
 <!-- Pricing -->
 <section class="py-5">
-  <div class="container" style="max-width: 700px;">
-    <div class="membership-pricing-card text-center">
-      <h2 class="membership-section-title mb-3">Una inversión mensual para sostener el cambio</h2>
-      <div class="membership-price">
-        USD 4.600 <span class="membership-price-period">/ mes</span>
-      </div>
-      <p style="color: #666; font-size: 0.95rem;">+ impuestos aplicables</p>
-
-      <div class="membership-pricing-details text-start">
-        <div class="membership-include-item">
-          <i class="fas fa-clock" style="color: #68CEF2;"></i>
-          <span>Hasta 80 horas mensuales de dedicación</span>
-        </div>
-        <div class="membership-include-item">
-          <i class="fas fa-users-cog" style="color: #fd6827;"></i>
-          <span>Perfiles operativos + acompañamiento estratégico</span>
-        </div>
-        <div class="membership-include-item">
-          <i class="fas fa-user-tie" style="color: #43af45;"></i>
-          <span>4 sesiones mensuales de mentoring 1:1 para líderes</span>
-        </div>
-      </div>
-
-      <p class="mt-4" style="font-size: 1rem; color: #666;">
-        Modelo de membresía mensual, sin necesidad de contratos rígidos.
-      </p>
-    </div>
+  <div class="container" style="max-width: 1100px;">
+    <h2 class="membership-section-title mb-5 text-center">Una inversión mensual para sostener el cambio</h2>
+    <%= erb :'membership/_pricing_cards' %>
   </div>
 </section>
 
@@ -420,28 +403,78 @@
   }
   .membership-pricing-card {
     background: white;
-    border-radius: 24px;
-    padding: 3rem 2rem;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    border: 2px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+  }
+  .membership-pricing-card--starred {
+    border-color: #68CEF2;
+    box-shadow: 0 8px 40px rgba(104,206,242,0.25);
+    transform: scale(1.03);
+    position: relative;
+  }
+  .membership-star-badge {
+    display: inline-block;
+    background: #68CEF2;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 0.75rem;
+  }
+  .membership-plan-name {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #1a3a4a;
+    margin-bottom: 1rem;
   }
   .membership-price {
     font-family: 'Raleway', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
     font-weight: 800;
     color: #1a3a4a;
-    margin: 1rem 0 0.25rem;
+    margin: 1.5rem 0 0.25rem;
   }
   .membership-price-period {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     font-weight: 400;
     color: #888;
   }
+  .membership-discount {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 0.15rem;
+  }
   .membership-pricing-details {
-    max-width: 480px;
-    margin: 1.5rem auto 0;
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 16px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+  }
+  .membership-pricing-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 0.5rem;
+  }
+  .membership-pricing-label {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.3;
+  }
+  .membership-pricing-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1a3a4a;
+    white-space: nowrap;
+    text-align: right;
   }
 
   @media screen and (max-width: 768px) {
@@ -452,7 +485,16 @@
       padding: 1.5rem;
     }
     .membership-pricing-card {
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
+    }
+    .membership-pricing-card--starred {
+      transform: none;
+    }
+    section {
+      overflow-x: hidden;
+    }
+    section > .container {
+      overflow-x: hidden;
     }
   }
 </style>
