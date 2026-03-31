@@ -561,19 +561,19 @@ $white: #FFFFFF;
 
 .featured-program {
   padding: 2rem;
-  color: white;
-  border-radius: 1rem;
+  color: black;
+  border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: black;
   }
 
   &:visited, &:active {
-    color: white;
+    color: black;
   }
 
   &__text {
@@ -583,13 +583,13 @@ $white: #FFFFFF;
       line-height: 1.1;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      color: white;
+      color: black;
     }
 
     p {
       font-size: 1rem;
       margin-bottom: 1.5rem;
-      color: white;
+      color: black;
     }
   }
 

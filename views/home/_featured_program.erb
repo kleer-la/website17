@@ -9,7 +9,7 @@
   details = strip_html.(program.summary)
 %>
 <section class="container mb-5">
-  <a href="<%= program_url %>" class="featured-program text-decoration-none" style="background-color: <%= program.primary_color %>; display: block;">
+  <a href="<%= program_url %>" class="featured-program text-decoration-none" style="background: linear-gradient(<%= program.primary_color %>, <%= program.primary_color %>22); border: 3px solid <%= program.primary_color %>; display: block;">
     <div class="row align-items-center">
       <div class="col-lg-9 featured-program__text">
         <h2><%= program.name %></h2>
