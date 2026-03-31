@@ -97,20 +97,50 @@ $white: #FFFFFF;
   max-width: 90%;
 }
 
+// Image: 100% width, keeps aspect ratio, vertical overflow cropped by .hero2
 .hero2 .hero__img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
   z-index: 0;
+  opacity: 0.85;
+}
+
+// Left whitening + general cyan tint
+.hero2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 25%,
+    rgba(104, 206, 242, 0.25) 50%,
+    rgba(104, 206, 242, 0.15) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+// Bottom wave cutout
+.hero2__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+  display: block;
 }
 
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 //bootstrap edited
@@ -178,6 +208,7 @@ $white: #FFFFFF;
   position: relative;
   margin-top: 50px;
   overflow: hidden;
+  background-color: white;
 }
 
 @media screen and (max-width: 992px) {
@@ -186,6 +217,11 @@ $white: #FFFFFF;
   }
 
   .hero2 .hero__img {
+    display: none;
+  }
+
+  .hero2::before,
+  .hero2__wave {
     display: none;
   }
 }

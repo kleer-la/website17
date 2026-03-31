@@ -8,7 +8,7 @@ cta_text = hero_data[:cta_text]
 %>
 <section id="hero2" class="hero2">
   <img
-    src="/app/img/hero_home.png"
+    src="/app/img/hero.webp"
     class="hero__img"
     alt="<%= hero_item[:alt] %>"
   >
@@ -21,7 +21,7 @@ cta_text = hero_data[:cta_text]
             <span class="highlight"><%= titles[1] %></span>
             <span class="highlight"><%= titles[2] %></span>
           </h1>
-          <p><strong><%= description %></strong></p>
+          <p><%= description %></p>
         </div>
         <button type="button" class="btn my-primary-button modal-opener"
           data-bs-toggle="modal" data-bs-target="#mail-modal">
@@ -30,4 +30,7 @@ cta_text = hero_data[:cta_text]
       </div>
     </div>
   </div>
+  <svg class="hero2__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C120,0 240,0 360,40 C480,80 600,100 720,80 C840,60 960,10 1080,20 C1200,30 1360,80 1440,60 L1440,120 L0,120 Z" fill="white"/>
+  </svg>
 </section>
