@@ -1,5 +1,11 @@
 <%
-  subtitle_text = service.subtitle.to_s.gsub(/<[^>]*>/, '').strip
+  subtitle_raw = service.subtitle.to_s
+  heading_match = subtitle_raw.match(/<h[1-6][^>]*>(.*?)<\/h[1-6]>/im)
+  subtitle_text = if heading_match
+    heading_match[1].gsub(/<[^>]*>/, '').strip
+  else
+    subtitle_raw.gsub(/<[^>]*>/, '').strip
+  end
 %>
 <a class="service-preview-card text-decoration-none d-flex flex-column h-100"
    href="/<%= session[:locale] %>/<%= @path %>/<%= area_slug %>/<%= service.slug %>"
