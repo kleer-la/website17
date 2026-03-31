@@ -21,10 +21,9 @@
       <div class="d-flex flex-column flex-sm-row flex-wrap justify-content-center align-items-center gap-4 mb-5">
         <% service_area.services.each do |service| %>
           <a href="/<%= session[:locale] %>/<%= @path %>/<%= service_area.slug %>/<%= service.slug %>"
-            class="area-hero-service-link d-flex align-items-center gap-2 text-white text-decoration-none"
-            style="font-weight: 700; font-size: 1.4rem; transition: opacity 0.2s;">
+            class="area-hero-service-link text-white"
+            style="font-weight: 700; font-size: 1.4rem; transition: opacity 0.2s; text-decoration: underline; text-underline-offset: 4px;">
             <%= service.name %>
-            <i class="fas fa-arrow-right" style="color: <%= @secondary_color %>; transition: transform 0.2s;"></i>
           </a>
         <% end %>
       </div>
@@ -64,9 +63,6 @@
   }
   .area-hero-service-link:hover {
     opacity: 0.8;
-  }
-  .area-hero-service-link:hover .fas {
-    transform: translateX(4px);
   }
   .area-hero-cta-btn:hover {
     transform: scale(1.05);
