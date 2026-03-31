@@ -217,10 +217,12 @@ $white: #FFFFFF;
   }
 
   .hero2 .hero__img {
-    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
 
-  .hero2::before,
   .hero2__wave {
     display: none;
   }
