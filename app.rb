@@ -70,7 +70,7 @@ end
 
 before do
   # Handle subdomain routing
-  @is_latelier = request.host.start_with?('latelier.')
+  @is_latelier = request.host.include?('latelier.')
   
   target_url, locale = unify_domains(request.host, request.path)
   session[:locale] = locale if locale # Set only if locale is non-nil
