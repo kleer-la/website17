@@ -7,16 +7,9 @@ cta_url = hero_item[:url]
 cta_text = hero_data[:cta_text]
 %>
 <section id="hero2" class="hero2">
-  <img
-    src="/app/img/hero.webp"
-    class="hero__img"
-    alt="<%= hero_item[:alt] %>"
-    width="1213"
-    height="688"
-  >
   <div class="container hero__content">
-    <div class="row">
-      <div class="col-lg-7 carousel__text">
+    <div class="row align-items-center">
+      <div class="col-lg-6 carousel__text">
         <div>
           <h1>
             <span class="highlight highlight--first"><%= titles[0] %> </span>
@@ -30,9 +23,15 @@ cta_text = hero_data[:cta_text]
           <%= cta_text %>
         </button>
       </div>
+      <div class="col-lg-6 hero__img-container">
+        <img
+          src="/app/img/hero.webp"
+          class="hero__img"
+          alt="<%= hero_item[:alt] %>"
+          width="1213"
+          height="688"
+        >
+      </div>
     </div>
   </div>
-  <svg class="hero2__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C120,0 240,0 360,40 C480,80 600,100 720,80 C840,60 960,10 1080,20 C1200,30 1360,80 1440,60 L1440,120 L0,120 Z" fill="white"/>
-  </svg>
 </section>

@@ -34,18 +34,22 @@ $white: #FFFFFF;
 .carousel__text {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding-bottom: 15%;
-  padding-top: 8%;
-  padding-right: 10%;
+  justify-content: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+
+  p {
+    color: white;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
 
   h1 {
-    margin-bottom: 7%;
     font-size: 3rem;
     line-height: 1.2;
     margin: 0;
     margin-bottom: 1rem;
-
   }
 
   .highlight {
@@ -54,32 +58,31 @@ $white: #FFFFFF;
     text-transform: uppercase;
     font-weight: 900;
     position: relative;
-    // margin-bottom: -0.8rem; // Overlap effect
 
     // Default style for lines 2 and 3: black background, white text
     background-color: black;
     color: white;
-    line-height: 1; // Reduce extra space around the text
-    padding-top: 0.05rem; // Slightly less padding on top
-    // padding-bottom: 0.25rem; // Slightly more padding on bottom to balance
+    line-height: 1;
+    padding-top: 0.05rem;
 
-    // First line: white background, black text
+    // First line: white text, no background (on dark teal)
     &--first {
-      background-color: white;
-      color: black;
+      background-color: transparent;
+      color: white;
+      padding-left: 0;
     }
 
     // Rotations for each line
     &:nth-child(1) {
-      transform: rotate(1deg); // First line slight left tilt
+      transform: rotate(1deg);
     }
 
     &:nth-child(2) {
-      transform: rotate(0deg); // Middle line straight
+      transform: rotate(0deg);
     }
 
     &:nth-child(3) {
-      transform: rotate(-1deg); // Last line slight right tilt
+      transform: rotate(-1deg);
     }
   }
 }
@@ -97,50 +100,50 @@ $white: #FFFFFF;
   max-width: 90%;
 }
 
-// Image: 100% width, keeps aspect ratio, vertical overflow cropped by .hero2
+// Hero image as inline element with rounded corners
 .hero2 .hero__img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: auto;
-  z-index: 0;
-  opacity: 0.85;
-}
-
-// Left whitening + general cyan tint
-.hero2::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.8) 25%,
-    rgba(104, 206, 242, 0.25) 50%,
-    rgba(104, 206, 242, 0.15) 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-// Bottom wave cutout
-.hero2__wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 2;
+  border-radius: 1rem;
   display: block;
+}
+
+.hero2 .hero__img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  position: relative;
+
+  // Desktop: left fog (angled: 8% top, 12% bottom) + bottom fog (stronger at right corner)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background:
+      // Left edge fog — angled via polygon-like gradient (95deg ≈ slightly tilted)
+      linear-gradient(95deg, #1a8a9e 3%, transparent 12%),
+      // Bottom fog — stronger toward right-bottom corner
+      linear-gradient(to top, #1a8a9e 0%, transparent 15%),
+      linear-gradient(to top left, #1a8a9e 0%, transparent 20%);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero2 .hero__img-container::before {
+    // Mobile: simple top-edge fog
+    background: linear-gradient(to bottom, #1a8a9e 5%, transparent 15%);
+  }
 }
 
 .hero__content {
   position: relative;
-  z-index: 2;
 }
 
 //bootstrap edited
@@ -208,23 +211,22 @@ $white: #FFFFFF;
   position: relative;
   margin-top: 50px;
   overflow: hidden;
-  background-color: white;
+  background-color: #1a8a9e;
+  border-radius: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 2rem 0;
 }
 
 @media screen and (max-width: 992px) {
   .hero2 {
     margin-top: 9rem;
+    border-radius: 1rem;
+    padding: 1.5rem 0;
   }
 
-  .hero2 .hero__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .hero2__wave {
-    display: none;
+  .hero2 .hero__img-container {
+    padding: 1rem 0.5rem 0;
   }
 }
 
