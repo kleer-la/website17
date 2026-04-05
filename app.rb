@@ -175,7 +175,8 @@ PERMANENT_REDIRECT = {
   'prensa/casos/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
   'clientes/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
   'prensa/casos/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
-  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020'
+  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
+  'nosotros' => 'es/somos'
 }.freeze
 
 PERMANENT_REDIRECT.each do |original, redirect|

@@ -2,6 +2,9 @@
 <meta name="author" content="Kleer - https://www.kleer.la">
 <meta property="og:url" content="https://www.kleer.la" />
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kleer" />
+<meta property="og:locale" content="<%= session[:locale] == 'en' ? 'en_US' : 'es_ES' %>" />
+<meta property="og:locale:alternate" content="<%= session[:locale] == 'en' ? 'es_ES' : 'en_US' %>" />
 <meta property="fb:app_id" content="116606177078" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@klaborativa">
