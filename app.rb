@@ -36,6 +36,7 @@ require './controllers/certificates_controller'
 require './controllers/podcasts_controller'
 require './controllers/event_controller'
 require './controllers/membership_controller'
+require './controllers/sitemap_controller'
 
 include MetaTags
 include Recaptcha::Adapters::ViewMethods
@@ -117,10 +118,12 @@ before '/:locale/*' do
 end
 get '/robots.txt' do
   content_type :text
-  <<-ROBOTS
-  User-agent: *
-  Disallow: /.well-known/apple-app-site-association
-  Disallow: /apple-app-site-association
+  <<~ROBOTS
+    User-agent: *
+    Disallow: /.well-known/apple-app-site-association
+    Disallow: /apple-app-site-association
+
+    Sitemap: https://www.kleer.la/sitemap.xml
   ROBOTS
 end
 get '/en' do

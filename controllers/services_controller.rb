@@ -80,6 +80,8 @@ def show_service(service_area, service, path)
   @path = path
   set_area_colors(service_area)
 
+  @json_ld = service_json_ld(service, service_area)
+
   erb :'services/landing_service/index', layout: :'layout/layout2022',
       locals: { service_area: service_area, service: service }
 end

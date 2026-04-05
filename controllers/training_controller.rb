@@ -122,6 +122,7 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
                     noindex: @event_type.noindex,
                     image: @event_type.cover
 
+    @json_ld = course_json_ld(@event_type)
     @extra_script = @event_type.extra_script
 
     if @event_type.categories.count.positive?

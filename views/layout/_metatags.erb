@@ -5,3 +5,6 @@
 <meta property="fb:app_id" content="116606177078" />
 <meta http-equiv="Cache-control" content="public">
 <link rel="shortcut icon" href="/favicon.ico">
+<%= json_ld_tag(organization_json_ld) %>
+<%= json_ld_tag(website_json_ld) %>
+<%= @json_ld ? json_ld_tag(@json_ld) : '' %>

@@ -55,6 +55,8 @@ get %r{/(resources|recursos)/([^/]+)} do |base_path, slug|
                   canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}",
                   image: @resource.cover
 
+  @json_ld = resource_json_ld(@resource)
+
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 
   @also_download = unless @is_assessment

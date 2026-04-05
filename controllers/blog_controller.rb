@@ -61,6 +61,8 @@ def blog_one(article)
                   image: article.cover,
                   'last-modified': article.substantive_change_at
 
+  @json_ld = article_json_ld(article)
+
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'
 
