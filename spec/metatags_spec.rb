@@ -56,6 +56,11 @@ describe 'metatags' do
       expect(head).to include '<meta property="og:title" content="Sarambanga"/>'
       expect(head).to include '<title>Pepe | Sarambanga</title>'
     end
+    it 'title already starting with site name skips prefix' do
+      head = Tags.new.display title: 'Kleer - My Article', site: 'Kleer'
+      expect(head).to include '<title>Kleer - My Article</title>'
+      expect(head).not_to include '<title>Kleer | Kleer'
+    end
   end
   context 'description' do
     it 'no description, no meta' do
@@ -74,7 +79,7 @@ describe 'metatags' do
     it 'has not canonical' do
       head = Tags.new.display base_url: 'https://www.kleer.la', charset: '', 'http-equiv': nil, viewport: nil,
                               hreflang: [], image: ''
-      expect(head).to eq ''
+      expect(head).not_to include '<link rel="canonical"'
     end
     it 'has canonical' do
       head = Tags.new.display base_url: 'https://www.kleer.la', canonical: 'randanganga'
@@ -130,6 +135,16 @@ describe 'metatags' do
       head = Tags.new.display 'path': nil
       expect(head).not_to include 'href='
       expect(head).not_to include 'href='
+    end
+  end
+  context 'og:url' do
+    it 'generates dynamic og:url from base_url, lang, and path' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es', path: '/es/blog/my-article'
+      expect(head).to include '<meta property="og:url" content="https://www.kleer.la/es/blog/my-article"/>'
+    end
+    it 'generates og:url for homepage' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es', path: '/es'
+      expect(head).to include '<meta property="og:url" content="https://www.kleer.la/es"/>'
     end
   end
   context 'last-modified' do
