@@ -82,7 +82,8 @@ module MetaTags
       path
       alternate_paths
       # @tags.delete :hreflang if !!@tags[:canonical]
-      (@tags.map { |tag| display_one tag }).join('')
+      result = (@tags.map { |tag| display_one tag }).join('')
+      result + "<meta property=\"og:url\" content=\"#{@base_url}/#{@current_lang}#{@path}\"/>"
     end
 
     def display_one(tag)
@@ -98,7 +99,7 @@ module MetaTags
       when :title
         if tag[1].to_s.length.positive?
           tab = ''
-          (tab += "#{@site} | ") if @site.to_s.length.positive?
+          (tab += "#{@site} | ") if @site.to_s.length.positive? && !tag[1].to_s.start_with?(@site.to_s)
           "<meta property=\"og:title\" content=\"#{tag[1]}\"/>
           <title>#{tab}#{tag[1]}</title>"
         end
