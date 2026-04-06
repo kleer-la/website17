@@ -31,6 +31,8 @@ describe 'Resources routes' do
         getit: '',
         assessment_id: nil,
         preview: '',
+        lang: 'es',
+        author_trainers: [],
         trainers_with_role: [],
         recommended_not_downloads: []
       )
@@ -108,6 +110,8 @@ describe 'Resources routes' do
         getit: '',
         assessment_id: nil,
         preview: '',
+        lang: 'en',
+        author_trainers: [],
         trainers_with_role: [],
         recommended_not_downloads: []
       )

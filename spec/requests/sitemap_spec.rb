@@ -19,8 +19,9 @@ describe 'GET /sitemap.xml' do
   end
 
   def urls
-    sitemap_xml.remove_namespaces!
-    sitemap_xml.xpath('//url/loc').map(&:text)
+    doc = sitemap_xml
+    doc.remove_namespaces!
+    doc.xpath('//url/loc').map(&:text)
   end
 
   it 'returns XML with correct content type' do
@@ -234,6 +235,7 @@ describe 'GET /sitemap.xml' do
 
   describe 'resources' do
     before do
+      allow(Resource).to receive(:create_list_keventer).and_call_original
       Resource.create_list_null([
         {
           'id' => 1, 'slug' => 'retromat', 'format' => 'download',
