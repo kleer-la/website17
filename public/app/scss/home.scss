@@ -100,22 +100,22 @@ $white: #FFFFFF;
   max-width: 90%;
 }
 
-// Hero image as inline element with rounded corners
+// Hero image filling full height of hero section
 .hero2 .hero__img {
   width: 100%;
-  height: auto;
-  border-radius: 1rem;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 .hero2 .hero__img-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0;
   position: relative;
+  padding: 0;
+  margin-top: -2rem;
+  margin-bottom: -2rem;
+  align-self: stretch;
 
-  // Desktop: left fog (angled: 8% top, 12% bottom) + bottom fog (stronger at right corner)
+  // Desktop: left fog at 20% + bottom fog
   &::before {
     content: '';
     position: absolute;
@@ -123,22 +123,32 @@ $white: #FFFFFF;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
     background:
-      // Left edge fog — angled via polygon-like gradient (95deg ≈ slightly tilted)
-      linear-gradient(95deg, #1a8a9e 3%, transparent 12%),
-      // Bottom fog — stronger toward right-bottom corner
-      linear-gradient(to top, #1a8a9e 0%, transparent 15%),
-      linear-gradient(to top left, #1a8a9e 0%, transparent 20%);
+      // Left edge fog — 20% of the image
+      linear-gradient(to right, #1a8a9e 5%, transparent 20%),
+      // Bottom fog — subtle
+      linear-gradient(to top, #1a8a9e 0%, transparent 15%);
     z-index: 1;
     pointer-events: none;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .hero2 .hero__img-container::before {
-    // Mobile: simple top-edge fog
-    background: linear-gradient(to bottom, #1a8a9e 5%, transparent 15%);
+  .hero2 .hero__img-container {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 1rem 0.5rem 0;
+
+    &::before {
+      border-radius: 1rem;
+      background: linear-gradient(to bottom, #1a8a9e 5%, transparent 15%);
+    }
+  }
+
+  .hero2 .hero__img {
+    height: auto;
+    object-fit: initial;
+    border-radius: 1rem;
   }
 }
 
@@ -191,6 +201,10 @@ $white: #FFFFFF;
   .carousel__text {
     height: auto;
     padding: 0 5%;
+
+    h1 {
+      font-size: 1.8rem;
+    }
   }
 
   .carousel__img {
@@ -216,6 +230,16 @@ $white: #FFFFFF;
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 2rem 0;
+
+  .row {
+    align-items: stretch;
+  }
+
+  .carousel__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -225,9 +249,6 @@ $white: #FFFFFF;
     padding: 1.5rem 0;
   }
 
-  .hero2 .hero__img-container {
-    padding: 1rem 0.5rem 0;
-  }
 }
 
 //promotion----------------
