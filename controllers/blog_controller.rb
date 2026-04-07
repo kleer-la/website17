@@ -59,7 +59,8 @@ def blog_one(article)
                   canonical: "#{t('meta_tag.blog.canonical')}/#{article.slug}",
                   noindex: article.noindex,
                   image: article.cover,
-                  'last-modified': article.substantive_change_at
+                  'last-modified': article.substantive_change_at,
+                  hreflang: [article.lang.to_sym]
 
   @json_ld = article_json_ld(article)
 

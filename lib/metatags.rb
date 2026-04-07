@@ -101,11 +101,13 @@ module MetaTags
           tab = ''
           (tab += "#{@site} | ") if @site.to_s.length.positive? && !tag[1].to_s.start_with?(@site.to_s)
           "<meta property=\"og:title\" content=\"#{tag[1]}\"/>
+          <meta name=\"twitter:title\" content=\"#{tag[1]}\"/>
           <title>#{tab}#{tag[1]}</title>"
         end
       when :description
         if tag[1].to_s.length.positive?
           "<meta property=\"og:description\" content=\"#{tag[1]}\"/>
+          <meta name=\"twitter:description\" content=\"#{tag[1]}\"/>
           <meta name=\"description\" content=\"#{tag[1]}\"/>"
         end
       when :base_url

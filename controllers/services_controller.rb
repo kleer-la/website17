@@ -21,7 +21,8 @@ get %r{/(servicios|services)/?} do
   @meta_tags.set! title: @page.seo_title || t('meta_tag.services.title'),
                   description: @page.seo_description || t('meta_tag.services.description'),
                   canonical: @page.canonical || t('meta_tag.services.canonical').to_s,
-                  image: cdn('servicios_cover.webp')
+                  image: cdn('servicios_cover.webp'),
+                  alternate_paths: { es: '/servicios', en: '/services' }
 
   @path = 'servicios'
   router_helper = RouterHelper.instance
@@ -64,7 +65,8 @@ end
 def show_service_area(service_area, path)
   @meta_tags.set! title: service_area.seo_title,
                   description: service_area.seo_description,
-                  canonical: "/#{path}/#{service_area.slug}"
+                  canonical: "/#{path}/#{service_area.slug}",
+                  alternate_paths: { es: "/servicios/#{service_area.slug}", en: "/services/#{service_area.slug}" }
 
   @path = path
   set_area_colors(service_area)
@@ -75,7 +77,8 @@ end
 def show_service(service_area, service, path)
   @meta_tags.set! title: service.seo_title || "#{service.name} - #{service_area.name}",
                   description: service.seo_description || service.subtitle,
-                  canonical: "/#{path}/#{service_area.slug}/#{service.slug}"
+                  canonical: "/#{path}/#{service_area.slug}/#{service.slug}",
+                  alternate_paths: { es: "/servicios/#{service_area.slug}/#{service.slug}", en: "/services/#{service_area.slug}/#{service.slug}" }
 
   @path = path
   set_area_colors(service_area)

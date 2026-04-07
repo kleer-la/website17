@@ -46,14 +46,16 @@ describe 'metatags' do
       expect(head).not_to include '<title>'
     end
 
-    it 'title -> OG & title (no site)' do
+    it 'title -> OG & twitter & title (no site)' do
       head = Tags.new.display title: 'Sarambanga'
       expect(head).to include '<meta property="og:title" content="Sarambanga"/>'
+      expect(head).to include '<meta name="twitter:title" content="Sarambanga"/>'
       expect(head).to include '<title>Sarambanga</title>'
     end
-    it 'title -> OG & title (w site)' do
+    it 'title -> OG & twitter & title (w site)' do
       head = Tags.new.display title: 'Sarambanga', site: 'Pepe'
       expect(head).to include '<meta property="og:title" content="Sarambanga"/>'
+      expect(head).to include '<meta name="twitter:title" content="Sarambanga"/>'
       expect(head).to include '<title>Pepe | Sarambanga</title>'
     end
     it 'title already starting with site name skips prefix' do
@@ -69,9 +71,10 @@ describe 'metatags' do
       expect(head).not_to include '<meta name="description"'
     end
 
-    it 'description -> OG & description' do
+    it 'description -> OG & twitter & description' do
       head = Tags.new.display description: 'Sarambanga'
       expect(head).to include '<meta property="og:description" content="Sarambanga"/>'
+      expect(head).to include '<meta name="twitter:description" content="Sarambanga"/>'
       expect(head).to include '<meta name="description" content="Sarambanga"/>'
     end
   end
