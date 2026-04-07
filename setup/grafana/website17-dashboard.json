@@ -1,0 +1,232 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "links": [],
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Total Requests",
+      "gridPos": { "h": 4, "w": 4, "x": 0, "y": 0 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "count_over_time({container=~\"$container\"} | json | __error__=`` [$__range])",
+        "refId": "A"
+      }],
+      "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "fixed", "fixedColor": "blue" } }
+      }
+    },
+    {
+      "type": "stat",
+      "title": "4xx Errors",
+      "gridPos": { "h": 4, "w": 4, "x": 4, "y": 0 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "count_over_time({container=~\"$container\"} | json | level = `warn` [$__range])",
+        "refId": "A"
+      }],
+      "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "fixed", "fixedColor": "yellow" } }
+      }
+    },
+    {
+      "type": "stat",
+      "title": "5xx Errors",
+      "gridPos": { "h": 4, "w": 4, "x": 8, "y": 0 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "count_over_time({container=~\"$container\"} | json | level = `error` [$__range])",
+        "refId": "A"
+      }],
+      "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
+      "fieldConfig": {
+        "defaults": { "color": { "mode": "fixed", "fixedColor": "red" } }
+      }
+    },
+    {
+      "type": "stat",
+      "title": "Avg Response Time",
+      "gridPos": { "h": 4, "w": 4, "x": 12, "y": 0 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "avg_over_time({container=~\"$container\"} | json | unwrap duration_ms [$__range])",
+        "refId": "A"
+      }],
+      "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "color": { "mode": "fixed", "fixedColor": "green" }
+        }
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Requests by Status",
+      "gridPos": { "h": 8, "w": 16, "x": 0, "y": 4 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [
+        {
+          "expr": "sum by (status) (count_over_time({container=~\"$container\"} | json | __error__=`` [$__interval]))",
+          "legendFormat": "{{status}}",
+          "refId": "A"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "fillOpacity": 10, "stacking": { "mode": "normal" } }
+        },
+        "overrides": [
+          { "matcher": { "id": "byRegexp", "options": "^2\\d+" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "green" } }] },
+          { "matcher": { "id": "byRegexp", "options": "^3\\d+" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "blue" } }] },
+          { "matcher": { "id": "byRegexp", "options": "^4\\d+" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "yellow" } }] },
+          { "matcher": { "id": "byRegexp", "options": "^5\\d+" }, "properties": [{ "id": "color", "value": { "mode": "fixed", "fixedColor": "red" } }] }
+        ]
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Response Time (ms)",
+      "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "avg_over_time({container=~\"$container\"} | json | unwrap duration_ms [$__interval])",
+        "legendFormat": "avg",
+        "refId": "A"
+      },
+      {
+        "expr": "quantile_over_time(0.95, {container=~\"$container\"} | json | unwrap duration_ms [$__interval])",
+        "legendFormat": "p95",
+        "refId": "B"
+      }],
+      "fieldConfig": {
+        "defaults": { "unit": "ms", "custom": { "fillOpacity": 5 } }
+      }
+    },
+    {
+      "type": "table",
+      "title": "Top 404 Paths",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | status = 404 | path !~ `.*\\.(php|env|asp|aspx|cgi|sql).*` | path !~ `.*(wp-|wordpress|xmlrpc|well-known|phpmyadmin|admin|ckeditor|filemanager).*` [$__range])))",
+        "refId": "A",
+        "instant": true
+      }],
+      "transformations": [
+        { "id": "sortBy", "options": { "fields": {}, "sort": [{ "field": "Value", "desc": true }] } }
+      ],
+      "fieldConfig": {
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "path" }, "properties": [{ "id": "custom.width", "value": 400 }] },
+          { "matcher": { "id": "byName", "options": "Value" }, "properties": [{ "id": "displayName", "value": "Count" }] }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Top 5xx Paths",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 12 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "topk(20, sum by (path, status) (count_over_time({container=~\"$container\"} | json | status >= 500 [$__range])))",
+        "refId": "A",
+        "instant": true
+      }],
+      "transformations": [
+        { "id": "sortBy", "options": { "fields": {}, "sort": [{ "field": "Value", "desc": true }] } }
+      ],
+      "fieldConfig": {
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "Value" }, "properties": [{ "id": "displayName", "value": "Count" }] }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Slowest Paths (avg ms)",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 20 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "topk(20, avg_over_time({container=~\"$container\"} | json | unwrap duration_ms [$__range]) by (path))",
+        "refId": "A",
+        "instant": true
+      }],
+      "transformations": [
+        { "id": "sortBy", "options": { "fields": {}, "sort": [{ "field": "Value", "desc": true }] } }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "ms" },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "path" }, "properties": [{ "id": "custom.width", "value": 400 }] },
+          { "matcher": { "id": "byName", "options": "Value" }, "properties": [{ "id": "displayName", "value": "Avg ms" }] }
+        ]
+      }
+    },
+    {
+      "type": "table",
+      "title": "Top Paths by Traffic",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 20 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | __error__=`` [$__range])))",
+        "refId": "A",
+        "instant": true
+      }],
+      "transformations": [
+        { "id": "sortBy", "options": { "fields": {}, "sort": [{ "field": "Value", "desc": true }] } }
+      ],
+      "fieldConfig": {
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "path" }, "properties": [{ "id": "custom.width", "value": 400 }] },
+          { "matcher": { "id": "byName", "options": "Value" }, "properties": [{ "id": "displayName", "value": "Requests" }] }
+        ]
+      }
+    },
+    {
+      "type": "logs",
+      "title": "Recent Error Logs (4xx + 5xx)",
+      "gridPos": { "h": 10, "w": 24, "x": 0, "y": 28 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+      "targets": [{
+        "expr": "{container=~\"$container\"} | json | level =~ `warn|error`",
+        "refId": "A"
+      }],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending",
+        "enableLogDetails": true
+      }
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 39,
+  "tags": ["website17", "loki"],
+  "templating": {
+    "list": [
+      {
+        "name": "container",
+        "type": "query",
+        "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
+        "query": { "label": "container", "stream": "{container=~\"website17-web-[^q].*\"}", "type": 1 },
+        "regex": "",
+        "includeAll": true,
+        "multi": true,
+        "current": { "selected": true, "text": ["All"], "value": ["$__all"] },
+        "refresh": 2,
+        "sort": 2
+      }
+    ]
+  },
+  "time": { "from": "now-24h", "to": "now" },
+  "timepicker": {},
+  "timezone": "America/Argentina/Buenos_Aires",
+  "title": "Website17 - Requests & Errors",
+  "uid": "website17-requests"
+}
