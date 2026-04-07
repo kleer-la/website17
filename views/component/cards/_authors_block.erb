@@ -14,22 +14,19 @@
     <%= authors[0] %>
   </div>
 <% else%>
-  <div class="more-authors rounded ">
-    <% if defined?(title) %>
-      <b><%= title %>: </b>
+  <div class="more-authors rounded">
+    <div class="more-authors__summary">
+      <% if defined?(title) %>
+        <b><%= title %>: </b>
+      <% end %>
       <img
-        src="/img/icons/blue_people.svg"
+        src="/img/icons/blue_user.svg"
         alt=""
         class="little-icon me-2"
         />
-    <% else %>
-      <img
-        src="/img/icons/blue_people.svg"
-        alt=""
-        class="little-icon me-2"
-        />
-      <%= title if defined?(title)%> +
-    <% end %>
+      <%= authors[0] %>
+      <i class="fas fa-chevron-down ms-1 more-authors__chevron"></i>
+    </div>
 
     <div class="more-authors__popup">
       <% authors.each do |author| %>

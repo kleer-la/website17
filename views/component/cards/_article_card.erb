@@ -22,19 +22,19 @@ where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/"
       <%= article.category_name %>
     </div>
   </div>
-  <div class="card-body">
+  <div class="card-body d-flex flex-column">
     <a href="<%= where_uri + article.slug %>">
       <h3 class="card-title"><%= article.title %></h3>
     </a>
     <p class="card-text">
       <%= @markdown_renderer.render(article.description) %>
     </p>
-    <p class="card-text">
-      <small class="text-muted">
-        <%= erb :'component/cards/_authors_block', locals: { authors: article.trainers } if article.trainers.count>0%>
-      </small>
-    </p>
-    <p class="card-text">
+    <div class="card-meta mt-auto">
+      <% if article.trainers.count > 0 %>
+        <small class="text-muted">
+          <%= erb :'component/cards/_authors_block', locals: { authors: article.trainers } %>
+        </small>
+      <% end %>
       <small class="text-muted">
         <img src="/img/icons/blue_calendar.svg"
           alt=""
@@ -47,6 +47,6 @@ where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/"
           <%= article.substantive_change_at[0..9] %>
         </time>
       </small>
-    </p>
+    </div>
   </div>
 </article>
