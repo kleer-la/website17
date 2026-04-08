@@ -14,7 +14,7 @@
         <p class="card-subtitle flex-grow-1"><%= smart_truncate(card_text, 200) %></p>
       <% end %>
       <% cta = area.cta_message ? area.cta_message.gsub(/<[^>]*>/, '').strip : nil %>
-      <span class="btn card-cta mt-2" style="background-color: <%= area.primary_color %>; color: <%= area.primary_font_color || 'white' %>;"><%= cta && !cta.empty? ? cta : t('home.home_courses.button.title') %></span>
+      <span class="btn card-cta mt-2" style="background-color: transparent; color: <%= area.primary_color %>; border: 2px solid <%= area.primary_color %>;"><%= cta && !cta.empty? ? cta : t('home.home_courses.button.title') %></span>
     </div>
   </a>
 </div>

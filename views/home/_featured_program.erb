@@ -16,7 +16,7 @@
         <% if details && !details.empty? %>
           <p><%= details %></p>
         <% end %>
-        <span class="btn card-cta" style="background-color: <%= program.secondary_color %>; color: <%= program.secondary_font_color || 'white' %>;"><%= cta_text %></span>
+        <span class="btn card-cta" style="background-color: transparent; color: <%= program.primary_color %>; border: 2px solid <%= program.primary_color %>;"><%= cta_text %></span>
       </div>
       <div class="col-lg-3 featured-program__img-container">
         <img
