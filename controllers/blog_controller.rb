@@ -3,7 +3,7 @@ require './lib/articles'
 require './controllers/pager_helper'
 require 'nokogiri'
 
-get '/blog-preview/:slug' do |slug|
+get %r{/blog-preview/([a-z0-9_\-]+)} do |slug|
   @meta_tags.set! noindex: true, nofollow: true
   @where = 'Blog-Preview'
 
@@ -17,7 +17,7 @@ get '/blog-preview' do
   blog_list Article.create_list_keventer(false)
 end
 
-get '/blog/:slug' do |slug|
+get %r{/blog/([a-z0-9_\-]+)} do |slug|
   @where = 'Blog'
   begin
     art = Article.create_one_keventer(slug)

@@ -31,7 +31,7 @@ get %r{/(servicios|services)/?} do
   erb :'services/landing_page/index', layout: :'layout/layout2022'
 end
 
-get %r{/(?:servicios|services)/([^/]+)/([^/]+)} do |area_slug, service_slug|
+get %r{/(?:servicios|services)/([a-z0-9_\-]+)/([a-z0-9_\-]+)} do |area_slug, service_slug|
   @is_training_program = false
   @page = Page.load_from_keventer(session[:locale], 'service-area')
 
@@ -48,7 +48,7 @@ get %r{/(?:servicios|services)/([^/]+)/([^/]+)} do |area_slug, service_slug|
   show_service(service_area, service, 'servicios')
 end
 
-get %r{/(?:servicios|services)/([^/]+)} do |slug|
+get %r{/(?:servicios|services)/([a-z0-9_\-]+)} do |slug|
   @is_training_program = false
   @page = Page.load_from_keventer(session[:locale], 'service-area')
 

@@ -27,7 +27,7 @@ def resources_index(preview=false)
 end
 
 # get '/recursos/:slug' do |slug|
-get %r{/(resources|recursos)/([^/]+)} do |base_path, slug|
+get %r{/(resources|recursos)/([a-z0-9_\-]+)} do |base_path, slug|
   @active_tab_publicamos = 'active'
 
   lang = session[:locale] || 'es'

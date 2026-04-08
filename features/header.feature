@@ -1,9 +1,9 @@
 Feature: Header & domains
-  I want to set the X-Robots-Tag header for qa2 environment
-  So that search engines don't index the qa2 site
+  I want to set the X-Robots-Tag header for qa environment
+  So that search engines don't index the qa site
 
-  Scenario: Accessing qa2 environment
-    Given the host is "qa2.kleer.la"
+  Scenario: Accessing qa environment
+    Given the host is "qa.kleer.la"
     When I open the web app
     Then the response should include the header "X-Robots-Tag" with value "noindex, nofollow"
 

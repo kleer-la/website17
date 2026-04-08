@@ -95,7 +95,7 @@ get %r{/(catalogo|catalog)/?} do
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
-get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
+get %r{/(cursos|courses)/([a-z0-9_\-]+)} do |lang_path, event_type_id_with_name|
   @event_type = event_type_from_json event_type_id_with_name
   @active_tab_entrenamos = 'active'
 
@@ -138,14 +138,14 @@ get %r{/(cursos|courses)/([^/]+)} do |lang_path, event_type_id_with_name|
 end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
-get '/categoria/:category_codename/cursos/:event_type_id_with_name' do
-  redirect to "/cursos/#{params[:event_type_id_with_name]}", 301
+get %r{/categoria/([a-z0-9_\-]+)/cursos/([a-z0-9_\-]+)} do |_category_codename, event_type_id_with_name|
+  redirect to "/cursos/#{event_type_id_with_name}", 301
 end
 
 # <%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended, title: t('recommended.title')  }%>
-get '/formacion/:slug*?' do
+get %r{/formacion/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
-  service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
+  service_area = ServiceAreaV3.create_keventer(slug, is_preview_mode)
   return status 404 if service_area.nil?
   return status 404 unless service_area.is_training_program
 
@@ -156,8 +156,8 @@ get '/formacion/:slug*?' do
     redirect to("/#{lang}/catalogo"), 301
   end
 
-  @service_slug = if service_area.slug != params[:slug]
-                    params[:slug]
+  @service_slug = if service_area.slug != slug
+                    slug
                   else
                     'none'
                   end
@@ -168,9 +168,9 @@ get '/formacion/:slug*?' do
   show_service_area(service_area, 'formacion')
 end
 
-get '/training/:slug*?' do
+get %r{/training/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
-  service_area = ServiceAreaV3.create_keventer(params[:slug], is_preview_mode)
+  service_area = ServiceAreaV3.create_keventer(slug, is_preview_mode)
   return status 404 if service_area.nil?
   return status 404 unless service_area.is_training_program
 
@@ -181,8 +181,8 @@ get '/training/:slug*?' do
     redirect to("/#{lang}/catalog"), 301
   end
 
-  @service_slug = if service_area.slug != params[:slug]
-                    params[:slug]
+  @service_slug = if service_area.slug != slug
+                    slug
                   else
                     'none'
                   end
