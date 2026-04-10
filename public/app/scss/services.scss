@@ -535,13 +535,13 @@ $white: #FFFFFF;
           padding: 20px;
 
           .outcome {
-            height: 85px;
+            min-height: 85px;
             width: 100%;
             border-radius: 15px;
             margin: 0 !important;
 
             .check {
-              height: 82px;
+              min-height: 82px;
               border-radius: 10px 0 0 10px;
               display: flex;
               justify-content: center;
@@ -583,43 +583,20 @@ $white: #FFFFFF;
       align-items: center;
 
       .program-item {
-        border-radius: 16px;
-        height: 100px;
-        padding: 25px;
+        padding: 20px 10px;
         margin: 10px;
-        display: flex;
 
         h5 {
-          margin: 10px 0;
+          margin: 0 0 8px 0;
           font-size: 20px;
           font-weight: 700;
           line-height: 28px;
           font-family: 'Raleway', sans-serif;
         }
 
-        .button-container {
-          display: flex;
-          justify-content: end;
-          align-items: center;
-          margin-left: auto;
-        }
-
-        .button {
-          height: 35px;
-          width: 35px;
-          border-radius: 50%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            margin: auto;
-            height: 25px;
-          }
-        }
-
         .detail {
-          margin: 10px 0;
+          margin: 0;
+          color: #555;
         }
       }
     }
@@ -923,8 +900,7 @@ $white: #FFFFFF;
         }
 
         .program-item {
-          height: 150px;
-          padding: 20px;
+          padding: 15px 10px;
         }
 
       }
