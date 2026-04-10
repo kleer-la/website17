@@ -14,7 +14,7 @@
   <% unless subtitle_text.empty? %>
     <p class="service-preview-subtitle flex-grow-1"><%= subtitle_text %></p>
   <% end %>
-  <span class="btn service-preview-cta" style="background-color: <%= primary_color %>; color: <%= @primary_font_color || 'white' %>;">
+  <span class="btn service-preview-cta" style="background-color: transparent; color: <%= @primary_font_color || '#333' %>; border: 2px solid <%= primary_color %>; border-radius: 50px;">
     Ver más
   </span>
 </a>
