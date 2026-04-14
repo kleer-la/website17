@@ -19,9 +19,9 @@ This document describes the actual design language of kleer.la as implemented in
 
 | Token | Hex | SCSS Variable | Usage |
 |-------|-----|---------------|-------|
-| Primary Yellow | `#FFE600` | `$primary-yellow` | Decorative elements, category flags |
+| Primary Yellow | `#FFE600` | `$primary-yellow` | Category flags, badges |
 | Secondary Yellow | `#FCDC2D` | `$secondary-yellow` | Badges, highlights |
-| Primary Red | `#EF5662` | `$primary-red` | Alerts, decorative shapes |
+| Primary Red | `#EF5662` | `$primary-red` | Alerts, error highlights |
 | Secondary Red | `#EA2A46` | `$secondary-red` | Error states |
 | Primary Green | `#43B045` | `$primary-green` | Success, positive indicators |
 | Secondary Green | `#0DAC52` | `$secondary-green` | Confirmation |
@@ -115,9 +115,9 @@ Each service area defines its own color set via API (primary, secondary, font co
 
 | Breakpoint | Width | Behavior |
 |------------|-------|----------|
-| Desktop | 992px+ | Multi-column, full nav, decorative SVGs visible |
-| Tablet | 768–991px | 1-2 columns, hamburger nav, `.desktop_figure` hidden |
-| Mobile | <768px | Single column, stacked cards, `.mobile_figure` shown |
+| Desktop | 992px+ | Multi-column, full nav visible |
+| Tablet | 768–991px | 1-2 columns, hamburger nav |
+| Mobile | <768px | Single column, stacked cards |
 | Small mobile | <420px | Reduced heading sizes, compact spacing |
 
 ### Page Skeleton
@@ -141,18 +141,18 @@ Each service area defines its own color set via API (primary, secondary, font co
 | Variant | Height | Background | Content | Used on |
 |---------|--------|------------|---------|---------|
 | Full hero | calc(100vh - 100px) | Varies (blue, gradient, image) | Title + description + CTA + image | Home |
-| Medium hero (`.hero-medium`) | 70vh | `$primary-blue` | Centered title + subtitle | Blog listing |
-| Generic hero (`.generic-hero`) | Auto | Solid color | H1 + subtitle + decorative SVGs | Catalog, about |
+| Medium hero (`.hero-medium`) | 70vh | Turquoise gradient | Centered title + subtitle | Blog listing |
+| Generic hero (`.generic-hero`) | Auto | Solid color | H1 + subtitle | Catalog, about |
 | Service hero | 70vh | Dynamic area color | Title + description + illustration | Services |
-| Light hero | 60vh | `$celeste` (#E8F8FD) | Centered title + subtitle | Resources |
+| Light hero | 60vh | Turquoise gradient | Centered title + subtitle + filter chips | Resources |
 
 ### Cards
 
 | Type | Width | Features | Used on |
 |------|-------|----------|---------|
 | Course card | Responsive grid | Image + badge overlay, category, metadata (duration/date), CTA | Catalog, agenda |
-| Article card (`.blog-card`) | 22rem, 530px height | Image + category flag, title, description, author + date | Blog listing |
-| Resource card | 18rem (inline) | Image + title + description, mobile flip behavior | Resources |
+| Article card (`.blog-card`) | 22rem, 530px height | Image + turquoise category chip, title, description, author + date, hover lift | Blog listing |
+| Resource card | Fluid grid | Image + format badge, title, description, hover lift | Resources |
 | Client card | 22rem | Logo image, optional industry label | Clients |
 | Trainer card | Flexible | Round photo, name, role badge, bio, social links | About, blog |
 | Service card | Flexible, 330px min-h | Colored header matching area, title, description, link | Services |
@@ -170,15 +170,6 @@ Each service area defines its own color set via API (primary, secondary, font co
 - Images in detail pages: 14-20px
 - Content table: 16px
 - Modals/containers: 1rem (16px)
-
-### Decorative SVG Elements
-
-The site uses scattered, absolutely-positioned SVG shapes for visual energy:
-- Yellow bean, yellow circle, yellow oval
-- Green bean, green worm
-- Red circle, red triangle, red bean
-- Blue oval, rustic asterisk
-- Hidden on tablet/mobile via `.desktop_figure` / `.mobile_figure` classes
 
 ---
 
@@ -207,7 +198,7 @@ Not all pages share the same design generation. The modern pages use the full de
 
 ### Modern Pages (current design language)
 
-- **Home** — full hero with animated text highlights, service cards, client grid, layered SVG decorations
+- **Home** — full hero with animated text highlights, service cards, client grid
 - **Services** — dynamic area theming, large cards with 3D hover, expandable content sections, generous whitespace (60-80px margins)
 - **Course landing** — structured sections (takeaways, program, trainers, testimonials, FAQ), rich metadata
 

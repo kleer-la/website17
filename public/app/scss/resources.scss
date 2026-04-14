@@ -41,19 +41,6 @@ $turquoise-light: #a5e4f1;
     color: $white;
   }
 
-  .resources-hero__yellow-circle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    opacity: 0.3;
-  }
-
-  .resources-hero__blue-circle {
-    position: absolute;
-    right: 0;
-    bottom: 20%;
-    opacity: 0.3;
-  }
 }
 
 // Resource type filter chips
@@ -112,15 +99,6 @@ $turquoise-light: #a5e4f1;
       font-size: 1rem;
     }
 
-    .resources-hero__yellow-circle {
-      left: -50px;
-      scale: 0.5;
-    }
-
-    .resources-hero__blue-circle {
-      scale: 0.5;
-      right: -50px;
-    }
   }
 }
 
@@ -168,15 +146,6 @@ $turquoise-light: #a5e4f1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.resource-detail-hero__decoration {
-  position: absolute;
-  z-index: 0;
-}
-
-.resource-detail-hero__decoration--green {
-  bottom: 0;
-  left: 0;
-}
 
 @media (max-width: 991px) {
   .resource-detail-hero__content {
@@ -188,9 +157,6 @@ $turquoise-light: #a5e4f1;
     justify-content: center;
   }
 
-  .resource-detail-hero__decoration {
-    display: none;
-  }
 }
 
 .resource-detail-body {

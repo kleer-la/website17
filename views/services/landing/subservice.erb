@@ -29,20 +29,11 @@
     <div class="col-md-6">
       <div class="takeaways">
         <%= @markdown_renderer.render(sub_service["takeaways"]) %>
-        <img
-          class="desktop_figure takeaways__red-bean"
-          src="<%= cdn('website-assets/red_bean.svg') %>" >
       </div>
     </div>
     <div class="col-md-6">
       <div class="recipients">
         <%= @markdown_renderer.render(sub_service["recipients"]) %>
-        <img
-          class="desktop_figure recipients__green-bean"
-          src="<%= cdn('website-assets/green_bean_sg.svg') %>" />
-        <img
-          class="desktop_figure recipients__yellow-bean"
-          src="<%= cdn('website-assets/yellow_bean.svg') %>"/>
       </div>
     </div>
   </div>

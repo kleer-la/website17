@@ -21,11 +21,6 @@
       <%end%>
     </div>
       <%= erb :'blog/paging' unless @all.nil? %>
-    <img
-      class="desktop_figure blog-feed-list__red-triangle"
-      src="<%= cdn('website-assets/red_triangle.svg') %>"
-      alt="decoration figure"
-      />
 
   <%end%>
   <% if @all.nil? %>
