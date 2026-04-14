@@ -33,6 +33,11 @@ $turquoise-light: #a5e4f1;
     max-width: 1000px;
     z-index: 3;
     color: $white;
+    font-family: "degular-text", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
   h2 {

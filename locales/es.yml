@@ -509,7 +509,7 @@ es:
       authors: 'Creado por:'
   resources:
     not_found: Recurso no encontrado
-    title: Recursos y Materiales sobre Agilidad
+    title: Recursos y Materiales<br>sobre Agilidad
     subtitle: >-
       Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
     filter:

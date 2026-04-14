@@ -203,7 +203,17 @@ $celeste: #E8F8FD;
   align-items: center;
   flex-direction: column;
 
-  h1, h2{
+  h1{
+    z-index: 1;
+    color: $white;
+    font-family: "degular-text", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  h2{
     z-index: 1;
     color: $white;
   }
