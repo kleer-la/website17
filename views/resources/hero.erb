@@ -4,10 +4,68 @@
   <% if session[:locale] == 'es' %>
     <%= erb :'component/sections/_search_box'  %>
   <% end %>
+
+  <% formats = @resources
+       .select { |r| r.lang == session[:locale].to_sym }
+       .map(&:format)
+       .compact
+       .reject(&:empty?)
+       .uniq
+       .sort
+  %>
+  <% if formats.any? %>
+    <div class="resource-filter-bar">
+      <button class="resource-filter-chip active" data-format="all">
+        <%= t("resources.filter.all", default: "Todos") %>
+      </button>
+      <% formats.each do |fmt| %>
+        <button class="resource-filter-chip" data-format="<%= fmt %>">
+          <%= fmt %>
+        </button>
+      <% end %>
+    </div>
+  <% end %>
+
   <img
     class="resources-hero__yellow-circle"
-    src="<%= cdn('website-assets/yellow_circle.png') %>">
+    src="<%= cdn('website-assets/yellow_circle.png') %>"
+    alt=""
+    role="presentation"
+    loading="lazy">
   <img
     class="resources-hero__blue-circle"
-    src="<%= cdn('website-assets/blue_semicircle.png') %>">
+    src="<%= cdn('website-assets/blue_semicircle.png') %>"
+    alt=""
+    role="presentation"
+    loading="lazy">
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var chips = document.querySelectorAll('.resource-filter-chip');
+  if (!chips.length) return;
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+
+      var format = chip.getAttribute('data-format');
+      var cards = document.querySelectorAll('#resource-list > div');
+
+      cards.forEach(function(col) {
+        var card = col.querySelector('.resource-card');
+        if (!card) return;
+        var badge = card.querySelector('.format-badge');
+        var cardFormat = badge ? badge.textContent.trim() : '';
+
+        if (format === 'all' || cardFormat === format) {
+          col.style.display = '';
+        } else {
+          col.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>

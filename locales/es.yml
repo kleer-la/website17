@@ -512,6 +512,8 @@ es:
     title: Recursos y Materiales sobre Agilidad
     subtitle: >-
       Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
+    filter:
+      all: Todos
     card:
       more_info: Más info
       comments: Notas

@@ -11,8 +11,12 @@ $grey: #B3B3B3;
 $white: #FFFFFF;
 $celeste: #E8F8FD;
 
+// Resources accent palette
+$turquoise-dark: #2d6a9f;
+$turquoise-light: #a5e4f1;
+
 .resources-hero {
-  background-color: $celeste;
+  background: linear-gradient(135deg, $turquoise-dark 0%, $turquoise-light 100%);
   margin-top: 100px;
   padding: 30px 60px 70px 60px;
   height: 60vh;
@@ -28,24 +32,60 @@ $celeste: #E8F8FD;
     margin-bottom: 40px;
     max-width: 1000px;
     z-index: 3;
-
+    color: $white;
   }
 
   h2 {
     z-index: 3;
     max-width: 1000px;
+    color: $white;
   }
 
   .resources-hero__yellow-circle {
     position: absolute;
     bottom: 0;
     left: 0;
+    opacity: 0.3;
   }
 
   .resources-hero__blue-circle {
     position: absolute;
     right: 0;
     bottom: 20%;
+    opacity: 0.3;
+  }
+}
+
+// Resource type filter chips
+.resource-filter-bar{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  z-index: 3;
+  position: relative;
+}
+
+.resource-filter-chip{
+  background-color: rgba($white, 0.25);
+  color: $white;
+  border: 1.5px solid rgba($white, 0.5);
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 0.833rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover{
+    background-color: rgba($white, 0.4);
+  }
+
+  &.active{
+    background-color: $white;
+    color: $turquoise-dark;
+    border-color: $white;
   }
 }
 
@@ -54,9 +94,9 @@ $celeste: #E8F8FD;
 }
 
 #search-title {
-  font-size: 24px;
+  font-size: 1.333rem;
   font-weight: 600;
-  line-height: 28px;
+  line-height: 1.556rem;
   margin: 50px 0 0 25px;
 }
 
@@ -69,7 +109,7 @@ $celeste: #E8F8FD;
     }
 
     h2 {
-      font-size: 16px
+      font-size: 1rem;
     }
 
     .resources-hero__yellow-circle {
@@ -90,7 +130,7 @@ $celeste: #E8F8FD;
 
 
 .resource-detail-hero {
-  background-color: var(--background-primary);
+  background: linear-gradient(135deg, $turquoise-dark 0%, darken($turquoise-dark, 5%) 100%);
   position: relative;
   padding: 4rem 0;
   overflow: hidden;
@@ -101,7 +141,7 @@ $celeste: #E8F8FD;
 }
 
 .resource-detail-hero__content h1 {
-  color: var(--text-primary);
+  color: $white;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -109,7 +149,7 @@ $celeste: #E8F8FD;
 }
 
 .resource-detail-hero__content p {
-  color: var(--text-secondary);
+  color: rgba($white, 0.9);
   font-size: 1.125rem;
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -155,24 +195,31 @@ $celeste: #E8F8FD;
 
 .resource-detail-body {
   h2 {
-    color: var(--text-primary);
+    color: $turquoise-dark;
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 
   h3 {
-    color: var(--text-primary);
+    color: $turquoise-dark;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
   a {
-    color: $secondary-blue;
+    color: $turquoise-dark;
     font-weight: bold;
   }
 
   .rounded-container {
     border-radius: 1rem;
+    background-color: rgba($turquoise-light, 0.15);
+    border: none;
+  }
+
+  .form-control:focus{
+    border-color: $turquoise-dark;
+    box-shadow: 0 0 0 0.2rem rgba($turquoise-dark, 0.25);
   }
 }
 
@@ -196,17 +243,19 @@ $celeste: #E8F8FD;
 // Assessment Styles - Scoped to assessment pages only
 .assessment {
   .assessment-hero {
-    background-color: var(--background-primary);
+    background: linear-gradient(135deg, $turquoise-dark 0%, darken($turquoise-dark, 5%) 100%);
     padding: 4rem 0;
     overflow: hidden;
     text-align: left;
-    position: relative; // Ensure positioning context if needed
-    overflow: hidden;
+    position: relative;
     padding-left: 3rem;
 
     .assessment-hero__content {
       padding: 2rem 0;
       text-align: left;
+
+      h1 { color: $white; }
+      p { color: rgba($white, 0.9); }
     }
 
     .assessment-hero__image {
@@ -218,14 +267,14 @@ $celeste: #E8F8FD;
   }
 
   h2 {
-    color: var(--text-primary);
+    color: $turquoise-dark;
     font-size: 2rem;
     margin-bottom: 1rem;
     line-height: normal;
   }
 
   h3 {
-    color: var(--text-primary);
+    color: $turquoise-dark;
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
@@ -256,13 +305,13 @@ $celeste: #E8F8FD;
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
 
     &:focus {
       outline: none;
-      border-color: $primary-green;
-      box-shadow: 0 0 0 2px rgba($primary-green, 0.1);
+      border-color: $turquoise-dark;
+      box-shadow: 0 0 0 2px rgba($turquoise-dark, 0.15);
     }
   }
 
@@ -270,15 +319,15 @@ $celeste: #E8F8FD;
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
     min-height: 120px;
     resize: vertical;
 
     &:focus {
       outline: none;
-      border-color: $primary-green;
-      box-shadow: 0 0 0 2px rgba($primary-green, 0.1);
+      border-color: $turquoise-dark;
+      box-shadow: 0 0 0 2px rgba($turquoise-dark, 0.15);
     }
   }
 
@@ -298,7 +347,7 @@ $celeste: #E8F8FD;
     transition: background-color 0.2s;
 
     &:hover {
-      background-color: #f8f9fa;
+      background-color: rgba($turquoise-light, 0.2);
     }
 
     input[type="radio"] {
@@ -308,7 +357,7 @@ $celeste: #E8F8FD;
 
   .slider-label {
     &.active {
-      background-color: $primary-green;
+      background-color: $turquoise-dark;
       color: $white;
       font-weight: bold;
     }
@@ -317,9 +366,9 @@ $celeste: #E8F8FD;
   .question-group-container {
     margin-bottom: 3rem;
     padding: 1.5rem;
-    background: #f8f9fa;
+    background: rgba($turquoise-light, 0.15);
     border-radius: 8px;
-    border-left: 4px solid $primary-green;
+    border-left: 4px solid $turquoise-dark;
 
     .question-group-title {
       font-size: 1.5rem;

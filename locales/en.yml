@@ -856,6 +856,8 @@ en:
     title: Resources for agility
     subtitle: >-
       Our 2 cents to help you with team collaboration: books, quick guides, card games, infographics, and more
+    filter:
+      all: All
     card:
       more_info: More info
       comments: Notes
