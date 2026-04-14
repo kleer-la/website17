@@ -18,7 +18,7 @@ where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/"
            <%= 'fetchpriority="high"' if (!lazy_load and not article.selected) %>
            decoding="async">
     </a>
-    <div class="category-flag me-3">
+    <div class="category-flag">
       <%= article.category_name %>
     </div>
   </div>

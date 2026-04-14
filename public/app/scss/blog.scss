@@ -10,11 +10,16 @@ $black: #333333;
 $grey: #B3B3B3;
 $white: #FFFFFF;
 
+// Blog & Resources accent palette
+$turquoise-dark: #2d6a9f;
+$turquoise-light: #a5e4f1;
+$celeste: #E8F8FD;
+
 .mainContent h1,
 .mainContent h2,
 .mainContent h3,
 .mainContent h4 {
-  color: #337ab7; }
+  color: $turquoise-dark; }
 
 #blog-hero{
   max-height: 30vh;
@@ -29,7 +34,7 @@ $white: #FFFFFF;
   line-height: 32px; }
 
 .blog-title {
-  color: #337ab7;
+  color: $turquoise-dark;
   font-family: "degular",sans-serif;
   font-style: normal;
   font-size: 32px;
@@ -39,11 +44,11 @@ $white: #FFFFFF;
 
 .blog__body{
   a{
-    color: $secondary-blue !important;
+    color: $turquoise-dark !important;
     font-weight: bold !important;
   }
   a:hover{
-    color: $primary-blue;
+    color: darken($turquoise-dark, 10%);
   }
 }
 
@@ -62,12 +67,12 @@ $white: #FFFFFF;
   h2 > a {
     font-size: 26px;
     margin-bottom: 1em;
-    color: #337ab7;
+    color: $turquoise-dark;
   }
   h2 {
     font-size: 26px;
     margin-bottom: 1em;
-    color: #337ab7;
+    color: $turquoise-dark;
   }
 
   h3 {
@@ -81,9 +86,9 @@ $white: #FFFFFF;
   }
 
   p, li {
-    font-size: 16px;
-    line-height: 2;
-    color: #010101;
+    font-size: 1rem;
+    line-height: 1.667rem;
+    color: $black;
   }
 
   &__data {
@@ -172,14 +177,26 @@ $white: #FFFFFF;
     }
 
     p, li {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
 }
 
+// Reading progress bar
+.reading-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, $turquoise-dark, $turquoise-light);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
 ///NEW VERSION
 #blog-feed-hero{
-  background-color: $primary-blue ;
+  background: linear-gradient(135deg, $turquoise-dark 0%, $turquoise-light 100%);
   position: relative;
   display: flex;
   justify-content: center;
@@ -188,6 +205,7 @@ $white: #FFFFFF;
 
   h1, h2{
     z-index: 1;
+    color: $white;
   }
 }
 
@@ -201,6 +219,11 @@ $white: #FFFFFF;
 
   box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
   border-radius: 16px;
+
+  input:focus{
+    border-color: $turquoise-dark;
+    box-shadow: 0 0 0 0.2rem rgba($turquoise-dark, 0.25);
+  }
 }
 
 .search-box__container{
@@ -400,32 +423,30 @@ $white: #FFFFFF;
 
 #landing-blog-body{
   width: 100%;
-  //max-width: 1700px;
-  //margin: 50px auto 50px auto;
 
   h2{
     font-weight: 600;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2rem;
+    line-height: 2.444rem;
     margin-top: 30px;
     margin-bottom: 30px;
     text-align: left;
+    color: $turquoise-dark;
   }
 
   h3{
     font-weight: 600;
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 1.556rem;
+    line-height: 2rem;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: left;
-
   }
 
   h4{
     font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.333rem;
+    line-height: 1.667rem;
     margin-top: 20px;
     margin-bottom: 25px;
     text-align: left;
@@ -433,8 +454,8 @@ $white: #FFFFFF;
 
   h5{
     font-weight: 600;
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 1.222rem;
+    line-height: 1.556rem;
     margin-top: 20px;
     margin-bottom: 25px;
     text-align: left;
@@ -442,8 +463,8 @@ $white: #FFFFFF;
 
   h6{
     font-weight: 500;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 1.111rem;
+    line-height: 1.389rem;
     margin-top: 20px;
     margin-bottom: 25px;
     text-align: left;
@@ -451,16 +472,15 @@ $white: #FFFFFF;
 
   p{
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 1rem;
+    line-height: 1.667rem;
   }
 
   .blog__body{
     margin-left: auto;
     width: 65%;
     float: right;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
     padding-right: 10px;
   }
 }
@@ -474,12 +494,13 @@ $white: #FFFFFF;
   border-radius: 16px;
   background-color: $white;
   padding: 30px;
+  border-left: 3px solid $turquoise-light;
 
   .title{
     font-weight: 600;
-    font-size: 20px;
-    line-height: 26px;
-    color: $secondary-blue;
+    font-size: 1.111rem;
+    line-height: 1.444rem;
+    color: $turquoise-dark;
   }
 
   ul {
@@ -489,8 +510,22 @@ $white: #FFFFFF;
     list-style: none;
     padding: 0;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 0.889rem;
+    line-height: 1.444rem;
+  }
+
+  a{
+    color: $black;
+    transition: color 0.2s ease;
+
+    &:hover{
+      color: $turquoise-dark;
+    }
+
+    &.active{
+      color: $turquoise-dark;
+      font-weight: 600;
+    }
   }
 
   li{
@@ -519,11 +554,10 @@ $white: #FFFFFF;
 .landing-blog-authors__container::-webkit-scrollbar-thumb {
   margin: 5px;
   border-radius: 1rem;
-  background-color: $secondary-blue;
-  //background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+  background-color: $turquoise-dark;
 }
 .landing-blog-authors__container::-webkit-scrollbar-track {
-  background: $celeste;
+  background: $turquoise-light;
 }
 .landing-blog-authors__container::-webkit-scrollbar {
   padding: 10px;
@@ -565,10 +599,10 @@ $white: #FFFFFF;
 }
 
 blockquote {
-  background: #f4f4f4;
+  background: rgba($turquoise-light, 0.25);
   padding: 15px;
-  border-left:8px solid #7588a7;
-  border-radius:12px;
+  border-left: 4px solid $turquoise-dark;
+  border-radius: 8px;
   p {
     margin-bottom: 0;
   }
@@ -578,20 +612,20 @@ blockquote {
 
 // CITA / CASO: Para citas de autores y frases destacadas
 .quote-case {
-  background: #f4f4f4;
+  background: rgba($turquoise-light, 0.25);
   padding: 15px;
-  border-left: 8px solid #5a6b82;
-  border-radius: 12px;
+  border-left: 4px solid $turquoise-dark;
+  border-radius: 8px;
   margin: 20px 0;
   font-style: italic;
 }
 
 // CITA / CASO Variante 2: Con comillas decorativas
 .quote-case-v2 {
-  background: #f4f4f4;
+  background: rgba($turquoise-light, 0.25);
   padding: 15px 15px 15px 45px;
-  border-left: 8px solid #5a6b82;
-  border-radius: 12px;
+  border-left: 4px solid $turquoise-dark;
+  border-radius: 8px;
   margin: 20px 0;
   font-style: italic;
   position: relative;
@@ -602,7 +636,7 @@ blockquote {
     left: 15px;
     top: 5px;
     font-size: 40px;
-    color: #5a6b82;
+    color: $turquoise-dark;
     opacity: 0.4;
     font-family: Georgia, serif;
   }
@@ -610,10 +644,10 @@ blockquote {
 
 // NOTA IMPORTANTE: Azul con ícono de pin
 .note-important-blue {
-  background: #e8f4f8;
+  background: rgba($turquoise-light, 0.3);
   padding: 15px;
-  border-left: 8px solid #2196f3;
-  border-radius: 12px;
+  border-left: 4px solid $turquoise-dark;
+  border-radius: 8px;
   margin: 20px 0;
 
   &::before {

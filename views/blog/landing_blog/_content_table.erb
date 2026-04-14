@@ -26,8 +26,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Active section highlighting
+    function updateActiveLink() {
+        var links = document.querySelectorAll('#landing-blog-content-table a[href^="#title-"], #landing-blog-content-table a[href^="#subtitle-"]');
+        var headings = document.querySelectorAll('[id^="title-"], [id^="subtitle-"]');
+        var current = '';
+
+        headings.forEach(function(heading) {
+            if (heading.getBoundingClientRect().top <= 150) {
+                current = heading.id;
+            }
+        });
+
+        links.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
     runOnScroll();
-    window.addEventListener("scroll", requestTick, { passive: true });
+    window.addEventListener("scroll", function() {
+        requestTick();
+        requestAnimationFrame(updateActiveLink);
+    }, { passive: true });
 });
 </script>
 
