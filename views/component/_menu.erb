@@ -8,6 +8,7 @@
     lang_text = 'ENGLISH'
   end
    navbar_items = t('navbar')
+   has_open_events = CacheService.get_or_set('has_open_events') { !Event.create_keventer_json.empty? }
 
    router_helper = RouterHelper.instance
 %>
@@ -32,6 +33,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%item[:options].each do |option| %>
+                  <% next if !has_open_events && %w[/agenda /schedule].include?(option[:url]) %>
                   <% if option[:text] == 'dropdown-divider' %>
                     <li><hr class="dropdown-divider"></li>
                   <% else %>
