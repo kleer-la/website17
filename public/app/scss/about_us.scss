@@ -11,95 +11,345 @@ $black: #333333;
 $grey: #B3B3B3;
 $white: #FFFFFF;
 
-#aboutus-info{
-  width: 100%;
-  padding: 5% 30px 5% 30px;
-}
+$turquoise-dark: #2d6a9f;
+$turquoise-light: #a5e4f1;
 
-#aboutus-kleerers{
-  padding: 20px 10% 20px 10%;
-}
-.kleerer-container{
-  background-color: $primary-blue;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 20px;
-  height: 350px;
-  max-width: 260px;
+// ============================================
+// ABOUT US PAGE
+// ============================================
+
+// --- Hero ---
+.aboutus-hero{
+  background: linear-gradient(135deg, $turquoise-dark 0%, $turquoise-light 100%);
+  margin-top: 100px;
+  padding: 80px 60px;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-.img-container {
-  margin: 15px 15px 0 15px;
-  padding: 5px;
-  border-radius: 50%;
-  background-color: $celeste;
+  h1{
+    color: $white;
+    font-family: "degular-text", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+  }
 
-  :hover{
-    transform: scale(1.2);
+  .hero-description{
+    color: rgba($white, 0.9);
+    max-width: 700px;
   }
 }
 
-.kleerer-name{
-  text-transform: uppercase;
-  height: 30px;
-}
+// --- Trayectoria (Timeline) ---
+.aboutus-trayectoria{
+  padding: 80px 0;
 
-////////////////////////////
+  h2{
+    color: $turquoise-dark;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 
-.brojo {border: 1px #f00 solid;}
-
-.header-about-us {
-  background: url(../img/somos.jpg);
-  background-size: cover;
-  height: 400px;
-  background-position: center center;
-  @media(min-width:1024px) {
-    background-position: center -110px;
+  &__description{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    color: $black;
+    font-size: 1rem;
+    line-height: 1.667rem;
   }
 }
 
-h3.title-somos {
-  font-size: 22px;
-}
-@media (max-width: 767px) {
-  .somos .col-sm-3 {
-    margin-bottom: 40px;
+.aboutus-timeline-card{
+  background-color: $white;
+  border: 1px solid rgba($turquoise-light, 0.5);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  text-align: center;
+  transition: border-color 0.25s ease;
+
+  &:hover{
+    border-color: $turquoise-dark;
+  }
+
+  &--present{
+    background-color: rgba($turquoise-light, 0.15);
+    border-color: $turquoise-dark;
+  }
+
+  &__label{
+    display: inline-block;
+    font-family: "degular-text", sans-serif;
+    font-weight: 700;
+    font-size: 0.833rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $turquoise-dark;
+    background-color: rgba($turquoise-light, 0.3);
+    border-radius: 100px;
+    padding: 4px 16px;
+    margin-bottom: 1rem;
+  }
+
+  p{
+    color: $black;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
   }
 }
 
-.vSpace {
-  display: block;
-  height: 20px;
+// --- Filosofía (Pillars) ---
+.aboutus-filosofia{
+  padding: 80px 0;
+  background-color: rgba($turquoise-light, 0.1);
+
+  h2{
+    color: $turquoise-dark;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__description{
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    color: $black;
+  }
 }
 
-.somos .fab {
-  font-size: 22px;
-  color: #fff; }
-.somos .fab:hover {
-  color: #000; }
+.aboutus-pillar-card{
+  background-color: $white;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.06);
+  border-left: 3px solid $turquoise-dark;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-.img-circle {
-  width: 160px;
-  filter: grayscale(100%); }
-  .img-circle:hover {
-    filter: grayscale(0); }
-.img-circle {
-      width: auto;
-      margin: 0 auto;
+  &:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 24px 48px rgba(45, 106, 159, 0.12);
+  }
+
+  h4{
+    color: $turquoise-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  p{
+    color: $black;
+    margin: 0;
+  }
+}
+
+// --- Propósito (Quote) ---
+.aboutus-proposito{
+  padding: 80px 0;
+  text-align: center;
+
+  blockquote{
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+
+    p{
+      font-family: "degular-text", sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: $turquoise-dark;
+      margin: 0;
+    }
+  }
+
+  &__footnote{
+    color: $grey;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+// --- Cultura (Values) ---
+.aboutus-cultura{
+  padding: 80px 0;
+
+  h2{
+    color: $turquoise-dark;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__description{
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    color: $black;
+  }
+}
+
+.aboutus-value-card{
+  background-color: rgba($turquoise-light, 0.15);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.25s ease;
+
+  &:hover{
+    transform: translateY(-4px);
+  }
+
+  h4{
+    color: $turquoise-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  p{
+    color: $black;
+    margin: 0;
+  }
+}
+
+// --- Team (Kleerers) ---
+.aboutus-kleerers{
+  padding: 80px 0;
+  background-color: rgba($turquoise-light, 0.08);
+
+  h2{
+    color: $turquoise-dark;
+  }
+}
+
+.aboutus-member-card{
+  background-color: $white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 24px 48px rgba(45, 106, 159, 0.12);
+    border-top-color: $turquoise-dark;
+  }
+
+  &__photo{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
     }
 
+    &:hover img{
+      transform: scale(1.05);
+    }
+  }
 
+  &__info{
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
 
-.img-trainer {
-  position: relative;
-  margin-bottom: 10px;
-  .img-name {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+  &__name{
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 0.25rem;
+    font-size: 1.111rem;
+  }
+
+  &__role{
+    color: $turquoise-dark;
+    font-weight: 600;
+    font-size: 0.833rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__bio{
+    color: $grey;
+    font-size: 0.833rem;
+    line-height: 1.4;
+    flex: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  &__social{
+    display: flex;
+    gap: 0.75rem;
+
+    a{
+      color: $turquoise-dark;
+      font-size: 1.111rem;
+      transition: color 0.2s ease;
+
+      &:hover{
+        color: darken($turquoise-dark, 15%);
+      }
+    }
+  }
+}
+
+// --- CTA ---
+.aboutus-cta{
+  padding: 80px 0;
+  background: linear-gradient(135deg, $turquoise-dark 0%, darken($turquoise-dark, 8%) 100%);
+  text-align: center;
+
+  h2{
+    color: $white;
+    margin-bottom: 1rem;
+  }
+
+  p{
+    color: rgba($white, 0.85);
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 1.111rem;
+  }
+}
+
+// --- Responsive ---
+@media screen and (max-width: 768px){
+  .aboutus-hero{
+    padding: 60px 24px;
+    min-height: auto;
+  }
+
+  .aboutus-trayectoria,
+  .aboutus-filosofia,
+  .aboutus-proposito,
+  .aboutus-cultura,
+  .aboutus-kleerers,
+  .aboutus-cta{
+    padding: 50px 0;
+  }
+
+  .aboutus-timeline-card,
+  .aboutus-pillar-card,
+  .aboutus-value-card{
+    margin-bottom: 1rem;
   }
 }

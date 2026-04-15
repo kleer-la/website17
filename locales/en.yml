@@ -892,14 +892,56 @@ en:
         consumer_goods: Consumer Goods
         energy: Energy
   aboutus:
-    title: About Kleer
-    subtitle: "<p>
-    We enjoy co-creating  conscious and amazing human environments
-    </p>
-    <p>
-    We are a team focused on improving the way people work. We accompany professionals, teams and organizations in their evolution towards continuous improvement, enhancing and balancing productivity, quality and happiness.
-    </p>
-    "
+    title: We co-create the future of work without recipes.
+    subtitle: >-
+      For over 17 years, we've accompanied people and organizations
+      to evolve in ever-changing environments. We're not external consultants;
+      we're partners in your transformation.
+    trayectoria:
+      title: 17 years hacking the organizational status quo.
+      description: >-
+        What started as a shared passion for agility in 2008 became a global
+        community. We've gone from teaching frameworks to designing human,
+        conscious, and above all, amazing organizations.
+      past: We were a spark of agility that attracted restless minds.
+      present: We are a team that understands organizations are living systems.
+      future: >-
+        We will be the bridge to a way of working where reflection,
+        sustainability, and inclusion are the norm, not the exception.
+    filosofia:
+      title: We understand complexity, we embrace uncertainty.
+      description: >-
+        Today's world is fast and unpredictable. That's why our philosophy
+        is based on Contextual Intelligence.
+      pillar1_title: No magic formulas
+      pillar1_text: Every case is unique.
+      pillar2_title: Real experimentation
+      pillar2_text: We work in iterations, measuring real impacts, not just theoretical ones.
+      pillar3_title: Living systems
+      pillar3_text: We rethink leadership, structure, and product as a connected whole.
+    proposito:
+      quote: At Kleer, we enjoy co-creating more conscious and amazing human environments.
+      footnote: This has been our guiding north since 2014. It's not just a phrase; it's our measure of success.
+    cultura:
+      title: "Culture isn't read, it's lived."
+      description: >-
+        For us, culture is what happens when nobody's watching.
+        It manifests in how we collaborate, how we include diverse voices,
+        and how we care for our impact on the planet.
+      value1_title: Continuous learning
+      value1_text: Sharing knowledge is our natural state.
+      value2_title: Flexible design
+      value2_text: We believe in structures that adapt, not imprison.
+      value3_title: Human leadership
+      value3_text: We foster a style of guidance based on trust and maturity.
+    equipo:
+      title: Our team
+    cta:
+      title: Is your organization ready to evolve?
+      description: >-
+        Tell us about your challenges today and let's find together
+        the way to make things happen.
+      button: Let's talk about your team
   news:
     title: News
     subtitle: News and publications in various media about our work.

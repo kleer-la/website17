@@ -1,30 +1,44 @@
-<section class="containter" id="aboutus-kleerers">
-      <div class="row somos w-100 m-0">
-        <% @kleerers.each do |kleerer| %>
-          <div class="col-md-4 col-lg-3">
-            <div class="text-center kleerer-container">
-              <div class="img-container">
-                <img src="<%=kleerer.gravatar_picture_url%>?s=400" class="rounded-circle" loading="lazy">
-              </div>
-              <h5 class="kleerer-name"><%=kleerer.name%></h5>
-              <div>
-                <% if kleerer.linkedin_url != "" %>
-                  <%= external_url_anchor kleerer.linkedin_url%>
-                  <i class="fab fa-linkedin-in"></i>
-                  </a>
-                <% end %>
-
-                <% if kleerer.twitter_username != "" %>
-                  <%= external_url_anchor "https://x.com/#{kleerer.twitter_username}"%>
-                  <i class="fab fa-twitter"></i>
-                  </a>
-                <% end %>
-              </div>
-
+<section id="aboutus-kleerers" class="aboutus-kleerers">
+  <div class="container">
+    <h2 class="text-center mb-5"><%= t('aboutus.equipo.title') %></h2>
+    <div class="row justify-content-center">
+      <% @kleerers.each do |kleerer| %>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="aboutus-member-card">
+            <div class="aboutus-member-card__photo">
+              <img
+                src="<%= kleerer.gravatar_picture_url %>?s=400"
+                alt="<%= kleerer.name %>"
+                loading="lazy"
+                width="400"
+                height="400"
+              />
             </div>
-
+            <div class="aboutus-member-card__info">
+              <h5 class="aboutus-member-card__name"><%= kleerer.name %></h5>
+              <% if kleerer.role && kleerer.role != '' %>
+                <p class="aboutus-member-card__role"><%= kleerer.role %></p>
+              <% end %>
+              <% bio_text = kleerer.bio.to_s.gsub(/[>#*\r]/, '').strip
+                 if bio_text != '' %>
+                <p class="aboutus-member-card__bio"><%= truncate_words(bio_text, 30) %></p>
+              <% end %>
+              <div class="aboutus-member-card__social">
+                <% if kleerer.linkedin_url != '' %>
+                  <%= external_url_anchor kleerer.linkedin_url %>
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                <% end %>
+                <% if kleerer.twitter_username != '' %>
+                  <%= external_url_anchor "https://x.com/#{kleerer.twitter_username}" %>
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                <% end %>
+              </div>
+            </div>
           </div>
-        <% end %>
-      </div>
-    </section>
-
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

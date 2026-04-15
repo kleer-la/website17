@@ -548,11 +548,57 @@ es:
         consumer_goods: Bienes de Consumo
         energy: Energía
   aboutus:
-    title: Sobre Kleer
-    subtitle: "<p>Somos un equipo enfocado en mejorar la forma en que las personas trabajan. Acompañamos a profesionales, equipos y organizaciones en su transformación integral para lograr mejores resultados.</p>
-    <p>
-     En Kleer disfrutamos cocreando ambientes humanos más conscientes y asombrosos
-    </p>"
+    title: Cocreamos el futuro del trabajo sin recetas.
+    subtitle: >-
+      Desde hace más de 17 años, acompañamos a personas y organizaciones
+      a evolucionar en entornos de cambio constante. No somos consultores
+      externos; somos socios en tu transformación.
+    trayectoria:
+      title: 17 años hackeando el statu quo organizacional.
+      description: >-
+        Lo que comenzó como una pasión compartida por la agilidad en 2008,
+        se convirtió en una comunidad global. Hemos pasado de enseñar marcos
+        de trabajo a diseñar organizaciones humanas, conscientes y, sobre todo,
+        asombrosas.
+      past: Fuimos una chispa de agilidad que atrajo a mentes inquietas.
+      present: Somos un equipo que entiende que las organizaciones son sistemas vivos.
+      future: >-
+        Seremos el puente hacia una forma de trabajar donde la reflexión,
+        la sostenibilidad y la inclusión sean la norma, no la excepción.
+    filosofia:
+      title: Entendemos la complejidad, abrazamos la incertidumbre.
+      description: >-
+        El mundo de hoy es rápido e impredecible. Por eso, nuestra filosofía
+        se basa en la Inteligencia Contextual.
+      pillar1_title: Sin fórmulas mágicas
+      pillar1_text: Cada caso es único.
+      pillar2_title: Experimentación real
+      pillar2_text: Trabajamos en iteraciones, midiendo impactos reales, no solo teóricos.
+      pillar3_title: Sistemas vivos
+      pillar3_text: Repensamos el liderazgo, la estructura y el producto como un todo conectado.
+    proposito:
+      quote: En Kleer disfrutamos cocreando ambientes humanos más conscientes y asombrosos.
+      footnote: Este es el norte que nos guía desde 2014. No es solo una frase; es nuestra métrica de éxito.
+    cultura:
+      title: "La cultura no se lee, se vive."
+      description: >-
+        Para nosotros, la cultura es lo que sucede cuando nadie está mirando.
+        Se manifiesta en cómo colaboramos, cómo incluimos diversas voces
+        y cómo cuidamos nuestro impacto en el planeta.
+      value1_title: Aprendizaje continuo
+      value1_text: Compartir conocimiento es nuestro estado natural.
+      value2_title: Diseño flexible
+      value2_text: Creemos en estructuras que se adaptan, no que encarcelan.
+      value3_title: Liderazgo humano
+      value3_text: Impulsamos un estilo de guía basado en la confianza y la madurez.
+    equipo:
+      title: Nuestro equipo
+    cta:
+      title: ¿Tu organización está lista para evolucionar?
+      description: >-
+        Cuéntanos qué desafíos tienes hoy y busquemos juntos la forma
+        de hacer que las cosas pasen.
+      button: Conversemos sobre tu equipo
   news:
     title: Novedades
     subtitle: Avisos, notas de prensa y publicaciones en diversos medios sobre nuestro trabajo.

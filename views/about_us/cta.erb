@@ -1,0 +1,15 @@
+<section id="aboutus-cta" class="aboutus-cta">
+  <div class="container text-center">
+    <h2><%= t('aboutus.cta.title') %></h2>
+    <p><%= t('aboutus.cta.description') %></p>
+    <div class="btn-center-container mt-4">
+      <%= erb :'component/_contact_banner_button',
+              locals: {
+                text_button: t('aboutus.cta.button'),
+                style_class: 'btn my-primary-button',
+                style: '',
+                specific_id: 'aboutus-cta-btn'
+              } %>
+    </div>
+  </div>
+</section>
