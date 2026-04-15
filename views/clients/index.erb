@@ -1,29 +1,68 @@
-<%= erb :'component/_generic_hero', locals: {title: t('clients.title'), subtitle: t('clients.subtitle')} %>
+<section class="clients-hero">
+  <h1><%= t('clients.title') %></h1>
+  <p class="hero-description"><%= t('clients.subtitle') %></p>
+</section>
 
-<div class="container mainContent clientes mt-5">
-  <div class="container fondo-blanco contenedor-generico">
-    <div class="row">
+<section class="clients-cases">
+  <div class="container">
+    <div class="row justify-content-center">
       <% @articles.each do |case_study| %>
-        <div class="col-md-6 col-lg-4">
-          <%= erb :'component/cards/_client_card', locals: {
-                where_uri: "/#{session[:locale]}/blog/", 
-                industry: I18n.t('clients.case_study.industry')[case_study.industry.to_sym]&.upcase, 
-                cover: case_study.cover,
-                title: case_study.title,
-                description: case_study.title,
-                # description: case_study.description,
-                id: case_study.slug
-                } 
-          %>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="/<%= session[:locale] %>/blog/<%= case_study.slug %>" class="clients-case-card">
+            <div class="clients-case-card__image">
+              <img src="<%= case_study.cover %>" alt="<%= case_study.title %>" loading="lazy" />
+            </div>
+            <div class="clients-case-card__body">
+              <% industry_label = I18n.t('clients.case_study.industry')[case_study.industry.to_sym] %>
+              <% if industry_label %>
+                <span class="clients-case-card__industry"><%= industry_label %></span>
+              <% end %>
+              <h3 class="clients-case-card__title"><%= case_study.title %></h3>
+            </div>
+          </a>
         </div>
       <% end %>
     </div>
-</div>
-</div>
+  </div>
+</section>
+
 <%
   client_data = section_data(@page, 'clients', { title: nil, content: nil, cta_text: nil })
   clients_title = client_data[:title]
   clients_description = client_data[:content]
   clients_cta = client_data[:cta_text]
 %>
-<%=erb :'component/sections/_clients', locals: {title:clients_title, description: clients_description, cta: clients_cta} %>
+
+<section class="clients-logos">
+  <div class="container">
+    <% if clients_title %>
+      <h2 class="text-center mb-2"><%= clients_title %></h2>
+    <% end %>
+    <% if clients_description.to_s != '' %>
+      <p class="text-center mb-4 clients-logos__description"><%= clients_description %></p>
+    <% end %>
+    <div class="row justify-content-center align-items-center">
+      <% @clients.each do |client| %>
+        <div class="col-4 col-md-3 col-lg-2 d-flex justify-content-center align-items-center mb-4">
+          <img src="<%= client[:img] %>" alt="<%= client[:name] %>" class="clients-logos__logo" loading="lazy" />
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="clients-cta">
+  <div class="container text-center">
+    <h2><%= t('clients.cta.title') %></h2>
+    <p><%= t('clients.cta.description') %></p>
+    <div class="btn-center-container mt-4">
+      <%= erb :'component/_contact_banner_button',
+              locals: {
+                text_button: t('clients.cta.button'),
+                style_class: 'btn my-primary-button',
+                style: '',
+                specific_id: 'clients-cta-btn'
+              } %>
+    </div>
+  </div>
+</section>

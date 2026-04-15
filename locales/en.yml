@@ -891,6 +891,10 @@ en:
         public_services: Public Services
         consumer_goods: Consumer Goods
         energy: Energy
+    cta:
+      title: Want to transform your organization?
+      description: Let's talk about how we can help you achieve your goals.
+      button: Contact us
   aboutus:
     title: We co-create the future of work without recipes.
     subtitle: >-

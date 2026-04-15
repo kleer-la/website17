@@ -547,6 +547,10 @@ es:
         public_services: Servicios Públicos
         consumer_goods: Bienes de Consumo
         energy: Energía
+    cta:
+      title: "¿Querés transformar tu organización?"
+      description: Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos.
+      button: Contactanos
   aboutus:
     title: Cocreamos el futuro del trabajo sin recetas.
     subtitle: >-
