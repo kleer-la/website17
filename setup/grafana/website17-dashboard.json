@@ -13,7 +13,7 @@
       "gridPos": { "h": 4, "w": 4, "x": 0, "y": 0 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "count_over_time({container=~\"$container\"} | json | __error__=`` [$__range])",
+        "expr": "sum(count_over_time({container=~\"$container\"} | json | __error__=`` [$__range]))",
         "refId": "A"
       }],
       "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
@@ -27,7 +27,7 @@
       "gridPos": { "h": 4, "w": 4, "x": 4, "y": 0 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "count_over_time({container=~\"$container\"} | json | level = `warn` [$__range])",
+        "expr": "sum(count_over_time({container=~\"$container\"} | json | level = `warn` [$__range]))",
         "refId": "A"
       }],
       "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
@@ -41,7 +41,7 @@
       "gridPos": { "h": 4, "w": 4, "x": 8, "y": 0 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "count_over_time({container=~\"$container\"} | json | level = `error` [$__range])",
+        "expr": "sum(count_over_time({container=~\"$container\"} | json | level = `error` [$__range]))",
         "refId": "A"
       }],
       "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
@@ -55,7 +55,7 @@
       "gridPos": { "h": 4, "w": 4, "x": 12, "y": 0 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "avg_over_time({container=~\"$container\"} | json | unwrap duration_ms [$__range])",
+        "expr": "sum(sum_over_time({container=~\"$container\"} | json | drop timestamp, method, path, query, status, ip, user_agent, referer, host, level | unwrap duration_ms [$__range])) / sum(count_over_time({container=~\"$container\"} | json | __error__=`` [$__range]))",
         "refId": "A"
       }],
       "options": { "colorMode": "background", "graphMode": "none", "textMode": "value" },
@@ -73,7 +73,7 @@
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [
         {
-          "expr": "sum by (status) (count_over_time({container=~\"$container\"} | json | __error__=`` [$__interval]))",
+          "expr": "sum by (status) (count_over_time({container=~\"$container\"} | json | __error__=`` | drop timestamp, method, path, query, ip, user_agent, referer, host, level, duration_ms [$__interval]))",
           "legendFormat": "{{status}}",
           "refId": "A"
         }
@@ -96,12 +96,12 @@
       "gridPos": { "h": 8, "w": 8, "x": 16, "y": 0 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "avg_over_time({container=~\"$container\"} | json | unwrap duration_ms [$__interval])",
+        "expr": "avg_over_time({container=~\"$container\"} | json | drop timestamp, method, path, query, status, ip, user_agent, referer, host, level | unwrap duration_ms [$__interval])",
         "legendFormat": "avg",
         "refId": "A"
       },
       {
-        "expr": "quantile_over_time(0.95, {container=~\"$container\"} | json | unwrap duration_ms [$__interval])",
+        "expr": "quantile_over_time(0.95, {container=~\"$container\"} | json | drop timestamp, method, path, query, status, ip, user_agent, referer, host, level | unwrap duration_ms [$__interval])",
         "legendFormat": "p95",
         "refId": "B"
       }],
@@ -115,7 +115,7 @@
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | status = 404 | path !~ `.*\\.(php|env|asp|aspx|cgi|sql).*` | path !~ `.*(wp-|wordpress|xmlrpc|well-known|phpmyadmin|admin|ckeditor|filemanager).*` [$__range])))",
+        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | status = 404 | path !~ `.*\\.(php|env|asp|aspx|cgi|sql).*` | path !~ `.*(wp-|wordpress|xmlrpc|well-known|phpmyadmin|admin|ckeditor|filemanager).*` | drop timestamp, method, query, status, ip, user_agent, referer, host, level, duration_ms [$__range])))",
         "refId": "A",
         "instant": true
       }],
@@ -135,7 +135,7 @@
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 12 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "topk(20, sum by (path, status) (count_over_time({container=~\"$container\"} | json | status >= 500 [$__range])))",
+        "expr": "topk(20, sum by (path, status) (count_over_time({container=~\"$container\"} | json | status >= 500 | drop timestamp, method, query, ip, user_agent, referer, host, level, duration_ms [$__range])))",
         "refId": "A",
         "instant": true
       }],
@@ -154,7 +154,7 @@
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 20 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "topk(20, avg_over_time({container=~\"$container\"} | json | unwrap duration_ms [$__range]) by (path))",
+        "expr": "topk(20, avg_over_time({container=~\"$container\"} | json | drop timestamp, method, query, status, ip, user_agent, referer, host, level | unwrap duration_ms [$__range]) by (path))",
         "refId": "A",
         "instant": true
       }],
@@ -175,7 +175,7 @@
       "gridPos": { "h": 8, "w": 12, "x": 12, "y": 20 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | __error__=`` [$__range])))",
+        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | __error__=`` | drop timestamp, method, query, status, ip, user_agent, referer, host, level, duration_ms [$__range])))",
         "refId": "A",
         "instant": true
       }],
