@@ -13,6 +13,7 @@ class Trainer
   def load_from_json(t_json)
     @id = t_json['id'].to_i
     load_str(%i[name bio long_bio gravatar_email twitter_username linkedin_url landing signature_credentials], t_json)
+    @role = @signature_credentials.to_s
     @bio =  t_json['bio_en'].to_s if @lang == 'en'
 
     self
