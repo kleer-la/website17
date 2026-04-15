@@ -88,6 +88,10 @@ before do
   end
 
   headers['X-Robots-Tag'] = 'noindex, nofollow' if request.host.include?('qa.')
+  headers['X-Content-Type-Options'] = 'nosniff'
+  headers['X-Frame-Options'] = 'DENY'
+  headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+  headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains' if settings.production?
 
   router_helper = RouterHelper.instance
   router_helper.lang = session[:locale]

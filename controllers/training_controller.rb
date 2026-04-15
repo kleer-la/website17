@@ -122,7 +122,24 @@ get %r{/(cursos|courses)/([a-z0-9_\-]+)} do |lang_path, event_type_id_with_name|
                     noindex: @event_type.noindex,
                     image: @event_type.cover
 
-    @json_ld = course_json_ld(@event_type)
+    json_ld_items = [course_json_ld(@event_type)]
+
+    if @event_type.faq.to_s.strip != ''
+      rendered_faq = @markdown_renderer.render(@event_type.faq)
+      faq_parts = rendered_faq.split('<h4>')
+      faq_questions = []
+      faq_answers = []
+      faq_parts.each do |part|
+        q, a = part.split('</h4>')
+        next unless q && a
+
+        faq_questions << q
+        faq_answers << a
+      end
+      json_ld_items << faq_json_ld(faq_questions, faq_answers) unless faq_questions.empty?
+    end
+
+    @json_ld = json_ld_items.length == 1 ? json_ld_items.first : json_ld_items
     @extra_script = @event_type.extra_script
 
     if @event_type.categories.count.positive?

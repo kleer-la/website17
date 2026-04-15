@@ -62,7 +62,16 @@ def blog_one(article)
                   'last-modified': article.substantive_change_at,
                   hreflang: [article.lang.to_sym]
 
-  @json_ld = article_json_ld(article)
+  blog_label = session[:locale] == 'en' ? 'Blog' : 'Blog'
+  blog_url = "https://www.kleer.la/#{session[:locale]}/blog"
+  @json_ld = [
+    article_json_ld(article),
+    breadcrumb_json_ld([
+      { name: 'Kleer', url: "https://www.kleer.la/#{session[:locale]}" },
+      { name: blog_label, url: blog_url },
+      { name: article.title }
+    ])
+  ]
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'

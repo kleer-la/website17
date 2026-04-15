@@ -14,7 +14,7 @@ module JsonLdHelper
       'logo' => 'https://www.kleer.la/img/logos/kleer.png',
       'sameAs' => [
         'https://www.linkedin.com/company/kleer',
-        'https://twitter.com/klaborativa'
+        'https://x.com/klaborativa'
       ],
       'contactPoint' => {
         '@type' => 'ContactPoint',
@@ -95,6 +95,39 @@ module JsonLdHelper
     }
     data['image'] = event_type.cover if event_type.cover && !event_type.cover.to_s.empty?
     data
+  end
+
+  def breadcrumb_json_ld(items)
+    {
+      '@context' => 'https://schema.org',
+      '@type' => 'BreadcrumbList',
+      'itemListElement' => items.each_with_index.map do |item, i|
+        entry = {
+          '@type' => 'ListItem',
+          'position' => i + 1,
+          'name' => item[:name]
+        }
+        entry['item'] = item[:url] if item[:url]
+        entry
+      end
+    }
+  end
+
+  def faq_json_ld(questions, answers)
+    {
+      '@context' => 'https://schema.org',
+      '@type' => 'FAQPage',
+      'mainEntity' => questions.zip(answers).map do |q, a|
+        {
+          '@type' => 'Question',
+          'name' => q.to_s.gsub(/<[^>]+>/, '').strip,
+          'acceptedAnswer' => {
+            '@type' => 'Answer',
+            'text' => a.to_s.gsub(/<[^>]+>/, '').strip
+          }
+        }
+      end
+    }
   end
 
   def resource_json_ld(resource)

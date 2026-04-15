@@ -11,4 +11,8 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <%= json_ld_tag(organization_json_ld) %>
 <%= json_ld_tag(website_json_ld) %>
-<%= @json_ld ? json_ld_tag(@json_ld) : '' %>
+<% if @json_ld.is_a?(Array) %>
+<%= @json_ld.map { |ld| json_ld_tag(ld) }.join("\n") %>
+<% elsif @json_ld %>
+<%= json_ld_tag(@json_ld) %>
+<% end %>
