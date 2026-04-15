@@ -1178,3 +1178,28 @@ en:
       failed_generation: Failed to generate the report. Please try submitting the assessment again or contact support if the problem persists.
       status_check_error: Unable to check report status. Please refresh the page or check your email for the results. If the problem persists, contact support.
       submission_failed: Assessment submission failed. Please try again.
+  booking:
+    page_title: Schedule a meeting
+    meta_description: Schedule a meeting with one of our consultants
+    select_consultant: Choose a consultant
+    select_time: Pick a time
+    confirm_booking: Confirm your meeting
+    name_label: Your full name
+    name_error: Please enter your name
+    email_label: Email address
+    email_error: Invalid email format
+    company_label: Company (optional)
+    notes_label: What would you like to discuss?
+    submit: Confirm meeting
+    success: Your meeting has been scheduled! Check your email for the details.
+    error: We couldn't schedule the meeting. Please try again.
+    no_consultants: No consultants are currently available for this area.
+    no_availability: No available times this week.
+    next_week: Next week
+    prev_week: Previous week
+    timezone_note: Times are shown in your timezone
+    duration: 30 min
+    schedule_cta: Schedule a consultation
+    meeting_confirmed: Meeting confirmed
+    meet_link: Google Meet link
+    with_consultant: "with %{name}"

@@ -848,3 +848,28 @@ es:
       failed_generation: Error al generar el reporte. Por favor intenta enviar la evaluación nuevamente o contacta a soporte si el problema persiste.
       status_check_error: No se puede verificar el estado del reporte. Por favor actualiza la página o revisa tu correo para los resultados. Si el problema persiste, contacta a soporte.
       submission_failed: Error al enviar la evaluación. Por favor intenta de nuevo.
+  booking:
+    page_title: Agendar una reunión
+    meta_description: Agendá una reunión con uno de nuestros consultores
+    select_consultant: Elegí un consultor
+    select_time: Elegí un horario
+    confirm_booking: Confirmá tu reunión
+    name_label: Tu nombre completo
+    name_error: Completá este campo con tu nombre
+    email_label: Correo electrónico
+    email_error: Formato de correo electrónico inválido
+    company_label: Empresa (opcional)
+    notes_label: "¿Sobre qué te gustaría hablar?"
+    submit: Confirmar reunión
+    success: "¡Tu reunión fue agendada! Revisá tu email para los detalles."
+    error: No pudimos agendar la reunión. Por favor intentá de nuevo.
+    no_consultants: No hay consultores disponibles para esta área en este momento.
+    no_availability: No hay horarios disponibles esta semana.
+    next_week: Semana siguiente
+    prev_week: Semana anterior
+    timezone_note: Los horarios se muestran en tu zona horaria
+    duration: 30 min
+    schedule_cta: Agendar una consulta
+    meeting_confirmed: Reunión confirmada
+    meet_link: Enlace de Google Meet
+    with_consultant: "con %{name}"

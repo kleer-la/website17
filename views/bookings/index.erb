@@ -1,0 +1,62 @@
+<section class="booking-hero" style="background-color: <%= @primary_color %>; color: <%= @primary_font_color %>;">
+  <div class="container py-5">
+    <h1><%= t('booking.page_title') %></h1>
+    <p class="lead"><%= area.name %></p>
+  </div>
+</section>
+
+<section class="booking-flow container py-5">
+  <% if flash[:booking] %>
+    <%= erb :'bookings/_confirmation', locals: { booking: flash[:booking] } %>
+  <% elsif consultants.empty? %>
+    <div class="alert alert-info">
+      <%= t('booking.no_consultants') %>
+    </div>
+  <% else %>
+    <% if flash[:error] %>
+      <div class="alert alert-danger"><%= flash[:error] %></div>
+    <% end %>
+
+    <!-- Step 1: Select consultant -->
+    <div id="step-consultant" class="booking-step">
+      <h2 class="booking-step__title">
+        <span class="booking-step__number">1</span>
+        <%= t('booking.select_consultant') %>
+      </h2>
+      <%= erb :'bookings/_consultant_list', locals: { consultants: consultants } %>
+    </div>
+
+    <!-- Step 2: Pick date/time -->
+    <div id="step-calendar" class="booking-step" style="display: none;">
+      <h2 class="booking-step__title">
+        <span class="booking-step__number">2</span>
+        <%= t('booking.select_time') %>
+      </h2>
+      <%= erb :'bookings/_calendar' %>
+    </div>
+
+    <!-- Step 3: Confirm booking -->
+    <div id="step-form" class="booking-step" style="display: none;">
+      <h2 class="booking-step__title">
+        <span class="booking-step__number">3</span>
+        <%= t('booking.confirm_booking') %>
+      </h2>
+      <%= erb :'bookings/_booking_form', locals: { area: area } %>
+    </div>
+  <% end %>
+</section>
+
+<script>
+  var BOOKING_CONFIG = {
+    availabilityUrl: '/consultant-availability',
+    locale: '<%= session[:locale] %>',
+    i18n: {
+      noAvailability: '<%= t("booking.no_availability") %>',
+      nextWeek: '<%= t("booking.next_week") %>',
+      prevWeek: '<%= t("booking.prev_week") %>',
+      timezoneNote: '<%= t("booking.timezone_note") %>',
+      duration: '<%= t("booking.duration") %>'
+    }
+  };
+</script>
+<script src="/js/booking.js"></script>

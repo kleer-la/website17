@@ -1,0 +1,23 @@
+<div class="booking-calendar">
+  <div class="booking-calendar__header">
+    <button type="button" class="btn btn-outline-secondary btn-sm" id="prev-week" disabled>
+      &larr; <%= t('booking.prev_week') %>
+    </button>
+    <span id="calendar-week-label" class="booking-calendar__week-label"></span>
+    <button type="button" class="btn btn-outline-secondary btn-sm" id="next-week">
+      <%= t('booking.next_week') %> &rarr;
+    </button>
+  </div>
+
+  <div id="calendar-loading" class="text-center py-4" style="display: none;">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div id="calendar-grid" class="booking-calendar__grid"></div>
+
+  <p class="booking-calendar__timezone text-muted mt-2">
+    <small><%= t('booking.timezone_note') %>: <span id="visitor-timezone"></span></small>
+  </p>
+</div>

@@ -1,0 +1,27 @@
+<div class="booking-consultants row">
+  <% consultants.each do |consultant| %>
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="booking-consultant-card" data-consultant-id="<%= consultant.id %>" data-consultant-name="<%= consultant.name %>">
+        <div class="booking-consultant-card__photo">
+          <img
+            src="<%= consultant.gravatar_picture_url %>?s=200"
+            alt="<%= consultant.name %>"
+            loading="lazy"
+            width="200"
+            height="200"
+          />
+        </div>
+        <div class="booking-consultant-card__info">
+          <h5 class="booking-consultant-card__name"><%= consultant.name %></h5>
+          <% if consultant.role && consultant.role != '' %>
+            <p class="booking-consultant-card__role"><%= consultant.role %></p>
+          <% end %>
+          <% bio_text = consultant.bio.to_s.gsub(/[>#*\r]/, '').strip
+             if bio_text != '' %>
+            <p class="booking-consultant-card__bio"><%= truncate_words(bio_text, 20) %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

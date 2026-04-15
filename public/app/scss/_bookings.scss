@@ -1,0 +1,234 @@
+// Booking page styles
+
+.booking-hero {
+  margin-top: 100px;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-family: 'degular-text', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .lead {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+}
+
+.booking-step {
+  margin-bottom: 3rem;
+}
+
+.booking-step__title {
+  font-family: 'degular-text', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.booking-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: $primary-blue;
+  color: $white;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+// Consultant cards
+.booking-consultant-card {
+  border-radius: 8px;
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 2px solid transparent;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 24px 48px rgba(45, 106, 159, 0.15);
+  }
+
+  &--selected {
+    border-color: $primary-blue;
+    box-shadow: 0px 24px 48px rgba(45, 106, 159, 0.2);
+  }
+}
+
+.booking-consultant-card__photo {
+  text-align: center;
+  padding: 1.5rem 1.5rem 0;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.booking-consultant-card__info {
+  padding: 1rem 1.5rem 1.5rem;
+  text-align: center;
+}
+
+.booking-consultant-card__name {
+  font-family: 'degular-text', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.booking-consultant-card__role {
+  font-size: 0.85rem;
+  color: $grey;
+  margin-bottom: 0.5rem;
+}
+
+.booking-consultant-card__bio {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+// Calendar
+.booking-calendar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.booking-calendar__week-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.booking-calendar__table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.booking-calendar__day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.booking-calendar__day-header {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.booking-calendar__slot {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: $white;
+  text-align: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background-color: lighten($primary-blue, 45%);
+    border-color: $primary-blue;
+  }
+
+  &--selected {
+    background-color: $primary-blue;
+    color: $white;
+    border-color: $primary-blue;
+
+    &:hover {
+      background-color: darken($primary-blue, 5%);
+      color: $white;
+    }
+  }
+}
+
+.booking-calendar__no-slots {
+  text-align: center;
+  padding: 1rem;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.booking-calendar__timezone {
+  font-size: 0.8rem;
+}
+
+// Booking form
+.booking-form-container {
+  max-width: 600px;
+}
+
+.booking-form__selected-slot {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid $primary-blue;
+}
+
+// Confirmation
+.booking-confirmation {
+  max-width: 600px;
+  margin: 0 auto;
+
+  &__icon {
+    color: #198754;
+  }
+
+  h2 {
+    font-family: 'degular-text', sans-serif;
+    font-weight: 700;
+  }
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+  .booking-calendar__table {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.25rem;
+  }
+
+  .booking-calendar__slot {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.2rem;
+  }
+
+  .booking-calendar__header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .booking-calendar__table {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .booking-hero h1 {
+    font-size: 1.5rem;
+  }
+}

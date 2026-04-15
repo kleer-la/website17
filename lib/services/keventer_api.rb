@@ -45,7 +45,8 @@ module KeventerAPI
     service_areas: 'service_areas.json',
     articles: 'articles.json',
     contacts: 'contacts',
-    mailer: 'contact_us'
+    mailer: 'contact_us',
+    consultants: 'consultants'
   }.each do |name, path|
     define_method("#{name}_url") { echo(url_for(path)) }
   end
@@ -62,7 +63,8 @@ module KeventerAPI
     contact_status: ['contacts/:id/status.json', :id],
     contact: ['contacts/:id.json', :id],
     event: ['events/:id.json', :id],
-    participant_register: ['v3/events/:id/participants/register', :id]
+    participant_register: ['v3/events/:id/participants/register', :id],
+    consultant_availability: ['consultants/:id/availability', :id]
   }.each do |name, (path, param)|
     define_method("#{name}_url") do |value, params = {}|
       echo(url_for(path.gsub(":#{param}", value.to_s), params))
@@ -73,6 +75,14 @@ module KeventerAPI
   def participant_pricing_url(event_id, quantity)
     echo(url_for("v3/events/#{event_id}/participants/pricing_info", { quantity: quantity }))
   end
+  def consultants_for_area_url(slug)
+    echo(url_for("service_areas/#{slug}/consultants"))
+  end
+
+  def consultant_booking_url(consultant_id)
+    echo(url_for("consultants/#{consultant_id}/bookings"))
+  end
+
   def page_url(lang, slug)
     s = "-#{slug}" unless slug.nil?
     echo(url_for("pages/#{lang}#{s}"))

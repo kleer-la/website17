@@ -38,6 +38,7 @@ require './controllers/podcasts_controller'
 require './controllers/event_controller'
 require './controllers/membership_controller'
 require './controllers/sitemap_controller'
+require './controllers/bookings_controller'
 
 include MetaTags
 include Recaptcha::Adapters::ViewMethods

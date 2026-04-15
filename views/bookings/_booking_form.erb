@@ -1,0 +1,82 @@
+<div class="booking-form-container">
+  <div class="booking-form__selected-slot mb-4">
+    <p class="mb-1"><strong id="selected-consultant-name"></strong></p>
+    <p class="mb-0" id="selected-slot-display"></p>
+  </div>
+
+  <form id="booking-form" action="/<%= session[:locale] || 'es' %>/book-meeting" method="post" class="needs-validation" novalidate>
+    <div class="row">
+      <div class="mb-3 col-xs-12">
+        <label class="form-label"><%= t('booking.name_label') %></label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          id="booking-name"
+          required>
+        <div class="invalid-feedback">
+          <%= t('booking.name_error') %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mb-3 col-xs-12 col-md-6">
+        <label class="form-label"><%= t('booking.email_label') %></label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          id="booking-email"
+          required>
+        <div class="invalid-feedback">
+          <%= t('booking.email_error') %>
+        </div>
+      </div>
+      <div class="mb-3 col-xs-12 col-md-6">
+        <label class="form-label"><%= t('booking.company_label') %></label>
+        <input
+          type="text"
+          class="form-control"
+          name="company"
+          id="booking-company">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><%= t('booking.notes_label') %></label>
+      <textarea
+        class="form-control"
+        name="notes"
+        id="booking-notes"
+        rows="3"></textarea>
+    </div>
+
+    <input type="hidden" name="consultant_id" id="input-consultant-id">
+    <input type="hidden" name="area_slug" value="<%= area.slug %>">
+    <input type="hidden" name="starts_at" id="input-starts-at">
+    <input type="hidden" name="ends_at" id="input-ends-at">
+
+    <div id="booking-recaptcha-placeholder" class="mb-3"></div>
+
+    <div class="btn-center-container">
+      <button type="submit"
+              id="booking-submit"
+              class="btn my-primary-button"
+              value="Submit"
+              disabled>
+        <%= t('booking.submit') %>
+      </button>
+    </div>
+  </form>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('booking-form');
+    form.addEventListener('submit', function(event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+</script>
