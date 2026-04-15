@@ -97,6 +97,7 @@ class Resource
                 :authors_list, :translators_list, :illustrators_list,
                 :author_trainers, :translator_trainers, :illustrator_trainers,
                 :fb_share, :tw_share, :li_share, :kleer_share_url, :recommended,
+                :created_at, :updated_at,
                 *LOCALIZED_FIELDS
 
   def initialize(doc, lang)

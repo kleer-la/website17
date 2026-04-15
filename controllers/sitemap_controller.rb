@@ -15,12 +15,17 @@ STATIC_PAGES = {
   '/novedades' => { es: '/novedades', en: '/news' }
 }.freeze
 
-def add_url(xml, path:, changefreq: 'weekly', priority: '0.7', lastmod: nil)
+def add_url(xml, path:, changefreq: 'weekly', priority: '0.7', lastmod: nil, hreflang: nil)
   xml.url do
     xml.loc "#{BASE_URL}#{path}"
     xml.lastmod lastmod if lastmod
     xml.changefreq changefreq
     xml.priority priority
+    if hreflang
+      hreflang.each do |lang, href|
+        xml['xhtml'].link(rel: 'alternate', hreflang: lang.to_s, href: "#{BASE_URL}#{href}")
+      end
+    end
   end
 end
 
@@ -56,9 +61,11 @@ get '/sitemap.xml' do
 
           lang = article.lang || 'es'
           lastmod = article.substantive_change_at.to_s.split('T').first
-          add_url(xml, path: "/#{lang}/blog/#{article.slug}",
+          article_path = "/#{lang}/blog/#{article.slug}"
+          add_url(xml, path: article_path,
                        changefreq: 'monthly', priority: '0.6',
-                       lastmod: lastmod.empty? ? nil : lastmod)
+                       lastmod: lastmod.empty? ? nil : lastmod,
+                       hreflang: { lang => article_path })
         end
       end
 
@@ -88,7 +95,9 @@ get '/sitemap.xml' do
 
           lang = et.lang || 'es'
           path_prefix = lang == 'en' ? 'courses' : 'cursos'
-          add_url(xml, path: "/#{lang}/#{path_prefix}/#{et.slug}", priority: '0.6')
+          course_path = "/#{lang}/#{path_prefix}/#{et.slug}"
+          add_url(xml, path: course_path, priority: '0.6',
+                       hreflang: { lang => course_path })
         end
       end
 
@@ -99,8 +108,12 @@ get '/sitemap.xml' do
           lang = resource.lang.to_s
           lang = 'es' if lang.empty?
           path_prefix = lang == 'en' ? 'resources' : 'recursos'
-          add_url(xml, path: "/#{lang}/#{path_prefix}/#{resource.slug}",
-                       changefreq: 'monthly', priority: '0.6')
+          resource_path = "/#{lang}/#{path_prefix}/#{resource.slug}"
+          lastmod = resource.updated_at.to_s.split('T').first
+          add_url(xml, path: resource_path,
+                       changefreq: 'monthly', priority: '0.6',
+                       lastmod: lastmod.to_s.empty? ? nil : lastmod,
+                       hreflang: { lang => resource_path })
         end
       end
 
