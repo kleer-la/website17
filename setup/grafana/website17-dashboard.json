@@ -115,7 +115,7 @@
       "gridPos": { "h": 8, "w": 12, "x": 0, "y": 12 },
       "datasource": { "type": "loki", "uid": "grafanacloud-kleer-logs" },
       "targets": [{
-        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | status = 404 | path !~ `.*\\.(php|env|asp|aspx|cgi|sql).*` | path !~ `.*(wp-|wordpress|xmlrpc|well-known|phpmyadmin|admin|ckeditor|filemanager).*` | drop timestamp, method, query, status, ip, user_agent, referer, host, level, duration_ms [$__range])))",
+        "expr": "topk(20, sum by (path) (count_over_time({container=~\"$container\"} | json | status == 404 | path !~ `.*\\.(php|env|asp|aspx|cgi|sql).*` | path !~ `.*(wp-|wordpress|xmlrpc|well-known|phpmyadmin|admin|ckeditor|filemanager).*` | drop timestamp, method, query, status, ip, user_agent, referer, host, level, duration_ms [$__range])))",
         "refId": "A",
         "instant": true
       }],
