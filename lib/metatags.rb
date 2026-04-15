@@ -20,7 +20,7 @@ module MetaTags
         charset: 'utf-8',
         base_url: 'https://www.kleer.la',
         'http-equiv': ['X-UA-Compatible', 'IE=edge'],
-        viewport: 'width=device-width, initial-scale=1.0"',
+        viewport: 'width=device-width, initial-scale=1.0',
         image: 'https://www.kleer.la/img/logos/kleer.png',
         hreflang: %i[es en]
       }
