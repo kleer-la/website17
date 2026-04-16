@@ -89,6 +89,8 @@ get '/consultant-availability/:id' do
     halt 403, { error: 'forbidden' }.to_json
   end
 
+  cache_control :no_store
+
   content_type :json
   begin
     response = JsonAPI.new(
