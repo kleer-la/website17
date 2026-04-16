@@ -44,4 +44,4 @@ group :development, :test do
   gem 'simplecov-lcov' # to generate LCOV output for coverall.io
 end
 
-gem 'rackup', '~> 2.1'
+gem 'rackup', '~> 2.3'

@@ -396,7 +396,7 @@ DEPENDENCIES
   puma
   rack-ssl-enforcer
   rack-test
-  rackup (~> 2.1)
+  rackup (~> 2.3)
   rake
   recaptcha
   redcarpet
