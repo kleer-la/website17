@@ -1,15 +1,9 @@
 <h2 class="mb-2" style="font-size: 1.1rem;"><%= t('booking.select_time') %></h2>
 
 <div id="consultants-list" class="row g-2">
-  <div class="col-12 text-end mb-1">
-    <select class="form-select form-select-sm d-inline-block" id="booking-timezone" style="width: auto;">
-      <option value="America/Argentina/Buenos_Aires">Buenos Aires (GMT-3)</option>
-      <option value="America/Santiago">Santiago (GMT-4)</option>
-      <option value="America/Bogota">Bogotá (GMT-5)</option>
-      <option value="America/Mexico_City">Ciudad de México (GMT-6)</option>
-      <option value="America/New_York">New York (GMT-5)</option>
-      <option value="Europe/Madrid">Madrid (GMT+1)</option>
-    </select>
+  <div class="col-12 mb-1">
+    <small class="text-muted" id="booking-timezone-label"></small>
+    <input type="hidden" id="booking-timezone">
   </div>
   <% consultants.each do |consultant| %>
     <div class="col-md-6">

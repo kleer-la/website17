@@ -31,18 +31,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Auto-load availability when consultants list is present
+  // Auto-detect timezone and load availability
+  var timezoneInput = document.getElementById('booking-timezone');
+  var timezoneLabel = document.getElementById('booking-timezone-label');
+  if (timezoneInput) {
+    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Argentina/Buenos_Aires';
+    timezoneInput.value = tz;
+    if (timezoneLabel) {
+      timezoneLabel.textContent = tz.replace(/_/g, ' ');
+    }
+  }
+
   var consultantsList = document.getElementById('consultants-list');
   if (consultantsList) {
     loadAllAvailability();
-  }
-
-  // Timezone change reloads availability
-  var timezoneSelect = document.getElementById('booking-timezone');
-  if (timezoneSelect) {
-    timezoneSelect.addEventListener('change', function () {
-      loadAllAvailability();
-    });
   }
 });
 
@@ -128,10 +130,12 @@ function showSlotsPage(container) {
     wrapper.innerHTML = '';
   }
 
+  var selectedTz = document.getElementById('booking-timezone').value;
+  var locale = (typeof BOOKING_CONFIG !== 'undefined' && BOOKING_CONFIG.locale === 'es') ? 'es-AR' : 'en-US';
   pageSlots.forEach(function (slot) {
     var date = new Date(slot.start);
-    var label = date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' }) +
-      ' ' + date.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+    var label = date.toLocaleDateString(locale, { weekday: 'short', day: 'numeric', month: 'short', timeZone: selectedTz }) +
+      ' ' + date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: selectedTz });
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -197,7 +201,7 @@ function selectSlot(btn) {
   var existing = document.getElementById('confirm-booking-btn');
   if (!existing) {
     var wrapper = document.createElement('div');
-    wrapper.className = 'col-12 text-center mt-2';
+    wrapper.className = 'col-12 mt-2';
     var confirmBtn = document.createElement('button');
     confirmBtn.id = 'confirm-booking-btn';
     confirmBtn.className = 'btn my-primary-button';
@@ -245,8 +249,8 @@ function confirmBooking(slotBtn) {
     .then(function () {
       confirmBtn.textContent = BOOKING_CONFIG.confirmedText;
       confirmBtn.disabled = true;
-      confirmBtn.classList.remove('my-primary-button');
-      confirmBtn.classList.add('btn-outline-success');
+      confirmBtn.style.background = '#198754';
+      confirmBtn.style.borderColor = '#198754';
       document.querySelectorAll('.slot-btn').forEach(function (el) {
         el.disabled = true;
       });
