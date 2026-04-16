@@ -1,0 +1,30 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="mb-4"><%= service_area.name %></h1>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="alert alert-warning" role="alert"><%= flash[:error] %></div>
+      <% end %>
+
+      <% if qualified %>
+        <%= erb :'bookings/_qualified_options', locals: {
+          service_area: service_area,
+          consultants: consultants,
+          booking_token: booking_token,
+          slug: slug
+        } %>
+      <% else %>
+        <%= erb :'bookings/_qualification_form', locals: {
+          service_area: service_area,
+          has_consultants: has_consultants,
+          slug: slug
+        } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script src="/js/booking.js" defer></script>

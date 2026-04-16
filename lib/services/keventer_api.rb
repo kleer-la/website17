@@ -54,6 +54,7 @@ module KeventerAPI
   {
     service_area: ['service_areas/:slug.json', :slug],
     service_area_preview: ['service_areas/:slug/preview.json', :slug],
+    service_area_consultants: ['service_areas/:slug/consultants', :slug],
     event_type: ['event_types/:id.json', :id],
     article: ['articles/:slug.json', :slug],
     resource: ['resources/:slug.json', :slug],
@@ -62,7 +63,9 @@ module KeventerAPI
     contact_status: ['contacts/:id/status.json', :id],
     contact: ['contacts/:id.json', :id],
     event: ['events/:id.json', :id],
-    participant_register: ['v3/events/:id/participants/register', :id]
+    participant_register: ['v3/events/:id/participants/register', :id],
+    consultant_availability: ['consultants/:id/availability', :id],
+    consultant_booking: ['consultants/:id/bookings', :id]
   }.each do |name, (path, param)|
     define_method("#{name}_url") do |value, params = {}|
       echo(url_for(path.gsub(":#{param}", value.to_s), params))

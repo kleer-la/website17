@@ -1,0 +1,94 @@
+<h2 class="mb-3">
+  <% if has_consultants %>
+    <%= t('booking.tell_us') %>
+  <% else %>
+    <%= t('booking.no_consultants_title') %>
+  <% end %>
+</h2>
+
+<form id="booking-qualify-form" action="/<%= session[:locale] || 'es' %>/qualify-booking" method="post" class="needs-validation" novalidate>
+  <div class="row">
+    <div class="mb-3 col-12">
+      <label class="form-label" for="booking-name"><%= t('booking.name_label') %></label>
+      <input type="text" class="form-control" name="name" id="booking-name" required>
+      <div class="invalid-feedback"><%= t('booking.name_label') %></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3 col-12 col-md-6">
+      <label class="form-label" for="booking-email"><%= t('booking.email_label') %></label>
+      <input type="email" class="form-control" name="email" id="booking-email" required>
+      <div class="invalid-feedback"><%= t('booking.email_label') %></div>
+    </div>
+    <div class="mb-3 col-12 col-md-6">
+      <label class="form-label" for="booking-company"><%= t('booking.company_label') %></label>
+      <input type="text" class="form-control" name="company" id="booking-company">
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="booking-situation"><%= t('booking.situation_label') %></label>
+    <div class="form-text">
+      <% if has_consultants %>
+        <%= t('booking.situation_hint') %>
+      <% else %>
+        <%= t('booking.situation_hint_no_consultants') %>
+      <% end %>
+    </div>
+    <textarea class="form-control" name="situation" id="booking-situation" rows="4"
+              placeholder="<%= t('booking.situation_placeholder') %>" required
+              <% if has_consultants %>data-char-threshold="50"<% end %>
+    ></textarea>
+    <% if has_consultants %>
+      <div class="form-text" id="booking-char-counter">0 / 50</div>
+    <% end %>
+    <div class="invalid-feedback"><%= t('booking.situation_label') %></div>
+  </div>
+
+  <div id="recaptcha-placeholder" class="mb-3"></div>
+
+  <input type="hidden" name="area_slug" value="<%= slug %>">
+  <input type="hidden" name="has_consultants" value="<%= has_consultants %>">
+
+  <div class="d-grid">
+    <button type="submit" id="booking-submit" class="btn btn-primary" disabled>
+      <%= t('booking.qualify_submit') %>
+    </button>
+  </div>
+</form>
+
+<script>
+  var RECAPTCHA_SITE_KEY = '<%= ENV["RECAPTCHA_SITE_KEY"] %>';
+
+  document.addEventListener('DOMContentLoaded', function() {
+    loadBookingRecaptcha();
+  });
+
+  function loadBookingRecaptcha() {
+    if (typeof grecaptcha !== 'undefined' && grecaptcha.render) {
+      initBookingRecaptcha();
+      return;
+    }
+    if (!document.querySelector('script[src*="recaptcha/api.js"]')) {
+      var script = document.createElement('script');
+      script.src = 'https://www.recaptcha.net/recaptcha/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.onload = function() { initBookingRecaptcha(); };
+      document.body.appendChild(script);
+    }
+  }
+
+  function initBookingRecaptcha() {
+    var placeholder = document.querySelector('#booking-qualify-form #recaptcha-placeholder');
+    if (!placeholder) return;
+    placeholder.innerHTML = '<div id="booking-recaptcha-widget"></div>';
+    grecaptcha.ready(function() {
+      grecaptcha.render('booking-recaptcha-widget', {
+        'sitekey': RECAPTCHA_SITE_KEY,
+        'callback': function() {
+          document.getElementById('booking-submit').disabled = false;
+        }
+      });
+    });
+  }
+</script>

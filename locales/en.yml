@@ -1101,6 +1101,27 @@ en:
     error: An error occurred, your message was not sent
     success: Your message has been sent successfully
     quote_message: <b>Thank you for your interest!</b><br>Within the next 48 business hours, we will send you a proposal tailored to your request.
+  booking:
+    tell_us: Tell us about your situation
+    name_label: Name
+    email_label: Email
+    company_label: Company
+    situation_label: Your situation
+    situation_hint: A detailed description (50+ characters) lets you schedule directly with a consultant
+    situation_hint_no_consultants: Your context and challenges will help us prepare for our meeting
+    situation_placeholder: Briefly describe your context, challenges, and what you're looking for...
+    qualify_submit: Submit
+    inquiry_sent: <b>Thank you!</b><br>We received your inquiry and will contact you soon.
+    schedule_option: Schedule a meeting
+    send_option: Just send message
+    char_counter: "%{count} / 50 characters"
+    error_recaptcha: A verification error occurred, please try again
+    error_expired_token: Your session expired, please fill out the form again
+    booking_confirmed: <b>Meeting scheduled!</b><br>You will receive a confirmation email shortly.
+    no_consultants_title: Contact us
+    select_time: Select an available time
+    confirm_booking: Confirm meeting
+    timezone_label: Timezone
   certificates:
     not_found: We couldn't find a certificate with that code
   certificate-form:

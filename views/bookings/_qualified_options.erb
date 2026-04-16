@@ -1,0 +1,70 @@
+<div class="mb-4">
+  <div class="d-flex gap-3 mb-4">
+    <button type="button" class="btn btn-primary" id="btn-schedule">
+      <%= t('booking.schedule_option') %>
+    </button>
+    <form action="/<%= session[:locale] || 'es' %>/send-booking-inquiry" method="post" class="d-inline">
+      <input type="hidden" name="booking_token" value="<%= booking_token %>">
+      <input type="hidden" name="area_slug" value="<%= slug %>">
+      <button type="submit" class="btn btn-outline-secondary">
+        <%= t('booking.send_option') %>
+      </button>
+    </form>
+  </div>
+</div>
+
+<div id="consultant-panel" style="display: none;">
+  <h3 class="mb-3"><%= t('booking.select_time') %></h3>
+
+  <div class="mb-3">
+    <label class="form-label" for="booking-timezone"><%= t('booking.timezone_label') %></label>
+    <select class="form-select" id="booking-timezone">
+      <option value="America/Argentina/Buenos_Aires">Buenos Aires (GMT-3)</option>
+      <option value="America/Santiago">Santiago (GMT-4)</option>
+      <option value="America/Bogota">Bogotá (GMT-5)</option>
+      <option value="America/Mexico_City">Ciudad de México (GMT-6)</option>
+      <option value="America/New_York">New York (GMT-5)</option>
+      <option value="Europe/Madrid">Madrid (GMT+1)</option>
+    </select>
+  </div>
+
+  <div id="consultants-list" class="row g-3">
+    <% consultants.each do |consultant| %>
+      <div class="col-md-6">
+        <div class="card consultant-card" data-consultant-id="<%= consultant['id'] %>">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <img src="https://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(consultant['gravatar_email'].to_s.downcase.strip) %>?s=48&d=mp"
+                   class="rounded-circle me-3" width="48" height="48" alt="<%= consultant['name'] %>">
+              <div>
+                <h5 class="card-title mb-0"><%= consultant['name'] %></h5>
+                <% if consultant['bio'] %>
+                  <small class="text-muted"><%= consultant['bio'] %></small>
+                <% end %>
+              </div>
+            </div>
+            <div class="availability-slots">
+              <div class="text-center py-3">
+                <div class="spinner-border spinner-border-sm" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  var BOOKING_CONFIG = {
+    token: '<%= booking_token %>',
+    areaSlug: '<%= slug %>',
+    serviceAreaId: '<%= service_area.id %>',
+    locale: '<%= session[:locale] || "es" %>',
+    consultantIds: <%= consultants.map { |c| c['id'] }.to_json %>,
+    confirmText: '<%= t("booking.confirm_booking") %>',
+    confirmedText: '<%= t("booking.booking_confirmed") %>'
+  };
+</script>
