@@ -36,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
   var timezoneLabel = document.getElementById('booking-timezone-label');
   if (timezoneInput) {
     var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Argentina/Buenos_Aires';
+    // Normalize short timezone names to canonical IANA names
+    var tzAliases = {
+      'America/Buenos_Aires': 'America/Argentina/Buenos_Aires',
+      'America/Catamarca': 'America/Argentina/Catamarca',
+      'America/Cordoba': 'America/Argentina/Cordoba',
+      'America/Mendoza': 'America/Argentina/Mendoza'
+    };
+    tz = tzAliases[tz] || tz;
     timezoneInput.value = tz;
     if (timezoneLabel) {
       timezoneLabel.textContent = tz.replace(/_/g, ' ');
