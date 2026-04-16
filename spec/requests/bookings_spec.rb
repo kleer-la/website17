@@ -84,6 +84,25 @@ describe 'Bookings' do
       expect(last_response.body).to include('Jane Doe')
     end
 
+    it 'renders valid JS when visitor message contains newlines and quotes' do
+      token = BookingToken.generate(
+        email: 'user@test.com',
+        area_slug: 'agile-coaching',
+        name: "O'Brien",
+        message: "Line one\r\nLine two\nLine \"three\""
+      )
+      get "/es/agendar/agile-coaching?token=#{token}"
+
+      expect(last_response.status).to eq(200)
+      body = last_response.body
+      # Extract BOOKING_CONFIG block and verify it's valid JS (no unescaped characters)
+      config_match = body.match(/var BOOKING_CONFIG = \{(.+?)\};/m)
+      expect(config_match).not_to be_nil
+      config_block = config_match[0]
+      expect(config_block).not_to include("\r")
+      expect(config_block).to include('O\\u0027Brien').or include("O'Brien") # .to_json escapes quotes
+    end
+
     context 'with nonexistent service area' do
       before do
         null_api = NullJsonAPI.new(nil, nil)
