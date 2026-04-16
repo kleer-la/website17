@@ -55,6 +55,8 @@
     serviceAreaId: '<%= service_area.id %>',
     visitorName: '<%= visitor_name %>',
     visitorEmail: '<%= visitor_email %>',
+    visitorCompany: '<%= visitor_company %>',
+    visitorMessage: '<%= visitor_message.gsub("'", "\\\\'").gsub("\n", "\\n") %>',
     locale: '<%= session[:locale] || "es" %>',
     consultantIds: <%= consultants.map { |c| c['id'] }.to_json %>,
     confirmText: '<%= t("booking.confirm_booking") %>',

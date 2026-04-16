@@ -226,6 +226,8 @@ function confirmBooking(slotBtn) {
   formData.append('timezone', timezone);
   formData.append('visitor_name', BOOKING_CONFIG.visitorName);
   formData.append('visitor_email', BOOKING_CONFIG.visitorEmail);
+  formData.append('visitor_company', BOOKING_CONFIG.visitorCompany);
+  formData.append('visitor_message', BOOKING_CONFIG.visitorMessage);
 
   fetch('/' + BOOKING_CONFIG.locale + '/book-meeting', {
     method: 'POST',

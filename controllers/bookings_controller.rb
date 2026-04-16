@@ -34,6 +34,8 @@ get %r{/agendar/([^/]+)} do |slug|
     booking_token: params[:token],
     visitor_name: token_payload['name'] || '',
     visitor_email: token_payload['email'] || '',
+    visitor_company: token_payload['company'] || '',
+    visitor_message: token_payload['message'] || '',
     slug: slug
   }
 end
@@ -61,7 +63,7 @@ post '/qualify-booking' do
   end
 
   if has_consultants
-    token = BookingToken.generate(email: params[:email], area_slug: area_slug, name: params[:name])
+    token = BookingToken.generate(email: params[:email], area_slug: area_slug, name: params[:name], company: params[:company] || '', message: message)
     redirect "/#{session[:locale]}/agendar/#{area_slug}?token=#{token}"
   else
     mail_data = {
@@ -124,6 +126,8 @@ post '/book-meeting' do
         secret: ENV['CONTACT_US_SECRET'],
         visitor_name: params[:visitor_name],
         visitor_email: params[:visitor_email],
+        visitor_company: params[:visitor_company],
+        visitor_message: params[:visitor_message],
         start: params[:start_time],
         end: params[:end_time],
         service_area_slug: params[:area_slug]
