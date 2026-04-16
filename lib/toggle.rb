@@ -29,6 +29,9 @@ class Toggle
   end
 
   def self.on?(flag)
+    env_key = "FEATURE_#{flag.to_s.upcase}"
+    return ENV[env_key] == 'true' if ENV.key?(env_key)
+
     Flipper.enabled?(flag)
   end
 end
