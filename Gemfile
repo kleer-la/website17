@@ -21,7 +21,6 @@ gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
 gem 'concurrent-ruby'
-gem 'flipper'
 
 group :development do
   gem 'kamal', require: false
