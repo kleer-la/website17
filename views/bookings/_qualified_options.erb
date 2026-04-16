@@ -58,7 +58,7 @@
     locale: '<%= session[:locale] || "es" %>',
     consultantIds: <%= consultants.map { |c| c['id'] }.to_json %>,
     confirmText: '<%= t("booking.confirm_booking") %>',
-    confirmedText: '<%= t("booking.booking_confirmed") %>',
+    confirmedText: '<%= t("booking.meeting_confirmed") %>',
     noSlotsText: '<%= t("booking.no_availability") %>',
     loadErrorText: '<%= t("booking.load_error") %>'
   };
