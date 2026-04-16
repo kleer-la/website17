@@ -830,26 +830,6 @@ es:
     success: Su mensaje ha sido enviado correctamente
     quote_message: <b>¡Gracias por tu interés!</b><br>En las próximas 48hs hábiles te enviaremos una propuesta adaptada a tu pedido.
   booking:
-    tell_us: Contanos sobre tu situación
-    name_label: Nombre
-    email_label: Email
-    company_label: Empresa
-    situation_label: Tu situación
-    situation_hint: Una descripción detallada (50+ caracteres) te permite agendar directamente con un consultor
-    situation_hint_no_consultants: Tu contexto y desafíos nos ayudarán a prepararnos para nuestra reunión
-    situation_placeholder: Describí brevemente tu contexto, desafíos y qué estás buscando...
-    qualify_submit: Enviar
-    inquiry_sent: <b>¡Gracias!</b><br>Recibimos tu consulta y te contactaremos pronto.
-    schedule_option: Agendar una reunión
-    send_option: Solo enviar mensaje
-    char_counter: "%{count} / 50 caracteres"
-    error_recaptcha: Ha ocurrido un error de verificación, por favor intentá de nuevo
-    error_expired_token: Tu sesión expiró, por favor completá el formulario nuevamente
-    booking_confirmed: <b>¡Reunión agendada!</b><br>Recibirás un email de confirmación en breve.
-    no_consultants_title: Contactanos
-    select_time: Seleccioná un horario disponible
-    confirm_booking: Confirmar reunión
-    timezone_label: Zona horaria
   certificates:
     not_found: No encontramos un certificado con ese código
   certificate-form:
@@ -877,25 +857,32 @@ es:
       status_check_error: No se puede verificar el estado del reporte. Por favor actualiza la página o revisa tu correo para los resultados. Si el problema persiste, contacta a soporte.
       submission_failed: Error al enviar la evaluación. Por favor intenta de nuevo.
   booking:
-    page_title: Agendar una reunión
-    meta_description: Agendá una reunión con uno de nuestros consultores
-    select_consultant: Elegí un consultor
-    select_time: Elegí un horario
-    confirm_booking: Confirmá tu reunión
+    tell_us: Contanos sobre tu situación
+    no_consultants_title: Contactanos
     name_label: Tu nombre completo
     name_error: Completá este campo con tu nombre
     email_label: Correo electrónico
     email_error: Formato de correo electrónico inválido
     company_label: Empresa (opcional)
+    situation_label: Tu situación
+    situation_hint: Una descripción detallada (50+ caracteres) te permite agendar directamente con un consultor
+    situation_hint_no_consultants: Tu contexto y desafíos nos ayudarán a prepararnos para nuestra reunión
+    situation_placeholder: Describí brevemente tu contexto, desafíos y qué estás buscando...
+    qualify_submit: Enviar
+    inquiry_sent: <b>¡Gracias!</b><br>Recibimos tu consulta y te contactaremos pronto.
+    schedule_option: Agendar una reunión
+    send_option: Solo enviar mensaje
+    error_recaptcha: Ha ocurrido un error de verificación, por favor intentá de nuevo
+    error_expired_token: Tu sesión expiró, por favor completá el formulario nuevamente
     notes_label: "¿Sobre qué te gustaría hablar?"
     submit: Confirmar reunión
     success: "¡Tu reunión fue agendada! Revisá tu email para los detalles."
-    error: No pudimos agendar la reunión. Por favor intentá de nuevo.
-    no_consultants: No hay consultores disponibles para esta área en este momento.
-    no_availability: No hay horarios disponibles esta semana.
+    select_time: Elegí un horario
+    confirm_booking: Confirmá tu reunión
     next_week: Semana siguiente
     prev_week: Semana anterior
     timezone_note: Los horarios se muestran en tu zona horaria
+    timezone_label: Zona horaria
     duration: 30 min
     schedule_cta: Agendar una consulta
     meeting_confirmed: Reunión confirmada
