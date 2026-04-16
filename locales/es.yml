@@ -612,6 +612,9 @@ es:
       video: Ver video
       audio: Escuchar audio
       external: Leer más
+    cta_title: "¿Querés saber más?"
+    cta_description: Conversemos sobre cómo podemos ayudarte.
+    cta_button: Contactanos
   recommended:
     title: Contenido recomendado
     type:

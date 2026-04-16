@@ -955,6 +955,9 @@ en:
       video: Watch video
       audio: Listen to audio
       external: Read more
+    cta_title: Want to learn more?
+    cta_description: Let's talk about how we can help you.
+    cta_button: Contact us
   recommended:
     title: We suggest
     type:
