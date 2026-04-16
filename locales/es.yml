@@ -764,6 +764,27 @@ es:
     error: Ha ocurrido un error, su mensaje no fué enviado
     success: Su mensaje ha sido enviado correctamente
     quote_message: <b>¡Gracias por tu interés!</b><br>En las próximas 48hs hábiles te enviaremos una propuesta adaptada a tu pedido.
+  booking:
+    tell_us: Contanos sobre tu situación
+    name_label: Nombre
+    email_label: Email
+    company_label: Empresa
+    situation_label: Tu situación
+    situation_hint: Una descripción detallada (50+ caracteres) te permite agendar directamente con un consultor
+    situation_hint_no_consultants: Tu contexto y desafíos nos ayudarán a prepararnos para nuestra reunión
+    situation_placeholder: Describí brevemente tu contexto, desafíos y qué estás buscando...
+    qualify_submit: Enviar
+    inquiry_sent: <b>¡Gracias!</b><br>Recibimos tu consulta y te contactaremos pronto.
+    schedule_option: Agendar una reunión
+    send_option: Solo enviar mensaje
+    char_counter: "%{count} / 50 caracteres"
+    error_recaptcha: Ha ocurrido un error de verificación, por favor intentá de nuevo
+    error_expired_token: Tu sesión expiró, por favor completá el formulario nuevamente
+    booking_confirmed: <b>¡Reunión agendada!</b><br>Recibirás un email de confirmación en breve.
+    no_consultants_title: Contactanos
+    select_time: Seleccioná un horario disponible
+    confirm_booking: Confirmar reunión
+    timezone_label: Zona horaria
   certificates:
     not_found: No encontramos un certificado con ese código
   certificate-form:
