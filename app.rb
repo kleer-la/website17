@@ -7,7 +7,6 @@ require 'money'
 require 'escape_utils'
 require 'recaptcha'
 
-require './lib/middleware/request_logger'
 require './lib/metatags'
 require './lib/helpers/custom_markdown'
 require './lib/helpers/timestamp'
@@ -36,8 +35,6 @@ require './controllers/news_controller'
 require './controllers/certificates_controller'
 require './controllers/podcasts_controller'
 require './controllers/event_controller'
-require './controllers/membership_controller'
-require './controllers/sitemap_controller'
 require './controllers/bookings_controller'
 
 include MetaTags
@@ -48,7 +45,6 @@ if production?
   use Rack::SslEnforcer, only_hosts: /\.kleer\./, x_forwarded_proto: true
 end
 use Rack::Deflater
-use Middleware::RequestLogger
 
 helpers do
   include Helpers
@@ -74,7 +70,7 @@ end
 
 before do
   # Handle subdomain routing
-  @is_latelier = request.host.include?('latelier.')
+  @is_latelier = request.host.start_with?('latelier.')
   
   target_url, locale = unify_domains(request.host, request.path)
   session[:locale] = locale if locale # Set only if locale is non-nil
@@ -88,11 +84,7 @@ before do
     @markdown_renderer = CustomMarkdown.new
   end
 
-  headers['X-Robots-Tag'] = 'noindex, nofollow' if request.host.include?('qa.')
-  headers['X-Content-Type-Options'] = 'nosniff'
-  headers['X-Frame-Options'] = 'DENY'
-  headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
-  headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains' if settings.production?
+  headers['X-Robots-Tag'] = 'noindex, nofollow' if request.host.include? 'qa2'
 
   router_helper = RouterHelper.instance
   router_helper.lang = session[:locale]
@@ -125,12 +117,10 @@ before '/:locale/*' do
 end
 get '/robots.txt' do
   content_type :text
-  <<~ROBOTS
-    User-agent: *
-    Disallow: /.well-known/apple-app-site-association
-    Disallow: /apple-app-site-association
-
-    Sitemap: https://www.kleer.la/sitemap.xml
+  <<-ROBOTS
+  User-agent: *
+  Disallow: /.well-known/apple-app-site-association
+  Disallow: /apple-app-site-association
   ROBOTS
 end
 get '/en' do
@@ -182,8 +172,7 @@ PERMANENT_REDIRECT = {
   'prensa/casos/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
   'clientes/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
   'prensa/casos/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
-  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
-  'nosotros' => 'es/somos'
+  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020'
 }.freeze
 
 PERMANENT_REDIRECT.each do |original, redirect|
