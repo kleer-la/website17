@@ -271,10 +271,8 @@ function confirmBooking(slotBtn) {
       });
     })
     .then(function () {
-      confirmBtn.textContent = BOOKING_CONFIG.confirmedText;
+      confirmBtn.textContent = '\u2713 ' + BOOKING_CONFIG.confirmedText;
       confirmBtn.disabled = true;
-      confirmBtn.style.background = '#198754';
-      confirmBtn.style.borderColor = '#198754';
       document.querySelectorAll('.slot-btn').forEach(function (el) {
         el.disabled = true;
       });
