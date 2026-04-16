@@ -44,6 +44,7 @@ env:
     - AWS_SECRET_ACCESS_KEY
     - CONTACT_US_SECRET
     - CACHE_RESET_TOKEN
+    - FEATURE_BOOKING
 
 ssh:
   user: appuser

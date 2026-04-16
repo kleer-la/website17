@@ -1,34 +1,16 @@
-require 'flipper'
-
-if ENV['RACK_ENV'] == 'test'
-  Flipper.configure do |config|
-    config.default do
-      Flipper.new(Flipper::Adapters::Memory.new)
-    end
-  end
-else
-  require 'flipper/adapters/pstore'
-
-  pstore_path = File.join(File.dirname(__FILE__), '..', 'tmp', 'flipper.pstore')
-  FileUtils.mkdir_p(File.dirname(pstore_path))
-
-  Flipper.configure do |config|
-    config.default do
-      Flipper.new(Flipper::Adapters::PStore.new(pstore_path))
-    end
-  end
-end
-
 class Toggle
+  @flags = {
+    'test' => true
+  }
+
   def self.turn(flag, value)
-    if value
-      Flipper.enable(flag)
-    else
-      Flipper.disable(flag)
-    end
+    @flags[flag] = value
   end
 
   def self.on?(flag)
-    Flipper.enabled?(flag)
+    env_key = "FEATURE_#{flag.to_s.upcase}"
+    return ENV[env_key] == 'true' if ENV.key?(env_key)
+
+    !@flags[flag].nil? && @flags[flag]
   end
 end
