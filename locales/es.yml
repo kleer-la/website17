@@ -865,7 +865,7 @@ es:
     email_error: Formato de correo electrónico inválido
     company_label: Empresa (opcional)
     situation_label: Tu situación
-    situation_hint: Una descripción detallada (50+ caracteres) te permite agendar directamente con un consultor
+    situation_hint: Una descripción detallada te permite agendar directamente con un consultor
     situation_hint_no_consultants: Tu contexto y desafíos nos ayudarán a prepararnos para nuestra reunión
     situation_placeholder: Describí brevemente tu contexto, desafíos y qué estás buscando...
     qualify_submit: Enviar
@@ -883,7 +883,10 @@ es:
     prev_week: Semana anterior
     timezone_note: Los horarios se muestran en tu zona horaria
     timezone_label: Zona horaria
+    no_availability: No hay horarios disponibles en las próximas 2 semanas.
+    load_error: No se pudo cargar la disponibilidad.
     duration: 30 min
+    meeting_about: "Reunión sobre %{name}"
     schedule_cta: Agendar una consulta
     meeting_confirmed: Reunión confirmada
     meet_link: Enlace de Google Meet

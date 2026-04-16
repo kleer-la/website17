@@ -6,31 +6,23 @@ require './lib/models/service_area_v3'
 include Recaptcha::Adapters::ControllerMethods
 
 get %r{/agendar/([^/]+)} do |slug|
+  token_payload = params[:token] && BookingToken.valid?(params[:token], area_slug: slug)
+  unless token_payload
+    status 404
+    return
+  end
+
   service_area = ServiceAreaV3.create_keventer(slug)
   return status 404 if service_area.nil?
 
-  # Fetch consultants for this service area
   consultants = []
-  has_consultants = false
   begin
     response = JsonAPI.new(KeventerAPI.service_area_consultants_url(slug))
-    if response.ok? && response.doc.is_a?(Array) && !response.doc.empty?
+    if response.ok? && response.doc.is_a?(Array)
       consultants = response.doc
-      has_consultants = true
     end
   rescue StandardError
-    # If API fails, fall back to no-consultants mode
-  end
-
-  qualified = false
-  booking_token = nil
-  if has_consultants && params[:token]
-    if BookingToken.valid?(params[:token], area_slug: slug)
-      qualified = true
-      booking_token = params[:token]
-    else
-      flash[:error] = t('booking.error_expired_token')
-    end
+    # Fall back to empty consultants
   end
 
   @meta_tags.set! title: service_area.name,
@@ -39,46 +31,54 @@ get %r{/agendar/([^/]+)} do |slug|
   erb :'bookings/index', layout: :'layout/layout2022', locals: {
     service_area: service_area,
     consultants: consultants,
-    has_consultants: has_consultants,
-    qualified: qualified,
-    booking_token: booking_token,
+    booking_token: params[:token],
+    visitor_name: token_payload['name'] || '',
+    visitor_email: token_payload['email'] || '',
     slug: slug
   }
 end
 
 post '/qualify-booking' do
   unless verify_recaptcha
-    flash[:error] = t('booking.error_recaptcha')
-    redirect "/#{session[:locale]}/agendar/#{params[:area_slug]}"
+    flash[:error] = t('mailer.error')
+    redirect "/#{session[:locale]}#{params[:context]}"
     return
   end
 
-  area_slug = params[:area_slug]
-  name = params[:name]
-  email = params[:email]
-  company = params[:company]
-  situation = params[:situation] || ''
-  has_consultants = params[:has_consultants] == 'true'
+  area_slug = (params[:area_slug] || '').strip
+  message = (params[:message] || '').strip
+  context = params[:context] || '/'
 
-  if has_consultants && situation.length >= 50
-    token = BookingToken.generate(email: email, area_slug: area_slug)
+  # Check if booking qualification is possible
+  has_consultants = false
+  if !area_slug.empty? && message.length >= 50
+    begin
+      response = JsonAPI.new(KeventerAPI.service_area_consultants_url(area_slug))
+      has_consultants = response.ok? && response.doc.is_a?(Array) && !response.doc.empty?
+    rescue StandardError
+      # API failure — fall through to mail
+    end
+  end
+
+  if has_consultants
+    token = BookingToken.generate(email: params[:email], area_slug: area_slug, name: params[:name])
     redirect "/#{session[:locale]}/agendar/#{area_slug}?token=#{token}"
   else
     mail_data = {
-      name: name,
-      email: email,
-      company: company,
-      message: situation,
-      context: "/agendar/#{area_slug}",
+      name: params[:name],
+      email: params[:email],
+      company: params[:company],
+      message: message,
+      context: context,
       language: session[:locale],
-      resource_slug: '',
-      initial_slug: '',
+      resource_slug: params[:resource_slug] || '',
+      initial_slug: params[:resource_slug] || '',
       can_we_contact: true,
       suscribe: false
     }
     send_mail(mail_data)
-    flash[:notice] = t('booking.inquiry_sent')
-    redirect "/#{session[:locale]}/agendar/#{area_slug}"
+    flash[:notice] = t('mailer.success')
+    redirect "/#{session[:locale]}#{context}"
   end
 end
 
@@ -103,7 +103,7 @@ get '/consultant-availability/:id' do
       status 502
       { error: 'upstream_error' }.to_json
     end
-  rescue StandardError => e
+  rescue StandardError
     status 502
     { error: 'upstream_error' }.to_json
   end
@@ -124,9 +124,9 @@ post '/book-meeting' do
         secret: ENV['CONTACT_US_SECRET'],
         visitor_name: params[:visitor_name],
         visitor_email: params[:visitor_email],
-        start_time: params[:start_time],
-        timezone: params[:timezone],
-        service_area_id: params[:service_area_id]
+        start: params[:start_time],
+        end: params[:end_time],
+        service_area_slug: params[:area_slug]
       }.to_json
     end
 
@@ -136,7 +136,7 @@ post '/book-meeting' do
       status response.status
       { error: 'booking_failed' }.to_json
     end
-  rescue StandardError => e
+  rescue StandardError
     status 502
     { error: 'upstream_error' }.to_json
   end

@@ -12,8 +12,8 @@ module BookingToken
     ENV.fetch('CONTACT_US_SECRET') { raise 'CONTACT_US_SECRET not set' }
   end
 
-  def generate(email:, area_slug:)
-    payload = { email: email, area_slug: area_slug, timestamp: Time.now.to_i }.to_json
+  def generate(email:, area_slug:, name: '')
+    payload = { email: email, name: name, area_slug: area_slug, timestamp: Time.now.to_i }.to_json
     signature = OpenSSL::HMAC.digest('SHA256', secret, payload)
     Base64.urlsafe_encode64(signature + payload)
   end
@@ -32,8 +32,8 @@ module BookingToken
     return false unless payload['area_slug'] == area_slug
     return false if Time.now.to_i - payload['timestamp'] > TTL
 
-    true
-  rescue ArgumentError, JSON::ParserError
+    payload
+  rescue StandardError
     false
   end
 end

@@ -17,7 +17,10 @@ describe BookingToken do
   describe '.valid?' do
     it 'accepts a freshly generated token with matching area_slug' do
       token = BookingToken.generate(email: 'user@example.com', area_slug: 'agile-coaching')
-      expect(BookingToken.valid?(token, area_slug: 'agile-coaching')).to be true
+      result = BookingToken.valid?(token, area_slug: 'agile-coaching')
+      expect(result).to be_a(Hash)
+      expect(result['email']).to eq('user@example.com')
+      expect(result['area_slug']).to eq('agile-coaching')
     end
 
     it 'rejects a token with a different area_slug' do

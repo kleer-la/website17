@@ -11,13 +11,6 @@
   area: service_area
 } %>
 <%= erb :'services/landing_area/_area_details', locals: {service_area: service_area} %>
-<% if feature_on?('booking') %>
-<section class="booking-cta container text-center py-4">
-  <a href="/<%= session[:locale] %>/agendar/<%= service_area.slug %>" class="btn my-primary-button">
-    <%= t('booking.schedule_cta') %>
-  </a>
-</section>
-<% end %>
 <%
   contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
   contact_title = contact_data[:title]

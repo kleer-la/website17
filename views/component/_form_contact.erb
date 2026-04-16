@@ -1,4 +1,4 @@
-<form id="contact-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
+<form id="contact-form" action="/<%=session[:locale] || 'es'%>/qualify-booking" method="post" class="needs-validation" novalidate>
   <div class="row">
     <div class="mb-3 col-xs-12">
       <label class="form-label"><%= t("contact-us-form.name-input.label") %></label>
@@ -37,14 +37,14 @@
   </div>
   <div class="mb-3 contact-only-field">
     <label class="form-label"><%= t("contact-us-form.message-input.label") %></label>
-    <div id="emailHelp" class="form-text"><%= t("contact-us-form.message-input.sub-label") %></div>
+    <div id="emailHelp" class="form-text"><%= t('booking.situation_hint') %></div>
     <textarea
       class="form-control"
       name="message"
       id="message-input"
       rows="3"
       required></textarea>
-
+    <div class="form-text" id="situation-counter"></div>
     <div class="invalid-feedback">
       <%= t("contact-us-form.message-input.error-message") %>
     </div>
@@ -55,6 +55,7 @@
 
   <input type="hidden" id="input-context" name="context" value="<%= request.path_info %>">
   <input type="hidden" id="resource-slug" name="resource_slug">
+  <input type="hidden" id="area-slug" name="area_slug" value="">
   <div class="btn-center-container">
     <button type="submit"
             id="submit"
@@ -123,18 +124,22 @@ function setupDownloadForm(resourceSlug) {
     const contactOnlyFields = document.querySelectorAll('.contact-only-field');
     const messageInput = document.getElementById('message-input');
 
+    var form = document.getElementById('contact-form');
+    var locale = '<%= session[:locale] || "es" %>';
     if (resourceSlug) {
       // Download mode
       modalTitle.textContent = '<%= t("contact-us-form.download") %>';
       resourceSlugInput.value = resourceSlug;
       contactOnlyFields.forEach(field => field.style.display = 'none');
       messageInput.removeAttribute('required');
+      form.action = '/' + locale + '/send-mail';
     } else {
       // Contact mode
       modalTitle.textContent = '<%= t("contact-us-form.title") %>';
       resourceSlugInput.value = '';
       contactOnlyFields.forEach(field => field.style.display = '');
       messageInput.setAttribute('required', '');
+      form.action = '/' + locale + '/qualify-booking';
     }
 
   loadReCaptcha('contact-form');
@@ -150,6 +155,24 @@ function setupDownloadForm(resourceSlug) {
     // If the modal is already open when the page loads, load reCAPTCHA
     if (document.querySelector('.modal.show')) {
       loadReCaptcha();
+    }
+
+    // Detect area_slug from URL path
+    var areaMatch = window.location.pathname.match(/\/(servicios|services)\/([a-z0-9_-]+)/);
+    if (areaMatch) {
+      var areaSlugInput = document.getElementById('area-slug');
+      if (areaSlugInput) areaSlugInput.value = areaMatch[2];
+    }
+
+    // Character counter for message textarea
+    var messageInput = document.getElementById('message-input');
+    var charCounter = document.getElementById('situation-counter');
+    if (messageInput && charCounter) {
+      messageInput.addEventListener('input', function() {
+        var len = messageInput.value.trim().length;
+        charCounter.textContent = len + ' / 50';
+        charCounter.style.color = len >= 50 ? '#198754' : '#6c757d';
+      });
     }
   });
 

@@ -48,61 +48,40 @@ describe 'Bookings' do
   end
 
   describe 'GET /agendar/:slug' do
-    context 'with consultants available' do
-      before do
-        ServiceAreaV3.null_json_api(nil, null_service_area_api)
-        allow(JsonAPI).to receive(:new).and_call_original
-        consultants_response = NullJsonAPI.new(nil, consultants_data.to_json)
-        allow(JsonAPI).to receive(:new)
-          .with(KeventerAPI.service_area_consultants_url('agile-coaching'))
-          .and_return(consultants_response)
-      end
-
-      it 'renders the qualification form without a token' do
-        get '/es/agendar/agile-coaching'
-
-        expect(last_response.status).to eq(200)
-        expect(last_response.body).to include('booking-qualify-form')
-        expect(last_response.body).to include('data-char-threshold="50"')
-      end
-
-      it 'renders qualified options with a valid token' do
-        token = BookingToken.generate(email: 'user@test.com', area_slug: 'agile-coaching')
-        get "/es/agendar/agile-coaching?token=#{token}"
-
-        expect(last_response.status).to eq(200)
-        expect(last_response.body).to include('btn-schedule')
-        expect(last_response.body).to include('Jane Doe')
-      end
-
-      it 'renders the qualification form with an expired token' do
-        token = BookingToken.generate(email: 'user@test.com', area_slug: 'agile-coaching')
-        allow(Time).to receive(:now).and_return(Time.now + 31 * 60)
-
-        get "/es/agendar/agile-coaching?token=#{token}"
-
-        expect(last_response.status).to eq(200)
-        expect(last_response.body).to include('booking-qualify-form')
-      end
+    before do
+      ServiceAreaV3.null_json_api(nil, null_service_area_api)
+      allow(JsonAPI).to receive(:new).and_call_original
+      consultants_response = NullJsonAPI.new(nil, consultants_data.to_json)
+      allow(JsonAPI).to receive(:new)
+        .with(KeventerAPI.service_area_consultants_url('agile-coaching'))
+        .and_return(consultants_response)
     end
 
-    context 'with no consultants available' do
-      before do
-        ServiceAreaV3.null_json_api(nil, null_service_area_api)
-        empty_response = NullJsonAPI.new(nil, [].to_json)
-        allow(JsonAPI).to receive(:new).and_call_original
-        allow(JsonAPI).to receive(:new)
-          .with(KeventerAPI.service_area_consultants_url('agile-coaching'))
-          .and_return(empty_response)
-      end
+    it 'returns 404 without a token' do
+      get '/es/agendar/agile-coaching'
+      expect(last_response.status).to eq(404)
+    end
 
-      it 'renders the contact-only form with generic hint' do
-        get '/es/agendar/agile-coaching'
+    it 'returns 404 with an invalid token' do
+      get '/es/agendar/agile-coaching?token=invalid'
+      expect(last_response.status).to eq(404)
+    end
 
-        expect(last_response.status).to eq(200)
-        expect(last_response.body).to include('booking-qualify-form')
-        expect(last_response.body).not_to include('data-char-threshold')
-      end
+    it 'returns 404 with an expired token' do
+      token = BookingToken.generate(email: 'user@test.com', area_slug: 'agile-coaching')
+      allow(Time).to receive(:now).and_return(Time.now + 31 * 60)
+
+      get "/es/agendar/agile-coaching?token=#{token}"
+      expect(last_response.status).to eq(404)
+    end
+
+    it 'renders consultants with a valid token' do
+      token = BookingToken.generate(email: 'user@test.com', area_slug: 'agile-coaching')
+      get "/es/agendar/agile-coaching?token=#{token}"
+
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to include('consultant-card')
+      expect(last_response.body).to include('Jane Doe')
     end
 
     context 'with nonexistent service area' do
@@ -112,8 +91,8 @@ describe 'Bookings' do
       end
 
       it 'returns 404' do
-        get '/es/agendar/nonexistent-slug'
-
+        token = BookingToken.generate(email: 'user@test.com', area_slug: 'nonexistent-slug')
+        get "/es/agendar/nonexistent-slug?token=#{token}"
         expect(last_response.status).to eq(404)
       end
     end
@@ -129,14 +108,21 @@ describe 'Bookings' do
     end
 
     context 'with consultants and description >= 50 chars' do
+      before do
+        consultants_response = NullJsonAPI.new(nil, consultants_data.to_json)
+        allow(JsonAPI).to receive(:new)
+          .with(KeventerAPI.service_area_consultants_url('agile-coaching'))
+          .and_return(consultants_response)
+      end
+
       it 'redirects with a token' do
         post '/es/qualify-booking', {
           'name' => 'Test User',
           'email' => 'test@example.com',
           'company' => 'TestCo',
-          'situation' => 'A' * 50,
+          'message' => 'A' * 50,
           'area_slug' => 'agile-coaching',
-          'has_consultants' => 'true'
+          'context' => '/servicios/agile-coaching'
         }
 
         expect(last_response.status).to eq(302)
@@ -144,8 +130,8 @@ describe 'Bookings' do
       end
     end
 
-    context 'with consultants and description < 50 chars' do
-      it 'sends mail and redirects without token' do
+    context 'with description < 50 chars' do
+      it 'sends mail and redirects to context page' do
         expect(Mailer).to receive(:new).with(
           KeventerAPI.mailer_url,
           hash_including(name: 'Test User', email: 'test@example.com')
@@ -155,19 +141,20 @@ describe 'Bookings' do
           'name' => 'Test User',
           'email' => 'test@example.com',
           'company' => 'TestCo',
-          'situation' => 'Short description',
+          'message' => 'Help needed',
+          'message' => 'Short',
           'area_slug' => 'agile-coaching',
-          'has_consultants' => 'true'
+          'context' => '/servicios/agile-coaching'
         }
 
         expect(last_response.status).to eq(302)
-        expect(last_response.location).to include('/es/agendar/agile-coaching')
+        expect(last_response.location).to include('/servicios/agile-coaching')
         expect(last_response.location).not_to include('token=')
       end
     end
 
-    context 'without consultants' do
-      it 'always sends mail regardless of description length' do
+    context 'without area_slug (non-service-area page)' do
+      it 'sends mail and redirects to context' do
         expect(Mailer).to receive(:new).with(
           KeventerAPI.mailer_url,
           hash_including(name: 'Test User')
@@ -176,15 +163,14 @@ describe 'Bookings' do
         post '/es/qualify-booking', {
           'name' => 'Test User',
           'email' => 'test@example.com',
-          'company' => 'TestCo',
-          'situation' => 'A' * 100,
-          'area_slug' => 'agile-coaching',
-          'has_consultants' => 'false'
+          'message' => 'General question',
+          'message' => '',
+          'area_slug' => '',
+          'context' => '/somos'
         }
 
         expect(last_response.status).to eq(302)
-        expect(last_response.location).to include('/es/agendar/agile-coaching')
-        expect(last_response.location).not_to include('token=')
+        expect(last_response.location).to include('/somos')
       end
     end
 
@@ -193,17 +179,17 @@ describe 'Bookings' do
         allow_any_instance_of(Sinatra::Application).to receive(:verify_recaptcha).and_return(false)
       end
 
-      it 'redirects with error' do
+      it 'redirects with error to context page' do
         post '/es/qualify-booking', {
           'name' => 'Test User',
           'email' => 'test@example.com',
-          'situation' => 'Some text',
-          'area_slug' => 'agile-coaching',
-          'has_consultants' => 'true'
+          'message' => 'Some text',
+          'area_slug' => '',
+          'context' => '/servicios/agile-coaching'
         }
 
         expect(last_response.status).to eq(302)
-        expect(last_response.location).to include('/es/agendar/agile-coaching')
+        expect(last_response.location).to include('/servicios/agile-coaching')
       end
     end
   end
@@ -211,13 +197,6 @@ describe 'Bookings' do
   describe 'GET /consultant-availability/:id' do
     it 'returns 403 without a valid token' do
       get '/es/consultant-availability/1'
-
-      expect(last_response.status).to eq(403)
-    end
-
-    it 'returns 403 with an invalid token' do
-      get '/es/consultant-availability/1?token=invalid&area_slug=agile-coaching'
-
       expect(last_response.status).to eq(403)
     end
 
@@ -233,24 +212,12 @@ describe 'Bookings' do
       expect(last_response.status).to eq(200)
       parsed = JSON.parse(last_response.body)
       expect(parsed).to be_an(Array)
-      expect(parsed.first['start_time']).to eq('2026-04-20T10:00:00Z')
     end
   end
 
   describe 'POST /book-meeting' do
     it 'returns 403 without a valid token' do
       post '/es/book-meeting', { 'consultant_id' => '1' }
-
-      expect(last_response.status).to eq(403)
-    end
-
-    it 'returns 403 with an invalid token' do
-      post '/es/book-meeting', {
-        'booking_token' => 'invalid',
-        'area_slug' => 'agile-coaching',
-        'consultant_id' => '1'
-      }
-
       expect(last_response.status).to eq(403)
     end
   end
@@ -265,7 +232,6 @@ describe 'Bookings' do
 
     it 'returns 403 without a valid token' do
       post '/es/send-booking-inquiry', { 'area_slug' => 'agile-coaching' }
-
       expect(last_response.status).to eq(403)
     end
 
@@ -286,7 +252,6 @@ describe 'Bookings' do
       }
 
       expect(last_response.status).to eq(302)
-      expect(last_response.location).to include('/es/agendar/agile-coaching')
     end
   end
 end

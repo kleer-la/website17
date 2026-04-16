@@ -1195,7 +1195,7 @@ en:
     email_error: Invalid email format
     company_label: Company (optional)
     situation_label: Your situation
-    situation_hint: A detailed description (50+ characters) lets you schedule directly with a consultant
+    situation_hint: "A detailed description let's you schedule directly with a consultant"
     situation_hint_no_consultants: Your context and challenges will help us prepare for our meeting
     situation_placeholder: Briefly describe your context, challenges, and what you're looking for...
     qualify_submit: Submit
@@ -1213,7 +1213,10 @@ en:
     prev_week: Previous week
     timezone_note: Times are shown in your timezone
     timezone_label: Timezone
+    no_availability: No available slots in the next 2 weeks.
+    load_error: Could not load availability.
     duration: 30 min
+    meeting_about: "Meeting about %{name}"
     schedule_cta: Schedule a consultation
     meeting_confirmed: Meeting confirmed
     meet_link: Google Meet link

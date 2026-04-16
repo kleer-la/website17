@@ -1,7 +1,7 @@
-<div class="container py-5">
+<div class="container py-2" style="margin-top: 70px;">
   <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <h1 class="mb-4"><%= service_area.name %></h1>
+    <div class="col-lg-10">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem;"><%= t('booking.meeting_about', name: service_area.name) %></h1>
 
       <% if flash[:notice] %>
         <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
@@ -10,21 +10,15 @@
         <div class="alert alert-warning" role="alert"><%= flash[:error] %></div>
       <% end %>
 
-      <% if qualified %>
-        <%= erb :'bookings/_qualified_options', locals: {
-          service_area: service_area,
-          consultants: consultants,
-          booking_token: booking_token,
-          slug: slug
-        } %>
-      <% else %>
-        <%= erb :'bookings/_qualification_form', locals: {
-          service_area: service_area,
-          has_consultants: has_consultants,
-          slug: slug
-        } %>
-      <% end %>
+      <%= erb :'bookings/_qualified_options', locals: {
+        service_area: service_area,
+        consultants: consultants,
+        booking_token: booking_token,
+        visitor_name: visitor_name,
+        visitor_email: visitor_email,
+        slug: slug
+      } %>
     </div>
   </div>
 </div>
-<script src="/js/booking.js" defer></script>
+<script src="/js/booking.js?v=<%= Time.now.to_i %>" defer></script>
