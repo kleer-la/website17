@@ -1,3 +1,27 @@
+// Map UTC offset (minutes) to canonical IANA timezone
+// getTimezoneOffset() returns positive for west of UTC (e.g., 180 = GMT-3)
+var OFFSET_TO_TIMEZONE = {
+  180: 'America/Argentina/Buenos_Aires',
+  240: 'America/Santiago',
+  300: 'America/Bogota',
+  360: 'America/Mexico_City',
+  '-60': 'Europe/Madrid',
+  '-120': 'Europe/Berlin',
+  0: 'UTC'
+};
+
+function resolveTimezone() {
+  var browserTz = '';
+  try { browserTz = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) {}
+
+  // If browser returns a canonical timezone with region/subregion, use it
+  if (browserTz && browserTz.split('/').length >= 3) return browserTz;
+
+  // Otherwise, fall back to offset-based mapping
+  var offset = new Date().getTimezoneOffset();
+  return OFFSET_TO_TIMEZONE[offset] || browserTz || 'America/Argentina/Buenos_Aires';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   // Character counter for situation textarea
   var textarea = document.getElementById('booking-situation');
@@ -35,15 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var timezoneInput = document.getElementById('booking-timezone');
   var timezoneLabel = document.getElementById('booking-timezone-label');
   if (timezoneInput) {
-    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Argentina/Buenos_Aires';
-    // Normalize short timezone names to canonical IANA names
-    var tzAliases = {
-      'America/Buenos_Aires': 'America/Argentina/Buenos_Aires',
-      'America/Catamarca': 'America/Argentina/Catamarca',
-      'America/Cordoba': 'America/Argentina/Cordoba',
-      'America/Mendoza': 'America/Argentina/Mendoza'
-    };
-    tz = tzAliases[tz] || tz;
+    var tz = resolveTimezone();
     timezoneInput.value = tz;
     if (timezoneLabel) {
       timezoneLabel.textContent = tz.replace(/_/g, ' ');
