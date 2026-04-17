@@ -242,10 +242,7 @@ describe 'Bookings' do
   end
 
   describe 'POST /send-booking-inquiry' do
-    let(:mailer_instance) { instance_double(Mailer) }
-
     before do
-      allow(Mailer).to receive(:new).and_return(mailer_instance)
       env 'rack.session', { locale: 'es', flash: {} }
     end
 
@@ -254,13 +251,10 @@ describe 'Bookings' do
       expect(last_response.status).to eq(403)
     end
 
-    it 'sends mail and redirects with a valid token' do
+    it 'redirects with a valid token without resending mail' do
       token = BookingToken.generate(email: 'user@test.com', area_slug: 'agile-coaching')
 
-      expect(Mailer).to receive(:new).with(
-        KeventerAPI.mailer_url,
-        hash_including(context: '/agendar/agile-coaching')
-      )
+      expect(Mailer).not_to receive(:new)
 
       post '/es/send-booking-inquiry', {
         'booking_token' => token,
@@ -271,6 +265,7 @@ describe 'Bookings' do
       }
 
       expect(last_response.status).to eq(302)
+      expect(last_response.location).to include('/agendar/agile-coaching')
     end
   end
 end

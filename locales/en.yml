@@ -1195,7 +1195,7 @@ en:
     email_error: Invalid email format
     company_label: Company (optional)
     situation_label: Your situation
-    situation_hint: "A detailed description let's you schedule directly with a consultant"
+    situation_hint: Schedule a call or send us a message
     situation_hint_no_consultants: Your context and challenges will help us prepare for our meeting
     situation_placeholder: Briefly describe your context, challenges, and what you're looking for...
     qualify_submit: Submit

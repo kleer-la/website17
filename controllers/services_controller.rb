@@ -69,6 +69,7 @@ def show_service_area(service_area, path)
                   alternate_paths: { es: "/servicios/#{service_area.slug}", en: "/services/#{service_area.slug}" }
 
   @path = path
+  @has_consultants = service_area_has_consultants?(service_area.slug)
   set_area_colors(service_area)
 
   erb :'services/landing_area/index', layout: :'layout/layout2022', locals: { service_area: service_area }
@@ -81,6 +82,7 @@ def show_service(service_area, service, path)
                   alternate_paths: { es: "/servicios/#{service_area.slug}/#{service.slug}", en: "/services/#{service_area.slug}/#{service.slug}" }
 
   @path = path
+  @has_consultants = service_area_has_consultants?(service_area.slug)
   set_area_colors(service_area)
 
   @json_ld = service_json_ld(service, service_area)

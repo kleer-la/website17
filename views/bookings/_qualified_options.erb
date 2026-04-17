@@ -51,6 +51,7 @@
     visitorEmail: <%= visitor_email.to_json %>,
     visitorCompany: <%= visitor_company.to_json %>,
     visitorMessage: <%= visitor_message.to_json %>,
+    visitorContext: <%= visitor_context.to_json %>,
     locale: '<%= session[:locale] || "es" %>',
     consultantIds: <%= consultants.map { |c| c['id'] }.to_json %>,
     confirmText: '<%= t("booking.confirm_booking") %>',

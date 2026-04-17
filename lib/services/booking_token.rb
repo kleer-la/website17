@@ -12,8 +12,8 @@ module BookingToken
     ENV.fetch('CONTACT_US_SECRET') { raise 'CONTACT_US_SECRET not set' }
   end
 
-  def generate(email:, area_slug:, name: '', company: '', message: '')
-    payload = { email: email, name: name, company: company, message: message, area_slug: area_slug, timestamp: Time.now.to_i }.to_json
+  def generate(email:, area_slug:, name: '', company: '', message: '', context: '')
+    payload = { email: email, name: name, company: company, message: message, context: context, area_slug: area_slug, timestamp: Time.now.to_i }.to_json
     signature = OpenSSL::HMAC.hexdigest('SHA256', secret, payload)
     Base64.urlsafe_encode64("#{signature}:#{payload}")
   end

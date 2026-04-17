@@ -219,6 +219,15 @@ module Helpers
     url.gsub('https://kleer-images.s3.sa-east-1.amazonaws.com', 'https://d3vnsn21cv5bcd.cloudfront.net')
   end
 
+  def service_area_has_consultants?(slug)
+    return false if slug.nil? || slug.to_s.empty?
+
+    response = JsonAPI.new(KeventerAPI.service_area_consultants_url(slug))
+    response.ok? && response.doc.is_a?(Array) && !response.doc.empty?
+  rescue StandardError
+    false
+  end
+
   private
 
   def capture(&block)

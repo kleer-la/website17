@@ -256,6 +256,7 @@ function confirmBooking(slotBtn) {
   formData.append('visitor_email', BOOKING_CONFIG.visitorEmail);
   formData.append('visitor_company', BOOKING_CONFIG.visitorCompany);
   formData.append('visitor_message', BOOKING_CONFIG.visitorMessage);
+  formData.append('visitor_context', BOOKING_CONFIG.visitorContext || '');
 
   fetch('/' + BOOKING_CONFIG.locale + '/book-meeting', {
     method: 'POST',

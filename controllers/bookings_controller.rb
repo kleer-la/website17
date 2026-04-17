@@ -25,6 +25,7 @@ get %r{/agendar/([^/]+)} do |slug|
     # Fall back to empty consultants
   end
 
+  @has_consultants = !consultants.empty?
   @meta_tags.set! title: service_area.name,
                   description: service_area.seo_description
 
@@ -36,6 +37,7 @@ get %r{/agendar/([^/]+)} do |slug|
     visitor_email: token_payload['email'] || '',
     visitor_company: token_payload['company'] || '',
     visitor_message: token_payload['message'] || '',
+    visitor_context: token_payload['context'] || "/agendar/#{slug}",
     slug: slug
   }
 end
@@ -51,34 +53,33 @@ post '/qualify-booking' do
   message = (params[:message] || '').strip
   context = params[:context] || '/'
 
-  # Check if booking qualification is possible
-  has_consultants = false
-  if !area_slug.empty? && message.length >= 50
-    begin
-      response = JsonAPI.new(KeventerAPI.service_area_consultants_url(area_slug))
-      has_consultants = response.ok? && response.doc.is_a?(Array) && !response.doc.empty?
-    rescue StandardError
-      # API failure — fall through to mail
-    end
-  end
+  mail_data = {
+    name: params[:name],
+    email: params[:email],
+    company: params[:company],
+    message: message,
+    context: context,
+    language: session[:locale],
+    resource_slug: params[:resource_slug] || '',
+    initial_slug: params[:resource_slug] || '',
+    can_we_contact: true,
+    suscribe: false
+  }
+  send_mail(mail_data)
+
+  has_consultants = !area_slug.empty? && message.length >= 50 && service_area_has_consultants?(area_slug)
 
   if has_consultants
-    token = BookingToken.generate(email: params[:email], area_slug: area_slug, name: params[:name], company: params[:company] || '', message: message)
+    token = BookingToken.generate(
+      email: params[:email],
+      area_slug: area_slug,
+      name: params[:name],
+      company: params[:company] || '',
+      message: message,
+      context: context
+    )
     redirect "/#{session[:locale]}/agendar/#{area_slug}?token=#{token}"
   else
-    mail_data = {
-      name: params[:name],
-      email: params[:email],
-      company: params[:company],
-      message: message,
-      context: context,
-      language: session[:locale],
-      resource_slug: params[:resource_slug] || '',
-      initial_slug: params[:resource_slug] || '',
-      can_we_contact: true,
-      suscribe: false
-    }
-    send_mail(mail_data)
     flash[:notice] = t('mailer.success')
     redirect "/#{session[:locale]}#{context}"
   end
@@ -130,6 +131,8 @@ post '/book-meeting' do
         visitor_email: params[:visitor_email],
         visitor_company: params[:visitor_company],
         visitor_message: params[:visitor_message],
+        visitor_context: params[:visitor_context],
+        language: session[:locale],
         start: params[:start_time],
         end: params[:end_time],
         service_area_slug: params[:area_slug]
@@ -153,19 +156,6 @@ post '/send-booking-inquiry' do
     halt 403
   end
 
-  mail_data = {
-    name: params[:name],
-    email: params[:email],
-    company: params[:company],
-    message: params[:message],
-    context: "/agendar/#{params[:area_slug]}",
-    language: session[:locale],
-    resource_slug: '',
-    initial_slug: '',
-    can_we_contact: true,
-    suscribe: false
-  }
-  send_mail(mail_data)
   flash[:notice] = t('booking.inquiry_sent')
   redirect "/#{session[:locale]}/agendar/#{params[:area_slug]}"
 end

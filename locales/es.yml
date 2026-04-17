@@ -865,7 +865,7 @@ es:
     email_error: Formato de correo electrónico inválido
     company_label: Empresa (opcional)
     situation_label: Tu situación
-    situation_hint: Una descripción detallada te permite agendar directamente con un consultor
+    situation_hint: Acuerda una llamada o envíanos un mensaje
     situation_hint_no_consultants: Tu contexto y desafíos nos ayudarán a prepararnos para nuestra reunión
     situation_placeholder: Describí brevemente tu contexto, desafíos y qué estás buscando...
     qualify_submit: Enviar

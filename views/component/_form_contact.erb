@@ -37,7 +37,9 @@
   </div>
   <div class="mb-3 contact-only-field">
     <label class="form-label"><%= t("contact-us-form.message-input.label") %></label>
-    <div id="emailHelp" class="form-text"><%= t('booking.situation_hint') %></div>
+    <% if @has_consultants %>
+      <div id="emailHelp" class="form-text"><%= t('booking.situation_hint') %></div>
+    <% end %>
     <textarea
       class="form-control"
       name="message"
@@ -170,7 +172,7 @@ function setupDownloadForm(resourceSlug) {
     if (messageInput && charCounter) {
       messageInput.addEventListener('input', function() {
         var len = messageInput.value.trim().length;
-        charCounter.textContent = len + ' / 50';
+        charCounter.textContent = len;
         charCounter.style.color = len >= 50 ? '#198754' : '#6c757d';
       });
     }
