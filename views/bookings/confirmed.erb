@@ -1,0 +1,61 @@
+<div class="container py-5" style="margin-top: 70px;">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+      <div style="font-size: 4rem; line-height: 1; margin-bottom: 1rem;">&#10003;</div>
+      <h1 class="mb-3"><%= t('booking.confirmed_title') %></h1>
+      <p class="lead mb-4"><%= t('booking.confirmed_hint') %></p>
+
+      <div id="booking-details" class="mb-4" style="display: none;">
+        <dl class="row justify-content-center text-start" style="max-width: 480px; margin: 0 auto;">
+          <dt class="col-sm-4"><%= t('booking.confirmed_when') %></dt>
+          <dd class="col-sm-8" id="booking-when"></dd>
+
+          <dt class="col-sm-4"><%= t('booking.confirmed_with') %></dt>
+          <dd class="col-sm-8" id="booking-with"></dd>
+        </dl>
+      </div>
+
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a id="booking-meet-link" href="#" target="_blank" rel="noopener" class="btn my-primary-button" style="display: none;">
+          <%= t('booking.confirmed_join') %>
+        </a>
+        <a href="/<%= session[:locale] || 'es' %>" class="btn my-secondary-button">
+          <%= t('booking.back_home') %>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    var raw = sessionStorage.getItem('bookingConfirmation');
+    if (!raw) return;
+
+    sessionStorage.removeItem('bookingConfirmation');
+    var data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+
+    var locale = '<%= session[:locale] || "es" %>' === 'es' ? 'es-AR' : 'en-US';
+
+    if (data.starts_at) {
+      var start = new Date(data.starts_at);
+      var whenLabel = start.toLocaleDateString(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) +
+        ' ' + start.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: false });
+      document.getElementById('booking-when').textContent = whenLabel;
+    }
+
+    if (data.consultant_name) {
+      document.getElementById('booking-with').textContent = data.consultant_name;
+    }
+
+    if (data.starts_at || data.consultant_name) {
+      document.getElementById('booking-details').style.display = '';
+    }
+
+    if (data.google_meet_link) {
+      var link = document.getElementById('booking-meet-link');
+      link.href = data.google_meet_link;
+      link.style.display = '';
+    }
+  })();
+</script>

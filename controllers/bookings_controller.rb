@@ -151,6 +151,10 @@ post '/book-meeting' do
   end
 end
 
+get '/booking-confirmed' do
+  erb :'bookings/confirmed', layout: :'layout/layout2022'
+end
+
 post '/send-booking-inquiry' do
   unless params[:booking_token] && params[:area_slug] && BookingToken.valid?(params[:booking_token], area_slug: params[:area_slug])
     halt 403

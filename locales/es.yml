@@ -891,3 +891,9 @@ es:
     meeting_confirmed: Reunión confirmada
     meet_link: Enlace de Google Meet
     with_consultant: "con %{name}"
+    confirmed_title: "¡Tu reunión está agendada!"
+    confirmed_hint: Revisa tu calendario y confirma la reunión. También te enviamos la invitación por email.
+    confirmed_when: "Cuándo"
+    confirmed_with: "Con"
+    confirmed_join: Unirse por Google Meet
+    back_home: Volver al inicio

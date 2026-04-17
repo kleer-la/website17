@@ -271,12 +271,16 @@ function confirmBooking(slotBtn) {
         return body;
       });
     })
-    .then(function () {
-      confirmBtn.textContent = '\u2713 ' + BOOKING_CONFIG.confirmedText;
-      confirmBtn.disabled = true;
-      document.querySelectorAll('.slot-btn').forEach(function (el) {
-        el.disabled = true;
-      });
+    .then(function (body) {
+      try {
+        sessionStorage.setItem('bookingConfirmation', JSON.stringify({
+          starts_at: body.starts_at,
+          ends_at: body.ends_at,
+          consultant_name: body.consultant_name,
+          google_meet_link: body.google_meet_link
+        }));
+      } catch (e) { /* storage may be unavailable */ }
+      window.location.href = '/' + BOOKING_CONFIG.locale + '/booking-confirmed';
     })
     .catch(function (err) {
       console.error('Booking error:', err);

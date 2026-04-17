@@ -1221,3 +1221,9 @@ en:
     meeting_confirmed: Meeting confirmed
     meet_link: Google Meet link
     with_consultant: "with %{name}"
+    confirmed_title: "Your meeting is scheduled!"
+    confirmed_hint: "Check your calendar and confirm the meeting. We also sent the invitation by email."
+    confirmed_when: "When"
+    confirmed_with: "With"
+    confirmed_join: Join via Google Meet
+    back_home: Back to home
