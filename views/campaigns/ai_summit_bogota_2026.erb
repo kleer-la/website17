@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<%= erb :'layout/_google_tracker_head' %>
+<%= erb :'layout/_metatags' %>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#4fd8e7",
+                    "surface-container": "#dbf1ff",
+                    "on-surface-variant": "#3c494b",
+                    "on-tertiary-container": "#533f00",
+                    "secondary-fixed": "#c2e8fe",
+                    "surface-dim": "#badff5",
+                    "tertiary-fixed-dim": "#ecc14d",
+                    "surface-container-high": "#ceedff",
+                    "surface": "#f4faff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#ffdf93",
+                    "surface-container-low": "#e8f6ff",
+                    "inverse-surface": "#093445",
+                    "secondary-fixed-dim": "#a6cce1",
+                    "surface-bright": "#f4faff",
+                    "surface-variant": "#c2e8fe",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#004a50",
+                    "tertiary": "#765b00",
+                    "on-secondary-container": "#45697c",
+                    "outline": "#6c797b",
+                    "on-secondary-fixed": "#001e2b",
+                    "inverse-primary": "#4fd8e7",
+                    "error": "#ba1a1a",
+                    "primary-container": "#2ac0ce",
+                    "background": "#f4faff",
+                    "secondary": "#3f6376",
+                    "secondary-container": "#c2e8fe",
+                    "inverse-on-surface": "#e2f3ff",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#001e2b",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "tertiary-container": "#d2aa37",
+                    "primary-fixed": "#88f3ff",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#004f56",
+                    "surface-tint": "#006971",
+                    "on-background": "#001e2b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#264b5d",
+                    "outline-variant": "#bbc9cb",
+                    "on-primary-fixed": "#001f23",
+                    "primary": "#006971",
+                    "surface-container-highest": "#c2e8fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-kleer-gradient {
+            background: linear-gradient(135deg, #006971 0%, #2ac0ce 100%);
+        }
+        .text-balance { text-wrap: balance; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<%= erb :'layout/_google_tracker_body' %>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#001e2b]/80 backdrop-blur-lg shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#001e2b] dark:text-white font-headline">
+                Kleer
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline font-semibold text-sm tracking-tight text-[#001e2b] dark:text-slate-300 hover:text-[#006971] transition-colors" href="#">MembresIA</a>
+<a class="font-headline font-semibold text-sm tracking-tight text-[#001e2b] dark:text-slate-300 hover:text-[#006971] transition-colors" href="#">Kleer Lab</a>
+<a class="font-headline font-semibold text-sm tracking-tight text-[#001e2b] dark:text-slate-300 hover:text-[#006971] transition-colors" href="#">Insights</a>
+<a class="font-headline font-semibold text-sm tracking-tight text-[#001e2b] dark:text-slate-300 hover:text-[#006971] transition-colors" href="#">Expertise</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:flex items-center gap-2 bg-kleer-gradient text-on-primary px-5 py-2.5 rounded-lg font-headline font-semibold text-sm hover:opacity-90 active:scale-95 transition-all" href="https://calendar.app.google/UXf1xdYe7KAWRxoU7" target="_blank">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                    Agendar conversación
+                </a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- HERO SECTION -->
+<section class="relative px-6 py-16 md:py-24 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                        AI Summit Bogotá 2026
+                    </div>
+<h1 class="text-4xl md:text-6xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tight text-balance">
+                        Pasa de ideas de inteligencia artificial a resultados reales en <span class="text-primary italic">semanas</span>, no meses
+                    </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl">
+                        Si estás intentando impulsar iniciativas de IA en tu empresa pero no logras avanzar con foco o ejecución, podemos ayudarte a destrabar ese proceso rápidamente.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="inline-block text-center bg-kleer-gradient text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-lg shadow-[0_20px_40px_rgba(0,30,43,0.06)] hover:scale-105 transition-transform" href="https://calendar.app.google/UXf1xdYe7KAWRxoU7" target="_blank">
+                            Agendar conversación (30 minutos)
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-5 grid gap-6">
+<!-- Segmented Options -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(0,30,43,0.06)] border-b-4 border-primary group cursor-pointer hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+<h3 class="font-headline font-bold text-xl mb-2 text-on-surface">Estoy impulsando la adopción de IA en mi organización</h3>
+<p class="text-sm text-on-surface-variant mb-4">Estrategia y ejecución continua con MembresIA.</p>
+<span class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Ver MembresIA <span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</div>
+<div class="bg-surface-container-highest p-8 rounded-xl shadow-[0_20px_40px_rgba(0,30,43,0.06)] border-b-4 border-primary-container group cursor-pointer hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-on-primary-container text-4xl mb-4">biotech</span>
+<h3 class="font-headline font-bold text-xl mb-2 text-on-surface">Tengo un problema concreto que quiero resolver con IA</h3>
+<p class="text-sm text-on-surface-variant mb-4">Pilotos funcionales en pocas semanas con Kleer Lab.</p>
+<span class="text-on-primary-container font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Ver Kleer Lab <span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Abstract background shape -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl -z-10"></div>
+</section>
+<!-- SECTION: LO QUE ESTAMOS VIENDO -->
+<section class="bg-surface-container-low py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-3xl md:text-4xl font-headline font-extrabold text-on-surface mb-4">Lo que estamos viendo en el AI Summit</h2>
+<p class="text-on-surface-variant">Compartimos los aprendizajes clave de esta edición para que los lleves directo a tu organización.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<h4 class="font-headline font-bold text-lg">La velocidad es la nueva ventaja</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">No gana el que tiene el modelo más grande, sino el que itera más rápido sobre problemas reales del negocio.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h4 class="font-headline font-bold text-lg">IA no es un silo técnico</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">El éxito depende de integrar la IA en los flujos de trabajo diarios, no de crear un laboratorio aislado.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h4 class="font-headline font-bold text-lg">Confianza sobre Hype</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Las empresas líderes están priorizando la gobernanza y la calidad de datos sobre las demostraciones llamativas.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: IDENTIFICACIÓN DEL PROBLEMA -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-surface mb-6">Si te pasa algo de esto, probablemente podamos ayudarte</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Identificar el bloqueo es el primer paso para la aceleración.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<div class="bg-surface p-6 rounded-lg border-l-4 border-error/30 flex flex-col gap-4">
+<span class="material-symbols-outlined text-error">hourglass_empty</span>
+<p class="font-bold text-on-surface leading-tight">La iniciativa no avanza de la idea</p>
+</div>
+<div class="bg-surface p-6 rounded-lg border-l-4 border-tertiary/30 flex flex-col gap-4">
+<span class="material-symbols-outlined text-tertiary">blur_on</span>
+<p class="font-bold text-on-surface leading-tight">Falta de foco en casos de uso</p>
+</div>
+<div class="bg-surface p-6 rounded-lg border-l-4 border-primary/30 flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary">engineering</span>
+<p class="font-bold text-on-surface leading-tight">Dependencia técnica externa excesiva</p>
+</div>
+<div class="bg-surface p-6 rounded-lg border-l-4 border-on-secondary-container/30 flex flex-col gap-4">
+<span class="material-symbols-outlined text-on-secondary-container">warning</span>
+<p class="font-bold text-on-surface leading-tight">Miedo a la privacidad y seguridad</p>
+</div>
+<div class="bg-surface p-6 rounded-lg border-l-4 border-on-surface-variant/30 flex flex-col gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">trending_down</span>
+<p class="font-bold text-on-surface leading-tight">Dificultad para medir el ROI de IA</p>
+</div>
+</div>
+</section>
+<!-- SECTION: DOS CAMINOS -->
+<section class="py-24 px-6 bg-on-surface text-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="text-3xl md:text-5xl font-headline font-extrabold mb-6">Dos caminos hacia la agilidad con IA</h2>
+<p class="text-surface/70 text-lg">Soluciones diseñadas para diferentes momentos de madurez.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Column 1: MembresIA -->
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative bg-surface-container-lowest/5 backdrop-blur-md p-10 rounded-2xl border border-surface/10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="text-3xl font-headline font-extrabold text-primary-fixed-dim mb-2 uppercase tracking-tight">MEMBRESIA</h3>
+<p class="text-xl font-bold">Estrategia y ejecución de IA</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-primary-fixed-dim">hub</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Priorización estratégica de portafolio</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Ciclos cortos de entrega de valor</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Acompañamiento a líderes de adopción</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Cultura de experimentación continua</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-primary text-on-primary rounded-lg font-headline font-bold text-lg hover:bg-primary-container transition-colors">
+                                Quiero evaluar la adopción de IA
+                            </button>
+</div>
+</div>
+<!-- Column 2: Kleer Lab -->
+<div class="relative group">
+<div class="absolute inset-0 bg-primary-container/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative bg-surface-container-lowest/5 backdrop-blur-md p-10 rounded-2xl border border-surface/10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="text-3xl font-headline font-extrabold text-primary-container mb-2 uppercase tracking-tight">KLEER LAB</h3>
+<p class="text-xl font-bold">Pilotos de IA en pocas semanas</p>
+</div>
+<span class="material-symbols-outlined text-5xl text-primary-container">science</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Solución a un problema concreto</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Piloto funcional en solo 8 semanas</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Validación técnica y de negocio</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary-container">check_circle</span>
+<span>Transferencia de conocimiento a tu equipo</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-surface text-on-surface rounded-lg font-headline font-bold text-lg hover:bg-surface-container transition-colors">
+                                Quiero evaluar mi caso
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: CÓMO TRABAJAMOS -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-headline font-extrabold text-on-surface mb-16 text-center">Nuestro método de aceleración</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-1/2 -translate-x-1/2 w-full h-0.5 bg-outline-variant/30 -z-10"></div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center font-headline font-black text-2xl text-primary mb-6 ring-8 ring-background">1</div>
+<h4 class="font-bold text-lg mb-2">Descubrimiento</h4>
+<p class="text-sm text-on-surface-variant">Entendemos el dolor de negocio y la viabilidad de los datos.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center font-headline font-black text-2xl text-primary mb-6 ring-8 ring-background">2</div>
+<h4 class="font-bold text-lg mb-2">Hipótesis</h4>
+<p class="text-sm text-on-surface-variant">Definimos qué queremos probar y cómo mediremos el éxito.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center font-headline font-black text-2xl text-primary mb-6 ring-8 ring-background">3</div>
+<h4 class="font-bold text-lg mb-2">Iteración</h4>
+<p class="text-sm text-on-surface-variant">Construimos prototipos rápidos para aprender del usuario real.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center font-headline font-black text-2xl text-primary mb-6 ring-8 ring-background">4</div>
+<h4 class="font-bold text-lg mb-2">Escalamiento</h4>
+<p class="text-sm text-on-surface-variant">Pasamos del piloto a una solución integrada y sostenible.</p>
+</div>
+</div>
+</section>
+<!-- SECTION: CASOS REALES DE IMPACTO -->
+<section class="py-24 px-6 bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-surface mb-6 text-balance">Casos reales de impacto</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Resultados concretos acompañando organizaciones líderes en la región.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1: ITTI -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,30,43,0.04)] border border-outline-variant/20 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                            MembresIA
+                        </div>
+<span class="material-symbols-outlined text-primary-container text-4xl">corporate_fare</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">ITTI (Paraguay)</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">La empresa tecnológica paraguaya ITTI, del Grupo Vázquez, confió en Kleer para acelerar la adopción de IA en todo el grupo, potenciado con la MembresIA Kleer.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all" href="https://calendar.app.google/UXf1xdYe7KAWRxoU7" target="_blank">
+                            Agendar conversación similar <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Sushi Pop -->
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-[0_10px_30px_rgba(0,30,43,0.04)] border border-outline-variant/20 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="inline-flex items-center gap-2 bg-primary-container/10 text-on-primary-container px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+                            Kleer Lab
+                        </div>
+<span class="material-symbols-outlined text-primary text-4xl">science</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-2">Sushi Pop (Paraguay)</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Sushi Pop, una cadena de restaurantes paraguaya, contrató el esquema de Kleer Lab para solucionar una problemática de negocio en tiempo récord.</p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="text-primary font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all" href="https://calendar.app.google/UXf1xdYe7KAWRxoU7" target="_blank">
+                            Explorar un piloto como este <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: CREDIBILIDAD -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-3xl md:text-4xl font-headline font-extrabold text-on-surface mb-6">Experiencia acompañando procesos de cambio</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Llevamos 15 años impulsando la agilidad en las organizaciones más importantes de Latinoamérica. No somos solo desarrolladores; somos estrategas que entienden que la tecnología es el medio, no el fin.
+                    </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="text-4xl font-headline font-black text-primary">15+</div>
+<div class="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Años de experiencia</div>
+</div>
+<div>
+<div class="text-4xl font-headline font-black text-primary">LatAm</div>
+<div class="text-sm uppercase tracking-widest font-bold text-on-surface-variant">Alcance regional</div>
+</div>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-video bg-on-surface">
+<img alt="Team collaborating" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="Professional team in a modern bright office collaborating around a table with laptops and agile sticky notes on glass wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoc4PYUF-0F-uQOd5QcFM_PzCHiI1OBwvyeiU02jRFVDbBqjKso2Xnamlckm9HXD_z-TA5BUygMLFQkKLmhWni3_k0NwuaKE1_HQ22ss35WFL6MUu0rqbBcZ1yLCManHDhZoqDUfFSK0NdCtHVV2_L5ofwPEvztLB3lRttHI5L-bCOgSu3ebl34KsphmRBk36yduQHz4oJmMIEZlQdxW3oai78ywq82SsC_UaSeq7nLqRmm0J_8QFTeEC1QWPSp4i7W-oFiwgdZEs"/>
+</div>
+</div>
+</section>
+<!-- SECTION: OFERTA PARA EL EVENTO -->
+<section class="py-24 px-6 max-w-5xl mx-auto">
+<div class="bg-kleer-gradient rounded-3xl p-12 text-on-primary text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+<div class="relative z-10">
+<div class="inline-block px-4 py-1 bg-tertiary text-on-tertiary rounded-full text-xs font-bold uppercase tracking-tighter mb-6">EXCLUSIVO AI SUMMIT</div>
+<h2 class="text-4xl md:text-5xl font-headline font-black mb-6">Especial AI Summit Bogotá</h2>
+<p class="text-xl mb-10 text-primary-fixed max-w-2xl mx-auto">
+                        Durante el evento, estamos ofreciendo una **sesión de diagnóstico gratuita** para evaluar tus iniciativas de IA. Cupos limitados para agendamiento prioritario.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="inline-block text-center px-8 py-4 bg-white text-primary rounded-lg font-headline font-bold text-lg hover:bg-primary-container hover:text-white transition-all shadow-xl active:scale-95" href="https://calendar.app.google/UXf1xdYe7KAWRxoU7" target="_blank">
+                            Agendar diagnóstico ahora
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA FINAL -->
+<section class="py-24 px-6 max-w-7xl mx-auto text-center">
+<h2 class="text-3xl md:text-5xl font-headline font-extrabold text-on-surface mb-8 text-balance">Si estás impulsando iniciativas de IA o tienes un caso concreto, lo podemos revisar juntos</h2>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="inline-block text-center bg-kleer-gradient text-on-primary px-8 py-4 rounded-lg font-headline font-bold text-lg hover:opacity-90 transition-all" href="https://calendar.app.google/UXf1xdYe7KAWRxoU7" target="_blank">
+                    Agendar conversación
+                </a>
+<button class="bg-surface-container-highest text-primary px-8 py-4 rounded-lg font-headline font-bold text-lg hover:bg-surface-container transition-all">
+                    Evaluar mi caso
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f4faff] dark:bg-[#001e2b] w-full py-12 border-t border-[#bbc9cb]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+<div class="text-lg font-bold text-[#001e2b] dark:text-white font-headline">
+                Kleer
+            </div>
+<div class="flex gap-6 font-['Plus_Jakarta_SANS'] text-xs font-medium uppercase tracking-widest text-[#006971] dark:text-[#2ac0ce]">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006971] transition-colors" href="#">LinkedIn</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006971] transition-colors" href="#">Instagram</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006971] transition-colors" href="/privacy">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006971] transition-colors" href="#">Contact</a>
+</div>
+<p class="font-['Plus_Jakarta_SANS'] text-xs font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                © 2026 Kleer - The Kinetic Legacy. 15 Years of Digital Agility.
+            </p>
+</div>
+</footer>
+</body>
+</html>
