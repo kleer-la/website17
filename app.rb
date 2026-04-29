@@ -7,6 +7,7 @@ require 'money'
 require 'escape_utils'
 require 'recaptcha'
 
+require './lib/middleware/request_logger'
 require './lib/metatags'
 require './lib/helpers/custom_markdown'
 require './lib/helpers/timestamp'
@@ -35,6 +36,7 @@ require './controllers/news_controller'
 require './controllers/certificates_controller'
 require './controllers/podcasts_controller'
 require './controllers/event_controller'
+require './controllers/membership_controller'
 require './controllers/bookings_controller'
 require './controllers/sitemap_controller'
 require './controllers/campaigns_controller'
@@ -47,6 +49,7 @@ if production?
   use Rack::SslEnforcer, only_hosts: /\.kleer\./, x_forwarded_proto: true
 end
 use Rack::Deflater
+use Middleware::RequestLogger
 
 helpers do
   include Helpers
