@@ -7,7 +7,7 @@ if !@page.sections.nil? && !@page.sections['services'].nil?
 end
 %>
 <% titles = to_lines(title) %>
-<section id="homepage-service-areas" class="container mb-5 service-areas">
+<section id="homepage-service-areas" class="container mt-5 mb-5 service-areas">
   <div class="mb-4">
     <h2>
       <span class="highlight highlight--first"><%= titles[0] %> </span>
@@ -16,6 +16,12 @@ end
     </h2>
     <p><%= description%></p>
   </div>
+
+  <% if @featured_program_first %>
+    <div class="mb-4">
+      <%= erb :'home/_featured_program' %>
+    </div>
+  <% end %>
 
   <div class="row justify-content-center align-items-stretch">
     <% @areas.each do |area| %>

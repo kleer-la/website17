@@ -8,25 +8,23 @@
   cta_text = cta_text && !cta_text.empty? ? cta_text : t('home.home_courses.button.title')
   details = strip_html.(program.summary)
 %>
-<section class="container mb-5">
-  <a href="<%= program_url %>" class="featured-program text-decoration-none" style="background: linear-gradient(<%= program.primary_color %>, <%= program.primary_color %>22); border: 3px solid <%= program.primary_color %>; display: block;">
-    <div class="row align-items-center">
-      <div class="col-lg-9 featured-program__text">
-        <h2><%= program.name %></h2>
-        <% if details && !details.empty? %>
-          <p><%= details %></p>
-        <% end %>
-        <span class="btn card-cta" style="background-color: transparent; color: #333333; border: 2px solid <%= program.primary_color %>;"><%= cta_text %></span>
-      </div>
-      <div class="col-lg-3 featured-program__img-container">
-        <img
-          src="<%= program.side_image %>"
-          alt="<%= program.name %>"
-          class="featured-program__img"
-          loading="lazy"
-        >
-      </div>
+<a href="<%= program_url %>" class="featured-program text-decoration-none" style="background: linear-gradient(<%= program.primary_color %>, <%= program.primary_color %>22); border: 3px solid <%= program.primary_color %>; display: block;">
+  <div class="row align-items-center">
+    <div class="col-lg-9 featured-program__text">
+      <h2><%= program.name %></h2>
+      <% if details && !details.empty? %>
+        <p><%= details %></p>
+      <% end %>
+      <span class="btn card-cta" style="background-color: transparent; color: #333333; border: 2px solid <%= program.primary_color %>;"><%= cta_text %></span>
     </div>
-  </a>
-</section>
+    <div class="col-lg-3 featured-program__img-container">
+      <img
+        src="<%= program.side_image %>"
+        alt="<%= program.name %>"
+        class="featured-program__img"
+        loading="lazy"
+      >
+    </div>
+  </div>
+</a>
 <% end %>
