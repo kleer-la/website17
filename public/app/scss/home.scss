@@ -559,7 +559,6 @@ $white: #FFFFFF;
   }
 
   .card-title {
-    color: black;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.1;
@@ -569,7 +568,6 @@ $white: #FFFFFF;
   }
 
   .card-subtitle {
-    color: black;
     font-size: 1rem;
     text-align: left;
     margin: 0;
@@ -588,7 +586,6 @@ $white: #FFFFFF;
 
 .featured-program {
   padding: 2rem;
-  color: black;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -596,11 +593,6 @@ $white: #FFFFFF;
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    color: black;
-  }
-
-  &:visited, &:active {
-    color: black;
   }
 
   &__text {
@@ -610,13 +602,11 @@ $white: #FFFFFF;
       line-height: 1.1;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      color: black;
     }
 
     p {
       font-size: 1rem;
       margin-bottom: 1.5rem;
-      color: black;
     }
   }
 
