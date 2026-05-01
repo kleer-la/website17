@@ -274,6 +274,12 @@ es:
         - text: Agilidad para Equipos
           url: /servicios/agilidad-equipos
           inside: true
+        - text: dropdown-divider
+          if_slug: adopcion-ia-empresas
+        - text: Adopción Empresarial de IA
+          url: /formacion/adopcion-ia-empresas
+          inside: true
+          if_slug: adopcion-ia-empresas
     - text: Cursos
       options:
         - text: Agenda
