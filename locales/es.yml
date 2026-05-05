@@ -276,6 +276,7 @@ es:
           inside: true
         - text: dropdown-divider
           if_slug: adopcion-ia-empresas
+          if_path: formacion
         - text: Adopción Empresarial de IA
           url: /formacion/adopcion-ia-empresas
           inside: true

@@ -10,9 +10,11 @@
    navbar_items = t('navbar')
    has_open_events = CacheService.get_or_set('has_open_events') { !Event.create_keventer_json.empty? }
    known_service_slugs = CacheService.get_or_set("known_service_slugs_#{session[:locale]}") do
-     list = ServiceAreaV3.try_create_list_keventer +
-            ServiceAreaV3.try_create_list_keventer(programs: true)
-     list.filter { |a| a.lang == session[:locale] }.map(&:slug)
+     lang = session[:locale]
+     service_areas = ServiceAreaV3.try_create_list_keventer.filter { |a| a.lang == lang }.map(&:slug)
+     programs = ServiceAreaV3.try_create_list_keventer(programs: true).filter { |a| a.lang == lang }.map(&:slug)
+     { 'servicios' => service_areas, 'services' => service_areas,
+       'formacion' => programs, 'training' => programs }
    end
 
    router_helper = RouterHelper.instance
@@ -39,7 +41,10 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <%item[:options].each do |option| %>
                   <% next if !has_open_events && %w[/agenda /schedule].include?(option[:url]) %>
-                  <% next if option[:if_slug] && !known_service_slugs.include?(option[:if_slug]) %>
+                  <% if option[:if_slug]
+                       prefix = option[:url].to_s[%r{^/([^/]+)/}, 1] || option[:if_path]
+                       next unless prefix && known_service_slugs[prefix]&.include?(option[:if_slug])
+                     end %>
                   <% if option[:text] == 'dropdown-divider' %>
                     <li><hr class="dropdown-divider"></li>
                   <% else %>
