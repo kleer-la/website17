@@ -1,14 +1,28 @@
-<section id="course-hero">
-  <div class="row h-100">
-    <div class="col-md-9 course-hero__text">
-      <h1><%= @event_type.name %></h1>
-      <h2 class="hero-description"><%= @event_type.subtitle %></h2>
-    </div>
-    <div class="col-md-3 course-hero__button">
-        <a data-bs-toggle="modal" data-bs-target="#incompany-quote-modal">
-          <strong><%= t("course_landing.quote_incompany") %></strong>
-        </a>
+<section id="course-hero" class="<%= 'course-hero--with-image' if @event_type.cover && !@event_type.cover.to_s.empty? %>"
+  <% if @event_type.cover && !@event_type.cover.to_s.empty? %>style="background-image: linear-gradient(135deg, rgba(13,24,18,0.78) 0%, rgba(13,24,18,0.50) 55%, rgba(13,24,18,0.78) 100%), url('<%= @event_type.cover %>');"<% end %>>
+  <div class="course-hero__inner">
+    <% if @event_type.categories && @event_type.categories.any? %>
+      <div class="course-hero__eyebrow"><%= @event_type.categories.first %></div>
+    <% end %>
+    <h1 class="course-hero__title"><%= @event_type.name %></h1>
+    <% if @event_type.subtitle && !@event_type.subtitle.to_s.strip.empty? %>
+      <h2 class="course-hero__subtitle"><%= @event_type.subtitle %></h2>
+    <% end %>
+    <% if @event_type.duration && @event_type.duration.to_i > 0 %>
+      <div class="course-hero__badges">
+        <span class="course-hero__badge"><%= @event_type.duration %> hs</span>
+        <% if @event_type.is_kleer_cert %>
+          <span class="course-hero__badge">Certificación Kleer</span>
+        <% end %>
+        <% if @event_type.is_sa_cert %>
+          <span class="course-hero__badge">Scrum Alliance</span>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="course-hero__cta-row">
+      <a data-bs-toggle="modal" data-bs-target="#incompany-quote-modal" class="course-hero__cta">
+        <strong><%= t("course_landing.quote_incompany") %></strong>
+      </a>
     </div>
   </div>
-  <img src="<%= cdn('website-assets/rustic_worm.svg') %>" alt="" class="course-hero__rustic-worm" width="117" height="75"/>
 </section>
