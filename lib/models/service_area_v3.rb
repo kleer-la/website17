@@ -4,7 +4,7 @@ require './lib/testimony'
 
 class ServiceAreaV3
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
-                    subtitle description definitions defintions target value_proposition
+                    subtitle description definitions defintions target value_proposition value_proposition_title
                     services seo_title seo_description target_title is_training_program ordering testimonies])
   attr_writer :icon, :side_image
 
@@ -12,7 +12,7 @@ class ServiceAreaV3
     @testimonies = []
 
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
-                slogan subtitle description definitions side_image target value_proposition
+                slogan subtitle description definitions side_image target value_proposition value_proposition_title
                 seo_title seo_description target_title is_training_program ordering], hash_service_area)
 
     @services = load_services(hash_service_area['services'])

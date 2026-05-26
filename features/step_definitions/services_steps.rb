@@ -24,6 +24,7 @@ Given('a service {string} with slug {string}') do |name, slug|
     "target_title": "...",
     "target": "...",
     "value_proposition": "...",
+    "value_proposition_title": "...",
     "seo_title": "SEO #{name}",
     "seo_description": "...",
     "services": [

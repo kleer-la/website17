@@ -5,7 +5,11 @@
       style="border: <%= service_area.primary_color %> 3px solid;"
     >
       <div class="target">
-        <h2><%= t("services.value_proposition.#{@is_training_program==true}") %></h2>
+        <%
+          vp_title = service_area.value_proposition_title.to_s.strip
+          vp_title = t("services.value_proposition.#{@is_training_program==true}") if vp_title.empty?
+        %>
+        <h2><%= vp_title %></h2>
         <%= service_area.value_proposition %>
       </div>
     </div>

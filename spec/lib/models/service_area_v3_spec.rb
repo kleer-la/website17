@@ -46,6 +46,29 @@ RSpec.describe ServiceAreaV3 do
     end
   end
 
+  describe '#value_proposition_title' do
+    let(:service_area_data) do
+      {
+        'id' => 1,
+        'slug' => 'test-service',
+        'name' => 'Test Service Area',
+        'services' => [],
+        'testimonies' => []
+      }
+    end
+
+    it 'loads value_proposition_title from JSON data' do
+      service_area_data['value_proposition_title'] = 'Por qué elegirnos'
+      service_area = ServiceAreaV3.new.load_from_json(service_area_data)
+      expect(service_area.value_proposition_title).to eq('Por qué elegirnos')
+    end
+
+    it 'is nil when not present in JSON data' do
+      service_area = ServiceAreaV3.new.load_from_json(service_area_data)
+      expect(service_area.value_proposition_title).to be_nil
+    end
+  end
+
   describe '#load_testimonies' do
     let(:service_area_data) do
       {
