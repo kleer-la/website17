@@ -225,6 +225,22 @@ get '/cache-reset' do
   { status: 'ok', message: 'Cache cleared successfully', stats: stats }.to_json
 end
 
+# Flagship pages — standalone pages where Page.template == 'flagship',
+# rendered at /:lang/:slug. Registered LAST so any earlier specific route
+# (e.g. /membresia-ia from membership_controller) wins; falls through to
+# 404 if no flagship Page matches the slug.
+get '/:slug' do
+  pass if params[:slug].to_s.include?('.') # skip /robots.txt, /favicon.ico, …
+  page = Page.load_from_keventer(session[:locale], params[:slug])
+  pass unless page.flagship?
+
+  @page = page
+  @meta_tags.set! title: page.seo_title || page.name,
+                  description: page.seo_description,
+                  canonical: page.canonical
+  erb :'flagships/show', layout: :'layout/layout2022'
+end
+
 private
 
 def get_404_error_text_for_course(course_name)

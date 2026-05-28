@@ -1,0 +1,82 @@
+<%
+  # Generic template for any Page with template == 'flagship'.
+  # Renders:
+  #   - the "hero" section (slug='hero') as a hero band, if present
+  #   - all other sections in `position` order as body sections
+  #     (each section's `content` is raw HTML composed with the .rw-* kit)
+  #   - the global bottom contact banner
+  #
+  # Page sections are admin-editable, so a non-developer can create new
+  # flagships entirely without code changes.
+  hero = @page.hero_section
+%>
+
+<style>
+  .flagship-hero {
+    background: linear-gradient(135deg, #0c2657 0%, #1a3a8e 60%, #2d56c2 100%);
+    color: #fff;
+    padding: 8rem 0 4rem;
+    margin-top: 0;
+  }
+  .flagship-hero-title  { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+  .flagship-hero-content { font-size: 1.25rem; line-height: 1.6; max-width: 820px; }
+  .flagship-hero-content p { color: rgba(255,255,255,0.92); }
+  .flagship-hero-content strong { color: #fff; }
+  .flagship-hero-cta {
+    display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem;
+    background: #FFA901; color: #1a1a2e; border-radius: 50px;
+    font-weight: 700; font-size: 1.1rem; text-decoration: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transition: transform 0.15s ease;
+  }
+  .flagship-hero-cta:hover { transform: scale(1.03); color: #1a1a2e; }
+
+  .flagship-section { padding: 3rem 0; }
+  .flagship-section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 1.5rem; }
+  .flagship-section-content { font-size: 1.05rem; line-height: 1.65; }
+  .flagship-section-cta {
+    display: inline-block; padding: 0.85rem 2rem; border-radius: 50px;
+    background: #1a3a8e; color: #fff; font-weight: 700; text-decoration: none;
+  }
+</style>
+
+<% if hero %>
+<section class="flagship-hero">
+  <div class="container">
+    <% if hero['title'].to_s.strip != '' %>
+      <h1 class="flagship-hero-title"><%= hero['title'] %></h1>
+    <% end %>
+    <% if hero['content'].to_s.strip != '' %>
+      <div class="flagship-hero-content"><%= hero['content'] %></div>
+    <% end %>
+    <% if hero['cta_text'].to_s.strip != '' && hero['cta_url'].to_s.strip != '' %>
+      <a href="<%= hero['cta_url'] %>" class="flagship-hero-cta"><%= hero['cta_text'] %></a>
+    <% end %>
+  </div>
+</section>
+<% end %>
+
+<% @page.body_sections.each do |s| %>
+<section class="flagship-section" id="<%= s['slug'] %>">
+  <div class="container">
+    <% if s['title'].to_s.strip != '' %>
+      <h2 class="flagship-section-title"><%= s['title'] %></h2>
+    <% end %>
+    <div class="flagship-section-content"><%= s['content'] %></div>
+    <% if s['cta_text'].to_s.strip != '' && s['cta_url'].to_s.strip != '' %>
+      <p class="text-center mt-4">
+        <a href="<%= s['cta_url'] %>" class="flagship-section-cta"><%= s['cta_text'] %></a>
+      </p>
+    <% end %>
+  </div>
+</section>
+<% end %>
+
+<%
+  contact_data = section_data(@page, 'contact', { title: 'Hablemos', cta_text: 'Conversemos' })
+%>
+<%= erb :'component/sections/_contact_bottom_section',
+        locals: {
+          contact_text: contact_data[:title],
+          button_text: contact_data[:cta_text]
+        } %>
