@@ -18,7 +18,24 @@
     padding: 8rem 0 4rem;
     margin-top: 0;
   }
-  .flagship-hero-title  { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+  /* Kicker: small uppercase line — section.title is rendered as h1 ABOVE the headline. */
+  .flagship-hero-title {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+  }
+  /* Big headline lives inside the hero section's content as an <h2>. */
+  .flagship-hero-content h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem;
+    color: inherit;
+  }
   .flagship-hero-content { font-size: 1.25rem; line-height: 1.6; max-width: 820px; }
   .flagship-hero-content p { color: rgba(255,255,255,0.92); }
   .flagship-hero-content strong { color: #fff; }
