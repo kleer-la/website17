@@ -1,0 +1,17 @@
+<%
+  # Expects locals: recommended_way (ServiceV3 or ServiceAreaV3 instance)
+  # Renders the full "Forma Recomendada" details block.
+  rw_details = recommended_way ? recommended_way.recommended_way_details.to_s : ''
+%>
+
+<% unless rw_details.strip.empty? %>
+<section id="forma-recomendada" class="recommended-way recommended-way-details mt-5 mb-4">
+  <%# Section heading is authored inside the details content (e.g. <h2 class="rw-details-title">…</h2>) %>
+  <div class="recommended-way-details-content p-4"
+       style="border: 3px solid <%= @primary_color || '#68CEF2' %>; border-radius: 12px; background: #fafafa;">
+    <%= rw_details %>
+  </div>
+  <%# No CTA here: the page's bottom contact section provides the single conversion CTA,
+      avoiding two stacked CTAs right next to each other. %>
+</section>
+<% end %>

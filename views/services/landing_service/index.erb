@@ -39,11 +39,24 @@
     <div class="dinamic-content">
       <%= erb :'services/landing_area/service_section/_outcomes',
               locals: { outcomes: service.outcomes, name: service.name } %>
+
+      <%# Forma Recomendada summary — prominent on specific service pages %>
+      <div class="rw-section"
+           style="--rw-accent: <%= @primary_color || '#68CEF2' %>; --rw-accent-2: <%= @secondary_color || '#565ed7' %>; --rw-accent-contrast: <%= @primary_font_color || '#fff' %>;">
+        <%= erb :'services/components/_recommended_way_summary', locals: { recommended_way: service } %>
+      </div>
+
       <%= erb :'services/landing_area/service_section/_program',
               locals: { program: service.program, id: service.slug, name: service.name } if !service.program.nil? && service.program != "" %>
       <%= erb :'services/landing_area/service_section/_target',
               locals: { target: service.target, name: service.name } %>
       <%= erb :'component/sections/recommended', locals: { recommended: service.recommended, title: t("services.recommended.false") } unless service.recommended.nil? || service.recommended.empty? %>
+
+      <%# Full Forma Recomendada details — lower on the page %>
+      <div class="rw-section"
+           style="--rw-accent: <%= @primary_color || '#68CEF2' %>; --rw-accent-2: <%= @secondary_color || '#565ed7' %>; --rw-accent-contrast: <%= @primary_font_color || '#fff' %>;">
+        <%= erb :'services/components/_recommended_way_details', locals: { recommended_way: service } %>
+      </div>
     </div>
   </div>
 </div>

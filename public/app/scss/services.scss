@@ -1472,3 +1472,56 @@ $white: #FFFFFF;
     align-self: center;
   }
 }
+
+/* ============================================
+   Forma Recomendada (Recommended Way)
+   Used on both Service Area pages and Specific Service pages
+   ============================================ */
+.recommended-way {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  .recommended-way-header h3 {
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+  }
+
+  .recommended-way-steps-content,
+  .recommended-way-details-content {
+    font-size: 1rem;
+    line-height: 1.5;
+
+    h2, h3, h4 {
+      margin-top: 0.75rem;
+      margin-bottom: 0.35rem;
+      font-weight: 700;
+    }
+
+    ul, ol {
+      padding-left: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    strong {
+      color: #222;
+    }
+  }
+
+  .recommended-way-details-content {
+    line-height: 1.55;
+
+    h2, h3, h4 {
+      color: #222;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+    }
+  }
+}

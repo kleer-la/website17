@@ -38,5 +38,19 @@ RSpec.describe ServiceV3 do
         expect(service.side_image).to eq('')
       end
     end
+
+    describe 'forma recomendada fields' do
+      it 'loads recommended way fields from JSON when present' do
+        service_data['recommended_way_title'] = 'Membresía IA'
+        service_data['recommended_way_note'] = '80%'
+        service_data['recommended_way_summary'] = '<ol><li>Paso 1</li></ol>'
+        service_data['recommended_way_details'] = '<p>Full guide</p>'
+        service = ServiceV3.new(service_data)
+        expect(service.recommended_way_title).to eq('Membresía IA')
+        expect(service.recommended_way_note).to eq('80%')
+        expect(service.recommended_way_summary).to include('Paso 1')
+        expect(service.recommended_way_details).to include('Full guide')
+      end
+    end
   end
 end

@@ -42,7 +42,11 @@ Given('a service {string} with slug {string}') do |name, slug|
     "pricing": "",
     "faq": [ ["Primera pregunta", "Respuesta 1ra pregunta"] ],
     "brochure": "",
-    "side_image": "https://www.kleer.la/app/img/services/diseno-org.webp"
+    "side_image": "https://www.kleer.la/app/img/services/diseno-org.webp",
+    "recommended_way_title": "Membresía IA",
+    "recommended_way_note": "Funciona para el 80%",
+    "recommended_way_summary": "<ol><li>Paso alto nivel</li></ol>",
+    "recommended_way_details": "<div id='forma-recomendada'>Detalles completos aquí</div>"
     }
   ]
   }
@@ -81,4 +85,20 @@ Given('a list that includew service area {string} with slug {string}') do |name,
   ]
   HEREDOC
   ServiceAreaV3.null_json_api(NullJsonAPI.new(nil, service_areas), NullJsonAPI.new(nil, nil))
+end
+
+# Forma Recomendada steps (used by @forma-recomendada scenario)
+Given('a service {string} with slug {string} and recommended way data') do |name, slug|
+  # Delegates to the regular step (which now includes recommended_way fields)
+  step "a service \"#{name}\" with slug \"#{slug}\""
+end
+
+Then('I should see the recommended way summary block') do
+  expect(page).to have_css('.recommended-way')
+  expect(page).to have_content('80%')
+end
+
+Then('I should see the full recommended way details block with id {string}') do |id|
+  expect(page).to have_css("##{id}")
+  expect(page.body).to include('Detalles completos')
 end

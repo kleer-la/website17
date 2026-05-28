@@ -179,7 +179,12 @@ PERMANENT_REDIRECT = {
   'prensa/casos/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
   'clientes/equipos-scrum-en-technisys-2015' => 'es/blog/equipos-scrum-en-technisys-2015',
   'prensa/casos/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
-  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020'
+  'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
+
+  # Membresía IA collapsed into the main Adopción IA service as the recommended "recipe"
+  'servicios/adopcion-ia/membresia' => 'es/servicios/adopcion-ia-empresas#receta',
+  'servicios/adopcion-ia/membresia-ia' => 'es/servicios/adopcion-ia-empresas#receta',
+  'formacion/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas#receta'
 }.freeze
 
 PERMANENT_REDIRECT.each do |original, redirect|

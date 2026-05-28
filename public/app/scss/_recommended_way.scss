@@ -1,0 +1,178 @@
+// ============================================================
+// Forma Recomendada — reusable "recipe" kit
+// Themed per service/area via CSS custom properties set inline on
+// a `.rw-section` wrapper: --rw-accent, --rw-accent-2, --rw-accent-contrast.
+// All colors fall back to celeste so the kit is safe without a wrapper.
+// Imported AFTER `services`/`_base` so these rules win ties on specificity.
+// ============================================================
+
+.rw-section {
+  // Defaults; the inline style on the wrapper overrides these per area.
+  --rw-accent: #68CEF2;
+  --rw-accent-2: #565ed7;
+  --rw-accent-contrast: #ffffff;
+}
+
+// Authored section title at the top of the details block (accent-colored)
+.recommended-way-details-content .rw-details-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: var(--rw-accent, #68CEF2);
+  line-height: 1.2;
+}
+
+// Lead line above the steps in the summary
+.recommended-way-steps-content > p:first-child {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 0.25rem;
+}
+
+// --- Numbered steps (summary) ---
+ul.rw-steps {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.rw-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin: 0;
+
+  .rw-step-number {
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--rw-accent, #68CEF2);
+    color: var(--rw-accent-contrast, #fff);
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rw-step-body {
+    flex: 1;
+
+    h4 { font-size: 1rem; font-weight: 700; margin: 0.1rem 0 0.15rem; }
+    p { margin: 0; color: #555; font-size: 0.95rem; line-height: 1.5; }
+  }
+}
+
+// --- Two-column responsive grid ("qué incluye" / "resultados") ---
+.rw-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+
+  > div h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 0.75rem; }
+
+  ul { list-style: none; padding: 0; margin: 0; }
+  li {
+    padding: 0.4rem 0 0.4rem 1.6rem;
+    margin: 0;
+    position: relative;
+    line-height: 1.5;
+
+    &::before {
+      content: '\2713';
+      color: var(--rw-accent, #68CEF2);
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+    }
+  }
+}
+
+// --- Callout box ---
+.rw-callout {
+  background: #f6f8ff;
+  border-left: 4px solid var(--rw-accent, #68CEF2);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  line-height: 1.6;
+}
+
+// --- Pricing cards (promoted from the old membership page, neutralized) ---
+.rw-pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 1.5rem 0;
+
+  @media (max-width: 992px) { grid-template-columns: 1fr; }
+}
+.rw-pricing-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.rw-pricing-card--starred {
+  border-color: var(--rw-accent, #68CEF2);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+  position: relative;
+
+  @media (max-width: 992px) { transform: none; }
+}
+.rw-star-badge {
+  display: inline-block;
+  background: var(--rw-accent, #68CEF2);
+  color: var(--rw-accent-contrast, #fff);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+.rw-plan-name { font-weight: 800; font-size: 1.4rem; color: #1a1a2e; margin-bottom: 1rem; }
+.rw-pricing-details { text-align: left; }
+.rw-pricing-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.rw-pricing-label { font-size: 0.9rem; color: #555; line-height: 1.3; }
+.rw-pricing-value { font-size: 0.9rem; font-weight: 700; color: #1a1a2e; white-space: nowrap; text-align: right; }
+.rw-price {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--rw-accent, #68CEF2);
+  margin: 1.5rem 0 0.25rem;
+}
+.rw-price-period { font-size: 0.95rem; font-weight: 400; color: #888; }
+.rw-discount { font-size: 0.85rem; color: #888; margin-bottom: 0.15rem; }
+.mt-auto-rw { margin-top: auto; }
+
+// --- Fallback style for markdown-authored tables inside the details block ---
+.recommended-way-details-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+
+  th, td { padding: 0.6rem 0.8rem; border: 1px solid #e3e3e3; text-align: left; }
+  thead th { background: var(--rw-accent, #68CEF2); color: var(--rw-accent-contrast, #fff); }
+  tbody tr:nth-child(even) { background: #fafbff; }
+}

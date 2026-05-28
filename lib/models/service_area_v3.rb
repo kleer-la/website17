@@ -5,7 +5,8 @@ require './lib/testimony'
 class ServiceAreaV3
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions defintions target value_proposition value_proposition_title
-                    services seo_title seo_description target_title is_training_program ordering testimonies])
+                    services seo_title seo_description target_title is_training_program ordering testimonies
+                    recommended_way_title recommended_way_note recommended_way_summary recommended_way_details])
   attr_writer :icon, :side_image
 
   def load_from_json(hash_service_area)
@@ -13,10 +14,13 @@ class ServiceAreaV3
 
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
                 slogan subtitle description definitions side_image target value_proposition value_proposition_title
-                seo_title seo_description target_title is_training_program ordering], hash_service_area)
+                seo_title seo_description target_title is_training_program ordering
+                recommended_way_title recommended_way_note], hash_service_area)
 
     @services = load_services(hash_service_area['services'])
     load_testimonies(hash_service_area['testimonies'])
+    @recommended_way_summary = hash_service_area['recommended_way_summary']
+    @recommended_way_details = hash_service_area['recommended_way_details']
 
     self
   end

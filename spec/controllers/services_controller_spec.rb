@@ -54,7 +54,11 @@ describe '/servicios' do
             'faq' => [],
             'brochure' => '',
             'side_image' => '',
-            'recommended' => []
+            'recommended' => [],
+            'recommended_way_title' => 'La Membresía IA',
+            'recommended_way_note' => 'Funciona para el 80% de las empresas',
+            'recommended_way_summary' => '<ol><li><strong>Diagnóstico</strong> — 2 semanas</li></ol>',
+            'recommended_way_details' => '<h3>Detalles completos</h3><p>Roles, timing y entregables...</p>'
           }
         ],
         'testimonies' => []
@@ -74,6 +78,14 @@ describe '/servicios' do
     it 'renders the service landing page' do
       get '/es/servicios/cambio-organizacional/diseno-organizacional'
       expect(last_response.status).to eq(200)
+    end
+
+    it 'includes forma recomendada when present on the service' do
+      get '/es/servicios/cambio-organizacional/diseno-organizacional'
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to include('La Membresía IA')
+      expect(last_response.body).to include('Funciona para el 80%')
+      expect(last_response.body).to include('Detalles completos')
     end
 
     it 'returns 404 for non-existent service slug' do
