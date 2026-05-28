@@ -73,10 +73,14 @@
 <% end %>
 
 <%
-  contact_data = section_data(@page, 'contact', { title: 'Hablemos', cta_text: 'Conversemos' })
+  # Bottom CTA — driven by a section with slug='contact'. The section's
+  # `title` becomes the banner heading, `content` (plain text) becomes the
+  # paragraph, and `cta_text` is the button label.
+  contact = @page.contact_section
 %>
 <%= erb :'component/sections/_contact_bottom_section',
         locals: {
-          contact_text: contact_data[:title],
-          button_text: contact_data[:cta_text]
+          contact_title: contact && contact['title'].to_s.strip != '' ? contact['title'] : nil,
+          contact_text:  contact && contact['content'].to_s.strip != '' ? contact['content'] : nil,
+          button_text:   contact && contact['cta_text'].to_s.strip != '' ? contact['cta_text'] : 'Conversemos'
         } %>

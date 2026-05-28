@@ -10,6 +10,8 @@ class Page
 
   # Sections treated as page chrome (rendered as the hero band, not in the body).
   HERO_SLUGS = %w[hero].freeze
+  # Sections consumed by the bottom contact banner; also excluded from the body.
+  CONTACT_SLUGS = %w[contact].freeze
 
   def initialize(data = {})
     @name = empty_to_nil(data['name'])
@@ -35,10 +37,16 @@ class Page
     @sections.find { |slug, _| HERO_SLUGS.include?(slug) }&.last
   end
 
-  # Sections that compose the page body (everything but hero), ordered by position.
+  def contact_section
+    @sections.find { |slug, _| CONTACT_SLUGS.include?(slug) }&.last
+  end
+
+  # Sections that compose the page body (everything but hero and contact chrome),
+  # ordered by position.
   def body_sections
+    chrome = HERO_SLUGS + CONTACT_SLUGS
     @sections.values
-             .reject { |s| HERO_SLUGS.include?(s['slug']) }
+             .reject { |s| chrome.include?(s['slug']) }
              .sort_by { |s| s['position'].to_i }
   end
 

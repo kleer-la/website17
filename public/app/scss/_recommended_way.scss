@@ -176,3 +176,153 @@ ul.rw-steps {
   thead th { background: var(--rw-accent, #68CEF2); color: var(--rw-accent-contrast, #fff); }
   tbody tr:nth-child(even) { background: #fafbff; }
 }
+
+// ============================================================
+// Flagship-page components — ported from the membership page so
+// any Page (template == 'flagship') can compose rich body sections.
+// ============================================================
+
+// Section typography used inside flagship sections.
+.flagship-section-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  color: #1a3a4a;
+}
+.rw-section-lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+// Pain-points list (red X markers)
+ul.rw-pain-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+
+  li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: #555;
+
+    &::before {
+      content: '\f00d'; // FontAwesome xmark
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: #EF5662;
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+    }
+  }
+}
+
+// Three-column icon feature cards (e.g. "Tres pilares")
+.rw-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin: 1.5rem 0;
+
+  @media (max-width: 992px) { grid-template-columns: 1fr 1fr; }
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+.rw-features--four { grid-template-columns: repeat(2, 1fr); }
+
+.rw-feature {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  text-align: center;
+
+  h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a3a4a;
+  }
+  p { font-size: 0.95rem; color: #666; margin-bottom: 0; line-height: 1.5; }
+}
+
+// Circular icon background (color set inline via style="background:...")
+.rw-feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  i { color: #fff; font-size: 1.5rem; }
+}
+
+// Dark-band variant for cards on a dark section (e.g. Kleer Way)
+.rw-feature--dark {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+
+  h3 { color: #fff; }
+  p { color: rgba(255, 255, 255, 0.85); }
+}
+
+// Impact-area cards (translucent card + colored badge label)
+.rw-impact {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  p { margin-bottom: 0; opacity: 0.9; line-height: 1.6; color: #fff; }
+}
+.rw-impact-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+// "Includes" / highlight panel
+.rw-includes-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--rw-accent, #68CEF2);
+
+  @media (max-width: 768px) { padding: 1.5rem; }
+}
+.rw-include-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  i { margin-top: 0.2rem; flex-shrink: 0; }
+}
+
+// Result item — white card with checkmark
+.rw-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  font-size: 1rem;
+
+  i { color: #43af45; font-size: 1.2rem; flex-shrink: 0; }
+}
