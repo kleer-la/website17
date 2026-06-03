@@ -39,6 +39,18 @@ RSpec.describe ServiceV3 do
       end
     end
 
+    describe 'card_description field' do
+      it 'loads card_description from JSON when present' do
+        service_data['card_description'] = '<section class="rw-section"><h2>Programa</h2></section>'
+        service = ServiceV3.new(service_data)
+        expect(service.card_description).to include('Programa')
+      end
+
+      it 'is nil when absent' do
+        expect(ServiceV3.new(service_data).card_description).to be_nil
+      end
+    end
+
     describe 'forma recomendada fields' do
       it 'loads recommended way fields from JSON when present' do
         service_data['recommended_way_title'] = 'Membresía IA'

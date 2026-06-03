@@ -1,0 +1,13 @@
+<%
+  # Expects locals: card_html (String, raw HTML authored with the .rw-* kit),
+  #                 primary_color (String, the area's accent color).
+  # Renders the service's card_description full-width inside a bordered box,
+  # reusing the same frame as the Forma Recomendada details block.
+  border_color = (defined?(primary_color) && primary_color.to_s.strip.empty? == false) ? primary_color : '#68CEF2'
+%>
+<section class="recommended-way recommended-way-details">
+  <div class="recommended-way-details-content p-4"
+       style="border: 3px solid <%= border_color %>; border-radius: 12px; background: #fafafa;">
+    <%= card_html %>
+  </div>
+</section>
