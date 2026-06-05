@@ -17,13 +17,13 @@
   services: service_area.services,
   area: service_area
 } %>
-<%= erb :'services/landing_area/_area_details', locals: {service_area: service_area} %>
 
-<%# Forma Recomendada — full DETAILS, full width, lower on the page %>
+<%# Forma Recomendada — full DETAILS, just below the service cards %>
 <div class="container rw-section"
      style="--rw-accent: <%= @primary_color || '#68CEF2' %>; --rw-accent-2: <%= @secondary_color || '#565ed7' %>; --rw-accent-contrast: <%= @primary_font_color || '#fff' %>;">
   <%= erb :'services/components/_recommended_way_details', locals: { recommended_way: service_area } %>
 </div>
+<%= erb :'services/landing_area/_area_details', locals: {service_area: service_area} %>
 <%
   contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
   contact_title = contact_data[:title]
