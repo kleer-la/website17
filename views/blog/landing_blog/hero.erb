@@ -26,6 +26,17 @@
         <time datetime="<%=@article.substantive_change_at[0..9]%>">
           <%=@article.substantive_change_at[0..9]%>
         </time>
+        <span class="landing-blog-hero__read-time">
+          · <%= t('blog.landing.read_time', minutes: @article.reading_time_minutes) %>
+        </span>
       </p>
     </div>
+    <% if @article.audio && !@article.audio.to_s.empty? %>
+      <div class="landing-blog-hero__audio">
+        <p class="landing-blog-hero__audio-label"><%= t('blog.landing.listen') %></p>
+        <audio controls preload="none" src="<%= @article.audio %>">
+          <%= t('blog.landing.listen') %>
+        </audio>
+      </div>
+    <% end %>
 </section>

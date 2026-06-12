@@ -851,6 +851,8 @@ en:
       last_modified: Last modified on
       ToC: Table of contents
       authors: Written by
+      read_time: "%{minutes} min read"
+      listen: Listen to this article
   resources:
     not_found: Resource not found
     title: Resources for agility

@@ -358,6 +358,37 @@ $celeste: #E8F8FD;
   margin: 15px;
 }
 
+.landing-blog-hero__read-time{
+  white-space: nowrap;
+}
+
+.landing-blog-hero__audio{
+  margin: 15px;
+  max-width: 800px;
+
+  .landing-blog-hero__audio-label{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: $turquoise-dark;
+    margin-bottom: 8px;
+  }
+
+  audio{
+    width: 100%;
+    height: 44px;
+    // Tints the native control's progress/buttons towards the brand colour
+    // in browsers that support it; falls back to the default UI elsewhere.
+    accent-color: $turquoise-dark;
+    border-radius: 22px;
+
+    &:focus-visible{
+      outline: 3px solid $turquoise-dark;
+      outline-offset: 3px;
+    }
+  }
+}
+
 .landing-blog-hero__summary{
   display: flex;
   align-items: center;

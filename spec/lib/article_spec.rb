@@ -120,5 +120,28 @@ describe Article do
       end
     end
   end
-  
+
+  context 'audio' do
+    it 'reads the audio url from the document' do
+      article = Article.new({ 'title' => 'x', 'audio' => 'https://cdn/example.mp3' })
+      expect(article.audio).to eq 'https://cdn/example.mp3'
+    end
+
+    it 'is nil when absent' do
+      expect(Article.new({ 'title' => 'x' }).audio).to be_nil
+    end
+  end
+
+  context 'reading_time_minutes' do
+    it 'rounds up to whole minutes at ~180 wpm' do
+      body = (['word'] * 181).join(' ')
+      expect(Article.new({ 'title' => 'x', 'body' => body }).reading_time_minutes).to eq 2
+    end
+
+    it 'returns at least 1 minute for short or empty bodies' do
+      expect(Article.new({ 'title' => 'x', 'body' => 'just a few words' }).reading_time_minutes).to eq 1
+      expect(Article.new({ 'title' => 'x', 'body' => '' }).reading_time_minutes).to eq 1
+    end
+  end
+
 end

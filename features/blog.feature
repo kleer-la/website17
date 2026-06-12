@@ -40,3 +40,26 @@ Feature: Kleer Blogs
     * a published article 'lorem-ipsum' with title 'Lorem ipsum'
     When I go to the 'lorem-ipsum' article page
     Then Title should be "Lorem ipsum"
+
+  Scenario: Article shows a reading-time estimate
+    Given A list of categories
+    And A list of articles with
+    * a published article 'lorem-ipsum' with title 'Lorem ipsum'
+    When I go to the 'lorem-ipsum' article page
+    Then I should see "min de lectura"
+
+  Scenario: Article with audio shows a listen player
+    Given A list of categories
+    And A list of articles with
+    * a published article 'lorem-ipsum' with title 'Lorem ipsum'
+    And the article has audio 'https://kleer-images.s3.sa-east-1.amazonaws.com/article_1.mp3'
+    When I go to the 'lorem-ipsum' article page
+    Then I should see "Escuchá este artículo"
+    And the page should have an audio player
+
+  Scenario: Article without audio has no player
+    Given A list of categories
+    And A list of articles with
+    * a published article 'lorem-ipsum' with title 'Lorem ipsum'
+    When I go to the 'lorem-ipsum' article page
+    Then the page should not have an audio player

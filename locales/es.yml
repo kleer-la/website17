@@ -514,6 +514,8 @@ es:
       last_modified: Última modificación el
       ToC: Tabla de contenido
       authors: 'Creado por:'
+      read_time: "%{minutes} min de lectura"
+      listen: Escuchá este artículo
   resources:
     not_found: Recurso no encontrado
     title: Recursos y Materiales<br>sobre Agilidad

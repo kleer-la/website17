@@ -55,7 +55,7 @@ class Article
                 :noindex,
                 :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :substantive_change_at, :cover, :header, :category_name, :id,
-                :industry, :recommended,
+                :industry, :recommended, :audio,
                 :active # View attributes,
 
   def initialize(doc)
@@ -74,6 +74,7 @@ class Article
     @header = doc['header']
     @header = @cover if @header.nil? || @header.empty?
     @category_name = doc['category_name'] || ''
+    @audio = doc['audio']
     @selected = doc['selected']
     @trainers_list = load_trainers(doc['trainers'])
     @active = false
@@ -110,6 +111,13 @@ class Article
 
   def header
     ImageUrlHelper.replace_s3_with_cdn(@header)
+  end
+
+  # Estimated reading time in whole minutes, derived from the body word count
+  # (~180 words per minute), with a floor of 1 minute.
+  def reading_time_minutes
+    words = @body.to_s.split(/\s+/).reject(&:empty?).size
+    [(words / 180.0).ceil, 1].max
   end
 
   def self.load_list(doc, only_published: false)

@@ -19,6 +19,18 @@ Given('the article has language {string}') do |lang|
   @articles[-1]['lang'] = lang
 end
 
+Given('the article has audio {string}') do |audio_url|
+  @articles[-1]['audio'] = audio_url
+end
+
+Then('the page should have an audio player') do
+  expect(page).to have_css('audio[controls]')
+end
+
+Then('the page should not have an audio player') do
+  expect(page).to have_no_css('audio')
+end
+
 When('I go to {string} client page') do |slug|
   Article.create_one_null(@articles[0], { next_null: true })
   visit "/clientes/testimonios/#{slug}"
