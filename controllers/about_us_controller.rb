@@ -11,26 +11,26 @@ get %r{/(somos|about_us)/?} do
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('somos', session[:locale])
 
-  erb :'about_us/index', layout: :'layout/layout2022'
+  render_page :'about_us/index'
 end
 
 get '/nuestra-filosofia' do
   @active_tab_somos = 'active'
   @meta_tags.set! title: "#{@base_title} | Nuestra filosofía"
   @kleerers = Trainer.create_keventer_json session[:locale]
-  erb :'old_page/nuestra_filosofia', layout: :'layout/layout2022'
+  render_page :'old_page/nuestra_filosofia'
 end
 
 get '/privacy' do
   @active_tab_privacidad = 'active'
   @meta_tags.set! title: t('privacy.title')
 
-  erb :'about_us/privacy', layout: :'layout/layout2022'
+  render_page :'about_us/privacy'
 end
 
 get '/terms' do
   @active_tab_terminos = 'active'
   @meta_tags.set! title: t('terms.title')
 
-  erb :'about_us/terms', layout: :'layout/layout2022'
+  render_page :'about_us/terms'
 end

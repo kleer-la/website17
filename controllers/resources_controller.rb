@@ -23,7 +23,7 @@ def resources_index(preview=false)
   @resources = Resource.create_list_keventer
   end
 
-  erb :'resources/index', layout: :'layout/layout2022'
+  render_page :'resources/index'
 end
 
 # get '/recursos/:slug' do |slug|
@@ -69,7 +69,7 @@ get %r{/(resources|recursos)/([a-z0-9_\-]+)} do |base_path, slug|
   router_helper = RouterHelper.instance
   router_helper.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
 
-  erb :'resources/show/show', layout: :'layout/layout2022'
+  render_page :'resources/show/show'
 rescue ResourceNotFoundError
   return status 404
 end

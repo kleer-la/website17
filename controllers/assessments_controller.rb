@@ -28,7 +28,7 @@ post '/assessment/:id' do |id|
                   description: @assessment.description,
                   image: cdn('website-assets/kleer-logo.png')
 
-  erb :'resources/assessment/show', layout: :'layout/layout2022'
+  render_page :'resources/assessment/show'
 end
 
 get '/assessment/:id' do |id|
@@ -52,7 +52,7 @@ get '/assessment/:id' do |id|
                   description: @assessment.description,
                   image: cdn('website-assets/kleer-logo.png')
 
-  erb :'resources/assessment/show', layout: :'layout/layout2022'
+  render_page :'resources/assessment/show'
 end
 
 
@@ -68,7 +68,7 @@ post '/submit_assessment' do
     status 400
     @error_message = 'No se encontraron datos de contacto'
     @contact = Contact.new(contact_data || {})
-    return erb :'resources/assessment/results', layout: :'layout/layout2022'
+    return render_page :'resources/assessment/results'
   end
 
   email_data = contact_data.merge(
@@ -92,7 +92,7 @@ post '/submit_assessment' do
                           'Assessment submission failed. Please try again later.'
                         end
         @contact = Contact.new(contact_data)
-        return erb :'resources/assessment/results', layout: :'layout/layout2022'
+        return render_page :'resources/assessment/results'
       end
 
       @id = mailer.id
@@ -107,7 +107,7 @@ post '/submit_assessment' do
         end
         @error_message = 'Assessment submission failed. Please try again later.'
         @contact = Contact.new(contact_data)
-        return erb :'resources/assessment/results', layout: :'layout/layout2022'
+        return render_page :'resources/assessment/results'
       end
       
       if ENV['RACK_ENV'] == 'development'
@@ -121,7 +121,7 @@ post '/submit_assessment' do
       end
       @error_message = 'Assessment submission failed due to a technical error. Please try again later.'
       @contact = Contact.new(contact_data)
-      return erb :'resources/assessment/results', layout: :'layout/layout2022'
+      return render_page :'resources/assessment/results'
     end
 
     # Clear session data after successful submission
@@ -135,7 +135,7 @@ post '/submit_assessment' do
     @contact = Contact.new(contact_data)
     
     @success_message = 'Respuestas enviadas correctamente, revisa tu correo para los resultados.'
-    erb :'resources/assessment/results', layout: :'layout/layout2022'
+    render_page :'resources/assessment/results'
 end
 
 get '/assessment/:contact_id/result_status' do
@@ -147,5 +147,5 @@ end
 get '/assessment/:contact_id/result' do
   @contact = Contact.create_one_keventer(params[:contact_id])
   @assessment = @contact.assessment
-  erb :'resources/assessment/results', layout: :'layout/layout2022'
+  render_page :'resources/assessment/results'
 end

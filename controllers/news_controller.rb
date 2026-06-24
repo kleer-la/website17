@@ -26,5 +26,5 @@ def news_index(preview=false)
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/'
 
-  erb :'news/preview', layout: :'layout/layout2022'
+  render_page :'news/preview'
 end

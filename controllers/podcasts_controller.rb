@@ -23,5 +23,5 @@ get '/podcasts' do
   @episodes.sort_by! { |episode| Date.parse(episode['published_at']) }.reverse!
   @recent_episodes = @episodes.shift(4)
 
-  erb :'podcasts/index', layout: :'layout/layout2022'
+  render_page :'podcasts/index'
 end

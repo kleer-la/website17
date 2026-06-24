@@ -76,7 +76,7 @@ get %r{/(agenda|schedule)/?} do
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('agenda', session[:locale])
 
-  erb :'training/agenda/index', layout: :'layout/layout2022'
+  render_page :'training/agenda/index'
 end
 
 get %r{/(catalogo|catalog)/?} do
@@ -91,7 +91,7 @@ get %r{/(catalogo|catalog)/?} do
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
-  erb :'training/catalog/index', layout: :'layout/layout2022'
+  render_page :'training/catalog/index'
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
@@ -150,7 +150,7 @@ get %r{/(cursos|courses)/([a-z0-9_\-]+)} do |lang_path, event_type_id_with_name|
     router_helper = RouterHelper.instance
     router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
 
-    erb :'training/landing_course/index', layout: :'layout/layout2022'
+    render_page :'training/landing_course/index'
   end
 end
 

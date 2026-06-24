@@ -8,7 +8,7 @@ get '/agilidad-organizacional' do
                   description: t('meta_tag.business-agility.description'),
                   canonical: t('meta_tag.business-agility.canonical').to_s
 
-  erb :'business_agility/index', layout: :'layout/layout2022'
+  render_page :'business_agility/index'
 end
 
 get %r{/(servicios|services)/?} do
@@ -28,7 +28,7 @@ get %r{/(servicios|services)/?} do
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
-  erb :'services/landing_page/index', layout: :'layout/layout2022'
+  render_page :'services/landing_page/index'
 end
 
 get %r{/(?:servicios|services)/([a-z0-9_\-]+)/([a-z0-9_\-]+)} do |area_slug, service_slug|
@@ -72,7 +72,7 @@ def show_service_area(service_area, path)
   @has_consultants = service_area_has_consultants?(service_area.slug)
   set_area_colors(service_area)
 
-  erb :'services/landing_area/index', layout: :'layout/layout2022', locals: { service_area: service_area }
+  render_page :'services/landing_area/index', locals: { service_area: service_area }
 end
 
 def show_service(service_area, service, path)
@@ -87,7 +87,7 @@ def show_service(service_area, service, path)
 
   @json_ld = service_json_ld(service, service_area)
 
-  erb :'services/landing_service/index', layout: :'layout/layout2022',
+  render_page :'services/landing_service/index',
       locals: { service_area: service_area, service: service }
 end
 

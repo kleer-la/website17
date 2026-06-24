@@ -56,19 +56,19 @@ get '/' do
     cache_key: "home_events_#{session[:locale]}"
   ).first(4)
 
-  erb :'home/index', layout: :'layout/layout2022'
+  render_page :'home/index'
 end
 
 not_found do
   @meta_tags.set! title: t('page_not_found')
 
-  erb :'home/error_404', layout: :'layout/layout2022'
+  render_page :'home/error_404'
 end
 
 if ENV['RACK_ENV'] != 'test'
   error 500 do
     @meta_tags.set! title: t('internal_error.title')
 
-    erb :'layout/error_500', layout: :'layout/layout2022'
+    render_page :'layout/error_500'
   end
 end

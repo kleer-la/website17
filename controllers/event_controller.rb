@@ -35,7 +35,7 @@ get '/events/:event_id/participants/register' do |event_id|
 
         @meta_tags.set! title: t('page_not_found')
         status event_result[:status]
-        return erb :'home/error_404', layout: :'layout/layout2022'
+        return render_page :'home/error_404'
       when :service_unavailable
         # API service is unavailable - trigger 503 error handling below
         raise StandardError.new('Service unavailable')
@@ -59,7 +59,7 @@ get '/events/:event_id/participants/register' do |event_id|
 
       @meta_tags.set! title: t('internal_error.title')
       status 503
-      return erb :'layout/error_500', layout: :'layout/layout2022'
+      return render_page :'layout/error_500'
     end
 
     # Use scoped locale instead of global
@@ -94,7 +94,7 @@ get '/events/:event_id/participants/register' do |event_id|
 
     @meta_tags.set! title: t('internal_error.title')
     status 503
-    erb :'layout/error_500', layout: :'layout/layout2022'
+    render_page :'layout/error_500'
   end
 end
 

@@ -48,7 +48,7 @@ get %r{/blog/?} do
   articles = Article.create_list_keventer(true)
   @articles = articles.select { |a| a.lang == session[:locale] }
 
-  erb :'blog/index', layout: :'layout/layout2022'
+  render_page :'blog/index'
 end
 
 def blog_one(article)
@@ -81,7 +81,7 @@ def blog_one(article)
   body = set_ids_in_body(rendered_body, titles)
 
   @article = article
-  erb :'blog/landing_blog/index', layout: :'layout/layout2022',
+  render_page :'blog/landing_blog/index',
                                   locals: { titles: titles, body: body }
 end
 
@@ -91,5 +91,5 @@ def blog_list(articles)
                   canonical: t('meta_tag.blog.canonical').to_s
 
   @articles = articles
-  erb :'blog/index', layout: :'layout/layout2022'
+  render_page :'blog/index'
 end

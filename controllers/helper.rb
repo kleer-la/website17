@@ -5,6 +5,13 @@ MONTHS_ES = { 'Jan' => 'Ene', 'Feb' => 'Feb', 'Mar' => 'Mar', 'Apr' => 'Abr', 'M
               'Jul' => 'Jul', 'Aug' => 'Ago', 'Sep' => 'Sep', 'Oct' => 'Oct', 'Nov' => 'Nov', 'Dec' => 'Dic' }.freeze
 
 module Helpers
+  # Renders a view wrapped in the default site layout. Centralizes the layout
+  # name so it lives in one place instead of being repeated at every call site.
+  # Pages that intentionally have no chrome keep using `erb ..., layout: false`.
+  def render_page(view, options = {})
+    erb view, { layout: :'layout/layout2022' }.merge(options)
+  end
+
   def format_date_range(start_date, finish_date, languaje)
     start_month = languaje == 'en' ? start_date.strftime('%d') : month_es(start_date.strftime('%b'))
     finish_month = languaje == 'en' ? finish_date.strftime('%d') : month_es(finish_date.strftime('%b'))

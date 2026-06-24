@@ -4,5 +4,5 @@ get '/membresia-ia' do
                   noindex: true,
                   nofollow: true
 
-  erb :'membership/index', layout: :'layout/layout2022'
+  render_page :'membership/index'
 end

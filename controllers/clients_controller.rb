@@ -14,7 +14,7 @@ get %r{/(clientes|clients)/?} do
                      .select { |a| a.lang == session[:locale] && a.industry != '' }
                      .sort_by(&:created_at).reverse
 
-  erb :'clients/index', layout: :'layout/layout2022'
+  render_page :'clients/index'
 end
 
 get '/clientes/testimonios/:id' do

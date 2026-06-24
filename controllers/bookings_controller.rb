@@ -29,7 +29,7 @@ get %r{/agendar/([^/]+)} do |slug|
   @meta_tags.set! title: service_area.name,
                   description: service_area.seo_description
 
-  erb :'bookings/index', layout: :'layout/layout2022', locals: {
+  render_page :'bookings/index', locals: {
     service_area: service_area,
     consultants: consultants,
     booking_token: params[:token],
@@ -152,7 +152,7 @@ post '/book-meeting' do
 end
 
 get '/booking-confirmed' do
-  erb :'bookings/confirmed', layout: :'layout/layout2022'
+  render_page :'bookings/confirmed'
 end
 
 post '/send-booking-inquiry' do

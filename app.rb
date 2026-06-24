@@ -238,7 +238,7 @@ get '/:slug' do
   @meta_tags.set! title: page.seo_title || page.name,
                   description: page.seo_description,
                   canonical: page.canonical
-  erb :'flagships/show', layout: :'layout/layout2022'
+  render_page :'flagships/show'
 end
 
 private
