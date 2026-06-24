@@ -89,6 +89,23 @@ git push heroku master:main
     for f in *.png; do cwebp $f -o $(echo $f | sed s/png$/webp/); done
 
 
+## reCAPTCHA
+
+Las claves deben ser de tipo **reCAPTCHA v2 "No soy un robot" (checkbox)**. Los
+formularios usan `grecaptcha.render` (widget v2); una clave v3 o Enterprise
+produce el error "El tipo de clave no es válido / Invalid key type" en el form.
+
+Dominios autorizados en la clave (consola de admin): www.kleer.la, kleer.la,
+www.kleer.es, latelier.kleer.la (prod) y qa.kleer.la, qa.latelier.kleer.la (qa).
+
+Las claves se entregan como secretos de Kamal (`RECAPTCHA_SITE_KEY` /
+`RECAPTCHA_SECRET_KEY` en `website.env`, gitignored). Rotar la clave solo
+requiere actualizar `website.env` y redeployar (`bin/deploy deploy` y
+`bin/deploy deploy -d qa`); no cambia imagen ni código.
+
+Rotación 2026-06-24: site key pública `6LdjHzItAAAAAOQy0lLsqMe13dEWWX75vQd6FHk2`
+(el secret nunca se versiona).
+
 Para el funcionamiento de los test relacionados a recaptcha
 ```cli
 export RECAPTCHA_SITE_KEY="<site key>"
