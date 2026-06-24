@@ -1,0 +1,11 @@
+<%#
+  Shared <head> essentials for standalone full-page templates that render
+  outside layout/layout2022 but should still be indexed (marketing landings).
+  Mirrors the standard head: encoding, viewport, analytics and SEO metatags.
+  Requires @meta_tags to be set in the route. Page-specific fonts, scripts
+  and styles stay in the page itself.
+%>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%= erb :'layout/_google_tracker_head' %>
+<%= erb :'layout/_metatags' %>
