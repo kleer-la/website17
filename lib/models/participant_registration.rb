@@ -1,3 +1,4 @@
+require 'date'
 require './lib/services/api_accessible'
 require './lib/services/keventer_api'
 require './lib/services/cache_service'
@@ -24,7 +25,12 @@ class ParticipantRegistration
     end
 
     if json_api&.ok?
-      { success: true, data: json_api.doc }
+      data = json_api.doc
+      # eventer's event JSON exposes only the raw registration_ends/date, not a
+      # registration_ended boolean. Derive it here (same rule as eventer's
+      # Event#registration_ended?) so the form can be hidden for closed events.
+      data['registration_ended'] = registration_ended?(data) if data.is_a?(Hash)
+      { success: true, data: data }
     else
       { success: false, error: :not_found, status: 404 }
     end
@@ -116,6 +122,19 @@ class ParticipantRegistration
         }
       end
     end
+  end
+
+  # Mirrors eventer's Event#registration_ended?: registration is closed once the
+  # earlier of the event date / registration_ends deadline is before today.
+  def registration_ended?(event, today = Date.today)
+    dates = [event['date'], event['registration_ends']].compact.filter_map do |d|
+      Date.parse(d.to_s)
+    rescue ArgumentError, TypeError
+      nil
+    end
+    return false if dates.empty?
+
+    dates.min < today
   end
 
   class << self

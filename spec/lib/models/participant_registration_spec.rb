@@ -17,7 +17,6 @@ RSpec.describe ParticipantRegistration do
       'address' => '123 Test St',
       'city' => 'Test City',
       'is_sold_out' => false,
-      'registration_ended' => false,
       'community_event' => false,
       'ask_for_coupons_code' => true
     }
@@ -81,6 +80,36 @@ RSpec.describe ParticipantRegistration do
         expect(result[:success]).to be false
         expect(result[:error]).to eq(:not_found)
         expect(result[:status]).to eq(404)
+      end
+    end
+
+    context 'registration_ended derivation (#387)' do
+      # eventer's event JSON exposes only the raw registration_ends date, not a
+      # registration_ended boolean; ParticipantRegistration derives it.
+      it 'derives registration_ended=true when registration_ends is in the past' do
+        data = valid_event_data.merge('registration_ends' => (Date.today - 3).to_s)
+        ParticipantRegistration.api_client = APIAccessible::NullJsonAPI.new(data.to_json)
+
+        result = ParticipantRegistration.new('123').load_event_data('es')
+
+        expect(result[:data]['registration_ended']).to be true
+      end
+
+      it 'derives registration_ended=false when registration_ends is in the future' do
+        data = valid_event_data.merge('registration_ends' => (Date.today + 30).to_s)
+        ParticipantRegistration.api_client = APIAccessible::NullJsonAPI.new(data.to_json)
+
+        result = ParticipantRegistration.new('123').load_event_data('es')
+
+        expect(result[:data]['registration_ended']).to be false
+      end
+
+      it 'derives registration_ended=false when no date fields are present' do
+        ParticipantRegistration.api_client = APIAccessible::NullJsonAPI.new(valid_event_data.to_json)
+
+        result = ParticipantRegistration.new('123').load_event_data('es')
+
+        expect(result[:data]['registration_ended']).to be false
       end
     end
   end

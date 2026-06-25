@@ -35,8 +35,9 @@ def course_not_found_error
 end
 
 def redirect_not_found_course
-  session[:error_msg] = course_not_found_error
-  flash.now[:alert] = course_not_found_error
+  # Persisted flash (not flash.now) so it survives the redirect below, and a
+  # whitelisted key (:error) so the layout's _flash_messages partial renders it.
+  flash[:error] = course_not_found_error
   lang = session[:locale]
   catalog_path = RouterHelper.translate_path('catalogo', lang)
   redirect(to("/#{lang}/#{catalog_path}"))

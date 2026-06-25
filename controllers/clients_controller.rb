@@ -22,8 +22,9 @@ get '/clientes/testimonios/:id' do
 end
 
 def redirect_not_found_testimony
-  session[:error_msg] = I18n.t('page_not_found')
-  flash.now[:alert] = I18n.t('page_not_found')
+  # Persisted flash (not flash.now) so it survives the redirect; :error is the
+  # key the layout's _flash_messages partial renders.
+  flash[:error] = I18n.t('page_not_found')
   lang = session[:locale]
   clients_path = lang == 'en' ? 'clients' : 'clientes'
   redirect(to("/#{lang}/#{clients_path}"))
