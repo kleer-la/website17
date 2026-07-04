@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc><%= @lab_base_url %>/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc><%= @lab_base_url %>/contacto</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<% @cases.each do |c| %>
+  <url>
+    <loc><%= @lab_base_url %>/casos/<%= c.slug %></loc>
+    <% if c.date_modified %><lastmod><%= c.date_modified %></lastmod><% end %>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<% end %>
+</urlset>

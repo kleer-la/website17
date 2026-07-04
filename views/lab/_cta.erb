@@ -1,0 +1,20 @@
+<section class="px-8 py-32 relative overflow-hidden">
+  <div class="absolute inset-0 processor-glow pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto text-center relative z-10">
+    <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-6">Hablemos</p>
+    <h2 class="text-4xl md:text-6xl font-headline font-bold tracking-tighter leading-[0.95] mb-8 text-on-surface">
+      ¿Tienes un proceso parecido <span class="text-primary italic">esperando</span>?
+    </h2>
+    <p class="text-xl text-on-surface-variant font-body leading-relaxed mb-12">
+      Cuéntanos qué necesitas resolver. Te respondemos con un alcance acotado en menos de 48 horas.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <button data-lab-modal="open" class="btn btn-primary text-base px-8 py-4 cursor-pointer">Cuéntanos tu desafío</button>
+      <% if (whatsapp = lab_whatsapp_link) %>
+        <a href="<%= whatsapp %>" target="_blank" rel="noopener" class="btn btn-secondary text-base px-8 py-4">
+          WhatsApp
+        </a>
+      <% end %>
+    </div>
+  </div>
+</section>

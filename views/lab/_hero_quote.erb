@@ -1,0 +1,11 @@
+<section class="px-8 py-24 bg-surface-container-low relative overflow-hidden">
+  <div class="absolute inset-0 processor-glow pointer-events-none"></div>
+  <blockquote class="max-w-5xl mx-auto relative z-10">
+    <p class="text-4xl md:text-7xl font-headline font-bold leading-[1.05] tracking-tight text-on-surface">
+      &ldquo;<span class="text-primary italic"><%= quote["text"] %></span>&rdquo;
+    </p>
+    <% if quote["attribution"] && !quote["attribution"].to_s.empty? %>
+      <cite class="block text-on-surface-variant font-label text-xs uppercase tracking-[0.3em] not-italic mt-8">— <%= quote["attribution"] %></cite>
+    <% end %>
+  </blockquote>
+</section>

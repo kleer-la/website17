@@ -1,0 +1,43 @@
+<article>
+  <header class="px-8 pt-24 pb-12 max-w-5xl mx-auto">
+    <div class="flex items-center gap-4 mb-6">
+      <a href="/" class="text-xs font-label font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Inicio</a>
+      <span class="text-outline-variant">/</span>
+      <span class="text-xs font-label font-bold uppercase tracking-widest text-secondary"><%= @case.industry %></span>
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-headline font-bold tracking-tighter leading-[0.95] mb-6 text-on-surface">
+      <%= @case.title %>
+    </h1>
+    <p class="text-on-surface-variant font-body text-lg">
+      <%= @case.client_label %>
+      <% if @case.duration && !@case.duration.to_s.empty? %>
+        <span class="opacity-40 mx-2">·</span><%= @case.duration %>
+      <% end %>
+    </p>
+  </header>
+
+  <% if @case.hero_metric %>
+    <%= erb :'lab/_hero_metric', layout: false, locals: { metric: @case.hero_metric } %>
+  <% elsif @case.hero_quote %>
+    <%= erb :'lab/_hero_quote', layout: false, locals: { quote: @case.hero_quote } %>
+  <% end %>
+
+  <section class="case-body px-8 py-16 max-w-3xl mx-auto">
+    <%= @case.body_html %>
+  </section>
+
+  <% if @case.secondary_metrics.any? %>
+    <%= erb :'lab/_secondary_metrics', layout: false, locals: { metrics: @case.secondary_metrics } %>
+  <% end %>
+
+  <% if @case.gallery.any? %>
+    <%= erb :'lab/_gallery', layout: false, locals: { gallery: @case.gallery, slug: @case.slug } %>
+  <% end %>
+
+  <% if @case.testimonial %>
+    <%= erb :'lab/_testimonial', layout: false, locals: { testimonial: @case.testimonial, slug: @case.slug } %>
+  <% end %>
+
+  <%= erb :'lab/_cta', layout: false %>
+</article>

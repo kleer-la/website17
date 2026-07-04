@@ -2,6 +2,7 @@ proxy:
   hosts:
     - qa.kleer.la
     - qa.latelier.kleer.la
+    - qa.lab.kleer.la
   ssl: true
   app_port: 4567
   healthcheck:

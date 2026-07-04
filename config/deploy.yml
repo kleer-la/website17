@@ -15,6 +15,7 @@ proxy:
     - kleer.es
     - www.kleer.es
     - latelier.kleer.la
+    - lab.kleer.la
   ssl: true
   app_port: 4567
   healthcheck:

@@ -1,0 +1,12 @@
+<section class="px-8 py-12 max-w-5xl mx-auto">
+  <div class="grid grid-cols-1 <%= 'md:grid-cols-2' if gallery.size > 1 %> gap-6">
+    <% gallery.each do |item| %>
+      <figure class="bg-surface-container-low p-4 rounded-xl">
+        <img src="/lab/cases/<%= slug %>/<%= item["src"] %>" alt="<%= item["caption"] %>" class="w-full h-auto rounded-lg" loading="lazy">
+        <% if item["caption"] && !item["caption"].to_s.empty? %>
+          <figcaption class="text-on-surface-variant text-sm font-body mt-3 px-2"><%= item["caption"] %></figcaption>
+        <% end %>
+      </figure>
+    <% end %>
+  </div>
+</section>

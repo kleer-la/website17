@@ -1,0 +1,12 @@
+<section class="px-8 py-12 max-w-5xl mx-auto">
+  <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+    <% metrics.each do |m| %>
+      <div class="bg-surface-container-high p-8 rounded-xl">
+        <p class="text-4xl md:text-5xl font-headline font-bold text-primary tracking-tighter mb-2">
+          <%= m["value"] %>
+        </p>
+        <p class="text-on-surface-variant font-body text-sm"><%= m["label"] %></p>
+      </div>
+    <% end %>
+  </div>
+</section>

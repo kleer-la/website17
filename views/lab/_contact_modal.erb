@@ -1,0 +1,40 @@
+<%# Light-mode contact modal. Shown/hidden by /lab/lab.js via the `hidden` class. %>
+<div id="lab-contact-modal"
+     class="hidden fixed inset-0 z-50 flex items-center justify-center"
+     style="background: rgba(0,0,0,0.55); padding: 1rem;">
+
+  <div style="background: #ffffff; border-radius: 1rem; box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+              width: 100%; max-width: 32rem; max-height: 92vh;
+              display: flex; flex-direction: column; position: relative;">
+
+    <%# Header %>
+    <div style="display: flex; align-items: flex-start; justify-content: space-between;
+                padding: 2rem 2rem 1.5rem; border-bottom: 1px solid #e5e7eb;">
+      <div>
+        <p class="font-label text-xs uppercase tracking-[0.3em] font-bold" style="color: #0e7490; margin-bottom: 0.375rem;">
+          HABLEMOS
+        </p>
+        <h2 class="font-headline font-bold" style="font-size: 1.5rem; color: #111827; line-height: 1.2;">
+          Cuéntanos tu desafío
+        </h2>
+        <p class="text-sm" style="color: #6b7280; margin-top: 0.25rem;">
+          Te respondemos en menos de 48 horas hábiles.
+        </p>
+      </div>
+      <button data-lab-modal="close"
+              style="background: none; border: none; cursor: pointer; padding: 0.375rem;
+                     color: #9ca3af; margin-left: 1rem; flex-shrink: 0; border-radius: 0.5rem;"
+              aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <%# Scrollable form %>
+    <div style="overflow-y: auto; flex: 1;">
+      <%= erb :'lab/_contact_form', layout: false, locals: { action: '/contacto', values: {}, errors: {} } %>
+    </div>
+
+  </div>
+</div>

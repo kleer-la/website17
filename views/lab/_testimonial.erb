@@ -1,0 +1,23 @@
+<section class="px-8 py-20 max-w-3xl mx-auto">
+  <blockquote class="bg-surface-container-low p-10 md:p-16 rounded-xl relative">
+    <span aria-hidden="true" class="absolute -top-4 left-10 text-7xl font-headline font-bold text-primary leading-none">&ldquo;</span>
+    <p class="text-xl md:text-2xl text-on-surface font-body leading-relaxed italic">
+      <%= testimonial["text"] %>
+    </p>
+    <% if (testimonial["name"] && !testimonial["name"].to_s.empty?) || (testimonial["role"] && !testimonial["role"].to_s.empty?) || (testimonial["photo"] && !testimonial["photo"].to_s.empty?) %>
+      <footer class="flex items-center gap-4 mt-8 pt-8 border-t border-outline-variant/15">
+        <% if testimonial["photo"] && !testimonial["photo"].to_s.empty? %>
+          <img src="/lab/cases/<%= slug %>/<%= testimonial["photo"] %>" alt="<%= testimonial["name"] %>" class="w-12 h-12 rounded-full object-cover">
+        <% end %>
+        <div>
+          <% if testimonial["name"] && !testimonial["name"].to_s.empty? %>
+            <p class="font-headline font-bold text-on-surface"><%= testimonial["name"] %></p>
+          <% end %>
+          <% if testimonial["role"] && !testimonial["role"].to_s.empty? %>
+            <p class="text-on-surface-variant text-sm"><%= testimonial["role"] %></p>
+          <% end %>
+        </div>
+      </footer>
+    <% end %>
+  </blockquote>
+</section>

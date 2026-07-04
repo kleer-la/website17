@@ -1,0 +1,31 @@
+<footer class="bg-surface w-full py-12 px-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+    <div>
+      <div class="text-lg font-bold text-primary font-headline mb-6 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">science</span>
+        <span>Kleer Lab</span>
+      </div>
+      <p class="text-on-surface-variant font-body text-sm max-w-xs mb-8">
+        Resolvemos en semanas lo que se postergó por años, con desarrollo asistido por IA y transferencia completa.
+      </p>
+      <p class="text-on-surface-variant font-body text-sm">
+        &copy; <%= Time.now.year %> Kleer Lab.
+      </p>
+      <p class="text-on-surface-variant font-body text-sm mt-2">
+        El laboratorio de IA de
+        <a href="https://www.kleer.la" class="hover:text-primary underline transition-all duration-200" target="_blank" rel="noopener">Kleer</a> ↗
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-x-12 gap-y-6 md:justify-end">
+      <div class="flex flex-col gap-4">
+        <p class="font-headline font-bold text-sm tracking-widest text-on-surface-variant uppercase">Sitio</p>
+        <a href="/" class="text-on-surface-variant hover:text-primary text-sm transition-all duration-200">Principal</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <p class="font-headline font-bold text-sm tracking-widest text-on-surface-variant uppercase">Contacto</p>
+        <button data-lab-modal="open" class="text-on-surface-variant hover:text-primary text-sm transition-all duration-200 text-left cursor-pointer bg-transparent border-0 p-0">Escríbenos</button>
+        <span class="text-on-surface-variant text-sm"><%= LabViewHelper::LAB_CONTACT_EMAIL %></span>
+      </div>
+    </div>
+  </div>
+</footer>

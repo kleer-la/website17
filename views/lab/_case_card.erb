@@ -1,0 +1,31 @@
+<a href="/casos/<%= c.slug %>"
+    class="group block no-underline bg-surface-container-low p-10 rounded-xl hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-500"></div>
+
+  <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-8"><%= c.industry %></p>
+
+  <% if c.hero_metric %>
+    <div class="mb-8">
+      <p class="text-7xl md:text-8xl font-headline font-bold text-primary tracking-tighter leading-none">
+        <%= c.hero_metric["value"] %>
+      </p>
+      <p class="text-on-surface-variant font-body mt-3"><%= c.hero_metric["label"] %></p>
+    </div>
+  <% elsif c.hero_quote %>
+    <blockquote class="mb-8">
+      <p class="text-3xl md:text-4xl font-headline font-bold leading-tight text-on-surface tracking-tight">
+        &ldquo;<%= c.hero_quote["text"] %>&rdquo;
+      </p>
+      <% if c.hero_quote["attribution"] && !c.hero_quote["attribution"].to_s.empty? %>
+        <cite class="block text-on-surface-variant text-sm not-italic mt-4">— <%= c.hero_quote["attribution"] %></cite>
+      <% end %>
+    </blockquote>
+  <% end %>
+
+  <div class="flex flex-col gap-4 mt-12 pt-6 border-t border-outline-variant/15">
+    <p class="text-on-surface font-body"><%= c.client_label %></p>
+    <span class="text-xs font-label font-bold uppercase tracking-widest text-primary flex items-center gap-2 self-start">
+      Leer caso <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </span>
+  </div>
+</a>

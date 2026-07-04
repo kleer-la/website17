@@ -40,6 +40,7 @@ require './controllers/membership_controller'
 require './controllers/bookings_controller'
 require './controllers/sitemap_controller'
 require './controllers/campaigns_controller'
+require './controllers/lab_controller'
 
 include MetaTags
 include Recaptcha::Adapters::ViewMethods
@@ -76,13 +77,20 @@ end
 before do
   # Handle subdomain routing
   @is_latelier = request.host.start_with?('latelier.')
-  
+  @is_lab = request.host.start_with?('lab.') || request.host.start_with?('qa.lab.')
+
   target_url, locale = unify_domains(request.host, request.path)
   session[:locale] = locale if locale # Set only if locale is non-nil
   if target_url
     redirect target_url, 301
   else
-    @base_title = @is_latelier ? 'L\'Atelier - Kleer' : 'Agile Coaching, Consulting & Training'
+    @base_title = if @is_lab
+                    'Kleer Lab'
+                  elsif @is_latelier
+                    'L\'Atelier - Kleer'
+                  else
+                    'Agile Coaching, Consulting & Training'
+                  end
     @meta_tags = Tags.new
     @meta_tags.set! title: @base_title, path: request.path
     # flash.sweep

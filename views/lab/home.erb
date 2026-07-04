@@ -1,0 +1,180 @@
+<style>
+  .grid-pattern {
+    background-image: radial-gradient(circle at 1px 1px, #3e494a 1px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 0.15;
+  }
+  .technical-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(120, 213, 223, 0.08) 0%, transparent 70%);
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>
+
+<%# ── Hero ──────────────────────────────────────────────── %>
+<section class="relative min-h-[80vh] flex items-center overflow-hidden px-8">
+  <div class="absolute inset-0 grid-pattern pointer-events-none"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full technical-gradient pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 py-24">
+    <div class="lg:col-span-9 flex flex-col justify-center">
+      <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-8">SOLUCIONES OPERATIVAS CON IA</p>
+      <h1 class="text-5xl md:text-7xl xl:text-8xl font-headline font-bold leading-[0.95] tracking-tighter mb-8 text-on-surface">
+        Kleer Lab: soluciones operativas <span class="text-primary italic">sostenibles</span> con IA en tiempo récord
+      </h1>
+      <p class="text-xl md:text-2xl font-body text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+        Transformamos procesos manuales en aplicaciones inteligentes en semanas, sin requerir equipo técnico interno. Resultados medibles desde la primera iteración.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <button data-lab-modal="open" class="btn btn-primary text-base px-8 py-4 cursor-pointer">Cuéntanos tu desafío</button>
+        <a href="#casos" class="btn btn-secondary text-base px-8 py-4">Ver casos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ── Resultados rápidos ─────────────────────────────────── %>
+<% if @home_metrics.any? %>
+  <section class="px-8 py-16 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto">
+      <%= lab_section_header(label: "RESULTADOS", title: "Impacto medido en operaciones reales", size: :sm) %>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <% @home_metrics.each do |m| %>
+          <a href="/casos/<%= m["source_case_slug"] %>" class="block group no-underline">
+            <div class="bg-surface-container-high rounded-xl p-8 group-hover:bg-surface-container-highest transition-all duration-300">
+              <p class="text-5xl md:text-6xl font-headline font-bold text-primary tracking-tighter leading-none mb-3"><%= m["value"] %></p>
+              <p class="text-on-surface-variant font-body text-sm"><%= m["label"] %></p>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%# ── Casos de éxito ─────────────────────────────────────── %>
+<% if @cases.any? %>
+  <section class="px-8 py-24" id="casos">
+    <div class="max-w-7xl mx-auto">
+      <%= lab_section_header(label: "CASOS DE ÉXITO", title: "Casos de éxito", size: :md) %>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <% @cases.each do |c| %>
+          <%= erb :'lab/_case_card', layout: false, locals: { c: c } %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%# ── Cómo trabajamos — método científico ─────────────────── %>
+<section class="px-8 py-32 bg-surface-container-low" id="como-trabajamos">
+  <div class="max-w-7xl mx-auto">
+    <%= lab_section_header(
+        label: "Cómo trabajamos",
+        title: "Método científico aplicado a tu operación. Cuatro pasos, sin sorpresas.",
+        subtitle: "Sin retainers, sin proyectos abiertos. Experimento acotado, ejecución verificable, transferencia completa.",
+        size: :lg) %>
+    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style="list-style: none; padding-left: 0;">
+      <li class="bg-surface-container-high p-8 rounded-xl">
+        <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">01</p>
+        <h3 class="text-xl font-headline font-bold mb-3">Hipótesis</h3>
+        <p class="text-on-surface-variant text-sm font-body leading-relaxed">
+          Una llamada para acotar qué desafío resolver y qué resultado esperas. Si no hay match, no hay propuesta.
+        </p>
+      </li>
+      <li class="bg-surface-container-high p-8 rounded-xl">
+        <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">02</p>
+        <h3 class="text-xl font-headline font-bold mb-3">Experimento</h3>
+        <p class="text-on-surface-variant text-sm font-body leading-relaxed">
+          Construimos la solución en semanas con agentes de IA. Validas en cada hito; nada queda en una caja negra.
+        </p>
+      </li>
+      <li class="bg-surface-container-high p-8 rounded-xl">
+        <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">03</p>
+        <h3 class="text-xl font-headline font-bold mb-3">Medición</h3>
+        <p class="text-on-surface-variant text-sm font-body leading-relaxed">
+          Comparamos contra la hipótesis. Resultados medibles desde la primera iteración, no al final del proyecto.
+        </p>
+      </li>
+      <li class="bg-surface-container-high p-8 rounded-xl relative">
+        <div class="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-xl"></div>
+        <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">04</p>
+        <h3 class="text-xl font-headline font-bold mb-3">Transferencia</h3>
+        <p class="text-on-surface-variant text-sm font-body leading-relaxed">
+          Lo opera tu equipo. Código, contexto, sin lock-in. Después, somos opcionales.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<%# ── Servicios enfocados ─────────────────────────────────── %>
+<section class="px-8 py-32" id="servicios">
+  <div class="max-w-7xl mx-auto">
+    <%= lab_section_header(
+        label: "QUÉ HACEMOS",
+        title: "Soluciones Express con IA, en detalle",
+        subtitle: "Una sola oferta, bien delimitada. Para que sepas exactamente qué esperar y qué no.",
+        size: :lg) %>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="bg-surface-container-low p-10 rounded-xl">
+        <p class="font-label text-xs uppercase tracking-[0.3em] text-primary font-bold mb-6">Qué cubre</p>
+        <h3 class="text-xl font-headline font-bold mb-6 text-on-surface">Procesos manuales que te frenan</h3>
+        <ul class="space-y-3 text-on-surface-variant font-body text-sm leading-relaxed">
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Actualizar múltiples documentos a partir de mails y redes sociales</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Reportes que se arman a mano cada semana o mes</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Tareas repetitivas que crecen con el negocio</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Flujos de trabajo que dependen de una sola persona</li>
+        </ul>
+      </div>
+
+      <div class="bg-surface-container-low p-10 rounded-xl">
+        <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-6">Ejemplos típicos</p>
+        <h3 class="text-xl font-headline font-bold mb-6 text-on-surface">Situaciones que escuchamos</h3>
+        <ul class="space-y-4 text-on-surface-variant font-body text-sm leading-relaxed">
+          <li>&ldquo;Me lleva 3 días armar el reporte mensual a mano.&rdquo;</li>
+          <li>&ldquo;Tengo un Excel donde cargo los pedidos uno por uno.&rdquo;</li>
+          <li>&ldquo;Cuando entra un nuevo proveedor tengo que actualizar 5 planillas.&rdquo;</li>
+          <li>&ldquo;Si G... se va, no pagamos impuestos.&rdquo;</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ── Testimonios ─────────────────────────────────────────── %>
+<% if @featured_testimonials.any? %>
+  <section class="px-8 py-24 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto">
+      <%= lab_section_header(label: "Testimonios", title: "Lo que dicen quienes trabajaron con nosotros", size: :md) %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% @featured_testimonials.each do |c| %>
+          <% t = c.testimonial %>
+          <blockquote class="bg-surface-container-high p-10 rounded-xl">
+            <p class="text-xl font-body leading-relaxed text-on-surface mb-8">&ldquo;<%= t["text"] %>&rdquo;</p>
+            <footer class="flex items-center gap-4">
+              <% if t["photo"] && !t["photo"].to_s.empty? %>
+                <img src="/lab/cases/<%= c.slug %>/<%= t["photo"] %>" alt="<%= t["name"] %>" class="w-12 h-12 rounded-full object-cover">
+              <% else %>
+                <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary">person</span>
+                </div>
+              <% end %>
+              <div>
+                <% if t["name"] && !t["name"].to_s.empty? %>
+                  <p class="font-body font-semibold text-on-surface text-sm"><%= t["name"] %></p>
+                <% end %>
+                <% if t["role"] && !t["role"].to_s.empty? %>
+                  <p class="font-label text-xs text-on-surface-variant"><%= t["role"] %></p>
+                <% end %>
+              </div>
+            </footer>
+          </blockquote>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<%# ── CTA cierre ──────────────────────────────────────────── %>
+<%= erb :'lab/_cta', layout: false %>

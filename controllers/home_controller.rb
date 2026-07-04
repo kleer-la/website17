@@ -30,8 +30,9 @@ def first_x_courses(courses, quantity)
 end
 
 get '/' do
+  return handle_lab_home if @is_lab
   return handle_latelier_page if @is_latelier
-  
+
   page = Page.load_from_keventer(session[:locale], nil)
   @meta_tags.set!  title: page.seo_title || t('meta_tag.home.title'),
                    description: page.seo_description || t('meta_tag.home.description'),

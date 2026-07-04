@@ -36,6 +36,8 @@ rescue StandardError => e
 end
 
 get '/sitemap.xml' do
+  return handle_lab_sitemap if @is_lab
+
   content_type 'application/xml'
 
   builder = Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|

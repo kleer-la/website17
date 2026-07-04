@@ -1,0 +1,21 @@
+<section style="position: relative; padding: 5rem 2rem; overflow: hidden;">
+  <div style="position: absolute; inset: 0; pointer-events: none;
+              background: radial-gradient(circle at 60% 40%, rgba(120,213,223,0.06) 0%, transparent 65%);"></div>
+  <div style="max-width: 42rem; margin: 0 auto; position: relative; z-index: 1;">
+    <p class="font-label text-xs uppercase tracking-[0.3em] font-bold text-secondary" style="margin-bottom: 1.5rem;">HABLEMOS</p>
+    <h1 class="font-headline font-bold text-on-surface" style="font-size: clamp(2.5rem, 6vw, 3.75rem); line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 1.5rem;">
+      Cuéntanos tu desafío
+    </h1>
+    <p class="font-body text-on-surface-variant" style="font-size: 1.25rem; line-height: 1.6;">
+      Sin compromiso. Te respondemos con un alcance acotado en menos de 48 horas hábiles.
+    </p>
+  </div>
+</section>
+
+<section style="padding: 0 2rem 6rem;">
+  <div style="max-width: 32rem; margin: 0 auto;">
+    <div style="background: #ffffff; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,0.2); overflow: hidden;">
+      <%= erb :'lab/_contact_form', layout: false, locals: { action: '/contacto', values: @lab_values || {}, errors: @lab_errors || {} } %>
+    </div>
+  </div>
+</section>
