@@ -30,6 +30,16 @@ else
   echo "==> Alloy already installed"
 fi
 
+# Validate the candidate config BEFORE it replaces the live one. A restart with a
+# broken config takes down logs AND metrics for every tenant on this box, so we
+# fail fast here instead. Uses the same stability level as the systemd unit.
+echo "==> Validating Alloy configuration..."
+if ! GCLOUD_RW_API_KEY="$API_KEY" alloy validate --stability.level=public-preview /tmp/config.alloy; then
+  echo "!! Config validation failed — leaving the running Alloy untouched." >&2
+  rm -f /tmp/config.alloy
+  exit 1
+fi
+
 # Deploy config
 echo "==> Deploying Alloy configuration..."
 sudo cp /tmp/config.alloy /etc/alloy/config.alloy

@@ -203,6 +203,57 @@
         "sortOrder": "Descending",
         "enableLogDetails": true
       }
+    },
+    {
+      "type": "row",
+      "title": "Container Resources (cAdvisor)",
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 38 },
+      "collapsed": false,
+      "panels": []
+    },
+    {
+      "type": "timeseries",
+      "title": "Memory by Container (working set)",
+      "description": "Per-container RSS-equivalent memory across every container on the host, not just website17. Backed by cAdvisor metrics via Alloy.",
+      "gridPos": { "h": 9, "w": 16, "x": 0, "y": 39 },
+      "datasource": { "type": "prometheus", "uid": "$prom" },
+      "targets": [{
+        "expr": "sum by (name) (container_memory_working_set_bytes{instance=\"ubuntu-8gb-hil-2\", name!=\"\"})",
+        "legendFormat": "{{name}}",
+        "refId": "A"
+      }],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "custom": { "fillOpacity": 10, "stacking": { "mode": "normal" }, "showPoints": "never" }
+        }
+      },
+      "options": {
+        "legend": { "displayMode": "table", "placement": "right", "calcs": ["last", "max"] },
+        "tooltip": { "mode": "multi", "sort": "desc" }
+      }
+    },
+    {
+      "type": "table",
+      "title": "Current Memory by Container",
+      "gridPos": { "h": 9, "w": 8, "x": 16, "y": 39 },
+      "datasource": { "type": "prometheus", "uid": "$prom" },
+      "targets": [{
+        "expr": "sum by (name) (container_memory_working_set_bytes{instance=\"ubuntu-8gb-hil-2\", name!=\"\"})",
+        "legendFormat": "{{name}}",
+        "refId": "A",
+        "instant": true
+      }],
+      "transformations": [
+        { "id": "sortBy", "options": { "fields": {}, "sort": [{ "field": "Value #A", "desc": true }] } }
+      ],
+      "fieldConfig": {
+        "defaults": { "unit": "bytes" },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "name" }, "properties": [{ "id": "custom.width", "value": 320 }] },
+          { "matcher": { "id": "byName", "options": "Value #A" }, "properties": [{ "id": "displayName", "value": "Memory" }] }
+        ]
+      }
     }
   ],
   "refresh": "5m",
@@ -210,6 +261,14 @@
   "tags": ["website17", "loki"],
   "templating": {
     "list": [
+      {
+        "name": "prom",
+        "type": "datasource",
+        "query": "prometheus",
+        "current": {},
+        "regex": "",
+        "hide": 0
+      },
       {
         "name": "container",
         "type": "query",
