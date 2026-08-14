@@ -239,6 +239,10 @@ end
 # 404 if no flagship Page matches the slug.
 get '/:slug' do
   pass if params[:slug].to_s.include?('.') # skip /robots.txt, /favicon.ico, …
+  # Flagship slugs are kebab-case; anything else (scrapers requesting quoted
+  # strings from our HTML as paths) would make URI.join raise inside the
+  # Keventer client — 404 it without burning an API call.
+  pass unless params[:slug].to_s.match?(/\A[a-z0-9-]+\z/i)
   page = Page.load_from_keventer(session[:locale], params[:slug])
   pass unless page.flagship?
 
