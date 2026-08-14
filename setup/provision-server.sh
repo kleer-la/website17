@@ -63,6 +63,10 @@ echo "    Docker: installed"
 REMOTE
 
 echo ""
+echo "==> Hardening Docker firewall (block stray published ports from the internet)..."
+ssh -o StrictHostKeyChecking=accept-new "root@$SERVER_IP" 'bash -s' < "$(dirname "$0")/harden-docker-firewall.sh"
+
+echo ""
 echo "==> Testing SSH as appuser..."
 ssh -o StrictHostKeyChecking=accept-new "appuser@$SERVER_IP" "echo 'SSH OK' && docker --version"
 
