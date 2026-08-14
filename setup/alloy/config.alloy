@@ -100,6 +100,14 @@ prometheus.relabel "integrations_node_exporter" {
 // Exposes per-container memory/CPU/network metrics from the Docker daemon.
 // Query in Grafana with the `name` label, e.g.:
 //   sum by (name) (container_memory_working_set_bytes{instance="ubuntu-8gb-hil-2"})
+//
+// Server prerequisite (done 2026-08-14): besides the docker group, the alloy
+// user needs read access to /run/containerd/containerd.sock, or every
+// docker-*.scope container fails ("cannot unix dial containerd api service")
+// and no series carry a `name` label. Fixed in /etc/containerd/config.toml:
+//   [grpc]
+//     gid = 988   # docker group
+// then `systemctl restart containerd` (running containers are unaffected).
 prometheus.exporter.cadvisor "integrations_cadvisor" {
 	docker_host      = "unix:///var/run/docker.sock"
 	storage_duration = "5m"
