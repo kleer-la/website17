@@ -509,7 +509,7 @@ es:
         text_title: 'Buscando:'
         empty: No se encontraron resultados
     landing:
-      back: Volver
+      all_articles: Ver todos los artículos
       published: Publicado el
       last_modified: Última modificación el
       ToC: Tabla de contenido

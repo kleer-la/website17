@@ -48,6 +48,15 @@ Feature: Kleer Blogs
     When I go to the 'lorem-ipsum' article page
     Then I should see "min de lectura"
 
+  Scenario: An article says where the reader is, and offers the way out at the end
+    Given A list of categories
+    And A list of articles with
+    * a published article 'lorem-ipsum' with title 'Lorem ipsum'
+    When I go to the 'lorem-ipsum' article page
+    Then the breadcrumb should end with "Lorem ipsum"
+    And the page should link to "/es/blog" with text "Blog"
+    And the page should link to "/es/blog" with text "Ver todos los artículos"
+
   Scenario: Article with audio shows a listen player
     Given A list of categories
     And A list of articles with

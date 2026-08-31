@@ -62,16 +62,18 @@ def blog_one(article)
                   'last-modified': article.substantive_change_at,
                   hreflang: [article.lang.to_sym]
 
-  blog_label = session[:locale] == 'en' ? 'Blog' : 'Blog'
-  blog_url = "https://www.kleer.la/#{session[:locale]}/blog"
-  @json_ld = [
-    article_json_ld(article),
-    breadcrumb_json_ld([
-                         { name: 'Kleer', url: "https://www.kleer.la/#{session[:locale]}" },
-                         { name: blog_label, url: blog_url },
-                         { name: article.title }
-                       ])
+  # One definition, two renderings: the visible trail in the hero and the
+  # BreadcrumbList below. Google asks that the two agree, and they cannot drift
+  # if neither is written twice. Links are relative so they stay on whatever
+  # host is serving; the JSON-LD keeps the canonical absolute ones.
+  home_path = "/#{session[:locale]}"
+  blog_path = "#{home_path}/blog"
+  @breadcrumbs = [
+    { name: 'Kleer', path: home_path, url: "https://www.kleer.la#{home_path}" },
+    { name: 'Blog', path: blog_path, url: "https://www.kleer.la#{blog_path}" },
+    { name: article.title }
   ]
+  @json_ld = [article_json_ld(article), breadcrumb_json_ld(@breadcrumbs)]
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = '/blog'

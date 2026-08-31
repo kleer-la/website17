@@ -31,6 +31,14 @@ Then('the page should not have an audio player') do
   expect(page).to have_no_css('audio')
 end
 
+Then('the breadcrumb should end with {string}') do |title|
+  expect(page).to have_css('nav[aria-label="Breadcrumb"] .breadcrumb-item.active', text: title)
+end
+
+Then('the page should link to {string} with text {string}') do |url, text|
+  expect(page).to have_css("a[href='#{url}']", text: text)
+end
+
 When('I go to {string} client page') do |slug|
   Article.create_one_null(@articles[0], { next_null: true })
   visit "/clientes/testimonios/#{slug}"

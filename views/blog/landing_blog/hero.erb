@@ -1,8 +1,15 @@
 <section id="landing-blog-hero" class="mb-5">
-    <a class="go-back-button" href="/<%=session[:locale]%>/blog">
-      <img src="/app/img/view_figures/arrow-right.svg" class="back-img" loading="lazy" width="20" height="20" alt=""/>
-      <%=t("blog.landing.back")%>
-    </a>
+    <nav aria-label="Breadcrumb" class="blog-breadcrumb">
+      <ol class="breadcrumb">
+        <% @breadcrumbs.each do |crumb| %>
+          <% if crumb[:path] %>
+            <li class="breadcrumb-item"><a href="<%= crumb[:path] %>"><%= crumb[:name] %></a></li>
+          <% else %>
+            <li class="breadcrumb-item active" aria-current="page"><%= crumb[:name] %></li>
+          <% end %>
+        <% end %>
+      </ol>
+    </nav>
     <div class="mt-4 mb-5">
       <div class="landing-blog-hero__title-container">
         <h1 ><%= @article.title %></h1>

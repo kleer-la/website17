@@ -3,5 +3,8 @@
   <div class="blog__body">
     <%=body%>
     <%= erb :'blog/landing_blog/authors' %>
+    <p class="blog__all-articles">
+      <a href="/<%= session[:locale] %>/blog"><%= t('blog.landing.all_articles') %></a>
+    </p>
   </div>
 </section>

@@ -846,7 +846,7 @@ en:
         text_title: 'Searching:'
         empty: No result found
     landing:
-      back: Go back
+      all_articles: See all articles
       published: Published
       last_modified: Last modified on
       ToC: Table of contents

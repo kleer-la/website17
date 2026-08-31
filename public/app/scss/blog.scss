@@ -317,16 +317,29 @@ $celeste: #E8F8FD;
 
 }
 
-.go-back-button{
+// Where the reader is, not just where they can go. The same three levels the
+// page publishes as BreadcrumbList, which is what Google asks for.
+.blog-breadcrumb{
   margin-bottom: 32px;
   margin-top: 32px;
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
-  img{
-    transform: rotate(90deg);
-    margin-bottom: 5px;
+
+  .breadcrumb{
+    margin-bottom: 0;
   }
+
+  // The last crumb is the article title, which can be long: let it wrap
+  // rather than push the trail off the screen.
+  .breadcrumb-item.active{
+    color: inherit;
+  }
+}
+
+// The way back out, at the end, where someone who finished reading looks for it.
+.blog__all-articles{
+  margin-top: 40px;
 }
 
 .landing-blog-hero__img-container{
