@@ -41,7 +41,10 @@
     <% if @article.audio && !@article.audio.to_s.empty? %>
       <div class="landing-blog-hero__audio">
         <p class="landing-blog-hero__audio-label"><%= t('blog.landing.listen') %></p>
-        <audio controls preload="none" src="<%= @article.audio %>">
+        <!-- metadata, not none: with nothing preloaded the player has no
+             duration to show and reads 0:00 until you press play. This is a
+             few KB of header, not the audio. -->
+        <audio controls preload="metadata" src="<%= @article.audio %>">
           <%= t('blog.landing.listen') %>
         </audio>
       </div>

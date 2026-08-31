@@ -24,7 +24,9 @@ Given('the article has audio {string}') do |audio_url|
 end
 
 Then('the page should have an audio player') do
-  expect(page).to have_css('audio[controls]')
+  # preload=metadata, not none: without it the player has no duration to show
+  # and sits at 0:00 until someone presses play.
+  expect(page).to have_css('audio[controls][preload="metadata"]')
 end
 
 Then('the page should not have an audio player') do
