@@ -14,7 +14,7 @@
           "description": "Exploramos el impacto transformador en la industria de la salud. Camilo Velásquez entrevista a Franklin Chacin de Roche Latinoamérica, líder visionario en marketing con más de 20 años de experiencia. Descubre cómo la agilidad está remodelando la forma en que se crean y entregan soluciones en este sector crucial para la humanidad.",
           "youtube_url": "https://youtu.be/J-9LGOi1Tdw",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/ra_28.webp",
-          "published_at": "2024-06-18"
+          "released_at": "2024-06-18"
         },
         {
           "season": "3",
@@ -24,7 +24,7 @@
           "youtube_url": "https://youtu.be/yJVC_hGTrd4",
           "spotify_url": "https://open.spotify.com/episode/4mMQEhhTQkf4Fd0nHlfx1o?si=c6bcb0b0fc214fd3",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/ra_27.webp",
-          "published_at": "2024-06-04"
+          "released_at": "2024-06-04"
         }
       ]
     },
@@ -39,14 +39,14 @@
           "description": "Leonardo Agudelo y Diego Sanchez Rivera conversan sobre la importancia de desarrollar el liderazgo en las organizaciones que están buscando ser más adaptativas y prosperar en entornos cambiantes.",
           "youtube_url": "https://youtube.com/live/E_FgN41j-N8?feature=share",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv_dsr.jpg",
-          "published_at": "2024-06-05"
+          "released_at": "2024-06-05"
         },
         {
           "title": "Desafíos culturales de un diseño organizacional \"ágil\" con Agustina Leudesdorf",
           "description": "Leonardo Agudelo y Agus Leudesdorf conversan sobre experiencias reales interactuando en el día a día con diseños organizacionales que tienden a llevar a una cultura más ágil.",
           "youtube_url": "https://youtube.com/live/1DlaeIIgL4o",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/kv_al.jpg",
-          "published_at": "2024-05-15"
+          "released_at": "2024-05-15"
         }
       ]
     },
@@ -63,7 +63,7 @@
           "youtube_url": "https://youtu.be/20_61cOi1UE",
           "spotify_url": "https://open.spotify.com/episode/5WEMXbwQgx0iO9uxnWIOtx?si=dedae5786f0e4a2e",
           "thumbnail_url": "https://kleer-images.s3.sa-east-1.amazonaws.com/dk_13.jpg",
-          "published_at": "2023-12-07"
+          "released_at": "2023-12-07"
         }
       ]
     }
