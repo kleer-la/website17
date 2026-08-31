@@ -54,7 +54,7 @@ Feature: Kleer Blogs
     * a published article 'lorem-ipsum' with title 'Lorem ipsum'
     And the article has audio 'https://kleer-images.s3.sa-east-1.amazonaws.com/article_1.mp3'
     When I go to the 'lorem-ipsum' article page
-    Then I should see "Escuchá este artículo"
+    Then I should see "Escucha este artículo"
     And the page should have an audio player
 
   Scenario: Article without audio has no player
