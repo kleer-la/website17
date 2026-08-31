@@ -3,22 +3,14 @@
 .podcasts-hero {
   position: relative;
 
-  .carousel-inner {
+  // The title is not a slide. It sits above them in the flow, so it takes
+  // exactly the height its text needs at any width. It used to be positioned
+  // absolutely over a band of padding reserved on .carousel-inner, with the two
+  // measured separately — the band started at 0 and the title at 80px — so the
+  // whole title hung over the first slide. It aligns with .carousel__text
+  // through the same grid columns rather than through offsets in pixels.
+  .title {
     padding-top: 80px;
-
-    .title {
-      position: absolute;
-      top: 80px;
-      left: 140px; // Align with left edge of parent container
-      width: 100%; // Full width to center text
-      padding-left: 15%; // Align with carousel__text
-      transform: none;
-      z-index: 10; // Ensure it's above other elements
-      // background: rgba(255, 255, 255, 0.8); // Optional: Add background to improve readability
-      padding: 5px 5px;
-      border-radius: 10px;
-      // border: 2px solid red; // Debugging border    
-    }
   }
 
   h1 {
@@ -63,18 +55,6 @@
       color: #333333 !important;
       line-height: 20px;
       font-size: 18px;
-    }
-  }
-}
-
-@media (max-width: 990px) {
-  .podcasts-hero {
-    .carousel-inner {
-      padding-top: 140px;
-
-      .title {
-        left: 40px;
-      }
     }
   }
 }

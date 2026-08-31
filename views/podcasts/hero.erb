@@ -13,6 +13,15 @@ carousel = @carousel.map.with_index{|e, index| {
 %>
 <section id="hero">
   <div id="carouselPodcasts" class="podcasts-hero carousel" data-bs-ride="false">
+    <div class="title">
+      <div class="container">
+        <div class="row">
+          <div class="offset-lg-1 col-lg-6">
+            <h1>Podcast y Streaming</h1>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="carousel-indicators">
       <% carousel.each_with_index do |item, index| %>
         <button
@@ -25,9 +34,6 @@ carousel = @carousel.map.with_index{|e, index| {
       <% end %>
     </div>
     <div class="carousel-inner">
-    <div class="title">
-        <h1>Podcast y Streaming</h1>
-    </div>
       <%carousel.each do |item|%>
         <div class="carousel-item <%='active' if item[:active]%>">
           <div class="container">
