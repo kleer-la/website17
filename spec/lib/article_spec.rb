@@ -86,7 +86,9 @@ describe Article do
       end
 
       it 'ignores unknown types and initializes valid ones' do
-        expect { article.init_recommended(doc_with_unknown) }.to output(/Unknown recommendation type: unknown/).to_stdout
+        expect do
+          article.init_recommended(doc_with_unknown)
+        end.to output(/Unknown recommendation type: unknown/).to_stdout
         expect(article.recommended.size).to eq(2)
         expect(article.recommended[0]).to be_a(RecommendedArticle)
         expect(article.recommended[1]).to be_a(RecommendedService)
@@ -143,5 +145,4 @@ describe Article do
       expect(Article.new({ 'title' => 'x', 'body' => '' }).reading_time_minutes).to eq 1
     end
   end
-
 end

@@ -96,14 +96,14 @@ describe 'GET /sitemap.xml' do
     let(:articles) do
       [
         Article.new({
-          'id' => 1, 'title' => 'Test Article', 'slug' => 'test-article',
-          'lang' => 'es', 'published' => true, 'description' => 'desc',
-          'substantive_change_at' => '2025-03-15T10:00:00Z'
-        }),
+                      'id' => 1, 'title' => 'Test Article', 'slug' => 'test-article',
+                      'lang' => 'es', 'published' => true, 'description' => 'desc',
+                      'substantive_change_at' => '2025-03-15T10:00:00Z'
+                    }),
         Article.new({
-          'id' => 2, 'title' => 'Unpublished', 'slug' => 'unpublished',
-          'lang' => 'es', 'published' => false, 'description' => 'desc'
-        })
+                      'id' => 2, 'title' => 'Unpublished', 'slug' => 'unpublished',
+                      'lang' => 'es', 'published' => false, 'description' => 'desc'
+                    })
       ]
     end
 
@@ -138,12 +138,12 @@ describe 'GET /sitemap.xml' do
     let(:service_areas) do
       area = ServiceAreaV3.new
       area.load_from_json({
-        'id' => 1, 'slug' => 'coaching', 'lang' => 'es', 'name' => 'Coaching',
-        'is_training_program' => false,
-        'services' => [
-          { 'id' => 10, 'slug' => 'agile-coaching', 'name' => 'Agile Coaching' }
-        ]
-      })
+                            'id' => 1, 'slug' => 'coaching', 'lang' => 'es', 'name' => 'Coaching',
+                            'is_training_program' => false,
+                            'services' => [
+                              { 'id' => 10, 'slug' => 'agile-coaching', 'name' => 'Agile Coaching' }
+                            ]
+                          })
       [area]
     end
 
@@ -161,9 +161,9 @@ describe 'GET /sitemap.xml' do
     it 'excludes training programs from services section' do
       program = ServiceAreaV3.new
       program.load_from_json({
-        'id' => 2, 'slug' => 'program-x', 'lang' => 'es', 'name' => 'Program X',
-        'is_training_program' => true, 'services' => []
-      })
+                               'id' => 2, 'slug' => 'program-x', 'lang' => 'es', 'name' => 'Program X',
+                               'is_training_program' => true, 'services' => []
+                             })
       allow(ServiceAreaV3).to receive(:try_create_list_keventer).and_return([program])
 
       get '/sitemap.xml'
@@ -175,10 +175,10 @@ describe 'GET /sitemap.xml' do
   describe 'catalog courses' do
     let(:event_type) do
       EventType.new({
-        'id' => 1, 'slug' => 'scrum-master', 'name' => 'Scrum Master',
-        'lang' => 'es', 'deleted' => false, 'noindex' => false,
-        'elevator_pitch' => 'Learn Scrum'
-      })
+                      'id' => 1, 'slug' => 'scrum-master', 'name' => 'Scrum Master',
+                      'lang' => 'es', 'deleted' => false, 'noindex' => false,
+                      'elevator_pitch' => 'Learn Scrum'
+                    })
     end
 
     let(:event) do
@@ -198,9 +198,9 @@ describe 'GET /sitemap.xml' do
 
     it 'excludes deleted courses' do
       deleted_et = EventType.new({
-        'id' => 2, 'slug' => 'old-course', 'name' => 'Old',
-        'lang' => 'es', 'deleted' => true, 'noindex' => false
-      })
+                                   'id' => 2, 'slug' => 'old-course', 'name' => 'Old',
+                                   'lang' => 'es', 'deleted' => true, 'noindex' => false
+                                 })
       deleted_event = Event.new(deleted_et)
       allow(Catalog).to receive(:create_keventer_json).and_return([deleted_event])
 
@@ -211,9 +211,9 @@ describe 'GET /sitemap.xml' do
 
     it 'excludes noindex courses' do
       noindex_et = EventType.new({
-        'id' => 3, 'slug' => 'hidden-course', 'name' => 'Hidden',
-        'lang' => 'es', 'deleted' => false, 'noindex' => true
-      })
+                                   'id' => 3, 'slug' => 'hidden-course', 'name' => 'Hidden',
+                                   'lang' => 'es', 'deleted' => false, 'noindex' => true
+                                 })
       noindex_event = Event.new(noindex_et)
       allow(Catalog).to receive(:create_keventer_json).and_return([noindex_event])
 
@@ -237,12 +237,12 @@ describe 'GET /sitemap.xml' do
     before do
       allow(Resource).to receive(:create_list_keventer).and_call_original
       Resource.create_list_null([
-        {
-          'id' => 1, 'slug' => 'retromat', 'format' => 'download',
-          'title_es' => 'Retromat', 'title_en' => '',
-          'description_es' => 'Una herramienta', 'description_en' => ''
-        }
-      ])
+                                  {
+                                    'id' => 1, 'slug' => 'retromat', 'format' => 'download',
+                                    'title_es' => 'Retromat', 'title_en' => '',
+                                    'description_es' => 'Una herramienta', 'description_en' => ''
+                                  }
+                                ])
     end
 
     after do
@@ -260,9 +260,9 @@ describe 'GET /sitemap.xml' do
     let(:program) do
       p = ServiceAreaV3.new
       p.load_from_json({
-        'id' => 5, 'slug' => 'agile-program', 'lang' => 'es', 'name' => 'Agile Program',
-        'is_training_program' => true, 'services' => []
-      })
+                         'id' => 5, 'slug' => 'agile-program', 'lang' => 'es', 'name' => 'Agile Program',
+                         'is_training_program' => true, 'services' => []
+                       })
       p
     end
 

@@ -109,7 +109,7 @@ describe 'Mixed Language URL Redirects' do
       end
     end
 
-    # Note: We don't test "no redirect" cases (matching language prefix and slug)
+    # NOTE: We don't test "no redirect" cases (matching language prefix and slug)
     # because that's the default behavior. The important tests are above,
     # verifying that mixed language URLs DO redirect correctly.
   end

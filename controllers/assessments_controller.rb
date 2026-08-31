@@ -23,7 +23,7 @@ post '/assessment/:id' do |id|
   session[:contact_data] = contact_data
 
   @assessment = Assessment.create_one_keventer(id, session[:locale])
-  
+
   @meta_tags.set! title: @assessment.title,
                   description: @assessment.description,
                   image: cdn('website-assets/kleer-logo.png')
@@ -32,7 +32,6 @@ post '/assessment/:id' do |id|
 end
 
 get '/assessment/:id' do |id|
-
   contact_data = {
     name: params[:name],
     email: params[:email],
@@ -47,14 +46,13 @@ get '/assessment/:id' do |id|
   session[:contact_data] = contact_data
 
   @assessment = Assessment.create_one_keventer(id, session[:locale])
-  
+
   @meta_tags.set! title: @assessment.title,
                   description: @assessment.description,
                   image: cdn('website-assets/kleer-logo.png')
 
   render_page :'resources/assessment/show'
 end
-
 
 post '/submit_assessment' do
   responses = params[:responses]
@@ -63,7 +61,7 @@ post '/submit_assessment' do
 
   # Retrieve contact data from session
   contact_data = session[:contact_data]
-  
+
   unless contact_data
     status 400
     @error_message = 'No se encontraron datos de contacto'
@@ -76,66 +74,63 @@ post '/submit_assessment' do
     assessment_results: responses
   )
 
-    begin
-      mailer = Mailer.new(KeventerAPI.contacts_url, email_data)
-      
-      # Check for API errors
-      if mailer.parsed_body&.key?('error')
-        error_message = mailer.parsed_body['error']
-        puts "API Error: #{error_message}" if ENV['RACK_ENV'] == 'development'
-        @error_message = case error_message
-                        when 'bad secret'
-                          'Configuration error. Please contact support.'
-                        when /validation/i
-                          'Invalid submission data. Please check your responses and try again.'
-                        else
-                          'Assessment submission failed. Please try again later.'
-                        end
-        @contact = Contact.new(contact_data)
-        return render_page :'resources/assessment/results'
-      end
+  begin
+    mailer = Mailer.new(KeventerAPI.contacts_url, email_data)
 
-      @id = mailer.id
-      @status = mailer.status
-      @assessment_report_url = mailer.assessment_report_url
-      @assessment_report_html = mailer.assessment_report_html
-      
-      # Validate required fields
-      unless @id
-        if ENV['RACK_ENV'] == 'development'
-          puts "Missing contact ID in API response: #{mailer.parsed_body}"
-        end
-        @error_message = 'Assessment submission failed. Please try again later.'
-        @contact = Contact.new(contact_data)
-        return render_page :'resources/assessment/results'
-      end
-      
-      if ENV['RACK_ENV'] == 'development'
-        puts "Assessment submitted successfully - Contact ID: #{@id}, Status: #{@status}"
-      end
-      
-    rescue StandardError => e
-      if ENV['RACK_ENV'] == 'development'
-        puts "Assessment submission error: #{e.message}"
-        puts "Error backtrace: #{e.backtrace&.first(5)}"
-      end
-      @error_message = 'Assessment submission failed due to a technical error. Please try again later.'
+    # Check for API errors
+    if mailer.parsed_body&.key?('error')
+      error_message = mailer.parsed_body['error']
+      puts "API Error: #{error_message}" if ENV['RACK_ENV'] == 'development'
+      @error_message = case error_message
+                       when 'bad secret'
+                         'Configuration error. Please contact support.'
+                       when /validation/i
+                         'Invalid submission data. Please check your responses and try again.'
+                       else
+                         'Assessment submission failed. Please try again later.'
+                       end
       @contact = Contact.new(contact_data)
       return render_page :'resources/assessment/results'
     end
 
-    # Clear session data after successful submission
-    session[:contact_data] = nil
-    contact_data[:id] = @id
-    contact_data[:status] = @status
-    contact_data[:assessment_report_url] = @assessment_report_url
-    contact_data[:assessment_report_html] = @assessment_report_html
-    contact_data = contact_data.transform_keys(&:to_s)
-    
+    @id = mailer.id
+    @status = mailer.status
+    @assessment_report_url = mailer.assessment_report_url
+    @assessment_report_html = mailer.assessment_report_html
+
+    # Validate required fields
+    unless @id
+      puts "Missing contact ID in API response: #{mailer.parsed_body}" if ENV['RACK_ENV'] == 'development'
+      @error_message = 'Assessment submission failed. Please try again later.'
+      @contact = Contact.new(contact_data)
+      return render_page :'resources/assessment/results'
+    end
+
+    if ENV['RACK_ENV'] == 'development'
+      puts "Assessment submitted successfully - Contact ID: #{@id}, Status: #{@status}"
+    end
+  rescue StandardError => e
+    if ENV['RACK_ENV'] == 'development'
+      puts "Assessment submission error: #{e.message}"
+      puts "Error backtrace: #{e.backtrace&.first(5)}"
+    end
+    @error_message = 'Assessment submission failed due to a technical error. Please try again later.'
     @contact = Contact.new(contact_data)
-    
-    @success_message = 'Respuestas enviadas correctamente, revisa tu correo para los resultados.'
-    render_page :'resources/assessment/results'
+    return render_page :'resources/assessment/results'
+  end
+
+  # Clear session data after successful submission
+  session[:contact_data] = nil
+  contact_data[:id] = @id
+  contact_data[:status] = @status
+  contact_data[:assessment_report_url] = @assessment_report_url
+  contact_data[:assessment_report_html] = @assessment_report_html
+  contact_data = contact_data.transform_keys(&:to_s)
+
+  @contact = Contact.new(contact_data)
+
+  @success_message = 'Respuestas enviadas correctamente, revisa tu correo para los resultados.'
+  render_page :'resources/assessment/results'
 end
 
 get '/assessment/:contact_id/result_status' do

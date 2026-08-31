@@ -55,13 +55,13 @@ module JsonLdHelper
     data['datePublished'] = article.created_at if article.created_at.to_s != ''
     data['dateModified'] = article.substantive_change_at if article.substantive_change_at.to_s != ''
 
-    if article.trainers_list && !article.trainers_list.empty?
-      data['author'] = article.trainers_list.map do |trainer|
-        { '@type' => 'Person', 'name' => trainer.name }
-      end
-    else
-      data['author'] = { '@type' => 'Organization', 'name' => 'Kleer' }
-    end
+    data['author'] = if article.trainers_list && !article.trainers_list.empty?
+                       article.trainers_list.map do |trainer|
+                         { '@type' => 'Person', 'name' => trainer.name }
+                       end
+                     else
+                       { '@type' => 'Organization', 'name' => 'Kleer' }
+                     end
 
     data
   end

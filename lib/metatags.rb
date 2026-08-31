@@ -33,10 +33,8 @@ module MetaTags
     end
     ROBOT_ATTR = %i[noindex nofollow noarchive].freeze
     def robot
-      content = (
-        (ROBOT_ATTR.map { |key| key.to_s if @tags[key] })
-                      .filter { |elem| !elem.nil? }
-      ).join(',')
+      content = ROBOT_ATTR.map { |key| key.to_s if @tags[key] }
+                          .filter { |elem| !elem.nil? }.join(',')
       (@tags[:robot] = content) unless content.nil? || content == ''
       ROBOT_ATTR.each { |tag| @tags.delete tag }
     end
@@ -82,7 +80,7 @@ module MetaTags
       path
       alternate_paths
       # @tags.delete :hreflang if !!@tags[:canonical]
-      result = (@tags.map { |tag| display_one tag }).join('')
+      result = @tags.map { |tag| display_one tag }.join('')
       result + "<meta property=\"og:url\" content=\"#{@base_url}/#{@current_lang}#{@path}\"/>"
     end
 
@@ -120,31 +118,29 @@ module MetaTags
           # Use alternate paths if provided, otherwise use same path for both languages
           es_path = @alternate_paths&.dig(:es) || @path
           en_path = @alternate_paths&.dig(:en) || @path
-          
+
           tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{es_path}\"/>" : '') do |ac, current_lang|
             path_for_lang = case current_lang
-            when :es
-              es_path
-            when :en
-              en_path
-            else
-              @path
-            end
+                            when :es
+                              es_path
+                            when :en
+                              en_path
+                            else
+                              @path
+                            end
             ac + "<link rel=\"alternate\" hreflang=\"#{current_lang}\" href=\"#{@base_url}/#{current_lang}#{path_for_lang}\"/>"
           end
         end
       when :image
         unless tag[1] == ''
-          ''"
+          "
           <meta property=\"og:image\" content=\"#{tag[1]}\"/>
           <meta property=\"og:image:url\" content=\"#{tag[1]}\"/>
           <meta property=\"og:image:secure_url\" content=\"#{tag[1]}\"/>
-          "''
+          "
         end
       when :'last-modified'
-        if tag[1].to_s.length.positive?
-          "<meta name=\"last-modified\" content=\"#{tag[1]}\"/>"
-        end
+        "<meta name=\"last-modified\" content=\"#{tag[1]}\"/>" if tag[1].to_s.length.positive?
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end

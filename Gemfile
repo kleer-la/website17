@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '~> 3.4.7'
 
 gem 'aws-sdk-s3'
+gem 'concurrent-ruby'
 gem 'curb'
 gem 'escape_utils'
 gem 'faraday'
@@ -20,17 +21,16 @@ gem 'sinatra-flash'
 gem 'sinatra-r18n'
 gem 'tzinfo'
 gem 'tzinfo-data'
-gem 'concurrent-ruby'
 
 group :development do
-  gem 'kamal', require: false
-  gem 'sass'
   gem 'foreman', require: false
   gem 'i18n-tasks', require: false
+  gem 'kamal', require: false
   gem 'platform-api', require: false
   gem 'rerun', require: false
   gem 'rubocop', require: false
   gem 'ruby-lsp', require: false
+  gem 'sass'
 end
 
 group :development, :test do

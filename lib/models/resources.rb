@@ -22,18 +22,16 @@ class Resource
       return @resource_null
     end
 
-    if ENV['RACK_ENV'] == 'development'
-      puts "DEBUG: Resource.create_one_keventer called with slug: '#{slug}'"
-    end
-    
+    puts "DEBUG: Resource.create_one_keventer called with slug: '#{slug}'" if ENV['RACK_ENV'] == 'development'
+
     sanitized_slug = slug.unicode_normalize(:nfd).gsub(/\p{M}/, '')
     api_url = "#{KeventerAPI.resource_url(sanitized_slug)}?lang=#{locale}"
-    
+
     if ENV['RACK_ENV'] == 'development'
       puts "DEBUG: Sanitized slug: '#{sanitized_slug}'"
       puts "DEBUG: API URL: #{api_url}"
     end
-    
+
     begin
       api_resp = JsonAPI.new(api_url)
       raise ResourceNotFoundError.new(slug) unless api_resp.ok?
@@ -42,13 +40,11 @@ class Resource
         puts "DEBUG: API Response slug: '#{api_resp.doc['slug']}'"
         puts "DEBUG: API Response title: '#{api_resp.doc['title_es']}'"
       end
-      
+
       resource = Resource.new(api_resp.doc, locale)
-      
-      if ENV['RACK_ENV'] == 'development'
-        puts "DEBUG: Resource object slug: '#{resource.slug}'"
-      end
-      
+
+      puts "DEBUG: Resource object slug: '#{resource.slug}'" if ENV['RACK_ENV'] == 'development'
+
       resource
     rescue StandardError => e
       unless ENV['RACK_ENV'] == 'test'
@@ -105,7 +101,7 @@ class Resource
     @format = doc['format']
     @slug = doc['slug']
     @lang = lang
-    @downloadable = AppHelper::boolean_value(doc['downloadable'])
+    @downloadable = AppHelper.boolean_value(doc['downloadable'])
     @assessment_id = doc.dig('assessment', 'id')
 
     init_localized_fields(doc)
@@ -136,9 +132,10 @@ class Resource
 
   def also_download(max)
     # puts "Resource#also_download:downloadable=#{@downloadable}, #{@recommended.inspect}"
-    return [] if !@downloadable
-    @recommended.select { |rec| rec.type == 'resource' && rec.downloadable}.first(max)
-    @recommended.select { |rec| rec.type == 'resource' && rec.downloadable}
+    return [] unless @downloadable
+
+    @recommended.select { |rec| rec.type == 'resource' && rec.downloadable }.first(max)
+    @recommended.select { |rec| rec.type == 'resource' && rec.downloadable }
   end
 
   def recommended_not_downloads
@@ -155,8 +152,7 @@ class Resource
   def init_trainers(doc, role)
     return nil if doc[role].nil?
 
-    list = (doc[role]&.reduce([]) { |ac, t| ac << show_one_trainer(t) }
-           )
+    list = doc[role]&.reduce([]) { |ac, t| ac << show_one_trainer(t) }
     return if list == []
 
     list.join(', ')

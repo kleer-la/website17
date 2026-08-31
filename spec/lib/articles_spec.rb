@@ -14,7 +14,7 @@ RSpec.describe Article do
       }
 
       article = Article.new(article_data)
-      
+
       expect(article.cover).to eq('https://d3vnsn21cv5bcd.cloudfront.net/test-image.jpg')
     end
 
@@ -29,7 +29,7 @@ RSpec.describe Article do
       }
 
       article = Article.new(article_data)
-      
+
       expect(article.cover).to eq('')
     end
 

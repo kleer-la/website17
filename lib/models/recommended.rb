@@ -12,8 +12,8 @@ class Recommended
     @cover = doc['cover']
     @type = doc['type']
     @level = doc['level']
-    @downloadable = AppHelper::boolean_value(doc['downloadable'])
-    @is_training_program = AppHelper::boolean_value(doc['is_training_program'])
+    @downloadable = AppHelper.boolean_value(doc['downloadable'])
+    @is_training_program = AppHelper.boolean_value(doc['is_training_program'])
   end
 
   def cover
@@ -24,7 +24,7 @@ class Recommended
     raise NotImplementedError, "#{self.class} must implement the 'url' method"
   end
 
-  def self.create(doc, lang= 'es')
+  def self.create(doc, lang = 'es')
     case doc['type']
     when 'article'
       RecommendedArticle.new(doc, lang)
@@ -40,7 +40,7 @@ class Recommended
     end
   end
 
-  def self.create_list(doc, lang= 'es')
+  def self.create_list(doc, lang = 'es')
     doc&.each_with_object([]) do |r, ac|
       recommendation = Recommended.create(r, lang)
       ac << recommendation if recommendation
@@ -83,12 +83,10 @@ class RecommendedService < Recommended
       else
         "/en/services/#{slug}"
       end
+    elsif @is_training_program
+      "/es/formacion/#{slug}"
     else
-      if @is_training_program
-        "/es/formacion/#{slug}"
-      else
-        "/es/servicios/#{slug}"
-      end
+      "/es/servicios/#{slug}"
     end
   end
 end

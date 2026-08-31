@@ -5,10 +5,10 @@ get %r{/(resources|recursos)/?} do
   resources_index
 end
 get %r{/(resources|recursos)/preview/?} do
-  resources_index(preview:true)
+  resources_index(preview: true)
 end
 
-def resources_index(preview=false)
+def resources_index(preview = false)
   page = Page.load_from_keventer(session[:locale], 'recursos')
   @meta_tags.set! title: page.seo_title || t('meta_tag.resources.title'),
                   description: page.seo_description || t('meta_tag.resources.description'),
@@ -17,31 +17,27 @@ def resources_index(preview=false)
   @meta_tags.set! image: page.cover unless page.cover.nil?
 
   @active_tab_publicamos = 'active'
-  if preview
-    @resources = Resource.create_list_keventer(:resources_preview_url)
-  else
-  @resources = Resource.create_list_keventer
-  end
+  @resources = if preview
+                 Resource.create_list_keventer(:resources_preview_url)
+               else
+                 Resource.create_list_keventer
+               end
 
   render_page :'resources/index'
 end
 
 # get '/recursos/:slug' do |slug|
-get %r{/(resources|recursos)/([a-z0-9_\-]+)} do |base_path, slug|
+get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
   @active_tab_publicamos = 'active'
 
   lang = session[:locale] || 'es'
   partial_url = lang == 'es' ? 'recursos' : 'resources'
 
-  if slug == 'retromat'
-    redirect to("/#{lang}/#{partial_url}/retromat-planes-retrospectivas"), 301
-  end
+  redirect to("/#{lang}/#{partial_url}/retromat-planes-retrospectivas"), 301 if slug == 'retromat'
 
   @resource = Resource.create_one_keventer(slug, lang)
 
-  if slug != @resource.slug
-    redirect to("/#{lang}/#{partial_url}/#{@resource.slug}"), 301
-  end
+  redirect to("/#{lang}/#{partial_url}/#{@resource.slug}"), 301 if slug != @resource.slug
 
   # Check if resource has content in the requested language
   if @resource.title.to_s.strip.empty?
@@ -59,11 +55,11 @@ get %r{/(resources|recursos)/([a-z0-9_\-]+)} do |base_path, slug|
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 
-  @also_download = unless @is_assessment
-                    @resource.also_download(3)
-                  else
-                    []
-                  end
+  @also_download = if @is_assessment
+                     []
+                   else
+                     @resource.also_download(3)
+                   end
 
   # Set alternate route with fallback
   router_helper = RouterHelper.instance
@@ -73,4 +69,3 @@ get %r{/(resources|recursos)/([a-z0-9_\-]+)} do |base_path, slug|
 rescue ResourceNotFoundError
   return status 404
 end
-

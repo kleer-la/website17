@@ -127,7 +127,9 @@ module Helpers
         cover: course.event_type.cover, uri_path: course.event_type.uri_path, open: false, date: date, url: course.event_type.uri_path.to_s,
         coupon: course.event_type.coupons[0] || nil, external_site_url: course.event_type.external_site_url, categories: format_categories(course.event_type.categories), is_open: is_open, is_elearning: false,
         country: 'OL', certified: (2 if course.event_type.is_sa_cert).to_i +
-          (1 if course.event_type.is_kleer_cert).to_i, slug: course.event_type.slug, ordering: course.event_type.ordering
+          (if course.event_type.is_kleer_cert
+             1
+           end).to_i, slug: course.event_type.slug, ordering: course.event_type.ordering
       }
     end.compact
   end
@@ -215,7 +217,7 @@ module Helpers
     end
   end
 
-  def cdn(path='')
+  def cdn(path = '')
     # https://kleer-images.s3.sa-east-1.amazonaws.com
     sep = path.empty? || path.start_with?('/') ? '' : '/'
     "https://d3vnsn21cv5bcd.cloudfront.net#{sep}#{path}"
@@ -223,6 +225,7 @@ module Helpers
 
   def replace_s3_with_cdn(url)
     return url if url.nil? || url.empty?
+
     url.gsub('https://kleer-images.s3.sa-east-1.amazonaws.com', 'https://d3vnsn21cv5bcd.cloudfront.net')
   end
 

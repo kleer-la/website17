@@ -157,23 +157,22 @@ describe 'Resources routes' do
     context 'when English resource has no content' do
       let(:resource_without_content) do
         double('Resource',
-          slug: 'test-slug',
-          title: '',
-          tabtitle: '',
-          seo_description: '',
-          cover: '',
-          long_description: '',
-          also_download: [],
-          format: 'pdf',
-          landing: '',
-          description: '',
-          comments: '',
-          getit: '',
-          assessment_id: nil,
-          preview: '',
-          trainers_with_role: [],
-          recommended_not_downloads: []
-        ).tap do |resource|
+               slug: 'test-slug',
+               title: '',
+               tabtitle: '',
+               seo_description: '',
+               cover: '',
+               long_description: '',
+               also_download: [],
+               format: 'pdf',
+               landing: '',
+               description: '',
+               comments: '',
+               getit: '',
+               assessment_id: nil,
+               preview: '',
+               trainers_with_role: [],
+               recommended_not_downloads: []).tap do |resource|
           allow(resource).to receive(:long_description=)
         end
       end

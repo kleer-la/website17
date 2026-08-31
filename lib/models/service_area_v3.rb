@@ -30,18 +30,17 @@ class ServiceAreaV3
   end
 
   def self.create_list_keventer(programs = false)
-
     # Use the cached @@json_api if available, otherwise create a new JsonAPI instance
     response = if defined?(@@json_api)
-                 value = @@json_api && @@json_api[0]  # Use first element for list responses
+                 value = @@json_api && @@json_api[0] # Use first element for list responses
                  if value.is_a?(Array)
-                   value.shift  # Pop from front (FIFO) rather than back
+                   value.shift # Pop from front (FIFO) rather than back
                  else
                    value
                  end
                else
-                  url = programs ? KeventerAPI.programs_url : KeventerAPI.service_areas_url
-                  KeventerAPI.echo(url)
+                 url = programs ? KeventerAPI.programs_url : KeventerAPI.service_areas_url
+                 KeventerAPI.echo(url)
                  JsonAPI.new(url)
                end
 
@@ -67,11 +66,11 @@ class ServiceAreaV3
     response = if defined?(@@json_api)
                  @@json_api && @@json_api[1]
                else
-                url = if is_preview_mode
-                        KeventerAPI.service_area_preview_url(slug)
-                      else
-                        KeventerAPI.service_area_url(slug)
-                      end
+                 url = if is_preview_mode
+                         KeventerAPI.service_area_preview_url(slug)
+                       else
+                         KeventerAPI.service_area_url(slug)
+                       end
 
                  JsonAPI.new(url)
                end

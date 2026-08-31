@@ -75,11 +75,10 @@ class News
   private
 
   def parse_date(date_str)
-    begin
-      return '' if date_str.nil? || date_str.empty?
-      Date.parse(date_str).strftime('%d-%m-%Y')
-    rescue Date::Error
-      ''
-    end
+    return '' if date_str.nil? || date_str.empty?
+
+    Date.parse(date_str).strftime('%d-%m-%Y')
+  rescue Date::Error
+    ''
   end
 end

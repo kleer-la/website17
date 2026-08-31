@@ -27,7 +27,7 @@ Given('I visit the home page without banner data') do
     'sections' => [],
     'recommended' => []
   }
-  
+
   Page.api_client = NullJsonAPI.new(nil, page_data.to_json)
   visit '/'
 end

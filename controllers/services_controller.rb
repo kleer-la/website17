@@ -15,9 +15,9 @@ get %r{/(servicios|services)/?} do
   # redirect to("#{session[:locale]}/agilidad-organizacional"), 301 if session[:locale] == 'en'
   @page = Page.load_from_keventer(session[:locale], 'services-landing')
 
-  @areas = ServiceAreaV3.try_create_list_keventer.
-          filter { |a| a.lang == session[:locale] }
-  
+  @areas = ServiceAreaV3.try_create_list_keventer
+                        .filter { |a| a.lang == session[:locale] }
+
   @meta_tags.set! title: @page.seo_title || t('meta_tag.services.title'),
                   description: @page.seo_description || t('meta_tag.services.description'),
                   canonical: @page.canonical || t('meta_tag.services.canonical').to_s,
@@ -31,7 +31,7 @@ get %r{/(servicios|services)/?} do
   render_page :'services/landing_page/index'
 end
 
-get %r{/(?:servicios|services)/([a-z0-9_\-]+)/([a-z0-9_\-]+)} do |area_slug, service_slug|
+get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, service_slug|
   @is_training_program = false
   @page = Page.load_from_keventer(session[:locale], 'service-area')
 
@@ -48,7 +48,7 @@ get %r{/(?:servicios|services)/([a-z0-9_\-]+)/([a-z0-9_\-]+)} do |area_slug, ser
   show_service(service_area, service, 'servicios')
 end
 
-get %r{/(?:servicios|services)/([a-z0-9_\-]+)} do |slug|
+get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
   @is_training_program = false
   @page = Page.load_from_keventer(session[:locale], 'service-area')
 
@@ -79,7 +79,8 @@ def show_service(service_area, service, path)
   @meta_tags.set! title: service.seo_title || "#{service.name} - #{service_area.name}",
                   description: service.seo_description || service.subtitle,
                   canonical: "/#{path}/#{service_area.slug}/#{service.slug}",
-                  alternate_paths: { es: "/servicios/#{service_area.slug}/#{service.slug}", en: "/services/#{service_area.slug}/#{service.slug}" }
+                  alternate_paths: { es: "/servicios/#{service_area.slug}/#{service.slug}",
+                                     en: "/services/#{service_area.slug}/#{service.slug}" }
 
   @path = path
   @has_consultants = service_area_has_consultants?(service_area.slug)
@@ -88,7 +89,7 @@ def show_service(service_area, service, path)
   @json_ld = service_json_ld(service, service_area)
 
   render_page :'services/landing_service/index',
-      locals: { service_area: service_area, service: service }
+              locals: { service_area: service_area, service: service }
 end
 
 def set_area_colors(service_area)

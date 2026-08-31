@@ -18,7 +18,7 @@ class RouterHelper
   }.freeze
 
   def set_current_route(current_route)
-    current_route = current_route[3..] if current_route[0, 3] == '/en' || current_route[0, 3] == '/es'
+    current_route = current_route[3..] if ['/en', '/es'].include?(current_route[0, 3])
     @current_route = current_route
   end
 
@@ -53,13 +53,13 @@ class RouterHelper
 
       # Check if the resource has content in the alternate language
       # If title is empty, the resource doesn't have a translation
-      if alternate_resource.title.nil? || alternate_resource.title.strip.empty?
-        # No translation available, fallback to index
-        @alternate_route = "/#{alternate_base_path}"
-      else
-        # Translation exists, link to it
-        @alternate_route = "/#{alternate_base_path}/#{alternate_resource.slug}"
-      end
+      @alternate_route = if alternate_resource.title.nil? || alternate_resource.title.strip.empty?
+                           # No translation available, fallback to index
+                           "/#{alternate_base_path}"
+                         else
+                           # Translation exists, link to it
+                           "/#{alternate_base_path}/#{alternate_resource.slug}"
+                         end
     rescue StandardError
       # If there's an error loading the resource, fallback to index
       @alternate_route = "/#{alternate_base_path}"

@@ -23,15 +23,11 @@ TIMEZONES = [
 
 class TimezoneConverter
   def self.timezone(name)
-    (
-      TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }
-    )&.[](0)
+    TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }&.[](0)
   end
 
   def self.gmt(name)
-    g = (
-      TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }
-    )&.[](2)
+    g = TIMEZONES.detect { |tz| name.match(/#{tz[1]}/) }&.[](2)
 
     "GMT#{g}" unless g.to_s == ''
   end

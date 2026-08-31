@@ -106,7 +106,7 @@ before do
 end
 
 before '/s/:short_code' do
-  pass  # Bypass locale handling for /s/ routes
+  pass # Bypass locale handling for /s/ routes
 end
 
 before '/:locale/*' do
@@ -118,9 +118,7 @@ before '/:locale/*' do
 
     # Check for mixed language URLs and redirect if needed
     corrected_path = RouterHelper.detect_mixed_language(locale, path)
-    if corrected_path
-      redirect "/#{locale}#{corrected_path}", 301
-    end
+    redirect "/#{locale}#{corrected_path}", 301 if corrected_path
 
     request.path_info = path
   else
@@ -207,10 +205,10 @@ end
 get '/s/:short_code' do |short_code|
   dest = ShorterUrl.create_keventer(short_code)
 
-  unless dest.nil?
-    redirect dest.original_url, 301
-  else
+  if dest.nil?
     halt 404
+  else
+    redirect dest.original_url, 301
   end
 end
 
@@ -218,13 +216,9 @@ get '/cache-reset' do
   token = params[:token]
   expected_token = ENV['CACHE_RESET_TOKEN']
 
-  if expected_token.nil? || expected_token.empty?
-    halt 503, 'Cache reset not configured'
-  end
+  halt 503, 'Cache reset not configured' if expected_token.nil? || expected_token.empty?
 
-  if token.nil? || token != expected_token
-    halt 403, 'Invalid token'
-  end
+  halt 403, 'Invalid token' if token.nil? || token != expected_token
 
   CacheService.clear
   stats = CacheService.stats
@@ -252,8 +246,6 @@ get '/:slug' do
                   canonical: page.canonical
   render_page :'flagships/show'
 end
-
-private
 
 def get_404_error_text_for_course(course_name)
   "Hemos movido la información sobre el curso '<strong>#{course_name}</strong>'. Por favor, verifica nuestro

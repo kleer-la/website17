@@ -24,7 +24,7 @@ REDIRECT = {
 
 REDIRECT.each do |uris|
   get "/#{uris[0]}" do
-    return(redirect_not_found_course) if uris[1].nil?
+    return redirect_not_found_course if uris[1].nil?
 
     redirect "/#{session[:locale]}/#{uris[1]}" # , 301
   end
@@ -47,7 +47,6 @@ def event_type_from_json(event_type_id_with_name)
   event_type_id = event_type_id_with_name.split('-')[0]
   EventType.create_keventer_json(event_type_id) if valid_id?(event_type_id)
 end
-
 
 def coming_courses
   Event.create_keventer_json
@@ -96,7 +95,7 @@ get %r{/(catalogo|catalog)/?} do
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
-get %r{/(cursos|courses)/([a-z0-9_\-]+)} do |lang_path, event_type_id_with_name|
+get %r{/(cursos|courses)/([a-z0-9_-]+)} do |_lang_path, event_type_id_with_name|
   @event_type = event_type_from_json event_type_id_with_name
   @active_tab_entrenamos = 'active'
 
@@ -156,12 +155,12 @@ get %r{/(cursos|courses)/([a-z0-9_\-]+)} do |lang_path, event_type_id_with_name|
 end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
-get %r{/categoria/([a-z0-9_\-]+)/cursos/([a-z0-9_\-]+)} do |_category_codename, event_type_id_with_name|
+get %r{/categoria/([a-z0-9_-]+)/cursos/([a-z0-9_-]+)} do |_category_codename, event_type_id_with_name|
   redirect to "/cursos/#{event_type_id_with_name}", 301
 end
 
 # <%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended, title: t('recommended.title')  }%>
-get %r{/formacion/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
+get %r{/formacion/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
   service_area = ServiceAreaV3.create_keventer(slug, is_preview_mode)
   return status 404 if service_area.nil?
@@ -170,9 +169,7 @@ get %r{/formacion/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
   lang = session[:locale] || 'es'
 
   # Check if service area language matches the requested language
-  if service_area.lang != lang
-    redirect to("/#{lang}/catalogo"), 301
-  end
+  redirect to("/#{lang}/catalogo"), 301 if service_area.lang != lang
 
   @service_slug = if service_area.slug != slug
                     slug
@@ -186,7 +183,7 @@ get %r{/formacion/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
   show_service_area(service_area, 'formacion')
 end
 
-get %r{/training/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
+get %r{/training/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
   service_area = ServiceAreaV3.create_keventer(slug, is_preview_mode)
   return status 404 if service_area.nil?
@@ -195,9 +192,7 @@ get %r{/training/([a-z0-9_\-]+)(/preview)?} do |slug, _preview|
   lang = session[:locale] || 'en'
 
   # Check if service area language matches the requested language
-  if service_area.lang != lang
-    redirect to("/#{lang}/catalog"), 301
-  end
+  redirect to("/#{lang}/catalog"), 301 if service_area.lang != lang
 
   @service_slug = if service_area.slug != slug
                     slug

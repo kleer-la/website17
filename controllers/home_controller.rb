@@ -5,7 +5,7 @@ def handle_latelier_page
   @meta_tags.set! title: "L'Atelier",
                   description: "L'Atelier by Kleer",
                   canonical: "https://latelier.kleer.la/#{session[:locale]}/"
-  
+
   erb :'latelier/spa', layout: false
 end
 
@@ -43,11 +43,11 @@ get '/' do
   @page = page
   @clients = client_list
 
-  @areas = ServiceAreaV3.try_create_list_keventer.
-          filter { |a| a.lang == session[:locale] }
+  @areas = ServiceAreaV3.try_create_list_keventer
+                        .filter { |a| a.lang == session[:locale] }
 
-  training_list = ServiceAreaV3.try_create_list_keventer(programs: true).
-          filter { |a| a.lang == session[:locale] }
+  training_list = ServiceAreaV3.try_create_list_keventer(programs: true)
+                               .filter { |a| a.lang == session[:locale] }
   lowest_program = training_list.first
   @featured_program = lowest_program ? ServiceAreaV3.create_keventer(lowest_program.slug) : nil
   @featured_program_first = lowest_program && @areas.first &&

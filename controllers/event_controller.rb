@@ -22,16 +22,16 @@ get '/events/:event_id/participants/register' do |event_id|
       when :not_found
         # Send error notification email for event not found
         send_error_notification({
-          error_type: 'Event Not Found',
-          url: request.url,
-          event_id: event_id,
-          language: @lang,
-          timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
-          error_message: 'Event not found via ParticipantRegistration model',
-          additional_details: "Event ID: #{event_id}",
-          user_agent: request.user_agent,
-          ip: request.ip
-        })
+                                  error_type: 'Event Not Found',
+                                  url: request.url,
+                                  event_id: event_id,
+                                  language: @lang,
+                                  timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
+                                  error_message: 'Event not found via ParticipantRegistration model',
+                                  additional_details: "Event ID: #{event_id}",
+                                  user_agent: request.user_agent,
+                                  ip: request.ip
+                                })
 
         @meta_tags.set! title: t('page_not_found')
         status event_result[:status]
@@ -46,16 +46,16 @@ get '/events/:event_id/participants/register' do |event_id|
     if @event.nil? || !@event.is_a?(Hash) || @event['event_type'].nil? || !@event['event_type'].is_a?(Hash)
       # Send error notification email
       send_error_notification({
-        error_type: 'Invalid API Response',
-        url: request.url,
-        event_id: event_id,
-        language: @lang,
-        timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
-        error_message: 'API returned invalid event data structure',
-        additional_details: "Event data: #{@event.inspect}",
-        user_agent: request.user_agent,
-        ip: request.ip
-      })
+                                error_type: 'Invalid API Response',
+                                url: request.url,
+                                event_id: event_id,
+                                language: @lang,
+                                timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
+                                error_message: 'API returned invalid event data structure',
+                                additional_details: "Event data: #{@event.inspect}",
+                                user_agent: request.user_agent,
+                                ip: request.ip
+                              })
 
       @meta_tags.set! title: t('internal_error.title')
       status 503
@@ -69,9 +69,7 @@ get '/events/:event_id/participants/register' do |event_id|
       (1..6).each do |qty|
         pricing_result = participant_registration.load_pricing_data(qty)
 
-        if pricing_result[:success]
-          @pricing_data[qty] = pricing_result[:data]
-        end
+        @pricing_data[qty] = pricing_result[:data] if pricing_result[:success]
         # If pricing fails, we just don't include it in @pricing_data
         # The view should handle missing pricing gracefully
       end
@@ -81,16 +79,16 @@ get '/events/:event_id/participants/register' do |event_id|
   rescue StandardError => e
     # Send error notification email for unexpected errors
     send_error_notification({
-      error_type: 'Unexpected Exception',
-      url: request.url,
-      event_id: event_id,
-      language: @lang,
-      timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
-      error_message: e.message,
-      additional_details: "Exception class: #{e.class}, Backtrace: #{e.backtrace.first(5).join('\n')}",
-      user_agent: request.user_agent,
-      ip: request.ip
-    })
+                              error_type: 'Unexpected Exception',
+                              url: request.url,
+                              event_id: event_id,
+                              language: @lang,
+                              timestamp: Time.now.strftime('%Y-%m-%d %H:%M:%S UTC'),
+                              error_message: e.message,
+                              additional_details: "Exception class: #{e.class}, Backtrace: #{e.backtrace.first(5).join('\n')}",
+                              user_agent: request.user_agent,
+                              ip: request.ip
+                            })
 
     @meta_tags.set! title: t('internal_error.title')
     status 503
@@ -101,16 +99,16 @@ end
 # Handle registration form submission
 post '/events/:event_id/participants/register' do |event_id|
   content_type :json
-  
+
   begin
     # Forward the registration to the Rails API
     api_url = "#{ENV['KEVENTER_URL'] || 'https://eventos.kleer.la'}/api/v3/events/#{event_id}/participants/register"
-    
+
     response = HTTParty.post(api_url, {
-      body: params.to_h,
-      headers: { 'Accept' => 'application/json' }
-    })
-    
+                               body: params.to_h,
+                               headers: { 'Accept' => 'application/json' }
+                             })
+
     if response.success?
       response.body
     else
@@ -120,10 +118,10 @@ post '/events/:event_id/participants/register' do |event_id|
   rescue Errno::ECONNREFUSED, Net::TimeoutError, SocketError, HTTParty::Error => e
     # Network/connection errors - service unavailable
     status 503
-    { error: "Registration service temporarily unavailable", details: e.message }.to_json
+    { error: 'Registration service temporarily unavailable', details: e.message }.to_json
   rescue StandardError => e
     # Other unexpected errors - but try to return JSON instead of triggering global handler
-    halt 500, { error: "Registration failed due to unexpected error", details: e.message }.to_json
+    halt 500, { error: 'Registration failed due to unexpected error', details: e.message }.to_json
   end
 end
 
@@ -136,11 +134,11 @@ get '/events/:event_id/participant_confirmed' do |event_id|
   begin
     event = Event.create_from_api(event_id)
     @event_type_id = event&.event_type_id
-  rescue StandardError => e
+  rescue StandardError
     # Fallback if Event.create_from_api fails
     @event_type_id = nil
   end
-  
+
   I18n.with_locale(@lang.to_sym) do
     erb :'participants/confirmed', layout: false
   end

@@ -18,9 +18,7 @@ get %r{/agendar/([^/]+)} do |slug|
   consultants = []
   begin
     response = JsonAPI.new(KeventerAPI.service_area_consultants_url(slug))
-    if response.ok? && response.doc.is_a?(Array)
-      consultants = response.doc
-    end
+    consultants = response.doc if response.ok? && response.doc.is_a?(Array)
   rescue StandardError
     # Fall back to empty consultants
   end
@@ -117,7 +115,8 @@ end
 post '/book-meeting' do
   content_type :json
 
-  unless params[:booking_token] && params[:area_slug] && BookingToken.valid?(params[:booking_token], area_slug: params[:area_slug])
+  unless params[:booking_token] && params[:area_slug] && BookingToken.valid?(params[:booking_token],
+                                                                             area_slug: params[:area_slug])
     halt 403, { error: 'forbidden' }.to_json
   end
 
@@ -139,7 +138,7 @@ post '/book-meeting' do
       }.to_json
     end
 
-    if response.status == 200 || response.status == 201
+    if [200, 201].include?(response.status)
       JSON.parse(response.body).to_json
     else
       status response.status
@@ -156,7 +155,8 @@ get '/booking-confirmed' do
 end
 
 post '/send-booking-inquiry' do
-  unless params[:booking_token] && params[:area_slug] && BookingToken.valid?(params[:booking_token], area_slug: params[:area_slug])
+  unless params[:booking_token] && params[:area_slug] && BookingToken.valid?(params[:booking_token],
+                                                                             area_slug: params[:area_slug])
     halt 403
   end
 

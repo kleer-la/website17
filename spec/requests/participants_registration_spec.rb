@@ -9,7 +9,7 @@ describe 'Participant Registration' do
 
   describe 'GET /:lang/events/:event_id/participants/register' do
     let(:event_id) { '123' }
-    
+
     let(:mock_event_data) do
       {
         'id' => event_id,
@@ -38,18 +38,18 @@ describe 'Participant Registration' do
       before do
         # Mock the new ParticipantRegistration model - this should be the ONLY path used
         allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return({
-          success: true,
-          data: mock_event_data
-        })
+                                                                                                 success: true,
+                                                                                                 data: mock_event_data
+                                                                                               })
         allow_any_instance_of(ParticipantRegistration).to receive(:load_pricing_data).and_return({
-          success: true,
-          data: {
-            'unit_price' => 100,
-            'total_price' => 100,
-            'currency' => 'USD',
-            'savings' => 0
-          }
-        })
+                                                                                                   success: true,
+                                                                                                   data: {
+                                                                                                     'unit_price' => 100,
+                                                                                                     'total_price' => 100,
+                                                                                                     'currency' => 'USD',
+                                                                                                     'savings' => 0
+                                                                                                   }
+                                                                                                 })
 
         # Setup session
         env 'rack.session', { locale: 'es' }
@@ -57,7 +57,7 @@ describe 'Participant Registration' do
 
       it 'renders the registration form' do
         get "/es/events/#{event_id}/participants/register"
-        
+
         expect(last_response.status).to eq(200)
         expect(last_response.body).to include('Test Course')
         expect(last_response.body).to include('15 Dec 2024')
@@ -72,23 +72,23 @@ describe 'Participant Registration' do
 
       it 'shows coupon code field when enabled' do
         get "/es/events/#{event_id}/participants/register"
-        
+
         expect(last_response.body).to include('name="referer_code"')
       end
 
       it 'shows sold out warning when event is sold out' do
         mock_event_data['is_sold_out'] = true
-        
+
         get "/es/events/#{event_id}/participants/register"
-        
+
         expect(last_response.body).to include('Este evento está completo')
       end
 
       it 'shows registration ended warning when registration has ended' do
         mock_event_data['registration_ended'] = true
-        
+
         get "/es/events/#{event_id}/participants/register"
-        
+
         expect(last_response.body).to include('La fecha de registración ha pasado')
       end
 
@@ -114,14 +114,14 @@ describe 'Participant Registration' do
       before do
         # Mock the new ParticipantRegistration model to return error (event not found)
         allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return({
-          success: false,
-          error: :not_found,
-          status: 404
-        })
+                                                                                                 success: false,
+                                                                                                 error: :not_found,
+                                                                                                 status: 404
+                                                                                               })
       end
 
       it 'returns 404 error' do
-        get "/es/events/999/participants/register"
+        get '/es/events/999/participants/register'
 
         expect(last_response.status).to eq(404)
       end
@@ -131,10 +131,10 @@ describe 'Participant Registration' do
       before do
         # Mock the new model to return service unavailable error
         allow_any_instance_of(ParticipantRegistration).to receive(:load_event_data).and_return({
-          success: false,
-          error: :service_unavailable,
-          status: 503
-        })
+                                                                                                 success: false,
+                                                                                                 error: :service_unavailable,
+                                                                                                 status: 503
+                                                                                               })
       end
 
       it 'returns 503 service unavailable' do
@@ -155,7 +155,7 @@ describe 'Participant Registration' do
 
     it 'renders confirmation page for free event' do
       get "/es/events/#{event_id}/participant_confirmed?free=true&api=1"
-      
+
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('¡Registro Exitoso!')
       expect(last_response.body).to include('¡Listo!')
@@ -164,7 +164,7 @@ describe 'Participant Registration' do
 
     it 'renders confirmation page for paid event' do
       get "/es/events/#{event_id}/participant_confirmed?free=false&api=1"
-      
+
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('¡Registro Exitoso!')
       expect(last_response.body).to include('¡Gracias!')
@@ -173,14 +173,14 @@ describe 'Participant Registration' do
 
     it 'responds successfully' do
       get "/es/events/#{event_id}/participant_confirmed?free=true&api=1"
-      
+
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('Registro Exitoso')
     end
 
     it 'includes back to agenda link' do
       get "/es/events/#{event_id}/participant_confirmed?free=true&api=1"
-      
+
       expect(last_response.body).to include('href="/es/agenda"')
       expect(last_response.body).to include('Volver a la Agenda')
     end
@@ -192,7 +192,7 @@ describe 'Participant Registration' do
 
       it 'renders confirmation page for free event in English' do
         get "/en/events/#{event_id}/participant_confirmed?free=true&api=1"
-        
+
         expect(last_response.status).to eq(200)
         expect(last_response.body).to include('Registration Successful!')
         expect(last_response.body).to include('You\'re all set!')
@@ -201,7 +201,7 @@ describe 'Participant Registration' do
 
       it 'includes back to agenda link in English' do
         get "/en/events/#{event_id}/participant_confirmed?free=true&api=1"
-        
+
         expect(last_response.body).to include('href="/en/schedule"')
         expect(last_response.body).to include('Back to Agenda')
       end
@@ -210,7 +210,7 @@ describe 'Participant Registration' do
 
   describe 'POST /:lang/events/:event_id/participants/register' do
     let(:event_id) { '123' }
-    
+
     let(:registration_params) do
       {
         'fname' => 'John',
@@ -242,7 +242,7 @@ describe 'Participant Registration' do
 
       it 'forwards the registration to Rails API and returns JSON response' do
         post "/es/events/#{event_id}/participants/register", registration_params
-        
+
         expect(last_response.status).to eq(200)
         expect(last_response.content_type).to include('application/json')
         expect(last_response.body).to include('success')
@@ -261,7 +261,7 @@ describe 'Participant Registration' do
 
       it 'returns error response from Rails API' do
         post "/es/events/#{event_id}/participants/register", registration_params
-        
+
         expect(last_response.status).to eq(422)
         expect(last_response.body).to include('Validation failed')
       end
@@ -274,7 +274,7 @@ describe 'Participant Registration' do
 
       it 'returns 503 service unavailable' do
         post "/es/events/#{event_id}/participants/register", registration_params
-        
+
         expect(last_response.status).to eq(503)
         expect(last_response.body).to include('Registration service temporarily unavailable')
       end

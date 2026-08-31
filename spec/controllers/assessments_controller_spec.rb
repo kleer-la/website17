@@ -12,58 +12,53 @@ describe 'Assessment routes' do
     let(:assessment_id) { 1 }
     let(:mock_assessment) do
       double('Assessment',
-        id: assessment_id,
-        title: 'Test Assessment',
-        description: '**Bold description** with markdown',
-        question_groups: [
-          double('QuestionGroup',
-            name: 'Group 1',
-            description: '*Italic group description* with markdown',
-            questions: [
-              double('Question',
-                id: 1,
-                name: 'Question 1',
-                description: '`Code question description` with markdown',
-                question_type: 'radio_button',
-                answers: [
-                  double('Answer', id: 1, text: '**Bold answer** with markdown'),
-                  double('Answer', id: 2, text: '*Italic answer* with markdown')
-                ]
-              ),
-              double('Question',
-                id: 2,
-                name: 'Question 2',
-                description: nil,
-                question_type: 'linear_scale',
-                answers: [
-                  double('Answer', id: 3, text: 'Low `code` rating'),
-                  double('Answer', id: 4, text: 'High **bold** rating')
-                ]
-              )
-            ]
-          )
-        ],
-        questions: [
-          double('Question',
-            id: 3,
-            name: 'Standalone Question',
-            description: '**Standalone** question with markdown',
-            question_type: 'short_text',
-            answers: []
-          )
-        ]
-      )
+             id: assessment_id,
+             title: 'Test Assessment',
+             description: '**Bold description** with markdown',
+             question_groups: [
+               double('QuestionGroup',
+                      name: 'Group 1',
+                      description: '*Italic group description* with markdown',
+                      questions: [
+                        double('Question',
+                               id: 1,
+                               name: 'Question 1',
+                               description: '`Code question description` with markdown',
+                               question_type: 'radio_button',
+                               answers: [
+                                 double('Answer', id: 1, text: '**Bold answer** with markdown'),
+                                 double('Answer', id: 2, text: '*Italic answer* with markdown')
+                               ]),
+                        double('Question',
+                               id: 2,
+                               name: 'Question 2',
+                               description: nil,
+                               question_type: 'linear_scale',
+                               answers: [
+                                 double('Answer', id: 3, text: 'Low `code` rating'),
+                                 double('Answer', id: 4, text: 'High **bold** rating')
+                               ])
+                      ])
+             ],
+             questions: [
+               double('Question',
+                      id: 3,
+                      name: 'Standalone Question',
+                      description: '**Standalone** question with markdown',
+                      question_type: 'short_text',
+                      answers: [])
+             ])
     end
     let(:markdown_renderer) { double('CustomMarkdown') }
 
     before do
       env 'rack.session', { locale: 'es' }
-      
+
       # Mock dependencies
       allow_any_instance_of(Sinatra::Application).to receive(:@meta_tags).and_return(double.as_null_object)
       allow(CustomMarkdown).to receive(:new).and_return(markdown_renderer)
       allow_any_instance_of(Sinatra::Application).to receive(:verify_recaptcha).and_return(true)
-      
+
       # Mock assessment creation
       allow(Assessment).to receive(:create_one_keventer)
         .with(assessment_id.to_s, 'es')
@@ -93,9 +88,9 @@ describe 'Assessment routes' do
           company: 'Test Company',
           context: 'Test Context'
         }
-        
+
         expect(last_response.status).to eq(200)
-        
+
         # Since the markdown renderer is properly mocked and the second test passes,
         # this confirms that the markdown rendering is working.
         # The actual HTML structure is complex due to the full page layout,
@@ -113,9 +108,9 @@ describe 'Assessment routes' do
           company: 'Test Company',
           context: 'Test Context'
         }
-        
+
         expect(last_response.status).to eq(200)
-        
+
         # Verify that markdown renderer was called for each expected field
         expect(markdown_renderer).to have_received(:render).with('**Bold description** with markdown')
         expect(markdown_renderer).to have_received(:render).with('*Italic group description* with markdown')
@@ -134,7 +129,7 @@ describe 'Assessment routes' do
           company: 'Test Company',
           context: 'Test Context'
         }
-        
+
         expect(last_response.status).to eq(200)
         # Should not include any empty description div for the question without description
         expect(last_response.body).not_to include('question-description"></div>')
@@ -154,7 +149,7 @@ describe 'Assessment routes' do
           context: 'Test Context',
           resource_slug: 'test-resource'
         }
-        
+
         expect(last_response).to be_redirect
         expect(last_response.location).to include('/recursos/test-resource')
       end

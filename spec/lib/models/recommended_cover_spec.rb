@@ -15,28 +15,28 @@ RSpec.describe Recommended do
 
     it 'replaces S3 URLs with CDN URLs in recommended articles' do
       recommended = Recommended.create(article_data)
-      
+
       expect(recommended.cover).to eq('https://d3vnsn21cv5bcd.cloudfront.net/test-cover.jpg')
     end
 
     it 'handles empty cover URLs' do
       article_data['cover'] = ''
       recommended = Recommended.create(article_data)
-      
+
       expect(recommended.cover).to eq('')
     end
 
     it 'handles nil cover URLs' do
       article_data['cover'] = nil
       recommended = Recommended.create(article_data)
-      
+
       expect(recommended.cover).to be_nil
     end
 
     it 'preserves existing CDN URLs' do
       article_data['cover'] = 'https://d3vnsn21cv5bcd.cloudfront.net/already-cdn.jpg'
       recommended = Recommended.create(article_data)
-      
+
       expect(recommended.cover).to eq('https://d3vnsn21cv5bcd.cloudfront.net/already-cdn.jpg')
     end
   end

@@ -4,43 +4,43 @@ require 'spec_helper'
 describe Assessment do
   let(:mock_doc) do
     {
-      'id'=>1,
-      'title'=>'Test Assessment',
-      'description'=>'Test Description',
-      'question_groups'=>[
+      'id' => 1,
+      'title' => 'Test Assessment',
+      'description' => 'Test Description',
+      'question_groups' => [
         {
-          'id'=>1,
-          'name'=>'Domain',
-          'description'=>'This is the domain question group description',
-          'position'=>1,
-          'questions'=>[
+          'id' => 1,
+          'name' => 'Domain',
+          'description' => 'This is the domain question group description',
+          'position' => 1,
+          'questions' => [
             {
-              'id'=>1,
-              'name'=>'Grouped Q1',
-              'position'=>1,
-              'question_type'=>'linear_scale',
-              'answers'=>[
+              'id' => 1,
+              'name' => 'Grouped Q1',
+              'position' => 1,
+              'question_type' => 'linear_scale',
+              'answers' => [
                 {
-                  'id'=>1,
-                  'text'=>'Low',
-                  'position'=>1
+                  'id' => 1,
+                  'text' => 'Low',
+                  'position' => 1
                 }
               ]
             }
           ]
         }
       ],
-      'questions'=>[
+      'questions' => [
         {
-          'id'=>2,
-          'name'=>'Standalone Q1',
-          'position'=>2,
-          'question_type'=>'linear_scale',
-          'answers'=>[
+          'id' => 2,
+          'name' => 'Standalone Q1',
+          'position' => 2,
+          'question_type' => 'linear_scale',
+          'answers' => [
             {
-              'id'=>2,
-              'text'=>'Small',
-              'position'=>1
+              'id' => 2,
+              'text' => 'Small',
+              'position' => 1
             }
           ]
         }
@@ -85,42 +85,42 @@ describe Assessment do
   describe '.create_one_null' do
     it 'creates a test assessment and enables null testing mode' do
       test_assessment = {
-        'id'=>1,
-        'title'=>'Mock Assessment',
-        'description'=>'Mock Description',
-        'question_groups'=>[
+        'id' => 1,
+        'title' => 'Mock Assessment',
+        'description' => 'Mock Description',
+        'question_groups' => [
           {
-            'id'=>1,
-            'name'=>'Mock Domain',
-            'position'=>1,
-            'questions'=>[
+            'id' => 1,
+            'name' => 'Mock Domain',
+            'position' => 1,
+            'questions' => [
               {
-                'id'=>1,
-                'name'=>'Mock Q1',
-                'position'=>1,
-                'question_type'=>'linear_scale',
-                'answers'=>[
+                'id' => 1,
+                'name' => 'Mock Q1',
+                'position' => 1,
+                'question_type' => 'linear_scale',
+                'answers' => [
                   {
-                    'id'=>1,
-                    'text'=>'Mock Low',
-                    'position'=>1
+                    'id' => 1,
+                    'text' => 'Mock Low',
+                    'position' => 1
                   }
                 ]
               }
             ]
           }
         ],
-        'questions'=>[
+        'questions' => [
           {
-            'id'=>2,
-            'name'=>'Mock Standalone',
-            'position'=>2,
-            'question_type'=>'linear_scale',
-            'answers'=>[
+            'id' => 2,
+            'name' => 'Mock Standalone',
+            'position' => 2,
+            'question_type' => 'linear_scale',
+            'answers' => [
               {
-                'id'=>2,
-                'text'=>'Mock Small',
-                'position'=>1
+                'id' => 2,
+                'text' => 'Mock Small',
+                'position' => 1
               }
             ]
           }

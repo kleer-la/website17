@@ -46,12 +46,12 @@ describe JsonLdHelper do
   describe '#article_json_ld' do
     let(:article) do
       Article.new({
-        'id' => 1, 'title' => 'Test Article', 'slug' => 'test-article',
-        'lang' => 'es', 'published' => true, 'description' => 'A test article',
-        'cover' => 'https://cdn.kleer.la/test.jpg',
-        'created_at' => '2025-01-15', 'substantive_change_at' => '2025-03-20',
-        'trainers' => [{ 'name' => 'Jane Doe', 'gravatar' => '' }]
-      })
+                    'id' => 1, 'title' => 'Test Article', 'slug' => 'test-article',
+                    'lang' => 'es', 'published' => true, 'description' => 'A test article',
+                    'cover' => 'https://cdn.kleer.la/test.jpg',
+                    'created_at' => '2025-01-15', 'substantive_change_at' => '2025-03-20',
+                    'trainers' => [{ 'name' => 'Jane Doe', 'gravatar' => '' }]
+                  })
     end
 
     subject { article_json_ld(article) }
@@ -74,9 +74,9 @@ describe JsonLdHelper do
 
     it 'falls back to Organization author when no trainers' do
       article_no_trainers = Article.new({
-        'id' => 2, 'title' => 'No Author', 'slug' => 'no-author',
-        'lang' => 'es', 'published' => true, 'description' => 'desc'
-      })
+                                          'id' => 2, 'title' => 'No Author', 'slug' => 'no-author',
+                                          'lang' => 'es', 'published' => true, 'description' => 'desc'
+                                        })
 
       result = article_json_ld(article_no_trainers)
 
@@ -93,9 +93,9 @@ describe JsonLdHelper do
   describe '#service_json_ld' do
     let(:service) do
       ServiceV3.new({
-        'id' => 1, 'name' => 'Agile Coaching', 'slug' => 'agile-coaching',
-        'subtitle' => 'Transform your team', 'seo_description' => 'Professional coaching'
-      })
+                      'id' => 1, 'name' => 'Agile Coaching', 'slug' => 'agile-coaching',
+                      'subtitle' => 'Transform your team', 'seo_description' => 'Professional coaching'
+                    })
     end
 
     let(:service_area) do
@@ -116,9 +116,9 @@ describe JsonLdHelper do
 
     it 'falls back to subtitle when seo_description is nil' do
       service_no_seo = ServiceV3.new({
-        'id' => 2, 'name' => 'Test', 'slug' => 'test',
-        'subtitle' => 'The subtitle', 'seo_description' => nil
-      })
+                                       'id' => 2, 'name' => 'Test', 'slug' => 'test',
+                                       'subtitle' => 'The subtitle', 'seo_description' => nil
+                                     })
 
       result = service_json_ld(service_no_seo, service_area)
 
@@ -129,10 +129,10 @@ describe JsonLdHelper do
   describe '#course_json_ld' do
     let(:event_type) do
       EventType.new({
-        'id' => 1, 'slug' => 'scrum-master', 'name' => 'Certified Scrum Master',
-        'lang' => 'es', 'elevator_pitch' => 'Learn Scrum fundamentals',
-        'cover' => 'https://cdn.kleer.la/scrum.jpg'
-      })
+                      'id' => 1, 'slug' => 'scrum-master', 'name' => 'Certified Scrum Master',
+                      'lang' => 'es', 'elevator_pitch' => 'Learn Scrum fundamentals',
+                      'cover' => 'https://cdn.kleer.la/scrum.jpg'
+                    })
     end
 
     subject { course_json_ld(event_type) }
@@ -153,12 +153,12 @@ describe JsonLdHelper do
   describe '#resource_json_ld' do
     let(:resource) do
       Resource.new({
-        'id' => 1, 'slug' => 'retromat', 'format' => 'download',
-        'title_es' => 'Retromat', 'description_es' => 'Herramienta de retrospectivas',
-        'seo_description_es' => 'Planes de retrospectivas',
-        'cover_es' => 'https://cdn.kleer.la/retromat.jpg',
-        'authors' => [{ 'name' => 'John Doe', 'gravatar' => '' }]
-      }, 'es')
+                     'id' => 1, 'slug' => 'retromat', 'format' => 'download',
+                     'title_es' => 'Retromat', 'description_es' => 'Herramienta de retrospectivas',
+                     'seo_description_es' => 'Planes de retrospectivas',
+                     'cover_es' => 'https://cdn.kleer.la/retromat.jpg',
+                     'authors' => [{ 'name' => 'John Doe', 'gravatar' => '' }]
+                   }, 'es')
     end
 
     subject { resource_json_ld(resource) }

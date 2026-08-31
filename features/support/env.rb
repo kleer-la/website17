@@ -26,7 +26,7 @@ class MyWorld
   include RSpec::Expectations
   include RSpec::Matchers
   include RSpecHtmlMatchers
-  include Rack::Test::Methods  # Add this line
+  include Rack::Test::Methods # Add this line
 
   def app
     Sinatra::Application

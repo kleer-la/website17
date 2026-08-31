@@ -70,7 +70,7 @@ RSpec.describe ParticipantRegistration do
 
     context 'when API call fails' do
       it 'returns error result' do
-        null_api = APIAccessible::NullJsonAPI.new("{}")
+        null_api = APIAccessible::NullJsonAPI.new('{}')
         allow(null_api).to receive(:ok?).and_return(false)
         ParticipantRegistration.api_client = null_api
 
@@ -131,7 +131,7 @@ RSpec.describe ParticipantRegistration do
 
     context 'when API call fails' do
       it 'returns error result' do
-        null_api = APIAccessible::NullJsonAPI.new("{}")
+        null_api = APIAccessible::NullJsonAPI.new('{}')
         allow(null_api).to receive(:ok?).and_return(false)
         ParticipantRegistration.api_client = null_api
 
@@ -179,7 +179,7 @@ RSpec.describe ParticipantRegistration do
 
     context 'when API is unreachable' do
       it 'returns service unavailable response' do
-        null_api = APIAccessible::NullJsonAPI.new("{}")
+        null_api = APIAccessible::NullJsonAPI.new('{}')
         allow(null_api).to receive(:ok?).and_return(false)
         ParticipantRegistration.api_client = null_api
 
@@ -202,7 +202,7 @@ RSpec.describe ParticipantRegistration do
     it 'caches event data API responses' do
       call_count = 0
 
-      allow(APIAccessible::JsonAPI).to receive(:new) do |url|
+      allow(APIAccessible::JsonAPI).to receive(:new) do |_url|
         call_count += 1
         APIAccessible::NullJsonAPI.new(valid_event_data.to_json)
       end
@@ -219,7 +219,7 @@ RSpec.describe ParticipantRegistration do
     it 'caches pricing data API responses' do
       call_count = 0
 
-      allow(APIAccessible::JsonAPI).to receive(:new) do |url|
+      allow(APIAccessible::JsonAPI).to receive(:new) do |_url|
         call_count += 1
         APIAccessible::NullJsonAPI.new(valid_pricing_data.to_json)
       end

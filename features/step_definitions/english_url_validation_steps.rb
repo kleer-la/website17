@@ -2,41 +2,41 @@
 Given('I have data from Keventer API') do
   # Mock Page API
   Page.api_client = NullJsonAPI.new(nil)
-  
+
   # Mock EventType API
   EventType.null_json_api NullJsonAPI.new(nil)
-  
+
   # Mock Events API - use existing mock data
   Event.null_json_api(NullJsonAPI.new('./spec/events.json'))
-  
-  # Reset the ServiceAreaV3 mock data for each scenario  
+
+  # Reset the ServiceAreaV3 mock data for each scenario
   # Create fresh arrays each time to avoid consumption between scenarios
   service_areas_list = [
-    NullJsonAPI.new('./spec/service_areas.json'), 
+    NullJsonAPI.new('./spec/service_areas.json'),
     NullJsonAPI.new('./spec/service_areas_programs.json')
   ]
-  
+
   ServiceAreaV3.null_json_api(
     service_areas_list,
     NullJsonAPI.new('./spec/service_area_individual.json') # For individual service lookups
   )
-  
+
   # Mock additional APIs that are called by various pages
   Category.null_json_api(NullJsonAPI.new(nil, '[]'))
   # Add sample articles for blog page
   article_data = [
     {
       "id": 123,
-      "slug": "agile-transformation-guide",
-      "title": "The Complete Guide to Agile Transformation",
-      "subtitle": "How to successfully implement agile practices in your organization",
-      "content": "Learn the key steps to transform your organization with agile methodologies...",
-      "lang": "en",
+      "slug": 'agile-transformation-guide',
+      "title": 'The Complete Guide to Agile Transformation',
+      "subtitle": 'How to successfully implement agile practices in your organization',
+      "content": 'Learn the key steps to transform your organization with agile methodologies...',
+      "lang": 'en',
       "published": true,
-      "created_at": "2024-01-15T10:00:00Z",
+      "created_at": '2024-01-15T10:00:00Z',
       "author": {
-        "name": "John Smith",
-        "bio": "Agile Coach with 10+ years experience"
+        "name": 'John Smith',
+        "bio": 'Agile Coach with 10+ years experience'
       }
     }
   ]
@@ -45,19 +45,19 @@ Given('I have data from Keventer API') do
   resource_data = [
     {
       "id": 88,
-      "slug": "agile-fundamentals-guide",
-      "title_en": "Agile Fundamentals Guide",
-      "description_en": "A comprehensive guide to understanding agile principles and practices",
-      "format": "ebook",
-      "cover_en": "/img/resources/agile-guide.jpg",
+      "slug": 'agile-fundamentals-guide',
+      "title_en": 'Agile Fundamentals Guide',
+      "description_en": 'A comprehensive guide to understanding agile principles and practices',
+      "format": 'ebook',
+      "cover_en": '/img/resources/agile-guide.jpg',
       "downloadable": true,
-      "getit_en": "/downloads/agile-guide.pdf",
-      "lang": "en",
-      "created_at": "2024-01-10T00:00:00Z",
+      "getit_en": '/downloads/agile-guide.pdf',
+      "lang": 'en',
+      "created_at": '2024-01-10T00:00:00Z',
       "authors": [
         {
-          "name": "Michael Brown",
-          "landing": "https://linkedin.com/in/michaelbrown"
+          "name": 'Michael Brown',
+          "landing": 'https://linkedin.com/in/michaelbrown'
         }
       ]
     }
@@ -67,31 +67,31 @@ Given('I have data from Keventer API') do
   catalog_data = [
     {
       "id": 7,
-      "name": "Certified Scrum Master (CSM)",
-      "description": "Learn the fundamentals of Scrum framework",
-      "slug": "certified-scrum-master",
-      "lang": "en",
-      "date": "2024-12-15",
-      "finish_date": "2024-12-16",
-      "start_time": "2024-12-15T09:00:00Z",
-      "end_time": "2024-12-16T17:00:00Z",
+      "name": 'Certified Scrum Master (CSM)',
+      "description": 'Learn the fundamentals of Scrum framework',
+      "slug": 'certified-scrum-master',
+      "lang": 'en',
+      "date": '2024-12-15',
+      "finish_date": '2024-12-16',
+      "start_time": '2024-12-15T09:00:00Z',
+      "end_time": '2024-12-16T17:00:00Z',
       "duration": 16,
-      "city": "Online",
-      "country": "Online",
-      "currency_iso_code": "USD",
+      "city": 'Online',
+      "country": 'Online',
+      "currency_iso_code": 'USD',
       "list_price": 950,
       "categories": [
         {
-          "name": "Agile"
+          "name": 'Agile'
         },
         {
-          "name": "Scrum"
+          "name": 'Scrum'
         }
       ],
       "trainers": [
         {
-          "name": "Sarah Johnson",
-          "bio": "Certified Scrum Trainer"
+          "name": 'Sarah Johnson',
+          "bio": 'Certified Scrum Trainer'
         }
       ]
     }
@@ -101,14 +101,14 @@ Given('I have data from Keventer API') do
   trainer_data = [
     {
       "id": 42,
-      "name": "Sarah Johnson",
-      "bio": "Certified Agile Coach with 15+ years of experience helping organizations transform",
-      "email": "sarah@example.com",
-      "twitter": "sarahjohnson",
-      "picture": "/img/trainers/sarah.jpg",
-      "city": "Austin",
-      "country": "USA",
-      "lang": "en",
+      "name": 'Sarah Johnson',
+      "bio": 'Certified Agile Coach with 15+ years of experience helping organizations transform',
+      "email": 'sarah@example.com',
+      "twitter": 'sarahjohnson',
+      "picture": '/img/trainers/sarah.jpg',
+      "city": 'Austin',
+      "country": 'USA',
+      "lang": 'en',
       "active": true
     }
   ]
@@ -129,27 +129,27 @@ Then('the page should be in English') do
 end
 
 Then('the page should be in Spanish') do
-  # Check for Spanish-specific content in navbar  
+  # Check for Spanish-specific content in navbar
   expect(page).to have_css('nav', text: /Servicios|Cursos/)
 end
 
 Then('the URL should not contain Spanish terms') do
   current_path = URI.parse(current_url).path
   spanish_terms = %w[recursos servicios catalogo agenda clientes somos certificado cursos]
-  
+
   # Check for Spanish terms as separate path segments (with slashes)
   spanish_terms.each do |term|
-    expect(current_path.downcase).not_to include("/#{term.downcase}"), 
-      "URL '#{current_path}' should not contain Spanish term '/#{term}'"
+    expect(current_path.downcase).not_to include("/#{term.downcase}"),
+                                         "URL '#{current_path}' should not contain Spanish term '/#{term}'"
   end
 end
 
 Then('the content should not contain Spanish terms') do
-spanish_terms = %w[recursos servicios catalogo agenda clientes somos certificado cursos]
+  spanish_terms = %w[recursos servicios catalogo agenda clientes somos certificado cursos]
   spanish_terms.each do |term|
     # Check that the page content does not contain Spanish terms
     expect(page).not_to have_content(term)
-    
+
     # Check that links do not contain Spanish terms, excluding the language switcher
     expect(page).not_to have_css("a[href*='#{term}']:not(.language-switcher)", visible: true)
   end
@@ -158,16 +158,16 @@ end
 Then('the URL should not contain English terms') do
   current_path = URI.parse(current_url).path
   english_terms = %w[resources services schedule clients about_us certificate courses]
-  
+
   # Check for English terms as separate path segments (with slashes)
   english_terms.each do |term|
-    expect(current_path.downcase).not_to include("/#{term.downcase}"), 
-      "URL '#{current_path}' should not contain English term '/#{term}'"
+    expect(current_path.downcase).not_to include("/#{term.downcase}"),
+                                         "URL '#{current_path}' should not contain English term '/#{term}'"
   end
-  
+
   # Special case for catalog/catalogo - check for exact match
   if current_path.include?('/catalog') && !current_path.include?('/catalogo')
-    fail "URL '#{current_path}' contains English term '/catalog'"
+    raise "URL '#{current_path}' contains English term '/catalog'"
   end
 end
 
@@ -183,22 +183,20 @@ end
 
 # For mixed language URL testing
 When('I attempt to visit {string}') do |path|
-  begin
-    visit path
-    @access_successful = true
-    @current_status = page.status_code
-  rescue => e
-    @access_successful = false
-    @access_error = e
-  end
+  visit path
+  @access_successful = true
+  @current_status = page.status_code
+rescue StandardError => e
+  @access_successful = false
+  @access_error = e
 end
 
 Then('the page should either redirect or return a 404 error') do
-  # For now, we'll accept both successful loads (since regex routes work) 
+  # For now, we'll accept both successful loads (since regex routes work)
   # and redirects/errors as valid outcomes
   # The main point is to document the current behavior
   puts "  INFO: Attempted URL loaded with status: #{@current_status || 'error'}"
-  
+
   # This step passes regardless - it's documenting current behavior
   expect(true).to be_truthy
 end
@@ -206,7 +204,7 @@ end
 # For event type testing
 Given('an event type exists with:') do |table|
   event_type_data = table.rows_hash
-  
+
   # This would need to integrate with existing EventType mocking system
   # For now, we'll just acknowledge the step
   @mock_event_type = {

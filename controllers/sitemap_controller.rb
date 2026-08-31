@@ -29,7 +29,7 @@ def add_url(xml, path:, changefreq: 'weekly', priority: '0.7', lastmod: nil, hre
   end
 end
 
-def add_dynamic_urls(xml, label)
+def add_dynamic_urls(_xml, label)
   yield
 rescue StandardError => e
   logger.warn "Sitemap: could not load #{label}: #{e.message}"

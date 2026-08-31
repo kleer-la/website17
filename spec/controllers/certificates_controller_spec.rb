@@ -162,10 +162,10 @@ describe 'Certificates routes' do
       require 'yaml'
       es_data = YAML.load_file('locales/es.yml')
       cursos_menu = es_data['es']['navbar'].find { |item| item['text'] == 'Cursos' }
-      
+
       expect(cursos_menu).not_to be_nil
       expect(cursos_menu['options']).not_to be_nil
-      
+
       validate_cert_option = cursos_menu['options'].find { |opt| opt['text'] == 'Validar certificado' }
       expect(validate_cert_option).not_to be_nil
       expect(validate_cert_option['url']).to eq('/certificado')
@@ -177,10 +177,10 @@ describe 'Certificates routes' do
       require 'yaml'
       en_data = YAML.load_file('locales/en.yml')
       courses_menu = en_data['en']['navbar'].find { |item| item['text'] == 'Courses' }
-      
+
       expect(courses_menu).not_to be_nil
       expect(courses_menu['options']).not_to be_nil
-      
+
       validate_cert_option = courses_menu['options'].find { |opt| opt['text'] == 'Validate Certificate' }
       expect(validate_cert_option).not_to be_nil
       expect(validate_cert_option['url']).to eq('/certificate')
@@ -194,7 +194,7 @@ describe 'Certificates routes' do
       I18n.load_path = Dir['locales/*.yml']
       I18n.backend.load_translations
       I18n.locale = :es
-      
+
       expect(I18n.t('certificates.not_found')).to eq('No encontramos un certificado con ese código')
       expect(I18n.t('certificate-form.title')).to eq('Certificados')
       expect(I18n.t('certificate-form.submit.text')).to eq('Obten tu certificado')
@@ -205,7 +205,7 @@ describe 'Certificates routes' do
       I18n.load_path = Dir['locales/*.yml']
       I18n.backend.load_translations
       I18n.locale = :en
-      
+
       expect(I18n.t('certificates.not_found')).to eq('We couldn\'t find a certificate with that code')
       expect(I18n.t('certificate-form.title')).to eq('Certificates')
       expect(I18n.t('certificate-form.submit.text')).to eq('Get certificate')

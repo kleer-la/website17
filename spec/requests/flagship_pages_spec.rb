@@ -5,7 +5,7 @@ require './app'
 # Keventer API: scrapers request quoted strings from our HTML (aria-labels,
 # CSS classes) as URLs, and URI.join raises URI::InvalidURIError on them,
 # turning what should be a 404 into a 500.
-describe "GET /:slug (flagship catch-all)" do
+describe 'GET /:slug (flagship catch-all)' do
   def app
     Sinatra::Application.new
   end

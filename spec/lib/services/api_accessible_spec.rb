@@ -37,7 +37,7 @@ RSpec.describe APIAccessible do
       it 'returns nil' do
         failed_response = instance_double(HTTParty::Response, success?: false)
         allow(APIAccessible::JsonAPI).to receive(:get).and_return(failed_response)
-        
+
         object = dummy_class.create_from_api(1)
         expect(object).to be_nil
       end

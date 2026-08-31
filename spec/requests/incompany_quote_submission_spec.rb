@@ -45,7 +45,7 @@ describe 'In-Company Quote Submission' do
             can_we_contact: false,
             suscribe: false
           )
-        ) do |url, data|
+        ) do |_url, data|
           expect(data[:message]).to include('Online')
           expect(data[:message]).to include('15')
           mailer_instance
@@ -83,7 +83,7 @@ describe 'In-Company Quote Submission' do
             company: 'Tech Solutions',
             language: 'es'
           )
-        ) do |url, data|
+        ) do |_url, data|
           expect(data[:message]).to include('Presencial')
           expect(data[:message]).to include('Buenos Aires, Argentina')
           expect(data[:message]).to include('20')
@@ -119,7 +119,7 @@ describe 'In-Company Quote Submission' do
             company: 'Global Inc',
             language: 'en'
           )
-        ) do |url, data|
+        ) do |_url, data|
           expect(data[:message]).to include('Online')
           expect(data[:message]).to include('12')
           mailer_instance
@@ -152,7 +152,7 @@ describe 'In-Company Quote Submission' do
         expect(Mailer).to receive(:new).with(
           mailer_url,
           hash_including(name: 'Test User')
-        ) do |url, data|
+        ) do |_url, data|
           expect(data[:message]).to include('8')
           mailer_instance
         end
@@ -183,7 +183,7 @@ describe 'In-Company Quote Submission' do
         expect(Mailer).to receive(:new).with(
           mailer_url,
           hash_including(name: 'Test User')
-        ) do |url, data|
+        ) do |_url, data|
           expect(data[:message]).to include('10')
           expect(data[:message]).to include('Información adicional')
           expect(data[:message]).to include('Por favor envien CV de los capacitadores')

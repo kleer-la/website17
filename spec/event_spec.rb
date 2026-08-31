@@ -49,7 +49,7 @@ describe Event do
 
   context 'create_keventer_json' do
     before(:each) do
-      @json_api = NullJsonAPI.new(nil, '''
+      @json_api = NullJsonAPI.new(nil, '
         [{"id":2372,"date":"2023-01-16","place":"(GMT-05:00) Bogota","capacity":24,"city":"Online","country_id":245,"trainer_id":11,
           "visibility_type":"pu","list_price":"800.0","eb_price":"760.0","eb_end_date":"2023-01-06","draft":false,"cancelled":false,
           "created_at":"2022-10-11T20:03:51.355Z","updated_at":"2022-12-26T15:11:38.304Z","event_type_id":7,"registration_link":"",
@@ -63,7 +63,7 @@ describe Event do
           "country":{"id":245,"name":"-- OnLine --","iso_code":"OL","created_at":"2012-11-28T19:53:51.250Z","updated_at":"2012-11-28T19:53:51.250Z"},
           "event_type":{"id":7,"name":"Certified Scrum Master (CSM)"}
         }]
-        ''')
+        ')
     end
 
     it 'read a json' do
@@ -77,76 +77,76 @@ describe Event do
       expect(events.count).to eq 0
     end
   end
-  
-  describe 'caching functionality' do    
+
+  describe 'caching functionality' do
     let(:mock_events) do
       [
         double('Event', country_iso: 'AR', date: Date.today + 1),
         double('Event', country_iso: 'CO', date: Date.today + 2)
       ]
     end
-    
+
     it 'caches events with default cache key' do
       allow(Event).to receive(:load_events).and_return(mock_events)
-      
+
       # First call should hit the API
       events1 = Event.create_keventer_json
       expect(events1).to eq(mock_events)
-      
+
       # Second call should use cache
       allow(Event).to receive(:load_events).and_return([])
       events2 = Event.create_keventer_json
       expect(events2).to eq(mock_events)
     end
-    
+
     it 'uses custom cache key when provided' do
       allow(Event).to receive(:load_events).and_return(mock_events)
-      
+
       # Cache with custom key
       events1 = Event.create_keventer_json(cache_key: 'custom_events_key')
       expect(events1).to eq(mock_events)
-      
+
       # Verify it's cached under the custom key
       cached_events = CacheService.get('custom_events_key')
       expect(cached_events).to eq(mock_events)
     end
-    
+
     it 'respects custom TTL' do
       allow(Event).to receive(:load_events).and_return(mock_events)
-      
+
       # Cache with default TTL
       events = Event.create_keventer_json
       expect(events).to eq(mock_events)
-      
+
       # Manually clear cache to test cache expiration
       CacheService.delete("home_events_#{I18n.locale || 'es'}")
-      
+
       # Should call API again
       allow(Event).to receive(:load_events).and_return([])
       events2 = Event.create_keventer_json
       expect(events2).to eq([])
     end
-    
+
     # it 'includes date in default cache key' do
     #   allow(Event).to receive(:load_events).and_return(mock_events)
-      
+
     #   # Cache for today
     #   today_events = Event.create_keventer_json(Date.today)
-      
+
     #   # Cache for tomorrow should be different
     #   tomorrow_events = Event.create_keventer_json(Date.today + 1)
-      
+
     #   # Verify they have different cache keys
     #   expect(CacheService.stats[:total_entries]).to eq(2)
     # end
-    
+
     # it 'handles API failures gracefully' do
     #   allow(Event).to receive(:load_events).and_raise(StandardError.new('API Error'))
-      
+
     #   expect {
     #     Event.create_keventer_json
     #   }.to raise_error(StandardError, 'API Error')
-      
+
     #   # Verify nothing was cached
     #   expect(CacheService.stats[:total_entries]).to eq(0)
     # end

@@ -9,7 +9,7 @@ require './lib/services/keventer_api'
 
 class Event
   include APIAccessible
-  api_connector(Class.new { def url_for(id) = KeventerAPI.events_url })
+  api_connector(Class.new { def url_for(_id) = KeventerAPI.events_url })
 
   attr_accessor :country_iso, :country_name, :certified,
                 :city, :country, :country_code, :event_type, :event_type_id, :date,
@@ -55,7 +55,8 @@ class Event
 
   def load_basic(hash_event)
     @id = hash_event['id'] ? hash_event['id'].to_i : hash_event['event_id']
-    load_str(%i[city place address registration_link time_zone_name is_sold_out registration_ended event_type_id], hash_event)
+    load_str(%i[city place address registration_link time_zone_name is_sold_out registration_ended event_type_id],
+             hash_event)
   end
 
   def load_date(hash_event)
@@ -127,6 +128,7 @@ class Event
   def registration_ended?(current_date = Date.today)
     # Prefer the API field if available, otherwise compute based on date
     return @registration_ended unless @registration_ended.nil?
+
     date.nil? || date <= current_date
   end
 
@@ -142,12 +144,12 @@ class Event
         load_events(json_api.doc, today) unless json_api.doc.nil?
       end || [] # Ensure array is returned even if cache returns nil
     rescue StandardError => e
-      if ENV['RACK_ENV'] == 'development'
-        raise e # Re-raise the original error with full context
-      else
-        puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test' # Log error for debugging
-        [] # Return empty array in production
-      end
+      raise e if ENV['RACK_ENV'] == 'development'
+
+      # Re-raise the original error with full context
+
+      puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test' # Log error for debugging
+      [] # Return empty array in production
     end
 
     def null_json_api(null_api)
@@ -176,12 +178,10 @@ class Event
       event_type = EventType.new(event_type_json)
       Event.new(event_type).load_from_json(event_data)
     rescue StandardError => e
-      if ENV['RACK_ENV'] == 'development'
-        raise e
-      else
-        puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test'
-        nil
-      end
+      raise e if ENV['RACK_ENV'] == 'development'
+
+      puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test'
+      nil
     end
 
     def load_events(events, today)

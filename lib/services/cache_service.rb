@@ -36,7 +36,7 @@ class CacheService
       expires_at: expires_at,
       created_at: Time.now
     }
-    
+
     @logger.info "Cache set for key: #{key}, TTL: #{ttl}s"
     value
   end
@@ -48,14 +48,14 @@ class CacheService
 
   def clear
     @cache.clear
-    @logger.info "Cache cleared"
+    @logger.info 'Cache cleared'
   end
 
   def stats
     now = Time.now
     valid_entries = @cache.values.count { |entry| !entry[:expires_at] || entry[:expires_at] > now }
     expired_entries = @cache.size - valid_entries
-    
+
     {
       total_entries: @cache.size,
       valid_entries: valid_entries,
@@ -69,7 +69,7 @@ class CacheService
       entry = @cache[key]
       entry[:expires_at] && entry[:expires_at] < now
     end
-    
+
     expired_keys.each { |key| @cache.delete(key) }
     @logger.info "Cleaned up #{expired_keys.size} expired cache entries"
     expired_keys.size

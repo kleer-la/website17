@@ -13,7 +13,8 @@ module BookingToken
   end
 
   def generate(email:, area_slug:, name: '', company: '', message: '', context: '')
-    payload = { email: email, name: name, company: company, message: message, context: context, area_slug: area_slug, timestamp: Time.now.to_i }.to_json
+    payload = { email: email, name: name, company: company, message: message, context: context, area_slug: area_slug,
+                timestamp: Time.now.to_i }.to_json
     signature = OpenSSL::HMAC.hexdigest('SHA256', secret, payload)
     Base64.urlsafe_encode64("#{signature}:#{payload}")
   end

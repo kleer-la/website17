@@ -18,7 +18,7 @@ module KeventerAPI
   end
 
   def echo(value)
-    if ENV['RACK_ENV'] == 'test' #'development'
+    if ENV['RACK_ENV'] == 'test' # 'development'
       caller_info = caller[1]&.match(/(.*):(\d+):in `([^']*)'/)
       if caller_info
         file = caller_info[1]
@@ -76,6 +76,7 @@ module KeventerAPI
   def participant_pricing_url(event_id, quantity)
     echo(url_for("v3/events/#{event_id}/participants/pricing_info", { quantity: quantity }))
   end
+
   def page_url(lang, slug)
     s = "-#{slug}" unless slug.nil?
     echo(url_for("pages/#{lang}#{s}"))

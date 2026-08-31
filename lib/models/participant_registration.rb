@@ -35,12 +35,10 @@ class ParticipantRegistration
       { success: false, error: :not_found, status: 404 }
     end
   rescue StandardError => e
-    if ENV['RACK_ENV'] == 'development'
-      raise e
-    else
-      puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test'
-      { success: false, error: :service_unavailable, status: 503 }
-    end
+    raise e if ENV['RACK_ENV'] == 'development'
+
+    puts "Event API Error: #{e.message}" unless ENV['RACK_ENV'] == 'test'
+    { success: false, error: :service_unavailable, status: 503 }
   end
 
   def load_pricing_data(quantity)
@@ -61,12 +59,10 @@ class ParticipantRegistration
       { success: false, error: :pricing_unavailable, status: 503 }
     end
   rescue StandardError => e
-    if ENV['RACK_ENV'] == 'development'
-      raise e
-    else
-      puts "Pricing API Error: #{e.message}"
-      { success: false, error: :service_unavailable, status: 503 }
-    end
+    raise e if ENV['RACK_ENV'] == 'development'
+
+    puts "Pricing API Error: #{e.message}"
+    { success: false, error: :service_unavailable, status: 503 }
   end
 
   def submit_registration(params)
@@ -82,7 +78,7 @@ class ParticipantRegistration
         # When API client is set but fails, treat as service unavailable (for testing unreachable scenarios)
         {
           success: false,
-          body: { error: "Registration service temporarily unavailable", details: "API unreachable" }.to_json,
+          body: { error: 'Registration service temporarily unavailable', details: 'API unreachable' }.to_json,
           status: 503
         }
       end
@@ -91,9 +87,9 @@ class ParticipantRegistration
 
       begin
         response = HTTParty.post(url, {
-          body: params.to_h,
-          headers: { 'Accept' => 'application/json' }
-        })
+                                   body: params.to_h,
+                                   headers: { 'Accept' => 'application/json' }
+                                 })
 
         if response.success?
           {
@@ -111,13 +107,13 @@ class ParticipantRegistration
       rescue Errno::ECONNREFUSED, Net::TimeoutError, SocketError, HTTParty::Error => e
         {
           success: false,
-          body: { error: "Registration service temporarily unavailable", details: e.message }.to_json,
+          body: { error: 'Registration service temporarily unavailable', details: e.message }.to_json,
           status: 503
         }
       rescue StandardError => e
         {
           success: false,
-          body: { error: "Registration failed due to unexpected error", details: e.message }.to_json,
+          body: { error: 'Registration failed due to unexpected error', details: e.message }.to_json,
           status: 500
         }
       end
@@ -145,6 +141,6 @@ class ParticipantRegistration
     end
 
     # Alias for testing compatibility
-    alias_method :api_client=, :null_json_api
+    alias api_client= null_json_api
   end
 end

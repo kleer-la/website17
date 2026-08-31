@@ -70,7 +70,7 @@ class Crawler
     begin
       response = get path
       # puts "Response for #{path}: Status #{response.status}, Body: #{response.body[0..100]}..."
-    
+
       check_response(full_url, response, parent_url)
       parse_links(full_url, response.body, depth) if response.status == 200
     rescue StandardError => e
@@ -134,7 +134,7 @@ class Crawler
   end
 
   def check_response(url, response, parent_url)
-    return unless response.status == 404 || response.status == 500
+    return unless [404, 500].include?(response.status)
 
     @errors << { url: url, error: "HTTP #{response.status}", parent_url: parent_url }
   end

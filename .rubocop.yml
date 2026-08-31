@@ -1,5 +1,6 @@
 AllCops:
   TargetRubyVersion: 3.0
+  NewCops: disable
 
 Style/Encoding:
   Enabled: false
@@ -13,7 +14,9 @@ Layout/LineLength:
   Max: 119
 
 Metrics/BlockLength:
-  IgnoredMethods:
+  # Renamed from IgnoredMethods, which newer rubocop ignores with a warning —
+  # the exemption for spec blocks was silently doing nothing.
+  AllowedMethods:
     - 'describe'
     - 'context'
 

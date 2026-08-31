@@ -3,7 +3,7 @@ require './lib/articles'
 require './controllers/pager_helper'
 require 'nokogiri'
 
-get %r{/blog-preview/([a-z0-9_\-]+)} do |slug|
+get %r{/blog-preview/([a-z0-9_-]+)} do |slug|
   @meta_tags.set! noindex: true, nofollow: true
   @where = 'Blog-Preview'
 
@@ -17,7 +17,7 @@ get '/blog-preview' do
   blog_list Article.create_list_keventer(false)
 end
 
-get %r{/blog/([a-z0-9_\-]+)} do |slug|
+get %r{/blog/([a-z0-9_-]+)} do |slug|
   @where = 'Blog'
   begin
     art = Article.create_one_keventer(slug)
@@ -67,10 +67,10 @@ def blog_one(article)
   @json_ld = [
     article_json_ld(article),
     breadcrumb_json_ld([
-      { name: 'Kleer', url: "https://www.kleer.la/#{session[:locale]}" },
-      { name: blog_label, url: blog_url },
-      { name: article.title }
-    ])
+                         { name: 'Kleer', url: "https://www.kleer.la/#{session[:locale]}" },
+                         { name: blog_label, url: blog_url },
+                         { name: article.title }
+                       ])
   ]
 
   router_helper = RouterHelper.instance
@@ -82,7 +82,7 @@ def blog_one(article)
 
   @article = article
   render_page :'blog/landing_blog/index',
-                                  locals: { titles: titles, body: body }
+              locals: { titles: titles, body: body }
 end
 
 def blog_list(articles)

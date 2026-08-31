@@ -174,33 +174,32 @@ describe Resource do
   describe '#also_download' do
     it 'excludes recommended resources with empty title' do
       resource = Resource.new({ 'id' => 1, 'title_es' => 'Main Resource', 'authors' => [], 'translators' => [], 'illustrators' => [], 'downloadable' => true,
-      'recommended' => [
-        {
-        "id"=> 13,
-        "slug"=> "dor-kards",
-        "type"=> "resource",
-        "title"=> "DoR Kards",
-        "subtitle"=> "A card game where the goal is to brainstorm and reach consensus as a team on the criteria to be included in its Definition of Ready (DoR).",
-        "cover"=> "/img/recursos/DoR-Kards-en.png",
-        "downloadable"=> true,
-        "lang"=> 'en',
-        "relevance_order"=> 250,
-        "level"=> "advanced"
-        },
-        {
-        "id"=> 13,
-        "slug"=> "dod-kards",
-        "type"=> "resource",
-        "title"=> "",
-        "subtitle"=> "",
-        "cover"=> "",
-        "downloadable"=> true,
-        "lang"=> 'en',
-        "relevance_order"=> 250,
-        "level"=> "advanced"
-        }
-      ]
-      }, 'en')
+                                'recommended' => [
+                                  {
+                                    'id' => 13,
+                                    'slug' => 'dor-kards',
+                                    'type' => 'resource',
+                                    'title' => 'DoR Kards',
+                                    'subtitle' => 'A card game where the goal is to brainstorm and reach consensus as a team on the criteria to be included in its Definition of Ready (DoR).',
+                                    'cover' => '/img/recursos/DoR-Kards-en.png',
+                                    'downloadable' => true,
+                                    'lang' => 'en',
+                                    'relevance_order' => 250,
+                                    'level' => 'advanced'
+                                  },
+                                  {
+                                    'id' => 13,
+                                    'slug' => 'dod-kards',
+                                    'type' => 'resource',
+                                    'title' => '',
+                                    'subtitle' => '',
+                                    'cover' => '',
+                                    'downloadable' => true,
+                                    'lang' => 'en',
+                                    'relevance_order' => 250,
+                                    'level' => 'advanced'
+                                  }
+                                ] }, 'en')
 
       result = resource.also_download(2)
       expect(result.count).to eq(1)

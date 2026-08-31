@@ -3,7 +3,7 @@ require './lib/helpers/event_helper'
 
 describe EventHelper do
   include EventHelper
-  
+
   describe '#calculate_event_pricing' do
     let(:event_type) { double('EventType', coupons: []) }
     let(:event) do

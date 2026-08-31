@@ -146,7 +146,7 @@ class NullStoreObject
   def upload_file(file); end
 
   def exists?
-    @exists[@key].nil? ? true : @exists[@key]
+    @exists[@key].nil? || @exists[@key]
   end
 
   def acl

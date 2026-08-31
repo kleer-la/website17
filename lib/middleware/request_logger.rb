@@ -28,7 +28,11 @@ module Middleware
         host: env['HTTP_HOST']
       }.compact
 
-      log_entry[:level] = status >= 500 ? 'error' : (status >= 400 ? 'warn' : 'info')
+      log_entry[:level] = if status >= 500
+                            'error'
+                          else
+                            (status >= 400 ? 'warn' : 'info')
+                          end
 
       $stdout.puts(JSON.generate(log_entry))
 

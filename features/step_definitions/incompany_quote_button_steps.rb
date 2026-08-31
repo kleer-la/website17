@@ -44,19 +44,19 @@ Then('I should see the field {string} with options {string} and {string}') do |f
   expect(page).to have_content(option2)
 end
 
-Then('the {string} field should be hidden') do |field_label|
+Then('the {string} field should be hidden') do |_field_label|
   # The "where-field" div has display:none when hidden
   field_div = page.find('#where-field', visible: :all)
   expect(field_div).not_to be_visible
 end
 
-Then('the {string} field should be visible') do |field_label|
+Then('the {string} field should be visible') do |_field_label|
   # The "where-field" div becomes visible when Presencial is selected
   field_div = page.find('#where-field', visible: :visible)
   expect(field_div).to be_visible
 end
 
-Then('the {string} field should be initially hidden') do |field_label|
+Then('the {string} field should be initially hidden') do |_field_label|
   # Check that the where-field has display:none style
   field_div = page.find('#where-field', visible: :all)
   expect(field_div[:style]).to include('display: none')
@@ -75,7 +75,7 @@ When('I select {string} location') do |location|
   end
 end
 
-Then('the {string} field should have minimum value of {int}') do |field_label, min_value|
+Then('the {string} field should have minimum value of {int}') do |_field_label, min_value|
   # For "Cantidad de asistentes" field, check the min attribute
   input = page.find('#incompany-attendees-input')
   expect(input[:min].to_i).to eq(min_value)

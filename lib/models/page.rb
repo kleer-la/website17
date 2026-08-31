@@ -64,14 +64,14 @@ class Page
 
   def self.load_from_keventer(lang, slug)
     return create(@api_client) if @api_client
-    
+
     url = KeventerAPI.page_url(lang, slug)
     cache_key = "page_#{lang}_#{slug}_#{url}"
-    
+
     json_api = CacheService.get_or_set(cache_key) do
       JsonAPI.new(url)
     end
-    
+
     create(json_api)
   end
 

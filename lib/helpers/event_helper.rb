@@ -40,13 +40,14 @@ module EventHelper
   end
 
   def event_time_info(event)
-    t("course_landing.event.time",
-      starts: event.start_time.strftime("%k:%M"),
-      ends: event.end_time.strftime("%k:%M"))
+    t('course_landing.event.time',
+      starts: event.start_time.strftime('%k:%M'),
+      ends: event.end_time.strftime('%k:%M'))
   end
 
   def specific_conditions_popup(event, markdown_renderer)
     return nil if event.specific_conditions.to_s.empty?
+
     {
       open: '<div class="more-info rounded">',
       close: "<span class=\"tooltip-icon\"></span><div class=\"more-info__popup\">#{markdown_renderer.render(event.specific_conditions)}</div></div>"
