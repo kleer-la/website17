@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'fileutils'
+require 'tmpdir'
 require './lib/services/cache_service'
 
 describe CacheService do
@@ -114,6 +116,59 @@ describe CacheService do
       expect(block_executed).to be true
       expect(result).to eq('computed_value')
       expect(cache.get('new_key')).to eq('computed_value')
+    end
+  end
+
+  describe 'cross-worker resets' do
+    # Every Puma worker holds its own copy of the cache; these two instances
+    # stand in for two of them.
+    let(:epoch_dir) { Dir.mktmpdir }
+    let(:epoch_file) { File.join(epoch_dir, 'cache-epoch') }
+    let!(:worker_a) { new_worker }
+    let!(:worker_b) { new_worker }
+
+    def new_worker
+      ENV['CACHE_EPOCH_FILE'] = epoch_file
+      CacheService.send(:new)
+    end
+
+    after do
+      ENV.delete('CACHE_EPOCH_FILE')
+      FileUtils.remove_entry(epoch_dir)
+    end
+
+    it 'empties the workers that did not handle the reset' do
+      worker_a.set('key', 'value')
+      worker_b.set('key', 'value')
+
+      worker_a.clear
+
+      expect(worker_b.get('key')).to be_nil
+    end
+
+    it 'leaves each worker alone while nobody resets anything' do
+      worker_a.set('key', 'from a')
+      worker_b.set('key', 'from b')
+
+      expect(worker_a.get('key')).to eq('from a')
+      expect(worker_b.get('key')).to eq('from b')
+    end
+
+    it 'drops only what was cached before the reset' do
+      worker_a.clear
+      worker_b.get('key') # worker_b notices the reset here
+      worker_b.set('key', 'cached after the reset')
+
+      expect(worker_b.get('key')).to eq('cached after the reset')
+    end
+
+    it 'clears itself even when the stamp cannot be written' do
+      ENV['CACHE_EPOCH_FILE'] = File.join(epoch_dir, 'missing', 'cache-epoch')
+      worker = CacheService.send(:new)
+      worker.set('key', 'value')
+
+      expect { worker.clear }.not_to raise_error
+      expect(worker.get('key')).to be_nil
     end
   end
 

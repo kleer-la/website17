@@ -1,6 +1,7 @@
 require 'concurrent-ruby'
 require 'logger'
 require 'singleton'
+require './lib/services/cache_reset_signal'
 
 class CacheService
   include Singleton
@@ -10,9 +11,12 @@ class CacheService
     @logger = Logger.new(STDOUT)
     @logger.level = Logger::WARN
     @logger.level = Logger::INFO if ENV['RACK_ENV'] == 'development'
+    @reset_signal = CacheResetSignal.new(logger: @logger)
   end
 
   def get(key)
+    honour_reset
+
     entry = @cache[key]
     return nil unless entry
 
@@ -48,6 +52,7 @@ class CacheService
 
   def clear
     @cache.clear
+    @reset_signal.fire
     @logger.info 'Cache cleared'
   end
 
@@ -104,6 +109,14 @@ class CacheService
   end
 
   private
+
+  # Drops what this worker holds when another one handled a /cache-reset.
+  def honour_reset
+    return unless @reset_signal.fired?
+
+    @cache.clear
+    @logger.info 'Cache cleared by a reset another worker handled'
+  end
 
   def default_ttl
     ENV['CACHE_TTL']&.to_i || 1800 # Default 30 minutes
