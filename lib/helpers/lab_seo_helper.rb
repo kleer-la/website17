@@ -10,14 +10,16 @@ module LabSeoHelper
   LAB_PARENT_ORG_URL = 'https://www.kleer.la'.freeze
 
   LAB_PAGE_TITLES = {
-    home: 'Kleer Lab — Soluciones operativas sostenibles con IA en tiempo récord',
-    cases: 'Casos de éxito — Kleer Lab'
+    home: 'Kleer Lab | Soluciones operativas a medida',
+    cases: 'Casos | Kleer Lab'
   }.freeze
 
   LAB_PAGE_DESCRIPTIONS = {
-    home: 'Transformamos procesos manuales en aplicaciones inteligentes en semanas, sin equipo técnico ' \
-          'interno. Resultados medibles desde la primera iteración, transferencia completa.',
-    cases: 'Casos reales: procesos manuales resueltos con IA en semanas. Métricas antes y después, sin lock-in.'
+    home: 'Convertimos procesos manuales y repetitivos en aplicaciones hechas para tu operación. ' \
+          'El primer resultado llega a uso real en semanas, con métricas para comprobarlo y el ' \
+          'código en tus manos.',
+    cases: 'Casos reales: procesos manuales resueltos con aplicaciones a medida. Qué había antes, ' \
+           'qué se construyó y qué cambió en la operación.'
   }.freeze
 
   def lab_page_title(scope = :home)
@@ -50,7 +52,7 @@ module LabSeoHelper
   end
 
   def lab_case_page_title(kase)
-    "#{kase.title} — Caso Kleer Lab"
+    "#{kase.title} | Caso Kleer Lab"
   end
 
   def lab_case_page_description(kase)
@@ -71,8 +73,8 @@ module LabSeoHelper
       'name' => LAB_ORG_NAME,
       'url' => LAB_ORG_URL,
       'logo' => LAB_LOGO_URL,
-      'description' => 'Transformamos procesos manuales en aplicaciones inteligentes en semanas, ' \
-                       'sin equipo técnico interno.',
+      'description' => 'Convertimos procesos manuales y repetitivos en aplicaciones hechas ' \
+                       'para la operación de cada empresa.',
       'parentOrganization' => {
         '@type' => 'Organization',
         'name' => 'Kleer',

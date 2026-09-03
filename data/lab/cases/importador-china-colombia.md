@@ -1,9 +1,9 @@
 ---
 title: "Pasé de Excels de 1 GB y reconciliaciones de medianoche a gestionar mis contenedores en tiempo real"
 client_name: null
-client_descriptor: "Un importador que viaja regularmente a China para comprar mercadería con destino a Colombia transformó su operación artesanal gracias a Kleer Lab, eliminando Excels gigantes y logrando visibilidad en tiempo real tanto para él como para su cliente."
+client_descriptor: "Un importador de mercadería, de China a Colombia."
+summary: "La gestión de cada contenedor vivía en archivos de Excel de casi 1 GB que viajaban por correo y se reconciliaban a mano de madrugada. Construimos una aplicación web para cargar cada compra en el momento y ver el estado del contenedor en tiempo real."
 industry: "Comercio exterior"
-duration: "Por completar"
 hero_quote:
   text: "Ahora gestiono todo en tiempo real, desde la computadora"
   attribution: "Director de operaciones"
@@ -53,3 +53,7 @@ Registro organizado y seguro de cada ítem (producto, precio, tamaño, proveedor
 - El importador ya no dedica las noches a organizar Excels ni a reconciliar versiones.
 - Mayor eficiencia durante el día en el mercado: puede confirmar compras sabiendo el estado exacto del contenedor.
 - Trabajo mucho más profesional y tranquilo.
+
+## Después de la entrega
+
+Kleer Lab construyó la aplicación y la fue evolucionando junto al importador. Hoy está en curso la transferencia a un equipo de tecnología propio del cliente, que quiere llevar el control de su producto digital. El trabajo de Kleer Lab fue arrancar ese producto antes y con menos riesgo; de acá en adelante lo evoluciona y lo opera su equipo.

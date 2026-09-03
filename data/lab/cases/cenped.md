@@ -1,7 +1,8 @@
 ---
-title: "Cómo Sushi Pop PY automatizó el 95% de sus 25.000 pedidos mensuales y ahorró más de 370 horas de trabajo manual por mes con Kleer Lab"
-client_name: null
-client_descriptor: "Sushi Pop PY, cadena de locales de comida rápida en Paraguay, implementó un sistema inteligente de captura y procesamiento automático de pedidos de PedidosYa y Monchis, alcanzando tasas de automatización superiores al 95% y ahorrando más de 370 horas mensuales de trabajo manual."
+title: "Cómo Sushi Pop PY dejó de cargar sus pedidos a mano"
+client_name: "Sushi Pop PY"
+client_descriptor: "Cadena de locales de comida rápida en Paraguay."
+summary: "Los pedidos de las plataformas de delivery se cargaban a mano en el sistema interno, con errores de mapeo y pedidos que se perdían por el camino. Construimos la captura y el procesamiento automático. Hoy el 95% de unos 25.000 pedidos mensuales entra sin intervención."
 industry: "Delivery de comida"
 duration: "Tres meses y medio"
 hero_metric:
@@ -9,7 +10,11 @@ hero_metric:
   label: "de sus 25.000 pedidos mensuales automatizados"
 secondary_metrics:
   - value: "+370"
-    label: "horas de trabajo manual ahorradas por mes"
+    label: "horas de trabajo manual recuperadas por mes"
+  - value: "<1 s"
+    label: "de procesamiento por pedido"
+  - value: "~99%"
+    label: "de pedidos confirmados, con incidentes resueltos el mismo día"
 testimonial:
   text: "“Gracias al equipo de Kleer Lab logramos enfocarnos en el crecimiento del negocio en lugar de estar cargando pedidos manualmente todos los días.”"
   name: "Daniel"
@@ -39,6 +44,12 @@ Kleer Lab desarrolló e implementó un sistema completo de **captura, mapeo inte
 - Sincronización automática de productos nuevos, sin esperar a que lleguen en un pedido.
 - Captura redundante de pedidos para no perder ninguno.
 - Reportes diarios con recomendaciones automáticas.
+
+## El primer mes
+
+A las cuatro semanas ya estaba en uso la captura de los pedidos de PedidosYa: quedaban registrados apenas entraban, así que dejó de poder perderse uno por el camino, y la carga en e-Karú se volvió más simple. La carga todavía era manual. Lo primero que se eliminó fue el riesgo.
+
+El mapeo de combos y promociones, la sincronización automática de productos y la incorporación de Monchis llegaron después, como incrementos sobre esa base.
 
 ## Resultados (marzo–abril 2026)
 

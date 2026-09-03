@@ -131,6 +131,12 @@ class LabCase
     client_name || client_descriptor
   end
 
+  # Short problem/solution/result line for the home card. Keeps the card from
+  # repeating the same figure the metrics strip above it already shows.
+  def summary
+    @data['summary']
+  end
+
   def industry
     @data['industry']
   end

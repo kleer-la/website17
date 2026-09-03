@@ -5,7 +5,7 @@
       &ldquo;<span class="text-primary italic"><%= quote["text"] %></span>&rdquo;
     </p>
     <% if quote["attribution"] && !quote["attribution"].to_s.empty? %>
-      <cite class="block text-on-surface-variant font-label text-xs uppercase tracking-[0.3em] not-italic mt-8">— <%= quote["attribution"] %></cite>
+      <cite class="block text-on-surface-variant font-label text-xs uppercase tracking-[0.3em] not-italic mt-8"><%= quote["attribution"] %></cite>
     <% end %>
   </blockquote>
 </section>

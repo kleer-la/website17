@@ -15,22 +15,50 @@
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full technical-gradient pointer-events-none"></div>
   <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 py-24">
     <div class="lg:col-span-9 flex flex-col justify-center">
-      <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-8">SOLUCIONES OPERATIVAS CON IA</p>
+      <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-8">SOLUCIONES OPERATIVAS A MEDIDA</p>
       <h1 class="text-5xl md:text-7xl xl:text-8xl font-headline font-bold leading-[0.95] tracking-tighter mb-8 text-on-surface">
-        Kleer Lab: soluciones operativas <span class="text-primary italic">sostenibles</span> con IA en tiempo récord
+        Resolvemos procesos que tu operación lleva <span class="text-primary italic">años</span> soportando
       </h1>
       <p class="text-xl md:text-2xl font-body text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
-        Transformamos procesos manuales en aplicaciones inteligentes en semanas, sin requerir equipo técnico interno. Resultados medibles desde la primera iteración.
+        Empezamos por un alcance acotado que llega a uso real en semanas. Desde ahí sumamos incrementos: cada uno funciona, se mide y decide el siguiente.
       </p>
-      <div class="flex flex-wrap gap-4">
+      <div class="flex flex-wrap gap-4 mb-12">
         <button data-lab-modal="open" class="btn btn-primary text-base px-8 py-4 cursor-pointer">Cuéntanos tu desafío</button>
         <a href="#casos" class="btn btn-secondary text-base px-8 py-4">Ver casos</a>
       </div>
+      <p class="text-on-surface-variant font-body text-sm max-w-xl leading-relaxed">
+        Usamos desarrollo asistido por IA para construir y validar más rápido. La tecnología se define a partir del problema.
+      </p>
     </div>
   </div>
 </section>
 
-<%# ── Resultados rápidos ─────────────────────────────────── %>
+<%# ── Situaciones ────────────────────────────────────────── %>
+<section class="px-8 py-24" id="que-resolvemos">
+  <div class="max-w-7xl mx-auto">
+    <%= lab_section_header(
+        label: "QUÉ RESOLVEMOS",
+        title: "Procesos que siguen funcionando a fuerza de tiempo y paciencia",
+        size: :md) %>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <ul class="space-y-4 text-on-surface-variant font-body leading-relaxed">
+        <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Un reporte tarda días porque la información vive repartida en varios archivos.</li>
+        <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Los pedidos o los registros se cargan a mano en otro sistema.</li>
+        <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Cada proveedor nuevo obliga a actualizar varias planillas.</li>
+      </ul>
+      <ul class="space-y-4 text-on-surface-variant font-body leading-relaxed">
+        <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Una tarea crítica depende de una sola persona.</li>
+        <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Alguien dedica la noche a reconciliar versiones del mismo archivo.</li>
+        <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>El negocio creció y la operación sigue con procesos artesanales.</li>
+      </ul>
+    </div>
+    <p class="text-on-surface font-body text-lg leading-relaxed max-w-3xl mt-12">
+      No hace falta que llegues con el problema entendido. Muchas veces empezar a trabajarlo es lo que da la claridad.
+    </p>
+  </div>
+</section>
+
+<%# ── Resultados ─────────────────────────────────────────── %>
 <% if @home_metrics.any? %>
   <section class="px-8 py-16 bg-surface-container-low">
     <div class="max-w-7xl mx-auto">
@@ -49,11 +77,11 @@
   </section>
 <% end %>
 
-<%# ── Casos de éxito ─────────────────────────────────────── %>
+<%# ── Casos ──────────────────────────────────────────────── %>
 <% if @cases.any? %>
   <section class="px-8 py-24" id="casos">
     <div class="max-w-7xl mx-auto">
-      <%= lab_section_header(label: "CASOS DE ÉXITO", title: "Casos de éxito", size: :md) %>
+      <%= lab_section_header(label: "CASOS", title: "Dos operaciones, antes y después", size: :md) %>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <% @cases.each do |c| %>
           <%= erb :'lab/_case_card', layout: false, locals: { c: c } %>
@@ -63,84 +91,107 @@
   </section>
 <% end %>
 
-<%# ── Cómo trabajamos — método científico ─────────────────── %>
+<%# ── Cómo trabajamos ────────────────────────────────────── %>
 <section class="px-8 py-32 bg-surface-container-low" id="como-trabajamos">
   <div class="max-w-7xl mx-auto">
     <%= lab_section_header(
         label: "Cómo trabajamos",
-        title: "Método científico aplicado a tu operación. Cuatro pasos, sin sorpresas.",
-        subtitle: "Sin retainers, sin proyectos abiertos. Experimento acotado, ejecución verificable, transferencia completa.",
+        title: "Método científico aplicado a tu operación",
+        subtitle: "Cada proyecto empieza con un alcance acotado y un resultado esperado. Participas durante el desarrollo y compruebas el resultado antes del cierre.",
         size: :lg) %>
     <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style="list-style: none; padding-left: 0;">
       <li class="bg-surface-container-high p-8 rounded-xl">
         <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">01</p>
         <h3 class="text-xl font-headline font-bold mb-3">Hipótesis</h3>
         <p class="text-on-surface-variant text-sm font-body leading-relaxed">
-          Una llamada para acotar qué desafío resolver y qué resultado esperas. Si no hay match, no hay propuesta.
+          Acordamos qué proceso abordar, qué resultado esperas y cómo lo vamos a medir. Si todavía no está claro, lo definimos en esa conversación.
         </p>
       </li>
       <li class="bg-surface-container-high p-8 rounded-xl">
         <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">02</p>
         <h3 class="text-xl font-headline font-bold mb-3">Experimento</h3>
         <p class="text-on-surface-variant text-sm font-body leading-relaxed">
-          Construimos la solución en semanas con agentes de IA. Validas en cada hito; nada queda en una caja negra.
+          Construimos un primer alcance en semanas y lo validas con quienes van a usarlo todos los días. Ves el avance en cada hito.
         </p>
       </li>
       <li class="bg-surface-container-high p-8 rounded-xl">
         <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">03</p>
         <h3 class="text-xl font-headline font-bold mb-3">Medición</h3>
         <p class="text-on-surface-variant text-sm font-body leading-relaxed">
-          Comparamos contra la hipótesis. Resultados medibles desde la primera iteración, no al final del proyecto.
+          Comparamos el resultado con la situación inicial. Cada incremento se mide cuando entra en uso, no cuando termina el proyecto.
         </p>
       </li>
       <li class="bg-surface-container-high p-8 rounded-xl">
         <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">04</p>
         <h3 class="text-xl font-headline font-bold mb-3">Transferencia</h3>
         <p class="text-on-surface-variant text-sm font-body leading-relaxed">
-          Lo opera tu equipo. Código, contexto, sin lock-in. Después, somos opcionales.
+          Entregamos la solución, su documentación y el contexto para operarla. Quién la mantiene después lo decides tú.
         </p>
       </li>
     </ol>
   </div>
 </section>
 
-<%# ── Servicios enfocados ─────────────────────────────────── %>
-<section class="px-8 py-32" id="servicios">
+<%# ── Qué queda funcionando ──────────────────────────────── %>
+<section class="px-8 py-24" id="que-recibes">
   <div class="max-w-7xl mx-auto">
     <%= lab_section_header(
-        label: "QUÉ HACEMOS",
-        title: "Soluciones Express con IA, en detalle",
-        subtitle: "Una sola oferta, bien delimitada. Para que sepas exactamente qué esperar y qué no.",
-        size: :lg) %>
+        label: "QUÉ RECIBES",
+        title: "Qué queda funcionando",
+        subtitle: "Lo que hay al cerrar el proyecto, además del método.",
+        size: :md) %>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class="bg-surface-container-low p-10 rounded-xl">
-        <p class="font-label text-xs uppercase tracking-[0.3em] text-primary font-bold mb-6">Qué cubre</p>
-        <h3 class="text-xl font-headline font-bold mb-6 text-on-surface">Procesos manuales que te frenan</h3>
-        <ul class="space-y-3 text-on-surface-variant font-body text-sm leading-relaxed">
-          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Actualizar múltiples documentos a partir de mails y redes sociales</li>
-          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Reportes que se arman a mano cada semana o mes</li>
-          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Tareas repetitivas que crecen con el negocio</li>
-          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Flujos de trabajo que dependen de una sola persona</li>
+        <ul class="space-y-4 text-on-surface-variant font-body leading-relaxed">
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Una solución construida para el proceso que acordamos.</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>La información centralizada o conectada, según lo que necesite el caso.</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Un flujo probado con las personas que lo usan todos los días.</li>
         </ul>
       </div>
-
       <div class="bg-surface-container-low p-10 rounded-xl">
-        <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-6">Ejemplos típicos</p>
-        <h3 class="text-xl font-headline font-bold mb-6 text-on-surface">Situaciones que escuchamos</h3>
-        <ul class="space-y-4 text-on-surface-variant font-body text-sm leading-relaxed">
-          <li>&ldquo;Me lleva 3 días armar el reporte mensual a mano.&rdquo;</li>
-          <li>&ldquo;Tengo un Excel donde cargo los pedidos uno por uno.&rdquo;</li>
-          <li>&ldquo;Cuando entra un nuevo proveedor tengo que actualizar 5 planillas.&rdquo;</li>
-          <li>&ldquo;Si G... se va, no pagamos impuestos.&rdquo;</li>
+        <ul class="space-y-4 text-on-surface-variant font-body leading-relaxed">
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Métricas para comprobar el resultado contra la situación inicial.</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>La documentación y el contexto para operarla.</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>El código, que es tuyo.</li>
         </ul>
+      </div>
+    </div>
+    <p class="text-on-surface-variant font-body leading-relaxed max-w-3xl mt-8">
+      Quién opera y mantiene la solución se acuerda al empezar: seguimos nosotros, la toma tu equipo, o la mantiene quien tú elijas.
+    </p>
+  </div>
+</section>
+
+<%# ── Cuándo tiene sentido ───────────────────────────────── %>
+<section class="px-8 py-24 bg-surface-container-low" id="cuando-tiene-sentido">
+  <div class="max-w-7xl mx-auto">
+    <%= lab_section_header(label: "CUÁNDO TIENE SENTIDO", title: "Si esto se parece a tu situación, hablemos", size: :md) %>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="bg-surface-container-high p-10 rounded-xl">
+        <h3 class="text-xl font-headline font-bold mb-6 text-on-surface">Kleer Lab encaja cuando</h3>
+        <ul class="space-y-4 text-on-surface-variant font-body text-sm leading-relaxed">
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Hay un proceso identificable que consume tiempo, genera errores o crea riesgo.</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>Se puede acordar un resultado observable, aunque el problema todavía no esté del todo entendido.</li>
+          <li class="flex gap-3"><span class="text-primary mt-0.5">→</span>El primer paso se puede acotar, para empezar a rendir antes de terminar el proyecto.</li>
+        </ul>
+      </div>
+      <div class="bg-surface-container-high p-10 rounded-xl">
+        <h3 class="text-xl font-headline font-bold mb-6 text-on-surface">Y si no encaja, te lo decimos</h3>
+        <p class="text-on-surface-variant font-body text-sm leading-relaxed mb-4">
+          Kleer Lab construye software. Si lo que te frena tiene más que ver con la forma de trabajar de tu equipo que con una herramienta que falta, te lo decimos en la primera conversación y te orientamos hacia
+          <a href="https://www.kleer.la" class="text-primary hover:underline" target="_blank" rel="noopener">los servicios de Kleer</a>.
+        </p>
+        <p class="text-on-surface-variant font-body text-sm leading-relaxed">
+          También hay problemas de software que no son para nosotros. Preferimos decirlo temprano.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<%# ── Testimonios ─────────────────────────────────────────── %>
+<%# ── Testimonios ────────────────────────────────────────── %>
 <% if @featured_testimonials.any? %>
-  <section class="px-8 py-24 bg-surface-container-low">
+  <section class="px-8 py-24" id="testimonios">
     <div class="max-w-7xl mx-auto">
       <%= lab_section_header(label: "Testimonios", title: "Lo que dicen quienes trabajaron con nosotros", size: :md) %>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -172,5 +223,5 @@
   </section>
 <% end %>
 
-<%# ── CTA cierre ──────────────────────────────────────────── %>
+<%# ── CTA cierre ─────────────────────────────────────────── %>
 <%= erb :'lab/_cta', layout: false %>

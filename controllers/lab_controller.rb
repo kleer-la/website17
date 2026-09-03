@@ -44,7 +44,7 @@ def lab_contact_errors(values)
 end
 
 def render_lab_contact(values: {}, errors: {}, status_code: 200)
-  @lab_title = 'Contacto — Kleer Lab'
+  @lab_title = 'Contacto | Kleer Lab'
   @lab_description = 'Cuéntanos tu desafío operativo. Te respondemos con un alcance acotado ' \
                      'en menos de 48 horas hábiles.'
   @lab_values = values
@@ -91,7 +91,7 @@ end
 get '/contacto/gracias' do
   pass unless @is_lab
 
-  @lab_title = '¡Gracias! — Kleer Lab'
+  @lab_title = 'Gracias | Kleer Lab'
   @lab_description = 'Tu mensaje fue recibido. Te respondemos en menos de 48 horas hábiles.'
   erb :'lab/thanks', layout: :'lab/layout'
 end

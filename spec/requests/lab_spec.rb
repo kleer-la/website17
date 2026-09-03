@@ -21,7 +21,13 @@ describe 'Kleer Lab subdomain' do
 
       expect(last_response.status).to eq(200)
       expect(last_response.body).to include('Kleer Lab')
-      expect(last_response.body).to include('soluciones operativas')
+      # Section anchors, not marketing copy: the wording is rewritten often,
+      # the sections it has to render are what this example is about.
+      expect(last_response.body).to include('id="que-resolvemos"')
+      expect(last_response.body).to include('id="casos"')
+      expect(last_response.body).to include('id="como-trabajamos"')
+      expect(last_response.body).to include('id="que-recibes"')
+      expect(last_response.body).to include('id="cuando-tiene-sentido"')
       expect(last_response.body).to include('/casos/cenped')
       expect(last_response.body).to include('"@type":"Organization"')
     end
