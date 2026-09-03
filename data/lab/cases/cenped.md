@@ -11,7 +11,10 @@ hero_metric:
 secondary_metrics:
   - value: "+370"
     label: "horas de trabajo manual recuperadas por mes"
-  - value: "<1 s"
+  # Entity, not a bare "<": these values are interpolated straight into the
+  # markup, and a raw < followed by a digit is invalid HTML (browsers happen
+  # to render it as text).
+  - value: "&lt;1 s"
     label: "de procesamiento por pedido"
   - value: "~99%"
     label: "de pedidos confirmados, con incidentes resueltos el mismo día"
