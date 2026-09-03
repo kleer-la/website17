@@ -65,7 +65,7 @@ post '/contacto' do
   values = lab_contact_values
 
   unless verify_recaptcha
-    return render_lab_contact(values: values, errors: { 'recaptcha' => 'Por favor verificá que no eres un robot.' },
+    return render_lab_contact(values: values, errors: { 'recaptcha' => 'Por favor verifica que no eres un robot.' },
                               status_code: 422)
   end
 

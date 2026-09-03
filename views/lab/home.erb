@@ -7,9 +7,6 @@
   .technical-gradient {
     background: radial-gradient(circle at 50% 50%, rgba(120, 213, 223, 0.08) 0%, transparent 70%);
   }
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
 </style>
 
 <%# ── Hero ──────────────────────────────────────────────── %>
@@ -97,7 +94,6 @@
         </p>
       </li>
       <li class="bg-surface-container-high p-8 rounded-xl">
-        <div class="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-xl"></div>
         <p class="font-headline font-bold text-5xl text-primary tracking-tighter mb-6">04</p>
         <h3 class="text-xl font-headline font-bold mb-3">Transferencia</h3>
         <p class="text-on-surface-variant text-sm font-body leading-relaxed">
@@ -157,7 +153,7 @@
                 <img src="/lab/cases/<%= c.slug %>/<%= t["photo"] %>" alt="<%= t["name"] %>" class="w-12 h-12 rounded-full object-cover">
               <% else %>
                 <div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center">
-                  <span class="material-symbols-outlined text-secondary">person</span>
+                  <%= lab_icon(:person, size: 22, css: "text-secondary") %>
                 </div>
               <% end %>
               <div>
