@@ -34,6 +34,8 @@ class Recommended
       RecommendedService.new(doc, lang)
     when 'resource'
       RecommendedResource.new(doc, lang)
+    when 'page'
+      RecommendedPage.new(doc, lang)
     else
       puts "Unknown recommendation type: #{doc['type']}"
       # raise ArgumentError, "Unknown recommendation type: #{doc['type']}"
@@ -98,5 +100,15 @@ class RecommendedResource < Recommended
     else
       "/es/recursos/#{slug}"
     end
+  end
+end
+
+# A flagship page, rendered by the /:slug catch-all at /:lang/:slug. The slug is
+# the whole path: unlike the other kinds there is no section prefix, and none of
+# it is translated — the Spanish and English pages are two records with their own
+# slugs.
+class RecommendedPage < Recommended
+  def url
+    "/#{@lang}/#{slug}"
   end
 end
