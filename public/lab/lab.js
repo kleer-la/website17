@@ -11,6 +11,17 @@
 
   var lastFocused = null;
 
+  // GTM lives in the layout; this only pushes. If the container is blocked or
+  // absent the array still exists and nothing here breaks.
+  function track(event, params) {
+    window.dataLayer = window.dataLayer || [];
+    var payload = { event: "lab_" + event };
+    if (params) {
+      Object.keys(params).forEach(function (k) { payload[k] = params[k]; });
+    }
+    window.dataLayer.push(payload);
+  }
+
   function panel() {
     return document.getElementById("lab-contact-modal");
   }
@@ -42,6 +53,7 @@
     }
     if (isOpen()) return;
     lastFocused = document.activeElement;
+    track("formulario_abierto");
     el.classList.remove("hidden");
     document.body.style.overflow = "hidden";
     // Land on the first field rather than the close button.
@@ -79,6 +91,12 @@
   }
 
   document.addEventListener("click", function (event) {
+    var tracked = event.target.closest("[data-lab-track]");
+    if (tracked) {
+      var name = tracked.getAttribute("data-lab-track");
+      track(name, name === "caso" ? { lab_caso: tracked.getAttribute("data-lab-case") } : null);
+    }
+
     var trigger = event.target.closest("[data-lab-modal]");
     if (trigger) {
       var action = trigger.getAttribute("data-lab-modal");
@@ -93,6 +111,11 @@
     }
     // Click on the backdrop (the panel root itself, not its children) closes.
     if (event.target === panel()) close();
+  });
+
+  // Page-load events, marked in the view: /contacto/gracias is the conversion.
+  document.querySelectorAll("[data-lab-event]").forEach(function (el) {
+    track(el.getAttribute("data-lab-event"));
   });
 
   document.addEventListener("keydown", function (event) {

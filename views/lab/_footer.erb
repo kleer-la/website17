@@ -23,8 +23,9 @@
       </div>
       <div class="flex flex-col gap-4">
         <p class="font-headline font-bold text-sm tracking-widest text-on-surface-variant uppercase">Contacto</p>
-        <button data-lab-modal="open" class="lab-tap text-on-surface-variant hover:text-primary text-sm transition-all duration-200 text-left cursor-pointer bg-transparent border-0">Escríbenos</button>
-        <span class="text-on-surface-variant text-sm"><%= LabViewHelper::LAB_CONTACT_EMAIL %></span>
+        <button data-lab-modal="open" data-lab-track="cta_footer" class="lab-tap text-on-surface-variant hover:text-primary text-sm transition-all duration-200 text-left cursor-pointer bg-transparent border-0">Escríbenos</button>
+        <a href="mailto:<%= LabViewHelper::LAB_CONTACT_EMAIL %>" data-lab-track="correo"
+           class="lab-tap text-on-surface-variant hover:text-primary text-sm transition-all duration-200"><%= LabViewHelper::LAB_CONTACT_EMAIL %></a>
       </div>
     </div>
   </div>

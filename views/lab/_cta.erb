@@ -9,9 +9,9 @@
       Cuéntanos cómo funciona hoy, cuánto tiempo consume y qué te gustaría cambiar. En menos de 48 horas te decimos si encaja con Kleer Lab y cuál podría ser un primer alcance.
     </p>
     <div class="flex flex-wrap justify-center gap-4">
-      <button data-lab-modal="open" class="btn btn-primary text-base px-8 py-4 cursor-pointer">Cuéntanos tu desafío</button>
+      <button data-lab-modal="open" data-lab-track="cta_cierre" class="btn btn-primary text-base px-8 py-4 cursor-pointer">Cuéntanos tu desafío</button>
       <% if (whatsapp = lab_whatsapp_link) %>
-        <a href="<%= whatsapp %>" target="_blank" rel="noopener" class="btn btn-secondary text-base px-8 py-4">
+        <a href="<%= whatsapp %>" target="_blank" rel="noopener" data-lab-track="whatsapp" class="btn btn-secondary text-base px-8 py-4">
           WhatsApp
         </a>
       <% end %>

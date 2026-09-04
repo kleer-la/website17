@@ -88,6 +88,37 @@ No background job or separate HTTP client was ported.
 - The theme A/B experiment (`?theme=`) and PWA manifest/service-worker from the
   old repo were intentionally dropped; only the single default theme ships.
 
+### Analytics
+
+Lab shipped without any analytics: GTM lived only in `views/layout/layout2022.erb`.
+`views/lab/layout.erb` now includes the same partials, and so the same container
+(`GTM-W5H5CPKF`) as the main site.
+
+Events are pushed to `dataLayer` from `public/lab/lab.js`, all prefixed `lab_`
+so they are easy to isolate in GTM. Elements are marked in the views rather than
+selected by class, so restyling cannot silently break measurement:
+
+| Event | Marked with | Where |
+|---|---|---|
+| `lab_cta_hero` | `data-lab-track="cta_hero"` | hero primary button |
+| `lab_cta_navbar` | `data-lab-track="cta_navbar"` | "Escríbenos", top bar |
+| `lab_cta_cierre` | `data-lab-track="cta_cierre"` | closing CTA |
+| `lab_cta_footer` | `data-lab-track="cta_footer"` | "Escríbenos", footer |
+| `lab_caso` | `data-lab-track="caso"` | case cards; carries `lab_caso` with the slug |
+| `lab_whatsapp` | `data-lab-track="whatsapp"` | WhatsApp button |
+| `lab_correo` | `data-lab-track="correo"` | the two mailto links |
+| `lab_formulario_abierto` | — | pushed whenever the modal opens |
+| `lab_formulario_enviado` | `data-lab-event` on `thanks.erb` | /contacto/gracias, the conversion |
+
+The four CTAs fire their own event *and* `lab_formulario_abierto`, so a funnel
+can be built without losing which button started it.
+
+`track()` creates `window.dataLayer` if it does not exist, so a blocked or
+absent container breaks nothing.
+
+Note the contact email is a `mailto:` link now. It used to be plain text, which
+meant there was nothing to click and nothing to measure.
+
 ### Deploy
 
 `lab.kleer.la` is listed in `config/deploy.yml` `proxy.hosts` (and

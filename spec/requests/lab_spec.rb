@@ -33,6 +33,22 @@ describe 'Kleer Lab subdomain' do
     end
   end
 
+  describe 'analytics' do
+    it 'loads the shared GTM container and marks the elements to measure' do
+      get '/', {}, lab_host
+
+      expect(last_response.body).to include('GTM-W5H5CPKF')
+      expect(last_response.body).to include('data-lab-track="cta_hero"')
+      expect(last_response.body).to include('data-lab-case="cenped"')
+    end
+
+    it 'marks the thank-you page as the conversion' do
+      get '/contacto/gracias', {}, lab_host
+
+      expect(last_response.body).to include('data-lab-event="formulario_enviado"')
+    end
+  end
+
   describe 'GET /robots.txt' do
     it 'announces the lab sitemap on the lab host' do
       get '/robots.txt', {}, lab_host

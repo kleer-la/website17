@@ -92,7 +92,8 @@
     </button>
     <p style="margin-top: 1rem; text-align: center; font-size: 0.75rem; color: #6b7280;">
       Si el formulario falla, escríbenos a
-      <span style="color: #374151; font-weight: 600;"><%= LabViewHelper::LAB_CONTACT_EMAIL %></span>
+      <a href="mailto:<%= LabViewHelper::LAB_CONTACT_EMAIL %>" data-lab-track="correo"
+         style="color: #374151; font-weight: 600;"><%= LabViewHelper::LAB_CONTACT_EMAIL %></a>
     </p>
   </div>
 </form>
