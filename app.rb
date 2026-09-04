@@ -236,6 +236,11 @@ end
 # (e.g. /membresia-ia from membership_controller) wins; falls through to
 # 404 if no flagship Page matches the slug.
 get '/:slug' do
+  # lab.kleer.la is its own site: serving the main site's pages there gave every
+  # flagship page a second URL, with the same title and the same canonical, on a
+  # host that has its own sitemap. Two URLs, one page, and nothing telling
+  # crawlers which one counts.
+  pass if @is_lab
   pass if params[:slug].to_s.include?('.') # skip /robots.txt, /favicon.ico, …
   # Flagship slugs are kebab-case; anything else (scrapers requesting quoted
   # strings from our HTML as paths) would make URI.join raise inside the
@@ -247,8 +252,18 @@ get '/:slug' do
   @page = page
   @meta_tags.set! title: page.seo_title || page.name,
                   description: page.seo_description,
-                  canonical: page.canonical
+                  canonical: flagship_canonical(page, params[:slug])
   render_page :'flagships/show'
+end
+
+# Metatags appends the canonical after /:lang, so what goes in is a path and it
+# needs its leading slash. Empty, it resolved to /:lang — every flagship page
+# was declaring itself a duplicate of the language home page. A page that does
+# not name a canonical is its own.
+def flagship_canonical(page, slug)
+  path = page.canonical.to_s.strip
+  path = slug.to_s if path.empty?
+  path.start_with?('/') ? path : "/#{path}"
 end
 
 def get_404_error_text_for_course(course_name)

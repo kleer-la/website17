@@ -35,4 +35,44 @@ describe 'GET /:slug (flagship catch-all)' do
       expect(last_response.status).to eq(404) # non-flagship falls through
     end
   end
+
+  # Two URLs for one page, on two hosts, each with its own sitemap.
+  context 'on lab.kleer.la' do
+    let(:lab_host) { { 'HTTP_HOST' => 'lab.kleer.la' } }
+
+    it 'does not serve the main site pages' do
+      expect(Page).not_to receive(:load_from_keventer)
+
+      get '/es/membresia-ia-v2', {}, lab_host
+
+      expect(last_response.status).to eq(404)
+    end
+  end
+
+  # An empty canonical used to render as https://www.kleer.la/es — the language
+  # home page — so every flagship page told crawlers it was a duplicate of it.
+  context 'canonical' do
+    def flagship(canonical)
+      instance_double(Page, flagship?: true, canonical: canonical,
+                            seo_title: 'Membresía IA', seo_description: 'Una descripción',
+                            name: 'Membresía IA', hero_section: nil, contact_section: nil,
+                            body_sections: [], recommended: [], cover: nil)
+    end
+
+    it 'points a page with no canonical of its own at itself' do
+      allow(Page).to receive(:load_from_keventer).and_return(flagship(nil))
+
+      get '/es/membresia-ia-v2'
+
+      expect(last_response.body).to include('<link rel="canonical" href="https://www.kleer.la/es/membresia-ia-v2"/>')
+    end
+
+    it 'respects a canonical the page declares, adding the slash it needs' do
+      allow(Page).to receive(:load_from_keventer).and_return(flagship('membresia-ia'))
+
+      get '/es/membresia-ia-v2'
+
+      expect(last_response.body).to include('<link rel="canonical" href="https://www.kleer.la/es/membresia-ia"/>')
+    end
+  end
 end
