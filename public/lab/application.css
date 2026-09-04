@@ -277,6 +277,17 @@ body {
 /* Bullet marker for the Lab lists. Replaces the "→" character, which rendered
    as a faint 16px glyph that sat off the first line of the item. Sized in em
    so it tracks the list's font size, and aligned to the cap height. */
+/* Focus ring for the contact form fields. They are styled inline (the form
+   renders on a light panel over the dark page) and used to carry
+   `outline: none` with nothing put back, so a keyboard user had no visible
+   indication of where they were. */
+.lab-field:focus-visible,
+.lab-field:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
 .lab-bullet {
   flex: 0 0 auto;
   width: 0.375em;

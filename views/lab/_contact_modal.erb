@@ -34,7 +34,7 @@
 
     <%# Scrollable form %>
     <div style="overflow-y: auto; flex: 1;">
-      <%= erb :'lab/_contact_form', layout: false, locals: { action: '/contacto', values: {}, errors: {} } %>
+      <%= erb :'lab/_contact_form', layout: false, locals: { action: '/contacto', values: {}, errors: {}, id_prefix: 'lab-modal' } %>
     </div>
 
   </div>
