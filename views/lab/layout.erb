@@ -29,9 +29,11 @@
     <%= lab_render_json_ld(lab_json_ld_organization) %>
     <%= @lab_head_extra %>
 
-    <link rel="icon" href="/lab/icon.png" type="image/png">
-    <link rel="icon" href="/lab/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/lab/icon.png">
+    <%# icon.svg used to be declared here and won, being the later and more
+        specific match. It was a 512x512 PNG base64'd inside an <svg>: 232 KB
+        of raster pretending to be vector. A real vector mark can come back. %>
+    <link rel="icon" href="<%= lab_asset('/lab/icon.png') %>" type="image/png">
+    <link rel="apple-touch-icon" href="<%= lab_asset('/lab/icon.png') %>">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
