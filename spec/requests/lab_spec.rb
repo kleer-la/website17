@@ -33,6 +33,21 @@ describe 'Kleer Lab subdomain' do
     end
   end
 
+  describe 'GET /robots.txt' do
+    it 'announces the lab sitemap on the lab host' do
+      get '/robots.txt', {}, lab_host
+
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to include('Sitemap: http://lab.kleer.la/sitemap.xml')
+    end
+
+    it 'still announces the main sitemap everywhere else' do
+      get '/robots.txt'
+
+      expect(last_response.body).to include('Sitemap: https://www.kleer.la/sitemap.xml')
+    end
+  end
+
   describe 'GET /casos/:slug' do
     it 'renders a published case with Article and Breadcrumb JSON-LD' do
       get '/casos/cenped', {}, lab_host

@@ -128,12 +128,16 @@ before '/:locale/*' do
 end
 get '/robots.txt' do
   content_type :text
+  # The lab. subdomain serves its own /sitemap.xml (sitemap_controller branches
+  # on @is_lab), so it has to announce that one. Pointing crawlers at
+  # www.kleer.la/sitemap.xml sent them to a file listing none of Lab's pages.
+  sitemap = @is_lab ? "#{request.base_url}/sitemap.xml" : 'https://www.kleer.la/sitemap.xml'
   <<~ROBOTS
     User-agent: *
     Disallow: /.well-known/apple-app-site-association
     Disallow: /apple-app-site-association
 
-    Sitemap: https://www.kleer.la/sitemap.xml
+    Sitemap: #{sitemap}
   ROBOTS
 end
 get '/en' do
