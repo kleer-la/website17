@@ -141,6 +141,9 @@ video {
 /* ── 4. Base ────────────────────────────────────────────────── */
 html,
 body {
+  /* Long words in a narrow column pushed a few pixels past the viewport on a
+     320px screen. Breaking them is cheaper than hunting each one. */
+  overflow-wrap: break-word;
   background-color: var(--color-background);
   color: var(--color-on-surface);
   font-family: var(--font-body);

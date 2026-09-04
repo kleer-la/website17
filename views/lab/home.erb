@@ -67,7 +67,9 @@
   <section class="px-8 py-16 bg-surface-container-low">
     <div class="max-w-7xl mx-auto">
       <%= lab_section_header(label: "RESULTADOS", title: "Impacto medido en operaciones reales", size: :sm) %>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <%# Stacked below md: at 320px two columns left each tile 49px of content
+          box for a 48px number, and the whole page scrolled sideways. %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <% @home_metrics.each do |m| %>
           <a href="/casos/<%= m["source_case_slug"] %>" class="block group no-underline">
             <div class="bg-surface-container-high rounded-xl p-8 group-hover:bg-surface-container-highest transition-all duration-300">
