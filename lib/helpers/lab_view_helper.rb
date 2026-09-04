@@ -44,6 +44,19 @@ module LabViewHelper
       %(stroke-linejoin="round" aria-hidden="true" focusable="false">#{paths}</svg>)
   end
 
+  LAB_PUBLIC_DIR = File.expand_path('../../public', __dir__).freeze
+
+  # Cache buster for the /lab assets. They ship with a 3-day Cache-Control and
+  # no fingerprint in the filename, so without this a CSS or JS change stays
+  # invisible for three days to anyone who visited recently. Two stats per
+  # render, which is cheaper than the static-file serving already doing them.
+  def lab_asset(path)
+    file = File.join(LAB_PUBLIC_DIR, path.delete_prefix('/'))
+    return path unless File.exist?(file)
+
+    "#{path}?v=#{File.mtime(file).to_i.to_s(36)}"
+  end
+
   LAB_CONTACT_EMAIL = 'lab@kleer.la'.freeze
 
   # WhatsApp link, reusing Kleer's number until Lab gets its own.
