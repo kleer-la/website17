@@ -16,7 +16,11 @@
   <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 py-24">
     <div class="lg:col-span-9 flex flex-col justify-center">
       <p class="font-label text-xs uppercase tracking-[0.3em] text-secondary font-bold mb-8">SOLUCIONES OPERATIVAS A MEDIDA</p>
-      <h1 class="text-5xl md:text-7xl xl:text-8xl font-headline font-bold leading-[0.95] tracking-tighter mb-8 text-on-surface">
+      <%# Fluid instead of the 5xl/7xl/8xl steps: at 320px the 48px base made
+          "Resolvemos" wider than the content box and the page scrolled
+          sideways. contact.erb and thanks.erb already size their h1 this way. %>
+      <h1 class="font-headline font-bold leading-[0.95] tracking-tighter mb-8 text-on-surface"
+          style="font-size: clamp(2.25rem, 7.5vw, 6rem);">
         Resolvemos procesos que tu operación lleva <span class="text-primary italic">años</span> soportando
       </h1>
       <p class="text-xl md:text-2xl font-body text-on-surface-variant max-w-2xl mb-12 leading-relaxed">

@@ -277,6 +277,14 @@ body {
 /* Bullet marker for the Lab lists. Replaces the "→" character, which rendered
    as a faint 16px glyph that sat off the first line of the item. Sized in em
    so it tracks the list's font size, and aligned to the cap height. */
+/* Standalone links in the footer render about 20px tall, under the 24px
+   minimum target size. Links sitting inline inside a sentence are exempt from
+   that rule and are left as they are. */
+.lab-tap {
+  display: inline-block;
+  padding-block: 0.25rem;
+}
+
 /* Focus ring for the contact form fields. They are styled inline (the form
    renders on a light panel over the dark page) and used to carry
    `outline: none` with nothing put back, so a keyboard user had no visible
