@@ -35,12 +35,15 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, servi
   @is_training_program = false
   @page = Page.load_from_keventer(session[:locale], 'service-area')
 
+  # `pass`, not 404: this pattern also covers paths that later routes claim by
+  # name — the redirects for the old adopcion-ia URLs, for instance, never fired
+  # because this route answered 404 first and nothing downstream got a turn.
   service_area = ServiceAreaV3.create_keventer area_slug
-  return status 404 if service_area.nil?
-  return status 404 if service_area.is_training_program
+  pass if service_area.nil?
+  pass if service_area.is_training_program
 
   service = service_area.services.find { |s| s.slug == service_slug }
-  return status 404 if service.nil?
+  pass if service.nil?
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])

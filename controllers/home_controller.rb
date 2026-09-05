@@ -2,9 +2,15 @@ require './lib/clients'
 require './lib/models/page'
 
 def handle_latelier_page
+  # One page, one language, on its own subdomain. It has no version on the main
+  # site, so it declares no alternates — the default pair named www.kleer.la/es
+  # and /en, which are a different site's pages. And since it answers under both
+  # /es/ and /en/ with the same content, both canonicalise to the same URL
+  # instead of each claiming to be the original.
   @meta_tags.set! title: "L'Atelier",
                   description: "L'Atelier by Kleer",
-                  canonical: "https://latelier.kleer.la/#{session[:locale]}/"
+                  canonical: 'https://latelier.kleer.la/es/',
+                  hreflang: []
 
   erb :'latelier/spa', layout: false
 end

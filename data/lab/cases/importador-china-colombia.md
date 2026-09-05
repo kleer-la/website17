@@ -1,5 +1,6 @@
 ---
 title: "Pasé de Excels de 1 GB y reconciliaciones de medianoche a gestionar mis contenedores en tiempo real"
+seo_title: "Del Excel de 1 GB a los contenedores en tiempo real"
 client_name: null
 client_descriptor: "Un importador de mercadería, de China a Colombia."
 summary: "La gestión de cada contenedor vivía en archivos de Excel de casi 1 GB que viajaban por correo y se reconciliaban a mano de madrugada. Construimos una aplicación web para cargar cada compra en el momento y ver el estado del contenedor en tiempo real."

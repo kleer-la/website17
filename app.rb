@@ -207,9 +207,12 @@ PERMANENT_REDIRECT = {
   'clientes/transformacion-agil-ypf-2020' => 'es/blog/transformacion-agil-ypf-2020',
 
   # Membresía IA collapsed into the main Adopción IA service as the recommended "recipe"
-  'servicios/adopcion-ia/membresia' => 'es/servicios/adopcion-ia-empresas#receta',
-  'servicios/adopcion-ia/membresia-ia' => 'es/servicios/adopcion-ia-empresas#receta',
-  'formacion/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas#receta'
+  # Estas dos apuntaban a es/servicios/adopcion-ia-empresas, que no existe: la
+  # adopción de IA vive bajo formación, no bajo servicios, y las tres URLs
+  # viejas hablan de lo mismo. El ancla #receta tampoco está en la página.
+  'servicios/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas',
+  'servicios/adopcion-ia/membresia-ia' => 'es/formacion/adopcion-ia-empresas',
+  'formacion/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas'
 }.freeze
 
 PERMANENT_REDIRECT.each do |original, redirect|

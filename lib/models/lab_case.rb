@@ -119,6 +119,13 @@ class LabCase
     @data['title'] || client_label
   end
 
+  # The headline is written to be read on the page and can run long; a search
+  # result cuts around 60 characters. A case that needs a shorter one for the
+  # tab and the result says so in `seo_title`, and the rest keep the headline.
+  def seo_title
+    @data['seo_title'] || title
+  end
+
   def client_name
     @data['client_name']
   end

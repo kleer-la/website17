@@ -15,9 +15,10 @@ module LabSeoHelper
   }.freeze
 
   LAB_PAGE_DESCRIPTIONS = {
-    home: 'Convertimos procesos manuales y repetitivos en aplicaciones hechas para tu operación. ' \
-          'El primer resultado llega a uso real en semanas, con métricas para comprobarlo y el ' \
-          'código en tus manos.',
+    # Los resultados de búsqueda cortan alrededor de 155 caracteres: lo que
+    # importa —qué hacemos y en cuánto tiempo— entra antes del corte.
+    home: 'Convertimos procesos manuales en aplicaciones hechas para tu operación. ' \
+          'El primer resultado llega a uso real en semanas, con el código en tus manos.',
     cases: 'Casos reales: procesos manuales resueltos con aplicaciones a medida. Qué había antes, ' \
            'qué se construyó y qué cambió en la operación.'
   }.freeze
@@ -52,7 +53,7 @@ module LabSeoHelper
   end
 
   def lab_case_page_title(kase)
-    "#{kase.title} | Caso Kleer Lab"
+    "#{kase.seo_title} | Caso Kleer Lab"
   end
 
   def lab_case_page_description(kase)
