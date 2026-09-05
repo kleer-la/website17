@@ -271,7 +271,8 @@ get '/:slug' do
   @page = page
   @meta_tags.set! title: page.seo_title || page.name,
                   description: page.seo_description,
-                  canonical: flagship_canonical(page, params[:slug])
+                  canonical: flagship_canonical(page, params[:slug]),
+                  noindex: page.noindex
   render_page :'flagships/show'
 end
 

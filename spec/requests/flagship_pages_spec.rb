@@ -50,11 +50,40 @@ describe 'GET /:slug (flagship catch-all)' do
     end
   end
 
+  # A flagship page can be published and still not belong in the index: the
+  # preview of a page that has not replaced the live one yet. Without the flag
+  # the preview was the only indexable copy of content whose real page is
+  # deliberately noindex.
+  context 'noindex' do
+    def flagship(noindex)
+      instance_double(Page, flagship?: true, canonical: nil, noindex: noindex,
+                            seo_title: 'Membresía IA', seo_description: 'Una descripción',
+                            name: 'Membresía IA', hero_section: nil, contact_section: nil,
+                            body_sections: [], recommended: [], cover: nil)
+    end
+
+    it 'keeps a page marked noindex out of the results' do
+      allow(Page).to receive(:load_from_keventer).and_return(flagship(true))
+
+      get '/es/membresia-ia-v2'
+
+      expect(last_response.body).to include('<meta name="robots" content="noindex"/>')
+    end
+
+    it 'says nothing about robots for a page that is not marked' do
+      allow(Page).to receive(:load_from_keventer).and_return(flagship(false))
+
+      get '/es/membresia-ia-v2'
+
+      expect(last_response.body).not_to include('name="robots"')
+    end
+  end
+
   # An empty canonical used to render as https://www.kleer.la/es — the language
   # home page — so every flagship page told crawlers it was a duplicate of it.
   context 'canonical' do
     def flagship(canonical)
-      instance_double(Page, flagship?: true, canonical: canonical,
+      instance_double(Page, flagship?: true, canonical: canonical, noindex: false,
                             seo_title: 'Membresía IA', seo_description: 'Una descripción',
                             name: 'Membresía IA', hero_section: nil, contact_section: nil,
                             body_sections: [], recommended: [], cover: nil)

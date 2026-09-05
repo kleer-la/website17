@@ -6,7 +6,7 @@ require './lib/image_url_helper'
 
 class Page
   attr_reader :name, :lang, :seo_title, :seo_description, :canonical,
-              :recommended, :sections, :template, :show_in_footer
+              :recommended, :sections, :template, :show_in_footer, :noindex
 
   # Sections treated as page chrome (rendered as the hero band, not in the body).
   HERO_SLUGS = %w[hero].freeze
@@ -22,6 +22,9 @@ class Page
     @cover = empty_to_nil(data['cover'])
     @template = data['template'] || 'overlay'
     @show_in_footer = data['show_in_footer'] == true
+    # A page can be published and still be one we keep out of search results —
+    # the preview of a page that has not replaced the live one yet.
+    @noindex = data['noindex'] == true
     @recommended = Recommended.create_list(data['recommended'] || [])
     @sections = (data['sections'] || []).each_with_object({}) do |section, hash|
       # Keep 'slug' in the value so body iteration knows each section's key.
