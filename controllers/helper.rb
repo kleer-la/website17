@@ -8,6 +8,14 @@ module Helpers
   # Renders a view wrapped in the default site layout. Centralizes the layout
   # name so it lives in one place instead of being repeated at every call site.
   # Pages that intentionally have no chrome keep using `erb ..., layout: false`.
+  # Anything from content that lands inside an HTML attribute goes through
+  # this. A pulled quote arrives wrapped in double quotes, and unescaped it
+  # closed the attribute on its first character: the meta description came out
+  # empty and the rest of the sentence became stray attributes.
+  def h(text)
+    Rack::Utils.escape_html(text.to_s)
+  end
+
   def render_page(view, options = {})
     erb view, { layout: :'layout/layout2022' }.merge(options)
   end

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title><%= lab_title %></title>
+    <title><%= h lab_title %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Kleer Lab">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="description" content="<%= lab_description %>">
+    <meta name="description" content="<%= h lab_description %>">
     <link rel="canonical" href="<%= lab_canonical_url %>">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="<%= lab_title %>">
-    <meta property="og:description" content="<%= lab_description %>">
+    <meta property="og:title" content="<%= h lab_title %>">
+    <meta property="og:description" content="<%= h lab_description %>">
     <meta property="og:image" content="<%= lab_og_image %>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="678">
@@ -22,8 +22,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= lab_title %>">
-    <meta name="twitter:description" content="<%= lab_description %>">
+    <meta name="twitter:title" content="<%= h lab_title %>">
+    <meta name="twitter:description" content="<%= h lab_description %>">
     <meta name="twitter:image" content="<%= lab_og_image %>">
 
     <%= lab_render_json_ld(lab_json_ld_organization) %>
