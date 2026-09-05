@@ -196,6 +196,21 @@ describe 'GET /sitemap.xml' do
       expect(urls).to include('https://www.kleer.la/es/cursos/scrum-master')
     end
 
+    it 'excludes courses that redirect somewhere else' do
+      # A course with an external site answers 301 to it: listing the URL sends
+      # crawlers to a redirect and tells them our sitemap is unreliable.
+      elsewhere = EventType.new({
+                                  'id' => 4, 'slug' => 'agilidad-primeros-pasos', 'name' => 'Primeros pasos',
+                                  'lang' => 'es', 'deleted' => false, 'noindex' => false,
+                                  'external_site_url' => 'https://academia.kleer.la/p/agilidad-primeros-pasos'
+                                })
+      allow(Catalog).to receive(:create_keventer_json).and_return([Event.new(elsewhere)])
+
+      get '/sitemap.xml'
+
+      expect(urls).not_to include('https://www.kleer.la/es/cursos/agilidad-primeros-pasos')
+    end
+
     it 'excludes deleted courses' do
       deleted_et = EventType.new({
                                    'id' => 2, 'slug' => 'old-course', 'name' => 'Old',

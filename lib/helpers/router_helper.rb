@@ -94,6 +94,16 @@ class RouterHelper
     '/' + translate_path(base_path, alternate_lang)
   end
 
+  # The alternates for a section whose slug differs per language, ready for
+  # Metatags. Without them the alternate is the current path with the prefix
+  # swapped — /en/somos, which redirects to /en/about_us, and an alternate that
+  # points at a redirect is a pair Google never confirms.
+  # @example
+  #   RouterHelper.alternate_paths('somos') # => { es: '/somos', en: '/about_us' }
+  def self.alternate_paths(base_path)
+    { es: "/#{translate_path(base_path, 'es')}", en: "/#{translate_path(base_path, 'en')}" }
+  end
+
   # Detects if a path has mixed language (locale prefix doesn't match path segments)
   # and returns the corrected path if needed
   # @param locale [String] the locale from the URL prefix ('es' or 'en')

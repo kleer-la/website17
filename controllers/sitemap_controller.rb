@@ -92,6 +92,9 @@ get '/sitemap.xml' do
         (Catalog.create_keventer_json || []).each do |event|
           et = event.event_type
           next if et.nil? || et.deleted || et.noindex
+          # A course with an external site answers 301 to it. A sitemap lists the
+          # pages worth indexing, not the ones that send crawlers elsewhere.
+          next if et.external_site_url.to_s != ''
           next if et.slug.nil? || et.slug.empty?
           next unless seen_slugs.add?("#{et.lang}-#{et.slug}")
 

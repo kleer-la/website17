@@ -2,7 +2,8 @@ get %r{/(somos|about_us)/?} do
   page = Page.load_from_keventer(session[:locale], 'somos')
   @meta_tags.set! title: page.seo_title || t('meta_tag.aboutus.title'),
                   description: page.seo_description || t('meta_tag.aboutus.description'),
-                  canonical: page.canonical || t('meta_tag.aboutus.canonical')
+                  canonical: page.canonical || t('meta_tag.aboutus.canonical'),
+                  alternate_paths: RouterHelper.alternate_paths('somos')
   @meta_tags.set! image: page.cover unless page.cover.nil?
 
   @active_tab_somos = 'active'

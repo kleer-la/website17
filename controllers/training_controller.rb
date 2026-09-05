@@ -87,7 +87,7 @@ get %r{/(catalogo|catalog)/?} do
                   # The slug differs per language, so the alternates cannot be the
                   # current path with the prefix swapped: that named /es/catalog
                   # and /en/catalogo, and both redirect.
-                  alternate_paths: { es: '/catalogo', en: '/catalog' }
+                  alternate_paths: RouterHelper.alternate_paths('catalogo')
   @meta_tags.set! image: page.cover unless page.cover.nil?
   @active_tab_entrenamos = 'active'
   @categories = load_categories session[:locale]
