@@ -152,6 +152,23 @@ describe 'metatags' do
       expect(head).to include 'href="https://www.kleer.la/es/sambayon"'
       expect(head).to include 'href="https://www.kleer.la/en/sambayon"'
     end
+    # A course, or an article, exists in one language only: the page declares
+    # that language and x-default has to agree with it, or it points at a URL
+    # that was never published.
+    it 'points x-default at the only language the page declares' do
+      head = Tags.new.display 'path': '/courses/7-csm', hreflang: [:en]
+
+      expect(head).to include %(hreflang='x-default' href="https://www.kleer.la/en/courses/7-csm")
+      expect(head).to include 'hreflang="en" href="https://www.kleer.la/en/courses/7-csm"'
+      expect(head).not_to include 'hreflang="es"'
+    end
+
+    it 'keeps x-default in Spanish when the page has both' do
+      head = Tags.new.display 'path': '/blog/nota'
+
+      expect(head).to include %(hreflang='x-default' href="https://www.kleer.la/es/blog/nota")
+    end
+
     it 'dont include hreflang if no lang' do
       head = Tags.new.display 'path': '/sambayon', hreflang: []
       expect(head).not_to include 'href='

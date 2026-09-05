@@ -83,7 +83,11 @@ get %r{/(catalogo|catalog)/?} do
   page = Page.load_from_keventer(session[:locale], 'catalogo')
   @meta_tags.set! title: page.seo_title || t('meta_tag.catalog.title'),
                   description: page.seo_description || t('meta_tag.catalog.description'),
-                  canonical: page.canonical || t('meta_tag.catalog.canonical')
+                  canonical: page.canonical || t('meta_tag.catalog.canonical'),
+                  # The slug differs per language, so the alternates cannot be the
+                  # current path with the prefix swapped: that named /es/catalog
+                  # and /en/catalogo, and both redirect.
+                  alternate_paths: { es: '/catalogo', en: '/catalog' }
   @meta_tags.set! image: page.cover unless page.cover.nil?
   @active_tab_entrenamos = 'active'
   @categories = load_categories session[:locale]
@@ -116,11 +120,17 @@ get %r{/(cursos|courses)/([a-z0-9_-]+)} do |_lang_path, event_type_id_with_name|
     end
 
     # SEO (title, meta)
+    # A course exists in one language — the English edition is a separate event
+    # type with its own slug — so the page declares that language and no other.
+    # Declaring both built the alternate URL with the Spanish segment under /en,
+    # which redirects to the catalogue: all 34 courses pointed at the same page,
+    # none of them got the reference back, and the cluster was discarded.
     @meta_tags.set! title: @event_type.seo_title || @event_type.name,
                     description: @event_type.elevator_pitch,
                     canonical: @event_type.canonical_url,
                     noindex: @event_type.noindex,
-                    image: @event_type.cover
+                    image: @event_type.cover,
+                    hreflang: [@event_type.lang.to_sym]
 
     json_ld_items = [course_json_ld(@event_type)]
 

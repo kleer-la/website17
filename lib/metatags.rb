@@ -119,7 +119,14 @@ module MetaTags
           es_path = @alternate_paths&.dig(:es) || @path
           en_path = @alternate_paths&.dig(:en) || @path
 
-          tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/es#{es_path}\"/>" : '') do |ac, current_lang|
+          # x-default is the version to serve when no declared language fits.
+          # Spanish when the page has both; when it declares a single language
+          # — a course or an article exists in one only — it has to be that
+          # one, or x-default names a URL that was never published.
+          default_lang = tag[1].include?(:es) || tag[1].size != 1 ? :es : tag[1].first
+          default_path = default_lang == :en ? en_path : es_path
+
+          tag[1].reduce(tag[1] != [] ? "<link rel=\"alternate\" hreflang='x-default' href=\"#{@base_url}/#{default_lang}#{default_path}\"/>" : '') do |ac, current_lang|
             path_for_lang = case current_lang
                             when :es
                               es_path
