@@ -112,7 +112,7 @@ module MetaTags
         @base_url = tag[1]
         nil
       when :canonical
-        "<link rel=\"canonical\" href=\"#{@base_url}/#{@current_lang}#{tag[1]}\"/>"
+        "<link rel=\"canonical\" href=\"#{canonical_url(tag[1])}\"/>"
       when :hreflang
         unless @path.nil?
           # Use alternate paths if provided, otherwise use same path for both languages
@@ -144,6 +144,18 @@ module MetaTags
       else
         puts "(warning - MetaTag not used) #{tag[0]}: #{tag[1]} "
       end
+    end
+
+    # The canonical arrives as a path relative to the language ('/membresia-ia'),
+    # as a bare slug from a free-text admin field, as '' for the language home,
+    # or — from a subdomain that canonicalises to itself — as a whole URL.
+    # Concatenating the four cases blindly is how latelier.kleer.la ended up
+    # declaring itself canonical at www.kleer.la/eshttps://latelier.kleer.la/es/.
+    def canonical_url(value)
+      value = value.to_s.strip
+      return value if value.match?(%r{\Ahttps?://})
+
+      [@base_url, @current_lang.to_s, value.sub(%r{\A/}, '')].reject { |part| part.to_s.empty? }.join('/')
     end
   end
 

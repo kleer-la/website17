@@ -36,16 +36,17 @@ describe 'GET /:slug (flagship catch-all)' do
     end
   end
 
-  # Two URLs for one page, on two hosts, each with its own sitemap.
-  context 'on lab.kleer.la' do
-    let(:lab_host) { { 'HTTP_HOST' => 'lab.kleer.la' } }
+  # Two URLs for one page, on two hosts, each with its own sitemap. Every
+  # subdomain is its own site, so the rule is asked as "main site only".
+  %w[lab.kleer.la qa.lab.kleer.la latelier.kleer.la qa.latelier.kleer.la].each do |host|
+    context "on #{host}" do
+      it 'does not serve the main site pages' do
+        expect(Page).not_to receive(:load_from_keventer)
 
-    it 'does not serve the main site pages' do
-      expect(Page).not_to receive(:load_from_keventer)
+        get '/es/membresia-ia-v2', {}, { 'HTTP_HOST' => host }
 
-      get '/es/membresia-ia-v2', {}, lab_host
-
-      expect(last_response.status).to eq(404)
+        expect(last_response.status).to eq(404)
+      end
     end
   end
 

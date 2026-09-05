@@ -84,6 +84,29 @@ describe 'metatags' do
                               hreflang: [], image: ''
       expect(head).not_to include '<link rel="canonical"'
     end
+    it 'puts the canonical under the current language' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es',
+                              canonical: '/membresia-ia'
+      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/es/membresia-ia"/>'
+    end
+
+    it 'takes a bare slug too: the field behind it is free text' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es',
+                              canonical: 'membresia-ia'
+      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/es/membresia-ia"/>'
+    end
+
+    it 'leaves a whole URL alone: a subdomain canonicalises to itself' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es',
+                              canonical: 'https://latelier.kleer.la/es/'
+      expect(head).to include '<link rel="canonical" href="https://latelier.kleer.la/es/"/>'
+    end
+
+    it 'is the language home when there is no path' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es', canonical: ''
+      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/es"/>'
+    end
+
     it 'has canonical' do
       head = Tags.new.display base_url: 'https://www.kleer.la', canonical: 'randanganga'
       expect(head).to include '<link rel="canonical" href="https://www.kleer.la/randanganga"/>'

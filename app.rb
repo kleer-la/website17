@@ -74,10 +74,25 @@ configure :test, :development do
   set :protection, except: [:host_authorization]
 end
 
+# Which site a host belongs to. One list, so a new subdomain is added here
+# instead of growing another `host.start_with?` somewhere else — the way the
+# flagship catch-all came to know about lab and not about latelier, and served
+# every main-site page on a second domain.
+SITES = {
+  lab: /\A(qa\.)?lab\./,
+  latelier: /\A(qa\.)?latelier\./
+}.freeze
+
+def site_for(host)
+  SITES.find { |_name, pattern| host.to_s.match?(pattern) }&.first || :main
+end
+
 before do
   # Handle subdomain routing
-  @is_latelier = request.host.start_with?('latelier.')
-  @is_lab = request.host.start_with?('lab.') || request.host.start_with?('qa.lab.')
+  @site = site_for(request.host)
+  @is_latelier = @site == :latelier
+  @is_lab = @site == :lab
+  @is_main_site = @site == :main
 
   target_url, locale = unify_domains(request.host, request.path)
   session[:locale] = locale if locale # Set only if locale is non-nil
@@ -236,11 +251,12 @@ end
 # (e.g. /membresia-ia from membership_controller) wins; falls through to
 # 404 if no flagship Page matches the slug.
 get '/:slug' do
-  # lab.kleer.la is its own site: serving the main site's pages there gave every
-  # flagship page a second URL, with the same title and the same canonical, on a
-  # host that has its own sitemap. Two URLs, one page, and nothing telling
-  # crawlers which one counts.
-  pass if @is_lab
+  # Flagship pages belong to the main site only. Each subdomain is its own site,
+  # with its own sitemap, so serving these there gives one page a second URL —
+  # same title, same canonical — on a host that never meant to have it. Asked
+  # the other way round ("only on the main site") this keeps holding when the
+  # next subdomain shows up.
+  pass unless @is_main_site
   pass if params[:slug].to_s.include?('.') # skip /robots.txt, /favicon.ico, …
   # Flagship slugs are kebab-case; anything else (scrapers requesting quoted
   # strings from our HTML as paths) would make URI.join raise inside the
@@ -256,14 +272,12 @@ get '/:slug' do
   render_page :'flagships/show'
 end
 
-# Metatags appends the canonical after /:lang, so what goes in is a path and it
-# needs its leading slash. Empty, it resolved to /:lang — every flagship page
-# was declaring itself a duplicate of the language home page. A page that does
-# not name a canonical is its own.
+# Empty, the canonical resolved to /:lang — every flagship page was declaring
+# itself a duplicate of the language home page. A page that names no canonical
+# is its own.
 def flagship_canonical(page, slug)
   path = page.canonical.to_s.strip
-  path = slug.to_s if path.empty?
-  path.start_with?('/') ? path : "/#{path}"
+  path.empty? ? slug.to_s : path
 end
 
 def get_404_error_text_for_course(course_name)
