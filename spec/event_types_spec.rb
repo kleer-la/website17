@@ -78,4 +78,54 @@ describe EventType do
       expect(@event_type.redirect_to('4-Enterprise-Agility')).to eq '/services'
     end
   end
+
+  # A 301 is how a retired course hands its authority to the one that replaced
+  # it. Landing on the language-less namespace — which answers 200 and then
+  # names /es/... as its canonical — spends the signal on a page that says it
+  # is not the right one.
+  context 'Redirect destination' do
+    def deleted_course(lang:)
+      EventType.new({ 'id' => '4', 'slug' => '4-enterprise-agility', 'lang' => lang })
+               .tap do |et|
+        et.canonical_slug = '418-enterprise-agility-practitioner'
+        et.deleted = true
+      end
+    end
+
+    it 'sends a Spanish course to the Spanish course URL' do
+      expect(deleted_course(lang: 'es').redirect_to('4-enterprise-agility'))
+        .to eq '/es/cursos/418-enterprise-agility-practitioner'
+    end
+
+    it 'sends an English course to the English course URL' do
+      expect(deleted_course(lang: 'en').redirect_to('4-enterprise-agility'))
+        .to eq '/en/courses/418-enterprise-agility-practitioner'
+    end
+
+    it 'assumes Spanish when the course does not say' do
+      expect(deleted_course(lang: nil).redirect_to('4-enterprise-agility'))
+        .to eq '/es/cursos/418-enterprise-agility-practitioner'
+    end
+  end
+
+  # The canonical tag is built by Metatags, which prepends the base URL and the
+  # language itself. This path has to stay relative to the language or the tag
+  # comes out as /es/es/cursos/... — which is why the redirect needs its own
+  # method instead of this one growing a prefix.
+  context 'Canonical path' do
+    it 'stays relative to the language' do
+      event_type = EventType.new({ 'id' => '4', 'slug' => '4-enterprise-agility', 'lang' => 'es' })
+      event_type.canonical_slug = '418-enterprise-agility-practitioner'
+
+      expect(event_type.canonical_url).to eq '/cursos/418-enterprise-agility-practitioner'
+    end
+  end
+
+  context 'Own path' do
+    it 'names the language even when the course does not' do
+      event_type = EventType.new({ 'id' => '4', 'slug' => '4-enterprise-agility' })
+
+      expect(event_type.uri_path).to eq '/es/cursos/4-enterprise-agility'
+    end
+  end
 end

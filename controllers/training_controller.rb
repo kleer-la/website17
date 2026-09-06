@@ -166,7 +166,11 @@ end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
 get %r{/categoria/([a-z0-9_-]+)/cursos/([a-z0-9_-]+)} do |_category_codename, event_type_id_with_name|
-  redirect to "/cursos/#{event_type_id_with_name}", 301
+  # Without the parentheses the 301 was swallowed by `to` as its `absolute`
+  # argument and the answer went out as a 302, which transfers nothing. And
+  # without the language it landed on the prefix-less namespace, whose
+  # canonical points back into /es/.
+  redirect to("/es/cursos/#{event_type_id_with_name}"), 301
 end
 
 # <%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended, title: t('recommended.title')  }%>

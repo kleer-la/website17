@@ -99,21 +99,30 @@ class EventType
   end
 
   def uri_path
-    partial = @lang == 'en' ? 'courses' : 'cursos'
-    "/#{@lang}/#{partial}/#{@slug}"
+    "/#{path_lang}#{lang_relative_path(@slug)}"
   end
 
+  # Relative to the language, because Metatags builds the canonical tag by
+  # prepending the base URL and the language. A prefix here would come out as
+  # /es/es/cursos/..., which is why the redirect below needs its own method.
   def canonical_url
-    partial = @lang == 'en' ? 'courses' : 'cursos'
-    "/#{partial}/#{@canonical_slug}" if @canonical_slug.to_s != ''
+    lang_relative_path(@canonical_slug) if @canonical_slug.to_s != ''
+  end
+
+  # Absolute, because a redirect has nothing prepended to it. Without the
+  # language it landed on /cursos/..., a namespace that answers 200 and then
+  # names /es/cursos/... as its canonical: the 301 stopped one URL short of
+  # the page it meant, and handed over that much less.
+  def canonical_uri_path
+    "/#{path_lang}#{canonical_url}" if @canonical_slug.to_s != ''
   end
 
   def redirect_to(event_type_id_with_name)
-    return @external_site_url   if @external_site_url.to_s != ''            # explicit redirect
-    return ''                   if @deleted && @canonical_slug == @slug     # dont know where to redirect
-    return ''                   if @deleted && @canonical_slug.to_s == ''   # dont know where to redirect
-    return canonical_url   if @deleted && @canonical_slug.to_s != ''   # redirect to canonical
-    return uri_path        if event_type_id_with_name != @slug         # redirect to itself
+    return @external_site_url  if @external_site_url.to_s != ''           # explicit redirect
+    return ''                  if @deleted && @canonical_slug == @slug    # dont know where to redirect
+    return ''                  if @deleted && @canonical_slug.to_s == ''  # dont know where to redirect
+    return canonical_uri_path  if @deleted                                # redirect to canonical
+    return uri_path            if event_type_id_with_name != @slug        # redirect to itself
 
     nil # dont redirect
   end
@@ -128,5 +137,17 @@ class EventType
 
   def brochure
     ImageUrlHelper.replace_s3_with_cdn(@brochure)
+  end
+
+  private
+
+  # A course that does not declare a language is Spanish: it is what the
+  # segment already assumed, and "//cursos/..." is not a URL.
+  def path_lang
+    @lang.to_s.empty? ? 'es' : @lang
+  end
+
+  def lang_relative_path(slug)
+    "/#{path_lang == 'en' ? 'courses' : 'cursos'}/#{slug}"
   end
 end
