@@ -162,7 +162,13 @@ module MetaTags
       value = value.to_s.strip
       return value if value.match?(%r{\Ahttps?://})
 
-      [@base_url, @current_lang.to_s, value.sub(%r{\A/}, '')].reject { |part| part.to_s.empty? }.join('/')
+      path = value.sub(%r{\A/}, '')
+      url = [@base_url, @current_lang.to_s, path].reject { |part| part.to_s.empty? }.join('/')
+      # The language home arrives as '' or '/', and stripping the slash leaves
+      # nothing to join: the URL came out as .../es, which answers 301 to
+      # .../es/ — the form the sitemap declares. A canonical that redirects
+      # names a page that is not the one.
+      path.empty? ? "#{url}/" : url
     end
   end
 

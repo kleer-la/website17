@@ -102,9 +102,17 @@ describe 'metatags' do
       expect(head).to include '<link rel="canonical" href="https://latelier.kleer.la/es/"/>'
     end
 
-    it 'is the language home when there is no path' do
+    # /es answers 301 to /es/, which is the form the sitemap declares. A
+    # canonical that redirects names a page that is not the one.
+    it 'keeps the trailing slash of the language home when there is no path' do
       head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es', canonical: ''
-      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/es"/>'
+      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/es/"/>'
+    end
+
+    # The value the home actually passes, from locales/*.yml.
+    it 'keeps the trailing slash of the language home when the path is a slash' do
+      head = Tags.new.display base_url: 'https://www.kleer.la', current_lang: 'es', canonical: '/'
+      expect(head).to include '<link rel="canonical" href="https://www.kleer.la/es/"/>'
     end
 
     it 'has canonical' do
