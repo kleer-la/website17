@@ -21,7 +21,7 @@ describe 'the footer' do
       # An icon link is empty of text but carries an image; this is about the
       # ones that carry nothing at all.
       empty = Nokogiri::HTML(last_response.body).css('footer a')
-                                                .select { |a| a.text.strip.empty? && a.element_children.empty? }
+                      .select { |a| a.text.strip.empty? && a.element_children.empty? }
       expect(empty.map { |a| a['href'] }).to be_empty
     end
   end
