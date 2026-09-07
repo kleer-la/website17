@@ -18,7 +18,9 @@ class RouterHelper
     'novedades' => { es: 'novedades', en: 'news' },
     'news' => { es: 'novedades', en: 'news' },
     'clientes' => { es: 'clientes', en: 'clients' },
-    'clients' => { es: 'clientes', en: 'clients' }
+    'clients' => { es: 'clientes', en: 'clients' },
+    'cursos' => { es: 'cursos', en: 'courses' },
+    'courses' => { es: 'cursos', en: 'courses' }
   }.freeze
 
   def set_current_route(current_route)

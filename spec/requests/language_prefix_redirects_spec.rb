@@ -28,6 +28,23 @@ describe 'a section asked for without its language prefix' do
     expect(last_response.location).to end_with('/es/recursos')
   end
 
+  # Courses were the section left out of the first pass, so /cursos/<slug>
+  # still answered 200 without a prefix and named /es/cursos/<slug> as its
+  # canonical — the shape this closed everywhere else.
+  it 'sends a course to the Spanish prefix' do
+    get '/cursos/97-mejora-continua-con-toyota-kata'
+
+    expect(last_response.status).to eq(301)
+    expect(last_response.location).to end_with('/es/cursos/97-mejora-continua-con-toyota-kata')
+  end
+
+  it 'sends an English course to the English prefix' do
+    get '/courses/68-certified-scrum-master-csm'
+
+    expect(last_response.status).to eq(301)
+    expect(last_response.location).to end_with('/en/courses/68-certified-scrum-master-csm')
+  end
+
   it 'sends a section that is the same in both languages to Spanish' do
     get '/blog'
 
