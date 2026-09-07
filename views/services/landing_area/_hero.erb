@@ -20,7 +20,7 @@
     <% if service_area.services.any? %>
       <div class="d-flex flex-column flex-sm-row flex-wrap justify-content-center align-items-center gap-4 mb-5">
         <% service_area.services.each do |service| %>
-          <a href="/<%= session[:locale] %>/<%= @path %>/<%= service_area.slug %>/<%= service.slug %>"
+          <a href="<%= service_path(service_area.slug, service.slug) %>"
             class="area-hero-service-link"
             style="color: <%= @primary_font_color %>; font-weight: 700; font-size: 1.4rem; transition: opacity 0.2s; text-decoration: underline; text-underline-offset: 4px;">
             <%= service.name %>

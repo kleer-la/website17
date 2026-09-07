@@ -16,6 +16,16 @@ module Helpers
     Rack::Utils.escape_html(text.to_s)
   end
 
+  # Where a service of an area is read. A service area has a page per service
+  # under <area>/<service>; a training programme does not — the two-segment
+  # route passes for it, so those links were 404s from the body of a
+  # commercial page. Its services are areas of their own, which is where the
+  # data puts them and where this points.
+  def service_path(area_slug, service_slug)
+    section = "/#{session[:locale]}/#{@path}"
+    @is_training_program ? "#{section}/#{service_slug}" : "#{section}/#{area_slug}/#{service_slug}"
+  end
+
   def render_page(view, options = {})
     erb view, { layout: :'layout/layout2022' }.merge(options)
   end
