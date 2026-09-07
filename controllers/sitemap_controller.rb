@@ -2,6 +2,11 @@ require 'nokogiri'
 
 BASE_URL = 'https://www.kleer.la'
 
+# Each section names the languages it has, and both its URLs and its alternates
+# follow from that. Novedades and Podcasts have only Spanish: the records behind
+# them carry no translation, so /en/news and /en/podcasts answered 200 with the
+# Spanish copy — listed here, they spent crawl on a page that speaks the wrong
+# language and offered it as the English version of one that reads fine.
 STATIC_PAGES = {
   '/' => { es: '/', en: '/' },
   '/blog' => { es: '/blog', en: '/blog' },
@@ -11,8 +16,8 @@ STATIC_PAGES = {
   '/recursos' => { es: '/recursos', en: '/resources' },
   '/somos' => { es: '/somos', en: '/about_us' },
   '/clientes' => { es: '/clientes', en: '/clients' },
-  '/podcasts' => { es: '/podcasts', en: '/podcasts' },
-  '/novedades' => { es: '/novedades', en: '/news' }
+  '/podcasts' => { es: '/podcasts' },
+  '/novedades' => { es: '/novedades' }
 }.freeze
 
 def add_url(xml, path:, changefreq: 'weekly', priority: '0.7', lastmod: nil, hreflang: nil)
@@ -44,14 +49,14 @@ get '/sitemap.xml' do
     xml.urlset(xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
                'xmlns:xhtml' => 'http://www.w3.org/1999/xhtml') do
       STATIC_PAGES.each do |key, paths|
-        %i[es en].each do |lang|
+        paths.each_key do |lang|
           xml.url do
             xml.loc "#{BASE_URL}/#{lang}#{paths[lang]}"
             xml.changefreq 'weekly'
             xml.priority(key == '/' ? '1.0' : '0.8')
-            %i[es en].each do |alt_lang|
+            paths.each do |alt_lang, alt_path|
               xml['xhtml'].link(rel: 'alternate', hreflang: alt_lang.to_s,
-                                href: "#{BASE_URL}/#{alt_lang}#{paths[alt_lang]}")
+                                href: "#{BASE_URL}/#{alt_lang}#{alt_path}")
             end
           end
         end

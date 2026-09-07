@@ -60,9 +60,28 @@ describe 'GET /sitemap.xml' do
       expect(urls).to include('https://www.kleer.la/es/clientes')
       expect(urls).to include('https://www.kleer.la/en/clients')
       expect(urls).to include('https://www.kleer.la/es/podcasts')
-      expect(urls).to include('https://www.kleer.la/en/podcasts')
       expect(urls).to include('https://www.kleer.la/es/novedades')
-      expect(urls).to include('https://www.kleer.la/en/news')
+    end
+
+    # Novedades and Podcasts have no English edition — the English URL answered
+    # with the Spanish copy. A sitemap lists the pages worth indexing, and a
+    # page that speaks the wrong language is not one of them.
+    it 'leaves out the languages a section does not have' do
+      get '/sitemap.xml'
+
+      expect(urls).not_to include('https://www.kleer.la/en/news')
+      expect(urls).not_to include('https://www.kleer.la/en/podcasts')
+    end
+
+    it 'does not offer them as an alternate of the Spanish page either' do
+      get '/sitemap.xml'
+
+      doc = sitemap_xml
+      links = doc.xpath('//xmlns:url[xmlns:loc[text()="https://www.kleer.la/es/novedades"]]/xhtml:link',
+                        'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9',
+                        'xhtml' => 'http://www.w3.org/1999/xhtml')
+
+      expect(links.map { |l| l['hreflang'] }).to eq(['es'])
     end
 
     it 'includes hreflang alternates for static pages' do

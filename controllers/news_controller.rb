@@ -15,6 +15,7 @@ def news_index(preview = false)
                   canonical: @page.canonical || t('meta_tag.news.canonical')
 
   @meta_tags.set! image: @page.cover unless @page.cover.nil?
+  spanish_only_section!
 
   @active_tab_publicamos = 'active'
   @news = if preview

@@ -56,6 +56,18 @@ describe 'language alternates of a service area' do
       .to include('<link rel="canonical" href="https://www.kleer.la/es/formacion/adopcion-ia-empresas"/>')
   end
 
+  # The hreflang stopped naming the other language, but the visible switcher
+  # kept offering it: without an alternate spelled out it falls back to the
+  # current path with its section translated, so every Spanish programme page
+  # linked /en/training/<slug>, which answers 301 to the catalogue. Landing on
+  # the catalogue is the right destination — reaching it through a redirect the
+  # page could have skipped is not.
+  it 'sends the language switcher to the catalogue, not to a programme that does not exist' do
+    get '/es/formacion/adopcion-ia-empresas'
+
+    expect(last_response.body).to include('class="nav-link language-switcher" href="/en/catalog"')
+    expect(last_response.body).not_to include('/en/training/adopcion-ia-empresas')
+  end
 end
 
 # The service routes, unlike the training ones, do not check the area's language

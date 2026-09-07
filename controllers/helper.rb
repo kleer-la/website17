@@ -26,6 +26,17 @@ module Helpers
     @is_training_program ? "#{section}/#{service_slug}" : "#{section}/#{area_slug}/#{service_slug}"
   end
 
+  # A section that exists only in Spanish still answers under /en: the language
+  # prefix is a route, not a catalogue of what is translated. So the English URL
+  # served the Spanish copy under <html lang="en">, offered as the English
+  # version of the page that reads fine. Declaring the one language it has keeps
+  # the alternate honest, and keeps the copy in the other prefix out of the
+  # index — the sitemap leaves it out for the same reason.
+  def spanish_only_section!
+    @meta_tags.set! hreflang: [:es]
+    @meta_tags.set! noindex: true, nofollow: true unless session[:locale].to_s == 'es'
+  end
+
   def render_page(view, options = {})
     erb view, { layout: :'layout/layout2022' }.merge(options)
   end

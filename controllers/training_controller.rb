@@ -194,6 +194,12 @@ get %r{/formacion/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
 
   @is_training_program = true
 
+  # A programme exists in one language, so the switcher has no counterpart to
+  # offer. Without one spelled out it fell back to this path with its section
+  # translated — /en/training/<slug>, which answers 301 to the catalogue. That
+  # is the right destination; reaching it through a redirect is not.
+  RouterHelper.instance.alternate_route = RouterHelper.alternate_path('catalogo', lang)
+
   show_service_area(service_area, 'formacion')
 end
 
@@ -216,6 +222,8 @@ get %r{/training/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   return status 404 if service_area.nil?
 
   @is_training_program = true
+
+  RouterHelper.instance.alternate_route = RouterHelper.alternate_path('catalogo', lang)
 
   show_service_area(service_area, 'training')
 end

@@ -50,13 +50,6 @@ describe 'language alternates of a translated section' do
     expect(last_response.body).not_to include('hreflang="es" href="https://www.kleer.la/es/resources"')
   end
 
-  it 'translates novedades' do
-    get '/es/novedades'
-
-    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/news"')
-    expect(last_response.body).not_to include('hreflang="en" href="https://www.kleer.la/en/novedades"')
-  end
-
   it 'translates clientes' do
     get '/es/clientes'
 
@@ -66,10 +59,12 @@ describe 'language alternates of a translated section' do
 
   # A section that is the same URL in both languages has a working alternate
   # already; translating a table it is not in would be how that gets lost.
+  # Podcasts used to be the example here and is Spanish-only now, so the case
+  # rides on /privacy — the other section the table does not know.
   it 'leaves a section that is not translated alone' do
-    get '/es/podcasts'
+    get '/es/privacy'
 
-    expect(last_response.body).to include('hreflang="es" href="https://www.kleer.la/es/podcasts"')
-    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/podcasts"')
+    expect(last_response.body).to include('hreflang="es" href="https://www.kleer.la/es/privacy"')
+    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/privacy"')
   end
 end

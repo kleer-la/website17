@@ -10,6 +10,7 @@ get '/podcasts' do
                   canonical: page.canonical || t('meta_tag.podcasts.canonical')
 
   @meta_tags.set! image: page.cover unless page.cover.nil?
+  spanish_only_section!
 
   @podcasts = Podcast.load_from_keventer
   @carousel = @podcasts.first(3)
