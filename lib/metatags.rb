@@ -1,3 +1,5 @@
+require './lib/helpers/router_helper'
+
 module MetaTags
   class Tags
     # @_tags = nil
@@ -115,9 +117,13 @@ module MetaTags
         "<link rel=\"canonical\" href=\"#{canonical_url(tag[1])}\"/>"
       when :hreflang
         unless @path.nil?
-          # Use alternate paths if provided, otherwise use same path for both languages
-          es_path = @alternate_paths&.dig(:es) || @path
-          en_path = @alternate_paths&.dig(:en) || @path
+          # Without alternate_paths the fallback used to be the current path
+          # for both languages — the Spanish segment under /en, which
+          # redirects. The section table knows the pairs it knows and leaves
+          # the rest alone, so a section that is the same URL in both
+          # languages keeps the alternate it already had.
+          es_path = @alternate_paths&.dig(:es) || RouterHelper.translate_first_segment(@path, 'es')
+          en_path = @alternate_paths&.dig(:en) || RouterHelper.translate_first_segment(@path, 'en')
 
           # x-default is the version to serve when no declared language fits.
           # Spanish when the page has both; when it declares a single language

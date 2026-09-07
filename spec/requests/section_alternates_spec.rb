@@ -13,6 +13,10 @@ describe 'language alternates of a translated section' do
   before do
     allow(Page).to receive(:load_from_keventer).and_return(Page.new)
     allow(Trainer).to receive(:create_keventer_json).and_return([])
+    allow(Resource).to receive(:create_list_keventer).and_return([])
+    allow(News).to receive(:create_list_keventer).and_return([])
+    allow(Article).to receive(:create_list_keventer).and_return([])
+    allow(Podcast).to receive(:load_from_keventer).and_return([])
   end
 
   it 'names each language slug on Quiénes somos' do
@@ -28,5 +32,44 @@ describe 'language alternates of a translated section' do
 
     expect(last_response.body).to include('hreflang="es" href="https://www.kleer.la/es/somos"')
     expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/about_us"')
+  end
+
+  # The sections that do not spell their alternates out fall back to the current
+  # path with the prefix swapped, which names the Spanish segment under /en.
+  it 'translates the section of the resources index' do
+    get '/es/recursos'
+
+    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/resources"')
+    expect(last_response.body).not_to include('hreflang="en" href="https://www.kleer.la/en/recursos"')
+  end
+
+  it 'translates the section from the English side' do
+    get '/en/resources'
+
+    expect(last_response.body).to include('hreflang="es" href="https://www.kleer.la/es/recursos"')
+    expect(last_response.body).not_to include('hreflang="es" href="https://www.kleer.la/es/resources"')
+  end
+
+  it 'translates novedades' do
+    get '/es/novedades'
+
+    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/news"')
+    expect(last_response.body).not_to include('hreflang="en" href="https://www.kleer.la/en/novedades"')
+  end
+
+  it 'translates clientes' do
+    get '/es/clientes'
+
+    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/clients"')
+    expect(last_response.body).not_to include('hreflang="en" href="https://www.kleer.la/en/clientes"')
+  end
+
+  # A section that is the same URL in both languages has a working alternate
+  # already; translating a table it is not in would be how that gets lost.
+  it 'leaves a section that is not translated alone' do
+    get '/es/podcasts'
+
+    expect(last_response.body).to include('hreflang="es" href="https://www.kleer.la/es/podcasts"')
+    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/podcasts"')
   end
 end

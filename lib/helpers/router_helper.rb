@@ -14,7 +14,11 @@ class RouterHelper
     'agenda' => { es: 'agenda', en: 'schedule' },
     'schedule' => { es: 'agenda', en: 'schedule' },
     'somos' => { es: 'somos', en: 'about_us' },
-    'about_us' => { es: 'somos', en: 'about_us' }
+    'about_us' => { es: 'somos', en: 'about_us' },
+    'novedades' => { es: 'novedades', en: 'news' },
+    'news' => { es: 'novedades', en: 'news' },
+    'clientes' => { es: 'clientes', en: 'clients' },
+    'clients' => { es: 'clientes', en: 'clients' }
   }.freeze
 
   def set_current_route(current_route)
@@ -79,6 +83,21 @@ class RouterHelper
     return base_path unless route_config
 
     route_config[locale.to_sym] || base_path
+  end
+
+  # The same path with its section translated, for the language alternates that
+  # no controller spells out. Swapping only the prefix names /en/recursos, which
+  # redirects, and an alternate pointing at a redirect is a pair Google never
+  # confirms. A section the table does not know keeps the path it has: /privacy
+  # and /podcasts are the same URL in both languages.
+  # @example
+  #   RouterHelper.translate_first_segment('/recursos/dod-kards', 'en')
+  #   # => '/resources/dod-kards'
+  def self.translate_first_segment(path, locale)
+    head, section, rest = path.to_s.split('/', 3)
+    return path if head.to_s != '' || section.to_s.empty?
+
+    ['', translate_path(section, locale), rest].compact.join('/')
   end
 
   # Returns the alternate path for a given path and current language

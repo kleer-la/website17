@@ -29,6 +29,22 @@ describe 'Mixed Language URL Redirects' do
         expect(last_response.location).to end_with('/en/catalog')
       end
 
+      # These two used to answer 200 under either segment, so /en/novedades was
+      # a second URL for /en/news that named the other one as its canonical.
+      it 'redirects /en/novedades to /en/news' do
+        get '/en/novedades'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/en/news')
+      end
+
+      it 'redirects /en/clientes to /en/clients' do
+        get '/en/clientes'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/en/clients')
+      end
+
       it 'redirects /en/formacion to /en/training' do
         get '/en/formacion'
 

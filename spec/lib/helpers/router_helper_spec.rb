@@ -19,6 +19,46 @@ describe RouterHelper do
       expect(RouterHelper::ROUTE_TRANSLATIONS['catalogo']).to eq({ es: 'catalogo', en: 'catalog' })
       expect(RouterHelper::ROUTE_TRANSLATIONS['catalog']).to eq({ es: 'catalogo', en: 'catalog' })
     end
+
+    it 'contains mapping for novedades/news' do
+      expect(RouterHelper::ROUTE_TRANSLATIONS['novedades']).to eq({ es: 'novedades', en: 'news' })
+      expect(RouterHelper::ROUTE_TRANSLATIONS['news']).to eq({ es: 'novedades', en: 'news' })
+    end
+
+    it 'contains mapping for clientes/clients' do
+      expect(RouterHelper::ROUTE_TRANSLATIONS['clientes']).to eq({ es: 'clientes', en: 'clients' })
+      expect(RouterHelper::ROUTE_TRANSLATIONS['clients']).to eq({ es: 'clientes', en: 'clients' })
+    end
+  end
+
+  # The language alternates fall back to the current path when the controller
+  # does not spell them out. Swapping only the prefix names /en/recursos, which
+  # redirects; the section table already knows the pair.
+  describe '.translate_first_segment' do
+    it 'translates the section of an index path' do
+      expect(RouterHelper.translate_first_segment('/recursos', 'en')).to eq '/resources'
+    end
+
+    it 'translates the section and keeps the rest of the path' do
+      expect(RouterHelper.translate_first_segment('/recursos/dod-kards', 'en')).to eq '/resources/dod-kards'
+    end
+
+    it 'translates back' do
+      expect(RouterHelper.translate_first_segment('/resources/dod-kards', 'es')).to eq '/recursos/dod-kards'
+    end
+
+    # A section the table does not know keeps the path it has: /privacy and
+    # /podcasts are the same URL in both languages, and inventing a
+    # counterpart for them would take away an alternate that works.
+    it 'leaves a section it does not know alone' do
+      expect(RouterHelper.translate_first_segment('/privacy', 'en')).to eq '/privacy'
+      expect(RouterHelper.translate_first_segment('/podcasts', 'en')).to eq '/podcasts'
+    end
+
+    it 'leaves the language home alone' do
+      expect(RouterHelper.translate_first_segment('', 'en')).to eq ''
+      expect(RouterHelper.translate_first_segment('/', 'en')).to eq '/'
+    end
   end
 
   describe '#set_current_route' do
