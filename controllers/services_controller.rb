@@ -48,7 +48,7 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, servi
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
-  show_service(service_area, service, 'servicios')
+  show_service(service_area, service, section_path)
 end
 
 get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
@@ -62,14 +62,30 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
-  show_service_area(service_area, 'servicios')
+  show_service_area(service_area, section_path)
+end
+
+# The services routes answer under /servicios and /services alike, so the
+# segment has to come from the language, not from the pattern.
+def section_path
+  RouterHelper.translate_path('servicios', session[:locale] || 'es')
+end
+
+# An area that does not declare a language is Spanish, which is what the
+# routes already assume.
+def area_lang(service_area)
+  (service_area.lang.to_s.empty? ? 'es' : service_area.lang).to_sym
 end
 
 def show_service_area(service_area, path)
+  # An area exists in one language: the English ones are separate records with
+  # their own slugs, and nothing links them to the Spanish ones. Naming both
+  # built the alternate by reusing this slug under the other prefix — a page
+  # that is this same area with the other chrome, not its translation.
   @meta_tags.set! title: service_area.seo_title,
                   description: service_area.seo_description,
                   canonical: "/#{path}/#{service_area.slug}",
-                  alternate_paths: { es: "/servicios/#{service_area.slug}", en: "/services/#{service_area.slug}" }
+                  hreflang: [area_lang(service_area)]
 
   @path = path
   @has_consultants = service_area_has_consultants?(service_area.slug)
@@ -82,8 +98,7 @@ def show_service(service_area, service, path)
   @meta_tags.set! title: service.seo_title || "#{service.name} - #{service_area.name}",
                   description: service.seo_description || service.subtitle,
                   canonical: "/#{path}/#{service_area.slug}/#{service.slug}",
-                  alternate_paths: { es: "/servicios/#{service_area.slug}/#{service.slug}",
-                                     en: "/services/#{service_area.slug}/#{service.slug}" }
+                  hreflang: [area_lang(service_area)]
 
   @path = path
   @has_consultants = service_area_has_consultants?(service_area.slug)
