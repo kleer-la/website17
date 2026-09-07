@@ -119,15 +119,44 @@ describe RouterHelper do
   end
 
   describe '#get_alternate_route' do
-    it 'returns current route when alternate is not set' do
+    it 'translates the current route when alternate is not set' do
       router_helper.set_current_route('/es/recursos')
-      expect(router_helper.get_alternate_route).to eq('/recursos')
+      expect(router_helper.get_alternate_route).to eq('/resources')
     end
 
     it 'returns alternate route when set' do
       router_helper.set_current_route('/es/recursos')
       router_helper.alternate_route = '/resources/some-slug'
       expect(router_helper.get_alternate_route).to eq('/resources/some-slug')
+    end
+  end
+
+  # The switcher is the same fallback the hreflang had before #408: without an
+  # alternate spelled out it offered the current path with the prefix swapped,
+  # so ESPAÑOL/ENGLISH on /es/recursos pointed at /en/recursos, a redirect.
+  describe '#get_alternate_route translating the section' do
+    it 'offers the section under its name in the other language' do
+      helper = RouterHelper.new
+      helper.lang = 'es'
+      helper.set_current_route('/es/recursos')
+
+      expect(helper.get_alternate_route).to eq '/resources'
+    end
+
+    it 'translates back' do
+      helper = RouterHelper.new
+      helper.lang = 'en'
+      helper.set_current_route('/en/resources/dod-kards')
+
+      expect(helper.get_alternate_route).to eq '/recursos/dod-kards'
+    end
+
+    it 'leaves a section it does not know alone' do
+      helper = RouterHelper.new
+      helper.lang = 'es'
+      helper.set_current_route('/es/podcasts')
+
+      expect(helper.get_alternate_route).to eq '/podcasts'
     end
   end
 

@@ -30,12 +30,18 @@ class RouterHelper
     @alternate_route = alternate_route
   end
 
+  # Where the language switcher points. Without an alternate spelled out by a
+  # controller it used to offer the current path with the prefix swapped —
+  # /en/recursos, which redirects — so the section gets translated here for the
+  # same reason the hreflang does.
   def get_alternate_route
-    if @alternate_route.nil?
-      @current_route
-    else
-      @alternate_route
-    end
+    return @alternate_route unless @alternate_route.nil?
+
+    RouterHelper.translate_first_segment(@current_route, alternate_lang)
+  end
+
+  def alternate_lang
+    @lang.to_s == 'en' ? 'es' : 'en'
   end
 
   # Sets alternate route for a resource with fallback to index if translation doesn't exist
