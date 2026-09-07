@@ -64,6 +64,34 @@ describe RouterHelper do
   # A section names its own language: /services is the English value in the
   # table, /servicios the Spanish one. Everything the table does not know has
   # no language to name, and stays where it is.
+  # The controller needs to know whether a translation is really there: it is
+  # what decides between declaring one language and declaring two.
+  describe '#set_alternate_route_with_fallback returning the translation' do
+    let(:translated) { double('Resource', title: 'Definition of Done', slug: 'dod-kards') }
+    let(:untranslated) { double('Resource', title: '', slug: 'poster-scrum') }
+
+    it 'gives back the slug the content has in the other language' do
+      allow(Resource).to receive(:create_one_keventer).with('dod-kards', 'en').and_return(translated)
+
+      expect(router_helper.set_alternate_route_with_fallback('recursos', 'dod-kards', 'es', Resource))
+        .to eq 'dod-kards'
+    end
+
+    it 'gives back nothing when there is no version in the other language' do
+      allow(Resource).to receive(:create_one_keventer).with('poster-scrum', 'en').and_return(untranslated)
+
+      expect(router_helper.set_alternate_route_with_fallback('recursos', 'poster-scrum', 'es', Resource))
+        .to be_nil
+    end
+
+    it 'gives back nothing when the other language cannot be loaded' do
+      allow(Resource).to receive(:create_one_keventer).and_raise(StandardError)
+
+      expect(router_helper.set_alternate_route_with_fallback('recursos', 'poster-scrum', 'es', Resource))
+        .to be_nil
+    end
+  end
+
   describe '.language_of_path' do
     it 'reads English from an English section' do
       expect(RouterHelper.language_of_path('/services')).to eq 'en'

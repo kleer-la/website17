@@ -27,6 +27,21 @@ def resources_index(preview = false)
 end
 
 # get '/recursos/:slug' do |slug|
+# The languages a resource can be read in. It exists in one unless its
+# translation really is there: offering /en/resources/<Spanish slug> named a
+# page that answers 302 to the index, and an alternate that does not answer
+# back is a pair Google drops — the same shape courses got rid of by declaring
+# the one language they have. Setting the switcher's route is the same
+# question, so it is asked once.
+def resource_alternates(base_path, slug, lang, resource)
+  alternate_slug = RouterHelper.instance.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
+  paths = { lang.to_sym => "/#{RouterHelper.translate_path(base_path, lang)}/#{resource.slug}" }
+  return paths unless alternate_slug
+
+  other_lang = lang == 'es' ? 'en' : 'es'
+  paths.merge(other_lang.to_sym => "/#{RouterHelper.translate_path(base_path, other_lang)}/#{alternate_slug}")
+end
+
 get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
   @active_tab_publicamos = 'active'
 
@@ -46,10 +61,14 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
   end
   @is_assessment = @resource.format == 'assessment'
 
+  alternates = resource_alternates(base_path, slug, lang, @resource)
+
   @meta_tags.set! title: @resource.tabtitle,
                   description: @resource.seo_description,
                   canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}",
-                  image: @resource.cover
+                  image: @resource.cover,
+                  hreflang: alternates.keys,
+                  alternate_paths: alternates
 
   @json_ld = resource_json_ld(@resource)
 
@@ -60,10 +79,6 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
                    else
                      @resource.also_download(3)
                    end
-
-  # Set alternate route with fallback
-  router_helper = RouterHelper.instance
-  router_helper.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
 
   render_page :'resources/show/show'
 rescue ResourceNotFoundError

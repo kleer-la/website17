@@ -56,24 +56,28 @@ class RouterHelper
     return unless route_config
 
     alternate_base_path = route_config[alternate_lang.to_sym]
+    alternate_slug = translated_slug(resource_class, slug, alternate_lang)
 
-    begin
-      # Try to load the resource in the alternate language
-      alternate_resource = resource_class.create_one_keventer(slug, alternate_lang)
+    # The switcher goes to the translation when there is one, and to the index
+    # when there is not — landing on the section beats landing on nothing.
+    @alternate_route = if alternate_slug
+                         "/#{alternate_base_path}/#{alternate_slug}"
+                       else
+                         "/#{alternate_base_path}"
+                       end
+    alternate_slug
+  end
 
-      # Check if the resource has content in the alternate language
-      # If title is empty, the resource doesn't have a translation
-      @alternate_route = if alternate_resource.title.nil? || alternate_resource.title.strip.empty?
-                           # No translation available, fallback to index
-                           "/#{alternate_base_path}"
-                         else
-                           # Translation exists, link to it
-                           "/#{alternate_base_path}/#{alternate_resource.slug}"
-                         end
-    rescue StandardError
-      # If there's an error loading the resource, fallback to index
-      @alternate_route = "/#{alternate_base_path}"
-    end
+  # The slug this content has in the other language, or nil when it has none.
+  # An empty title is how the API says "not translated", and the caller needs
+  # the difference: it decides between declaring one language and declaring two.
+  def translated_slug(resource_class, slug, lang)
+    translated = resource_class.create_one_keventer(slug, lang)
+    return nil if translated.title.to_s.strip.empty?
+
+    translated.slug
+  rescue StandardError
+    nil
   end
 
   # Translates a path segment to the appropriate language
