@@ -37,6 +37,16 @@ module Helpers
     @meta_tags.set! noindex: true, nofollow: true unless session[:locale].to_s == 'es'
   end
 
+  # Whether the course agenda is offered in this language. There are no open
+  # editions to list and the page loaded them without filtering by language, so
+  # the English one announced Spanish courses. The menu, the catalogue's own
+  # invitation and the page itself ask this one question, so they cannot drift
+  # apart — and when /en earns an agenda again, this is the single line to
+  # change.
+  def schedule_offered?(locale = session[:locale])
+    locale.to_s != 'en'
+  end
+
   def render_page(view, options = {})
     erb view, { layout: :'layout/layout2022' }.merge(options)
   end

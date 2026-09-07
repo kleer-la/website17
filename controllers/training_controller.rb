@@ -63,6 +63,7 @@ get %r{/(agenda|schedule)/?} do
                   canonical: @page.canonical || t('meta_tag.agenda.canonical'),
                   alternate_paths: { es: '/agenda', en: '/schedule' }
   @meta_tags.set! image: @page.cover unless @page.cover.nil?
+  spanish_only_section!
 
   @events = Event.create_keventer_json
 
@@ -73,8 +74,10 @@ get %r{/(agenda|schedule)/?} do
     @catalog_courses = all_catalog.select { |e| e.event_type.platform != 'academia' }.first(8)
   end
 
+  # With no English agenda to switch to, the switcher offers the catalogue —
+  # the section this page belongs to in the other language.
   router_helper = RouterHelper.instance
-  router_helper.alternate_route = RouterHelper.alternate_path('agenda', session[:locale])
+  router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
 
   render_page :'training/agenda/index'
 end

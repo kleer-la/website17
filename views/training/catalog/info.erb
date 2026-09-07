@@ -1,7 +1,7 @@
 <section id="training-info">
   <div class="info-container">
     <h4 class="text-center mb-5"><%=t('catalog.type')%></h4>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="subcontainer">
           <div>
@@ -21,18 +21,23 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 border-start border-end">
-        <div class="subcontainer">
-            <h3 class="subtitle"><%=t('catalog.public.title')  || "" %></h3>
-            <%= @markdown_renderer.render(t("catalog.public.text")) %>
-          <div class="btn-center-container">
-            <a class="my-primary-button training-info__redir-button"
-              href="<%= "/#{session[:locale]}#{t("catalog.public.button.link")}" %>">
-              <%= t("catalog.public.button.text") %>
-            </a>
+      <%# The invitation to the agenda goes where the agenda goes: offering it
+          in a language that has none sends the reader to a page with no dates
+          on it. The row centres so the remaining columns do not sit off-side. %>
+      <% if schedule_offered? %>
+        <div class="col-md-4 border-start border-end">
+          <div class="subcontainer">
+              <h3 class="subtitle"><%=t('catalog.public.title')  || "" %></h3>
+              <%= @markdown_renderer.render(t("catalog.public.text")) %>
+            <div class="btn-center-container">
+              <a class="my-primary-button training-info__redir-button"
+                href="<%= "/#{session[:locale]}#{t("catalog.public.button.link")}" %>">
+                <%= t("catalog.public.button.text") %>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
       <div class="col-md-4">
         <div class="subcontainer">
           <h3 class="subtitle">

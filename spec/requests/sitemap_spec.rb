@@ -52,7 +52,6 @@ describe 'GET /sitemap.xml' do
       expect(urls).to include('https://www.kleer.la/es/catalogo')
       expect(urls).to include('https://www.kleer.la/en/catalog')
       expect(urls).to include('https://www.kleer.la/es/agenda')
-      expect(urls).to include('https://www.kleer.la/en/schedule')
       expect(urls).to include('https://www.kleer.la/es/recursos')
       expect(urls).to include('https://www.kleer.la/en/resources')
       expect(urls).to include('https://www.kleer.la/es/somos')
@@ -71,6 +70,7 @@ describe 'GET /sitemap.xml' do
 
       expect(urls).not_to include('https://www.kleer.la/en/news')
       expect(urls).not_to include('https://www.kleer.la/en/podcasts')
+      expect(urls).not_to include('https://www.kleer.la/en/schedule')
     end
 
     it 'does not offer them as an alternate of the Spanish page either' do

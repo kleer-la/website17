@@ -7,12 +7,15 @@ BASE_URL = 'https://www.kleer.la'
 # them carry no translation, so /en/news and /en/podcasts answered 200 with the
 # Spanish copy — listed here, they spent crawl on a page that speaks the wrong
 # language and offered it as the English version of one that reads fine.
+# The Agenda is Spanish-only by decision: there are no open editions to list,
+# and it loaded them without filtering by language, so /en/schedule announced
+# Spanish courses.
 STATIC_PAGES = {
   '/' => { es: '/', en: '/' },
   '/blog' => { es: '/blog', en: '/blog' },
   '/servicios' => { es: '/servicios', en: '/services' },
   '/catalogo' => { es: '/catalogo', en: '/catalog' },
-  '/agenda' => { es: '/agenda', en: '/schedule' },
+  '/agenda' => { es: '/agenda' },
   '/recursos' => { es: '/recursos', en: '/resources' },
   '/somos' => { es: '/somos', en: '/about_us' },
   '/clientes' => { es: '/clientes', en: '/clients' },
