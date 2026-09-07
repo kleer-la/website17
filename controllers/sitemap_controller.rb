@@ -68,9 +68,15 @@ get '/sitemap.xml' do
       add_dynamic_urls(xml, 'articles') do
         Article.create_list_keventer(true).each do |article|
           next unless article.published
+          # The page itself answers noindex, so listing it here asks for a
+          # crawl that can only end in "excluded by noindex tag".
+          next if article.noindex
 
           lang = article.lang || 'es'
-          lastmod = article.substantive_change_at.to_s.split('T').first
+          # `''.split('T').first` is nil, not '', and `nil.empty?` raised — inside
+          # add_dynamic_urls, which catches and logs, so one article with no
+          # date silently took every article out of the sitemap.
+          lastmod = article.substantive_change_at.to_s.split('T').first.to_s
           article_path = "/#{lang}/blog/#{article.slug}"
           add_url(xml, path: article_path,
                        changefreq: 'monthly', priority: '0.6',

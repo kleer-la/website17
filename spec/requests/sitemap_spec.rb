@@ -73,6 +73,31 @@ describe 'GET /sitemap.xml' do
       expect(urls).not_to include('https://www.kleer.la/en/schedule')
     end
 
+    # An article with no substantive_change_at used to raise inside the block
+    # that builds them, and add_dynamic_urls catches: every article vanished
+    # from the sitemap and only a log line said so.
+    it 'lists an article that has no date' do
+      allow(Article).to receive(:create_list_keventer).and_return(
+        [Article.new('slug' => 'sin-fecha', 'lang' => 'es', 'published' => true)]
+      )
+
+      get '/sitemap.xml'
+
+      expect(urls).to include('https://www.kleer.la/es/blog/sin-fecha')
+    end
+
+    it 'leaves out an article the admin marked noindex' do
+      allow(Article).to receive(:create_list_keventer).and_return(
+        [Article.new('slug' => 'visible', 'lang' => 'es', 'published' => true),
+         Article.new('slug' => 'oculto', 'lang' => 'es', 'published' => true, 'noindex' => true)]
+      )
+
+      get '/sitemap.xml'
+
+      expect(urls).to include('https://www.kleer.la/es/blog/visible')
+      expect(urls).not_to include('https://www.kleer.la/es/blog/oculto')
+    end
+
     it 'does not offer them as an alternate of the Spanish page either' do
       get '/sitemap.xml'
 

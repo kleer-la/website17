@@ -63,7 +63,10 @@ class Article
     @title = doc['title']
     @body = doc['body'] || ''
     @slug = doc['slug']
-    @tabtitle = doc['tabtitle'] || @title
+    # `||` would keep an empty admin field: a blank string is truthy in Ruby,
+    # and MetaTags drops a title of zero length — so the page went out with no
+    # <title> at all and the search result carried whatever Google made up.
+    @tabtitle = doc['tabtitle'].to_s.strip.empty? ? @title : doc['tabtitle']
     @description = doc['description'] || ''
     @lang = doc['lang']
     @industry = doc['industry'] || ''

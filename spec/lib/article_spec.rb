@@ -7,6 +7,20 @@ describe Article do
     article = Article.new(doc)
     expect(article.title).to eq 'Lorem Ipsum'
   end
+  # The tab title falls back to the article title when the admin field is
+  # empty. `||` does not do that: an empty string is truthy in Ruby, so three
+  # published articles went out with no <title> tag at all and Google made one
+  # up for the result.
+  it 'falls back to the title when the tab title is blank' do
+    expect(Article.new('title' => 'Lorem Ipsum', 'tabtitle' => '').tabtitle).to eq 'Lorem Ipsum'
+    expect(Article.new('title' => 'Lorem Ipsum', 'tabtitle' => '   ').tabtitle).to eq 'Lorem Ipsum'
+    expect(Article.new('title' => 'Lorem Ipsum').tabtitle).to eq 'Lorem Ipsum'
+  end
+
+  it 'keeps the tab title when there is one' do
+    expect(Article.new('title' => 'Lorem Ipsum', 'tabtitle' => 'Otro').tabtitle).to eq 'Otro'
+  end
+
   it 'trainers' do
     doc = { 'title' => 'Lorem Ipsum',
             'trainers' => [{ 'name' => 'Luke' }] }
