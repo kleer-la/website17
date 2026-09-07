@@ -41,6 +41,12 @@ Then('the page should link to {string} with text {string}') do |url, text|
   expect(page).to have_css("a[href='#{url}']", text: text)
 end
 
+# The BreadcrumbList has to name the canonical URL. /es answers 301 to /es/,
+# so structured data that says /es names a page that is not the one.
+Then('the breadcrumb data should name {string}') do |url|
+  expect(page.html).to match(/"item":\s*"#{Regexp.escape(url)}"/)
+end
+
 When('I go to {string} client page') do |slug|
   Article.create_one_null(@articles[0], { next_null: true })
   visit "/clientes/testimonios/#{slug}"

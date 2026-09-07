@@ -66,8 +66,10 @@ def blog_one(article)
   # BreadcrumbList below. Google asks that the two agree, and they cannot drift
   # if neither is written twice. Links are relative so they stay on whatever
   # host is serving; the JSON-LD keeps the canonical absolute ones.
-  home_path = "/#{session[:locale]}"
-  blog_path = "#{home_path}/blog"
+  # The language home keeps its trailing slash: /es answers 301 to /es/, and a
+  # crumb — visible or structured — that names a redirect names the wrong page.
+  home_path = "/#{session[:locale]}/"
+  blog_path = "/#{session[:locale]}/blog"
   @breadcrumbs = [
     { name: 'Kleer', path: home_path, url: "https://www.kleer.la#{home_path}" },
     { name: 'Blog', path: blog_path, url: "https://www.kleer.la#{blog_path}" },
