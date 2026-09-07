@@ -120,6 +120,20 @@ before do
   router_helper.alternate_route = nil
 end
 
+# A section names its own language, so it answers under its own prefix and
+# nowhere else. Without this /services was reachable unprefixed and served the
+# Spanish page — <html lang="es"> canonicalising to /es/servicios — so the
+# English slug pointed at Spanish content.
+before do
+  next unless @is_main_site && (request.get? || request.head?)
+  # An old URL that already has a destination keeps resolving in one hop:
+  # thirteen of those start with a section the table knows.
+  next if PERMANENT_REDIRECT.key?(request.path_info.sub(%r{\A/}, '').chomp('/'))
+
+  lang = RouterHelper.language_of_path(request.path_info)
+  redirect "/#{lang}#{request.path_info}", 301 if lang
+end
+
 before '/s/:short_code' do
   pass # Bypass locale handling for /s/ routes
 end

@@ -61,6 +61,46 @@ describe RouterHelper do
     end
   end
 
+  # A section names its own language: /services is the English value in the
+  # table, /servicios the Spanish one. Everything the table does not know has
+  # no language to name, and stays where it is.
+  describe '.language_of_path' do
+    it 'reads English from an English section' do
+      expect(RouterHelper.language_of_path('/services')).to eq 'en'
+      expect(RouterHelper.language_of_path('/about_us')).to eq 'en'
+      expect(RouterHelper.language_of_path('/resources/dod-kards')).to eq 'en'
+    end
+
+    it 'reads Spanish from a Spanish section' do
+      expect(RouterHelper.language_of_path('/servicios')).to eq 'es'
+      expect(RouterHelper.language_of_path('/somos')).to eq 'es'
+    end
+
+    it 'takes a section that is the same in both for Spanish' do
+      expect(RouterHelper.language_of_path('/blog')).to eq 'es'
+    end
+
+    it 'says nothing about a path that already has a prefix' do
+      expect(RouterHelper.language_of_path('/es/servicios')).to be_nil
+      expect(RouterHelper.language_of_path('/en/services')).to be_nil
+    end
+
+    # The routes that are not content: a prefix would send a form post or a
+    # utility file somewhere it was never meant to go.
+    it 'says nothing about a section it does not know' do
+      expect(RouterHelper.language_of_path('/events/1/participants/register')).to be_nil
+      expect(RouterHelper.language_of_path('/assessment/7')).to be_nil
+      expect(RouterHelper.language_of_path('/robots.txt')).to be_nil
+      expect(RouterHelper.language_of_path('/s/abc')).to be_nil
+      expect(RouterHelper.language_of_path('/cache-reset')).to be_nil
+    end
+
+    it 'says nothing about the root' do
+      expect(RouterHelper.language_of_path('/')).to be_nil
+      expect(RouterHelper.language_of_path('')).to be_nil
+    end
+  end
+
   describe '#set_current_route' do
     it 'removes language prefix from route' do
       router_helper.set_current_route('/es/recursos/some-slug')

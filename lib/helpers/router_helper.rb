@@ -100,6 +100,25 @@ class RouterHelper
     ['', translate_path(section, locale), rest].compact.join('/')
   end
 
+  # The language a path names through its first segment, or nil when it starts
+  # with something the table does not know — which is how /events, /assessment,
+  # /robots.txt and the /es and /en prefixes themselves stay out of it.
+  # @example
+  #   RouterHelper.language_of_path('/services')  # => 'en'
+  #   RouterHelper.language_of_path('/servicios') # => 'es'
+  #   RouterHelper.language_of_path('/es/servicios') # => nil
+  def self.language_of_path(path)
+    head, section, = path.to_s.split('/', 3)
+    return nil unless head.to_s.empty?
+
+    config = ROUTE_TRANSLATIONS[section]
+    return nil if config.nil?
+
+    # A section that reads the same in both languages has no language to name;
+    # Spanish is the site's default and the canonical those pages already give.
+    config[:en] == section && config[:es] != section ? 'en' : 'es'
+  end
+
   # Returns the alternate path for a given path and current language
   # @param base_path [String] the path segment (e.g., 'recursos', 'catalogo', 'agenda')
   # @param current_lang [String, Symbol] the current language ('es' or 'en')

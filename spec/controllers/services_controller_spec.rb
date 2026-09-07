@@ -9,12 +9,21 @@ describe '/servicios' do
   end
 
   it 'responds successfully for Spanish route' do
-    get '/servicios'
+    get '/es/servicios'
     expect(last_response).to be_ok
   end
   it 'responds successfully / at the end' do
-    get '/servicios/'
+    get '/es/servicios/'
     expect(last_response).to be_ok
+  end
+
+  # The section names its language, so it answers under its prefix and sends
+  # the bare form there instead of serving it a second time.
+  it 'sends the unprefixed form to the Spanish prefix' do
+    get '/servicios'
+
+    expect(last_response.status).to eq(301)
+    expect(last_response.location).to end_with('/es/servicios')
   end
 
   describe 'GET /servicios/:area_slug/:service_slug' do
