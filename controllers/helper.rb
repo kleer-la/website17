@@ -47,6 +47,18 @@ module Helpers
     locale.to_s != 'en'
   end
 
+  # An area lives in one section — /servicios or /formacion — and which one is
+  # a flag on the record, not a property of the URL. Deriving the URL from the
+  # flag instead of pairing the two sections by hand means the redirect follows
+  # the data: flipping `is_training_program` in the admin moves the offer and
+  # turns the redirect around at once, with no rule left behind to go stale and
+  # no chance of building a chain out of two half-applied decisions.
+  def area_url(service_area)
+    lang = session[:locale] || 'es'
+    section = RouterHelper.translate_path(service_area.is_training_program ? 'formacion' : 'servicios', lang)
+    "/#{lang}/#{section}/#{service_area.slug}"
+  end
+
   def render_page(view, options = {})
     erb view, { layout: :'layout/layout2022' }.merge(options)
   end

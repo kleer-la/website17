@@ -181,7 +181,8 @@ get %r{/formacion/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
   service_area = ServiceAreaV3.create_keventer(slug, is_preview_mode)
   return status 404 if service_area.nil?
-  return status 404 unless service_area.is_training_program
+
+  redirect to(area_url(service_area)), 301 unless service_area.is_training_program
 
   lang = session[:locale] || 'es'
 
@@ -211,7 +212,8 @@ get %r{/training/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
   service_area = ServiceAreaV3.create_keventer(slug, is_preview_mode)
   return status 404 if service_area.nil?
-  return status 404 unless service_area.is_training_program
+
+  redirect to(area_url(service_area)), 301 unless service_area.is_training_program
 
   lang = session[:locale] || 'en'
 
