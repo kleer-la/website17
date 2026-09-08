@@ -102,7 +102,17 @@ get %r{/(catalogo|catalog)/?} do
 end
 
 # Nueva (y simplificada) ruta para Tipos de Evento
-get %r{/(cursos|courses)/([a-z0-9_-]+)} do |_lang_path, event_type_id_with_name|
+# The slugs of the old site carried accents, parentheses and capitals, and a
+# crawler sends them either percent-encoded or as raw UTF-8 — which Rack hands
+# over as bytes, so a \p{L} class does not see a letter there at all. One path
+# segment is the honest description: everything up to the next separator.
+#
+# Being this open is safe because only the leading id is ever read
+# (`slug.split('-')[0]`), and `valid_id?` rejects anything that is not digits.
+# What the pattern decides is whether the route gets a turn, not whether the
+# course exists.
+SLUG = %r{[^/?\#]+}
+get %r{/(cursos|courses)/(#{SLUG})} do |_lang_path, event_type_id_with_name|
   @event_type = event_type_from_json event_type_id_with_name
   @active_tab_entrenamos = 'active'
 
@@ -168,7 +178,7 @@ get %r{/(cursos|courses)/([a-z0-9_-]+)} do |_lang_path, event_type_id_with_name|
 end
 
 # Ruta antigua para Tipos de Evento (redirige a la nueva)
-get %r{/categoria/([a-z0-9_-]+)/cursos/([a-z0-9_-]+)} do |_category_codename, event_type_id_with_name|
+get %r{/categoria/(#{SLUG})/cursos/(#{SLUG})} do |_category_codename, event_type_id_with_name|
   # Without the parentheses the 301 was swallowed by `to` as its `absolute`
   # argument and the answer went out as a 302, which transfers nothing. And
   # without the language it landed on the prefix-less namespace, whose
