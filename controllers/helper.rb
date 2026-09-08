@@ -53,10 +53,13 @@ module Helpers
   # the data: flipping `is_training_program` in the admin moves the offer and
   # turns the redirect around at once, with no rule left behind to go stale and
   # no chance of building a chain out of two half-applied decisions.
-  def area_url(service_area)
+  # The slug asked for, not the record's own: a sub-service resolves to the area
+  # that holds it, so `service_area.slug` is the parent's and redirecting to it
+  # would throw away which sub-service was wanted.
+  def area_url(service_area, slug)
     lang = session[:locale] || 'es'
     section = RouterHelper.translate_path(service_area.is_training_program ? 'formacion' : 'servicios', lang)
-    "/#{lang}/#{section}/#{service_area.slug}"
+    "/#{lang}/#{section}/#{slug}"
   end
 
   def render_page(view, options = {})

@@ -58,7 +58,7 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
   service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
 
-  redirect to(area_url(service_area)), 301 if service_area.is_training_program
+  redirect to(area_url(service_area, slug)), 301 if service_area.is_training_program
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])

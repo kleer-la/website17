@@ -87,6 +87,21 @@ describe 'an area asked for in the wrong section' do
     end
   end
 
+  # A sub-service resolves to the area that holds it, so the record's own slug
+  # is the parent's. Redirecting to that slug threw away which sub-service was
+  # asked for — /servicios/gestion-producto landed on the programmes area
+  # instead of on the page for gestión de producto.
+  context 'a slug that resolves to the area holding it' do
+    before { serving(area(slug: 'programas-capacitacion-empresarial', training: true)) }
+
+    it 'keeps the slug that was asked for' do
+      get '/es/servicios/gestion-producto'
+
+      expect(last_response.status).to eq 301
+      expect(last_response.headers['Location']).to end_with '/es/formacion/gestion-producto'
+    end
+  end
+
   it 'still 404s when there is no such area' do
     ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, 'null'))
 
