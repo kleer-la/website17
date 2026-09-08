@@ -15,6 +15,7 @@ def resources_index(preview = false)
                   canonical: page.canonical || t('meta_tag.resources.canonical')
 
   @meta_tags.set! image: page.cover unless page.cover.nil?
+  @meta_tags.set! noindex: true, nofollow: true if preview
 
   @active_tab_publicamos = 'active'
   @resources = if preview

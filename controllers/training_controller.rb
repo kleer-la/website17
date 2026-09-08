@@ -196,6 +196,7 @@ get %r{/formacion/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   return status 404 if service_area.nil?
 
   @is_training_program = true
+  @meta_tags.set! noindex: true, nofollow: true if is_preview_mode
 
   # A programme exists in one language, so the switcher has no counterpart to
   # offer. Without one spelled out it fell back to this path with its section
@@ -225,6 +226,7 @@ get %r{/training/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   return status 404 if service_area.nil?
 
   @is_training_program = true
+  @meta_tags.set! noindex: true, nofollow: true if is_preview_mode
 
   RouterHelper.instance.alternate_route = RouterHelper.alternate_path('catalogo', lang)
 

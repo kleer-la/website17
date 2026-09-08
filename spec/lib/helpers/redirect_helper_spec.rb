@@ -5,6 +5,29 @@ describe RedirectHelper do
   include RedirectHelper
 
   describe '#unify_domains' do
+    # robots.txt is a file of the host, not of a page: by specification it lives
+    # at the root and governs everything crawled there. Prefixing it sent
+    # kleer.la/robots.txt to /es/robots.txt — which resolves, but puts the file
+    # that decides what gets crawled behind the language rewrite.
+    context 'with a file that belongs to the host, not to a language' do
+      %w[/robots.txt /sitemap.xml /.well-known/security.txt].each do |path|
+        it "keeps #{path} at the root" do
+          target_url, = unify_domains('kleer.la', path)
+          expect(target_url).to eq("https://www.kleer.la#{path}")
+        end
+      end
+
+      it 'does it for the English host too' do
+        target_url, = unify_domains('kleer.us', '/robots.txt')
+        expect(target_url).to eq('https://www.kleer.la/robots.txt')
+      end
+
+      it 'still prefixes an ordinary path' do
+        target_url, = unify_domains('kleer.la', '/recursos')
+        expect(target_url).to eq('https://www.kleer.la/es/recursos')
+      end
+    end
+
     context 'when host is a redirect domain' do
       it 'redirects kleer.us to www.kleer.la/en/' do
         target_url, locale = unify_domains('kleer.us', '/')
