@@ -1,0 +1,26 @@
+<%# The area sold on its own: outcomes, program, FAQ and brochure, with the styles of a service page %>
+<div class="services-section">
+  <div
+    class="service-info-container"
+    style="border: <%= @primary_color %> 3px solid;"
+  >
+    <div class="dinamic-content">
+      <%= erb :'services/landing_area/service_section/_outcomes',
+              locals: { outcomes: service_area.outcomes, name: service_area.name } unless service_area.outcomes.empty? %>
+
+      <%= erb :'services/landing_area/service_section/_program',
+              locals: { program: service_area.program, id: service_area.slug, name: service_area.name } unless service_area.program.empty? %>
+
+      <%= erb :'services/landing_area/service_section/_faq',
+              locals: { faq: service_area.faq, id: service_area.slug } unless service_area.faq.empty? %>
+
+      <% if service_area.brochure && !service_area.brochure.to_s.empty? %>
+        <div class="d-flex justify-content-center mt-5 mb-3">
+          <a class="my-primary-button" href="<%= service_area.brochure %>" target="_blank" rel="noopener">
+            <%= t('services.brochure') %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

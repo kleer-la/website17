@@ -26,6 +26,92 @@ describe '/servicios' do
     expect(last_response.location).to end_with('/es/servicios')
   end
 
+  # An area can be an offering in itself: it carries the blocks a service has,
+  # and its page presents them with the same contact CTA a service page has.
+  describe 'GET /servicios/:area_slug when the area is an offering' do
+    let(:offering_area_data) do
+      {
+        'id' => 4,
+        'slug' => 'adopcion-ia',
+        'name' => 'Adopción de IA',
+        'lang' => 'es',
+        'is_training_program' => false,
+        'primary_color' => '#4dd3e8',
+        'primary_font_color' => '#FFFFFF',
+        'secondary_color' => '#34e3ff',
+        'secondary_font_color' => '#000000',
+        'icon' => '/app/img/icons/ev-org.svg',
+        'summary' => 'Summary text',
+        'cta_message' => 'CTA message',
+        'slogan' => 'Slogan',
+        'subtitle' => 'Subtitle',
+        'description' => 'Description',
+        'target' => 'Target audience',
+        'value_proposition' => 'Value proposition',
+        'seo_title' => 'SEO Title',
+        'seo_description' => 'Adopción de IA para empresas',
+        'outcomes' => ['Equipos que usan IA a diario', 'Menos retrabajo'],
+        'definitions' => nil,
+        'program' => [['Diagnóstico inicial', 'Dos semanas de relevamiento'], ['Pilotos', 'Tres equipos']],
+        'pricing' => 'Desde USD 5.000 mensuales',
+        'faq' => [['¿Cuánto dura el acompañamiento?', 'Entre tres y seis meses']],
+        'brochure' => 'https://cdn.example.com/adopcion-ia.pdf',
+        'recommended' => [
+          { 'type' => 'article', 'title' => 'Lectura recomendada', 'subtitle' => 'Sub', 'slug' => 'lectura',
+            'cover' => '', 'lang' => 'es', 'relevance_order' => 1, 'level' => 'initial' }
+        ],
+        'services' => [],
+        'testimonies' => []
+      }
+    end
+
+    before do
+      ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, offering_area_data.to_json))
+    end
+
+    after do
+      ServiceAreaV3.class_variable_set(:@@json_api, nil) if ServiceAreaV3.class_variable_defined?(:@@json_api)
+    end
+
+    it 'presents the outcomes, program, FAQ and brochure like a service page does' do
+      get '/es/servicios/adopcion-ia'
+
+      expect(last_response.status).to eq(200)
+      expect(last_response.body).to include('Equipos que usan IA a diario')
+      expect(last_response.body).to include('Diagnóstico inicial')
+      expect(last_response.body).to include('Dos semanas de relevamiento')
+      expect(last_response.body).to include('¿Cuánto dura el acompañamiento?')
+      expect(last_response.body).to include('Entre tres y seis meses')
+      expect(last_response.body).to include('https://cdn.example.com/adopcion-ia.pdf')
+    end
+
+    # The price is negotiated, not listed: it stays in the CMS for the team.
+    it 'does not show the pricing' do
+      get '/es/servicios/adopcion-ia'
+
+      expect(last_response.body).not_to include('Desde USD 5.000 mensuales')
+    end
+
+    it 'shows what the area recommends' do
+      get '/es/servicios/adopcion-ia'
+
+      expect(last_response.body).to include('Lectura recomendada')
+    end
+
+    it 'describes the area as a Service for search engines' do
+      get '/es/servicios/adopcion-ia'
+
+      expect(last_response.body).to include('"@type":"Service"')
+      expect(last_response.body).to include('Adopción de IA para empresas')
+    end
+
+    it 'does not show an empty services section when the area has no services' do
+      get '/es/servicios/adopcion-ia'
+
+      expect(last_response.body).not_to include('CTA message')
+    end
+  end
+
   describe 'GET /servicios/:area_slug/:service_slug' do
     let(:service_area_data) do
       {
@@ -60,7 +146,7 @@ describe '/servicios' do
             'program' => [['Module 1', 'Detail 1']],
             'target' => '<p>Target</p>',
             'pricing' => '',
-            'faq' => [],
+            'faq' => [['¿Se puede hacer remoto?', 'Sí, todo el proceso']],
             'brochure' => '',
             'side_image' => '',
             'recommended' => [],
@@ -95,6 +181,14 @@ describe '/servicios' do
       expect(last_response.body).to include('La Membresía IA')
       expect(last_response.body).to include('Funciona para el 80%')
       expect(last_response.body).to include('Detalles completos')
+    end
+
+    it 'renders the FAQ as an accordion' do
+      get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+      expect(last_response.body).to include('Preguntas frecuentes')
+      expect(last_response.body).to include('¿Se puede hacer remoto?')
+      expect(last_response.body).to include('Sí, todo el proceso')
     end
 
     it 'returns 404 for non-existent service slug' do

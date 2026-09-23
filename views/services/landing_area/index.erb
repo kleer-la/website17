@@ -7,6 +7,9 @@
 <%= erb :'services/landing_area/_hero', locals: {service_area: service_area, hero_cta: hero_cta} %>
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
 
+<%# The area as an offering in itself: outcomes, program, brochure, pricing — what a service page shows %>
+<%= erb :'services/landing_area/_offering', locals: { service_area: service_area } if service_area.offering? %>
+
 <%# Forma Recomendada — scannable SUMMARY, full width, high on the page %>
 <div class="container rw-section"
      style="--rw-accent: <%= @primary_color || '#68CEF2' %>; --rw-accent-2: <%= @secondary_color || '#565ed7' %>; --rw-accent-contrast: <%= @primary_font_color || '#fff' %>;">
@@ -16,7 +19,7 @@
 <%= erb :'services/landing_area/services', locals: {
   services: service_area.services,
   area: service_area
-} %>
+} if service_area.services.any? %>
 
 <%# Forma Recomendada — full DETAILS, just below the service cards %>
 <div class="container rw-section"
@@ -24,6 +27,7 @@
   <%= erb :'services/components/_recommended_way_details', locals: { recommended_way: service_area } %>
 </div>
 <%= erb :'services/landing_area/_area_details', locals: {service_area: service_area} %>
+<%= erb :'component/sections/recommended', locals: { recommended: service_area.recommended, title: t('services.recommended.false') } unless service_area.recommended.nil? || service_area.recommended.empty? %>
 <%
   contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
   contact_title = contact_data[:title]

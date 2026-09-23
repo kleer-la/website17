@@ -50,6 +50,8 @@
               locals: { program: service.program, id: service.slug, name: service.name } if !service.program.nil? && service.program != "" %>
       <%= erb :'services/landing_area/service_section/_target',
               locals: { target: service.target, name: service.name } %>
+      <%= erb :'services/landing_area/service_section/_faq',
+              locals: { faq: service.faq, id: service.slug } unless service.faq.nil? || service.faq.empty? %>
       <%= erb :'component/sections/recommended', locals: { recommended: service.recommended, title: t("services.recommended.false") } unless service.recommended.nil? || service.recommended.empty? %>
 
       <%# Full Forma Recomendada details — lower on the page %>

@@ -92,6 +92,8 @@ def show_service_area(service_area, path)
   @has_consultants = service_area_has_consultants?(service_area.slug)
   set_area_colors(service_area)
 
+  @json_ld = service_area_json_ld(service_area) if service_area.offering?
+
   render_page :'services/landing_area/index', locals: { service_area: service_area }
 end
 

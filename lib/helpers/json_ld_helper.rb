@@ -80,6 +80,18 @@ module JsonLdHelper
     }
   end
 
+  # An area that is an offering in itself is a Service too; it is its own category.
+  def service_area_json_ld(service_area)
+    {
+      '@context' => 'https://schema.org',
+      '@type' => 'Service',
+      'name' => service_area.name,
+      'description' => service_area.seo_description,
+      'provider' => { '@type' => 'Organization', 'name' => 'Kleer' },
+      'category' => service_area.name
+    }
+  end
+
   def course_json_ld(event_type)
     data = {
       '@context' => 'https://schema.org',

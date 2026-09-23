@@ -1,0 +1,21 @@
+<%# Frequently asked questions: ol > li items from the CMS, each an accordion entry with its answer %>
+<div class="faq mt-5">
+  <h4><%= t('services.faq') %></h4>
+  <div class="accordion accordion-flush mt-4 mx-auto" id="faq-<%= id %>" style="max-width: 960px;">
+    <% faq.each_with_index do |(question, answer), index| %>
+      <div class="accordion-item">
+        <h5 class="accordion-header" id="faq-<%= id %>-heading-<%= index %>">
+          <button class="accordion-button collapsed fw-bold" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#faq-<%= id %>-item-<%= index %>"
+                  aria-expanded="false" aria-controls="faq-<%= id %>-item-<%= index %>">
+            <%= question %>
+          </button>
+        </h5>
+        <div id="faq-<%= id %>-item-<%= index %>" class="accordion-collapse collapse"
+             aria-labelledby="faq-<%= id %>-heading-<%= index %>" data-bs-parent="#faq-<%= id %>">
+          <div class="accordion-body"><%= answer %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

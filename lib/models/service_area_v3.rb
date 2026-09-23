@@ -1,4 +1,5 @@
 require './lib/models/service_v3'
+require './lib/models/recommended'
 require './lib/image_url_helper'
 require './lib/testimony'
 
@@ -6,8 +7,9 @@ class ServiceAreaV3
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions defintions target value_proposition value_proposition_title
                     services seo_title seo_description target_title is_training_program ordering testimonies
-                    recommended_way_title recommended_way_note recommended_way_summary recommended_way_details])
-  attr_writer :icon, :side_image
+                    recommended_way_title recommended_way_note recommended_way_summary recommended_way_details
+                    outcomes program faq pricing recommended])
+  attr_writer :icon, :side_image, :brochure
 
   def load_from_json(hash_service_area)
     @testimonies = []
@@ -15,14 +17,33 @@ class ServiceAreaV3
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
                 slogan subtitle description definitions side_image target value_proposition value_proposition_title
                 seo_title seo_description target_title is_training_program ordering
-                recommended_way_title recommended_way_note], hash_service_area)
+                recommended_way_title recommended_way_note pricing brochure], hash_service_area)
 
     @services = load_services(hash_service_area['services'])
     load_testimonies(hash_service_area['testimonies'])
     @recommended_way_summary = hash_service_area['recommended_way_summary']
     @recommended_way_details = hash_service_area['recommended_way_details']
+    load_offering(hash_service_area)
 
     self
+  end
+
+  # The area as an offering in itself: the same blocks a service has.
+  def load_offering(hash_service_area)
+    @outcomes = hash_service_area['outcomes'] || []
+    @program = hash_service_area['program'] || []
+    @faq = hash_service_area['faq'] || []
+    @recommended = Recommended.create_list(hash_service_area['recommended'] || [])
+  end
+
+  # Whether the area sells something on its own, i.e. it has the blocks a
+  # service page is made of, and not only the intro to the services under it.
+  def offering?
+    [outcomes, program, faq].any? { |block| Array(block).any? }
+  end
+
+  def brochure
+    ImageUrlHelper.replace_s3_with_cdn(@brochure)
   end
 
   def self.null_json_api(list_null_api, instance_null_api)
