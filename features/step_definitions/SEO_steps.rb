@@ -37,6 +37,12 @@ Then('SEO hreflang {string} should have href {string}') do |lang, url|
   expect(page.html).to match(/<link.*hreflang="#{lang}" href="#{url}"/)
 end
 
+# A Spanish-only section (the agenda since 788de27e) must not point search
+# engines at an English version that does not exist.
+Then('SEO should declare no hreflang {string}') do |lang|
+  expect(page.html).not_to match(/<link[^>]*hreflang="#{lang}"/)
+end
+
 Then('SEO meta {string} {string} should match {string}') do |tag, tag_name, pattern|
   meta_tags = page.all('meta', visible: false) # Find all meta tags
 
