@@ -43,7 +43,11 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, servi
   pass if service_area.is_training_program
 
   service = service_area.services.find { |s| s.slug == service_slug }
-  pass if service.nil?
+  if service.nil?
+    moved_to = moved_service_url(service_slug)
+    redirect to(moved_to), 301 if moved_to
+    pass
+  end
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
@@ -64,6 +68,18 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
   show_service_area(service_area, section_path)
+end
+
+# A service moved to another area keeps its slug, and Keventer resolves a
+# service slug to the area that now holds it. Its old URL, under the old area,
+# follows it there — to /formacion when the new area is a training programme.
+def moved_service_url(service_slug)
+  area = ServiceAreaV3.create_keventer(service_slug)
+  return nil if area.nil? || area.services.none? { |s| s.slug == service_slug }
+
+  return area_url(area, service_slug) if area.is_training_program
+
+  "/#{session[:locale] || 'es'}/#{section_path}/#{area.slug}/#{service_slug}"
 end
 
 # The services routes answer under /servicios and /services alike, so the

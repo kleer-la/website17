@@ -196,6 +196,28 @@ describe '/servicios' do
       expect(last_response.status).to eq(404)
     end
 
+    # A service moved to another area keeps its slug; its old URL follows it.
+    context 'when the service moved to another area' do
+      let(:training_area) do
+        ServiceAreaV3.new.load_from_json(
+          service_area_data.merge(
+            'slug' => 'programas-capacitacion-empresarial', 'is_training_program' => true,
+            'services' => [service_area_data['services'][0].merge('slug' => 'programa-producto')]
+          )
+        )
+      end
+
+      it 'sends the old URL to the training programme that now holds it' do
+        allow(ServiceAreaV3).to receive(:create_keventer).and_call_original
+        allow(ServiceAreaV3).to receive(:create_keventer).with('programa-producto').and_return(training_area)
+
+        get '/es/servicios/cambio-organizacional/programa-producto'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/formacion/programa-producto')
+      end
+    end
+
     # The restyled pages sit behind a flag, so QA can show them while
     # production keeps serving the current ones.
     context 'with the services_redesign flag' do
