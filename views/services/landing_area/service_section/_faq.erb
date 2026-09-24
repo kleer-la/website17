@@ -1,5 +1,5 @@
 <%# Frequently asked questions: ol > li items from the CMS, each an accordion entry with its answer %>
-<div class="faq mt-5">
+<div class="faq mt-5" id="preguntas-frecuentes">
   <h4><%= t('services.faq') %></h4>
   <div class="accordion accordion-flush mt-4 mx-auto" id="faq-<%= id %>" style="max-width: 960px;">
     <% faq.each_with_index do |(question, answer), index| %>

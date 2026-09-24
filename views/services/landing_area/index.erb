@@ -33,13 +33,7 @@
                   section_id: 'area-testimonies' } %>
 <%
   contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
-  contact_title = service_area.own_text(:contact_title) || contact_data[:title]
-  contact_description = contact_data[:content]
-  contact_cta = service_area.own_text(:contact_cta_text) || contact_data[:cta_text]
 %>
 <%= erb :'component/sections/_contact_bottom_section',
-        locals: {
-          contact_text: contact_title ,
-          button_text: contact_cta
-        } %>
+        locals: service_area.contact_locals(contact_data[:title], contact_data[:cta_text]) %>
 

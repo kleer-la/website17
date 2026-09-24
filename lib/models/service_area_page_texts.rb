@@ -3,7 +3,7 @@
 # the shared text.
 module ServiceAreaPageTexts
   PAGE_TEXTS = %i[hero_cta_text hero_secondary_cta_text hero_secondary_cta_target hero_note
-                  contact_title contact_cta_text].freeze
+                  contact_title contact_text contact_cta_text].freeze
 
   attr_accessor(*PAGE_TEXTS)
 
@@ -11,6 +11,17 @@ module ServiceAreaPageTexts
   def own_text(field)
     value = public_send(field).to_s.strip
     value.empty? ? nil : value
+  end
+
+  # The locals of the contact block closing the page. With a contact_text the
+  # area brings a title and the promise under it; without one, its
+  # contact_title stays the block's only line, as it always was.
+  def contact_locals(shared_text, shared_cta)
+    button_text = own_text(:contact_cta_text) || shared_cta
+    text = own_text(:contact_text)
+    return { contact_text: own_text(:contact_title) || shared_text, button_text: button_text } if text.nil?
+
+    { contact_title: own_text(:contact_title), contact_text: text, button_text: button_text }
   end
 
   # The second hero button only makes sense with somewhere to go.

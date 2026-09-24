@@ -168,6 +168,29 @@ describe '/servicios' do
 
           expect(body).not_to include('Ver cómo trabajamos')
         end
+
+        # kleer-la/website17#425: a title and the promise that backs it.
+        it 'closes with the contact title as heading and the contact text under it' do
+          body = visit_area(area_data.merge('contact_title' => 'Empecemos por entender tu caso',
+                                            'contact_text' => 'Una conversación de 45 minutos.'))
+
+          expect(body).to match(%r{<h2[^>]*>\s*Empecemos por entender tu caso\s*</h2>})
+          expect(body).to match(%r{<p[^>]*>\s*Una conversación de 45 minutos.\s*</p>})
+        end
+
+        it 'keeps a lone contact title as the paragraph, as before' do
+          body = visit_area(area_data.merge('contact_title' => 'Empecemos por entender tu caso'))
+
+          expect(body).to match(%r{<p[^>]*>\s*Empecemos por entender tu caso\s*</p>})
+          expect(body).not_to match(%r{<h2[^>]*>\s*Empecemos por entender tu caso})
+        end
+
+        # A fixed anchor, so a hero button can point at the FAQ whatever the area.
+        it 'anchors the FAQ at #preguntas-frecuentes' do
+          body = visit_area(area_data.merge('faq' => [['¿Cuánto dura?', 'Tres meses']]))
+
+          expect(body).to include('id="preguntas-frecuentes"')
+        end
       end
     end
   end
