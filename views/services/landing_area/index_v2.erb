@@ -17,14 +17,14 @@
 %>
 <link rel="stylesheet" href="<%= css_url('services-v2.css') %>">
 
-<div class="svc2" style="--svc2-accent: <%= @primary_color || '#68CEF2' %>;">
+<div class="svc2" style="--svc2-accent: <%= @primary_color || '#68CEF2' %>; --svc2-accent-ink: <%= @primary_font_color || '#000000' %>;">
 
   <section class="svc2-hero">
     <div class="container">
       <% if subtitle_has_h1 %>
         <p class="svc2-eyebrow"><%= service_area.name %></p>
       <% else %>
-        <h1 class="svc2-h1"><%= service_area.name %></h1>
+        <h1 class="svc2-area-name"><%= service_area.name %></h1>
       <% end %>
       <div class="svc2-hero-text"><%= subtitle %></div>
 

@@ -373,15 +373,24 @@ describe '/servicios' do
         expect(last_response.body).to include('Diseño Organizacional')
       end
 
-      # With no <h1> of its own in the subtitle, the area name is the page's
-      # headline, so it takes the headline size, not the small eyebrow label.
-      it 'gives the area name the headline style when it is the page h1' do
+      # The claim in the subtitle is the one big headline; the area name is the
+      # page's h1 but reads as a clear label above it, not a second headline.
+      it 'shows the area name as the label above the claim' do
         Toggle.turn(:services_redesign, true)
 
         get '/es/servicios/cambio-organizacional'
 
-        expect(last_response.body).to include('<h1 class="svc2-h1">Cambio Organizacional</h1>')
-        expect(last_response.body).not_to include('<h1 class="svc2-eyebrow">')
+        expect(last_response.body).to include('<h1 class="svc2-area-name">Cambio Organizacional</h1>')
+        expect(last_response.body).not_to include('<h1 class="svc2-h1">')
+      end
+
+      # The area's own text color for its primary color, for marks filled with it.
+      it 'passes the area palette to the page' do
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.body).to match(/--svc2-accent: #\h+; --svc2-accent-ink: #\h+;/)
       end
 
       it 'shows a service card authored in the CMS as a card of the grid' do

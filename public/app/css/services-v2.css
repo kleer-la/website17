@@ -29,7 +29,11 @@
 
 .svc2-section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
 .svc2-section + .svc2-section { border-top: 1px solid var(--svc2-line); }
-.svc2-band { background: var(--svc2-soft); border-block: 1px solid var(--svc2-line); }
+/* The one tinted band: a light wash of the area color instead of plain gray. */
+.svc2-band {
+  background: color-mix(in srgb, var(--svc2-accent) 10%, var(--svc2-paper));
+  border-block: 1px solid color-mix(in srgb, var(--svc2-accent) 25%, var(--svc2-paper));
+}
 
 .svc2-eyebrow {
   display: flex;
@@ -45,6 +49,25 @@
   line-height: 1.4 !important;
 }
 .svc2-eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--svc2-accent);
+}
+/* The area name as the page's h1 when the subtitle's claim is the headline:
+   a clear label above it, in the area color darkened enough to read. */
+.svc2-area-name {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem !important;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  color: color-mix(in srgb, var(--svc2-accent) 60%, var(--svc2-ink)) !important;
+}
+.svc2-area-name::before {
   content: "";
   width: 1.5rem;
   height: 3px;
@@ -229,8 +252,8 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--svc2-ink) !important;
-  color: #fff !important;
+  background: var(--svc2-accent) !important;
+  color: var(--svc2-accent-ink, #fff) !important;
   font-size: 0.85rem;
   font-weight: 700;
 }
