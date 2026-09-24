@@ -248,6 +248,14 @@
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 .svc2-details, .svc2-details * { font-size: 0.95rem; }
+/* Side by side, the unboxed column starts where the panel's text does (its
+   padding plus its 1px border), so both headings sit on one line. */
+@media (min-width: 992px) {
+  .svc2-two > .svc2-panel ~ .svc2-results { padding-top: calc(clamp(1.25rem, 3vw, 2rem) + 1px); }
+}
+/* CMS details often arrive as <p><h2>…</h2>…</p>; the browser closes that <p>
+   before the heading and leaves an empty one pushing the panel's text down. */
+.svc2-details > p:empty { display: none; }
 .svc2-details h2, .svc2-details .rw-details-title {
   font-size: 1.15rem !important;
   font-weight: 700 !important;

@@ -373,6 +373,17 @@ describe '/servicios' do
         expect(last_response.body).to include('Diseño Organizacional')
       end
 
+      # With no <h1> of its own in the subtitle, the area name is the page's
+      # headline, so it takes the headline size, not the small eyebrow label.
+      it 'gives the area name the headline style when it is the page h1' do
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.body).to include('<h1 class="svc2-h1">Cambio Organizacional</h1>')
+        expect(last_response.body).not_to include('<h1 class="svc2-eyebrow">')
+      end
+
       it 'shows a service card authored in the CMS as a card of the grid' do
         service_area_data['services'][0]['card_description'] = '<h2 class="rw-details-title">Frente 01</h2>'
         ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, service_area_data.to_json))
