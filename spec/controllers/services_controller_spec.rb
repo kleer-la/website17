@@ -172,6 +172,54 @@ describe '/servicios' do
     end
   end
 
+  # What clients said about the area's services: Keventer sends the starred
+  # ones, in the same shape a course page gets.
+  describe 'GET /servicios/:area_slug with testimonies' do
+    let(:area_data) do
+      {
+        'id' => 1, 'slug' => 'agile-product-management', 'name' => 'Agile Product Management', 'lang' => 'es',
+        'is_training_program' => false, 'primary_color' => '#4dd3e8', 'primary_font_color' => '#FFFFFF',
+        'secondary_color' => '#34e3ff', 'secondary_font_color' => '#000000', 'icon' => '/app/img/icons/ev-org.svg',
+        'summary' => 'Summary', 'cta_message' => 'CTA message', 'slogan' => 'Slogan', 'subtitle' => 'Subtitle',
+        'description' => 'Description', 'target' => 'Target', 'value_proposition' => 'Value proposition',
+        'seo_title' => 'SEO', 'seo_description' => 'SEO description', 'services' => [],
+        'testimonies' => [{ 'fname' => 'Ana', 'lname' => 'Pérez', 'testimony' => 'Nos ordenó el backlog.',
+                            'profile_url' => 'https://linkedin.com/in/ana', 'photo_url' => nil }]
+      }
+    end
+
+    def visit_area(data)
+      ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, data.to_json))
+      get '/es/servicios/agile-product-management'
+      last_response.body
+    end
+
+    after do
+      Toggle.turn(:services_redesign, false)
+      ServiceAreaV3.class_variable_set(:@@json_api, nil) if ServiceAreaV3.class_variable_defined?(:@@json_api)
+    end
+
+    [false, true].each do |redesign|
+      context "with the services_redesign flag #{redesign ? 'on' : 'off'}" do
+        before { Toggle.turn(:services_redesign, redesign) }
+
+        it 'shows them with who said it' do
+          body = visit_area(area_data)
+
+          expect(body).to include('Nos ordenó el backlog.')
+          expect(body).to include('Ana Pérez')
+          expect(body).to include('https://linkedin.com/in/ana')
+        end
+
+        it 'leaves the section out when there are none' do
+          body = visit_area(area_data.merge('testimonies' => []))
+
+          expect(body).not_to include('area-testimonies')
+        end
+      end
+    end
+  end
+
   describe 'GET /servicios/:area_slug/:service_slug' do
     let(:service_area_data) do
       {

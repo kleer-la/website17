@@ -142,6 +142,10 @@
 
   <%= erb :'component/sections/recommended', locals: { recommended: service_area.recommended, title: t('services.recommended.false') } unless service_area.recommended.nil? || service_area.recommended.empty? %>
 
+  <%= erb :'component/sections/_testimonies',
+          locals: { testimonies: service_area.testimonies, title: t('services.area.testimonies'),
+                    section_id: 'area-testimonies' } %>
+
   <%
     contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
   %>

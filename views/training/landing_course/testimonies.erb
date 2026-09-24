@@ -1,36 +1,3 @@
-<% unless @event_type.testimonies == []%>
-  <section id="course-testimonies" class="">
-    <h2 class="mb-5 text-center common-subtitle"><%= t("course_landing.testimonies") %></h2>
-    <div class="testimonies-container">
-      <% @event_type.testimonies.each do |testimony| %>
-        <div class="testimony-container">
-          <div class="testimony-info">
-            <div class="testimony-info__photo-container">
-              <img
-                src="<%= testimony.photo_url ? testimony.photo_url : "/app/img/icons/People.svg"%>"
-                class="rounded-circle testimony-info__photo"
-                loading="lazy"
-              >
-            </div>
-            <div>
-              <strong>
-                <%= "#{testimony.name} #{testimony.last_name}" %>
-              </strong>
-              <br/>
-              <% if testimony.linkedin_url %>
-                <a href="<%= testimony.linkedin_url %>">
-                  <img class="testimony-linkedin" src="/app/img/icons/Linkedin.svg" loading="lazy">
-                </a>
-              <% end %>
-            </div>
-          </div>
-          <div class="testimony-message">
-            "<%= testimony.message %>"
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </section>
-<% end %>
-
-
+<%= erb :'component/sections/_testimonies',
+        locals: { testimonies: @event_type.testimonies, title: t('course_landing.testimonies'),
+                  section_id: 'course-testimonies' } %>
