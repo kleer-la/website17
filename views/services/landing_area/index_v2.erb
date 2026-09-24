@@ -1,6 +1,6 @@
 <%
   hero_data = section_data(@page, 'hero', { title: t('services.area.hero.title'), content: t('services.area.hero.description'), cta_text: t('services.area.hero.button.title')})
-  hero_cta = hero_data[:cta_text]
+  hero_cta = service_area.own_text(:hero_cta_text) || hero_data[:cta_text]
 
   subtitle = service_area.subtitle.to_s
   # The subtitle usually brings its own <h1>; when it does not, the area name is the heading.
@@ -31,7 +31,15 @@
       <div class="svc2-actions">
         <%= erb :'component/_contact_banner_button',
                 locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'area-hero-cta' } %>
+        <% if service_area.hero_secondary_cta? %>
+          <a href="<%= service_area.own_text(:hero_secondary_cta_target) %>" class="svc2-btn svc2-btn--ghost">
+            <%= service_area.own_text(:hero_secondary_cta_text) %>
+          </a>
+        <% end %>
       </div>
+      <% if service_area.own_text(:hero_note) %>
+        <p class="svc2-hero-note"><%= service_area.own_text(:hero_note) %></p>
+      <% end %>
 
       <% if service_area.services.any? %>
         <nav class="svc2-chips" aria-label="<%= service_area.name %>">
@@ -138,5 +146,6 @@
     contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
   %>
   <%= erb :'component/sections/_contact_bottom_section',
-          locals: { contact_text: contact_data[:title], button_text: contact_data[:cta_text] } %>
+          locals: { contact_text: service_area.own_text(:contact_title) || contact_data[:title],
+                    button_text: service_area.own_text(:contact_cta_text) || contact_data[:cta_text] } %>
 </div>

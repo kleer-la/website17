@@ -2,7 +2,7 @@
   hero_data = section_data(@page, 'hero', { title: t('services.area.hero.title'), content: t('services.area.hero.description'), cta_text: t('services.area.hero.button.title')})
   hero_title = hero_data[:title]
   hero_description = hero_data[:content]
-  hero_cta = hero_data[:cta_text]
+  hero_cta = service_area.own_text(:hero_cta_text) || hero_data[:cta_text]
 %>
 <%= erb :'services/landing_area/_hero', locals: {service_area: service_area, hero_cta: hero_cta} %>
 <%= erb :'services/landing_area/area', locals: {service_area: service_area} %>
@@ -30,9 +30,9 @@
 <%= erb :'component/sections/recommended', locals: { recommended: service_area.recommended, title: t('services.recommended.false') } unless service_area.recommended.nil? || service_area.recommended.empty? %>
 <%
   contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
-  contact_title = contact_data[:title]
+  contact_title = service_area.own_text(:contact_title) || contact_data[:title]
   contact_description = contact_data[:content]
-  contact_cta = contact_data[:cta_text]
+  contact_cta = service_area.own_text(:contact_cta_text) || contact_data[:cta_text]
 %>
 <%= erb :'component/sections/_contact_bottom_section',
         locals: {

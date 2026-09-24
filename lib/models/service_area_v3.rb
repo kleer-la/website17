@@ -2,8 +2,11 @@ require './lib/models/service_v3'
 require './lib/models/recommended'
 require './lib/image_url_helper'
 require './lib/testimony'
+require './lib/models/service_area_page_texts'
 
 class ServiceAreaV3
+  include ServiceAreaPageTexts
+
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions defintions target value_proposition value_proposition_title
                     services seo_title seo_description target_title is_training_program ordering testimonies
@@ -17,7 +20,7 @@ class ServiceAreaV3
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
                 slogan subtitle description definitions side_image target value_proposition value_proposition_title
                 seo_title seo_description target_title is_training_program ordering
-                recommended_way_title recommended_way_note pricing brochure], hash_service_area)
+                recommended_way_title recommended_way_note pricing brochure] + PAGE_TEXTS, hash_service_area)
 
     @services = load_services(hash_service_area['services'])
     load_testimonies(hash_service_area['testimonies'])

@@ -117,6 +117,7 @@
 .svc2-btn:hover, .svc2 .my-primary-button:hover { opacity: 0.85; color: #fff !important; }
 .svc2-btn--ghost { background: transparent !important; color: var(--svc2-ink) !important; }
 .svc2-btn--ghost:hover { color: var(--svc2-ink) !important; }
+.svc2-hero-note { margin: 1rem 0 0; opacity: 0.8; }
 
 .svc2-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
 .svc2-chips a {

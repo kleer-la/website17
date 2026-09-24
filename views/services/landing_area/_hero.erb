@@ -38,7 +38,18 @@
                 style_class: 'btn area-hero-cta-btn',
                 specific_id: "area-hero-cta"
               } %>
+      <% if service_area.hero_secondary_cta? %>
+        <a href="<%= service_area.own_text(:hero_secondary_cta_target) %>" class="btn area-hero-secondary-btn"
+          style="color: <%= @primary_font_color %>; border: 2px solid <%= @primary_font_color %>; font-weight: 700; font-size: 1.1rem; padding: 14px 40px; border-radius: 50px; margin-left: 0.75rem; background: transparent;">
+          <%= service_area.own_text(:hero_secondary_cta_text) %>
+        </a>
+      <% end %>
     </div>
+    <% if service_area.own_text(:hero_note) %>
+      <p class="area-hero-note text-center mt-4 mb-0" style="font-size: 1.05rem; opacity: 0.85;">
+        <%= service_area.own_text(:hero_note) %>
+      </p>
+    <% end %>
   </div>
 </section>
 

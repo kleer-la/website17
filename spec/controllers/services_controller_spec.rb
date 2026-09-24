@@ -112,6 +112,66 @@ describe '/servicios' do
     end
   end
 
+  # The hero and contact texts come from one Page shared by every area; an area
+  # can bring its own, and whatever it leaves empty keeps the shared text.
+  describe 'GET /servicios/:area_slug with page texts of its own' do
+    let(:area_data) do
+      {
+        'id' => 1, 'slug' => 'agile-product-management', 'name' => 'Agile Product Management', 'lang' => 'es',
+        'is_training_program' => false, 'primary_color' => '#4dd3e8', 'primary_font_color' => '#FFFFFF',
+        'secondary_color' => '#34e3ff', 'secondary_font_color' => '#000000', 'icon' => '/app/img/icons/ev-org.svg',
+        'summary' => 'Summary', 'cta_message' => 'CTA message', 'slogan' => 'Slogan', 'subtitle' => 'Subtitle',
+        'description' => 'Description', 'target' => 'Target', 'value_proposition' => 'Value proposition',
+        'seo_title' => 'SEO', 'seo_description' => 'SEO description', 'services' => [], 'testimonies' => []
+      }
+    end
+    let(:own_texts) do
+      { 'hero_cta_text' => 'Conversemos tu caso', 'hero_secondary_cta_text' => 'Ver cómo trabajamos',
+        'hero_secondary_cta_target' => '#como-trabajamos', 'hero_note' => 'Trabajamos dentro del equipo.',
+        'contact_title' => 'Una conversación de 45 minutos', 'contact_cta_text' => 'Agendar' }
+    end
+
+    def visit_area(data)
+      ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, data.to_json))
+      get '/es/servicios/agile-product-management'
+      last_response.body
+    end
+
+    after do
+      Toggle.turn(:services_redesign, false)
+      ServiceAreaV3.class_variable_set(:@@json_api, nil) if ServiceAreaV3.class_variable_defined?(:@@json_api)
+    end
+
+    [false, true].each do |redesign|
+      context "with the services_redesign flag #{redesign ? 'on' : 'off'}" do
+        before { Toggle.turn(:services_redesign, redesign) }
+
+        it 'uses the texts the area sets for the hero and the contact block' do
+          body = visit_area(area_data.merge(own_texts))
+
+          expect(body).to include('Conversemos tu caso')
+          expect(body).to include('href="#como-trabajamos"').and include('Ver cómo trabajamos')
+          expect(body).to include('Trabajamos dentro del equipo.')
+          expect(body).to include('Una conversación de 45 minutos').and include('Agendar')
+          expect(body).not_to include('Solicitar Reunión')
+        end
+
+        it 'keeps the shared texts when the area sets none' do
+          body = visit_area(area_data)
+
+          expect(body).to include('Solicitar Reunión')
+          expect(body).not_to include('Ver cómo trabajamos')
+        end
+
+        it 'leaves out a secondary button with nowhere to go' do
+          body = visit_area(area_data.merge('hero_secondary_cta_text' => 'Ver cómo trabajamos'))
+
+          expect(body).not_to include('Ver cómo trabajamos')
+        end
+      end
+    end
+  end
+
   describe 'GET /servicios/:area_slug/:service_slug' do
     let(:service_area_data) do
       {
