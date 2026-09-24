@@ -16,6 +16,8 @@ env:
     WEB_CONCURRENCY: 1
     CACHE_TTL: 1
     LAB_WHATSAPP_NUMBER: "17868400847"
+    # Restyled area and service pages; production keeps the current ones.
+    FEATURE_SERVICES_REDESIGN: "true"
   secret:
     - KEVENTER_URL
     - RECAPTCHA_SITE_KEY

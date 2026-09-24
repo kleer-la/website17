@@ -1,0 +1,142 @@
+<%
+  hero_data = section_data(@page, 'hero', { title: t('services.area.hero.title'), content: t('services.area.hero.description'), cta_text: t('services.area.hero.button.title')})
+  hero_cta = hero_data[:cta_text]
+
+  subtitle = service_area.subtitle.to_s
+  # The subtitle usually brings its own <h1>; when it does not, the area name is the heading.
+  subtitle_has_h1 = subtitle.include?('<h1')
+  slogan_text = service_area.slogan.to_s.gsub(/<[^>]*>/, '').strip
+  services_title = service_area.cta_message.to_s.gsub(/<[^>]*>/, '').strip
+  side_image = service_area.side_image.to_s.strip
+  rw_title = service_area.recommended_way_title.to_s.strip
+  rw_note = service_area.recommended_way_note.to_s.strip
+  rw_summary = service_area.recommended_way_summary.to_s.strip
+  rw_details = service_area.recommended_way_details.to_s.strip
+  vp_title = service_area.value_proposition_title.to_s.strip
+  vp_title = t("services.value_proposition.#{@is_training_program == true}") if vp_title.empty?
+%>
+<link rel="stylesheet" href="<%= css_url('services-v2.css') %>">
+
+<div class="svc2" style="--svc2-accent: <%= @primary_color || '#68CEF2' %>;">
+
+  <section class="svc2-hero">
+    <div class="container">
+      <% if subtitle_has_h1 %>
+        <p class="svc2-eyebrow"><%= service_area.name %></p>
+      <% else %>
+        <h1 class="svc2-eyebrow"><%= service_area.name %></h1>
+      <% end %>
+      <div class="svc2-hero-text"><%= subtitle %></div>
+
+      <div class="svc2-actions">
+        <%= erb :'component/_contact_banner_button',
+                locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'area-hero-cta' } %>
+      </div>
+
+      <% if service_area.services.any? %>
+        <nav class="svc2-chips" aria-label="<%= service_area.name %>">
+          <% service_area.services.each do |service| %>
+            <a href="<%= service_path(service_area.slug, service.slug) %>"><%= service.name %></a>
+          <% end %>
+        </nav>
+      <% end %>
+    </div>
+  </section>
+
+  <% unless slogan_text.empty? && service_area.description.to_s.strip.empty? %>
+    <section class="svc2-section">
+      <div class="container">
+        <div class="svc2-split<%= ' svc2-split--image' unless side_image.empty? %>">
+          <div>
+            <h2 class="svc2-h2"><%= slogan_text %></h2>
+            <div class="svc2-prose"><%= service_area.description %></div>
+          </div>
+          <% unless side_image.empty? %>
+            <img src="<%= service_area.side_image %>" alt="" class="svc2-side-image" loading="lazy">
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if service_area.services.any? %>
+    <section class="svc2-section" id="servicios">
+      <div class="container">
+        <% unless services_title.empty? %><h2 class="svc2-h2"><%= services_title %></h2><% end %>
+        <div class="svc2-cards">
+          <% service_area.services.each do |service| %>
+            <% card_html = service.card_description.to_s.strip %>
+            <% if card_html.empty? %>
+              <%= erb :'services/components/_service_preview_card',
+                      locals: { service: service, area_slug: service_area.slug, primary_color: 'var(--svc2-line)' } %>
+            <% else %>
+              <article class="svc2-card"><%= card_html %></article>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% unless rw_summary.empty? && rw_title.empty? %>
+    <section class="svc2-section svc2-band" id="forma-recomendada">
+      <div class="container">
+        <p class="svc2-eyebrow"><%= t('services.v2.recommended_way') %></p>
+        <h2 class="svc2-h2"><%= rw_title.empty? ? t('services.v2.recommended_way') : rw_title %></h2>
+        <% unless rw_note.empty? %><p class="svc2-lead"><%= rw_note %></p><% end %>
+        <div class="svc2-steps"><%= rw_summary %></div>
+      </div>
+    </section>
+  <% end %>
+
+  <% unless rw_details.empty? && service_area.value_proposition.to_s.strip.empty? %>
+    <section class="svc2-section">
+      <div class="container svc2-two">
+        <% unless rw_details.empty? %>
+          <div class="svc2-panel svc2-details"><%= rw_details %></div>
+        <% end %>
+        <% unless service_area.value_proposition.to_s.strip.empty? %>
+          <div class="svc2-results">
+            <h2 class="svc2-h3"><%= vp_title %></h2>
+            <div class="svc2-prose"><%= service_area.value_proposition %></div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+
+  <% unless service_area.target.to_s.strip.empty? %>
+    <section class="svc2-section">
+      <div class="container">
+        <div class="svc2-panel svc2-target">
+          <h2 class="svc2-h3"><%= service_area.target_title.to_s.strip.empty? ? t("services.target.#{@is_training_program == true}", name: service_area.name) : service_area.target_title %></h2>
+          <div class="svc2-prose"><%= service_area.target %></div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if service_area.offering? %>
+    <section class="svc2-section">
+      <div class="container svc2-offering">
+        <%= erb :'services/landing_area/service_section/_outcomes',
+                locals: { outcomes: service_area.outcomes, name: service_area.name } unless service_area.outcomes.empty? %>
+        <%= erb :'services/landing_area/service_section/_program',
+                locals: { program: service_area.program, id: service_area.slug, name: service_area.name } unless service_area.program.empty? %>
+        <%= erb :'services/landing_area/service_section/_faq',
+                locals: { faq: service_area.faq, id: service_area.slug } unless service_area.faq.empty? %>
+        <% if service_area.brochure && !service_area.brochure.to_s.empty? %>
+          <p class="svc2-actions"><a class="svc2-btn svc2-btn--ghost" href="<%= service_area.brochure %>" target="_blank" rel="noopener"><%= t('services.brochure') %></a></p>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+
+  <%= erb :'component/sections/recommended', locals: { recommended: service_area.recommended, title: t('services.recommended.false') } unless service_area.recommended.nil? || service_area.recommended.empty? %>
+
+  <%
+    contact_data = section_data(@page, 'contact', { title: t('services.area.contact.title'), content: t('services.area.contact.description'), cta_text: t('services.area.contact.button.title')})
+  %>
+  <%= erb :'component/sections/_contact_bottom_section',
+          locals: { contact_text: contact_data[:title], button_text: contact_data[:cta_text] } %>
+</div>

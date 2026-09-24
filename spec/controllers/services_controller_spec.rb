@@ -195,5 +195,53 @@ describe '/servicios' do
       get '/es/servicios/cambio-organizacional/non-existent-service'
       expect(last_response.status).to eq(404)
     end
+
+    # The restyled pages sit behind a flag, so QA can show them while
+    # production keeps serving the current ones.
+    context 'with the services_redesign flag' do
+      after { Toggle.turn(:services_redesign, false) }
+
+      it 'keeps the current area page while the flag is off' do
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.status).to eq(200)
+        expect(last_response.body).not_to include('services-v2.css')
+        expect(last_response.body).to include('area-hero-full')
+      end
+
+      it 'serves the restyled area page when the flag is on' do
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.status).to eq(200)
+        expect(last_response.body).to include('services-v2.css')
+        expect(last_response.body).not_to include('area-hero-full')
+        expect(last_response.body).to include('Diseño Organizacional')
+      end
+
+      it 'shows a service card authored in the CMS as a card of the grid' do
+        service_area_data['services'][0]['card_description'] = '<h2 class="rw-details-title">Frente 01</h2>'
+        ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, service_area_data.to_json))
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional'
+
+        card = '<article class="svc2-card"><h2 class="rw-details-title">Frente 01</h2></article>'
+        expect(last_response.body).to include(card)
+      end
+
+      it 'serves the restyled service page when the flag is on' do
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        expect(last_response.status).to eq(200)
+        expect(last_response.body).to include('services-v2.css')
+        expect(last_response.body).to include('La Membresía IA')
+        expect(last_response.body).to include('Detalles completos')
+        expect(last_response.body).to include('¿Se puede hacer remoto?')
+      end
+    end
   end
 end

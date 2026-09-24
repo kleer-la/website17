@@ -1,0 +1,90 @@
+<%
+  hero_data = section_data(@page, 'hero', { title: t('services.service.hero.title'), content: t('services.service.hero.description'), cta_text: t('services.service.hero.button.title')})
+  hero_cta = hero_data[:cta_text]
+
+  subtitle = service.subtitle.to_s
+  side_image = service.side_image.to_s.strip
+  has_program = !service.program.nil? && service.program != ''
+  has_faq = !(service.faq.nil? || service.faq.empty?)
+%>
+<link rel="stylesheet" href="<%= css_url('services-v2.css') %>">
+
+<div class="svc2" style="--svc2-accent: <%= @primary_color || '#68CEF2' %>;">
+
+  <section class="svc2-hero">
+    <div class="container">
+      <p class="svc2-eyebrow"><a href="<%= area_url(service_area, service_area.slug) %>"><%= service_area.name %></a></p>
+      <%# The service name is the page's h1; the subtitle's own heading is the headline, shown larger %>
+      <h1 class="svc2-service-name"><%= service.name %></h1>
+      <div class="svc2-hero-text"><%= subtitle %></div>
+      <div class="svc2-actions">
+        <%= erb :'component/_contact_banner_button',
+                locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'service-hero-cta' } %>
+      </div>
+    </div>
+  </section>
+
+  <% unless service.value_proposition.to_s.strip.empty? %>
+    <section class="svc2-section">
+      <div class="container">
+        <div class="svc2-split<%= ' svc2-split--image' unless side_image.empty? %>">
+          <div class="svc2-prose"><%= service.value_proposition %></div>
+          <% unless side_image.empty? %>
+            <img src="<%= service.side_image %>" alt="" class="svc2-side-image" loading="lazy">
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="svc2-section svc2-offering">
+    <div class="container">
+      <%= erb :'services/landing_area/service_section/_outcomes',
+              locals: { outcomes: service.outcomes, name: service.name } unless service.outcomes.nil? || service.outcomes.empty? %>
+    </div>
+  </section>
+
+  <% unless service.recommended_way_summary.to_s.strip.empty? && service.recommended_way_title.to_s.strip.empty? %>
+    <section class="svc2-section svc2-band">
+      <div class="container">
+        <p class="svc2-eyebrow"><%= t('services.v2.recommended_way') %></p>
+        <% unless service.recommended_way_title.to_s.strip.empty? %><h2 class="svc2-h2"><%= service.recommended_way_title %></h2><% end %>
+        <% unless service.recommended_way_note.to_s.strip.empty? %><p class="svc2-lead"><%= service.recommended_way_note %></p><% end %>
+        <div class="svc2-steps"><%= service.recommended_way_summary %></div>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="svc2-section svc2-offering">
+    <div class="container">
+      <%= erb :'services/landing_area/service_section/_program',
+              locals: { program: service.program, id: service.slug, name: service.name } if has_program %>
+
+      <% unless service.target.to_s.strip.empty? %>
+        <div class="svc2-panel svc2-target">
+          <h2 class="svc2-h3"><%= t('services.target.false', name: service.name) %></h2>
+          <div class="svc2-prose"><%= service.target %></div>
+        </div>
+      <% end %>
+
+      <%= erb :'services/landing_area/service_section/_faq',
+              locals: { faq: service.faq, id: service.slug } if has_faq %>
+    </div>
+  </section>
+
+  <%= erb :'component/sections/recommended', locals: { recommended: service.recommended, title: t('services.recommended.false') } unless service.recommended.nil? || service.recommended.empty? %>
+
+  <% unless service.recommended_way_details.to_s.strip.empty? %>
+    <section class="svc2-section" id="forma-recomendada">
+      <div class="container">
+        <div class="svc2-panel svc2-details"><%= service.recommended_way_details %></div>
+      </div>
+    </section>
+  <% end %>
+
+  <%
+    contact_data = section_data(@page, 'contact', { title: t('services.service.contact.title'), content: t('services.service.contact.description'), cta_text: t('services.service.contact.button.title')})
+  %>
+  <%= erb :'component/sections/_contact_bottom_section',
+          locals: { contact_text: contact_data[:title], button_text: contact_data[:cta_text] } %>
+</div>

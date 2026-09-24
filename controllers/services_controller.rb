@@ -94,7 +94,7 @@ def show_service_area(service_area, path)
 
   @json_ld = service_area_json_ld(service_area) if service_area.offering?
 
-  render_page :'services/landing_area/index', locals: { service_area: service_area }
+  render_page services_view(:'services/landing_area/index'), locals: { service_area: service_area }
 end
 
 def show_service(service_area, service, path)
@@ -109,8 +109,14 @@ def show_service(service_area, service, path)
 
   @json_ld = service_json_ld(service, service_area)
 
-  render_page :'services/landing_service/index',
+  render_page services_view(:'services/landing_service/index'),
               locals: { service_area: service_area, service: service }
+end
+
+# The restyled area and service pages live beside the current ones, behind the
+# services_redesign flag, so QA can show them while production keeps the old ones.
+def services_view(view)
+  feature_on?(:services_redesign) ? :"#{view}_v2" : view
 end
 
 def set_area_colors(service_area)

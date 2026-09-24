@@ -1,0 +1,304 @@
+/*
+ * Area and service pages, restyled (FEATURE_SERVICES_V2).
+ * Plain CSS on purpose: it loads only on those pages while the flag is on,
+ * and goes away — or into services.scss — once the new look is settled.
+ *
+ * The area color is an accent, not a background: rules, markers and links.
+ * Text stays in neutral ink so any area color keeps contrast.
+ * Several blocks come from the CMS with inline styles, hence the !important.
+ */
+.svc2 {
+  --svc2-ink: #1d2320;
+  --svc2-muted: #5b635f;
+  --svc2-line: #e3e6e4;
+  --svc2-soft: #f6f7f6;
+  --svc2-paper: #ffffff;
+  color: var(--svc2-ink);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.svc2 .container { max-width: 1080px; }
+
+.svc2 h1, .svc2 h2, .svc2 h3, .svc2 h4, .svc2 h5 {
+  font-family: "degular", "degular-text", sans-serif;
+  color: var(--svc2-ink);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.svc2-section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.svc2-section + .svc2-section { border-top: 1px solid var(--svc2-line); }
+.svc2-band { background: var(--svc2-soft); border-block: 1px solid var(--svc2-line); }
+
+.svc2-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 0 0.9rem;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--svc2-muted) !important;
+  line-height: 1.4 !important;
+}
+.svc2-eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--svc2-accent);
+}
+.svc2-eyebrow a { color: inherit; text-decoration: none; }
+.svc2-eyebrow a:hover { color: var(--svc2-ink); }
+
+.svc2-h1,
+.svc2-hero-text h1,
+.svc2-hero-text h2 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  margin: 0 0 1rem !important;
+  max-width: 22ch;
+}
+.svc2-h2 {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 1rem !important;
+  max-width: 34ch;
+}
+.svc2-h3 {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin: 0 0 0.75rem !important;
+}
+.svc2-lead { color: var(--svc2-muted); font-size: 1.05rem; max-width: 60ch; }
+
+/* Hero: white, left-aligned, the area color only in the eyebrow rule */
+.svc2-hero {
+  padding: clamp(6.5rem, 12vw, 8.5rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--svc2-paper);
+  border-bottom: 1px solid var(--svc2-line);
+}
+.svc2-hero-text { max-width: 62ch; }
+.svc2-service-name {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: var(--svc2-muted) !important;
+  margin: 0 0 0.75rem !important;
+}
+.svc2-hero-text div,
+.svc2-hero-text p {
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--svc2-muted);
+}
+
+.svc2-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0 0; }
+.svc2-btn,
+.svc2 .my-primary-button {
+  display: inline-block;
+  padding: 0.7rem 1.6rem !important;
+  border-radius: 999px !important;
+  border: 1.5px solid var(--svc2-ink) !important;
+  background: var(--svc2-ink) !important;
+  color: #fff !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+  box-shadow: none !important;
+  transition: opacity 0.15s;
+}
+.svc2-btn:hover, .svc2 .my-primary-button:hover { opacity: 0.85; color: #fff !important; }
+.svc2-btn--ghost { background: transparent !important; color: var(--svc2-ink) !important; }
+.svc2-btn--ghost:hover { color: var(--svc2-ink) !important; }
+
+.svc2-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+.svc2-chips a {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--svc2-line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--svc2-ink);
+  text-decoration: none;
+  background: var(--svc2-paper);
+}
+.svc2-chips a:hover { border-color: var(--svc2-accent); }
+
+/* Text blocks coming from the CMS */
+.svc2-prose { max-width: 66ch; }
+.svc2-prose div, .svc2-prose p, .svc2-prose li { font-size: 0.95rem; line-height: 1.65; color: var(--svc2-ink); }
+.svc2-prose ul { padding-left: 0; list-style: none; margin: 1rem 0 0; display: grid; gap: 0.6rem; }
+.svc2-prose ul li { position: relative; padding-left: 1.4rem; }
+.svc2-prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  background: var(--svc2-accent);
+}
+.svc2-prose h1 { font-size: 1.35rem !important; }
+.svc2-prose h2, .svc2-prose h3 { font-size: 1.15rem !important; margin-top: 1.25rem; }
+
+.svc2-split { display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 992px) { .svc2-split--image { grid-template-columns: 7fr 4fr; } }
+.svc2-side-image { width: 100%; max-width: 360px; justify-self: center; border-radius: 12px; }
+
+/* Service cards: a grid of equal cards instead of stacked full-width boxes */
+.svc2-cards {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 1.5rem;
+}
+.svc2-card,
+.svc2 .service-preview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.5rem !important;
+  background: var(--svc2-paper) !important;
+  border: 1px solid var(--svc2-line) !important;
+  border-radius: 14px !important;
+  color: var(--svc2-ink);
+}
+.svc2-card:hover, .svc2 .service-preview-card:hover { border-color: var(--svc2-accent) !important; }
+.svc2-card > * { margin: 0; }
+.svc2-card h2, .svc2-card h3,
+.svc2 .service-preview-card h3 {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  color: var(--svc2-ink) !important;
+}
+.svc2-card span:not(.rw-step-number),
+.svc2-card .rw-eyebrow {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--svc2-muted) !important;
+  margin: 0 !important;
+}
+.svc2-card p, .svc2-card li, .svc2-card div { font-size: 0.92rem !important; line-height: 1.55 !important; color: var(--svc2-muted) !important; }
+.svc2-card div { margin: 0 !important; }
+.svc2-card .rw-quote { font-style: italic; }
+.svc2-card ul { margin: 0 !important; padding-left: 1.1rem !important; line-height: 1.5 !important; }
+.svc2-card li { margin: 0 0 0.2rem !important; }
+.svc2-card hr { display: none; }
+.svc2-card p:last-child { margin-top: auto !important; }
+.svc2-card a,
+.svc2 .service-preview-cta {
+  display: inline !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: var(--svc2-ink) !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  text-decoration: underline;
+  text-decoration-color: var(--svc2-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.svc2 .service-preview-subtitle { color: var(--svc2-muted); font-size: 0.92rem; }
+
+/* Recommended way: numbered steps laid out across */
+.svc2-steps ul.rw-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+.svc2-steps .rw-step { flex-direction: column; gap: 0.6rem; }
+.svc2-steps .rw-step-number {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--svc2-ink) !important;
+  color: #fff !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.svc2-steps .rw-step-body h4 { font-size: 1rem !important; }
+.svc2-steps .rw-step-body p { color: var(--svc2-muted); font-size: 0.92rem; }
+.svc2-steps > *:not(ul) { max-width: 66ch; }
+
+/* Panels: what is included, who it is for */
+.svc2-two { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 992px) { .svc2-two { grid-template-columns: 1fr 1fr; } }
+.svc2-panel {
+  background: var(--svc2-paper);
+  border: 1px solid var(--svc2-line);
+  border-radius: 14px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.svc2-details, .svc2-details * { font-size: 0.95rem; }
+.svc2-details h2, .svc2-details .rw-details-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 0 0 1rem !important;
+  color: var(--svc2-ink) !important;
+}
+.svc2-details span { color: var(--svc2-muted) !important; font-size: 0.75rem !important; letter-spacing: 0.1em; }
+.svc2-details p, .svc2-details li { color: var(--svc2-ink) !important; font-size: 0.95rem !important; line-height: 1.55 !important; }
+.svc2-details a { background: var(--svc2-ink) !important; color: #fff !important; font-size: 0.95rem !important; padding: 0.6rem 1.4rem !important; box-shadow: none !important; }
+.svc2-details hr { border-top: 1px solid var(--svc2-line) !important; margin: 2rem 0 !important; }
+.svc2 dl.rw-spec { margin: 0; }
+.svc2 dl.rw-spec dt {
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--svc2-muted);
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--svc2-line);
+}
+.svc2 dl.rw-spec dt:first-child { border-top: 0; padding-top: 0; }
+.svc2 dl.rw-spec dd { margin: 0.2rem 0 0.9rem; }
+
+/* Blocks reused from the current pages (outcomes, program, FAQ, target):
+   neutral borders instead of the area color */
+.svc2-offering .outcomes h4,
+.svc2-offering .program h4,
+.svc2-offering .faq h4 {
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem) !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  margin-bottom: 1rem !important;
+}
+.svc2-offering .outcome {
+  border: 1px solid var(--svc2-line) !important;
+  border-radius: 12px !important;
+  background: var(--svc2-paper) !important;
+}
+.svc2-offering .outcome .check {
+  background: transparent !important;
+  border: 0 !important;
+}
+.svc2-offering .outcome .check img { filter: brightness(0) saturate(0); opacity: 0.7; }
+.svc2-offering .outcome p, .svc2-offering .program-item p { font-size: 0.95rem !important; }
+.svc2-offering .program-item {
+  border: 1px solid var(--svc2-line) !important;
+  background: var(--svc2-paper) !important;
+  border-radius: 12px !important;
+}
+.svc2-offering .program-item h5 { font-size: 1rem !important; }
+.svc2-offering .accordion-button { font-size: 0.98rem; color: var(--svc2-ink); background: transparent; box-shadow: none; }
+.svc2-offering .accordion-button:not(.collapsed) { color: var(--svc2-ink); background: var(--svc2-soft); }
+.svc2-offering .accordion-body { font-size: 0.95rem; color: var(--svc2-muted); }
+.svc2-offering .faq .accordion { max-width: none !important; }
+.svc2-target { margin-top: 2rem; }

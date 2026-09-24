@@ -798,6 +798,8 @@ es:
       advanced: Capacitaciones avanzadas
     brochure: Descargar programa
     faq: Preguntas frecuentes
+    v2:
+      recommended_way: Forma recomendada
   contact-us-form:
     title: Contáctanos
     download: Descargar recurso

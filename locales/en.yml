@@ -1120,6 +1120,8 @@ en:
       advanced: Advanced Training 
     brochure: Download the program
     faq: Frequently asked questions
+    v2:
+      recommended_way: Recommended approach
   contact-us-form:
     title: Contact us
     download: Resource download
