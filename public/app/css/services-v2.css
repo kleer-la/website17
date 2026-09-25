@@ -337,6 +337,20 @@
   border-radius: 12px !important;
 }
 .svc2-offering .program-item h5 { font-size: 1rem !important; }
+/* Their spacing, padding and minimum height came from the old page's
+   .service-info-container, which these pages do not have: without it the
+   cards touched and each one took the height of its own text. Every card
+   fills its cell, so a row's cards align. */
+.svc2-offering .outcome-list, .svc2-offering .program > .row { --bs-gutter-y: 1rem; margin-top: 0.5rem !important; }
+.svc2-offering .outcome-container, .svc2-offering .program > .row > [class*="col-"] { display: flex; }
+.svc2-offering .outcome { flex: 1; margin: 0 !important; padding: 0.9rem 0.5rem; }
+.svc2-offering .outcome .check, .svc2-offering .outcome .content { display: flex; align-items: center; }
+.svc2-offering .outcome .check { justify-content: center; }
+.svc2-offering .outcome .check img { height: 26px; }
+.svc2-offering .outcome p { margin: 0 !important; }
+.svc2-offering .program-item { flex: 1; margin: 0 !important; padding: 1.25rem 0.75rem; }
+.svc2-offering .program-item h5 { margin-bottom: 0.5rem !important; }
+.svc2-offering .program-item .detail { margin: 0 !important; }
 .svc2-offering .accordion-button { font-size: 0.98rem; color: var(--svc2-ink); background: transparent; box-shadow: none; }
 .svc2-offering .accordion-button:not(.collapsed) { color: var(--svc2-ink); background: var(--svc2-soft); }
 .svc2-offering .accordion-body { font-size: 0.95rem; color: var(--svc2-muted); }
