@@ -1,9 +1,13 @@
-<%# Frequently asked questions: ol > li items from the CMS, each an accordion entry with its answer %>
+<%# Frequently asked questions: ol > li items from the CMS, each an accordion entry with its answer.
+    Each entry is anchored by its question's text; faq-anchors.js opens the one a link points at. %>
+<% anchors = faq_anchors(faq.map(&:first)) %>
+<link rel="stylesheet" href="<%= css_url('service-content.css') %>">
+<script src="/js/faq-anchors.js" defer></script>
 <div class="faq mt-5" id="preguntas-frecuentes">
   <h4><%= t('services.faq') %></h4>
   <div class="accordion accordion-flush mt-4 mx-auto" id="faq-<%= id %>" style="max-width: 960px;">
     <% faq.each_with_index do |(question, answer), index| %>
-      <div class="accordion-item">
+      <div class="accordion-item" id="<%= anchors[index] %>">
         <h5 class="accordion-header" id="faq-<%= id %>-heading-<%= index %>">
           <button class="accordion-button collapsed fw-bold" type="button"
                   data-bs-toggle="collapse" data-bs-target="#faq-<%= id %>-item-<%= index %>"

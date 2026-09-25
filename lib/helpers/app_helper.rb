@@ -51,6 +51,20 @@ module AppHelper
     result
   end
 
+  # One anchor per FAQ question, made from its text ("¿Qué es Kanban y para qué
+  # sirve?" -> "que-es-kanban-y-para-que-sirve") so a link survives reordering;
+  # a repeated question gets -2, -3... to keep the ids unique on the page.
+  def faq_anchors(questions)
+    seen = Hash.new(0)
+    questions.map do |question|
+      text = question.to_s.gsub(/<[^>]*>/, '')
+      base = I18n.transliterate(text).downcase.gsub(/[^a-z0-9]+/, '-').gsub(/\A-+|-+\z/, '')
+      base = 'pregunta' if base.empty?
+      seen[base] += 1
+      seen[base] == 1 ? base : "#{base}-#{seen[base]}"
+    end
+  end
+
   def section_data(page, section_key, defaults = {})
     return defaults if page.nil? || page.sections.nil? || page.sections[section_key].nil?
 

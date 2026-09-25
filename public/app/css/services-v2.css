@@ -279,6 +279,14 @@
 /* CMS details often arrive as <p><h2>…</h2>…</p>; the browser closes that <p>
    before the heading and leaves an empty one pushing the panel's text down. */
 .svc2-details > p:empty { display: none; }
+
+/* Links in the CMS prose read as links: underlined, in the darkened area color. */
+.svc2-prose a {
+  color: color-mix(in srgb, var(--svc2-accent) 60%, var(--svc2-ink));
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
 .svc2-details h2, .svc2-details .rw-details-title {
   font-size: 1.15rem !important;
   font-weight: 700 !important;

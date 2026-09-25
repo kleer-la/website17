@@ -191,6 +191,29 @@ describe '/servicios' do
 
           expect(body).to include('id="preguntas-frecuentes"')
         end
+
+        # kleer-la/website17#424: a link can point at one question, by an anchor
+        # made from its text, so reordering the FAQ does not break it.
+        it 'anchors each question by its text' do
+          body = visit_area(area_data.merge('faq' => [['¿Qué es Kanban y para qué sirve?', 'Un método.'],
+                                                      ['¿Cuánto dura?', 'Tres meses']]))
+
+          expect(body).to include('id="que-es-kanban-y-para-que-sirve"')
+          expect(body).to include('id="cuanto-dura"')
+        end
+
+        it 'keeps the anchors apart when two questions read the same' do
+          body = visit_area(area_data.merge('faq' => [['¿Cuánto dura?', 'Tres meses'], ['¿Cuánto dura?', 'Seis']]))
+
+          expect(body).to include('id="cuanto-dura"').and include('id="cuanto-dura-2"')
+        end
+
+        it 'loads what opens a linked question and styles links in the content' do
+          body = visit_area(area_data.merge('faq' => [['¿Cuánto dura?', 'Tres meses']]))
+
+          expect(body).to include('/js/faq-anchors.js')
+          expect(body).to include('service-content.css')
+        end
       end
     end
   end
