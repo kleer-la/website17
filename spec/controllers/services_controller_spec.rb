@@ -485,6 +485,18 @@ describe '/servicios' do
     context 'with the services_redesign flag' do
       after { Toggle.turn(:services_redesign, false) }
 
+      # The hero had a chip per service on top of the cards below: too many calls
+      # to action in one place. The cards are the one way into each service.
+      it 'links each service from its card, not from the hero' do
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.status).to eq(200)
+        expect(last_response.body).not_to include('svc2-chips')
+        expect(last_response.body.scan('/es/servicios/cambio-organizacional/diseno-organizacional').size).to be >= 1
+      end
+
       it 'keeps the current area page while the flag is off' do
         get '/es/servicios/cambio-organizacional'
 

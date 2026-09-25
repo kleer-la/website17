@@ -40,14 +40,6 @@
       <% if service_area.own_text(:hero_note) %>
         <p class="svc2-hero-note"><%= service_area.own_text(:hero_note) %></p>
       <% end %>
-
-      <% if service_area.services.any? %>
-        <nav class="svc2-chips" aria-label="<%= service_area.name %>">
-          <% service_area.services.each do |service| %>
-            <a href="<%= service_path(service_area.slug, service.slug) %>"><%= service.name %></a>
-          <% end %>
-        </nav>
-      <% end %>
     </div>
   </section>
 

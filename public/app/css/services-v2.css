@@ -142,18 +142,6 @@
 .svc2-btn--ghost:hover { color: var(--svc2-ink) !important; }
 .svc2-hero-note { margin: 1rem 0 0; opacity: 0.8; }
 
-.svc2-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
-.svc2-chips a {
-  padding: 0.35rem 0.9rem;
-  border: 1px solid var(--svc2-line);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  color: var(--svc2-ink);
-  text-decoration: none;
-  background: var(--svc2-paper);
-}
-.svc2-chips a:hover { border-color: var(--svc2-accent); }
-
 /* Text blocks coming from the CMS */
 .svc2-prose { max-width: 66ch; }
 .svc2-prose div, .svc2-prose p, .svc2-prose li { font-size: 0.95rem; line-height: 1.65; color: var(--svc2-ink); }
