@@ -49,6 +49,9 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, servi
     pass
   end
 
+  # The area slug is one Keventer no longer uses: one hop to the current URL.
+  redirect to(service_url(service_area, service)), 301 if service_area.slug_old == area_slug
+
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
 
@@ -62,6 +65,8 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
   service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
 
+  current = current_url(service_area, slug)
+  redirect to(current), 301 if current
   redirect to(area_url(service_area, slug)), 301 if service_area.is_training_program
 
   router_helper = RouterHelper.instance
@@ -71,15 +76,31 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
 end
 
 # A service moved to another area keeps its slug, and Keventer resolves a
-# service slug to the area that now holds it. Its old URL, under the old area,
-# follows it there — to /formacion when the new area is a training programme.
+# service slug — current or old — to the area that now holds it. Its old URL,
+# under the old area, follows it there in one hop, whatever else changed: to
+# /formacion when the new area is a training programme.
 def moved_service_url(service_slug)
   area = ServiceAreaV3.create_keventer(service_slug)
-  return nil if area.nil? || area.services.none? { |s| s.slug == service_slug }
+  return nil if area.nil?
 
-  return area_url(area, service_slug) if area.is_training_program
+  service = area.services.find { |s| s.slug == service_slug || s.slug_old == service_slug }
+  service_url(area, service) if service
+end
 
-  "/#{session[:locale] || 'es'}/#{section_path}/#{area.slug}/#{service_slug}"
+# Keventer resolves a slug it no longer uses to the record that had it, and
+# says which one (`slug_old`). The URL that record has today, or nil when the
+# slug asked for is the current one (kleer-la/website17#426).
+def current_url(service_area, slug)
+  return area_url(service_area, service_area.slug) if service_area.slug_old == slug
+
+  service = service_area.services.find { |s| s.slug_old == slug }
+  service_url(service_area, service) if service
+end
+
+def service_url(service_area, service)
+  return area_url(service_area, service.slug) if service_area.is_training_program
+
+  "/#{session[:locale] || 'es'}/#{section_path}/#{service_area.slug}/#{service.slug}"
 end
 
 # The services routes answer under /servicios and /services alike, so the

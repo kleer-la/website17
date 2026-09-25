@@ -379,6 +379,85 @@ describe '/servicios' do
       expect(last_response.status).to eq(404)
     end
 
+    # Producto Digital changes its slugs before going live (kleer-marketing#32).
+    # Keventer resolves a slug it no longer uses and says which one (slug_old);
+    # the site answers the old URL with one 301 to the current one, whatever
+    # combination of old and new the URL brought (kleer-la/website17#426).
+    context 'when a slug is one Keventer no longer uses' do
+      let(:new_service) do
+        service_area_data['services'][0].merge('slug' => 'estrategia-descubrimiento-producto',
+                                               'name' => 'Estrategia y Descubrimiento de Producto')
+      end
+      let(:area) { service_area_data.merge('slug' => 'producto-digital', 'services' => [new_service]) }
+
+      # What Keventer answers to each slug: the current record, marking the old slug.
+      def keventer_answers(slug_to_json)
+        allow(ServiceAreaV3).to receive(:create_keventer).and_return(nil)
+        slug_to_json.each do |slug, json|
+          allow(ServiceAreaV3).to receive(:create_keventer).with(slug).and_return(ServiceAreaV3.new.load_from_json(json))
+        end
+      end
+
+      before do
+        keventer_answers(
+          'producto-digital' => area,
+          'agile-product-management' => area.merge('slug_old' => 'agile-product-management'),
+          'consultoria-coaching-producto' => area.merge('services' => [new_service.merge('slug_old' => 'consultoria-coaching-producto')])
+        )
+      end
+
+      it 'sends the old area slug to the area' do
+        get '/es/servicios/agile-product-management'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/producto-digital')
+      end
+
+      it 'sends the old area slug with a service to that service under the new one' do
+        get '/es/servicios/agile-product-management/estrategia-descubrimiento-producto'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/producto-digital/estrategia-descubrimiento-producto')
+      end
+
+      it 'sends the old service slug to the service' do
+        get '/es/servicios/producto-digital/consultoria-coaching-producto'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/producto-digital/estrategia-descubrimiento-producto')
+      end
+
+      it 'sends both old slugs to both new ones in one hop' do
+        get '/es/servicios/agile-product-management/consultoria-coaching-producto'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/producto-digital/estrategia-descubrimiento-producto')
+      end
+
+      it 'sends an old service slug asked for as an area to the service' do
+        get '/es/servicios/consultoria-coaching-producto'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/producto-digital/estrategia-descubrimiento-producto')
+      end
+
+      it 'serves the current URL without redirecting' do
+        get '/es/servicios/producto-digital/estrategia-descubrimiento-producto'
+
+        expect(last_response.status).to eq(200)
+      end
+
+      it 'sends the old slug of a training programme to /formacion' do
+        keventer_answers('programas-viejo' => area.merge('slug' => 'programas', 'slug_old' => 'programas-viejo',
+                                                         'is_training_program' => true))
+
+        get '/es/servicios/programas-viejo'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/formacion/programas')
+      end
+    end
+
     # A service moved to another area keeps its slug; its old URL follows it.
     context 'when the service moved to another area' do
       let(:training_area) do

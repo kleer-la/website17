@@ -9,7 +9,7 @@ class ServiceAreaV3
 
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions defintions target value_proposition value_proposition_title
-                    services seo_title seo_description target_title is_training_program ordering testimonies
+                    services seo_title seo_description target_title is_training_program ordering testimonies slug_old
                     recommended_way_title recommended_way_note recommended_way_summary recommended_way_details
                     outcomes program faq pricing recommended])
   attr_writer :icon, :side_image, :brochure
@@ -19,7 +19,7 @@ class ServiceAreaV3
 
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
                 slogan subtitle description definitions side_image target value_proposition value_proposition_title
-                seo_title seo_description target_title is_training_program ordering
+                seo_title seo_description target_title is_training_program ordering slug_old
                 recommended_way_title recommended_way_note pricing brochure] + PAGE_TEXTS, hash_service_area)
 
     @services = load_services(hash_service_area['services'])
