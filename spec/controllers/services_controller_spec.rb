@@ -208,6 +208,15 @@ describe '/servicios' do
           expect(body).to include('id="cuanto-dura"').and include('id="cuanto-dura-2"')
         end
 
+        it 'links a program step to the FAQ question that defines it' do
+          body = visit_area(area_data.merge('program' => [['Kanban', 'Flujo visible'], ['Transferencia', nil]],
+                                            'faq' => [['¿Qué es Kanban y para qué sirve?', 'Un método.']]))
+
+          expect(body).to include('href="#que-es-kanban-y-para-que-sirve"')
+          expect(body).to include('¿Qué es Kanban?')
+          expect(body.scan('class="program-definition"').size).to eq(1)
+        end
+
         it 'loads what opens a linked question and styles links in the content' do
           body = visit_area(area_data.merge('faq' => [['¿Cuánto dura?', 'Tres meses']]))
 

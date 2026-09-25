@@ -5,14 +5,18 @@
  * site teal where the page sets no area color.
  */
 .faq .accordion-body a,
-.program .detail a {
+.program .detail a,
+.program .program-definition {
   color: color-mix(in srgb, var(--svc2-accent, #1a8a9e) 60%, #1d2320);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 0.18em;
 }
 .faq .accordion-body a:hover,
-.program .detail a:hover { text-decoration-thickness: 2px; }
+.program .detail a:hover,
+.program .program-definition:hover { text-decoration-thickness: 2px; }
+/* The link from a program step to the FAQ question that defines its term. */
+.program .program-definition { display: inline-block; margin-top: 0.25rem; font-size: 0.9rem; }
 
 /* A question opened from a link lands below the fixed navbar, not under it. */
 .faq .accordion-item { scroll-margin-top: 120px; }

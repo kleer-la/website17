@@ -47,7 +47,7 @@
       </div>
 
       <%= erb :'services/landing_area/service_section/_program',
-              locals: { program: service.program, id: service.slug, name: service.name } if !service.program.nil? && service.program != "" %>
+              locals: { program: service.program, id: service.slug, name: service.name, faq: service.faq } if !service.program.nil? && service.program != "" %>
       <%= erb :'services/landing_area/service_section/_target',
               locals: { target: service.target, name: service.name } %>
       <%= erb :'services/landing_area/service_section/_faq',

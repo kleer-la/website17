@@ -9,7 +9,7 @@
               locals: { outcomes: service_area.outcomes, name: service_area.name } unless service_area.outcomes.empty? %>
 
       <%= erb :'services/landing_area/service_section/_program',
-              locals: { program: service_area.program, id: service_area.slug, name: service_area.name } unless service_area.program.empty? %>
+              locals: { program: service_area.program, id: service_area.slug, name: service_area.name, faq: service_area.faq } unless service_area.program.empty? %>
 
       <%= erb :'services/landing_area/service_section/_faq',
               locals: { faq: service_area.faq, id: service_area.slug } unless service_area.faq.empty? %>

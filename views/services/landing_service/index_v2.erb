@@ -58,7 +58,7 @@
   <section class="svc2-section svc2-offering">
     <div class="container">
       <%= erb :'services/landing_area/service_section/_program',
-              locals: { program: service.program, id: service.slug, name: service.name } if has_program %>
+              locals: { program: service.program, id: service.slug, name: service.name, faq: service.faq } if has_program %>
 
       <% unless service.target.to_s.strip.empty? %>
         <div class="svc2-panel svc2-target">

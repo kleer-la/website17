@@ -1,3 +1,5 @@
+<%# A step named like a term the page's FAQ defines ("¿Qué es Kanban…?") links to that question. %>
+<% definitions = faq_definitions(defined?(faq) ? faq : []) %>
 <link rel="stylesheet" href="<%= css_url('service-content.css') %>">
 <div class="program">
   <h4>
@@ -10,6 +12,9 @@
          <div class="col-12">
            <h5><%= item[0] %></h5>
            <p class="detail"><%= item[1] %></p>
+           <% if (definition = faq_definition_for(item[0], definitions)) %>
+             <a class="program-definition" href="#<%= definition[:anchor] %>"><%= definition[:label] %> ↓</a>
+           <% end %>
          </div>
        </div>
      </div>
