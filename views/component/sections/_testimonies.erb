@@ -17,11 +17,15 @@
               <strong>
                 <%= "#{testimony.name} #{testimony.last_name}" %>
               </strong>
-              <br/>
+              <% unless testimony.context.empty? %>
+                <div class="testimony-info__context"><%= testimony.context %></div>
+              <% end %>
               <% if testimony.linkedin_url %>
-                <a href="<%= testimony.linkedin_url %>">
-                  <img class="testimony-linkedin" src="/app/img/icons/Linkedin.svg" loading="lazy">
-                </a>
+                <div>
+                  <a href="<%= testimony.linkedin_url %>">
+                    <img class="testimony-linkedin" src="/app/img/icons/Linkedin.svg" loading="lazy">
+                  </a>
+                </div>
               <% end %>
             </div>
           </div>

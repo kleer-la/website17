@@ -91,6 +91,18 @@ RSpec.describe ServiceAreaV3 do
       expect(service_area.testimonies).to eq([])
     end
 
+    it 'loads the role and company of who said it, empty when they do not come' do
+      service_area_data['testimonies'] = [
+        { 'fname' => 'Alejandro', 'lname' => 'Raiczyk', 'testimony' => 'Ordenó el backlog.',
+          'role' => 'Responsable de producto', 'company' => 'Technisys' },
+        { 'fname' => 'Ana', 'lname' => 'Pérez', 'testimony' => 'Buen taller.' }
+      ]
+      testimonies = ServiceAreaV3.new.load_from_json(service_area_data).testimonies
+
+      expect(testimonies.first).to have_attributes(role: 'Responsable de producto', company: 'Technisys')
+      expect(testimonies.last).to have_attributes(role: nil, company: nil)
+    end
+
     it 'loads testimonies from JSON data' do
       service_area_data['testimonies'] = [
         {

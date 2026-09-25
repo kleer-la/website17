@@ -1,6 +1,6 @@
 class Testimony
   attr_accessor :name, :last_name, :email, :phone, :event_id, :created_at,
-                :message, :linkedin_url, :photo_url
+                :message, :linkedin_url, :photo_url, :role, :company
 
   def initialize
     @name = @last_name = @email = @phone = @message = @photo_url = @linkedin_url = ''
@@ -15,5 +15,12 @@ class Testimony
     @message = json['testimony']
     @linkedin_url = json['profile_url']
     @photo_url = json['photo_url']
+    @role = json['role']
+    @company = json['company']
+  end
+
+  # "Role · Company" under the name: whichever of the two came, or nothing.
+  def context
+    [role, company].reject { |part| part.nil? || part.strip.empty? }.join(' · ')
   end
 end

@@ -271,6 +271,26 @@ describe '/servicios' do
 
           expect(body).not_to include('area-testimonies')
         end
+
+        # Who speaks is half the value for a decision maker (kleer-la/website17#427).
+        it 'shows the role and company under the name when they come' do
+          body = visit_area(with_context('role' => 'Responsable de producto', 'company' => 'Technisys'))
+
+          expect(body).to include('Responsable de producto · Technisys')
+        end
+
+        it 'shows whichever of the two comes' do
+          expect(visit_area(with_context('company' => 'Technisys'))).to include('>Technisys<')
+          expect(visit_area(with_context('role' => 'CTO'))).to include('>CTO<')
+        end
+
+        it 'adds nothing when neither comes' do
+          expect(visit_area(area_data)).not_to include('testimony-info__context')
+        end
+
+        def with_context(fields)
+          area_data.merge('testimonies' => [area_data['testimonies'].first.merge(fields)])
+        end
       end
     end
   end
