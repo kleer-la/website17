@@ -56,6 +56,18 @@ module Helpers
   # The slug asked for, not the record's own: a sub-service resolves to the area
   # that holds it, so `service_area.slug` is the parent's and redirecting to it
   # would throw away which sub-service was wanted.
+  # The service areas of a language as the menu and the footer list them.
+  # Name, URL and order come from Keventer, so renaming an area renames its
+  # entry everywhere, with no deploy (kleer-marketing#26). Cached with the rest
+  # of the menu; the cache reset clears it.
+  def service_area_menu_items(lang)
+    CacheService.get_or_set("service_area_menu_#{lang}") do
+      section = RouterHelper.translate_path('servicios', lang)
+      ServiceAreaV3.try_create_list_keventer.select { |area| area.lang == lang }
+                   .map { |area| { text: area.name, url: "/#{section}/#{area.slug}" } }
+    end
+  end
+
   def area_url(service_area, slug)
     lang = session[:locale] || 'es'
     section = RouterHelper.translate_path(service_area.is_training_program ? 'formacion' : 'servicios', lang)

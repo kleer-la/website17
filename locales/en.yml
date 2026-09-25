@@ -630,15 +630,8 @@ en:
   navbar:
     - text: Services
       options:
-        - text: Organizational Change and Leadership
-          url: /services/organizational-change-and-leadership
-          inside: true
-        - text: Product Management
-          url: /services/product-management
-          inside: true
-        - text: Team Agility
-          url: /services/team-agility
-          inside: true
+        # The areas themselves: name, URL and order come from Keventer.
+        - text: service-areas
     - text: Courses
       options:
         - text: Course Catalog

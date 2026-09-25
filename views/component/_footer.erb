@@ -6,9 +6,15 @@
           <h5><%= item[:title] %></h5>
           <ul>
             <% item[:items].each do |subitem| %>
-              <li><a href='<%= "/#{session[:locale]}#{subitem[:url]}"%>'>
-                  <%= subitem[:title] %>
-              </a></li>
+              <% if subitem[:title] == 'service-areas' %>
+                <% service_area_menu_items(session[:locale]).each do |area| %>
+                  <li><a href='<%= "/#{session[:locale]}#{area[:url]}" %>'><%= area[:text] %></a></li>
+                <% end %>
+              <% else %>
+                <li><a href='<%= "/#{session[:locale]}#{subitem[:url]}"%>'>
+                    <%= subitem[:title] %>
+                </a></li>
+              <% end %>
             <% end %>
           </ul>
         </div>

@@ -265,15 +265,8 @@ es:
   navbar:
     - text: Servicios
       options:
-        - text: Cambio Organizacional y Liderazgo
-          url: /servicios/cambio-organizacional-liderazgo
-          inside: true
-        - text: Product Management
-          url: /servicios/agile-product-management
-          inside: true
-        - text: Agilidad para Equipos
-          url: /servicios/agilidad-equipos
-          inside: true
+        # The areas themselves: name, URL and order come from Keventer.
+        - text: service-areas
         - text: dropdown-divider
           if_slug: adopcion-ia-empresas
           if_path: formacion
@@ -324,12 +317,7 @@ es:
   footer_menu:
     - title: Qué hacemos
       items:
-        - title: Cambio Org. y Liderazgo
-          url: /servicios/cambio-organizacional-liderazgo
-        - title: Product Management
-          url: /servicios/agile-product-management
-        - title: Agilidad para Equipos
-          url: /servicios/agilidad-equipos
+        - title: service-areas
         - title: Programas de Capacitación
           url: /formacion/programas-capacitacion-empresarial
         - title: Membresía IA
