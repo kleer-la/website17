@@ -642,7 +642,7 @@ es:
         - {
           text: Product Strategy,
           img: /app/img/icons/Strategy.svg,
-          url: /es/servicios/agile-product-management#product_strategy
+          url: /es/servicios/producto-digital/estrategia-descubrimiento-producto
         }
         - {
           text: Desarrollo del Liderazgo Ágil,
@@ -667,7 +667,7 @@ es:
         - {
           text: Product discovery,
           img: /app/img/icons/Binoculars.svg,
-          url: /es/servicios/agile-product-management#product_discovery
+          url: /es/servicios/producto-digital/estrategia-descubrimiento-producto
         }
 #        - {
 #          text: Prácticas agiles de desarrollo de software,

@@ -117,7 +117,7 @@ describe '/servicios' do
   describe 'GET /servicios/:area_slug with page texts of its own' do
     let(:area_data) do
       {
-        'id' => 1, 'slug' => 'agile-product-management', 'name' => 'Agile Product Management', 'lang' => 'es',
+        'id' => 1, 'slug' => 'producto-digital', 'name' => 'Producto Digital', 'lang' => 'es',
         'is_training_program' => false, 'primary_color' => '#4dd3e8', 'primary_font_color' => '#FFFFFF',
         'secondary_color' => '#34e3ff', 'secondary_font_color' => '#000000', 'icon' => '/app/img/icons/ev-org.svg',
         'summary' => 'Summary', 'cta_message' => 'CTA message', 'slogan' => 'Slogan', 'subtitle' => 'Subtitle',
@@ -133,7 +133,7 @@ describe '/servicios' do
 
     def visit_area(data)
       ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, data.to_json))
-      get '/es/servicios/agile-product-management'
+      get '/es/servicios/producto-digital'
       last_response.body
     end
 
@@ -232,7 +232,7 @@ describe '/servicios' do
   describe 'GET /servicios/:area_slug with testimonies' do
     let(:area_data) do
       {
-        'id' => 1, 'slug' => 'agile-product-management', 'name' => 'Agile Product Management', 'lang' => 'es',
+        'id' => 1, 'slug' => 'producto-digital', 'name' => 'Producto Digital', 'lang' => 'es',
         'is_training_program' => false, 'primary_color' => '#4dd3e8', 'primary_font_color' => '#FFFFFF',
         'secondary_color' => '#34e3ff', 'secondary_font_color' => '#000000', 'icon' => '/app/img/icons/ev-org.svg',
         'summary' => 'Summary', 'cta_message' => 'CTA message', 'slogan' => 'Slogan', 'subtitle' => 'Subtitle',
@@ -245,7 +245,7 @@ describe '/servicios' do
 
     def visit_area(data)
       ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, data.to_json))
-      get '/es/servicios/agile-product-management'
+      get '/es/servicios/producto-digital'
       last_response.body
     end
 
