@@ -21,6 +21,11 @@ get %r{/blog/([a-z0-9_-]+)} do |slug|
   @where = 'Blog'
   begin
     art = Article.create_one_keventer(slug)
+    # Before the published check: an article merged into another or retired
+    # towards its area is unpublished to leave the blog list, and its URL
+    # still has to carry the traffic there. Same shape as EventType#redirect_to
+    # with external_site_url. A path or an absolute URL both work.
+    redirect(art.redirect_url, 301) if art.redirect_url
     raise ArticleNotFoundError.new(slug) unless art.published
 
     if art.slug != slug

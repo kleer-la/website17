@@ -55,7 +55,7 @@ class Article
                 :noindex,
                 :trainers, :trainers_list, :slug, :lang, :selected,
                 :created_at, :updated_at, :substantive_change_at, :cover, :header, :category_name, :id,
-                :industry, :recommended, :audio,
+                :industry, :recommended, :audio, :redirect_url,
                 :active # View attributes,
 
   def initialize(doc)
@@ -72,6 +72,11 @@ class Article
     @industry = doc['industry'] || ''
     @published = doc['published']
     @noindex = doc['noindex']
+    # Where this URL sends the visitor instead of showing the article: another
+    # article it was merged into, or the area page that replaces it. Keventer
+    # returns it published or not, so an unpublished article can still forward
+    # its traffic (kleer-la/website17#429).
+    @redirect_url = presence(doc['redirect_url'])
     @abstract = doc['abstract'] || ''
     @cover = doc['cover'] || ''
     @header = doc['header']
@@ -84,6 +89,11 @@ class Article
     init_trainers(doc)
     init_dates(doc)
     init_recommended(doc)
+  end
+
+  def presence(value)
+    text = value.to_s.strip
+    text.empty? ? nil : text
   end
 
   def load_trainers(hash_trainers)
