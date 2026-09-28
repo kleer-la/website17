@@ -80,9 +80,10 @@
 .svc2-h1,
 .svc2-hero-text h1,
 .svc2-hero-text h2 {
-  font-size: clamp(1.7rem, 4vw, 2.6rem) !important;
+  font-size: clamp(2rem, 4.4vw, 3.3rem) !important;
   font-weight: 700 !important;
-  line-height: 1.15 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.02em;
   margin: 0 0 1rem !important;
   max-width: 22ch;
 }
@@ -101,13 +102,39 @@
 }
 .svc2-lead { color: var(--svc2-muted); font-size: 1.05rem; max-width: 60ch; }
 
-/* Hero: white, left-aligned, the area color only in the eyebrow rule */
+/* Hero: left-aligned on a wash of the area color that sets it apart from the
+   white body. With a hero image, the picture takes the half the text leaves. */
 .svc2-hero {
-  padding: clamp(6.5rem, 12vw, 8.5rem) 0 clamp(2.5rem, 5vw, 3.5rem);
-  background: var(--svc2-paper);
-  border-bottom: 1px solid var(--svc2-line);
+  padding: clamp(6.5rem, 12vw, 8.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+  background: linear-gradient(180deg, var(--svc2-paper) 0%,
+                              color-mix(in srgb, var(--svc2-accent) 9%, var(--svc2-paper)) 100%);
 }
 .svc2-hero-text { max-width: 62ch; }
+.svc2-hero-grid { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (min-width: 992px) {
+  .svc2-hero--image .svc2-hero-grid { grid-template-columns: 1.1fr 0.9fr; }
+}
+.svc2-hero-visual { position: relative; margin: 0 1rem 1rem 0; }
+.svc2-hero-visual::before {
+  content: "";
+  position: absolute;
+  right: -1rem;
+  bottom: -1rem;
+  width: 70%;
+  height: 70%;
+  border-radius: 1.5rem;
+  background: var(--svc2-accent);
+}
+.svc2-hero-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+@media (min-width: 992px) { .svc2-hero-image { aspect-ratio: 4 / 5; max-height: 34rem; } }
 .svc2-service-name {
   font-size: 1.05rem !important;
   font-weight: 600 !important;
@@ -140,7 +167,18 @@
 .svc2-btn:hover, .svc2 .my-primary-button:hover { opacity: 0.85; color: #fff !important; }
 .svc2-btn--ghost { background: transparent !important; color: var(--svc2-ink) !important; }
 .svc2-btn--ghost:hover { color: var(--svc2-ink) !important; }
-.svc2-hero-note { margin: 1rem 0 0; opacity: 0.8; }
+.svc2-hero-note { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.5rem; }
+.svc2-hero-note li { position: relative; padding-left: 1.75rem; color: var(--svc2-muted); }
+.svc2-hero-note li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--svc2-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center / 80% no-repeat;
+}
 
 /* Text blocks coming from the CMS */
 .svc2-prose { max-width: 66ch; }

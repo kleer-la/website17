@@ -11,16 +11,19 @@
 
 <div class="svc2" style="--svc2-accent: <%= @primary_color || '#68CEF2' %>; --svc2-accent-ink: <%= @primary_font_color || '#000000' %>;">
 
-  <section class="svc2-hero">
-    <div class="container">
-      <p class="svc2-eyebrow"><a href="<%= area_url(service_area, service_area.slug) %>"><%= service_area.name %></a></p>
-      <%# The service name is the page's h1; the subtitle's own heading is the headline, shown larger %>
-      <h1 class="svc2-service-name"><%= service.name %></h1>
-      <div class="svc2-hero-text"><%= subtitle %></div>
-      <div class="svc2-actions">
-        <%= erb :'component/_contact_banner_button',
-                locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'service-hero-cta' } %>
+  <section class="<%= service.hero_image ? 'svc2-hero svc2-hero--image' : 'svc2-hero' %>">
+    <div class="container svc2-hero-grid">
+      <div class="svc2-hero-copy">
+        <p class="svc2-eyebrow"><a href="<%= area_url(service_area, service_area.slug) %>"><%= service_area.name %></a></p>
+        <%# The service name is the page's h1; the subtitle's own heading is the headline, shown larger %>
+        <h1 class="svc2-service-name"><%= service.name %></h1>
+        <div class="svc2-hero-text"><%= subtitle %></div>
+        <div class="svc2-actions">
+          <%= erb :'component/_contact_banner_button',
+                  locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'service-hero-cta' } %>
+        </div>
       </div>
+      <%= erb :'services/components/_hero_image', locals: { url: service.hero_image } if service.hero_image %>
     </div>
   </section>
 

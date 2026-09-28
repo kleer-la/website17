@@ -19,27 +19,35 @@
 
 <div class="svc2" style="--svc2-accent: <%= @primary_color || '#68CEF2' %>; --svc2-accent-ink: <%= @primary_font_color || '#000000' %>;">
 
-  <section class="svc2-hero">
-    <div class="container">
-      <% if subtitle_has_h1 %>
-        <p class="svc2-eyebrow"><%= service_area.name %></p>
-      <% else %>
-        <h1 class="svc2-area-name"><%= service_area.name %></h1>
-      <% end %>
-      <div class="svc2-hero-text"><%= subtitle %></div>
+  <section class="<%= service_area.hero_image ? 'svc2-hero svc2-hero--image' : 'svc2-hero' %>">
+    <div class="container svc2-hero-grid">
+      <div class="svc2-hero-copy">
+        <% if subtitle_has_h1 %>
+          <p class="svc2-eyebrow"><%= service_area.name %></p>
+        <% else %>
+          <h1 class="svc2-area-name"><%= service_area.name %></h1>
+        <% end %>
+        <div class="svc2-hero-text"><%= subtitle %></div>
 
-      <div class="svc2-actions">
-        <%= erb :'component/_contact_banner_button',
-                locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'area-hero-cta' } %>
-        <% if service_area.hero_secondary_cta? %>
-          <a href="<%= service_area.own_text(:hero_secondary_cta_target) %>" class="svc2-btn svc2-btn--ghost">
-            <%= service_area.own_text(:hero_secondary_cta_text) %>
-          </a>
+        <div class="svc2-actions">
+          <%= erb :'component/_contact_banner_button',
+                  locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'area-hero-cta' } %>
+          <% if service_area.hero_secondary_cta? %>
+            <a href="<%= service_area.own_text(:hero_secondary_cta_target) %>" class="svc2-btn svc2-btn--ghost">
+              <%= service_area.own_text(:hero_secondary_cta_text) %>
+            </a>
+          <% end %>
+        </div>
+        <% if service_area.own_text(:hero_note) %>
+          <%# Each "·"-separated promise of the note is a point of its own %>
+          <ul class="svc2-hero-note">
+            <% service_area.own_text(:hero_note).split('·').map(&:strip).reject(&:empty?).each do |point| %>
+              <li><%= point %></li>
+            <% end %>
+          </ul>
         <% end %>
       </div>
-      <% if service_area.own_text(:hero_note) %>
-        <p class="svc2-hero-note"><%= service_area.own_text(:hero_note) %></p>
-      <% end %>
+      <%= erb :'services/components/_hero_image', locals: { url: service_area.hero_image } if service_area.hero_image %>
     </div>
   </section>
 

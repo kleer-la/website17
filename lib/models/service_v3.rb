@@ -5,7 +5,7 @@ class ServiceV3
   attr_accessor(*%i[id name subtitle card_description value_proposition outcomes definitions program target pricing faq url
                     slug slug_old recommended seo_title seo_description
                     recommended_way_title recommended_way_note recommended_way_summary recommended_way_details])
-  attr_writer :brochure, :side_image
+  attr_writer :brochure, :side_image, :hero_image
 
   def initialize(hash_service)
     load_from_json(hash_service)
@@ -13,7 +13,7 @@ class ServiceV3
 
   def load_from_json(hash_service)
     load_str(%i[id name subtitle card_description value_proposition definitions target pricing brochure slug slug_old
-                side_image seo_title seo_description recommended_way_title recommended_way_note],
+                side_image hero_image seo_title seo_description recommended_way_title recommended_way_note],
              hash_service)
 
     @outcomes = hash_service['outcomes']
@@ -36,6 +36,12 @@ class ServiceV3
 
   def side_image
     ImageUrlHelper.replace_s3_with_cdn(@side_image)
+  end
+
+  # The picture beside the hero text, or nil to keep the hero in one column.
+  def hero_image
+    url = ImageUrlHelper.replace_s3_with_cdn(@hero_image).to_s.strip
+    url.empty? ? nil : url
   end
 
   def load_str(syms, hash)

@@ -547,6 +547,52 @@ describe '/servicios' do
         expect(last_response.body).to include(card)
       end
 
+      # The picture fills the half of the hero the text leaves empty; without
+      # one the hero stays in a single column.
+      describe 'hero image' do
+        before { Toggle.turn(:services_redesign, true) }
+
+        def visit_with(data, path)
+          ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, data.to_json))
+          get path
+          last_response.body
+        end
+
+        it 'puts the area image beside the hero text, through the CDN' do
+          data = service_area_data.merge('hero_image' => 'https://kleer-images.s3.sa-east-1.amazonaws.com/area.webp')
+
+          body = visit_with(data, '/es/servicios/cambio-organizacional')
+
+          expect(body).to include('class="svc2-hero svc2-hero--image"')
+          expect(body).to include('<img src="https://d3vnsn21cv5bcd.cloudfront.net/area.webp" alt="" class="svc2-hero-image"')
+        end
+
+        it 'puts the service image beside the service hero text' do
+          service_area_data['services'][0]['hero_image'] = 'https://example.com/service.webp'
+
+          body = visit_with(service_area_data, '/es/servicios/cambio-organizacional/diseno-organizacional')
+
+          expect(body).to include('class="svc2-hero svc2-hero--image"')
+          expect(body).to include('<img src="https://example.com/service.webp" alt="" class="svc2-hero-image"')
+        end
+
+        it 'keeps the hero in one column without an image' do
+          body = visit_with(service_area_data, '/es/servicios/cambio-organizacional')
+
+          expect(body).to include('<section class="svc2-hero">')
+          expect(body).not_to include('svc2-hero-image')
+        end
+
+        # The note carries separate promises, one per point, not one long line.
+        it 'lists each point of the hero note' do
+          data = service_area_data.merge('hero_note' => 'Dentro de los equipos · Diagnóstico de dos semanas')
+
+          body = visit_with(data, '/es/servicios/cambio-organizacional')
+
+          expect(body).to include('<li>Dentro de los equipos</li>').and include('<li>Diagnóstico de dos semanas</li>')
+        end
+      end
+
       it 'serves the restyled service page when the flag is on' do
         Toggle.turn(:services_redesign, true)
 
