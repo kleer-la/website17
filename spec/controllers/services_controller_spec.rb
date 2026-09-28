@@ -583,6 +583,37 @@ describe '/servicios' do
           expect(body).not_to include('svc2-hero-image')
         end
 
+        # Two pictures in a row on the same side read as one block. With a hero
+        # picture, the section after it puts its own on the left, on a wide
+        # screen only: the markup keeps text before picture, so on a phone the
+        # two pictures never end up together.
+        describe 'the section after the hero' do
+          let(:side) { { 'side_image' => 'https://example.com/side.webp', 'slogan' => 'Slogan' } }
+
+          it 'puts its picture on the left of the area page when the hero has one' do
+            body = visit_with(service_area_data.merge(side, 'hero_image' => 'https://example.com/hero.webp'),
+                              '/es/servicios/cambio-organizacional')
+
+            expect(body).to include('class="svc2-split svc2-split--image svc2-split--image-left"')
+          end
+
+          it 'puts its picture on the left of the service page when the hero has one' do
+            service_area_data['services'][0].merge!('side_image' => 'https://example.com/side.webp',
+                                                    'hero_image' => 'https://example.com/hero.webp')
+
+            body = visit_with(service_area_data, '/es/servicios/cambio-organizacional/diseno-organizacional')
+
+            expect(body).to include('class="svc2-split svc2-split--image svc2-split--image-left"')
+          end
+
+          it 'keeps its picture on the right when the hero has none' do
+            body = visit_with(service_area_data.merge(side), '/es/servicios/cambio-organizacional')
+
+            expect(body).to include('class="svc2-split svc2-split--image"')
+            expect(body).not_to include('svc2-split--image-left')
+          end
+        end
+
         # A fact over the picture: the big figure and the line under it.
         describe 'with a highlight' do
           let(:image) { { 'hero_image' => 'https://example.com/area.webp' } }

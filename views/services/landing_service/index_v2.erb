@@ -30,7 +30,8 @@
   <% unless service.value_proposition.to_s.strip.empty? %>
     <section class="svc2-section">
       <div class="container">
-        <div class="svc2-split<%= ' svc2-split--image' unless side_image.empty? %>">
+        <%# After a hero picture, this picture goes on the left (on a wide screen only) %>
+        <div class="svc2-split<%= ' svc2-split--image' unless side_image.empty? %><%= ' svc2-split--image-left' if !side_image.empty? && service.hero_image %>">
           <div class="svc2-prose"><%= service.value_proposition %></div>
           <% unless side_image.empty? %>
             <img src="<%= service.side_image %>" alt="" class="svc2-side-image" loading="lazy">

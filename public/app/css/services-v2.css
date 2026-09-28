@@ -225,6 +225,13 @@
 
 .svc2-split { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 992px) { .svc2-split--image { grid-template-columns: 7fr 4fr; } }
+/* Right after a hero picture the picture swaps sides, so the two do not stack
+   on the right. Only the columns move: the markup keeps text before picture,
+   and on a phone the two pictures stay apart. */
+@media (min-width: 992px) {
+  .svc2-split--image-left { grid-template-columns: 4fr 7fr; }
+  .svc2-split--image-left > img { order: -1; }
+}
 .svc2-side-image { width: 100%; max-width: 360px; justify-self: center; border-radius: 12px; }
 
 /* Service cards: a grid of equal cards instead of stacked full-width boxes */
