@@ -583,6 +583,42 @@ describe '/servicios' do
           expect(body).not_to include('svc2-hero-image')
         end
 
+        # A fact over the picture: the big figure and the line under it.
+        describe 'with a highlight' do
+          let(:image) { { 'hero_image' => 'https://example.com/area.webp' } }
+          let(:highlight) do
+            { 'hero_highlight' => '2 semanas', 'hero_highlight_text' => 'de diagnóstico para encontrar el cuello de botella' }
+          end
+
+          it 'shows it over the area picture' do
+            body = visit_with(service_area_data.merge(image, highlight), '/es/servicios/cambio-organizacional')
+
+            expect(body).to include('<p class="svc2-hero-highlight"><strong>2 semanas</strong>')
+            expect(body).to include('<span>de diagnóstico para encontrar el cuello de botella</span>')
+          end
+
+          it 'shows it over the service picture' do
+            service_area_data['services'][0].merge!(image, 'hero_highlight' => '3 meses')
+
+            body = visit_with(service_area_data, '/es/servicios/cambio-organizacional/diseno-organizacional')
+
+            expect(body).to include('<p class="svc2-hero-highlight"><strong>3 meses</strong>')
+          end
+
+          it 'shows the figure alone when it has no line' do
+            body = visit_with(service_area_data.merge(image, 'hero_highlight' => '2 semanas'),
+                              '/es/servicios/cambio-organizacional')
+
+            expect(body).to include('<p class="svc2-hero-highlight"><strong>2 semanas</strong></p>')
+          end
+
+          it 'leaves it out without a picture to sit on' do
+            body = visit_with(service_area_data.merge(highlight), '/es/servicios/cambio-organizacional')
+
+            expect(body).not_to include('svc2-hero-highlight')
+          end
+        end
+
         # The note carries separate promises, one per point, not one long line.
         it 'lists each point of the hero note' do
           data = service_area_data.merge('hero_note' => 'Dentro de los equipos · Diagnóstico de dos semanas')

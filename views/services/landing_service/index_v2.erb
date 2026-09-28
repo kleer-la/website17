@@ -23,7 +23,7 @@
                   locals: { style: '', text_button: hero_cta, style_class: 'svc2-btn', specific_id: 'service-hero-cta' } %>
         </div>
       </div>
-      <%= erb :'services/components/_hero_image', locals: { url: service.hero_image } if service.hero_image %>
+      <%= erb :'services/components/_hero_image', locals: { picture: service } if service.hero_image %>
     </div>
   </section>
 

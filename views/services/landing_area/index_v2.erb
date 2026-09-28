@@ -47,7 +47,7 @@
           </ul>
         <% end %>
       </div>
-      <%= erb :'services/components/_hero_image', locals: { url: service_area.hero_image } if service_area.hero_image %>
+      <%= erb :'services/components/_hero_image', locals: { picture: service_area } if service_area.hero_image %>
     </div>
   </section>
 

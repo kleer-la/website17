@@ -3,24 +3,26 @@ require './lib/models/recommended'
 require './lib/image_url_helper'
 require './lib/testimony'
 require './lib/models/service_area_page_texts'
+require './lib/models/hero_picture'
 
 class ServiceAreaV3
   include ServiceAreaPageTexts
+  include HeroPicture
 
   attr_accessor(*%i[id slug lang name summary primary_color primary_font_color secondary_color secondary_font_color slogan cta_message
                     subtitle description definitions defintions target value_proposition value_proposition_title
                     services seo_title seo_description target_title is_training_program ordering testimonies slug_old
                     recommended_way_title recommended_way_note recommended_way_summary recommended_way_details
                     outcomes program faq pricing recommended])
-  attr_writer :icon, :side_image, :hero_image, :brochure
+  attr_writer :icon, :side_image, :brochure
 
   def load_from_json(hash_service_area)
     @testimonies = []
 
     load_str(%i[id slug lang name icon summary primary_color primary_font_color secondary_color secondary_font_color cta_message
-                slogan subtitle description definitions side_image hero_image target value_proposition value_proposition_title
+                slogan subtitle description definitions side_image target value_proposition value_proposition_title
                 seo_title seo_description target_title is_training_program ordering slug_old
-                recommended_way_title recommended_way_note pricing brochure] + PAGE_TEXTS, hash_service_area)
+                recommended_way_title recommended_way_note pricing brochure] + PAGE_TEXTS + HERO_PICTURE_FIELDS, hash_service_area)
 
     @services = load_services(hash_service_area['services'])
     load_testimonies(hash_service_area['testimonies'])
@@ -47,12 +49,6 @@ class ServiceAreaV3
 
   def brochure
     ImageUrlHelper.replace_s3_with_cdn(@brochure)
-  end
-
-  # The picture beside the hero text, or nil to keep the hero in one column.
-  def hero_image
-    url = ImageUrlHelper.replace_s3_with_cdn(@hero_image).to_s.strip
-    url.empty? ? nil : url
   end
 
   def self.null_json_api(list_null_api, instance_null_api)

@@ -1,4 +1,7 @@
-<%# The picture beside the hero text, on a block of the area color. It is the first thing on screen, so it loads eagerly. %>
+<%# The picture beside the hero text, on a block of the area color, with the fact the page leads with over it. It is the first thing on screen, so it loads eagerly. %>
 <div class="svc2-hero-visual">
-  <img src="<%= url %>" alt="" class="svc2-hero-image" fetchpriority="high">
+  <img src="<%= picture.hero_image %>" alt="" class="svc2-hero-image" fetchpriority="high">
+  <% if picture.hero_highlight %>
+    <p class="svc2-hero-highlight"><strong><%= picture.hero_highlight %></strong><% if picture.hero_highlight_text %><span><%= picture.hero_highlight_text %></span><% end %></p>
+  <% end %>
 </div>
