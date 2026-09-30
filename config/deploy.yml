@@ -38,6 +38,8 @@ env:
     PORT: 4567
     WEB_CONCURRENCY: 2
     LAB_WHATSAPP_NUMBER: "17868400847"
+    # Restyled area and service pages, on since 2026-09-30 (kleer-marketing#32).
+    FEATURE_SERVICES_REDESIGN: "true"
   secret:
     - KEVENTER_URL
     - RECAPTCHA_SITE_KEY
