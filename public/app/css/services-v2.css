@@ -334,6 +334,12 @@
 @media (min-width: 992px) {
   .svc2-two > .svc2-panel ~ .svc2-results { padding-top: calc(clamp(1.25rem, 3vw, 2rem) + 1px); }
 }
+/* Details that carry a row of cards (.rw-features, three across) do not fit in
+   half the width: the value proposition goes under them instead of beside. */
+@media (min-width: 992px) {
+  .svc2-two:has(.rw-features) { grid-template-columns: 1fr; }
+  .svc2-two:has(.rw-features) > .svc2-panel ~ .svc2-results { padding-top: 0; }
+}
 /* CMS details often arrive as <p><h2>…</h2>…</p>; the browser closes that <p>
    before the heading and leaves an empty one pushing the panel's text down. */
 .svc2-details > p:empty { display: none; }
