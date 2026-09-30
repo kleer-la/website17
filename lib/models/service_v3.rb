@@ -29,6 +29,14 @@ class ServiceV3
     self
   end
 
+  # The card authored in the CMS (HTML with the .rw-* kit), shown instead of
+  # the generated one. A card_description without markup is the old one-line
+  # teaser, not a card: it gets the generated card, which links to the page.
+  def authored_card
+    html = card_description.to_s.strip
+    html if html.match?(/<[a-z][^>]*>/i)
+  end
+
   def null_json_api(null_api)
     @json_api = null_api
   end

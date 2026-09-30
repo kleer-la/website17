@@ -74,8 +74,8 @@
         <% unless services_title.empty? %><h2 class="svc2-h2"><%= services_title %></h2><% end %>
         <div class="svc2-cards">
           <% service_area.services.each do |service| %>
-            <% card_html = service.card_description.to_s.strip %>
-            <% if card_html.empty? %>
+            <% card_html = service.authored_card %>
+            <% if card_html.nil? %>
               <%= erb :'services/components/_service_preview_card',
                       locals: { service: service, area_slug: service_area.slug, primary_color: 'var(--svc2-line)' } %>
             <% else %>

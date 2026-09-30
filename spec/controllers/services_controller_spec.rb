@@ -547,6 +547,19 @@ describe '/servicios' do
         expect(last_response.body).to include(card)
       end
 
+      # A plain-text card_description is the one-line teaser of the old listing,
+      # not a card: shown as one it left the service with no link to its page.
+      it 'gives a service with a plain-text card_description the linked card' do
+        service_area_data['services'][0]['card_description'] = 'Llevamos tu agilidad al siguiente nivel'
+        ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, service_area_data.to_json))
+        Toggle.turn(:services_redesign, true)
+
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.body).not_to include('<article class="svc2-card">Llevamos')
+        expect(last_response.body).to include('href="/es/servicios/cambio-organizacional/diseno-organizacional"')
+      end
+
       # The picture fills the half of the hero the text leaves empty; without
       # one the hero stays in a single column.
       describe 'hero image' do
