@@ -315,6 +315,36 @@ describe 'GET /sitemap.xml' do
     end
   end
 
+  # A resource may have an English slug of its own (kleer-la/eventer#227): the
+  # English URLs use it, the Spanish ones the Spanish slug (#435).
+  describe 'resources with an English slug' do
+    before do
+      allow(Resource).to receive(:create_list_keventer).and_call_original
+      Resource.create_list_null([
+                                  { 'id' => 3, 'slug' => 'conceptos-de-ia', 'slug_en' => 'ai-concepts',
+                                    'format' => 'concepts', 'title_es' => 'Conceptos de IA',
+                                    'title_en' => 'AI concepts',
+                                    'concepts' => [{ 'slug' => 'agent', 'lang' => 'en' }] },
+                                  { 'id' => 4, 'slug' => 'kartas', 'format' => 'card',
+                                    'title_es' => 'Kartas', 'title_en' => 'Kards' }
+                                ])
+    end
+
+    after do
+      Resource.instance_variable_set(:@next_null, false)
+    end
+
+    it 'lists each language under its own slug, the Spanish one when there is no English one' do
+      get '/sitemap.xml'
+
+      expect(urls).to include('https://www.kleer.la/es/recursos/conceptos-de-ia',
+                              'https://www.kleer.la/en/resources/ai-concepts',
+                              'https://www.kleer.la/en/resources/ai-concepts/agent',
+                              'https://www.kleer.la/en/resources/kartas')
+      expect(urls).not_to include('https://www.kleer.la/en/resources/conceptos-de-ia')
+    end
+  end
+
   # A concepts resource has a page per concept, and each one is worth indexing
   # on its own: listed under the resource, in the language it was written in.
   describe 'concepts resources' do

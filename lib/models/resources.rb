@@ -116,7 +116,9 @@ class Resource
   def initialize(doc, lang)
     @id = doc['id']
     @format = doc['format']
-    @slug = doc['slug']
+    # The slug of the page's language: English may have one of its own
+    # (kleer-la/eventer#227); without it, or when equal, it is the Spanish one.
+    @slug = (lang.to_s == 'en' && doc['slug_en'].to_s.strip != '' ? doc['slug_en'] : doc['slug'])
     @lang = lang
     @downloadable = AppHelper.boolean_value(doc['downloadable'])
     @assessment_id = doc.dig('assessment', 'id')
