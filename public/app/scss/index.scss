@@ -961,6 +961,19 @@ $turquoise-light: #a5e4f1;
   }
 }
 
+// The listing: a card grows with its text instead of letting it overflow a
+// fixed height, and the cards of a row stretch to the tallest one, so the
+// grid stays even and no description is cut.
+#resource-list {
+  > [class*="col-"]:not(.hidden-element) { display: flex; }
+
+  .resource-card {
+    height: auto;
+    min-height: 550px;
+    justify-content: flex-start;
+  }
+}
+
 .contact-only-field.hidden {
   display: none;
 }
