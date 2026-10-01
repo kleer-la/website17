@@ -48,7 +48,7 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |base_path, slug, c
 
   question = @concept.question.to_s.empty? ? @concept.name : @concept.question
   @meta_tags.set! title: h("#{question} · #{@resource.title}"),
-                  description: h(concept_description(@concept)),
+                  description: h(concept_description(@resource, @concept)),
                   canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}/#{@concept.slug}",
                   image: @resource.cover,
                   hreflang: [lang.to_sym],
@@ -64,8 +64,8 @@ rescue ResourceNotFoundError
   halt 404
 end
 
-def concept_description(concept)
-  text = concept.definition.to_s
+def concept_description(resource, concept)
+  text = concept_plain_text(resource, concept.definition)
   text.length > 160 ? "#{text[0..156]}..." : text
 end
 

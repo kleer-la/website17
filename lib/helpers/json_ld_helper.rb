@@ -1,6 +1,9 @@
 require 'json'
+require './lib/helpers/concept_link_helper'
 
 module JsonLdHelper
+  include ConceptLinkHelper
+
   def json_ld_tag(data)
     "<script type=\"application/ld+json\">#{JSON.generate(data)}</script>"
   end
@@ -179,7 +182,8 @@ module JsonLdHelper
     data.merge(
       '@type' => 'DefinedTermSet',
       'hasDefinedTerm' => resource.concepts.map do |concept|
-        { '@type' => 'DefinedTerm', 'name' => concept.name, 'description' => concept.definition,
+        { '@type' => 'DefinedTerm', 'name' => concept.name,
+          'description' => concept_plain_text(resource, concept.definition),
           'url' => "#{data['url']}/#{concept.slug}" }
       end
     )
@@ -191,7 +195,7 @@ module JsonLdHelper
       '@context' => 'https://schema.org',
       '@type' => 'DefinedTerm',
       'name' => concept.name,
-      'description' => concept.definition,
+      'description' => concept_plain_text(resource, concept.definition),
       'url' => "#{set['url']}/#{concept.slug}",
       'inDefinedTermSet' => { '@type' => 'DefinedTermSet', 'name' => set['name'], 'url' => set['url'] }
     }

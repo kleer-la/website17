@@ -185,6 +185,16 @@ p.concepts-title { font-size: 1.4rem; }
   p { margin: 0; }
 }
 
+// A mention of another card, marked by hand in the text (#433): it keeps the
+// colour of the text and reads as a link only by its thin stage-coloured line.
+.concepts a.concepts-link {
+  text-decoration: underline;
+  text-decoration-color: var(--sc);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  &:hover { color: var(--sc); text-decoration-thickness: 2px; }
+}
+
 .concepts-myth { background: var(--sb); border-radius: 8px; padding: 14px 16px; }
 
 .concepts-wrong {

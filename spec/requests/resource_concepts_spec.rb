@@ -131,6 +131,30 @@ describe 'a resource of the concepts format' do
       expect(term).not_to have_key('inLanguage')
     end
 
+    # The card's text links to other cards where it is marked (#433).
+    context 'with links marked in its text' do
+      let(:doc) do
+        data = JSON.parse(File.read('./spec/fixtures/resource_concepts.json'))
+        token = data['concepts'].find { |c| c['slug'] == 'token' }
+        token['definition'] = 'Lo que lee un [[modelo|modelo]] <i>de verdad</i>.'
+        token['practice'] = 'Cuenta en [[datos]] y en [[nada|nada]].'
+        data
+      end
+
+      it 'links the marks to their cards and escapes the rest' do
+        card = html.at_css('.concepts-card')
+        expect(card.at_css('.concepts-definition a.concepts-link')['href']).to eq('/es/recursos/conceptos-de-ia/modelo')
+        expect(card.at_css('.concepts-definition').inner_html).to include('&lt;i&gt;de verdad&lt;/i&gt;')
+        expect(card.css('.concepts-block a.concepts-link').map(&:text)).to eq(['Datos de entrenamiento'])
+        expect(card.text).not_to include('[[')
+      end
+
+      it 'describes itself without the marks' do
+        expect(html.at_css('meta[name="description"]')['content']).to eq('Lo que lee un modelo <i>de verdad</i>.')
+        expect(json_ld_of_type('DefinedTerm')['description']).to eq('Lo que lee un modelo <i>de verdad</i>.')
+      end
+    end
+
     it 'does not offer the download form in the card page hero' do
       expect(html.at_css('#resource-detail-hero')).to be_nil
     end

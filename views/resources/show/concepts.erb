@@ -58,26 +58,26 @@
               <h1><%= h concept.name %></h1>
               <% unless concept.question.empty? %><p class="concepts-question"><%= h concept.question %></p><% end %>
             </div>
-            <p class="concepts-definition"><%= h concept.definition %></p>
+            <p class="concepts-definition"><%= concept_text_html(@resource, concept, concept.definition, base) %></p>
             <% if @concept_media %>
               <div class="concepts-media"><%= @concept_media %></div>
             <% end %>
             <% unless concept.analogy.empty? %>
               <div class="concepts-block">
                 <h2><%= t('resources.concepts.analogy') %></h2>
-                <p><%= h concept.analogy %></p>
+                <p><%= concept_text_html(@resource, concept, concept.analogy, base) %></p>
               </div>
             <% end %>
             <% unless concept.misconception.empty? && concept.correction.empty? %>
               <div class="concepts-block concepts-myth">
                 <h2><%= t('resources.concepts.misconception') %></h2>
-                <p><% unless concept.misconception.empty? %><span class="concepts-wrong"><%= h concept.misconception %></span> <% end %><%= h concept.correction %></p>
+                <p><% unless concept.misconception.empty? %><span class="concepts-wrong"><%= concept_text_html(@resource, concept, concept.misconception, base) %></span> <% end %><%= concept_text_html(@resource, concept, concept.correction, base) %></p>
               </div>
             <% end %>
             <% unless concept.practice.empty? %>
               <div class="concepts-block">
                 <h2><%= t('resources.concepts.practice') %></h2>
-                <p><%= h concept.practice %></p>
+                <p><%= concept_text_html(@resource, concept, concept.practice, base) %></p>
               </div>
             <% end %>
             <% unless related.empty? %>
