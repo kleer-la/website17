@@ -27,6 +27,48 @@ def resources_index(preview = false)
   render_page :'resources/index'
 end
 
+# A card of a concepts resource, at its own URL so it can be found and linked
+# on its own. It exists in the language it was written in; the English cards
+# needn't mirror the Spanish ones, so it declares that one language only.
+get %r{/(resources|recursos)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |base_path, slug, concept_slug|
+  @active_tab_publicamos = 'active'
+
+  lang = session[:locale] || 'es'
+  partial_url = lang == 'es' ? 'recursos' : 'resources'
+
+  @resource = Resource.create_one_keventer(slug, lang)
+  redirect to("/#{lang}/#{partial_url}/#{@resource.slug}/#{concept_slug}"), 301 if slug != @resource.slug
+
+  @concept = @resource.concept(concept_slug) if @resource.concepts?
+  halt 404 if @concept.nil?
+
+  @concepts_base = "/#{lang}/#{partial_url}/#{@resource.slug}"
+  concept_path = "#{@concepts_base}/#{@concept.slug}"
+  RouterHelper.instance.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
+
+  question = @concept.question.to_s.empty? ? @concept.name : @concept.question
+  @meta_tags.set! title: h("#{question} · #{@resource.title}"),
+                  description: h(concept_description(@concept)),
+                  canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}/#{@concept.slug}",
+                  image: @resource.cover,
+                  hreflang: [lang.to_sym],
+                  alternate_paths: { lang.to_sym => concept_path }
+
+  @json_ld = concept_json_ld(@resource, @concept)
+  @concept_media = @markdown_renderer.render(@concept.media) unless @concept.media.empty?
+  @resource.long_description = @markdown_renderer.render(@resource.long_description)
+  @also_download = @resource.also_download(3)
+
+  render_page :'resources/show/show'
+rescue ResourceNotFoundError
+  halt 404
+end
+
+def concept_description(concept)
+  text = concept.definition.to_s
+  text.length > 160 ? "#{text[0..156]}..." : text
+end
+
 # get '/recursos/:slug' do |slug|
 # The languages a resource can be read in. It exists in one unless its
 # translation really is there: offering /en/resources/<Spanish slug> named a
@@ -72,6 +114,7 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
                   alternate_paths: alternates
 
   @json_ld = resource_json_ld(@resource)
+  @concepts_base = "/#{lang}/#{partial_url}/#{@resource.slug}"
 
   @resource.long_description = @markdown_renderer.render(@resource.long_description)
 

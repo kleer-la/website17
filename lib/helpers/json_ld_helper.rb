@@ -167,6 +167,34 @@ module JsonLdHelper
       end
     end
 
-    data
+    concepts_set_json_ld(resource, data)
+  end
+
+  # A concepts resource is a glossary: a DefinedTermSet (a kind of
+  # CreativeWork, so it keeps what every resource says) whose terms are the
+  # concepts, each at its own page.
+  def concepts_set_json_ld(resource, data)
+    return data unless resource.respond_to?(:concepts?) && resource.concepts?
+
+    data.merge(
+      '@type' => 'DefinedTermSet',
+      'hasDefinedTerm' => resource.concepts.map do |concept|
+        { '@type' => 'DefinedTerm', 'name' => concept.name, 'description' => concept.definition,
+          'url' => "#{data['url']}/#{concept.slug}" }
+      end
+    )
+  end
+
+  def concept_json_ld(resource, concept)
+    set = resource_json_ld(resource)
+    {
+      '@context' => 'https://schema.org',
+      '@type' => 'DefinedTerm',
+      'name' => concept.name,
+      'description' => concept.definition,
+      'url' => "#{set['url']}/#{concept.slug}",
+      'inLanguage' => set['inLanguage'],
+      'inDefinedTermSet' => { '@type' => 'DefinedTermSet', 'name' => set['name'], 'url' => set['url'] }
+    }
   end
 end

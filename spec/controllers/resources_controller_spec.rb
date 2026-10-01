@@ -34,7 +34,8 @@ describe 'Resources routes' do
         lang: 'es',
         author_trainers: [],
         trainers_with_role: [],
-        recommended_not_downloads: []
+        recommended_not_downloads: [],
+        concepts?: false
       )
     end
 
@@ -113,7 +114,8 @@ describe 'Resources routes' do
         lang: 'en',
         author_trainers: [],
         trainers_with_role: [],
-        recommended_not_downloads: []
+        recommended_not_downloads: [],
+        concepts?: false
       )
     end
 

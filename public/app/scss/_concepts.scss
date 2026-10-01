@@ -1,0 +1,331 @@
+// ============================================================
+// Resources of the "concepts" format: a map of stages and one card per
+// concept (views/resources/show/concepts.erb). No JavaScript:
+// - phone: the resource URL shows the map; a concept URL shows only its card,
+//   with a sticky "← Mapa" bar.
+// - desktop: map on the left (sticky), card or welcome on the right.
+// Stage colors cycle through the four Kleer colors (.concepts-s1..s4), set as
+// --sc (text/border) and --sb (soft background) on the element.
+// The .demo/.toks/.bar/.legend rules style the visuals authored in a concept's
+// `media` field.
+// ============================================================
+
+.concepts {
+  --c-bg: #f6f7f9;
+  --c-surface: #ffffff;
+  --c-fg: #333333;
+  --c-muted: #5b6475;
+  --c-line: #dde1e8;
+  --c-accent: #2d6a9f;
+  --c-accent-soft: #e8f8fd;
+  --c-top: 90px; // below the fixed navbar once it shrinks on scroll
+
+  --s1: #8a5a00; --s1-bg: #fff6cc; // yellow
+  --s2: #0b7a3b; --s2-bg: #e3f5e8; // green
+  --s3: #1c6a9a; --s3-bg: #e8f8fd; // blue
+  --s4: #b3202f; --s4-bg: #fdeaec; // red
+  --sc: var(--c-accent);
+  --sb: var(--c-accent-soft);
+
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  margin-top: 100px;
+  padding: 24px 16px 48px;
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+}
+
+.concepts-s1 { --sc: var(--s1); --sb: var(--s1-bg); }
+.concepts-s2 { --sc: var(--s2); --sb: var(--s2-bg); }
+.concepts-s3 { --sc: var(--s3); --sb: var(--s3-bg); }
+.concepts-s4 { --sc: var(--s4); --sb: var(--s4-bg); }
+
+.concepts-app {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+// --- Map ---
+.concepts-mappane {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: var(--c-top);
+  max-height: calc(100vh - var(--c-top));
+  overflow-y: auto;
+  padding-bottom: 16px;
+}
+
+.concepts-title {
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 2.3rem);
+  line-height: 1.1;
+  margin: 0 0 8px;
+  color: var(--c-fg);
+  a:hover { color: var(--c-accent); }
+}
+p.concepts-title { font-size: 1.4rem; }
+
+.concepts-lead { margin: 0; color: var(--c-muted); }
+.concepts-intro { margin-top: 10px; color: var(--c-muted); font-size: 15px; p { margin: 0 0 8px; } }
+
+.concepts-howto {
+  display: none;
+  margin: 12px 0 0;
+  font-size: 15px;
+  background: var(--c-accent-soft);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.concepts-map { display: flex; flex-direction: column; gap: 18px; }
+
+.concepts-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  h2 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    line-height: 1.3; // the site's h2 brings 64px
+    color: var(--sc);
+    margin: 0 0 4px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  h2 .n {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--sb);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1;
+  }
+}
+
+.concepts-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-left: 4px solid var(--sc);
+  border-radius: 8px;
+  padding: 9px 12px;
+
+  &:hover { border-color: var(--sc); color: inherit; }
+  &.on { background: var(--sb); border-color: var(--sc); }
+
+  .nm { font-weight: 700; display: block; line-height: 1.25; }
+  .qq { font-size: 14px; color: var(--c-muted); display: block; line-height: 1.3; }
+  .go { color: var(--sc); font-size: 20px; line-height: 1; }
+}
+
+// --- Card ---
+.concepts-pane { min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.concepts-topbar { display: none; }
+
+.concepts-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: 12px;
+  padding: clamp(20px, 4vw, 40px);
+}
+
+.concepts-inner { max-width: 66ch; display: flex; flex-direction: column; gap: 22px; }
+
+.concepts-eyebrow {
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--sc);
+  font-weight: 700;
+}
+
+.concepts-card h1 {
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 2.3rem);
+  line-height: 1.1;
+  margin: 4px 0 0;
+  color: var(--c-fg);
+}
+
+.concepts-question { color: var(--c-muted); font-style: italic; margin: 6px 0 0; }
+.concepts-definition { font-size: 20px; line-height: 1.5; margin: 0; }
+
+.concepts-block {
+  h2 {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: var(--c-muted);
+    margin: 0 0 6px;
+  }
+  p { margin: 0; }
+}
+
+.concepts-myth { background: var(--sb); border-radius: 8px; padding: 14px 16px; }
+
+.concepts-wrong {
+  font-weight: 700;
+  text-decoration: line-through;
+  text-decoration-color: var(--sc);
+  text-decoration-thickness: 2px;
+}
+
+.concepts-related { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.concepts-chip {
+  border: 1.5px solid var(--sc);
+  background: var(--sb);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 15px;
+  &:hover { color: var(--sc); }
+}
+
+.concepts-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--c-line);
+  padding-top: 16px;
+
+  a {
+    border: 1px solid var(--c-line);
+    border-radius: 8px;
+    padding: 10px 12px;
+    min-width: 0;
+    &:hover { border-color: var(--c-accent); }
+  }
+  a.next { text-align: right; grid-column: 2; }
+  small {
+    display: block;
+    color: var(--c-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+}
+
+.concepts-welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 56ch;
+
+  .concepts-eyebrow { color: var(--c-accent); }
+  h2 { font-size: 26px; line-height: 1.2; font-weight: 800; margin: 0; }
+  p { margin: 0; color: var(--c-muted); }
+  .btn { align-self: flex-start; }
+}
+
+// --- Visuals authored in `media` ---
+.concepts-media {
+  .demo {
+    border: 1px dashed var(--c-line);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cap { font-size: 13px; color: var(--c-muted); }
+  .toks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 15px;
+    span { padding: 3px 5px; border-radius: 4px; white-space: pre; }
+    span:nth-child(4n+1) { background: var(--s1-bg); }
+    span:nth-child(4n+2) { background: var(--s2-bg); }
+    span:nth-child(4n+3) { background: var(--s3-bg); }
+    span:nth-child(4n) { background: var(--s4-bg); }
+  }
+  .bar {
+    display: flex;
+    height: 30px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--c-line);
+    div { min-width: 0; }
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-size: 13px;
+    color: var(--c-muted);
+    i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+  }
+  // Segments of .bar and swatches of .legend take the strong stage colors.
+  .bar, .legend {
+    .s1 { background: var(--s1); }
+    .s2 { background: var(--s2); }
+    .s3 { background: var(--s3); }
+    .s4 { background: var(--s4); }
+    .free { background: var(--c-line); }
+  }
+  img { max-width: 100%; height: auto; }
+  p { margin: 0 0 8px; }
+}
+
+.concepts-download { margin-top: 2rem; }
+
+// --- Phone: two screens, map or card ---
+@media (max-width: 767.98px) {
+  .concepts { --c-top: 80px; }
+  .concepts-app { grid-template-columns: minmax(0, 1fr); }
+  .concepts-mappane { position: static; max-height: none; overflow: visible; }
+  .concepts-howto { display: block; }
+  .concepts.reading .concepts-mappane { display: none; }
+  .concepts:not(.reading) .concepts-pane { display: none; }
+
+  .concepts-topbar {
+    display: flex;
+    position: sticky;
+    top: var(--c-top);
+    z-index: 2;
+    background: var(--c-bg);
+    margin: -12px -16px 0;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--c-line);
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    .back {
+      background: var(--c-surface);
+      border: 1px solid var(--c-line);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 700;
+    }
+    .pos { font-size: 14px; color: var(--c-muted); font-variant-numeric: tabular-nums; }
+  }
+
+  .concepts-pane { gap: 14px; }
+  .concepts-card { border-radius: 10px; }
+}

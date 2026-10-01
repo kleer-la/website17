@@ -875,6 +875,23 @@ en:
         suscribe: Subscribe to our newsletter
       assessment_title: Self-assessment
       start_assessment: Start assessment
+    concepts:
+      map_label: Concept map
+      howto: Tap the question you had to read its card.
+      welcome_eyebrow: How to use it
+      welcome_title: Pick a question from the map
+      welcome_text: "Each concept has a one-minute card: what it is, an image to remember it by, the most common misunderstanding and what changes in practice."
+      welcome_text_2: Jump between related concepts or read them all in order, from the first stage to the last.
+      start: Start at the beginning
+      stage: Stage %{number}
+      analogy: An image to remember it
+      misconception: The misunderstanding
+      practice: What changes in practice
+      related: Related concepts
+      previous: ← Previous
+      next: Next →
+      back_to_map: ← Map
+      position: "%{position} of %{total}"
   clients:
     title: Our Clients
     subtitle: Some testimonials from clients about our interventions in their companies.

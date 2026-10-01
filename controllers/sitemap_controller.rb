@@ -133,6 +133,17 @@ get '/sitemap.xml' do
                        changefreq: 'monthly', priority: '0.6',
                        lastmod: lastmod.to_s.empty? ? nil : lastmod,
                        hreflang: { lang => resource_path })
+
+          # The listing brings, for a concepts resource, each concept's slug,
+          # language and date — the resource keeps those of its language.
+          resource.concepts.each do |concept|
+            concept_path = "#{resource_path}/#{concept.slug}"
+            concept_lastmod = concept.updated_at.split('T').first.to_s
+            add_url(xml, path: concept_path,
+                         changefreq: 'monthly', priority: '0.6',
+                         lastmod: concept_lastmod.empty? ? nil : concept_lastmod,
+                         hreflang: { lang => concept_path })
+          end
         end
       end
 

@@ -1,0 +1,117 @@
+<%#
+  A concepts resource: a map of stages and one card per concept. Each concept
+  in the map is a real link to its own page. No JavaScript: on a phone the
+  resource URL shows the map and a concept URL shows its card; on a desktop the
+  map sits on the left and the card (or the welcome) on the right.
+%>
+<%
+  concept = @concept
+  base = @concepts_base
+  stages = @resource.stages
+  stage_class = ->(stage) { "concepts-s#{((stage.number - 1) % 4) + 1}" }
+%>
+<section id="concepts" class="concepts<%= ' reading' if concept %>">
+  <div class="concepts-app">
+    <aside class="concepts-mappane" aria-label="<%= t('resources.concepts.map_label') %>">
+      <div class="concepts-head">
+        <% if concept %>
+          <p class="concepts-title"><a href="<%= base %>"><%= h @resource.title %></a></p>
+        <% else %>
+          <h1 class="concepts-title"><%= h @resource.title %></h1>
+        <% end %>
+        <p class="concepts-lead"><%= h @resource.description %></p>
+        <% unless concept || @resource.long_description.to_s.strip.empty? %>
+          <div class="concepts-intro"><%= @resource.long_description %></div>
+        <% end %>
+        <p class="concepts-howto"><%= t('resources.concepts.howto') %></p>
+      </div>
+      <nav class="concepts-map" aria-label="<%= t('resources.concepts.map_label') %>">
+        <% stages.each do |stage| %>
+          <section class="concepts-stage <%= stage_class.call(stage) %>">
+            <h2><span class="n"><%= stage.number %></span><%= h stage.name %></h2>
+            <% stage.concepts.each do |c| %>
+              <% current = concept && c.slug == concept.slug %>
+              <a class="concepts-item<%= ' on' if current %>" href="<%= base %>/<%= c.slug %>"<%= ' aria-current="page"' if current %>>
+                <span><span class="nm"><%= h c.name %></span><span class="qq"><%= h c.question %></span></span>
+                <span class="go" aria-hidden="true">›</span>
+              </a>
+            <% end %>
+          </section>
+        <% end %>
+      </nav>
+    </aside>
+
+    <div class="concepts-pane">
+      <% if concept %>
+        <% stage = @resource.stage_of(concept)
+           prev_c = @resource.previous_concept(concept)
+           next_c = @resource.next_concept(concept)
+           related = @resource.related_concepts(concept) %>
+        <div class="concepts-topbar">
+          <a class="back" href="<%= base %>"><%= t('resources.concepts.back_to_map') %></a>
+          <span class="pos"><%= t('resources.concepts.position', position: @resource.concept_position(concept), total: @resource.concepts.size) %></span>
+        </div>
+        <article class="concepts-card <%= stage_class.call(stage) %>">
+          <div class="concepts-inner">
+            <div>
+              <div class="concepts-eyebrow"><%= t('resources.concepts.stage', number: stage.number) %> · <%= h stage.name %></div>
+              <h1><%= h concept.name %></h1>
+              <% unless concept.question.empty? %><p class="concepts-question"><%= h concept.question %></p><% end %>
+            </div>
+            <p class="concepts-definition"><%= h concept.definition %></p>
+            <% if @concept_media %>
+              <div class="concepts-media"><%= @concept_media %></div>
+            <% end %>
+            <% unless concept.analogy.empty? %>
+              <div class="concepts-block">
+                <h2><%= t('resources.concepts.analogy') %></h2>
+                <p><%= h concept.analogy %></p>
+              </div>
+            <% end %>
+            <% unless concept.misconception.empty? && concept.correction.empty? %>
+              <div class="concepts-block concepts-myth">
+                <h2><%= t('resources.concepts.misconception') %></h2>
+                <p><% unless concept.misconception.empty? %><span class="concepts-wrong"><%= h concept.misconception %></span> <% end %><%= h concept.correction %></p>
+              </div>
+            <% end %>
+            <% unless concept.practice.empty? %>
+              <div class="concepts-block">
+                <h2><%= t('resources.concepts.practice') %></h2>
+                <p><%= h concept.practice %></p>
+              </div>
+            <% end %>
+            <% unless related.empty? %>
+              <div class="concepts-block">
+                <h2><%= t('resources.concepts.related') %></h2>
+                <div class="concepts-related">
+                  <% related.each do |r| %>
+                    <a class="concepts-chip <%= stage_class.call(@resource.stage_of(r)) %>" href="<%= base %>/<%= r.slug %>"><%= h r.name %></a>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            <nav class="concepts-nav">
+              <% if prev_c %>
+                <a class="prev" href="<%= base %>/<%= prev_c.slug %>"><small><%= t('resources.concepts.previous') %></small><%= h prev_c.name %></a>
+              <% end %>
+              <% if next_c %>
+                <a class="next" href="<%= base %>/<%= next_c.slug %>"><small><%= t('resources.concepts.next') %></small><%= h next_c.name %></a>
+              <% end %>
+            </nav>
+          </div>
+        </article>
+      <% else %>
+        <div class="concepts-card concepts-welcome">
+          <div class="concepts-eyebrow"><%= t('resources.concepts.welcome_eyebrow') %></div>
+          <h2><%= t('resources.concepts.welcome_title') %></h2>
+          <p><%= t('resources.concepts.welcome_text') %></p>
+          <p><%= t('resources.concepts.welcome_text_2') %></p>
+          <% first = @resource.concepts.first %>
+          <% if first %>
+            <a class="btn my-primary-button" href="<%= base %>/<%= first.slug %>"><%= t('resources.concepts.start') %></a>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

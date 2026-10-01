@@ -534,6 +534,23 @@ es:
         suscribe: Suscríbete a nuestro newsletter
       assessment_title: Auto evaluación
       start_assessment: Comenzar evaluación
+    concepts:
+      map_label: Mapa de conceptos
+      howto: Tocá la pregunta que te hiciste para leer la ficha.
+      welcome_eyebrow: Cómo se usa
+      welcome_title: Elegí una pregunta del mapa
+      welcome_text: "Cada concepto tiene una ficha de un minuto: qué es, una imagen para recordarlo, el malentendido más común y qué cambia en la práctica."
+      welcome_text_2: Podés saltar entre conceptos relacionados o leer todo en orden, de la primera etapa a la última.
+      start: Empezar por el principio
+      stage: Etapa %{number}
+      analogy: Una imagen para recordarlo
+      misconception: El malentendido
+      practice: Qué cambia en la práctica
+      related: Conceptos relacionados
+      previous: ← Anterior
+      next: Siguiente →
+      back_to_map: ← Mapa
+      position: "%{position} de %{total}"
   clients:
     title: Nuestros Clientes
     subtitle: Testimonios sobre algunas de nuestras intervenciones.

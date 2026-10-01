@@ -315,6 +315,57 @@ describe 'GET /sitemap.xml' do
     end
   end
 
+  # A concepts resource has a page per concept, and each one is worth indexing
+  # on its own: listed under the resource, in the language it was written in.
+  describe 'concepts resources' do
+    before do
+      allow(Resource).to receive(:create_list_keventer).and_call_original
+      Resource.create_list_null([
+                                  {
+                                    'id' => 2, 'slug' => 'conceptos-de-ia', 'format' => 'concepts',
+                                    'title_es' => 'Conceptos de IA', 'title_en' => 'AI concepts',
+                                    'updated_at' => '2026-10-01T12:00:00.000Z',
+                                    'concepts' => [
+                                      { 'slug' => 'token', 'lang' => 'es', 'updated_at' => '2026-09-15T10:00:00Z' },
+                                      { 'slug' => 'agente', 'lang' => 'es', 'updated_at' => '2026-09-20T10:00:00Z' },
+                                      { 'slug' => 'agent', 'lang' => 'en', 'updated_at' => '2026-09-21T10:00:00Z' }
+                                    ]
+                                  }
+                                ])
+    end
+
+    after do
+      Resource.instance_variable_set(:@next_null, false)
+    end
+
+    def url_node(loc)
+      doc = sitemap_xml
+      doc.remove_namespaces!
+      doc.xpath('//url').find { |u| u.at_xpath('loc').text == loc }
+    end
+
+    it 'lists a URL per concept, in its own language' do
+      get '/sitemap.xml'
+
+      expect(urls).to include('https://www.kleer.la/es/recursos/conceptos-de-ia/token',
+                              'https://www.kleer.la/es/recursos/conceptos-de-ia/agente',
+                              'https://www.kleer.la/en/resources/conceptos-de-ia/agent')
+      expect(urls).not_to include('https://www.kleer.la/en/resources/conceptos-de-ia/token',
+                                  'https://www.kleer.la/es/recursos/conceptos-de-ia/agent')
+    end
+
+    it 'dates each concept and gives it the frequency and priority of its resource' do
+      get '/sitemap.xml'
+
+      node = url_node('https://www.kleer.la/es/recursos/conceptos-de-ia/token')
+      expect(node.at_xpath('lastmod').text).to eq('2026-09-15')
+      expect(node.at_xpath('changefreq').text).to eq('monthly')
+      expect(node.at_xpath('priority').text).to eq('0.6')
+      expect(node.xpath('link').map { |l| [l['hreflang'], l['href']] })
+        .to eq([['es', 'https://www.kleer.la/es/recursos/conceptos-de-ia/token']])
+    end
+  end
+
   describe 'training programs' do
     let(:program) do
       p = ServiceAreaV3.new

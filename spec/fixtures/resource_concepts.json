@@ -1,0 +1,91 @@
+{
+ "id": 99,
+ "slug": "conceptos-de-ia",
+ "format": "concepts",
+ "title_es": "Conceptos de IA sin jerga",
+ "title_en": "",
+ "description_es": "Quince palabras que aparecen en toda charla sobre IA.",
+ "description_en": "",
+ "long_description_es": "Una intro **opcional**.",
+ "getit_es": "https://example.com/libro.pdf",
+ "cover_es": "https://example.com/cover.png",
+ "updated_at": "2026-10-01T12:00:00.000Z",
+ "authors": [],
+ "translators": [],
+ "illustrators": [],
+ "recommended": [],
+ "concepts": [
+  {
+   "slug": "datos",
+   "lang": "es",
+   "position": 1,
+   "name": "Datos de entrenamiento",
+   "question": "¿De dónde sale lo que sabe?",
+   "stage": "Cómo se fabrica",
+   "definition": "Todo el material del que el modelo aprende.",
+   "analogy": "Analogía de Datos de entrenamiento.",
+   "misconception": "Malentendido de Datos de entrenamiento.",
+   "correction": "Corrección de Datos de entrenamiento.",
+   "practice": "Práctica de Datos de entrenamiento.",
+   "media": null,
+   "updated_at": "2026-10-01T12:00:00.000Z",
+   "related_slugs": [
+    "modelo"
+   ]
+  },
+  {
+   "slug": "modelo",
+   "lang": "es",
+   "position": 2,
+   "name": "Modelo (LLM)",
+   "question": "¿Qué es exactamente \"la IA\"?",
+   "stage": "Cómo se fabrica",
+   "definition": "El resultado del entrenamiento.",
+   "analogy": "Analogía de Modelo (LLM).",
+   "misconception": "Malentendido de Modelo (LLM).",
+   "correction": "Corrección de Modelo (LLM).",
+   "practice": "Práctica de Modelo (LLM).",
+   "media": null,
+   "updated_at": "2026-10-01T12:00:00.000Z",
+   "related_slugs": [
+    "datos",
+    "token"
+   ]
+  },
+  {
+   "slug": "token",
+   "lang": "es",
+   "position": 3,
+   "name": "Token",
+   "question": "¿Qué es un token?",
+   "stage": "Qué pasa cuando le escribís",
+   "definition": "La unidad en que el modelo lee y escribe.",
+   "analogy": "Analogía de Token.",
+   "misconception": "Malentendido de Token.",
+   "correction": "Corrección de Token.",
+   "practice": "Práctica de Token.",
+   "media": "<div class=\"demo\"><div class=\"toks\"><span>La</span><span> vent</span></div></div>",
+   "updated_at": "2026-09-15T10:00:00.000Z",
+   "related_slugs": [
+    "modelo",
+    "fantasma"
+   ]
+  },
+  {
+   "slug": "agente",
+   "lang": "es",
+   "position": 4,
+   "name": "Agente",
+   "question": "¿Qué es un agente?",
+   "stage": "Cómo se pone a trabajar",
+   "definition": "Un modelo que trabaja en ciclo.",
+   "analogy": "Analogía de Agente.",
+   "misconception": "Malentendido de Agente.",
+   "correction": "Corrección de Agente.",
+   "practice": "Práctica de Agente.",
+   "media": null,
+   "updated_at": "2026-10-01T12:00:00.000Z",
+   "related_slugs": []
+  }
+ ]
+}

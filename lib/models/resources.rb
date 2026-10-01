@@ -5,6 +5,23 @@ require './lib/models/recommended'
 require './lib/trainer'
 require './lib/image_url_helper'
 
+# One card of a concepts resource. From the show endpoint it comes complete;
+# from the listing, only slug, lang and updated_at.
+class Concept
+  FIELDS = %w[slug lang name question stage definition analogy misconception correction practice media
+              updated_at].freeze
+  attr_reader(*FIELDS, :position, :related_slugs)
+
+  def initialize(doc)
+    FIELDS.each { |field| instance_variable_set("@#{field}", doc[field].to_s) }
+    @position = doc['position'].to_i
+    @related_slugs = Array(doc['related_slugs'])
+  end
+end
+
+# The concepts of a stage, numbered in reading order.
+ConceptStage = Struct.new(:number, :name, :concepts)
+
 class Resource
   @next_null = false
   @resource_null = nil
@@ -93,7 +110,7 @@ class Resource
                 :authors_list, :translators_list, :illustrators_list,
                 :author_trainers, :translator_trainers, :illustrator_trainers,
                 :fb_share, :tw_share, :li_share, :kleer_share_url, :recommended,
-                :created_at, :updated_at,
+                :created_at, :updated_at, :concepts,
                 *LOCALIZED_FIELDS
 
   def initialize(doc, lang)
@@ -108,6 +125,7 @@ class Resource
     init_urls
     init_contributors(doc)
     init_dates(doc)
+    init_concepts(doc)
     init_recommended(doc).filter! { |rec| rec.lang == lang }
   end
 
@@ -147,6 +165,42 @@ class Resource
     ImageUrlHelper.replace_s3_with_cdn(@cover)
   end
 
+  def concepts?
+    @format == 'concepts'
+  end
+
+  def concept(slug)
+    @concepts.find { |c| c.slug == slug }
+  end
+
+  # Stages are free text; their order is the order of their first concept.
+  def stages
+    @concepts.group_by(&:stage).each_with_index.map do |(name, concepts), i|
+      ConceptStage.new(i + 1, name, concepts)
+    end
+  end
+
+  def stage_of(concept)
+    stages.find { |s| s.name == concept.stage }
+  end
+
+  def concept_position(concept)
+    @concepts.index(concept) + 1
+  end
+
+  def previous_concept(concept)
+    i = @concepts.index(concept)
+    i.positive? ? @concepts[i - 1] : nil
+  end
+
+  def next_concept(concept)
+    @concepts[@concepts.index(concept) + 1]
+  end
+
+  def related_concepts(concept)
+    concept.related_slugs.filter_map { |slug| self.concept(slug) }
+  end
+
   private
 
   def init_trainers(doc, role)
@@ -156,6 +210,12 @@ class Resource
     return if list == []
 
     list.join(', ')
+  end
+
+  def init_concepts(doc)
+    @concepts = Array(doc['concepts']).map { |c| Concept.new(c) }
+                                      .select { |c| c.lang.empty? || c.lang == @lang.to_s }
+                                      .each_with_index.sort_by { |c, i| [c.position, i] }.map(&:first)
   end
 
   def init_dates(doc)
