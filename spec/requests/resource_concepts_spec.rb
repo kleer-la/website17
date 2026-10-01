@@ -44,12 +44,12 @@ describe 'a resource of the concepts format' do
 
     it 'welcomes the reader with a way to start at the beginning' do
       welcome = html.at_css('.concepts-welcome')
-      expect(welcome.text).to include('Elegí una pregunta del mapa')
+      expect(welcome.text).to include('Elige una pregunta del mapa')
       expect(welcome.at_css('a')['href']).to eq('/es/recursos/conceptos-de-ia/datos')
     end
 
     it 'tells a phone reader to tap a question' do
-      expect(html.at_css('.concepts-howto').text).to include('Tocá la pregunta')
+      expect(html.at_css('.concepts-howto').text).to include('Toca la pregunta')
     end
 
     it 'keeps the long description as an optional intro' do

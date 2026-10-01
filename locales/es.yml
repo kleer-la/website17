@@ -127,7 +127,7 @@ es:
             next: "Obtener libro >>"
             learnings: "<p>Mediante este libro conocerás:</p> <ul><li>Los factores que dieron origen a las metodologías ágiles</li><li>Los valores y principios del Manifiesto Ágil</li><li>Los contextos de complejidad donde Scrum es más eficiente</li><li>Los principios y valores de Scrum</li><li>Roles del Equipo Scrum</li><li>Responsabilidades y expectativas de cada rol</li><li>Elementos y actividades del flujo de trabajo de Scrum</li><li>Técnicas de análisis ágil y desarrollo evolutivo</li><li>Técnicas de comunicación de necesidades (Historias de Usuario)</li><li>Estimaciones ágiles</li><li>Planificación del mediano y largo plazo</li> <li>Presupuestación de proyectos ágiles</li></ul>&nbsp;"
             video:
-                title: "Mirá el video de 4 minutos y medio que describe Scrum"
+                title: "Mira el video de 4 minutos y medio que describe Scrum"
                 download: "Baja el PDF con el poster desde <a href='hhttps://kleer-images.s3-sa-east-1.amazonaws.com/posters/Scrum.pdf'>aquí</a>"
         mas_productivos:
             title: "Equipos más productivos"
@@ -188,7 +188,7 @@ es:
     title6: "SECCIÓN 6 - CAMBIOS A ESTA POLÍTICA DE PRIVACIDAD"
     text6: "Nos reservamos el derecho de modificar esta política de privacidad en cualquier momento, así que por favor revísala frecuentemente. Cambios y aclaraciones entrarán en vigencia inmediatamente después de su publicación en el sitio web. Si hacemos cambios materiales a esta política, notificaremos aquí que ha sido actualizada, por lo que cual estás enterado de qué información recopilamos, cómo y bajo qué circunstancias, si las hubiere, la utilizamos y/o divulgamos. Si nuestro sitio es adquirido o fusionado con otra empresa, tu información puede ser transferida a los nuevos propietarios, para que podamos seguir vendiéndote servicios."
     title7: "PREGUNTAS E INFORMACIÓN DE CONTACTO"
-    text7: "Si quieres: acceder, corregir, enmendar o borrar cualquier información personal que poseamos sobre ti, registrar una queja, o simplemente quieres más información contactanos a info@kleer.la o por correo postal a Kleer SRL [Billinghurst 1935 1ro A, Buenos Aires, C, 1425, Argentina]"
+    text7: "Si quieres: acceder, corregir, enmendar o borrar cualquier información personal que poseamos sobre ti, registrar una queja, o simplemente quieres más información contáctanos a info@kleer.la o por correo postal a Kleer SRL [Billinghurst 1935 1ro A, Buenos Aires, C, 1425, Argentina]"
   terms:
     title: "Términos de servicio"
     title1: "INFORMACIÓN GENERAL"
@@ -536,11 +536,11 @@ es:
       start_assessment: Comenzar evaluación
     concepts:
       map_label: Mapa de conceptos
-      howto: Tocá la pregunta que te hiciste para leer la ficha.
+      howto: Toca la pregunta que te hiciste para leer la ficha.
       welcome_eyebrow: Cómo se usa
-      welcome_title: Elegí una pregunta del mapa
+      welcome_title: Elige una pregunta del mapa
       welcome_text: "Cada concepto tiene una ficha de un minuto: qué es, una imagen para recordarlo, el malentendido más común y qué cambia en la práctica."
-      welcome_text_2: Podés saltar entre conceptos relacionados o leer todo en orden, de la primera etapa a la última.
+      welcome_text_2: Puedes saltar entre conceptos relacionados o leer todo en orden, de la primera etapa a la última.
       start: Empezar por el principio
       stage: Etapa %{number}
       analogy: Una imagen para recordarlo
@@ -562,9 +562,9 @@ es:
         consumer_goods: Bienes de Consumo
         energy: Energía
     cta:
-      title: "¿Querés transformar tu organización?"
+      title: "¿Quieres transformar tu organización?"
       description: Conversemos sobre cómo podemos ayudarte a alcanzar tus objetivos.
-      button: Contactanos
+      button: Contáctanos
   aboutus:
     title: Cocreamos el futuro del trabajo sin recetas.
     subtitle: >-
@@ -626,9 +626,9 @@ es:
       video: Ver video
       audio: Escuchar audio
       external: Leer más
-    cta_title: "¿Querés saber más?"
+    cta_title: "¿Quieres saber más?"
     cta_description: Conversemos sobre cómo podemos ayudarte.
-    cta_button: Contactanos
+    cta_button: Contáctanos
   recommended:
     title: Contenido recomendado
     type:
@@ -876,10 +876,10 @@ es:
       status_check_error: No se puede verificar el estado del reporte. Por favor actualiza la página o revisa tu correo para los resultados. Si el problema persiste, contacta a soporte.
       submission_failed: Error al enviar la evaluación. Por favor intenta de nuevo.
   booking:
-    tell_us: Contanos sobre tu situación
-    no_consultants_title: Contactanos
+    tell_us: Cuéntanos sobre tu situación
+    no_consultants_title: Contáctanos
     name_label: Tu nombre completo
-    name_error: Completá este campo con tu nombre
+    name_error: Completa este campo con tu nombre
     email_label: Correo electrónico
     email_error: Formato de correo electrónico inválido
     company_label: Empresa (opcional)
@@ -891,13 +891,13 @@ es:
     inquiry_sent: <b>¡Gracias!</b><br>Recibimos tu consulta y te contactaremos pronto.
     schedule_option: Agendar una reunión
     send_option: Solo enviar mensaje
-    error_recaptcha: Ha ocurrido un error de verificación, por favor intentá de nuevo
-    error_expired_token: Tu sesión expiró, por favor completá el formulario nuevamente
+    error_recaptcha: Ha ocurrido un error de verificación, por favor intenta de nuevo
+    error_expired_token: Tu sesión expiró, por favor completa el formulario nuevamente
     notes_label: "¿Sobre qué te gustaría hablar?"
     submit: Confirmar reunión
-    success: "¡Tu reunión fue agendada! Revisá tu email para los detalles."
-    select_time: Elegí un horario
-    confirm_booking: Confirmá tu reunión
+    success: "¡Tu reunión fue agendada! Revisa tu email para los detalles."
+    select_time: Elige un horario
+    confirm_booking: Confirma tu reunión
     next_week: Semana siguiente
     prev_week: Semana anterior
     timezone_note: Los horarios se muestran en tu zona horaria
