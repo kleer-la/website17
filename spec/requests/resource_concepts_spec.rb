@@ -127,6 +127,8 @@ describe 'a resource of the concepts format' do
                               'url' => 'https://www.kleer.la/es/recursos/conceptos-de-ia/token')
       expect(term['inDefinedTermSet']).to include('@type' => 'DefinedTermSet',
                                                   'url' => 'https://www.kleer.la/es/recursos/conceptos-de-ia')
+      # schema.org's validator warns on inLanguage: DefinedTerm is not a CreativeWork
+      expect(term).not_to have_key('inLanguage')
     end
 
     it 'does not offer the download form in the card page hero' do

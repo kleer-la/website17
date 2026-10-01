@@ -193,7 +193,6 @@ module JsonLdHelper
       'name' => concept.name,
       'description' => concept.definition,
       'url' => "#{set['url']}/#{concept.slug}",
-      'inLanguage' => set['inLanguage'],
       'inDefinedTermSet' => { '@type' => 'DefinedTermSet', 'name' => set['name'], 'url' => set['url'] }
     }
   end
