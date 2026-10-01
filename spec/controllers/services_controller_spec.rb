@@ -458,6 +458,89 @@ describe '/servicios' do
       end
     end
 
+    # A service or an area that leaves sends its URL to what replaces it with
+    # one 301 (kleer-la/eventer#224). An area that leaves takes along the
+    # services without a redirect of their own.
+    context 'when the area or the service left for another page' do
+      def keventer_answers(slug_to_json)
+        areas = slug_to_json.transform_values { |json| ServiceAreaV3.new.load_from_json(json) }
+        allow(ServiceAreaV3).to receive(:create_keventer) { |slug, *| areas[slug] }
+      end
+
+      let(:service) { service_area_data['services'][0] }
+
+      it 'sends a service to its own redirect, even when it is no longer listed' do
+        keventer_answers('cambio-organizacional' => service_area_data.merge(
+          'services' => [], 'service_redirects' => { 'diseno-organizacional' => '/es/servicios/otra/nuevo' }
+        ))
+
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/otra/nuevo')
+      end
+
+      it 'sends it to an absolute URL as it is' do
+        keventer_answers('cambio-organizacional' => service_area_data.merge(
+          'service_redirects' => { 'diseno-organizacional' => 'https://example.com/fuera' }
+        ))
+
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to eq('https://example.com/fuera')
+      end
+
+      it 'sends the area page to the area redirect' do
+        keventer_answers('cambio-organizacional' => service_area_data.merge('redirect_url' => '/es/servicios/otra'))
+
+        get '/es/servicios/cambio-organizacional'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/otra')
+      end
+
+      it 'sends an old slug of a redirected area there in one hop' do
+        keventer_answers('cambio-viejo' => service_area_data.merge('slug_old' => 'cambio-viejo',
+                                                                   'redirect_url' => '/es/servicios/otra'))
+
+        get '/es/servicios/cambio-viejo'
+
+        expect(last_response.location).to end_with('/es/servicios/otra')
+      end
+
+      it 'sends the services of a redirected area along, listed or not' do
+        keventer_answers('cambio-organizacional' => service_area_data.merge('redirect_url' => '/es/servicios/otra'))
+
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+        expect(last_response.location).to end_with('/es/servicios/otra')
+
+        get '/es/servicios/cambio-organizacional/ya-no-esta'
+        expect(last_response.location).to end_with('/es/servicios/otra')
+      end
+
+      it "prefers the service's own redirect to the area one" do
+        keventer_answers('cambio-organizacional' => service_area_data.merge(
+          'redirect_url' => '/es/servicios/otra',
+          'service_redirects' => { 'diseno-organizacional' => '/es/servicios/otra/nuevo' }
+        ))
+
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        expect(last_response.location).to end_with('/es/servicios/otra/nuevo')
+      end
+
+      it 'sends a training programme to its redirect' do
+        keventer_answers('programas' => service_area_data.merge('slug' => 'programas', 'is_training_program' => true,
+                                                                'redirect_url' => '/es/catalogo'))
+
+        get '/es/formacion/programas'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/catalogo')
+      end
+    end
+
     # A service moved to another area keeps its slug; its old URL follows it.
     context 'when the service moved to another area' do
       let(:training_area) do

@@ -42,12 +42,19 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, servi
   pass if service_area.nil?
   pass if service_area.is_training_program
 
+  # A service that left answers with its own redirect; an area that left
+  # takes along the services without one (kleer-la/eventer#224).
+  own_redirect = service_area.service_redirects[service_slug]
+  redirect to(own_redirect), 301 if own_redirect
+
   service = service_area.services.find { |s| s.slug == service_slug }
   if service.nil?
     moved_to = moved_service_url(service_slug)
     redirect to(moved_to), 301 if moved_to
+    redirect to(service_area.redirect_url), 301 if service_area.redirect_url
     pass
   end
+  redirect to(service_area.redirect_url), 301 if service_area.redirect_url
 
   # The area slug is one Keventer no longer uses: one hop to the current URL.
   redirect to(service_url(service_area, service)), 301 if service_area.slug_old == area_slug
@@ -64,6 +71,9 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
 
   service_area = ServiceAreaV3.create_keventer slug
   return status 404 if service_area.nil?
+
+  # An area that left goes straight to what replaces it, from any slug.
+  redirect to(service_area.redirect_url), 301 if service_area.redirect_url
 
   current = current_url(service_area, slug)
   redirect to(current), 301 if current
@@ -82,6 +92,7 @@ end
 def moved_service_url(service_slug)
   area = ServiceAreaV3.create_keventer(service_slug)
   return nil if area.nil?
+  return area.service_redirects[service_slug] if area.service_redirects[service_slug]
 
   service = area.services.find { |s| s.slug == service_slug || s.slug_old == service_slug }
   service_url(area, service) if service
