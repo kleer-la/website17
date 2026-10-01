@@ -41,6 +41,12 @@ describe 'GET /sitemap.xml' do
 
   describe 'static pages' do
     it 'includes all static pages in both languages' do
+      # The catalogue is listed in the languages it has courses in (#421).
+      allow(Catalog).to receive(:create_keventer_json).and_return(
+        Catalog.load_catalog_events([{ 'event_type_id' => 1, 'slug' => '1-scrum', 'lang' => 'es' },
+                                     { 'event_type_id' => 68, 'slug' => '68-csm', 'lang' => 'en' }])
+      )
+
       get '/sitemap.xml'
 
       expect(urls).to include('https://www.kleer.la/es/')

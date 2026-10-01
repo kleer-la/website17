@@ -6,6 +6,7 @@
           <h5><%= item[:title] %></h5>
           <ul>
             <% item[:items].each do |subitem| %>
+              <% next if %w[/catalogo /catalog].include?(subitem[:url]) && !catalog_offered? %>
               <% if subitem[:title] == 'service-areas' %>
                 <% service_area_menu_items(session[:locale]).each do |area| %>
                   <li><a href='<%= "/#{session[:locale]}#{area[:url]}" %>'><%= area[:text] %></a></li>

@@ -17,7 +17,16 @@ describe 'sections that exist only in Spanish' do
     allow(News).to receive(:create_list_keventer).and_return([])
     allow(Podcast).to receive(:load_from_keventer).and_return([])
     allow(Event).to receive(:create_keventer_json).and_return([])
-    allow(Catalog).to receive(:create_keventer_json).and_return([])
+    # A course per language, so both catalogues exist (#421) and the agenda
+    # examples below read the menu of a page that renders.
+    allow(Catalog).to receive(:create_keventer_json).and_return(
+      Catalog.load_catalog_events([
+                                    { 'event_type_id' => 1, 'slug' => '1-scrum', 'name' => 'Scrum',
+                                      'lang' => 'es', 'categories' => [] },
+                                    { 'event_type_id' => 68, 'slug' => '68-csm', 'name' => 'CSM',
+                                      'lang' => 'en', 'categories' => [] }
+                                  ])
+    )
     allow(ServiceAreaV3).to receive(:try_create_list_keventer).and_return([])
     allow(Category).to receive(:create_keventer_json).and_return([])
   end

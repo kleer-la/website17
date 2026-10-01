@@ -11,8 +11,15 @@ describe 'the catalogue tells search engines where it lives' do
     Sinatra::Application.new
   end
 
+  # One course per language: a language with none has no catalogue, and its
+  # URL redirects (#421).
+  let(:courses) do
+    [{ 'event_type_id' => 1, 'slug' => '1-scrum', 'name' => 'Scrum', 'lang' => 'es', 'categories' => [] },
+     { 'event_type_id' => 68, 'slug' => '68-csm', 'name' => 'CSM', 'lang' => 'en', 'categories' => [] }]
+  end
+
   before do
-    allow(Catalog).to receive(:create_keventer_json).and_return([])
+    allow(Catalog).to receive(:create_keventer_json).and_return(Catalog.load_catalog_events(courses))
     allow(Category).to receive(:create_keventer_json).and_return([])
     allow(Page).to receive(:load_from_keventer).and_return(Page.new)
   end

@@ -52,6 +52,8 @@ get '/sitemap.xml' do
     xml.urlset(xmlns: 'http://www.sitemaps.org/schemas/sitemap/0.9',
                'xmlns:xhtml' => 'http://www.w3.org/1999/xhtml') do
       STATIC_PAGES.each do |key, paths|
+        # The catalogue of a language with no course to offer redirects (#421).
+        paths = paths.select { |lang, _| catalog_offered?(lang) } if key == '/catalogo'
         paths.each_key do |lang|
           xml.url do
             xml.loc "#{BASE_URL}/#{lang}#{paths[lang]}"

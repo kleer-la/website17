@@ -47,6 +47,32 @@ module Helpers
     locale.to_s != 'en'
   end
 
+  # Whether the catalogue has a course to offer in this language — one a
+  # crawler may index, since a page whose only course asks not to be is empty
+  # all the same. Read from the courses Keventer sends, so the English entry
+  # comes back with the first English course, no deploy (#421). When Keventer
+  # does not answer — the catalogue comes back nil, or the request raises — that
+  # says nothing about the courses, and is no reason to take the section off the
+  # site; the menu and the footer ask on every page, so it must not take the
+  # page down either.
+  def catalog_offered?(locale = session[:locale])
+    courses = Catalog.create_keventer_json
+    return true if courses.nil?
+
+    courses.any? do |course|
+      et = course.event_type
+      et && et.lang.to_s == locale.to_s && !et.deleted && !et.noindex
+    end
+  rescue StandardError
+    true
+  end
+
+  # Where the catalogue of a language is, or the services when it has none —
+  # the section the courses belong to.
+  def catalog_or_services_path(locale)
+    "/#{RouterHelper.translate_path(catalog_offered?(locale) ? 'catalogo' : 'servicios', locale)}"
+  end
+
   # An area lives in one section — /servicios or /formacion — and which one is
   # a flag on the record, not a property of the URL. Deriving the URL from the
   # flag instead of pairing the two sections by hand means the redirect follows

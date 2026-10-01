@@ -75,14 +75,22 @@ get %r{/(agenda|schedule)/?} do
   end
 
   # With no English agenda to switch to, the switcher offers the catalogue —
-  # the section this page belongs to in the other language.
-  router_helper = RouterHelper.instance
-  router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
+  # the section this page belongs to in the other language — or the services,
+  # when that language has no catalogue either.
+  other_lang = session[:locale].to_s == 'es' ? 'en' : 'es'
+  RouterHelper.instance.alternate_route = catalog_or_services_path(other_lang)
 
   render_page :'training/agenda/index'
 end
 
 get %r{/(catalogo|catalog)/?} do
+  lang = session[:locale].to_s
+  # A language with no course to offer has no catalogue to show (#421). 302, not
+  # 301: the page comes back with the first course, and a permanent redirect is
+  # one that browsers and crawlers remember.
+  redirect to("/#{lang}/#{RouterHelper.translate_path('servicios', lang)}"), 302 unless catalog_offered?(lang)
+
+  other_lang = lang == 'es' ? 'en' : 'es'
   page = Page.load_from_keventer(session[:locale], 'catalogo')
   @meta_tags.set! title: page.seo_title || t('meta_tag.catalog.title'),
                   description: page.seo_description || t('meta_tag.catalog.description'),
@@ -91,13 +99,14 @@ get %r{/(catalogo|catalog)/?} do
                   # current path with the prefix swapped: that named /es/catalog
                   # and /en/catalogo, and both redirect.
                   alternate_paths: RouterHelper.alternate_paths('catalogo')
+  # Nor is it an alternate in a language that has no catalogue.
+  @meta_tags.set! hreflang: [lang.to_sym] unless catalog_offered?(other_lang)
   @meta_tags.set! image: page.cover unless page.cover.nil?
   @active_tab_entrenamos = 'active'
   @categories = load_categories session[:locale]
   @events = Catalog.create_keventer_json
 
-  router_helper = RouterHelper.instance
-  router_helper.alternate_route = RouterHelper.alternate_path('catalogo', session[:locale])
+  RouterHelper.instance.alternate_route = catalog_or_services_path(other_lang)
   render_page :'training/catalog/index'
 end
 
