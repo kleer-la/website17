@@ -155,6 +155,21 @@ describe 'a resource of the concepts format' do
       end
     end
 
+    # The alternate was given with its language prefix, and the metatags add
+    # it again: /es/es/recursos/..., a 404 (#436).
+    it 'declares its own URL as its language and x-default, with one language prefix' do
+      own = 'https://www.kleer.la/es/recursos/conceptos-de-ia/token'
+
+      expect(html.at_css('link[rel="alternate"][hreflang="es"]')['href']).to eq(own)
+      expect(html.at_css('link[rel="alternate"][hreflang="x-default"]')['href']).to eq(own)
+      expect(last_response.body).not_to include('/es/es/')
+    end
+
+    # A card exists in one language: no other locale to offer (#441).
+    it 'offers no alternate locale' do
+      expect(html.at_css('meta[property="og:locale:alternate"]')).to be_nil
+    end
+
     it 'does not offer the download form in the card page hero' do
       expect(html.at_css('#resource-detail-hero')).to be_nil
     end

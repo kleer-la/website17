@@ -68,8 +68,17 @@ module Helpers
     end
   end
 
+  # Where a catalogue card leads: a course with an external site (Academia, or
+  # one that redirects to what replaced it) answers its own page with a 301,
+  # so the card goes straight there (#440).
+  def course_card_href(course)
+    course[:external_site_url].to_s.strip.empty? ? course[:url] : course[:external_site_url]
+  end
+
+  # In the area's own language, not the session's: an area exists in one, and
+  # a redirect built with the other prefix landed on a duplicate (#437).
   def area_url(service_area, slug)
-    lang = session[:locale] || 'es'
+    lang = service_area.lang.to_s.empty? ? 'es' : service_area.lang.to_s
     section = RouterHelper.translate_path(service_area.is_training_program ? 'formacion' : 'servicios', lang)
     "/#{lang}/#{section}/#{slug}"
   end

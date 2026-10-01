@@ -1,4 +1,5 @@
 require 'json'
+require 'yaml'
 require './lib/helpers/concept_link_helper'
 
 module JsonLdHelper
@@ -8,23 +9,31 @@ module JsonLdHelper
     "<script type=\"application/ld+json\">#{JSON.generate(data)}</script>"
   end
 
+  ORGANIZATION = YAML.load_file(File.expand_path('../../config/organization.yml', __dir__)).freeze
+
   def organization_json_ld
+    org = ORGANIZATION
+    lang = session[:locale] == 'en' ? 'en' : 'es'
     {
       '@context' => 'https://schema.org',
       '@type' => 'Organization',
-      'name' => 'Kleer',
-      'url' => 'https://www.kleer.la',
-      'logo' => 'https://www.kleer.la/img/logos/kleer.png',
-      'sameAs' => [
-        'https://www.linkedin.com/company/kleer',
-        'https://x.com/klaborativa'
-      ],
-      'contactPoint' => {
-        '@type' => 'ContactPoint',
-        'contactType' => 'customer service',
-        'url' => 'https://www.kleer.la'
-      }
+      'name' => org['name'],
+      'legalName' => org['legal_name'],
+      'url' => org['url'],
+      'logo' => org['logo'],
+      'foundingDate' => org['founding_date'],
+      'description' => org.dig('description', lang),
+      'areaServed' => area_served,
+      'sameAs' => org['same_as'],
+      'address' => organization_address(org['address']),
+      'contactPoint' => { '@type' => 'ContactPoint', 'contactType' => 'customer service',
+                          'email' => org['email'], 'url' => "#{org['url']}/#{lang}" }
     }
+  end
+
+  def organization_address(address)
+    { '@type' => 'PostalAddress', 'streetAddress' => address['street'], 'addressLocality' => address['locality'],
+      'postalCode' => address['postal_code'], 'addressCountry' => address['country'] }
   end
 
   def website_json_ld
@@ -75,12 +84,27 @@ module JsonLdHelper
       '@type' => 'Service',
       'name' => service.name,
       'description' => service.seo_description || service.subtitle,
-      'provider' => {
-        '@type' => 'Organization',
-        'name' => 'Kleer'
-      },
+      'provider' => organization_reference,
+      'serviceType' => service_area.name,
+      'areaServed' => area_served,
       'category' => service_area.name
     }
+  end
+
+  def area_served
+    lang = session[:locale] == 'en' ? 'en' : 'es'
+    ORGANIZATION['area_served'].map { |area| { '@type' => area['type'], 'name' => area['name'][lang] } }
+  end
+
+  def organization_reference
+    { '@type' => 'Organization', 'name' => ORGANIZATION['name'], 'url' => ORGANIZATION['url'] }
+  end
+
+  # The FAQ a page shows, as [question, answer] pairs with their HTML; the
+  # pairs without both are left out, as the page cannot show them either.
+  def offering_faq_json_ld(faq)
+    pairs = Array(faq).select { |q, a| q.to_s.strip != '' && a.to_s.strip != '' }
+    faq_json_ld(pairs.map(&:first), pairs.map(&:last)) unless pairs.empty?
   end
 
   # An area that is an offering in itself is a Service too; it is its own category.
@@ -90,7 +114,9 @@ module JsonLdHelper
       '@type' => 'Service',
       'name' => service_area.name,
       'description' => service_area.seo_description,
-      'provider' => { '@type' => 'Organization', 'name' => 'Kleer' },
+      'provider' => organization_reference,
+      'serviceType' => service_area.name,
+      'areaServed' => area_served,
       'category' => service_area.name
     }
   end

@@ -1,0 +1,37 @@
+# Who Kleer is, for the Organization JSON-LD every page carries (#441). Search
+# engines and AI answer engines build the organisation's card from it. Values
+# come from what the site already publishes: the profiles from the footer, the
+# description from Quiénes somos / About us, the address from the privacy policy.
+name: Kleer
+legal_name: Kleer SRL
+url: https://www.kleer.la
+logo: https://www.kleer.la/img/logos/kleer.png
+# July 2009, as schema.org takes it (ISO 8601, year-month).
+founding_date: '2009-07'
+x_handle: '@kleer_la'
+same_as:
+  - https://www.linkedin.com/company/kleer/
+  - https://www.instagram.com/kleer.la/
+  - https://www.youtube.com/channel/UCAIGRA-4HRyx0fUUM9cjvQw
+  - https://x.com/kleer_la
+  - https://www.facebook.com/kleer.la
+email: info@kleer.la
+# Where Kleer works: Latin America as a region, Spain as a country.
+area_served:
+  - type: Place
+    name: { es: Latinoamérica, en: Latin America }
+  - type: Country
+    name: { es: España, en: Spain }
+address:
+  street: Billinghurst 1935 1ro A
+  locality: Buenos Aires
+  postal_code: '1425'
+  country: AR
+description:
+  es: >-
+    Cocreamos el futuro del trabajo sin recetas. Desde hace más de 17 años,
+    acompañamos a personas y organizaciones a evolucionar en entornos de cambio
+    constante.
+  en: >-
+    We co-create the future of work without recipes. For over 17 years, we've
+    accompanied people and organizations to evolve in ever-changing environments.

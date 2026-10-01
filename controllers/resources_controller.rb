@@ -43,7 +43,8 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |base_path, slug, c
   halt 404 if @concept.nil?
 
   @concepts_base = "/#{lang}/#{partial_url}/#{@resource.slug}"
-  concept_path = "#{@concepts_base}/#{@concept.slug}"
+  # Without the language: the metatags put it in front (#436).
+  concept_path = "/#{partial_url}/#{@resource.slug}/#{@concept.slug}"
   RouterHelper.instance.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
 
   question = @concept.question.to_s.empty? ? @concept.name : @concept.question

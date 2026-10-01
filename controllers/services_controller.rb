@@ -56,8 +56,11 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |area_slug, servi
   end
   redirect to(service_area.redirect_url), 301 if service_area.redirect_url
 
-  # The area slug is one Keventer no longer uses: one hop to the current URL.
-  redirect to(service_url(service_area, service)), 301 if service_area.slug_old == area_slug
+  # The area slug is one Keventer no longer uses, or the URL has the other
+  # language's prefix: one hop to the current URL.
+  if service_area.slug_old == area_slug || other_language?(service_area)
+    redirect to(service_url(service_area, service)), 301
+  end
 
   router_helper = RouterHelper.instance
   router_helper.alternate_route = RouterHelper.alternate_path('servicios', session[:locale])
@@ -77,6 +80,7 @@ get %r{/(?:servicios|services)/([a-z0-9_-]+)} do |slug|
 
   current = current_url(service_area, slug)
   redirect to(current), 301 if current
+  redirect to(area_url(service_area, service_area.slug)), 301 if other_language?(service_area)
   redirect to(area_url(service_area, slug)), 301 if service_area.is_training_program
 
   router_helper = RouterHelper.instance
@@ -111,7 +115,13 @@ end
 def service_url(service_area, service)
   return area_url(service_area, service.slug) if service_area.is_training_program
 
-  "/#{session[:locale] || 'es'}/#{section_path}/#{service_area.slug}/#{service.slug}"
+  lang = area_lang(service_area)
+  "/#{lang}/#{RouterHelper.translate_path('servicios', lang)}/#{service_area.slug}/#{service.slug}"
+end
+
+# Asked under the prefix of the other language (#437).
+def other_language?(service_area)
+  area_lang(service_area).to_s != (session[:locale] || 'es').to_s
 end
 
 # The services routes answer under /servicios and /services alike, so the
@@ -140,7 +150,7 @@ def show_service_area(service_area, path)
   @has_consultants = service_area_has_consultants?(service_area.slug)
   set_area_colors(service_area)
 
-  @json_ld = service_area_json_ld(service_area) if service_area.offering?
+  @json_ld = area_page_json_ld(service_area, path)
 
   render_page services_view(:'services/landing_area/index'), locals: { service_area: service_area }
 end
@@ -155,10 +165,36 @@ def show_service(service_area, service, path)
   @has_consultants = service_area_has_consultants?(service_area.slug)
   set_area_colors(service_area)
 
-  @json_ld = service_json_ld(service, service_area)
+  @json_ld = service_page_json_ld(service_area, service, path)
 
   render_page services_view(:'services/landing_service/index'),
               locals: { service_area: service_area, service: service }
+end
+
+def area_page_json_ld(service_area, path)
+  [(service_area_json_ld(service_area) if service_area.offering?),
+   breadcrumb_json_ld(offering_breadcrumbs(service_area, path)),
+   offering_faq_json_ld(service_area.faq)].compact
+end
+
+def service_page_json_ld(service_area, service, path)
+  [service_json_ld(service, service_area),
+   breadcrumb_json_ld(offering_breadcrumbs(service_area, path, service)),
+   offering_faq_json_ld(service.faq)].compact
+end
+
+# Kleer › Servicios (or Formación) › the area › the service, as the JSON-LD
+# BreadcrumbList of an area or service page (#438).
+def offering_breadcrumbs(service_area, path, service = nil)
+  lang = area_lang(service_area)
+  base = "https://www.kleer.la/#{lang}"
+  section = path.to_s.start_with?('formacion', 'training') ? 'training' : 'services'
+  crumbs = [{ name: 'Kleer', url: "#{base}/" },
+            { name: t("services.breadcrumb_#{section}"), url: "#{base}/#{path}" },
+            { name: service_area.name,
+              url: "https://www.kleer.la#{area_url(service_area, service_area.slug)}" }]
+  crumbs << { name: service.name } if service
+  crumbs
 end
 
 # The restyled area and service pages live beside the current ones, behind the

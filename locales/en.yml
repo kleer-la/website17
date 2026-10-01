@@ -1050,6 +1050,8 @@ en:
       button:
         text: Let’s talk
   services:
+    breadcrumb_services: Services
+    breadcrumb_training: Training
     landing_page:
       hero:
         title_html: Transform your Company with<br/><strong>Organizational Agility</strong>

@@ -47,10 +47,10 @@ es:
     text: Lo sentimos, algo salió mal. Por favor, inténtelo de nuevo más tarde.
   meta_tag:
     home:
-      title: Agile Coaching, Consulting & Training
+      title: Agile Coaching, consultoría y formación
       description: >-
-        Descubre el poder de la Transformación Ágil. Contamos con más de 13 años
-        de experiencia acompañando a empresas en su evolución organizacional
+        Cocreamos el futuro del trabajo sin recetas. Desde hace más de 17 años, acompañamos a personas
+        y organizaciones a evolucionar en entornos de cambio constante.
       canonical: '/'
     resources:
       title: Recursos sobre Agile
@@ -61,8 +61,8 @@ es:
     catalog:
       title: Formación Empresarial en Métodos Ágiles
       description: >-
-        Programas de capacitación In-Company. Desarrolle las habilidades de sus equipos.
-        Cursos en Scrum, Product Discovery, Agile Coaching, Liderazgo, CSM, CSD
+        Programas de capacitación in-company. Desarrolla las habilidades de tus equipos.
+        Cursos de Scrum, Product Discovery, Agile Coaching, Liderazgo y CSM.
       canonical: /catalogo
     agenda:
       title: Agenda de Cursos sobre Métodos Ágiles
@@ -725,6 +725,8 @@ es:
       button:
         text: ¿Conversamos?
   services:
+    breadcrumb_services: Servicios
+    breadcrumb_training: Formación
     landing_page:
       hero:
         title_html: Transforma tu Empresa con<br/><strong>Agilidad Organizacional</strong>

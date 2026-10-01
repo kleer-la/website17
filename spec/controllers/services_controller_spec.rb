@@ -541,6 +541,93 @@ describe '/servicios' do
       end
     end
 
+    # An area exists in one language: under the other prefix it answered 200,
+    # Spanish content with lang="en" and a canonical in English (#437).
+    context 'when asked under the prefix of the other language' do
+      def keventer_answers(slug_to_json)
+        areas = slug_to_json.transform_values { |json| ServiceAreaV3.new.load_from_json(json) }
+        allow(ServiceAreaV3).to receive(:create_keventer) { |slug, *| areas[slug] }
+      end
+
+      before { keventer_answers('cambio-organizacional' => service_area_data) }
+
+      it 'sends a Spanish area to its Spanish URL' do
+        get '/en/services/cambio-organizacional'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/cambio-organizacional')
+      end
+
+      it 'sends a service of a Spanish area to its Spanish URL' do
+        get '/en/services/cambio-organizacional/diseno-organizacional'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/cambio-organizacional/diseno-organizacional')
+      end
+
+      it 'sends an English area under /es/servicios to /en/services' do
+        keventer_answers('team-agility' => service_area_data.merge('slug' => 'team-agility', 'lang' => 'en'))
+
+        get '/es/servicios/team-agility'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/en/services/team-agility')
+      end
+
+      it 'sends an old slug asked for in the other language in one hop' do
+        keventer_answers('agile-product-management' => service_area_data.merge('slug' => 'producto-digital',
+                                                                               'slug_old' => 'agile-product-management'))
+
+        get '/en/services/agile-product-management'
+
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/servicios/producto-digital')
+      end
+    end
+
+    # The FAQ a page shows, marked up as FAQPage, and where the page sits, as a
+    # BreadcrumbList: what search and AI answer engines quote from (#438).
+    describe 'structured data' do
+      def json_ld(type)
+        Nokogiri::HTML(last_response.body).css('script[type="application/ld+json"]')
+                .map { |s| JSON.parse(s.text) }.find { |d| d['@type'] == type }
+      end
+
+      before do
+        service_area_data['services'][0]['faq'] = [['¿Se puede hacer <b>remoto</b>?', '<p>Sí, todo el proceso</p>'],
+                                                   ['¿Cuánto dura?', '<ul><li>Tres meses</li></ul>']]
+        ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, service_area_data.to_json))
+      end
+
+      it 'marks up the FAQ of a service in the order of the page, without HTML' do
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        questions = json_ld('FAQPage')['mainEntity']
+        expect(questions.map { |q| q['name'] }).to eq(['¿Se puede hacer remoto?', '¿Cuánto dura?'])
+        expect(questions.first['acceptedAnswer']['text']).to eq('Sí, todo el proceso')
+      end
+
+      it 'says where a service sits and who provides it' do
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        crumbs = json_ld('BreadcrumbList')['itemListElement']
+        expect(crumbs.map { |c| c['name'] }).to eq(['Kleer', 'Servicios', 'Cambio Organizacional', 'Diseño Organizacional'])
+        expect(crumbs[2]['item']).to eq('https://www.kleer.la/es/servicios/cambio-organizacional')
+        service = json_ld('Service')
+        expect(service['provider']).to include('@type' => 'Organization', 'url' => 'https://www.kleer.la')
+        expect(service['serviceType']).to eq('Cambio Organizacional')
+        expect(service['areaServed'].map { |a| a['name'] }).to eq(%w[Latinoamérica España])
+      end
+
+      it 'says where an area sits, and marks no FAQ it does not have' do
+        get '/es/servicios/cambio-organizacional'
+
+        expect(json_ld('BreadcrumbList')['itemListElement'].map { |c| c['name'] })
+          .to eq(['Kleer', 'Servicios', 'Cambio Organizacional'])
+        expect(json_ld('FAQPage')).to be_nil
+      end
+    end
+
     # A service moved to another area keeps its slug; its old URL follows it.
     context 'when the service moved to another area' do
       let(:training_area) do

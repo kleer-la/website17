@@ -281,6 +281,20 @@ describe 'GET /sitemap.xml' do
       expect(urls).not_to include('https://www.kleer.la/es/cursos/hidden-course')
     end
 
+    # Through the catalog JSON as Keventer sends it: flat, one hash per course
+    # (#440). The noindex field arrived from kleer-la/eventer only now.
+    it 'excludes a noindex course read from the catalog JSON' do
+      courses = [{ 'event_type_id' => 414, 'slug' => '414-agile-products-with-scrum', 'name' => 'Agile Products',
+                   'lang' => 'en', 'noindex' => true, 'external_site_url' => '' },
+                 { 'event_type_id' => 68, 'slug' => '68-csm', 'name' => 'CSM', 'lang' => 'en', 'noindex' => false }]
+      allow(Catalog).to receive(:create_keventer_json).and_return(Catalog.load_catalog_events(courses))
+
+      get '/sitemap.xml'
+
+      expect(urls).not_to include('https://www.kleer.la/en/courses/414-agile-products-with-scrum')
+      expect(urls).to include('https://www.kleer.la/en/courses/68-csm')
+    end
+
     it 'deduplicates courses by lang and slug' do
       dup_event = Event.new(event_type)
       allow(Catalog).to receive(:create_keventer_json).and_return([event, dup_event])

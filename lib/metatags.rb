@@ -30,6 +30,9 @@ module MetaTags
       @shown = false
     end
 
+    # The languages the page declares itself in, as symbols.
+    def languages = Array(@tags[:hreflang]).map(&:to_sym)
+
     def set!(keyw = {})
       @tags.merge! keyw
     end
