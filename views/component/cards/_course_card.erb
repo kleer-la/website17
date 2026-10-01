@@ -1,7 +1,7 @@
 <div class="card course-card">
   <div class="image-container">
     <a href="<%= course_card_href(@course) %>">
-      <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: '...', has_webp: @course[:has_webp]}%>
+      <%= erb :'component/_image', locals: {image_url: @course[:cover], css_class: 'card-img-top course-card__image', alt: h(@course[:title]), has_webp: @course[:has_webp]}%>
     </a>
       <div class="flags">
         <% if @course[:is_open] %>

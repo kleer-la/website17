@@ -8,6 +8,8 @@ module LabSeoHelper
   LAB_ORG_URL = 'https://lab.kleer.la'.freeze
   LAB_LOGO_URL = "#{LAB_ORG_URL}/lab/icon.png".freeze
   LAB_PARENT_ORG_URL = 'https://www.kleer.la'.freeze
+  LAB_DESCRIPTION = 'Convertimos procesos manuales y repetitivos en aplicaciones hechas ' \
+                    'para la operación de cada empresa.'.freeze
 
   LAB_PAGE_TITLES = {
     home: 'Kleer Lab | Soluciones operativas a medida',
@@ -65,57 +67,5 @@ module LabSeoHelper
     else
       "#{kase.client_label}. #{kase.industry}. Caso Kleer Lab."
     end
-  end
-
-  def lab_json_ld_organization
-    {
-      '@context' => 'https://schema.org',
-      '@type' => 'Organization',
-      'name' => LAB_ORG_NAME,
-      'url' => LAB_ORG_URL,
-      'logo' => LAB_LOGO_URL,
-      'description' => 'Convertimos procesos manuales y repetitivos en aplicaciones hechas ' \
-                       'para la operación de cada empresa.',
-      'parentOrganization' => {
-        '@type' => 'Organization',
-        'name' => 'Kleer',
-        'url' => LAB_PARENT_ORG_URL
-      }
-    }
-  end
-
-  def lab_json_ld_for_case(kase)
-    keywords = [kase.industry]
-    keywords << kase.hero_metric['value'] if kase.hero_metric
-
-    payload = {
-      '@context' => 'https://schema.org',
-      '@type' => 'Article',
-      'articleSection' => 'Case study',
-      'headline' => kase.title,
-      'keywords' => keywords.compact.join(', '),
-      'author' => { '@type' => 'Organization', 'name' => LAB_ORG_NAME, 'url' => LAB_ORG_URL },
-      'publisher' => { '@type' => 'Organization', 'name' => LAB_ORG_NAME, 'url' => LAB_ORG_URL }
-    }
-    payload['datePublished'] = kase.date_published if kase.date_published
-    payload['dateModified'] = kase.date_modified if kase.date_modified
-    payload
-  end
-
-  def lab_json_ld_breadcrumb_for_case(kase)
-    {
-      '@context' => 'https://schema.org',
-      '@type' => 'BreadcrumbList',
-      'itemListElement' => [
-        { '@type' => 'ListItem', 'position' => 1, 'name' => 'Inicio', 'item' => LAB_ORG_URL },
-        { '@type' => 'ListItem', 'position' => 2, 'name' => kase.title,
-          'item' => "#{LAB_ORG_URL}/casos/#{kase.slug}" }
-      ]
-    }
-  end
-
-  def lab_render_json_ld(hash)
-    json = hash.to_json.gsub('</', '<\/')
-    %(<script type="application/ld+json">#{json}</script>)
   end
 end

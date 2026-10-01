@@ -9,7 +9,7 @@ landing_uri = "/#{lang}/#{resources_path}/#{resource.slug}"
     <% if resource.format && !resource.format.empty? %>
       <span class="format-badge"><%= resource.format %></span>
     <% end %>
-    <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: '...', has_webp: false}%>
+    <%= erb :'component/_image', locals: {image_url: resource.cover, css_class: 'card-img-top', alt: h(resource.title), has_webp: false}%>
   </div>
   </a>
   <div class="card-body body">

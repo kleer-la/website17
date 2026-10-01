@@ -1,7 +1,7 @@
 <div class="recommended-card">
   <div class="image-container">
     <a href="<%= item.url%>">
-      <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: '...', has_webp: false}%>
+      <%= erb :'component/_image', locals: {image_url: item.cover, css_class: 'card-img-top recommended-card__image', alt: h(item.title), has_webp: false}%>
     </a>
     <% if @is_training_program == true %>
       <div class="level-flag">

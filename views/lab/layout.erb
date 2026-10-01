@@ -8,6 +8,7 @@
     <meta name="application-name" content="Kleer Lab">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="description" content="<%= h lab_description %>">
+    <% if @lab_noindex %><meta name="robots" content="noindex"><% end %>
     <link rel="canonical" href="<%= lab_canonical_url %>">
 
     <!-- Open Graph -->
@@ -27,6 +28,7 @@
     <meta name="twitter:image" content="<%= lab_og_image %>">
 
     <%= lab_render_json_ld(lab_json_ld_organization) %>
+    <%= lab_render_json_ld(lab_json_ld_website) %>
     <%= @lab_head_extra %>
 
     <%# icon.svg used to be declared here and won, being the later and more

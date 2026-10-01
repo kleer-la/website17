@@ -67,6 +67,8 @@ get '/' do
 end
 
 not_found do
+  return lab_not_found if @is_lab
+
   @meta_tags.set! title: t('page_not_found')
 
   render_page :'home/error_404'

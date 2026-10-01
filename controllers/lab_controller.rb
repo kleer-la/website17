@@ -13,6 +13,7 @@ def handle_lab_home
   @cases = LabCase.featured.first(2)
   @home_metrics = LabCase.aggregate_metrics_for_home(limit: 4)
   @featured_testimonials = LabCase.featured_testimonials(limit: 3)
+  @lab_head_extra = lab_render_json_ld(lab_json_ld_professional_service)
   erb :'lab/home', layout: :'lab/layout'
 end
 
@@ -20,7 +21,17 @@ def handle_lab_sitemap
   content_type 'application/xml'
   @lab_base_url = request.base_url
   @cases = LabCase.published
+  # The pages without a date of their own change when the cases do.
+  @lab_lastmod = @cases.map(&:date_modified).compact.max
   erb :'lab/sitemap', layout: false
+end
+
+# Kleer Lab's own 404, in its layout, instead of kleer.la's (#442).
+def lab_not_found
+  @lab_title = 'Página no encontrada | Kleer Lab'
+  @lab_description = lab_page_description(:home)
+  @lab_noindex = true
+  erb :'lab/not_found', layout: :'lab/layout'
 end
 
 def lab_contact_values
@@ -93,7 +104,41 @@ get '/contacto/gracias' do
 
   @lab_title = 'Gracias | Kleer Lab'
   @lab_description = 'Tu mensaje fue recibido. Te respondemos en menos de 48 horas hábiles.'
+  @lab_noindex = true # only reachable after sending the form
   erb :'lab/thanks', layout: :'lab/layout'
+end
+
+# Kleer Lab's own /llms.txt (#442): what it is, its pages and its cases, and
+# whose it is.
+get '/llms.txt' do
+  pass unless @is_lab
+
+  content_type 'text/plain', charset: 'utf-8'
+  lab_llms_txt
+end
+
+LAB_LLMS_PAGES = { 'Inicio' => '/', 'Casos' => '/casos', 'Contacto' => '/contacto' }.freeze
+
+def lab_llms_txt
+  base = LabSeoHelper::LAB_ORG_URL
+  pages = { 'Inicio' => lab_page_description(:home), 'Casos' => lab_page_description(:cases),
+            'Contacto' => 'Cuéntanos tu desafío operativo; te respondemos en menos de 48 horas hábiles.' }
+  page_lines = pages.map { |name, text| "- [#{name}](#{base}#{LAB_LLMS_PAGES[name]}): #{text}" }
+  case_lines = LabCase.published.map { |c| "- [#{c.title}](#{base}/casos/#{c.slug}): #{c.summary}" }
+  lines = ["# #{LabSeoHelper::LAB_ORG_NAME}", "> #{LabSeoHelper::LAB_DESCRIPTION}",
+           "## Páginas\n\n#{page_lines.join("\n")}", "## Casos\n\n#{case_lines.join("\n")}",
+           "## Kleer\n\n- [Kleer](#{LabSeoHelper::LAB_PARENT_ORG_URL}): la consultora de la que Kleer Lab es parte."]
+  "#{lines.join("\n\n")}\n"
+end
+
+# Every published case, the page the breadcrumb of a case points to (#442).
+get '/casos' do
+  pass unless @is_lab
+
+  @lab_title = lab_page_title(:cases)
+  @lab_description = lab_page_description(:cases)
+  @cases = LabCase.published
+  erb :'lab/cases', layout: :'lab/layout'
 end
 
 get '/casos/:slug' do

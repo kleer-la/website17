@@ -32,4 +32,11 @@ describe 'the card of a resource in the listing' do
     card = Nokogiri::HTML(last_response.body).at_css('#prompt-comunicar .card-text')
     expect(card.text).to eq(description)
   end
+
+  # The cover says what the card is about to whoever cannot see it (#443).
+  it 'describes its cover with the title' do
+    get '/es/recursos'
+
+    expect(Nokogiri::HTML(last_response.body).at_css('#prompt-comunicar img')['alt']).to eq('Conceptos de IA sin jerga')
+  end
 end

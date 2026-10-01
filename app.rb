@@ -27,6 +27,7 @@ require './controllers/assessments_controller'
 require './controllers/resources_controller'
 require './controllers/blog_controller'
 require './controllers/services_controller'
+require './controllers/llms_controller'
 require './controllers/training_controller'
 require './controllers/clients_controller'
 require './controllers/about_us_controller'
@@ -87,6 +88,14 @@ def site_for(host)
   SITES.find { |_name, pattern| host.to_s.match?(pattern) }&.first || :main
 end
 
+# Files for crawlers need no session, and setting its cookie on them made
+# every crawl of robots.txt or the sitemap start one (#442).
+CRAWLER_FILES = %w[/robots.txt /sitemap.xml /llms.txt].freeze
+
+before do
+  request.session_options[:skip] = true if CRAWLER_FILES.include?(request.path_info)
+end
+
 before do
   # Handle subdomain routing
   @site = site_for(request.host)
@@ -118,6 +127,44 @@ before do
   router_helper.lang = session[:locale]
   router_helper.set_current_route(request.path)
   router_helper.alternate_route = nil
+end
+
+# One URL per page (#443): the bare root goes to the Spanish home, and a
+# trailing slash to the same path without it — some routes answered both with
+# 200 and others 404. /es/ and /en/ are the homes as the site links them.
+HOMES = %w[/es/ /en/].freeze
+
+before do
+  next unless @is_main_site && (request.get? || request.head?)
+
+  path = request.path_info
+  query = request.query_string.empty? ? '' : "?#{request.query_string}"
+  redirect "/es/#{query}", 301 if path == '/'
+  redirect "#{path.chomp('/')}#{query}", 301 if path.length > 1 && path.end_with?('/') && !HOMES.include?(path)
+end
+
+# The lab. host serves Kleer Lab and nothing else (#442). kleer.la's pages,
+# which it used to serve as duplicates, do not exist here and answer Lab's own
+# 404; a language prefix or a trailing slash on a Lab page goes to the bare
+# path. The form's POST and the static files (served before any filter) are
+# left alone.
+LAB_PATHS = [%r{\A/\z}, %r{\A/contacto(/gracias)?\z}, %r{\A/casos(/[a-z0-9_-]+)?\z},
+             %r{\A/(sitemap\.xml|robots\.txt|llms\.txt)\z}].freeze
+
+def lab_path?(path) = LAB_PATHS.any? { |pattern| pattern.match?(path) }
+
+before do
+  next unless @is_lab && (request.get? || request.head?)
+
+  path = request.path_info
+  query = request.query_string.empty? ? '' : "?#{request.query_string}"
+  bare = path.sub(%r{\A/(es|en)(?=/|\z)}, '')
+  bare = bare.chomp('/') if bare.length > 1
+  bare = '/' if bare.empty?
+  next if bare == path && lab_path?(path)
+
+  redirect "#{bare}#{query}", 301 if lab_path?(bare)
+  halt 404
 end
 
 # A section names its own language, so it answers under its own prefix and

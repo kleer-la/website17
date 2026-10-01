@@ -12,9 +12,11 @@ describe '/servicios' do
     get '/es/servicios'
     expect(last_response).to be_ok
   end
-  it 'responds successfully / at the end' do
+  # One URL per page: the trailing slash goes to the path without it (#443).
+  it 'sends / at the end to the path without it' do
     get '/es/servicios/'
-    expect(last_response).to be_ok
+    expect(last_response.status).to eq(301)
+    expect(last_response.location).to end_with('/es/servicios')
   end
 
   # The section names its language, so it answers under its prefix and sends

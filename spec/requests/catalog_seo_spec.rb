@@ -64,5 +64,6 @@ describe 'the catalogue tells search engines where it lives' do
 
     expect(last_response.body).to include('href="/es/servicios/producto-digital/desarrollo"')
     expect(last_response.body).not_to include('href="/es/cursos/46-agile-architecture"')
+    expect(last_response.body).to include('alt="Agile Architecture"')
   end
 end

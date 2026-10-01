@@ -2,13 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc><%= @lab_base_url %>/</loc>
+    <% if @lab_lastmod %><lastmod><%= @lab_lastmod %></lastmod><% end %>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc><%= @lab_base_url %>/contacto</loc>
+    <% if @lab_lastmod %><lastmod><%= @lab_lastmod %></lastmod><% end %>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc><%= @lab_base_url %>/casos</loc>
+    <% if @lab_lastmod %><lastmod><%= @lab_lastmod %></lastmod><% end %>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 <% @cases.each do |c| %>
   <url>
