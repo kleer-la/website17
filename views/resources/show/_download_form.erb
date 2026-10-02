@@ -52,10 +52,13 @@
                 <input type="checkbox" id="can_we_contact" name="can_we_contact">
                 <label for="can_we_contact"><%= t('resources.show.download.notify_me') %></label>
               </div>
+              <%# The newsletter is written in Spanish: there is none to offer in English. %>
+              <% if lang == 'es' %>
               <div class="form-group">
                 <input type="checkbox" id="suscribe" name="suscribe">
                 <label for="suscribe"><%= t('resources.show.download.suscribe') %></label>
               </div>
+              <% end %>
             </div>
           </div>
           <div class="row">

@@ -51,5 +51,6 @@ entérate de todas las novedades!
         <% end %>
       </ul>
   </div>
-  <%= erb :'component/_modal_newsletter'%>
+  <%# Its form goes with the button above, which only Spanish pages show. %>
+  <%= erb :'component/_modal_newsletter' if session[:locale] == 'es' %>
 </footer>
