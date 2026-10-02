@@ -50,12 +50,7 @@ describe 'language alternates of a translated section' do
     expect(last_response.body).not_to include('hreflang="es" href="https://www.kleer.la/es/resources"')
   end
 
-  it 'translates clientes' do
-    get '/es/clientes'
-
-    expect(last_response.body).to include('hreflang="en" href="https://www.kleer.la/en/clients"')
-    expect(last_response.body).not_to include('hreflang="en" href="https://www.kleer.la/en/clientes"')
-  end
+  # Clientes has no English edition any more: english_clients_cut_spec.rb.
 
   # A section that is the same URL in both languages has a working alternate
   # already; translating a table it is not in would be how that gets lost.

@@ -63,7 +63,6 @@ describe 'GET /sitemap.xml' do
       expect(urls).to include('https://www.kleer.la/es/somos')
       expect(urls).to include('https://www.kleer.la/en/about_us')
       expect(urls).to include('https://www.kleer.la/es/clientes')
-      expect(urls).to include('https://www.kleer.la/en/clients')
       expect(urls).to include('https://www.kleer.la/es/podcasts')
       expect(urls).to include('https://www.kleer.la/es/novedades')
     end
@@ -77,6 +76,7 @@ describe 'GET /sitemap.xml' do
       expect(urls).not_to include('https://www.kleer.la/en/news')
       expect(urls).not_to include('https://www.kleer.la/en/podcasts')
       expect(urls).not_to include('https://www.kleer.la/en/schedule')
+      expect(urls).not_to include('https://www.kleer.la/en/clients')
     end
 
     # An article with no substantive_change_at used to raise inside the block

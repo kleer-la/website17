@@ -643,9 +643,6 @@ en:
         - text: Validate Certificate
           url: /certificate
           inside: true
-    - text: Clients
-      url: /clients
-      inside: true
     - text: We publish
       options:
         - text: Resources
@@ -664,8 +661,6 @@ en:
           url: /services
         - title: Courses
           url: /catalog
-        - title: Clients
-          url: /clients
     - title: We publish
       items:
         - title: Resources
