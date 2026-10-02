@@ -336,7 +336,8 @@ get '/:slug' do
   @meta_tags.set! title: page.seo_title || page.name,
                   description: page.seo_description,
                   canonical: flagship_canonical(page, params[:slug]),
-                  noindex: page.noindex
+                  noindex: page.noindex,
+                  hreflang: Page.flagship_languages(params[:slug]) | [session[:locale].to_sym]
   render_page :'flagships/show'
 end
 

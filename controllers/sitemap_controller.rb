@@ -150,6 +150,22 @@ get '/sitemap.xml' do
         end
       end
 
+      add_dynamic_urls(xml, 'flagship pages') do
+        flagships = Page.flagships
+        flagships.each do |page|
+          next if page.noindex
+          # A page that names another as canonical is a copy of it.
+          canonical = page.canonical.to_s.strip.delete_prefix('/')
+          next unless canonical.empty? || canonical == page.slug
+
+          languages = Page.flagship_languages(page.slug, flagships)
+          lastmod = page.updated_at.to_s.split('T').first.to_s
+          add_url(xml, path: "/#{page.lang}/#{page.slug}",
+                       lastmod: lastmod.empty? ? nil : lastmod,
+                       hreflang: languages.to_h { |lang| [lang, "/#{lang}/#{page.slug}"] })
+        end
+      end
+
       add_dynamic_urls(xml, 'training programs') do
         %w[es en].each do |lang|
           programs = ServiceAreaV3.try_create_list_keventer(programs: true).select { |a| a.lang == lang }

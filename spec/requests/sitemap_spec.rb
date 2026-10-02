@@ -12,6 +12,7 @@ describe 'GET /sitemap.xml' do
     allow(ServiceAreaV3).to receive(:try_create_list_keventer).and_return([])
     allow(Catalog).to receive(:create_keventer_json).and_return([])
     allow(Resource).to receive(:create_list_keventer).and_return([])
+    allow(Page).to receive(:flagships).and_return([])
   end
 
   def sitemap_xml
@@ -457,4 +458,57 @@ describe 'GET /sitemap.xml' do
       expect(urls).to include('https://www.kleer.la/es/')
     end
   end
+
+  # A flagship is a page at /:lang/:slug, written in Keventer. The indexable
+  # ones were missing from the sitemap (#448).
+  context 'flagship pages' do
+    def flagship(slug:, lang: 'es', noindex: false, canonical: nil, updated_at: '2026-10-02T19:10:19.753Z')
+      Page::Flagship.new(slug: slug, lang: lang, noindex: noindex, canonical: canonical, updated_at: updated_at)
+    end
+
+    def url_node(loc)
+      doc = sitemap_xml
+      doc.remove_namespaces!
+      doc.xpath('//url').find { |u| u.at_xpath('loc').text == loc }
+    end
+
+    it 'lists an indexable flagship, dated by its last change' do
+      allow(Page).to receive(:flagships).and_return([flagship(slug: 'membresia-ia')])
+
+      get '/sitemap.xml'
+
+      node = url_node('https://www.kleer.la/es/membresia-ia')
+      expect(node).not_to be_nil
+      expect(node.at_xpath('lastmod').text).to eq('2026-10-02')
+    end
+
+    it 'leaves out one that asks to stay out of the index' do
+      allow(Page).to receive(:flagships).and_return([flagship(slug: 'membresia-ia-v2', noindex: true)])
+
+      get '/sitemap.xml'
+
+      expect(urls).not_to include('https://www.kleer.la/es/membresia-ia-v2')
+    end
+
+    it 'leaves out one that names another page as canonical' do
+      allow(Page).to receive(:flagships).and_return([flagship(slug: 'copia', canonical: 'membresia-ia')])
+
+      get '/sitemap.xml'
+
+      expect(urls).not_to include('https://www.kleer.la/es/copia')
+    end
+
+    it 'announces only the languages the slug exists in' do
+      allow(Page).to receive(:flagships).and_return(
+        [flagship(slug: 'membresia-ia'), flagship(slug: 'ambas'), flagship(slug: 'ambas', lang: 'en')]
+      )
+
+      get '/sitemap.xml'
+
+      alternates = ->(loc) { url_node(loc).xpath('link').map { |l| l['hreflang'] } }
+      expect(alternates.call('https://www.kleer.la/es/membresia-ia')).to eq(%w[es])
+      expect(alternates.call('https://www.kleer.la/en/ambas')).to contain_exactly('es', 'en')
+    end
+  end
 end
+

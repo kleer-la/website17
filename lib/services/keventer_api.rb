@@ -44,6 +44,7 @@ module KeventerAPI
     programs: 'service_areas/programs',
     service_areas: 'service_areas.json',
     articles: 'articles.json',
+    flagship_pages: 'pages/flagships',
     contacts: 'contacts',
     mailer: 'contact_us'
   }.each do |name, path|

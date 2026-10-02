@@ -10,6 +10,8 @@ describe 'GET /:slug (flagship catch-all)' do
     Sinatra::Application.new
   end
 
+  before { allow(Page).to receive(:flagships).and_return([]) }
+
   context 'with a non-slug path (bot-extracted attribute text)' do
     it 'returns 404, not 500, for a path with spaces' do
       get '/Contact%20us%20via%20WhatsApp'
@@ -195,4 +197,44 @@ describe 'GET /:slug (flagship catch-all)' do
       expect(last_response.location).to end_with('/es/membresia-ia')
     end
   end
+
+  # The head announced an English alternate for a page that only exists in
+  # Spanish: a hreflang to a 404 (#448).
+  context 'hreflang' do
+    def alternates
+      last_response.body.scan(/hreflang=["']([^"']+)["'] href="([^"]+)"/)
+    end
+
+    it 'announces only the language the page exists in' do
+      allow(Page).to receive(:flagships).and_return(
+        [Page::Flagship.new(slug: 'membresia-ia', lang: 'es', noindex: false, canonical: nil, updated_at: nil)]
+      )
+      allow(Page).to receive(:load_from_keventer).and_return(flagship_page)
+
+      get '/es/membresia-ia'
+
+      expect(alternates).to contain_exactly(%w[x-default https://www.kleer.la/es/membresia-ia],
+                                            %w[es https://www.kleer.la/es/membresia-ia])
+    end
+
+    it 'announces both when the slug exists in both' do
+      allow(Page).to receive(:flagships).and_return(
+        %w[es en].map { |l| Page::Flagship.new(slug: 'ambas', lang: l, noindex: false, canonical: nil, updated_at: nil) }
+      )
+      allow(Page).to receive(:load_from_keventer).and_return(flagship_page)
+
+      get '/en/ambas'
+
+      expect(alternates.map(&:first)).to contain_exactly('x-default', 'es', 'en')
+    end
+
+    it 'still names its own language when the list cannot be loaded' do
+      allow(Page).to receive(:load_from_keventer).and_return(flagship_page)
+
+      get '/es/membresia-ia'
+
+      expect(alternates.map(&:first)).to contain_exactly('x-default', 'es')
+    end
+  end
 end
+

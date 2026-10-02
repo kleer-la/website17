@@ -74,6 +74,27 @@ class Page
     create(NullJsonAPI.new(file_path))
   end
 
+  # Where a flagship lives and whether it wants to be indexed — the listing
+  # the sitemap and the hreflang alternates are built from.
+  Flagship = Struct.new(:slug, :lang, :noindex, :canonical, :updated_at, keyword_init: true)
+
+  # Empty when Keventer does not answer: a page then announces only itself.
+  def self.flagships
+    json_api = CacheService.get_or_set('flagship_pages') { JsonAPI.new(KeventerAPI.flagship_pages_url) }
+    return [] unless json_api.ok?
+
+    json_api.doc.map do |p|
+      Flagship.new(slug: p['slug'], lang: p['lang'], noindex: p['noindex'] == true,
+                   canonical: p['canonical'], updated_at: p['updated_at'])
+    end
+  end
+
+  # The languages a flagship slug is published in. Spanish and English pages
+  # are separate records, so a slug can exist in one only.
+  def self.flagship_languages(slug, flagships = self.flagships)
+    flagships.select { |f| f.slug == slug }.map { |f| f.lang.to_sym }
+  end
+
   def self.load_from_keventer(lang, slug)
     return create(@api_client) if @api_client
 
