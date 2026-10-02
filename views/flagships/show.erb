@@ -4,6 +4,7 @@
   #   - the "hero" section (slug='hero') as a hero band, if present
   #   - all other sections in `position` order as body sections
   #     (each section's `content` is raw HTML composed with the .rw-* kit)
+  #   - the recommended content Keventer links to the page
   #   - the global bottom contact banner
   #
   # Page sections are admin-editable, so a non-developer can create new
@@ -66,8 +67,14 @@
     <% if hero['content'].to_s.strip != '' %>
       <div class="flagship-hero-content"><%= hero['content'] %></div>
     <% end %>
-    <% if hero['cta_text'].to_s.strip != '' && hero['cta_url'].to_s.strip != '' %>
-      <a href="<%= hero['cta_url'] %>" class="flagship-hero-cta"><%= hero['cta_text'] %></a>
+    <% if hero['cta_text'].to_s.strip != '' %>
+      <% if @page.opens_contact_form?(hero['cta_url']) %>
+        <%= erb :'component/_contact_banner_button',
+                locals: { specific_id: 'flagship-hero-cta', style: '',
+                          text_button: hero['cta_text'], style_class: 'flagship-hero-cta border-0' } %>
+      <% else %>
+        <a href="<%= hero['cta_url'] %>" class="flagship-hero-cta"><%= hero['cta_text'] %></a>
+      <% end %>
     <% end %>
   </div>
 </section>
@@ -88,6 +95,8 @@
   </div>
 </section>
 <% end %>
+
+<%= erb :'component/sections/recommended', locals: { recommended: @page.recommended, title: t('recommended.title') } %>
 
 <%
   # Bottom CTA — driven by a section with slug='contact'. The section's

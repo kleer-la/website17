@@ -37,7 +37,6 @@ require './controllers/news_controller'
 require './controllers/certificates_controller'
 require './controllers/podcasts_controller'
 require './controllers/event_controller'
-require './controllers/membership_controller'
 require './controllers/bookings_controller'
 require './controllers/sitemap_controller'
 require './controllers/campaigns_controller'
@@ -273,7 +272,11 @@ PERMANENT_REDIRECT = {
   # viejas hablan de lo mismo. El ancla #receta tampoco está en la página.
   'servicios/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas',
   'servicios/adopcion-ia/membresia-ia' => 'es/formacion/adopcion-ia-empresas',
-  'formacion/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas'
+  'formacion/adopcion-ia/membresia' => 'es/formacion/adopcion-ia-empresas',
+
+  # The membership flagship was previewed at -v2 while a view written here held
+  # the real URL (#446). The flagship took the URL; the preview goes there.
+  'membresia-ia-v2' => 'es/membresia-ia'
 }.freeze
 
 PERMANENT_REDIRECT.each do |original, redirect|
@@ -312,8 +315,8 @@ end
 
 # Flagship pages — standalone pages where Page.template == 'flagship',
 # rendered at /:lang/:slug. Registered LAST so any earlier specific route
-# (e.g. /membresia-ia from membership_controller) wins; falls through to
-# 404 if no flagship Page matches the slug.
+# wins; falls through to 404 if no flagship Page matches the slug — including
+# a slug that only exists in the other language.
 get '/:slug' do
   # Flagship pages belong to the main site only. Each subdomain is its own site,
   # with its own sitemap, so serving these there gives one page a second URL —

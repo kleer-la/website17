@@ -36,6 +36,15 @@ class Page
     @template == 'flagship'
   end
 
+  # Where a button that means "talk to us" points: nowhere yet, the contact
+  # section by slug, or the banner the contact section renders as. Those open
+  # the contact form instead of scrolling or linking.
+  CONTACT_TARGETS = ['', '#contact', '#newsletter-subscription'].freeze
+
+  def opens_contact_form?(cta_url)
+    CONTACT_TARGETS.include?(cta_url.to_s.strip)
+  end
+
   def hero_section
     @sections.find { |slug, _| HERO_SLUGS.include?(slug) }&.last
   end
