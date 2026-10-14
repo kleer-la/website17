@@ -30,7 +30,7 @@ The application also serves **L'Atelier**, a Google Meet add-on for remote colla
 
 ## Development Environment Context
 
-**Important**: This project is typically developed within a devcontainer. When Claude Code provides commands, these should be run inside the devcontainer environment by the developer, not on the host system. Claude Code runs on the Ubuntu host but cannot execute commands inside the devcontainer.
+**Important**: Claude Code runs on the host, which has no Ruby. Every `bundle`, `rspec`, `cucumber`, `rubocop`, `sass` and `bin/deploy` command goes through this repo's own devcontainer (`devcontainer-website17-1`), which mounts the repo at `/app`. File operations and git happen on the host as usual. If the container is stopped: `docker start devcontainer-website17-1`. Do not use eventer's container (`eventer_devcontainer-app-1`): it is a different app.
 
 ## Common Commands
 
@@ -49,36 +49,25 @@ bundle install
 puma -p 4567
 ```
 
-### Testing Backend - Rails (./s)
+### Testing
 ```bash
-# Run all RSpec tests
-docker exec eventer_devcontainer-app-1 rspec
-
-# Run all Cucumber tests (excluding system tests)
-docker exec eventer_devcontainer-app-1 cucumber
- 
-# Run system tests only
-docker exec eventer_devcontainer-app-1 cucumber -p system
-
-# Run specific test file
-docker exec eventer_devcontainer-app-1 rspec spec/lib/services/cache_service_spec.rb
-```
-
-### Testing frontend - Sinatra (./website17)
-```bash
-# Run tests inside Docker container (when using devcontainer)
-docker exec website17 bundle exec rspec
-docker exec website17 bundle exec rspec spec/requests/participants_registration_spec.rb
-docker exec website17 bundle exec cucumber
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec rspec'
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec rspec spec/metatags_spec.rb'
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec cucumber'
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec cucumber features/page_titles.feature'
 ```
 
 ### Deployment
+`bin/deploy` wraps `bundle exec kamal` (it loads `website.env`), so it runs in the container too. Kamal builds from a git clone at HEAD: **commit first**, because uncommitted changes never ship and an unchanged SHA silently reuses the previous image.
 ```bash
-# Deploy to QA (qa.kleer.la)
-kamal deploy -d qa
+# Deploy to QA (qa.kleer.la); check it before production
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy deploy -d qa'
 
 # Deploy to production (www.kleer.la)
-kamal deploy
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy deploy'
+
+# Which commit is running (drop -d qa for production)
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy app version -d qa'
 ```
 
 ### Utilities
@@ -86,8 +75,9 @@ kamal deploy
 # List all defined routes
 rake routes
 
-# Check CSS/SASS compilation
-./sass.sh
+# Compile the SCSS once (public/app/css is committed, so commit the result)
+docker exec devcontainer-website17-1 bash -lc 'cd /app/public/app && sass scss/index.scss:css/index.css --style compressed'
+# or watch while developing: ./sass.sh
 
 # I18n management
 i18n-tasks missing    # Find missing translations
