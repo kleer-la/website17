@@ -266,6 +266,17 @@ html {
   height: 14px;
 }
 
+// The icons are white for the footer's dark background. The navbar is white,
+// so there they keep the SVGs' own dark colour and turn white only on the
+// blue hover square.
+.navbar .icon-social {
+  filter: none;
+}
+
+.navbar .list-inline-item:hover .icon-social {
+  filter: brightness(0) invert(1);
+}
+
 .floating-absolute-buttons {
   position: fixed;
   bottom: 40px;
