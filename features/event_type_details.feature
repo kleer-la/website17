@@ -34,7 +34,7 @@ Feature: Event Type Details
 	Scenario: Event type detail Title
 		Given theres an event type
 		When I visit the plain event type page
-		Then the page title should includes "^Kleer"
+		Then the page title should includes "Kleer$"
 		And the page title includes "Kleer" just once
 
 	Scenario: SEO H-tags structure

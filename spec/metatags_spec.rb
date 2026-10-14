@@ -52,16 +52,17 @@ describe 'metatags' do
       expect(head).to include '<meta name="twitter:title" content="Sarambanga"/>'
       expect(head).to include '<title>Sarambanga</title>'
     end
-    it 'title -> OG & twitter & title (w site)' do
+    it 'title -> OG & twitter & title (w site): the site name goes last' do
       head = Tags.new.display title: 'Sarambanga', site: 'Pepe'
       expect(head).to include '<meta property="og:title" content="Sarambanga"/>'
       expect(head).to include '<meta name="twitter:title" content="Sarambanga"/>'
-      expect(head).to include '<title>Pepe | Sarambanga</title>'
+      expect(head).to include '<title>Sarambanga | Pepe</title>'
     end
-    it 'title already starting with site name skips prefix' do
-      head = Tags.new.display title: 'Kleer - My Article', site: 'Kleer'
-      expect(head).to include '<title>Kleer - My Article</title>'
-      expect(head).not_to include '<title>Kleer | Kleer'
+    it 'title that already has the site name anywhere is left alone' do
+      ['Kleer - My Article', 'My Article - Kleer', 'My kleer Article', 'Kleer Lab'].each do |title|
+        head = Tags.new.display title: title, site: 'Kleer'
+        expect(head).to include "<title>#{title}</title>"
+      end
     end
   end
   context 'description' do

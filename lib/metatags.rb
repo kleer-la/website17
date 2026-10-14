@@ -89,6 +89,14 @@ module MetaTags
       result + "<meta property=\"og:url\" content=\"#{@base_url}/#{@current_lang}#{@path}\"/>"
     end
 
+    # The specific part first, the site name last: that is what a search result
+    # truncates last. A title that already says the site name, wherever, is left alone.
+    def tab_title(title)
+      return title if @site.to_s.empty? || title.to_s.downcase.include?(@site.to_s.downcase)
+
+      "#{title} | #{@site}"
+    end
+
     def display_one(tag)
       case tag[0]
       when :'http-equiv'
@@ -101,11 +109,9 @@ module MetaTags
         "<meta charset=\"#{tag[1]}\">" if tag[1].to_s.length.positive?
       when :title
         if tag[1].to_s.length.positive?
-          tab = ''
-          (tab += "#{@site} | ") if @site.to_s.length.positive? && !tag[1].to_s.start_with?(@site.to_s)
           "<meta property=\"og:title\" content=\"#{tag[1]}\"/>
           <meta name=\"twitter:title\" content=\"#{tag[1]}\"/>
-          <title>#{tab}#{tag[1]}</title>"
+          <title>#{tab_title(tag[1])}</title>"
         end
       when :description
         if tag[1].to_s.length.positive?

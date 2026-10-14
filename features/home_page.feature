@@ -19,8 +19,8 @@ Feature: Home Page
 
   Scenario: SEO description
     Given I visit the home page
-    Then SEO meta name "description" should be "Descubre el poder de la Transformación Ágil. Contamos con más de 13 años de experiencia acompañando a empresas en su evolución organizacional"
-    Then SEO meta property "og:description" should be "Descubre el poder de la Transformación Ágil. Contamos con más de 13 años de experiencia acompañando a empresas en su evolución organizacional"
+    Then SEO meta name "description" should be "Cocreamos el futuro del trabajo sin recetas. Desde hace más de 17 años, acompañamos a personas y organizaciones a evolucionar en entornos de cambio constante."
+    Then SEO meta property "og:description" should be "Cocreamos el futuro del trabajo sin recetas. Desde hace más de 17 años, acompañamos a personas y organizaciones a evolucionar en entornos de cambio constante."
 
   Scenario: No noindex
     Given I visit the home page
