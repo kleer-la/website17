@@ -89,10 +89,11 @@ class Page
     end
   end
 
-  # The languages a flagship slug is published in. Spanish and English pages
-  # are separate records, so a slug can exist in one only.
+  # The languages a flagship slug is published in and indexable. Spanish and
+  # English pages are separate records, so a slug can exist in one only; a
+  # noindex page is not an alternate worth announcing (#451).
   def self.flagship_languages(slug, flagships = self.flagships)
-    flagships.select { |f| f.slug == slug }.map { |f| f.lang.to_sym }
+    flagships.select { |f| f.slug == slug && !f.noindex }.map { |f| f.lang.to_sym }
   end
 
   def self.load_from_keventer(lang, slug)

@@ -509,6 +509,20 @@ describe 'GET /sitemap.xml' do
       expect(alternates.call('https://www.kleer.la/es/membresia-ia')).to eq(%w[es])
       expect(alternates.call('https://www.kleer.la/en/ambas')).to contain_exactly('es', 'en')
     end
+
+    # The noindex page is not in the sitemap, so announcing it as an alternate
+    # points the other language at a page that does not index (#451).
+    it 'leaves out the language whose page is noindex' do
+      allow(Page).to receive(:flagships).and_return(
+        [flagship(slug: 'ambas'), flagship(slug: 'ambas', lang: 'en', noindex: true)]
+      )
+
+      get '/sitemap.xml'
+
+      alternates = url_node('https://www.kleer.la/es/ambas').xpath('link').map { |l| l['hreflang'] }
+      expect(alternates).to eq(%w[es])
+      expect(urls).not_to include('https://www.kleer.la/en/ambas')
+    end
   end
 end
 
