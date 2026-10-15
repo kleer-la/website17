@@ -12,7 +12,7 @@ module LabSeoHelper
                     'para la operación de cada empresa.'.freeze
 
   LAB_PAGE_TITLES = {
-    home: 'Kleer Lab | Soluciones operativas a medida',
+    home: 'Kleer Lab | Soluciones digitales',
     cases: 'Casos | Kleer Lab'
   }.freeze
 
