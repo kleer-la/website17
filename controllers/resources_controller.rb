@@ -48,8 +48,8 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |base_path, slug, c
   RouterHelper.instance.set_alternate_route_with_fallback(base_path, slug, lang, Resource)
 
   question = @concept.question.to_s.empty? ? @concept.name : @concept.question
-  @meta_tags.set! title: h("#{question} · #{@resource.title}"),
-                  description: h(concept_description(@resource, @concept)),
+  @meta_tags.set! title: "#{question} · #{@resource.title}",
+                  description: concept_description(@resource, @concept),
                   canonical: "#{t('meta_tag.resources.canonical')}/#{@resource.slug}/#{@concept.slug}",
                   image: @resource.cover,
                   hreflang: [lang.to_sym],

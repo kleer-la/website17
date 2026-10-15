@@ -1,3 +1,4 @@
+require 'rack/utils'
 require './lib/helpers/router_helper'
 
 module MetaTags
@@ -97,6 +98,13 @@ module MetaTags
       "#{title} | #{@site}"
     end
 
+    # Titles and descriptions come from the CMS as free text: a double quote
+    # would cut the content="..." attribute and a < or & would break the HTML.
+    # Line breaks (some descriptions carry them) become one space.
+    def text(value)
+      Rack::Utils.escape_html(value.to_s.gsub(/\s*[\r\n]+\s*/, ' ').strip)
+    end
+
     def display_one(tag)
       case tag[0]
       when :'http-equiv'
@@ -109,15 +117,15 @@ module MetaTags
         "<meta charset=\"#{tag[1]}\">" if tag[1].to_s.length.positive?
       when :title
         if tag[1].to_s.length.positive?
-          "<meta property=\"og:title\" content=\"#{tag[1]}\"/>
-          <meta name=\"twitter:title\" content=\"#{tag[1]}\"/>
-          <title>#{tab_title(tag[1])}</title>"
+          "<meta property=\"og:title\" content=\"#{text(tag[1])}\"/>
+          <meta name=\"twitter:title\" content=\"#{text(tag[1])}\"/>
+          <title>#{text(tab_title(tag[1]))}</title>"
         end
       when :description
         if tag[1].to_s.length.positive?
-          "<meta property=\"og:description\" content=\"#{tag[1]}\"/>
-          <meta name=\"twitter:description\" content=\"#{tag[1]}\"/>
-          <meta name=\"description\" content=\"#{tag[1]}\"/>"
+          "<meta property=\"og:description\" content=\"#{text(tag[1])}\"/>
+          <meta name=\"twitter:description\" content=\"#{text(tag[1])}\"/>
+          <meta name=\"description\" content=\"#{text(tag[1])}\"/>"
         end
       when :base_url
         @base_url = tag[1]

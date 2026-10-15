@@ -58,6 +58,13 @@ describe 'metatags' do
       expect(head).to include '<meta name="twitter:title" content="Sarambanga"/>'
       expect(head).to include '<title>Sarambanga | Pepe</title>'
     end
+    it 'escapes HTML in the title, in the three places it appears' do
+      head = Tags.new.display title: 'Scrum "a fondo" <b> & más', site: 'Pepe'
+      escaped = 'Scrum &quot;a fondo&quot; &lt;b&gt; &amp; más'
+      expect(head).to include %(<meta property="og:title" content="#{escaped}"/>)
+      expect(head).to include %(<meta name="twitter:title" content="#{escaped}"/>)
+      expect(head).to include "<title>#{escaped} | Pepe</title>"
+    end
     it 'title that already has the site name anywhere is left alone' do
       ['Kleer - My Article', 'My Article - Kleer', 'My kleer Article', 'Kleer Lab'].each do |title|
         head = Tags.new.display title: title, site: 'Kleer'
@@ -77,6 +84,18 @@ describe 'metatags' do
       expect(head).to include '<meta property="og:description" content="Sarambanga"/>'
       expect(head).to include '<meta name="twitter:description" content="Sarambanga"/>'
       expect(head).to include '<meta name="description" content="Sarambanga"/>'
+    end
+    it 'escapes HTML in the description so a quote does not cut the attribute' do
+      head = Tags.new.display description: 'La Guía "Sesiones de Mejora" <3 & más'
+      escaped = 'La Guía &quot;Sesiones de Mejora&quot; &lt;3 &amp; más'
+      expect(head).to include %(<meta property="og:description" content="#{escaped}"/>)
+      expect(head).to include %(<meta name="twitter:description" content="#{escaped}"/>)
+      expect(head).to include %(<meta name="description" content="#{escaped}"/>)
+    end
+
+    it 'turns line breaks in the description into spaces' do
+      head = Tags.new.display description: "Primera línea\r\n  segunda\n\ntercera"
+      expect(head).to include '<meta name="description" content="Primera línea segunda tercera"/>'
     end
   end
   context 'canonical' do
