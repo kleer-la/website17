@@ -90,4 +90,36 @@ describe AppHelper do
       expect(link_faq_terms('<p>Scrum</p>', {}, Set.new)).to eq('<p>Scrum</p>')
     end
   end
+
+  # A long course description beside the side image makes a narrow, tall column:
+  # the first part stays beside the image, the rest takes the full width.
+  describe '#split_description' do
+    it 'cuts at the first heading that comes after a paragraph' do
+      intro, rest = split_description('<p>Uno</p><p>Dos</p><h5>Tema</h5><p>Tres</p><h5>Otro</h5><p>Cuatro</p>')
+
+      expect(intro).to eq('<p>Uno</p><p>Dos</p>')
+      expect(rest).to eq('<h5>Tema</h5><p>Tres</p><h5>Otro</h5><p>Cuatro</p>')
+    end
+
+    it 'does not cut at a heading that opens the text: nothing would sit beside the image' do
+      intro, rest = split_description('<h5>Tema</h5><p>Uno</p><h5>Otro</h5><p>Dos</p>')
+
+      expect(intro).to eq('<h5>Tema</h5><p>Uno</p>')
+      expect(rest).to eq('<h5>Otro</h5><p>Dos</p>')
+    end
+
+    it 'keeps a text without headings whole beside the image' do
+      expect(split_description('<p>Uno</p><p>Dos</p>')).to eq(['<p>Uno</p><p>Dos</p>', ''])
+    end
+
+    it 'does not take a heading inside a list or quote for the cut' do
+      html = '<p>Uno</p><ul><li><h5>x</h5></li></ul>'
+
+      expect(split_description(html)).to eq([html, ''])
+    end
+
+    it 'copes with an empty description' do
+      expect(split_description(nil)).to eq(['', ''])
+    end
+  end
 end

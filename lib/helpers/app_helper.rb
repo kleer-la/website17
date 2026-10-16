@@ -171,6 +171,26 @@ module AppHelper
     end.join
   end
 
+  # A long description would make a narrow, tall column beside the side image:
+  # [the part that stays beside it, the rest for the full width], cut at the
+  # first top-level heading that comes after a paragraph.
+  def split_description(html)
+    html = html.to_s
+    nodes = Nokogiri::HTML::DocumentFragment.parse(html).children.to_a
+    cut = description_cut_index(nodes)
+    return [html, ''] unless cut
+
+    [nodes[0...cut].map(&:to_html).join, nodes[cut..].map(&:to_html).join]
+  end
+
+  def description_cut_index(nodes)
+    seen_paragraph = false
+    nodes.index do |node|
+      seen_paragraph ||= node.name == 'p'
+      seen_paragraph && node.name.match?(/\Ah[1-6]\z/)
+    end
+  end
+
   # The definition a program step links to: its whole title must be the term.
   def faq_definition_for(step_title, definitions)
     definitions[anchor_slug(step_title)]

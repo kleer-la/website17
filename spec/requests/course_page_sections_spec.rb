@@ -42,6 +42,23 @@ describe 'GET /es/cursos/:slug — sections' do
     end
   end
 
+  context 'with a long description' do
+    let(:long) { "Introducción.\n\n##### Primer tema\n\nDesarrollo del tema.\n\n##### Segundo tema\n\nMás texto." }
+
+    it 'keeps the first part beside the image and gives the rest the full width' do
+      body = visit('description' => long, 'side_image' => 'https://example.com/lado.webp')
+
+      beside = body[/<div class="col-md-6">\s*(<p>Introducción\.<\/p>)\s*<\/div>/, 1]
+      expect(beside).not_to be_nil
+      expect(body).to match(/<div class="col-12 course-description__more">\s*<h5>Primer tema<\/h5>/)
+      expect(body).to include('Segundo tema')
+    end
+
+    it 'renders no full-width block when the description has no heading to cut at' do
+      expect(visit('description' => 'Solo un párrafo.')).not_to include('course-description__more')
+    end
+  end
+
   context 'with a FAQ that defines a term' do
     it 'links the program step named like the term to its question' do
       body = visit

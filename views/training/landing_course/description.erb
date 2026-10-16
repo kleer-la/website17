@@ -1,7 +1,8 @@
+<% intro, rest = split_description(link_course_terms(@markdown_renderer.render(@event_type.description.to_s))) %>
 <section id="course-description" class="container">
       <div class="row">
         <div class="col-md-6">
-          <%= link_course_terms(@markdown_renderer.render(@event_type.description.to_s)) %>
+          <%= intro %>
         </div>
         <div class="col-md-6 ps-5 pe-5">
           <%if @event_type.side_image.to_s == ''%>
@@ -18,4 +19,11 @@
           <% end %>
         </div>
       </div>
+      <% unless rest.empty? %>
+      <div class="row">
+        <div class="col-12 course-description__more">
+          <%= rest %>
+        </div>
+      </div>
+      <% end %>
 </section>
