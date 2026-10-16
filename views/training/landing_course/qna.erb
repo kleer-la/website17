@@ -1,28 +1,18 @@
 <%
-  separator = '<h4>'
-  question_separator = '</h4>'
-
-  answers = []
-  questions = []
-
-  qna = @markdown_renderer.render(@event_type.faq).split(separator)
-
-  qna.each do |complete_question|
-    separated_question = complete_question.split(question_separator)
-    questions.push(separated_question[0])
-    answers.push(separated_question[1])
-  end
-
-  questions = questions.compact
-  answers = answers.compact
-
+  # Each question is anchored by its text; faq-anchors.js opens the one a link (a program step's) points at.
+  qna = h4_blocks(@markdown_renderer.render(@event_type.faq.to_s))
+  questions = qna.map(&:first)
+  answers = qna.map(&:last)
+  anchors = faq_anchors(questions)
 %>
 <%unless questions == []%>
+<script src="/js/faq-anchors.js" defer></script>
 <section id="course-qna">
   <div class="container p-5 course-qna-container">
     <h2 class="text-center mb-5 common-subtitle"><%= t("course_landing.faq") %></h2>
     <% questions.each.with_index do |question, index| %>
 
+      <div class="course-qna__item" id="<%= anchors[index] %>">
       <a data-bs-toggle="collapse" href="#question<%=index %>" role="button" aria-expanded="false" aria-controls="question<%=index %>">
         <div class="course-qna__question">
           <h3 class="common-item"><%= question %></h3>
@@ -31,6 +21,7 @@
       </a>
       <div class="collapse course-qna__answer" id="question<%=index %>">
         <%= answers[index] %>
+      </div>
       </div>
     <% end %>
   </div>

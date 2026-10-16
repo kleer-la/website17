@@ -1,25 +1,12 @@
 <%
-  separator = '<h4>'
-  item_separator = '</h4>'
-
-  separated_program = []
-
-  program = @markdown_renderer.render(@event_type.program).split(separator)
-
-  program.each do |item|
-    separated_item = item.split(item_separator)
-
-    if separated_item[0].nil?
-      next
-    end
-    separated_program.push({item: separated_item[0], subitem: separated_item[1]})
-  end
-
-  separated_program = separated_program.compact
-
-  middle_space = program.length / 2
+  program_html = @markdown_renderer.render(@event_type.program.to_s)
+  separated_program = h4_blocks(program_html).map { |item, subitem| { item: item, subitem: subitem } }
+  middle_space = (separated_program.length + 1) / 2
+  # A step named like a term the course FAQ defines ("¿Qué es Kanban…?") links to that question.
+  definitions = faq_definitions(h4_blocks(@markdown_renderer.render(@event_type.faq.to_s)))
 %>
-
+<link rel="stylesheet" href="<%= css_url('service-content.css') %>">
+<% unless separated_program.empty? %>
 <section id="course-program">
   <div class="container mt-5">
     <h2 class="mb-5 text-center common-subtitle"><%= t("course_landing.program") %></h2>
@@ -31,7 +18,7 @@
              break
            end
         %>
-        <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+        <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index, definition: faq_definition_for(item[:item], definitions)} %>
       <% end %>
       </div>
       <div class="col-md-6">
@@ -41,7 +28,7 @@
               next
             end
           %>
-          <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index} %>
+          <%= erb :'training/landing_course/_program-item', locals: {item: item[:item], subitem: item[:subitem], index: index, definition: faq_definition_for(item[:item], definitions)} %>
         <% end %>
       </div>
     </div>
@@ -55,3 +42,4 @@
   <% end %>
 
 </section>
+<% end %>

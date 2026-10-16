@@ -64,6 +64,15 @@ module AppHelper
     end
   end
 
+  # A course's rendered markdown is a run of <h4>title</h4> blocks (program steps,
+  # FAQ questions): the [title, body] pairs, in order.
+  def h4_blocks(html)
+    html.to_s.split('<h4>').filter_map do |block|
+      title, body = block.split('</h4>')
+      [title, body] unless title.nil?
+    end
+  end
+
   # "¿Qué es [un|la…] X [y para/por qué …]?" — the FAQ questions that define a term.
   FAQ_DEFINITION = /\A\s*¿?\s*qu[ée]\s+(?:es|son)\s+(?:(?:el|la|los|las|un|una)\s+)?(?<term>.+?)
                     (?<tail>\s+y\s+(?:para|por)\s+qu[ée]\b.*)?\s*\?*\s*\z/xim

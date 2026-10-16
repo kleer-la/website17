@@ -28,4 +28,6 @@
     <%= subitem %>
   </div>
 <%end%>
-
+<% if definition %>
+  <div class="program"><a class="program-definition" href="#<%= definition[:anchor] %>"><%= definition[:label] %> ↓</a></div>
+<% end %>

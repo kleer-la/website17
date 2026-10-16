@@ -20,3 +20,7 @@
 
 /* A question opened from a link lands below the fixed navbar, not under it. */
 .faq .accordion-item { scroll-margin-top: 120px; }
+
+/* The same, on a course page: a program step's link and the questions it opens. */
+.course-qna__item { scroll-margin-top: 120px; }
+#course-program .program { margin: 0.25rem 0 1rem; }

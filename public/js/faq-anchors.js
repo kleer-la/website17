@@ -8,9 +8,9 @@
     var id = decodeURIComponent(window.location.hash.slice(1));
     if (!id) return;
     var item = document.getElementById(id);
-    if (!item || !item.classList.contains('accordion-item') || !window.bootstrap) return;
+    if (!item || !(item.classList.contains('accordion-item') || item.classList.contains('course-qna__item')) || !window.bootstrap) return;
 
-    var panel = item.querySelector('.accordion-collapse');
+    var panel = item.querySelector('.accordion-collapse, .course-qna__answer');
     if (!panel || panel.classList.contains('show')) return;
 
     panel.addEventListener('shown.bs.collapse', function () {
