@@ -637,6 +637,7 @@ es:
       article: Blog
       event_type: Curso
       resource: Recurso
+      service_area: Área de servicios
   business-agility:
     title: Agilidad Organizacional
     subtitle: >-

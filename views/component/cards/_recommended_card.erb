@@ -12,7 +12,7 @@
       </div>
     <% else %>
     <div class="type-flag">
-      <% if item.type == 'service' && item.is_training_program %>
+      <% if %w[service service_area].include?(item.type) && item.is_training_program %>
         <%= t('recommended.type.training_program') %>
       <% else %>
         <%= t("recommended.type.#{item.type}") %>

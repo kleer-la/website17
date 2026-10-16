@@ -32,6 +32,8 @@ class Recommended
       RecommendedEventType.new(doc, lang)
     when 'service'
       RecommendedService.new(doc, lang)
+    when 'service_area'
+      RecommendedServiceArea.new(doc, lang)
     when 'resource'
       RecommendedResource.new(doc, lang)
     when 'page'
@@ -90,6 +92,17 @@ class RecommendedService < Recommended
     else
       "/es/servicios/#{slug}"
     end
+  end
+end
+
+# An area page: /servicios/:slug, or /formacion/:slug when the area is a training program.
+class RecommendedServiceArea < Recommended
+  SECTIONS = { ['es', true] => 'formacion', ['es', false] => 'servicios',
+               ['en', true] => 'training', ['en', false] => 'services' }.freeze
+
+  def url
+    language = @lang == 'en' ? 'en' : 'es'
+    "/#{language}/#{SECTIONS.fetch([language, @is_training_program])}/#{slug}"
   end
 end
 
