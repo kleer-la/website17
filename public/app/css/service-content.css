@@ -24,3 +24,5 @@
 /* The same, on a course page: a program step's link and the questions it opens. */
 .course-qna__item { scroll-margin-top: 120px; }
 #course-program .program { margin: 0.25rem 0 1rem; }
+/* A term in a course text that its FAQ defines links to the question. */
+.faq-term-link { text-decoration: underline; text-underline-offset: 0.18em; }

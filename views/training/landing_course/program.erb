@@ -3,7 +3,7 @@
   separated_program = h4_blocks(program_html).map { |item, subitem| { item: item, subitem: subitem } }
   middle_space = (separated_program.length + 1) / 2
   # A step named like a term the course FAQ defines ("¿Qué es Kanban…?") links to that question.
-  definitions = faq_definitions(h4_blocks(@markdown_renderer.render(@event_type.faq.to_s)))
+  definitions = course_faq_definitions
 %>
 <link rel="stylesheet" href="<%= css_url('service-content.css') %>">
 <% unless separated_program.empty? %>

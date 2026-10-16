@@ -4,7 +4,7 @@
   <div class="row">
     <h2 class="mb-4 text-center common-subtitle"><%= t("course_landing.target") %></h2>
     <div >
-      <%=@markdown_renderer.render( @event_type.recipients )%>
+      <%= link_course_terms(@markdown_renderer.render(@event_type.recipients.to_s)) %>
     </div>
   </div>
 </section>
@@ -16,7 +16,7 @@
     </div>
     <div class="col-md-6">
       <h2 class="mb-4 text-center common-subtitle"><%= t("course_landing.target") %></h2>
-      <%=@markdown_renderer.render( @event_type.recipients )%>
+      <%= link_course_terms(@markdown_renderer.render(@event_type.recipients.to_s)) %>
     </div>
   </div>
 </section>

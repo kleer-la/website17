@@ -1,7 +1,7 @@
 <section id="course-description" class="container">
       <div class="row">
         <div class="col-md-6">
-          <%=@markdown_renderer.render( @event_type.description )%>
+          <%= link_course_terms(@markdown_renderer.render(@event_type.description.to_s)) %>
         </div>
         <div class="col-md-6 ps-5 pe-5">
           <%if @event_type.side_image.to_s == ''%>

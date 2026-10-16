@@ -13,7 +13,7 @@ describe AppHelper do
 
     it 'takes the term out of a "¿Qué es X y para qué sirve?" question' do
       expect(definitions('¿Qué es Kanban y para qué sirve?')['kanban'])
-        .to eq(anchor: 'que-es-kanban-y-para-que-sirve', label: '¿Qué es Kanban?')
+        .to eq(anchor: 'que-es-kanban-y-para-que-sirve', label: '¿Qué es Kanban?', term: 'Kanban')
     end
 
     it 'drops the article, and reads "son" and "por qué" the same way' do
@@ -49,6 +49,45 @@ describe AppHelper do
 
     it 'does not match a title that only contains the term' do
       expect(faq_definition_for('Toyota Kata en la práctica', found)).to be_nil
+    end
+  end
+
+  # The text of a course names a term its FAQ defines ("la teoría de restricciones
+  # dice…"): the first mention links to the question, so nobody writes it by hand.
+  describe '#link_faq_terms' do
+    let(:found) do
+      faq_definitions([['¿Qué es la teoría de restricciones?', 'R'], ['¿Qué es Scrum y para qué sirve?', 'R']])
+    end
+
+    def linked(html, used = Set.new) = link_faq_terms(html, found, used)
+
+    it 'links the first mention of a defined term, whatever its case or accents' do
+      expect(linked('<p>La Teoria de Restricciones dice mucho. La teoría de restricciones, también.</p>'))
+        .to eq('<p>La <a class="faq-term-link" href="#que-es-la-teoria-de-restricciones">Teoria de Restricciones</a> ' \
+               'dice mucho. La teoría de restricciones, también.</p>')
+    end
+
+    it 'links each term once, and tells the caller which ones it used' do
+      used = Set.new
+      linked('<p>Scrum y la teoría de restricciones.</p>', used)
+
+      expect(used).to eq(Set.new(%w[scrum teoria-de-restricciones]))
+      expect(linked('<p>Scrum otra vez.</p>', used)).to eq('<p>Scrum otra vez.</p>')
+    end
+
+    it 'leaves links and headings alone' do
+      html = '<h2>Scrum</h2><p><a href="/x">Scrum</a> y Scrum.</p>'
+
+      expect(linked(html)).to eq('<h2>Scrum</h2><p><a href="/x">Scrum</a> y ' \
+                                 '<a class="faq-term-link" href="#que-es-scrum-y-para-que-sirve">Scrum</a>.</p>')
+    end
+
+    it 'only matches whole words' do
+      expect(linked('<p>Scrumban no es Scrum.</p>')).to include('Scrumban no es <a')
+    end
+
+    it 'returns the text untouched when the FAQ defines nothing' do
+      expect(link_faq_terms('<p>Scrum</p>', {}, Set.new)).to eq('<p>Scrum</p>')
     end
   end
 end

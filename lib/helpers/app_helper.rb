@@ -87,7 +87,8 @@ module AppHelper
       match = FAQ_DEFINITION.match(question)
       next unless match
 
-      found[anchor_slug(match[:term])] ||= { anchor: anchors[index], label: definition_label(question, match) }
+      found[anchor_slug(match[:term])] ||= { anchor: anchors[index], label: definition_label(question, match),
+                                             term: match[:term].strip }
     end
   end
 
@@ -96,6 +97,78 @@ module AppHelper
     label = match[:tail] ? question[0...match.begin(:tail)] : question.sub(/\s*\?*\s*\z/, '')
     label = "¿#{label}" unless label.start_with?('¿')
     "#{label}?"
+  end
+
+  # The question definitions of a course's FAQ, read once per page.
+  def course_faq_definitions
+    @course_faq_definitions ||= faq_definitions(h4_blocks(@markdown_renderer.render(@event_type.faq.to_s)))
+  end
+
+  # A course text with its first mention of each term the FAQ defines linked to
+  # that question; a term is linked once in the whole page, across texts.
+  def link_course_terms(html)
+    link_faq_terms(html, course_faq_definitions, @linked_terms ||= Set.new)
+  end
+
+  FAQ_TERM_SKIPPED_IN = %w[a h1 h2 h3 h4 h5 h6 button script style].freeze
+
+  # `used` holds the slugs already linked: the call adds the ones it links.
+  def link_faq_terms(html, definitions, used)
+    return html if definitions.empty? || html.to_s.strip.empty?
+
+    fragment = Nokogiri::HTML::DocumentFragment.parse(html)
+    definitions.sort_by { |_, definition| -definition[:term].length }.each do |slug, definition|
+      next if used.include?(slug)
+
+      node = fragment.xpath('.//text()').find do |text|
+        linkable_text?(text) && term_span(text.content, definition[:term])
+      end
+      next unless node
+
+      link_term_in(node, definition)
+      used << slug
+    end
+    fragment.to_html
+  end
+
+  def linkable_text?(text)
+    text.ancestors.none? { |ancestor| FAQ_TERM_SKIPPED_IN.include?(ancestor.name) }
+  end
+
+  def link_term_in(node, definition)
+    from, length = term_span(node.content, definition[:term])
+    content = node.content
+    link = Nokogiri::XML::Node.new('a', node.document)
+    link['class'] = 'faq-term-link'
+    link['href'] = "##{definition[:anchor]}"
+    link.content = content[from, length]
+    node.add_next_sibling(Nokogiri::XML::Text.new(content[(from + length)..], node.document))
+    node.add_next_sibling(link)
+    node.content = content[0, from]
+  end
+
+  # Where `term` first appears in `text` as a whole word, ignoring case and
+  # accents: [offset, length], or nil.
+  def term_span(text, term)
+    haystack = fold_accents(text)
+    needle = fold_accents(term)
+    offset = 0
+    while (found = haystack.index(needle, offset))
+      before = found.zero? ? '' : haystack[found - 1]
+      after = haystack[found + needle.length] || ''
+      return [found, needle.length] unless before.match?(/[[:alnum:]]/) || after.match?(/[[:alnum:]]/)
+
+      offset = found + 1
+    end
+    nil
+  end
+
+  # Same length as the input, so offsets carry over to the original text.
+  def fold_accents(text)
+    text.each_char.map do |char|
+      plain = I18n.transliterate(char).downcase
+      plain.length == 1 ? plain : char.downcase
+    end.join
   end
 
   # The definition a program step links to: its whole title must be the term.

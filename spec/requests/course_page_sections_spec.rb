@@ -57,6 +57,12 @@ describe 'GET /es/cursos/:slug — sections' do
       expect(body).to include('/js/faq-anchors.js')
     end
 
+    it 'links the first mention of the term in the course text to its question' do
+      body = visit('description' => 'Cuando algo limita, la Kanban dice que todo se frena.')
+
+      expect(body).to include('<a class="faq-term-link" href="#que-es-kanban-y-para-que-sirve">Kanban</a>')
+    end
+
     it 'adds no link when the FAQ does not define the step' do
       body = visit('faq' => "#### ¿Cuánto dura?\n\nDos días.")
 
