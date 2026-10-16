@@ -86,6 +86,17 @@ describe AppHelper do
       expect(linked('<p>Scrumban no es Scrum.</p>')).to include('Scrumban no es <a')
     end
 
+    it 'does not split a proper name that contains the term' do
+      expect(linked('<p>El curso Certified Scrum Master (CSM) enseña Scrum.</p>'))
+        .to eq('<p>El curso Certified Scrum Master (CSM) enseña ' \
+               '<a class="faq-term-link" href="#que-es-scrum-y-para-que-sirve">Scrum</a>.</p>')
+    end
+
+    it 'does not take a capitalised sentence opener or an article for part of a name' do
+      expect(linked('<p>Aplicá Scrum. La Teoria de Restricciones ayuda.</p>'))
+        .to include('Aplicá <a class="faq-term-link"').and include('La <a class="faq-term-link"')
+    end
+
     it 'returns the text untouched when the FAQ defines nothing' do
       expect(link_faq_terms('<p>Scrum</p>', {}, Set.new)).to eq('<p>Scrum</p>')
     end

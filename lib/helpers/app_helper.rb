@@ -156,11 +156,31 @@ module AppHelper
     while (found = haystack.index(needle, offset))
       before = found.zero? ? '' : haystack[found - 1]
       after = haystack[found + needle.length] || ''
-      return [found, needle.length] unless before.match?(/[[:alnum:]]/) || after.match?(/[[:alnum:]]/)
+      whole_word = !(before.match?(/[[:alnum:]]/) || after.match?(/[[:alnum:]]/))
+      return [found, needle.length] if whole_word && !part_of_name?(text, found, needle.length)
 
       offset = found + 1
     end
     nil
+  end
+
+  NAME_LINKERS = %w[el la los las un una de del y e en con por para a al lo].freeze
+
+  # "Certified Scrum Master": a capitalised term touching another capitalised word
+  # is part of a longer name, which the FAQ question doesn't answer. A word that
+  # only opens the sentence, or an article, doesn't count as a neighbour.
+  def part_of_name?(text, from, length)
+    return false unless text[from].match?(/\p{Lu}/)
+
+    before = text[0, from][/(?<![[:alnum:]])(\p{Lu}[[:alpha:]]*) +\z/, 1]
+    after = text[(from + length)..][/\A +(\p{Lu}[[:alpha:]]*)/, 1]
+    return true if after && !NAME_LINKERS.include?(after.downcase)
+
+    before && !NAME_LINKERS.include?(before.downcase) && !sentence_opener?(text[0, from], before)
+  end
+
+  def sentence_opener?(preceding, word)
+    preceding.sub(/#{Regexp.escape(word)} +\z/, '').match?(/\A\s*\z|[.!?¿¡:]\s*\z/)
   end
 
   # Same length as the input, so offsets carry over to the original text.
