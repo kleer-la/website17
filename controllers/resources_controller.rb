@@ -24,6 +24,7 @@ def resources_index(preview = false)
   @meta_tags.set! noindex: true, nofollow: true if preview
 
   @active_tab_publicamos = 'active'
+  @preview_list = preview
   @resources = if preview
                  Resource.create_list_keventer(:resources_preview_url)
                else

@@ -1,7 +1,8 @@
 <%
 lang = session[:locale]
 resources_path = RouterHelper.translate_path('recursos', lang)
-landing_uri = "/#{lang}/#{resources_path}/#{resource.slug}"
+# In the preview list a draft has no public page yet (#456): open its preview.
+landing_uri = "/#{lang}/#{resources_path}/#{'preview/' if defined?(preview) && preview}#{resource.slug}"
 %>
 <div class="card resource-card" id="<%= resource.slug %>">
   <a href="<%= landing_uri %>">

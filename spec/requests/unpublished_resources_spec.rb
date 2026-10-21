@@ -78,4 +78,26 @@ describe 'an unpublished resource' do
   it 'counts a resource whose API answer carries no flag as published' do
     expect(Resource.new({ 'slug' => 'x' }, 'es').published).to be(true)
   end
+
+  # The preview list is where the team finds a draft: its cards must open the
+  # draft, not the public path that now answers 404.
+  describe 'the preview list' do
+    before do
+      allow(Resource).to receive(:create_list_keventer).and_return([resource(published: false, lang: :es)])
+    end
+
+    it 'links each card to its preview page' do
+      get '/es/recursos/preview'
+
+      expect(last_response.body).to include('href="/es/recursos/preview/guia"')
+      expect(last_response.body).not_to include('href="/es/recursos/guia"')
+    end
+
+    it 'leaves the public list linking to the public pages' do
+      get '/es/recursos'
+
+      expect(last_response.body).to include('href="/es/recursos/guia"')
+      expect(last_response.body).not_to include('/recursos/preview/guia')
+    end
+  end
 end
