@@ -35,7 +35,8 @@ describe 'Resources routes' do
         author_trainers: [],
         trainers_with_role: [],
         recommended_not_downloads: [],
-        concepts?: false
+        concepts?: false,
+        published: true
       )
     end
 
@@ -115,7 +116,8 @@ describe 'Resources routes' do
         author_trainers: [],
         trainers_with_role: [],
         recommended_not_downloads: [],
-        concepts?: false
+        concepts?: false,
+        published: true
       )
     end
 
@@ -174,7 +176,8 @@ describe 'Resources routes' do
                assessment_id: nil,
                preview: '',
                trainers_with_role: [],
-               recommended_not_downloads: []).tap do |resource|
+               recommended_not_downloads: [],
+               published: true).tap do |resource|
           allow(resource).to receive(:long_description=)
         end
       end

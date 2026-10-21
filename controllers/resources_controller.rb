@@ -8,6 +8,12 @@ get %r{/(resources|recursos)/preview/?} do
   resources_index(preview: true)
 end
 
+# A draft, for the team to read before publishing it; the public path is a 404
+# until then (#456). Before the card route, which would take `preview` for a slug.
+get %r{/(resources|recursos)/preview/([a-z0-9_-]+)} do |base_path, slug|
+  resource_page(base_path, slug, preview: true)
+end
+
 def resources_index(preview = false)
   page = Page.load_from_keventer(session[:locale], 'recursos')
   @meta_tags.set! title: page.seo_title || t('meta_tag.resources.title'),
@@ -37,6 +43,8 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |base_path, slug, c
   partial_url = lang == 'es' ? 'recursos' : 'resources'
 
   @resource = Resource.create_one_keventer(slug, lang)
+  raise ResourceNotFoundError.new(slug) unless @resource.published
+
   redirect to("/#{lang}/#{partial_url}/#{@resource.slug}/#{concept_slug}"), 301 if slug != @resource.slug
 
   @concept = @resource.concept(concept_slug) if @resource.concepts?
@@ -87,6 +95,10 @@ def resource_alternates(base_path, slug, lang, resource)
 end
 
 get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
+  resource_page(base_path, slug)
+end
+
+def resource_page(base_path, slug, preview: false)
   @active_tab_publicamos = 'active'
 
   lang = session[:locale] || 'es'
@@ -95,8 +107,12 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
   redirect to("/#{lang}/#{partial_url}/retromat-planes-retrospectivas"), 301 if slug == 'retromat'
 
   @resource = Resource.create_one_keventer(slug, lang)
+  # Before the redirect to the current slug: a retired page must not forward.
+  raise ResourceNotFoundError.new(slug) unless @resource.published || preview
 
-  redirect to("/#{lang}/#{partial_url}/#{@resource.slug}"), 301 if slug != @resource.slug
+  @meta_tags.set! noindex: true, nofollow: true if preview
+  base = preview ? "/#{lang}/#{partial_url}/preview" : "/#{lang}/#{partial_url}"
+  redirect to("#{base}/#{@resource.slug}"), 301 if slug != @resource.slug
 
   # Check if resource has content in the requested language
   if @resource.title.to_s.strip.empty?
@@ -127,5 +143,5 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)} do |base_path, slug|
 
   render_page :'resources/show/show'
 rescue ResourceNotFoundError
-  return status 404
+  status 404
 end

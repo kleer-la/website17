@@ -110,7 +110,7 @@ class Resource
                 :authors_list, :translators_list, :illustrators_list,
                 :author_trainers, :translator_trainers, :illustrator_trainers,
                 :fb_share, :tw_share, :li_share, :kleer_share_url, :recommended,
-                :created_at, :updated_at, :concepts,
+                :created_at, :updated_at, :concepts, :published,
                 *LOCALIZED_FIELDS
 
   def initialize(doc, lang)
@@ -122,6 +122,9 @@ class Resource
     @lang = lang
     @downloadable = AppHelper.boolean_value(doc['downloadable'])
     @assessment_id = doc.dig('assessment', 'id')
+    # The API also returns unpublished resources (the preview needs them); one
+    # that does not say is taken as published, as it always was.
+    @published = doc['published'] != false
 
     init_localized_fields(doc)
     init_urls
