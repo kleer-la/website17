@@ -611,6 +611,7 @@ $turquoise-light: #a5e4f1;
 
   .card-body {
     padding: 0;
+    min-height: 0;
   }
 
   .card-text {
@@ -620,7 +621,17 @@ $turquoise-light: #a5e4f1;
     font-size: 1rem;
     line-height: 1.333rem;
     font-feature-settings: 'pnum' on, 'lnum' on;
+    // the text gives way so author and date stay inside the card
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+
+    p:last-child { margin-bottom: 0; }
   }
+
+  .card-meta { flex: none; padding-top: 8px; }
 }
 
 .client-card {

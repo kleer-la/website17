@@ -26,9 +26,10 @@ where_uri = "/#{session[:locale]}/#{@where.to_s.downcase.gsub(' ','-')}/"
     <a href="<%= where_uri + article.slug %>">
       <h3 class="card-title"><%= article.title %></h3>
     </a>
-    <p class="card-text">
+    <%# div, not p: the rendered markdown brings its own <p>, which would close this one early %>
+    <div class="card-text">
       <%= @markdown_renderer.render(article.description) %>
-    </p>
+    </div>
     <div class="card-meta mt-auto">
       <% if article.trainers.count > 0 %>
         <small class="text-muted">
