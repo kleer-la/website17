@@ -195,6 +195,18 @@ get %r{/categoria/(#{SLUG})/cursos/(#{SLUG})} do |_category_codename, event_type
   redirect to("/es/cursos/#{event_type_id_with_name}"), 301
 end
 
+# Keventer resolves the slug of a service that is not published to the area that
+# held it, and the area's own list leaves it out. It answers where it went, or
+# 404 — not the area page again under a second URL (kleer-la/website17#458).
+def unlisted_service_slug(service_area, slug)
+  return if [service_area.slug, service_area.slug_old].include?(slug)
+  return if service_area.services.any? { |sv| [sv.slug, sv.slug_old].include?(slug) }
+
+  moved_to = service_area.service_redirects[slug]
+  redirect to(moved_to), 301 if moved_to
+  halt 404
+end
+
 # <%= erb :'component/sections/recommended', locals: { recommended: @event_type.recommended, title: t('recommended.title')  }%>
 get %r{/formacion/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   is_preview_mode = request.path_info.end_with?('/preview')
@@ -204,6 +216,7 @@ get %r{/formacion/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   # A programme that left goes to what replaces it (kleer-la/eventer#224).
   redirect to(service_area.redirect_url), 301 if service_area.redirect_url
   redirect to(area_url(service_area, slug)), 301 unless service_area.is_training_program
+  unlisted_service_slug(service_area, slug)
 
   lang = session[:locale] || 'es'
 
@@ -237,6 +250,7 @@ get %r{/training/([a-z0-9_-]+)(/preview)?} do |slug, _preview|
   # A programme that left goes to what replaces it (kleer-la/eventer#224).
   redirect to(service_area.redirect_url), 301 if service_area.redirect_url
   redirect to(area_url(service_area, slug)), 301 unless service_area.is_training_program
+  unlisted_service_slug(service_area, slug)
 
   lang = session[:locale] || 'en'
 

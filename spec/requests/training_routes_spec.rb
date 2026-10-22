@@ -100,4 +100,55 @@ describe 'Training Routes' do
       end
     end
   end
+
+  # A programme's service has no page of its own: /formacion/<service slug> loads
+  # the area. Keventer resolves the slug of a service that is not published to
+  # that area too, so the answer has to come from the services it lists (#458).
+  describe 'a service slug under a training area' do
+    let(:area_data) do
+      { 'id' => 1, 'slug' => 'programa', 'name' => 'Programa', 'lang' => 'es', 'is_training_program' => true,
+        'primary_color' => '#FF5733', 'primary_font_color' => '#FFFFFF',
+        'secondary_color' => '#33FF57', 'secondary_font_color' => '#000000',
+        'services' => [{ 'id' => 5, 'slug' => 'servicio-vigente', 'name' => 'Vigente' }],
+        'service_redirects' => {} }
+    end
+
+    before { ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, area_data.to_json)) }
+
+    after do
+      ServiceAreaV3.class_variable_set(:@@json_api, nil) if ServiceAreaV3.class_variable_defined?(:@@json_api)
+    end
+
+    { '/es/formacion' => 'es', '/en/training' => 'en' }.each do |base, lang|
+      it "answers 404 under #{base} for a service that is not listed" do
+        ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, area_data.merge('lang' => lang).to_json))
+
+        get "#{base}/servicio-retirado"
+
+        expect(last_response.status).to eq(404)
+      end
+    end
+
+    it 'sends a service that left with a redirect to where it went' do
+      area_data['service_redirects'] = { 'servicio-retirado' => '/es/formacion/otro' }
+      ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, area_data.to_json))
+
+      get '/es/formacion/servicio-retirado'
+
+      expect(last_response.status).to eq(301)
+      expect(last_response.location).to end_with('/es/formacion/otro')
+    end
+
+    it 'still renders the area for the slug of a listed service' do
+      get '/es/formacion/servicio-vigente'
+
+      expect(last_response.status).to eq(200)
+    end
+
+    it 'still renders the area under its own slug' do
+      get '/es/formacion/programa'
+
+      expect(last_response.status).to eq(200)
+    end
+  end
 end
