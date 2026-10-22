@@ -44,6 +44,7 @@ get %r{/(resources|recursos)/([a-z0-9_-]+)/([a-z0-9_-]+)} do |base_path, slug, c
   partial_url = lang == 'es' ? 'recursos' : 'resources'
 
   @resource = Resource.create_one_keventer(slug, lang)
+  redirect(@resource.redirect_url, 301) if @resource.redirect_url
   raise ResourceNotFoundError.new(slug) unless @resource.published
 
   redirect to("/#{lang}/#{partial_url}/#{@resource.slug}/#{concept_slug}"), 301 if slug != @resource.slug
@@ -108,6 +109,9 @@ def resource_page(base_path, slug, preview: false)
   redirect to("/#{lang}/#{partial_url}/retromat-planes-retrospectivas"), 301 if slug == 'retromat'
 
   @resource = Resource.create_one_keventer(slug, lang)
+  # A replacement is the one thing a retired page forwards to (eventer#236);
+  # the preview is for reading the draft, so it stays put.
+  redirect(@resource.redirect_url, 301) if @resource.redirect_url && !preview
   # Before the redirect to the current slug: a retired page must not forward.
   raise ResourceNotFoundError.new(slug) unless @resource.published || preview
 

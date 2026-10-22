@@ -17,7 +17,7 @@ describe 'language alternates of a resource' do
                        long_description: '', :long_description= => '', also_download: [], format: 'pdf',
                        landing: '', description: '', comments: '', getit: '', assessment_id: nil,
                        preview: '', lang: 'es', author_trainers: [], trainers_with_role: [],
-                       recommended_not_downloads: [], concepts?: false, published: true)
+                       recommended_not_downloads: [], concepts?: false, published: true, redirect_url: nil)
   end
 
   before do

@@ -11,8 +11,8 @@ describe 'an unpublished resource' do
     Sinatra::Application.new
   end
 
-  def resource(published:, lang: 'es')
-    Resource.new({ 'id' => 1, 'slug' => 'guia', 'slug_en' => 'guide', 'format' => 'concepts', 'published' => published,
+  def resource(published:, lang: 'es', redirect_url: nil)
+    Resource.new({ 'id' => 1, 'redirect_url' => redirect_url, 'slug' => 'guia', 'slug_en' => 'guide', 'format' => 'concepts', 'published' => published,
                    'title_es' => 'Guía', 'title_en' => 'Guide', 'description_es' => 'texto-del-recurso',
                    'description_en' => 'texto-del-recurso',
                    'concepts' => [{ 'slug' => 'una-ficha', 'lang' => lang, 'name' => 'Ficha',
@@ -50,6 +50,32 @@ describe 'an unpublished resource' do
         allow(Resource).to receive(:create_one_keventer).with(data[:slug], lang)
                                                         .and_return(resource(published: true, lang: lang))
         get "#{data[:path]}/una-ficha"
+        expect(last_response.status).to eq(200)
+      end
+
+      # Same shape as an article: the retired page forwards to its replacement
+      # before the published check (eventer#236).
+      it 'answers 301 to its redirect_url when it has one, published or not' do
+        allow(Resource).to receive(:create_one_keventer).with(data[:slug], lang)
+                                                        .and_return(resource(published: false, lang: lang,
+                                                                             redirect_url: '/es/recursos/otro'))
+
+        get data[:path]
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/recursos/otro')
+
+        get "#{data[:path]}/una-ficha"
+        expect(last_response.status).to eq(301)
+        expect(last_response.location).to end_with('/es/recursos/otro')
+      end
+
+      it 'does not forward the preview, where the team reads the draft' do
+        allow(Resource).to receive(:create_one_keventer).with(data[:slug], lang)
+                                                        .and_return(resource(published: false, lang: lang,
+                                                                             redirect_url: '/es/recursos/otro'))
+
+        get data[:path].sub(%r{/(recursos|resources)/}, '/\1/preview/')
+
         expect(last_response.status).to eq(200)
       end
 
