@@ -8,7 +8,8 @@
   <div class="slogan-areas">
     <img src="/app/img/icons/magicpen.svg" alt="Áreas de trabajo" loading="lazy">
     <%= intro_title %>
-    <%= intro_description %>
+    <%# Wrapped: bare in the flex column, each text run and link was a line of its own (#457). %>
+    <div class="slogan-areas__text"><%= intro_description %></div>
   </div>
   <div class="area-list p-5">
     <% @areas.each do |area| %>

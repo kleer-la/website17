@@ -110,6 +110,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    min-height: 0;
   }
 
   .card-text {
@@ -119,10 +120,28 @@
     font-size: 16px;
     line-height: 26px;
     font-feature-settings: 'pnum' on, 'lnum' on;
+    // The card has a fixed height: a long subtitle gives way, the button never
+    // does (#455). A subtitle can carry a heading and several paragraphs.
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    // Fades out where it is cut instead of slicing a line in half.
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
   }
 
   .button-container {
+    flex: none;
     margin-top: auto;
+    padding-top: 12px;
     text-align: center;
   }
 }

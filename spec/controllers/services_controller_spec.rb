@@ -12,6 +12,14 @@ describe '/servicios' do
     get '/es/servicios'
     expect(last_response).to be_ok
   end
+
+  # Bare in the flex column of .slogan-areas, each text run and each link of the
+  # CMS intro was a line of its own: the link alone, its full stop below (#457).
+  it 'keeps the intro text in one block, so its links flow with the text' do
+    get '/es/servicios'
+
+    expect(last_response.body).to match(%r{<div class="slogan-areas">.*<div class="slogan-areas__text">}m)
+  end
   # One URL per page: the trailing slash goes to the path without it (#443).
   it 'sends / at the end to the path without it' do
     get '/es/servicios/'
@@ -98,6 +106,15 @@ describe '/servicios' do
       get '/es/servicios/adopcion-ia'
 
       expect(last_response.body).to include('Lectura recomendada')
+    end
+
+    # A heading in the subtitle closes a <p> and leaves its text outside the
+    # card text, pushing the button off the card (#455).
+    it 'holds the subtitle of a recommended card in a div, which can carry headings' do
+      get '/es/servicios/adopcion-ia'
+
+      expect(last_response.body).to include('<div class="card-text subtitle">Sub</div>')
+      expect(last_response.body).not_to include('<p class="card-text subtitle">')
     end
 
     it 'describes the area as a Service for search engines' do

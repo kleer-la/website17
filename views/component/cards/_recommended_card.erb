@@ -26,7 +26,8 @@
         <h3 class="card-title"><%= item.title%></h3>
       </a>
     </div>
-    <p class="card-text subtitle"><%= item.subtitle%></p>
+    <%# A div: the subtitle can hold a heading and paragraphs, and a heading closes a <p>, leaving its text outside the card text (#455). %>
+    <div class="card-text subtitle"><%= item.subtitle%></div>
     <div class="button-container">
       <a href="<%= item.url%>" class="btn my-secondary-button ms-3 me-3">
         <%= t('generals.buttons.more_info') %>

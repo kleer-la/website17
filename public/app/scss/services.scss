@@ -119,6 +119,17 @@ $white: #FFFFFF;
       line-height: 38px;
       font-weight: 400;
     }
+
+    // The intro is CMS text with hand-written links (#457): they read as links
+    // (colour and underline), with a visible hover and focus.
+    &__text a {
+      color: #006e8c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+
+      &:hover { color: #004f66; text-decoration-thickness: 2px; }
+      &:focus-visible { outline: 2px solid #006e8c; outline-offset: 2px; border-radius: 2px; }
+    }
   }
 }
 
