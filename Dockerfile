@@ -1,4 +1,4 @@
-FROM ruby:3.4.7-slim AS base
+FROM ruby:4.0.9-slim AS base
 
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \

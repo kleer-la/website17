@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '~> 3.4.7'
+ruby '~> 4.0.9'
 
 gem 'aws-sdk-s3'
 gem 'concurrent-ruby'
@@ -11,6 +11,7 @@ gem 'i18n'
 gem 'json'
 gem 'money'
 gem 'nokogiri' # for RedCarpet
+gem 'ostruct' # FileStoreService requires it; no longer a default gem in Ruby 4.0
 gem 'puma'
 gem 'rack-ssl-enforcer'
 gem 'rake'
@@ -36,7 +37,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'coveralls_reborn'
-  gem 'cucumber'
+  gem 'cucumber', '~> 11.1' # 12 calls RSpec::Mocks.setup(arg), which rspec-mocks 3.13 rejects
   gem 'rack-test'
   gem 'rspec'
   gem 'rspec-html-matchers' # , '~> 0.9.4'

@@ -20,7 +20,7 @@ The application also serves **L'Atelier**, a Google Meet add-on for remote colla
 ## Technology Stack
 
 - **Framework**: Sinatra (Ruby web framework)
-- **Ruby Version**: ~3.3
+- **Ruby Version**: 4.0.9
 - **Template Engine**: ERB
 - **Testing**: RSpec for unit tests, Cucumber for integration/system tests
 - **Deployment**: Kamal to Hetzner Ubuntu server
