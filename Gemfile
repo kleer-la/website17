@@ -24,6 +24,7 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 
 group :development do
+  gem 'bundler-audit', require: false
   gem 'foreman', require: false
   gem 'i18n-tasks', require: false
   gem 'kamal', require: false
