@@ -380,6 +380,15 @@ footer {
   }
 }
 
+.footer__tagline {
+  color: $white;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
 .footer-botom__list {
   display: flex;
   flex-wrap: wrap;

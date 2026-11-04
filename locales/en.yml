@@ -604,6 +604,7 @@ en:
   event:
     not_found: The course you are looking for was not found. Check other available dates or similar courses.
   generals:
+    tagline: Decide. Build. Sustain.
     buttons:
       more_info: More info
       go_academy: Go to the academy
@@ -842,7 +843,7 @@ en:
       listen: Listen to this article
   resources:
     not_found: Resource not found
-    title: Resources for agility
+    title: Resources to evolve<br>the way you work
     subtitle: >-
       Our 2 cents to help you with team collaboration: books, quick guides, card games, infographics, and more
     filter:

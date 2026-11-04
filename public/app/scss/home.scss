@@ -241,6 +241,14 @@ $white: #FFFFFF;
     flex-direction: column;
     justify-content: center;
   }
+
+  .carousel__text .hero__tagline {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
 }
 
 @media screen and (max-width: 992px) {

@@ -239,6 +239,7 @@ es:
   event:
     not_found: El curso que indicas no fue encontrado. Revisa otras fechas disponibles o cursos similares.
   generals:
+    tagline: Decidir. Construir. Sostener.
     buttons:
       more_info: 'Conoce más'
       go_academy: 'Ir a academia'
@@ -506,9 +507,9 @@ es:
       listen: Escucha este artículo
   resources:
     not_found: Recurso no encontrado
-    title: Recursos y Materiales<br>sobre Agilidad
+    title: Recursos y materiales<br>para evolucionar tu forma de trabajar
     subtitle: >-
-      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías ágiles, juegos de cartas, infografías y más.
+      Nuestro granito de arena con descargables que pueden ayudarte en distintos momentos de colaboración en equipos: libros, guías, juegos de cartas, infografías y más.
     filter:
       all: Todos
     card:
