@@ -22,7 +22,7 @@ class HeadingOutline
       when :main_heading then "#{heading}: the page should have exactly one h1"
       when :skipped_level then "#{heading} comes right after #{related}, skipping a level"
       when :empty then "#{heading} has no text"
-      when :nested then "#{heading} is inside the section titled #{related} but does not rank below it"
+      when :nested then "#{heading} is inside the block headed by #{related} but does not rank below it"
       when :adopted then "#{heading} becomes a child of #{related} without being inside its block"
       end
     end
@@ -58,18 +58,23 @@ class HeadingOutline
     @headings.select { _1.text.empty? }.map { Problem.new(:empty, _1) }
   end
 
-  # A section's title is its first heading, provided it is also the least
-  # nested one. Everything else inside the section has to rank below it.
-  # Sections of cards with no title of their own are left alone.
+  # A block's title is its first heading, provided it is also the least nested
+  # one. Everything else inside the block has to rank below it. The blocks are
+  # the sectioning elements and the element each heading sits in; sections of
+  # cards with no title of their own are left alone.
   def nested
-    sections = @headings.flat_map { |h| sectioning_ancestors(h) }.uniq
-    found = sections.flat_map do |section|
-      title, *rest = @headings.select { inside?(_1, section) }
-      next [] unless title && rest.all? { depth(_1, section) > depth(title, section) }
+    blocks = @headings.flat_map { |h| [*sectioning_ancestors(h), h.node.parent] }.uniq
+    found = blocks.flat_map do |block|
+      title, *rest = @headings.select { inside?(_1, block) }
+      next [] unless titled?(block, title, rest)
 
       rest.select { _1.level <= title.level }.map { Problem.new(:nested, _1, title) }
     end
     found.uniq { _1.heading.node }
+  end
+
+  def titled?(block, first, rest)
+    first && rest.all? { depth(_1, block) > depth(first, block) }
   end
 
   # The outline makes each heading a child of the closest earlier heading with

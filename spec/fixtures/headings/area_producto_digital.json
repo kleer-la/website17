@@ -1,0 +1,214 @@
+{
+  "id": 1,
+  "slug": "producto-digital",
+  "slug_old": null,
+  "redirect_url": null,
+  "service_redirects": {},
+  "lang": "es",
+  "name": "Producto Digital",
+  "icon": "/app/img/icons/HandStars.svg",
+  "summary": "<div class=\"trix-content\">\n  <div>Un producto que avanza: se decide con ev…</div>\n</div>\n",
+  "cta_message": "<div class=\"trix-content\">\n  <div>Tres frentes para impulsar resultados</div>\n</div>\n",
+  "primary_color": "#43af45",
+  "primary_font_color": "#000000",
+  "secondary_color": "#aefcb0",
+  "secondary_font_color": "#000000",
+  "slogan": "<div class=\"trix-content\">\n  <div>Hay mucho para mejorar. Prioricemos por…</div>\n</div>\n",
+  "subtitle": "<div class=\"trix-content\">\n  <h2>Que tu producto vuelva a avanzar</h2><div>Conecta las prioridades de tu producto c…</div>\n</div>\n",
+  "description": "<div class=\"trix-content\">\n  <div>Tu equipo entrega funcionalidades, pero…</div><ul><li><strong>Qué construir y por qué:</strong> se entregan funcionalidades, pero las m…</li><li><strong>Cómo trabaja el equipo:</strong> se vive apagando incendios y el retraba…</li><li><strong>Cómo se construye:</strong> cada cambio en el producto cuesta caro,…</li></ul>\n</div>\n",
+  "side_image": "https://www.kleer.la/app/img/services/apm.webp",
+  "hero_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/retrospectives.webp",
+  "hero_highlight": "2 semanas",
+  "hero_highlight_text": "de diagnóstico para entender el contexto y qué priorizar.",
+  "target_title": "A quién está dirigido",
+  "target": "<div class=\"trix-content\">\n  <ul><li><strong>Empresas grandes y medianas con equipos…</strong> que sienten que el producto dejó de ava…</li><li><strong>Áreas de tecnología que pasan de proyect…</strong> y necesitan que negocio y tecnología de…</li><li><strong>Empresas de software</strong> cuyo producto se volvió difícil de cambiar.</li><li><strong>Un equipo o muchos:</strong> desde un equipo de cinco personas hasta…</li></ul><div><br></div><div><strong>Un caso: de proyectos a producto en la t…</strong></div><div>Empresa de software para el sector salud…<br><br><strong>El desafío.</strong> Una empresa con su producto instalado e…<br><br><strong>Qué hicimos.</strong> Durante siete meses, un equipo de tres…</div><ul><li><a href=\"/es/servicios/producto-digital/estrategia-product-management\"><strong>Qué construir y por qué</strong></a><strong>.</strong> Definimos roles y una tríada de product…</li><li><a href=\"/es/servicios/producto-digital/flujo-mejora-continua-equipos-producto\"><strong>Cómo trabaja el equipo</strong></a><strong>.</strong> Unificamos el backlog, formamos Scrum M…</li><li><a href=\"/es/servicios/producto-digital/desarrollo-productos-digitales-agentes-ia\"><strong>Cómo se construye</strong></a><strong>.</strong> Ordenamos el manejo de repositorios y e…</li></ul><div><br><strong>Qué cambió.</strong></div><ul><li>Los equipos dejaron de trabajar a demand…</li><li>Los pedidos a infraestructura entran por…</li><li>Al cierre, la estrategia de 2026 se prio…</li><li>La organización empezó a hablar de produ…</li></ul><div><br><em>«Jamás imaginé que impactábamos a tantas…</em><br>Líder técnico</div>\n</div>\n",
+  "value_proposition": "<div class=\"trix-content\">\n  <div>En el diagnóstico definimos con ustedes…</div><div><br><strong>Métricas de práctica, que anticipan el resultado.</strong> Muestran la capacidad del equipo y de l…</div><ul><li>Tiempo desde que algo se decide hasta qu…</li><li>Frecuencia con la que se entrega a producción.</li><li>Proporción de cambios que generan un inc…</li><li>Tiempo para recuperarse cuando algo falla.</li></ul><div><br><strong>Métricas de negocio, que confirman el resultado.</strong> Cada iniciativa declara qué resultado b…</div><ul><li>El indicador que la iniciativa promete m…</li><li>Proporción de iniciativas que alcanzan e…</li></ul>\n</div>\n",
+  "value_proposition_title": "Cómo lo medimos",
+  "seo_title": "Producto Digital | Estrategia, Discovery y Delivery",
+  "seo_description": "Alinea estrategia, equipos e ingeniería para que tu producto digital avance. Trabajamos con tu equipo en decisiones, flujo y evolución del software.",
+  "is_training_program": false,
+  "recommended_way_title": "Del diagnóstico a la autonomía",
+  "recommended_way_note": "Miramos las decisiones de producto, la coordinación de los equipos y las prácticas de ingeniería en conjunto.",
+  "recommended_way_summary": "<ul class=\"rw-steps\"><li class=\"rw-step\"><span class=\"rw-step-number\">1</span><div class=\"rw-step-body\"><h4>Diagnóstico</h4><p>En dos semanas, un diagnóstico inicial q…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">2</span><div class=\"rw-step-body\"><h4>Trabajo y ajuste continuo</h4><p>Trabajamos en uno o varios frentes a la…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">3</span><div class=\"rw-step-body\"><h4>Desarrollo de Capacidades</h4><p>Acuerdos, guías y hábitos que el equipo…</p></div></li></ul>\n",
+  "recommended_way_details": "<p><h2 class=\"rw-details-title\">Qué incluye</h2><dl class=\"rw-spec\"><dt>Duración</dt><dd>3 a 6 meses, con revisión cada 4 semanas.</dd><dt>Dedicación</dt><dd>Se define en el diagnóstico, según el ta…</dd><dt>Con quiénes</dt><dd>La tríada (gestión de producto, diseño y…</dd><dt>Formato</dt><dd>Trabajo en la operación diaria, sesiones…</dd><dt>Qué queda</dt><dd>Acuerdos de trabajo, tablero de iniciati…</dd></dl></p>\n",
+  "outcomes": null,
+  "definitions": null,
+  "program": [],
+  "pricing": "",
+  "faq": [
+    [
+      "¿Se puede contratar un solo frente?",
+      "<strong>Sí, y también varios a la vez.</strong> En el diagnóstico acordamos por dónde e…<br><br>Es habitual que, al avanzar, <strong>aparezcan nuevas prioridades en otro frente</strong>. Por ejemplo, en <strong>Technisys</strong> empezamos por cómo trabajaban los equip…<br><br>En la <strong>revisión de cada cuatro semanas</strong> decidimos juntos si se suma otro frente o si se sigue profundizando en los actuales."
+    ],
+    [
+      "¿Qué es Dual-Track y para qué sirve?",
+      "Es una forma de organizar el trabajo en <strong>dos carriles que avanzan a la vez</strong>: uno <strong>explora</strong> qué conviene construir (habla con usuar…<strong>entrega</strong> lo que ya se validó.<br><br><strong>No son dos equipos.</strong> Son las mismas personas de negocio, ges…<br><br><strong>Para qué sirve:</strong> para que el equipo aprenda sin frenar l…<strong>lo que une a los tres frentes</strong>: lo que se descubre sobre qué construir…<br><br>Si quieres saber más: la <a href=\"/es/blog/guia-de-product-discovery-en-espanol\">Guía de Product Discovery</a>."
+    ]
+  ],
+  "brochure": "",
+  "hero_cta_text": "Conversemos tu caso",
+  "hero_secondary_cta_text": "Conoce cómo trabajamos",
+  "hero_secondary_cta_target": "#servicios",
+  "hero_note": "Trabajamos con tus equipos, sobre tu producto real.",
+  "contact_title": "Empecemos por entender tu caso",
+  "contact_text": "Una conversación de 45 minutos con quien va a trabajar con tu equipo. Sales con una primera lectura de qué priorizar, contrates o no.",
+  "contact_cta_text": "Solicitar una reunión",
+  "recommended": [],
+  "testimonies": [
+    {
+      "fname": "Ana",
+      "lname": "Pérez",
+      "role": "Responsable de producto",
+      "company": "Cliente",
+      "testimony": "Trabajamos sobre la marcha, sin frenar al equipo.",
+      "profile_url": null,
+      "photo_url": null
+    }
+  ],
+  "services": [
+    {
+      "id": 5,
+      "slug": "estrategia-product-management",
+      "slug_old": null,
+      "name": "Estrategia y Product Management",
+      "seo_title": "Estrategia y Product Management para empresas",
+      "seo_description": "Fortalece el Product Management de tu empresa. De proyectos a productos: alinea estrategia, evidencia de usuarios y prioridades para decidir qué construir.",
+      "subtitle": "<h2>Decide qué construir y por qué</h2><div>Fortalece la gestión de producto de tu e…</div>",
+      "card_description": "<span class=\"rw-eyebrow\">Frente 1 · Producto</span>\r\n<h2 class=\"rw-details-title\">Estrategia y Product Management</h2>\r\n<p>Decidir qué construir y por qué.</p>\r\n<p class=\"rw-quote\">“Cambiamos la estrategia y las nuevas fu…</p>\r\n<ul>\r\n  <li>Prioridades vinculadas con los resultado…</li>\r\n  <li>Decisiones fundamentadas en evidencia de…</li>\r\n  <li>Un backlog organizado alrededor de oportunidades.</li>\r\n  <li>Iniciativas que se miden por resultados.</li>\r\n</ul>\r\n<p class=\"rw-card-link\"><a href=\"producto-digital/estrategia-product-management\">Explorar Estrategia y Product Management →</a></p>",
+      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Entregar más funcionalidades no garantiz…</strong><br><br>La estrategia cambia, pero las prioridad…<br>El desafío: conectar la dirección del pr…<br><br><strong>Product Management conectado con resultados.</strong></div><div><br></div><div>Ayudamos a definir una dirección clara p…</div><div>Trabajamos con quienes lideran el produc…</div>\n</div>\n",
+      "outcomes": [
+        "<strong>Decisiones alineadas:</strong> gestión de producto, diseño y tecnología trabajan hacia una dirección común.",
+        "<strong>Oportunidades relevantes:</strong> el equipo comprende las necesidades de los usuarios y su relación con el negocio."
+      ],
+      "definitions": null,
+      "program": [
+        [
+          "Acordar la estrategia y los resultados",
+          "Trabajamos con líderes y equipo, para definir a quién sirve el producto, qué problema busca resolver y qué resultados de negocio se quieren alcanzar. También se acuerda cómo medir el avance y qué oportunidades dejar fuera del foco."
+        ],
+        [
+          "Explorar oportunidades con discovery",
+          "El equipo contrasta sus supuestos con conversaciones y observaciones de usuarios. Herramientas como el Opportunity Solution Tree y OKRs ayudan a relacionar el resultado de negocio con las oportunidades y posibles soluciones."
+        ]
+      ],
+      "target": "<div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <ul><li><strong>Equipos de desarrollo de producto</strong> que entregan lo solicitado, pero no ven…</li><li><strong>Empresas que cambian su estrategia</strong> y necesitan traducirla en prioridades d…</li><li><strong>Áreas de TI y PMO</strong> que hoy gestionan una cartera de proyec…</li><li><strong>Líderes</strong> que buscan fortalecer la colaboración e…</li></ul><div><br></div><hr><h2><strong>Un caso: banca digital en Argentina</strong></h2><div>Unidad de banca digital de un banco inte…<br><br><strong>El desafío.</strong> Un roadmap lleno de iniciativas y equip…<br><br><strong>Qué hicimos.</strong> Un workshop intensivo con 21 personas y…<br><br><strong>Qué cambió.</strong> Los equipos empezaron a descartar hipót…<br><br><em>«Una nueva forma de trabajo que el Banco…</em><br>Líder de Estrategia de la unidad<br><br><strong>Qué vino después.</strong> En 2025, el banco volvió a contratar a…<a href=\"/es/cursos/667-taller-de-agile-product-management\">Taller de Agile Product Management</a>, con casi 80 personas capacitadas. Cada…</div>\n</div>\n</div>\n</div>\n</div>\n",
+      "pricing": "",
+      "faq": [
+        [
+          "¿Qué hace una consultoría en Product Management y cuándo conviene?",
+          "Una consultoría en Product Management ayuda a tu empresa a definir la estrategia de producto, aplicar Product Discovery y ajustar el modelo operativo de producto para decidir qué construir con evidencia.<br><br>Conviene cuando el equipo entrega lo que se pide, pero las métricas del negocio no se mueven, o cuando la estrategia cambió y el backlog sigue respondiendo a la anterior."
+        ],
+        [
+          "¿Qué es un modelo operativo de producto y para qué sirve?",
+          "Un modelo operativo de producto es cómo una empresa organiza equipos, roles, presupuesto y decisiones alrededor de productos con continuidad, en lugar de proyectos con alcance fijo gestionados desde una PMO (Marty Cagan, <em>Transformed</em>).<br><br><strong>Una prueba rápida:</strong> mira cómo se aprueba una iniciativa. Si se aprueba con alcance, plazo y presupuesto fijos, la organización trabaja por proyecto, aunque sus equipos se llamen de producto."
+        ]
+      ],
+      "brochure": "",
+      "side_image": "https://www.kleer.la/app/img/services/discovery.webp",
+      "hero_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/estrategia-empresarial.webp",
+      "hero_highlight": null,
+      "hero_highlight_text": null,
+      "recommended": [],
+      "recommended_way_title": "",
+      "recommended_way_note": "",
+      "recommended_way_summary": null,
+      "recommended_way_details": null
+    },
+    {
+      "id": 182,
+      "slug": "flujo-mejora-continua-equipos-producto",
+      "slug_old": null,
+      "name": "Flujo y Mejora Continua en Equipos de Producto",
+      "seo_title": "Flujo y mejora continua en equipos de producto",
+      "seo_description": "Tu equipo de producto sostiene el ritmo de entrega: acuerdos claros, flujo visible con Lean y Kanban, y mejora continua con Toyota Kata.",
+      "subtitle": "<h2>Que dejes de apagar incendios y tus equi…</h2><div>Acuerdos claros, trabajo visible y equip…</div>",
+      "card_description": "<span class=\"rw-eyebrow\">Frente 2 · Equipos</span>\n<h2 class=\"rw-details-title\">Flujo y mejora continua</h2>\n<p>Coordinar mejor. Sostener el ritmo.</p>\n<p class=\"rw-quote\">“Termino metido en el detalle, resolvien…</p>\n<ul>\n  <li>Trabajo visible y bloqueos que se pueden abordar.</li>\n  <li>Menos trabajo a medias y retrabajo.</li>\n  <li>Acuerdos compartidos para priorizar, dec…</li>\n  <li>Capacidad del equipo para mejorar con autonomía.</li>\n</ul>\n<p class=\"rw-card-link\"><a href=\"producto-digital/flujo-mejora-continua-equipos-producto\">Explorar Flujo y Mejora Continua en Equipos →</a></p>",
+      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Entregas que se sostienen, sin vivir en…</strong><br><br>Muchos equipos de producto trabajan much…<br><br>Trabajamos dentro de los equipos, sobre…</div>\n</div>\n",
+      "outcomes": [
+        "<strong>Entregas más previsibles:</strong> el equipo sabe cuánto trabajo puede tomar y cumple lo que compromete.",
+        "<strong>Menos retrabajo:</strong> se detectan y se atacan las causas, no solo los síntomas."
+      ],
+      "definitions": null,
+      "program": [
+        [
+          "Diagnóstico del flujo",
+          "Miramos cómo entra, avanza y sale el trabajo, dónde se traba y cuánto retrabajo hay. Es parte del <a href=\"/es/servicios/producto-digital#forma-recomendada\">diagnóstico de dos semanas</a> con el que empieza todo trabajo en Producto Digital."
+        ],
+        [
+          "Acuerdos de trabajo y foco",
+          "Definimos con el equipo cómo se prioriza, cómo se decide y cuánto trabajo se toma a la vez."
+        ]
+      ],
+      "target": "<div class=\"trix-content\">\n  <div>Uno o varios equipos que construyen prod…</div>\n</div>\n",
+      "pricing": null,
+      "faq": [
+        [
+          "¿Cuándo conviene empezar con un curso?",
+          "<strong>Pocas veces.</strong> Hoy la mayoría de los equipos con los q…<br><br><strong>El curso conviene cuando el equipo es nuevo.</strong> Parte de armarlo es elegir una forma de…<br>· <strong>Scrum</strong>, cuando el equipo construye producto.<br>· <strong>Kanban</strong>, cuando hace mantenimiento evolutivo o…<br>Una capacitación in-company al inicio de…<br><br>Los cursos que usamos están más abajo, en \"Contenido recomendado\"."
+        ],
+        [
+          "¿Sirve si el equipo ya usa Scrum?",
+          "<strong>Sí, y es el caso más común.</strong> Muchos equipos adoptaron Scrum hace tie…<br>· Los sprints terminan con trabajo a med…<br>· Las urgencias entran en medio del spri…<br>· La daily se volvió un reporte de estad…<br>· La retrospectiva es una reunión más, y…<br>· La review muestra avances, pero nadie…<br><br>Empezamos por evaluar cómo trabaja hoy el equipo y volvemos a alinear sus acuerdos mínimos de trabajo. Después trabajamos con el equipo cada semana, sobre su trabajo real, hasta que las prácticas se sostienen solas."
+        ]
+      ],
+      "brochure": null,
+      "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/toyota_kata_training.webp",
+      "hero_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/flight-levels-team.webp",
+      "hero_highlight": null,
+      "hero_highlight_text": null,
+      "recommended": [],
+      "recommended_way_title": null,
+      "recommended_way_note": null,
+      "recommended_way_summary": null,
+      "recommended_way_details": null
+    },
+    {
+      "id": 181,
+      "slug": "desarrollo-productos-digitales-agentes-ia",
+      "slug_old": null,
+      "name": "Desarrollo de Productos Digitales con Agentes de IA",
+      "seo_title": "Desarrollo de productos digitales con agentes de IA",
+      "seo_description": "Incorpora agentes de IA a la forma de construir tu producto: moderniza lo existente y acelera su evolución con calidad y seguridad.",
+      "subtitle": "<h2>Haz que tu producto digital vuelva a evo…</h2><div>Incorpora agentes de IA a la forma de co…</div>",
+      "card_description": "<span class=\"rw-eyebrow\">Frente 3 · Ingeniería con IA</span>\n<h2 class=\"rw-details-title\">Desarrollo y evolución del producto</h2>\n<p>Evolucionar con calidad y seguridad.</p>\n<p class=\"rw-quote\">“Un cambio de una línea nos lleva dos se…</p>\n<ul>\n  <li>Agentes de IA en el desarrollo diario.</li>\n  <li>Prácticas de ingeniería revisadas con criterio.</li>\n  <li>Modernización de sistemas existentes.</li>\n  <li>Calidad y seguridad consideradas en cada cambio.</li>\n</ul>\n<p class=\"rw-card-link\"><a href=\"producto-digital/desarrollo-productos-digitales-agentes-ia\">Explorar Desarrollo con Agentes de IA →</a></p>",
+      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Productos que vuelven a ser fáciles de cambiar.</strong><br><br>Cuando cada cambio cuesta semanas, <strong>los agentes de IA cambian la ecuación</strong>: entienden, prueban y rediseñan código…<br><br><em>“Reemplazamos nuestro sistema de gestión…</em><br><br>Trabajamos <strong>sobre el código real de tu producto</strong> y lo medimos con <strong>métricas de práctica</strong> (tiempo de un cambio hasta producción,…<strong>resultado de negocio</strong> que cada cambio busca mover.<br><br><strong>¿Buscabas un curso técnico?</strong> Esos contenidos ahora son parte de este…<a href=\"#todavia-dan-el-curso-certified-scrum-developer-csd-a-csd\">CSD</a>, <a href=\"#como-hacemos-integracion-continua-si-el-sistema-no-tiene-pruebas\">integración continua y DevOps</a>, <a href=\"#como-cambian-las-pruebas-cuando-un-agente-puede-automatizarlas-rapido\">testing</a> y <a href=\"#como-evoluciona-la-arquitectura-de-un-sistema-legacy-para-que-vuelva-a-ser-facil-de-cambiar\">arquitectura</a>.</div>\n</div>\n",
+      "outcomes": [
+        "<strong>Evolución más rápida</strong> del producto, con cambios que antes eran costosos o riesgosos.",
+        "<strong>Sistemas legacy modernizados</strong>, con pruebas que protegen su comportamiento."
+      ],
+      "definitions": null,
+      "program": [
+        [
+          "Prueba de concepto y diagnóstico del contexto de desarrollo",
+          "Construimos con personas del equipo una funcionalidad o una extensión de tu sistema, con agentes de IA. La prueba muestra dónde se traba el cambio y dónde conviene incorporar agentes."
+        ],
+        [
+          "Revisión crítica de prácticas",
+          "Repasamos integración continua, pruebas, diseño, revisión de código y despliegue, y definimos cuáles se conservan y cómo cambian con agentes de IA."
+        ]
+      ],
+      "target": "<div class=\"trix-content\">\n  <div>Empresas con productos digitales que nec…</div>\n</div>\n",
+      "pricing": null,
+      "faq": [
+        [
+          "¿Todavía dan el curso Certified Scrum Developer (CSD / A-CSD)?",
+          "No, y ya no emitimos la certificación de Scrum Alliance. Tampoco damos <a href=\"#como-hacemos-integracion-continua-si-el-sistema-no-tiene-pruebas\">DevOps ni Integración Continua</a>, <a href=\"#como-cambian-las-pruebas-cuando-un-agente-puede-automatizarlas-rapido\">Testing Ágil</a> ni <a href=\"#como-evoluciona-la-arquitectura-de-un-sistema-legacy-para-que-vuelva-a-ser-facil-de-cambiar\">Arquitectura</a> como cursos. Esos contenidos ahora se trabajan dentro de este servicio, sobre el código de tus equipos: abajo contamos cómo aplicamos hoy integración continua, arquitectura, pruebas y TDD con agentes de IA. Cuando un equipo completo necesita profundizar un tema, sumamos una capacitación in-company dentro del mismo servicio."
+        ],
+        [
+          "¿Cómo hacemos integración continua si el sistema no tiene pruebas?",
+          "<strong>Primero, una red mínima de pruebas; la c…</strong> Sin pruebas, integrar seguido solo inte…<br><br><strong>Una prueba rápida:</strong> ¿cuánto tarda el pipeline en decir si u…<a href=\"/es/blog/entrega-continua-de-software\">Entrega continua de software</a>."
+        ]
+      ],
+      "brochure": null,
+      "side_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/desarrollo-productos-digitales-agentes-ia.webp",
+      "hero_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/equipo_agil.webp",
+      "hero_highlight": null,
+      "hero_highlight_text": null,
+      "recommended": [],
+      "recommended_way_title": "Empezamos construyendo",
+      "recommended_way_note": "Iniciamos con una prueba de concepto sobre tu producto, no con un informe.",
+      "recommended_way_summary": "<ul class=\"rw-steps\"><li class=\"rw-step\"><span class=\"rw-step-number\">1</span><div class=\"rw-step-body\"><h4>Prueba de concepto</h4><p>Junto con personas del equipo, desarroll…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">2</span><div class=\"rw-step-body\"><h4>Diagnóstico</h4><p>La prueba muestra dónde se traba el camb…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">3</span><div class=\"rw-step-body\"><h4>Extensión</h4><p>Llevamos lo que funcionó al trabajo diar…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">4</span><div class=\"rw-step-body\"><h4>Transferencia</h4><p>Acuerdos, guías y hábitos que se sostien…</p></div></li></ul>\n",
+      "recommended_way_details": "<p><h2 class=\"rw-details-title\">Qué incluye</h2><dl class=\"rw-spec\"><dt>Duración</dt><dd>2 a 6 meses, con revisión cada 4 semanas.</dd><dt>Dedicación</dt><dd>Se define después de la prueba de concep…</dd><dt>Con quiénes</dt><dd>Quienes desarrollan, prueban y operan el…</dd><dt>Formato</dt><dd>Trabajo sobre el código real, en pares y…</dd><dt>Qué queda</dt><dd>La funcionalidad construida, el pipeline…</dd></dl></p>\n"
+    }
+  ]
+}

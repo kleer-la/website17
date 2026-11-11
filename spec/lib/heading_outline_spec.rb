@@ -127,6 +127,24 @@ describe HeadingOutline do
         .to eq ['Estrategia y Product Management', 'Flujo y mejora continua']
     end
 
+    # Service page: the case study comes from Keventer inside the target panel,
+    # which shares its section with the FAQ, so the section has no single title.
+    it 'reports a heading that ranks as high as the one heading its block' do
+      service = <<~HTML
+        #{hero}
+        <section><div class="container">
+          <div class="svc2-panel"><h2>¿A quién está dirigido?</h2>
+            <div class="svc2-prose"><div class="trix-content"><ul><li>Equipos</li></ul><h2>Un caso: banca digital</h2></div></div>
+          </div>
+          <div class="faq"><h3>Preguntas frecuentes</h3></div>
+        </div></section>
+      HTML
+
+      nested = problems(service).select { _1.rule == :nested }
+      expect(nested.map { [_1.heading.text, _1.related.text] })
+        .to eq [['Un caso: banca digital', '¿A quién está dirigido?']]
+    end
+
     # Footer titles are h5 right after the last section's h2: they end up as
     # children of whatever section happens to come last.
     it 'reports headings outside the block of the heading that adopts them' do
