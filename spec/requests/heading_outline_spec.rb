@@ -28,8 +28,8 @@ describe 'the heading outline of the main pages' do
     expect(problems).to be_empty, "#{problems.size} heading problems on #{path}:\n  #{problems.join("\n  ")}"
   end
 
-  # Production lists the AI programme before the areas, which puts it inside
-  # their section rather than in one of its own.
+  # A training programme ordered before the areas goes inside their section;
+  # ordered after them, it gets a section of its own.
   let(:featured_ordering) { 1 }
   let(:featured_program) do
     area('ordering' => featured_ordering, 'slug' => 'adopcion-organizacional-ia',
@@ -53,8 +53,6 @@ describe 'the heading outline of the main pages' do
 
   after { Toggle.turn(:services_redesign, false) }
 
-  # Each page is pending with what still breaks its outline. Once a page is
-  # fixed RSpec fails the pending example, which is the cue to drop the line.
   describe 'home' do
     it 'with the featured programme inside the areas section' do
       expect_sound_outline('/es/')
@@ -76,7 +74,6 @@ describe 'the heading outline of the main pages' do
   end
 
   it 'service area' do
-    pending 'Keventer content (kleer-marketing#147): front cards are h2, recommended-way steps are h4'
     expect_sound_outline('/es/servicios/producto-digital')
   end
 
@@ -93,7 +90,6 @@ describe 'the heading outline of the main pages' do
   end
 
   it 'service' do
-    pending 'Keventer content (kleer-marketing#147): the case study in the target is an h2'
     expect_sound_outline('/es/servicios/producto-digital/estrategia-product-management')
   end
 end

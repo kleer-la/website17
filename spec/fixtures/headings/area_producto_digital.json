@@ -7,30 +7,30 @@
   "lang": "es",
   "name": "Producto Digital",
   "icon": "/app/img/icons/HandStars.svg",
-  "summary": "<div class=\"trix-content\">\n  <div>Un producto que avanza: se decide con ev…</div>\n</div>\n",
+  "summary": "<div class=\"trix-content\">\n  <div>Un producto que avanza: se decide con evidencia, sostiene el ritmo y se construye rápido sin perder calidad.</div>\n</div>\n",
   "cta_message": "<div class=\"trix-content\">\n  <div>Tres frentes para impulsar resultados</div>\n</div>\n",
   "primary_color": "#43af45",
   "primary_font_color": "#000000",
   "secondary_color": "#aefcb0",
   "secondary_font_color": "#000000",
-  "slogan": "<div class=\"trix-content\">\n  <div>Hay mucho para mejorar. Prioricemos por…</div>\n</div>\n",
-  "subtitle": "<div class=\"trix-content\">\n  <h2>Que tu producto vuelva a avanzar</h2><div>Conecta las prioridades de tu producto c…</div>\n</div>\n",
-  "description": "<div class=\"trix-content\">\n  <div>Tu equipo entrega funcionalidades, pero…</div><ul><li><strong>Qué construir y por qué:</strong> se entregan funcionalidades, pero las m…</li><li><strong>Cómo trabaja el equipo:</strong> se vive apagando incendios y el retraba…</li><li><strong>Cómo se construye:</strong> cada cambio en el producto cuesta caro,…</li></ul>\n</div>\n",
+  "slogan": "<div class=\"trix-content\">\n  <div>Hay mucho para mejorar. Prioricemos por dónde empezar.</div>\n</div>\n",
+  "subtitle": "<div class=\"trix-content\">\n  <h2>Que tu producto vuelva a avanzar</h2><div>Conecta las prioridades de tu producto con los resultados del negocio. Trabajamos con tu equipo y líderes para mejorar las decisiones sobre qué construir, cómo trabaja el equipo y cómo se construye.</div>\n</div>\n",
+  "description": "<div class=\"trix-content\">\n  <div>Tu equipo entrega funcionalidades, pero el producto no logra los resultados esperados. Los desafíos pueden estar en las prioridades, en la coordinación o en las dificultades para modificar el software.</div><ul><li><strong>Qué construir y por qué:</strong> se entregan funcionalidades, pero las métricas del negocio no se mueven.</li><li><strong>Cómo trabaja el equipo:</strong> se vive apagando incendios y el retrabajo se come el tiempo.</li><li><strong>Cómo se construye:</strong> cada cambio en el producto cuesta caro, y nadie quiere tocar el legacy.</li></ul>\n</div>\n",
   "side_image": "https://www.kleer.la/app/img/services/apm.webp",
   "hero_image": "https://kleer-images.s3.sa-east-1.amazonaws.com/retrospectives.webp",
   "hero_highlight": "2 semanas",
   "hero_highlight_text": "de diagnóstico para entender el contexto y qué priorizar.",
   "target_title": "A quién está dirigido",
-  "target": "<div class=\"trix-content\">\n  <ul><li><strong>Empresas grandes y medianas con equipos…</strong> que sienten que el producto dejó de ava…</li><li><strong>Áreas de tecnología que pasan de proyect…</strong> y necesitan que negocio y tecnología de…</li><li><strong>Empresas de software</strong> cuyo producto se volvió difícil de cambiar.</li><li><strong>Un equipo o muchos:</strong> desde un equipo de cinco personas hasta…</li></ul><div><br></div><div><strong>Un caso: de proyectos a producto en la t…</strong></div><div>Empresa de software para el sector salud…<br><br><strong>El desafío.</strong> Una empresa con su producto instalado e…<br><br><strong>Qué hicimos.</strong> Durante siete meses, un equipo de tres…</div><ul><li><a href=\"/es/servicios/producto-digital/estrategia-product-management\"><strong>Qué construir y por qué</strong></a><strong>.</strong> Definimos roles y una tríada de product…</li><li><a href=\"/es/servicios/producto-digital/flujo-mejora-continua-equipos-producto\"><strong>Cómo trabaja el equipo</strong></a><strong>.</strong> Unificamos el backlog, formamos Scrum M…</li><li><a href=\"/es/servicios/producto-digital/desarrollo-productos-digitales-agentes-ia\"><strong>Cómo se construye</strong></a><strong>.</strong> Ordenamos el manejo de repositorios y e…</li></ul><div><br><strong>Qué cambió.</strong></div><ul><li>Los equipos dejaron de trabajar a demand…</li><li>Los pedidos a infraestructura entran por…</li><li>Al cierre, la estrategia de 2026 se prio…</li><li>La organización empezó a hablar de produ…</li></ul><div><br><em>«Jamás imaginé que impactábamos a tantas…</em><br>Líder técnico</div>\n</div>\n",
-  "value_proposition": "<div class=\"trix-content\">\n  <div>En el diagnóstico definimos con ustedes…</div><div><br><strong>Métricas de práctica, que anticipan el resultado.</strong> Muestran la capacidad del equipo y de l…</div><ul><li>Tiempo desde que algo se decide hasta qu…</li><li>Frecuencia con la que se entrega a producción.</li><li>Proporción de cambios que generan un inc…</li><li>Tiempo para recuperarse cuando algo falla.</li></ul><div><br><strong>Métricas de negocio, que confirman el resultado.</strong> Cada iniciativa declara qué resultado b…</div><ul><li>El indicador que la iniciativa promete m…</li><li>Proporción de iniciativas que alcanzan e…</li></ul>\n</div>\n",
+  "target": "<div class=\"trix-content\">\n  <ul><li><strong>Empresas grandes y medianas con equipos de producto propios</strong> que sienten que el producto dejó de avanzar al ritmo del negocio.</li><li><strong>Áreas de tecnología que pasan de proyectos a productos</strong> y necesitan que negocio y tecnología decidan juntos.</li><li><strong>Empresas de software</strong> cuyo producto se volvió difícil de cambiar.</li><li><strong>Un equipo o muchos:</strong> desde un equipo de cinco personas hasta un área de producto con varios equipos, como una tribu con sus squads o células.</li></ul><div><br></div><div><strong>Un caso: de proyectos a producto en la transición a SaaS</strong></div><div>Empresa de software para el sector salud · Argentina · 2025.<br><br><strong>El desafío.</strong> Una empresa con su producto instalado en cada cliente decidió pasar a un modelo SaaS. Venía de trabajar por proyectos a pedido de cada cliente, con una cultura vertical y equipos donde las urgencias del día a día no dejaban espacio para planificar. El paso a SaaS no dependía de un solo cambio: había que decidir qué producto estándar construir, ordenar cómo trabajaban los equipos y cambiar cómo se construía y desplegaba el software.<br><br><strong>Qué hicimos.</strong> Durante siete meses, un equipo de tres consultores de Kleer trabajó en los tres frentes a la vez, con revisiones periódicas con la dirección para ajustar el foco:</div><ul><li><a href=\"/es/servicios/producto-digital/estrategia-product-management\"><strong>Qué construir y por qué</strong></a><strong>.</strong> Definimos roles y una tríada de producto adaptada a su realidad. Llevamos el discovery a los clientes, con perfiles de usuario y entrevistas, y dimos una formación transversal en Agile Product Management.</li><li><a href=\"/es/servicios/producto-digital/flujo-mejora-continua-equipos-producto\"><strong>Cómo trabaja el equipo</strong></a><strong>.</strong> Unificamos el backlog, formamos Scrum Masters e incorporamos tableros visuales y eventos de Scrum y Kanban. Acompañamos un par de proyectos piloto desde el roadmap hasta sus primeros sprints, e impulsamos Comunidades de Práctica.</li><li><a href=\"/es/servicios/producto-digital/desarrollo-productos-digitales-agentes-ia\"><strong>Cómo se construye</strong></a><strong>.</strong> Ordenamos el manejo de repositorios y el versionado, llevamos las aplicaciones a contenedores e incorporamos CI/CD. Armamos una versión base estándar del producto para nuevas instalaciones y avanzamos hacia una arquitectura multi-tenant para SaaS. También ordenamos el delivery: una mesa de ayuda para despliegues e instalaciones en cliente, solicitudes formales con documentación técnica y un SLA interno.</li></ul><div><br><strong>Qué cambió.</strong></div><ul><li>Los equipos dejaron de trabajar a demanda y pasaron a planificar sobre un backlog común. Cada equipo declara qué valor se compromete a entregar en el sprint.</li><li>Los pedidos a infraestructura entran por un circuito formal, con la información necesaria y plazos acordados.</li><li>Al cierre, la estrategia de 2026 se priorizó con propuestas de producto basadas en supuestos, hipótesis, métricas y un roadmap orientado a resultados.</li><li>La organización empezó a hablar de producto en lugar de proyectos.</li></ul><div><br><em>«Jamás imaginé que impactábamos a tantas personas con nuestro producto.»</em><br>Líder técnico</div>\n</div>\n",
+  "value_proposition": "<div class=\"trix-content\">\n  <div>En el diagnóstico definimos con ustedes qué medir, y en cada revisión lo seguimos. El objetivo es que el equipo incorpore estas métricas y las siga midiendo cuando ya no estemos. Trabajamos con dos tipos:</div><div><br><strong>Métricas de práctica, que anticipan el resultado.</strong> Muestran la capacidad del equipo y de la organización, y se mueven antes que el negocio. Por ejemplo, inspiradas en las métricas DORA:</div><ul><li>Tiempo desde que algo se decide hasta que llega a los usuarios.</li><li>Frecuencia con la que se entrega a producción.</li><li>Proporción de cambios que generan un incidente o retrabajo.</li><li>Tiempo para recuperarse cuando algo falla.</li></ul><div><br><strong>Métricas de negocio, que confirman el resultado.</strong> Cada iniciativa declara qué resultado busca mover, y se verifica. Por ejemplo:</div><ul><li>El indicador que la iniciativa promete mover: conversión, retención, costo operativo, tiempo de atención.</li><li>Proporción de iniciativas que alcanzan el resultado esperado.</li></ul>\n</div>\n",
   "value_proposition_title": "Cómo lo medimos",
   "seo_title": "Producto Digital | Estrategia, Discovery y Delivery",
   "seo_description": "Alinea estrategia, equipos e ingeniería para que tu producto digital avance. Trabajamos con tu equipo en decisiones, flujo y evolución del software.",
   "is_training_program": false,
   "recommended_way_title": "Del diagnóstico a la autonomía",
   "recommended_way_note": "Miramos las decisiones de producto, la coordinación de los equipos y las prácticas de ingeniería en conjunto.",
-  "recommended_way_summary": "<ul class=\"rw-steps\"><li class=\"rw-step\"><span class=\"rw-step-number\">1</span><div class=\"rw-step-body\"><h4>Diagnóstico</h4><p>En dos semanas, un diagnóstico inicial q…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">2</span><div class=\"rw-step-body\"><h4>Trabajo y ajuste continuo</h4><p>Trabajamos en uno o varios frentes a la…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">3</span><div class=\"rw-step-body\"><h4>Desarrollo de Capacidades</h4><p>Acuerdos, guías y hábitos que el equipo…</p></div></li></ul>\n",
-  "recommended_way_details": "<p><h2 class=\"rw-details-title\">Qué incluye</h2><dl class=\"rw-spec\"><dt>Duración</dt><dd>3 a 6 meses, con revisión cada 4 semanas.</dd><dt>Dedicación</dt><dd>Se define en el diagnóstico, según el ta…</dd><dt>Con quiénes</dt><dd>La tríada (gestión de producto, diseño y…</dd><dt>Formato</dt><dd>Trabajo en la operación diaria, sesiones…</dd><dt>Qué queda</dt><dd>Acuerdos de trabajo, tablero de iniciati…</dd></dl></p>\n",
+  "recommended_way_summary": "<ul class=\"rw-steps\"><li class=\"rw-step\"><span class=\"rw-step-number\">1</span><div class=\"rw-step-body\"><h3>Diagnóstico</h3><p>En dos semanas, un diagnóstico inicial que nos permita acordar por dónde empezar y cómo medir la mejora.</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">2</span><div class=\"rw-step-body\"><h3>Trabajo y ajuste continuo</h3><p>Trabajamos en uno o varios frentes a la vez y ajustamos según los resultados.</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">3</span><div class=\"rw-step-body\"><h3>Desarrollo de Capacidades</h3><p>Acuerdos, guías y hábitos que el equipo sostiene con autonomía.</p></div></li></ul>\n",
+  "recommended_way_details": "<p><h2 class=\"rw-details-title\">Qué incluye</h2><dl class=\"rw-spec\"><dt>Duración</dt><dd>3 a 6 meses, con revisión cada 4 semanas.</dd><dt>Dedicación</dt><dd>Se define en el diagnóstico, según el tamaño del equipo y cuántos equipos incluimos.</dd><dt>Con quiénes</dt><dd>La tríada (gestión de producto, diseño y tecnología) y quienes construyen; también sus líderes.</dd><dt>Formato</dt><dd>Trabajo en la operación diaria, sesiones grupales y 1:1. Online o en las oficinas del cliente.</dd><dt>Qué queda</dt><dd>Acuerdos de trabajo, tablero de iniciativas, prácticas documentadas, las métricas en marcha y un equipo que las sostiene solo.</dd></dl></p>\n",
   "outcomes": null,
   "definitions": null,
   "program": [],
@@ -38,11 +38,35 @@
   "faq": [
     [
       "¿Se puede contratar un solo frente?",
-      "<strong>Sí, y también varios a la vez.</strong> En el diagnóstico acordamos por dónde e…<br><br>Es habitual que, al avanzar, <strong>aparezcan nuevas prioridades en otro frente</strong>. Por ejemplo, en <strong>Technisys</strong> empezamos por cómo trabajaban los equip…<br><br>En la <strong>revisión de cada cuatro semanas</strong> decidimos juntos si se suma otro frente o si se sigue profundizando en los actuales."
+      "<strong>Sí, y también varios a la vez.</strong> En el diagnóstico acordamos por dónde empezar: a veces es un frente, y muchas veces una combinación, porque un mismo problema suele tener causas en más de uno.<br><br>Es habitual que, al avanzar, <strong>aparezcan nuevas prioridades en otro frente</strong>. Por ejemplo, en <strong>Technisys</strong> empezamos por cómo trabajaban los equipos del área de producto. Cuando ya entregaban cada tres semanas, el freno pasó a ser la instalación del producto: varios días por versión, con muchas tareas manuales. La automatizamos junto con los equipos, y pasó a llevar horas.<br><br>En la <strong>revisión de cada cuatro semanas</strong> decidimos juntos si se suma otro frente o si se sigue profundizando en los actuales."
     ],
     [
       "¿Qué es Dual-Track y para qué sirve?",
-      "Es una forma de organizar el trabajo en <strong>dos carriles que avanzan a la vez</strong>: uno <strong>explora</strong> qué conviene construir (habla con usuar…<strong>entrega</strong> lo que ya se validó.<br><br><strong>No son dos equipos.</strong> Son las mismas personas de negocio, ges…<br><br><strong>Para qué sirve:</strong> para que el equipo aprenda sin frenar l…<strong>lo que une a los tres frentes</strong>: lo que se descubre sobre qué construir…<br><br>Si quieres saber más: la <a href=\"/es/blog/guia-de-product-discovery-en-espanol\">Guía de Product Discovery</a>."
+      "Es una forma de organizar el trabajo en <strong>dos carriles que avanzan a la vez</strong>: uno <strong>explora</strong> qué conviene construir (habla con usuarios y prueba ideas con experimentos baratos) y el otro <strong>entrega</strong> lo que ya se validó.<br><br><strong>No son dos equipos.</strong> Son las mismas personas de negocio, gestión de producto, diseño y tecnología, que deciden juntas qué pasa de un carril al otro.<br><br><strong>Para qué sirve:</strong> para que el equipo aprenda sin frenar las entregas. Y es <strong>lo que une a los tres frentes</strong>: lo que se descubre sobre qué construir llega a cómo trabaja el equipo y a cómo se construye, sin pasamanos ni documentos de traspaso.<br><br>Si quieres saber más: la <a href=\"/es/blog/guia-de-product-discovery-en-espanol\">Guía de Product Discovery</a>."
+    ],
+    [
+      "¿Cuánto tiempo nos pide, y cuánto dedican ustedes?",
+      "<strong>Depende del tamaño, y se define en el diagnóstico.</strong><br><br><strong>Siempre trabajamos con un núcleo fijo:</strong> la tríada (gestión de producto, diseño y tecnología) y sus líderes, porque ahí se toman las decisiones que el resto sigue.<br><br><strong>Con un equipo de cinco o diez personas</strong>, trabajamos con todos. <strong>Con cincuenta</strong>, elegimos uno o dos equipos para trabajar directamente, y la tríada lleva lo aprendido al resto.<br><br><strong>De su lado</strong>, pedimos tiempo semanal de la tríada y de sus líderes. En organizaciones grandes ese tiempo es mayor, porque son quienes multiplican el cambio."
+    ],
+    [
+      "¿Qué son las métricas DORA y para qué sirven?",
+      "Son <strong>cuatro indicadores</strong> que surgieron de años de investigación sobre equipos de desarrollo de software (el programa DevOps Research and Assessment):<br>· <strong>Tiempo de entrega:</strong> cuánto tarda un cambio en llegar a producción.<br>· <strong>Frecuencia:</strong> cada cuánto se entrega.<br>· <strong>Tasa de fallas:</strong> qué proporción de los cambios genera un problema.<br>· <strong>Recuperación:</strong> cuánto se tarda en volver a la normalidad cuando algo falla.<br><br><strong>Para qué sirven:</strong> anticipan. La investigación las asocia con un mejor desempeño de la organización, así que muestran si el equipo va bien antes de que se vea en el negocio.<br><br><strong>Cómo las usamos:</strong> como punto de partida, adaptadas a cada producto. No todos los equipos necesitan las cuatro, y a veces conviene medir algo más cercano a su realidad."
+    ],
+    [
+      "¿Esto es formación o consultoría?",
+      "<strong>Es trabajo sobre tu producto real</strong>, con el equipo, en su operación diaria. La formación está integrada, y cambia según el momento de la organización:<br>· <strong>Al inicio</strong>, cuando todavía no hay acuerdo sobre qué cambiar: un taller corto con líderes, para construir un lenguaje común y definir por dónde iniciar.<br>· <strong>Con los primeros equipos</strong>, el aprendizaje ocurre en el trabajo: cápsulas cortas sobre un tema justo cuando el equipo lo necesita, y práctica inmediata sobre su propio backlog, su código o sus acuerdos.<br>· <strong>Cuando un equipo completo necesita profundizar un tema</strong>, sumamos una capacitación in-company. Cada frente tiene las suyas, y las encuentras en su página.<br><br>Lo mismo vale para <strong>adoptar IA</strong> que para adoptar nuevas formas de trabajo: lo que sirve al comienzo no es lo que sirve cuando ya hay equipos con experiencia.<br><br>Si quieres saber más: <a href=\"/es/blog/capacitaciones-empresariales-inicio-pilotos\">Capacitaciones empresariales: inicio y pilotos</a>."
+    ],
+    [
+      "¿Reemplazan a alguien del equipo?",
+      "<strong>No.</strong> No tomamos el rol de quien gestiona el producto ni el de quien lidera la parte técnica, y no sumamos gente para construir.<br><br>Trabajamos <strong>con quienes ocupan esos roles</strong>, sobre su trabajo real, para que <strong>sigan solos</strong> cuando ya no estemos."
+    ],
+    [
+      "¿Sirve para productos que no son digitales?",
+      "<strong>En buena parte, sí.</strong> Decidir qué construir y ordenar cómo trabaja el equipo no depende de que el producto sea software. Antes de Producto Digital lo hacíamos con el nombre de <strong>Innovation Team</strong>, también en productos y procesos físicos.<br><br>El recorrido es el mismo: <strong>oportunidades, soluciones e implementación</strong>. Lo que cambia son los prototipos: pruebas en planta, modelos o impresión 3D en lugar de software. Por ejemplo, con un equipo de una empresa de consumo masivo que reunía a producción, calidad, marketing, logística y producto. Hemos implementado <strong>cambios industriales en menos de cuatro meses</strong>.<br><br>El frente de cómo se construye, en cambio, es propio del software.<br><br>Si quieres saber más: <a href=\"/es/blog/capacitaciones-empresariales-inicio-pilotos\">Capacitaciones empresariales: inicio y pilotos</a>, que cuenta cómo arrancó ese equipo."
+    ],
+    [
+      "¿Trabajan con nuestra tecnología?",
+      "<strong>Sí.</strong> Trabajamos con el stack, las herramientas y los procesos que el equipo ya usa.<br><br>Si parte del trabajo es <strong>incorporar agentes de IA</strong>, elegimos juntos las herramientas según las <strong>políticas de seguridad</strong> y el tipo de datos de la empresa."
     ]
   ],
   "brochure": "",
@@ -73,12 +97,16 @@
       "name": "Estrategia y Product Management",
       "seo_title": "Estrategia y Product Management para empresas",
       "seo_description": "Fortalece el Product Management de tu empresa. De proyectos a productos: alinea estrategia, evidencia de usuarios y prioridades para decidir qué construir.",
-      "subtitle": "<h2>Decide qué construir y por qué</h2><div>Fortalece la gestión de producto de tu e…</div>",
-      "card_description": "<span class=\"rw-eyebrow\">Frente 1 · Producto</span>\r\n<h2 class=\"rw-details-title\">Estrategia y Product Management</h2>\r\n<p>Decidir qué construir y por qué.</p>\r\n<p class=\"rw-quote\">“Cambiamos la estrategia y las nuevas fu…</p>\r\n<ul>\r\n  <li>Prioridades vinculadas con los resultado…</li>\r\n  <li>Decisiones fundamentadas en evidencia de…</li>\r\n  <li>Un backlog organizado alrededor de oportunidades.</li>\r\n  <li>Iniciativas que se miden por resultados.</li>\r\n</ul>\r\n<p class=\"rw-card-link\"><a href=\"producto-digital/estrategia-product-management\">Explorar Estrategia y Product Management →</a></p>",
-      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Entregar más funcionalidades no garantiz…</strong><br><br>La estrategia cambia, pero las prioridad…<br>El desafío: conectar la dirección del pr…<br><br><strong>Product Management conectado con resultados.</strong></div><div><br></div><div>Ayudamos a definir una dirección clara p…</div><div>Trabajamos con quienes lideran el produc…</div>\n</div>\n",
+      "subtitle": "<h2>Decide qué construir y por qué</h2><div>Fortalece la gestión de producto de tu empresa y ayuda a tu equipo a decidir qué construir con base en la estrategia, las necesidades de los usuarios y los resultados del negocio.</div>",
+      "card_description": "<span class=\"rw-eyebrow\">Frente 1 · Producto</span>\r\n<h3 class=\"rw-details-title\">Estrategia y Product Management</h3>\r\n<p>Decidir qué construir y por qué.</p>\r\n<p class=\"rw-quote\">“Cambiamos la estrategia y las nuevas funcionalidades siguen respondiendo a la anterior.”</p>\r\n<ul>\r\n  <li>Prioridades vinculadas con los resultados del negocio.</li>\r\n  <li>Decisiones fundamentadas en evidencia de usuarios.</li>\r\n  <li>Un backlog organizado alrededor de oportunidades.</li>\r\n  <li>Iniciativas que se miden por resultados.</li>\r\n</ul>\r\n<p class=\"rw-card-link\"><a href=\"producto-digital/estrategia-product-management\">Explorar Estrategia y Product Management →</a></p>",
+      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Entregar más funcionalidades no garantiza mejores resultados.</strong><br><br>La estrategia cambia, pero las prioridades siguen respondiendo a decisiones anteriores. Algunas ideas se validan recién cuando ya se invirtió en desarrollarlas. En muchas áreas de TI, las iniciativas se aprueban como proyectos (caso de negocio, alcance y fecha) y se miden por cumplir el plan, no por su resultado.<br>El desafío: conectar la dirección del producto con las necesidades de los usuarios y los resultados de negocio.<br><br><strong>Product Management conectado con resultados.</strong></div><div><br></div><div>Ayudamos a definir una dirección clara para el producto: para quién es, qué necesidades aborda, qué resultados busca, cómo decidir qué oportunidades atender y a qué le decimos que no.</div><div>Trabajamos con quienes lideran el producto y con la tríada (gestión de producto, diseño y tecnología) para que el equipo se enfoque en las iniciativas que generan valor.</div>\n</div>\n",
       "outcomes": [
         "<strong>Decisiones alineadas:</strong> gestión de producto, diseño y tecnología trabajan hacia una dirección común.",
-        "<strong>Oportunidades relevantes:</strong> el equipo comprende las necesidades de los usuarios y su relación con el negocio."
+        "<strong>Oportunidades relevantes:</strong> el equipo comprende las necesidades de los usuarios y su relación con el negocio.",
+        "<strong>Iniciativas ligadas a resultados:</strong> cada iniciativa define qué indicador de negocio busca mover, no solo su plazo y presupuesto.",
+        "<strong>Soluciones probadas antes de construir:</strong> los experimentos permiten aprender antes de comprometer más esfuerzo.",
+        "<strong>Prioridades que reflejan lo aprendido:</strong> la estrategia y la evidencia orientan qué construye el equipo.",
+        "<strong>Aprendizaje y autonomía:</strong> el equipo incorpora prácticas de Product Management en su modelo operativo."
       ],
       "definitions": null,
       "program": [
@@ -89,9 +117,17 @@
         [
           "Explorar oportunidades con discovery",
           "El equipo contrasta sus supuestos con conversaciones y observaciones de usuarios. Herramientas como el Opportunity Solution Tree y OKRs ayudan a relacionar el resultado de negocio con las oportunidades y posibles soluciones."
+        ],
+        [
+          "Probar soluciones y decidir con evidencia",
+          "El equipo diseña experimentos y prototipos para aprender antes de comprometer esfuerzo de desarrollo. Lo aprendido ayuda a decidir qué soluciones explorar, ajustar o descartar."
+        ],
+        [
+          "Entregar, medir y aprender",
+          "El equipo convierte las soluciones validadas en entregas graduales y mide tanto el avance de la iniciativa como su resultado. Con esa evidencia, revisa si va en la dirección esperada y qué conviene hacer después."
         ]
       ],
-      "target": "<div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <ul><li><strong>Equipos de desarrollo de producto</strong> que entregan lo solicitado, pero no ven…</li><li><strong>Empresas que cambian su estrategia</strong> y necesitan traducirla en prioridades d…</li><li><strong>Áreas de TI y PMO</strong> que hoy gestionan una cartera de proyec…</li><li><strong>Líderes</strong> que buscan fortalecer la colaboración e…</li></ul><div><br></div><hr><h2><strong>Un caso: banca digital en Argentina</strong></h2><div>Unidad de banca digital de un banco inte…<br><br><strong>El desafío.</strong> Un roadmap lleno de iniciativas y equip…<br><br><strong>Qué hicimos.</strong> Un workshop intensivo con 21 personas y…<br><br><strong>Qué cambió.</strong> Los equipos empezaron a descartar hipót…<br><br><em>«Una nueva forma de trabajo que el Banco…</em><br>Líder de Estrategia de la unidad<br><br><strong>Qué vino después.</strong> En 2025, el banco volvió a contratar a…<a href=\"/es/cursos/667-taller-de-agile-product-management\">Taller de Agile Product Management</a>, con casi 80 personas capacitadas. Cada…</div>\n</div>\n</div>\n</div>\n</div>\n",
+      "target": "<div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <div class=\"trix-content\">\n  <ul><li><strong>Equipos de desarrollo de producto</strong> que entregan lo solicitado, pero no ven cambios en los resultados del negocio.</li><li><strong>Empresas que cambian su estrategia</strong> y necesitan traducirla en prioridades de producto.</li><li><strong>Áreas de TI y PMO</strong> que hoy gestionan una cartera de proyectos y quieren pasar a gestionar productos con continuidad.</li><li><strong>Líderes</strong> que buscan fortalecer la colaboración entre gestión de producto, diseño y tecnología.</li></ul><div><br></div><hr><h3><strong>Un caso: banca digital en Argentina</strong></h3><div>Unidad de banca digital de un banco internacional · 2023 y 2025.<br><br><strong>El desafío.</strong> Un roadmap lleno de iniciativas y equipos que no siempre sabían para qué las construían. Se buscaba una visión estratégica compartida, para que cada tríada de producto (PO, Tech Lead y UX) decidiera mejor sin escalar todo.<br><br><strong>Qué hicimos.</strong> Un workshop intensivo con 21 personas y 3 meses de mentoring con el equipo de estrategia y las tríadas de sus 5 células. Conectamos los OKRs con oportunidades e hipótesis usando Opportunity Solution Tree, pasamos a un roadmap de outcomes (Now / Next / Later) y le dimos a cada tríada el lugar de equipo que decide, guiado por la estrategia de producto y por OKRs trimestrales medidos con métricas de producto.<br><br><strong>Qué cambió.</strong> Los equipos empezaron a descartar hipótesis antes de construirlas: un mapa de comercios se dejó de lado en discovery, sin pagar el costo de desarrollarlo. En enero de 2024, ya sin nuestro acompañamiento, el equipo presentó su roadmap anual al Directorio del banco explicando el por qué y el para qué de cada apuesta.<br><br><em>«Una nueva forma de trabajo que el Banco no posee: storytelling con un razonamiento y justificación del por qué y el para qué, que motivó, empoderó y sirvió de ejemplo.»</em><br>Líder de Estrategia de la unidad<br><br><strong>Qué vino después.</strong> En 2025, el banco volvió a contratar a Kleer para llevar esas bases y ese lenguaje común a otras áreas: tres ediciones del <a href=\"/es/cursos/667-taller-de-agile-product-management\">Taller de Agile Product Management</a>, con casi 80 personas capacitadas. Cada edición se ajustó al nivel de madurez de su grupo, con ejemplos y casos propios del área para trabajar durante el taller.</div>\n</div>\n</div>\n</div>\n</div>\n</div>\n",
       "pricing": "",
       "faq": [
         [
@@ -101,6 +137,38 @@
         [
           "¿Qué es un modelo operativo de producto y para qué sirve?",
           "Un modelo operativo de producto es cómo una empresa organiza equipos, roles, presupuesto y decisiones alrededor de productos con continuidad, en lugar de proyectos con alcance fijo gestionados desde una PMO (Marty Cagan, <em>Transformed</em>).<br><br><strong>Una prueba rápida:</strong> mira cómo se aprueba una iniciativa. Si se aprueba con alcance, plazo y presupuesto fijos, la organización trabaja por proyecto, aunque sus equipos se llamen de producto."
+        ],
+        [
+          "¿Cómo pasar de trabajar por proyectos a gestionar productos?",
+          "Para pasar de proyectos a productos hay que cambiar tres cosas: qué se aprueba (resultados en lugar de alcance y caso de negocio), cómo se organizan los equipos (estables) y cómo se mide el éxito (impacto, no cumplimiento de plazo y presupuesto).<br><br><strong>El error más común:</strong> renombrar los proyectos como productos sin cambiar qué se aprueba ni cómo se mide. El trabajo sigue siendo el mismo."
+        ],
+        [
+          "¿Qué es una estrategia de producto y cómo se define?",
+          "Una estrategia de producto define para quién es el producto (clientes y usuarios), qué problema resuelve, qué resultado de negocio busca y a qué se le dice que no. Cumple el papel del plan estratégico anual y de la cartera de proyectos, pero para un producto con continuidad, no para proyectos con fecha de fin.<br><br><strong>Una prueba rápida:</strong> pide a tres personas del equipo que digan, por separado, para quién es el producto y qué resultado busca este trimestre. Si no coinciden, la estrategia no está explícita."
+        ],
+        [
+          "¿Cómo aplican Product Discovery con nuestros equipos?",
+          "Product Discovery es el trabajo continuo de hablar con usuarios y probar supuestos para decidir qué construir antes de invertir en desarrollo. Con tus equipos lo aplicamos sobre una iniciativa real:<br>· <strong>Diagnóstico:</strong> revisamos con qué evidencia decide hoy el equipo y cuáles son los supuestos más riesgosos.<br>· <strong>Entrevistas:</strong> la tríada (gestión de producto, diseño y tecnología) habla con usuarios; las primeras las hacemos juntos.<br>· <strong>Experimentos:</strong> prototipos y pruebas de bajo costo para validar o descartar ideas antes de construirlas.<br>· <strong>Hábito:</strong> lo integramos al ritmo del equipo, para que siga sin nosotros.<br><br>Si quieres saber qué es y cómo hacerlo paso a paso: la <a href=\"/es/blog/guia-de-product-discovery-en-espanol\">Guía de Product Discovery</a>."
+        ],
+        [
+          "¿Qué es un Opportunity Solution Tree y cómo se usa?",
+          "El Opportunity Solution Tree, creado por Teresa Torres, es un mapa que conecta un resultado de negocio con las oportunidades de los usuarios, las soluciones posibles y los experimentos para validarlas, en lugar de partir de una lista de requerimientos.<br><br>Se usa para que cada ítem del backlog se explique por la oportunidad que ataca, y para descartar a tiempo las ideas que no mueven el resultado.<br><br>Si quieres saber más: <a href=\"/es/blog/tecnica-opportunity-solution-tree-paso-a-paso\">Me pidieron algo imposible… ¿por dónde empiezo?</a>"
+        ],
+        [
+          "¿Qué es la tríada de producto y qué papel tiene el liderazgo?",
+          "La tríada de producto (<em>product trio</em>) es el grupo de gestión de producto, diseño y tecnología que decide junto qué construir; el liderazgo define la estrategia y los resultados que importan. En organizaciones de TI tradicionales, esas miradas suelen repartirse entre analista funcional, UX y líder técnico.<br><br>Trabajamos con la tríada y con sus líderes al mismo tiempo, porque el cambio más difícil es pasar de un liderazgo que pide funcionalidades a uno que pide resultados."
+        ],
+        [
+          "¿Qué pasa con las iniciativas que ya vienen decididas por la dirección?",
+          "Cuando la dirección (la gerencia o el sponsor) ya decidió una iniciativa, la tratamos como hipótesis: preguntamos qué resultado de negocio busca y cómo sabríamos si lo logra, en lugar de descartarla o construirla sin más.<br><br>Muchas veces se mantiene; otras, un experimento chico muestra un camino más barato al mismo resultado. La decisión se toma con evidencia, no por quién la pidió."
+        ],
+        [
+          "¿Cómo empieza el trabajo y cuánto dura?",
+          "Empieza con un diagnóstico de dos semanas: miramos cómo se decide hoy qué construir (estrategia, prioridades, evidencia y quién decide) y acordamos por dónde empezar y cómo medir la mejora.<br><br>Después trabajamos de 3 a 6 meses con el equipo y sus líderes, con una revisión cada 4 semanas para ajustar el foco.<br><br>Si quieres saber más: <a href=\"/es/servicios/producto-digital#forma-recomendada\">Del diagnóstico a la autonomía</a>."
+        ],
+        [
+          "¿Se combina con los otros frentes?",
+          "<strong>Sí, y es lo habitual:</strong> Estrategia y Product Management se combina con los frentes de Equipos e Ingeniería con IA, porque un mismo problema suele tener causas en más de uno.<br><br>Validar ideas antes de construir rinde poco si cada entrega tarda meses; y un equipo que entrega rápido rinde poco si construye lo que no mueve el negocio. Lo que se decide aquí llega a <a href=\"/es/servicios/producto-digital/flujo-mejora-continua-equipos-producto\">cómo trabaja el equipo</a> y a <a href=\"/es/servicios/producto-digital/desarrollo-productos-digitales-agentes-ia\">cómo se construye</a>."
         ]
       ],
       "brochure": "",
@@ -121,12 +189,16 @@
       "name": "Flujo y Mejora Continua en Equipos de Producto",
       "seo_title": "Flujo y mejora continua en equipos de producto",
       "seo_description": "Tu equipo de producto sostiene el ritmo de entrega: acuerdos claros, flujo visible con Lean y Kanban, y mejora continua con Toyota Kata.",
-      "subtitle": "<h2>Que dejes de apagar incendios y tus equi…</h2><div>Acuerdos claros, trabajo visible y equip…</div>",
-      "card_description": "<span class=\"rw-eyebrow\">Frente 2 · Equipos</span>\n<h2 class=\"rw-details-title\">Flujo y mejora continua</h2>\n<p>Coordinar mejor. Sostener el ritmo.</p>\n<p class=\"rw-quote\">“Termino metido en el detalle, resolvien…</p>\n<ul>\n  <li>Trabajo visible y bloqueos que se pueden abordar.</li>\n  <li>Menos trabajo a medias y retrabajo.</li>\n  <li>Acuerdos compartidos para priorizar, dec…</li>\n  <li>Capacidad del equipo para mejorar con autonomía.</li>\n</ul>\n<p class=\"rw-card-link\"><a href=\"producto-digital/flujo-mejora-continua-equipos-producto\">Explorar Flujo y Mejora Continua en Equipos →</a></p>",
-      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Entregas que se sostienen, sin vivir en…</strong><br><br>Muchos equipos de producto trabajan much…<br><br>Trabajamos dentro de los equipos, sobre…</div>\n</div>\n",
+      "subtitle": "<h2>Que dejes de apagar incendios y tus equipos sostengan el ritmo de entrega.</h2><div>Acuerdos claros, trabajo visible y equipos que se coordinan sin escalar cada conflicto. Y un hábito de mejora que sigue cuando ya no estemos.</div>",
+      "card_description": "<span class=\"rw-eyebrow\">Frente 2 · Equipos</span>\n<h3 class=\"rw-details-title\">Flujo y mejora continua</h3>\n<p>Coordinar mejor. Sostener el ritmo.</p>\n<p class=\"rw-quote\">“Termino metido en el detalle, resolviendo conflictos entre equipos que no logran coordinarse.”</p>\n<ul>\n  <li>Trabajo visible y bloqueos que se pueden abordar.</li>\n  <li>Menos trabajo a medias y retrabajo.</li>\n  <li>Acuerdos compartidos para priorizar, decidir y colaborar.</li>\n  <li>Capacidad del equipo para mejorar con autonomía.</li>\n</ul>\n<p class=\"rw-card-link\"><a href=\"producto-digital/flujo-mejora-continua-equipos-producto\">Explorar Flujo y Mejora Continua en Equipos →</a></p>",
+      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Entregas que se sostienen, sin vivir en emergencia.</strong><br><br>Muchos equipos de producto trabajan mucho y avanzan poco: las prioridades cambian a mitad de camino, el trabajo queda a medias, el retrabajo se come el tiempo y cada entrega cuesta más de lo que debería.<br><br>Trabajamos dentro de los equipos, sobre su operación diaria. Hacemos visible por dónde pasa el trabajo y dónde se traba. Acordamos cómo se decide y cómo se colabora, sobre todo en la tríada de gestión de producto, diseño y tecnología. Y dejamos instalado un hábito de mejora que el equipo sostiene solo. El resultado: menos trabajo a medias, entregas que se cumplen y más tiempo para lo que mueve el negocio.</div>\n</div>\n",
       "outcomes": [
         "<strong>Entregas más previsibles:</strong> el equipo sabe cuánto trabajo puede tomar y cumple lo que compromete.",
-        "<strong>Menos retrabajo:</strong> se detectan y se atacan las causas, no solo los síntomas."
+        "<strong>Menos retrabajo:</strong> se detectan y se atacan las causas, no solo los síntomas.",
+        "<strong>Foco:</strong> menos trabajo a medias y menos cambios de prioridad en el camino.",
+        "<strong>Una tríada que decide junta:</strong> gestión de producto, diseño y tecnología coordinan antes de construir.",
+        "<strong>Equipos que se coordinan:</strong> los conflictos entre equipos se resuelven donde ocurren, sin escalar cada uno a quien lidera.",
+        "<strong>Mejora como hábito:</strong> el equipo sigue identificando y resolviendo problemas sin depender de nosotros."
       ],
       "definitions": null,
       "program": [
@@ -137,18 +209,62 @@
         [
           "Acuerdos de trabajo y foco",
           "Definimos con el equipo cómo se prioriza, cómo se decide y cuánto trabajo se toma a la vez."
+        ],
+        [
+          "Kanban",
+          "El equipo ve su trabajo, sus bloqueos y sus tiempos, y limita cuánto toma a la vez: menos trabajo a medias y entregas previsibles."
+        ],
+        [
+          "Lean",
+          "Se identifican y eliminan desde la causa las esperas, pasamanos y correcciones que no aportan valor."
+        ],
+        [
+          "Tríada de producto",
+          "Gestión de producto, diseño y tecnología trabajan juntos desde el descubrimiento hasta la entrega."
+        ],
+        [
+          "Coordinación entre equipos con Flight Levels",
+          "Diseñamos con los líderes cómo se coordinan los equipos entre sí y con la estrategia: qué trabajo se mira en cada nivel, quién decide y cada cuánto. Así los conflictos entre equipos se resuelven donde ocurren, sin escalar cada uno a quien lidera."
+        ],
+        [
+          "Toyota Kata",
+          "Ciclos cortos de experimentación hacia metas concretas, hasta que mejorar se vuelve rutina del equipo."
+        ],
+        [
+          "Transferencia",
+          "Dejamos acuerdos, guías y personas del equipo capaces de sostener y extender la práctica."
         ]
       ],
-      "target": "<div class=\"trix-content\">\n  <div>Uno o varios equipos que construyen prod…</div>\n</div>\n",
+      "target": "<div class=\"trix-content\">\n  <div>Uno o varios equipos que construyen productos digitales, y sus líderes, cuando entregan con esfuerzo pero sin ritmo sostenido: mucho retrabajo, prioridades que cambian y la sensación de estar siempre apagando incendios.</div>\n</div>\n",
       "pricing": null,
       "faq": [
         [
           "¿Cuándo conviene empezar con un curso?",
-          "<strong>Pocas veces.</strong> Hoy la mayoría de los equipos con los q…<br><br><strong>El curso conviene cuando el equipo es nuevo.</strong> Parte de armarlo es elegir una forma de…<br>· <strong>Scrum</strong>, cuando el equipo construye producto.<br>· <strong>Kanban</strong>, cuando hace mantenimiento evolutivo o…<br>Una capacitación in-company al inicio de…<br><br>Los cursos que usamos están más abajo, en \"Contenido recomendado\"."
+          "<strong>Pocas veces.</strong> Hoy la mayoría de los equipos con los que empezamos a trabajar ya conocen Scrum y lo tienen incorporado. Por eso casi siempre arrancamos sin curso, con un diagnóstico de cómo trabaja el equipo, muchas veces a partir de una retrospectiva. Lo que haga falta aprender llega después, en cápsulas cortas sobre el tema que el equipo necesita.<br><br><strong>El curso conviene cuando el equipo es nuevo.</strong> Parte de armarlo es elegir una forma de trabajo, y conviene partir de una conocida:<br>· <strong>Scrum</strong>, cuando el equipo construye producto.<br>· <strong>Kanban</strong>, cuando hace mantenimiento evolutivo o da soporte.<br>Una capacitación in-company al inicio deja a todas las personas del equipo en la misma página: conceptos comunes, un lenguaje compartido y los primeros acuerdos de trabajo.<br><br>Los cursos que usamos están más abajo, en \"Contenido recomendado\"."
         ],
         [
           "¿Sirve si el equipo ya usa Scrum?",
-          "<strong>Sí, y es el caso más común.</strong> Muchos equipos adoptaron Scrum hace tie…<br>· Los sprints terminan con trabajo a med…<br>· Las urgencias entran en medio del spri…<br>· La daily se volvió un reporte de estad…<br>· La retrospectiva es una reunión más, y…<br>· La review muestra avances, pero nadie…<br><br>Empezamos por evaluar cómo trabaja hoy el equipo y volvemos a alinear sus acuerdos mínimos de trabajo. Después trabajamos con el equipo cada semana, sobre su trabajo real, hasta que las prácticas se sostienen solas."
+          "<strong>Sí, y es el caso más común.</strong> Muchos equipos adoptaron Scrum hace tiempo, pero con los años las prácticas se desgastan. Algunas señales frecuentes:<br>· Los sprints terminan con trabajo a medias que pasa al siguiente.<br>· Las urgencias entran en medio del sprint y rompen lo planificado.<br>· La daily se volvió un reporte de estado, y no una coordinación.<br>· La retrospectiva es una reunión más, y sus acciones no se cumplen.<br>· La review muestra avances, pero nadie de negocio decide con eso.<br><br>Empezamos por evaluar cómo trabaja hoy el equipo y volvemos a alinear sus acuerdos mínimos de trabajo. Después trabajamos con el equipo cada semana, sobre su trabajo real, hasta que las prácticas se sostienen solas."
+        ],
+        [
+          "¿Qué es Kanban y para qué sirve?",
+          "Es un método para diseñar el sistema de trabajo del equipo (cuánto se toma a la vez, qué significa terminado, dónde se traba el flujo), mucho más que un tablero. Sirve para reducir el trabajo a medias y volver previsibles las entregas.<br><br><strong>Una prueba rápida:</strong> cuenta cuántas cosas tiene el equipo empezadas y sin terminar. Si son más que las personas del equipo, el problema no es la velocidad: el equipo empieza más de lo que termina.<br><br> Si quieres saber más: <a href=\"/es/blog/kanban-fundamentos\">Kanban más allá del tablero</a>."
+        ],
+        [
+          "¿Qué es Lean y para qué sirve?",
+          "Es una forma de mirar el trabajo desde lo que aporta valor al cliente, para identificar lo que no aporta (esperas, pasamanos, correcciones) y eliminarlo desde la causa. Sirve para reducir el retrabajo y los tiempos muertos.<br><br><strong>Una prueba rápida:</strong> toma un pedido que el equipo terminó hace poco y separa el tiempo en que alguien trabajó en él del tiempo en que estuvo esperando. La espera suele ser la mayor parte, y ahí está la mejora.<br><br> Si quieres saber más: <a href=\"/es/blog/lean-eliminar-desperdicio\">Lean: el arte de eliminar el desperdicio</a> y la <a href=\"/es/recursos/guia-para-la-mejora-lean-en-servicios\">Guía para la mejora Lean en servicios</a>."
+        ],
+        [
+          "¿Qué es Flight Levels y para qué sirve?",
+          "Es un modelo que ordena el trabajo en tres niveles y los conecta entre sí: el de cada equipo, el de la coordinación entre equipos y el de la estrategia. Sirve para que varios equipos se coordinen sin depender de que alguien resuelva cada conflicto, y para que un cambio de estrategia llegue al trabajo de todos los días.<br><br><strong>Una señal:</strong> si los conflictos entre equipos terminan en tu agenda, falta el nivel de coordinación. En el servicio lo diseñamos con los líderes: qué se mira en cada nivel, quién decide y cada cuánto.<br><br> Si quieres saber más: <a href=\"/es/blog/flight-levels-coordinar-equipos-y-estrategia\">Flight Levels: cómo coordinar equipos y alinearlos con la estrategia</a>."
+        ],
+        [
+          "¿Qué es Toyota Kata y para qué sirve?",
+          "Es una rutina corta de mejora que el equipo practica, guiada por su líder, hasta volverla un hábito: dónde estamos, a dónde queremos llegar, cuál es el próximo experimento. Sirve para que la mejora siga cuando nosotros ya no estemos.<br><br><strong>Para probarla:</strong> estas son las 5 preguntas que el líder hace en cada conversación de mejora.<br>1. ¿Cuál es la siguiente condición objetivo?<br>2. ¿Cuál es la condición actual?<br>3. ¿Qué obstáculos te impiden alcanzarla? ¿Cuál estás abordando ahora?<br>4. ¿Cuál es tu próximo paso (experimento)? ¿Qué esperas de él?<br>5. ¿Cuándo podemos ir y ver qué aprendimos de ese paso?<br><br> Si quieres saber más: <a href=\"/es/blog/mejora-continua-para-todo-el-mundo\">Mejora continua para todo el mundo</a> y la <a href=\"/es/recursos/guia-de-bolsillo-para-coaching-kata\">Guía de bolsillo para Coaching Kata</a>."
+        ],
+        [
+          "¿Cómo sé si este es mi cuello de botella?",
+          "<strong>Si te reconoces en alguna de estas frases, el cuello de botella está en cómo trabaja el equipo:</strong><br>· \"No sé en qué anda mi equipo.\"<br>· \"Nunca cumple con lo que se compromete.\"<br>· \"Nos cuesta coordinarnos con otros equipos.\"<br>· \"Hay fricciones internas: no logran trabajar juntos.\"<br><br><strong>Cuando las frases cambian, el cuello de botella se corrió.</strong><br>· \"Entendemos lo que hace el equipo, pero va muy lento\": está en <a href=\"/es/servicios/producto-digital/desarrollo-productos-digitales-agentes-ia\">cómo se construye</a>.<br>· \"Lo que construimos no mueve el negocio\": está en <a href=\"/es/servicios/producto-digital/estrategia-product-management\">qué construir y por qué</a>.<br>Ahí la mejora ya no pasa por la dinámica del equipo, sino por su relación con el negocio o por la forma técnica de construir.<br><br>Este frente se puede contratar solo. En el diagnóstico confirmamos por dónde conviene iniciar."
         ]
       ],
       "brochure": null,
@@ -169,12 +285,15 @@
       "name": "Desarrollo de Productos Digitales con Agentes de IA",
       "seo_title": "Desarrollo de productos digitales con agentes de IA",
       "seo_description": "Incorpora agentes de IA a la forma de construir tu producto: moderniza lo existente y acelera su evolución con calidad y seguridad.",
-      "subtitle": "<h2>Haz que tu producto digital vuelva a evo…</h2><div>Incorpora agentes de IA a la forma de co…</div>",
-      "card_description": "<span class=\"rw-eyebrow\">Frente 3 · Ingeniería con IA</span>\n<h2 class=\"rw-details-title\">Desarrollo y evolución del producto</h2>\n<p>Evolucionar con calidad y seguridad.</p>\n<p class=\"rw-quote\">“Un cambio de una línea nos lleva dos se…</p>\n<ul>\n  <li>Agentes de IA en el desarrollo diario.</li>\n  <li>Prácticas de ingeniería revisadas con criterio.</li>\n  <li>Modernización de sistemas existentes.</li>\n  <li>Calidad y seguridad consideradas en cada cambio.</li>\n</ul>\n<p class=\"rw-card-link\"><a href=\"producto-digital/desarrollo-productos-digitales-agentes-ia\">Explorar Desarrollo con Agentes de IA →</a></p>",
-      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Productos que vuelven a ser fáciles de cambiar.</strong><br><br>Cuando cada cambio cuesta semanas, <strong>los agentes de IA cambian la ecuación</strong>: entienden, prueban y rediseñan código…<br><br><em>“Reemplazamos nuestro sistema de gestión…</em><br><br>Trabajamos <strong>sobre el código real de tu producto</strong> y lo medimos con <strong>métricas de práctica</strong> (tiempo de un cambio hasta producción,…<strong>resultado de negocio</strong> que cada cambio busca mover.<br><br><strong>¿Buscabas un curso técnico?</strong> Esos contenidos ahora son parte de este…<a href=\"#todavia-dan-el-curso-certified-scrum-developer-csd-a-csd\">CSD</a>, <a href=\"#como-hacemos-integracion-continua-si-el-sistema-no-tiene-pruebas\">integración continua y DevOps</a>, <a href=\"#como-cambian-las-pruebas-cuando-un-agente-puede-automatizarlas-rapido\">testing</a> y <a href=\"#como-evoluciona-la-arquitectura-de-un-sistema-legacy-para-que-vuelva-a-ser-facil-de-cambiar\">arquitectura</a>.</div>\n</div>\n",
+      "subtitle": "<h2>Haz que tu producto digital vuelva a evolucionar rápido, con calidad y seguridad.</h2><div>Incorpora agentes de IA a la forma de construir tu producto: moderniza lo existente y acelera su evolución sin perder el control.</div>",
+      "card_description": "<span class=\"rw-eyebrow\">Frente 3 · Ingeniería con IA</span>\n<h3 class=\"rw-details-title\">Desarrollo y evolución del producto</h3>\n<p>Evolucionar con calidad y seguridad.</p>\n<p class=\"rw-quote\">“Un cambio de una línea nos lleva dos semanas, y nadie se anima a tocar ese módulo.”</p>\n<ul>\n  <li>Agentes de IA en el desarrollo diario.</li>\n  <li>Prácticas de ingeniería revisadas con criterio.</li>\n  <li>Modernización de sistemas existentes.</li>\n  <li>Calidad y seguridad consideradas en cada cambio.</li>\n</ul>\n<p class=\"rw-card-link\"><a href=\"producto-digital/desarrollo-productos-digitales-agentes-ia\">Explorar Desarrollo con Agentes de IA →</a></p>",
+      "value_proposition": "<div class=\"trix-content\">\n  <div><strong>Productos que vuelven a ser fáciles de cambiar.</strong><br><br>Cuando cada cambio cuesta semanas, <strong>los agentes de IA cambian la ecuación</strong>: entienden, prueban y rediseñan código existente mucho más rápido.<br><br><em>“Reemplazamos nuestro sistema de gestión por un desarrollo propio en dos meses.”</em><br><br>Trabajamos <strong>sobre el código real de tu producto</strong> y lo medimos con <strong>métricas de práctica</strong> (tiempo de un cambio hasta producción, frecuencia de entrega, cambios que fallan, tiempo de recuperación) y con el <strong>resultado de negocio</strong> que cada cambio busca mover.<br><br><strong>¿Buscabas un curso técnico?</strong> Esos contenidos ahora son parte de este servicio. Mira las preguntas sobre <a href=\"#todavia-dan-el-curso-certified-scrum-developer-csd-a-csd\">CSD</a>, <a href=\"#como-hacemos-integracion-continua-si-el-sistema-no-tiene-pruebas\">integración continua y DevOps</a>, <a href=\"#como-cambian-las-pruebas-cuando-un-agente-puede-automatizarlas-rapido\">testing</a> y <a href=\"#como-evoluciona-la-arquitectura-de-un-sistema-legacy-para-que-vuelva-a-ser-facil-de-cambiar\">arquitectura</a>.</div>\n</div>\n",
       "outcomes": [
         "<strong>Evolución más rápida</strong> del producto, con cambios que antes eran costosos o riesgosos.",
-        "<strong>Sistemas legacy modernizados</strong>, con pruebas que protegen su comportamiento."
+        "<strong>Sistemas legacy modernizados</strong>, con pruebas que protegen su comportamiento.",
+        "Más <strong>calidad y seguridad</strong> en cada entrega.",
+        "<strong>Experiencia actualizada</strong> en soluciones existentes.",
+        "<strong>Autonomía:</strong> el equipo sigue evolucionando el producto con agentes de IA cuando ya no estemos."
       ],
       "definitions": null,
       "program": [
@@ -185,9 +304,25 @@
         [
           "Revisión crítica de prácticas",
           "Repasamos integración continua, pruebas, diseño, revisión de código y despliegue, y definimos cuáles se conservan y cómo cambian con agentes de IA."
+        ],
+        [
+          "Selección y adaptación de herramientas",
+          "Elegimos con el equipo los agentes de IA según las políticas de seguridad y el tipo de datos de la empresa, y los adaptamos a su proceso de desarrollo: instrucciones en el repositorio, permisos, qué revisa una persona y qué verifica el pipeline."
+        ],
+        [
+          "Modernización con agentes de IA",
+          "Trabajamos con el equipo sobre el producto real: el agente ayuda a entender el código, cubrirlo con pruebas y rediseñarlo, con controles de calidad y seguridad."
+        ],
+        [
+          "Evolución continua",
+          "Incorporamos agentes al flujo diario de desarrollo para acelerar nuevas funcionalidades con reglas claras de uso y revisión."
+        ],
+        [
+          "Transferencia y autonomía",
+          "Dejamos acuerdos, guías y hábitos para que el equipo sostenga esta forma de trabajo."
         ]
       ],
-      "target": "<div class=\"trix-content\">\n  <div>Empresas con productos digitales que nec…</div>\n</div>\n",
+      "target": "<div class=\"trix-content\">\n  <div>Empresas con productos digitales que necesitan evolucionar más rápido o modernizar sistemas existentes, y líderes de producto y tecnología que quieren incorporar agentes de IA con criterio. También quienes buscan formación sobre prácticas para mejorar el desarrollo.</div>\n</div>\n",
       "pricing": null,
       "faq": [
         [
@@ -196,7 +331,23 @@
         ],
         [
           "¿Cómo hacemos integración continua si el sistema no tiene pruebas?",
-          "<strong>Primero, una red mínima de pruebas; la c…</strong> Sin pruebas, integrar seguido solo inte…<br><br><strong>Una prueba rápida:</strong> ¿cuánto tarda el pipeline en decir si u…<a href=\"/es/blog/entrega-continua-de-software\">Entrega continua de software</a>."
+          "<strong>Primero, una red mínima de pruebas; la cobertura viene después.</strong> Sin pruebas, integrar seguido solo integra errores más rápido, y con agentes, todavía más rápido. Por eso empezamos con pruebas de caracterización (golden master): fijan cómo se comporta hoy el sistema, aunque ese comportamiento tenga errores. Con esa red, el equipo pasa a trunk-based development: cambios chicos, integrados a la rama principal varias veces al día, con el pipeline como única puerta de entrada. Lo que todavía no está listo se esconde con feature flags, no en ramas largas. Y los ambientes se definen como código (infrastructure as code), para que el equipo y los agentes los reproduzcan igual cada vez.<br><br><strong>Una prueba rápida:</strong> ¿cuánto tarda el pipeline en decir si un cambio rompió algo? Si pasa de los 10 minutos que propone XP, el equipo lo va a esquivar, y los agentes también. Si quieres saber más: <a href=\"/es/blog/entrega-continua-de-software\">Entrega continua de software</a>."
+        ],
+        [
+          "¿Cómo evoluciona la arquitectura de un sistema legacy para que vuelva a ser fácil de cambiar?",
+          "<strong>Por partes, con decisiones que el equipo toma y valida en el camino, sin un rediseño completo.</strong> Lo que vuelve maleable un sistema para una persona también lo vuelve maleable para un agente: pruebas que avisan rápido, módulos con límites claros y nombres que dicen qué hace el código. Así trabajamos la arquitectura:<br>· <strong>Atributos de calidad primero:</strong> acordamos con negocio cuáles importan (facilidad de cambio, seguridad, disponibilidad) y se priorizan como un backlog más. Monolito o microservicios se decide según esos atributos.<br>· <strong>Arquitectura hexagonal</strong> (puertos y adaptadores): separa el dominio de la base de datos y de los servicios externos, para cambiar y probar cada parte por separado.<br>· <strong>Refactoring de arquitectura en pasos chicos,</strong> con pruebas que fijan el comportamiento actual antes de mover nada: el agente propone y las pruebas verifican.<br>· <strong>Arquitectura en el pipeline:</strong> las métricas de calidad se miden en cada integración, así el diseño no se degrada sin que nadie lo note.<br><br>El agente acelera cada paso, sobre todo el de entender código que nadie documentó. Las decisiones de arquitectura las sigue tomando el equipo."
+        ],
+        [
+          "¿Cómo cambian las pruebas cuando un agente puede automatizarlas rápido?",
+          "<strong>Escribir pruebas deja de ser el cuello de botella; decidir qué probar, no.</strong> Un agente genera cientos de pruebas en minutos, y muchas solo repiten lo que el código ya hace: pasan siempre y no protegen nada. Lo que trabajamos con el equipo:<br>· <strong>Cuadrantes de la prueba:</strong> qué pruebas guían el desarrollo y cuáles critican el producto, qué se automatiza y qué no.<br>· <strong>Pirámide de automatización:</strong> muchas pruebas unitarias rápidas y pocas de punta a punta, elegidas para los recorridos que importan. Con agentes es fácil invertirla, y el pipeline se vuelve lento y frágil.<br>· <strong>Pruebas end-to-end automáticas:</strong> un agente recorre la aplicación como un usuario, y hasta graba el video del recorrido; si una pantalla cambia, la prueba se rompe. Lo contamos en <a href=\"/es/blog/documentar-producto-con-video-automatico\">Esta reunión podría haber sido un video</a>.<br>· <strong>ATDD:</strong> el equipo define con negocio los criterios de aceptación antes de construir, y el agente los convierte en pruebas.<br>· <strong>Testing exploratorio:</strong> el tiempo que libera la automatización va a lo que un agente no ve: usabilidad, casos raros, el contexto del negocio.<br><br><strong>Una prueba rápida:</strong> rompe a propósito una línea del código (es la idea del mutation testing). Si ninguna prueba falla, esas pruebas no protegen esa parte."
+        ],
+        [
+          "¿Qué pasa con la propiedad colectiva del código si lo escribe un agente?",
+          "<strong>El código sigue siendo del equipo, y la responsabilidad también.</strong> La propiedad colectiva (collective code ownership) dice que cualquier persona del equipo puede cambiar cualquier parte del código. Con agentes, el riesgo es el opuesto: código que nadie del equipo entiende. Lo evitamos con tres prácticas:<br>· <strong>Nadie integra código que no puede explicar,</strong> lo haya escrito quien lo haya escrito.<br>· <strong>TDD y ATDD/BDD:</strong> el equipo escribe primero la prueba o el criterio de aceptación, y el agente escribe el código que lo cumple. La intención queda en manos de personas.<br>· <strong>Revisión centrada en el diseño,</strong> con los estándares del equipo verificados por análisis estático, así las personas miran lo que una herramienta no ve."
+        ],
+        [
+          "¿Cómo sé si este es mi cuello de botella?",
+          "<strong>Si te reconoces en alguna de estas frases, el cuello de botella está en cómo se construye:</strong><br>· \"Un cambio chico nos lleva semanas.\"<br>· \"Nadie se anima a tocar ese módulo.\"<br>· \"Cada entrega rompe algo que funcionaba.\"<br>· \"Solo una o dos personas entienden el sistema.\"<br>· \"Antes de cada salida, probamos todo a mano.\"<br><br><strong>Cuando las frases cambian, el cuello de botella se corrió.</strong><br>· \"No sé en qué anda mi equipo\" o \"Nunca cumple con lo que se compromete\": está en <a href=\"/es/servicios/producto-digital/flujo-mejora-continua-equipos-producto\">cómo trabaja el equipo</a>.<br>· \"Lo que construimos no mueve el negocio\": está en <a href=\"/es/servicios/producto-digital/estrategia-product-management\">qué construir y por qué</a>.<br><br>Este frente se puede contratar solo. En el diagnóstico confirmamos por dónde conviene iniciar."
         ]
       ],
       "brochure": null,
@@ -207,8 +358,8 @@
       "recommended": [],
       "recommended_way_title": "Empezamos construyendo",
       "recommended_way_note": "Iniciamos con una prueba de concepto sobre tu producto, no con un informe.",
-      "recommended_way_summary": "<ul class=\"rw-steps\"><li class=\"rw-step\"><span class=\"rw-step-number\">1</span><div class=\"rw-step-body\"><h4>Prueba de concepto</h4><p>Junto con personas del equipo, desarroll…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">2</span><div class=\"rw-step-body\"><h4>Diagnóstico</h4><p>La prueba muestra dónde se traba el camb…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">3</span><div class=\"rw-step-body\"><h4>Extensión</h4><p>Llevamos lo que funcionó al trabajo diar…</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">4</span><div class=\"rw-step-body\"><h4>Transferencia</h4><p>Acuerdos, guías y hábitos que se sostien…</p></div></li></ul>\n",
-      "recommended_way_details": "<p><h2 class=\"rw-details-title\">Qué incluye</h2><dl class=\"rw-spec\"><dt>Duración</dt><dd>2 a 6 meses, con revisión cada 4 semanas.</dd><dt>Dedicación</dt><dd>Se define después de la prueba de concep…</dd><dt>Con quiénes</dt><dd>Quienes desarrollan, prueban y operan el…</dd><dt>Formato</dt><dd>Trabajo sobre el código real, en pares y…</dd><dt>Qué queda</dt><dd>La funcionalidad construida, el pipeline…</dd></dl></p>\n"
+      "recommended_way_summary": "<ul class=\"rw-steps\"><li class=\"rw-step\"><span class=\"rw-step-number\">1</span><div class=\"rw-step-body\"><h3>Prueba de concepto</h3><p>Junto con personas del equipo, desarrollamos con agentes de IA una funcionalidad dentro de tu producto o una extensión nueva de tu sistema.</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">2</span><div class=\"rw-step-body\"><h3>Diagnóstico</h3><p>La prueba muestra dónde se traba el cambio (pruebas, integración, despliegue, arquitectura, herramientas) en tu contexto y dónde conviene incorporar agentes y mejoras. También definimos qué medir sobre la mejora.</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">3</span><div class=\"rw-step-body\"><h3>Extensión</h3><p>Llevamos lo que funcionó al trabajo diario: primero al equipo de la prueba, después a los demás equipos que tocan el producto.</p></div></li><li class=\"rw-step\"><span class=\"rw-step-number\">4</span><div class=\"rw-step-body\"><h3>Transferencia</h3><p>Acuerdos, guías y hábitos que se sostienen cuando ya no estemos.</p></div></li></ul>\n",
+      "recommended_way_details": "<p><h2 class=\"rw-details-title\">Qué incluye</h2><dl class=\"rw-spec\"><dt>Duración</dt><dd>2 a 6 meses, con revisión cada 4 semanas.</dd><dt>Dedicación</dt><dd>Se define después de la prueba de concepto, según el tamaño del producto y del equipo.</dd><dt>Con quiénes</dt><dd>Quienes desarrollan, prueban y operan el producto, y sus líderes técnicos.</dd><dt>Formato</dt><dd>Trabajo sobre el código real, en pares y ensambles.</dd><dt>Qué queda</dt><dd>La funcionalidad construida, el pipeline y las pruebas, instrucciones para los agentes y las métricas en marcha.</dd></dl></p>\n"
     }
   ]
 }
