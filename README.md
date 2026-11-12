@@ -20,7 +20,7 @@ Code climate
 CSS
 ---
 
-Los estilos son CSS plano, sin compilar: se editan en `public/app/css/` (los de todo el sitio en `css/site/`, en el orden de `SITE_STYLESHEETS` en `lib/helpers/timestamp.rb`) y se fuerza el refresco con Ctrl+Shift+R.
+Los estilos son CSS plano, sin compilar: se editan en `public/app/css/` (los de todo el sitio en `css/site/`, que la app sirve unidos como `/app/css/site.css`, en el orden de `SiteStylesheet::FILES` en `lib/site_stylesheet.rb`) y se fuerza el refresco con Ctrl+Shift+R.
 
 Docker
 ---

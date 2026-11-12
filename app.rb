@@ -215,6 +215,11 @@ get '/robots.txt' do
     Sitemap: #{sitemap}
   ROBOTS
 end
+get '/app/css/site.css' do
+  content_type :css, charset: 'utf-8'
+  cache_control :public, max_age: 60 * 60 * 24 * 3
+  site_stylesheet.to_css
+end
 get '/en' do
   redirect '/en/', 301 # permanent redirect
 end

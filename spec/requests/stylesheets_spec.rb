@@ -2,10 +2,11 @@ require 'spec_helper'
 require './app'
 require 'nokogiri'
 
-# The site's styles are plain CSS with no build step (website17#464): the
-# layout links each file of public/app/css/site, palette first, in the order
-# the old Sass imports had, so the cascade is the one the site always had.
-describe 'the site stylesheets' do
+# The site's styles are plain CSS with no build step (website17#464). The
+# files of public/app/css/site are the source; the site serves them joined in
+# one stylesheet, palette first, in the order the old Sass imports had, so the
+# cascade is the one the site always had and the browser makes one request.
+describe 'the site stylesheet' do
   def app
     Sinatra::Application.new
   end
@@ -17,20 +18,50 @@ describe 'the site stylesheets' do
   let(:linked) do
     get '/es/'
     Nokogiri::HTML(last_response.body).css('head link[rel=stylesheet]')
-            .map { |l| l['href'][%r{^/app/css/([^?]+)}, 1] }.compact
+            .map { |l| l['href'] }.grep(%r{^/app/css/})
   end
 
-  it 'links the palette first and then every site file, in cascade order' do
-    expected = %w[tokens home training blog news clients about_us UIKit services business-agility
-                  recommended resources slider contact bookings recommended_way concepts index]
-
-    expect(linked).to eq(expected.map { "site/#{_1}.css" })
+  let(:files) do
+    %w[tokens home training blog news clients about_us UIKit services business-agility
+       recommended resources slider contact bookings recommended_way concepts index]
   end
 
-  it 'serves every file it links' do
-    linked.each do |file|
-      get "/app/css/#{file}"
-      expect(last_response.status).to eq(200), "#{file} answered #{last_response.status}"
+  it 'is a single stylesheet, versioned by its newest file' do
+    newest = files.map { File.mtime("public/app/css/site/#{_1}.css").to_i }.max
+
+    expect(linked).to eq ["/app/css/site.css?v=#{newest}"]
+  end
+
+  describe 'its body' do
+    before { get '/app/css/site.css' }
+
+    let(:css) { last_response.body }
+
+    it 'is served as CSS' do
+      expect(last_response.status).to eq 200
+      expect(last_response.content_type).to start_with 'text/css'
+    end
+
+    it 'joins every site file, in cascade order' do
+      expect(css.scan(%r{^/\* site/(\S+)\.css \*/$}).flatten).to eq files
+    end
+
+    it 'keeps each file whole, but for the lines it hoists' do
+      files.each do |name|
+        rules = File.read("public/app/css/site/#{name}.css").lines.grep_v(/\A@(charset|import)\b/).join
+
+        expect(css).to include("/* site/#{name}.css */\n#{rules.strip}\n"), "#{name}.css is not whole"
+      end
+    end
+
+    # Both are only valid before every rule, so a joined file has to hoist them.
+    it 'opens with the charset and the imports' do
+      head = css.lines.reject { _1.strip.empty? }.first(2)
+
+      expect(head.first).to start_with '@charset "UTF-8";'
+      expect(head.last).to start_with '@import url('
+      expect(css.scan('@charset').size).to eq 1
+      expect(css.scan('@import').size).to eq 1
     end
   end
 

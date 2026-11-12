@@ -71,7 +71,7 @@ docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy app version
 ```
 
 ### Styles
-Plain CSS, no build step (website17#464). The site-wide files live in `public/app/css/site/` and the layout links them in the order of `SITE_STYLESHEETS` (`lib/helpers/timestamp.rb`): later files win, so a new file goes where its rules should take precedence. The palette is custom properties in `site/tokens.css` (`var(--primary-blue)`). Page-specific files (`services-v2.css`, `podcasts.css`…) are linked from their views. Images in `url()` go from the site root (`/app/img/…`), not relative to the stylesheet. Edit the CSS and reload; there is nothing to compile.
+Plain CSS, no build step (website17#464). The site-wide files live in `public/app/css/site/`; the app serves them joined as one stylesheet, `/app/css/site.css`, in the order of `SiteStylesheet::FILES` (`lib/site_stylesheet.rb`), so the browser makes one request. Later files win, so a new file goes where its rules should take precedence. The palette is custom properties in `site/tokens.css` (`var(--primary-blue)`). Page-specific files (`services-v2.css`, `podcasts.css`…) are linked from their views. Images in `url()` go from the site root (`/app/img/…`), not relative to the stylesheet. Edit the CSS and reload; there is nothing to compile.
 
 ### Utilities
 ```bash
