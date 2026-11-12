@@ -57,7 +57,7 @@ docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec cucumber'
 docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec cucumber features/page_titles.feature'
 ```
 
-Performance (`spec/performance`, tagged `perf`, left out of the normal run): Lighthouse, in mobile mode, on a deployed site. Run it after each QA deploy, before production. Rules on what each page requests while it loads fail the spec; examples are no reCAPTCHA before a form opens, one site stylesheet, a JavaScript cap and an image cap. Timings (score, FCP, LCP, TBT) are the median of `PERF_RUNS` runs (3 by default) and only get reported, because a single run varies by seconds. The HTML reports stay in `tmp/perf/`. Lighthouse, Node and Chromium are part of the devcontainer image, with Lighthouse pinned in `tools/lighthouse`; changing that version means rebuilding the container.
+Performance (`spec/performance`, tagged `perf`, left out of the normal run): Lighthouse, in mobile mode, on a deployed site. The QA deploy runs it on its own (see Deployment). Rules on what each page requests while it loads fail the spec; examples are no reCAPTCHA before a form opens, one site stylesheet, a JavaScript cap and an image cap. Timings (score, FCP, LCP, TBT) are the median of `PERF_RUNS` runs (3 by default) and only get reported, because a single run varies by seconds. The HTML reports stay in `tmp/perf/`. Lighthouse, Node and Chromium are part of the devcontainer image, with Lighthouse pinned in `tools/lighthouse`; changing that version means rebuilding the container.
 ```bash
 docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec rake "perf[https://qa.kleer.la,https://www.kleer.la]"'
 ```
@@ -74,6 +74,8 @@ docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy deploy'
 # Which commit is running (drop -d qa for production)
 docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy app version -d qa'
 ```
+
+Kamal hooks (`.kamal/hooks`, tested in `spec/kamal_hooks_spec.rb`) tie the two deploys to the performance specs. After a QA deploy, `post-deploy` runs `rake perf` with one run per page against QA, with production as the baseline. That adds ~3 minutes, and the log stays in `tmp/perf/qa-<sha>.log`. If the specs pass, it records the commit in `tmp/perf/passed/`. Before a production deploy, `pre-deploy` refuses any commit that isn't recorded there, so production only gets exactly what passed in QA. In an emergency, `SKIP_PERF=1 bin/deploy deploy` skips the check. The record lives on the machine that deploys (this devcontainer).
 
 ### Styles
 Plain CSS, no build step (website17#464). The site-wide files live in `public/app/css/site/`; the app serves them joined as one stylesheet, `/app/css/site.css`, in the order of `SiteStylesheet::FILES` (`lib/site_stylesheet.rb`), so the browser makes one request. Later files win, so a new file goes where its rules should take precedence. The palette is custom properties in `site/tokens.css` (`var(--primary-blue)`). Page-specific files (`services-v2.css`, `podcasts.css`…) are linked from their views. Images in `url()` go from the site root (`/app/img/…`), not relative to the stylesheet. Edit the CSS and reload; there is nothing to compile.

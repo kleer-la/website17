@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# After a QA deploy, run the performance specs (one Lighthouse run per page,
+# production as the baseline) and record the commit when they pass, which
+# lets pre-deploy send it to production. The log stays in tmp/perf.
+set -euo pipefail
+
+[ "${KAMAL_DESTINATION:-}" = "qa" ] || exit 0
+
+passed_dir="${PERF_PASSED_DIR:-tmp/perf/passed}"
+mkdir -p "${passed_dir}" tmp/perf
+log="tmp/perf/qa-${KAMAL_VERSION}.log"
+
+echo "post-deploy: running the performance specs on QA (log: ${log})..." >&2
+if [ -n "${PERF_COMMAND:-}" ]; then
+  run() { sh -c "${PERF_COMMAND}"; }
+else
+  run() { PERF_RUNS=1 bundle exec rake "perf[https://qa.kleer.la,https://www.kleer.la]"; }
+fi
+
+if run 2>&1 | tee "${log}" >&2; then
+  touch "${passed_dir}/${KAMAL_VERSION}"
+  echo "post-deploy: ${KAMAL_VERSION} passed; it can go to production." >&2
+else
+  echo "post-deploy: the performance specs failed on QA (see ${log}); production will refuse ${KAMAL_VERSION}." >&2
+  exit 1
+fi

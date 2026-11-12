@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Production only goes out with a commit that passed the performance specs
+# in QA (see post-deploy). SKIP_PERF=1 skips the check, for emergencies.
+set -euo pipefail
+
+[ "${KAMAL_DESTINATION:-}" = "qa" ] && exit 0
+
+passed_dir="${PERF_PASSED_DIR:-tmp/perf/passed}"
+if [ -n "${SKIP_PERF:-}" ]; then
+  echo "pre-deploy: SKIP_PERF set, deploying ${KAMAL_VERSION} without checking QA." >&2
+  exit 0
+fi
+
+if [ ! -e "${passed_dir}/${KAMAL_VERSION}" ]; then
+  cat >&2 <<MSG
+pre-deploy: ${KAMAL_VERSION} has not passed the performance specs in QA.
+Deploy it there first (bin/deploy deploy -d qa); it runs them on its own.
+In an emergency: SKIP_PERF=1 bin/deploy deploy
+MSG
+  exit 1
+fi
