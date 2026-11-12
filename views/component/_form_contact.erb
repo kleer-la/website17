@@ -143,20 +143,20 @@ function setupDownloadForm(resourceSlug) {
       messageInput.setAttribute('required', '');
       form.action = '/' + locale + '/qualify-booking';
     }
-
-  loadReCaptcha('contact-form');
   }
 
   // Wait for the DOM to be fully loaded
   document.addEventListener('DOMContentLoaded', function() {
-    var modalOpeners = document.querySelectorAll('.modal-opener');
-    modalOpeners.forEach(function(button) {
-      button.addEventListener('click', loadReCaptcha('contact-form'));
-    });
-
-    // If the modal is already open when the page loads, load reCAPTCHA
-    if (document.querySelector('.modal.show')) {
-      loadReCaptcha();
+    // reCAPTCHA (~850 KB of script) loads when the contact modal opens,
+    // whichever button opens it, not on every page view (website17#465).
+    var contactModal = document.getElementById('mail-modal');
+    if (contactModal) {
+      contactModal.addEventListener('show.bs.modal', function() {
+        loadReCaptcha('contact-form');
+      });
+      if (contactModal.classList.contains('show')) {
+        loadReCaptcha('contact-form');
+      }
     }
 
     // Detect area_slug from URL path
