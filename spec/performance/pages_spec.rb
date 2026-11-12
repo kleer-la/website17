@@ -17,7 +17,6 @@ describe 'page performance', :perf do
   # Known problems, pending until they are fixed: RSpec then fails the
   # pending example, which is the cue to drop the line.
   oversized_images = {
-    '/es/' => 'website17#465: an image in Keventer content',
     '/es/servicios' => 'website17#465: an image in Keventer content'
   }
   measured = Hash.new do |cache, url|
