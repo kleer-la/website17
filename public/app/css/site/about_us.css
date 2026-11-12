@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/* ============================================ */
+/* ABOUT US PAGE */
+/* ============================================ */
+/* --- Hero --- */
+.aboutus-hero {
+  background: linear-gradient(135deg, #2d6a9f 0%, #a5e4f1 100%);
+  margin-top: 100px;
+  padding: 80px 60px;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.aboutus-hero h1 {
+  color: var(--white);
+  font-family: "degular-text", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+}
+.aboutus-hero .hero-description {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+}
+
+/* --- Trayectoria (Timeline) --- */
+.aboutus-trayectoria {
+  padding: 80px 0;
+}
+.aboutus-trayectoria h2 {
+  color: var(--turquoise-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.aboutus-trayectoria__description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--black);
+  font-size: 1rem;
+  line-height: 1.667rem;
+}
+
+.aboutus-timeline-card {
+  background-color: var(--white);
+  border: 1px solid rgba(165, 228, 241, 0.5);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  text-align: center;
+  transition: border-color 0.25s ease;
+}
+.aboutus-timeline-card:hover {
+  border-color: var(--turquoise-dark);
+}
+.aboutus-timeline-card--present {
+  background-color: rgba(165, 228, 241, 0.15);
+  border-color: var(--turquoise-dark);
+}
+.aboutus-timeline-card__label {
+  display: inline-block;
+  font-family: "degular-text", sans-serif;
+  font-weight: 700;
+  font-size: 0.833rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--turquoise-dark);
+  background-color: rgba(165, 228, 241, 0.3);
+  border-radius: 100px;
+  padding: 4px 16px;
+  margin-bottom: 1rem;
+}
+.aboutus-timeline-card p {
+  color: var(--black);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Filosofía (Pillars) --- */
+.aboutus-filosofia {
+  padding: 80px 0;
+  background-color: rgba(165, 228, 241, 0.1);
+}
+.aboutus-filosofia h2 {
+  color: var(--turquoise-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.aboutus-filosofia__description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--black);
+}
+
+.aboutus-pillar-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.06);
+  border-left: 3px solid var(--turquoise-dark);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.aboutus-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 24px 48px rgba(45, 106, 159, 0.12);
+}
+.aboutus-pillar-card h4 {
+  color: var(--turquoise-dark);
+  margin-bottom: 0.5rem;
+}
+.aboutus-pillar-card p {
+  color: var(--black);
+  margin: 0;
+}
+
+/* --- Propósito (Quote) --- */
+.aboutus-proposito {
+  padding: 80px 0;
+  text-align: center;
+}
+.aboutus-proposito blockquote {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.aboutus-proposito blockquote p {
+  font-family: "degular-text", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--turquoise-dark);
+  margin: 0;
+}
+.aboutus-proposito__footnote {
+  color: var(--grey);
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* --- Cultura (Values) --- */
+.aboutus-cultura {
+  padding: 80px 0;
+}
+.aboutus-cultura h2 {
+  color: var(--turquoise-dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.aboutus-cultura__description {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--black);
+}
+
+.aboutus-value-card {
+  background-color: rgba(165, 228, 241, 0.15);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+.aboutus-value-card:hover {
+  transform: translateY(-4px);
+}
+.aboutus-value-card h4 {
+  color: var(--turquoise-dark);
+  margin-bottom: 0.5rem;
+}
+.aboutus-value-card p {
+  color: var(--black);
+  margin: 0;
+}
+
+/* --- Team (Kleerers) --- */
+.aboutus-kleerers {
+  padding: 80px 0;
+  background-color: rgba(165, 228, 241, 0.08);
+}
+.aboutus-kleerers h2 {
+  color: var(--turquoise-dark);
+}
+
+.aboutus-member-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 18px 76px rgba(51, 51, 51, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.aboutus-member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 24px 48px rgba(45, 106, 159, 0.12);
+  border-top-color: var(--turquoise-dark);
+}
+.aboutus-member-card__photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.aboutus-member-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.aboutus-member-card__photo:hover img {
+  transform: scale(1.05);
+}
+.aboutus-member-card__info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.aboutus-member-card__name {
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 0.25rem;
+  font-size: 1.111rem;
+}
+.aboutus-member-card__role {
+  color: var(--turquoise-dark);
+  font-weight: 600;
+  font-size: 0.833rem;
+  margin-bottom: 0.5rem;
+}
+.aboutus-member-card__bio {
+  color: var(--grey);
+  font-size: 0.833rem;
+  line-height: 1.4;
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+.aboutus-member-card__social {
+  display: flex;
+  gap: 0.75rem;
+}
+.aboutus-member-card__social a {
+  color: var(--turquoise-dark);
+  font-size: 1.111rem;
+  transition: color 0.2s ease;
+}
+.aboutus-member-card__social a:hover {
+  color: #1c4263;
+}
+
+/* --- CTA --- */
+.aboutus-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2d6a9f 0%, #24557f 100%);
+  text-align: center;
+}
+.aboutus-cta h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.aboutus-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 550px;
+  margin: 0 auto;
+  font-size: 1.111rem;
+}
+
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  .aboutus-hero {
+    padding: 60px 24px;
+    min-height: auto;
+  }
+  .aboutus-trayectoria,
+  .aboutus-filosofia,
+  .aboutus-proposito,
+  .aboutus-cultura,
+  .aboutus-kleerers,
+  .aboutus-cta {
+    padding: 50px 0;
+  }
+  .aboutus-timeline-card,
+  .aboutus-pillar-card,
+  .aboutus-value-card {
+    margin-bottom: 1rem;
+  }
+}

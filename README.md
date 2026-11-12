@@ -17,15 +17,10 @@ Code climate
 [![Test Coverage](https://codeclimate.com/github/kleer-la/website17/badges/coverage.svg)](https://codeclimate.com/github/kleer-la/website17/coverage)
 [![Issue Count](https://codeclimate.com/github/kleer-la/website17/badges/issue_count.svg)](https://codeclimate.com/github/kleer-la/website17)
 
-CSS/SASS
+CSS
 ---
 
-Para trabajar los estilos:
-```cli
-gem install sass
-./sass.sh
-```
-y forzar refresco Crtl+Shft+R
+Los estilos son CSS plano, sin compilar: se editan en `public/app/css/` (los de todo el sitio en `css/site/`, en el orden de `SITE_STYLESHEETS` en `lib/helpers/timestamp.rb`) y se fuerza el refresco con Ctrl+Shift+R.
 
 Docker
 ---

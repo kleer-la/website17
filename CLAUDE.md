@@ -30,7 +30,7 @@ The application also serves **L'Atelier**, a Google Meet add-on for remote colla
 
 ## Development Environment Context
 
-**Important**: Claude Code runs on the host, which has no Ruby. Every `bundle`, `rspec`, `cucumber`, `rubocop`, `sass` and `bin/deploy` command goes through this repo's own devcontainer (`devcontainer-website17-1`), which mounts the repo at `/app`. File operations and git happen on the host as usual. If the container is stopped: `docker start devcontainer-website17-1`. Do not use eventer's container (`eventer_devcontainer-app-1`): it is a different app.
+**Important**: Claude Code runs on the host, which has no Ruby. Every `bundle`, `rspec`, `cucumber`, `rubocop` and `bin/deploy` command goes through this repo's own devcontainer (`devcontainer-website17-1`), which mounts the repo at `/app`. File operations and git happen on the host as usual. If the container is stopped: `docker start devcontainer-website17-1`. Do not use eventer's container (`eventer_devcontainer-app-1`): it is a different app.
 
 ## Common Commands
 
@@ -70,14 +70,13 @@ docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy deploy'
 docker exec devcontainer-website17-1 bash -lc 'cd /app && bin/deploy app version -d qa'
 ```
 
+### Styles
+Plain CSS, no build step (website17#464). The site-wide files live in `public/app/css/site/` and the layout links them in the order of `SITE_STYLESHEETS` (`lib/helpers/timestamp.rb`): later files win, so a new file goes where its rules should take precedence. The palette is custom properties in `site/tokens.css` (`var(--primary-blue)`). Page-specific files (`services-v2.css`, `podcasts.css`…) are linked from their views. Images in `url()` go from the site root (`/app/img/…`), not relative to the stylesheet. Edit the CSS and reload; there is nothing to compile.
+
 ### Utilities
 ```bash
 # List all defined routes
 rake routes
-
-# Compile the SCSS once (public/app/css is committed, so commit the result)
-docker exec devcontainer-website17-1 bash -lc 'cd /app/public/app && sass scss/index.scss:css/index.css --style compressed'
-# or watch while developing: ./sass.sh
 
 # I18n management
 i18n-tasks missing    # Find missing translations

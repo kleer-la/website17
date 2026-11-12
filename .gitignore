@@ -30,9 +30,6 @@ webrat.log
 public/.DS_Store
 public/*.pdf
 public/img/.DS_Store
-public/app/.sass-cache
-.sass-cache
-public/app/css/*.css.map
 website.env
 
 crawler_results_*.txt

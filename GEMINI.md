@@ -72,9 +72,6 @@ git push heroku master:main
 # List all defined routes
 rake routes
 
-# Check CSS/SASS compilation
-./sass.sh
-
 # I18n management
 i18n-tasks missing    # Find missing translations
 i18n-tasks unused     # Find unused translations

@@ -8,34 +8,34 @@ This document describes the actual design language of kleer.la as implemented in
 
 ### Brand Colors
 
-| Token | Hex | SCSS Variable | Usage |
+| Token | Hex | CSS custom property | Usage |
 |-------|-----|---------------|-------|
-| Primary Blue | `#68CEF2` | `$primary-blue` | Hero backgrounds, brand identity, highlights |
-| Secondary Blue | `#00BBEE` | `$secondary-blue` | Link hover, accents, TOC titles |
-| Blue Kleer | `#7bcaea` | `$blue-kleer` | Softer brand blue, secondary surfaces |
-| Celeste | `#E8F8FD` | `$celeste` | Light backgrounds (resources hero) |
+| Primary Blue | `#68CEF2` | `var(--primary-blue)` | Hero backgrounds, brand identity, highlights |
+| Secondary Blue | `#00BBEE` | `var(--secondary-blue)` | Link hover, accents, TOC titles |
+| Blue Kleer | `#7bcaea` | `var(--blue-kleer)` | Softer brand blue, secondary surfaces |
+| Celeste | `#E8F8FD` | `var(--celeste)` | Light backgrounds (resources hero) |
 
 ### Accent Colors
 
-| Token | Hex | SCSS Variable | Usage |
+| Token | Hex | CSS custom property | Usage |
 |-------|-----|---------------|-------|
-| Primary Yellow | `#FFE600` | `$primary-yellow` | Category flags, badges |
-| Secondary Yellow | `#FCDC2D` | `$secondary-yellow` | Badges, highlights |
-| Primary Red | `#EF5662` | `$primary-red` | Alerts, error highlights |
-| Secondary Red | `#EA2A46` | `$secondary-red` | Error states |
-| Primary Green | `#43B045` | `$primary-green` | Success, positive indicators |
-| Secondary Green | `#0DAC52` | `$secondary-green` | Confirmation |
+| Primary Yellow | `#FFE600` | `var(--primary-yellow)` | Category flags, badges |
+| Secondary Yellow | `#FCDC2D` | `var(--secondary-yellow)` | Badges, highlights |
+| Primary Red | `#EF5662` | `var(--primary-red)` | Alerts, error highlights |
+| Secondary Red | `#EA2A46` | `var(--secondary-red)` | Error states |
+| Primary Green | `#43B045` | `var(--primary-green)` | Success, positive indicators |
+| Secondary Green | `#0DAC52` | `var(--secondary-green)` | Confirmation |
 
 ### CTA & Neutrals
 
-| Token | Hex | SCSS Variable | Usage |
+| Token | Hex | CSS custom property | Usage |
 |-------|-----|---------------|-------|
-| CTA Orange | `#FFA901` | `$primary-cta` | Primary buttons, call-to-action |
-| Black | `#333333` | `$black` | Body text, headings |
-| Grey | `#B3B3B3` | `$grey` | Secondary text, metadata |
-| Soft Grey | `#D9D9D9` | `$soft-grey` | Borders, dividers |
-| Card Grey | `#EAEAEA` | `$grey-card` | Card backgrounds |
-| White | `#FFFFFF` | `$white` | Page background |
+| CTA Orange | `#FFA901` | `var(--primary-cta)` | Primary buttons, call-to-action |
+| Black | `#333333` | `var(--black)` | Body text, headings |
+| Grey | `#B3B3B3` | `var(--grey)` | Secondary text, metadata |
+| Soft Grey | `#D9D9D9` | `var(--soft-grey)` | Borders, dividers |
+| Card Grey | `#EAEAEA` | `var(--grey-card)` | Card backgrounds |
+| White | `#FFFFFF` | `var(--white)` | Page background |
 
 ### Service Area Dynamic Colors
 
@@ -310,7 +310,7 @@ These complement the existing blue family (`$primary-blue` #68CEF2) but give blo
 
 For the blog & resources refresh, suggested order:
 
-1. **Add SCSS variables** — `$turquoise-dark: #2d6a9f` and `$turquoise-light: #a5e4f1` to UIKit.scss
+1. **Palette tokens** — `--turquoise-dark: #2d6a9f` and `--turquoise-light: #a5e4f1` live in `public/app/css/site/tokens.css`
 2. **Blog listing hero gradient + category chips** — highest visual impact, low effort
 3. **Card hover states** — small CSS addition, big polish gain
 4. **Resource card grid refactor** — remove inline widths, use CSS grid
