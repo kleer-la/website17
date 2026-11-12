@@ -4,7 +4,7 @@
 <% definitions = faq_definitions(defined?(faq) ? faq : []) %>
 <link rel="stylesheet" href="<%= css_url('service-content.css') %>">
 <div class="program">
-  <h<%= level %> class="offering-title">
+  <h<%= level %> class="offering-title h4">
     <%= t("services.program.#{@is_training_program==true}", name: name) %>
   </h<%= level %>>
   <div class="row mt-5 w-100">
@@ -12,7 +12,7 @@
      <div class="col-12 col-lg-6">
        <div class="program-item row">
          <div class="col-12">
-           <h<%= level + 1 %> class="program-item__title"><%= item[0] %></h<%= level + 1 %>>
+           <h<%= level + 1 %> class="program-item__title h5"><%= item[0] %></h<%= level + 1 %>>
            <p class="detail"><%= item[1] %></p>
            <% if (definition = faq_definition_for(item[0], definitions)) %>
              <a class="program-definition" href="#<%= definition[:anchor] %>"><%= definition[:label] %> ↓</a>

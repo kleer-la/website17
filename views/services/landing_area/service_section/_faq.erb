@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="<%= css_url('service-content.css') %>">
 <script src="/js/faq-anchors.js" defer></script>
 <div class="faq mt-5" id="preguntas-frecuentes">
-  <h<%= level %> class="offering-title"><%= t('services.faq') %></h<%= level %>>
+  <h<%= level %> class="offering-title h4"><%= t('services.faq') %></h<%= level %>>
   <div class="accordion accordion-flush mt-4 mx-auto" id="faq-<%= id %>" style="max-width: 960px;">
     <% faq.each_with_index do |(question, answer), index| %>
       <div class="accordion-item" id="<%= anchors[index] %>">
-        <h<%= level + 1 %> class="accordion-header" id="faq-<%= id %>-heading-<%= index %>">
+        <h<%= level + 1 %> class="accordion-header h5" id="faq-<%= id %>-heading-<%= index %>">
           <button class="accordion-button collapsed fw-bold" type="button"
                   data-bs-toggle="collapse" data-bs-target="#faq-<%= id %>-item-<%= index %>"
                   aria-expanded="false" aria-controls="faq-<%= id %>-item-<%= index %>">
