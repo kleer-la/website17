@@ -23,6 +23,18 @@ task :crawl, [:base_url, :max_pages] do |_t, args|
   puts crawl.report
 end
 
+desc 'Check the heading outline of every page in the sitemap of a deployed site ' \
+     '(rake headings[https://qa.kleer.la])'
+task :headings, [:base_url] do |_t, args|
+  require './lib/site_headings'
+
+  base = args[:base_url] || 'https://www.kleer.la'
+  warn "Revisando los headings de #{base}..."
+  check = SiteHeadings.new(base).run
+  puts check.report
+  exit 1 if check.pages.any? || check.unreadable.any?
+end
+
 desc 'Lighthouse rules and timings on a deployed site, optionally against a baseline ' \
      '(rake perf[https://qa.kleer.la,https://www.kleer.la])'
 task :perf, [:base_url, :baseline_url] do |_t, args|
