@@ -62,6 +62,7 @@ ul.rw-steps {
 .rw-step .rw-step-body {
   flex: 1;
 }
+.rw-step .rw-step-body h3,
 .rw-step .rw-step-body h4 {
   font-size: 1rem;
   font-weight: 700;
