@@ -17,8 +17,11 @@ const DOMobjects = {
     resources: {
         list: Array.from(document.getElementById('resource-list').children),
         title: document.getElementById('search-title'),
-        setTitle: function(text){
-            this.title.innerHTML = text
+        // The searched text is the visitor's: write it as text, never as HTML.
+        setResults: function(count, text){
+            const searched = document.createElement('b')
+            searched.textContent = text
+            this.title.replaceChildren(`${count} resultados para: `, searched)
         }
     },
     pager: {
@@ -89,7 +92,7 @@ const filterByText = (event) => {
 
     if(textInFilter){
         DOMobjects.showElements([DOMobjects.resources.title], true)
-        DOMobjects.resources.setTitle(`${pager.filteredResourcesCount} resultados para: <b>${textInFilter}</b>`)
+        DOMobjects.resources.setResults(pager.filteredResourcesCount, textInFilter)
     }else{
         DOMobjects.showElements([DOMobjects.resources.title], false)
     }
@@ -144,7 +147,7 @@ const filter = () => {
 
   if(textInFilter) {
       DOMobjects.showElements([DOMobjects.resources.title], true)
-      DOMobjects.resources.setTitle(`${pager.filteredResourcesCount} resultados para: <b>${textInFilter}</b>`)
+      DOMobjects.resources.setResults(pager.filteredResourcesCount, textInFilter)
   } else {
       DOMobjects.showElements([DOMobjects.resources.title], false)
   }

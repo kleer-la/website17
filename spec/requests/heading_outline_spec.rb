@@ -92,4 +92,22 @@ describe 'the heading outline of the main pages' do
   it 'service' do
     expect_sound_outline('/es/servicios/producto-digital/estrategia-product-management')
   end
+
+  it 'catalog' do
+    courses = [{ 'event_type_id' => 1, 'slug' => '1-scrum', 'name' => 'Scrum', 'lang' => 'es', 'categories' => [] },
+               { 'event_type_id' => 2, 'slug' => '2-kanban', 'name' => 'Kanban', 'lang' => 'es', 'categories' => [] }]
+    allow(Catalog).to receive(:create_keventer_json).and_return(Catalog.load_catalog_events(courses))
+    allow(Category).to receive(:create_keventer_json).and_return([])
+
+    expect_sound_outline('/es/catalogo')
+  end
+
+  # The search results line is a status, not the title of the list (#466).
+  it 'resources' do
+    doc = JSON.parse(File.read('./spec/fixtures/resource_concepts.json'))
+    resources = Resource.load_list([doc, doc.merge('slug' => 'otro')])
+    allow(Resource).to receive(:create_list_keventer).and_return(resources)
+
+    expect_sound_outline('/es/recursos')
+  end
 end

@@ -30,7 +30,7 @@ class HeadingOutline
 
   def initialize(html)
     @headings = Nokogiri::HTML5(html).css(LEVELS.join(',')).map do |node|
-      Heading.new(node, node.name[1].to_i, node.text.split.join(' '))
+      Heading.new(node, node.name[1].to_i, text_of(node))
     end
   end
 
@@ -39,6 +39,11 @@ class HeadingOutline
   end
 
   private
+
+  # What a reader hears: an image inside the heading counts by its alt.
+  def text_of(node)
+    [node.text, *node.css('img').map { _1['alt'] }].join(' ').split.join(' ')
+  end
 
   def main_heading
     h1s = @headings.select { _1.level == 1 }

@@ -1,13 +1,13 @@
 <%=erb :'resources/hero' %>
 <section class="container resources-list">
-  <h2 id="search-title" class="hidden-element"></h2>
+  <p id="search-title" class="hidden-element" role="status"></p>
   <div>
     <%=erb :'resources/list' %>
   </div>
 </section>
 
 <% if session[:locale] == 'es' %>
-  <script src="/js/resources_filter.js?v=1""></script>
+  <script src="/js/resources_filter.js?v=2"></script>
 <% end %>
 
 

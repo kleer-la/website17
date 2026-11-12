@@ -66,6 +66,12 @@ describe HeadingOutline do
     it 'reports a heading without text' do
       expect(rules("#{hero}<section><h2> </h2></section>")).to include :empty
     end
+
+    # Catalog: the e-learning column is titled with the Academia logo.
+    it 'takes the text of a logo from its alt, as screen readers and search engines do' do
+      expect(rules(%(#{hero}<section><h2><img src="logo.png" alt="Academia"></h2></section>))).to be_empty
+      expect(rules(%(#{hero}<section><h2><img src="logo.png" alt=""></h2></section>))).to include :empty
+    end
   end
 
   describe 'heading levels follow the DOM' do
