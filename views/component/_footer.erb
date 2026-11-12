@@ -3,7 +3,7 @@
     <div class="row">
       <% t('footer_menu').each_with_index do |item, i| %>
         <div class="col-6 <%= i == 0 ? 'col-md-3' : 'col-md-2' %>">
-          <h5><%= item[:title] %></h5>
+          <p class="h5"><%= item[:title] %></p>
           <ul>
             <% item[:items].each do |subitem| %>
               <% next if %w[/catalogo /catalog].include?(subitem[:url]) && !catalog_offered? %>
@@ -21,7 +21,7 @@
         </div>
       <% end %>
       <div class="col-6 col-md-4">
-        <h5><%= t("generals.social_media.title") %></h5>
+        <p class="h5"><%= t("generals.social_media.title") %></p>
         <% if session[:locale] == 'es'%>
         ¡Suscríbete a nuestro newsletter y 
 entérate de todas las novedades!

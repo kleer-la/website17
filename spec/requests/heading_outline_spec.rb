@@ -54,23 +54,23 @@ describe 'the heading outline of the main pages' do
   # Each page is pending with what still breaks its outline. Once a page is
   # fixed RSpec fails the pending example, which is the cue to drop the line.
   it 'home' do
-    pending 'the featured programme is an h2 inside the areas section; footer titles are h5'
+    pending 'the featured programme is an h2 inside the areas section'
     expect_sound_outline('/es/')
   end
 
   it 'services' do
-    pending 'the area titles are h2 inside the section that lists them; footer titles are h5'
+    pending 'the area titles are h2 inside the section that lists them'
     expect_sound_outline('/es/servicios')
   end
 
   it 'service area' do
-    pending 'front cards are h2 in Keventer content; recommended-way steps and FAQ title are h4; footer titles are h5'
+    pending 'front cards are h2 in Keventer content; recommended-way steps and FAQ title are h4'
     expect_sound_outline('/es/servicios/producto-digital')
   end
 
   it 'service' do
     pending 'hero tagline is an h2; outcomes, program and FAQ titles are h4; ' \
-            'the case study is an h2 in Keventer content; footer titles are h5'
+            'the case study is an h2 in Keventer content'
     expect_sound_outline('/es/servicios/producto-digital/estrategia-product-management')
   end
 end

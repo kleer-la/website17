@@ -54,7 +54,7 @@ h4 {
   line-height: 2.222rem; /* 40px */
 }
 
-h5 {
+h5, .h5 {
   font-family: "degular-text", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -288,7 +288,7 @@ input[type=checkbox]:focus {
     font-size: 1.111rem; /* 20px */
     line-height: 1.444rem; /* 26px */
   }
-  h5 {
+  h5, .h5 {
     font-size: 1rem; /* 18px */
     line-height: 1.333rem; /* 24px */
   }
