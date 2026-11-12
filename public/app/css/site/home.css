@@ -523,7 +523,7 @@
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.featured-program__text h2 {
+.featured-program__text .featured-program__title {
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.1;

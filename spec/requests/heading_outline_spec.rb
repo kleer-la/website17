@@ -30,9 +30,11 @@ describe 'the heading outline of the main pages' do
 
   # Production lists the AI programme before the areas, which puts it inside
   # their section rather than in one of its own.
+  let(:featured_ordering) { 1 }
   let(:featured_program) do
-    area('ordering' => 1, 'slug' => 'adopcion-organizacional-ia', 'name' => 'Adopción Organizacional de IA',
-         'lang' => 'es', 'is_training_program' => true, 'primary_color' => '#FF5733', 'services' => [])
+    area('ordering' => featured_ordering, 'slug' => 'adopcion-organizacional-ia',
+         'name' => 'Adopción Organizacional de IA', 'lang' => 'es', 'is_training_program' => true,
+         'primary_color' => '#FF5733', 'services' => [])
   end
 
   before do
@@ -53,9 +55,20 @@ describe 'the heading outline of the main pages' do
 
   # Each page is pending with what still breaks its outline. Once a page is
   # fixed RSpec fails the pending example, which is the cue to drop the line.
-  it 'home' do
-    pending 'the featured programme is an h2 inside the areas section'
-    expect_sound_outline('/es/')
+  describe 'home' do
+    it 'with the featured programme inside the areas section' do
+      expect_sound_outline('/es/')
+    end
+
+    context 'when the featured programme comes after the areas' do
+      let(:featured_ordering) { 99 }
+
+      it 'gives it a section of its own, titled h2' do
+        expect_sound_outline('/es/')
+        expect(Nokogiri::HTML5(last_response.body).at_css('section > .featured-program h2').text)
+          .to eq 'Adopción Organizacional de IA'
+      end
+    end
   end
 
   it 'services' do

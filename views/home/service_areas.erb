@@ -19,7 +19,7 @@ end
 
   <% if @featured_program_first %>
     <div class="mb-4">
-      <%= erb :'home/_featured_program' %>
+      <%= erb :'home/_featured_program', locals: { heading_level: 'h3' } %>
     </div>
   <% end %>
 

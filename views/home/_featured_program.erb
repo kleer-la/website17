@@ -1,4 +1,7 @@
+<%# Inside the areas section the programme sits next to the area cards (h3);
+    in a section of its own it titles that section (h2). %>
 <% program = @featured_program %>
+<% heading = defined?(heading_level) ? heading_level : 'h2' %>
 <% if program %>
 <%
   strip_html = ->(text) { text ? text.gsub(/<[^>]*>/, '').strip : nil }
@@ -12,7 +15,7 @@
 <a href="<%= program_url %>" class="featured-program text-decoration-none" style="background: linear-gradient(<%= program.primary_color %>, <%= program.primary_color %>22); border: 3px solid <%= program.primary_color %>; display: block; color: <%= font_color %>;">
   <div class="row align-items-center">
     <div class="col-lg-9 featured-program__text">
-      <h2><%= program.name %></h2>
+      <<%= heading %> class="featured-program__title"><%= program.name %></<%= heading %>>
       <% if details && !details.empty? %>
         <p><%= details %></p>
       <% end %>
