@@ -22,3 +22,13 @@ task :crawl, [:base_url, :max_pages] do |_t, args|
   crawl = SiteCrawl.new(base, max_pages: max, logger: ->(url) { warn "  #{url}" }).run
   puts crawl.report
 end
+
+desc 'Lighthouse rules and timings on a deployed site, optionally against a baseline ' \
+     '(rake perf[https://qa.kleer.la,https://www.kleer.la])'
+task :perf, [:base_url, :baseline_url] do |_t, args|
+  usage = 'Usage: rake perf[https://qa.kleer.la] or rake perf[https://qa.kleer.la,https://www.kleer.la]'
+  abort usage unless args[:base_url]
+
+  env = { 'PERF_BASE_URL' => args[:base_url], 'PERF_BASELINE_URL' => args[:baseline_url].to_s }
+  exit system(env, 'bundle', 'exec', 'rspec', 'spec/performance', '--format', 'documentation')
+end

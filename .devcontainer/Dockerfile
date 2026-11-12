@@ -18,4 +18,13 @@ RUN apt-get update -qq && \
       build-essential pkg-config libcurl4-openssl-dev && \
     rm -rf /var/lib/apt/lists/*
 
+# Lighthouse for the performance specs (spec/performance): Node and Chromium
+# from Debian, Lighthouse at the version pinned in tools/lighthouse.
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends nodejs npm chromium fonts-liberation && \
+    rm -rf /var/lib/apt/lists/*
+COPY tools/lighthouse/package.json tools/lighthouse/package-lock.json /opt/lighthouse/
+RUN cd /opt/lighthouse && npm ci --omit=dev --no-audit --no-fund
+ENV CHROME_PATH=/usr/bin/chromium
+
 WORKDIR /app

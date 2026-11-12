@@ -1,0 +1,8 @@
+{
+  "name": "website17-lighthouse",
+  "private": true,
+  "description": "Lighthouse for the performance specs (spec/performance), installed in the devcontainer image.",
+  "dependencies": {
+    "lighthouse": "12.8.2"
+  }
+}

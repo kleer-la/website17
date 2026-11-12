@@ -57,6 +57,11 @@ docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec cucumber'
 docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec cucumber features/page_titles.feature'
 ```
 
+Performance (`spec/performance`, tagged `perf`, left out of the normal run): Lighthouse, in mobile mode, on a deployed site. Run it after each QA deploy, before production. Rules on what each page requests while it loads fail the spec; examples are no reCAPTCHA before a form opens, one site stylesheet, a JavaScript cap and an image cap. Timings (score, FCP, LCP, TBT) are the median of `PERF_RUNS` runs (3 by default) and only get reported, because a single run varies by seconds. The HTML reports stay in `tmp/perf/`. Lighthouse, Node and Chromium are part of the devcontainer image, with Lighthouse pinned in `tools/lighthouse`; changing that version means rebuilding the container.
+```bash
+docker exec devcontainer-website17-1 bash -lc 'cd /app && bundle exec rake "perf[https://qa.kleer.la,https://www.kleer.la]"'
+```
+
 ### Deployment
 `bin/deploy` wraps `bundle exec kamal` (it loads `website.env`), so it runs in the container too. Kamal builds from a git clone at HEAD: **commit first**, because uncommitted changes never ship and an unchanged SHA silently reuses the previous image.
 ```bash

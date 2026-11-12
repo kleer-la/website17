@@ -16,4 +16,8 @@ RSpec.configure do |config|
 
   # Set RACK_ENV to test for clean test output
   ENV['RACK_ENV'] = 'test'
+
+  # The performance specs run Lighthouse against a deployed site, so they
+  # only run when told where: `rake perf[https://qa.kleer.la]`.
+  config.filter_run_excluding :perf unless ENV['PERF_BASE_URL']
 end
