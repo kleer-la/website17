@@ -1,5 +1,6 @@
 <!-- Begin Mailchimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+<%# The form's styles load without holding the first paint; the form is hidden until its dialog opens. %>
+<link href="https://cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
 <style type="text/css">
     #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
     /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
@@ -327,7 +328,11 @@
     </div>
   </form>
 </div>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='MMERGE4';ftypes[4]='dropdown'; /*
+<%# Mailchimp's validation script (140 KB, with its own jQuery) loads when the dialog opens,
+    not with every page (website17#465). Until then the form still posts to Mailchimp. %>
+<script>
+(function () {
+  function configure($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='MMERGE4';ftypes[4]='dropdown'; /*
  * Translated default messages for the $ validation plugin.
  * Locale: ES
  */
@@ -349,5 +354,18 @@
         range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
         max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
         min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-    });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+    });
+  }
+
+  var dialog = document.getElementById('exampleModal');
+  if (!dialog) return;
+  dialog.addEventListener('show.bs.modal', function () {
+    if (window.$mcj) return;
+    var script = document.createElement('script');
+    script.src = 'https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js';
+    script.onload = function () { configure(jQuery); window.$mcj = jQuery.noConflict(true); };
+    document.body.appendChild(script);
+  }, { once: true });
+})();
+</script>
 <!--End mc_embed_signup-->

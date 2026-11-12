@@ -54,15 +54,25 @@ describe 'the site stylesheet' do
       end
     end
 
-    # Both are only valid before every rule, so a joined file has to hoist them.
-    it 'opens with the charset and the imports' do
-      head = css.lines.reject { _1.strip.empty? }.first(2)
-
-      expect(head.first).to start_with '@charset "UTF-8";'
-      expect(head.last).to start_with '@import url('
+    it 'opens with the charset, once' do
+      expect(css.lines.first).to start_with '@charset "UTF-8";'
       expect(css.scan('@charset').size).to eq 1
-      expect(css.scan('@import').size).to eq 1
     end
+
+    # An @import is only fetched once this stylesheet has arrived, which puts
+    # one more round trip before the first paint (website17#465).
+    it 'imports nothing' do
+      expect(css).not_to include '@import'
+    end
+  end
+
+  it 'asks for the web fonts from the head, next to the stylesheet' do
+    get '/es/'
+    head = Nokogiri::HTML(last_response.body).at_css('head')
+
+    expect(head.at_css('link[rel=preconnect][href="https://fonts.gstatic.com"][crossorigin]')).not_to be_nil
+    expect(head.at_css('link[rel=stylesheet][href^="https://fonts.googleapis.com/css2?family=Raleway"]')['href'])
+      .to end_with '&display=swap'
   end
 
   # A relative url() resolves from the stylesheet's own folder, so moving a

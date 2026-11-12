@@ -51,4 +51,28 @@ describe 'the footer' do
       expect(html.css('.modal .modal-title.h5')).not_to be_empty
     end
   end
+
+  # Mailchimp's validation script (140 KB, with its own jQuery) used to load,
+  # parser-blocking, on every page; the form only needs it once its dialog
+  # opens (website17#465).
+  context 'newsletter dialog' do
+    let(:html) do
+      get '/es/'
+      Nokogiri::HTML(last_response.body)
+    end
+
+    it 'does not load the Mailchimp scripts with the page' do
+      expect(html.css('script[src*="mc-validate"]')).to be_empty
+    end
+
+    it 'loads them when the dialog opens' do
+      loader = html.css('script:not([src])').map(&:text).find { _1.include?('mc-validate.js') }
+
+      expect(loader).to include("getElementById('exampleModal')", 'show.bs.modal')
+    end
+
+    it 'does not hold the first paint on the Mailchimp form styles' do
+      expect(html.at_css('link[href*="mailchimp.com/embedcode"]')['media']).to eq 'print'
+    end
+  end
 end

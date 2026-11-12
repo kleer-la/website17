@@ -18,8 +18,7 @@ describe 'page performance', :perf do
   # pending example, which is the cue to drop the line.
   oversized_images = {
     '/es/' => 'website17#465: an image in Keventer content',
-    '/es/servicios' => 'website17#465: an image in Keventer content',
-    '/es/servicios/producto-digital' => 'website17#465: public/app/img/services/apm.webp'
+    '/es/servicios' => 'website17#465: an image in Keventer content'
   }
   measured = Hash.new do |cache, url|
     name = url.sub(%r{\Ahttps?://}, '').gsub(/[^a-z0-9]+/i, '-').chomp('-')
@@ -32,9 +31,9 @@ describe 'page performance', :perf do
     describe path do
       let(:report) { measured["#{base}#{path}"].first }
 
-      # A form loads it when it opens (website17#465).
-      it 'loads no reCAPTCHA before a form opens' do
-        expect(report.requests.map(&:url).grep(/recaptcha/)).to be_empty
+      # Each form loads them when it opens (website17#465).
+      it 'loads no form scripts (reCAPTCHA, Mailchimp) before a form opens' do
+        expect(report.requests.map(&:url).grep(/recaptcha|mc-validate/)).to be_empty
       end
 
       it 'links the site styles as one stylesheet' do
