@@ -72,18 +72,28 @@ describe 'the heading outline of the main pages' do
   end
 
   it 'services' do
-    pending 'the area titles are h2 inside the section that lists them'
     expect_sound_outline('/es/servicios')
   end
 
   it 'service area' do
-    pending 'front cards are h2 in Keventer content; recommended-way steps and FAQ title are h4'
+    pending 'Keventer content (kleer-marketing#147): front cards are h2, recommended-way steps are h4'
     expect_sound_outline('/es/servicios/producto-digital')
   end
 
+  # Outcomes, program and FAQ are sections of the v2 pages, whatever the content does.
+  it 'titles the outcomes, program and FAQ blocks as sections, with their items one level below' do
+    with_blocks = area_json.merge('ordering' => 10, 'outcomes' => ['Menos retrabajo'],
+                                  'program' => [['Diagnóstico', 'Dos semanas para acordar por dónde empezar']])
+    allow(ServiceAreaV3).to receive(:create_keventer).and_return(area(with_blocks))
+    get '/es/servicios/producto-digital'
+    page = Nokogiri::HTML5(last_response.body)
+
+    expect(page.css('.offering-title').map(&:name)).to eq %w[h2 h2 h2]
+    expect(page.css('.program-item__title, .faq .accordion-header').map(&:name).uniq).to eq %w[h3]
+  end
+
   it 'service' do
-    pending 'hero tagline is an h2; outcomes, program and FAQ titles are h4; ' \
-            'the case study is an h2 in Keventer content'
+    pending 'Keventer content (kleer-marketing#147): the case study in the target is an h2'
     expect_sound_outline('/es/servicios/producto-digital/estrategia-product-management')
   end
 end

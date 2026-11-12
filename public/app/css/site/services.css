@@ -151,7 +151,7 @@
   height: 330px;
   padding: 80px 80px;
 }
-.area-card .show-content h2 {
+.area-card .show-content .area-card__title {
   font-family: "Raleway", sans-serif;
   font-size: 30px !important;
   font-weight: 700 !important;

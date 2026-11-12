@@ -378,9 +378,7 @@
 
 /* Blocks reused from the current pages (outcomes, program, FAQ, target):
    neutral borders instead of the area color */
-.svc2-offering .outcomes h4,
-.svc2-offering .program h4,
-.svc2-offering .faq h4 {
+.svc2-offering .offering-title {
   font-size: clamp(1.35rem, 2.6vw, 1.85rem) !important;
   font-weight: 700 !important;
   text-align: left !important;
@@ -402,7 +400,7 @@
   background: var(--svc2-paper) !important;
   border-radius: 12px !important;
 }
-.svc2-offering .program-item h5 { font-size: 1rem !important; }
+.svc2-offering .program-item__title { font-size: 1rem !important; }
 /* Their spacing, padding and minimum height came from the old page's
    .service-info-container, which these pages do not have: without it the
    cards touched and each one took the height of its own text. Every card
@@ -415,7 +413,7 @@
 .svc2-offering .outcome .check img { height: 26px; }
 .svc2-offering .outcome p { margin: 0 !important; }
 .svc2-offering .program-item { flex: 1; margin: 0 !important; padding: 1.25rem 0.75rem; }
-.svc2-offering .program-item h5 { margin-bottom: 0.5rem !important; }
+.svc2-offering .program-item__title { margin-bottom: 0.5rem !important; }
 .svc2-offering .program-item .detail { margin: 0 !important; }
 .svc2-offering .accordion-button { font-size: 0.98rem; color: var(--svc2-ink); background: transparent; box-shadow: none; }
 .svc2-offering .accordion-button:not(.collapsed) { color: var(--svc2-ink); background: var(--svc2-soft); }

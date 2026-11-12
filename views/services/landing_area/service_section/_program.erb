@@ -1,16 +1,18 @@
 <%# A step named like a term the page's FAQ defines ("¿Qué es Kanban…?") links to that question. %>
+<%# The page decides where the block sits in its outline; v1 nests it under a service (h4). %>
+<% level = defined?(heading_level) ? heading_level : 4 %>
 <% definitions = faq_definitions(defined?(faq) ? faq : []) %>
 <link rel="stylesheet" href="<%= css_url('service-content.css') %>">
 <div class="program">
-  <h4>
+  <h<%= level %> class="offering-title">
     <%= t("services.program.#{@is_training_program==true}", name: name) %>
-  </h4>
+  </h<%= level %>>
   <div class="row mt-5 w-100">
     <% program.each.with_index do |item, index| %>
      <div class="col-12 col-lg-6">
        <div class="program-item row">
          <div class="col-12">
-           <h5><%= item[0] %></h5>
+           <h<%= level + 1 %> class="program-item__title"><%= item[0] %></h<%= level + 1 %>>
            <p class="detail"><%= item[1] %></p>
            <% if (definition = faq_definition_for(item[0], definitions)) %>
              <a class="program-definition" href="#<%= definition[:anchor] %>"><%= definition[:label] %> ↓</a>

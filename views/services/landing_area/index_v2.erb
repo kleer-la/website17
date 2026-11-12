@@ -129,11 +129,11 @@
     <section class="svc2-section">
       <div class="container svc2-offering">
         <%= erb :'services/landing_area/service_section/_outcomes',
-                locals: { outcomes: service_area.outcomes, name: service_area.name } unless service_area.outcomes.empty? %>
+                locals: { heading_level: 2, outcomes: service_area.outcomes, name: service_area.name } unless service_area.outcomes.empty? %>
         <%= erb :'services/landing_area/service_section/_program',
-                locals: { program: service_area.program, id: service_area.slug, name: service_area.name, faq: service_area.faq } unless service_area.program.empty? %>
+                locals: { heading_level: 2, program: service_area.program, id: service_area.slug, name: service_area.name, faq: service_area.faq } unless service_area.program.empty? %>
         <%= erb :'services/landing_area/service_section/_faq',
-                locals: { faq: service_area.faq, id: service_area.slug } unless service_area.faq.empty? %>
+                locals: { heading_level: 2, faq: service_area.faq, id: service_area.slug } unless service_area.faq.empty? %>
         <% if service_area.brochure && !service_area.brochure.to_s.empty? %>
           <p class="svc2-actions"><a class="svc2-btn svc2-btn--ghost" href="<%= service_area.brochure %>" target="_blank" rel="noopener"><%= t('services.brochure') %></a></p>
         <% end %>

@@ -44,7 +44,7 @@
   <section class="svc2-section svc2-offering">
     <div class="container">
       <%= erb :'services/landing_area/service_section/_outcomes',
-              locals: { outcomes: service.outcomes, name: service.name } unless service.outcomes.nil? || service.outcomes.empty? %>
+              locals: { heading_level: 2, outcomes: service.outcomes, name: service.name } unless service.outcomes.nil? || service.outcomes.empty? %>
     </div>
   </section>
 
@@ -62,7 +62,7 @@
   <section class="svc2-section svc2-offering">
     <div class="container">
       <%= erb :'services/landing_area/service_section/_program',
-              locals: { program: service.program, id: service.slug, name: service.name, faq: service.faq } if has_program %>
+              locals: { heading_level: 2, program: service.program, id: service.slug, name: service.name, faq: service.faq } if has_program %>
 
       <% unless service.target.to_s.strip.empty? %>
         <div class="svc2-panel svc2-target">
@@ -72,7 +72,7 @@
       <% end %>
 
       <%= erb :'services/landing_area/service_section/_faq',
-              locals: { faq: service.faq, id: service.slug } if has_faq %>
+              locals: { heading_level: 2, faq: service.faq, id: service.slug } if has_faq %>
     </div>
   </section>
 

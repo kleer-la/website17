@@ -1,8 +1,9 @@
+<%# The page decides where the block sits in its outline; v1 nests it under a service (h4). %>
+<% level = defined?(heading_level) ? heading_level : 4 %>
 <div class="outcomes">
-  <h4>
-    <%= t("services.benefits.#{@is_training_program == true}", name: name) 
-    %>
-  </h4>
+  <h<%= level %> class="offering-title">
+    <%= t("services.benefits.#{@is_training_program == true}", name: name) %>
+  </h<%= level %>>
   <div class="outcome-list row w-100">
     <% outcomes.each do |outcome| %>
       <% if @is_training_program == true%>
