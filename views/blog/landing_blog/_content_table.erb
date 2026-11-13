@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
   <div id="landing-blog-content-table">
-  <h3 class="title mt-0"><%=t("blog.landing.ToC")%></h3>
+  <h2 class="title mt-0"><%=t("blog.landing.ToC")%></h2>
   <ul>
     <% titles.each.with_index do |title, index| %>
       <% subtitles = title[:subtitles].each_with_index.reduce('') do |string , (subtitle, subindex)|

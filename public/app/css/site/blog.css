@@ -391,6 +391,15 @@
   margin-bottom: 25px;
   text-align: left;
 }
+/* The author card's name, as the article's h6 rule styled it (#467). */
+#landing-blog-body .trainer-card__name {
+  font-weight: 500;
+  font-size: 1.111rem;
+  line-height: 1.389rem;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  text-align: left;
+}
 #landing-blog-body p {
   font-weight: 400;
   font-size: 1rem;
@@ -416,6 +425,7 @@
   border-left: 3px solid var(--turquoise-light);
 }
 #landing-blog-content-table .title {
+  margin-bottom: 20px; /* an h2 since #467; it had the article's h3 margin */
   font-weight: 600;
   font-size: 1.111rem;
   line-height: 1.444rem;

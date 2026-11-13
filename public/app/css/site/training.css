@@ -811,6 +811,17 @@
   justify-content: space-around;
   justify-items: center;
 }
+/* The name is an h3 under the authors' h2 (#467, #468), styled as the h6 it
+   was. Two classes outrank the h3 rules of the pages that hold the card. */
+.course-trainers__individual-container .trainer-card__name {
+  font-family: "degular-text", sans-serif;
+  font-weight: 700;
+  font-size: 1.111rem; /* 20px */
+  line-height: 1.444rem; /* 26px */
+  color: inherit;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
 .course-trainers__individual-container img {
   height: 130px;
 }

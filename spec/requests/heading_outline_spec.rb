@@ -102,6 +102,30 @@ describe 'the heading outline of the main pages' do
     expect_sound_outline('/es/catalogo')
   end
 
+  describe 'with an author' do
+    let(:author) do
+      { 'id' => 7, 'name' => 'Ana Autora', 'bio' => 'Facilita equipos.', 'gravatar_email' => 'ana@example.com' }
+    end
+
+    # The table of contents is navigation, ahead of the article's own h2s (#467).
+    it 'article' do
+      article = Article.new('id' => 1, 'title' => 'Un artículo', 'slug' => 'un-articulo', 'lang' => 'es',
+                            'published' => true, 'description' => 'desc', 'trainers' => [author],
+                            'body' => '<h2>Primero</h2><p>Texto</p><h3>Detalle</h3><h2>Segundo</h2><p>Más</p>')
+      allow(Article).to receive_messages(create_one_keventer: article, create_list_keventer: [])
+
+      expect_sound_outline('/es/blog/un-articulo')
+    end
+
+    it 'resource' do
+      doc = JSON.parse(File.read('./spec/fixtures/resource_concepts.json'))
+                .merge('slug' => 'cartas', 'format' => 'card', 'concepts' => [], 'authors' => [author])
+      allow(Resource).to receive(:create_one_keventer).and_return(Resource.new(doc, 'es'))
+
+      expect_sound_outline('/es/recursos/cartas')
+    end
+  end
+
   # The search results line is a status, not the title of the list (#466).
   it 'resources' do
     doc = JSON.parse(File.read('./spec/fixtures/resource_concepts.json'))
