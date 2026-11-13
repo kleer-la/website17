@@ -6,7 +6,8 @@
     <% end %>
     <h1 class="course-hero__title"><%= @event_type.name %></h1>
     <% if @event_type.subtitle && !@event_type.subtitle.to_s.strip.empty? %>
-      <h2 class="course-hero__subtitle"><%= @event_type.subtitle %></h2>
+      <%# A tagline, not a section: as an h2 it adopted the whole page (#466). %>
+      <p class="course-hero__subtitle"><%= @event_type.subtitle %></p>
     <% end %>
     <% if @event_type.duration && @event_type.duration.to_i > 0 %>
       <div class="course-hero__badges">

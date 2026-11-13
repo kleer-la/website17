@@ -520,6 +520,7 @@
 }
 
 .course-hero__subtitle {
+  margin-top: 0; /* a p since #466; it was an h2 */
   color: var(--white);
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -661,27 +662,30 @@
   margin-top: 120px;
   margin-bottom: 100px;
 }
-#course-description h3 {
+/* The description starts at h2, right below the course's h1 (#466). Each
+   level keeps the look of the one below, which the content used before. */
+#course-description h2 {
   font-family: "Degular";
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
   line-height: 30px;
 }
-#course-description h4 {
+#course-description h3 {
   font-family: "Degular";
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 28px;
 }
-#course-description h5 {
+#course-description h4 {
   font-family: "Degular";
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: 28px;
 }
+#course-description h5,
 #course-description h6 {
   font-family: "Degular";
   font-style: normal;
@@ -821,6 +825,14 @@
   color: inherit;
   margin-top: 0;
   margin-bottom: 0.5rem;
+}
+/* The quote form's group labels, styled as the h6 they were (#466). */
+.incompany-quote-form__group {
+  margin-top: 0;
+  font-family: "degular-text", sans-serif;
+  font-weight: 700;
+  font-size: 1.111rem; /* 20px */
+  line-height: 1.444rem; /* 26px */
 }
 .course-trainers__individual-container img {
   height: 130px;

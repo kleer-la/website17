@@ -1,6 +1,7 @@
 <form id="incompany-quote-form" action="/<%=session[:locale] || 'es'%>/send-mail" method="post" class="needs-validation" novalidate>
   <!-- Contact Information Section -->
-  <h6 class="mb-3"><%= t("incompany_quote_form.contact_section_title") %></h6>
+  <%# Labels of field groups, not headings: they title no section of the page (#466). %>
+  <p class="incompany-quote-form__group mb-3"><%= t("incompany_quote_form.contact_section_title") %></p>
 
   <div class="mb-3">
     <input
@@ -38,7 +39,7 @@
   </div>
 
   <!-- Quote Information Section -->
-  <h6 class="mb-3 mt-4"><%= t("incompany_quote_form.quote_section_title") %></h6>
+  <p class="incompany-quote-form__group mb-3 mt-4"><%= t("incompany_quote_form.quote_section_title") %></p>
 
   <div class="row">
     <div class="mb-3 col-xs-12 col-md-6">

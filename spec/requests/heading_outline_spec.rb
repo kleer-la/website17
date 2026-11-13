@@ -102,6 +102,19 @@ describe 'the heading outline of the main pages' do
     expect_sound_outline('/es/catalogo')
   end
 
+  # The hero's tagline and the quote form's field groups are not sections (#466).
+  it 'course' do
+    allow(EventType).to receive(:create_keventer_json).and_return(
+      EventType.new({ 'id' => 7, 'slug' => '7-csm', 'canonical_slug' => '7-csm', 'name' => 'CSM', 'lang' => 'es',
+                      'deleted' => false, 'noindex' => false, 'elevator_pitch' => 'Scrum', 'categories' => [],
+                      'trainers' => [], 'subtitle' => 'Aprendé Scrum haciendo',
+                      'description' => "## Qué es\n\nUn curso.", 'takeaways' => 'Mucho', 'recipients' => 'Equipos',
+                      'program' => "#### Kanban\n\nFlujo visible", 'faq' => "#### ¿Cuánto dura?\n\nDos días." })
+    )
+
+    expect_sound_outline('/es/cursos/7-csm')
+  end
+
   describe 'with an author' do
     let(:author) do
       { 'id' => 7, 'name' => 'Ana Autora', 'bio' => 'Facilita equipos.', 'gravatar_email' => 'ana@example.com' }
