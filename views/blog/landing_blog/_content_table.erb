@@ -54,8 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-  <div id="landing-blog-content-table">
-  <h2 class="title mt-0"><%=t("blog.landing.ToC")%></h2>
+  <%# Navigation, not a section of the article: as a heading it adopted the
+      article's first headings and hid a body that starts below h2 (#467). %>
+  <nav id="landing-blog-content-table" aria-labelledby="landing-blog-content-table__title">
+  <div id="landing-blog-content-table__title" class="title mt-0"><%=t("blog.landing.ToC")%></div>
   <ul>
     <% titles.each.with_index do |title, index| %>
       <% subtitles = title[:subtitles].each_with_index.reduce('') do |string , (subtitle, subindex)|
@@ -103,4 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
         index: 30
       } if recommended.any?%>
   </ul>
-</div>
+</nav>

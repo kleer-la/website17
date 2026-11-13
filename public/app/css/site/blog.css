@@ -425,7 +425,10 @@
   border-left: 3px solid var(--turquoise-light);
 }
 #landing-blog-content-table .title {
-  margin-bottom: 20px; /* an h2 since #467; it had the article's h3 margin */
+  /* The h3 it was, before it became the nav's label (#467). */
+  font-family: "degular-text", sans-serif;
+  margin-bottom: 20px;
+  text-align: left;
   font-weight: 600;
   font-size: 1.111rem;
   line-height: 1.444rem;

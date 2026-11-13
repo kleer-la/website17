@@ -117,6 +117,20 @@ describe 'the heading outline of the main pages' do
       expect_sound_outline('/es/blog/un-articulo')
     end
 
+    # As a heading it would adopt an article that starts with h3, and hide that
+    # skip: it is a labelled nav, so the outline reports the article itself.
+    it 'article whose body starts below h2' do
+      article = Article.new('id' => 1, 'title' => 'Un artículo', 'slug' => 'un-articulo', 'lang' => 'es',
+                            'published' => true, 'description' => 'desc', 'trainers' => [],
+                            'body' => '<h3>Primero</h3><p>Texto</p>')
+      allow(Article).to receive_messages(create_one_keventer: article, create_list_keventer: [])
+
+      expect(outline_problems('/es/blog/un-articulo'))
+        .to eq ['h3 «Primero» comes right after h1 «Un artículo», skipping a level']
+      toc = Nokogiri::HTML5(last_response.body).at_css('nav#landing-blog-content-table')
+      expect(toc.at_css("##{toc['aria-labelledby']}").text).to eq 'Tabla de contenido'
+    end
+
     it 'resource' do
       doc = JSON.parse(File.read('./spec/fixtures/resource_concepts.json'))
                 .merge('slug' => 'cartas', 'format' => 'card', 'concepts' => [], 'authors' => [author])
