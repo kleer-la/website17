@@ -1,0 +1,44 @@
+# The heading outline of every published page (#470). Content changes in
+# Keventer without a deploy, so this checks production on a schedule instead
+# of in a deploy hook; a failed run is the alert. The request specs cover the
+# templates; this covers what editors publish.
+name: Heading outline (production)
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # every day, 07:00 in Buenos Aires
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Site to check
+        default: https://www.kleer.la
+
+jobs:
+  headings:
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y build-essential pkg-config libcurl4-openssl-dev
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 4.0.9
+          bundler-cache: true
+      - name: Check the heading outline
+        env:
+          BASE_URL: ${{ inputs.base_url || 'https://www.kleer.la' }}
+        run: |
+          set -o pipefail
+          bundle exec rake "headings[$BASE_URL]" 2>&1 | tee headings.txt
+      - name: Report
+        if: always()
+        run: |
+          {
+            echo '## Heading outline'
+            echo '```'
+            cat headings.txt 2>/dev/null || echo 'no report'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
