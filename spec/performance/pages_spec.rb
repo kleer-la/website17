@@ -16,9 +16,7 @@ describe 'page performance', :perf do
   pages = %w[/es/ /es/servicios /es/servicios/producto-digital]
   # Known problems, pending until they are fixed: RSpec then fails the
   # pending example, which is the cue to drop the line.
-  oversized_images = {
-    '/es/servicios' => 'website17#465: an image in Keventer content'
-  }
+  oversized_images = {}
   measured = Hash.new do |cache, url|
     name = url.sub(%r{\Ahttps?://}, '').gsub(/[^a-z0-9]+/i, '-').chomp('-')
     cache[url] = Array.new(runs) { |i| Performance::Lighthouse.run(url, "#{name}-#{i + 1}") }
