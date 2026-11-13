@@ -170,7 +170,13 @@ ul.rw-steps {
   margin-bottom: 0.75rem;
 }
 
+/* Plan names were h4 in the page content; the class keeps that look whatever
+   the tag, so content can rank them in the outline (h3, or p where the block
+   has no title of its own) (#466). */
 .rw-plan-name {
+  font-family: "degular-text", sans-serif;
+  line-height: 2.222rem;
+  margin-top: 0;
   font-weight: 800;
   font-size: 1.4rem;
   color: #1a1a2e;

@@ -6,11 +6,11 @@
 <% end %>
 
 <section id="articles">
-  <% unless session[:locale] == 'en' %>
-    <h2 id="articles__title" class="mt-4 mb-4 subtitle">
-      <%=t("blog.latest")%>
-    </h2>
-  <% end %>
+  <%# English has no highlights or pager above the list: its title is there for
+      screen readers and the outline only, so the cards rank below it (#466). %>
+  <h2 id="articles__title" class="mt-4 mb-4 subtitle<%= ' visually-hidden' if session[:locale] == 'en' %>">
+    <%=t("blog.latest")%>
+  </h2>
 
   <% @articles = @articles || []
      if @articles.empty? %>

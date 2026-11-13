@@ -231,7 +231,10 @@
   flex-direction: column;
   flex: 1;
 }
+/* An h3 since #466, below the team's h2; it keeps the h5 look it had. */
 .aboutus-member-card__name {
+  font-family: "degular-text", sans-serif;
+  line-height: 1.556rem;
   font-weight: 700;
   color: var(--black);
   margin-bottom: 0.25rem;

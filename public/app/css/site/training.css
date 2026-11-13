@@ -1107,7 +1107,10 @@
 }
 
 /* Empty agenda section titles */
+/* h2 since #466; it keeps the paragraph's font and line height. */
 .empty-agenda__section-title {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.333rem;
   font-size: 20px;
   font-weight: 600;
   color: var(--black);

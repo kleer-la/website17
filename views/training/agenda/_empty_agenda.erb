@@ -43,7 +43,7 @@
 <% unless academy_cards.empty? %>
 <section id="academia-courses" class="mt-4 mb-5">
   <div class="container">
-    <p class="text-center mb-2 empty-agenda__section-title"><%= academia_data[:title] %></p>
+    <h2 class="text-center mb-2 empty-agenda__section-title"><%= academia_data[:title] %></h2>
     <% unless academia_data[:content].to_s.empty? %>
       <p class="text-center text-muted mb-4"><%= academia_data[:content] %></p>
     <% end %>
@@ -97,7 +97,7 @@
 <% unless catalog_cards.empty? %>
 <section id="catalog-courses" class="mt-5 mb-5">
   <div class="container">
-    <p class="text-center mb-2 empty-agenda__section-title"><%= catalog_data[:title] %></p>
+    <h2 class="text-center mb-2 empty-agenda__section-title"><%= catalog_data[:title] %></h2>
     <% unless catalog_data[:content].to_s.empty? %>
       <p class="text-center text-muted mb-4"><%= catalog_data[:content] %></p>
     <% end %>

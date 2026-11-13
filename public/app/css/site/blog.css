@@ -170,9 +170,14 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
-#blog-feed-hero h2 {
+#blog-feed-hero h2,
+#blog-feed-hero .hero-description {
   z-index: 1;
   color: var(--white);
+}
+/* The tagline is a p since #466; it keeps the h2's bottom margin. */
+#blog-feed-hero .hero-description {
+  margin-bottom: 0.5rem;
 }
 
 .blog-feed__search-box {

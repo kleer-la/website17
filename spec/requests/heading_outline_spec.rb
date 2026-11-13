@@ -153,6 +153,62 @@ describe 'the heading outline of the main pages' do
     end
   end
 
+  # The pages below had their headings out of place in production (#466).
+  describe 'listings' do
+    # The hero's tagline is not a section: as an h2 it adopted every article card.
+    it 'English blog' do
+      article = double('article', slug: 'kards', title: 'DoR Kards', description: 'A game.', cover: '/img/x.png',
+                                  category_name: 'Teams', lang: 'en', selected: false, trainers: [],
+                                  substantive_change_at: '2025-09-30T10:00:00Z', noindex: false, tabtitle: 'x',
+                                  categories: [])
+      allow(Article).to receive(:create_list_keventer).and_return([article])
+      allow(Category).to receive(:create_keventer_json).and_return([])
+
+      expect_sound_outline('/en/blog')
+    end
+
+    # Each member's name ranks right below the team's h2.
+    it 'about us' do
+      kleerer = Trainer.new('es').load_from_json('id' => 1, 'name' => 'Ana Kleerer', 'bio' => 'Facilita.',
+                                                 'gravatar_email' => 'ana@example.com', 'is_kleerer' => true,
+                                                 'linkedin_url' => '', 'twitter_username' => '')
+      allow(Trainer).to receive(:create_keventer_json).and_return([kleerer])
+
+      expect_sound_outline('/es/somos')
+    end
+
+    # The case cards come right after the page's h1.
+    it 'clients' do
+      case_study = double('article', slug: 'caso', title: 'Un caso', cover: '/img/x.png', lang: 'es',
+                                     industry: 'technology', created_at: '2026-01-01')
+      allow(Article).to receive(:create_list_keventer).and_return([case_study])
+
+      expect_sound_outline('/es/clientes')
+    end
+
+    # So do the news cards.
+    it 'news' do
+      news = News.new('id' => 1, 'title' => 'Webinar', 'description' => 'Un encuentro.', 'lang' => 'es',
+                      'event_date' => '2026-10-01', 'trainers' => [])
+      allow(News).to receive(:create_list_keventer).and_return([news])
+
+      expect_sound_outline('/es/novedades')
+    end
+
+    # With no editions scheduled the agenda offers academy and catalog courses:
+    # each group is a section of its own, and the hero's tagline is not one.
+    it 'agenda with nothing scheduled' do
+      courses = [{ 'event_type_id' => 1, 'slug' => '1-kata', 'name' => 'Kata', 'lang' => 'es', 'categories' => [],
+                   'platform' => 'academia' },
+                 { 'event_type_id' => 2, 'slug' => '2-scrum', 'name' => 'Scrum', 'lang' => 'es', 'categories' => [],
+                   'platform' => 'keventer' }]
+      allow(Catalog).to receive(:create_keventer_json).and_return(Catalog.load_catalog_events(courses))
+
+      expect_sound_outline('/es/agenda')
+      expect(Nokogiri::HTML5(last_response.body).css('#academia-courses h2, #catalog-courses h2').size).to eq 2
+    end
+  end
+
   # The search results line is a status, not the title of the list (#466).
   it 'resources' do
     doc = JSON.parse(File.read('./spec/fixtures/resource_concepts.json'))

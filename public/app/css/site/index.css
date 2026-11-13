@@ -30,12 +30,14 @@ html {
   height: 100%;
   z-index: 3;
 }
-.hero-medium .hero__text h2 {
+.hero-medium .hero__text h2,
+.hero-medium .hero__text .hero__subtitle {
   font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 26px;
+  margin-bottom: 0.5rem; /* the agenda's tagline is a p since #466 */
 }
 
 .generic-hero {
