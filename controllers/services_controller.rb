@@ -157,7 +157,7 @@ end
 
 def show_service(service_area, service, path)
   @meta_tags.set! title: service.seo_title || "#{service.name} - #{service_area.name}",
-                  description: service.seo_description || service.subtitle,
+                  description: service.meta_description,
                   canonical: "/#{path}/#{service_area.slug}/#{service.slug}",
                   hreflang: [area_lang(service_area)]
 

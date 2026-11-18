@@ -1,3 +1,4 @@
+require 'nokogiri'
 require './lib/image_url_helper'
 require './lib/models/recommended'
 require './lib/models/hero_picture'
@@ -35,6 +36,16 @@ class ServiceV3
   def authored_card
     html = card_description.to_s.strip
     html if html.match?(/<[a-z][^>]*>/i)
+  end
+
+  # What search engines get told the page is about. A service without its own
+  # SEO description falls back to its subtitle, which the CMS stores as HTML
+  # (a heading and a paragraph): the text goes out, the markup does not.
+  def meta_description
+    own = seo_description.to_s.strip
+    return own unless own.empty?
+
+    Nokogiri::HTML.fragment(subtitle.to_s.gsub(/<[^>]+>/, ' ')).text.gsub(/[[:space:]]+/, ' ').strip
   end
 
   def null_json_api(null_api)

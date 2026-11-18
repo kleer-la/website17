@@ -638,6 +638,38 @@ describe '/servicios' do
         expect(service['areaServed'].map { |a| a['name'] }).to eq(%w[Latinoamérica España])
       end
 
+      # A service without an SEO description falls back to its subtitle, and
+      # the CMS stores that one as HTML.
+      context 'when the service has no SEO description of its own' do
+        before do
+          service_area_data['services'][0].merge!(
+            'seo_description' => nil,
+            'subtitle' => '<h1>Define una dirección clara.&nbsp;</h1><div>Analizamos &amp; priorizamos.</div>'
+          )
+          ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, service_area_data.to_json))
+        end
+
+        it 'describes it with the text of the subtitle, without the markup' do
+          get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+          plain = 'Define una dirección clara. Analizamos & priorizamos.'
+          description = Nokogiri::HTML(last_response.body).at_css('meta[name="description"]')['content']
+          expect(description).to eq(plain)
+          expect(json_ld('Service')['description']).to eq(plain)
+        end
+      end
+
+      it 'uses the SEO description of the service when it has one' do
+        service_area_data['services'][0]['seo_description'] = 'Rediseña tu organización con foco.'
+        ServiceAreaV3.null_json_api(nil, NullJsonAPI.new(nil, service_area_data.to_json))
+
+        get '/es/servicios/cambio-organizacional/diseno-organizacional'
+
+        description = Nokogiri::HTML(last_response.body).at_css('meta[name="description"]')['content']
+        expect(description).to eq('Rediseña tu organización con foco.')
+        expect(json_ld('Service')['description']).to eq('Rediseña tu organización con foco.')
+      end
+
       it 'says where an area sits, and marks no FAQ it does not have' do
         get '/es/servicios/cambio-organizacional'
 

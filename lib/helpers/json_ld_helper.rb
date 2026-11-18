@@ -83,7 +83,7 @@ module JsonLdHelper
       '@context' => 'https://schema.org',
       '@type' => 'Service',
       'name' => service.name,
-      'description' => service.seo_description || service.subtitle,
+      'description' => service.meta_description,
       'provider' => organization_reference,
       'serviceType' => service_area.name,
       'areaServed' => area_served,
