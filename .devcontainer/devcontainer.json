@@ -16,6 +16,6 @@
 			]
 		}
 	},
-	"postCreateCommand": "bundle install && git config core.hooksPath .githooks && echo '\n# Auto-source website.env for Kamal deployments\nif [ -f /app/website.env ]; then\n  source /app/website.env\nfi' >> ~/.bashrc",
+	"postCreateCommand": "bundle install && echo '\n# Auto-source website.env for Kamal deployments\nif [ -f /app/website.env ]; then\n  source /app/website.env\nfi' >> ~/.bashrc",
 	"remoteUser": "user"
 }
