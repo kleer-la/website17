@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 # After a QA deploy, run the performance specs (one Lighthouse run per page,
-# production as the baseline) and record the commit when they pass, which
-# lets pre-deploy send it to production. The log stays in tmp/perf.
+# production as the baseline) and record the result, which lets pre-deploy
+# send the commit to production. The log stays in tmp/perf.
+#
+# The result is recorded in two places: a file on this machine, and the
+# perf/qa commit status on GitHub (bin/perf-status), which a production deploy
+# from any machine can read. GitHub needs GITHUB_TOKEN in website.env; without
+# it, or if GitHub cannot be reached, only this machine knows.
 set -euo pipefail
 
 [ "${KAMAL_DESTINATION:-}" = "qa" ] || exit 0
@@ -17,10 +22,18 @@ else
   run() { PERF_RUNS=1 bundle exec rake "perf[https://qa.kleer.la,https://www.kleer.la]"; }
 fi
 
+tell_github() {
+  if ! ruby bin/perf-status record "${KAMAL_VERSION}" "$1"; then
+    echo "post-deploy: could not record the result on GitHub; only this machine knows it." >&2
+  fi
+}
+
 if run 2>&1 | tee "${log}" >&2; then
   touch "${passed_dir}/${KAMAL_VERSION}"
+  tell_github success
   echo "post-deploy: ${KAMAL_VERSION} passed; it can go to production." >&2
 else
+  tell_github failure
   echo "post-deploy: the performance specs failed on QA (see ${log}); production will refuse ${KAMAL_VERSION}." >&2
   exit 1
 fi

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Production only goes out with a commit that passed the performance specs
-# in QA (see post-deploy). SKIP_PERF=1 skips the check, for emergencies.
+# in QA (see post-deploy). It counts as passed when this machine recorded it,
+# or when GitHub has a perf/qa success status for it (a QA deploy from any
+# machine with GITHUB_TOKEN sets one). SKIP_PERF=1 skips the check, for
+# emergencies.
 set -euo pipefail
 
 [ "${KAMAL_DESTINATION:-}" = "qa" ] && exit 0
@@ -11,11 +14,22 @@ if [ -n "${SKIP_PERF:-}" ]; then
   exit 0
 fi
 
-if [ ! -e "${passed_dir}/${KAMAL_VERSION}" ]; then
-  cat >&2 <<MSG
+[ -e "${passed_dir}/${KAMAL_VERSION}" ] && exit 0
+
+github=0
+ruby bin/perf-status passed "${KAMAL_VERSION}" || github=$?
+[ "${github}" -eq 0 ] && exit 0
+
+if [ "${github}" -eq 2 ]; then
+  hint="GitHub could not be asked (add GITHUB_TOKEN to website.env to check what other machines recorded)."
+else
+  hint="GitHub has no passing perf/qa status for it either."
+fi
+
+cat >&2 <<MSG
 pre-deploy: ${KAMAL_VERSION} has not passed the performance specs in QA.
+${hint}
 Deploy it there first (bin/deploy deploy -d qa); it runs them on its own.
 In an emergency: SKIP_PERF=1 bin/deploy deploy
 MSG
-  exit 1
-fi
+exit 1

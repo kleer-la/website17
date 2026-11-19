@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Reads and writes the `perf/qa` commit status on GitHub: the shared record of
+# whether a commit passed the performance specs on QA. The Kamal hooks use it
+# so a production deploy from any machine sees what a QA deploy from another
+# one found (.kamal/hooks/post-deploy, pre-deploy).
+#
+#   bin/perf-status record SHA success|failure   tell GitHub
+#   bin/perf-status passed SHA                   exit 0 if the latest perf/qa status is success
+#
+# Needs GITHUB_TOKEN, a token that can read and write commit statuses on the
+# repository. Exits 2 when there is none or GitHub cannot be reached, so the
+# hooks can tell "not passed" from "could not ask".
+#
+# Standard library only: the hooks run it with plain `ruby`, outside Bundler.
+
+require 'json'
+require 'net/http'
+require 'uri'
+
+CONTEXT = 'perf/qa'
+
+def api(path)
+  base = ENV.fetch('GITHUB_API_URL', 'https://api.github.com')
+  repo = ENV.fetch('GITHUB_REPOSITORY', 'kleer-la/website17')
+  URI("#{base}/repos/#{repo}/#{path}")
+end
+
+def request(req)
+  req['Authorization'] = "Bearer #{ENV.fetch('GITHUB_TOKEN')}"
+  req['Accept'] = 'application/vnd.github+json'
+  uri = req.uri
+  Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https', open_timeout: 5, read_timeout: 10) do |http|
+    http.request(req)
+  end
+end
+
+def record(sha, state)
+  req = Net::HTTP::Post.new(api("statuses/#{sha}"), 'Content-Type' => 'application/json')
+  description = state == 'success' ? 'Performance specs passed on QA' : 'Performance specs failed on QA'
+  req.body = JSON.generate(state: state, context: CONTEXT, description: description)
+  response = request(req)
+  abort "perf-status: GitHub answered #{response.code} recording #{sha}" unless response.is_a?(Net::HTTPSuccess)
+end
+
+# GitHub lists a commit's statuses newest first, so the first perf/qa one is
+# the current verdict.
+def passed?(sha)
+  response = request(Net::HTTP::Get.new(api("commits/#{sha}/statuses?per_page=100")))
+  unless response.is_a?(Net::HTTPSuccess)
+    warn "perf-status: GitHub answered #{response.code} for #{sha}"
+    exit 2
+  end
+  latest = JSON.parse(response.body).find { |status| status['context'] == CONTEXT }
+  latest && latest['state'] == 'success'
+end
+
+command, sha, state = ARGV
+abort 'usage: bin/perf-status record SHA success|failure | passed SHA' unless sha
+
+unless ENV['GITHUB_TOKEN'].to_s.strip != ''
+  warn 'perf-status: no GITHUB_TOKEN, cannot reach GitHub'
+  exit 2
+end
+
+begin
+  case command
+  when 'record' then record(sha, state)
+  when 'passed' then exit(passed?(sha) ? 0 : 1)
+  else abort "perf-status: unknown command #{command}"
+  end
+rescue SystemCallError, IOError, Timeout::Error, SocketError, Net::OpenTimeout => e
+  warn "perf-status: could not reach GitHub (#{e.class}: #{e.message})"
+  exit 2
+end
