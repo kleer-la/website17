@@ -120,6 +120,14 @@ GEM
     faraday-net_http (3.5.0)
       net-http (~> 0.5)
     ffi (1.17.4)
+    ffi (1.17.4-aarch64-linux-gnu)
+    ffi (1.17.4-aarch64-linux-musl)
+    ffi (1.17.4-arm-linux-gnu)
+    ffi (1.17.4-arm-linux-musl)
+    ffi (1.17.4-x86-linux-gnu)
+    ffi (1.17.4-x86-linux-musl)
+    ffi (1.17.4-x86_64-linux-gnu)
+    ffi (1.17.4-x86_64-linux-musl)
     foreman (0.90.0)
       thor (~> 1.4)
     heroics (0.1.4)
@@ -206,6 +214,18 @@ GEM
     nio4r (2.7.5)
     nokogiri (1.19.7)
       mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
+    nokogiri (1.19.7-aarch64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.7-aarch64-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.19.7-arm-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.7-arm-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.19.7-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.19.7-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.3)
     parallel (2.3.0)
@@ -373,7 +393,15 @@ GEM
     zeitwerk (2.8.3)
 
 PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
   ruby
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   aws-sdk-s3
