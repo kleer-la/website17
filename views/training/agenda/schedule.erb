@@ -6,12 +6,7 @@
 
   show_two_prices = true if defined?(show_two_prices).nil? || show_two_prices.nil?
 
-  title = t('home.home_courses.title')
-
-  if !@page&.sections.nil? && !@page&.sections['agenda'].nil?
-    title = @page.sections['agenda']['title']
-    #description = @page.sections['agenda']['content']
-  end
+  title = section_data(@page, 'agenda', { title: t('home.home_courses.title') })[:title]
 %>
 
 <% if events.empty? %>

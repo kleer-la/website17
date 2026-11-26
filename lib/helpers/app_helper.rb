@@ -221,11 +221,13 @@ module AppHelper
     I18n.transliterate(plain).downcase.gsub(/[^a-z0-9]+/, '-').gsub(/\A-+|-+\z/, '')
   end
 
+  # An overlay section's fields over the template's defaults; an empty field
+  # keeps the default. Every overlay read goes through here (Page#section).
   def section_data(page, section_key, defaults = {})
-    return defaults if page.nil? || page.sections.nil? || page.sections[section_key].nil?
+    section = page&.section(section_key)
+    return defaults if section.nil?
 
-    symbolized_section = page.sections[section_key].transform_keys(&:to_sym).reject { |_, value| value == '' }
-    defaults.merge(symbolized_section || {})
+    defaults.merge(section.transform_keys(&:to_sym).reject { |_, value| value == '' })
   end
 
   module_function

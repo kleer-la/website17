@@ -1,10 +1,10 @@
 <%
-title = 'Explora Nuestros Servicios'
-description = 'Queremos conocer tus desafíos para ofrecerte una solución personalizada.'
-if !@page.sections.nil? && !@page.sections['services'].nil?
-  title = @page.sections['services']['title']
-  description = @page.sections['services']['content']
-end
+services_data = section_data(@page, 'services', {
+  title: 'Explora Nuestros Servicios',
+  content: 'Queremos conocer tus desafíos para ofrecerte una solución personalizada.'
+})
+title = services_data[:title]
+description = services_data[:content]
 %>
 <% titles = to_lines(title) %>
 <section id="homepage-service-areas" class="container mt-5 mb-5 service-areas">

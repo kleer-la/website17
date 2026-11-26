@@ -1,6 +1,7 @@
 <section class="news-hero">
-  <h1><%= @page&.sections&.dig('hero', 'title') || t('news.title') %></h1>
-  <% subtitle = @page&.sections&.dig('hero', 'content') %>
+  <% hero_data = section_data(@page, 'hero', { title: t('news.title') }) %>
+  <h1><%= hero_data[:title] %></h1>
+  <% subtitle = hero_data[:content] %>
   <% if subtitle %>
     <p class="hero-description"><%= subtitle %></p>
   <% end %>

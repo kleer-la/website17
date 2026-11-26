@@ -45,6 +45,13 @@ class Page
     CONTACT_TARGETS.include?(cta_url.to_s.strip)
   end
 
+  # The one way an overlay template reads a section of its page. Keeping every
+  # read here is what lets spec/requests/page_templates_spec.rb check that each
+  # template reads exactly what PageTemplates declares (kleer-la/eventer#243).
+  def section(slug)
+    @sections[slug]
+  end
+
   def hero_section
     @sections.find { |slug, _| HERO_SLUGS.include?(slug) }&.last
   end

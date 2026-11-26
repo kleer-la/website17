@@ -21,6 +21,7 @@ ObjectSpace.each_object(Module) do |m|
 end
 
 require './lib/models/shorter_url'
+require './lib/models/page_templates'
 
 require './controllers/helper'
 require './controllers/assessments_controller'
@@ -301,6 +302,13 @@ get '/s/:short_code' do |short_code|
   else
     redirect dest.original_url, 301
   end
+end
+
+# Which sections each overlay template reads, for Keventer to warn about a
+# section that would never show (kleer-la/eventer#243). Slugs and roles only.
+get '/page-templates.json' do
+  content_type :json
+  PageTemplates.as_json.to_json
 end
 
 get '/cache-reset' do
