@@ -36,6 +36,11 @@ entérate de todas las novedades!
   </div>
   <div class="container-fluid footer-bottom">
       <p class="footer__tagline"><%= t('generals.tagline') %></p>
+      <%# What Kleer does and for whom, in two lines (#472): plain text, not a heading (#466). %>
+      <% descriptor = t('generals.descriptor', default: '').to_s.strip %>
+      <% unless descriptor.empty? %>
+        <p class="footer__descriptor"><%= descriptor.lines.map { |line| Rack::Utils.escape_html(line.strip) }.join('<br>') %></p>
+      <% end %>
       <ul class="footer-botom__list">
         <li>Copyright &copy; Kleer 2026 <span>|</span></li>
         <% if (session[:locale] == "es") %>

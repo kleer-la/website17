@@ -331,6 +331,16 @@ footer {
   margin-bottom: 0.5rem;
 }
 
+/* What Kleer does and for whom, under the tagline (#472). */
+.footer__descriptor {
+  color: var(--white);
+  text-align: center;
+  font-size: 14px;
+  line-height: 22px;
+  opacity: 0.85;
+  margin-bottom: 0.75rem;
+}
+
 .footer-botom__list {
   display: flex;
   flex-wrap: wrap;
